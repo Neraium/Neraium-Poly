@@ -16,6 +16,7 @@ def create_app(runtime=None, frontend_path: Path | None = None) -> FastAPI:
         from neraium_poly.ops.runtime import ResearchRuntime
 
         runtime = ResearchRuntime()
+        runtime.run_scenario()
     app = FastAPI(title="Neraium-Poly Paper Research", version="0.1.0")
     lock = RLock()
 
@@ -61,7 +62,10 @@ def create_app(runtime=None, frontend_path: Path | None = None) -> FastAPI:
         with lock:
             if runtime.suspended:
                 raise HTTPException(409, "Emergency stop active; process restart with review required")
-            runtime.run_scenario()
+            try:
+                runtime.run_scenario()
+            except ValueError as error:
+                raise HTTPException(409, str(error)) from error
             return {"ok": True}
 
     @app.post("/api/kill-switch")

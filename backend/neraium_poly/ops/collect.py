@@ -1,5 +1,6 @@
 """Bounded public collection. No strategy or execution is invoked."""
 
+import asyncio
 import json
 from pathlib import Path
 
@@ -8,7 +9,7 @@ import httpx
 from neraium_poly.data import EventStore, PolymarketAdapter
 
 
-async def collect(path: Path):
+async def collect_once(path: Path):
     store = EventStore(path)
     adapter = PolymarketAdapter()
     counts = {"markets": 0, "books": 0, "errors": []}
@@ -29,3 +30,14 @@ async def collect(path: Path):
         await adapter.close()
         store.close()
     print(json.dumps(counts))
+
+
+async def collect(path: Path, *, cycles: int = 1, interval: float = 30):
+    if cycles < 0 or interval < 5:
+        raise ValueError("cycles must be nonnegative and interval at least five seconds")
+    completed = 0
+    while cycles == 0 or completed < cycles:
+        await collect_once(path)
+        completed += 1
+        if cycles == 0 or completed < cycles:
+            await asyncio.sleep(interval)
