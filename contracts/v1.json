@@ -1,0 +1,1186 @@
+{
+  "Record": {
+    "additionalProperties": false,
+    "properties": {
+      "schema_version": {
+        "const": "1.0",
+        "default": "1.0",
+        "title": "Schema Version",
+        "type": "string"
+      },
+      "id": {
+        "title": "Id",
+        "type": "string"
+      },
+      "timestamp": {
+        "format": "date-time",
+        "title": "Timestamp",
+        "type": "string"
+      },
+      "available_at": {
+        "format": "date-time",
+        "title": "Available At",
+        "type": "string"
+      },
+      "source": {
+        "minLength": 1,
+        "title": "Source",
+        "type": "string"
+      }
+    },
+    "required": [
+      "timestamp",
+      "available_at",
+      "source"
+    ],
+    "title": "Record",
+    "type": "object"
+  },
+  "MarketSnapshot": {
+    "additionalProperties": false,
+    "properties": {
+      "schema_version": {
+        "const": "1.0",
+        "default": "1.0",
+        "title": "Schema Version",
+        "type": "string"
+      },
+      "id": {
+        "title": "Id",
+        "type": "string"
+      },
+      "timestamp": {
+        "format": "date-time",
+        "title": "Timestamp",
+        "type": "string"
+      },
+      "available_at": {
+        "format": "date-time",
+        "title": "Available At",
+        "type": "string"
+      },
+      "source": {
+        "minLength": 1,
+        "title": "Source",
+        "type": "string"
+      },
+      "exchange": {
+        "default": "polymarket",
+        "title": "Exchange",
+        "type": "string"
+      },
+      "market_id": {
+        "title": "Market Id",
+        "type": "string"
+      },
+      "event_id": {
+        "title": "Event Id",
+        "type": "string"
+      },
+      "question": {
+        "title": "Question",
+        "type": "string"
+      },
+      "token_id": {
+        "title": "Token Id",
+        "type": "string"
+      },
+      "outcome": {
+        "default": "YES",
+        "title": "Outcome",
+        "type": "string"
+      },
+      "probability": {
+        "maximum": 1,
+        "minimum": 0,
+        "title": "Probability",
+        "type": "number"
+      },
+      "status": {
+        "default": "unknown",
+        "enum": [
+          "active",
+          "closed",
+          "resolved",
+          "unknown"
+        ],
+        "title": "Status",
+        "type": "string"
+      },
+      "resolution_rules": {
+        "default": "",
+        "title": "Resolution Rules",
+        "type": "string"
+      },
+      "resolution_source": {
+        "default": "",
+        "title": "Resolution Source",
+        "type": "string"
+      },
+      "end_time": {
+        "anyOf": [
+          {
+            "format": "date-time",
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "End Time"
+      },
+      "tick_size": {
+        "default": 0.01,
+        "exclusiveMinimum": 0,
+        "maximum": 1,
+        "title": "Tick Size",
+        "type": "number"
+      },
+      "min_order_size": {
+        "default": 1,
+        "exclusiveMinimum": 0,
+        "title": "Min Order Size",
+        "type": "number"
+      }
+    },
+    "required": [
+      "timestamp",
+      "available_at",
+      "source",
+      "market_id",
+      "event_id",
+      "question",
+      "token_id",
+      "probability"
+    ],
+    "title": "MarketSnapshot",
+    "type": "object"
+  },
+  "PriceLevel": {
+    "additionalProperties": false,
+    "properties": {
+      "price": {
+        "exclusiveMaximum": 1,
+        "exclusiveMinimum": 0,
+        "title": "Price",
+        "type": "number"
+      },
+      "size": {
+        "exclusiveMinimum": 0,
+        "title": "Size",
+        "type": "number"
+      }
+    },
+    "required": [
+      "price",
+      "size"
+    ],
+    "title": "PriceLevel",
+    "type": "object"
+  },
+  "OrderBookSnapshot": {
+    "$defs": {
+      "PriceLevel": {
+        "additionalProperties": false,
+        "properties": {
+          "price": {
+            "exclusiveMaximum": 1,
+            "exclusiveMinimum": 0,
+            "title": "Price",
+            "type": "number"
+          },
+          "size": {
+            "exclusiveMinimum": 0,
+            "title": "Size",
+            "type": "number"
+          }
+        },
+        "required": [
+          "price",
+          "size"
+        ],
+        "title": "PriceLevel",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "schema_version": {
+        "const": "1.0",
+        "default": "1.0",
+        "title": "Schema Version",
+        "type": "string"
+      },
+      "id": {
+        "title": "Id",
+        "type": "string"
+      },
+      "timestamp": {
+        "format": "date-time",
+        "title": "Timestamp",
+        "type": "string"
+      },
+      "available_at": {
+        "format": "date-time",
+        "title": "Available At",
+        "type": "string"
+      },
+      "source": {
+        "minLength": 1,
+        "title": "Source",
+        "type": "string"
+      },
+      "exchange": {
+        "default": "polymarket",
+        "title": "Exchange",
+        "type": "string"
+      },
+      "market_id": {
+        "title": "Market Id",
+        "type": "string"
+      },
+      "token_id": {
+        "title": "Token Id",
+        "type": "string"
+      },
+      "bids": {
+        "default": [],
+        "items": {
+          "$ref": "#/$defs/PriceLevel"
+        },
+        "title": "Bids",
+        "type": "array"
+      },
+      "asks": {
+        "default": [],
+        "items": {
+          "$ref": "#/$defs/PriceLevel"
+        },
+        "title": "Asks",
+        "type": "array"
+      },
+      "sequence": {
+        "default": 0,
+        "minimum": 0,
+        "title": "Sequence",
+        "type": "integer"
+      },
+      "complete": {
+        "default": true,
+        "title": "Complete",
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "timestamp",
+      "available_at",
+      "source",
+      "market_id",
+      "token_id"
+    ],
+    "title": "OrderBookSnapshot",
+    "type": "object"
+  },
+  "MarketRelationship": {
+    "additionalProperties": false,
+    "properties": {
+      "schema_version": {
+        "const": "1.0",
+        "default": "1.0",
+        "title": "Schema Version",
+        "type": "string"
+      },
+      "id": {
+        "title": "Id",
+        "type": "string"
+      },
+      "timestamp": {
+        "format": "date-time",
+        "title": "Timestamp",
+        "type": "string"
+      },
+      "available_at": {
+        "format": "date-time",
+        "title": "Available At",
+        "type": "string"
+      },
+      "source": {
+        "minLength": 1,
+        "title": "Source",
+        "type": "string"
+      },
+      "market_ids": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Market Ids",
+        "type": "array"
+      },
+      "kind": {
+        "enum": [
+          "statistical",
+          "mutually_exclusive",
+          "exhaustive",
+          "conditional",
+          "implication"
+        ],
+        "title": "Kind",
+        "type": "string"
+      },
+      "confidence": {
+        "maximum": 1,
+        "minimum": 0,
+        "title": "Confidence",
+        "type": "number"
+      },
+      "rule_verified": {
+        "default": false,
+        "title": "Rule Verified",
+        "type": "boolean"
+      },
+      "rule_description": {
+        "default": "",
+        "title": "Rule Description",
+        "type": "string"
+      }
+    },
+    "required": [
+      "timestamp",
+      "available_at",
+      "source",
+      "market_ids",
+      "kind",
+      "confidence"
+    ],
+    "title": "MarketRelationship",
+    "type": "object"
+  },
+  "RelationshipEvidence": {
+    "additionalProperties": false,
+    "properties": {
+      "schema_version": {
+        "const": "1.0",
+        "default": "1.0",
+        "title": "Schema Version",
+        "type": "string"
+      },
+      "id": {
+        "title": "Id",
+        "type": "string"
+      },
+      "timestamp": {
+        "format": "date-time",
+        "title": "Timestamp",
+        "type": "string"
+      },
+      "available_at": {
+        "format": "date-time",
+        "title": "Available At",
+        "type": "string"
+      },
+      "source": {
+        "minLength": 1,
+        "title": "Source",
+        "type": "string"
+      },
+      "relationship_id": {
+        "title": "Relationship Id",
+        "type": "string"
+      },
+      "sample_count": {
+        "minimum": 0,
+        "title": "Sample Count",
+        "type": "integer"
+      },
+      "persistence": {
+        "minimum": 0,
+        "title": "Persistence",
+        "type": "integer"
+      },
+      "strength": {
+        "minimum": 0,
+        "title": "Strength",
+        "type": "number"
+      },
+      "confidence": {
+        "maximum": 1,
+        "minimum": 0,
+        "title": "Confidence",
+        "type": "number"
+      },
+      "qualified": {
+        "title": "Qualified",
+        "type": "boolean"
+      },
+      "reasons": {
+        "default": [],
+        "items": {
+          "type": "string"
+        },
+        "title": "Reasons",
+        "type": "array"
+      },
+      "observation_ids": {
+        "default": [],
+        "items": {
+          "type": "string"
+        },
+        "title": "Observation Ids",
+        "type": "array"
+      },
+      "regime": {
+        "default": "unknown",
+        "title": "Regime",
+        "type": "string"
+      }
+    },
+    "required": [
+      "timestamp",
+      "available_at",
+      "source",
+      "relationship_id",
+      "sample_count",
+      "persistence",
+      "strength",
+      "confidence",
+      "qualified"
+    ],
+    "title": "RelationshipEvidence",
+    "type": "object"
+  },
+  "ModelProvenance": {
+    "additionalProperties": false,
+    "properties": {
+      "schema_version": {
+        "const": "1.0",
+        "default": "1.0",
+        "title": "Schema Version",
+        "type": "string"
+      },
+      "id": {
+        "title": "Id",
+        "type": "string"
+      },
+      "timestamp": {
+        "format": "date-time",
+        "title": "Timestamp",
+        "type": "string"
+      },
+      "available_at": {
+        "format": "date-time",
+        "title": "Available At",
+        "type": "string"
+      },
+      "source": {
+        "minLength": 1,
+        "title": "Source",
+        "type": "string"
+      },
+      "model_name": {
+        "title": "Model Name",
+        "type": "string"
+      },
+      "model_version": {
+        "title": "Model Version",
+        "type": "string"
+      },
+      "training_end": {
+        "format": "date-time",
+        "title": "Training End",
+        "type": "string"
+      },
+      "artifact_hash": {
+        "title": "Artifact Hash",
+        "type": "string"
+      },
+      "approved": {
+        "default": false,
+        "title": "Approved",
+        "type": "boolean"
+      },
+      "calibration_samples": {
+        "default": 0,
+        "minimum": 0,
+        "title": "Calibration Samples",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "timestamp",
+      "available_at",
+      "source",
+      "model_name",
+      "model_version",
+      "training_end",
+      "artifact_hash"
+    ],
+    "title": "ModelProvenance",
+    "type": "object"
+  },
+  "ProbabilityEstimate": {
+    "additionalProperties": false,
+    "properties": {
+      "schema_version": {
+        "const": "1.0",
+        "default": "1.0",
+        "title": "Schema Version",
+        "type": "string"
+      },
+      "id": {
+        "title": "Id",
+        "type": "string"
+      },
+      "timestamp": {
+        "format": "date-time",
+        "title": "Timestamp",
+        "type": "string"
+      },
+      "available_at": {
+        "format": "date-time",
+        "title": "Available At",
+        "type": "string"
+      },
+      "source": {
+        "minLength": 1,
+        "title": "Source",
+        "type": "string"
+      },
+      "market_id": {
+        "title": "Market Id",
+        "type": "string"
+      },
+      "token_id": {
+        "title": "Token Id",
+        "type": "string"
+      },
+      "probability": {
+        "maximum": 1,
+        "minimum": 0,
+        "title": "Probability",
+        "type": "number"
+      },
+      "lower": {
+        "maximum": 1,
+        "minimum": 0,
+        "title": "Lower",
+        "type": "number"
+      },
+      "upper": {
+        "maximum": 1,
+        "minimum": 0,
+        "title": "Upper",
+        "type": "number"
+      },
+      "model_id": {
+        "title": "Model Id",
+        "type": "string"
+      },
+      "calibrated": {
+        "default": false,
+        "title": "Calibrated",
+        "type": "boolean"
+      },
+      "evidence_ids": {
+        "default": [],
+        "items": {
+          "type": "string"
+        },
+        "title": "Evidence Ids",
+        "type": "array"
+      }
+    },
+    "required": [
+      "timestamp",
+      "available_at",
+      "source",
+      "market_id",
+      "token_id",
+      "probability",
+      "lower",
+      "upper",
+      "model_id"
+    ],
+    "title": "ProbabilityEstimate",
+    "type": "object"
+  },
+  "TradingOpportunity": {
+    "additionalProperties": false,
+    "properties": {
+      "schema_version": {
+        "const": "1.0",
+        "default": "1.0",
+        "title": "Schema Version",
+        "type": "string"
+      },
+      "id": {
+        "title": "Id",
+        "type": "string"
+      },
+      "timestamp": {
+        "format": "date-time",
+        "title": "Timestamp",
+        "type": "string"
+      },
+      "available_at": {
+        "format": "date-time",
+        "title": "Available At",
+        "type": "string"
+      },
+      "source": {
+        "minLength": 1,
+        "title": "Source",
+        "type": "string"
+      },
+      "market_id": {
+        "title": "Market Id",
+        "type": "string"
+      },
+      "token_id": {
+        "title": "Token Id",
+        "type": "string"
+      },
+      "event_id": {
+        "title": "Event Id",
+        "type": "string"
+      },
+      "estimate_id": {
+        "title": "Estimate Id",
+        "type": "string"
+      },
+      "evidence_ids": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Evidence Ids",
+        "type": "array"
+      },
+      "side": {
+        "default": "BUY",
+        "enum": [
+          "BUY",
+          "SELL"
+        ],
+        "title": "Side",
+        "type": "string"
+      },
+      "market_probability": {
+        "exclusiveMaximum": 1,
+        "exclusiveMinimum": 0,
+        "title": "Market Probability",
+        "type": "number"
+      },
+      "estimated_probability": {
+        "maximum": 1,
+        "minimum": 0,
+        "title": "Estimated Probability",
+        "type": "number"
+      },
+      "conservative_probability": {
+        "maximum": 1,
+        "minimum": 0,
+        "title": "Conservative Probability",
+        "type": "number"
+      },
+      "net_edge": {
+        "title": "Net Edge",
+        "type": "number"
+      },
+      "fee_rate": {
+        "maximum": 1,
+        "minimum": 0,
+        "title": "Fee Rate",
+        "type": "number"
+      },
+      "slippage": {
+        "minimum": 0,
+        "title": "Slippage",
+        "type": "number"
+      },
+      "liquidity": {
+        "minimum": 0,
+        "title": "Liquidity",
+        "type": "number"
+      },
+      "tier": {
+        "default": "standard",
+        "enum": [
+          "standard",
+          "high",
+          "exceptional"
+        ],
+        "title": "Tier",
+        "type": "string"
+      },
+      "calibrated": {
+        "default": false,
+        "title": "Calibrated",
+        "type": "boolean"
+      },
+      "independent_evidence": {
+        "default": 0,
+        "minimum": 0,
+        "title": "Independent Evidence",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "timestamp",
+      "available_at",
+      "source",
+      "market_id",
+      "token_id",
+      "event_id",
+      "estimate_id",
+      "evidence_ids",
+      "market_probability",
+      "estimated_probability",
+      "conservative_probability",
+      "net_edge",
+      "fee_rate",
+      "slippage",
+      "liquidity"
+    ],
+    "title": "TradingOpportunity",
+    "type": "object"
+  },
+  "OrderIntent": {
+    "additionalProperties": false,
+    "properties": {
+      "schema_version": {
+        "const": "1.0",
+        "default": "1.0",
+        "title": "Schema Version",
+        "type": "string"
+      },
+      "id": {
+        "title": "Id",
+        "type": "string"
+      },
+      "timestamp": {
+        "format": "date-time",
+        "title": "Timestamp",
+        "type": "string"
+      },
+      "available_at": {
+        "format": "date-time",
+        "title": "Available At",
+        "type": "string"
+      },
+      "source": {
+        "minLength": 1,
+        "title": "Source",
+        "type": "string"
+      },
+      "client_order_id": {
+        "title": "Client Order Id",
+        "type": "string"
+      },
+      "market_id": {
+        "title": "Market Id",
+        "type": "string"
+      },
+      "token_id": {
+        "title": "Token Id",
+        "type": "string"
+      },
+      "event_id": {
+        "title": "Event Id",
+        "type": "string"
+      },
+      "opportunity_id": {
+        "title": "Opportunity Id",
+        "type": "string"
+      },
+      "side": {
+        "default": "BUY",
+        "enum": [
+          "BUY",
+          "SELL"
+        ],
+        "title": "Side",
+        "type": "string"
+      },
+      "limit_price": {
+        "exclusiveMaximum": 1,
+        "exclusiveMinimum": 0,
+        "title": "Limit Price",
+        "type": "number"
+      },
+      "quantity": {
+        "exclusiveMinimum": 0,
+        "title": "Quantity",
+        "type": "number"
+      },
+      "expires_at": {
+        "format": "date-time",
+        "title": "Expires At",
+        "type": "string"
+      },
+      "tier": {
+        "default": "standard",
+        "enum": [
+          "standard",
+          "high",
+          "exceptional"
+        ],
+        "title": "Tier",
+        "type": "string"
+      }
+    },
+    "required": [
+      "timestamp",
+      "available_at",
+      "source",
+      "client_order_id",
+      "market_id",
+      "token_id",
+      "event_id",
+      "opportunity_id",
+      "limit_price",
+      "quantity",
+      "expires_at"
+    ],
+    "title": "OrderIntent",
+    "type": "object"
+  },
+  "RiskDecision": {
+    "additionalProperties": false,
+    "properties": {
+      "schema_version": {
+        "const": "1.0",
+        "default": "1.0",
+        "title": "Schema Version",
+        "type": "string"
+      },
+      "id": {
+        "title": "Id",
+        "type": "string"
+      },
+      "timestamp": {
+        "format": "date-time",
+        "title": "Timestamp",
+        "type": "string"
+      },
+      "available_at": {
+        "format": "date-time",
+        "title": "Available At",
+        "type": "string"
+      },
+      "source": {
+        "minLength": 1,
+        "title": "Source",
+        "type": "string"
+      },
+      "intent_id": {
+        "title": "Intent Id",
+        "type": "string"
+      },
+      "approved": {
+        "title": "Approved",
+        "type": "boolean"
+      },
+      "reasons": {
+        "items": {
+          "type": "string"
+        },
+        "title": "Reasons",
+        "type": "array"
+      },
+      "approved_notional": {
+        "minimum": 0,
+        "title": "Approved Notional",
+        "type": "number"
+      },
+      "reservation_id": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Reservation Id"
+      },
+      "expires_at": {
+        "format": "date-time",
+        "title": "Expires At",
+        "type": "string"
+      }
+    },
+    "required": [
+      "timestamp",
+      "available_at",
+      "source",
+      "intent_id",
+      "approved",
+      "reasons",
+      "approved_notional",
+      "expires_at"
+    ],
+    "title": "RiskDecision",
+    "type": "object"
+  },
+  "ExecutionReport": {
+    "additionalProperties": false,
+    "properties": {
+      "schema_version": {
+        "const": "1.0",
+        "default": "1.0",
+        "title": "Schema Version",
+        "type": "string"
+      },
+      "id": {
+        "title": "Id",
+        "type": "string"
+      },
+      "timestamp": {
+        "format": "date-time",
+        "title": "Timestamp",
+        "type": "string"
+      },
+      "available_at": {
+        "format": "date-time",
+        "title": "Available At",
+        "type": "string"
+      },
+      "source": {
+        "minLength": 1,
+        "title": "Source",
+        "type": "string"
+      },
+      "intent_id": {
+        "title": "Intent Id",
+        "type": "string"
+      },
+      "client_order_id": {
+        "title": "Client Order Id",
+        "type": "string"
+      },
+      "status": {
+        "enum": [
+          "open",
+          "partial",
+          "filled",
+          "cancelled",
+          "expired",
+          "rejected"
+        ],
+        "title": "Status",
+        "type": "string"
+      },
+      "filled_quantity": {
+        "minimum": 0,
+        "title": "Filled Quantity",
+        "type": "number"
+      },
+      "average_price": {
+        "maximum": 1,
+        "minimum": 0,
+        "title": "Average Price",
+        "type": "number"
+      },
+      "fees": {
+        "minimum": 0,
+        "title": "Fees",
+        "type": "number"
+      },
+      "remaining_quantity": {
+        "minimum": 0,
+        "title": "Remaining Quantity",
+        "type": "number"
+      },
+      "reason": {
+        "default": "",
+        "title": "Reason",
+        "type": "string"
+      }
+    },
+    "required": [
+      "timestamp",
+      "available_at",
+      "source",
+      "intent_id",
+      "client_order_id",
+      "status",
+      "filled_quantity",
+      "average_price",
+      "fees",
+      "remaining_quantity"
+    ],
+    "title": "ExecutionReport",
+    "type": "object"
+  },
+  "PortfolioPosition": {
+    "additionalProperties": false,
+    "properties": {
+      "schema_version": {
+        "const": "1.0",
+        "default": "1.0",
+        "title": "Schema Version",
+        "type": "string"
+      },
+      "id": {
+        "title": "Id",
+        "type": "string"
+      },
+      "timestamp": {
+        "format": "date-time",
+        "title": "Timestamp",
+        "type": "string"
+      },
+      "available_at": {
+        "format": "date-time",
+        "title": "Available At",
+        "type": "string"
+      },
+      "source": {
+        "minLength": 1,
+        "title": "Source",
+        "type": "string"
+      },
+      "market_id": {
+        "title": "Market Id",
+        "type": "string"
+      },
+      "token_id": {
+        "title": "Token Id",
+        "type": "string"
+      },
+      "event_id": {
+        "title": "Event Id",
+        "type": "string"
+      },
+      "quantity": {
+        "minimum": 0,
+        "title": "Quantity",
+        "type": "number"
+      },
+      "average_cost": {
+        "maximum": 1,
+        "minimum": 0,
+        "title": "Average Cost",
+        "type": "number"
+      },
+      "mark_price": {
+        "maximum": 1,
+        "minimum": 0,
+        "title": "Mark Price",
+        "type": "number"
+      },
+      "realized_pnl": {
+        "default": 0,
+        "title": "Realized Pnl",
+        "type": "number"
+      },
+      "simulated": {
+        "default": true,
+        "title": "Simulated",
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "timestamp",
+      "available_at",
+      "source",
+      "market_id",
+      "token_id",
+      "event_id",
+      "quantity",
+      "average_cost",
+      "mark_price"
+    ],
+    "title": "PortfolioPosition",
+    "type": "object"
+  },
+  "StrategyPerformance": {
+    "additionalProperties": false,
+    "properties": {
+      "schema_version": {
+        "const": "1.0",
+        "default": "1.0",
+        "title": "Schema Version",
+        "type": "string"
+      },
+      "id": {
+        "title": "Id",
+        "type": "string"
+      },
+      "timestamp": {
+        "format": "date-time",
+        "title": "Timestamp",
+        "type": "string"
+      },
+      "available_at": {
+        "format": "date-time",
+        "title": "Available At",
+        "type": "string"
+      },
+      "source": {
+        "minLength": 1,
+        "title": "Source",
+        "type": "string"
+      },
+      "strategy_id": {
+        "title": "Strategy Id",
+        "type": "string"
+      },
+      "trades": {
+        "minimum": 0,
+        "title": "Trades",
+        "type": "integer"
+      },
+      "simulated_pnl": {
+        "title": "Simulated Pnl",
+        "type": "number"
+      },
+      "realized_pnl": {
+        "default": 0,
+        "title": "Realized Pnl",
+        "type": "number"
+      },
+      "brier_score": {
+        "anyOf": [
+          {
+            "maximum": 1,
+            "minimum": 0,
+            "type": "number"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Brier Score"
+      },
+      "max_drawdown": {
+        "minimum": 0,
+        "title": "Max Drawdown",
+        "type": "number"
+      },
+      "dataset_hash": {
+        "title": "Dataset Hash",
+        "type": "string"
+      },
+      "out_of_sample": {
+        "default": true,
+        "title": "Out Of Sample",
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "timestamp",
+      "available_at",
+      "source",
+      "strategy_id",
+      "trades",
+      "simulated_pnl",
+      "max_drawdown",
+      "dataset_hash"
+    ],
+    "title": "StrategyPerformance",
+    "type": "object"
+  }
+}
