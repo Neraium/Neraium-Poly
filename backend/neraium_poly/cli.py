@@ -10,7 +10,7 @@ from neraium_poly.settings import Settings
 def main():
     parser = argparse.ArgumentParser(description="Neraium-Poly paper research")
     parser.add_argument("command", choices=["serve", "scenario", "collect"])
-    parser.add_argument("--port", type=int, default=8000)
+    parser.add_argument("--port", type=int, default=18740)
     parser.add_argument("--output", type=Path)
     args = parser.parse_args()
     Settings.from_env()

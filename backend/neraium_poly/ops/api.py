@@ -28,10 +28,10 @@ def create_app(runtime=None, frontend_path: Path | None = None) -> FastAPI:
             and origin
             and origin
             not in {
-                "http://127.0.0.1:8000",
-                "http://localhost:8000",
-                "http://127.0.0.1:5173",
-                "http://localhost:5173",
+                "http://127.0.0.1:18740",
+                "http://localhost:18740",
+                "http://127.0.0.1:18741",
+                "http://localhost:18741",
             }
         ):
             from fastapi.responses import JSONResponse

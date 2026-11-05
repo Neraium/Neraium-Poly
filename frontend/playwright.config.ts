@@ -1,2 +1,2 @@
 import { defineConfig } from '@playwright/test';
-export default defineConfig({testDir:'./tests',workers:1,use:{baseURL:'http://127.0.0.1:5173'},webServer:{command:'npm run dev -- --port 5173',url:'http://127.0.0.1:5173',reuseExistingServer:!process.env.CI},reporter:'list'});
+export default defineConfig({testDir:'./tests',workers:1,use:{baseURL:'http://127.0.0.1:18741'},webServer:{command:'npm run dev -- --port 18741',url:'http://127.0.0.1:18741',reuseExistingServer:false},reporter:'list'});
