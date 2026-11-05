@@ -2,8 +2,51 @@ from concurrent.futures import ThreadPoolExecutor
 from datetime import timedelta
 
 import pytest
-from neraium_poly.contracts import OrderIntent, RelationshipEvidence, TradingOpportunity
-from neraium_poly.risk import RiskEngine, RiskLimits, RiskViolation
+from neraium_poly.contracts import (
+    ModelProvenance,
+    OrderIntent,
+    ProbabilityEstimate,
+    RelationshipEvidence,
+    TradingOpportunity,
+)
+from neraium_poly.risk import RiskEngine as BaseRiskEngine
+from neraium_poly.risk import RiskLimits, RiskViolation
+
+
+class RiskEngine(BaseRiskEngine):
+    """Tests supply explicit approved fixture provenance unless overridden."""
+
+    def approve(self, intent, opportunity, market, book, evidence, *, now, **kwargs):
+        model = ModelProvenance(
+            id="fixture-model",
+            timestamp=now - timedelta(days=1),
+            available_at=now - timedelta(days=1),
+            source="fixture",
+            model_name="fixture",
+            model_version="1",
+            training_end=now - timedelta(days=2),
+            artifact_hash="fixture-hash",
+            approved=True,
+            calibration_samples=100,
+        )
+        estimate = ProbabilityEstimate(
+            id=opportunity.estimate_id,
+            timestamp=now,
+            available_at=now,
+            source="fixture",
+            market_id=market.market_id,
+            token_id=market.token_id,
+            probability=opportunity.estimated_probability,
+            lower=opportunity.conservative_probability,
+            upper=max(opportunity.estimated_probability, 0.8),
+            model_id=model.id,
+            calibrated=True,
+            evidence_ids=opportunity.evidence_ids,
+        )
+        kwargs.setdefault("estimate", estimate)
+        kwargs.setdefault("model", model)
+        opportunity = opportunity.model_copy(update={"calibrated": True})
+        return super().approve(intent, opportunity, market, book, evidence, now=now, **kwargs)
 
 
 def inputs(now, market, book, *, cost=4, tier="standard", suffix="0", fee=0.02):
@@ -239,3 +282,21 @@ def test_fractional_kelly_is_capped_and_optional(now, market, book):
     assert engine.size(opportunity) == 2
     assert engine.size(opportunity, fractional_kelly=True) <= 5
     assert engine.size(opportunity.model_copy(update={"net_edge": -0.1}), fractional_kelly=True) == 0
+
+
+def test_all_tiers_require_model_provenance(now, market, book):
+    result = BaseRiskEngine().approve(*inputs(now, market, book), now=now)
+    assert not result.approved
+    assert {"missing_model_provenance", "uncalibrated_probability"} <= set(result.reasons)
+
+
+def test_naive_expiry_rejected(now, market, book):
+    args = list(inputs(now, market, book))
+    args[0] = args[0].model_copy(update={"expires_at": now.replace(tzinfo=None)})
+    assert "expired_order" in RiskEngine().approve(*args, now=now).reasons
+
+
+def test_stale_market_rejected(now, market, book):
+    args = list(inputs(now, market, book))
+    args[2] = market.model_copy(update={"timestamp": now - timedelta(days=1)})
+    assert "stale_market" in RiskEngine().approve(*args, now=now).reasons

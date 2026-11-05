@@ -48,6 +48,8 @@ class RiskLimits(BaseModel):
     daily_loss_fraction: float = Field(default=0.05, gt=0, le=1)
     drawdown_fraction: float = Field(default=0.10, gt=0, le=1)
     max_book_age_seconds: float = Field(default=15, gt=0)
+    max_market_age_seconds: float = Field(default=3600, gt=0)
+    max_estimate_age_seconds: float = Field(default=300, gt=0)
     max_evidence_age_seconds: float = Field(default=3600, gt=0)
     max_spread: float = Field(default=0.05, gt=0, lt=1)
     min_net_edge: float = Field(default=0.03, gt=0, lt=1)
@@ -317,6 +319,17 @@ class RiskEngine:
             or intent.tier != opportunity.tier
         ):
             reasons.append("identity_mismatch")
+        if (now - market.timestamp).total_seconds() > self.limits.max_market_age_seconds:
+            reasons.append("stale_market")
+        if estimate is None or model is None:
+            reasons.append("missing_model_provenance")
+        if not opportunity.calibrated or (estimate is not None and not estimate.calibrated):
+            reasons.append("uncalibrated_probability")
+        if (
+            estimate is not None
+            and (now - estimate.timestamp).total_seconds() > self.limits.max_estimate_age_seconds
+        ):
+            reasons.append("stale_estimate")
         if market.status != "active" or not market.resolution_rules or not market.resolution_source:
             reasons.append("unverified_market_rules")
         if market.end_time and (market.end_time.tzinfo is None or market.end_time <= now):
@@ -370,6 +383,7 @@ class RiskEngine:
             or model.available_at > now
             or model.training_end.tzinfo is None
             or model.training_end >= now
+            or (estimate is not None and model.training_end >= estimate.timestamp)
             or not model.artifact_hash
             or estimate is None
             or estimate.model_id != model.id
@@ -408,6 +422,8 @@ class RiskEngine:
             or stopped
             or row["digest"] != _digest(intent)
             or row["decision"] != decision.model_dump_json()
+            or decision.expires_at.tzinfo is None
+            or intent.expires_at.tzinfo is None
             or decision.expires_at <= now
             or intent.expires_at <= now
         ):
@@ -583,7 +599,11 @@ class RiskEngine:
         if fractional_kelly:
             p, price = opportunity.conservative_probability, opportunity.market_probability
             budget = self.limits.bankroll * self.limits.kelly_fraction * max(0, (p - price) / (1 - price))
-        budget = min(high, budget, opportunity.liquidity * self.limits.max_liquidity_participation)
+        budget = min(
+            high,
+            budget,
+            opportunity.liquidity * opportunity.market_probability * self.limits.max_liquidity_participation,
+        )
         return budget if budget >= low and opportunity.net_edge >= self.limits.min_net_edge else 0
 
     def stress(self, *, now: datetime) -> dict:
