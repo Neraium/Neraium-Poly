@@ -209,6 +209,7 @@ class ModelRegistry:
 
 class FeeModel(Protocol):
     def fee_per_share(self, price: float) -> float: ...
+    def effective_notional_bound(self) -> float: ...
 
 
 @dataclass(frozen=True)
@@ -221,6 +222,10 @@ class ProtocolFeeModel:
     def __post_init__(self):
         if not isfinite(self.protocol_rate) or not 0 <= self.protocol_rate <= 1:
             raise ValueError("invalid protocol fee rate")
+
+    def effective_notional_bound(self) -> float:
+        """Global BUY bound valid for all price improvements 0 < p < 1."""
+        return 0 if self.maker else self.protocol_rate
 
     def fee_per_share(self, price: float) -> float:
         if not isfinite(price) or not 0 < price < 1:
@@ -363,13 +368,15 @@ class OpportunityRanker:
             self.last_reasons = ("insufficient_executable_liquidity",)
             return None
         worst = levels[-1][0]
-        # Worst-price limit and peak fee across crossed levels reserve conservatively.
+        # A proportional simulation reserve must cover every possible price
+        # improvement, including later books. A spot fee/price ratio cannot.
         try:
-            fee = max(fee_model.fee_per_share(p) for p, _ in levels)
-        except (ValueError, TypeError, ArithmeticError):
+            fee_bound = fee_model.effective_notional_bound()
+            fee = worst * fee_bound
+        except (AttributeError, ValueError, TypeError, ArithmeticError):
             self.last_reasons = ("invalid_fee_model",)
             return None
-        if not isfinite(fee) or fee < 0:
+        if not isfinite(fee_bound) or not 0 <= fee_bound <= 1:
             self.last_reasons = ("invalid_fee_model",)
             return None
         net_edge = estimate.lower - worst - fee - self.policy.latency_buffer
@@ -393,7 +400,7 @@ class OpportunityRanker:
             estimated_probability=estimate.probability,
             conservative_probability=estimate.lower,
             net_edge=net_edge,
-            fee_rate=fee / worst,
+            fee_rate=fee_bound,
             slippage=worst - best,
             liquidity=liquidity,
             tier=tier,

@@ -38,7 +38,8 @@ opportunity records the worst crossed ask as the executable limit probability,
 slippage versus the best ask, and executable liquidity in **outcome shares**.
 Quantity is also shares. Net edge per share is the lower estimated probability
 minus the worst quote, conservative fee per share, and latency buffer. The fee
-reserve uses the largest fee among crossed price levels. A marketable book quote
+reserve uses an explicit global effective notional bound valid over all possible
+BUY price improvements, including fills against later books. A marketable book quote
 cannot claim maker fees. Unknown fee schedules suppress the opportunity.
 
 The official [Polymarket fee documentation](https://docs.polymarket.com/trading/fees.md),
@@ -46,8 +47,14 @@ reviewed 2026-11-06 UTC, specifies taker fee = shares × protocol rate × price 
 (1-price), and zero maker fees. No category rate is guessed: callers must supply
 a verified per-market rate or an explicit synthetic fixture rate. The opportunity's
 `fee_rate` is the effective proportional rate against executable notional; for a
-single level it is protocol_rate × (1-price). The simulator must use the same
-protocol curve for actual fills and reconcile its reserve. Protocol rates can
+single level the exact ratio would be protocol_rate × (1-price), but this
+implementation deliberately reserves and simulates the larger global bound
+protocol_rate. This overstates fees conservatively and remains safe if execution
+prices improve. Custom fee models must declare an effective_notional_bound();
+spot-price fees alone cannot establish a safe reserve. The standalone historical
+backtest retains the exact protocol curve rather than the conservative broker
+bound. These cost assumptions are explicitly different and should be reported
+with results. Protocol rates can
 change; this document is not a promise of future exchange costs.
 
 The ranker also rejects unavailable or stale inputs, cross-exchange instrument

@@ -146,8 +146,8 @@ def test_opportunity_lower_bound_ev_and_fee_accounting(now, market, book):
         market, book, estimate, [qualified(now)], provenance, now, fee_model=ProtocolFeeModel(0.02)
     )
     assert result and result.side == "BUY"
-    assert result.fee_rate == pytest.approx(0.02 * (1 - 0.4))
-    assert result.net_edge == pytest.approx(estimate.lower - 0.4 - 0.02 * 0.4 * 0.6 - 0.005)
+    assert result.fee_rate == pytest.approx(0.02)
+    assert result.net_edge == pytest.approx(estimate.lower - 0.4 - 0.02 * 0.4 - 0.005)
     assert result.conservative_probability == estimate.lower
     assert result.independent_evidence == 1
     assert result.liquidity == 100  # executable outcome shares, not dollars
@@ -324,3 +324,29 @@ def test_ranker_cross_exchange_and_expired_market_rejected(now, market, book):
         is None
     )
     assert "market_expired_or_invalid_end_time" in ranker.last_reasons
+
+
+def test_multilevel_fee_bound_covers_all_price_improvements(now, market, book):
+    _, _, provenance, estimate = approved(now, market)
+    book = book.model_copy(update={"asks": (PriceLevel(price=0.4, size=5), PriceLevel(price=0.42, size=10))})
+    fee = ProtocolFeeModel(0.02)
+    result = OpportunityRanker().rank(
+        market, book, estimate, [qualified(now)], provenance, now, fee_model=fee
+    )
+    assert result and result.fee_rate == 0.02
+    for price in (0.001, 0.1, 0.4, 0.42, 0.9):
+        assert price * result.fee_rate >= fee.fee_per_share(price)
+    assert result.net_edge == pytest.approx(estimate.lower - 0.42 * (1 + 0.02) - 0.005)
+
+
+def test_custom_fee_model_without_global_bound_withheld(now, market, book):
+    class SpotOnly:
+        def fee_per_share(self, price):
+            return 0.01 * price
+
+    _, _, provenance, estimate = approved(now, market)
+    ranker = OpportunityRanker()
+    assert (
+        ranker.rank(market, book, estimate, [qualified(now)], provenance, now, fee_model=SpotOnly()) is None
+    )
+    assert "invalid_fee_model" in ranker.last_reasons
