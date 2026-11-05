@@ -76,6 +76,9 @@ class PaperBroker:
           fee_rate REAL NOT NULL, maker INTEGER NOT NULL, submitted TEXT NOT NULL,
           ready TEXT NOT NULL, pending TEXT);
         CREATE TABLE IF NOT EXISTS books (key TEXT PRIMARY KEY, digest TEXT NOT NULL);
+        CREATE TABLE IF NOT EXISTS book_watermarks (
+          exchange TEXT NOT NULL, token TEXT NOT NULL, timestamp TEXT NOT NULL,
+          sequence INTEGER NOT NULL, PRIMARY KEY(exchange,token));
         CREATE TABLE IF NOT EXISTS liquidity (
           book TEXT NOT NULL, price REAL NOT NULL, remaining REAL NOT NULL,
           PRIMARY KEY(book,price));
@@ -327,6 +330,21 @@ class PaperBroker:
                 or len({level.price for level in book.asks}) != len(book.asks)
             ):
                 return self._terminal(row, "rejected", "invalid_or_stale_book", now)
+            watermark = self.db.execute(
+                "SELECT timestamp,sequence FROM book_watermarks WHERE exchange=? AND token=?",
+                (book.exchange, book.token_id),
+            ).fetchone()
+            if watermark and (
+                book.timestamp < datetime.fromisoformat(watermark["timestamp"])
+                or (book.sequence > 0 and watermark["sequence"] > 0 and book.sequence < watermark["sequence"])
+            ):
+                return self._terminal(row, "rejected", "regressing_book_snapshot", now)
+            self.db.execute(
+                "INSERT INTO book_watermarks(exchange,token,timestamp,sequence) VALUES(?,?,?,?) "
+                "ON CONFLICT(exchange,token) DO UPDATE SET timestamp=excluded.timestamp, "
+                "sequence=MAX(sequence,excluded.sequence)",
+                (book.exchange, book.token_id, book.timestamp.isoformat(), book.sequence),
+            )
             if row["maker"] and book.timestamp <= datetime.fromisoformat(row["submitted"]):
                 return report
             key = self._book_key(book)
@@ -439,25 +457,58 @@ class PaperBroker:
             ]
 
     def reconcile(self, *, now: datetime) -> dict:
+        """Compare both ledger directions; unresolved acknowledgements are never success."""
         for row in self.db.execute("SELECT client_id FROM orders ORDER BY client_id").fetchall():
             self._recover(row[0], now)
         mismatches = []
-        for row in self.db.execute("SELECT * FROM orders ORDER BY client_id"):
-            report = ExecutionReport.model_validate_json(row["report"])
-            if report.filled_quantity and not self._risk_ack(
-                row,
-                {
-                    "quantity": report.filled_quantity,
-                    "average_price": report.average_price,
-                    "fees": report.fees,
-                },
-            ):
-                mismatches.append(row["client_id"])
+        pending_orders = []
+        unavailable = []
+        with self._transaction():
+            rows = self.db.execute("SELECT * FROM orders ORDER BY client_id").fetchall()
+            known = {}
+            latest_fills = {}
+            try:
+                for event in self.risk.audit():
+                    if event["action"] == "fill":
+                        payload = json.loads(event["payload"])
+                        latest_fills[payload["reservation_id"]] = payload
+            except Exception:  # noqa: BLE001 - unknown audit state cannot certify reconciliation
+                unavailable.append("risk_audit_unavailable")
+            for row in rows:
+                report = ExecutionReport.model_validate_json(row["report"])
+                decision = RiskDecision.model_validate_json(row["decision"])
+                known[decision.reservation_id] = row["client_id"]
+                if row["pending"]:
+                    pending_orders.append(row["client_id"])
+                acknowledged = latest_fills.get(decision.reservation_id)
+                if acknowledged is not None:
+                    if any(
+                        abs(actual - acknowledged[key]) > EPS
+                        for actual, key in (
+                            (report.filled_quantity, "quantity"),
+                            (report.average_price, "average_price"),
+                            (report.fees, "fees"),
+                        )
+                    ):
+                        mismatches.append(row["client_id"])
+                elif report.filled_quantity > EPS and not unavailable:
+                    mismatches.append(row["client_id"])
+            for reservation_id in latest_fills:
+                if reservation_id not in known:
+                    mismatches.append("orphan-risk-fill:" + reservation_id)
+            try:
+                positions = [p.model_dump(mode="json") for p in self.risk.positions(now=now)]
+                portfolio = self.risk.snapshot(now=now)
+            except Exception:  # noqa: BLE001 - unknown portfolio state cannot certify reconciliation
+                unavailable.append("risk_portfolio_unavailable")
+                positions, portfolio = [], None
         return {
-            "consistent": not mismatches,
-            "mismatches": mismatches,
-            "positions": [p.model_dump(mode="json") for p in self.risk.positions(now=now)],
-            "portfolio": self.risk.snapshot(now=now),
+            "consistent": not (mismatches or pending_orders or unavailable),
+            "mismatches": sorted(set(mismatches)),
+            "pending_orders": pending_orders,
+            "unavailable": unavailable,
+            "positions": positions,
+            "portfolio": portfolio,
             "simulated": True,
         }
 
