@@ -369,6 +369,22 @@ class RiskEngine:
             reasons.append("insufficient_net_edge")
         if opportunity.conservative_probability > opportunity.estimated_probability + EPS:
             reasons.append("invalid_conservative_probability")
+        if estimate is not None:
+            # Bind the qualified evidence to this exact estimate. An opportunity
+            # cannot retrofit later findings onto an unsupported old estimate.
+            if (
+                not estimate.evidence_ids
+                or len(set(estimate.evidence_ids)) != len(estimate.evidence_ids)
+                or set(estimate.evidence_ids) != set(opportunity.evidence_ids)
+            ):
+                reasons.append("estimate_evidence_mismatch")
+            if (
+                any(item.available_at > estimate.available_at for item in cited)
+                or estimate.available_at > opportunity.available_at
+                or opportunity.available_at > intent.available_at
+                or (model is not None and model.available_at > estimate.available_at)
+            ):
+                reasons.append("noncausal_provenance")
         if estimate is not None and (
             estimate.id != opportunity.estimate_id
             or estimate.market_id != intent.market_id
@@ -563,6 +579,10 @@ class RiskEngine:
                 "INSERT INTO daily(day,pnl) VALUES(?,?) ON CONFLICT(day) DO UPDATE SET pnl=pnl+?",
                 (now.date().isoformat(), pnl, pnl),
             )
+            # Realized gains establish a new high-water mark just as marked
+            # gains do. Keep this atomic with cash and position reconciliation.
+            equity = self._state(now)["equity"]
+            self.db.execute("UPDATE account SET peak=MAX(peak,?) WHERE id=1", (equity,))
             self._audit(
                 "simulated_settlement",
                 {"token_id": token_id, "payout": payout, "pnl": pnl, "source": resolution_source},
