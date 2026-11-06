@@ -56,6 +56,10 @@ class LivePaperRuntime:
         self._lock = RLock()
         try:
             self.events = EventStore(self.directory / "events.sqlite")
+            self.events.connection.execute(
+                "CREATE INDEX IF NOT EXISTS events_kind_time ON events(kind,available_at)"
+            )
+            self.events.connection.commit()
             self.risk = RiskEngine(str(self.directory / "risk.sqlite"), limits=config.risk_limits)
             self.broker = PaperBroker(self.risk, str(self.directory / "broker.sqlite"))
             self.validation = validation or ValidationStore(str(self.directory / "approval.sqlite"))
@@ -68,6 +72,10 @@ class LivePaperRuntime:
             saved = self.ledger.get("relationship_checkpoint")
             if saved:
                 self.engine.restore(saved)
+            self.trade_engine = RelationshipEngine(self.engine.policy)
+            saved_trade = self.ledger.get("workflow_relationship_checkpoint")
+            if saved_trade:
+                self.trade_engine.restore(saved_trade)
             self.markets = {
                 m.token_id: m
                 for m in (MarketSnapshot.model_validate(x) for x in self.ledger.get("markets", []))
@@ -101,6 +109,7 @@ class LivePaperRuntime:
             self.last_discovery = None
             self.last_cycle = None
             self.last_success = None
+            self.last_receipt = None
             self.last_error = None
             self.started_at = self.clock()
             self.stopping = False
@@ -133,6 +142,7 @@ class LivePaperRuntime:
         self.ledger.put("relationships", [r.model_dump(mode="json") for r in self.relationships.values()])
         self.ledger.put("token_map", self.token_map)
         self.ledger.put("relationship_checkpoint", self.engine.checkpoint())
+        self.ledger.put("workflow_relationship_checkpoint", self.trade_engine.checkpoint())
         self.ledger.put("totals", self.totals)
         self.ledger.put("scan", self.scan)
         self.ledger.put("book_offset", self.offset)
@@ -149,6 +159,8 @@ class LivePaperRuntime:
         from neraium_poly.data.operational import build_statistical_relationships
 
         now = self.clock()
+        with self._lock:
+            self._activation(now)
         batch = await self.adapter.discover_bounded(
             max_markets=self.config.max_markets,
             page_size=self.config.page_size,
@@ -156,14 +168,28 @@ class LivePaperRuntime:
         )
         if not batch.markets:
             raise ValueError("No valid real market metadata returned")
+        approved_metadata = []
+        if self.activation:
+            from neraium_poly.data.polymarket import GAMMA, normalize_market
+
+            for market_id in self.activation.relationship_tokens:
+                raw = await self.adapter._get(GAMMA, f"/markets/{market_id}")
+                approved_metadata.extend(normalize_market(raw, self.clock()))
         with self._lock:
             incoming = {m.token_id: m for m in batch.markets}
+            for approved in approved_metadata:
+                incoming[approved.token_id] = approved
             # Keep metadata needed to reconcile existing positions even when a market leaves discovery.
             for position in self.risk.positions(now=now):
                 if position.token_id in self.markets:
                     incoming.setdefault(position.token_id, self.markets[position.token_id])
             self.markets = incoming
-            for m in batch.markets:
+            retained_tokens = set(incoming)
+            self.prices = {key: value for key, value in self.prices.items() if key in retained_tokens}
+            self.books = {key: value for key, value in self.books.items() if key in retained_tokens}
+            self.fees = {key: value for key, value in self.fees.items() if key in retained_tokens}
+            self.token_map = {key: value for key, value in self.token_map.items() if value in retained_tokens}
+            for m in (*batch.markets, *approved_metadata):
                 self.events.append(m)
             generated, token_map = build_statistical_relationships(
                 batch.markets, now, max_pairs=self.config.max_relationships
@@ -197,7 +223,13 @@ class LivePaperRuntime:
 
     def _book_market(self, book):
         market = self.markets.get(book.token_id)
-        if market is None or not book.bids or not book.asks:
+        if market is None or (book.market_id, book.token_id, book.exchange) != (
+            market.market_id,
+            market.token_id,
+            market.exchange,
+        ):
+            raise ValueError("order book instrument identity mismatch")
+        if not book.bids or not book.asks:
             return None
         old = self.prices.get(book.token_id)
         # Repeated receipt of the same exchange state cannot inflate temporal evidence.
@@ -257,6 +289,7 @@ class LivePaperRuntime:
             self.events.append(item)
             evidence.append(item)
         self.ledger.put("relationship_checkpoint", self.engine.checkpoint())
+        self.ledger.put("workflow_relationship_checkpoint", self.trade_engine.checkpoint())
         return evidence
 
     def _activation(self, now):
@@ -275,11 +308,17 @@ class LivePaperRuntime:
             return
         # Only reviewed relationships are allowed to authorize trades. Automatically
         # discovered associations remain research observations, not approved scope.
+        if len(activation.relationship_tokens) > self.config.max_markets:
+            self.workflow = None
+            self.activation = None
+            self.last_error = "approved_scope_exceeds_bounded_universe"
+            return
+        self.trade_engine.retain({r.id for r in activation.relationships})
         self.workflow = PaperWorkflow(
             activation.registry,
             activation.model_id,
             activation.relationships,
-            self.engine,
+            self.trade_engine,
             self.risk,
             self.broker,
             self.events,
@@ -301,9 +340,28 @@ class LivePaperRuntime:
         if row is None:
             return
         intent = json.loads(row[0])
+        with self._lock:
+            self._activation(self.clock())
+            market = self.markets.get(intent["token_id"])
+            if (
+                self.workflow is None
+                or self.activation.relationship_tokens.get(intent["market_id"]) != intent["token_id"]
+                or market is None
+                or market.status != "active"
+                or (market.end_time is not None and market.end_time <= self.clock())
+            ):
+                self.events.append(self.broker.cancel(report.client_order_id, now=self.clock()))
+                return
         try:
             book = await self.adapter.book(intent["market_id"], intent["token_id"])
             with self._lock:
+                self._activation(self.clock())
+                if (
+                    self.workflow is None
+                    or self.activation.relationship_tokens.get(intent["market_id"]) != intent["token_id"]
+                ):
+                    self.events.append(self.broker.cancel(report.client_order_id, now=self.clock()))
+                    return
                 self.events.append(book)
                 updated = self.broker.process(report.client_order_id, book, now=self.clock())
                 self.events.append(updated)
@@ -345,10 +403,12 @@ class LivePaperRuntime:
                 result = self.workflow.evaluate(
                     book, self.clock(), fee_model=fee, quantity=qty, tier=self.config.position_tier
                 )
-                if result.opportunity:
-                    self.totals["qualified_opportunities"] += 1
-                if result.execution and result.execution.status != "rejected":
-                    self.totals["orders"] += 1
+                self.totals["qualified_opportunities"] = self.events.connection.execute(
+                    "SELECT count(*) FROM events WHERE kind='TradingOpportunity'"
+                ).fetchone()[0]
+                self.totals["orders"] = self.broker.db.execute(
+                    "SELECT count(*) FROM orders WHERE json_extract(report,'$.status') != 'rejected'"
+                ).fetchone()[0]
                 reasons.extend(result.reasons)
             if result.execution and result.execution.status in {"open", "partial"}:
                 await asyncio.sleep(self.broker.config.latency_ms / 1000)
@@ -412,6 +472,12 @@ class LivePaperRuntime:
             for market in chosen:
                 try:
                     book = await self.adapter.book(market.market_id, market.token_id)
+                    if (book.market_id, book.token_id, book.exchange) != (
+                        market.market_id,
+                        market.token_id,
+                        market.exchange,
+                    ):
+                        raise ValueError("order book instrument identity mismatch")
                     with self._lock:
                         self.events.append(book)
                         self.books[book.token_id] = book
@@ -433,7 +499,9 @@ class LivePaperRuntime:
                 self.risk.mark(marks, now=now)
                 self.broker.expire(now=now)
                 self.totals["books"] += len(received)
-                self.totals["qualified_evidence"] += sum(e.qualified for e in evidence)
+                self.totals["qualified_evidence"] = self.events.connection.execute(
+                    "SELECT count(*) FROM events WHERE kind='RelationshipEvidence' AND json_extract(payload,'$.qualified')=1"
+                ).fetchone()[0]
             reasons = await self._evaluate(received, now)
             for report in self.broker.history():
                 await self._advance_order(report, self.clock())
@@ -462,7 +530,15 @@ class LivePaperRuntime:
                 )
                 self.events.append(record)
                 self.last_cycle = record.model_dump(mode="json")
-                self.last_success = self.clock() if received else self.last_success
+                self.last_receipt = self.clock() if received else self.last_receipt
+                self.last_success = (
+                    self.clock()
+                    if any(
+                        assess_book(b, self.clock(), max_age_seconds=self.config.max_book_age_seconds).healthy
+                        for b in received
+                    )
+                    else self.last_success
+                )
                 self.last_error = ",".join(failures[:3]) if failures else None
                 self._save()
                 log.info("cycle %s", json.dumps(self.last_cycle))
@@ -502,6 +578,10 @@ class LivePaperRuntime:
             if age is not None
             and age < max(60, self.config.books_per_cycle * 0.5)
             and self.last_error is None
+            and any(
+                assess_book(b, now, max_age_seconds=self.config.max_book_age_seconds).healthy
+                for b in self.books.values()
+            )
             else "degraded",
             "paper_trading": True,
             "live_trading_enabled": False,
@@ -536,6 +616,19 @@ class LivePaperRuntime:
                 for b in self.books.values()
             )
             settlements = [a for a in self.risk.audit() if a["action"] == "simulated_settlement"]
+            market_rows = []
+            for token, metadata in self.markets.items():
+                row = self.prices.get(token, metadata).model_dump(mode="json")
+                book = self.books.get(token)
+                row.update(
+                    metadata_probability=metadata.probability,
+                    best_bid=book.bids[0].price if book and book.bids else None,
+                    best_ask=book.asks[0].price if book and book.asks else None,
+                    ask_depth=book.asks[0].size if book and book.asks else None,
+                    book_timestamp=book.timestamp.isoformat() if book else None,
+                    book_age_seconds=(now - book.timestamp).total_seconds() if book else None,
+                )
+                market_rows.append(row)
             return {
                 "mode": "live_market_paper",
                 "scenario": "Live Polymarket · paper execution gated by real-strategy validation",
@@ -549,7 +642,7 @@ class LivePaperRuntime:
                 "simulated_realized_pnl": account["realized_pnl"],
                 "realized_pnl": 0,
                 "suspended": account["kill_switch"],
-                "markets": [m.model_dump(mode="json") for m in self.markets.values()],
+                "markets": market_rows,
                 "relationships": [r.model_dump(mode="json") for r in self.relationships.values()],
                 "evidence": self._latest("RelationshipEvidence"),
                 "opportunities": self._latest("TradingOpportunity"),
