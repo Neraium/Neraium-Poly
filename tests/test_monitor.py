@@ -291,3 +291,14 @@ def test_relationship_evaluations_come_from_observed_engine_status():
     certified, experimental = sample()
     experimental["strategy_engine"] = {"intelligence": {"evaluations": 7}}
     assert "Relationships 1 ExpEval 7" in at_size(38, 24, certified, experimental)
+
+
+def test_latest_observed_cycle_is_visible_even_without_trades():
+    output = rendered(
+        e={
+            "account_id": "experimental-paper",
+            "last_cycle": {"timestamp": "2026-11-06T02:42:00Z", "signal_count": 312, "eligible_count": 0},
+            "latest_activity": [],
+        }
+    )
+    assert "Last 02:42:00Z 312 eval 0 opp" in output

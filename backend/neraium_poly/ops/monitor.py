@@ -229,6 +229,18 @@ def render_monitor(certified=None, experimental=None, *, width=40, height=24, er
         reason = max(reasons, key=lambda key: _finite_count(reasons[key]))
         details.append((f"Rej {_number(reasons[reason])} {_clean(reason).replace('_', ' ')}", "dim", 1))
         budget -= 1
+    cycle = _mapping(experimental.get("last_cycle"))
+    if budget and not activity and cycle:
+        seen = _seen(cycle.get("timestamp"))
+        time_label = seen[6:] if seen != "unknown" else seen
+        details.append(
+            (
+                f"Last {time_label} {_number(cycle.get('signal_count'))} eval {_number(cycle.get('eligible_count'))} opp",
+                "white",
+                1,
+            )
+        )
+        budget -= 1
     if budget and isinstance(activity, list) and activity:
         details.append(("Last: " + _clean(activity[-1]), "white", 1))
         budget -= 1
