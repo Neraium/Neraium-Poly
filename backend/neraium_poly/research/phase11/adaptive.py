@@ -28,6 +28,10 @@ class ResearchRegistry:
           payload TEXT NOT NULL, digest TEXT NOT NULL);
         CREATE TABLE IF NOT EXISTS audit(
           seq INTEGER PRIMARY KEY, payload TEXT NOT NULL, digest TEXT NOT NULL);
+        CREATE TRIGGER IF NOT EXISTS audit_no_update BEFORE UPDATE ON audit
+          BEGIN SELECT RAISE(ABORT,'research audit append only'); END;
+        CREATE TRIGGER IF NOT EXISTS audit_no_delete BEFORE DELETE ON audit
+          BEGIN SELECT RAISE(ABORT,'research audit append only'); END;
         CREATE TRIGGER IF NOT EXISTS versions_no_update BEFORE UPDATE ON versions
           BEGIN SELECT RAISE(ABORT,'research versions append only'); END;
         CREATE TRIGGER IF NOT EXISTS versions_no_delete BEFORE DELETE ON versions

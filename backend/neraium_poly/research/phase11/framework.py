@@ -4,10 +4,12 @@ import hashlib
 import json
 import multiprocessing as mp
 import os
+import resource
 import shutil
 import time
 from concurrent.futures import ProcessPoolExecutor
 from datetime import UTC, datetime
+from multiprocessing import resource_tracker
 from pathlib import Path
 
 from neraium_poly.research.phase11.adaptive import ResearchRegistry, canonical
@@ -47,6 +49,7 @@ def _worker(study, dataset):
         "started_at": start,
         "completed_at": datetime.now(UTC).isoformat(),
         "numerical_threads": 1,
+        "peak_rss_kib": resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,
     }
 
 
@@ -66,6 +69,7 @@ def run_studies(dataset, *, workers=2):
         peak = max(peak, active)
     return {s: r[0] for s, r in pairs.items()}, {
         "coordinator_pid": os.getpid(),
+        "resource_tracker_pid": resource_tracker._resource_tracker._pid,
         "requested_workers": workers,
         "actual_cpu_worker_pids": sorted({r["pid"] for r in observations}),
         "peak_concurrent_tasks": peak,
@@ -182,6 +186,7 @@ def _summary(studies, manifest, registry, experiment_id):
         "dataset_interval": manifest.get("availability_interval"),
         "strategies": rows,
         "best_supported_model": selected,
+        "calibration_status": "direction only; terminal unavailable",
         "baseline_comparison": best,
         "adaptive": registry.status(),
         "independent_training_events": 0,
@@ -219,14 +224,9 @@ def run_experiment(*, dataset, output, workers=2):
         hashes[file.name] = _sha(file)
     registry = ResearchRegistry(output.parent / "research.sqlite")
     try:
-        at = max(
-            (
-                datetime.fromisoformat(s["spec"]["heldout_interval"][1])
-                for s in studies.values()
-                if s["spec"].get("heldout_interval")
-            ),
-            default=datetime.now(UTC),
-        )
+        at = datetime.fromisoformat(manifest["availability_interval"][1])
+        if at.tzinfo is None:
+            raise ValueError("aware research dataset availability required")
         registry.register(
             version_id=experiment_id,
             dataset_sha256=manifest["dataset_sha256"],
