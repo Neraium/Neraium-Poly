@@ -78,6 +78,24 @@ Definition lookup, cumulative counts, latest-history queries and deterministic
 replay must use this all-history API. Querying only the current segment would
 silently lose relationship definitions, reset evidence counts or conceal orders.
 
+The managed all-history read interface is`iter_replay(until=None, kind=None)`.
+It streams verified records in deterministic availability/event-time/ID order,
+including the frozen legacy source and every completed/current managed segment.
+An offline export can consume this iterator incrementally into a new explicitly
+identified research dataset, preserving record IDs, timestamps, payload digests
+and source references. Do not materialize a many-GiB archive with the convenience
+list-returning`replay()` method; that method is suitable only for bounded studies
+and tests. Exporting history is not authorization to delete its source segments.
+
+Existing raw-SQLite readers have a narrower compatibility scope. The Phase11
+dataset extractor, Phase10 diagnostic reader and`PublicArchiveRuntime` open the
+database path supplied by their caller directly. Supplying the old`events.sqlite`
+therefore reads only the frozen legacy source after managed activation, not new
+segments. They must not label that legacy-only view as complete managed history.
+Use an explicitly exported dataset from`iter_replay` for all-history research, or
+extend those readers with a separately tested managed-reader integration. A
+SQLite catalog index is not itself a drop-in event-payload database.
+
 An event is durably committed to its segment before its catalog entry is
 published. Recovery reconciles committed segment records with the catalog before
 accepting new writes. An interruption between these steps must recover the same
