@@ -15,6 +15,7 @@ import re
 import shutil
 import sqlite3
 from collections import deque
+from contextlib import ExitStack, contextmanager
 from datetime import UTC, datetime
 from pathlib import Path
 from threading import RLock
@@ -68,6 +69,8 @@ class ManagedEventStore:
         self._usage_at = None
         self._usage = self._pending = 0
         self._samples = deque(maxlen=64)
+        self._cold = None
+        self._cold_verified = {}
         self.directory.mkdir(parents=True, exist_ok=True)
         try:
             for p in [self.path, self.segment_dir, self.catalog_path, self.directory / "events-archive.lock"]:
@@ -150,6 +153,41 @@ class ManagedEventStore:
         if not NAME.fullmatch(name):
             raise ValueError("invalid archive segment path")
         return self.segment_dir / name
+
+    def _cold_reader(self):
+        if self._cold is None:
+            # Delayed import: cold helpers depend on the segment format constants.
+            from neraium_poly.data.cold import ColdSegmentReader
+
+            self._cold = ColdSegmentReader(self.directory / "events-cold-cache",
+                                            min_free_bytes=max(self.min_free_bytes, 8 * 1024**3),
+                                            max_cache_bytes=64 * 1024**2)
+        return self._cold
+
+    def _verify_cold(self, name, row):
+        identity = (row["raw_sha"], row["gzip_sha"], row["records"])
+        if self._cold_verified.get(name) != identity:
+            # Cold-only recovery must prove every indexed payload before accepting writes.
+            self._check_budget(row["raw_size"] + 32768, refresh=True)
+            self._cold_reader().verify_metadata(self._source(name), catalog_row=row)
+            self._cold_verified[name] = identity
+
+    @contextmanager
+    def _open_source(self, name):
+        path = self._source(name)
+        if path.exists() or path.is_symlink():
+            source = _readonly(path)
+            try:
+                yield source
+            finally:
+                source.close()
+            return
+        row = self.catalog.execute("SELECT * FROM segments WHERE name=?", (name,)).fetchone()
+        if name == "legacy" or row is None or row["status"] != "sealed":
+            raise ValueError("missing archive source segment")
+        self._verify_cold(name, row)
+        with self._cold_reader().open(path, catalog_row=row) as source:
+            yield source
 
     def _catalog_record(self, row, segment):
         # Deliberately separate from segment commit: an orphan durable row is replayed.
@@ -246,6 +284,9 @@ class ManagedEventStore:
             known[p.name] = dict(self.catalog.execute("SELECT * FROM segments WHERE name=?", (p.name,)).fetchone())
         for name, row in known.items():
             path = self._source(name)
+            if not path.exists() and row["status"] == "sealed":
+                self._verify_cold(name, row)
+                continue  # Catalog is complete; never rehydrate or recreate the original.
             if not path.is_file() or path.is_symlink():
                 raise ValueError("missing archive source segment")
             manifest_path = Path(str(path) + ".manifest.json")
@@ -287,7 +328,9 @@ class ManagedEventStore:
             self._create_active()
 
     def _create_active(self):
-        number = max([int(p.name[8:16]) for p in self.segment_dir.iterdir() if NAME.fullmatch(p.name)] or [0]) + 1
+        names = {p.name for p in self.segment_dir.iterdir() if NAME.fullmatch(p.name)}
+        names.update(r[0] for r in self.catalog.execute("SELECT name FROM segments") if NAME.fullmatch(r[0]))
+        number = max([int(name[8:16]) for name in names] or [0]) + 1
         if number > 99999999:
             raise ValueError("archive segment identity space exhausted")
         name = f"segment-{number:08d}.sqlite"
@@ -461,11 +504,8 @@ class ManagedEventStore:
             return self.status()
 
     def _fetch(self, row):
-        source = _readonly(self._source(row["segment"]))
-        try:
+        with self._open_source(row["segment"]) as source:
             value = source.execute("SELECT kind,payload,digest FROM events WHERE id=?", (row["id"],)).fetchone()
-        finally:
-            source.close()
         if value is None or value[0] != row["kind"] or value[2] != row["digest"] or hashlib.sha256(value[1].encode()).hexdigest() != value[2]:
             raise ValueError("corrupt or missing indexed archive record")
         return value
@@ -507,20 +547,16 @@ class ManagedEventStore:
         query = "SELECT * FROM records" + (" WHERE " + " AND ".join(clauses) if clauses else "") + " ORDER BY available_at,event_time,id"
         with self._lock:
             connection, segment = None, None
-            try:
+            with ExitStack() as sources:
                 for row in self.catalog.execute(query, values):
                     if segment != row["segment"]:
-                        if connection is not None:
-                            connection.close()
+                        sources.close()  # Unpin previous cold inode before another restore.
                         segment = row["segment"]
-                        connection = _readonly(self._source(segment))
+                        connection = sources.enter_context(self._open_source(segment))
                     value = connection.execute("SELECT kind,payload,digest FROM events WHERE id=?", (row["id"],)).fetchone()
                     if value is None or value[0] != row["kind"] or value[2] != row["digest"] or hashlib.sha256(value[1].encode()).hexdigest() != value[2]:
                         raise ValueError("corrupt or missing indexed archive record")
                     yield {"kind": row["kind"], "record": json.loads(value[1])}
-            finally:
-                if connection is not None:
-                    connection.close()
 
     def replay(self, *, until=None, kind=None):
         return list(self.iter_replay(until=until, kind=kind))
@@ -545,6 +581,16 @@ class ManagedEventStore:
                 error = "archive_global_free_floor_reached"
             rows = list(self.catalog.execute("SELECT * FROM segments"))
             active_bytes = sum(p.stat().st_size for p in self.segment_dir.glob((self.active_name or "NOACTIVE") + "*") if p.is_file())
+            sealed = [r for r in rows if r["status"] == "sealed"]
+            missing = [r["name"] for r in sealed if not self._source(r["name"]).exists()]
+            cache = self.directory / "events-cold-cache"
+            cache_bytes = sum(p.stat().st_size for p in cache.iterdir() if p.is_file()) if cache.exists() else 0
+            tiers = {"active_segments": sum(r["status"] == "active" for r in rows),
+                     "sealed_originals_present": len(sealed) - len(missing),
+                     "cold_only_segments": len(missing), "cold_only_verified_this_process": len(self._cold_verified),
+                     "cold_proofs_present": sum(Path(str(self._source(r["name"])) + ".cold-proof.json").is_file() for r in sealed),
+                     "derived_cache_bytes": cache_bytes, "derived_cache_budget_bytes": 64 * 1024**2,
+                     "counts_scope": "current catalog and filesystem; proof presence is not integrity verification"}
             return {"managed": True, "usage_bytes": usage, "usage_is_conservative_estimate": bool(self._pending), "budget_bytes": self.budget_bytes,
                     "active_bytes": active_bytes, "segment_bytes": self.segment_bytes,
                     "segments": sum(r["status"] != "legacy" for r in rows),
@@ -555,6 +601,9 @@ class ManagedEventStore:
                     "remaining_bytes": remaining,
                     "seconds_to_exhaustion": min(remaining, max(0, free - self.min_free_bytes)) / rate if rate else None,
                     "global_floor_bytes": self.min_free_bytes, "retention_policy": "retain_all_originals_and_verified_copies",
+                    "archive_tiers": tiers,
+                    "warnings": ["sealed_original_absent_verified_cold_recovery"] if missing else [],
+                    "cold_only_names_sample": missing[:10],
                     "health": "blocked" if error else "ok", "last_error": error}
 
     def close(self):
