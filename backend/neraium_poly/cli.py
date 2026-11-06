@@ -85,7 +85,9 @@ def main():
         runtime = PublicArchiveRuntime(args.database) if args.database else None
 
         uvicorn.run(
-            create_app(runtime=runtime, frontend_path=Path("frontend/dist")), host="127.0.0.1", port=args.port
+            create_app(runtime=runtime, frontend_path=Path("frontend/dist"), local_port=args.port),
+            host="127.0.0.1",
+            port=args.port,
         )
     elif args.command == "scenario":
         from neraium_poly.ops.runtime import ResearchRuntime

@@ -10,7 +10,7 @@ from fastapi.staticfiles import StaticFiles
 from neraium_poly.settings import Settings
 
 
-def create_app(runtime=None, frontend_path: Path | None = None) -> FastAPI:
+def create_app(runtime=None, frontend_path: Path | None = None, local_port: int = 18740) -> FastAPI:
     Settings.from_env()
     if runtime is None:
         from neraium_poly.ops.runtime import ResearchRuntime
@@ -33,6 +33,7 @@ def create_app(runtime=None, frontend_path: Path | None = None) -> FastAPI:
                 "http://localhost:18740",
                 "http://127.0.0.1:18741",
                 "http://localhost:18741",
+                f"http://127.0.0.1:{local_port}",
                 f"http://127.0.0.1:{getattr(getattr(runtime, 'config', None), 'port', 18740)}",
             }
         ):

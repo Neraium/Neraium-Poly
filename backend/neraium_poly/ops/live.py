@@ -423,6 +423,17 @@ class LivePaperRuntime:
             result = await self.adapter.settlement(market)
             if result is None:
                 continue
+            if (
+                (result.market_id, result.token_id, result.event_id)
+                != (market.market_id, market.token_id, market.event_id)
+                or result.resolution_rules != market.resolution_rules
+                or result.resolution_source != market.resolution_source
+                or result.payout not in (0, 1)
+                or not result.condition_id
+                or not result.transaction_hash
+            ):
+                self.last_error = "settlement_observation_identity_or_rules_mismatch"
+                continue
             self.events.append(result)
             if (
                 not self.config.allow_simulated_settlement
@@ -718,7 +729,7 @@ async def serve_live(config: LivePaperConfig):
     from .api import create_app
 
     runtime = LivePaperRuntime(config)
-    app = create_app(runtime=runtime, frontend_path=Path("frontend/dist"))
+    app = create_app(runtime=runtime, frontend_path=Path("frontend/dist"), local_port=config.port)
     server = uvicorn.Server(uvicorn.Config(app, host=config.host, port=config.port, log_level="info"))
     try:
         await asyncio.gather(server.serve(), runtime.run(lambda: server.should_exit))

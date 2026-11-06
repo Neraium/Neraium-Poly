@@ -12,6 +12,6 @@ test('connected paper workflow exposes audited fills and latches emergency stop'
  await page.getByRole('button',{name:'Run deterministic replay'}).click();
  await page.getByRole('button',{name:'Emergency stop'}).click();
  await expect(page.getByRole('button',{name:'Trading suspended'})).toBeDisabled();
- const response=await page.request.post('http://127.0.0.1:18740/api/scenario');
+ const response=await page.request.post('/api/scenario');
  expect(response.status()).toBe(409);expect(errors).toEqual([]);
 });
