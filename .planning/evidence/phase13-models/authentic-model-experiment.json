@@ -1,0 +1,48 @@
+{
+  "artifact_sha256": "7088a3d1b2cb9924f4fc58069a3f0b7a3418214235bee29bed2b13728e8204fc",
+  "path": "data/phase13-models/authentic-model-experiment-v2.json",
+  "source_manifest_sha256": "e492738f48894f2c7e0aa54a0adb35a77feaa8e9081e658c963393dd7771f21d",
+  "cutoff": "2026-11-06T06:06:45.079491+00:00",
+  "games": 842,
+  "predictions": [
+    {
+      "game_id": "2026_09_DET_MIA",
+      "p": 0.5885885885885886,
+      "outcomes": {
+        "win": 0.5885885885885886,
+        "tie": 0.027402402402402402,
+        "loss": 0.384009009009009
+      },
+      "expected_payout": 0.6022897897897899,
+      "train": 553,
+      "teams": {
+        "MIA": 33,
+        "DET": 34
+      },
+      "dataset_sha256": "fad0e477a3045cdc1eaa77694a5f0ddc7ff1265dc9ad029897de267249bbe3ea",
+      "model_sha256": "886b8b4054711106a7bccfc086f461d33e8984a05cef16db2e94db665c197654"
+    },
+    {
+      "game_id": "2026_09_BUF_MIN",
+      "p": 0.5121621621621621,
+      "outcomes": {
+        "win": 0.5121621621621621,
+        "tie": 0.026013513513513515,
+        "loss": 0.46182432432432435
+      },
+      "expected_payout": 0.5251689189189189,
+      "train": 553,
+      "teams": {
+        "MIN": 34,
+        "BUF": 37
+      },
+      "dataset_sha256": "fad0e477a3045cdc1eaa77694a5f0ddc7ff1265dc9ad029897de267249bbe3ea",
+      "model_sha256": "886b8b4054711106a7bccfc086f461d33e8984a05cef16db2e94db665c197654"
+    }
+  ],
+  "calibration": null,
+  "forecast_skill": null,
+  "journal_forecasts": false,
+  "fixtures_used": false,
+  "research_only": true
+}
