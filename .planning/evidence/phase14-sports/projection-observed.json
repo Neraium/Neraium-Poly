@@ -1,0 +1,58 @@
+{
+  "observed_at": "2026-11-06T09:35:39.070085+00:00",
+  "actual_existing_records_projected": 2,
+  "new_forecasts_recorded": 0,
+  "journal_appends_performed": 0,
+  "existing_evidence_file_unchanged": true,
+  "existing_evidence_file_sha256": "4781ef5397da4a649e5d9d7e6198d5bca165ec320efa45f51af8277bc7870121",
+  "qualification": "Read-only schema projection, not source/model replay or new evidence admission",
+  "records": [
+    {
+      "original_record_id": "f18c896710653d210eee5d140fc08a035f9adf9bae7bb2e07ca3456228ce16d1",
+      "original_record_sha256": "0b716eabcb0a9b4d35c8cb3f778637824f5909c38b4e154708214b6263b6f267",
+      "domain": "sports",
+      "market_id": "5920626",
+      "timestamp": "2026-11-06T06:16:42.614376+00:00",
+      "probability_semantics": "outcome_distribution",
+      "probability": null,
+      "outcome_probabilities": {
+        "loss": 0.384009009009009,
+        "tie": 0.027402402402402402,
+        "win": 0.5885885885885886
+      },
+      "model_version": "sports-independent-baselines-v1/frequency",
+      "projection_only": true,
+      "admissible_to_new_journal": false,
+      "count_as_new_forecast": false,
+      "source_integrity_replayed": false
+    },
+    {
+      "original_record_id": "47697de92df0a8cf359d87dfa4ef7a9bf6759a1ee88331426c111809526ab56e",
+      "original_record_sha256": "f045bb0e183f4e188bacba794b53c89aa7c2f01f9248d3ba1b3cce65263cad7b",
+      "domain": "sports",
+      "market_id": "5968098",
+      "timestamp": "2026-11-06T06:16:48.580897+00:00",
+      "probability_semantics": "outcome_distribution",
+      "probability": null,
+      "outcome_probabilities": {
+        "loss": 0.46182432432432435,
+        "tie": 0.026013513513513515,
+        "win": 0.5121621621621621
+      },
+      "model_version": "sports-independent-baselines-v1/frequency",
+      "projection_only": true,
+      "admissible_to_new_journal": false,
+      "count_as_new_forecast": false,
+      "source_integrity_replayed": false
+    }
+  ],
+  "current_sports_counts": {
+    "ternary_research_forecasts": 2,
+    "ternary_pending": 2,
+    "ternary_resolved": 0
+  },
+  "current_cash": 500.0,
+  "current_pnl": 0.0,
+  "current_service_status": "degraded",
+  "additional_sports_providers_activated": 0
+}
