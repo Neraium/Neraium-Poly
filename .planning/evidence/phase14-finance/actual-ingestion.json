@@ -1,0 +1,149 @@
+{
+  "observed_at": "2026-11-06T08:40:54.865732+00:00",
+  "source_snapshots": [
+    {
+      "domain": "crypto",
+      "market_id": "6423888",
+      "question": "Will the price of Bitcoin be above $78,000 on November 6?",
+      "contract": {
+        "schema_version": "1.0",
+        "id": "baa1da52643e8dd6323fed03b5345b37ddd05299253cb683ecb3e020aecc7fa1",
+        "timestamp": "2026-11-06T08:40:53.772967Z",
+        "available_at": "2026-11-06T08:40:53.772967Z",
+        "source": "neraium-poly/financial-contract/v1",
+        "domain": "crypto",
+        "event_id": "1283785",
+        "market_id": "6423888",
+        "token_id": "108550100953399482438673325409852114530803575646844219769084974071274737267138",
+        "contract_type": "binance_minute_terminal_close_above",
+        "probability_semantics": "binary_event_probability",
+        "rules_sha256": "1c27bfa87e1c4896178339e781cc68a24f145471680748e7228d8eb84b533e39",
+        "parameters": {
+          "asset": "BTC",
+          "symbol": "BTCUSDT",
+          "quote_currency": "USDT",
+          "price_definition": "final_close",
+          "threshold": 78000.0,
+          "operator": ">",
+          "selected_outcome": "Yes",
+          "timezone": "America/New_York",
+          "resolution_boundary": "2026-11-06T17:00:00+00:00",
+          "candidate_candle_open": "2026-11-06T16:59:00+00:00",
+          "candidate_candle_close": "2026-11-06T16:59:59.999000+00:00",
+          "candle_convention": "unreviewed_minute_ending_boundary",
+          "reference_source": "https://www.binance.com/en/trade/BTC_USDT"
+        },
+        "compatible": true,
+        "review_required": true,
+        "reasons": [
+          "explicit_candle_label_vs_close_time_review_required"
+        ]
+      },
+      "forecast_result": {
+        "status": "withheld",
+        "reasons": [
+          "explicit_candle_label_vs_close_time_review_required"
+        ],
+        "probability": null
+      },
+      "actual_source_ingestion": true,
+      "fixtures": false,
+      "raw_evidence_storage": "volatile_tmpfs_not_durable",
+      "volatile_path": "/dev/shm/neraium-poly-phase14/finance/crypto-evidence-v1.json",
+      "evidence_file_sha256": "19667bd4d71044a3b1b82b287d39c5ca0d61aea12ac0dfc8603be320cb05f3ed",
+      "evidence": [
+        {
+          "id": "a8c7ab2a65df5b917890916f70a5716142e1bf290f0066d308b118c42008c563",
+          "source": "https://data-api.binance.vision",
+          "retrieved_at": "2026-11-06T08:40:54.802416+00:00",
+          "available_at": "2026-11-06T08:40:54.802416+00:00",
+          "source_timestamp": null,
+          "payload_sha256": "2ea4bad07369378283cf754baeef5124a18105451212258627f1e3bde7a2e57f",
+          "raw_response_sha256": "d907f2ae07f4cdf1e9dab31a74d667f419aa704c26f7df3465606acace1f7ea5",
+          "bytes": 170120,
+          "qualification": "qualified_research",
+          "missingness": [
+            "historical_availability_vintages",
+            "heldout_calibration"
+          ]
+        }
+      ],
+      "closed_minutes": 1000,
+      "source_first_open_ms": 1793894400000,
+      "source_last_close_ms": 1793954399999,
+      "last_actual_close": 75653.63,
+      "measured_sigma_per_sqrt_minute": 0.0007547759814158766
+    },
+    {
+      "domain": "economics",
+      "market_id": "3215008",
+      "question": "Will the Fed increase interest rates by 25 bps after the December 2026 meeting?",
+      "contract": {
+        "schema_version": "1.0",
+        "id": "d9de3b26c646df061252b229a331df143236fd2944a72b8f797f142d9abe1fe7",
+        "timestamp": "2026-11-06T08:40:54.811165Z",
+        "available_at": "2026-11-06T08:40:54.811165Z",
+        "source": "neraium-poly/economic-contract/v1",
+        "domain": "economics",
+        "event_id": "770450",
+        "market_id": "3215008",
+        "token_id": "111662129652828266889360374468657435151479595863413519836161861837506140152890",
+        "contract_type": "fomc_target_upper_bound_change",
+        "probability_semantics": "unsupported",
+        "rules_sha256": "fdb210318474078daa855d747ed941b2113f64d186318fe4a0e4776c7737e4e6",
+        "parameters": {
+          "resolution_source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+          "reference_variable": "target_federal_funds_upper_bound",
+          "calendar_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+          "effective_funds_rate_is_not_target_upper_bound": true,
+          "preliminary_vs_revised": "unqualified_until_exact_release_vintage_verified"
+        },
+        "compatible": false,
+        "review_required": true,
+        "reasons": [
+          "release_vintage_and_exact_settlement_definition_review_required",
+          "independent_economic_model_not_validated"
+        ]
+      },
+      "forecast_result": {
+        "status": "withheld",
+        "probability": null,
+        "domain": "economics",
+        "reasons": [
+          "qualified_release_vintages_and_independent_calibrated_model_required"
+        ],
+        "brier": null,
+        "log_loss": null,
+        "trading_authority": false
+      },
+      "actual_source_ingestion": true,
+      "fixtures": false,
+      "raw_evidence_storage": "volatile_tmpfs_not_durable",
+      "volatile_path": "/dev/shm/neraium-poly-phase14/finance/economics-evidence-v1.json",
+      "evidence_file_sha256": "e633b33493c1d6839c65ab8e566feb38a62c1a64a53c0177191c7b099084a256",
+      "evidence": [
+        {
+          "id": "71c4addd95ad72fd4d9e42809d5a982b3495031d13e6da05467a003d0508f208",
+          "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+          "retrieved_at": "2026-11-06T08:40:54.862774+00:00",
+          "available_at": "2026-11-06T08:40:54.862774+00:00",
+          "source_timestamp": null,
+          "payload_sha256": "a92ece47a42c541848663de874e8a864702cf223d47d8a936d600f9d24e9f52a",
+          "raw_response_sha256": "70a351f0dae95c2bf12d0954069fa6ffeb87f28db05444581d957d5a80722617",
+          "bytes": 166350,
+          "qualification": "qualified_research",
+          "missingness": [
+            "exact_publication_time",
+            "historical_vintages",
+            "qualified_consensus",
+            "calibrated_economic_probability_model"
+          ]
+        }
+      ]
+    }
+  ],
+  "independent_market_forecasts_recorded": 0,
+  "orders": 0,
+  "profitability": null,
+  "persistent_capture_blocker": "Root filesystem below existing8GiB safety floor; no guard weakened"
+}
