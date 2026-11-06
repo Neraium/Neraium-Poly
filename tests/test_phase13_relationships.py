@@ -93,3 +93,18 @@ def test_checkpoint_rejects_unbounded_or_invalid_state():
         SportsRelationshipResearch().restore(checkpoint)
     with pytest.raises(ValueError, match="configuration"):
         SportsRelationshipResearch(warmup=1)
+
+
+def test_continued_same_regime_does_not_inflate_distinct_findings():
+    p, m = observations()
+    engine = SportsRelationshipResearch()
+    for i in range(10):
+        observe(engine, p, m, i)
+    for i in range(10, 15):
+        result = observe(engine, p, m, i, market=0.3)
+        assert result["new_relationship_finding"] is (i == 12)
+    assert engine.findings == 1
+    restored = SportsRelationshipResearch()
+    restored.restore(engine.checkpoint())
+    assert observe(restored, p, m, 15, market=0.3)["new_relationship_finding"] is False
+    assert restored.findings == 1

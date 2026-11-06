@@ -77,6 +77,7 @@ class SportsRelationshipResearch:
             "rules_sha256": mapping.rules_sha256, "model_sha256": prediction.model_sha256,
             "observations": 0, "baseline": 0.0, "last_at": None, "last_evidence": None,
             "candidate_direction": 0, "candidate_count": 0, "candidate_since": None,
+            "candidate_announced": False,
         })
         if state["rules_sha256"] != mapping.rules_sha256 or state["game_id"] != mapping.game_id:
             return {"status": "withheld", "reason": "relationship_identity_or_rule_changed", "executable_opportunity": False}
@@ -97,11 +98,13 @@ class SportsRelationshipResearch:
         direction = 1 if shift >= self.config["threshold"] else -1 if shift <= -self.config["threshold"] else 0
         if direction == 0:
             state["candidate_direction"], state["candidate_count"], state["candidate_since"] = 0, 0, None
+            state["candidate_announced"] = False
             # Update ordinary temporal baseline only after classifying this point;
             # no future observations enter the current relationship finding.
             state["baseline"] = 0.95 * state["baseline"] + 0.05 * residual
         elif direction != state["candidate_direction"]:
             state["candidate_direction"], state["candidate_count"], state["candidate_since"] = direction, 1, now.isoformat()
+            state["candidate_announced"] = False
         else:
             state["candidate_count"] += 1
         persistent = (
@@ -109,13 +112,16 @@ class SportsRelationshipResearch:
             and (now - datetime.fromisoformat(state["candidate_since"])).total_seconds()
             >= self.config["persistence_seconds"]
         )
-        if persistent:
+        new_finding = persistent and not state["candidate_announced"]
+        if new_finding:
             self.findings += 1
+            state["candidate_announced"] = True
         return {
             "status": "persistent_descriptive_relationship_change" if persistent else "observing",
             "classification": "statistical_relationship", "comparison": comparison, "event_id": mapping.event_id,
             "model_market_residual": residual, "prior_temporal_baseline": state["baseline"],
             "relationship_shift": shift, "persistence_count": state["candidate_count"],
+            "new_relationship_finding": new_finding,
             "persistence_since": state["candidate_since"], "evidence_sha256": evidence_sha256,
             "model_sha256": prediction.model_sha256, "rules_sha256": mapping.rules_sha256,
             "uncertainty": "Uncalibrated model; no causal influence or profitability established",
@@ -139,10 +145,22 @@ class SportsRelationshipResearch:
                 or not isinstance(state.get("baseline"), (float, int)) or not isfinite(state["baseline"])
                 or not -1 <= state["baseline"] <= 1
                 or type(state.get("candidate_count")) is not int or state["candidate_count"] < 0
-                or state.get("candidate_direction") not in {-1, 0, 1}
+                or type(state.get("candidate_direction")) is not int
+                or state["candidate_direction"] not in {-1, 0, 1}
+                or type(state.get("candidate_announced")) is not bool
                 or state.get("last_at") is None or datetime.fromisoformat(state["last_at"]).tzinfo is None
             ):
                 raise ValueError("invalid relationship checkpoint state")
+            if state["candidate_count"]:
+                since = state.get("candidate_since")
+                if (
+                    not isinstance(since, str) or datetime.fromisoformat(since).tzinfo is None
+                    or datetime.fromisoformat(since) > datetime.fromisoformat(state["last_at"])
+                    or state["candidate_direction"] == 0
+                ):
+                    raise ValueError("invalid relationship persistence checkpoint")
+            elif state.get("candidate_since") is not None or state["candidate_direction"] != 0:
+                raise ValueError("invalid empty relationship persistence checkpoint")
         for name in ("evaluations", "findings"):
             if type(data.get(name)) is not int or data[name] < 0:
                 raise ValueError("invalid relationship checkpoint counters")
