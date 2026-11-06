@@ -6,6 +6,7 @@ No transaction method, account mutation, payout inference or settlement fallback
 import asyncio
 import hashlib
 import json
+import re
 import shutil
 from datetime import UTC, datetime
 from pathlib import Path
@@ -17,7 +18,7 @@ from neraium_poly.data.operational import OperationalPolymarketAdapter, Settleme
 from neraium_poly.data.polymarket import CLOB, DATA, GAMMA
 from neraium_poly.research.phase12.contracts import EventForecast, VerifiedEventOutcome
 from neraium_poly.research.qualification import _load_proofs
-from neraium_poly.research.settlement_evidence import ReadOnlySettlementClient, canonical
+from neraium_poly.research.settlement_evidence import HEX32, ReadOnlySettlementClient, canonical
 
 NATIVE_BYTES = 2 * 1024 * 1024
 RPC_BYTES = 5 * 1024 * 1024
@@ -140,8 +141,54 @@ class _ReplayNative(OperationalPolymarketAdapter):
         return parsed
 
 
+UINT64_HEX = re.compile(r"^0x[0-9a-fA-F]{1,16}$")
+
+
+class _ForwardSettlementClient(ReadOnlySettlementClient):
+    """One binary condition: ambiguous logs never reach the derived proof writer."""
+
+    def request(self, method, params):
+        if method == "eth_getTransactionReceipt" and (
+            len(params) != 1 or not isinstance(params[0], str) or not HEX32.fullmatch(params[0])
+        ):
+            raise ValueError("bounded transaction locator required")
+        result = super().request(method, params)
+        if method == "eth_getLogs":
+            if not isinstance(result, list) or len(result) > 1:
+                raise ValueError("ambiguous resolution logs for one binary condition")
+            for log in result:
+                if not isinstance(log, dict) or any(
+                    not isinstance(log.get(key), str) or not UINT64_HEX.fullmatch(log[key])
+                    for key in ("blockNumber", "logIndex")
+                ):
+                    raise ValueError("bounded resolution log quantities required")
+                if any(
+                    not isinstance(log.get(key), str) or not HEX32.fullmatch(log[key])
+                    for key in ("transactionHash", "blockHash")
+                ):
+                    raise ValueError("bounded resolution log hashes required")
+        elif method in {
+            "eth_getTransactionReceipt",
+            "eth_getBlockByHash",
+            "eth_getBlockByNumber",
+        } and isinstance(result, dict):
+            fields = ("blockNumber",) if method == "eth_getTransactionReceipt" else ("number", "timestamp")
+            # Finalized headers also provide a timestamp in the actual RPC schema;
+            # only number enters proof metadata when querying finality.
+            if method == "eth_getBlockByNumber" and params[0] == "finalized":
+                fields = ("number",)
+            if any(
+                not isinstance(result.get(key), str) or not UINT64_HEX.fullmatch(result[key])
+                for key in fields
+            ):
+                raise ValueError("bounded chain header quantities required")
+        return result
+
+
 def _chain_acquire(directory, native, client):
-    rpc = ReadOnlySettlementClient(
+    if not HEX32.fullmatch(native.transaction_hash) or not HEX32.fullmatch(native.condition_id):
+        return None
+    rpc = _ForwardSettlementClient(
         directory, client=client, max_requests=15, max_bytes=RPC_BYTES, interval=0.25
     )
     try:

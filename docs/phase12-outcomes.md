@@ -18,7 +18,10 @@ Polygon client scans that block plus/minus one for exact CTF ConditionResolution
 checks receipt inclusion, canonical block and finalized height, then replays all
 raw proofs via `_load_proofs`. A preparation transaction is never treated as a
 resolution, and no later-window guess substitutes for missing evidence. Payout
-orientation must match the original Gamma token array and native payout.
+orientation must match the original Gamma token array and native payout. A forward-only single-condition
+RPC guard rejects multiple/ambiguous logs before generating a proof report.
+Transaction/condition hashes and block/log quantities have fixed bounds, so
+derived proof metadata cannot expand beyond the reserved byte budget.
 
 Only a forecast preceding both the native resolution time and exact chain block
 time may be matched. Evidence availability is the latest actual acquisition time;

@@ -253,3 +253,85 @@ async def test_total_proof_storage_budget_rejects_before_network(tmp_path):
     finally:
         await public.aclose()
         rpc.close()
+
+
+def test_ambiguous_logs_reject_before_derived_proof_report(tmp_path):
+    from neraium_poly.research.phase12.outcome_collector import _ForwardSettlementClient
+
+    log, *_ = fixtures()
+
+    def handler(request):
+        body = json.loads(request.content)
+        result = (
+            "0x89"
+            if body["method"] == "eth_chainId"
+            else {"number": "0x20"}
+            if body["method"] == "eth_getBlockByNumber"
+            else [log, log]
+        )
+        return httpx.Response(200, json={"jsonrpc": "2.0", "id": body["id"], "result": result})
+
+    with httpx.Client(transport=httpx.MockTransport(handler)) as http:
+        client = _ForwardSettlementClient(
+            tmp_path / "chain", client=http, max_requests=15, max_bytes=5 * 1024 * 1024, interval=0
+        )
+        try:
+            with pytest.raises(ValueError, match="ambiguous resolution logs"):
+                client.acquire([CONDITION], 15, 17)
+            assert not (tmp_path / "chain/proofs.json").exists()
+        finally:
+            client.close()
+
+
+@pytest.mark.parametrize("field", ["blockNumber", "logIndex"])
+def test_oversized_log_quantities_reject_before_proof_expansion(tmp_path, field):
+    from neraium_poly.research.phase12.outcome_collector import _ForwardSettlementClient
+    from neraium_poly.research.settlement_evidence import CONDITION_RESOLUTION, CTF
+
+    log, *_ = fixtures()
+    log[field] = "0x" + "f" * 17
+    with httpx.Client(
+        transport=httpx.MockTransport(
+            lambda r: httpx.Response(
+                200, json={"jsonrpc": "2.0", "id": json.loads(r.content)["id"], "result": [log]}
+            )
+        )
+    ) as http:
+        client = _ForwardSettlementClient(
+            tmp_path / "chain", client=http, max_requests=15, max_bytes=5 * 1024 * 1024, interval=0
+        )
+        try:
+            with pytest.raises(ValueError, match="bounded resolution log quantities"):
+                client.request(
+                    "eth_getLogs",
+                    [
+                        {
+                            "address": CTF,
+                            "topics": [CONDITION_RESOLUTION, [CONDITION]],
+                            "fromBlock": "0xf",
+                            "toBlock": "0x11",
+                        }
+                    ],
+                )
+        finally:
+            client.close()
+
+
+def test_unsupported_transaction_locator_never_starts_rpc(tmp_path):
+    from types import SimpleNamespace
+
+    from neraium_poly.research.phase12.outcome_collector import _chain_acquire
+
+    def forbidden(request):
+        raise AssertionError("RPC must not be invoked")
+
+    with httpx.Client(transport=httpx.MockTransport(forbidden)) as http:
+        assert (
+            _chain_acquire(
+                tmp_path / "chain",
+                SimpleNamespace(transaction_hash="unbounded-unknown", condition_id=CONDITION),
+                http,
+            )
+            is None
+        )
+        assert not (tmp_path / "chain").exists()
