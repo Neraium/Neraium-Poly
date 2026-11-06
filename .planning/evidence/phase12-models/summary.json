@@ -1,0 +1,33 @@
+{
+  "dataset_sha256": "9e20ac5ccaef7616c2f0047df789a696916ff0d4b3d7d3938334bb190f77353d",
+  "pid": 3042635,
+  "elapsed_seconds": 0.03456312580965459,
+  "cpu_workers": 1,
+  "actual_parallel_execution": false,
+  "model_funnel": {
+    "canonical_events": 250,
+    "verified_token_outcomes": 47,
+    "market_price_observations": 616,
+    "point_in_time_market_comparison_rows": 0,
+    "independent_context_rows_before_group_dedup": 0,
+    "rejections": {
+      "market_observation_not_available_at_decision": 616
+    }
+  },
+  "split_counts": {
+    "train": 0,
+    "validation": 0,
+    "heldout": 0,
+    "purged": 0
+  },
+  "terminal_probability": {
+    "brier": null,
+    "log_loss": null,
+    "calibration": null
+  },
+  "independent_forecasting_skill_established": false,
+  "reported_dependency_groups": 120,
+  "predecision_relationship_price_evidence": 0,
+  "logical_constraints_verified": 0,
+  "executable_opportunities": 0
+}
