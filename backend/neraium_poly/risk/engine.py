@@ -297,7 +297,8 @@ class RiskEngine:
         )
         return decision
 
-    def _checks(self, intent, opportunity, market, book, evidence, now, estimate, model):
+    def _operational_checks(self, intent, opportunity, market, book, evidence, now):
+        """Common execution/capital input checks; no model-approval authority."""
         reasons = []
         if any(r.available_at > now for r in (intent, opportunity, market, book, *evidence)):
             reasons.append("future_information")
@@ -321,15 +322,6 @@ class RiskEngine:
             reasons.append("identity_mismatch")
         if (now - market.timestamp).total_seconds() > self.limits.max_market_age_seconds:
             reasons.append("stale_market")
-        if estimate is None or model is None:
-            reasons.append("missing_model_provenance")
-        if not opportunity.calibrated or (estimate is not None and not estimate.calibrated):
-            reasons.append("uncalibrated_probability")
-        if (
-            estimate is not None
-            and (now - estimate.timestamp).total_seconds() > self.limits.max_estimate_age_seconds
-        ):
-            reasons.append("stale_estimate")
         if market.status != "active" or not market.resolution_rules or not market.resolution_source:
             reasons.append("unverified_market_rules")
         if market.end_time and (market.end_time.tzinfo is None or market.end_time <= now):
@@ -355,6 +347,23 @@ class RiskEngine:
         executable = sum(level.size for level in book.asks if level.price <= intent.limit_price + EPS)
         if intent.quantity > executable * self.limits.max_liquidity_participation + EPS:
             reasons.append("liquidity_participation")
+        return reasons
+
+    @staticmethod
+    def _decode_opportunity(payload):
+        return TradingOpportunity.model_validate_json(payload)
+
+    def _checks(self, intent, opportunity, market, book, evidence, now, estimate, model):
+        reasons = self._operational_checks(intent, opportunity, market, book, evidence, now)
+        if estimate is None or model is None:
+            reasons.append("missing_model_provenance")
+        if not opportunity.calibrated or (estimate is not None and not estimate.calibrated):
+            reasons.append("uncalibrated_probability")
+        if (
+            estimate is not None
+            and (now - estimate.timestamp).total_seconds() > self.limits.max_estimate_age_seconds
+        ):
+            reasons.append("stale_estimate")
         if not opportunity.evidence_ids or set(opportunity.evidence_ids) - {e.id for e in evidence}:
             reasons.append("missing_evidence")
         cited = [e for e in evidence if e.id in opportunity.evidence_ids]
@@ -471,7 +480,7 @@ class RiskEngine:
             raise RiskViolation("nonfinite fill")
         with self._transaction():
             row = self._approval(intent, decision, now)
-            opportunity = TradingOpportunity.model_validate_json(row["opportunity"])
+            opportunity = self._decode_opportunity(row["opportunity"])
             principal = cumulative_quantity * average_price
             delta_qty = cumulative_quantity - row["quantity"]
             delta_principal = principal - row["principal"]
