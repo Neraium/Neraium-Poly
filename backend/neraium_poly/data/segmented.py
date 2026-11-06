@@ -247,6 +247,9 @@ class ManagedEventStore:
             if not path.is_file() or path.is_symlink():
                 raise ValueError("missing archive source segment")
             if row["status"] in {"sealed", "legacy"}:
+                wal = Path(str(path) + "-wal")
+                if wal.exists() and wal.stat().st_size:
+                    raise ValueError("immutable archive has an uncheckpointed writer")
                 if path.stat().st_size != row["raw_size"] or _sha(path) != row["raw_sha"]:
                     raise ValueError("immutable archive source changed")
             elif row["status"] != "active":

@@ -128,3 +128,19 @@ def test_published_manifest_recovers_interrupted_catalogue_seal(tmp_path):
         assert recovered.maintain()["compressed_segments"] == 1
     finally:
         recovered.close()
+
+
+def test_adopted_legacy_rejects_a_new_uncheckpointed_writer(tmp_path):
+    path = tmp_path / "events.sqlite"
+    original = EventStore(path)
+    original.append(record(0))
+    original.close()
+    manager = managed(path)
+    manager.close()
+    unsafe_writer = EventStore(path)
+    try:
+        unsafe_writer.append(record(1))
+        with pytest.raises(ValueError, match="uncheckpointed writer"):
+            managed(path)
+    finally:
+        unsafe_writer.close()
