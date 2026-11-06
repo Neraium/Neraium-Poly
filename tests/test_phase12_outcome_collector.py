@@ -22,6 +22,8 @@ def controlled_clients(
     raw["conditionId"] = CONDITION
     if variant == "v2":
         raw.update(version="v2", positionIds=["11", "12"])
+    if variant == "future":
+        raw["version"] = "v3-unreviewed"
     if variant == "negRisk":
         raw["negRisk"] = True
     market = normalize_market(raw, NOW - timedelta(seconds=180))[token_index]
@@ -147,6 +149,7 @@ async def test_exact_future_resolution_replays_native_and_finalized_chain(tmp_pa
         {"preparation": True},
         {"variant": "v2"},
         {"variant": "negRisk"},
+        {"variant": "future"},
     ],
 )
 async def test_disputes_preparation_and_unsupported_variants_never_become_outcomes(tmp_path, kwargs):
@@ -231,6 +234,22 @@ async def test_new_directory_and_root_confinement(tmp_path):
         assert not await asyncio.to_thread(
             verify_collected_outcome, changed, m, f, tmp_path / "different-root"
         )
+    finally:
+        await public.aclose()
+        rpc.close()
+
+
+async def test_total_proof_storage_budget_rejects_before_network(tmp_path):
+    f, m, public, rpc = controlled_clients()
+    try:
+        # Sparse controlled file exercises accounting without a large allocation.
+        with (tmp_path / "retained-evidence.bin").open("wb") as handle:
+            handle.truncate(25 * 1024 * 1024)
+        with pytest.raises(ValueError, match="storage budget"):
+            await acquire_verified_outcome(
+                f, m, tmp_path / "next", client=public, rpc_client=rpc, clock=lambda: NOW
+            )
+        assert not (tmp_path / "next").exists()
     finally:
         await public.aclose()
         rpc.close()
