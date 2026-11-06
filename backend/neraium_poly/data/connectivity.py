@@ -13,6 +13,7 @@ import math
 from collections import defaultdict
 from collections.abc import Awaitable, Callable, Sequence
 from contextlib import suppress
+from datetime import datetime
 from decimal import Decimal, InvalidOperation
 from time import monotonic
 
@@ -135,6 +136,7 @@ class CoverageFeed:
         self.latest: dict[str, OrderBookSnapshot] = {}
         self._markets: dict[str, MarketSnapshot] = {}
         self._resolved_tokens: set[str] = set()
+        self._gap_watermarks: dict[str, datetime] = {}
         self._queue = asyncio.Queue(maxsize=queue_size)
         self._task = None
         self._refresh_tasks = {}
@@ -162,6 +164,7 @@ class CoverageFeed:
                 "gap_source_time",
                 "gap_top_integrity",
                 "gap_invalid_delta",
+                "stale_recovery_baselines",
             )
         }
         self.last_message_at = None
@@ -176,6 +179,7 @@ class CoverageFeed:
             "subscribed_tokens": len(self._markets),
             "cached_books": len(self.latest),
             "resolved_tokens_withheld": len(self._resolved_tokens),
+            "gap_tokens_withheld": sum(token not in self.latest for token in self._gap_watermarks),
             "fresh_books": sum(assess_book(b, now).healthy for b in self.latest.values()),
             "queue_depth": self._queue.qsize(),
             "resnapshot_pending": len(self._refresh_tasks),
@@ -247,6 +251,7 @@ class CoverageFeed:
                 raise ValueError("ambiguous token identity")
         self._markets = unique
         self._resolved_tokens.intersection_update(unique)
+        self._gap_watermarks = {key: value for key, value in self._gap_watermarks.items() if key in unique}
         self.latest = {k: v for k, v in self.latest.items() if k in unique}
 
     async def books(
@@ -270,6 +275,8 @@ class CoverageFeed:
                 self._metrics["rest_books"] += 1
                 if m.token_id in self._resolved_tokens:
                     return None
+                if not self._accept_baseline(b):
+                    return None
                 old = self.latest.get(m.token_id)
                 if old is not None and b.timestamp < old.timestamp:
                     self._metrics["out_of_order"] += 1
@@ -283,13 +290,27 @@ class CoverageFeed:
         result = await asyncio.gather(*(one(m) for m in chosen))
         return [b for b in result if b is not None]
 
-    def _invalidate(self, tokens: Sequence[str] | None = None, *, gap: bool = True):
-        for token in list(tokens) if tokens is not None else list(self.latest):
+    def _invalidate(self, tokens: Sequence[str] | None = None, *, gap: bool = True, watermark=None):
+        affected = list(tokens) if tokens is not None else list(self._markets)
+        for token in affected:
             self.latest.pop(token, None)
         self._metrics["invalidations"] += 1
         if gap:
             self._metrics["gaps"] += 1
             self.last_gap_at = self.adapter.clock()
+            boundary = watermark or self.last_gap_at
+            for token in affected:
+                prior = self._gap_watermarks.get(token)
+                if prior is None or boundary > prior:
+                    self._gap_watermarks[token] = boundary
+
+    def _accept_baseline(self, book):
+        boundary = self._gap_watermarks.get(book.token_id)
+        if boundary is not None and book.timestamp < boundary:
+            self._metrics["stale_recovery_baselines"] += 1
+            return False
+        self._gap_watermarks.pop(book.token_id, None)
+        return True
 
     async def execution_book(self, token: str):
         """A pending order cannot bypass resolution/gap guards via raw REST."""
@@ -305,6 +326,8 @@ class CoverageFeed:
             book = await self.adapter.book(market.market_id, token)
             self._metrics["rest_books"] += 1
             if token in self._resolved_tokens or (generation is not None and generation != self._generation):
+                return None
+            if not self._accept_baseline(book):
                 return None
             current = self.latest.get(token)
             if current is not None and current.timestamp > book.timestamp:
@@ -359,6 +382,8 @@ class CoverageFeed:
                 return []
             try:
                 book = normalize_book(payload, self._markets[token].market_id, token, received)
+                if not self._accept_baseline(book):
+                    return []
                 old = self.latest.get(token)
                 if old and book.timestamp < old.timestamp:
                     self._metrics["out_of_order"] += 1
@@ -389,6 +414,7 @@ class CoverageFeed:
             result = []
             for token, updates in grouped.items():
                 old = self.latest.get(token)
+                at = received
                 try:
                     at = timestamp(payload["timestamp"])
                     if at > received:
@@ -458,7 +484,7 @@ class CoverageFeed:
                         else "gap_invalid_delta"
                     )
                     self._metrics[category] += 1
-                    self._invalidate([token])
+                    self._invalidate([token], watermark=min(at, received))
                     if background_recovery:
                         self._schedule_resnapshot(token)
                     else:

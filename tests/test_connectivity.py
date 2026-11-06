@@ -555,3 +555,71 @@ async def test_initial_400_book_burst_yields_to_bounded_consumer(now, market):
         assert len(f.latest) == 400
     finally:
         await f.close()
+
+
+async def test_recovery_requires_baseline_at_or_after_offending_delta(feed, now):
+    async def stale(market_id, token_id):
+        return OrderBookSnapshot.model_validate(
+            {
+                "id": "pre-gap-rest",
+                "timestamp": now - timedelta(seconds=2),
+                "available_at": now,
+                "source": "https://clob.polymarket.com",
+                "market_id": market_id,
+                "token_id": token_id,
+                "bids": [{"price": 0.39, "size": 100}],
+                "asks": [{"price": 0.4, "size": 100}],
+            }
+        )
+
+    feed.adapter.book = stale
+    result = await feed.handle(
+        delta(now - timedelta(seconds=1), [{"asset_id": "t1", "side": "BUY", "price": ".39", "size": "4"}])
+    )
+    assert result == [] and "t1" not in feed.latest
+    assert feed.metrics()["stale_recovery_baselines"] == 1
+    assert await feed.handle(full(now - timedelta(seconds=2))) == []
+    assert await feed.handle(full(now))
+    assert "t1" in feed.latest and feed.metrics()["gap_tokens_withheld"] == 0
+
+
+async def test_rest_fallback_cannot_restore_pre_gap_state(feed, now, market):
+    feed._invalidate(["t1"], watermark=now + timedelta(seconds=1))
+    assert await feed.books([market]) == []
+    assert "t1" not in feed.latest
+
+
+async def test_newer_gap_advances_boundary_while_recovery_waits(feed, now):
+    gate = asyncio.Event()
+
+    async def delayed(market_id, token_id):
+        await gate.wait()
+        return OrderBookSnapshot.model_validate(
+            {
+                "id": "old-response",
+                "timestamp": now - timedelta(seconds=2),
+                "available_at": now,
+                "source": "https://clob.polymarket.com",
+                "market_id": market_id,
+                "token_id": token_id,
+                "bids": [{"price": 0.39, "size": 100}],
+                "asks": [{"price": 0.4, "size": 100}],
+            }
+        )
+
+    feed.adapter.book = delayed
+    for age in (2, 1):
+        await feed.handle(
+            delta(
+                now - timedelta(seconds=age), [{"asset_id": "t1", "side": "BUY", "price": ".39", "size": "4"}]
+            ),
+            background_recovery=True,
+        )
+        await asyncio.sleep(0)
+    assert len(feed._refresh_tasks) == 1
+    gate.set()
+    for _ in range(10):
+        if not feed._refresh_tasks:
+            break
+        await asyncio.sleep(0)
+    assert "t1" not in feed.latest and feed._gap_watermarks["t1"] == now - timedelta(seconds=1)
