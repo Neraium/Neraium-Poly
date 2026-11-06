@@ -470,6 +470,12 @@ async def test_unreviewed_settlement_withheld_without_invented_pnl(tmp_path, now
                 },
             }
         )
+        original = adapter.settlement_result
+        adapter.settlement_result = original.model_copy(update={"token_id": "wrong-reviewed-token"})
+        await runtime._settle(clock())
+        assert runtime.risk.positions(now=clock())
+        assert runtime.last_error == "settlement_observation_identity_or_rules_mismatch"
+        adapter.settlement_result = original
         await runtime._settle(clock())
         settled = runtime.state()
         assert not settled["positions"]

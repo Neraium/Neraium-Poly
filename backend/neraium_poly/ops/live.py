@@ -464,6 +464,7 @@ class LivePaperRuntime:
             self.last_error = "archive_or_disk_budget_exhausted"
             return
         self.working = True
+        self.last_error = None
         try:
             if (
                 self.last_discovery is None
@@ -550,7 +551,7 @@ class LivePaperRuntime:
                     )
                     else self.last_success
                 )
-                self.last_error = ",".join(failures[:3]) if failures else None
+                self.last_error = ",".join(failures[:3]) if failures else self.last_error
                 self._save()
                 log.info("cycle %s", json.dumps(self.last_cycle))
         finally:
