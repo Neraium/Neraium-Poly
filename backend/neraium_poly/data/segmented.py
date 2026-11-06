@@ -1,0 +1,493 @@
+"""Lossless SQLite segments with a durable all-history index and no purge policy.
+
+A committed segment row precedes its catalogue row. Recovery verifies immutable
+sources and reconciles that single-owner write ordering before accepting writes.
+Original legacy/segment files are never moved, replaced, compressed while open,
+or deleted. Gzip files are additional verified copies, not a retention shortcut.
+"""
+
+import fcntl
+import gzip
+import hashlib
+import json
+import os
+import re
+import shutil
+import sqlite3
+from collections import deque
+from datetime import UTC, datetime
+from pathlib import Path
+from threading import RLock
+
+from neraium_poly.data.store import EventStore
+
+NAME = re.compile(r"segment-[0-9]{8}\.sqlite\Z")
+CHUNK = 1024 * 1024
+
+
+def _sha(path):
+    result = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(CHUNK), b""):
+            result.update(chunk)
+    return result.hexdigest()
+
+
+def _sync_dir(path):
+    fd = os.open(path, os.O_RDONLY | os.O_DIRECTORY)
+    try:
+        os.fsync(fd)
+    finally:
+        os.close(fd)
+
+
+def _readonly(path):
+    if path.is_symlink() or not path.is_file():
+        raise ValueError("archive source missing or symlinked")
+    return sqlite3.connect(f"file:{path.resolve()}?mode=ro", uri=True, timeout=10)
+
+
+class ManagedEventStore:
+    """Single-owner append-only event archive; budgets include the service tree."""
+
+    def __init__(self, path, *, segment_bytes, budget_bytes, min_free_bytes, compress=True, clock=None):
+        if segment_bytes < 4096 or budget_bytes < segment_bytes or min_free_bytes < 0:
+            raise ValueError("invalid bounded archive configuration")
+        self.path = Path(path).absolute()
+        self.directory = self.path.parent
+        self.segment_dir = self.directory / "events-segments"
+        self.catalog_path = self.directory / "events-archive.sqlite"
+        self.segment_bytes, self.budget_bytes = segment_bytes, budget_bytes
+        self.min_free_bytes, self.compress = min_free_bytes, compress
+        self.clock = clock or (lambda: datetime.now(UTC))
+        self._lock = RLock()
+        self.active = self.catalog = self._owner = None
+        self.active_name = None
+        self._dirty = False
+        self._last_error = None
+        self._usage_at = None
+        self._usage = self._pending = 0
+        self._samples = deque(maxlen=64)
+        self.directory.mkdir(parents=True, exist_ok=True)
+        try:
+            for p in [self.path, self.segment_dir, self.catalog_path, self.directory / "events-archive.lock"]:
+                if p.is_symlink():
+                    raise ValueError("archive paths must not be symlinks")
+            self._owner = (self.directory / "events-archive.lock").open("a+b")
+            try:
+                fcntl.flock(self._owner.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+            except BlockingIOError as error:
+                raise ValueError("another archive owner is active") from error
+            self._check_budget(256 * 1024, refresh=True)
+            self.segment_dir.mkdir(exist_ok=True)
+            if not self.catalog_path.exists() and any(self.segment_dir.iterdir()):
+                raise ValueError("archive catalogue missing beside existing segments")
+            self.catalog = sqlite3.connect(self.catalog_path, check_same_thread=False, timeout=10)
+            self.catalog.row_factory = sqlite3.Row
+            self.catalog.execute("PRAGMA journal_mode=WAL")
+            self.catalog.execute("PRAGMA synchronous=FULL")
+            self.catalog.executescript("""
+                CREATE TABLE IF NOT EXISTS segments(
+                  name TEXT PRIMARY KEY,status TEXT NOT NULL,raw_sha TEXT,raw_size INTEGER,
+                  records INTEGER NOT NULL DEFAULT 0,gzip_sha TEXT,gzip_size INTEGER);
+                CREATE TABLE IF NOT EXISTS records(
+                  id TEXT PRIMARY KEY,kind TEXT NOT NULL,available_at TEXT NOT NULL,
+                  event_time TEXT NOT NULL,digest TEXT NOT NULL,segment TEXT NOT NULL,
+                  qualified INTEGER NOT NULL);
+                CREATE INDEX IF NOT EXISTS records_kind_time ON records(kind,available_at,id);
+                CREATE TABLE IF NOT EXISTS archive_meta(key TEXT PRIMARY KEY,value TEXT NOT NULL);
+            """)
+            version = self.catalog.execute("SELECT value FROM archive_meta WHERE key='version'").fetchone()
+            if version and version[0] != "1":
+                raise ValueError("unsupported archive catalogue version")
+            with self.catalog:
+                self.catalog.execute("INSERT OR IGNORE INTO archive_meta VALUES('version','1')")
+            if self.catalog.execute("PRAGMA quick_check").fetchall()[0][0] != "ok":
+                raise ValueError("corrupt archive catalogue")
+            self._recover()
+            self._usage_at = None
+            self._measure()
+            self._samples.append((self.clock(), self._usage))
+        except BaseException:
+            self.close()
+            raise
+
+    def _measure(self):
+        now = self.clock()
+        if self._usage_at is None or (now - self._usage_at).total_seconds() >= 1:
+            total = 0
+            for p in self.directory.rglob("*"):
+                if p.is_symlink():
+                    raise ValueError("symlink inside managed service archive")
+                if p.is_file():
+                    try:
+                        total += p.stat().st_size
+                    except FileNotFoundError:  # SQLite may checkpoint its own sidecars.
+                        continue
+            self._usage, self._pending, self._usage_at = total, 0, now
+        return self._usage + self._pending
+
+    def _check_budget(self, extra=0, *, refresh=False):
+        if refresh:
+            self._usage_at = None
+        usage = self._measure()
+        if usage + extra >= self.budget_bytes:
+            raise ValueError("archive_service_budget_exhausted")
+        if shutil.disk_usage(self.directory).free < self.min_free_bytes + extra:
+            raise ValueError("archive_global_free_floor_reached")
+
+    def _source(self, name):
+        if name == "legacy":
+            return self.path
+        if not NAME.fullmatch(name):
+            raise ValueError("invalid archive segment path")
+        return self.segment_dir / name
+
+    def _catalog_record(self, row, segment):
+        # Deliberately separate from segment commit: an orphan durable row is replayed.
+        rid, kind, available, event, payload, digest = row
+        if hashlib.sha256(payload.encode()).hexdigest() != digest:
+            raise ValueError("corrupt archive payload digest")
+        qualified = int(json.loads(payload).get("qualified") is True)
+        previous = self.catalog.execute("SELECT * FROM records WHERE id=?", (rid,)).fetchone()
+        expected = (rid, kind, available, event, digest, segment, qualified)
+        if previous:
+            if tuple(previous) != expected:
+                raise ValueError("archive identity collision or catalogue mismatch")
+            return False
+        self.catalog.execute("INSERT INTO records VALUES(?,?,?,?,?,?,?)", expected)
+        return True
+
+    def _index_segment(self, path, name=None):
+        name = name or ("legacy" if path == self.path else path.name)
+        source = _readonly(path)
+        total = 0
+        try:
+            if source.execute("PRAGMA quick_check").fetchone()[0] != "ok":
+                raise ValueError("corrupt archive segment")
+            with self.catalog:
+                for row in source.execute("SELECT id,kind,available_at,event_time,payload,digest FROM events"):
+                    if total % 1000 == 0:
+                        self._check_budget(512 * 1024, refresh=True)
+                    self._catalog_record(row, name)
+                    total += 1
+                    if total % 1000 == 0:
+                        self.catalog.commit()
+                indexed = self.catalog.execute("SELECT count(*) FROM records WHERE segment=?", (name,)).fetchone()[0]
+                if indexed != total:
+                    raise ValueError("catalogue references missing archive records")
+                self.catalog.execute("UPDATE segments SET records=? WHERE name=?", (total, name))
+        finally:
+            source.close()
+        return total
+
+    def _recover(self):
+        known = {r["name"]: r for r in self.catalog.execute("SELECT * FROM segments")}
+        if self.path.exists() and "legacy" not in known:
+            if Path(str(self.path) + "-wal").exists() and Path(str(self.path) + "-wal").stat().st_size:
+                raise ValueError("legacy archive must be closed and checkpointed before adoption")
+            self._index_segment(self.path, "legacy")
+            with self.catalog:
+                self.catalog.execute(
+                    "INSERT INTO segments(name,status,raw_sha,raw_size,records) VALUES(?,?,?,?,?)",
+                    ("legacy", "legacy", _sha(self.path), self.path.stat().st_size, self.count()),
+                )
+        known = {r["name"]: r for r in self.catalog.execute("SELECT * FROM segments")}
+        for name, row in known.items():
+            path = self._source(name)
+            if not path.is_file() or path.is_symlink():
+                raise ValueError("missing archive source segment")
+            if row["status"] in {"sealed", "legacy"}:
+                if path.stat().st_size != row["raw_size"] or _sha(path) != row["raw_sha"]:
+                    raise ValueError("immutable archive source changed")
+            elif row["status"] != "active":
+                raise ValueError("invalid archive segment state")
+            self._index_segment(path, name)
+            if row["gzip_sha"]:
+                self._verify_compressed(row)
+        unknown = [p for p in self.segment_dir.iterdir() if NAME.fullmatch(p.name) and p.name not in known]
+        active = [r["name"] for r in self.catalog.execute("SELECT name FROM segments WHERE status='active'")]
+        if len(active) > 1 or len(unknown) > 1 or (active and unknown):
+            raise ValueError("ambiguous interrupted archive rotation")
+        if unknown:
+            p = unknown[0]
+            self._index_segment(p)
+            with self.catalog:
+                self.catalog.execute("INSERT INTO segments(name,status,records) VALUES(?,?,?)",
+                                     (p.name, "active", self.catalog.execute("SELECT count(*) FROM records WHERE segment=?", (p.name,)).fetchone()[0]))
+            active = [p.name]
+        orphan = self.catalog.execute("SELECT count(*) FROM records r LEFT JOIN segments s ON r.segment=s.name WHERE s.name IS NULL").fetchone()[0]
+        if orphan:
+            raise ValueError("catalogue references an unknown archive source")
+        if active:
+            self.active_name = active[0]
+            self.active = EventStore(self._source(self.active_name))
+        else:
+            self._create_active()
+
+    def _create_active(self):
+        number = max([int(p.name[8:16]) for p in self.segment_dir.iterdir() if NAME.fullmatch(p.name)] or [0]) + 1
+        if number > 99999999:
+            raise ValueError("archive segment identity space exhausted")
+        name = f"segment-{number:08d}.sqlite"
+        path = self._source(name)
+        self._check_budget(128 * 1024)
+        active = EventStore(path)
+        try:
+            _sync_dir(self.segment_dir)
+            with self.catalog:
+                self.catalog.execute("INSERT INTO segments(name,status) VALUES(?,'active')", (name,))
+        except BaseException:
+            active.close()
+            raise
+        self.active, self.active_name = active, name
+
+    def _seal_active(self):
+        if self.active is None:
+            return
+        path, name = self._source(self.active_name), self.active_name
+        with self.active._lock:
+            result = self.active.connection.execute("PRAGMA wal_checkpoint(TRUNCATE)").fetchone()
+            if result[0]:
+                raise ValueError("active archive checkpoint busy")
+            self.active.close()
+        self.active = None
+        with path.open("rb") as source:
+            os.fsync(source.fileno())
+        digest, size = _sha(path), path.stat().st_size
+        with self.catalog:
+            self.catalog.execute("UPDATE segments SET status='sealed',raw_sha=?,raw_size=? WHERE name=?",
+                                 (digest, size, name))
+        _sync_dir(self.segment_dir)
+
+    def _publish_compression(self, temporary, target):
+        # Existing copies are never replaced, including after interrupted publication.
+        os.link(temporary, target)
+        _sync_dir(target.parent)
+        temporary.unlink()  # Disposable duplicate pending output, not original evidence.
+        _sync_dir(target.parent)
+
+    def _verify_compressed(self, row):
+        target = Path(str(self._source(row["name"])) + ".gz")
+        if not target.is_file() or target.is_symlink() or _sha(target) != row["gzip_sha"]:
+            raise ValueError("corrupt compressed archive copy")
+        digest = hashlib.sha256()
+        length = 0
+        with gzip.open(target, "rb") as handle:
+            for chunk in iter(lambda: handle.read(CHUNK), b""):
+                digest.update(chunk)
+                length += len(chunk)
+        if digest.hexdigest() != row["raw_sha"] or length != row["raw_size"]:
+            raise ValueError("compressed archive roundtrip mismatch")
+
+    def _compress(self, row):
+        source = self._source(row["name"])
+        target = Path(str(source) + ".gz")
+        temporary = Path(str(target) + ".pending")
+        if row["status"] != "sealed" or self.active_name == row["name"]:
+            raise ValueError("cannot compress an open or legacy archive")
+        if _sha(source) != row["raw_sha"]:
+            raise ValueError("immutable archive source changed")
+        if not target.exists():
+            self._check_budget(row["raw_size"] + 256 * 1024, refresh=True)
+            # An interrupted pending copy is disposable only after its source validates.
+            if temporary.exists():
+                if temporary.is_symlink():
+                    raise ValueError("symlinked pending archive copy")
+                temporary.unlink()
+            with source.open("rb") as raw, temporary.open("xb") as output:
+                with gzip.GzipFile(fileobj=output, mode="wb", compresslevel=1, mtime=0) as compressed:
+                    for chunk in iter(lambda: raw.read(CHUNK), b""):
+                        self._check_budget(len(chunk) + 65536)
+                        compressed.write(chunk)
+                output.flush()
+                os.fsync(output.fileno())
+            # Validate exact source bytes before publishing under the final name.
+            digest = hashlib.sha256()
+            length = 0
+            with gzip.open(temporary, "rb") as handle:
+                for chunk in iter(lambda: handle.read(CHUNK), b""):
+                    digest.update(chunk)
+                    length += len(chunk)
+            if digest.hexdigest() != row["raw_sha"] or length != row["raw_size"]:
+                raise ValueError("pending compressed archive roundtrip mismatch")
+            self._publish_compression(temporary, target)
+        verified = dict(row)
+        verified["gzip_sha"] = _sha(target)
+        self._verify_compressed(verified)
+        if temporary.exists():
+            if temporary.is_symlink():
+                raise ValueError("symlinked pending archive copy")
+            temporary.unlink()
+            _sync_dir(target.parent)
+        with self.catalog:
+            self.catalog.execute("UPDATE segments SET gzip_sha=?,gzip_size=? WHERE name=?",
+                                 (verified["gzip_sha"], target.stat().st_size, row["name"]))
+        self._usage_at = None
+
+    def append(self, record):
+        payload = record.model_dump_json()
+        digest = hashlib.sha256(payload.encode()).hexdigest()
+        if len(payload.encode()) > 8 * CHUNK:
+            raise ValueError("archive record exceeds bounded payload size")
+        with self._lock:
+            if self._dirty:
+                self._index_segment(self._source(self.active_name))
+                self._dirty = False
+                self._last_error = None
+            previous = self.get(record.id)
+            if previous:
+                if previous[2] != digest:
+                    raise ValueError("event ID collision with different payload")
+                return False
+            if self._last_error:
+                raise ValueError(self._last_error)
+            self._check_budget(len(payload.encode()) * 3 + 256 * 1024)
+            if self.active is None:
+                self._recover()
+            active_size = sum(p.stat().st_size for p in self.segment_dir.glob(self.active_name + "*") if p.is_file())
+            if active_size + len(payload.encode()) * 2 + 8192 > self.segment_bytes and self.active.count():
+                self._seal_active()
+                self._create_active()
+            row = (record.id, type(record).__name__, record.available_at.isoformat(), record.timestamp.isoformat(), payload, digest)
+            self.active.append(record)
+            self._dirty = True
+            try:
+                with self.catalog:
+                    self._catalog_record(row, self.active_name)
+                    self.catalog.execute("UPDATE segments SET records=records+1 WHERE name=?", (self.active_name,))
+                self._dirty = False
+                self._pending += len(payload.encode()) * 3 + 8192
+            except BaseException:
+                self._last_error = "archive catalogue recovery required"
+                raise
+            return True
+
+    def maintain(self):
+        with self._lock:
+            try:
+                self._check_budget(256 * 1024, refresh=True)
+                if self._dirty:
+                    self._index_segment(self._source(self.active_name))
+                    self._dirty = False
+                if self.active is None:
+                    self._recover()
+                active_size = sum(p.stat().st_size for p in self.segment_dir.glob(self.active_name + "*") if p.is_file())
+                if active_size >= self.segment_bytes and self.active.count():
+                    self._seal_active()
+                    self._create_active()
+                if self.compress:
+                    row = self.catalog.execute("SELECT * FROM segments WHERE status='sealed' AND gzip_sha IS NULL ORDER BY name LIMIT 1").fetchone()
+                    if row:
+                        self._compress(row)
+                self._last_error = None
+            except Exception as error:  # noqa: BLE001 - a maintenance failure must stop archive writes
+                self._last_error = f"archive_maintenance:{type(error).__name__}:{str(error)[:160]}"
+            return self.status()
+
+    def _fetch(self, row):
+        source = _readonly(self._source(row["segment"]))
+        try:
+            value = source.execute("SELECT kind,payload,digest FROM events WHERE id=?", (row["id"],)).fetchone()
+        finally:
+            source.close()
+        if value is None or value[0] != row["kind"] or value[2] != row["digest"] or hashlib.sha256(value[1].encode()).hexdigest() != value[2]:
+            raise ValueError("corrupt or missing indexed archive record")
+        return value
+
+    def get(self, record_id):
+        with self._lock:
+            row = self.catalog.execute("SELECT * FROM records WHERE id=?", (record_id,)).fetchone()
+            return self._fetch(row) if row else None
+
+    def count(self, *, kind=None, qualified=None):
+        clauses, values = [], []
+        if kind is not None:
+            clauses.append("kind=?")
+            values.append(kind)
+        if qualified is not None:
+            clauses.append("qualified=?")
+            values.append(int(qualified))
+        with self._lock:
+            return self.catalog.execute("SELECT count(*) FROM records" + (" WHERE " + " AND ".join(clauses) if clauses else ""), values).fetchone()[0]
+
+    def latest(self, kind, limit=100):
+        if not 1 <= limit <= 10000:
+            raise ValueError("bounded latest archive query required")
+        with self._lock:
+            rows = self.catalog.execute("SELECT * FROM records WHERE kind=? ORDER BY available_at DESC,id DESC LIMIT ?", (kind, limit)).fetchall()
+            return [json.loads(self._fetch(row)[1]) for row in rows]
+
+    def iter_replay(self, *, until=None, kind=None):
+        """Stream historical records; caller should exhaust/close this locked iterator."""
+        if until is not None and until.tzinfo is None:
+            raise ValueError("timezone required")
+        clauses, values = [], []
+        if until is not None:
+            clauses.append("available_at<=?")
+            values.append(until.astimezone(UTC).isoformat())
+        if kind is not None:
+            clauses.append("kind=?")
+            values.append(kind)
+        query = "SELECT * FROM records" + (" WHERE " + " AND ".join(clauses) if clauses else "") + " ORDER BY available_at,event_time,id"
+        with self._lock:
+            connection, segment = None, None
+            try:
+                for row in self.catalog.execute(query, values):
+                    if segment != row["segment"]:
+                        if connection is not None:
+                            connection.close()
+                        segment = row["segment"]
+                        connection = _readonly(self._source(segment))
+                    value = connection.execute("SELECT kind,payload,digest FROM events WHERE id=?", (row["id"],)).fetchone()
+                    if value is None or value[0] != row["kind"] or value[2] != row["digest"] or hashlib.sha256(value[1].encode()).hexdigest() != value[2]:
+                        raise ValueError("corrupt or missing indexed archive record")
+                    yield {"kind": row["kind"], "record": json.loads(value[1])}
+            finally:
+                if connection is not None:
+                    connection.close()
+
+    def replay(self, *, until=None, kind=None):
+        return list(self.iter_replay(until=until, kind=kind))
+
+    def status(self):
+        with self._lock:
+            usage = self._measure()
+            now = self.clock()
+            if not self._samples or now > self._samples[-1][0]:
+                self._samples.append((now, usage))
+            elapsed = (now - self._samples[0][0]).total_seconds() if self._samples else 0
+            delta = usage - self._samples[0][1] if self._samples else 0
+            rate = delta / elapsed if elapsed >= 1 and delta >= 0 else None
+            free = shutil.disk_usage(self.directory).free
+            remaining = max(0, self.budget_bytes - usage)
+            error = self._last_error
+            if usage >= self.budget_bytes:
+                error = "archive_service_budget_exhausted"
+            if free < self.min_free_bytes:
+                error = "archive_global_free_floor_reached"
+            rows = list(self.catalog.execute("SELECT * FROM segments"))
+            active_bytes = sum(p.stat().st_size for p in self.segment_dir.glob((self.active_name or "NOACTIVE") + "*") if p.is_file())
+            return {"managed": True, "usage_bytes": usage, "budget_bytes": self.budget_bytes,
+                    "active_bytes": active_bytes, "segment_bytes": self.segment_bytes,
+                    "segments": sum(r["status"] != "legacy" for r in rows),
+                    "sealed_segments": sum(r["status"] == "sealed" for r in rows),
+                    "compressed_segments": sum(r["gzip_sha"] is not None for r in rows),
+                    "legacy_records": sum(r["records"] for r in rows if r["status"] == "legacy"),
+                    "records": self.count(), "free_bytes": free, "growth_bytes_per_second": rate,
+                    "remaining_bytes": remaining,
+                    "seconds_to_exhaustion": min(remaining, max(0, free - self.min_free_bytes)) / rate if rate else None,
+                    "global_floor_bytes": self.min_free_bytes, "retention_policy": "retain_all_originals_and_verified_copies",
+                    "health": "blocked" if error else "ok", "last_error": error}
+
+    def close(self):
+        if self.active is not None:
+            self.active.close()
+            self.active = None
+        if self.catalog is not None:
+            self.catalog.close()
+            self.catalog = None
+        if self._owner is not None:
+            fcntl.flock(self._owner.fileno(), fcntl.LOCK_UN)
+            self._owner.close()
+            self._owner = None
