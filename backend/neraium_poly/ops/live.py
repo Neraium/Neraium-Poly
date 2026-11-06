@@ -62,7 +62,9 @@ class LivePaperRuntime:
             self.events.connection.commit()
             self.risk = RiskEngine(str(self.directory / "risk.sqlite"), limits=config.risk_limits)
             self.broker = PaperBroker(self.risk, str(self.directory / "broker.sqlite"))
-            self.validation = validation or ValidationStore(str(self.directory / "approval.sqlite"))
+            self.validation = validation or ValidationStore(
+                str(self.directory / "approval.sqlite"), owner_public_key=config.owner_public_key
+            )
             self.adapter = adapter or OperationalPolymarketAdapter()
             self.engine = RelationshipEngine(
                 RelationshipPolicy(

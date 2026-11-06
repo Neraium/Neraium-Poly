@@ -23,6 +23,7 @@ class LivePaperConfig(BaseModel):
     max_relationships: int = Field(default=200, ge=1, le=1000)
     max_book_age_seconds: float = Field(default=15, gt=0, le=60)
     max_fee_age_seconds: float = Field(default=300, gt=0, le=3600)
+    owner_public_key: Path | None = None
     allow_simulated_settlement: bool = False
     settlement_rule_hashes: dict[str, str] = Field(default_factory=dict)
     settlement_review_actor: str = ""

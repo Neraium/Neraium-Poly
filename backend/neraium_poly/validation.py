@@ -18,10 +18,12 @@ from statistics import mean, stdev
 from threading import RLock
 from typing import Literal
 from urllib.parse import urlparse
+from uuid import uuid4
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator
 
 from neraium_poly.contracts import MarketRelationship, MarketSnapshot, OrderBookSnapshot
+from neraium_poly.owner import canonical, owner_payload, verify_signature
 from neraium_poly.strategy import HistogramCalibrator, LabeledForecast, ModelRegistry, ProtocolFeeModel
 
 
@@ -156,8 +158,15 @@ class ValidationStore:
     inputs under the exact stored policy. Loading verifies every bound digest.
     """
 
-    def __init__(self, path: str | Path, policy: ValidationPolicy | None = None):
+    def __init__(
+        self,
+        path: str | Path,
+        policy: ValidationPolicy | None = None,
+        *,
+        owner_public_key: Path | None = None,
+    ):
         self.policy = policy or ValidationPolicy()
+        self.owner_public_key = owner_public_key
         if str(path) != ":memory:":
             Path(path).parent.mkdir(parents=True, exist_ok=True)
         self.db = sqlite3.connect(str(path), isolation_level=None, check_same_thread=False, timeout=10)
@@ -171,6 +180,10 @@ class ValidationStore:
         CREATE TABLE IF NOT EXISTS strategy_reviews (
             seq INTEGER PRIMARY KEY, timestamp TEXT NOT NULL, actor TEXT NOT NULL,
             action TEXT NOT NULL, report_id TEXT, reason TEXT NOT NULL);
+        CREATE TABLE IF NOT EXISTS owner_requests (
+            request_id TEXT PRIMARY KEY, report_id TEXT NOT NULL, payload BLOB NOT NULL, digest TEXT NOT NULL);
+        CREATE TABLE IF NOT EXISTS owner_approvals (
+            report_id TEXT PRIMARY KEY, request_id TEXT NOT NULL, signature BLOB NOT NULL, public_key_hash TEXT NOT NULL);
         CREATE TABLE IF NOT EXISTS active_strategy (
             id INTEGER PRIMARY KEY CHECK(id=1), report_id TEXT NOT NULL,
             approved_at TEXT NOT NULL, actor TEXT NOT NULL);
@@ -401,7 +414,50 @@ class ValidationStore:
             ValidationPolicy.model_validate_json(row["policy"]),
         )
 
-    def approve(self, report_id: str, actor: str, now: datetime) -> str:
+    def prepare_owner_request(self, report_id: str, now: datetime) -> dict:
+        now = _now(now)
+        with self._lock:
+            report, data, raw, policy = self._stored(report_id)
+            checked = self._validate(data, raw, now, policy, save=False)
+            if not report.passed or not checked.passed or policy != self.policy:
+                raise ValueError("Only a currently passing strategy can be submitted for owner approval")
+            request = owner_payload(report.model_dump(mode="json"), json.loads(raw), str(uuid4()), now)
+            payload = canonical(request)
+            self.db.execute(
+                "INSERT INTO owner_requests VALUES(?,?,?,?)",
+                (request["request_id"], report_id, payload, _hash(payload)),
+            )
+            return request
+
+    def _verify_owner(self, report, request_id, signature, now):
+        if not request_id or signature is None:
+            raise ValueError(
+                "Explicit owner approval required; an actor name or passing tests cannot activate a strategy"
+            )
+        row = self.db.execute("SELECT * FROM owner_requests WHERE request_id=?", (request_id,)).fetchone()
+        if row is None or row["report_id"] != report.id or _hash(bytes(row["payload"])) != row["digest"]:
+            raise ValueError("Owner approval request missing or changed")
+        payload = json.loads(row["payload"])
+        for key, value in (
+            ("report_id", report.id),
+            ("dataset_hash", report.dataset_hash),
+            ("manifest_hash", report.manifest_hash),
+            ("model_id", report.model_id),
+            ("report_sha256", _hash(canonical(report.model_dump(mode="json")))),
+        ):
+            if payload.get(key) != value:
+                raise ValueError("Owner approval does not bind this exact validated strategy")
+        return verify_signature(payload, signature, self.owner_public_key, now)
+
+    def approve(
+        self,
+        report_id: str,
+        actor: str,
+        now: datetime,
+        *,
+        owner_request_id: str | None = None,
+        owner_signature: bytes | None = None,
+    ) -> str:
         now = _now(now)
         if not actor.strip():
             raise ValueError("explicit approval actor required")
@@ -416,8 +472,13 @@ class ValidationStore:
                 )
             if policy != self.policy:
                 raise ValueError("active validation policy differs; validate again")
+            public_key_hash = self._verify_owner(report, owner_request_id, owner_signature, now)
             self.db.execute("BEGIN IMMEDIATE")
             try:
+                self.db.execute(
+                    "INSERT OR REPLACE INTO owner_approvals VALUES(?,?,?,?)",
+                    (report_id, owner_request_id, owner_signature, public_key_hash),
+                )
                 self.db.execute(
                     "INSERT INTO strategy_reviews(timestamp,actor,action,report_id,reason) VALUES(?,?,?,?,?)",
                     (now.isoformat(), actor, "approve", report_id, "explicit passing real-data approval"),
@@ -470,6 +531,15 @@ class ValidationStore:
                     raise ValueError("explicit_approval_audit_missing_or_changed")
                 report, data, raw, policy = self._stored(active["report_id"])
                 manifest = ValidationManifest.model_validate_json(raw)
+                owner = self.db.execute(
+                    "SELECT * FROM owner_approvals WHERE report_id=?", (report.id,)
+                ).fetchone()
+                if (
+                    owner is None
+                    or self._verify_owner(report, owner["request_id"], bytes(owner["signature"]), now)
+                    != owner["public_key_hash"]
+                ):
+                    raise ValueError("Explicit owner approval missing or changed")
                 at = datetime.fromisoformat(active["approved_at"])
                 if (
                     not report.passed
@@ -514,6 +584,8 @@ class ValidationStore:
                 reports = [ValidationReport.model_validate_json(r[0]) for r in rows]
             return {
                 "active": active is not None,
+                "owner_approval_required": True,
+                "owner_public_key_configured": self.owner_public_key is not None,
                 "report_id": active.report_id if active else None,
                 "model_id": active.model_id if active else None,
                 "reports": len(reports),

@@ -1,11 +1,13 @@
 """Controlled assertions of gate behavior, never actual real-market evidence."""
 
 import json
+import subprocess
 from datetime import timedelta
 from hashlib import sha256
 
 import pytest
 from neraium_poly.contracts import MarketRelationship, OrderBookSnapshot, PriceLevel
+from neraium_poly.owner import canonical
 from neraium_poly.validation import ValidationStore
 
 
@@ -87,6 +89,43 @@ def documents(tmp_path, now, mutate=None):
     return dataset, meta
 
 
+def owner_signing_fixture(store, report, now, directory):
+    """Ephemeral TEST-ONLY approval keys; never provision production trust."""
+    directory.mkdir(parents=True, exist_ok=True)
+    private = directory / "test-owner-private.pem"
+    public = directory / "test-owner-public.pem"
+    subprocess.run(
+        ["openssl", "genpkey", "-algorithm", "ED25519", "-out", str(private)], check=True, capture_output=True
+    )
+    subprocess.run(
+        ["openssl", "pkey", "-in", str(private), "-pubout", "-out", str(public)],
+        check=True,
+        capture_output=True,
+    )
+    store.owner_public_key = public
+    request = store.prepare_owner_request(report.id, now)
+    message = directory / "request.json"
+    message.write_bytes(canonical(request))
+    signature = directory / "owner.sig"
+    subprocess.run(
+        [
+            "openssl",
+            "pkeyutl",
+            "-sign",
+            "-inkey",
+            str(private),
+            "-rawin",
+            "-in",
+            str(message),
+            "-out",
+            str(signature),
+        ],
+        check=True,
+        capture_output=True,
+    )
+    return public, {"owner_request_id": request["request_id"], "owner_signature": signature.read_bytes()}
+
+
 def test_no_implicit_approval_and_durable_reconstruction(tmp_path, now):
     dataset, manifest = documents(tmp_path, now)
     path = tmp_path / "validation.sqlite"
@@ -98,11 +137,12 @@ def test_no_implicit_approval_and_durable_reconstruction(tmp_path, now):
     assert report.train_events == report.heldout_events == 200
     assert report.brier_improvement_lower95 > 0.005
     assert store.load_active(now) is None
-    store.approve(report.id, "separate-explicit-reviewer", now)
+    public, owner = owner_signing_fixture(store, report, now, tmp_path / "owner")
+    store.approve(report.id, "separate-explicit-reviewer", now, **owner)
     first = store.load_active(now)
     assert first and first.registry.active_id == first.model_id
     store.close()
-    restored = ValidationStore(path)
+    restored = ValidationStore(path, owner_public_key=public)
     again = restored.load_active(now + timedelta(minutes=1))
     assert again and first.model_id == again.model_id
     assert again.registry.approvals[again.model_id].available_at == now
@@ -203,7 +243,8 @@ def test_approval_expiry_and_integrity_fail_closed(tmp_path, now):
     report = store.validate(dataset, manifest, now)
     with pytest.raises(ValueError, match="actor"):
         store.approve(report.id, "", now)
-    store.approve(report.id, "reviewer", now)
+    _, owner = owner_signing_fixture(store, report, now, tmp_path / "owner")
+    store.approve(report.id, "reviewer", now, **owner)
     assert store.load_active(now + timedelta(days=3)) is None
     assert not store.status(now + timedelta(days=3))["active"]
     store.db.execute("UPDATE validation_reports SET dataset=? WHERE id=?", (b"[]", report.id))
@@ -238,3 +279,39 @@ def test_missing_review_audit_cannot_activate(tmp_path, now):
     )
     assert store.load_active(now) is None
     assert store.status(now)["blockers"] == ["approval_integrity_expiry_or_storage_failure"]
+
+
+def test_passing_report_and_actor_cannot_self_approve(tmp_path, now):
+    dataset, manifest = documents(tmp_path, now)
+    store = ValidationStore(tmp_path / "approval.sqlite")
+    report = store.validate(dataset, manifest, now)
+    assert report.passed
+    with pytest.raises(ValueError, match="owner approval"):
+        store.approve(report.id, "autonomous-agent", now)
+    assert store.load_active(now) is None
+    assert store.status(now)["owner_approval_required"]
+    public, owner = owner_signing_fixture(store, report, now, tmp_path / "test-only-owner")
+    wrong = bytes([owner["owner_signature"][0] ^ 1]) + owner["owner_signature"][1:]
+    with pytest.raises(ValueError, match="signature"):
+        store.approve(report.id, "operator", now, **{**owner, "owner_signature": wrong})
+    store.owner_public_key = None
+    with pytest.raises(ValueError, match="trusted"):
+        store.approve(report.id, "operator", now, **owner)
+    store.owner_public_key = public
+    store.approve(report.id, "operator", now, **owner)
+    assert store.load_active(now)
+    store.owner_public_key = None
+    assert store.load_active(now) is None
+
+
+def test_owner_request_integrity_and_context_reject(tmp_path, now):
+    dataset, manifest = documents(tmp_path, now)
+    store = ValidationStore(tmp_path / "approval.sqlite")
+    report = store.validate(dataset, manifest, now)
+    _, owner = owner_signing_fixture(store, report, now, tmp_path / "owner")
+    store.db.execute(
+        "UPDATE owner_requests SET payload=? WHERE request_id=?", (b"{}", owner["owner_request_id"])
+    )
+    with pytest.raises(ValueError, match="changed"):
+        store.approve(report.id, "operator", now, **owner)
+    assert store.load_active(now) is None

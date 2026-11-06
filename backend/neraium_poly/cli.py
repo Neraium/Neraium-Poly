@@ -17,6 +17,7 @@ def main():
             "collect",
             "paper-live",
             "strategy-validate",
+            "strategy-package",
             "strategy-approve",
             "strategy-status",
             "strategy-revoke",
@@ -33,6 +34,9 @@ def main():
     parser.add_argument("--manifest", type=Path)
     parser.add_argument("--report-id")
     parser.add_argument("--actor")
+    parser.add_argument("--owner-public-key", type=Path)
+    parser.add_argument("--owner-request-id")
+    parser.add_argument("--owner-signature", type=Path)
     parser.add_argument("--reason", default="operator revoked")
     args = parser.parse_args()
     Settings.from_env()
@@ -54,7 +58,9 @@ def main():
         from neraium_poly.validation import ValidationStore
 
         args.data_dir.mkdir(parents=True, exist_ok=True)
-        store = ValidationStore(str(args.data_dir / "approval.sqlite"))
+        store = ValidationStore(
+            str(args.data_dir / "approval.sqlite"), owner_public_key=args.owner_public_key
+        )
         now = datetime.now(UTC)
         try:
             if args.command == "strategy-status":
@@ -64,10 +70,26 @@ def main():
                     parser.error("strategy-validate requires --dataset and --manifest")
                 report = store.validate(args.dataset, args.manifest, now)
                 result = report.model_dump(mode="json")
+            elif args.command == "strategy-package":
+                if not args.report_id or not args.output:
+                    parser.error("strategy-package requires --report-id and --output")
+                from neraium_poly.owner import canonical
+
+                result = store.prepare_owner_request(args.report_id, now)
+                args.output.parent.mkdir(parents=True, exist_ok=True)
+                args.output.write_bytes(canonical(result))
             elif args.command == "strategy-approve":
                 if not args.report_id or not args.actor:
                     parser.error("strategy-approve requires --report-id and --actor")
-                result = {"activation_id": store.approve(args.report_id, args.actor, now)}
+                result = {
+                    "activation_id": store.approve(
+                        args.report_id,
+                        args.actor,
+                        now,
+                        owner_request_id=args.owner_request_id,
+                        owner_signature=args.owner_signature.read_bytes() if args.owner_signature else None,
+                    )
+                }
             else:
                 if not args.actor:
                     parser.error("strategy-revoke requires --actor")
