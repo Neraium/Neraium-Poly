@@ -13,7 +13,7 @@ uv run neraium-poly paper-live --config config/paper-live.example.json
 uv run neraium-poly strategy-status --data-dir data/paper-live
 ```
 
-It scans real public markets, feeds observed books into relationship intelligence, and evaluates the explicit real-strategy approval gate before any paper order. With no passing real-data report and named approval, it continues collection and records why trading is withheld. No strategy or probability estimate is fabricated to create activity. See [persistent operation](docs/live-paper-operation.md) and [validation requirements](docs/real-strategy-validation.md). The commands below remain separate synthetic research demonstrations.
+It scans up to 200 liquid real public markets with bounded REST and native WebSocket ingestion, feeds observed books into relationship intelligence, and evaluates the explicit real-strategy approval gate before any paper order. With no passing real-data report and explicit signed owner approval, it continues collection and records why trading is withheld. No strategy or probability estimate is fabricated to create activity. See [persistent operation](docs/live-paper-operation.md) and [validation requirements](docs/real-strategy-validation.md). The commands below remain separate synthetic research demonstrations.
 
 ## Run locally
 
@@ -68,6 +68,6 @@ Browser tests serve the production frontend build with their own backend on port
 
 ## Boundaries
 
-This initial release is a local research platform. Calibration and backtest fixtures are synthetic; no real-market profitability has been established. BUY-only simulation, bounded public collection, a conservative maker approximation, and SQLite single-owner operation are deliberate limits. Historical order-book depth is not assumed. Long-running WebSocket soak tests, real-label out-of-sample evaluation and production throughput certification remain future work. PostgreSQL multi-process operation and additional exchanges need separate engineering validation.
+This initial release is a local research platform. Calibration and backtest fixtures are synthetic; no real-market profitability has been established. BUY-only simulation, bounded public collection, a conservative maker approximation, and SQLite single-owner operation are deliberate limits. Historical order-book depth is not assumed. Long-running WebSocket soak tests, qualified real-label out-of-sample evaluation and production throughput certification remain future work. PostgreSQL multi-process operation and additional exchanges need separate engineering validation.
 
-`PAPER_TRADING=true` and `LIVE_TRADING_ENABLED=false` are enforced at startup and in execution components. No wallets, signing, deposits, live orders, deployment or infrastructure changes are included. See [security](SECURITY.md), [eligibility](docs/eligibility.md), [architecture](docs/architecture.md), [operations](docs/operations.md) and [roadmap](docs/roadmap.md).
+`PAPER_TRADING=true` and `LIVE_TRADING_ENABLED=false` are enforced at startup and in execution components. No wallets, transaction signing, deposits or live orders are included. Detached owner signatures authorize paper strategy activation only. See [security](SECURITY.md), [eligibility](docs/eligibility.md), [architecture](docs/architecture.md), [operations](docs/operations.md) and [roadmap](docs/roadmap.md).

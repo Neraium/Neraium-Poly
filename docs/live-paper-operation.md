@@ -13,7 +13,16 @@ The installed `neraium-poly-paper.service` runs this command as ubuntu, starts a
 
 ## Real observations and execution
 
-Discovery rotates through bounded pages, default50 markets and all their outcome tokens per refresh. Public GET calls obey the adapter's rate limit/retry policy. The next discovery and book cursors are durable. The feed is REST polling; no WebSocket connection is claimed. Approved market scope is pinned and refreshed independently of the rotating research universe. Existing positions retain needed metadata.
+Discovery defaults to 200 eligible markets ordered by 24-hour volume, using
+bounded pages. It excludes markets without enabled books or accepting orders.
+Up to 400 binary outcome tokens subscribe to the public market WebSocket;
+bounded asynchronous REST fallback shares an 8-request/second limiter and four
+in-flight slots. Configuration caps both markets and subscriptions. Native full
+book/delta counters are separate from REST bootstrap counters. Scope changes,
+disconnects, queue overflow, unknown baselines and inconsistent deltas invalidate
+affected cached books and trigger bounded recovery. Freshness is never inferred
+from receipt time or a successful socket connection. Quiet books can be stale.
+Approved strategy scope and held-position metadata remain pinned independently.
 
 Source CLOB timestamps, receipt time, instrument identity, visible bid/ask levels and depth are preserved. The relationship engine uses **observed book midpoints as market observations**, never as independently validated probability estimates. Re-receiving an unchanged source timestamp cannot inflate the temporal baseline. Same-event associations are research hypotheses; logical settlement constraints are not inferred. Freshness, missing data, sample size, persistence, spread, liquidity and settlement semantics qualify or suppress findings.
 
@@ -29,8 +38,13 @@ Position notional and tier are configured independently of quantity: standard$2â
 uv run neraium-poly strategy-status --data-dir data/paper-live
 uv run neraium-poly strategy-validate --data-dir data/paper-live \
   --dataset reviewed-observations.json --manifest reviewed-manifest.json
+uv run neraium-poly strategy-package --data-dir data/paper-live \
+  --report-id EXACT_PASSING_REPORT_ID --output request.json
+# Only after independent owner review/signature and provisioned public-key trust:
 uv run neraium-poly strategy-approve --data-dir data/paper-live \
-  --report-id EXACT_PASSING_REPORT_ID --actor NAMED_RESEARCH_REVIEWER
+  --report-id EXACT_PASSING_REPORT_ID --actor OWNER_REVIEWER \
+  --owner-public-key /owner/provisioned/public.pem \
+  --owner-request-id EXACT_REQUEST_ID --owner-signature /owner/provided/signature.bin
 uv run neraium-poly strategy-revoke --data-dir data/paper-live \
   --actor NAMED_RESEARCH_REVIEWER --reason 'Review withdrawn'
 ```
@@ -53,4 +67,25 @@ Automatic simulated settlement defaults **off**. Closed flags, terminal prices a
 
 Both PAPER_TRADING=true and LIVE_TRADING_ENABLED=false are required. LiveBroker always raises; no wallet, signer or external order submission exists. The API stays on loopback and is not a public multi-user deployment.
 
-Default archive budget512MiB and free-disk floor2GiB stop collection/evaluation with a visible health error before resource exhaustion. No unrelated data is deleted or cleaned. Archive rotation/export is an explicit operator task; the service does not silently discard replay evidence. SQLite remains a single-owner research deployment, not a distributed trading system. Public HTTP responses can be cached; source freshness is enforced independently of receipt time. Strict15-second source-age checks and sequential bounded polling can leave many quiet books stale and suppress all opportunities. No minimum trade count is imposed.
+The supplied production configuration archive budget2GiB and free-disk floor8GiB stop collection/evaluation with a visible health error before resource exhaustion. No unrelated data is deleted or cleaned. Archive rotation/export is an explicit operator task; the service does not silently discard replay evidence. SQLite remains a single-owner research deployment, not a distributed trading system. Public HTTP responses can be cached; source freshness is enforced independently of receipt time. Strict15-second source-age checks and bounded polling/stream recovery can leave many quiet books stale and suppress all opportunities. No minimum trade count is imposed.
+
+
+## Phase8 research operation
+
+`research-acquire --research-dir NEW_DIRECTORY --event-first --max-events 250
+--max-history-requests 50` creates a bounded, immutable-provenance acquisition.
+Never overwrite an evidence directory. `research-evaluate --research-dir DIRECTORY
+--output REPORT` reproduces six-candidate evidence and calibration diagnostics.
+Use `uv sync --extra research` for optional Parquet archive inspection;
+`research-audit --research-dir ARCHIVE --output AUDIT` keeps publisher L2 claims
+separate from official executable books. See historical-evidence.md for actual
+sources, counts, hashes and unresolved provenance.
+
+The persistent service samples actual current depth states into a bounded replay
+archive with exact full states, quote-level deltas and receipt references. This
+is sampled live evidence, not a promise to archive every exchange tick. It
+refreshes the configured historical research report hourly. Historical API
+acquisition remains an explicit bounded CLI operation; it is not an unattended
+download loop. Report refresh cannot generate owner approval or certify missing
+evidence. Missing exact settlement availability, independent context, dependency
+review or historical executable books leaves model metrics and strategy P/L null.

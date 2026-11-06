@@ -495,6 +495,11 @@ class LivePaperRuntime:
                         reasons.append("feed_gap_or_resolution_invalidated_quote")
                         continue
                     book = current
+                    if not assess_book(
+                        book, self.clock(), max_age_seconds=self.config.max_book_age_seconds
+                    ).healthy:
+                        reasons.append("stale_or_incomplete_execution_book_after_network")
+                        continue
                     self._book_market(book)
                 if (
                     self.activation.relationship_tokens.get(book.market_id) != book.token_id

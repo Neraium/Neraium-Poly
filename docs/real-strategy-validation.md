@@ -5,16 +5,20 @@ relationship does not approve it. There is no bundled real-market dataset,
 passing report, approval or claimed profitable strategy. Without an active,
 verified approval, `load_active(now)` returns `None` and collection continues.
 
-```python
-from neraium_poly.validation import ValidationStore
-store = ValidationStore("data/live/validation.sqlite")
-report = store.validate("reviewed-observations.json", "reviewed-manifest.json", now)
-# Review the full report and its source evidence. This is deliberately separate:
-store.approve(report.id, actor="named-research-reviewer", now=review_time)
-activation = store.load_active(decision_time)
-# activation.registry/model_id/relationships/relationship_tokens/
-# settlement_reviews/correlation_groups/allowed_tiers feed PaperWorkflow.
-```
+After a real report passes, `strategy-package --report-id ID --output request.json`
+prepares an immutable canonical approval request. The owner independently reviews
+the report, raw provenance, dependency groups, model and deployment scope, then
+signs those exact bytes using an owner-controlled Ed25519 private key kept outside
+this service. The owner provisions only its public key in `owner_public_key`.
+`strategy-approve` requires `--owner-public-key`, `--owner-request-id`,
+`--owner-signature` and a named `--actor`; an actor string alone cannot approve.
+No production owner key or approval has been provisioned. Agents must not create
+an owner trust root or sign on the owner's behalf. Test keys stay test-only.
+
+The request binds report, dataset, manifest and model hashes, request identity,
+expiry and paper-only mode. Restart revalidates the detached signature and current
+public-key identity. Missing, changed, expired or invalid signatures fail closed.
+
 
 `revoke(actor, now, reason)` immediately removes active approval and records its
 reason. `status(now)` reports active status, exact blockers, report counts,
@@ -41,7 +45,7 @@ label availability, executable price/quantity and protocol fee rate) plus:
   verified final resolution evidence. Market prices cannot substitute for an
   outcome. Unverified or unavailable labels reject.
 
-Only one observation per distinct event is accepted across the entire dataset,
+An explicit dependency review and dependency-group assignment are required. Repeated groups across distinct event IDs reject rather than counting correlated windows as independent. Only one observation per distinct event is accepted across the entire dataset,
 so train and heldout events cannot overlap or inflate counts. Training decisions
 and available labels must precede `train_cutoff`; heldout decisions must follow
 it, and their outcomes must be available before validation. No historical book
@@ -95,7 +99,7 @@ approval the exact stored inputs are revalidated. On restart the registry and
 model artifact are reconstructed from training records, their model hash is
 checked, and the approval audit identity/time must match. Expired, changed,
 revoked or unreadable approvals fail closed. Data files are bounded to 20 MB by
-default. No API keys, wallet references or signing mechanism are used.
+default. No API keys or wallets are used. Owner signatures authorize paper strategy scope only; the application verifies signatures and has no owner signing function.
 
 These mechanical checks cannot establish whether an externally supplied file or
 provenance attestation tells the truth. A named review must inspect the actual

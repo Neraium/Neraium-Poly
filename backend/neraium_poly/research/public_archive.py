@@ -1,4 +1,5 @@
 """Bounded publisher-attributed L2 inspection, never certified exchange books."""
+
 from __future__ import annotations
 
 import hashlib
@@ -81,31 +82,41 @@ def iter_public_snapshots(
     _limits(max_rows, batch_size)
     count = 0
     for entry in _files(Path(directory)):
-        columns = ["market_slug", "token_id", "outcome", "captured_at", "market_end_at",
-                   "bid_prices", "bid_sizes", "ask_prices", "ask_sizes"]
+        columns = [
+            "market_slug",
+            "token_id",
+            "outcome",
+            "captured_at",
+            "market_end_at",
+            "bid_prices",
+            "bid_sizes",
+            "ask_prices",
+            "ask_sizes",
+        ]
         for batch in _reader(entry["path"]).iter_batches(batch_size=batch_size, columns=columns):
             for row in batch.to_pylist():
                 if count >= max_rows:
                     return
                 count += 1
-                if len(row["bid_prices"]) != len(row["bid_sizes"]) or len(
-                    row["ask_prices"]
-                ) != len(row["ask_sizes"]):
+                if len(row["bid_prices"]) != len(row["bid_sizes"]) or len(row["ask_prices"]) != len(
+                    row["ask_sizes"]
+                ):
                     raise ValueError("Publisher ladder lengths disagree")
                 yield PublisherSnapshot(
-                    market_slug=str(row["market_slug"]), token_id=str(row["token_id"]),
-                    outcome=str(row["outcome"]), captured_at=_time(row["captured_at"]),
+                    market_slug=str(row["market_slug"]),
+                    token_id=str(row["token_id"]),
+                    outcome=str(row["outcome"]),
+                    captured_at=_time(row["captured_at"]),
                     market_end_at=_time(row["market_end_at"]),
                     bids=tuple(zip(row["bid_prices"], row["bid_sizes"], strict=True)),
                     asks=tuple(zip(row["ask_prices"], row["ask_sizes"], strict=True)),
-                    publisher_url=entry["final_url"], raw_sha256=entry["sha256"],
+                    publisher_url=entry["final_url"],
+                    raw_sha256=entry["sha256"],
                     retrieved_at=_time(entry["retrieved_at"]),
                 )
 
 
-def audit_public_archive(
-    directory: str | Path, *, max_rows: int = 5000, batch_size: int = 512
-) -> dict:
+def audit_public_archive(directory: str | Path, *, max_rows: int = 5000, batch_size: int = 512) -> dict:
     """Deterministic bounded quality sample, not a representative performance estimate."""
     _limits(max_rows, batch_size)
     entries = _files(Path(directory))
@@ -120,22 +131,28 @@ def audit_public_archive(
         bids, asks = row.bids, row.asks
         counts["one_sided"] += not bids or not asks
         counts["invalid_or_zero_levels"] += any(
-            not math.isfinite(price) or not 0 < price < 1
-            or not math.isfinite(size) or size <= 0 for price, size in bids + asks
+            not math.isfinite(price) or not 0 < price < 1 or not math.isfinite(size) or size <= 0
+            for price, size in bids + asks
         )
-        counts["crossed_or_locked"] += bool(bids and asks and max(p for p, _ in bids)
-                                                    >= min(p for p, _ in asks))
-        counts["unsorted_ladders"] += any(bids[i][0] < bids[i+1][0]
-                                               for i in range(len(bids)-1)) or any(
-            asks[i][0] > asks[i+1][0] for i in range(len(asks)-1)
+        counts["crossed_or_locked"] += bool(
+            bids and asks and max(p for p, _ in bids) >= min(p for p, _ in asks)
+        )
+        counts["unsorted_ladders"] += any(bids[i][0] < bids[i + 1][0] for i in range(len(bids) - 1)) or any(
+            asks[i][0] > asks[i + 1][0] for i in range(len(asks) - 1)
         )
         counts["capture_at_or_after_end"] += row.captured_at >= row.market_end_at
     return {
-        "kind": "publisher_archive_quality_sample", "source_file_rows": totals,
-        "source_total_rows": sum(totals.values()), "sample_is_representative": False,
-        "sample_max_rows": max_rows, "batch_size": batch_size, **counts,
-        "sample_distinct_market_slugs": len(slugs), "sample_distinct_tokens": len(tokens),
-        "official_event_mapping_count": 0, "verified_outcome_count": 0,
+        "kind": "publisher_archive_quality_sample",
+        "source_file_rows": totals,
+        "source_total_rows": sum(totals.values()),
+        "sample_is_representative": False,
+        "sample_max_rows": max_rows,
+        "batch_size": batch_size,
+        **counts,
+        "sample_distinct_market_slugs": len(slugs),
+        "sample_distinct_tokens": len(tokens),
+        "official_event_mapping_count": 0,
+        "verified_outcome_count": 0,
         "certification_eligible_events": 0,
         "first_sample_capture": min(times).isoformat() if times else None,
         "last_sample_capture": max(times).isoformat() if times else None,

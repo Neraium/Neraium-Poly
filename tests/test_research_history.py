@@ -432,27 +432,48 @@ def publisher_archive(tmp_path, monkeypatch, now):
 
     from neraium_poly.research import public_archive
 
-    file = tmp_path / 'sample.parquet'
-    file.write_bytes(b'controlled test-only parquet substitute')
-    (tmp_path / 'manifest.json').write_text(json.dumps({'files': [{
-        'file': file.name, 'sha256': hashlib.sha256(file.read_bytes()).hexdigest(),
-        'bytes': file.stat().st_size, 'final_url': 'https://test.example/publisher',
-        'retrieved_at': now.isoformat(),
-    }]}))
-    rows = [{'market_slug': 'test-market', 'token_id': 'test-token', 'outcome': 'Up',
-             'captured_at': now - timedelta(days=1), 'market_end_at': now,
-             'bid_prices': [.4], 'bid_sizes': [2.], 'ask_prices': [.6], 'ask_sizes': [3.],
-             'winner': 'Up', 'is_winning_outcome': True}]
+    file = tmp_path / "sample.parquet"
+    file.write_bytes(b"controlled test-only parquet substitute")
+    (tmp_path / "manifest.json").write_text(
+        json.dumps(
+            {
+                "files": [
+                    {
+                        "file": file.name,
+                        "sha256": hashlib.sha256(file.read_bytes()).hexdigest(),
+                        "bytes": file.stat().st_size,
+                        "final_url": "https://test.example/publisher",
+                        "retrieved_at": now.isoformat(),
+                    }
+                ]
+            }
+        )
+    )
+    rows = [
+        {
+            "market_slug": "test-market",
+            "token_id": "test-token",
+            "outcome": "Up",
+            "captured_at": now - timedelta(days=1),
+            "market_end_at": now,
+            "bid_prices": [0.4],
+            "bid_sizes": [2.0],
+            "ask_prices": [0.6],
+            "ask_sizes": [3.0],
+            "winner": "Up",
+            "is_winning_outcome": True,
+        }
+    ]
 
     class Reader:
         metadata = SimpleNamespace(num_rows=1000)
 
         def iter_batches(self, batch_size, columns):
             assert batch_size <= 512
-            assert 'winner' not in columns and 'is_winning_outcome' not in columns
+            assert "winner" not in columns and "is_winning_outcome" not in columns
             yield SimpleNamespace(to_pylist=lambda: rows)
 
-    monkeypatch.setattr(public_archive, '_reader', lambda path: Reader())
+    monkeypatch.setattr(public_archive, "_reader", lambda path: Reader())
     return tmp_path, rows
 
 
@@ -462,23 +483,23 @@ def test_publisher_archive_capture_is_not_exchange_time_or_verified_label(publis
     directory, _ = publisher_archive
     snapshot = next(iter_public_snapshots(directory))
     assert snapshot.retrieved_at > snapshot.captured_at
-    assert not hasattr(snapshot, 'timestamp') and not hasattr(snapshot, 'available_at')
-    assert not hasattr(snapshot, 'winner') and not hasattr(snapshot, 'outcome_verified')
+    assert not hasattr(snapshot, "timestamp") and not hasattr(snapshot, "available_at")
+    assert not hasattr(snapshot, "winner") and not hasattr(snapshot, "outcome_verified")
     report = audit_public_archive(directory)
-    assert report['source_total_rows'] == 1000 and report['sampled_rows'] == 1
-    assert report['official_event_mapping_count'] == report['certification_eligible_events'] == 0
+    assert report["source_total_rows"] == 1000 and report["sampled_rows"] == 1
+    assert report["official_event_mapping_count"] == report["certification_eligible_events"] == 0
 
 
 def test_publisher_archive_quality_and_hard_bounds(publisher_archive):
     from neraium_poly.research.public_archive import audit_public_archive
 
     directory, rows = publisher_archive
-    rows[0].update(bid_prices=[.6, .7], bid_sizes=[0., 2.], ask_prices=[.5, .4], ask_sizes=[1., 1.])
+    rows[0].update(bid_prices=[0.6, 0.7], bid_sizes=[0.0, 2.0], ask_prices=[0.5, 0.4], ask_sizes=[1.0, 1.0])
     report = audit_public_archive(directory)
-    assert report['crossed_or_locked'] == 1
-    assert report['unsorted_ladders'] == 1 and report['invalid_or_zero_levels'] == 1
-    for kwargs in [{'max_rows': 5001}, {'batch_size': 513}, {'max_rows': 0}]:
-        with pytest.raises(ValueError, match='Audit limits'):
+    assert report["crossed_or_locked"] == 1
+    assert report["unsorted_ladders"] == 1 and report["invalid_or_zero_levels"] == 1
+    for kwargs in [{"max_rows": 5001}, {"batch_size": 513}, {"max_rows": 0}]:
+        with pytest.raises(ValueError, match="Audit limits"):
             audit_public_archive(directory, **kwargs)
 
 
@@ -486,13 +507,13 @@ def test_publisher_archive_rejects_tampering_lengths_and_naive_times(publisher_a
     from neraium_poly.research.public_archive import audit_public_archive
 
     directory, rows = publisher_archive
-    rows[0]['bid_sizes'] = []
-    with pytest.raises(ValueError, match='lengths'):
+    rows[0]["bid_sizes"] = []
+    with pytest.raises(ValueError, match="lengths"):
         audit_public_archive(directory)
-    rows[0]['bid_sizes'] = [1.]
-    rows[0]['captured_at'] = '2026-01-01T00:00:00'
-    with pytest.raises(ValueError, match='timezone'):
+    rows[0]["bid_sizes"] = [1.0]
+    rows[0]["captured_at"] = "2026-01-01T00:00:00"
+    with pytest.raises(ValueError, match="timezone"):
         audit_public_archive(directory)
-    (directory / 'sample.parquet').write_bytes(b'tampered')
-    with pytest.raises(ValueError, match='checksum'):
+    (directory / "sample.parquet").write_bytes(b"tampered")
+    with pytest.raises(ValueError, match="checksum"):
         audit_public_archive(directory)

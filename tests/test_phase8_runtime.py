@@ -125,3 +125,33 @@ async def test_pending_execution_uses_resolution_guard_not_raw_rest(tmp_path, no
 def test_subscription_cap_fails_before_network():
     with pytest.raises(ValueError, match="subscription cap"):
         LivePaperConfig(max_markets=500, max_subscription_tokens=800)
+
+
+async def test_one_sided_quote_after_fee_wait_is_explicitly_withheld(tmp_path, now):
+    clock = Clock(now)
+    adapter = FakeAdapter(clock)
+    validation = TestOnlyValidation(clock)
+    validation.activation = fixture_activation(clock, adapter.markets())
+    runtime = LivePaperRuntime(
+        configuration(tmp_path, websocket_enabled=False), adapter=adapter, validation=validation, clock=clock
+    )
+    runtime.coverage = TestCoverage(adapter)
+    runtime.trade_engine = RelationshipEngine(
+        RelationshipPolicy(baseline_size=3, persistence_required=2, max_age_seconds=15)
+    )
+    try:
+        for _ in range(3):
+            await cycle(runtime, clock)
+        await cycle(runtime, clock, shift=True)
+        runtime.fees.clear()
+
+        def vanish():
+            for token, book in list(runtime.coverage.latest.items()):
+                runtime.coverage.latest[token] = book.model_copy(update={"asks": ()})
+
+        adapter.fee_callback = vanish
+        await cycle(runtime, clock, shift=True)
+        assert not runtime.state()["orders"]
+        assert "stale_or_incomplete_execution_book_after_network" in runtime.last_cycle["suppression_reasons"]
+    finally:
+        await runtime.close()
