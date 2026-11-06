@@ -287,3 +287,17 @@ def test_tamper_detection_and_wrong_rule_outcome_not_scored(tmp_path):
     db.close()
     with pytest.raises(ValueError, match="corrupt forecast"):
         EventForecastLedger(tmp_path, clock=clock)
+
+
+def test_model_copy_cannot_bypass_forecast_field_validation(tmp_path):
+    clock = Clock()
+    ledger = EventForecastLedger(tmp_path, clock=clock)
+    f, _ = evidence(ledger, clock)
+    with pytest.raises(ValueError):
+        ledger.record_forecast(f.model_copy(update={"kind": "invented_independent_strategy"}))
+    with pytest.raises(ValueError):
+        ledger.record_forecast(f.model_copy(update={"probability": 1.5}))
+    with pytest.raises(ValueError):
+        ledger.record_forecast(f.model_copy(update={"certification_authority": True}))
+    assert ledger.summary()["forecasts"] == 0
+    ledger.close()

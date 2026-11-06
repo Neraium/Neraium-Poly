@@ -74,6 +74,7 @@ class EventForecastLedger:
             CREATE TABLE IF NOT EXISTS journal(
               seq INTEGER PRIMARY KEY,kind TEXT NOT NULL,id TEXT NOT NULL UNIQUE,
               payload TEXT NOT NULL,digest TEXT NOT NULL,previous TEXT,chain TEXT NOT NULL);
+            CREATE INDEX IF NOT EXISTS journal_event_kind ON journal(kind,json_extract(payload,'$.event_id'));
             CREATE TRIGGER IF NOT EXISTS journal_no_update BEFORE UPDATE ON journal
               BEGIN SELECT RAISE(ABORT,'forecast journal append only'); END;
             CREATE TRIGGER IF NOT EXISTS journal_no_delete BEFORE DELETE ON journal
@@ -135,7 +136,9 @@ class EventForecastLedger:
             return True
 
     def record_evidence(self, record):
-        record = EventEvidence.model_validate(record)
+        record = EventEvidence.model_validate(
+            record.model_dump() if isinstance(record, EventEvidence) else record
+        )
         now = self.clock()
         if record.available_at > now or content_sha256(record.payload) != record.content_sha256:
             raise ValueError("future or corrupt event evidence")
@@ -150,7 +153,9 @@ class EventForecastLedger:
         return EventEvidence.model_validate_json(row[0])
 
     def record_forecast(self, forecast):
-        forecast = EventForecast.model_validate(forecast)
+        forecast = EventForecast.model_validate(
+            forecast.model_dump() if isinstance(forecast, EventForecast) else forecast
+        )
         with self._lock:
             old = self.db.execute("SELECT kind,payload FROM journal WHERE id=?", (forecast.id,)).fetchone()
             if old:
@@ -256,7 +261,9 @@ class EventForecastLedger:
             return self._append("forecast", forecast)
 
     def record_outcome(self, outcome):
-        outcome = VerifiedEventOutcome.model_validate(outcome)
+        outcome = VerifiedEventOutcome.model_validate(
+            outcome.model_dump() if isinstance(outcome, VerifiedEventOutcome) else outcome
+        )
         with self._lock:
             old = self.db.execute("SELECT kind,payload FROM journal WHERE id=?", (outcome.id,)).fetchone()
             if old:
