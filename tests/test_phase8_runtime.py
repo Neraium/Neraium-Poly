@@ -155,3 +155,25 @@ async def test_one_sided_quote_after_fee_wait_is_explicitly_withheld(tmp_path, n
         assert "stale_or_incomplete_execution_book_after_network" in runtime.last_cycle["suppression_reasons"]
     finally:
         await runtime.close()
+
+
+async def test_relationship_reentry_after_restart_reuses_archived_definition(tmp_path, now):
+    clock = Clock(now)
+    cfg = configuration(tmp_path, websocket_enabled=False)
+    runtime = LivePaperRuntime(cfg, adapter=FakeAdapter(clock), clock=clock)
+    await runtime.discover()
+    original = next(iter(runtime.relationships.values()))
+    # The edge leaves the bounded liquid universe; the append-only archive remains.
+    runtime.relationships.clear()
+    runtime.engine.retain(set())
+    runtime._save()
+    await runtime.close()
+    clock.advance(300)
+    restarted = LivePaperRuntime(cfg, adapter=FakeAdapter(clock), clock=clock)
+    try:
+        await restarted.discover()
+        assert restarted.relationships[original.id] == original
+        assert restarted.state()["cash"] == 500
+        assert not restarted.state()["orders"]
+    finally:
+        await restarted.close()

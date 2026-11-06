@@ -231,6 +231,24 @@ class LivePaperRuntime:
             }
             self.engine.retain(active_ids)
             for relationship in generated:
+                if relationship.id not in self.relationships:
+                    # A liquid-universe edge can disappear and re-enter later.
+                    # Its stable identity retains the original immutable definition.
+                    archived = self.events.connection.execute(
+                        "SELECT kind,payload,digest FROM events WHERE id=?", (relationship.id,)
+                    ).fetchone()
+                    if archived is not None:
+                        kind, payload, digest = archived
+                        if (
+                            kind != "MarketRelationship"
+                            or hashlib.sha256(payload.encode()).hexdigest() != digest
+                        ):
+                            raise ValueError("invalid archived relationship definition")
+                        original = MarketRelationship.model_validate_json(payload)
+                        excluded = {"timestamp", "available_at"}
+                        if original.model_dump(exclude=excluded) != relationship.model_dump(exclude=excluded):
+                            raise ValueError("relationship semantics changed without versioned identity")
+                        relationship = original
                 self.relationships.setdefault(relationship.id, relationship)
                 if len(self.relationships) > self.config.max_relationships:
                     self.relationships.pop(relationship.id, None)
