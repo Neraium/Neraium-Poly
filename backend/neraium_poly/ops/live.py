@@ -493,6 +493,11 @@ class LivePaperRuntime:
                     with self._lock:
                         self.events.append(book)
                         self.books[book.token_id] = book
+                        self.last_receipt = self.clock()
+                        if assess_book(
+                            book, self.clock(), max_age_seconds=self.config.max_book_age_seconds
+                        ).healthy:
+                            self.last_success = self.clock()
                         self._book_market(book)
                     received.append(book)
                 except Exception as error:  # noqa: BLE001 - individual public-data failure withholds that instrument
@@ -665,7 +670,17 @@ class LivePaperRuntime:
                 if self.activation
                 else [],
                 "performance": self._latest("StrategyPerformance"),
-                "backtests": [validation["latest_report"]] if validation.get("latest_report") else [],
+                "backtests": [
+                    {
+                        **validation["latest_report"],
+                        "name": validation["latest_report"]["id"],
+                        "samples": validation["latest_report"]["heldout_events"],
+                        "pnl": validation["latest_report"]["simulated_pnl"],
+                        "limitations": "Explicit validation screen; no future returns guarantee",
+                    }
+                ]
+                if validation.get("latest_report")
+                else [],
                 "alerts": alerts,
                 "limits": self.risk.limits.model_dump(),
                 "health": [
@@ -725,6 +740,8 @@ class LivePaperRuntime:
 
 
 async def serve_live(config: LivePaperConfig):
+    logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s %(message)s")
+    logging.getLogger("httpx").setLevel(logging.WARNING)
     import uvicorn
 
     from .api import create_app

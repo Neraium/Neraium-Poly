@@ -19,3 +19,6 @@ uv run neraium-poly serve --database data/public.sqlite
 Default API port is 18740 and frontend development port is 18741, selected to avoid other Neraium services. Port reuse is disabled in browser certification. No existing services are stopped.
 
 Library workflow integration uses `PaperWorkflow(registry, model_id, relationships, relationship_engine, risk, broker, store, ...)`. Feed normalized observations with `ingest_market(market, now)`, then call `evaluate(book, now, fee_model, quantity=10)`. It archives context, suppression reasons, evidence, estimates, risk decisions and execution reports. Advance resting/partial orders with `process_order(client_order_id, book, now)`. Logical relationships need explicit settlement review; ambiguous outcome pairs need `relationship_tokens`. The model registry must already have an explicit approval. On restart, replay causal market inputs to rebuild relationship baselines; archived final results prevent repeated orders. See `tests/test_workflow.py` for a complete executable example using real subsystem implementations.
+
+
+The integrated persistent `paper-live` coordinator is documented in [live-paper-operation.md](live-paper-operation.md). It uses port18742 and durable capital/approval/execution state. Browser certification uses a separate production-build server on port18940 and leaves both live services intact.

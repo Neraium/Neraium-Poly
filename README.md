@@ -4,6 +4,17 @@
 
 Python modular monolith · React/TypeScript dashboard · versioned Pydantic contracts · SQLite research ledgers · public Polymarket data adapter.
 
+## Integrated real-market paper service
+
+The integrated coordinator runs at **http://127.0.0.1:18742** with persistent risk, broker and strategy ledgers:
+
+```sh
+uv run neraium-poly paper-live --config config/paper-live.example.json
+uv run neraium-poly strategy-status --data-dir data/paper-live
+```
+
+It scans real public markets, feeds observed books into relationship intelligence, and evaluates the explicit real-strategy approval gate before any paper order. With no passing real-data report and named approval, it continues collection and records why trading is withheld. No strategy or probability estimate is fabricated to create activity. See [persistent operation](docs/live-paper-operation.md) and [validation requirements](docs/real-strategy-validation.md). The commands below remain separate synthetic research demonstrations.
+
 ## Run locally
 
 Requires Python 3.12+, uv and Node.js 22+.
@@ -53,7 +64,7 @@ npm test --prefix frontend
 npm audit --prefix frontend --audit-level=high
 ```
 
-Browser tests launch their own backend and frontend on ports 18740/18741; stop this project's local server first. They never reuse another Neraium service. CI repeats contract, replay, strategy, risk, execution, concurrency, recovery, browser and dependency checks. Detailed evidence and limitations: [certification](docs/certification.md).
+Browser tests serve the production frontend build with their own backend on port18940, preserving the operational services. They never reuse another Neraium service. CI repeats contract, replay, strategy, risk, execution, concurrency, recovery, browser and dependency checks. Detailed evidence and limitations: [certification](docs/certification.md).
 
 ## Boundaries
 
