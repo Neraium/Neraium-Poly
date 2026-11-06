@@ -69,6 +69,10 @@ class RelationshipHistory:
             elif any(m and digest(_semantic(m)) != definition["semantic_sha256"][0 if side == "left" else 1]
                      for side, m in pairs):
                 reason = "contract_semantics_changed"
+            elif any(m and m.token_id in probe.current and m.token_id in self.coverage
+                     and (probe.current[m.token_id][1].timestamp-_time(self.coverage[m.token_id]["source_at"])).total_seconds() > 120
+                     for _, m in pairs):
+                reason = "source_gap_requires_new_baseline"
             elif any(m is None for _, m in pairs):
                 since = self.absent_since.setdefault(identity, now.isoformat())
                 if (now-_time(since)).total_seconds() >= 120:
@@ -77,11 +81,20 @@ class RelationshipHistory:
                 self.absent_since.pop(identity, None)
             if reason:
                 self._retire(identity, reason, now)
-        eligible = {}
+        eligible, blocked_tokens = {}, set()
         for token, (market, book) in probe.current.items():
             if market.end_time and market.end_time <= now:
                 continue
             previous = self.coverage.get(token)
+            quote_sha = digest(probe.raw_current[token][1])
+            if previous and previous.get("book_id") == book.id and previous.get("book_sha256") != quote_sha:
+                self.rejections["changed_book_identity"] += 1
+                blocked_tokens.add(token)
+                continue
+            if previous and previous.get("book_id") != book.id and book.timestamp <= _time(previous["source_at"]):
+                self.rejections["non_increasing_source_time"] += 1
+                blocked_tokens.add(token)
+                continue
             semantics = digest(_semantic(market))
             if previous is None or previous["semantics"] != semantics or (book.timestamp-_time(previous["source_at"])).total_seconds() > 120:
                 previous = {"first_at": book.timestamp.isoformat(), "count": 0, "book_id": None,
@@ -90,6 +103,7 @@ class RelationshipHistory:
                 previous["count"] += 1
                 previous["book_id"] = book.id
                 previous["source_at"] = book.timestamp.isoformat()
+                previous["book_sha256"] = quote_sha
             previous["seen_at"] = now.isoformat()
             self.coverage[token] = previous
             if previous["count"] >= 3 and (book.timestamp-_time(previous["first_at"])).total_seconds() >= 60:
@@ -122,7 +136,7 @@ class RelationshipHistory:
             tokens.update(pair)
         before = set(self.engine.definitions)
         selected = {"markets": [raw for raw in frame["markets"] if raw.get("token_id") in tokens],
-                    "books": [raw for raw in frame["books"] if raw.get("token_id") in tokens]}
+                    "books": [raw for raw in frame["books"] if raw.get("token_id") in tokens and raw.get("token_id") not in blocked_tokens]}
         result = self.engine.observe(selected, observed_at=now)
         self.version += len(set(self.engine.definitions)-before)
         return {"results": result.get("results", []), "selected_source_tokens": sorted(tokens), **self.summary()}
@@ -161,7 +175,9 @@ class RelationshipHistory:
                 or row["trading_authority"] is not False or _time(row["retired_at"]) > _time(value["last_at"])):
                 raise ValueError("invalid relationship retirement provenance")
         for row in value["coverage"].values():
-            if (type(row["count"]) is not int or row["count"] < 0 or _time(row["source_at"]) > _time(row["seen_at"])
+            if (type(row["count"]) is not int or row["count"] < 0
+                or not isinstance(row.get("book_sha256"), str) or len(row["book_sha256"]) != 64
+                or _time(row["source_at"]) > _time(row["seen_at"])
                 or _time(row["first_at"]) > _time(row["source_at"]) or _time(row["seen_at"]) > _time(value["last_at"])):
                 raise ValueError("invalid relationship selection chronology")
         candidate.coverage, candidate.absent_since = deepcopy(value["coverage"]), deepcopy(value["absent_since"])

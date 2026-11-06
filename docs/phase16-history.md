@@ -91,7 +91,8 @@ history completeness and two-sided depth, at most one pair per metadata parent.
 The default graph retains3pairs, with bounded selection coverage.
 
 Pairs retire when a contract closes/ends, semantics change, or a pair is absent
-from the observed universe for120seconds. A short stale-book interval alone does
+from the observed universe for120seconds. A resumed source gap exceeding120seconds
+also retires the old baseline before new warmup. A short stale-book interval alone does
 not retire a pair. Retirement records preserve definition, source proofs, prior
 joint state, reason, time, graph version and their hash. The bounded32-entry memory
 ring is not the historical archive: every study checkpoint must be archived by

@@ -226,3 +226,44 @@ def test_future_frame_ended_market_and_changed_checkpoint_authority_withhold():
     checkpoint = h.checkpoint(); checkpoint["history"]["fixture-token-1"][0]["trading_authority"] = True
     with pytest.raises(ValueError, match="invalid causal checkpoint point"):
         CausalHistory().restore(checkpoint)
+
+
+def test_checkpoint_old_label_cannot_claim_availability_after_scoring():
+    h = CausalHistory(history_size=60)
+    for i in range(70):
+        f, now = frame(i, tokens=1); h.observe(f, now=now)
+    checkpoint = h.checkpoint()
+    # This label's decision has left the bounded current history; label validation
+    # must independently enforce its original point-in-time provenance.
+    checkpoint["labels"][0]["label"]["available_at"] = (now+timedelta(seconds=1)).isoformat()
+    with pytest.raises(ValueError, match="matured label"):
+        CausalHistory(history_size=60).restore(checkpoint)
+
+
+def test_frame_receipt_cannot_precede_its_event_time():
+    f, now = frame(); f["timestamp"] = (now+timedelta(seconds=1)).isoformat()
+    assert CausalHistory().observe(f, now=now+timedelta(seconds=2))["current_observations"] == 0
+
+
+def test_graph_reused_identity_and_same_source_time_do_not_add_observations():
+    h = RelationshipHistory()
+    for i in range(4):
+        f, now = frame(i); h.observe(f, now=now)
+    baseline = h.engine.engine.states[next(iter(h.engine.definitions))]["observations"]
+    f["books"][0]["bids"][0]["size"] = 41
+    result = h.observe(f, now=now+timedelta(seconds=1))
+    assert result["graph_rejections"]["changed_book_identity"] == 1
+    f["books"][0]["id"] = "fixture-new-id-same-source-time"
+    result = h.observe(f, now=now+timedelta(seconds=2))
+    assert result["graph_rejections"]["non_increasing_source_time"] == 1
+    assert h.engine.engine.states[next(iter(h.engine.definitions))]["observations"] == baseline
+
+
+def test_graph_source_gap_retires_baseline_instead_of_manufacturing_persistence():
+    h = RelationshipHistory()
+    for i in range(4):
+        f, now = frame(i); h.observe(f, now=now)
+    f, now = frame(10); result = h.observe(f, now=now)
+    assert result["registered_statistical_candidates"] == 0
+    assert result["retirements_total"] == 1
+    assert h.retired[-1]["reason"] == "source_gap_requires_new_baseline"

@@ -112,7 +112,9 @@ class CausalHistory:
                 markets[market.token_id] = (market, raw)
             except (ValueError, TypeError):
                 self._reject("invalid_market_contract")
-        if any(frame.get(key) is not None and _time(frame[key]) > now for key in ("timestamp", "available_at")):
+        if (any(frame.get(key) is not None and _time(frame[key]) > now for key in ("timestamp", "available_at"))
+            or (frame.get("timestamp") is not None and frame.get("available_at") is not None
+                and _time(frame["timestamp"]) > _time(frame["available_at"]))):
             self._reject("future_frame")
             return {"accepted": [], "matured": [], "status": "withheld", **self.summary()}
         candidates = []
@@ -353,6 +355,14 @@ class CausalHistory:
             if (decision["token_id"] != actual["token_id"] or decision["rules_sha256"] != actual["rules_sha256"]
                 or label["target_at"] != target.isoformat() or not 0 <= (_time(actual["source_at"])-target).total_seconds() <= 30
                 or _time(label["label_observed_at"]) > _time(value["last_at"])
+                or _time(decision["source_at"]) > _time(decision["available_at"])
+                or _time(decision["available_at"]) > _time(decision["observed_at"])
+                or not _time(actual["source_at"]) <= _time(actual["available_at"]) <= _time(label["label_observed_at"])
+                or actual["observed_at"] != label["label_observed_at"]
+                or actual["bid_vwap"] != _vwap(actual["bids"])
+                or decision["bid_vwap"] != _vwap(decision["bids"])
+                or decision["quantity"] != 5.0 or actual["quantity"] != 5.0
+                or label["id"] != digest([decision["id"], actual["id"], "60s-top3-bid-mark"])
                 or label["actual_bid"] != actual["bid_vwap"] or label["unchanged_bid_baseline"] != decision["bid_vwap"]
                 or label["independent_outcome"] is not False or label["trading_authority"] is not False):
                 raise ValueError("invalid causal checkpoint matured label")
