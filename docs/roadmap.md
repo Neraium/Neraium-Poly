@@ -9,3 +9,11 @@
 6. Audit dependencies, document limitations, commit and push verified implementation.
 
 Future research: richer event ontology, independently labeled relationships, exchange-specific fees, calibrated models with real held-out labels, PostgreSQL multi-process reservations, queue-aware maker simulation, multi-exchange adapters. Live execution requires a separate release and explicit authorization.
+
+Phase8 implements auditable historical acquisition, six research candidates,
+baseline/calibration evaluation, liquid-market streaming and owner-signature
+paper activation gates. See [readiness](phase8-readiness.md) for actual data and
+limitations. The 100/100 independent-event gate remains unmet. Next research must
+corroborate outcomes/timing, dependency groups, point-in-time books and independent
+context before sealed heldout evaluation. Owner approval follows certification;
+it cannot substitute for evidence. No trading activation is scheduled.
