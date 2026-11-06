@@ -1,0 +1,54 @@
+{
+  "experimental": {
+    "cash": 500.0,
+    "bankroll": 500.0,
+    "simulated_pnl": 0.0,
+    "orders": 0,
+    "positions": 0,
+    "health": {
+      "status": "ok",
+      "account_id": "experimental-paper",
+      "validation_status": "unvalidated",
+      "paper_trading": true,
+      "live_trading_enabled": false,
+      "last_ingestion_at": "2026-11-06T04:27:02.610325+00:00",
+      "last_ingestion_age_seconds": 2.593447,
+      "last_error": null,
+      "fee_error": null,
+      "timestamp": "2026-11-06T04:27:05.203772+00:00"
+    }
+  },
+  "certified": {
+    "cash": 500.0,
+    "bankroll": 500.0,
+    "simulated_pnl": 0.0,
+    "orders": 0,
+    "positions": 0,
+    "health": {
+      "status": "ok",
+      "paper_trading": true,
+      "live_trading_enabled": false,
+      "mode": "live_market_paper",
+      "trading_status": "validation_blocked",
+      "last_ingestion_at": "2026-11-06T04:27:05.237972+00:00",
+      "last_ingestion_age_seconds": 0.001068,
+      "last_error": null,
+      "ledger_consistent": true,
+      "timestamp": "2026-11-06T04:27:05.239040+00:00"
+    }
+  },
+  "source_health": {
+    "status": "ok",
+    "paper_trading": true,
+    "live_trading_enabled": false,
+    "mode": "live_market_paper",
+    "trading_status": "validation_blocked",
+    "last_ingestion_at": "2026-11-06T04:27:05.270894+00:00",
+    "last_ingestion_age_seconds": 0.00014,
+    "last_error": null,
+    "ledger_consistent": true,
+    "timestamp": "2026-11-06T04:27:05.271034+00:00"
+  },
+  "observed_at": "2026-11-06T04:27:05.272224+00:00",
+  "systemd": "MainPID=2981665\nNRestarts=0\nActiveState=active\n\nMainPID=3014868\nNRestarts=0\nActiveState=active\n"
+}

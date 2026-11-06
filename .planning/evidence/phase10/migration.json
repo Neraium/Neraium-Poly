@@ -1,0 +1,68 @@
+{
+  "timestamp": "2026-11-06T04:22:19.036858+00:00",
+  "head": "c18e07e65945984d0132fdf36870687c8a717ff3",
+  "migration": {
+    "timestamp": "2026-11-06T04:22:19.011261+00:00",
+    "previous_hash": "6bcbf03d74b2ab86992d8e5b8f91af08a3ec787546316ca57a777fde70a3cd5c",
+    "new_hash": "5b8e3826fd59f57e9d9593c9af67271d3c0c9dc34cac80f2228ff361b67a7eea",
+    "reason": "Phase10 reviewed instrumentation and transient missing-book relationship baseline retention; estimator and risk thresholds unchanged, existing checkpoint compatibility tested; preserve capital and causal history",
+    "checkpoint_preserved": true,
+    "certification_authority": false,
+    "account_mutation": false
+  },
+  "bank_state_unchanged": true,
+  "before": {
+    "paper-live": {
+      "account": [
+        1,
+        500.0,
+        500.0,
+        0.0,
+        0,
+        "{\"bankroll\":500.0,\"aggregate_fraction\":0.2,\"market_fraction\":0.05,\"event_fraction\":0.1,\"correlation_fraction\":0.1,\"daily_loss_fraction\":0.05,\"drawdown_fraction\":0.1,\"max_book_age_seconds\":15.0,\"max_market_age_seconds\":3600.0,\"max_estimate_age_seconds\":300.0,\"max_evidence_age_seconds\":3600.0,\"max_spread\":0.05,\"min_net_edge\":0.03,\"max_liquidity_participation\":0.25,\"approval_ttl_seconds\":10.0,\"standard_min\":2.0,\"standard_max\":5.0,\"high_min\":5.0,\"high_max\":15.0,\"exceptional_min\":15.0,\"exceptional_max\":25.0,\"kelly_fraction\":0.1}"
+      ],
+      "positions": [],
+      "reservations": []
+    },
+    "experimental-paper": {
+      "account": [
+        1,
+        500.0,
+        500.0,
+        0.0,
+        0,
+        "{\"bankroll\":500.0,\"aggregate_fraction\":0.2,\"market_fraction\":0.05,\"event_fraction\":0.1,\"correlation_fraction\":0.1,\"daily_loss_fraction\":0.05,\"drawdown_fraction\":0.1,\"max_book_age_seconds\":15.0,\"max_market_age_seconds\":3600.0,\"max_estimate_age_seconds\":300.0,\"max_evidence_age_seconds\":3600.0,\"max_spread\":0.05,\"min_net_edge\":0.03,\"max_liquidity_participation\":0.25,\"approval_ttl_seconds\":10.0,\"standard_min\":2.0,\"standard_max\":5.0,\"high_min\":5.0,\"high_max\":15.0,\"exceptional_min\":15.0,\"exceptional_max\":25.0,\"kelly_fraction\":0.1}"
+      ],
+      "positions": [],
+      "reservations": []
+    }
+  },
+  "after": {
+    "paper-live": {
+      "account": [
+        1,
+        500.0,
+        500.0,
+        0.0,
+        0,
+        "{\"bankroll\":500.0,\"aggregate_fraction\":0.2,\"market_fraction\":0.05,\"event_fraction\":0.1,\"correlation_fraction\":0.1,\"daily_loss_fraction\":0.05,\"drawdown_fraction\":0.1,\"max_book_age_seconds\":15.0,\"max_market_age_seconds\":3600.0,\"max_estimate_age_seconds\":300.0,\"max_evidence_age_seconds\":3600.0,\"max_spread\":0.05,\"min_net_edge\":0.03,\"max_liquidity_participation\":0.25,\"approval_ttl_seconds\":10.0,\"standard_min\":2.0,\"standard_max\":5.0,\"high_min\":5.0,\"high_max\":15.0,\"exceptional_min\":15.0,\"exceptional_max\":25.0,\"kelly_fraction\":0.1}"
+      ],
+      "positions": [],
+      "reservations": []
+    },
+    "experimental-paper": {
+      "account": [
+        1,
+        500.0,
+        500.0,
+        0.0,
+        0,
+        "{\"bankroll\":500.0,\"aggregate_fraction\":0.2,\"market_fraction\":0.05,\"event_fraction\":0.1,\"correlation_fraction\":0.1,\"daily_loss_fraction\":0.05,\"drawdown_fraction\":0.1,\"max_book_age_seconds\":15.0,\"max_market_age_seconds\":3600.0,\"max_estimate_age_seconds\":300.0,\"max_evidence_age_seconds\":3600.0,\"max_spread\":0.05,\"min_net_edge\":0.03,\"max_liquidity_participation\":0.25,\"approval_ttl_seconds\":10.0,\"standard_min\":2.0,\"standard_max\":5.0,\"high_min\":5.0,\"high_max\":15.0,\"exceptional_min\":15.0,\"exceptional_max\":25.0,\"kelly_fraction\":0.1}"
+      ],
+      "positions": [],
+      "reservations": []
+    }
+  },
+  "backup": "data/phase10-operations/service-before-migration.sqlite",
+  "backup_sha256": "5a7f0610aa62bbe043c3484c9f97e58a653a013b86b731d7928ce2c5c560dfc9"
+}

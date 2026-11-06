@@ -1,0 +1,3853 @@
+{
+  "observed_at": "2026-11-06T04:24:51.550059+00:00",
+  "source_markets": 200,
+  "source_tokens": 400,
+  "source_fresh_books": 219,
+  "selected_tokens": 64,
+  "experimental_markets": 33,
+  "experimental_fresh_books": 33,
+  "source_health": {
+    "status": "ok",
+    "last_error": null,
+    "books_withheld_at_export": 0,
+    "last_ingestion_at": "2026-11-06T04:24:51.099608+00:00",
+    "paper_trading": true,
+    "live_trading_enabled": false
+  },
+  "connectivity": {
+    "messages": 4840959,
+    "native_book_frames": 30705,
+    "native_delta_frames": 4805053,
+    "native_books_delivered": 7325238,
+    "rest_books": 36410,
+    "reconnects": 0,
+    "gaps": 2102934,
+    "out_of_order": 213190,
+    "queue_overflows": 0,
+    "invalid_frames": 0,
+    "callbacks_failed": 0,
+    "invalidations": 2102987,
+    "resnapshot_failures": 0,
+    "gap_missing_baseline": 2087105,
+    "gap_source_time": 7453,
+    "gap_top_integrity": 7824,
+    "gap_invalid_delta": 476,
+    "stale_recovery_baselines": 657,
+    "ws_connected": true,
+    "subscribed_tokens": 400,
+    "cached_books": 389,
+    "resolved_tokens_withheld": 0,
+    "gap_tokens_withheld": 11,
+    "fresh_books": 262,
+    "queue_depth": 1,
+    "resnapshot_pending": 0,
+    "connection_generation": 35,
+    "last_message_at": "2026-11-06T04:24:51.099639+00:00",
+    "last_gap_at": "2026-11-06T04:24:50.727810+00:00",
+    "http_requests": 36587,
+    "http_rate_limits": 0,
+    "http_peak_inflight": 3,
+    "rate_requests_per_second": 8.0
+  },
+  "services": {
+    "neraium-poly-paper.service": {
+      "pid": 2981665,
+      "execution_flags": [
+        "PAPER_TRADING=true",
+        "LIVE_TRADING_ENABLED=false"
+      ]
+    },
+    "neraium-poly-experimental.service": {
+      "pid": 3014868,
+      "execution_flags": [
+        "PAPER_TRADING=true",
+        "LIVE_TRADING_ENABLED=false"
+      ]
+    }
+  },
+  "experimental_health": {
+    "status": "ok",
+    "account_id": "experimental-paper",
+    "validation_status": "unvalidated",
+    "paper_trading": true,
+    "live_trading_enabled": false,
+    "last_ingestion_at": "2026-11-06T04:24:43.511975+00:00",
+    "last_ingestion_age_seconds": 5.334685,
+    "last_error": null,
+    "fee_error": null,
+    "timestamp": "2026-11-06T04:24:48.846660+00:00"
+  },
+  "experimental": {
+    "cash": 500.0,
+    "bankroll": 500.0,
+    "initial_bankroll": 500.0,
+    "simulated_pnl": 0.0,
+    "simulated_realized_pnl": 0.0,
+    "simulated_unrealized_pnl": 0.0,
+    "orders_attempted": 0,
+    "orders_submitted": 0,
+    "fills": 0,
+    "positions": [],
+    "experimental_totals": {
+      "cycles": 1164,
+      "observations": 49446,
+      "qualified_opportunities": 0,
+      "signals": 333666
+    },
+    "reconciliation": {
+      "consistent": true,
+      "mismatches": [],
+      "pending_orders": [],
+      "unavailable": [],
+      "positions": [],
+      "portfolio": {
+        "cash": 500.0,
+        "reserved": 0,
+        "invested": 0,
+        "exposure": 0,
+        "equity": 500.0,
+        "peak": 500.0,
+        "realized_pnl": 0.0,
+        "daily_pnl": 0,
+        "kill_switch": false,
+        "drawdown": 0,
+        "simulated": true
+      },
+      "simulated": true,
+      "experimental_inventory_reconciled": true,
+      "experimental_cash_reconciled": true
+    }
+  },
+  "certified": {
+    "cash": 500.0,
+    "bankroll": 500.0,
+    "initial_bankroll": 500.0,
+    "simulated_pnl": 0.0,
+    "positions": [],
+    "orders": []
+  },
+  "certified_validation": {
+    "active": false,
+    "owner_approval_required": true,
+    "owner_public_key_configured": false,
+    "report_id": null,
+    "model_id": null,
+    "reports": 0,
+    "passing_reports": 0,
+    "latest_report": null,
+    "blockers": [
+      "no_explicit_real_strategy_approval"
+    ],
+    "requirements": [
+      "At least 100 independent training events and 100 heldout events",
+      "Point-in-time executable books and independent evidence with verified final labels",
+      "Heldout calibration, confidence-bounded improvement and cost-adjusted edge",
+      "Explicit provenance review and separate actor approval; no automatic promotion"
+    ]
+  },
+  "decision_trace": {
+    "schema_version": "1.0",
+    "epoch_started_at": "2026-11-06T04:22:19.671107+00:00",
+    "last_evaluation_at": "2026-11-06T04:24:43.297623+00:00",
+    "counter_scope": {
+      "phase10_epoch": "Cumulative since explicit trace epoch; persisted across restart; legacy counts retained separately",
+      "latest_cycle": "Latest engine evaluation plus subsequent admission/execution events; replaced on each evaluation; service health reports later cycle failures",
+      "strategy_id": "Each strategy has independent counters; rejected reasons are nonexclusive and do not sum to rejected signals",
+      "candidate_signals": "Data/evidence prerequisites passed with a numerical valuation; cost/risk can still reject",
+      "qualified_opportunities": "Strategy admission predicates passed before portfolio risk",
+      "order_attempts": "A paper order intent was created and presented to risk; not all qualified opportunities create an intent",
+      "fills": "New simulated execution fill events including partials; entries/exits reported separately"
+    },
+    "phase10_epoch": {
+      "strategies": {
+        "calibrated_forecast": {
+          "cancelled_orders": 0,
+          "candidate_signals": 0,
+          "duplicate_signals": 435,
+          "emitted_signals": 1229,
+          "expired_orders": 0,
+          "fills": 0,
+          "markets_considered": 1664,
+          "order_attempts": 0,
+          "qualified_opportunities": 0,
+          "reasons": {
+            "independent_context_verified_labels_and_calibration_required": {
+              "category": "CERTIFICATION DEPENDENCY",
+              "count": 1664,
+              "samples": [
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 2.384846,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 1,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:20:28.500839+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6507380",
+                  "signal_id": "f7d84997b686d3ce9d0432e9f1b5a14af8b014eceea66027897b57382ec6407e",
+                  "timestamp": "2026-11-06T04:22:20.052846+00:00",
+                  "token_id": "100063340678399453619037549684979791875230113493746028286298866490793476208749"
+                },
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 1.745927,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 1,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:20:28.500839+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6507380",
+                  "signal_id": "3a70caa101982ebd3c3387b33ecdb6a20b2dcb642faf29a74b4f5c70dbbf8620",
+                  "timestamp": "2026-11-06T04:22:25.560927+00:00",
+                  "token_id": "100063340678399453619037549684979791875230113493746028286298866490793476208749"
+                },
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 0.759512,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 1,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:20:28.500839+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6507380",
+                  "signal_id": "88fa2a6f3fbd9e58e7bae70114dccdfc76025e01446aa1538056b93a446fc879",
+                  "timestamp": "2026-11-06T04:22:31.151512+00:00",
+                  "token_id": "100063340678399453619037549684979791875230113493746028286298866490793476208749"
+                }
+              ]
+            },
+            "missing_book": {
+              "category": "MISSING EVIDENCE",
+              "count": 57,
+              "samples": [
+                {
+                  "diagnostics": {
+                    "book_age_seconds": null,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:21:22.153942+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6423885",
+                  "signal_id": "58e4fc3a3f3fb8287343695a0b3360fa8d343ae37a9b16db59f32ac0fda631d5",
+                  "timestamp": "2026-11-06T04:22:25.560927+00:00",
+                  "token_id": "113888739003330413348261539134884858114090652439144846869649003571862177350188"
+                },
+                {
+                  "diagnostics": {
+                    "book_age_seconds": null,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:21:22.153942+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6423885",
+                  "signal_id": "61e8488e79f8cf411d36cba4216d7a755ffc3770f382d769ef18c62acbad84ea",
+                  "timestamp": "2026-11-06T04:22:31.151512+00:00",
+                  "token_id": "113888739003330413348261539134884858114090652439144846869649003571862177350188"
+                },
+                {
+                  "diagnostics": {
+                    "book_age_seconds": null,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:20:06.753301+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "3215006",
+                  "signal_id": "4f0c9f440df263c6e45862fc386a9aefceed1dcfd2e809cf6097e36676171271",
+                  "timestamp": "2026-11-06T04:22:36.755744+00:00",
+                  "token_id": "23677896678650147625251750117853328843601853501710889530409633595389256242910"
+                }
+              ]
+            },
+            "missing_liquidity": {
+              "category": "MISSING EVIDENCE",
+              "count": 52,
+              "samples": [
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 0.418846,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:21:27.875311+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6705227",
+                  "signal_id": "e14042b5dbf7407f0e422ab14aec70c65cf487830c7a9cfdda72509e8c015162",
+                  "timestamp": "2026-11-06T04:22:20.052846+00:00",
+                  "token_id": "79015921464368616102162879247031217347021507875295490334855498616315688379225"
+                },
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 0.970927,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:21:27.875311+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6705227",
+                  "signal_id": "d6d68b4ceca44a1ef4544caac658930dfec6497224327dba7ce8f61bab47907d",
+                  "timestamp": "2026-11-06T04:22:25.560927+00:00",
+                  "token_id": "79015921464368616102162879247031217347021507875295490334855498616315688379225"
+                },
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 0.538512,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:21:27.875311+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6705227",
+                  "signal_id": "1c82af89e8a68cc846df764cb24014dad5cc0a6aa5ea0141c73ce26a75671706",
+                  "timestamp": "2026-11-06T04:22:31.151512+00:00",
+                  "token_id": "79015921464368616102162879247031217347021507875295490334855498616315688379225"
+                }
+              ]
+            },
+            "stale_book": {
+              "category": "MISSING EVIDENCE",
+              "count": 302,
+              "samples": [
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 15.310846,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:18:46.277244+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "4397025",
+                  "signal_id": "afb86d9539ae71fd25e4c6c023bc465bc6f8f9f8c57d1eb02a8c84de5e00f751",
+                  "timestamp": "2026-11-06T04:22:20.052846+00:00",
+                  "token_id": "101996110023306359267215939819928021406998500989415641847320025626005179879667"
+                },
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 18.714512,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:21:51.132697+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "3215005",
+                  "signal_id": "f9aa57b6351f1b4f54fcc013008cf36a04d4396504f7771dfbdfdf332e762041",
+                  "timestamp": "2026-11-06T04:22:31.151512+00:00",
+                  "token_id": "104236736263775307891497202874191911203963566711959725788584750440530976742193"
+                },
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 15.427744,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:19:49.245184+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "3215007",
+                  "signal_id": "c7b988b372db325b5050aa6d0d6b0c4b25ed36117cc452ee53eb0b20aa8a6ccb",
+                  "timestamp": "2026-11-06T04:22:36.755744+00:00",
+                  "token_id": "42865728742506860386768556888821101266630139112044622335353850919229585308601"
+                }
+              ]
+            },
+            "unknown_fee_schedule": {
+              "category": "MISSING EVIDENCE",
+              "count": 130,
+              "samples": [
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 0.753846,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 1,
+                    "evidence_gate_passed": 0,
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "3128768",
+                  "signal_id": "7e1da95a4525eb63affd1c6a1188ecff479c6d55f2863d865d13e9faeffe19d7",
+                  "timestamp": "2026-11-06T04:22:20.052846+00:00",
+                  "token_id": "29437165757872171455593111483309548889820974982069052877568301892400345063381"
+                },
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 4.011927,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 1,
+                    "evidence_gate_passed": 0,
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "3128768",
+                  "signal_id": "359ac3ce42575d208ef38d6b00056f965326a7338efcec0d473d6668fbc40745",
+                  "timestamp": "2026-11-06T04:22:25.560927+00:00",
+                  "token_id": "29437165757872171455593111483309548889820974982069052877568301892400345063381"
+                },
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 0.785512,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 1,
+                    "evidence_gate_passed": 0,
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "3128768",
+                  "signal_id": "9961237051cabfebc53256d22c73e9a56a52623520f8adbcad81e43d160dcca1",
+                  "timestamp": "2026-11-06T04:22:31.151512+00:00",
+                  "token_id": "29437165757872171455593111483309548889820974982069052877568301892400345063381"
+                }
+              ]
+            }
+          },
+          "rejected_signals": 1664,
+          "risk_rejections": 0,
+          "submitted_orders": 0,
+          "valid_observations": 1253
+        },
+        "cross_market_consistency": {
+          "cancelled_orders": 0,
+          "candidate_signals": 0,
+          "duplicate_signals": 435,
+          "emitted_signals": 1229,
+          "expired_orders": 0,
+          "fills": 0,
+          "markets_considered": 1664,
+          "order_attempts": 0,
+          "qualified_opportunities": 0,
+          "reasons": {
+            "independently_reviewed_exhaustive_payoff_scope_required": {
+              "category": "MISSING EVIDENCE",
+              "count": 1664,
+              "samples": [
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 2.384846,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 1,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:20:28.500839+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6507380",
+                  "signal_id": "c0a5acbecd6a89532ce71371ed6606408b73cf13544dfff6673c1746ecc4d212",
+                  "timestamp": "2026-11-06T04:22:20.052846+00:00",
+                  "token_id": "100063340678399453619037549684979791875230113493746028286298866490793476208749"
+                },
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 1.745927,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 1,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:20:28.500839+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6507380",
+                  "signal_id": "d71d1fff33cde720e8cf43929533206f8dc6376d4f0f42b8dc56d4057509c173",
+                  "timestamp": "2026-11-06T04:22:25.560927+00:00",
+                  "token_id": "100063340678399453619037549684979791875230113493746028286298866490793476208749"
+                },
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 0.759512,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 1,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:20:28.500839+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6507380",
+                  "signal_id": "c5f33968104cd0b597268735aa787a93fc69638e7a8237af129cb986be93b8cb",
+                  "timestamp": "2026-11-06T04:22:31.151512+00:00",
+                  "token_id": "100063340678399453619037549684979791875230113493746028286298866490793476208749"
+                }
+              ]
+            },
+            "missing_book": {
+              "category": "MISSING EVIDENCE",
+              "count": 57,
+              "samples": [
+                {
+                  "diagnostics": {
+                    "book_age_seconds": null,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:21:22.153942+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6423885",
+                  "signal_id": "9baeb662f93f8178a14871edff7e3128d32cd3aa231306ecfea359ed07ad5b0c",
+                  "timestamp": "2026-11-06T04:22:25.560927+00:00",
+                  "token_id": "113888739003330413348261539134884858114090652439144846869649003571862177350188"
+                },
+                {
+                  "diagnostics": {
+                    "book_age_seconds": null,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:21:22.153942+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6423885",
+                  "signal_id": "b8dd494a2e27a73e760158b722244201151f260fbd5ac8c1bc883c7c7f5c9302",
+                  "timestamp": "2026-11-06T04:22:31.151512+00:00",
+                  "token_id": "113888739003330413348261539134884858114090652439144846869649003571862177350188"
+                },
+                {
+                  "diagnostics": {
+                    "book_age_seconds": null,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:20:06.753301+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "3215006",
+                  "signal_id": "b64765dc7c3b7e261e538c03e6df78e1d63a0f731f652a29bdfae8e881b68f5c",
+                  "timestamp": "2026-11-06T04:22:36.755744+00:00",
+                  "token_id": "23677896678650147625251750117853328843601853501710889530409633595389256242910"
+                }
+              ]
+            },
+            "missing_liquidity": {
+              "category": "MISSING EVIDENCE",
+              "count": 52,
+              "samples": [
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 0.418846,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:21:27.875311+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6705227",
+                  "signal_id": "4e4a09793f19c9f2ae96e19fac5c4053aefd6f21938c2cc66af9acfa0a778c16",
+                  "timestamp": "2026-11-06T04:22:20.052846+00:00",
+                  "token_id": "79015921464368616102162879247031217347021507875295490334855498616315688379225"
+                },
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 0.970927,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:21:27.875311+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6705227",
+                  "signal_id": "7bf4acee3b0be1d19245f1502834c6834cf5532a1f6875662d4b5186c28a1aeb",
+                  "timestamp": "2026-11-06T04:22:25.560927+00:00",
+                  "token_id": "79015921464368616102162879247031217347021507875295490334855498616315688379225"
+                },
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 0.538512,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:21:27.875311+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6705227",
+                  "signal_id": "efb7503d2745154115d96eda6cf7d8072914e043655669e845f51f6bad443d87",
+                  "timestamp": "2026-11-06T04:22:31.151512+00:00",
+                  "token_id": "79015921464368616102162879247031217347021507875295490334855498616315688379225"
+                }
+              ]
+            },
+            "multi_leg_execution_and_hedging_not_supported": {
+              "category": "STRATEGY LIMITATION",
+              "count": 1664,
+              "samples": [
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 2.384846,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 1,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:20:28.500839+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6507380",
+                  "signal_id": "c0a5acbecd6a89532ce71371ed6606408b73cf13544dfff6673c1746ecc4d212",
+                  "timestamp": "2026-11-06T04:22:20.052846+00:00",
+                  "token_id": "100063340678399453619037549684979791875230113493746028286298866490793476208749"
+                },
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 1.745927,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 1,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:20:28.500839+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6507380",
+                  "signal_id": "d71d1fff33cde720e8cf43929533206f8dc6376d4f0f42b8dc56d4057509c173",
+                  "timestamp": "2026-11-06T04:22:25.560927+00:00",
+                  "token_id": "100063340678399453619037549684979791875230113493746028286298866490793476208749"
+                },
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 0.759512,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 1,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:20:28.500839+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6507380",
+                  "signal_id": "c5f33968104cd0b597268735aa787a93fc69638e7a8237af129cb986be93b8cb",
+                  "timestamp": "2026-11-06T04:22:31.151512+00:00",
+                  "token_id": "100063340678399453619037549684979791875230113493746028286298866490793476208749"
+                }
+              ]
+            },
+            "stale_book": {
+              "category": "MISSING EVIDENCE",
+              "count": 302,
+              "samples": [
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 15.310846,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:18:46.277244+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "4397025",
+                  "signal_id": "b8593a14306c94d692cf7899ce5376e7ae81dcc5e365e29d1231f5ac8b8af223",
+                  "timestamp": "2026-11-06T04:22:20.052846+00:00",
+                  "token_id": "101996110023306359267215939819928021406998500989415641847320025626005179879667"
+                },
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 18.714512,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:21:51.132697+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "3215005",
+                  "signal_id": "d9430888f71612b3a7a00d85d387204fd76396ff64d51692c98ab29dc24100da",
+                  "timestamp": "2026-11-06T04:22:31.151512+00:00",
+                  "token_id": "104236736263775307891497202874191911203963566711959725788584750440530976742193"
+                },
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 15.427744,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:19:49.245184+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "3215007",
+                  "signal_id": "5f7eafa5157914b65fdbca033ee5c457383e64917bdd1beff75da852bbac513d",
+                  "timestamp": "2026-11-06T04:22:36.755744+00:00",
+                  "token_id": "42865728742506860386768556888821101266630139112044622335353850919229585308601"
+                }
+              ]
+            },
+            "unknown_fee_schedule": {
+              "category": "MISSING EVIDENCE",
+              "count": 130,
+              "samples": [
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 0.753846,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 1,
+                    "evidence_gate_passed": 0,
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "3128768",
+                  "signal_id": "8543676ccc136a22c97da482af012d4da907b463f5867581b7f0fe604ed80eac",
+                  "timestamp": "2026-11-06T04:22:20.052846+00:00",
+                  "token_id": "29437165757872171455593111483309548889820974982069052877568301892400345063381"
+                },
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 4.011927,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 1,
+                    "evidence_gate_passed": 0,
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "3128768",
+                  "signal_id": "6092ee9ea4c0d34d8caa77297fdf753878e9021fd6eba9a33026df2070407b74",
+                  "timestamp": "2026-11-06T04:22:25.560927+00:00",
+                  "token_id": "29437165757872171455593111483309548889820974982069052877568301892400345063381"
+                },
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 0.785512,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 1,
+                    "evidence_gate_passed": 0,
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "3128768",
+                  "signal_id": "891614c5ce08109f780954612ab8fb312d97db041341d63531ed3e13dbea5465",
+                  "timestamp": "2026-11-06T04:22:31.151512+00:00",
+                  "token_id": "29437165757872171455593111483309548889820974982069052877568301892400345063381"
+                }
+              ]
+            }
+          },
+          "rejected_signals": 1664,
+          "risk_rejections": 0,
+          "submitted_orders": 0,
+          "valid_observations": 1253
+        },
+        "event_driven": {
+          "cancelled_orders": 0,
+          "candidate_signals": 0,
+          "duplicate_signals": 435,
+          "emitted_signals": 1229,
+          "expired_orders": 0,
+          "fills": 0,
+          "markets_considered": 1664,
+          "order_attempts": 0,
+          "qualified_opportunities": 0,
+          "reasons": {
+            "independent_predecision_context_and_response_model_required": {
+              "category": "MISSING EVIDENCE",
+              "count": 1664,
+              "samples": [
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 2.384846,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 1,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:20:28.500839+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6507380",
+                  "signal_id": "356bca3f616a2ff34ac948fdb7e1316f419789befd10a9b866fe3df3c3b7e13d",
+                  "timestamp": "2026-11-06T04:22:20.052846+00:00",
+                  "token_id": "100063340678399453619037549684979791875230113493746028286298866490793476208749"
+                },
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 1.745927,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 1,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:20:28.500839+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6507380",
+                  "signal_id": "2b94468cfcb9e61112a8ca0f0b4e6cbdaa283cd24063f00adf200cdd5a578db1",
+                  "timestamp": "2026-11-06T04:22:25.560927+00:00",
+                  "token_id": "100063340678399453619037549684979791875230113493746028286298866490793476208749"
+                },
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 0.759512,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 1,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:20:28.500839+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6507380",
+                  "signal_id": "34220375ed8710692063d186e67a0a807232f9e0e91481ba323fba48b57713d2",
+                  "timestamp": "2026-11-06T04:22:31.151512+00:00",
+                  "token_id": "100063340678399453619037549684979791875230113493746028286298866490793476208749"
+                }
+              ]
+            },
+            "missing_book": {
+              "category": "MISSING EVIDENCE",
+              "count": 57,
+              "samples": [
+                {
+                  "diagnostics": {
+                    "book_age_seconds": null,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:21:22.153942+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6423885",
+                  "signal_id": "369a207127abaa84b4b51771692ae104be6e1d084e40c7668b650dcc897a493b",
+                  "timestamp": "2026-11-06T04:22:25.560927+00:00",
+                  "token_id": "113888739003330413348261539134884858114090652439144846869649003571862177350188"
+                },
+                {
+                  "diagnostics": {
+                    "book_age_seconds": null,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:21:22.153942+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6423885",
+                  "signal_id": "bcfcde9f8ca5f6fc20599e7571fe4a1ed01fdcbbf3f8d8786862a728f1f41212",
+                  "timestamp": "2026-11-06T04:22:31.151512+00:00",
+                  "token_id": "113888739003330413348261539134884858114090652439144846869649003571862177350188"
+                },
+                {
+                  "diagnostics": {
+                    "book_age_seconds": null,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:20:06.753301+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "3215006",
+                  "signal_id": "702429fa30a307dec7d709e0b1bb07b0fa57fe35e33fc5550c65a95f76228d60",
+                  "timestamp": "2026-11-06T04:22:36.755744+00:00",
+                  "token_id": "23677896678650147625251750117853328843601853501710889530409633595389256242910"
+                }
+              ]
+            },
+            "missing_liquidity": {
+              "category": "MISSING EVIDENCE",
+              "count": 52,
+              "samples": [
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 0.418846,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:21:27.875311+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6705227",
+                  "signal_id": "aef0080a705528d0154855c3dfdd624720c92deef05c1d3f2431faddf271f5c4",
+                  "timestamp": "2026-11-06T04:22:20.052846+00:00",
+                  "token_id": "79015921464368616102162879247031217347021507875295490334855498616315688379225"
+                },
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 0.970927,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:21:27.875311+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6705227",
+                  "signal_id": "88f8c50ffd349412f1268a05a3ea7776fd2579dbae0fe0d9819a209b28e9d417",
+                  "timestamp": "2026-11-06T04:22:25.560927+00:00",
+                  "token_id": "79015921464368616102162879247031217347021507875295490334855498616315688379225"
+                },
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 0.538512,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:21:27.875311+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6705227",
+                  "signal_id": "da2c3af0ef41f3fe59226c3574379a183554cd4fcc09355450ac2a457d541606",
+                  "timestamp": "2026-11-06T04:22:31.151512+00:00",
+                  "token_id": "79015921464368616102162879247031217347021507875295490334855498616315688379225"
+                }
+              ]
+            },
+            "stale_book": {
+              "category": "MISSING EVIDENCE",
+              "count": 302,
+              "samples": [
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 15.310846,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:18:46.277244+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "4397025",
+                  "signal_id": "84bf3e4c02c484cc0395139ae2b52cd9fd05b3d536a05d89406f9f88f3a330a4",
+                  "timestamp": "2026-11-06T04:22:20.052846+00:00",
+                  "token_id": "101996110023306359267215939819928021406998500989415641847320025626005179879667"
+                },
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 18.714512,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:21:51.132697+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "3215005",
+                  "signal_id": "e2a093bff011c50813f3a77e7a027175acd173226307ec05b8b8eb8157de358a",
+                  "timestamp": "2026-11-06T04:22:31.151512+00:00",
+                  "token_id": "104236736263775307891497202874191911203963566711959725788584750440530976742193"
+                },
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 15.427744,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:19:49.245184+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "3215007",
+                  "signal_id": "43f3ec119974dba14aae895cc0f144ef6a4f70d21a9e604d826fb3c3ec9a2977",
+                  "timestamp": "2026-11-06T04:22:36.755744+00:00",
+                  "token_id": "42865728742506860386768556888821101266630139112044622335353850919229585308601"
+                }
+              ]
+            },
+            "unknown_fee_schedule": {
+              "category": "MISSING EVIDENCE",
+              "count": 130,
+              "samples": [
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 0.753846,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 1,
+                    "evidence_gate_passed": 0,
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "3128768",
+                  "signal_id": "52dbfbbb75351e6227220d3b8f66563b6522c48d536f6966eaa15f8044b8d2c6",
+                  "timestamp": "2026-11-06T04:22:20.052846+00:00",
+                  "token_id": "29437165757872171455593111483309548889820974982069052877568301892400345063381"
+                },
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 4.011927,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 1,
+                    "evidence_gate_passed": 0,
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "3128768",
+                  "signal_id": "a684ee4b004454ca2c7c224582760e5ae920aac86a4c7d8d98f284193231f903",
+                  "timestamp": "2026-11-06T04:22:25.560927+00:00",
+                  "token_id": "29437165757872171455593111483309548889820974982069052877568301892400345063381"
+                },
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 0.785512,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 1,
+                    "evidence_gate_passed": 0,
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "3128768",
+                  "signal_id": "36e92258606c63f24f18b657d1c2a5783efbd36bee558d1f2ebac3e7920f94c4",
+                  "timestamp": "2026-11-06T04:22:31.151512+00:00",
+                  "token_id": "29437165757872171455593111483309548889820974982069052877568301892400345063381"
+                }
+              ]
+            }
+          },
+          "rejected_signals": 1664,
+          "risk_rejections": 0,
+          "submitted_orders": 0,
+          "valid_observations": 1253
+        },
+        "liquidity_spread": {
+          "cancelled_orders": 0,
+          "candidate_signals": 0,
+          "duplicate_signals": 435,
+          "emitted_signals": 1229,
+          "expired_orders": 0,
+          "fills": 0,
+          "markets_considered": 1664,
+          "order_attempts": 0,
+          "qualified_opportunities": 0,
+          "reasons": {
+            "missing_book": {
+              "category": "MISSING EVIDENCE",
+              "count": 57,
+              "samples": [
+                {
+                  "diagnostics": {
+                    "book_age_seconds": null,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:21:22.153942+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6423885",
+                  "signal_id": "c87cfdaf8f30a89c2701674ae4a217b5c43688a30d9092b61524bbb18f250756",
+                  "timestamp": "2026-11-06T04:22:25.560927+00:00",
+                  "token_id": "113888739003330413348261539134884858114090652439144846869649003571862177350188"
+                },
+                {
+                  "diagnostics": {
+                    "book_age_seconds": null,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:21:22.153942+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6423885",
+                  "signal_id": "fdceb5d57252f7fd566772f5812e251d3d5d430d8748ad55116ba67aa437053d",
+                  "timestamp": "2026-11-06T04:22:31.151512+00:00",
+                  "token_id": "113888739003330413348261539134884858114090652439144846869649003571862177350188"
+                },
+                {
+                  "diagnostics": {
+                    "book_age_seconds": null,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:20:06.753301+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "3215006",
+                  "signal_id": "f2c1624d894cb372430361eb91d3ef11b43eef1bbd6918585d416712d19d9b26",
+                  "timestamp": "2026-11-06T04:22:36.755744+00:00",
+                  "token_id": "23677896678650147625251750117853328843601853501710889530409633595389256242910"
+                }
+              ]
+            },
+            "missing_liquidity": {
+              "category": "MISSING EVIDENCE",
+              "count": 52,
+              "samples": [
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 0.418846,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:21:27.875311+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6705227",
+                  "signal_id": "daaec06e4561cf65172edabc3ae3ba9527cbd68c76472ed5bfb1b97875791ae6",
+                  "timestamp": "2026-11-06T04:22:20.052846+00:00",
+                  "token_id": "79015921464368616102162879247031217347021507875295490334855498616315688379225"
+                },
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 0.970927,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:21:27.875311+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6705227",
+                  "signal_id": "792714f3e1c0aaa2a15c1f362e2aa5d9c683cc60ba4d0924ab05819ec6b2104f",
+                  "timestamp": "2026-11-06T04:22:25.560927+00:00",
+                  "token_id": "79015921464368616102162879247031217347021507875295490334855498616315688379225"
+                },
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 0.538512,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:21:27.875311+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6705227",
+                  "signal_id": "b4644cb122ef300a985237ff271641285133930b3acf7b8c8db92be27f45ac8e",
+                  "timestamp": "2026-11-06T04:22:31.151512+00:00",
+                  "token_id": "79015921464368616102162879247031217347021507875295490334855498616315688379225"
+                }
+              ]
+            },
+            "stale_book": {
+              "category": "MISSING EVIDENCE",
+              "count": 302,
+              "samples": [
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 15.310846,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:18:46.277244+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "4397025",
+                  "signal_id": "cf2d43f90dbe8f1c96946e9bf6751acde1a78d1e7fdab519f705af3a448aecf5",
+                  "timestamp": "2026-11-06T04:22:20.052846+00:00",
+                  "token_id": "101996110023306359267215939819928021406998500989415641847320025626005179879667"
+                },
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 18.714512,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:21:51.132697+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "3215005",
+                  "signal_id": "72d5b7042096d44475c6ada8821d856f789868a330f3648cc865c2032bf244dd",
+                  "timestamp": "2026-11-06T04:22:31.151512+00:00",
+                  "token_id": "104236736263775307891497202874191911203963566711959725788584750440530976742193"
+                },
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 15.427744,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:19:49.245184+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "3215007",
+                  "signal_id": "c974800040c58cef46687af026771f1b32bf6d44447fb56ab51bf81be51b1f4e",
+                  "timestamp": "2026-11-06T04:22:36.755744+00:00",
+                  "token_id": "42865728742506860386768556888821101266630139112044622335353850919229585308601"
+                }
+              ]
+            },
+            "two_sided_inventory_execution_not_supported": {
+              "category": "STRATEGY LIMITATION",
+              "count": 1664,
+              "samples": [
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 2.384846,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 1,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:20:28.500839+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6507380",
+                  "signal_id": "2c5d43bf714b94fad5bff53eba46995601dcc9c0af93bf8d25e8be4098129225",
+                  "timestamp": "2026-11-06T04:22:20.052846+00:00",
+                  "token_id": "100063340678399453619037549684979791875230113493746028286298866490793476208749"
+                },
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 1.745927,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 1,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:20:28.500839+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6507380",
+                  "signal_id": "3d7ea7278dd354e4f15c3f909bc3a3a4d44b513970c38ddd5e1061a888c35565",
+                  "timestamp": "2026-11-06T04:22:25.560927+00:00",
+                  "token_id": "100063340678399453619037549684979791875230113493746028286298866490793476208749"
+                },
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 0.759512,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 1,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:20:28.500839+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6507380",
+                  "signal_id": "d53316b995d19446dd11746a027ab1657105faf3a00bb8569165f9189f16fd52",
+                  "timestamp": "2026-11-06T04:22:31.151512+00:00",
+                  "token_id": "100063340678399453619037549684979791875230113493746028286298866490793476208749"
+                }
+              ]
+            },
+            "unknown_fee_schedule": {
+              "category": "MISSING EVIDENCE",
+              "count": 130,
+              "samples": [
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 0.753846,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 1,
+                    "evidence_gate_passed": 0,
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "3128768",
+                  "signal_id": "5eef6634807311d7dedb7fcee517a84000a83c15212c372255f54c1f475456b5",
+                  "timestamp": "2026-11-06T04:22:20.052846+00:00",
+                  "token_id": "29437165757872171455593111483309548889820974982069052877568301892400345063381"
+                },
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 4.011927,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 1,
+                    "evidence_gate_passed": 0,
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "3128768",
+                  "signal_id": "06d19e29eaaf04cfc1f2d09461b79980cf9d244cc928aca00b70644c9113f264",
+                  "timestamp": "2026-11-06T04:22:25.560927+00:00",
+                  "token_id": "29437165757872171455593111483309548889820974982069052877568301892400345063381"
+                },
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 0.785512,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 1,
+                    "evidence_gate_passed": 0,
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "3128768",
+                  "signal_id": "da782bafab9094b707b70b63c39a766edf360b1ca5a0037e2907e0f93195d9b2",
+                  "timestamp": "2026-11-06T04:22:31.151512+00:00",
+                  "token_id": "29437165757872171455593111483309548889820974982069052877568301892400345063381"
+                }
+              ]
+            },
+            "validated_queue_and_adverse_selection_model_required": {
+              "category": "MISSING EVIDENCE",
+              "count": 1664,
+              "samples": [
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 2.384846,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 1,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:20:28.500839+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6507380",
+                  "signal_id": "2c5d43bf714b94fad5bff53eba46995601dcc9c0af93bf8d25e8be4098129225",
+                  "timestamp": "2026-11-06T04:22:20.052846+00:00",
+                  "token_id": "100063340678399453619037549684979791875230113493746028286298866490793476208749"
+                },
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 1.745927,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 1,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:20:28.500839+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6507380",
+                  "signal_id": "3d7ea7278dd354e4f15c3f909bc3a3a4d44b513970c38ddd5e1061a888c35565",
+                  "timestamp": "2026-11-06T04:22:25.560927+00:00",
+                  "token_id": "100063340678399453619037549684979791875230113493746028286298866490793476208749"
+                },
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 0.759512,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 1,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:20:28.500839+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6507380",
+                  "signal_id": "d53316b995d19446dd11746a027ab1657105faf3a00bb8569165f9189f16fd52",
+                  "timestamp": "2026-11-06T04:22:31.151512+00:00",
+                  "token_id": "100063340678399453619037549684979791875230113493746028286298866490793476208749"
+                }
+              ]
+            }
+          },
+          "rejected_signals": 1664,
+          "risk_rejections": 0,
+          "submitted_orders": 0,
+          "valid_observations": 1253
+        },
+        "persistent_relationship": {
+          "cancelled_orders": 0,
+          "candidate_signals": 0,
+          "duplicate_signals": 435,
+          "emitted_signals": 1229,
+          "expired_orders": 0,
+          "fills": 0,
+          "markets_considered": 1664,
+          "order_attempts": 0,
+          "qualified_opportunities": 0,
+          "reasons": {
+            "conservative_roundtrip_edge_insufficient": {
+              "category": "MARKET CONDITION",
+              "count": 1382,
+              "samples": [
+                {
+                  "diagnostics": {
+                    "bias": 0.0,
+                    "book_age_seconds": 2.384846,
+                    "candidate_before_costs": 0,
+                    "conservative_pre_cost_edge": -0.020000000000000018,
+                    "cost_model": "global_notional_bound_matches_broker",
+                    "current_bid": 0.09,
+                    "data_gate_passed": 1,
+                    "empirical_error_envelope": 0.010000000000000009,
+                    "entry_ask": 0.1,
+                    "entry_fee_bound": 0.007000000000000001,
+                    "evidence_gate_passed": 0,
+                    "exit_fee_bound": 0.0056,
+                    "fee_observed_at": "2026-11-06T04:20:28.500839+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "forecast": 0.09,
+                    "forecast_gross_edge": -0.010000000000000009,
+                    "lower": 0.07999999999999999,
+                    "matured_errors": 60,
+                    "minimum_net_edge": 0.03,
+                    "observations": 95,
+                    "qualified_before_risk": 0,
+                    "reference_bid": 0.09,
+                    "roundtrip_slippage_bound": 0.02,
+                    "spread": 0.010000000000000009,
+                    "uncertainty_haircut": 0.010000000000000009,
+                    "upper": 0.1,
+                    "valuation_ready": 1
+                  },
+                  "estimated_net_edge": -0.052600000000000036,
+                  "market_id": "6507380",
+                  "signal_id": "d8edeed909d54520347666bea6c07fcda18bf49ed52b4009bebadf4a836d35d8",
+                  "timestamp": "2026-11-06T04:22:20.052846+00:00",
+                  "token_id": "100063340678399453619037549684979791875230113493746028286298866490793476208749"
+                },
+                {
+                  "diagnostics": {
+                    "bias": 0.0,
+                    "book_age_seconds": 1.745927,
+                    "candidate_before_costs": 0,
+                    "conservative_pre_cost_edge": -0.020000000000000018,
+                    "cost_model": "global_notional_bound_matches_broker",
+                    "current_bid": 0.09,
+                    "data_gate_passed": 1,
+                    "empirical_error_envelope": 0.010000000000000009,
+                    "entry_ask": 0.1,
+                    "entry_fee_bound": 0.007000000000000001,
+                    "evidence_gate_passed": 0,
+                    "exit_fee_bound": 0.0056,
+                    "fee_observed_at": "2026-11-06T04:20:28.500839+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "forecast": 0.09,
+                    "forecast_gross_edge": -0.010000000000000009,
+                    "lower": 0.07999999999999999,
+                    "matured_errors": 60,
+                    "minimum_net_edge": 0.03,
+                    "observations": 95,
+                    "qualified_before_risk": 0,
+                    "reference_bid": 0.09,
+                    "roundtrip_slippage_bound": 0.02,
+                    "spread": 0.010000000000000009,
+                    "uncertainty_haircut": 0.010000000000000009,
+                    "upper": 0.1,
+                    "valuation_ready": 1
+                  },
+                  "estimated_net_edge": -0.052600000000000036,
+                  "market_id": "6507380",
+                  "signal_id": "b63d11b6e8288d64195ae49f94a71559aeba50c9be29c439b05678c967a38825",
+                  "timestamp": "2026-11-06T04:22:25.560927+00:00",
+                  "token_id": "100063340678399453619037549684979791875230113493746028286298866490793476208749"
+                },
+                {
+                  "diagnostics": {
+                    "bias": 0.0,
+                    "book_age_seconds": 0.759512,
+                    "candidate_before_costs": 0,
+                    "conservative_pre_cost_edge": -0.020000000000000018,
+                    "cost_model": "global_notional_bound_matches_broker",
+                    "current_bid": 0.09,
+                    "data_gate_passed": 1,
+                    "empirical_error_envelope": 0.010000000000000009,
+                    "entry_ask": 0.1,
+                    "entry_fee_bound": 0.007000000000000001,
+                    "evidence_gate_passed": 0,
+                    "exit_fee_bound": 0.0056,
+                    "fee_observed_at": "2026-11-06T04:20:28.500839+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "forecast": 0.09,
+                    "forecast_gross_edge": -0.010000000000000009,
+                    "lower": 0.07999999999999999,
+                    "matured_errors": 60,
+                    "minimum_net_edge": 0.03,
+                    "observations": 95,
+                    "qualified_before_risk": 0,
+                    "reference_bid": 0.09,
+                    "roundtrip_slippage_bound": 0.02,
+                    "spread": 0.010000000000000009,
+                    "uncertainty_haircut": 0.010000000000000009,
+                    "upper": 0.1,
+                    "valuation_ready": 1
+                  },
+                  "estimated_net_edge": -0.052600000000000036,
+                  "market_id": "6507380",
+                  "signal_id": "c07e0e0277cbf6f22a353f663357123ef1678b68ba024abfdeb835f49dc24a85",
+                  "timestamp": "2026-11-06T04:22:31.151512+00:00",
+                  "token_id": "100063340678399453619037549684979791875230113493746028286298866490793476208749"
+                }
+              ]
+            },
+            "insufficient_causal_bid_history": {
+              "category": "MISSING EVIDENCE",
+              "count": 52,
+              "samples": [
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 79.350071,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:21:08.184681+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6490622",
+                  "signal_id": "bdfb20638543e1c599eeb3fd7e34a1d7bbe071a3d4faa6b468075133e27fe8f2",
+                  "timestamp": "2026-11-06T04:23:17.164071+00:00",
+                  "token_id": "51813782413093870360945676787709991580104678576723849573329710990751482365913"
+                },
+                {
+                  "signal_id": "da1f8cf176ef2d1bbc2f7cacb4a255e6796b5d90e160b6feeb88e86fbe294679",
+                  "market_id": "6490622",
+                  "token_id": "51813782413093870360945676787709991580104678576723849573329710990751482365913",
+                  "timestamp": "2026-11-06T04:23:40.181073+00:00",
+                  "estimated_net_edge": null,
+                  "diagnostics": {
+                    "book_age_seconds": null,
+                    "fee_reference": "https://clob.polymarket.com",
+                    "fee_observed_at": "2026-11-06T04:21:08.184681+00:00",
+                    "data_gate_passed": 0,
+                    "valuation_ready": 0,
+                    "evidence_gate_passed": 0,
+                    "candidate_before_costs": 0,
+                    "qualified_before_risk": 0
+                  }
+                },
+                {
+                  "signal_id": "215991418109f6873997b54ca4cfbe6c959bc6a4dec1be4b1886f711f3fd4f71",
+                  "market_id": "6490622",
+                  "token_id": "51813782413093870360945676787709991580104678576723849573329710990751482365913",
+                  "timestamp": "2026-11-06T04:23:45.697768+00:00",
+                  "estimated_net_edge": null,
+                  "diagnostics": {
+                    "book_age_seconds": null,
+                    "fee_reference": "https://clob.polymarket.com",
+                    "fee_observed_at": "2026-11-06T04:21:08.184681+00:00",
+                    "data_gate_passed": 0,
+                    "valuation_ready": 0,
+                    "evidence_gate_passed": 0,
+                    "candidate_before_costs": 0,
+                    "qualified_before_risk": 0
+                  }
+                }
+              ]
+            },
+            "insufficient_matured_horizon_forecast_errors": {
+              "category": "MISSING EVIDENCE",
+              "count": 52,
+              "samples": [
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 0.418846,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:21:27.875311+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6705227",
+                  "signal_id": "7c1b47166c7adec01dbcb4d18dc02cadb1ada32a8428702013103ded5379ec9c",
+                  "timestamp": "2026-11-06T04:22:20.052846+00:00",
+                  "token_id": "79015921464368616102162879247031217347021507875295490334855498616315688379225"
+                },
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 0.970927,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:21:27.875311+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6705227",
+                  "signal_id": "14b77741fa874ceb426598e65632aa97f4792529caf636837217b37ed54f4d58",
+                  "timestamp": "2026-11-06T04:22:25.560927+00:00",
+                  "token_id": "79015921464368616102162879247031217347021507875295490334855498616315688379225"
+                },
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 0.538512,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:21:27.875311+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6705227",
+                  "signal_id": "1aef21b75a67a6900ed6c8e0a57e70e5ef366749247aa0c8b1ae28e6edc53c93",
+                  "timestamp": "2026-11-06T04:22:31.151512+00:00",
+                  "token_id": "79015921464368616102162879247031217347021507875295490334855498616315688379225"
+                }
+              ]
+            },
+            "missing_book": {
+              "category": "MISSING EVIDENCE",
+              "count": 57,
+              "samples": [
+                {
+                  "diagnostics": {
+                    "bias": -0.0020000000000000018,
+                    "book_age_seconds": null,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "empirical_error_envelope": 0.01,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:21:22.153942+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "forecast": 0.96,
+                    "lower": 0.95,
+                    "matured_errors": 60,
+                    "observations": 95,
+                    "qualified_before_risk": 0,
+                    "reference_bid": 0.962,
+                    "upper": 0.97,
+                    "valuation_ready": 1
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6423885",
+                  "signal_id": "67f80c23cc633596f6af1d367553726f8f7ad8726b7b7766df3a25db3e4b3c8f",
+                  "timestamp": "2026-11-06T04:22:25.560927+00:00",
+                  "token_id": "113888739003330413348261539134884858114090652439144846869649003571862177350188"
+                },
+                {
+                  "diagnostics": {
+                    "bias": -0.0020000000000000018,
+                    "book_age_seconds": null,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "empirical_error_envelope": 0.01,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:21:22.153942+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "forecast": 0.96,
+                    "lower": 0.95,
+                    "matured_errors": 60,
+                    "observations": 95,
+                    "qualified_before_risk": 0,
+                    "reference_bid": 0.962,
+                    "upper": 0.97,
+                    "valuation_ready": 1
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6423885",
+                  "signal_id": "c06d764ec5fbd44504f50d5655f0c3a65221119e916a00c0c39b3a37ac073ee1",
+                  "timestamp": "2026-11-06T04:22:31.151512+00:00",
+                  "token_id": "113888739003330413348261539134884858114090652439144846869649003571862177350188"
+                },
+                {
+                  "diagnostics": {
+                    "bias": 0.0010000000000000009,
+                    "book_age_seconds": null,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "empirical_error_envelope": 0.01,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:20:06.753301+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "forecast": 0.991,
+                    "lower": 0.981,
+                    "matured_errors": 60,
+                    "observations": 95,
+                    "qualified_before_risk": 0,
+                    "reference_bid": 0.99,
+                    "upper": 1,
+                    "valuation_ready": 1
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "3215006",
+                  "signal_id": "e444e70d2464c53101b384c80f0f9f53966c823bfb3bca6a331d1b265741a1d7",
+                  "timestamp": "2026-11-06T04:22:36.755744+00:00",
+                  "token_id": "23677896678650147625251750117853328843601853501710889530409633595389256242910"
+                }
+              ]
+            },
+            "missing_liquidity": {
+              "category": "MISSING EVIDENCE",
+              "count": 52,
+              "samples": [
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 0.418846,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:21:27.875311+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6705227",
+                  "signal_id": "7c1b47166c7adec01dbcb4d18dc02cadb1ada32a8428702013103ded5379ec9c",
+                  "timestamp": "2026-11-06T04:22:20.052846+00:00",
+                  "token_id": "79015921464368616102162879247031217347021507875295490334855498616315688379225"
+                },
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 0.970927,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:21:27.875311+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6705227",
+                  "signal_id": "14b77741fa874ceb426598e65632aa97f4792529caf636837217b37ed54f4d58",
+                  "timestamp": "2026-11-06T04:22:25.560927+00:00",
+                  "token_id": "79015921464368616102162879247031217347021507875295490334855498616315688379225"
+                },
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 0.538512,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:21:27.875311+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6705227",
+                  "signal_id": "1aef21b75a67a6900ed6c8e0a57e70e5ef366749247aa0c8b1ae28e6edc53c93",
+                  "timestamp": "2026-11-06T04:22:31.151512+00:00",
+                  "token_id": "79015921464368616102162879247031217347021507875295490334855498616315688379225"
+                }
+              ]
+            },
+            "persistent_contextual_relationship_evidence_required": {
+              "category": "MISSING EVIDENCE",
+              "count": 1664,
+              "samples": [
+                {
+                  "diagnostics": {
+                    "bias": 0.0,
+                    "book_age_seconds": 2.384846,
+                    "candidate_before_costs": 0,
+                    "conservative_pre_cost_edge": -0.020000000000000018,
+                    "cost_model": "global_notional_bound_matches_broker",
+                    "current_bid": 0.09,
+                    "data_gate_passed": 1,
+                    "empirical_error_envelope": 0.010000000000000009,
+                    "entry_ask": 0.1,
+                    "entry_fee_bound": 0.007000000000000001,
+                    "evidence_gate_passed": 0,
+                    "exit_fee_bound": 0.0056,
+                    "fee_observed_at": "2026-11-06T04:20:28.500839+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "forecast": 0.09,
+                    "forecast_gross_edge": -0.010000000000000009,
+                    "lower": 0.07999999999999999,
+                    "matured_errors": 60,
+                    "minimum_net_edge": 0.03,
+                    "observations": 95,
+                    "qualified_before_risk": 0,
+                    "reference_bid": 0.09,
+                    "roundtrip_slippage_bound": 0.02,
+                    "spread": 0.010000000000000009,
+                    "uncertainty_haircut": 0.010000000000000009,
+                    "upper": 0.1,
+                    "valuation_ready": 1
+                  },
+                  "estimated_net_edge": -0.052600000000000036,
+                  "market_id": "6507380",
+                  "signal_id": "d8edeed909d54520347666bea6c07fcda18bf49ed52b4009bebadf4a836d35d8",
+                  "timestamp": "2026-11-06T04:22:20.052846+00:00",
+                  "token_id": "100063340678399453619037549684979791875230113493746028286298866490793476208749"
+                },
+                {
+                  "diagnostics": {
+                    "bias": 0.0,
+                    "book_age_seconds": 1.745927,
+                    "candidate_before_costs": 0,
+                    "conservative_pre_cost_edge": -0.020000000000000018,
+                    "cost_model": "global_notional_bound_matches_broker",
+                    "current_bid": 0.09,
+                    "data_gate_passed": 1,
+                    "empirical_error_envelope": 0.010000000000000009,
+                    "entry_ask": 0.1,
+                    "entry_fee_bound": 0.007000000000000001,
+                    "evidence_gate_passed": 0,
+                    "exit_fee_bound": 0.0056,
+                    "fee_observed_at": "2026-11-06T04:20:28.500839+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "forecast": 0.09,
+                    "forecast_gross_edge": -0.010000000000000009,
+                    "lower": 0.07999999999999999,
+                    "matured_errors": 60,
+                    "minimum_net_edge": 0.03,
+                    "observations": 95,
+                    "qualified_before_risk": 0,
+                    "reference_bid": 0.09,
+                    "roundtrip_slippage_bound": 0.02,
+                    "spread": 0.010000000000000009,
+                    "uncertainty_haircut": 0.010000000000000009,
+                    "upper": 0.1,
+                    "valuation_ready": 1
+                  },
+                  "estimated_net_edge": -0.052600000000000036,
+                  "market_id": "6507380",
+                  "signal_id": "b63d11b6e8288d64195ae49f94a71559aeba50c9be29c439b05678c967a38825",
+                  "timestamp": "2026-11-06T04:22:25.560927+00:00",
+                  "token_id": "100063340678399453619037549684979791875230113493746028286298866490793476208749"
+                },
+                {
+                  "diagnostics": {
+                    "bias": 0.0,
+                    "book_age_seconds": 0.759512,
+                    "candidate_before_costs": 0,
+                    "conservative_pre_cost_edge": -0.020000000000000018,
+                    "cost_model": "global_notional_bound_matches_broker",
+                    "current_bid": 0.09,
+                    "data_gate_passed": 1,
+                    "empirical_error_envelope": 0.010000000000000009,
+                    "entry_ask": 0.1,
+                    "entry_fee_bound": 0.007000000000000001,
+                    "evidence_gate_passed": 0,
+                    "exit_fee_bound": 0.0056,
+                    "fee_observed_at": "2026-11-06T04:20:28.500839+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "forecast": 0.09,
+                    "forecast_gross_edge": -0.010000000000000009,
+                    "lower": 0.07999999999999999,
+                    "matured_errors": 60,
+                    "minimum_net_edge": 0.03,
+                    "observations": 95,
+                    "qualified_before_risk": 0,
+                    "reference_bid": 0.09,
+                    "roundtrip_slippage_bound": 0.02,
+                    "spread": 0.010000000000000009,
+                    "uncertainty_haircut": 0.010000000000000009,
+                    "upper": 0.1,
+                    "valuation_ready": 1
+                  },
+                  "estimated_net_edge": -0.052600000000000036,
+                  "market_id": "6507380",
+                  "signal_id": "c07e0e0277cbf6f22a353f663357123ef1678b68ba024abfdeb835f49dc24a85",
+                  "timestamp": "2026-11-06T04:22:31.151512+00:00",
+                  "token_id": "100063340678399453619037549684979791875230113493746028286298866490793476208749"
+                }
+              ]
+            },
+            "stale_book": {
+              "category": "MISSING EVIDENCE",
+              "count": 302,
+              "samples": [
+                {
+                  "diagnostics": {
+                    "bias": 0.0,
+                    "book_age_seconds": 15.310846,
+                    "candidate_before_costs": 0,
+                    "conservative_pre_cost_edge": -0.020000000000000018,
+                    "cost_model": "global_notional_bound_matches_broker",
+                    "current_bid": 0.83,
+                    "data_gate_passed": 0,
+                    "empirical_error_envelope": 0.01,
+                    "entry_ask": 0.84,
+                    "entry_fee_bound": 0.042,
+                    "evidence_gate_passed": 0,
+                    "exit_fee_bound": 0.041,
+                    "fee_observed_at": "2026-11-06T04:18:46.277244+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "forecast": 0.83,
+                    "forecast_gross_edge": -0.010000000000000009,
+                    "lower": 0.82,
+                    "matured_errors": 55,
+                    "minimum_net_edge": 0.03,
+                    "observations": 95,
+                    "qualified_before_risk": 0,
+                    "reference_bid": 0.83,
+                    "roundtrip_slippage_bound": 0.02,
+                    "spread": 0.010000000000000009,
+                    "uncertainty_haircut": 0.010000000000000009,
+                    "upper": 0.84,
+                    "valuation_ready": 1
+                  },
+                  "estimated_net_edge": -0.1230000000000001,
+                  "market_id": "4397025",
+                  "signal_id": "f2987e5f61f3bc141df58c11ee05a928575ca14f1410598ef8289150b4575d19",
+                  "timestamp": "2026-11-06T04:22:20.052846+00:00",
+                  "token_id": "101996110023306359267215939819928021406998500989415641847320025626005179879667"
+                },
+                {
+                  "diagnostics": {
+                    "bias": 0.0,
+                    "book_age_seconds": 18.714512,
+                    "candidate_before_costs": 0,
+                    "conservative_pre_cost_edge": -0.01200000000000001,
+                    "cost_model": "global_notional_bound_matches_broker",
+                    "current_bid": 0.994,
+                    "data_gate_passed": 0,
+                    "empirical_error_envelope": 0.01,
+                    "entry_ask": 0.996,
+                    "entry_fee_bound": 0.049800000000000004,
+                    "evidence_gate_passed": 0,
+                    "exit_fee_bound": 0.0492,
+                    "fee_observed_at": "2026-11-06T04:21:51.132697+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "forecast": 0.994,
+                    "forecast_gross_edge": -0.0020000000000000018,
+                    "lower": 0.984,
+                    "matured_errors": 41,
+                    "minimum_net_edge": 0.03,
+                    "observations": 74,
+                    "qualified_before_risk": 0,
+                    "reference_bid": 0.994,
+                    "roundtrip_slippage_bound": 0.02,
+                    "spread": 0.0020000000000000018,
+                    "uncertainty_haircut": 0.010000000000000009,
+                    "upper": 1,
+                    "valuation_ready": 1
+                  },
+                  "estimated_net_edge": -0.1310000000000001,
+                  "market_id": "3215005",
+                  "signal_id": "41902c0cb5e93c87998479fcf533374b3ae28d5dd403ee1f2327cdcf1bc27a01",
+                  "timestamp": "2026-11-06T04:22:31.151512+00:00",
+                  "token_id": "104236736263775307891497202874191911203963566711959725788584750440530976742193"
+                },
+                {
+                  "diagnostics": {
+                    "bias": 0.0,
+                    "book_age_seconds": 15.427744,
+                    "candidate_before_costs": 0,
+                    "conservative_pre_cost_edge": -0.02999999999999997,
+                    "cost_model": "global_notional_bound_matches_broker",
+                    "current_bid": 0.35,
+                    "data_gate_passed": 0,
+                    "empirical_error_envelope": 0.019999999999999962,
+                    "entry_ask": 0.36,
+                    "entry_fee_bound": 0.018,
+                    "evidence_gate_passed": 0,
+                    "exit_fee_bound": 0.0165,
+                    "fee_observed_at": "2026-11-06T04:19:49.245184+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "forecast": 0.35,
+                    "forecast_gross_edge": -0.010000000000000009,
+                    "lower": 0.33,
+                    "matured_errors": 60,
+                    "minimum_net_edge": 0.03,
+                    "observations": 95,
+                    "qualified_before_risk": 0,
+                    "reference_bid": 0.35,
+                    "roundtrip_slippage_bound": 0.02,
+                    "spread": 0.010000000000000009,
+                    "uncertainty_haircut": 0.019999999999999962,
+                    "upper": 0.36999999999999994,
+                    "valuation_ready": 1
+                  },
+                  "estimated_net_edge": -0.0845,
+                  "market_id": "3215007",
+                  "signal_id": "91e7f6a36f91088d737b6c73f4b0e4dbc64c4509d4eb31504829ad2d87091b7b",
+                  "timestamp": "2026-11-06T04:22:36.755744+00:00",
+                  "token_id": "42865728742506860386768556888821101266630139112044622335353850919229585308601"
+                }
+              ]
+            },
+            "unknown_fee_schedule": {
+              "category": "MISSING EVIDENCE",
+              "count": 130,
+              "samples": [
+                {
+                  "diagnostics": {
+                    "bias": 0.0,
+                    "book_age_seconds": 0.753846,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 1,
+                    "empirical_error_envelope": 0.01,
+                    "evidence_gate_passed": 0,
+                    "forecast": 0.23,
+                    "lower": 0.22,
+                    "matured_errors": 60,
+                    "observations": 95,
+                    "qualified_before_risk": 0,
+                    "reference_bid": 0.23,
+                    "upper": 0.24000000000000002,
+                    "valuation_ready": 1
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "3128768",
+                  "signal_id": "b42cf3c9989ef93cb26bec316ed5ab5416a6c43614b7fde7047fb0fcf131d68d",
+                  "timestamp": "2026-11-06T04:22:20.052846+00:00",
+                  "token_id": "29437165757872171455593111483309548889820974982069052877568301892400345063381"
+                },
+                {
+                  "diagnostics": {
+                    "bias": 0.0,
+                    "book_age_seconds": 4.011927,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 1,
+                    "empirical_error_envelope": 0.01,
+                    "evidence_gate_passed": 0,
+                    "forecast": 0.23,
+                    "lower": 0.22,
+                    "matured_errors": 60,
+                    "observations": 95,
+                    "qualified_before_risk": 0,
+                    "reference_bid": 0.23,
+                    "upper": 0.24000000000000002,
+                    "valuation_ready": 1
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "3128768",
+                  "signal_id": "5fdfb87267d2db37aa468fc15ab614fded108afab35738332a6a5a8da30990b5",
+                  "timestamp": "2026-11-06T04:22:25.560927+00:00",
+                  "token_id": "29437165757872171455593111483309548889820974982069052877568301892400345063381"
+                },
+                {
+                  "diagnostics": {
+                    "bias": 0.0,
+                    "book_age_seconds": 0.785512,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 1,
+                    "empirical_error_envelope": 0.01,
+                    "evidence_gate_passed": 0,
+                    "forecast": 0.23,
+                    "lower": 0.22,
+                    "matured_errors": 60,
+                    "observations": 95,
+                    "qualified_before_risk": 0,
+                    "reference_bid": 0.23,
+                    "upper": 0.24000000000000002,
+                    "valuation_ready": 1
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "3128768",
+                  "signal_id": "b96e1fad1fdfcde7d4e0f10f0566733910d58d150e11e9035161461b6fa780bd",
+                  "timestamp": "2026-11-06T04:22:31.151512+00:00",
+                  "token_id": "29437165757872171455593111483309548889820974982069052877568301892400345063381"
+                }
+              ]
+            }
+          },
+          "rejected_signals": 1664,
+          "risk_rejections": 0,
+          "submitted_orders": 0,
+          "valid_observations": 1253
+        },
+        "short_horizon": {
+          "cancelled_orders": 0,
+          "candidate_signals": 1136,
+          "duplicate_signals": 435,
+          "emitted_signals": 1229,
+          "expired_orders": 0,
+          "fills": 0,
+          "markets_considered": 1664,
+          "order_attempts": 0,
+          "qualified_opportunities": 0,
+          "reasons": {
+            "conservative_roundtrip_edge_insufficient": {
+              "category": "MARKET CONDITION",
+              "count": 1382,
+              "samples": [
+                {
+                  "diagnostics": {
+                    "bias": 0.0,
+                    "book_age_seconds": 2.384846,
+                    "candidate_before_costs": 1,
+                    "conservative_pre_cost_edge": -0.020000000000000018,
+                    "cost_model": "global_notional_bound_matches_broker",
+                    "current_bid": 0.09,
+                    "data_gate_passed": 1,
+                    "empirical_error_envelope": 0.010000000000000009,
+                    "entry_ask": 0.1,
+                    "entry_fee_bound": 0.007000000000000001,
+                    "evidence_gate_passed": 1,
+                    "exit_fee_bound": 0.0056,
+                    "fee_observed_at": "2026-11-06T04:20:28.500839+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "forecast": 0.09,
+                    "forecast_gross_edge": -0.010000000000000009,
+                    "lower": 0.07999999999999999,
+                    "matured_errors": 60,
+                    "minimum_net_edge": 0.03,
+                    "observations": 95,
+                    "qualified_before_risk": 0,
+                    "reference_bid": 0.09,
+                    "roundtrip_slippage_bound": 0.02,
+                    "spread": 0.010000000000000009,
+                    "uncertainty_haircut": 0.010000000000000009,
+                    "upper": 0.1,
+                    "valuation_ready": 1
+                  },
+                  "estimated_net_edge": -0.052600000000000036,
+                  "market_id": "6507380",
+                  "signal_id": "9c34f2957851dd9fff0fed7f553aca47001affcb65d798218a7ad39f725e7f42",
+                  "timestamp": "2026-11-06T04:22:20.052846+00:00",
+                  "token_id": "100063340678399453619037549684979791875230113493746028286298866490793476208749"
+                },
+                {
+                  "diagnostics": {
+                    "bias": 0.0,
+                    "book_age_seconds": 1.745927,
+                    "candidate_before_costs": 1,
+                    "conservative_pre_cost_edge": -0.020000000000000018,
+                    "cost_model": "global_notional_bound_matches_broker",
+                    "current_bid": 0.09,
+                    "data_gate_passed": 1,
+                    "empirical_error_envelope": 0.010000000000000009,
+                    "entry_ask": 0.1,
+                    "entry_fee_bound": 0.007000000000000001,
+                    "evidence_gate_passed": 1,
+                    "exit_fee_bound": 0.0056,
+                    "fee_observed_at": "2026-11-06T04:20:28.500839+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "forecast": 0.09,
+                    "forecast_gross_edge": -0.010000000000000009,
+                    "lower": 0.07999999999999999,
+                    "matured_errors": 60,
+                    "minimum_net_edge": 0.03,
+                    "observations": 95,
+                    "qualified_before_risk": 0,
+                    "reference_bid": 0.09,
+                    "roundtrip_slippage_bound": 0.02,
+                    "spread": 0.010000000000000009,
+                    "uncertainty_haircut": 0.010000000000000009,
+                    "upper": 0.1,
+                    "valuation_ready": 1
+                  },
+                  "estimated_net_edge": -0.052600000000000036,
+                  "market_id": "6507380",
+                  "signal_id": "92a0006a850f4b88a9db5081945aa4f7c1f63e6033a38a5bb45cb062ce0ee522",
+                  "timestamp": "2026-11-06T04:22:25.560927+00:00",
+                  "token_id": "100063340678399453619037549684979791875230113493746028286298866490793476208749"
+                },
+                {
+                  "diagnostics": {
+                    "bias": 0.0,
+                    "book_age_seconds": 0.759512,
+                    "candidate_before_costs": 1,
+                    "conservative_pre_cost_edge": -0.020000000000000018,
+                    "cost_model": "global_notional_bound_matches_broker",
+                    "current_bid": 0.09,
+                    "data_gate_passed": 1,
+                    "empirical_error_envelope": 0.010000000000000009,
+                    "entry_ask": 0.1,
+                    "entry_fee_bound": 0.007000000000000001,
+                    "evidence_gate_passed": 1,
+                    "exit_fee_bound": 0.0056,
+                    "fee_observed_at": "2026-11-06T04:20:28.500839+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "forecast": 0.09,
+                    "forecast_gross_edge": -0.010000000000000009,
+                    "lower": 0.07999999999999999,
+                    "matured_errors": 60,
+                    "minimum_net_edge": 0.03,
+                    "observations": 95,
+                    "qualified_before_risk": 0,
+                    "reference_bid": 0.09,
+                    "roundtrip_slippage_bound": 0.02,
+                    "spread": 0.010000000000000009,
+                    "uncertainty_haircut": 0.010000000000000009,
+                    "upper": 0.1,
+                    "valuation_ready": 1
+                  },
+                  "estimated_net_edge": -0.052600000000000036,
+                  "market_id": "6507380",
+                  "signal_id": "c2e80285476058f1568671d1ff71bc33da319b7ceb71ed88a57d7e574b96351f",
+                  "timestamp": "2026-11-06T04:22:31.151512+00:00",
+                  "token_id": "100063340678399453619037549684979791875230113493746028286298866490793476208749"
+                }
+              ]
+            },
+            "insufficient_causal_bid_history": {
+              "category": "MISSING EVIDENCE",
+              "count": 52,
+              "samples": [
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 79.350071,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:21:08.184681+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6490622",
+                  "signal_id": "381cc82b697ae398f68191929cee67ab6f801ba350267130565e9b10a0a78001",
+                  "timestamp": "2026-11-06T04:23:17.164071+00:00",
+                  "token_id": "51813782413093870360945676787709991580104678576723849573329710990751482365913"
+                },
+                {
+                  "signal_id": "76cbabc0d26c5ec0906b21fa1752a26360ddfe77f335d6b62a8feaa2799a068d",
+                  "market_id": "6490622",
+                  "token_id": "51813782413093870360945676787709991580104678576723849573329710990751482365913",
+                  "timestamp": "2026-11-06T04:23:40.181073+00:00",
+                  "estimated_net_edge": null,
+                  "diagnostics": {
+                    "book_age_seconds": null,
+                    "fee_reference": "https://clob.polymarket.com",
+                    "fee_observed_at": "2026-11-06T04:21:08.184681+00:00",
+                    "data_gate_passed": 0,
+                    "valuation_ready": 0,
+                    "evidence_gate_passed": 0,
+                    "candidate_before_costs": 0,
+                    "qualified_before_risk": 0
+                  }
+                },
+                {
+                  "signal_id": "3648f8004f84db08f24dd80cdc16a1f2725b23a4bcdf2f16fd1fe89633ddb27d",
+                  "market_id": "6490622",
+                  "token_id": "51813782413093870360945676787709991580104678576723849573329710990751482365913",
+                  "timestamp": "2026-11-06T04:23:45.697768+00:00",
+                  "estimated_net_edge": null,
+                  "diagnostics": {
+                    "book_age_seconds": null,
+                    "fee_reference": "https://clob.polymarket.com",
+                    "fee_observed_at": "2026-11-06T04:21:08.184681+00:00",
+                    "data_gate_passed": 0,
+                    "valuation_ready": 0,
+                    "evidence_gate_passed": 0,
+                    "candidate_before_costs": 0,
+                    "qualified_before_risk": 0
+                  }
+                }
+              ]
+            },
+            "insufficient_matured_horizon_forecast_errors": {
+              "category": "MISSING EVIDENCE",
+              "count": 52,
+              "samples": [
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 0.418846,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:21:27.875311+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6705227",
+                  "signal_id": "d99e30b145f4139e3f47d981553c73b81405c1759e42bcd0ce1fe24da7b3ba6e",
+                  "timestamp": "2026-11-06T04:22:20.052846+00:00",
+                  "token_id": "79015921464368616102162879247031217347021507875295490334855498616315688379225"
+                },
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 0.970927,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:21:27.875311+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6705227",
+                  "signal_id": "096da2f87f2fa39731952cccdb8d007ca0f008d585d2ad9bd84665dfb313ef93",
+                  "timestamp": "2026-11-06T04:22:25.560927+00:00",
+                  "token_id": "79015921464368616102162879247031217347021507875295490334855498616315688379225"
+                },
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 0.538512,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:21:27.875311+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6705227",
+                  "signal_id": "e5320960ac59fa2795fcbf657b7766b55b588c2cc7d96bb7a72206ee91bcef0b",
+                  "timestamp": "2026-11-06T04:22:31.151512+00:00",
+                  "token_id": "79015921464368616102162879247031217347021507875295490334855498616315688379225"
+                }
+              ]
+            },
+            "missing_book": {
+              "category": "MISSING EVIDENCE",
+              "count": 57,
+              "samples": [
+                {
+                  "diagnostics": {
+                    "bias": -0.0020000000000000018,
+                    "book_age_seconds": null,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "empirical_error_envelope": 0.01,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:21:22.153942+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "forecast": 0.96,
+                    "lower": 0.95,
+                    "matured_errors": 60,
+                    "observations": 95,
+                    "qualified_before_risk": 0,
+                    "reference_bid": 0.962,
+                    "upper": 0.97,
+                    "valuation_ready": 1
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6423885",
+                  "signal_id": "3577a62fb88f38e07ad65aaebf18cc00094e9e357bc55a3f4de78ef36c6b0869",
+                  "timestamp": "2026-11-06T04:22:25.560927+00:00",
+                  "token_id": "113888739003330413348261539134884858114090652439144846869649003571862177350188"
+                },
+                {
+                  "diagnostics": {
+                    "bias": -0.0020000000000000018,
+                    "book_age_seconds": null,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "empirical_error_envelope": 0.01,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:21:22.153942+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "forecast": 0.96,
+                    "lower": 0.95,
+                    "matured_errors": 60,
+                    "observations": 95,
+                    "qualified_before_risk": 0,
+                    "reference_bid": 0.962,
+                    "upper": 0.97,
+                    "valuation_ready": 1
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6423885",
+                  "signal_id": "32c19f1c99ed1b37407a8e19e47ab5c0ffa93b2f8a987af17c12e7bbc2e02eb8",
+                  "timestamp": "2026-11-06T04:22:31.151512+00:00",
+                  "token_id": "113888739003330413348261539134884858114090652439144846869649003571862177350188"
+                },
+                {
+                  "diagnostics": {
+                    "bias": 0.0010000000000000009,
+                    "book_age_seconds": null,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "empirical_error_envelope": 0.01,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:20:06.753301+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "forecast": 0.991,
+                    "lower": 0.981,
+                    "matured_errors": 60,
+                    "observations": 95,
+                    "qualified_before_risk": 0,
+                    "reference_bid": 0.99,
+                    "upper": 1,
+                    "valuation_ready": 1
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "3215006",
+                  "signal_id": "03376ba91e32988ef83ce1b12e392cb4dc14752ecf68f59be8fd4f80cae65f9b",
+                  "timestamp": "2026-11-06T04:22:36.755744+00:00",
+                  "token_id": "23677896678650147625251750117853328843601853501710889530409633595389256242910"
+                }
+              ]
+            },
+            "missing_liquidity": {
+              "category": "MISSING EVIDENCE",
+              "count": 52,
+              "samples": [
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 0.418846,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:21:27.875311+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6705227",
+                  "signal_id": "d99e30b145f4139e3f47d981553c73b81405c1759e42bcd0ce1fe24da7b3ba6e",
+                  "timestamp": "2026-11-06T04:22:20.052846+00:00",
+                  "token_id": "79015921464368616102162879247031217347021507875295490334855498616315688379225"
+                },
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 0.970927,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:21:27.875311+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6705227",
+                  "signal_id": "096da2f87f2fa39731952cccdb8d007ca0f008d585d2ad9bd84665dfb313ef93",
+                  "timestamp": "2026-11-06T04:22:25.560927+00:00",
+                  "token_id": "79015921464368616102162879247031217347021507875295490334855498616315688379225"
+                },
+                {
+                  "diagnostics": {
+                    "book_age_seconds": 0.538512,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 0,
+                    "evidence_gate_passed": 0,
+                    "fee_observed_at": "2026-11-06T04:21:27.875311+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "qualified_before_risk": 0,
+                    "valuation_ready": 0
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "6705227",
+                  "signal_id": "e5320960ac59fa2795fcbf657b7766b55b588c2cc7d96bb7a72206ee91bcef0b",
+                  "timestamp": "2026-11-06T04:22:31.151512+00:00",
+                  "token_id": "79015921464368616102162879247031217347021507875295490334855498616315688379225"
+                }
+              ]
+            },
+            "stale_book": {
+              "category": "MISSING EVIDENCE",
+              "count": 302,
+              "samples": [
+                {
+                  "diagnostics": {
+                    "bias": 0.0,
+                    "book_age_seconds": 15.310846,
+                    "candidate_before_costs": 0,
+                    "conservative_pre_cost_edge": -0.020000000000000018,
+                    "cost_model": "global_notional_bound_matches_broker",
+                    "current_bid": 0.83,
+                    "data_gate_passed": 0,
+                    "empirical_error_envelope": 0.01,
+                    "entry_ask": 0.84,
+                    "entry_fee_bound": 0.042,
+                    "evidence_gate_passed": 0,
+                    "exit_fee_bound": 0.041,
+                    "fee_observed_at": "2026-11-06T04:18:46.277244+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "forecast": 0.83,
+                    "forecast_gross_edge": -0.010000000000000009,
+                    "lower": 0.82,
+                    "matured_errors": 55,
+                    "minimum_net_edge": 0.03,
+                    "observations": 95,
+                    "qualified_before_risk": 0,
+                    "reference_bid": 0.83,
+                    "roundtrip_slippage_bound": 0.02,
+                    "spread": 0.010000000000000009,
+                    "uncertainty_haircut": 0.010000000000000009,
+                    "upper": 0.84,
+                    "valuation_ready": 1
+                  },
+                  "estimated_net_edge": -0.1230000000000001,
+                  "market_id": "4397025",
+                  "signal_id": "4ee55983d9a5afea828b9b53d939af1077de5877a783af9563a48bc3feb6e6fb",
+                  "timestamp": "2026-11-06T04:22:20.052846+00:00",
+                  "token_id": "101996110023306359267215939819928021406998500989415641847320025626005179879667"
+                },
+                {
+                  "diagnostics": {
+                    "bias": 0.0,
+                    "book_age_seconds": 18.714512,
+                    "candidate_before_costs": 0,
+                    "conservative_pre_cost_edge": -0.01200000000000001,
+                    "cost_model": "global_notional_bound_matches_broker",
+                    "current_bid": 0.994,
+                    "data_gate_passed": 0,
+                    "empirical_error_envelope": 0.01,
+                    "entry_ask": 0.996,
+                    "entry_fee_bound": 0.049800000000000004,
+                    "evidence_gate_passed": 0,
+                    "exit_fee_bound": 0.0492,
+                    "fee_observed_at": "2026-11-06T04:21:51.132697+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "forecast": 0.994,
+                    "forecast_gross_edge": -0.0020000000000000018,
+                    "lower": 0.984,
+                    "matured_errors": 41,
+                    "minimum_net_edge": 0.03,
+                    "observations": 74,
+                    "qualified_before_risk": 0,
+                    "reference_bid": 0.994,
+                    "roundtrip_slippage_bound": 0.02,
+                    "spread": 0.0020000000000000018,
+                    "uncertainty_haircut": 0.010000000000000009,
+                    "upper": 1,
+                    "valuation_ready": 1
+                  },
+                  "estimated_net_edge": -0.1310000000000001,
+                  "market_id": "3215005",
+                  "signal_id": "e99cb7a0847168de2ac88969cc596e0ec84d274171c990e58809862274273096",
+                  "timestamp": "2026-11-06T04:22:31.151512+00:00",
+                  "token_id": "104236736263775307891497202874191911203963566711959725788584750440530976742193"
+                },
+                {
+                  "diagnostics": {
+                    "bias": 0.0,
+                    "book_age_seconds": 15.427744,
+                    "candidate_before_costs": 0,
+                    "conservative_pre_cost_edge": -0.02999999999999997,
+                    "cost_model": "global_notional_bound_matches_broker",
+                    "current_bid": 0.35,
+                    "data_gate_passed": 0,
+                    "empirical_error_envelope": 0.019999999999999962,
+                    "entry_ask": 0.36,
+                    "entry_fee_bound": 0.018,
+                    "evidence_gate_passed": 0,
+                    "exit_fee_bound": 0.0165,
+                    "fee_observed_at": "2026-11-06T04:19:49.245184+00:00",
+                    "fee_reference": "https://clob.polymarket.com",
+                    "forecast": 0.35,
+                    "forecast_gross_edge": -0.010000000000000009,
+                    "lower": 0.33,
+                    "matured_errors": 60,
+                    "minimum_net_edge": 0.03,
+                    "observations": 95,
+                    "qualified_before_risk": 0,
+                    "reference_bid": 0.35,
+                    "roundtrip_slippage_bound": 0.02,
+                    "spread": 0.010000000000000009,
+                    "uncertainty_haircut": 0.019999999999999962,
+                    "upper": 0.36999999999999994,
+                    "valuation_ready": 1
+                  },
+                  "estimated_net_edge": -0.0845,
+                  "market_id": "3215007",
+                  "signal_id": "c5d69ac4fa6327d9aac569ee0d8a0d35dd3900d22ba154306dd02cfaa99218c1",
+                  "timestamp": "2026-11-06T04:22:36.755744+00:00",
+                  "token_id": "42865728742506860386768556888821101266630139112044622335353850919229585308601"
+                }
+              ]
+            },
+            "unknown_fee_schedule": {
+              "category": "MISSING EVIDENCE",
+              "count": 130,
+              "samples": [
+                {
+                  "diagnostics": {
+                    "bias": 0.0,
+                    "book_age_seconds": 0.753846,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 1,
+                    "empirical_error_envelope": 0.01,
+                    "evidence_gate_passed": 0,
+                    "forecast": 0.23,
+                    "lower": 0.22,
+                    "matured_errors": 60,
+                    "observations": 95,
+                    "qualified_before_risk": 0,
+                    "reference_bid": 0.23,
+                    "upper": 0.24000000000000002,
+                    "valuation_ready": 1
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "3128768",
+                  "signal_id": "6d8e15a9fcc471c758b76b175d28f722a4169b5802c04cfa5890efad641f18e4",
+                  "timestamp": "2026-11-06T04:22:20.052846+00:00",
+                  "token_id": "29437165757872171455593111483309548889820974982069052877568301892400345063381"
+                },
+                {
+                  "diagnostics": {
+                    "bias": 0.0,
+                    "book_age_seconds": 4.011927,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 1,
+                    "empirical_error_envelope": 0.01,
+                    "evidence_gate_passed": 0,
+                    "forecast": 0.23,
+                    "lower": 0.22,
+                    "matured_errors": 60,
+                    "observations": 95,
+                    "qualified_before_risk": 0,
+                    "reference_bid": 0.23,
+                    "upper": 0.24000000000000002,
+                    "valuation_ready": 1
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "3128768",
+                  "signal_id": "6f81a292b1bcaa5b5b08d535f7315fe9074b27e3d29df8609bc7fa3afc778893",
+                  "timestamp": "2026-11-06T04:22:25.560927+00:00",
+                  "token_id": "29437165757872171455593111483309548889820974982069052877568301892400345063381"
+                },
+                {
+                  "diagnostics": {
+                    "bias": 0.0,
+                    "book_age_seconds": 0.785512,
+                    "candidate_before_costs": 0,
+                    "data_gate_passed": 1,
+                    "empirical_error_envelope": 0.01,
+                    "evidence_gate_passed": 0,
+                    "forecast": 0.23,
+                    "lower": 0.22,
+                    "matured_errors": 60,
+                    "observations": 95,
+                    "qualified_before_risk": 0,
+                    "reference_bid": 0.23,
+                    "upper": 0.24000000000000002,
+                    "valuation_ready": 1
+                  },
+                  "estimated_net_edge": null,
+                  "market_id": "3128768",
+                  "signal_id": "f4a6170fc2cbe79ab985c20fbc11d8d2feaf513faa4692bdc069fb14e140cc95",
+                  "timestamp": "2026-11-06T04:22:31.151512+00:00",
+                  "token_id": "29437165757872171455593111483309548889820974982069052877568301892400345063381"
+                }
+              ]
+            }
+          },
+          "rejected_signals": 1664,
+          "risk_rejections": 0,
+          "submitted_orders": 0,
+          "valid_observations": 1253
+        }
+      }
+    },
+    "latest_cycle": {
+      "strategies": {
+        "calibrated_forecast": {
+          "markets_considered": 64,
+          "valid_observations": 39,
+          "candidate_signals": 0,
+          "rejected_signals": 64,
+          "qualified_opportunities": 0,
+          "risk_rejections": 0,
+          "order_attempts": 0,
+          "submitted_orders": 0,
+          "fills": 0,
+          "expired_orders": 0,
+          "cancelled_orders": 0,
+          "reasons": {
+            "independent_context_verified_labels_and_calibration_required": {
+              "category": "CERTIFICATION DEPENDENCY",
+              "count": 64,
+              "samples": [
+                {
+                  "signal_id": "78cfc4cdeb93479bc86f0e1be6ab4bcdaa72ba91d617f3fe574506cb879d8f65",
+                  "market_id": "6507380",
+                  "token_id": "100063340678399453619037549684979791875230113493746028286298866490793476208749",
+                  "timestamp": "2026-11-06T04:24:43.297623+00:00",
+                  "estimated_net_edge": null,
+                  "diagnostics": {
+                    "book_age_seconds": 2.915623,
+                    "fee_reference": "https://clob.polymarket.com",
+                    "fee_observed_at": "2026-11-06T04:24:29.466047+00:00",
+                    "data_gate_passed": 1,
+                    "valuation_ready": 0,
+                    "evidence_gate_passed": 0,
+                    "candidate_before_costs": 0,
+                    "qualified_before_risk": 0
+                  }
+                }
+              ]
+            },
+            "stale_book": {
+              "category": "MISSING EVIDENCE",
+              "count": 15,
+              "samples": [
+                {
+                  "signal_id": "768c955b94c6e1538aaa8e76a211fda0c7852777d59599b8cfd9500a1d1ba1b8",
+                  "market_id": "4620900",
+                  "token_id": "51699731593220798404378104978434018325263546766663573208722653674626387696963",
+                  "timestamp": "2026-11-06T04:24:43.297623+00:00",
+                  "estimated_net_edge": null,
+                  "diagnostics": {
+                    "book_age_seconds": 52.354623,
+                    "fee_reference": "https://clob.polymarket.com",
+                    "fee_observed_at": "2026-11-06T04:21:39.914948+00:00",
+                    "data_gate_passed": 0,
+                    "valuation_ready": 0,
+                    "evidence_gate_passed": 0,
+                    "candidate_before_costs": 0,
+                    "qualified_before_risk": 0
+                  }
+                }
+              ]
+            },
+            "missing_book": {
+              "category": "MISSING EVIDENCE",
+              "count": 8,
+              "samples": [
+                {
+                  "signal_id": "1b816822c01df4f3a60ee9f5ee1b53f9c890e9761e25a61d3fc70a6ca4744954",
+                  "market_id": "6423885",
+                  "token_id": "113888739003330413348261539134884858114090652439144846869649003571862177350188",
+                  "timestamp": "2026-11-06T04:24:43.297623+00:00",
+                  "estimated_net_edge": null,
+                  "diagnostics": {
+                    "book_age_seconds": null,
+                    "fee_reference": "https://clob.polymarket.com",
+                    "fee_observed_at": "2026-11-06T04:21:22.153942+00:00",
+                    "data_gate_passed": 0,
+                    "valuation_ready": 0,
+                    "evidence_gate_passed": 0,
+                    "candidate_before_costs": 0,
+                    "qualified_before_risk": 0
+                  }
+                }
+              ]
+            },
+            "unknown_fee_schedule": {
+              "category": "MISSING EVIDENCE",
+              "count": 5,
+              "samples": [
+                {
+                  "signal_id": "ddcc25acb2a35152f9991198997cfdb0d1705e15d990422e83ee1403fee16774",
+                  "market_id": "3128768",
+                  "token_id": "29437165757872171455593111483309548889820974982069052877568301892400345063381",
+                  "timestamp": "2026-11-06T04:24:43.297623+00:00",
+                  "estimated_net_edge": null,
+                  "diagnostics": {
+                    "book_age_seconds": 3.726623,
+                    "data_gate_passed": 1,
+                    "valuation_ready": 0,
+                    "evidence_gate_passed": 0,
+                    "candidate_before_costs": 0,
+                    "qualified_before_risk": 0
+                  }
+                }
+              ]
+            },
+            "missing_liquidity": {
+              "category": "MISSING EVIDENCE",
+              "count": 2,
+              "samples": [
+                {
+                  "signal_id": "71a137475a3711a84719b9a0d50474d64bcb08838a45d810e94208286cf46782",
+                  "market_id": "6705227",
+                  "token_id": "79015921464368616102162879247031217347021507875295490334855498616315688379225",
+                  "timestamp": "2026-11-06T04:24:43.297623+00:00",
+                  "estimated_net_edge": null,
+                  "diagnostics": {
+                    "book_age_seconds": 1.713623,
+                    "fee_reference": "https://clob.polymarket.com",
+                    "fee_observed_at": "2026-11-06T04:21:27.875311+00:00",
+                    "data_gate_passed": 0,
+                    "valuation_ready": 0,
+                    "evidence_gate_passed": 0,
+                    "candidate_before_costs": 0,
+                    "qualified_before_risk": 0
+                  }
+                }
+              ]
+            }
+          },
+          "emitted_signals": 47,
+          "duplicate_signals": 17
+        },
+        "cross_market_consistency": {
+          "markets_considered": 64,
+          "valid_observations": 39,
+          "candidate_signals": 0,
+          "rejected_signals": 64,
+          "qualified_opportunities": 0,
+          "risk_rejections": 0,
+          "order_attempts": 0,
+          "submitted_orders": 0,
+          "fills": 0,
+          "expired_orders": 0,
+          "cancelled_orders": 0,
+          "reasons": {
+            "independently_reviewed_exhaustive_payoff_scope_required": {
+              "category": "MISSING EVIDENCE",
+              "count": 64,
+              "samples": [
+                {
+                  "signal_id": "18fbc9aa8c1c61a34f456905372f09108349bc5d7e42b7d03601f7efba93aa6b",
+                  "market_id": "6507380",
+                  "token_id": "100063340678399453619037549684979791875230113493746028286298866490793476208749",
+                  "timestamp": "2026-11-06T04:24:43.297623+00:00",
+                  "estimated_net_edge": null,
+                  "diagnostics": {
+                    "book_age_seconds": 2.915623,
+                    "fee_reference": "https://clob.polymarket.com",
+                    "fee_observed_at": "2026-11-06T04:24:29.466047+00:00",
+                    "data_gate_passed": 1,
+                    "valuation_ready": 0,
+                    "evidence_gate_passed": 0,
+                    "candidate_before_costs": 0,
+                    "qualified_before_risk": 0
+                  }
+                }
+              ]
+            },
+            "multi_leg_execution_and_hedging_not_supported": {
+              "category": "STRATEGY LIMITATION",
+              "count": 64,
+              "samples": [
+                {
+                  "signal_id": "18fbc9aa8c1c61a34f456905372f09108349bc5d7e42b7d03601f7efba93aa6b",
+                  "market_id": "6507380",
+                  "token_id": "100063340678399453619037549684979791875230113493746028286298866490793476208749",
+                  "timestamp": "2026-11-06T04:24:43.297623+00:00",
+                  "estimated_net_edge": null,
+                  "diagnostics": {
+                    "book_age_seconds": 2.915623,
+                    "fee_reference": "https://clob.polymarket.com",
+                    "fee_observed_at": "2026-11-06T04:24:29.466047+00:00",
+                    "data_gate_passed": 1,
+                    "valuation_ready": 0,
+                    "evidence_gate_passed": 0,
+                    "candidate_before_costs": 0,
+                    "qualified_before_risk": 0
+                  }
+                }
+              ]
+            },
+            "stale_book": {
+              "category": "MISSING EVIDENCE",
+              "count": 15,
+              "samples": [
+                {
+                  "signal_id": "2a3c74f76fe2bfffe8f39623f2b8703ff90a28244e38f4318e75f9b7f7d12a54",
+                  "market_id": "4620900",
+                  "token_id": "51699731593220798404378104978434018325263546766663573208722653674626387696963",
+                  "timestamp": "2026-11-06T04:24:43.297623+00:00",
+                  "estimated_net_edge": null,
+                  "diagnostics": {
+                    "book_age_seconds": 52.354623,
+                    "fee_reference": "https://clob.polymarket.com",
+                    "fee_observed_at": "2026-11-06T04:21:39.914948+00:00",
+                    "data_gate_passed": 0,
+                    "valuation_ready": 0,
+                    "evidence_gate_passed": 0,
+                    "candidate_before_costs": 0,
+                    "qualified_before_risk": 0
+                  }
+                }
+              ]
+            },
+            "missing_book": {
+              "category": "MISSING EVIDENCE",
+              "count": 8,
+              "samples": [
+                {
+                  "signal_id": "ee0392e7e57a2f561483fe112e20ce789a3a0a370deaf397739d9b63eb2840f8",
+                  "market_id": "6423885",
+                  "token_id": "113888739003330413348261539134884858114090652439144846869649003571862177350188",
+                  "timestamp": "2026-11-06T04:24:43.297623+00:00",
+                  "estimated_net_edge": null,
+                  "diagnostics": {
+                    "book_age_seconds": null,
+                    "fee_reference": "https://clob.polymarket.com",
+                    "fee_observed_at": "2026-11-06T04:21:22.153942+00:00",
+                    "data_gate_passed": 0,
+                    "valuation_ready": 0,
+                    "evidence_gate_passed": 0,
+                    "candidate_before_costs": 0,
+                    "qualified_before_risk": 0
+                  }
+                }
+              ]
+            },
+            "unknown_fee_schedule": {
+              "category": "MISSING EVIDENCE",
+              "count": 5,
+              "samples": [
+                {
+                  "signal_id": "a4d21dc83f53c7c9cfaba744ddbd52bc2f32d74b18dc6fa599da177ce7c09a4e",
+                  "market_id": "3128768",
+                  "token_id": "29437165757872171455593111483309548889820974982069052877568301892400345063381",
+                  "timestamp": "2026-11-06T04:24:43.297623+00:00",
+                  "estimated_net_edge": null,
+                  "diagnostics": {
+                    "book_age_seconds": 3.726623,
+                    "data_gate_passed": 1,
+                    "valuation_ready": 0,
+                    "evidence_gate_passed": 0,
+                    "candidate_before_costs": 0,
+                    "qualified_before_risk": 0
+                  }
+                }
+              ]
+            },
+            "missing_liquidity": {
+              "category": "MISSING EVIDENCE",
+              "count": 2,
+              "samples": [
+                {
+                  "signal_id": "ebbb58260a4c21c34fe10fae11eb8f351399218b2fbe24961ac3ceecc84999c0",
+                  "market_id": "6705227",
+                  "token_id": "79015921464368616102162879247031217347021507875295490334855498616315688379225",
+                  "timestamp": "2026-11-06T04:24:43.297623+00:00",
+                  "estimated_net_edge": null,
+                  "diagnostics": {
+                    "book_age_seconds": 1.713623,
+                    "fee_reference": "https://clob.polymarket.com",
+                    "fee_observed_at": "2026-11-06T04:21:27.875311+00:00",
+                    "data_gate_passed": 0,
+                    "valuation_ready": 0,
+                    "evidence_gate_passed": 0,
+                    "candidate_before_costs": 0,
+                    "qualified_before_risk": 0
+                  }
+                }
+              ]
+            }
+          },
+          "emitted_signals": 47,
+          "duplicate_signals": 17
+        },
+        "event_driven": {
+          "markets_considered": 64,
+          "valid_observations": 39,
+          "candidate_signals": 0,
+          "rejected_signals": 64,
+          "qualified_opportunities": 0,
+          "risk_rejections": 0,
+          "order_attempts": 0,
+          "submitted_orders": 0,
+          "fills": 0,
+          "expired_orders": 0,
+          "cancelled_orders": 0,
+          "reasons": {
+            "independent_predecision_context_and_response_model_required": {
+              "category": "MISSING EVIDENCE",
+              "count": 64,
+              "samples": [
+                {
+                  "signal_id": "6d798d833a6848006f6e6c7cc1fb911ceb1e3b450640af579799801b8a08982c",
+                  "market_id": "6507380",
+                  "token_id": "100063340678399453619037549684979791875230113493746028286298866490793476208749",
+                  "timestamp": "2026-11-06T04:24:43.297623+00:00",
+                  "estimated_net_edge": null,
+                  "diagnostics": {
+                    "book_age_seconds": 2.915623,
+                    "fee_reference": "https://clob.polymarket.com",
+                    "fee_observed_at": "2026-11-06T04:24:29.466047+00:00",
+                    "data_gate_passed": 1,
+                    "valuation_ready": 0,
+                    "evidence_gate_passed": 0,
+                    "candidate_before_costs": 0,
+                    "qualified_before_risk": 0
+                  }
+                }
+              ]
+            },
+            "stale_book": {
+              "category": "MISSING EVIDENCE",
+              "count": 15,
+              "samples": [
+                {
+                  "signal_id": "8a4023089bb95649d88a67f703b5c08e600350eba2736d84401fd21d3ce61d8f",
+                  "market_id": "4620900",
+                  "token_id": "51699731593220798404378104978434018325263546766663573208722653674626387696963",
+                  "timestamp": "2026-11-06T04:24:43.297623+00:00",
+                  "estimated_net_edge": null,
+                  "diagnostics": {
+                    "book_age_seconds": 52.354623,
+                    "fee_reference": "https://clob.polymarket.com",
+                    "fee_observed_at": "2026-11-06T04:21:39.914948+00:00",
+                    "data_gate_passed": 0,
+                    "valuation_ready": 0,
+                    "evidence_gate_passed": 0,
+                    "candidate_before_costs": 0,
+                    "qualified_before_risk": 0
+                  }
+                }
+              ]
+            },
+            "missing_book": {
+              "category": "MISSING EVIDENCE",
+              "count": 8,
+              "samples": [
+                {
+                  "signal_id": "0ff31f593a2df447e3d02647b325801696d76a250f2864ce82dcc256c5164e95",
+                  "market_id": "6423885",
+                  "token_id": "113888739003330413348261539134884858114090652439144846869649003571862177350188",
+                  "timestamp": "2026-11-06T04:24:43.297623+00:00",
+                  "estimated_net_edge": null,
+                  "diagnostics": {
+                    "book_age_seconds": null,
+                    "fee_reference": "https://clob.polymarket.com",
+                    "fee_observed_at": "2026-11-06T04:21:22.153942+00:00",
+                    "data_gate_passed": 0,
+                    "valuation_ready": 0,
+                    "evidence_gate_passed": 0,
+                    "candidate_before_costs": 0,
+                    "qualified_before_risk": 0
+                  }
+                }
+              ]
+            },
+            "unknown_fee_schedule": {
+              "category": "MISSING EVIDENCE",
+              "count": 5,
+              "samples": [
+                {
+                  "signal_id": "7f44fbc577c0dcc3c032f29dc7b69020af1c49b4266b7c6e3a6b04cd8f23c0e2",
+                  "market_id": "3128768",
+                  "token_id": "29437165757872171455593111483309548889820974982069052877568301892400345063381",
+                  "timestamp": "2026-11-06T04:24:43.297623+00:00",
+                  "estimated_net_edge": null,
+                  "diagnostics": {
+                    "book_age_seconds": 3.726623,
+                    "data_gate_passed": 1,
+                    "valuation_ready": 0,
+                    "evidence_gate_passed": 0,
+                    "candidate_before_costs": 0,
+                    "qualified_before_risk": 0
+                  }
+                }
+              ]
+            },
+            "missing_liquidity": {
+              "category": "MISSING EVIDENCE",
+              "count": 2,
+              "samples": [
+                {
+                  "signal_id": "768f9ef88973885a6880b03457facc17752db3e5b9a32c844afbbdaaefc012ef",
+                  "market_id": "6705227",
+                  "token_id": "79015921464368616102162879247031217347021507875295490334855498616315688379225",
+                  "timestamp": "2026-11-06T04:24:43.297623+00:00",
+                  "estimated_net_edge": null,
+                  "diagnostics": {
+                    "book_age_seconds": 1.713623,
+                    "fee_reference": "https://clob.polymarket.com",
+                    "fee_observed_at": "2026-11-06T04:21:27.875311+00:00",
+                    "data_gate_passed": 0,
+                    "valuation_ready": 0,
+                    "evidence_gate_passed": 0,
+                    "candidate_before_costs": 0,
+                    "qualified_before_risk": 0
+                  }
+                }
+              ]
+            }
+          },
+          "emitted_signals": 47,
+          "duplicate_signals": 17
+        },
+        "liquidity_spread": {
+          "markets_considered": 64,
+          "valid_observations": 39,
+          "candidate_signals": 0,
+          "rejected_signals": 64,
+          "qualified_opportunities": 0,
+          "risk_rejections": 0,
+          "order_attempts": 0,
+          "submitted_orders": 0,
+          "fills": 0,
+          "expired_orders": 0,
+          "cancelled_orders": 0,
+          "reasons": {
+            "validated_queue_and_adverse_selection_model_required": {
+              "category": "MISSING EVIDENCE",
+              "count": 64,
+              "samples": [
+                {
+                  "signal_id": "484c02144430d4ee094ca513970c97444d7d6bf22357a65ac3bc2a429863ea3b",
+                  "market_id": "6507380",
+                  "token_id": "100063340678399453619037549684979791875230113493746028286298866490793476208749",
+                  "timestamp": "2026-11-06T04:24:43.297623+00:00",
+                  "estimated_net_edge": null,
+                  "diagnostics": {
+                    "book_age_seconds": 2.915623,
+                    "fee_reference": "https://clob.polymarket.com",
+                    "fee_observed_at": "2026-11-06T04:24:29.466047+00:00",
+                    "data_gate_passed": 1,
+                    "valuation_ready": 0,
+                    "evidence_gate_passed": 0,
+                    "candidate_before_costs": 0,
+                    "qualified_before_risk": 0
+                  }
+                }
+              ]
+            },
+            "two_sided_inventory_execution_not_supported": {
+              "category": "STRATEGY LIMITATION",
+              "count": 64,
+              "samples": [
+                {
+                  "signal_id": "484c02144430d4ee094ca513970c97444d7d6bf22357a65ac3bc2a429863ea3b",
+                  "market_id": "6507380",
+                  "token_id": "100063340678399453619037549684979791875230113493746028286298866490793476208749",
+                  "timestamp": "2026-11-06T04:24:43.297623+00:00",
+                  "estimated_net_edge": null,
+                  "diagnostics": {
+                    "book_age_seconds": 2.915623,
+                    "fee_reference": "https://clob.polymarket.com",
+                    "fee_observed_at": "2026-11-06T04:24:29.466047+00:00",
+                    "data_gate_passed": 1,
+                    "valuation_ready": 0,
+                    "evidence_gate_passed": 0,
+                    "candidate_before_costs": 0,
+                    "qualified_before_risk": 0
+                  }
+                }
+              ]
+            },
+            "stale_book": {
+              "category": "MISSING EVIDENCE",
+              "count": 15,
+              "samples": [
+                {
+                  "signal_id": "3c5cba72c91afe0928a5c44bbe06e81cef1b207d611d4c166dc3a639179354ab",
+                  "market_id": "4620900",
+                  "token_id": "51699731593220798404378104978434018325263546766663573208722653674626387696963",
+                  "timestamp": "2026-11-06T04:24:43.297623+00:00",
+                  "estimated_net_edge": null,
+                  "diagnostics": {
+                    "book_age_seconds": 52.354623,
+                    "fee_reference": "https://clob.polymarket.com",
+                    "fee_observed_at": "2026-11-06T04:21:39.914948+00:00",
+                    "data_gate_passed": 0,
+                    "valuation_ready": 0,
+                    "evidence_gate_passed": 0,
+                    "candidate_before_costs": 0,
+                    "qualified_before_risk": 0
+                  }
+                }
+              ]
+            },
+            "missing_book": {
+              "category": "MISSING EVIDENCE",
+              "count": 8,
+              "samples": [
+                {
+                  "signal_id": "eabd63062a31fc28a2759211f2b40810a48fb058a0916a605667af789b9d9c74",
+                  "market_id": "6423885",
+                  "token_id": "113888739003330413348261539134884858114090652439144846869649003571862177350188",
+                  "timestamp": "2026-11-06T04:24:43.297623+00:00",
+                  "estimated_net_edge": null,
+                  "diagnostics": {
+                    "book_age_seconds": null,
+                    "fee_reference": "https://clob.polymarket.com",
+                    "fee_observed_at": "2026-11-06T04:21:22.153942+00:00",
+                    "data_gate_passed": 0,
+                    "valuation_ready": 0,
+                    "evidence_gate_passed": 0,
+                    "candidate_before_costs": 0,
+                    "qualified_before_risk": 0
+                  }
+                }
+              ]
+            },
+            "unknown_fee_schedule": {
+              "category": "MISSING EVIDENCE",
+              "count": 5,
+              "samples": [
+                {
+                  "signal_id": "0a8dbb02ac40c749ad8c4ca448154cce7070fa4b9aaa9bd10168af05dc01d835",
+                  "market_id": "3128768",
+                  "token_id": "29437165757872171455593111483309548889820974982069052877568301892400345063381",
+                  "timestamp": "2026-11-06T04:24:43.297623+00:00",
+                  "estimated_net_edge": null,
+                  "diagnostics": {
+                    "book_age_seconds": 3.726623,
+                    "data_gate_passed": 1,
+                    "valuation_ready": 0,
+                    "evidence_gate_passed": 0,
+                    "candidate_before_costs": 0,
+                    "qualified_before_risk": 0
+                  }
+                }
+              ]
+            },
+            "missing_liquidity": {
+              "category": "MISSING EVIDENCE",
+              "count": 2,
+              "samples": [
+                {
+                  "signal_id": "b0b5750ba4016d25d58ad73aaabad26c95405606df4833f44ee9ae078e08cfe6",
+                  "market_id": "6705227",
+                  "token_id": "79015921464368616102162879247031217347021507875295490334855498616315688379225",
+                  "timestamp": "2026-11-06T04:24:43.297623+00:00",
+                  "estimated_net_edge": null,
+                  "diagnostics": {
+                    "book_age_seconds": 1.713623,
+                    "fee_reference": "https://clob.polymarket.com",
+                    "fee_observed_at": "2026-11-06T04:21:27.875311+00:00",
+                    "data_gate_passed": 0,
+                    "valuation_ready": 0,
+                    "evidence_gate_passed": 0,
+                    "candidate_before_costs": 0,
+                    "qualified_before_risk": 0
+                  }
+                }
+              ]
+            }
+          },
+          "emitted_signals": 47,
+          "duplicate_signals": 17
+        },
+        "persistent_relationship": {
+          "markets_considered": 64,
+          "valid_observations": 39,
+          "candidate_signals": 0,
+          "rejected_signals": 64,
+          "qualified_opportunities": 0,
+          "risk_rejections": 0,
+          "order_attempts": 0,
+          "submitted_orders": 0,
+          "fills": 0,
+          "expired_orders": 0,
+          "cancelled_orders": 0,
+          "reasons": {
+            "persistent_contextual_relationship_evidence_required": {
+              "category": "MISSING EVIDENCE",
+              "count": 64,
+              "samples": [
+                {
+                  "signal_id": "ec0e5da60612e8bfb30accdc2e2b2c92688ec9524418a3ac2ef3b31ef735535d",
+                  "market_id": "6507380",
+                  "token_id": "100063340678399453619037549684979791875230113493746028286298866490793476208749",
+                  "timestamp": "2026-11-06T04:24:43.297623+00:00",
+                  "estimated_net_edge": -0.052600000000000036,
+                  "diagnostics": {
+                    "book_age_seconds": 2.915623,
+                    "fee_reference": "https://clob.polymarket.com",
+                    "fee_observed_at": "2026-11-06T04:24:29.466047+00:00",
+                    "forecast": 0.09,
+                    "lower": 0.07999999999999999,
+                    "upper": 0.1,
+                    "observations": 95,
+                    "matured_errors": 60,
+                    "empirical_error_envelope": 0.010000000000000009,
+                    "reference_bid": 0.09,
+                    "bias": 0.0,
+                    "entry_ask": 0.1,
+                    "current_bid": 0.09,
+                    "spread": 0.010000000000000009,
+                    "forecast_gross_edge": -0.010000000000000009,
+                    "uncertainty_haircut": 0.010000000000000009,
+                    "conservative_pre_cost_edge": -0.020000000000000018,
+                    "entry_fee_bound": 0.007000000000000001,
+                    "exit_fee_bound": 0.0056,
+                    "roundtrip_slippage_bound": 0.02,
+                    "minimum_net_edge": 0.03,
+                    "cost_model": "global_notional_bound_matches_broker",
+                    "data_gate_passed": 1,
+                    "valuation_ready": 1,
+                    "evidence_gate_passed": 0,
+                    "candidate_before_costs": 0,
+                    "qualified_before_risk": 0
+                  }
+                }
+              ]
+            },
+            "conservative_roundtrip_edge_insufficient": {
+              "category": "MARKET CONDITION",
+              "count": 47,
+              "samples": [
+                {
+                  "signal_id": "ec0e5da60612e8bfb30accdc2e2b2c92688ec9524418a3ac2ef3b31ef735535d",
+                  "market_id": "6507380",
+                  "token_id": "100063340678399453619037549684979791875230113493746028286298866490793476208749",
+                  "timestamp": "2026-11-06T04:24:43.297623+00:00",
+                  "estimated_net_edge": -0.052600000000000036,
+                  "diagnostics": {
+                    "book_age_seconds": 2.915623,
+                    "fee_reference": "https://clob.polymarket.com",
+                    "fee_observed_at": "2026-11-06T04:24:29.466047+00:00",
+                    "forecast": 0.09,
+                    "lower": 0.07999999999999999,
+                    "upper": 0.1,
+                    "observations": 95,
+                    "matured_errors": 60,
+                    "empirical_error_envelope": 0.010000000000000009,
+                    "reference_bid": 0.09,
+                    "bias": 0.0,
+                    "entry_ask": 0.1,
+                    "current_bid": 0.09,
+                    "spread": 0.010000000000000009,
+                    "forecast_gross_edge": -0.010000000000000009,
+                    "uncertainty_haircut": 0.010000000000000009,
+                    "conservative_pre_cost_edge": -0.020000000000000018,
+                    "entry_fee_bound": 0.007000000000000001,
+                    "exit_fee_bound": 0.0056,
+                    "roundtrip_slippage_bound": 0.02,
+                    "minimum_net_edge": 0.03,
+                    "cost_model": "global_notional_bound_matches_broker",
+                    "data_gate_passed": 1,
+                    "valuation_ready": 1,
+                    "evidence_gate_passed": 0,
+                    "candidate_before_costs": 0,
+                    "qualified_before_risk": 0
+                  }
+                }
+              ]
+            },
+            "stale_book": {
+              "category": "MISSING EVIDENCE",
+              "count": 15,
+              "samples": [
+                {
+                  "signal_id": "8356dc328c479b428d02a42962f18adfb2380653332bb68e1eb5396550532d42",
+                  "market_id": "4620900",
+                  "token_id": "51699731593220798404378104978434018325263546766663573208722653674626387696963",
+                  "timestamp": "2026-11-06T04:24:43.297623+00:00",
+                  "estimated_net_edge": -0.074,
+                  "diagnostics": {
+                    "book_age_seconds": 52.354623,
+                    "fee_reference": "https://clob.polymarket.com",
+                    "fee_observed_at": "2026-11-06T04:21:39.914948+00:00",
+                    "forecast": 0.34,
+                    "lower": 0.33,
+                    "upper": 0.35000000000000003,
+                    "observations": 95,
+                    "matured_errors": 50,
+                    "empirical_error_envelope": 0.010000000000000009,
+                    "reference_bid": 0.34,
+                    "bias": 0.0,
+                    "entry_ask": 0.35,
+                    "current_bid": 0.34,
+                    "spread": 0.009999999999999953,
+                    "forecast_gross_edge": -0.009999999999999953,
+                    "uncertainty_haircut": 0.010000000000000009,
+                    "conservative_pre_cost_edge": -0.019999999999999962,
+                    "entry_fee_bound": 0.017499999999999998,
+                    "exit_fee_bound": 0.0165,
+                    "roundtrip_slippage_bound": 0.02,
+                    "minimum_net_edge": 0.03,
+                    "cost_model": "global_notional_bound_matches_broker",
+                    "data_gate_passed": 0,
+                    "valuation_ready": 1,
+                    "evidence_gate_passed": 0,
+                    "candidate_before_costs": 0,
+                    "qualified_before_risk": 0
+                  }
+                }
+              ]
+            },
+            "missing_book": {
+              "category": "MISSING EVIDENCE",
+              "count": 8,
+              "samples": [
+                {
+                  "signal_id": "d87ac28f941f592af4af38d457c14d15bd0748844b2dda1c5ecd9a02ad54516e",
+                  "market_id": "6423885",
+                  "token_id": "113888739003330413348261539134884858114090652439144846869649003571862177350188",
+                  "timestamp": "2026-11-06T04:24:43.297623+00:00",
+                  "estimated_net_edge": null,
+                  "diagnostics": {
+                    "book_age_seconds": null,
+                    "fee_reference": "https://clob.polymarket.com",
+                    "fee_observed_at": "2026-11-06T04:21:22.153942+00:00",
+                    "forecast": 0.96175,
+                    "lower": 0.95175,
+                    "upper": 0.97175,
+                    "observations": 95,
+                    "matured_errors": 60,
+                    "empirical_error_envelope": 0.01,
+                    "reference_bid": 0.962,
+                    "bias": -0.00024999999999997247,
+                    "data_gate_passed": 0,
+                    "valuation_ready": 1,
+                    "evidence_gate_passed": 0,
+                    "candidate_before_costs": 0,
+                    "qualified_before_risk": 0
+                  }
+                }
+              ]
+            },
+            "unknown_fee_schedule": {
+              "category": "MISSING EVIDENCE",
+              "count": 5,
+              "samples": [
+                {
+                  "signal_id": "9a0a130af5eaaafebe90c92431a9791d98ab8252f2d93af7c354e7a96c1651bc",
+                  "market_id": "3128768",
+                  "token_id": "29437165757872171455593111483309548889820974982069052877568301892400345063381",
+                  "timestamp": "2026-11-06T04:24:43.297623+00:00",
+                  "estimated_net_edge": null,
+                  "diagnostics": {
+                    "book_age_seconds": 3.726623,
+                    "forecast": 0.23,
+                    "lower": 0.22,
+                    "upper": 0.24000000000000002,
+                    "observations": 95,
+                    "matured_errors": 60,
+                    "empirical_error_envelope": 0.01,
+                    "reference_bid": 0.23,
+                    "bias": 0.0,
+                    "data_gate_passed": 1,
+                    "valuation_ready": 1,
+                    "evidence_gate_passed": 0,
+                    "candidate_before_costs": 0,
+                    "qualified_before_risk": 0
+                  }
+                }
+              ]
+            },
+            "insufficient_causal_bid_history": {
+              "category": "MISSING EVIDENCE",
+              "count": 2,
+              "samples": [
+                {
+                  "signal_id": "2bdca95364343bc48a1426f9859dc95e3a6a2ca88a3f512e69bac9335c78299a",
+                  "market_id": "6490622",
+                  "token_id": "51813782413093870360945676787709991580104678576723849573329710990751482365913",
+                  "timestamp": "2026-11-06T04:24:43.297623+00:00",
+                  "estimated_net_edge": null,
+                  "diagnostics": {
+                    "book_age_seconds": 17.773623,
+                    "fee_reference": "https://clob.polymarket.com",
+                    "fee_observed_at": "2026-11-06T04:21:08.184681+00:00",
+                    "data_gate_passed": 0,
+                    "valuation_ready": 0,
+                    "evidence_gate_passed": 0,
+                    "candidate_before_costs": 0,
+                    "qualified_before_risk": 0
+                  }
+                }
+              ]
+            },
+            "missing_liquidity": {
+              "category": "MISSING EVIDENCE",
+              "count": 2,
+              "samples": [
+                {
+                  "signal_id": "bebca46efe4f95013f6bb82747761ae1f865c5d924a90aa89826643cf1b6776b",
+                  "market_id": "6705227",
+                  "token_id": "79015921464368616102162879247031217347021507875295490334855498616315688379225",
+                  "timestamp": "2026-11-06T04:24:43.297623+00:00",
+                  "estimated_net_edge": null,
+                  "diagnostics": {
+                    "book_age_seconds": 1.713623,
+                    "fee_reference": "https://clob.polymarket.com",
+                    "fee_observed_at": "2026-11-06T04:21:27.875311+00:00",
+                    "data_gate_passed": 0,
+                    "valuation_ready": 0,
+                    "evidence_gate_passed": 0,
+                    "candidate_before_costs": 0,
+                    "qualified_before_risk": 0
+                  }
+                }
+              ]
+            },
+            "insufficient_matured_horizon_forecast_errors": {
+              "category": "MISSING EVIDENCE",
+              "count": 2,
+              "samples": [
+                {
+                  "signal_id": "bebca46efe4f95013f6bb82747761ae1f865c5d924a90aa89826643cf1b6776b",
+                  "market_id": "6705227",
+                  "token_id": "79015921464368616102162879247031217347021507875295490334855498616315688379225",
+                  "timestamp": "2026-11-06T04:24:43.297623+00:00",
+                  "estimated_net_edge": null,
+                  "diagnostics": {
+                    "book_age_seconds": 1.713623,
+                    "fee_reference": "https://clob.polymarket.com",
+                    "fee_observed_at": "2026-11-06T04:21:27.875311+00:00",
+                    "data_gate_passed": 0,
+                    "valuation_ready": 0,
+                    "evidence_gate_passed": 0,
+                    "candidate_before_costs": 0,
+                    "qualified_before_risk": 0
+                  }
+                }
+              ]
+            }
+          },
+          "emitted_signals": 47,
+          "duplicate_signals": 17
+        },
+        "short_horizon": {
+          "markets_considered": 64,
+          "valid_observations": 39,
+          "candidate_signals": 35,
+          "rejected_signals": 64,
+          "qualified_opportunities": 0,
+          "risk_rejections": 0,
+          "order_attempts": 0,
+          "submitted_orders": 0,
+          "fills": 0,
+          "expired_orders": 0,
+          "cancelled_orders": 0,
+          "reasons": {
+            "conservative_roundtrip_edge_insufficient": {
+              "category": "MARKET CONDITION",
+              "count": 47,
+              "samples": [
+                {
+                  "signal_id": "a7c2e1d86662e036c3008231251c8ad88157382e218b14c99f8feaec62006910",
+                  "market_id": "6507380",
+                  "token_id": "100063340678399453619037549684979791875230113493746028286298866490793476208749",
+                  "timestamp": "2026-11-06T04:24:43.297623+00:00",
+                  "estimated_net_edge": -0.052600000000000036,
+                  "diagnostics": {
+                    "book_age_seconds": 2.915623,
+                    "fee_reference": "https://clob.polymarket.com",
+                    "fee_observed_at": "2026-11-06T04:24:29.466047+00:00",
+                    "forecast": 0.09,
+                    "lower": 0.07999999999999999,
+                    "upper": 0.1,
+                    "observations": 95,
+                    "matured_errors": 60,
+                    "empirical_error_envelope": 0.010000000000000009,
+                    "reference_bid": 0.09,
+                    "bias": 0.0,
+                    "entry_ask": 0.1,
+                    "current_bid": 0.09,
+                    "spread": 0.010000000000000009,
+                    "forecast_gross_edge": -0.010000000000000009,
+                    "uncertainty_haircut": 0.010000000000000009,
+                    "conservative_pre_cost_edge": -0.020000000000000018,
+                    "entry_fee_bound": 0.007000000000000001,
+                    "exit_fee_bound": 0.0056,
+                    "roundtrip_slippage_bound": 0.02,
+                    "minimum_net_edge": 0.03,
+                    "cost_model": "global_notional_bound_matches_broker",
+                    "data_gate_passed": 1,
+                    "valuation_ready": 1,
+                    "evidence_gate_passed": 1,
+                    "candidate_before_costs": 1,
+                    "qualified_before_risk": 0
+                  }
+                }
+              ]
+            },
+            "stale_book": {
+              "category": "MISSING EVIDENCE",
+              "count": 15,
+              "samples": [
+                {
+                  "signal_id": "92d00eafb41c2e49d6ce2af295e5e72b49f439e27881959e081049a40d235f3f",
+                  "market_id": "4620900",
+                  "token_id": "51699731593220798404378104978434018325263546766663573208722653674626387696963",
+                  "timestamp": "2026-11-06T04:24:43.297623+00:00",
+                  "estimated_net_edge": -0.074,
+                  "diagnostics": {
+                    "book_age_seconds": 52.354623,
+                    "fee_reference": "https://clob.polymarket.com",
+                    "fee_observed_at": "2026-11-06T04:21:39.914948+00:00",
+                    "forecast": 0.34,
+                    "lower": 0.33,
+                    "upper": 0.35000000000000003,
+                    "observations": 95,
+                    "matured_errors": 50,
+                    "empirical_error_envelope": 0.010000000000000009,
+                    "reference_bid": 0.34,
+                    "bias": 0.0,
+                    "entry_ask": 0.35,
+                    "current_bid": 0.34,
+                    "spread": 0.009999999999999953,
+                    "forecast_gross_edge": -0.009999999999999953,
+                    "uncertainty_haircut": 0.010000000000000009,
+                    "conservative_pre_cost_edge": -0.019999999999999962,
+                    "entry_fee_bound": 0.017499999999999998,
+                    "exit_fee_bound": 0.0165,
+                    "roundtrip_slippage_bound": 0.02,
+                    "minimum_net_edge": 0.03,
+                    "cost_model": "global_notional_bound_matches_broker",
+                    "data_gate_passed": 0,
+                    "valuation_ready": 1,
+                    "evidence_gate_passed": 0,
+                    "candidate_before_costs": 0,
+                    "qualified_before_risk": 0
+                  }
+                }
+              ]
+            },
+            "missing_book": {
+              "category": "MISSING EVIDENCE",
+              "count": 8,
+              "samples": [
+                {
+                  "signal_id": "a1fc38b0e80480126c6da76ac9228a990271d96010759f9d37a750ef243ddbe9",
+                  "market_id": "6423885",
+                  "token_id": "113888739003330413348261539134884858114090652439144846869649003571862177350188",
+                  "timestamp": "2026-11-06T04:24:43.297623+00:00",
+                  "estimated_net_edge": null,
+                  "diagnostics": {
+                    "book_age_seconds": null,
+                    "fee_reference": "https://clob.polymarket.com",
+                    "fee_observed_at": "2026-11-06T04:21:22.153942+00:00",
+                    "forecast": 0.96175,
+                    "lower": 0.95175,
+                    "upper": 0.97175,
+                    "observations": 95,
+                    "matured_errors": 60,
+                    "empirical_error_envelope": 0.01,
+                    "reference_bid": 0.962,
+                    "bias": -0.00024999999999997247,
+                    "data_gate_passed": 0,
+                    "valuation_ready": 1,
+                    "evidence_gate_passed": 0,
+                    "candidate_before_costs": 0,
+                    "qualified_before_risk": 0
+                  }
+                }
+              ]
+            },
+            "unknown_fee_schedule": {
+              "category": "MISSING EVIDENCE",
+              "count": 5,
+              "samples": [
+                {
+                  "signal_id": "3ef621c202c02ab02b8b87389e9b45366091ad6dcc100d7adc9a576a94af3856",
+                  "market_id": "3128768",
+                  "token_id": "29437165757872171455593111483309548889820974982069052877568301892400345063381",
+                  "timestamp": "2026-11-06T04:24:43.297623+00:00",
+                  "estimated_net_edge": null,
+                  "diagnostics": {
+                    "book_age_seconds": 3.726623,
+                    "forecast": 0.23,
+                    "lower": 0.22,
+                    "upper": 0.24000000000000002,
+                    "observations": 95,
+                    "matured_errors": 60,
+                    "empirical_error_envelope": 0.01,
+                    "reference_bid": 0.23,
+                    "bias": 0.0,
+                    "data_gate_passed": 1,
+                    "valuation_ready": 1,
+                    "evidence_gate_passed": 0,
+                    "candidate_before_costs": 0,
+                    "qualified_before_risk": 0
+                  }
+                }
+              ]
+            },
+            "insufficient_causal_bid_history": {
+              "category": "MISSING EVIDENCE",
+              "count": 2,
+              "samples": [
+                {
+                  "signal_id": "aec2bca13775b87acac95a8a8ddf472955e6168fb747e3390bf01493bc02ba1c",
+                  "market_id": "6490622",
+                  "token_id": "51813782413093870360945676787709991580104678576723849573329710990751482365913",
+                  "timestamp": "2026-11-06T04:24:43.297623+00:00",
+                  "estimated_net_edge": null,
+                  "diagnostics": {
+                    "book_age_seconds": 17.773623,
+                    "fee_reference": "https://clob.polymarket.com",
+                    "fee_observed_at": "2026-11-06T04:21:08.184681+00:00",
+                    "data_gate_passed": 0,
+                    "valuation_ready": 0,
+                    "evidence_gate_passed": 0,
+                    "candidate_before_costs": 0,
+                    "qualified_before_risk": 0
+                  }
+                }
+              ]
+            },
+            "missing_liquidity": {
+              "category": "MISSING EVIDENCE",
+              "count": 2,
+              "samples": [
+                {
+                  "signal_id": "5d29d1fb15923771453abb5b6227d2c4e21f574ee9c229b58ac18b466eb8caea",
+                  "market_id": "6705227",
+                  "token_id": "79015921464368616102162879247031217347021507875295490334855498616315688379225",
+                  "timestamp": "2026-11-06T04:24:43.297623+00:00",
+                  "estimated_net_edge": null,
+                  "diagnostics": {
+                    "book_age_seconds": 1.713623,
+                    "fee_reference": "https://clob.polymarket.com",
+                    "fee_observed_at": "2026-11-06T04:21:27.875311+00:00",
+                    "data_gate_passed": 0,
+                    "valuation_ready": 0,
+                    "evidence_gate_passed": 0,
+                    "candidate_before_costs": 0,
+                    "qualified_before_risk": 0
+                  }
+                }
+              ]
+            },
+            "insufficient_matured_horizon_forecast_errors": {
+              "category": "MISSING EVIDENCE",
+              "count": 2,
+              "samples": [
+                {
+                  "signal_id": "5d29d1fb15923771453abb5b6227d2c4e21f574ee9c229b58ac18b466eb8caea",
+                  "market_id": "6705227",
+                  "token_id": "79015921464368616102162879247031217347021507875295490334855498616315688379225",
+                  "timestamp": "2026-11-06T04:24:43.297623+00:00",
+                  "estimated_net_edge": null,
+                  "diagnostics": {
+                    "book_age_seconds": 1.713623,
+                    "fee_reference": "https://clob.polymarket.com",
+                    "fee_observed_at": "2026-11-06T04:21:27.875311+00:00",
+                    "data_gate_passed": 0,
+                    "valuation_ready": 0,
+                    "evidence_gate_passed": 0,
+                    "candidate_before_costs": 0,
+                    "qualified_before_risk": 0
+                  }
+                }
+              ]
+            }
+          },
+          "emitted_signals": 47,
+          "duplicate_signals": 17
+        }
+      }
+    }
+  },
+  "observed_quotes": [
+    {
+      "id": "bf55abe0e78ca3684fb6fea294a91c2d5afa225bbae5a0da8730dfbe31556820",
+      "market_id": "3580932",
+      "token_id": "28042880819135054236705112210866715426402068267079731308218252509537644025901",
+      "timestamp": "2026-11-06T04:24:47.926000Z",
+      "available_at": "2026-11-06T04:24:48.876727Z",
+      "source": "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+      "best_bid": {
+        "price": 0.32,
+        "size": 58.69
+      },
+      "best_ask": {
+        "price": 0.33,
+        "size": 4425.87
+      },
+      "source_age_seconds_at_capture": 3.624059
+    },
+    {
+      "id": "184be6f68529fe7ef177fca27638a94c5ca911959e4a2cbe5b4fc9cd910a3182",
+      "market_id": "3215007",
+      "token_id": "42865728742506860386768556888821101266630139112044622335353850919229585308601",
+      "timestamp": "2026-11-06T04:24:49.765000Z",
+      "available_at": "2026-11-06T04:24:50.812796Z",
+      "source": "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+      "best_bid": {
+        "price": 0.35,
+        "size": 11575.2
+      },
+      "best_ask": {
+        "price": 0.36,
+        "size": 18895.24
+      },
+      "source_age_seconds_at_capture": 1.785059
+    },
+    {
+      "id": "e72fdb5fa71c87cad57a7db8d6797639b3766c85143a8cdd2673479fa30b598c",
+      "market_id": "6675981",
+      "token_id": "107157641296911498592890920947053829105931739511040760439170568486187692171415",
+      "timestamp": "2026-11-06T04:24:49.549000Z",
+      "available_at": "2026-11-06T04:24:50.731295Z",
+      "source": "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+      "best_bid": {
+        "price": 0.71,
+        "size": 8597.08
+      },
+      "best_ask": {
+        "price": 0.72,
+        "size": 104440.74
+      },
+      "source_age_seconds_at_capture": 2.001059
+    }
+  ],
+  "raw_files_sha256": {
+    "data/phase10-operations/experimental-final.json": "b034f29998f9e04c6a65d7af5a8408c1917507aab0d5ca274e6b5709ef216815",
+    "data/phase10-operations/certified-final.json": "b5b86aad245d444b29ddcbb5cc959de82bbccd10c2459229b4efa3d88691c4fa",
+    "data/phase10-operations/source-frame-final.json": "22704b34633ac8aaeb5a8f072cb18a604be863f25b01152a25ce3737dffcd840"
+  },
+  "quote_selection": "Selected experimental tokens with fresh source timestamps and ask between .1 and .9; quote only, not a qualified opportunity or fill"
+}

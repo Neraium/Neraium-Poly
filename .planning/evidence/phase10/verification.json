@@ -1,0 +1,16 @@
+{
+  "verified_source_head": "66509cadf0af7cfe80cb19c87c334c5548c1b55f",
+  "ci_run_id": 42162301617,
+  "ci_conclusion": "success",
+  "ci_backend_tests": 447,
+  "local_full_backend": 446,
+  "later_baseline_focused_tests": 9,
+  "local_browser_tests": 5,
+  "local_dashboard_build": "passed",
+  "ruff": "passed",
+  "runtime_dependency_audit": "no known vulnerabilities",
+  "npm_audit": "0 vulnerabilities",
+  "strategy_activation_changed": false,
+  "live_execution_enabled": false,
+  "preexisting_inspection_preserved": ".planning/evidence/live-inspection-20261106/"
+}

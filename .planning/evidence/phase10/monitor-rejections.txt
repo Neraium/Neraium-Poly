@@ -1,0 +1,24 @@
+REAL MARKET DATA
+Markets 200 Fresh 4/400 1%
+EXPERIMENTAL PAPER TRADING
+UNVALIDATED Stop clear
+Cash $500.00 P/L $0.00
+Exposure $0.00 Pos 0
+Exp fresh 53/64 83%
+CERTIFIED PAPER TRADING
+Cash $500.00 P/L $0.00
+Gate validation_blocked Stop clear
+Epoch since 11-06 04:22:19Z
+REJECTIONS · nonexclusive counts
+3,702 MISSING EVIDENCE
+1,280 STRATEGY LIMITATION
+1,076 MARKET CONDITION
+1,076 net edge below floor
+640 context/calibration missing
+640 causal context/model missing
+640 payoff scope unverified
+640 multi-leg unsupported
+640 persistent evidence missing
+640 two-sided execution unsupported
+LIVE FINANCIAL TRADING DISABLED
+Ctrl-C exits monitor only
