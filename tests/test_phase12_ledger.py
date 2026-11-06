@@ -1,0 +1,289 @@
+"""Controlled fixtures only; these forecasts/outcomes never enter real paper accounts."""
+
+import hashlib
+import sqlite3
+from datetime import UTC, datetime, timedelta
+
+import pytest
+from neraium_poly.research.phase12.contracts import EventEvidence, EventForecast, VerifiedEventOutcome
+from neraium_poly.research.phase12.ledger import EventForecastLedger, content_sha256
+from test_experimental_account import book, market
+
+NOW = datetime(2026, 11, 6, 12, tzinfo=UTC)
+
+
+class Clock:
+    now = NOW
+
+    def __call__(self):
+        return self.now
+
+
+def evidence(ledger, clock, suffix=""):
+    b, m = book(clock()), market(clock())
+    records = []
+    for kind, payload in [
+        ("order_book", {"book": b.model_dump(mode="json")}),
+        ("resolution_rules", {"market": m.model_dump(mode="json")}),
+    ]:
+        e = EventEvidence(
+            id=kind + suffix,
+            timestamp=clock(),
+            available_at=clock(),
+            source="CONTROLLED test fixture",
+            event_id=m.event_id,
+            market_id=m.market_id,
+            kind=kind,
+            content_sha256=content_sha256(payload),
+            payload=payload,
+        )
+        ledger.record_evidence(e)
+        records.append(e)
+    f = EventForecast(
+        id="forecast" + suffix,
+        timestamp=clock(),
+        available_at=clock(),
+        source="CONTROLLED fixture",
+        event_id=m.event_id,
+        market_id=m.market_id,
+        token_id=m.token_id,
+        dependency_group=m.event_id,
+        kind="market_baseline",
+        probability=0.395,
+        market_probability=0.395,
+        evidence_cutoff=clock(),
+        model_version="controlled-midpoint-v1",
+        feature_version="controlled-book-v1",
+        dataset_sha256="a" * 64,
+        model_sha256="b" * 64,
+        resolution_rules_sha256=hashlib.sha256(m.resolution_rules.encode()).hexdigest(),
+        evidence_ids=tuple(e.id for e in records),
+        uncertainty={"type": "uncalibrated_spread"},
+    )
+    return f, records
+
+
+def outcome(f, clock):
+    verification = {"controlled_test_proof": f.token_id, "payout": 1}
+    return VerifiedEventOutcome(
+        id="controlled-outcome",
+        timestamp=clock(),
+        available_at=clock(),
+        source="CONTROLLED synthetic verifier fixture",
+        event_id=f.event_id,
+        market_id=f.market_id,
+        token_id=f.token_id,
+        payout=1,
+        resolution_rules_sha256=f.resolution_rules_sha256,
+        settled_at=NOW + timedelta(hours=1),
+        verification_source="controlled-test-only",
+        proof_sha256=content_sha256(verification),
+        verification=verification,
+    )
+
+
+def test_baseline_immutable_idempotent_and_restart_safe(tmp_path):
+    clock = Clock()
+    ledger = EventForecastLedger(tmp_path / "forecast", clock=clock)
+    f, _records = evidence(ledger, clock)
+    assert ledger.record_forecast(f)
+    assert not ledger.record_forecast(f)
+    assert ledger.forecasts() == (f,) and ledger.pending_forecasts() == (f,)
+    with pytest.raises(ValueError, match="collision"):
+        ledger.record_forecast(f.model_copy(update={"probability": 0.6}))
+    with pytest.raises(sqlite3.IntegrityError, match="append only"):
+        ledger.db.execute("UPDATE journal SET payload='{}'")
+    head = ledger.verify()
+    ledger.close()
+    ledger = EventForecastLedger(tmp_path / "forecast", clock=clock)
+    assert ledger.verify() == head
+    s = ledger.summary()
+    assert s["forecasts_pending"] == 1 and s["scores"]["brier"] is None
+    assert s["independent_event_groups"] == 0 and not s["certification_authority"]
+    ledger.close()
+
+
+def test_exclusive_owner_and_record_budget(tmp_path):
+    clock = Clock()
+    ledger = EventForecastLedger(tmp_path, clock=clock, max_records=2)
+    with pytest.raises(ValueError, match="another event"):
+        EventForecastLedger(tmp_path, clock=clock)
+    f, _ = evidence(ledger, clock)
+    with pytest.raises(ValueError, match="budget"):
+        ledger.record_forecast(f)
+    ledger.close()
+
+
+def test_future_evidence_backdated_forecast_and_missing_rules_reject(tmp_path):
+    clock = Clock()
+    ledger = EventForecastLedger(tmp_path, clock=clock)
+    f, records = evidence(ledger, clock)
+    with pytest.raises(ValueError, match="future or corrupt"):
+        ledger.record_evidence(
+            records[0].model_copy(update={"id": "future", "available_at": clock() + timedelta(seconds=1)})
+        )
+    with pytest.raises(ValueError, match="prospective"):
+        ledger.record_forecast(
+            f.model_copy(
+                update={
+                    "timestamp": clock() - timedelta(seconds=31),
+                    "evidence_cutoff": clock() - timedelta(seconds=31),
+                }
+            )
+        )
+    with pytest.raises(ValueError, match="matching resolution"):
+        ledger.record_forecast(f.model_copy(update={"evidence_ids": (records[0].id,)}))
+    with pytest.raises(ValueError, match="mismatched"):
+        ledger.record_forecast(f.model_copy(update={"evidence_cutoff": clock() - timedelta(seconds=1)}))
+    with pytest.raises(ValueError, match="market baseline"):
+        ledger.record_forecast(f.model_copy(update={"market_probability": 0.5}))
+    ledger.close()
+
+
+def test_baseline_cannot_claim_independent_probability_or_group_review(tmp_path):
+    clock = Clock()
+    ledger = EventForecastLedger(tmp_path, clock=clock)
+    f, _ = evidence(ledger, clock)
+    with pytest.raises(ValueError, match="independent probability"):
+        ledger.record_forecast(f.model_copy(update={"probability": 0.6}))
+    with pytest.raises(ValueError, match="grouping review"):
+        ledger.record_forecast(f.model_copy(update={"independence_reviewed": True}))
+    with pytest.raises(ValueError, match="historical-frequency"):
+        ledger.record_forecast(f.model_copy(update={"kind": "historical_frequency", "probability": 0.6}))
+    ledger.close()
+
+
+def test_independent_forecast_requires_external_evidence_and_trusted_model_validator(tmp_path):
+    clock = Clock()
+    ledger = EventForecastLedger(tmp_path, clock=clock)
+    f, _records = evidence(ledger, clock)
+    model = f.model_copy(
+        update={
+            "kind": "independent_model",
+            "probability": 0.7,
+            "lower_probability": 0.6,
+            "upper_probability": 0.8,
+        }
+    )
+    with pytest.raises(ValueError, match="reviewed model"):
+        ledger.record_forecast(model)
+    e = EventEvidence(
+        id="external",
+        timestamp=clock(),
+        available_at=clock(),
+        source="https://api.weather.gov/controlled",
+        event_id=f.event_id,
+        market_id=f.market_id,
+        kind="external_context",
+        payload={"controlled": 1},
+        content_sha256=content_sha256({"controlled": 1}),
+        independent_of_market_price=True,
+    )
+    ledger.record_evidence(e)
+    model = model.model_copy(update={"evidence_ids": (*f.evidence_ids, e.id)})
+    with pytest.raises(ValueError, match="reviewed model"):
+        ledger.record_forecast(model)
+    ledger.independent_forecast_validator = lambda forecast, evidence: True  # Controlled reviewer only.
+    assert ledger.record_forecast(model)
+    ledger.close()
+
+
+def test_outcome_json_flag_is_not_verified_proof_and_past_forecast_cannot_be_inserted(tmp_path):
+    clock = Clock()
+    ledger = EventForecastLedger(tmp_path, clock=clock)
+    f, _ = evidence(ledger, clock)
+    ledger.record_forecast(f)
+    clock.now = NOW + timedelta(hours=2)
+    o = outcome(f, clock)
+    with pytest.raises(ValueError, match="independent finalized"):
+        ledger.record_outcome(o)
+    ledger.outcome_validator = lambda proof: True  # Only synthetic verifier in this controlled test.
+    assert ledger.record_outcome(o)
+    s = ledger.summary()
+    assert s["forecasts_resolved"] == 1 and s["independent_event_groups"] == 0
+    assert s["scores"]["brier"] is None
+    assert s["uncalibrated_resolved_scores"]["brier"] == pytest.approx((0.395 - 1) ** 2)
+    f2, _ = evidence(ledger, clock, "-after")
+    with pytest.raises(ValueError, match="known resolved"):
+        ledger.record_forecast(f2)
+    ledger.close()
+
+
+def test_earliest_forecast_per_dependency_model_scores_once(tmp_path):
+    clock = Clock()
+    ledger = EventForecastLedger(
+        tmp_path,
+        clock=clock,
+        independent_forecast_validator=lambda f, e: True,
+        independence_validator=lambda f: True,
+        outcome_validator=lambda o: True,
+    )
+    f, _ = evidence(ledger, clock)
+    ext = EventEvidence(
+        id="external",
+        timestamp=clock(),
+        available_at=clock(),
+        source="https://weather.test.invalid",
+        event_id=f.event_id,
+        market_id=f.market_id,
+        kind="external_context",
+        payload={"fixture": 1},
+        content_sha256=content_sha256({"fixture": 1}),
+        independent_of_market_price=True,
+    )
+    ledger.record_evidence(ext)
+    f = f.model_copy(
+        update={
+            "kind": "independent_model",
+            "model_version": "controlled-model",
+            "probability": 0.7,
+            "lower_probability": 0.6,
+            "upper_probability": 0.9,
+            "independence_reviewed": True,
+            "evidence_ids": (*f.evidence_ids, ext.id),
+        }
+    )
+    ledger.record_forecast(f)
+    clock.now += timedelta(seconds=1)
+    f2, _ = evidence(ledger, clock, "-next")
+    f2 = f2.model_copy(
+        update={
+            "kind": "independent_model",
+            "model_version": "controlled-model",
+            "probability": 0.8,
+            "lower_probability": 0.6,
+            "upper_probability": 0.9,
+            "independence_reviewed": True,
+            "evidence_ids": (*f2.evidence_ids, ext.id),
+        }
+    )
+    ledger.record_forecast(f2)
+    clock.now = NOW + timedelta(hours=2)
+    ledger.record_outcome(outcome(f, clock))
+    s = ledger.summary()
+    assert s["forecasts_resolved"] == 2 and s["resolved_forecast_groups"] == 1
+    assert s["scores"]["count"] == s["independent_event_groups"] == 1
+    assert s["scores"]["brier"] == pytest.approx(0.09)
+    assert next(iter(s["model_scores"].values()))["count"] == 1
+    assert ledger.summary(now=NOW)["forecasts_resolved"] == 0
+    assert ledger.summary(now=NOW)["forecasts"] == 1
+    ledger.close()
+
+
+def test_tamper_detection_and_wrong_rule_outcome_not_scored(tmp_path):
+    clock = Clock()
+    ledger = EventForecastLedger(tmp_path, clock=clock, outcome_validator=lambda o: True)
+    f, _ = evidence(ledger, clock)
+    ledger.record_forecast(f)
+    clock.now = NOW + timedelta(hours=2)
+    ledger.record_outcome(outcome(f, clock).model_copy(update={"resolution_rules_sha256": "f" * 64}))
+    assert ledger.summary()["rejected_outcome_matches"] == 1
+    assert ledger.summary()["forecasts_resolved"] == 0
+    ledger.close()
+    db = sqlite3.connect(tmp_path / "forecasts.sqlite")
+    db.execute("DROP TRIGGER journal_no_update")
+    db.execute("UPDATE journal SET payload='{}' WHERE seq=1")
+    db.commit()
+    db.close()
+    with pytest.raises(ValueError, match="corrupt forecast"):
+        EventForecastLedger(tmp_path, clock=clock)

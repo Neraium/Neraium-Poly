@@ -125,3 +125,13 @@ confidence, supported edge and leading rejection are distinct from account P/L.
 Missing or stale reports withhold numerical edge and old comparison values;
 unsupported metrics say unavailable. Category enrichment and research results
 never imply that a strategy is approved or profitable.
+
+## Event intelligence
+
+`uv run neraium-poly monitor --view events` separates research forecasts from
+experimental and certified paper accounts. It shows pending/resolved forecasts,
+reviewed independent event groups, available model/baseline scores, calibration,
+historical qualification, SII findings and rejection reasons. Unverified,
+unavailable or stale research metrics are withheld. Repeated forecasts are not
+independent observations; null scores are not zero loss or proof of skill.
+Normal 34–45-column, 24-row layouts and a 12-row fallback are covered by tests.

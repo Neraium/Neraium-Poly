@@ -577,3 +577,79 @@ def test_research_stale_report_withholds_confidence_and_labels_stale_marks():
     assert "P/L(last)" in output
     assert "Confidence unavailable" in output and "Cal unavailable" in output
     assert "high" not in output and "Cal validated" not in output
+
+
+def event_sample():
+    c, e = sample()
+    e["event_intelligence"] = {
+        "ledger": {
+            "status": "prospective_research",
+            "events_tracked": 12,
+            "forecasts_pending": 24,
+            "forecasts_resolved": 0,
+            "resolved_forecast_groups": 0,
+            "independent_event_groups": 0,
+            "model_versions": ["observed-midpoint-v1"],
+            "scores": {"count": 0, "brier": None, "log_loss": None},
+            "baseline_scores": {"count": 0, "brier": None},
+            "calibration_status": "insufficient independent evidence",
+        },
+        "relationships": {"qualified_findings": 0},
+        "experimental_opportunities": 0,
+        "historical_qualification": {
+            "events": 250,
+            "chain_corroborated_exact_settlement_groups": 47,
+            "qualified_training_events": 0,
+            "qualified_heldout_events": 0,
+        },
+        "rejections": {"independent_event_model_unavailable": 12},
+    }
+    return c, e
+
+
+def test_events_view_fits_phone_and_separates_forecast_from_paper():
+    c, e = event_sample()
+    for width in (34, 38, 45, 80):
+        console = Console(width=width, record=True, no_color=True)
+        console.print(render_monitor(c, e, width=width, height=24, view="events"))
+        output = console.export_text()
+        assert len(output.splitlines()) <= 24 and max(map(len, output.splitlines())) <= width
+        assert (
+            "RESEARCH FORECAST" in output and "EXPERIMENTAL PAPER" in output and "CERTIFIED PAPER" in output
+        )
+        assert "Events 12 Pending 24 Done 0" in output
+        assert "Brier unavailable" in output and "Market Brier unavailable" in output
+        assert "History 47/250" in output and "need 100/100" in output
+        assert "$498.00" in output and "$500.00" in output
+        assert "LIVE FINANCIAL TRADING DISABLED" in output
+
+
+def test_events_view_unknown_does_not_create_zero_forecasts_or_scores():
+    console = Console(width=38, record=True, no_color=True)
+    console.print(render_monitor(width=38, height=24, view="events"))
+    output = console.export_text()
+    assert "Events — Pending — Done —" in output
+    assert "Brier unavailable" in output and "Model unavailable" in output
+    assert "$0.00" not in output and "Report unavailable/stale" in output
+
+
+def test_events_view_stale_report_withholds_scores_and_relationship_findings():
+    c, e = event_sample()
+    e["event_intelligence"]["ledger"]["status"] = "stale"
+    e["event_intelligence"]["ledger"]["scores"] = {"count": 100, "brier": 0.01, "log_loss": 0.05}
+    e["event_intelligence"]["relationships"]["qualified_findings"] = 99
+    console = Console(width=45, record=True, no_color=True)
+    console.print(render_monitor(c, e, width=45, height=24, view="events"))
+    output = console.export_text()
+    assert "Brier unavailable" in output and "SII findings —" in output
+    assert ".01000" not in output and "Cal unavailable" in output
+
+
+def test_tiny_events_view_retains_all_identities_and_cash():
+    c, e = event_sample()
+    console = Console(width=34, record=True, no_color=True)
+    console.print(render_monitor(c, e, width=34, height=12, view="events"))
+    output = console.export_text()
+    assert len(output.splitlines()) <= 12
+    assert all(label in output for label in ("RESEARCH FORECAST", "EXPERIMENTAL PAPER", "CERTIFIED PAPER"))
+    assert "$498.00" in output and "$500.00" in output

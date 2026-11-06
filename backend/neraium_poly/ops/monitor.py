@@ -104,8 +104,13 @@ def render_monitor(
     """
     width, height = max(30, min(int(width), 160)), max(12, min(int(height or 24), 100))
     certified, experimental = _mapping(certified), _mapping(experimental)
-    if view not in {"summary", "strategies", "rejections", "research"} or scope not in {"cycle", "epoch"}:
+    if view not in {"summary", "strategies", "rejections", "research", "events"} or scope not in {
+        "cycle",
+        "epoch",
+    }:
         raise ValueError("monitor view or scope invalid")
+    if view == "events":
+        return _render_events(certified, experimental, width, height, errors)
     if view == "research":
         return _render_research(certified, experimental, width, height, errors, scope)
     if view != "summary":
@@ -510,6 +515,126 @@ def _render_detail(certified, experimental, width, height, errors, view, scope):
     footer = [(_safety_footer(certified, experimental), "dim"), ("Ctrl-C exits monitor only", "dim")]
     rendered = Text()
     for index, (value, style) in enumerate(lines[: max(0, height - len(footer))] + footer):
+        if index:
+            rendered.append("\n")
+        row = Text(_clean(value), style=style, no_wrap=True, overflow="ellipsis")
+        row.truncate(width, overflow="ellipsis")
+        rendered.append_text(row)
+    return rendered
+
+
+def _event_metric(value):
+    if value is None or isinstance(value, bool):
+        return "unavailable"
+    try:
+        value = float(value)
+        return f"{value:.5f}" if math.isfinite(value) and value >= 0 else "unavailable"
+    except (ValueError, TypeError):
+        return "unavailable"
+
+
+def _render_events(certified, experimental, width, height, errors):
+    """Outcome forecasting is explicit research, separate from both paper accounts."""
+    operation = _mapping(certified.get("operation"))
+    live = certified.get("mode") == "live_market_paper"
+    exp = experimental.get("account_id") == "experimental-paper"
+    event = _mapping(experimental.get("event_intelligence"))
+    ledger = _mapping(event.get("ledger", event))
+    available = bool(ledger) and ledger.get("status") not in {"unavailable", "stale", "invalid"}
+    scores = _mapping(ledger.get("scores")) if available else {}
+    baseline = _mapping(ledger.get("baseline_scores")) if available else {}
+    history = _mapping(event.get("historical_qualification", experimental.get("historical_qualification")))
+    relationships = _mapping(event.get("relationships", event.get("sii"))) if available else {}
+    versions = ledger.get("model_versions", []) if available else []
+    version_text = _clean(versions[0]) if isinstance(versions, list) and versions else "unavailable"
+    reason = event.get("last_rejection", event.get("reason"))
+    rejections = _mapping(event.get("rejections"))
+    if not reason and rejections:
+        reason = max(rejections, key=lambda k: _finite_count(rejections[k]))
+    reason = (
+        (reason or "Insufficient independent evidence")
+        if available
+        else "Report unavailable/stale; insufficient evidence"
+    )
+    stale_marks = (
+        bool(experimental.get("stale_mark_tokens"))
+        or experimental.get("pnl_valuation") == "stale_last_observed_marks"
+    )
+    pnl = "P/L(last)" if stale_marks else "P/L"
+
+    def count(key):
+        return _number(ledger.get(key) if available else None)
+
+    lines = [
+        ("REAL MARKET DATA", "bold cyan"),
+        (
+            f"Markets {_number(_mapping(operation.get('scan')).get('discovered_markets') if live else None)} WS {_flag(_mapping(operation.get('connectivity')).get('ws_connected'), 'up', 'down')}",
+            "white",
+        ),
+        ("RESEARCH FORECAST", "bold yellow"),
+        (
+            f"Events {count('events_tracked')} Pending {count('forecasts_pending')} Done {count('forecasts_resolved')}",
+            "white",
+        ),
+        (
+            f"Groups {count('resolved_forecast_groups')} Independent {count('independent_event_groups')}",
+            "white",
+        ),
+        (f"Model {version_text}", "dim"),
+        (f"Cal {_research_text(ledger.get('calibration_status') if available else None)}", "dim"),
+        (f"Brier {_event_metric(scores.get('brier'))} n={_number(scores.get('count'))}", "white"),
+        (f"Log loss {_event_metric(scores.get('log_loss'))}", "white"),
+        (f"Market Brier {_event_metric(baseline.get('brier'))}", "dim"),
+        (
+            f"History {_number(history.get('chain_corroborated_exact_settlement_groups'))}/{_number(history.get('events'))}",
+            "dim",
+        ),
+        (
+            f"Train/test {_number(history.get('qualified_training_events'))}/{_number(history.get('qualified_heldout_events'))} need 100/100",
+            "dim",
+        ),
+        (
+            f"SII findings {_number(relationships.get('qualified_findings', relationships.get('persistent_findings')))}",
+            "dim",
+        ),
+        (
+            f"Exp opp {_number(event.get('experimental_opportunities'))} Rej {_number(sum(v for v in rejections.values() if isinstance(v, int))) if rejections else '—'}",
+            "white",
+        ),
+        (f"Block {_reason_label(reason)}", "yellow"),
+        ("EXPERIMENTAL PAPER", "bold yellow"),
+        (
+            f"{_number(experimental.get('cash') if exp else None, True)} {pnl} {_number(experimental.get('simulated_pnl') if exp else None, True)}",
+            "white",
+        ),
+        (
+            f"Ord {_number(_count(experimental.get('orders')) if exp else None)} Fill {_number(experimental.get('fills') if exp else None)} Pos {_number(_count(experimental.get('positions')) if exp else None)}",
+            "white",
+        ),
+        (
+            f"Stop {_flag(experimental.get('suspended') if exp else None)} Health {_research_text(_mapping(experimental.get('service')).get('status'))}",
+            "white",
+        ),
+        ("CERTIFIED PAPER", "bold green"),
+        (
+            f"{_number(certified.get('cash') if live else None, True)} P/L {_number(certified.get('simulated_pnl') if live else None, True)}",
+            "white",
+        ),
+        (f"Gate {_research_text(_mapping(operation.get('service')).get('trading_status'))}", "white"),
+    ]
+    if errors:
+        lines[14] = ("API " + _clean(errors[0]), "yellow")
+    footer = [(_safety_footer(certified, experimental), "dim"), ("Ctrl-C exits monitor only", "dim")]
+    # Tiny viewports retain all three identities and cash/gate; remove secondary
+    # research detail first. Normal phone height preserves all 22 content rows.
+    priority = [9, 8, 7, 12, 13, 10, 11, 5, 6, 1, 17, 18, 14, 4, 3]
+    keep = list(range(len(lines)))
+    for index in priority:
+        if len(keep) <= height - 2:
+            break
+        keep.remove(index)
+    rendered = Text()
+    for index, (value, style) in enumerate([lines[i] for i in keep] + footer):
         if index:
             rendered.append("\n")
         row = Text(_clean(value), style=style, no_wrap=True, overflow="ellipsis")
