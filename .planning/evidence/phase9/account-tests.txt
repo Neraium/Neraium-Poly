@@ -1,0 +1,13 @@
+{"pid": 2959991, "pytest_workers": 1, "cpu_process_workers": 1, "threads": {"OMP_NUM_THREADS": "1", "OPENBLAS_NUM_THREADS": "1", "MKL_NUM_THREADS": "1"}, "started_at": "2026-11-06T02:22:34.524529+00:00", "scope": "isolated account worktree full regression; controlled test fixtures"}
+........................................................................ [ 21%]
+........................................................................ [ 42%]
+........................................................................ [ 64%]
+........................................................................ [ 85%]
+...............................................                          [100%]
+=============================== warnings summary ===============================
+../../../../../../Neraium-Poly/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1
+  /home/ubuntu/Neraium-Poly/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+335 passed, 1 warning in 37.31s

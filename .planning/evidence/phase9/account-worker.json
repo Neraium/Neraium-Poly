@@ -1,0 +1,15 @@
+{
+  "pid": 2959991,
+  "pytest_workers": 1,
+  "cpu_process_workers": 1,
+  "threads": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1"
+  },
+  "started_at": "2026-11-06T02:22:34.524529+00:00",
+  "scope": "isolated account worktree full regression; controlled test fixtures",
+  "ended_at": "2026-11-06T02:23:12.001927+00:00",
+  "elapsed_seconds": 37.47739710402675,
+  "exit_code": 0
+}

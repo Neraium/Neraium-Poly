@@ -17,3 +17,8 @@ limitations. The 100/100 independent-event gate remains unmet. Next research mus
 corroborate outcomes/timing, dependency groups, point-in-time books and independent
 context before sealed heldout evaluation. Owner approval follows certification;
 it cannot substitute for evidence. No trading activation is scheduled.
+
+Phase9 delivers an isolated experimental account/service and phone SSH monitor,
+chain-corroborated settlement timing, explicit research strategy registration,
+cost-aware execution and baseline diagnostics. Certification remains blocked;
+independent evidence and better models remain research work. See phase9-readiness.md.

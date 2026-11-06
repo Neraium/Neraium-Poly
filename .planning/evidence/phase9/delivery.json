@@ -1,0 +1,18 @@
+{
+  "observed_at": "2026-11-06T03:20:07.799995+00:00",
+  "source_head": "121bc318b9d93413e6747a76c192dc7d348d3578",
+  "branch": "main",
+  "worktree": "/home/ubuntu/Neraium-Poly",
+  "ci": "https://github.com/Neraium/Neraium-Poly/actions/runs/42154963153",
+  "ci_result": "success both jobs",
+  "backend_tests_passed": 412,
+  "browser_tests_passed": 5,
+  "experimental_service": "neraium-poly-experimental.service",
+  "certified_service": "neraium-poly-paper.service",
+  "accounts": "independent500simulatedcapital",
+  "strategies_certified": 0,
+  "real_orders": 0,
+  "live_trading_enabled": false,
+  "handoff": "data/phase9-handoff.json written after final documentation push; exact finalHEAD/branch/worktree and nextactions",
+  "preserved_preexisting_untracked": ".planning/evidence/live-inspection-20261106/"
+}

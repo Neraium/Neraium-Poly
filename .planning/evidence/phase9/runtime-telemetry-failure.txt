@@ -1,0 +1,389 @@
+FFFF.F                                                                   [100%]
+=================================== FAILURES ===================================
+___ test_real_frame_pipeline_archives_inputs_and_rejections_without_approval ___
+
+tmp_path = PosixPath('/tmp/pytest-of-ubuntu/pytest-1174/test_real_frame_pipeline_archi0')
+moment = datetime.datetime(2026, 11, 6, 12, 0, tzinfo=datetime.timezone.utc)
+
+    async def test_real_frame_pipeline_archives_inputs_and_rejections_without_approval(tmp_path, moment):
+        r, _clock, feed = runtime(tmp_path, moment)
+        try:
+            await r.cycle()
+>           s = r.state()
+                ^^^^^^^^^
+
+tests/test_experimental_runtime.py:75:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <neraium_poly.experimental.runtime.ExperimentalRuntime object at 0x7b164e9f1d30>
+
+    def state(self):
+        with self._lock:
+            now = self.clock()
+            state = self.account.snapshot(now=now)
+            frame = self.last_frame
+            books = frame.books if frame else ()
+            current = {b.token_id: b for b in books}
+            stale_marks = [
+                p["token_id"]
+                for p in state["positions"]
+                if p["token_id"] not in current
+                or not assess_book(current[p["token_id"]], now, max_spread=0.05).healthy
+            ]
+            state.update(
+                mark_sources={
+                    p["token_id"]: self.mark_sources.get(p["token_id"]) for p in state["positions"]
+                },
+                stale_mark_tokens=stale_marks,
+                pnl_valuation="stale_last_observed_marks"
+                if stale_marks
+                else "fresh_observed_bid_marks_or_cash",
+                strategy_code_sha256=self.model_hash,
+>               relationship_definition_ids=tuple(definition_ids),
+                                                  ^^^^^^^^^^^^^^
+                relationship_evidence_ids=tuple(e.id for e in self.engine.intelligence.latest),
+                generated_at=now.isoformat(),
+                suspended=state["kill_switch"],
+                service=self.health(),
+                source_markets=len({m.market_id for m in frame.markets}) if frame else None,
+                source_tokens=len(frame.markets) if frame else None,
+                experimental_markets=len({m.market_id for m in frame.markets if m.token_id in self.selected})
+                if frame
+                else None,
+                fresh_books=sum(assess_book(b, now).healthy for b in books),
+                source_fresh_books=sum(assess_book(b, now).healthy for b in books),
+                experimental_fresh_books=sum(
+                    assess_book(b, now).healthy for b in books if b.token_id in self.selected
+                ),
+                selected_tokens=len(self.selected),
+                qualified_opportunities=self.totals["qualified_opportunities"],
+                experimental_totals=dict(self.totals),
+                rejection_reasons=dict(self.rejections),
+                latest_activity=list(self.activity),
+                last_cycle=self.last_cycle,
+                strategy_engine=self.engine.status(),
+                data_source=self.config.source_url,
+                certification_authority=False,
+                historical_qualification=self._qualification(),
+            )
+E           NameError: name 'definition_ids' is not defined
+
+backend/neraium_poly/experimental/runtime.py:436: NameError
+____ test_pending_order_fills_only_from_new_post_latency_frame_and_recovers ____
+
+tmp_path = PosixPath('/tmp/pytest-of-ubuntu/pytest-1174/test_pending_order_fills_only_0')
+moment = datetime.datetime(2026, 11, 6, 12, 0, tzinfo=datetime.timezone.utc)
+
+    async def test_pending_order_fills_only_from_new_post_latency_frame_and_recovers(tmp_path, moment):
+        certified = tmp_path / "certified"
+        certified.mkdir()
+        sentinel = certified / "risk.sqlite"
+        sentinel.write_bytes(b"protected certified fixture")
+        digest = hashlib.sha256(sentinel.read_bytes()).hexdigest()
+        r, clock, feed = runtime(tmp_path, moment)
+        try:
+            b = book(moment)
+            r.fees[b.token_id] = fee(moment)
+            submitted = r.account.submit(signal(moment, b), feed.market, b, now=moment, fee_schedule=fee(moment))
+            assert submitted["status"] == "submitted"
+            await r.cycle()
+>           assert r.state()["fills"] == 0
+                   ^^^^^^^^^
+
+tests/test_experimental_runtime.py:100:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <neraium_poly.experimental.runtime.ExperimentalRuntime object at 0x7b164e9f1c10>
+
+    def state(self):
+        with self._lock:
+            now = self.clock()
+            state = self.account.snapshot(now=now)
+            frame = self.last_frame
+            books = frame.books if frame else ()
+            current = {b.token_id: b for b in books}
+            stale_marks = [
+                p["token_id"]
+                for p in state["positions"]
+                if p["token_id"] not in current
+                or not assess_book(current[p["token_id"]], now, max_spread=0.05).healthy
+            ]
+            state.update(
+                mark_sources={
+                    p["token_id"]: self.mark_sources.get(p["token_id"]) for p in state["positions"]
+                },
+                stale_mark_tokens=stale_marks,
+                pnl_valuation="stale_last_observed_marks"
+                if stale_marks
+                else "fresh_observed_bid_marks_or_cash",
+                strategy_code_sha256=self.model_hash,
+>               relationship_definition_ids=tuple(definition_ids),
+                                                  ^^^^^^^^^^^^^^
+                relationship_evidence_ids=tuple(e.id for e in self.engine.intelligence.latest),
+                generated_at=now.isoformat(),
+                suspended=state["kill_switch"],
+                service=self.health(),
+                source_markets=len({m.market_id for m in frame.markets}) if frame else None,
+                source_tokens=len(frame.markets) if frame else None,
+                experimental_markets=len({m.market_id for m in frame.markets if m.token_id in self.selected})
+                if frame
+                else None,
+                fresh_books=sum(assess_book(b, now).healthy for b in books),
+                source_fresh_books=sum(assess_book(b, now).healthy for b in books),
+                experimental_fresh_books=sum(
+                    assess_book(b, now).healthy for b in books if b.token_id in self.selected
+                ),
+                selected_tokens=len(self.selected),
+                qualified_opportunities=self.totals["qualified_opportunities"],
+                experimental_totals=dict(self.totals),
+                rejection_reasons=dict(self.rejections),
+                latest_activity=list(self.activity),
+                last_cycle=self.last_cycle,
+                strategy_engine=self.engine.status(),
+                data_source=self.config.source_url,
+                certification_authority=False,
+                historical_qualification=self._qualification(),
+            )
+E           NameError: name 'definition_ids' is not defined
+
+backend/neraium_poly/experimental/runtime.py:436: NameError
+_________ test_stale_held_marks_are_labeled_and_cannot_create_entries __________
+
+tmp_path = PosixPath('/tmp/pytest-of-ubuntu/pytest-1174/test_stale_held_marks_are_labe0')
+moment = datetime.datetime(2026, 11, 6, 12, 0, tzinfo=datetime.timezone.utc)
+
+    async def test_stale_held_marks_are_labeled_and_cannot_create_entries(tmp_path, moment):
+        r, clock, feed = runtime(tmp_path, moment)
+        try:
+            b = book(moment)
+            r.fees[b.token_id] = fee(moment)
+            r.account.submit(signal(moment, b), feed.market, b, now=moment, fee_schedule=fee(moment))
+            clock.now += timedelta(seconds=1)
+            await r.cycle()
+>           assert r.state()["positions"]
+                   ^^^^^^^^^
+
+tests/test_experimental_runtime.py:128:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <neraium_poly.experimental.runtime.ExperimentalRuntime object at 0x7b164e9f35c0>
+
+    def state(self):
+        with self._lock:
+            now = self.clock()
+            state = self.account.snapshot(now=now)
+            frame = self.last_frame
+            books = frame.books if frame else ()
+            current = {b.token_id: b for b in books}
+            stale_marks = [
+                p["token_id"]
+                for p in state["positions"]
+                if p["token_id"] not in current
+                or not assess_book(current[p["token_id"]], now, max_spread=0.05).healthy
+            ]
+            state.update(
+                mark_sources={
+                    p["token_id"]: self.mark_sources.get(p["token_id"]) for p in state["positions"]
+                },
+                stale_mark_tokens=stale_marks,
+                pnl_valuation="stale_last_observed_marks"
+                if stale_marks
+                else "fresh_observed_bid_marks_or_cash",
+                strategy_code_sha256=self.model_hash,
+>               relationship_definition_ids=tuple(definition_ids),
+                                                  ^^^^^^^^^^^^^^
+                relationship_evidence_ids=tuple(e.id for e in self.engine.intelligence.latest),
+                generated_at=now.isoformat(),
+                suspended=state["kill_switch"],
+                service=self.health(),
+                source_markets=len({m.market_id for m in frame.markets}) if frame else None,
+                source_tokens=len(frame.markets) if frame else None,
+                experimental_markets=len({m.market_id for m in frame.markets if m.token_id in self.selected})
+                if frame
+                else None,
+                fresh_books=sum(assess_book(b, now).healthy for b in books),
+                source_fresh_books=sum(assess_book(b, now).healthy for b in books),
+                experimental_fresh_books=sum(
+                    assess_book(b, now).healthy for b in books if b.token_id in self.selected
+                ),
+                selected_tokens=len(self.selected),
+                qualified_opportunities=self.totals["qualified_opportunities"],
+                experimental_totals=dict(self.totals),
+                rejection_reasons=dict(self.rejections),
+                latest_activity=list(self.activity),
+                last_cycle=self.last_cycle,
+                strategy_engine=self.engine.status(),
+                data_source=self.config.source_url,
+                certification_authority=False,
+                historical_qualification=self._qualification(),
+            )
+E           NameError: name 'definition_ids' is not defined
+
+backend/neraium_poly/experimental/runtime.py:436: NameError
+______________ test_storage_limit_latches_only_experimental_stop _______________
+
+tmp_path = PosixPath('/tmp/pytest-of-ubuntu/pytest-1174/test_storage_limit_latches_onl0')
+moment = datetime.datetime(2026, 11, 6, 12, 0, tzinfo=datetime.timezone.utc)
+
+    async def test_storage_limit_latches_only_experimental_stop(tmp_path, moment):
+        r, _clock, _feed = runtime(tmp_path, moment)
+        try:
+            r._budget_ok = lambda: False
+            await r.cycle()
+>           s = r.state()
+                ^^^^^^^^^
+
+tests/test_experimental_runtime.py:145:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <neraium_poly.experimental.runtime.ExperimentalRuntime object at 0x7b164e9f87a0>
+
+    def state(self):
+        with self._lock:
+            now = self.clock()
+            state = self.account.snapshot(now=now)
+            frame = self.last_frame
+            books = frame.books if frame else ()
+            current = {b.token_id: b for b in books}
+            stale_marks = [
+                p["token_id"]
+                for p in state["positions"]
+                if p["token_id"] not in current
+                or not assess_book(current[p["token_id"]], now, max_spread=0.05).healthy
+            ]
+            state.update(
+                mark_sources={
+                    p["token_id"]: self.mark_sources.get(p["token_id"]) for p in state["positions"]
+                },
+                stale_mark_tokens=stale_marks,
+                pnl_valuation="stale_last_observed_marks"
+                if stale_marks
+                else "fresh_observed_bid_marks_or_cash",
+                strategy_code_sha256=self.model_hash,
+>               relationship_definition_ids=tuple(definition_ids),
+                                                  ^^^^^^^^^^^^^^
+                relationship_evidence_ids=tuple(e.id for e in self.engine.intelligence.latest),
+                generated_at=now.isoformat(),
+                suspended=state["kill_switch"],
+                service=self.health(),
+                source_markets=len({m.market_id for m in frame.markets}) if frame else None,
+                source_tokens=len(frame.markets) if frame else None,
+                experimental_markets=len({m.market_id for m in frame.markets if m.token_id in self.selected})
+                if frame
+                else None,
+                fresh_books=sum(assess_book(b, now).healthy for b in books),
+                source_fresh_books=sum(assess_book(b, now).healthy for b in books),
+                experimental_fresh_books=sum(
+                    assess_book(b, now).healthy for b in books if b.token_id in self.selected
+                ),
+                selected_tokens=len(self.selected),
+                qualified_opportunities=self.totals["qualified_opportunities"],
+                experimental_totals=dict(self.totals),
+                rejection_reasons=dict(self.rejections),
+                latest_activity=list(self.activity),
+                last_cycle=self.last_cycle,
+                strategy_engine=self.engine.status(),
+                data_source=self.config.source_url,
+                certification_authority=False,
+                historical_qualification=self._qualification(),
+            )
+E           NameError: name 'definition_ids' is not defined
+
+backend/neraium_poly/experimental/runtime.py:436: NameError
+____ test_relationship_evidence_and_definition_are_durable_before_admission ____
+
+tmp_path = PosixPath('/tmp/pytest-of-ubuntu/pytest-1174/test_relationship_evidence_and0')
+moment = datetime.datetime(2026, 11, 6, 12, 0, tzinfo=datetime.timezone.utc)
+
+    async def test_relationship_evidence_and_definition_are_durable_before_admission(tmp_path, moment):
+        r, clock, feed = runtime(tmp_path, moment)
+        a = market(moment, "controlled-a").model_copy(update={"event_id": "controlled-shared-event"})
+        b = market(moment, "controlled-b").model_copy(update={"event_id": "controlled-shared-event"})
+
+        async def paired():
+            return SharedMarketFrame(
+                timestamp=clock(),
+                available_at=clock(),
+                source="neraium-poly/public-market-frame/v1",
+                producer_health={"status": "ok", "live_trading_enabled": False},
+                markets=(a, b),
+                books=(book(clock(), "controlled-a"), book(clock(), "controlled-b")),
+            )
+
+        feed.read = paired
+        try:
+            await r.cycle()
+            assert len(r.events.replay(kind="RelationshipEvidence")) == 1
+            assert len(r.events.replay(kind="ExperimentalRelationshipDefinition")) == 1
+            assert r.last_cycle["relationship_evidence_ids"]
+            clock.now += timedelta(seconds=1)
+            await r.cycle()
+            assert len(r.events.replay(kind="ExperimentalRelationshipDefinition")) == 1
+            assert len(r.events.replay(kind="RelationshipEvidence")) == 2
+>           assert not r.state()["orders"]
+                       ^^^^^^^^^
+
+tests/test_experimental_runtime.py:186:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <neraium_poly.experimental.runtime.ExperimentalRuntime object at 0x7b164e9f2930>
+
+    def state(self):
+        with self._lock:
+            now = self.clock()
+            state = self.account.snapshot(now=now)
+            frame = self.last_frame
+            books = frame.books if frame else ()
+            current = {b.token_id: b for b in books}
+            stale_marks = [
+                p["token_id"]
+                for p in state["positions"]
+                if p["token_id"] not in current
+                or not assess_book(current[p["token_id"]], now, max_spread=0.05).healthy
+            ]
+            state.update(
+                mark_sources={
+                    p["token_id"]: self.mark_sources.get(p["token_id"]) for p in state["positions"]
+                },
+                stale_mark_tokens=stale_marks,
+                pnl_valuation="stale_last_observed_marks"
+                if stale_marks
+                else "fresh_observed_bid_marks_or_cash",
+                strategy_code_sha256=self.model_hash,
+>               relationship_definition_ids=tuple(definition_ids),
+                                                  ^^^^^^^^^^^^^^
+                relationship_evidence_ids=tuple(e.id for e in self.engine.intelligence.latest),
+                generated_at=now.isoformat(),
+                suspended=state["kill_switch"],
+                service=self.health(),
+                source_markets=len({m.market_id for m in frame.markets}) if frame else None,
+                source_tokens=len(frame.markets) if frame else None,
+                experimental_markets=len({m.market_id for m in frame.markets if m.token_id in self.selected})
+                if frame
+                else None,
+                fresh_books=sum(assess_book(b, now).healthy for b in books),
+                source_fresh_books=sum(assess_book(b, now).healthy for b in books),
+                experimental_fresh_books=sum(
+                    assess_book(b, now).healthy for b in books if b.token_id in self.selected
+                ),
+                selected_tokens=len(self.selected),
+                qualified_opportunities=self.totals["qualified_opportunities"],
+                experimental_totals=dict(self.totals),
+                rejection_reasons=dict(self.rejections),
+                latest_activity=list(self.activity),
+                last_cycle=self.last_cycle,
+                strategy_engine=self.engine.status(),
+                data_source=self.config.source_url,
+                certification_authority=False,
+                historical_qualification=self._qualification(),
+            )
+E           NameError: name 'definition_ids' is not defined
+
+backend/neraium_poly/experimental/runtime.py:436: NameError
+=========================== short test summary info ============================
+FAILED tests/test_experimental_runtime.py::test_real_frame_pipeline_archives_inputs_and_rejections_without_approval
+FAILED tests/test_experimental_runtime.py::test_pending_order_fills_only_from_new_post_latency_frame_and_recovers
+FAILED tests/test_experimental_runtime.py::test_stale_held_marks_are_labeled_and_cannot_create_entries
+FAILED tests/test_experimental_runtime.py::test_storage_limit_latches_only_experimental_stop
+FAILED tests/test_experimental_runtime.py::test_relationship_evidence_and_definition_are_durable_before_admission
+5 failed, 1 passed in 1.87s

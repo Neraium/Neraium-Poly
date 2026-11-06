@@ -1,0 +1,20 @@
+{
+  "verdict": "pass",
+  "scope": "code/account/data integrity; finalCIbindingpending",
+  "source_head": "121bc318b9d93413e6747a76c192dc7d348d3578",
+  "reviewer": "/root/p9_strategies",
+  "observed_at": "2026-11-06T03:17:29Z",
+  "critical_issues": [],
+  "verified": [
+    "twohealthyseparate500accounts/zeroordersfillspositionsPnL",
+    "processpaper=true/live=false",
+    "200sourcemarkets400tokens64experimental",
+    "certapprovalinactive/keyabsent",
+    "152latestcycleauditreferencesverifiedagainstSHA256",
+    "postlatencysource/receiptandtokenriskguardspreserved",
+    "sixresearchcandidates/twoentrypathsandnegativebaselineresultdisclosed",
+    "actualworkerPIDsandintervalssupportparallelism"
+  ],
+  "writes_performed": false,
+  "pending": "FinalCIrun42154963153dashboardcompletionandartifactbinding"
+}

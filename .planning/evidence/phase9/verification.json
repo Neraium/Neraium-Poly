@@ -1,0 +1,31 @@
+{
+  "source_head": "121bc318b9d93413e6747a76c192dc7d348d3578",
+  "backend_tests_passed": 412,
+  "test_worker_partitions": [
+    215,
+    197
+  ],
+  "parallel_test_evidence": "parallel-tests.json",
+  "browser_tests_passed": 5,
+  "frontend_production_build": "passed",
+  "ruff_lint_and_format": "passed",
+  "python_audit_including_optional_research": "no known vulnerabilities",
+  "npm_audit": "0 vulnerabilities",
+  "actual_replay": "100 actual sampled observations reconstructed with hashes/quotes verified",
+  "ci": "https://github.com/Neraium/Neraium-Poly/actions/runs/42154963153",
+  "ci_result": "success both jobs",
+  "earlier_ci_failure": {
+    "run": 42151416382,
+    "backend": "408 passed; one KeyError in diagnostic thread-environment reporting",
+    "fix_commit": "8328325",
+    "regression": "Explicitly unset thread variables in the diagnostic test; report unavailable values as null instead of assuming limits"
+  },
+  "warning": "Existing Starlette TestClient deprecation; no fabricated certification result",
+  "final_telemetry_patch": {
+    "initial_commit": "12b59f4",
+    "issue": "Cycle-local reference accidentally added to state(); pushed before failing check completed",
+    "fix_commit": "121bc31",
+    "verification": "6 runtime integration cases and412backendtests passed before service reload",
+    "operational_impact": "Running services were not reloaded with the broken patch; no orders attempted"
+  }
+}

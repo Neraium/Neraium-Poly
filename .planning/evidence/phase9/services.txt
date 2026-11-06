@@ -1,0 +1,19 @@
+MainPID=2981665
+NRestarts=0
+MemoryCurrent=257998848
+CPUUsageNSec=783122395000
+ReadWritePaths=/home/ubuntu/Neraium-Poly/data/paper-live
+ReadOnlyPaths=
+Id=neraium-poly-paper.service
+ActiveState=active
+ActiveEnterTimestamp=Fri 2026-11-06 02:55:43 UTC
+
+MainPID=2983765
+NRestarts=0
+MemoryCurrent=123596800
+CPUUsageNSec=6546941000
+ReadWritePaths=/home/ubuntu/Neraium-Poly/data/experimental-paper
+ReadOnlyPaths=/home/ubuntu/Neraium-Poly/data/paper-live
+Id=neraium-poly-experimental.service
+ActiveState=active
+ActiveEnterTimestamp=Fri 2026-11-06 03:11:47 UTC

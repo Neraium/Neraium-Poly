@@ -1,0 +1,39 @@
+{
+  "generated_at": "2026-11-06T02:42:27.673956+00:00",
+  "account_id": "experimental-paper",
+  "cash": 500.0,
+  "simulated_pnl": 0.0,
+  "positions": [],
+  "orders": [],
+  "experimental_totals": {
+    "cycles": 83,
+    "observations": 3591,
+    "qualified_opportunities": 0,
+    "signals": 24654
+  },
+  "model_hash": "6bcbf03d74b2ab86992d8e5b8f91af08a3ec787546316ca57a777fde70a3cd5c",
+  "reconciliation": {
+    "consistent": true,
+    "mismatches": [],
+    "pending_orders": [],
+    "unavailable": [],
+    "positions": [],
+    "portfolio": {
+      "cash": 500.0,
+      "reserved": 0,
+      "invested": 0,
+      "exposure": 0,
+      "equity": 500.0,
+      "peak": 500.0,
+      "realized_pnl": 0.0,
+      "daily_pnl": 0,
+      "kill_switch": false,
+      "drawdown": 0,
+      "simulated": true
+    },
+    "simulated": true,
+    "experimental_inventory_reconciled": true,
+    "experimental_cash_reconciled": true
+  },
+  "checks": "capital, prior counters, model hash and inventory reconciliation preserved"
+}

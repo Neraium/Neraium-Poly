@@ -1,0 +1,12 @@
+{
+  "pid": 2953379,
+  "pytest_workers": 1,
+  "started_at_unix": 1793931270.512208,
+  "finished_at_unix": 1793931270.964587,
+  "exit_code": 0,
+  "numerical_threads": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1"
+  }
+}

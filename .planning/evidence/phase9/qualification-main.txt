@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "created_at": "2026-11-06T02:45:55.583960+00:00",
+  "events": 250,
+  "official_verified_outcome_groups": 51,
+  "chain_corroborated_exact_settlement_groups": 47,
+  "point_in_time_qualified_events": 0,
+  "historical_depth_qualified_events": 0,
+  "reviewed_independent_events": 0,
+  "certifiable_training_events": 0,
+  "certifiable_heldout_events": 0,
+  "certification_status": "blocked",
+  "owner_approval_required": true,
+  "strategy_promotion_authority": false,
+  "required_training_events": 100,
+  "required_heldout_events": 100,
+  "cpu_worker_processes": 2,
+  "worker_overlap_observed": true,
+  "limitations": [
+    "Block event-time does not backdate historical availability",
+    "Source/API labels remain distinct from independently linked finalized CTF proof",
+    "Publisher L2 rows remain separate and not execution-certified",
+    "Asset/window and parent-event deduplication do not prove independence",
+    "No current metadata rule text is asserted to be its historical version"
+  ],
+  "manifest_sha256": "69f709f46725d8afd9a21e16c451e3a37674779ba23770368db74140fa459d63"
+}

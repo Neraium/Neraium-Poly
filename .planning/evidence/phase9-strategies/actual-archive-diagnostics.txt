@@ -1,0 +1,102 @@
+{
+  "version": "1.0",
+  "observed_at": "2026-11-06T02:14:23.368668+00:00",
+  "source_archive": "/home/ubuntu/Neraium-Poly/data/paper-live/events.sqlite",
+  "read_only": true,
+  "workers_requested": 2,
+  "worker_pids": [
+    2953129,
+    2953132
+  ],
+  "workers_observed": 2,
+  "overlapping_work_intervals": true,
+  "max_concurrent_workers_observed": 2,
+  "results": [
+    {
+      "pid": 2953132,
+      "started_at_unix": 1793931250.3058019,
+      "finished_at_unix": 1793931262.7736728,
+      "cpu_seconds": 12.293883654,
+      "horizon_seconds": 60,
+      "snapshot_high_water_rowid": 163083,
+      "archive_window_sha256": "66cfb71577cad274aa1d0e5831271b9a67a0a66ec54f860b6615c5dcfc7945fb",
+      "raw_records_checked": 24000,
+      "tokens_in_window": 380,
+      "selected_tokens": [
+        "100063340678399453619037549684979791875230113493746028286298866490793476208749",
+        "102645755577741168121437478206766514988150534631094399057975298702479134694986",
+        "103159225638359731790247383162357783913500681643575178525536406773575671450318",
+        "104057763218510615367140802415589642126328786949880639432107896044654185136344"
+      ],
+      "selected_observations": 280,
+      "scored_monetary_forecasts": 96,
+      "future_bid_mae": 0.0014947916666666677,
+      "unchanged_current_bid_baseline_mae": 0.0006354166666666664,
+      "model_comparison": "Monetary forecast diagnostic, not terminal probability calibration or profit",
+      "exclusions": {
+        "stale_book": 1051,
+        "missing_liquidity": 1463,
+        "large_spread": 179
+      },
+      "simulated_orders": null,
+      "simulated_fills": null,
+      "execution_pnl": null,
+      "certification_status": "blocked",
+      "deficiencies": [
+        "historical_fee_observations_not_bound",
+        "sampled_not_complete_tick_history",
+        "event_independence_and_rules_not_reviewed",
+        "no_certified_execution_simulation"
+      ],
+      "numerical_threads": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1"
+      }
+    },
+    {
+      "pid": 2953129,
+      "started_at_unix": 1793931250.305779,
+      "finished_at_unix": 1793931262.7918653,
+      "cpu_seconds": 12.320428578000001,
+      "horizon_seconds": 120,
+      "snapshot_high_water_rowid": 163083,
+      "archive_window_sha256": "66cfb71577cad274aa1d0e5831271b9a67a0a66ec54f860b6615c5dcfc7945fb",
+      "raw_records_checked": 24000,
+      "tokens_in_window": 380,
+      "selected_tokens": [
+        "100063340678399453619037549684979791875230113493746028286298866490793476208749",
+        "102645755577741168121437478206766514988150534631094399057975298702479134694986",
+        "103159225638359731790247383162357783913500681643575178525536406773575671450318",
+        "104057763218510615367140802415589642126328786949880639432107896044654185136344"
+      ],
+      "selected_observations": 280,
+      "scored_monetary_forecasts": 79,
+      "future_bid_mae": 0.0011518987341772155,
+      "unchanged_current_bid_baseline_mae": 0.00089873417721519,
+      "model_comparison": "Monetary forecast diagnostic, not terminal probability calibration or profit",
+      "exclusions": {
+        "stale_book": 1051,
+        "missing_liquidity": 1463,
+        "large_spread": 179
+      },
+      "simulated_orders": null,
+      "simulated_fills": null,
+      "execution_pnl": null,
+      "certification_status": "blocked",
+      "deficiencies": [
+        "historical_fee_observations_not_bound",
+        "sampled_not_complete_tick_history",
+        "event_independence_and_rules_not_reviewed",
+        "no_certified_execution_simulation"
+      ],
+      "numerical_threads": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1"
+      }
+    }
+  ],
+  "activation_authority": false,
+  "actual_trade_profits_claimed": false
+}

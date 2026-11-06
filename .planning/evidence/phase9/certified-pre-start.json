@@ -1,0 +1,29 @@
+{
+  "generated_at": "2026-11-06T02:34:46.958296+00:00",
+  "cash": 500.0,
+  "initial_bankroll": 500.0,
+  "simulated_pnl": 0.0,
+  "reserved": 0,
+  "exposure": 0,
+  "positions": [],
+  "orders": [],
+  "validation": {
+    "active": false,
+    "owner_approval_required": true,
+    "owner_public_key_configured": false,
+    "report_id": null,
+    "model_id": null,
+    "reports": 0,
+    "passing_reports": 0,
+    "latest_report": null,
+    "blockers": [
+      "no_explicit_real_strategy_approval"
+    ],
+    "requirements": [
+      "At least 100 independent training events and 100 heldout events",
+      "Point-in-time executable books and independent evidence with verified final labels",
+      "Heldout calibration, confidence-bounded improvement and cost-adjusted edge",
+      "Explicit provenance review and separate actor approval; no automatic promotion"
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "observed_at": "2026-11-06T02:12:18.023934+00:00",
+  "source": "collaboration.list_agents actual running statuses",
+  "concurrent_agents_including_coordinator": 4,
+  "concurrent_writing_subagents": 3,
+  "agents": [
+    "/root",
+    "/root/p9_account",
+    "/root/p9_history",
+    "/root/p9_strategies"
+  ],
+  "isolated_worktrees": {
+    "account": "/home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/poly-phase9-account",
+    "history": "/home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/poly-phase9-history",
+    "strategies": "/home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/poly-phase9-strategies"
+  },
+  "logical_cpus_detected": 32,
+  "policy": "bounded subprocess jobs; numericalthreads1; paralleltest/backtest/historicalactualPIDsreportedseparately; agentcountisnotCPUutilization"
+}

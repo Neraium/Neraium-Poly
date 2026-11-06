@@ -4,6 +4,19 @@
 
 Python modular monolith · React/TypeScript dashboard · versioned Pydantic contracts · SQLite research ledgers · public Polymarket data adapter.
 
+## Isolated experimental research and SSH monitor
+
+```sh
+uv run neraium-poly monitor
+uv run neraium-poly experimental-paper --config config/experimental-paper.example.json
+```
+
+The experimental service uses a separate $500 simulated account, shared authentic
+books and the same operational risk controls. Its strategies and results remain
+unvalidated. Certified strategy approval is unchanged. See [Phase9 readiness](docs/phase9-readiness.md),
+[terminal monitor](docs/terminal-monitor.md) and [account controls](docs/experimental-account.md).
+No trade frequency is required and no live execution exists.
+
 ## Integrated real-market paper service
 
 The integrated coordinator runs at **http://127.0.0.1:18742** with persistent risk, broker and strategy ledgers:

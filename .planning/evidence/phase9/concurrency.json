@@ -1,0 +1,31 @@
+{
+  "observed_development_agents": 4,
+  "writing_subagents": 3,
+  "isolated_writing_worktrees": 3,
+  "development_evidence": "agents.json",
+  "test_process_workers": 2,
+  "test_peak_observed_workers": 2,
+  "test_worker_pids": [
+    2983266,
+    2983267
+  ],
+  "historical_cpu_workers": 2,
+  "historical_job_processes_including_controls": 5,
+  "historical_worker_pids": [
+    2974955,
+    2974958
+  ],
+  "historical_coordinator_pid": 2974948,
+  "historical_manager_pid": 2974950,
+  "historical_resource_tracker_pid": 2974949,
+  "historical_worker_overlap": true,
+  "backtest_cpu_workers": 2,
+  "backtest_worker_pids": [
+    2954569,
+    2954572
+  ],
+  "backtest_worker_overlap": true,
+  "browser_playwright_workers": 1,
+  "numerical_threads_per_quant_worker": 1,
+  "scope": "Per-job measured worker/process counts; worker jobs ran at different times, not a claim all CPU jobs overlapped. Development agents and individual job workers were genuinely concurrent. Auxiliary subprocess counts are separately identified where measured."
+}
