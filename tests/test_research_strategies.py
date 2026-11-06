@@ -415,3 +415,13 @@ def test_microstructure_imbalance_is_not_terminal_probability():
 def test_naive_decision_time_rejects():
     with pytest.raises(ValueError, match="timezone"):
         maker_signal(make_book(), NOW.replace(tzinfo=None))
+
+
+def test_baseline_forecast_scores_are_not_attributed_to_unevaluated_strategies():
+    report = evaluate_bundle(bundle())
+    candidates = {candidate["id"]: candidate for candidate in report["candidates"]}
+    assert candidates["persistent_relationship"]["metrics"] is None
+    assert candidates["persistent_relationship"]["status"] == "not_evaluable"
+    assert candidates["persistent_relationship"]["supporting_model"]["metrics"] is not None
+    assert candidates["event_repricing"]["metrics"] is None
+    assert set(report["split"]["train_event_ids"]).isdisjoint(report["split"]["heldout_event_ids"])

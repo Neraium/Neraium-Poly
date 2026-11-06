@@ -44,7 +44,7 @@ report = evaluate_bundle(authentic_research_bundle)
 write_report(authentic_research_bundle, "data/phase8/research-report.json")
 ```
 
-The report schema has `dataset_hash`, `evaluation_as_of`, `analysis_mode`,
+The report schema has `dataset_hash`, `evaluation_as_of`, `analysis_mode`, `split`,
 `coverage`, `models`, six `candidates`, `recommended_model`, and `certification`.
 It hashes canonical sorted input records and the acquisition manifest; permuting
 input order does not change the result. Conflicting record IDs or contradictory
@@ -123,3 +123,12 @@ There is no bundled profitable model or actual research result in these tests.
 Tests construct controlled synthetic assertions solely to verify formulas,
 causality, independent event counts, deterministic replay and suppression. They
 are never installed as an operational dataset or approval.
+
+Candidate performance is not borrowed from a convenient baseline. A histogram
+forecast score may appear under `supporting_model` for the persistent-relationship
+hypothesis, but that candidate's own metrics remain null without actual qualified
+relationship-entry evidence. Likewise a logistic score does not establish an
+event-repricing entry/exit result. Independent-forecast candidate metrics are
+explicitly scoped to forecast quality, not strategy returns. The report retains
+exact train/heldout event IDs, forecast record IDs and label-time basis so the
+purge and retrospective/point-in-time distinction can be independently checked.

@@ -522,11 +522,17 @@ def evaluate_bundle(bundle: ResearchBundle) -> dict:
             {
                 **spec,
                 "data_requirements": spec["required_data"],
-                "status": "not_evaluable"
-                if relevant is None or relevant["metrics"] is None
-                else "exploratory_only",
+                "status": "exploratory_only"
+                if spec["id"] == "independent_forecast" and relevant and relevant["metrics"]
+                else "not_evaluable",
                 "required_data_deficits": sorted(deficits),
-                "metrics": relevant["metrics"] if relevant else None,
+                "metrics": relevant["metrics"] if spec["id"] == "independent_forecast" and relevant else None,
+                "metric_scope": "independent_forecast_quality_only"
+                if spec["id"] == "independent_forecast" and relevant and relevant["metrics"]
+                else None,
+                "supporting_model": {"id": relevant["id"], "metrics": relevant["metrics"]}
+                if relevant
+                else None,
                 "certification_status": "blocked",
                 "simulated_pnl": None,
             }
@@ -550,6 +556,15 @@ def evaluate_bundle(bundle: ResearchBundle) -> dict:
             "books": len(bundle.books),
             "independent_context": sum(r.context is not None for r in rows),
             "related_legs_not_independent": len(bundle.events) - len({e.event_id for e in bundle.events}),
+        },
+        "split": {
+            "method": "one deterministic earliest-source forecast per event; chronological event purge",
+            "train_event_ids": [r.event.event_id for r in train],
+            "heldout_event_ids": [r.event.event_id for r in test],
+            "forecast_record_ids": [r.price.id for r in rows],
+            "training_label_time_basis": "verified_available_at"
+            if archive_mode
+            else "retrospective_settlement_event_time_only",
         },
         "models": models,
         "candidates": candidates,
