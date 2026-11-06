@@ -25,7 +25,13 @@ def run_relationships(observations, dataset_manifest):
         if market is None:
             counts["missing_point_in_time_metadata"] += 1
             continue
-        if market.outcome.casefold() != "yes" or market.status != "active":
+        if (
+            market.outcome.casefold() != "yes"
+            or market.status != "active"
+            or (market.end_time is not None and market.end_time <= now)
+        ):
+            known.pop(book.token_id, None)
+            latest.pop(book.token_id, None)
             counts["unsupported_outcome_or_lifecycle"] += 1
             continue
         if not market.resolution_rules or not market.resolution_source:

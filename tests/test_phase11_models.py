@@ -222,3 +222,25 @@ def test_relationship_reused_source_time_cannot_inflate_persistence():
     changed = run_relationships(rows, MANIFEST)
     assert changed["counts"]["paired_observations"] == original["counts"]["paired_observations"]
     assert changed["counts"]["out_of_order_or_reused_source_pair"] >= 1
+
+
+def test_relationship_known_closed_leg_is_evicted_before_new_peer_quote():
+    observations = [row(0, token="a"), row(0, token="b")]
+    closing = row(1, token="a")
+    observations.append(
+        closing.model_copy(
+            update={
+                "market": closing.market.model_copy(
+                    update={
+                        "status": "closed",
+                        "available_at": closing.book.available_at,
+                    }
+                )
+            }
+        )
+    )
+    observations.append(row(1, token="b"))
+    result = run_relationships(observations, MANIFEST)
+    assert result["counts"]["paired_observations"] == 1
+    assert result["counts"]["unsupported_outcome_or_lifecycle"] == 1
+    assert not result["findings"]
