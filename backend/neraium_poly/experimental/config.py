@@ -41,11 +41,18 @@ class ExperimentalConfig(BaseModel):
     fee_ttl_seconds: float = Field(default=300, gt=0, le=300)
     max_archive_mb: int = Field(default=512, ge=1, le=2048)
     min_free_disk_mb: int = Field(default=8192, ge=512)
+    archive_management_enabled: bool = False
+    archive_budget_mb: int = Field(default=16384, ge=64, le=131072)
+    archive_segment_mb: int = Field(default=8, ge=1, le=1024)
+    archive_reserve_disk_mb: int = Field(default=65536, ge=8192)
+    archive_compression_enabled: bool = True
     position_notional: float = Field(default=2, ge=2, le=5)
     risk_limits: RiskLimits = Field(default_factory=RiskLimits)
 
     @model_validator(mode="after")
     def isolated(self):
+        if self.archive_segment_mb >= self.archive_budget_mb:
+            raise ValueError("archive segment must be smaller than total service budget")
         loopback_url(self.source_url)
         if self.host != "127.0.0.1" or self.port in (18740, 18741, 18742):
             raise ValueError("experimental API requires separate loopback port")

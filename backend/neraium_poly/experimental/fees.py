@@ -41,9 +41,7 @@ class AuditedFeeAdapter(ConcurrentPublicAdapter):
             raise ValueError("fee evidence budget exhausted")
         digest = hashlib.sha256(encoded.encode()).hexdigest()
         rid = hashlib.sha256((base + path + digest).encode()).hexdigest()
-        existing = self.store.connection.execute(
-            "SELECT kind,payload,digest FROM events WHERE id=?", (rid,)
-        ).fetchone()
+        existing = self.store.get(rid)
         if existing:
             kind, payload, sha = existing
             if kind != "PublicFeeResponse" or hashlib.sha256(payload.encode()).hexdigest() != sha:

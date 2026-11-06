@@ -80,6 +80,38 @@ class EventStore:
             result.append({"kind": event_kind, "record": json.loads(payload)})
         return result
 
-    def count(self) -> int:
+    def get(self, record_id: str):
         with self._lock:
-            return self.connection.execute("SELECT count(*) FROM events").fetchone()[0]
+            row = self.connection.execute(
+                "SELECT kind,payload,digest FROM events WHERE id=?", (record_id,)
+            ).fetchone()
+        if row and hashlib.sha256(row[1].encode()).hexdigest() != row[2]:
+            raise ValueError("corrupt archived record")
+        return row
+
+    def latest(self, kind: str, limit: int = 100) -> list[dict]:
+        if not 1 <= limit <= 1000:
+            raise ValueError("bounded latest archive query required")
+        with self._lock:
+            rows = self.connection.execute(
+                "SELECT payload,digest FROM events WHERE kind=? ORDER BY available_at DESC,id DESC LIMIT ?",
+                (kind, limit),
+            ).fetchall()
+        result = []
+        for payload, digest in rows:
+            if hashlib.sha256(payload.encode()).hexdigest() != digest:
+                raise ValueError("corrupt archived record")
+            result.append(json.loads(payload))
+        return result
+
+    def count(self, *, kind: str | None = None, qualified: bool | None = None) -> int:
+        clauses, params = [], []
+        if kind is not None:
+            clauses.append("kind=?")
+            params.append(kind)
+        if qualified is not None:
+            clauses.append("json_extract(payload,'$.qualified')=?")
+            params.append(int(qualified))
+        query = "SELECT count(*) FROM events" + (" WHERE " + " AND ".join(clauses) if clauses else "")
+        with self._lock:
+            return self.connection.execute(query, params).fetchone()[0]

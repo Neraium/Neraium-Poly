@@ -69,79 +69,122 @@ class ExperimentalRuntime:
             )
         self.account = account
         self.ledger = account.ledger
+        self.archive_fault = None
         self.model_hash = strategy_code_hash()
         previous_hash = self.ledger.get("strategy_code_hash")
         if previous_hash is not None and previous_hash != self.model_hash:
             account.close()
             raise ValueError("Experimental model code changed; explicit research baseline migration required")
-        self.events = EventStore(config.data_dir / "events.sqlite")
-        self.archive = QuoteArchive(self.events, self.ledger.get("quote_archive", {}))
-        self.engine = ExperimentalStrategyEngine(
-            enabled=config.enabled_strategies, max_tokens=config.max_tokens
-        )
-        checkpoint = self.ledger.get("strategy_engine")
-        if checkpoint:
-            self.engine.restore(checkpoint)
-        self.trace = DecisionTrace(epoch_started_at=self.clock())
-        trace_state = self.ledger.get("decision_trace", {})
-        if trace_state:
-            self.trace.restore(trace_state["checkpoint"])
-        self.trace_cursors = trace_state.get(
-            "cursors",
-            {
-                "risk": self.account.risk.db.execute("SELECT COALESCE(MAX(seq),0) FROM audit").fetchone()[0],
-                "broker": self.account.broker.db.execute("SELECT COALESCE(MAX(seq),0) FROM audit").fetchone()[
-                    0
-                ],
-            },
-        )
-        self.event_intelligence = None
-        if config.event_research_enabled:
-            from neraium_poly.research.phase12.runtime import EventResearchRuntime
+        if config.archive_management_enabled:
+            from neraium_poly.data.segmented import ManagedEventStore
 
             try:
-                self.event_intelligence = EventResearchRuntime(
-                    config.data_dir / "event-intelligence",
+                self.events = ManagedEventStore(
+                    config.data_dir / "events.sqlite",
+                    segment_bytes=config.archive_segment_mb * 1024**2,
+                    budget_bytes=config.archive_budget_mb * 1024**2,
+                    min_free_bytes=max(8192, config.min_free_disk_mb, config.archive_reserve_disk_mb) * 1024**2,
+                    compress=config.archive_compression_enabled,
                     clock=self.clock,
-                    dataset_path=config.event_dataset_path,
-                    state=self.ledger.get("event_intelligence", {}),
-                    interval=config.event_forecast_interval,
-                    max_forecasts=config.event_forecasts_per_cycle,
-                    max_bytes=config.event_ledger_mb * 1024 * 1024,
-                    sports_enabled=config.sports_research_enabled,
-                    domains_enabled=config.domain_research_enabled,
                 )
-            except Exception as error:
-                self.event_research_initialization_error = f"{type(error).__name__}:{str(error)[:160]}"
-                log.exception("event_research_startup_withheld")
-        self.feed = feed or SharedFeedClient(config.source_url)
-        self.fee_adapter = fee_adapter or AuditedFeeAdapter(
-            self.events, self._budget_ok, client=httpx.AsyncClient(timeout=5, follow_redirects=False)
-        )
-        self.fees = self.ledger.get("observed_fees", {})
-        self.fee_attempts = {}
-        self.totals = self.ledger.get(
-            "experimental_totals",
-            {"cycles": 0, "signals": 0, "qualified_opportunities": 0, "observations": 0},
-        )
-        self.rejections = Counter(self.ledger.get("experimental_rejections", {}))
-        self.activity = deque(self.ledger.get("experimental_activity", []), maxlen=15)
-        self.selected = self.ledger.get("selected_tokens", [])
-        self.mark_sources = self.ledger.get("mark_sources", {})
-        self.last_frame = None
-        self.last_cycle = None
-        self.last_success = None
-        self.last_error = None
-        self.fee_error = None
-        self.stopping = False
-        self.started = self.clock()
+            except BaseException:
+                account.close()
+                raise
+        else:
+            self.events = EventStore(config.data_dir / "events.sqlite")
+        try:
+            self.archive = QuoteArchive(self.events, self.ledger.get("quote_archive", {}))
+            self.engine = ExperimentalStrategyEngine(
+                enabled=config.enabled_strategies, max_tokens=config.max_tokens
+            )
+            checkpoint = self.ledger.get("strategy_engine")
+            if checkpoint:
+                self.engine.restore(checkpoint)
+            self.trace = DecisionTrace(epoch_started_at=self.clock())
+            trace_state = self.ledger.get("decision_trace", {})
+            if trace_state:
+                self.trace.restore(trace_state["checkpoint"])
+            self.trace_cursors = trace_state.get(
+                "cursors",
+                {
+                    "risk": self.account.risk.db.execute("SELECT COALESCE(MAX(seq),0) FROM audit").fetchone()[0],
+                    "broker": self.account.broker.db.execute("SELECT COALESCE(MAX(seq),0) FROM audit").fetchone()[
+                        0
+                    ],
+                },
+            )
+            self.event_intelligence = None
+            if config.event_research_enabled:
+                from neraium_poly.research.phase12.runtime import EventResearchRuntime
+
+                try:
+                    self.event_intelligence = EventResearchRuntime(
+                        config.data_dir / "event-intelligence",
+                        clock=self.clock,
+                        dataset_path=config.event_dataset_path,
+                        state=self.ledger.get("event_intelligence", {}),
+                        interval=config.event_forecast_interval,
+                        max_forecasts=config.event_forecasts_per_cycle,
+                        max_bytes=config.event_ledger_mb * 1024 * 1024,
+                        sports_enabled=config.sports_research_enabled,
+                        domains_enabled=config.domain_research_enabled,
+                    )
+                except Exception as error:
+                    self.event_research_initialization_error = f"{type(error).__name__}:{str(error)[:160]}"
+                    log.exception("event_research_startup_withheld")
+            self.feed = feed or SharedFeedClient(config.source_url)
+            self.fee_adapter = fee_adapter or AuditedFeeAdapter(
+                self.events, self._budget_ok, client=httpx.AsyncClient(timeout=5, follow_redirects=False)
+            )
+            self.fees = self.ledger.get("observed_fees", {})
+            self.fee_attempts = {}
+            self.totals = self.ledger.get(
+                "experimental_totals",
+                {"cycles": 0, "signals": 0, "qualified_opportunities": 0, "observations": 0},
+            )
+            self.rejections = Counter(self.ledger.get("experimental_rejections", {}))
+            self.activity = deque(self.ledger.get("experimental_activity", []), maxlen=15)
+            self.selected = self.ledger.get("selected_tokens", [])
+            self.mark_sources = self.ledger.get("mark_sources", {})
+            self.last_frame = None
+            self.last_cycle = None
+            self.last_success = None
+            self.last_error = None
+            self.fee_error = None
+            self.stopping = False
+            self.started = self.clock()
+        except BaseException:
+            self.events.close()
+            self.account.close()
+            raise
 
     def _budget_ok(self):
+        if self.config.archive_management_enabled:
+            if self.archive_fault:
+                return False
+            try:
+                return self.events.can_write() if hasattr(self.events, "can_write") else self._archive_status()["health"] == "ok"
+            except Exception as error:  # noqa: BLE001 - deny orders if archive accounting fails
+                self.archive_fault = f"archive_budget:{type(error).__name__}:{str(error)[:160]}"
+                return False
         size = sum(p.stat().st_size for p in self.config.data_dir.glob("*.sqlite*") if p.is_file())
         return (
             size < self.config.max_archive_mb * 1024 * 1024
             and shutil.disk_usage(self.config.data_dir).free >= self.config.min_free_disk_mb * 1024 * 1024
         )
+
+    def _archive_status(self):
+        if not self.config.archive_management_enabled:
+            return {"managed": False, "health": "legacy_budget", "budget_bytes": self.config.max_archive_mb * 1024**2,
+                    "retention_policy": "append_only_no_rotation"}
+        try:
+            status = self.events.status()
+        except Exception as error:  # noqa: BLE001 - keep account state visible when archive health fails
+            self.archive_fault = f"archive_status:{type(error).__name__}:{str(error)[:160]}"
+            status = {"managed": True}
+        if self.archive_fault:
+            status.update(health="blocked", last_error=self.archive_fault)
+        return status
 
     def _save(self):
         if self.event_intelligence is not None:
@@ -228,13 +271,18 @@ class ExperimentalRuntime:
     async def cycle(self):
         Settings.from_env()
         now = self.clock()
+        if self.config.archive_management_enabled:
+            try:
+                self.events.maintain()
+            except Exception as error:  # noqa: BLE001 - storage faults preserve the risk suspension path
+                self.archive_fault = f"archive_maintenance:{type(error).__name__}:{str(error)[:160]}"
         if not self._budget_ok():
-            self.last_error = "experimental_storage_budget_exhausted"
+            self.last_error = self._archive_status().get("last_error") if self.config.archive_management_enabled else "experimental_storage_budget_exhausted"
             if not self.account.snapshot(now=now)["kill_switch"]:
                 self.account.stop(now=now)
             # The paper account remains fail-closed. Separately bounded research
             # may read public observations without writing paper execution evidence.
-            if self.event_intelligence is not None:
+            if self.event_intelligence is not None and not self.config.archive_management_enabled:
                 try:
                     research_frame = await getattr(self.feed, "read_research", self.feed.read)()
                     with self._lock:
@@ -268,9 +316,7 @@ class ExperimentalRuntime:
             for relationship in self.engine.intelligence.definitions.values():
                 definition = relationship.model_dump(mode="json")
                 rid = hashlib.sha256(relationship.model_dump_json().encode()).hexdigest()
-                existing = self.events.connection.execute(
-                    "SELECT kind,payload,digest FROM events WHERE id=?", (rid,)
-                ).fetchone()
+                existing = self.events.get(rid)
                 if existing is None:
                     self.events.append(
                         ExperimentalRelationshipDefinition(
@@ -521,7 +567,9 @@ class ExperimentalRuntime:
     async def _event_resolution_loop(self, should_exit):
         next_check = self.clock()
         while not self.stopping and not should_exit():
-            if self.event_intelligence is not None and self.clock() >= next_check:
+            if self.event_intelligence is not None and self.clock() >= next_check and (
+                not self.config.archive_management_enabled or self._budget_ok()
+            ):
                 try:
                     await self.event_intelligence.resolve_pending()
                 except Exception as error:
@@ -614,6 +662,7 @@ class ExperimentalRuntime:
                 or not assess_book(current[p["token_id"]], now, max_spread=0.05).healthy
             ]
             state.update(
+                archive=self._archive_status(),
                 mark_sources={
                     p["token_id"]: self.mark_sources.get(p["token_id"]) for p in state["positions"]
                 },

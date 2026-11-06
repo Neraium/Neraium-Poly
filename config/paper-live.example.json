@@ -53,5 +53,10 @@
     "exceptional_min": 15.0,
     "exceptional_max": 25.0,
     "kelly_fraction": 0.1
-  }
+  },
+  "archive_management_enabled": true,
+  "archive_budget_mb": 65536,
+  "archive_segment_mb": 16,
+  "archive_reserve_disk_mb": 65536,
+  "archive_compression_enabled": true
 }

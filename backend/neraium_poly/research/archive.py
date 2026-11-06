@@ -80,15 +80,12 @@ class QuoteArchive:
         self.state = dict(state or {})
         self.bases = {}
         for token, row in self.state.items():
-            saved = self.store.connection.execute(
-                "SELECT payload,digest FROM events WHERE id=? AND kind='OrderBookSnapshot'",
-                (row["full_book_id"],),
-            ).fetchone()
-            if not saved:
+            saved = self.store.get(row["full_book_id"])
+            if not saved or saved[0] != "OrderBookSnapshot":
                 raise ValueError("Missing canonical quote in recovered archive")
-            if sha256(saved[0].encode()).hexdigest() != saved[1]:
+            if sha256(saved[1].encode()).hexdigest() != saved[2]:
                 raise ValueError("Corrupt canonical quote in recovered archive")
-            book = OrderBookSnapshot.model_validate_json(saved[0])
+            book = OrderBookSnapshot.model_validate_json(saved[1])
             if book.token_id != token or content_hash(book) != row.get(
                 "base_content_sha256", row["content_sha256"]
             ):
@@ -170,12 +167,9 @@ def replay_sampled_books(store, *, until=None) -> tuple[OrderBookSnapshot, ...]:
             # if malformed input tried to backdate a receipt; reject rather than guess.
             original = originals.get(receipt.full_book_id)
             if original is None:
-                row = store.connection.execute(
-                    "SELECT payload,digest FROM events WHERE id=? AND kind='OrderBookSnapshot'",
-                    (receipt.full_book_id,),
-                ).fetchone()
-                if row and sha256(row[0].encode()).hexdigest() == row[1]:
-                    original = OrderBookSnapshot.model_validate_json(row[0])
+                row = store.get(receipt.full_book_id)
+                if row and row[0] == "OrderBookSnapshot" and sha256(row[1].encode()).hexdigest() == row[2]:
+                    original = OrderBookSnapshot.model_validate_json(row[1])
             if original is None or original.available_at > receipt.available_at:
                 raise ValueError("Missing or inconsistent quote reference during replay")
             result.append(apply_observation(original, receipt))

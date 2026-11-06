@@ -20,6 +20,11 @@ class LivePaperConfig(BaseModel):
     discovery_interval_seconds: float = Field(default=300, ge=10, le=3600)
     max_archive_mb: int = Field(default=512, ge=1, le=4096)
     min_free_disk_mb: int = Field(default=2048, ge=100)
+    archive_management_enabled: bool = False
+    archive_budget_mb: int = Field(default=65536, ge=64, le=131072)
+    archive_segment_mb: int = Field(default=16, ge=1, le=1024)
+    archive_reserve_disk_mb: int = Field(default=65536, ge=8192)
+    archive_compression_enabled: bool = True
     max_relationships: int = Field(default=200, ge=1, le=1000)
     max_book_age_seconds: float = Field(default=15, gt=0, le=60)
     coverage_enabled: bool = True
@@ -44,6 +49,8 @@ class LivePaperConfig(BaseModel):
 
     @model_validator(mode="after")
     def safety(self):
+        if self.archive_segment_mb >= self.archive_budget_mb:
+            raise ValueError("archive segment must be smaller than total service budget")
         if self.allow_simulated_settlement and (
             not self.settlement_rule_hashes or not self.settlement_review_actor.strip()
         ):

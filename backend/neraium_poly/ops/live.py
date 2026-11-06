@@ -55,12 +55,25 @@ class LivePaperRuntime:
         self.directory = config.data_dir.resolve()
         self.ledger = LiveLedger(self.directory)
         self._lock = RLock()
+        self.archive_fault = None
         try:
-            self.events = EventStore(self.directory / "events.sqlite")
-            self.events.connection.execute(
-                "CREATE INDEX IF NOT EXISTS events_kind_time ON events(kind,available_at)"
-            )
-            self.events.connection.commit()
+            if config.archive_management_enabled:
+                from neraium_poly.data.segmented import ManagedEventStore
+
+                self.events = ManagedEventStore(
+                    self.directory / "events.sqlite",
+                    segment_bytes=config.archive_segment_mb * 1024**2,
+                    budget_bytes=config.archive_budget_mb * 1024**2,
+                    min_free_bytes=max(8192, config.min_free_disk_mb, config.archive_reserve_disk_mb) * 1024**2,
+                    compress=config.archive_compression_enabled,
+                    clock=self.clock,
+                )
+            else:
+                self.events = EventStore(self.directory / "events.sqlite")
+                self.events.connection.execute(
+                    "CREATE INDEX IF NOT EXISTS events_kind_time ON events(kind,available_at)"
+                )
+                self.events.connection.commit()
             self.risk = RiskEngine(str(self.directory / "risk.sqlite"), limits=config.risk_limits)
             self.broker = PaperBroker(self.risk, str(self.directory / "broker.sqlite"))
             self.validation = validation or ValidationStore(
@@ -142,6 +155,13 @@ class LivePaperRuntime:
                 self.risk.kill_switch(True, now=self.clock())
                 self.last_error = "restart_reconciliation_failed"
         except BaseException:
+            for name in ("events", "broker", "risk", "validation"):
+                resource = getattr(self, name, None)
+                if resource is not None and hasattr(resource, "close"):
+                    try:
+                        resource.close()
+                    except Exception:  # Preserve the original startup failure.
+                        log.exception("startup_resource_cleanup_failed:%s", name)
             self.ledger.close()
             raise
 
@@ -170,12 +190,33 @@ class LivePaperRuntime:
         self.ledger.put("order_activations", self.order_activations)
 
     def _budget_ok(self):
+        if self.config.archive_management_enabled:
+            if self.archive_fault:
+                return False
+            try:
+                return self.events.can_write() if hasattr(self.events, "can_write") else self._archive_status()["health"] == "ok"
+            except Exception as error:  # noqa: BLE001 - deny ingestion if archive accounting fails
+                self.archive_fault = f"archive_budget:{type(error).__name__}:{str(error)[:160]}"
+                return False
         files = [p for p in self.directory.glob("events.sqlite*") if p.is_file()]
         size = sum(p.stat().st_size for p in files)
         return (
             size < self.config.max_archive_mb * 1024 * 1024
             and shutil.disk_usage(self.directory).free > self.config.min_free_disk_mb * 1024 * 1024
         )
+
+    def _archive_status(self):
+        if not self.config.archive_management_enabled:
+            return {"managed": False, "health": "legacy_budget", "budget_bytes": self.config.max_archive_mb * 1024**2,
+                    "retention_policy": "append_only_no_rotation"}
+        try:
+            status = self.events.status()
+        except Exception as error:  # noqa: BLE001 - a failed archive cannot grant write authority
+            self.archive_fault = f"archive_status:{type(error).__name__}:{str(error)[:160]}"
+            status = {"managed": True}
+        if self.archive_fault:
+            status.update(health="blocked", last_error=self.archive_fault)
+        return status
 
     async def discover(self):
         from neraium_poly.data.operational import build_statistical_relationships
@@ -234,9 +275,7 @@ class LivePaperRuntime:
                 if relationship.id not in self.relationships:
                     # A liquid-universe edge can disappear and re-enter later.
                     # Its stable identity retains the original immutable definition.
-                    archived = self.events.connection.execute(
-                        "SELECT kind,payload,digest FROM events WHERE id=?", (relationship.id,)
-                    ).fetchone()
+                    archived = self.events.get(relationship.id)
                     if archived is not None:
                         kind, payload, digest = archived
                         if (
@@ -534,9 +573,7 @@ class LivePaperRuntime:
                 if result.execution:
                     self.order_activations[result.execution.client_order_id] = self.activation_id
                     self.ledger.put("order_activations", self.order_activations)
-                self.totals["qualified_opportunities"] = self.events.connection.execute(
-                    "SELECT count(*) FROM events WHERE kind='TradingOpportunity'"
-                ).fetchone()[0]
+                self.totals["qualified_opportunities"] = self.events.count(kind="TradingOpportunity")
                 self.totals["orders"] = self.broker.db.execute(
                     "SELECT count(*) FROM orders WHERE json_extract(report,'$.status') != 'rejected'"
                 ).fetchone()[0]
@@ -591,8 +628,13 @@ class LivePaperRuntime:
     async def cycle(self):
         Settings.from_env()
         now = self.clock()
+        if self.config.archive_management_enabled:
+            try:
+                self.events.maintain()
+            except Exception as error:  # noqa: BLE001 - use the same stream stop as other storage faults
+                self.archive_fault = f"archive_maintenance:{type(error).__name__}:{str(error)[:160]}"
         if not self._budget_ok():
-            self.last_error = "archive_or_disk_budget_exhausted"
+            self.last_error = self._archive_status().get("last_error") if self.config.archive_management_enabled else "archive_or_disk_budget_exhausted"
             if self.coverage:
                 await self.coverage.stop_stream()
             return
@@ -662,9 +704,7 @@ class LivePaperRuntime:
                 self.risk.mark(marks, now=now)
                 self.broker.expire(now=now)
                 self.totals["books"] += len(received)
-                self.totals["qualified_evidence"] = self.events.connection.execute(
-                    "SELECT count(*) FROM events WHERE kind='RelationshipEvidence' AND json_extract(payload,'$.qualified')=1"
-                ).fetchone()[0]
+                self.totals["qualified_evidence"] = self.events.count(kind="RelationshipEvidence", qualified=True)
             reasons = await self._evaluate(received, now)
             for report in self.broker.history():
                 await self._advance_order(report, self.clock())
@@ -721,17 +761,7 @@ class LivePaperRuntime:
                 await asyncio.sleep(1)
 
     def _latest(self, kind, limit=100):
-        with self.events._lock:
-            rows = self.events.connection.execute(
-                "SELECT payload,digest FROM events WHERE kind=? ORDER BY available_at DESC,id DESC LIMIT ?",
-                (kind, limit),
-            ).fetchall()
-        result = []
-        for payload, digest in rows:
-            if hashlib.sha256(payload.encode()).hexdigest() != digest:
-                raise ValueError("corrupt archived record")
-            result.append(json.loads(payload))
-        return result
+        return self.events.latest(kind, limit=limit)
 
     def market_frame(self):
         from neraium_poly.experimental.feed import market_frame
@@ -803,6 +833,7 @@ class LivePaperRuntime:
                 market_rows.append(row)
             return {
                 "mode": "live_market_paper",
+                "archive": self._archive_status(),
                 "scenario": "Live Polymarket · paper execution gated by real-strategy validation",
                 "generated_at": now.isoformat(),
                 "bankroll": account["equity"],

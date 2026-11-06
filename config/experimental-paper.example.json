@@ -32,5 +32,10 @@
     "min_net_edge": 0.03,
     "max_liquidity_participation": 0.25
   },
-  "domain_research_enabled": true
+  "domain_research_enabled": true,
+  "archive_management_enabled": true,
+  "archive_budget_mb": 16384,
+  "archive_segment_mb": 8,
+  "archive_reserve_disk_mb": 65536,
+  "archive_compression_enabled": true
 }

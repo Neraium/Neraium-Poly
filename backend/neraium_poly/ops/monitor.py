@@ -104,11 +104,13 @@ def render_monitor(
     """
     width, height = max(30, min(int(width), 160)), max(12, min(int(height or 24), 100))
     certified, experimental = _mapping(certified), _mapping(experimental)
-    if view not in {"summary", "strategies", "rejections", "research", "events", "domains"} or scope not in {
+    if view not in {"summary", "strategies", "rejections", "research", "events", "domains", "archives"} or scope not in {
         "cycle",
         "epoch",
     }:
         raise ValueError("monitor view or scope invalid")
+    if view == "archives":
+        return _render_archives(certified, experimental, width, height, errors)
     if view == "domains":
         return _render_domains(certified, experimental, width, height, errors)
     if view == "events":
@@ -534,6 +536,66 @@ def _event_metric(value):
     except (ValueError, TypeError):
         return "unavailable"
 
+
+
+def _render_archives(certified, experimental, width, height, errors):
+    import math
+
+    def size(value):
+        if isinstance(value, bool) or not isinstance(value, (float, int)) or not math.isfinite(value) or value < 0:
+            return "unknown"
+        if value >= 1024**3:
+            return f"{value / 1024**3:.2f}GiB"
+        if value < 1024**2:
+            return f"{value / 1024:.1f}KiB"
+        return f"{value / 1024**2:.1f}MiB"
+
+    def horizon(value):
+        if isinstance(value, bool) or not isinstance(value, (float, int)) or not math.isfinite(value) or value < 0:
+            return "unknown"
+        return f"{value / 3600:.1f}h"
+
+    connection = _mapping(_mapping(certified.get("operation")).get("connectivity"))
+    lines = [("REAL MARKET DATA", "bold cyan", 0),
+             (f"WS {_flag(connection.get('ws_connected'), 'on', 'off')} Fresh {_number(connection.get('fresh_books'))}", "white", 1)]
+    for label, account in [("COLLECTOR ARCHIVE", certified), ("EXPERIMENTAL ARCHIVE", experimental)]:
+        archive = _mapping(account.get("archive"))
+        rate = archive.get("growth_bytes_per_second")
+        lines.extend([
+            (label, "bold yellow", 0),
+            (f"{size(archive.get('usage_bytes'))} / {size(archive.get('budget_bytes'))}", "white", 0),
+            (f"State {_clean(archive.get('health', 'unavailable'))}", "yellow", 1),
+            (f"Segments {_number(archive.get('segments'))} Sealed {_number(archive.get('sealed_segments'))} Gzip {_number(archive.get('compressed_segments'))}", "white", 2),
+            (f"Growth {size(rate)}/s Full in {horizon(archive.get('seconds_to_exhaustion'))}", "dim", 2),
+            (f"Free {size(archive.get('free_bytes'))} Floor {size(archive.get('global_floor_bytes'))}", "dim", 2),
+        ])
+        if archive.get("last_error"):
+            lines.append((f"Reason {_clean(archive['last_error'])}", "yellow", 0))
+    lines += [
+        (f"EXPERIMENTAL PAPER {_number(experimental.get('cash'),True)} P/L {_number(experimental.get('simulated_pnl'),True)}", "white", 0),
+        (f"CERTIFIED PAPER {_number(certified.get('cash'),True)} P/L {_number(certified.get('simulated_pnl'),True)}", "white", 0),
+        (f"Emergency stop: {_flag(experimental.get('kill_switch', experimental.get('suspended')), 'ACTIVE', 'clear')}", "yellow", 0),
+        ("Retention: all originals; no purge", "dim", 2),
+    ]
+    if errors:
+        lines.append((f"API {_clean(errors[0])}", "red", 0))
+    keep = list(range(len(lines)))
+    for i in sorted(keep, key=lambda i: (lines[i][2], -i), reverse=True):
+        if len(keep) <= height - 2:
+            break
+        keep.remove(i)
+    result = Text()
+    footer = _safety_footer(certified, experimental)
+    if width < 31 and "DISABLED" in footer:
+        footer = "LIVE TRADING DISABLED"
+    final = [(lines[i][0], lines[i][1]) for i in keep] + [(footer, "dim"), ("Ctrl-C exits monitor only", "dim")]
+    for i, (text, style) in enumerate(final):
+        if i:
+            result.append("\n")
+        row = Text(_clean(text), style=style, no_wrap=True, overflow="ellipsis")
+        row.truncate(width, overflow="ellipsis")
+        result.append_text(row)
+    return result
 
 
 def _render_domains(certified, experimental, width, height, errors):
