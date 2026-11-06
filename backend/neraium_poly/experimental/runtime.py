@@ -22,6 +22,7 @@ from neraium_poly.experimental.migration import strategy_code_hash
 from neraium_poly.experimental.strategies import ExperimentalStrategyEngine
 from neraium_poly.experimental.trace import DecisionTrace
 from neraium_poly.research.archive import QuoteArchive
+from neraium_poly.research.phase11.framework import load_summary
 from neraium_poly.settings import Settings
 
 log = logging.getLogger(__name__)
@@ -562,6 +563,9 @@ class ExperimentalRuntime:
                 data_source=self.config.source_url,
                 certification_authority=False,
                 historical_qualification=self._qualification(),
+                research=load_summary(self.config.research_report_path)
+                if self.config.research_report_path
+                else {"status": "unavailable", "reason": "Research report not configured"},
             )
             return state
 

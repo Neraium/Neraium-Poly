@@ -23,7 +23,7 @@ class ResearchObservation(BaseModel):
             if self.market.available_at > self.book.available_at:
                 raise ValueError("future metadata cannot be research feature")
         if self.fee is not None:
-            at = datetime.fromisoformat(self.fee["observed_at"].replace("Z", "+00:00"))
+            at = datetime.fromisoformat(self.fee["observed_at"])
             if at.tzinfo is None or at > self.book.available_at:
                 raise ValueError("future fee cannot be research feature")
         return self

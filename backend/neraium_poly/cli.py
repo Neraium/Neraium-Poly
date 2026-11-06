@@ -20,6 +20,8 @@ def main():
             "experimental-migrate",
             "monitor",
             "research-qualify",
+            "research-experiment",
+            "research-watch",
             "strategy-validate",
             "strategy-package",
             "research-acquire",
@@ -54,12 +56,16 @@ def main():
     parser.add_argument("--once", action="store_true")
     parser.add_argument("--width", type=int)
     parser.add_argument("--no-color", action="store_true")
-    parser.add_argument("--view", choices=("summary", "strategies", "rejections"), default="summary")
+    parser.add_argument(
+        "--view", choices=("summary", "strategies", "rejections", "research"), default="summary"
+    )
     parser.add_argument("--scope", choices=("cycle", "epoch"), default="cycle")
     parser.add_argument("--refresh", type=float, default=3)
     parser.add_argument("--certified-url", default="http://127.0.0.1:18742/api/state")
     parser.add_argument("--experimental-url", default="http://127.0.0.1:18743/api/state")
     parser.add_argument("--rpc-evidence-dir", type=Path)
+    parser.add_argument("--research-output", type=Path, default=Path("data/phase11-results"))
+    parser.add_argument("--max-observations", type=int, default=20000)
     parser.add_argument("--workers", type=int, default=2)
     args = parser.parse_args()
     Settings.from_env()
@@ -76,6 +82,30 @@ def main():
             view=args.view,
             scope=args.scope,
         )
+    elif args.command == "research-experiment":
+        from neraium_poly.research.phase11.framework import run_experiment
+
+        if not args.dataset or not args.output:
+            parser.error("research-experiment requires frozen --dataset and new --output")
+        print(
+            json.dumps(
+                run_experiment(dataset=args.dataset, output=args.output, workers=args.workers), indent=2
+            )
+        )
+    elif args.command == "research-watch":
+        from neraium_poly.research.phase11.framework import watch_research
+
+        if not args.database:
+            parser.error("research-watch requires read-only source --database")
+        for report in watch_research(
+            database=args.database,
+            output=args.research_output,
+            cycles=args.cycles,
+            interval=args.interval,
+            limit=args.max_observations,
+            workers=args.workers,
+        ):
+            print(json.dumps(report), flush=True)
     elif args.command == "experimental-migrate":
         from neraium_poly.experimental.config import ExperimentalConfig
         from neraium_poly.experimental.migration import migrate_research_baseline

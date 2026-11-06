@@ -22,6 +22,7 @@ class ExperimentalConfig(BaseModel):
     data_dir: Path = Path("data/experimental-paper")
     certified_directory: Path = Path("data/paper-live")
     qualification_report_path: Path | None = Path("data/phase9qualification/qualified-v2/report.json")
+    research_report_path: Path | None = Path("data/phase11-results/latest.json")
     source_url: str = "http://127.0.0.1:18742/api/market-frame"
     host: str = "127.0.0.1"
     port: int = Field(default=18743, ge=1024, le=65535)
