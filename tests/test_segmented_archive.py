@@ -185,3 +185,38 @@ def test_unregistered_published_copy_is_verified_during_recovery(tmp_path, monke
     copies[0].write_bytes(b"CONTROLLED corruption")
     with pytest.raises((ValueError, OSError)):
         managed(path)
+
+
+def test_sealing_rechecks_original_payload_before_publishing_verified_copy(tmp_path):
+    import sqlite3
+
+    store = managed(tmp_path / "events.sqlite")
+    try:
+        store.append(record(0))
+        source = store._source(store.active_name)
+        store.active.close()
+        store.active = None
+        with sqlite3.connect(source) as controlled_mutation:
+            controlled_mutation.execute("DROP TRIGGER events_no_update")
+            controlled_mutation.execute("UPDATE events SET payload=replace(payload,'CONTROLLED','CORRUPTED')")
+        store.active = EventStore(source)
+        with pytest.raises(ValueError, match="corrupt archive payload digest"):
+            store._seal_active()
+        assert not list(store.segment_dir.glob("*.manifest.json"))
+        assert not list(store.segment_dir.glob("*.gz"))
+    finally:
+        store.close()
+
+
+def test_status_usage_is_measured_even_after_conservative_admission_reservations(tmp_path):
+    store = managed(tmp_path / "events.sqlite")
+    try:
+        assert store.can_write()
+        store.append(record(0))
+        assert store._pending > 0
+        actual = sum(p.stat().st_size for p in tmp_path.rglob("*") if p.is_file())
+        status = store.status()
+        assert status["usage_bytes"] == actual
+        assert status["usage_is_conservative_estimate"] is False
+    finally:
+        store.close()

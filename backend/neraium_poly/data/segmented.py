@@ -314,8 +314,8 @@ class ManagedEventStore:
         self.active = None
         with path.open("rb") as source:
             os.fsync(source.fileno())
+        records = self._index_segment(path, name)
         digest, size = _sha(path), path.stat().st_size
-        records = self.catalog.execute("SELECT count(*) FROM records WHERE segment=?", (name,)).fetchone()[0]
         self._write_manifest(name, digest, size, records)
         with self.catalog:
             self.catalog.execute("UPDATE segments SET status='sealed',raw_sha=?,raw_size=? WHERE name=?",
@@ -419,11 +419,23 @@ class ManagedEventStore:
                     self._catalog_record(row, self.active_name)
                     self.catalog.execute("UPDATE segments SET records=records+1 WHERE name=?", (self.active_name,))
                 self._dirty = False
-                self._pending += len(payload.encode()) * 3 + 8192
+                self._pending += len(payload.encode()) * 3 + 256 * 1024
             except BaseException:
                 self._last_error = "archive catalogue recovery required"
                 raise
             return True
+
+    def can_write(self):
+        """Cheap fail-closed admission; exact usage reporting belongs to status()."""
+        with self._lock:
+            try:
+                if self._last_error:
+                    return False
+                self._check_budget(256 * 1024)
+                return True
+            except (OSError, ValueError) as error:
+                self._last_error = f"archive_admission:{type(error).__name__}:{str(error)[:160]}"
+                return False
 
     def maintain(self):
         with self._lock:
@@ -516,8 +528,7 @@ class ManagedEventStore:
         with self._lock:
             now = self.clock()
             sample_due = not self._samples or (now - self._samples[-1][0]).total_seconds() >= 5
-            if sample_due:
-                self._usage_at = None
+            self._usage_at = None
             usage = self._measure()
             if sample_due:
                 self._samples.append((now, self._usage))
