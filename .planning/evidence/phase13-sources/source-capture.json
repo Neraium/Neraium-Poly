@@ -1,0 +1,113 @@
+{
+  "captured_at": "2026-11-06T06:02:51.460476+00:00",
+  "source_report": {
+    "provider": "nflverse/nflverse-data",
+    "license": "CC-BY-4.0",
+    "attribution": "nflverse contributors; Lee Sharpe schedules; normalized fields, odds discarded",
+    "license_url": "https://github.com/nflverse/nflverse-data/blob/main/LICENSE.md",
+    "source_url": "https://github.com/nflverse/nflverse-data/releases/download/schedules/games.csv",
+    "collected_at": "2026-11-06T06:02:51.364369+00:00",
+    "games": 842,
+    "statuses": {
+      "final": 692,
+      "scheduled": 150
+    },
+    "rejected_rows": {},
+    "minimum_season": 2024,
+    "source_updated_at": "2026-11-06T05:06:25+00:00",
+    "availability": "First observed retrieval, not historical event time or publisher update time",
+    "official_results": false,
+    "result_status_semantics": "publisher_reported_scores_not_official_finality",
+    "certification_authority": false,
+    "withheld_providers": {
+      "NBA": "NBA terms prohibit gambling/database use absent consent",
+      "NFL.com": "No licensed official automated result access configured",
+      "ATP/esports": "No qualified provider configured"
+    },
+    "missingness": [
+      "row_publication_times",
+      "official_result_finality",
+      "cancellation_status",
+      "injuries",
+      "lineups"
+    ]
+  },
+  "manifest_sha256": "fef4c9717d7ff071d3aecc4399bc0f10a0a9e471db9a7f79773e8cfa0b5b4269",
+  "raw_games_sha256": "ea6beb0888cd123d84ecd998364b32661a85622e7522bd3cd63441cff3fe474f",
+  "actual_mappings": [
+    {
+      "schema_version": "1.0",
+      "event_id": "1217417",
+      "market_id": "5920626",
+      "token_id": "77848626876688716983588852240686636563373445326764845068265008490716712317223",
+      "game_id": "2026_09_DET_MIA",
+      "league": "NFL",
+      "provider": "nflverse/nflverse-data",
+      "selected_team_id": "DET",
+      "opponent_team_id": "MIA",
+      "event_start": "2026-11-08T18:00:00Z",
+      "rules_sha256": "187e4b0f4547f9ba61a10a39e033afbaa04563f4b2b19ce9649136ff4e3f7611",
+      "mapping_sha256": "d9c24751155a048a8e7eedb7343aba6253d9db4c2449542dc0d45128667deffd",
+      "artifact_sha256": "ea6beb0888cd123d84ecd998364b32661a85622e7522bd3cd63441cff3fe474f",
+      "method": "exact_alias_schedule_rules_v1",
+      "includes_overtime": true
+    },
+    {
+      "schema_version": "1.0",
+      "event_id": "1217417",
+      "market_id": "5920626",
+      "token_id": "105595942090130073190364000757535921800908124200569723529646419542572239411796",
+      "game_id": "2026_09_DET_MIA",
+      "league": "NFL",
+      "provider": "nflverse/nflverse-data",
+      "selected_team_id": "MIA",
+      "opponent_team_id": "DET",
+      "event_start": "2026-11-08T18:00:00Z",
+      "rules_sha256": "187e4b0f4547f9ba61a10a39e033afbaa04563f4b2b19ce9649136ff4e3f7611",
+      "mapping_sha256": "c8c5416ae277a8f09dd337311c0cd4ad22fcad544f9783bf675cbb9e4048e76d",
+      "artifact_sha256": "ea6beb0888cd123d84ecd998364b32661a85622e7522bd3cd63441cff3fe474f",
+      "method": "exact_alias_schedule_rules_v1",
+      "includes_overtime": true
+    },
+    {
+      "schema_version": "1.0",
+      "event_id": "1223454",
+      "market_id": "5968098",
+      "token_id": "66396576201555994148891471175166180593461969988035431286378882540556301360616",
+      "game_id": "2026_09_BUF_MIN",
+      "league": "NFL",
+      "provider": "nflverse/nflverse-data",
+      "selected_team_id": "BUF",
+      "opponent_team_id": "MIN",
+      "event_start": "2026-11-10T01:15:00Z",
+      "rules_sha256": "4fe78287c71475fa4043a9796671424c89708c3a2a2d8dda6d22ed1fad25e21e",
+      "mapping_sha256": "5ba6486d7f54c3dc0e11ed5c72283b6e0cad7b4099840efed9bcb8e293a0f950",
+      "artifact_sha256": "ea6beb0888cd123d84ecd998364b32661a85622e7522bd3cd63441cff3fe474f",
+      "method": "exact_alias_schedule_rules_v1",
+      "includes_overtime": true
+    },
+    {
+      "schema_version": "1.0",
+      "event_id": "1223454",
+      "market_id": "5968098",
+      "token_id": "73740327665853513775435224643812227209597485663581167997680615928558036283958",
+      "game_id": "2026_09_BUF_MIN",
+      "league": "NFL",
+      "provider": "nflverse/nflverse-data",
+      "selected_team_id": "MIN",
+      "opponent_team_id": "BUF",
+      "event_start": "2026-11-10T01:15:00Z",
+      "rules_sha256": "4fe78287c71475fa4043a9796671424c89708c3a2a2d8dda6d22ed1fad25e21e",
+      "mapping_sha256": "c66435cabc1344f7f4d6b4a4a2dd1412fc926d109a415ef280a33355a85e8352",
+      "artifact_sha256": "ea6beb0888cd123d84ecd998364b32661a85622e7522bd3cd63441cff3fe474f",
+      "method": "exact_alias_schedule_rules_v1",
+      "includes_overtime": true
+    }
+  ],
+  "mapping_rejections": {
+    "mapping_unsupported_league_or_resolution_source": 394,
+    "mapping_unsupported_contract_question": 2
+  },
+  "replay_verified": true,
+  "raw_snapshot": "/home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/poly-phase13-sources/data/phase13-source-capture-v2"
+}
