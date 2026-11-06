@@ -1,0 +1,13 @@
+
+> neraium-poly-dashboard@0.1.0 build
+> tsc -b && vite build
+
+vite v7.3.7 building client environment for production...
+transforming...
+✓ 28 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.42 kB │ gzip:  0.30 kB
+dist/assets/index-DfJAB7aw.css    7.85 kB │ gzip:  2.54 kB
+dist/assets/index-BRYFTICv.js   235.40 kB │ gzip: 73.53 kB
+✓ built in 751ms

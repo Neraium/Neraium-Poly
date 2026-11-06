@@ -1,5 +1,13 @@
 name: Paper research certification
-on: [push, pull_request]
+on:
+  push:
+    paths-ignore:
+      - '**/*.md'
+      - '.planning/**'
+  pull_request:
+    paths-ignore:
+      - '**/*.md'
+      - '.planning/**'
 permissions:
   contents: read
 jobs:
