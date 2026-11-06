@@ -233,3 +233,24 @@ def test_loader_rejects_duplicate_id_even_if_observation_hash_rebound(tmp_path):
     m.write_text(json.dumps(manifest))
     with pytest.raises(ValueError, match="duplicate or unsupported"):
         load_dataset(tmp_path / "dataset")
+
+
+def test_protocol_curve_diagnostic_requires_explicit_exponent_and_preserves_bound():
+    data = [observation(0), observation(0.2), observation(60, bid=0.43, ask=0.44)]
+    data = [
+        o.model_copy(
+            update={"fee": {**o.fee, "assumption": "Current official exponent1 global notional fee bound"}}
+        )
+        for o in data
+    ]
+    features, _ = causal_features(data)
+    rows, _ = execution_scenarios(data, features)
+    r = next(x for x in rows if x["notional_target"] == 2)
+    expected = r["shares"] * (0.43 - 0.41 - 0.02 * 0.41 * (1 - 0.41) - 0.02 * 0.43 * (1 - 0.43))
+    assert r["protocol_exponent1_curve_counterfactual"] == pytest.approx(expected)
+    assert r["protocol_exponent1_curve_counterfactual"] >= r["hypothetical_net_difference_after_fee_bound"]
+    unsupported = [
+        o.model_copy(update={"fee": {**o.fee, "assumption": "unverified fee exponent"}}) for o in data
+    ]
+    rows, _ = execution_scenarios(unsupported, features)
+    assert all(x["protocol_exponent1_curve_counterfactual"] is None for x in rows)

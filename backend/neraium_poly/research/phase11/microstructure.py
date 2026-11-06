@@ -85,12 +85,13 @@ def depth_quote(levels, quantity, *, participation=0.1, limit=None, buy=True):
     """Walk displayed depth with per-level participation; no queue/fill claim."""
     if quantity <= 0 or not 0 < participation <= 1:
         raise ValueError("positive quantity and bounded participation required")
-    remaining, value = quantity, 0.0
+    remaining, value, curve_factor = quantity, 0.0, 0.0
     for p in levels:
         if limit is not None and ((buy and p.price > limit) or (not buy and p.price < limit)):
             break
         size = min(remaining, p.size * participation)
         value += size * p.price
+        curve_factor += size * p.price * (1 - p.price)
         remaining -= size
         if remaining <= 1e-9:
             break
@@ -101,6 +102,7 @@ def depth_quote(levels, quantity, *, participation=0.1, limit=None, buy=True):
         "complete": remaining <= 1e-9,
         "average_price": value / filled if filled > 0 else None,
         "notional": value,
+        "exponent1_fee_factor": curve_factor,
         "unavailable_quantity": remaining,
     }
 
@@ -190,6 +192,17 @@ def execution_scenarios(observations, features, *, horizon=60, max_trials=6000):
             proceeds = sell["notional"]
             known = entry_rate is not None and exit_rate is not None
             bound_net = proceeds * (1 - exit_rate) - cost * (1 + entry_rate) if full and known else None
+            curve_supported = known and all(
+                "exponent1" in (o.fee or {}).get("assumption", "") for o in (entry, exit_obs)
+            )
+            curve_net = (
+                proceeds
+                - cost
+                - buy["exponent1_fee_factor"] * entry_rate
+                - sell["exponent1_fee_factor"] * exit_rate
+                if full and curve_supported
+                else None
+            )
             slip_sensitivity = {
                 str(slip): bound_net - 2 * qty * slip if bound_net is not None else None
                 for slip in (0, 0.005, 0.01, 0.02)
@@ -217,6 +230,7 @@ def execution_scenarios(observations, features, *, horizon=60, max_trials=6000):
                     "entry_fee_evidence_id": (entry.fee or {}).get("evidence_id"),
                     "exit_fee_evidence_id": (exit_obs.fee or {}).get("evidence_id"),
                     "hypothetical_net_difference_after_fee_bound": bound_net,
+                    "protocol_exponent1_curve_counterfactual": curve_net,
                     "additional_per_leg_slippage_sensitivity": slip_sensitivity,
                     "imbalance_at_decision": feature["imbalance"],
                     "classification": "retrospective independent quote-capacity scenario; not an order, fill or portfolio return",
@@ -252,6 +266,18 @@ def run_microstructure(observations, manifest=None):
             else None,
             "positive_at_additional_slippage_01": sum(
                 r["additional_per_leg_slippage_sensitivity"]["0.01"] > 0 for r in known
+            ),
+            "protocol_curve_counterfactual_median": median(
+                r["protocol_exponent1_curve_counterfactual"]
+                for r in rows
+                if r["protocol_exponent1_curve_counterfactual"] is not None
+            )
+            if any(r["protocol_exponent1_curve_counterfactual"] is not None for r in rows)
+            else None,
+            "positive_protocol_curve_with_slippage_01": sum(
+                r["protocol_exponent1_curve_counterfactual"] - 2 * r["shares"] * 0.01 > 0
+                for r in rows
+                if r["protocol_exponent1_curve_counterfactual"] is not None
             ),
             "portfolio_pnl": None,
             "independent_confidence_interval": None,
