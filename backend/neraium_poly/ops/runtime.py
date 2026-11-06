@@ -188,6 +188,7 @@ class ResearchRuntime:
         if report.status in {"open", "partial"}:
             report = broker.process(intent.client_order_id, book, now=now + timedelta(seconds=1))
         self._save("orders", report)
+        self.clock = now + timedelta(seconds=1)
         self.risk.mark({market.token_id: 0.41}, now=now + timedelta(seconds=1))
         result = walk_forward(training, evaluation_end=cutoff)
         self._save("performance", result.performance)
