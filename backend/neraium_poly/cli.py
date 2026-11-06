@@ -60,7 +60,7 @@ def main():
     parser.add_argument("--width", type=int)
     parser.add_argument("--no-color", action="store_true")
     parser.add_argument(
-        "--view", choices=("summary", "strategies", "rejections", "research", "events", "domains", "archives", "operations"), default="summary"
+        "--view", choices=("summary", "strategies", "rejections", "research", "events", "domains", "archives", "operations", "readiness"), default="summary"
     )
     parser.add_argument("--scope", choices=("cycle", "epoch"), default="cycle")
     parser.add_argument("--refresh", type=float, default=3)

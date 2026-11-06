@@ -105,11 +105,13 @@ def render_monitor(
     """
     width, height = max(30, min(int(width), 160)), max(12, min(int(height or 24), 100))
     certified, experimental = _mapping(certified), _mapping(experimental)
-    if view not in {"summary", "strategies", "rejections", "research", "events", "domains", "archives", "operations"} or scope not in {
+    if view not in {"summary", "strategies", "rejections", "research", "events", "domains", "archives", "operations", "readiness"} or scope not in {
         "cycle",
         "epoch",
     }:
         raise ValueError("monitor view or scope invalid")
+    if view == "readiness":
+        return _render_readiness(certified, experimental, width, height, errors)
     if view == "operations":
         return _render_operations(certified, experimental, width, height, errors)
     if view == "archives":
@@ -563,6 +565,110 @@ def _ops_horizon(value):
     if isinstance(value, bool) or not isinstance(value, (int, float)) or not math.isfinite(value) or value < 0:
         return "unknown"
     return f"{value/86400:.1f}d" if value >= 86400 else f"{value/3600:.1f}h"
+
+
+def _p16_recent(value, now, seconds=15):
+    try:
+        at = datetime.fromisoformat(value)
+        return at.tzinfo is not None and 0 <= (now - at).total_seconds() <= seconds
+    except (TypeError, ValueError, AttributeError):
+        return False
+
+
+def _render_readiness(certified, experimental, width, height, errors):
+    """Phone-sized evidence progress; original quote times control current claims."""
+    now = datetime.now(UTC)
+    operation = _mapping(certified.get("operation"))
+    connection = _mapping(operation.get("connectivity"))
+    cs, es = _mapping(operation.get("service")), _mapping(experimental.get("service"))
+    cf, ef = (_ops_fresh(v.get("generated_at"), now) for v in (certified, experimental))
+    live = (cf and certified.get("mode") == "live_market_paper" and cs.get("status") == "ok"
+            and _ops_fresh(cs.get("timestamp"), now) and connection.get("ws_connected") is True
+            and _p16_recent(connection.get("last_message_at"), now))
+    study = _mapping(_mapping(experimental.get("operations_research")).get("phase16"))
+    history, qualification = _mapping(study.get("history")), _mapping(study.get("qualification"))
+    mark = _mapping(qualification.get("mark_research_readiness"))
+    calibration = _mapping(qualification.get("calibration"))
+    tokens = history.get("per_token", [])
+    if isinstance(tokens, dict):
+        tokens = list(tokens.values())
+    quote_current = isinstance(tokens, list) and any(
+        isinstance(row, dict) and _p16_recent(row.get("latest_source_at"), now)
+        and _p16_recent(row.get("latest_available_at"), now) for row in tokens)
+    study_fresh = ef and _ops_fresh(study.get("last_study_at"), now)
+    current = live and study_fresh and quote_current
+    lines = []
+
+    def line(value, priority=2, style="white"):
+        lines.append((_clean(value), style, priority))
+
+    def reason(value):
+        return _clean(value).replace("_", " ")
+
+    line("QUALIFICATION READINESS", 0, "bold cyan")
+    line("REAL MARKET DATA" if live else "SOURCE STALE / UNAVAILABLE", 0, "cyan" if live else "yellow")
+    line("EXPERIMENTAL PAPER", 0, "bold yellow")
+    line(f"{'Last ' if experimental and not ef else ''}{_number(experimental.get('cash'), True)} Sim P/L {_number(experimental.get('simulated_pnl'), True)}", 0)
+    line(f"Stop {_flag(experimental.get('kill_switch', experimental.get('suspended')))}", 0, "yellow")
+    line("CERTIFIED PAPER", 0, "bold green")
+    line(f"{'Last ' if certified and not cf else ''}{_number(certified.get('cash'), True)} Sim P/L {_number(certified.get('simulated_pnl'), True)}", 0)
+    mark_status = reason(mark.get("status", "unavailable")) if current else "stale / unavailable"
+    line(f"Mark research: {mark_status}", 1, "yellow")
+    train, held = calibration.get("training_events"), calibration.get("heldout_events")
+    line(f"{'Terminal' if study_fresh else 'Last terminal'} train/held {_number(train)}/{_number(held)}", 1)
+    prefix = "" if study_fresh else "Last "
+    line(f"{prefix}Tokens {_number(history.get('tokens_tracked'))} Marks {_number(history.get('current_matured_labels'))}", 1)
+    remaining = mark.get("remaining_requirements", qualification.get("insufficient_evidence", []))
+    if not study_fresh:
+        line("Remaining: fresh study evidence", 1, "yellow")
+    elif not quote_current:
+        line("Remaining: fresh source quotes", 1, "yellow")
+    elif isinstance(remaining, list) and remaining:
+        line(f"Remaining: {reason(remaining[0])}", 1, "yellow")
+    elif calibration.get("metrics") is None:
+        line("Remaining: independent outcomes", 1, "yellow")
+    line(f"Markets {_number(_mapping(operation.get('scan')).get('discovered_markets'))} Fresh {_number(connection.get('fresh_books')) if live else '—'}", 2)
+    line(f"{prefix}History {_number(history.get('current_observations'))} Matured {_number(history.get('matured_labels'))}", 2)
+    line(f"{prefix}Parent groups {_number(history.get('unique_parent_events'))} (unreviewed)", 2)
+    eligible = qualification.get("eligible_mark_tokens")
+    line(f"Eligible mark tokens {_number(len(eligible) if isinstance(eligible, list) else None)}" + (" (last)" if not current else ""), 2)
+    edge = qualification.get("estimated_executable_edge")
+    all_quotes_current = isinstance(tokens, list) and bool(tokens) and all(
+        isinstance(row, dict) and _p16_recent(row.get("latest_source_at"), now)
+        and _p16_recent(row.get("latest_available_at"), now) for row in tokens)
+    edge_text = f"{edge:+.4f}/share" if current and all_quotes_current and type(edge) in (float, int) and math.isfinite(edge) else "unavailable"
+    line(f"Est edge (research) {edge_text}", 2)
+    metrics = _mapping(calibration.get("metrics"))
+    sufficient = type(train) is int and train >= 100 and type(held) is int and held >= 100
+    brier = metrics.get("brier")
+    brier_text = f"{brier:.5f}" if study_fresh and sufficient and type(brier) in (float, int) and math.isfinite(brier) and brier >= 0 else "insufficient evidence"
+    line(f"Terminal Brier {brier_text}", 2)
+    line(f"Orders {_number(experimental.get('orders_submitted'))} Fills {_number(experimental.get('fills'))} Pos {_number(experimental.get('open_positions'))}", 2)
+    relationship = _mapping(study.get("relationships"))
+    line(f"Relationship {_number(relationship.get('evaluations', _mapping(relationship.get('engine')).get('evaluations')))} evaluations", 3)
+    line(f"Certified gate {reason(cs.get('trading_status', 'unavailable'))}", 2, "yellow")
+    line(f"Study {_seen(study.get('last_study_at'))}", 2, "dim")
+    if study.get("last_error"):
+        line(f"Study error {reason(study['last_error'])}", 1, "yellow")
+    for error in tuple(errors)[:2]:
+        line(f"API {reason(error)}", 1, "red")
+    unsafe = any(v.get("live_trading_enabled") is True or v.get("paper_trading") is False for v in (cs, es))
+    safe = all(fresh and _ops_fresh(v.get("timestamp"), now) and v.get("paper_trading") is True
+               and v.get("live_trading_enabled") is False for v, fresh in ((cs, cf), (es, ef)))
+    footer = "WARNING LIVE CONFIG UNSAFE" if unsafe else "LIVE TRADING DISABLED" if safe else "LIVE CONFIG UNVERIFIED"
+    keep = list(range(len(lines)))
+    for i in sorted(keep, key=lambda i: (lines[i][2], i), reverse=True):
+        if len(keep) <= height - 1:
+            break
+        keep.remove(i)
+    output = Text()
+    for i, (text, style) in enumerate([(lines[j][0], lines[j][1]) for j in keep] + [(footer, "red" if unsafe else "dim")]):
+        if i:
+            output.append("\n")
+        row = Text(text, style=style, no_wrap=True, overflow="ellipsis")
+        row.truncate(width, overflow="ellipsis")
+        output.append_text(row)
+    return output
 
 
 def _render_operations(certified, experimental, width, height, errors):
@@ -1131,7 +1237,7 @@ def monitor(
 ):
     loopback_url(certified_url)
     loopback_url(experimental_url)
-    if view == "operations":
+    if view in {"operations", "readiness"}:
         def operations_url(value):
             parsed = urlsplit(value)
             return urlunsplit((parsed.scheme, parsed.netloc, "/api/operations-state", "", ""))
