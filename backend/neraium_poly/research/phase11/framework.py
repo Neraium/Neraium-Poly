@@ -104,7 +104,7 @@ def publish_summary(path, report):
     os.replace(temporary, path)
 
 
-def load_summary(path):
+def load_summary(path, *, now=None, max_age_seconds=3600):
     path = Path(path)
     if not path.is_file():
         return {
@@ -125,6 +125,19 @@ def load_summary(path):
             or report.get("automatic_promotion") is not False
         ):
             raise ValueError("invalid research integrity or authority")
+        generated = datetime.fromisoformat(report["generated_at"])
+        current = now or datetime.now(UTC)
+        if generated.tzinfo is None or current.tzinfo is None or generated > current or max_age_seconds <= 0:
+            raise ValueError("invalid research report generation time")
+        age = (current - generated).total_seconds()
+        if age > max_age_seconds:
+            return {
+                **report,
+                "status": "stale",
+                "report_status": report.get("status"),
+                "age_seconds": age,
+                "reason": "Research report requires a new observed-data evaluation",
+            }
         return report
     except (OSError, ValueError, KeyError, TypeError):
         return {
@@ -140,6 +153,13 @@ def _summary(studies, manifest, registry, experiment_id):
     selected = models.get("validation_selected_mark_model")
     comparisons = models.get("adaptive_comparisons", [])
     best = next((m for m in comparisons if m.get("model") == selected), None)
+    if best:
+        best = {
+            **best,
+            "summary": f"{selected} retained"
+            if selected == "unchanged_bid"
+            else f"{selected} vs unchanged bid",
+        }
     rows = []
     reasons = {
         "short_horizon": ("exploratory_only", "No independently demonstrated cost-adjusted edge"),

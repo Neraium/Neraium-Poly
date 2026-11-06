@@ -1,5 +1,6 @@
 """Append-only exploratory model versions and drift; never trading authority."""
 
+import fcntl
 import hashlib
 import json
 import math
@@ -18,25 +19,37 @@ class ResearchRegistry:
             raise ValueError("bounded version count required")
         self.path = Path(path)
         self.path.parent.mkdir(parents=True, exist_ok=True)
-        self.db = sqlite3.connect(self.path, isolation_level=None)
-        self.db.row_factory = sqlite3.Row
-        self.max_versions = max_versions
-        self.db.executescript("""
-        PRAGMA journal_mode=WAL;
-        CREATE TABLE IF NOT EXISTS versions(
-          id TEXT PRIMARY KEY, dataset TEXT NOT NULL, available_at TEXT NOT NULL,
-          payload TEXT NOT NULL, digest TEXT NOT NULL);
-        CREATE TABLE IF NOT EXISTS audit(
-          seq INTEGER PRIMARY KEY, payload TEXT NOT NULL, digest TEXT NOT NULL);
-        CREATE TRIGGER IF NOT EXISTS audit_no_update BEFORE UPDATE ON audit
-          BEGIN SELECT RAISE(ABORT,'research audit append only'); END;
-        CREATE TRIGGER IF NOT EXISTS audit_no_delete BEFORE DELETE ON audit
-          BEGIN SELECT RAISE(ABORT,'research audit append only'); END;
-        CREATE TRIGGER IF NOT EXISTS versions_no_update BEFORE UPDATE ON versions
-          BEGIN SELECT RAISE(ABORT,'research versions append only'); END;
-        CREATE TRIGGER IF NOT EXISTS versions_no_delete BEFORE DELETE ON versions
-          BEGIN SELECT RAISE(ABORT,'research versions append only'); END;
-        """)
+        self.owner = self.path.with_suffix(".lock").open("a+")
+        try:
+            fcntl.flock(self.owner, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        except OSError:
+            self.owner.close()
+            raise ValueError("another research coordinator owns this registry") from None
+        try:
+            self.db = sqlite3.connect(self.path, isolation_level=None)
+            self.db.row_factory = sqlite3.Row
+            self.max_versions = max_versions
+            self.db.executescript("""
+            PRAGMA journal_mode=WAL;
+            CREATE TABLE IF NOT EXISTS versions(
+              id TEXT PRIMARY KEY, dataset TEXT NOT NULL, available_at TEXT NOT NULL,
+              payload TEXT NOT NULL, digest TEXT NOT NULL);
+            CREATE TABLE IF NOT EXISTS audit(
+              seq INTEGER PRIMARY KEY, payload TEXT NOT NULL, digest TEXT NOT NULL);
+            CREATE TRIGGER IF NOT EXISTS audit_no_update BEFORE UPDATE ON audit
+              BEGIN SELECT RAISE(ABORT,'research audit append only'); END;
+            CREATE TRIGGER IF NOT EXISTS audit_no_delete BEFORE DELETE ON audit
+              BEGIN SELECT RAISE(ABORT,'research audit append only'); END;
+            CREATE TRIGGER IF NOT EXISTS versions_no_update BEFORE UPDATE ON versions
+              BEGIN SELECT RAISE(ABORT,'research versions append only'); END;
+            CREATE TRIGGER IF NOT EXISTS versions_no_delete BEFORE DELETE ON versions
+              BEGIN SELECT RAISE(ABORT,'research versions append only'); END;
+            """)
+        except BaseException:
+            if hasattr(self, "db"):
+                self.db.close()
+            self.owner.close()
+            raise
 
     def _audit(self, event):
         prior = self.db.execute("SELECT digest FROM audit ORDER BY seq DESC LIMIT 1").fetchone()
@@ -167,3 +180,5 @@ class ResearchRegistry:
 
     def close(self):
         self.db.close()
+        fcntl.flock(self.owner, fcntl.LOCK_UN)
+        self.owner.close()
