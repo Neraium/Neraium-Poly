@@ -97,3 +97,21 @@ The two sports locator receipts contain CTF **ConditionPreparation**, at blocks 
 - Committable summary: `.planning/evidence/phase10/diagnostics-summary.json`.
 - Full captured inputs, replay output, dataset and raw RPC archives remain in this worktree's ignored `data/phase10/`; no raw historical archive, database or account file is committed.
 - Full v3 report SHA-256: `3164620470269379101f8ef71dae6f1bcaf3ab39f2d901aa74f03718d80098d9`.
+
+## Causal quote-history baseline extension
+
+The fixed captured checkpoint also supports bounded chronological replay. At every scored decision, only the quote prefix available by that decision is provided to the horizon model. Labels are the first actual future source bid at or after decision receipt time plus 60 seconds, within 30 seconds of that target; source-to-receipt delays above 15 seconds are excluded. Both current and future quote identities and source/availability times are retained. No subsequently collected fee observation is backdated.
+
+The authentic captured histories produced **2,083 labels across 57 tokens and 17 reported event IDs**:
+
+| Descriptive forecast metric | USD/share |
+| --- | ---: |
+| Model mean absolute error | .001392342774843975 |
+| Unchanged-current-bid mean absolute error | .0007465194431108978 |
+| Model less baseline error | +.0006458233317330772 |
+
+The model performed worse in this particular short snapshot. The empirical envelope contained 97.2636% of these labels, but that is not calibrated probability coverage or a certification result. Labels overlap, complementary tokens share events, and cross-event dependence has not been reviewed. Confidence intervals, independently reviewed event count (zero), historical fee rates, executable returns and P/L remain withheld/null as appropriate. This is not an independent 100/100 train/test study and cannot authorize either account.
+
+The extension's final reproducible report is `data/phase10/audit-baseline-v2/report.json`, fixed at the same 61171 source high-water and captured inputs. SHA-256: `b5de6f6e0e96e7075c3fb3ed7410bb2cc5147ed90e30079db6d81f53c97f6aa3`. Committable baseline summary includes token-level sample volumes and supporting quote IDs: `.planning/evidence/phase10/baseline-summary.json`. The strategy source file SHA is recorded alongside the algorithm version.
+
+Actual final extension workers **3014498** and **3014505** overlapped; coordinator **3014492**, resource tracker **3014496**. There were two concurrent CPU workers and four processes in that job, one numerical thread per worker. Five diagnostic invocations during development launched ten CPU worker processes in total, sequentially by job; peak CPU-worker concurrency remained two. All Phase 10 raw inputs, datasets, acquisition evidence and diagnostic versions together occupy less than 8 MiB. Final focused verification: **53 tests passed**, scoped Ruff passed.

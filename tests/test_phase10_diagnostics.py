@@ -115,3 +115,36 @@ def test_duplicate_books_and_unofficial_identity_are_not_accepted(market, book, 
     r = frame_quality(f, [], {}, ExperimentalStrategyEngine().checkpoint(), now)
     assert r["counts"]["source"].get("official_book_identity", 0) == 0
     assert r["counts"]["source"].get("static_operationally_eligible", 0) == 0
+
+
+def test_causal_baseline_only_scores_available_future_labels(market, now):
+    from dataclasses import asdict
+
+    from neraium_poly.experimental.strategies import QuotePoint
+    from neraium_poly.research.phase10_diagnostics import forecast_baseline_audit
+
+    engine = ExperimentalStrategyEngine()
+    points = [
+        QuotePoint(
+            f"controlled-{i}",
+            (now + timedelta(seconds=10 * i)).isoformat(),
+            (now + timedelta(seconds=10 * i + 0.1)).isoformat(),
+            0.5,
+            0.51,
+        )
+        for i in range(96)
+    ]
+    cp = engine.checkpoint()
+    cp["history"] = {market.token_id: [asdict(x) for x in points]}
+    r = forecast_baseline_audit(cp, [market.model_dump(mode="json")])
+    assert r["scored_labels"] > 0
+    assert r["model_mae"] == 0 and r["unchanged_bid_mae"] == 0
+    assert r["confidence_interval"] is None and r["execution_returns"] is None
+    assert r["independently_reviewed_events"] == 0
+    assert r["observed_event_ids"] == 1
+    for row in r["token_results"][0]["representatives"]:
+        assert row["label_available_at"] > row["decision_available_at"]
+        assert row["label_source_delay_after_target_seconds"] <= 30
+    # An unavailable point earlier in the input prefix invalidates its decisions.
+    cp["history"][market.token_id][0]["available_at"] = (now + timedelta(days=1)).isoformat()
+    assert forecast_baseline_audit(cp, [market.model_dump(mode="json")])["scored_labels"] == 0

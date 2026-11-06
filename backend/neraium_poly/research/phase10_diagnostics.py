@@ -14,7 +14,8 @@ import multiprocessing as mp
 import os
 import sqlite3
 import time
-from collections import Counter
+from bisect import bisect_left
+from collections import Counter, deque
 from datetime import datetime, timedelta
 from multiprocessing import resource_tracker
 from pathlib import Path
@@ -23,7 +24,7 @@ from urllib.parse import urlparse
 
 from neraium_poly.contracts import MarketSnapshot, OrderBookSnapshot
 from neraium_poly.data import assess_book
-from neraium_poly.experimental.strategies import ExperimentalStrategyEngine
+from neraium_poly.experimental.strategies import ExperimentalStrategyEngine, QuotePoint
 from neraium_poly.research.qualification import _load_proofs
 
 
@@ -275,6 +276,102 @@ def historical_audit(dataset, chain):
     }
 
 
+def forecast_baseline_audit(checkpoint, markets):
+    """Chronological quote-prefix scoring, without historical fee backdating.
+
+    Scores overlap within a token, and outcomes share events. Therefore labels
+    are not independent events and a confidence interval is deliberately null.
+    This does not reuse simulated P/L as ground truth.
+    """
+    engine = ExperimentalStrategyEngine(**checkpoint["policy"])
+    engine.restore(checkpoint)
+    identities = {m["token_id"]: (m["market_id"], m["event_id"]) for m in markets}
+    horizons = engine.horizon_seconds
+    all_scores, token_results = [], []
+    for token, raw in checkpoint["history"].items():
+        rows = [QuotePoint(**point) for point in raw]
+        source_times = [point.at.timestamp() for point in rows]
+        scores = []
+        for i in range(40, len(rows)):
+            decision = datetime.fromisoformat(rows[i].available_at)
+            if not 0 <= (decision - rows[i].at).total_seconds() <= 15:
+                continue
+            if any(datetime.fromisoformat(point.available_at) > decision for point in rows[: i + 1]):
+                continue
+            target = decision.timestamp() + horizons
+            j = bisect_left(source_times, target)
+            if j >= len(rows) or source_times[j] > target + 30:
+                continue
+            label_available = datetime.fromisoformat(rows[j].available_at)
+            if not 0 <= (label_available - rows[j].at).total_seconds() <= 15:
+                continue
+            engine.history[token] = deque(rows[: i + 1], maxlen=engine.history_size)
+            prediction, _ = engine._horizon(token, decision)
+            if prediction is None:
+                continue
+            truth = rows[j].bid
+            scores.append(
+                {
+                    "decision_id": rows[i].id,
+                    "decision_available_at": decision.isoformat(),
+                    "label_id": rows[j].id,
+                    "label_event_at": rows[j].timestamp,
+                    "label_available_at": rows[j].available_at,
+                    "forecast": prediction["forecast"],
+                    "baseline_bid": rows[i].bid,
+                    "observed_future_bid": truth,
+                    "forecast_absolute_error": abs(prediction["forecast"] - truth),
+                    "baseline_absolute_error": abs(rows[i].bid - truth),
+                    "empirical_band_contains_label": prediction["lower"] <= truth <= prediction["upper"],
+                    "label_source_delay_after_target_seconds": source_times[j] - target,
+                }
+            )
+        if scores:
+            market, event = identities.get(token, (None, None))
+            token_results.append(
+                {
+                    "token_id": token,
+                    "market_id": market,
+                    "event_id": event,
+                    "labels": len(scores),
+                    "model_mae": mean(x["forecast_absolute_error"] for x in scores),
+                    "unchanged_bid_mae": mean(x["baseline_absolute_error"] for x in scores),
+                    "first_decision_at": scores[0]["decision_available_at"],
+                    "last_label_at": scores[-1]["label_available_at"],
+                    "representatives": scores[:2],
+                }
+            )
+            all_scores.extend(scores)
+    n = len(all_scores)
+    return {
+        "algorithm_version": "chronological-prefix-baseline-v1",
+        "strategy_source_sha256": hashlib.sha256(
+            (Path(__file__).parent.parent / "experimental" / "strategies.py").read_bytes()
+        ).hexdigest(),
+        "horizon_seconds": horizons,
+        "scored_labels": n,
+        "tokens_with_labels": len(token_results),
+        "observed_event_ids": len({x["event_id"] for x in token_results if x["event_id"] is not None}),
+        "independently_reviewed_events": 0,
+        "model_mae": mean(x["forecast_absolute_error"] for x in all_scores) if n else None,
+        "unchanged_bid_mae": mean(x["baseline_absolute_error"] for x in all_scores) if n else None,
+        "model_less_baseline_absolute_error": mean(
+            x["forecast_absolute_error"] - x["baseline_absolute_error"] for x in all_scores
+        )
+        if n
+        else None,
+        "empirical_band_label_coverage": mean(x["empirical_band_contains_label"] for x in all_scores)
+        if n
+        else None,
+        "confidence_interval": None,
+        "uncertainty_limitation": "Overlapping horizon labels and unreviewed cross-event dependencies preclude an independent-event confidence interval; empirical band coverage is not calibrated probability coverage.",
+        "execution_returns": None,
+        "historical_fees": None,
+        "execution_limitation": "No point-in-time historical fee/fill/slippage path is reconstructed; no execution or P/L claims.",
+        "token_results": token_results,
+    }
+
+
 def _worker(kind, args, barrier, output):
     for name in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS", "NUMEXPR_NUM_THREADS"):
         os.environ[name] = "1"
@@ -282,7 +379,11 @@ def _worker(kind, args, barrier, output):
     start = time.time_ns()
     try:
         result = (
-            {"quality": frame_quality(*args[0]), "cycles": cycle_window(args[1], high_water=args[2])}
+            {
+                "quality": frame_quality(*args[0]),
+                "cycles": cycle_window(args[1], high_water=args[2]),
+                "baseline": forecast_baseline_audit(args[0][3], args[0][0]["markets"]),
+            }
             if kind == "quality"
             else historical_audit(*args)
         )

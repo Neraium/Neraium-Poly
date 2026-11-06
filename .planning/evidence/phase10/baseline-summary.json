@@ -1,0 +1,2337 @@
+{
+  "baseline": {
+    "algorithm_version": "chronological-prefix-baseline-v1",
+    "confidence_interval": null,
+    "empirical_band_label_coverage": 0.9726356216994719,
+    "execution_limitation": "No point-in-time historical fee/fill/slippage path is reconstructed; no execution or P/L claims.",
+    "execution_returns": null,
+    "historical_fees": null,
+    "horizon_seconds": 60,
+    "independently_reviewed_events": 0,
+    "model_less_baseline_absolute_error": 0.0006458233317330772,
+    "model_mae": 0.001392342774843975,
+    "observed_event_ids": 17,
+    "scored_labels": 2083,
+    "strategy_source_sha256": "0f17d23008eefea066b3d2f04e6aa9ccbbf4de42be26aa0edc024285d875700c",
+    "token_results": [
+      {
+        "event_id": "1292829",
+        "first_decision_at": "2026-11-06T04:10:05.020304+00:00",
+        "labels": 40,
+        "last_label_at": "2026-11-06T04:17:05.595969+00:00",
+        "market_id": "6507380",
+        "model_mae": 0.01162500000000001,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.09,
+            "decision_available_at": "2026-11-06T04:10:05.020304+00:00",
+            "decision_id": "1f8894089810e7864057df41c9620ad0793c5f3a575e957ec1805bf4f363ca8e",
+            "empirical_band_contains_label": true,
+            "forecast": 0.07999999999999999,
+            "forecast_absolute_error": 0.010000000000000009,
+            "label_available_at": "2026-11-06T04:11:35.944695+00:00",
+            "label_event_at": "2026-11-06T04:11:33.336000+00:00",
+            "label_id": "2926155e3cd1056f4c9ce68fa4f2178116747a37cd26733167d694b2c8231838",
+            "label_source_delay_after_target_seconds": 28.315696001052856,
+            "observed_future_bid": 0.09
+          },
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.09,
+            "decision_available_at": "2026-11-06T04:10:07.142017+00:00",
+            "decision_id": "0354c1f2db69f29c5df4116a04cfe4e0bd4a1d71e247704099f20839e83e24fa",
+            "empirical_band_contains_label": true,
+            "forecast": 0.07999999999999999,
+            "forecast_absolute_error": 0.010000000000000009,
+            "label_available_at": "2026-11-06T04:11:35.944695+00:00",
+            "label_event_at": "2026-11-06T04:11:33.336000+00:00",
+            "label_id": "2926155e3cd1056f4c9ce68fa4f2178116747a37cd26733167d694b2c8231838",
+            "label_source_delay_after_target_seconds": 26.19398307800293,
+            "observed_future_bid": 0.09
+          }
+        ],
+        "token_id": "100063340678399453619037549684979791875230113493746028286298866490793476208749",
+        "unchanged_bid_mae": 0.004250000000000004
+      },
+      {
+        "event_id": "848341",
+        "first_decision_at": "2026-11-06T04:10:58.461865+00:00",
+        "labels": 40,
+        "last_label_at": "2026-11-06T04:17:05.749560+00:00",
+        "market_id": "3580932",
+        "model_mae": 0.0,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.67,
+            "decision_available_at": "2026-11-06T04:10:58.461865+00:00",
+            "decision_id": "ef0ce308e903fdd1085e5d3aef1b01ecf143f3b315675e4a2e5eda2e5ecd48e9",
+            "empirical_band_contains_label": true,
+            "forecast": 0.67,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:12:20.456134+00:00",
+            "label_event_at": "2026-11-06T04:12:20.410000+00:00",
+            "label_id": "c265fc5d50f327aeeeda3d1fac289d182cdbe081e1ec36df88cbdcbec2d841a3",
+            "label_source_delay_after_target_seconds": 21.948135137557983,
+            "observed_future_bid": 0.67
+          },
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.67,
+            "decision_available_at": "2026-11-06T04:11:05.553477+00:00",
+            "decision_id": "253932350be482e259ad27217ff8968d765645933d0d2db25a44369dc4ecb247",
+            "empirical_band_contains_label": true,
+            "forecast": 0.67,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:12:20.456134+00:00",
+            "label_event_at": "2026-11-06T04:12:20.410000+00:00",
+            "label_id": "c265fc5d50f327aeeeda3d1fac289d182cdbe081e1ec36df88cbdcbec2d841a3",
+            "label_source_delay_after_target_seconds": 14.856523036956787,
+            "observed_future_bid": 0.67
+          }
+        ],
+        "token_id": "100205215067722297517595068937257697192973299370955287626157382353628199508318",
+        "unchanged_bid_mae": 0.0
+      },
+      {
+        "event_id": "991810",
+        "first_decision_at": "2026-11-06T04:09:11.678314+00:00",
+        "labels": 38,
+        "last_label_at": "2026-11-06T04:17:01.471747+00:00",
+        "market_id": "4397033",
+        "model_mae": 0.0,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.25,
+            "decision_available_at": "2026-11-06T04:09:11.678314+00:00",
+            "decision_id": "6a927080cbcb0b2f3e80e4242420ded9ff53620e8bb12c8e5c4add62a02d330f",
+            "empirical_band_contains_label": true,
+            "forecast": 0.25,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:10:11.724430+00:00",
+            "label_event_at": "2026-11-06T04:10:11.682000+00:00",
+            "label_id": "2ac7281da585813e746f6c6582f9387d5ce7db86bcaf3f1c708040b553e27041",
+            "label_source_delay_after_target_seconds": 0.0036859512329101562,
+            "observed_future_bid": 0.25
+          },
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.25,
+            "decision_available_at": "2026-11-06T04:09:54.282379+00:00",
+            "decision_id": "84040d69c71313a8c40e6f616517fd421df348e385c286e55784dddc10f2781b",
+            "empirical_band_contains_label": true,
+            "forecast": 0.25,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:10:57.511500+00:00",
+            "label_event_at": "2026-11-06T04:10:56.942000+00:00",
+            "label_id": "45369d21e003c461288dc80c41d75de200f106b6b651651703d95cacdd83fdbf",
+            "label_source_delay_after_target_seconds": 2.659621000289917,
+            "observed_future_bid": 0.25
+          }
+        ],
+        "token_id": "101156861859248010272982388611860996032700684150053028417361465335294418301847",
+        "unchanged_bid_mae": 0.0
+      },
+      {
+        "event_id": "991810",
+        "first_decision_at": "2026-11-06T04:04:04.056560+00:00",
+        "labels": 33,
+        "last_label_at": "2026-11-06T04:16:37.841234+00:00",
+        "market_id": "4397025",
+        "model_mae": 0.0,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.83,
+            "decision_available_at": "2026-11-06T04:04:04.056560+00:00",
+            "decision_id": "bc77cc5c2a94290d29e275b83108a8c3a2b2aa10f592aa38d42d3ef05413a3a2",
+            "empirical_band_contains_label": true,
+            "forecast": 0.83,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:05:05.210593+00:00",
+            "label_event_at": "2026-11-06T04:05:05.050000+00:00",
+            "label_id": "6a19310b684099c269d563c38a2e8d4deecef47b59b21fd3b15cfdac5398685e",
+            "label_source_delay_after_target_seconds": 0.9934399127960205,
+            "observed_future_bid": 0.83
+          },
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.83,
+            "decision_available_at": "2026-11-06T04:04:11.046041+00:00",
+            "decision_id": "ae3a9cf1bbec039d45e078b154988eeade4b157c60569d53a18350183c6d4158",
+            "empirical_band_contains_label": true,
+            "forecast": 0.83,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:05:42.122997+00:00",
+            "label_event_at": "2026-11-06T04:05:39.532000+00:00",
+            "label_id": "3f2efdbcb5f93bcfec2cd348042eedbb042bdfc56eead0b74808ba35c68f396a",
+            "label_source_delay_after_target_seconds": 28.48595905303955,
+            "observed_future_bid": 0.83
+          }
+        ],
+        "token_id": "101996110023306359267215939819928021406998500989415641847320025626005179879667",
+        "unchanged_bid_mae": 0.0
+      },
+      {
+        "event_id": "1283785",
+        "first_decision_at": "2026-11-06T04:12:05.169247+00:00",
+        "labels": 36,
+        "last_label_at": "2026-11-06T04:17:05.396341+00:00",
+        "market_id": "6423884",
+        "model_mae": 0.0,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.985,
+            "decision_available_at": "2026-11-06T04:12:05.169247+00:00",
+            "decision_id": "dc12556b5104831de1cc6c3abd3e0154d2c5306137ee15f44b7984c00078244b",
+            "empirical_band_contains_label": true,
+            "forecast": 0.985,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:13:07.040187+00:00",
+            "label_event_at": "2026-11-06T04:13:06.980000+00:00",
+            "label_id": "0bd991fc2e0aa4f1e1c0797612db506a856f6d4cec8b97f318a810263d589284",
+            "label_source_delay_after_target_seconds": 1.8107531070709229,
+            "observed_future_bid": 0.985
+          },
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.985,
+            "decision_available_at": "2026-11-06T04:12:12.552884+00:00",
+            "decision_id": "6896fcd28de6e68a6ca1af934b2335d0fb2809b52d230ee296c30b116eaff878",
+            "empirical_band_contains_label": true,
+            "forecast": 0.985,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:13:14.346360+00:00",
+            "label_event_at": "2026-11-06T04:13:14.305000+00:00",
+            "label_id": "3ba2f78c0e6318a5abe3ec130cb739cc4eff15cad0599bea1d46fb94f724e8ab",
+            "label_source_delay_after_target_seconds": 1.7521159648895264,
+            "observed_future_bid": 0.985
+          }
+        ],
+        "token_id": "103480603771448938172180577782580783404893747704456386235837873850471517210674",
+        "unchanged_bid_mae": 0.0
+      },
+      {
+        "event_id": "1217417",
+        "first_decision_at": "2026-11-06T03:52:46.046746+00:00",
+        "labels": 36,
+        "last_label_at": "2026-11-06T04:16:19.989403+00:00",
+        "market_id": "5920626",
+        "model_mae": 0.0,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.25,
+            "decision_available_at": "2026-11-06T03:52:46.046746+00:00",
+            "decision_id": "f71aa4475dc229cb554f1161cf8cc40a9dc6257d6d7b747c375ed904179f66f6",
+            "empirical_band_contains_label": true,
+            "forecast": 0.25,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T03:54:12.886136+00:00",
+            "label_event_at": "2026-11-06T03:54:10.457000+00:00",
+            "label_id": "b4411fea4f5b7e3314d736d72a69d2a5feceee574beb3a359cacd0eab9085c58",
+            "label_source_delay_after_target_seconds": 24.41025400161743,
+            "observed_future_bid": 0.25
+          },
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.25,
+            "decision_available_at": "2026-11-06T03:53:06.133835+00:00",
+            "decision_id": "649f8d2c8d9d6cf883d76f2afa514d5de744071ed7d2c0aa25ab819f9fd3e02b",
+            "empirical_band_contains_label": true,
+            "forecast": 0.25,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T03:54:12.886136+00:00",
+            "label_event_at": "2026-11-06T03:54:10.457000+00:00",
+            "label_id": "b4411fea4f5b7e3314d736d72a69d2a5feceee574beb3a359cacd0eab9085c58",
+            "label_source_delay_after_target_seconds": 4.323164939880371,
+            "observed_future_bid": 0.25
+          }
+        ],
+        "token_id": "105595942090130073190364000757535921800908124200569723529646419542572239411796",
+        "unchanged_bid_mae": 0.0
+      },
+      {
+        "event_id": "1313864",
+        "first_decision_at": "2026-11-06T04:08:01.495554+00:00",
+        "labels": 47,
+        "last_label_at": "2026-11-06T04:16:52.978214+00:00",
+        "market_id": "6675981",
+        "model_mae": 0.0,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.7,
+            "decision_available_at": "2026-11-06T04:08:01.495554+00:00",
+            "decision_id": "27584875be18824f80d1fceb7c3d0117c8380e5fb2a90310fe4e9de1a5668ec6",
+            "empirical_band_contains_label": true,
+            "forecast": 0.7,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:09:10.144908+00:00",
+            "label_event_at": "2026-11-06T04:09:10.100000+00:00",
+            "label_id": "ed177fdfccb8979e398fc696687669281900f0ac1ec3ec955f406b4e1273e7ac",
+            "label_source_delay_after_target_seconds": 8.604445934295654,
+            "observed_future_bid": 0.7
+          },
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.7,
+            "decision_available_at": "2026-11-06T04:08:42.975600+00:00",
+            "decision_id": "be7fa33ef70cd1192e5a7ba947ca155d576060171fd17f7ff1e2ae0de9e5359a",
+            "empirical_band_contains_label": true,
+            "forecast": 0.7,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:09:48.759231+00:00",
+            "label_event_at": "2026-11-06T04:09:48.717000+00:00",
+            "label_id": "6f0d019b78041cab977498d530509832c07bdbc05bfec5f45c9cf4f61f4a8744",
+            "label_source_delay_after_target_seconds": 5.7414000034332275,
+            "observed_future_bid": 0.7
+          }
+        ],
+        "token_id": "107157641296911498592890920947053829105931739511040760439170568486187692171415",
+        "unchanged_bid_mae": 0.0
+      },
+      {
+        "event_id": "1263843",
+        "first_decision_at": "2026-11-06T04:11:27.027771+00:00",
+        "labels": 41,
+        "last_label_at": "2026-11-06T04:16:57.744033+00:00",
+        "market_id": "6288562",
+        "model_mae": 0.0014268292682926777,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.072,
+            "decision_available_at": "2026-11-06T04:11:27.027771+00:00",
+            "decision_id": "ffdc9e00409dfd2e2aae9b99dc222e1871548e587a17d4360ba6e7dd565cd17a",
+            "empirical_band_contains_label": true,
+            "forecast": 0.072,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:12:35.315540+00:00",
+            "label_event_at": "2026-11-06T04:12:35.229000+00:00",
+            "label_id": "7559e21a8fa261baa4b05f3cb69f161b80e857d02119d811c90ed8d23503b265",
+            "label_source_delay_after_target_seconds": 8.201229095458984,
+            "observed_future_bid": 0.072
+          },
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.072,
+            "decision_available_at": "2026-11-06T04:11:30.474848+00:00",
+            "decision_id": "44652eca25607a414272ccb47945887e4e89bf721d87926540b93961a7a821d8",
+            "empirical_band_contains_label": true,
+            "forecast": 0.072,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:12:35.315540+00:00",
+            "label_event_at": "2026-11-06T04:12:35.229000+00:00",
+            "label_id": "7559e21a8fa261baa4b05f3cb69f161b80e857d02119d811c90ed8d23503b265",
+            "label_source_delay_after_target_seconds": 4.754152059555054,
+            "observed_future_bid": 0.072
+          }
+        ],
+        "token_id": "111240058838551497825064769078360963506789149911276154586465194437754547021664",
+        "unchanged_bid_mae": 0.0006585365853658512
+      },
+      {
+        "event_id": "770450",
+        "first_decision_at": "2026-11-06T04:12:01.571414+00:00",
+        "labels": 37,
+        "last_label_at": "2026-11-06T04:17:05.719948+00:00",
+        "market_id": "3215008",
+        "model_mae": 0.0035135135135135167,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.65,
+            "decision_available_at": "2026-11-06T04:12:01.571414+00:00",
+            "decision_id": "36f32e27733928e22e9f3ecbf432318cc801b3c3be10950a972960513d38f2bf",
+            "empirical_band_contains_label": true,
+            "forecast": 0.65,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:13:05.177000+00:00",
+            "label_event_at": "2026-11-06T04:13:05+00:00",
+            "label_id": "43b8b40a6ba7b40df5974f8ce3c25a5e2dfce7f79d5a8b8447fdf9077df0bd52",
+            "label_source_delay_after_target_seconds": 3.428586006164551,
+            "observed_future_bid": 0.65
+          },
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.65,
+            "decision_available_at": "2026-11-06T04:12:07.343268+00:00",
+            "decision_id": "4bd2117e144ecd02d2c139bd05aa3dcbd3d0a3447a60d212727dacf4c2aa50e6",
+            "empirical_band_contains_label": true,
+            "forecast": 0.65,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:13:13.271274+00:00",
+            "label_event_at": "2026-11-06T04:13:13.151000+00:00",
+            "label_id": "4faacdd1400796c278b569c0ed9ef9329702a632bfd638099f4a913ca8711e7c",
+            "label_source_delay_after_target_seconds": 5.807732105255127,
+            "observed_future_bid": 0.65
+          }
+        ],
+        "token_id": "111662129652828266889360374468657435151479595863413519836161861837506140152890",
+        "unchanged_bid_mae": 0.0024324324324324345
+      },
+      {
+        "event_id": "1283785",
+        "first_decision_at": "2026-11-06T04:12:24.099506+00:00",
+        "labels": 36,
+        "last_label_at": "2026-11-06T04:17:05.738772+00:00",
+        "market_id": "6423892",
+        "model_mae": 0.0001388888888888889,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.007,
+            "decision_available_at": "2026-11-06T04:12:24.099506+00:00",
+            "decision_id": "a29dfa360a5fbdf8b9cbb56be483371a41e2b5c362d60b4d29e12e2577a91219",
+            "empirical_band_contains_label": true,
+            "forecast": 0.007,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:13:25.383083+00:00",
+            "label_event_at": "2026-11-06T04:13:25.341000+00:00",
+            "label_id": "cf940e5711c915af5d3d3d4a431392d0de0680ba322ca2ebd0326a535c5a1c3a",
+            "label_source_delay_after_target_seconds": 1.2414941787719727,
+            "observed_future_bid": 0.007
+          },
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.007,
+            "decision_available_at": "2026-11-06T04:12:29.898434+00:00",
+            "decision_id": "7c0533dbc08fc53524791c3de532d4800c557c3bd8323a8c113b8aa4c3ad835f",
+            "empirical_band_contains_label": true,
+            "forecast": 0.007,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:13:30.253203+00:00",
+            "label_event_at": "2026-11-06T04:13:30.212000+00:00",
+            "label_id": "d8b6d1a96c09981f44b160e67e4fbdd1cb3c46816f4d56d46895750b5d72ab1e",
+            "label_source_delay_after_target_seconds": 0.3135659694671631,
+            "observed_future_bid": 0.007
+          }
+        ],
+        "token_id": "112554888495466442543547906736420692852179589019408913268537259635055663664935",
+        "unchanged_bid_mae": 0.0001388888888888889
+      },
+      {
+        "event_id": "1283785",
+        "first_decision_at": "2026-11-06T04:11:40.713340+00:00",
+        "labels": 38,
+        "last_label_at": "2026-11-06T04:17:00.159199+00:00",
+        "market_id": "6423885",
+        "model_mae": 0.0019605263157894738,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.0020000000000000018,
+            "baseline_bid": 0.964,
+            "decision_available_at": "2026-11-06T04:11:40.713340+00:00",
+            "decision_id": "c48ec9c572b5ca24e1aaf46500c3ef1d76b1ca795b2e989169a409f291974e16",
+            "empirical_band_contains_label": true,
+            "forecast": 0.963,
+            "forecast_absolute_error": 0.0030000000000000027,
+            "label_available_at": "2026-11-06T04:12:41.061651+00:00",
+            "label_event_at": "2026-11-06T04:12:41.018000+00:00",
+            "label_id": "6b9ce56d08f0f8b7bba6109507190b7abd7ecce23152c4cf2703bb4280274c10",
+            "label_source_delay_after_target_seconds": 0.3046598434448242,
+            "observed_future_bid": 0.966
+          },
+          {
+            "baseline_absolute_error": 0.0010000000000000009,
+            "baseline_bid": 0.965,
+            "decision_available_at": "2026-11-06T04:11:55.701764+00:00",
+            "decision_id": "eb2bec458d6fbe502ec778cee3697087be7554cc4ed451e3994e41d55bc2fc24",
+            "empirical_band_contains_label": true,
+            "forecast": 0.963,
+            "forecast_absolute_error": 0.0030000000000000027,
+            "label_available_at": "2026-11-06T04:12:57.486498+00:00",
+            "label_event_at": "2026-11-06T04:12:57.443000+00:00",
+            "label_id": "f79c2d9b08c7fe5f440604261cfca7dc8dc3ddaae31a042f9781f58a9748ca20",
+            "label_source_delay_after_target_seconds": 1.7412359714508057,
+            "observed_future_bid": 0.966
+          }
+        ],
+        "token_id": "113888739003330413348261539134884858114090652439144846869649003571862177350188",
+        "unchanged_bid_mae": 0.0009210526315789482
+      },
+      {
+        "event_id": "1263843",
+        "first_decision_at": "2026-11-06T04:11:27.027771+00:00",
+        "labels": 41,
+        "last_label_at": "2026-11-06T04:16:57.744033+00:00",
+        "market_id": "6288562",
+        "model_mae": 0.002060975609756098,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.0040000000000000036,
+            "baseline_bid": 0.927,
+            "decision_available_at": "2026-11-06T04:11:27.027771+00:00",
+            "decision_id": "d5e69c90d30c9baa1296b512ae66b69844a34a36e4946ba39b2495a61302749c",
+            "empirical_band_contains_label": true,
+            "forecast": 0.927,
+            "forecast_absolute_error": 0.0040000000000000036,
+            "label_available_at": "2026-11-06T04:12:35.315540+00:00",
+            "label_event_at": "2026-11-06T04:12:35.229000+00:00",
+            "label_id": "1146f31fd4d0aee84cb1d27fd39b5eaba278984f1ff24c40e4b67ba5f993006d",
+            "label_source_delay_after_target_seconds": 8.201229095458984,
+            "observed_future_bid": 0.923
+          },
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.923,
+            "decision_available_at": "2026-11-06T04:11:30.474848+00:00",
+            "decision_id": "8f5164be802df0a6ed7c79006d551efc9d279d577fdb634a684440fcb50c440d",
+            "empirical_band_contains_label": true,
+            "forecast": 0.927,
+            "forecast_absolute_error": 0.0040000000000000036,
+            "label_available_at": "2026-11-06T04:12:35.315540+00:00",
+            "label_event_at": "2026-11-06T04:12:35.229000+00:00",
+            "label_id": "1146f31fd4d0aee84cb1d27fd39b5eaba278984f1ff24c40e4b67ba5f993006d",
+            "label_source_delay_after_target_seconds": 4.754152059555054,
+            "observed_future_bid": 0.923
+          }
+        ],
+        "token_id": "14411058205024537204294596714568909941300084318384574274136968258591547580842",
+        "unchanged_bid_mae": 0.0005609756097560981
+      },
+      {
+        "event_id": "991810",
+        "first_decision_at": "2026-11-06T04:12:57.424139+00:00",
+        "labels": 34,
+        "last_label_at": "2026-11-06T04:17:05.635090+00:00",
+        "market_id": "4397022",
+        "model_mae": 0.0,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.53,
+            "decision_available_at": "2026-11-06T04:12:57.424139+00:00",
+            "decision_id": "44bff6ca23ef7a189044bf00384e947667e1e90c4874c4be7a461a66a7310e57",
+            "empirical_band_contains_label": true,
+            "forecast": 0.53,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:13:59.617496+00:00",
+            "label_event_at": "2026-11-06T04:13:59.576000+00:00",
+            "label_id": "ee80a691610c6a09e4394c103484db6ebadc0934e2cd6bfdd8d466e091a0d5b3",
+            "label_source_delay_after_target_seconds": 2.1518609523773193,
+            "observed_future_bid": 0.53
+          },
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.53,
+            "decision_available_at": "2026-11-06T04:13:03.656915+00:00",
+            "decision_id": "8a4a467c288dba113bc1d57a9885ee04cbeec4c672e63a44db4b682beb93a7cc",
+            "empirical_band_contains_label": true,
+            "forecast": 0.53,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:14:05.594505+00:00",
+            "label_event_at": "2026-11-06T04:14:05.553000+00:00",
+            "label_id": "7c72e54729082e4393487590339bc83a7362054018d0b71ec42d673b145d3dac",
+            "label_source_delay_after_target_seconds": 1.8960850238800049,
+            "observed_future_bid": 0.53
+          }
+        ],
+        "token_id": "15907269680083135091620869613557617263613890890387514554477997501123964677519",
+        "unchanged_bid_mae": 0.0
+      },
+      {
+        "event_id": "1299077",
+        "first_decision_at": "2026-11-06T04:12:11.671148+00:00",
+        "labels": 38,
+        "last_label_at": "2026-11-06T04:17:05.865964+00:00",
+        "market_id": "6563869",
+        "model_mae": 0.007736842105263153,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.0040000000000000036,
+            "baseline_bid": 0.797,
+            "decision_available_at": "2026-11-06T04:12:11.671148+00:00",
+            "decision_id": "3441e4b2218e68eca971b71d390d118d3fe499f7cfbd9cf463de907c5bdec9af",
+            "empirical_band_contains_label": true,
+            "forecast": 0.793,
+            "forecast_absolute_error": 0.008000000000000007,
+            "label_available_at": "2026-11-06T04:13:14.678132+00:00",
+            "label_event_at": "2026-11-06T04:13:14.638000+00:00",
+            "label_id": "cc19e44d49eef484afe5f36b286db8078ccb23435780627a41aba25b14c4b4fa",
+            "label_source_delay_after_target_seconds": 2.9668519496917725,
+            "observed_future_bid": 0.801
+          },
+          {
+            "baseline_absolute_error": 0.0040000000000000036,
+            "baseline_bid": 0.797,
+            "decision_available_at": "2026-11-06T04:12:17.269303+00:00",
+            "decision_id": "91dc75c7dd923564a521c211f0afd8280806c4007d4fc299528a3aa6dfc1ecf5",
+            "empirical_band_contains_label": true,
+            "forecast": 0.793,
+            "forecast_absolute_error": 0.008000000000000007,
+            "label_available_at": "2026-11-06T04:13:20.231902+00:00",
+            "label_event_at": "2026-11-06T04:13:20.192000+00:00",
+            "label_id": "9e25225a05822026248c3f77174aa59cac05666a555244da096b4514af98aa74",
+            "label_source_delay_after_target_seconds": 2.922696828842163,
+            "observed_future_bid": 0.801
+          }
+        ],
+        "token_id": "15975575418418802381999697512653682302854700326112208629012806536256176912787",
+        "unchanged_bid_mae": 0.0037631578947368454
+      },
+      {
+        "event_id": "1299077",
+        "first_decision_at": "2026-11-06T04:12:11.671148+00:00",
+        "labels": 38,
+        "last_label_at": "2026-11-06T04:17:05.865964+00:00",
+        "market_id": "6563869",
+        "model_mae": 0.005947368421052637,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.006000000000000005,
+            "baseline_bid": 0.196,
+            "decision_available_at": "2026-11-06T04:12:11.671148+00:00",
+            "decision_id": "cc666c6727fa9ffd62c7eb1751c06828406fc12062fd1e6fc702d646317df303",
+            "empirical_band_contains_label": false,
+            "forecast": 0.2005,
+            "forecast_absolute_error": 0.01050000000000001,
+            "label_available_at": "2026-11-06T04:13:14.678132+00:00",
+            "label_event_at": "2026-11-06T04:13:14.638000+00:00",
+            "label_id": "b86703c6dc013a7c8da5d0d5f09aa9c5f227d97b1e126dce1912b6d7c734ef37",
+            "label_source_delay_after_target_seconds": 2.9668519496917725,
+            "observed_future_bid": 0.19
+          },
+          {
+            "baseline_absolute_error": 0.006000000000000005,
+            "baseline_bid": 0.196,
+            "decision_available_at": "2026-11-06T04:12:17.269303+00:00",
+            "decision_id": "1ab5e1ec94d98aaa992249f1303d225d287dca1a77e183cf44e4bb1aea0e474a",
+            "empirical_band_contains_label": true,
+            "forecast": 0.2,
+            "forecast_absolute_error": 0.010000000000000009,
+            "label_available_at": "2026-11-06T04:13:20.231902+00:00",
+            "label_event_at": "2026-11-06T04:13:20.192000+00:00",
+            "label_id": "10224ac108fb555c8a875eb401bc99bd1825e310f38866aec94870304e29f0d7",
+            "label_source_delay_after_target_seconds": 2.922696828842163,
+            "observed_future_bid": 0.19
+          }
+        ],
+        "token_id": "16262430118969979678621516611239448586591711696365914345947614718428617361411",
+        "unchanged_bid_mae": 0.002368421052631581
+      },
+      {
+        "event_id": "770450",
+        "first_decision_at": "2026-11-06T04:08:56.633937+00:00",
+        "labels": 31,
+        "last_label_at": "2026-11-06T04:17:05.885823+00:00",
+        "market_id": "3215006",
+        "model_mae": 0.0009516129032258055,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.0010000000000000009,
+            "baseline_bid": 0.987,
+            "decision_available_at": "2026-11-06T04:08:56.633937+00:00",
+            "decision_id": "30cfdb66a6ba0e67f548de9ae4d9d9e15e236a63c2d081e51d810b9a2935ba33",
+            "empirical_band_contains_label": true,
+            "forecast": 0.987,
+            "forecast_absolute_error": 0.0010000000000000009,
+            "label_available_at": "2026-11-06T04:09:59.953527+00:00",
+            "label_event_at": "2026-11-06T04:09:59.811000+00:00",
+            "label_id": "cd26a16a25dd7c93fe3df2cfe8281003a1126f3a89551f294ad2c9172c8e79fd",
+            "label_source_delay_after_target_seconds": 3.177063226699829,
+            "observed_future_bid": 0.988
+          },
+          {
+            "baseline_absolute_error": 0.0010000000000000009,
+            "baseline_bid": 0.987,
+            "decision_available_at": "2026-11-06T04:08:59.512967+00:00",
+            "decision_id": "ae394b30c7cd8d16debded1998551094d63aa856c3651e1703571cf1525ed890",
+            "empirical_band_contains_label": true,
+            "forecast": 0.987,
+            "forecast_absolute_error": 0.0010000000000000009,
+            "label_available_at": "2026-11-06T04:09:59.953527+00:00",
+            "label_event_at": "2026-11-06T04:09:59.811000+00:00",
+            "label_id": "cd26a16a25dd7c93fe3df2cfe8281003a1126f3a89551f294ad2c9172c8e79fd",
+            "label_source_delay_after_target_seconds": 0.2980329990386963,
+            "observed_future_bid": 0.988
+          }
+        ],
+        "token_id": "23677896678650147625251750117853328843601853501710889530409633595389256242910",
+        "unchanged_bid_mae": 0.000548387096774194
+      },
+      {
+        "event_id": "89502",
+        "first_decision_at": "2026-11-06T04:12:57.570899+00:00",
+        "labels": 33,
+        "last_label_at": "2026-11-06T04:16:59.358651+00:00",
+        "market_id": "3865960",
+        "model_mae": 0.0,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.53,
+            "decision_available_at": "2026-11-06T04:12:57.570899+00:00",
+            "decision_id": "0261d93a4a2d35ad95c19418364a8df7f78251cf0b1c561678e019aa40c08527",
+            "empirical_band_contains_label": true,
+            "forecast": 0.53,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:14:04.883925+00:00",
+            "label_event_at": "2026-11-06T04:14:04.842000+00:00",
+            "label_id": "54e174d60a065fc806acc1eb9d82ab131559fca95e553ce2f20a06cbebc9663d",
+            "label_source_delay_after_target_seconds": 7.271100997924805,
+            "observed_future_bid": 0.53
+          },
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.53,
+            "decision_available_at": "2026-11-06T04:13:03.746296+00:00",
+            "decision_id": "9c575fd5c540c63cd1c674da145859171052f7d65649d72db4fc781c1fc59881",
+            "empirical_band_contains_label": true,
+            "forecast": 0.53,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:14:04.883925+00:00",
+            "label_event_at": "2026-11-06T04:14:04.842000+00:00",
+            "label_id": "54e174d60a065fc806acc1eb9d82ab131559fca95e553ce2f20a06cbebc9663d",
+            "label_source_delay_after_target_seconds": 1.0957040786743164,
+            "observed_future_bid": 0.53
+          }
+        ],
+        "token_id": "26181023444847865740144968881453381639052456965503182671034643115973725837732",
+        "unchanged_bid_mae": 0.0
+      },
+      {
+        "event_id": "1291725",
+        "first_decision_at": "2026-11-06T04:10:20.424975+00:00",
+        "labels": 40,
+        "last_label_at": "2026-11-06T04:17:00.025081+00:00",
+        "market_id": "6501428",
+        "model_mae": 0.0,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.17,
+            "decision_available_at": "2026-11-06T04:10:20.424975+00:00",
+            "decision_id": "735657a497075d1b07c6d67468efd81246b498be7475dba6840929b6577b51aa",
+            "empirical_band_contains_label": true,
+            "forecast": 0.17,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:11:30.145558+00:00",
+            "label_event_at": "2026-11-06T04:11:30.103000+00:00",
+            "label_id": "552e1059a5d64466b3dc20928c79ee9932a0963dcee8ec16655ccac37cc2c861",
+            "label_source_delay_after_target_seconds": 9.678025007247925,
+            "observed_future_bid": 0.17
+          },
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.17,
+            "decision_available_at": "2026-11-06T04:10:28.176794+00:00",
+            "decision_id": "21b56354bf60aa11be71d0cceec8ccd68a606201dafb74145e265b39a67dec15",
+            "empirical_band_contains_label": true,
+            "forecast": 0.17,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:11:30.145558+00:00",
+            "label_event_at": "2026-11-06T04:11:30.103000+00:00",
+            "label_id": "552e1059a5d64466b3dc20928c79ee9932a0963dcee8ec16655ccac37cc2c861",
+            "label_source_delay_after_target_seconds": 1.9262058734893799,
+            "observed_future_bid": 0.17
+          }
+        ],
+        "token_id": "26660158252778151728418762173367017636491922052161878826809972643916748786508",
+        "unchanged_bid_mae": 0.0
+      },
+      {
+        "event_id": "79987",
+        "first_decision_at": "2026-11-06T04:06:52.448724+00:00",
+        "labels": 41,
+        "last_label_at": "2026-11-06T04:17:03.042942+00:00",
+        "market_id": "679034",
+        "model_mae": 0.0,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.978,
+            "decision_available_at": "2026-11-06T04:06:52.448724+00:00",
+            "decision_id": "f105d2724a2f4793e8705c97f3fe3c6b34e6f8a87e752d93ed40c32f22e526fd",
+            "empirical_band_contains_label": true,
+            "forecast": 0.978,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:08:01.966331+00:00",
+            "label_event_at": "2026-11-06T04:08:01.916000+00:00",
+            "label_id": "33375bac8913c319c98119b9fde18b5ad115cf0b426e4d4c5de4ab269985ba0d",
+            "label_source_delay_after_target_seconds": 9.467275857925415,
+            "observed_future_bid": 0.978
+          },
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.978,
+            "decision_available_at": "2026-11-06T04:07:02.353104+00:00",
+            "decision_id": "d1510357c1ec852f55b504a33e304e7d3156e308c87ec5c8089010131604ac91",
+            "empirical_band_contains_label": true,
+            "forecast": 0.978,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:08:10.564358+00:00",
+            "label_event_at": "2026-11-06T04:08:09.001000+00:00",
+            "label_id": "912ebc08b1ee7dd82c419c477d5c7e5f0b7b9ba6c9679d1ef2a86e31e589c8e1",
+            "label_source_delay_after_target_seconds": 6.647895812988281,
+            "observed_future_bid": 0.978
+          }
+        ],
+        "token_id": "26890459666562518130876295284144647143504759262811197504274347102239033858901",
+        "unchanged_bid_mae": 0.0
+      },
+      {
+        "event_id": "848341",
+        "first_decision_at": "2026-11-06T04:11:05.553477+00:00",
+        "labels": 40,
+        "last_label_at": "2026-11-06T04:17:05.749560+00:00",
+        "market_id": "3580932",
+        "model_mae": 0.0,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.32,
+            "decision_available_at": "2026-11-06T04:11:05.553477+00:00",
+            "decision_id": "95821eaa362c7bfb6ea1f294543897fa7409c11c7701e7a4a1428f0789e5e538",
+            "empirical_band_contains_label": true,
+            "forecast": 0.32,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:12:20.456134+00:00",
+            "label_event_at": "2026-11-06T04:12:20.410000+00:00",
+            "label_id": "cd37a9fd6aaac0719c57a827929bf0e9dfd615a6df044008c048f9d3ca2ffdb3",
+            "label_source_delay_after_target_seconds": 14.856523036956787,
+            "observed_future_bid": 0.32
+          },
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.32,
+            "decision_available_at": "2026-11-06T04:11:15.369765+00:00",
+            "decision_id": "c03722870f4432a21497090d599d1418f55f863b4042b64ec550d2009d017ff0",
+            "empirical_band_contains_label": true,
+            "forecast": 0.32,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:12:20.456134+00:00",
+            "label_event_at": "2026-11-06T04:12:20.410000+00:00",
+            "label_id": "cd37a9fd6aaac0719c57a827929bf0e9dfd615a6df044008c048f9d3ca2ffdb3",
+            "label_source_delay_after_target_seconds": 5.0402350425720215,
+            "observed_future_bid": 0.32
+          }
+        ],
+        "token_id": "28042880819135054236705112210866715426402068267079731308218252509537644025901",
+        "unchanged_bid_mae": 0.0
+      },
+      {
+        "event_id": "634802",
+        "first_decision_at": "2026-11-06T04:12:21.187825+00:00",
+        "labels": 34,
+        "last_label_at": "2026-11-06T04:17:02.674958+00:00",
+        "market_id": "3128768",
+        "model_mae": 0.0,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.23,
+            "decision_available_at": "2026-11-06T04:12:21.187825+00:00",
+            "decision_id": "3ddc0ac53bae9b640671d5295aef59951e4055cd95222a07e5da033fad20234f",
+            "empirical_band_contains_label": true,
+            "forecast": 0.23,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:13:25.717925+00:00",
+            "label_event_at": "2026-11-06T04:13:25.676000+00:00",
+            "label_id": "0945040651f413a7d7bf6265ade4eeab87a3f7283de6993f934398599e4dc178",
+            "label_source_delay_after_target_seconds": 4.4881751537323,
+            "observed_future_bid": 0.23
+          },
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.23,
+            "decision_available_at": "2026-11-06T04:12:29.302610+00:00",
+            "decision_id": "87c38c482e3190832ee72152f66621ee8a4e56c1fa11839778c54b44443fe389",
+            "empirical_band_contains_label": true,
+            "forecast": 0.23,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:13:36.009981+00:00",
+            "label_event_at": "2026-11-06T04:13:35.968000+00:00",
+            "label_id": "7e161fd495ff6771fabdd1cd020646f387bb839d05d830f9db88845926e1b637",
+            "label_source_delay_after_target_seconds": 6.6653900146484375,
+            "observed_future_bid": 0.23
+          }
+        ],
+        "token_id": "29437165757872171455593111483309548889820974982069052877568301892400345063381",
+        "unchanged_bid_mae": 0.0
+      },
+      {
+        "event_id": "1291725",
+        "first_decision_at": "2026-11-06T04:10:20.424975+00:00",
+        "labels": 40,
+        "last_label_at": "2026-11-06T04:17:00.025081+00:00",
+        "market_id": "6501428",
+        "model_mae": 0.0,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.82,
+            "decision_available_at": "2026-11-06T04:10:20.424975+00:00",
+            "decision_id": "8c069f4b1b6e7e66ee62c71b01b67d616147a8566ce8e45b020d604ea2190992",
+            "empirical_band_contains_label": true,
+            "forecast": 0.82,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:11:30.145558+00:00",
+            "label_event_at": "2026-11-06T04:11:30.103000+00:00",
+            "label_id": "89545647d7a05ba231688eef27cbbb4bcc3c1e5fe18952d95d1f40937a48fd4f",
+            "label_source_delay_after_target_seconds": 9.678025007247925,
+            "observed_future_bid": 0.82
+          },
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.82,
+            "decision_available_at": "2026-11-06T04:10:28.176794+00:00",
+            "decision_id": "6fcac00dcd35a3dcf7d120c60ddce3c8dc8e664e83463690e52798940fee4e86",
+            "empirical_band_contains_label": true,
+            "forecast": 0.82,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:11:30.145558+00:00",
+            "label_event_at": "2026-11-06T04:11:30.103000+00:00",
+            "label_id": "89545647d7a05ba231688eef27cbbb4bcc3c1e5fe18952d95d1f40937a48fd4f",
+            "label_source_delay_after_target_seconds": 1.9262058734893799,
+            "observed_future_bid": 0.82
+          }
+        ],
+        "token_id": "37613318835793015887725866016633322473535613851983058311943736863668980929626",
+        "unchanged_bid_mae": 0.0
+      },
+      {
+        "event_id": "634802",
+        "first_decision_at": "2026-11-06T04:12:35.328683+00:00",
+        "labels": 33,
+        "last_label_at": "2026-11-06T04:17:02.674958+00:00",
+        "market_id": "3128768",
+        "model_mae": 0.0,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.75,
+            "decision_available_at": "2026-11-06T04:12:35.328683+00:00",
+            "decision_id": "900c910fc072d83f9176d27584877e0c653eeb8e29a94740d51b8316df500781",
+            "empirical_band_contains_label": true,
+            "forecast": 0.75,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:13:36.009981+00:00",
+            "label_event_at": "2026-11-06T04:13:35.968000+00:00",
+            "label_id": "522cf3843a67f6306aab21edd81ef0674db4ad69fe99b8a9282933afe52158a9",
+            "label_source_delay_after_target_seconds": 0.6393170356750488,
+            "observed_future_bid": 0.75
+          },
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.75,
+            "decision_available_at": "2026-11-06T04:12:41.109879+00:00",
+            "decision_id": "0916da0bb2a3109c7b4eaa8b59188c7e0c9e75f997ee062451b8060a8bf8813c",
+            "empirical_band_contains_label": true,
+            "forecast": 0.75,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:13:41.307468+00:00",
+            "label_event_at": "2026-11-06T04:13:41.267000+00:00",
+            "label_id": "21d9ae982971ae1351ffb36c78c0dcadc5e8a1e6c85f616dcca5ae72d1e4b103",
+            "label_source_delay_after_target_seconds": 0.157120943069458,
+            "observed_future_bid": 0.75
+          }
+        ],
+        "token_id": "38920824596940566520627325808924938453425845390003657036912369412019539683738",
+        "unchanged_bid_mae": 0.0
+      },
+      {
+        "event_id": "1283785",
+        "first_decision_at": "2026-11-06T04:09:19.557888+00:00",
+        "labels": 37,
+        "last_label_at": "2026-11-06T04:16:48.798198+00:00",
+        "market_id": "6423883",
+        "model_mae": 0.0008648648648648649,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.001,
+            "baseline_bid": 0.003,
+            "decision_available_at": "2026-11-06T04:09:19.557888+00:00",
+            "decision_id": "40bf6436787271c92055db3cc5672374be956ff7a8b614fb9be74d72dffca37c",
+            "empirical_band_contains_label": true,
+            "forecast": 0.002,
+            "forecast_absolute_error": 0.002,
+            "label_available_at": "2026-11-06T04:10:31.079811+00:00",
+            "label_event_at": "2026-11-06T04:10:31.031000+00:00",
+            "label_id": "95f6cb68582012cd62fcedb1ff8082f8cef2892409bf56408a7a7f829441b36e",
+            "label_source_delay_after_target_seconds": 11.473111867904663,
+            "observed_future_bid": 0.004
+          },
+          {
+            "baseline_absolute_error": 0.001,
+            "baseline_bid": 0.003,
+            "decision_available_at": "2026-11-06T04:09:20.093597+00:00",
+            "decision_id": "fcd95dc3b8e6391a68fb02ea89665352f21e7f1caddc355bb7b8fd3c86af0ae7",
+            "empirical_band_contains_label": true,
+            "forecast": 0.002,
+            "forecast_absolute_error": 0.002,
+            "label_available_at": "2026-11-06T04:10:31.079811+00:00",
+            "label_event_at": "2026-11-06T04:10:31.031000+00:00",
+            "label_id": "95f6cb68582012cd62fcedb1ff8082f8cef2892409bf56408a7a7f829441b36e",
+            "label_source_delay_after_target_seconds": 10.937402963638306,
+            "observed_future_bid": 0.004
+          }
+        ],
+        "token_id": "40280543296373270507961766913927754246716574467376427763313103857071858137755",
+        "unchanged_bid_mae": 0.00013513513513513514
+      },
+      {
+        "event_id": "770450",
+        "first_decision_at": "2026-11-06T04:11:55.795901+00:00",
+        "labels": 36,
+        "last_label_at": "2026-11-06T04:16:58.212453+00:00",
+        "market_id": "3215007",
+        "model_mae": 0.007777777777777763,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.33,
+            "decision_available_at": "2026-11-06T04:11:55.795901+00:00",
+            "decision_id": "a64e7fa8c621f4f77867804a472cf2b8d26c8ea114e07b7a27dedb9a395487c1",
+            "empirical_band_contains_label": true,
+            "forecast": 0.33,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:13:03.966281+00:00",
+            "label_event_at": "2026-11-06T04:13:02.991000+00:00",
+            "label_id": "f8491419392ff4c9ced88d2d3bbfefd38505af3bd705d7e86951c881e73d1b82",
+            "label_source_delay_after_target_seconds": 7.195098876953125,
+            "observed_future_bid": 0.33
+          },
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.33,
+            "decision_available_at": "2026-11-06T04:12:00.815459+00:00",
+            "decision_id": "c5a09a6e0ce30fd0715ba497647f185028a14dcc225b6be9857ff171fce48355",
+            "empirical_band_contains_label": true,
+            "forecast": 0.33,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:13:03.966281+00:00",
+            "label_event_at": "2026-11-06T04:13:02.991000+00:00",
+            "label_id": "f8491419392ff4c9ced88d2d3bbfefd38505af3bd705d7e86951c881e73d1b82",
+            "label_source_delay_after_target_seconds": 2.1755409240722656,
+            "observed_future_bid": 0.33
+          }
+        ],
+        "token_id": "42865728742506860386768556888821101266630139112044622335353850919229585308601",
+        "unchanged_bid_mae": 0.006111111111111099
+      },
+      {
+        "event_id": "89502",
+        "first_decision_at": "2026-11-06T04:12:57.570899+00:00",
+        "labels": 33,
+        "last_label_at": "2026-11-06T04:16:59.358651+00:00",
+        "market_id": "3865960",
+        "model_mae": 0.0,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.46,
+            "decision_available_at": "2026-11-06T04:12:57.570899+00:00",
+            "decision_id": "70fc15596987526e444111ccc9d3b70abe4f142254de04bee874400d62f947cc",
+            "empirical_band_contains_label": true,
+            "forecast": 0.46,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:14:04.883925+00:00",
+            "label_event_at": "2026-11-06T04:14:04.842000+00:00",
+            "label_id": "b6ec8ad270dc8c939f224b80f8474fce337c6d3618995e902d55bcb1349c7d2a",
+            "label_source_delay_after_target_seconds": 7.271100997924805,
+            "observed_future_bid": 0.46
+          },
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.46,
+            "decision_available_at": "2026-11-06T04:13:03.741195+00:00",
+            "decision_id": "5c809dc32ae136c2daae3e473a83dce4493ec77d66ebd8d99a49adfa24060978",
+            "empirical_band_contains_label": true,
+            "forecast": 0.46,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:14:04.883925+00:00",
+            "label_event_at": "2026-11-06T04:14:04.842000+00:00",
+            "label_id": "b6ec8ad270dc8c939f224b80f8474fce337c6d3618995e902d55bcb1349c7d2a",
+            "label_source_delay_after_target_seconds": 1.1008050441741943,
+            "observed_future_bid": 0.46
+          }
+        ],
+        "token_id": "43873895024879972348799332304583852450961083930689783649843650004302588743583",
+        "unchanged_bid_mae": 0.0
+      },
+      {
+        "event_id": "455875",
+        "first_decision_at": "2026-11-06T04:10:31.965126+00:00",
+        "labels": 39,
+        "last_label_at": "2026-11-06T04:17:02.961148+00:00",
+        "market_id": "2176270",
+        "model_mae": 0.0,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.89,
+            "decision_available_at": "2026-11-06T04:10:31.965126+00:00",
+            "decision_id": "4622071e46f4336ed5eaee0c2317ea1b2b4e408ab5e1feaa7e140d81f83b90d5",
+            "empirical_band_contains_label": true,
+            "forecast": 0.89,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:11:38.145939+00:00",
+            "label_event_at": "2026-11-06T04:11:38.104000+00:00",
+            "label_id": "7b41f7d9ca5d0ca19580ea86199eb717d7ba4e7e22e1ed2259ae2658f7ffb2b5",
+            "label_source_delay_after_target_seconds": 6.138874053955078,
+            "observed_future_bid": 0.89
+          },
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.89,
+            "decision_available_at": "2026-11-06T04:10:37.412722+00:00",
+            "decision_id": "1e5ba2306db4be299b0fb44deae9827241b6480982e008225cef7400dc0104f7",
+            "empirical_band_contains_label": true,
+            "forecast": 0.89,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:11:38.145939+00:00",
+            "label_event_at": "2026-11-06T04:11:38.104000+00:00",
+            "label_id": "7b41f7d9ca5d0ca19580ea86199eb717d7ba4e7e22e1ed2259ae2658f7ffb2b5",
+            "label_source_delay_after_target_seconds": 0.6912779808044434,
+            "observed_future_bid": 0.89
+          }
+        ],
+        "token_id": "48727431314333088243693016929623363710488980152833544156961659445129455301311",
+        "unchanged_bid_mae": 0.0
+      },
+      {
+        "event_id": "1299077",
+        "first_decision_at": "2026-11-06T04:12:35.216365+00:00",
+        "labels": 35,
+        "last_label_at": "2026-11-06T04:17:05.902139+00:00",
+        "market_id": "6563871",
+        "model_mae": 0.0005928571428571474,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.926,
+            "decision_available_at": "2026-11-06T04:12:35.216365+00:00",
+            "decision_id": "b525b58906c2a2c3eb15c7cf9b5f7c866987f36d59df1114e49d0f0990ccb4b6",
+            "empirical_band_contains_label": true,
+            "forecast": 0.925,
+            "forecast_absolute_error": 0.0010000000000000009,
+            "label_available_at": "2026-11-06T04:13:36.987788+00:00",
+            "label_event_at": "2026-11-06T04:13:36.947000+00:00",
+            "label_id": "9839de8e63b45921eb1a6d44f2a4d6cfdaa3fdac1fe7dfc3232c25f47c56b14e",
+            "label_source_delay_after_target_seconds": 1.7306349277496338,
+            "observed_future_bid": 0.926
+          },
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.926,
+            "decision_available_at": "2026-11-06T04:12:39.954511+00:00",
+            "decision_id": "5bc1f0884cd535af9305db43362d54b5d9f8e153f69d37c5312d78ae07b4ad54",
+            "empirical_band_contains_label": true,
+            "forecast": 0.925,
+            "forecast_absolute_error": 0.0010000000000000009,
+            "label_available_at": "2026-11-06T04:13:40.116458+00:00",
+            "label_event_at": "2026-11-06T04:13:40.074000+00:00",
+            "label_id": "39f56988ddaa0c2d5ab7d056713054d13529120a5e92477d49168b2593fb27ad",
+            "label_source_delay_after_target_seconds": 0.11948895454406738,
+            "observed_future_bid": 0.926
+          }
+        ],
+        "token_id": "48877954735201752776510757916643767204506079536720087050972443082937342876420",
+        "unchanged_bid_mae": 0.0
+      },
+      {
+        "event_id": "1034268",
+        "first_decision_at": "2026-11-06T04:07:25.303575+00:00",
+        "labels": 32,
+        "last_label_at": "2026-11-06T04:16:52.996881+00:00",
+        "market_id": "4620900",
+        "model_mae": 0.0018750000000000017,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.33,
+            "decision_available_at": "2026-11-06T04:07:25.303575+00:00",
+            "decision_id": "d41b7bc7ab5216bb1d56789363f043bb510553c3bba0e3f31da251ecf06d4d47",
+            "empirical_band_contains_label": true,
+            "forecast": 0.33,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:08:41.970652+00:00",
+            "label_event_at": "2026-11-06T04:08:37.369000+00:00",
+            "label_id": "9707b81e225d7f5eed04e16b6b591fd33ac12463a5a25c526ecb221028d8d046",
+            "label_source_delay_after_target_seconds": 12.065424919128418,
+            "observed_future_bid": 0.33
+          },
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.33,
+            "decision_available_at": "2026-11-06T04:07:31.060570+00:00",
+            "decision_id": "68b298de89eab6f72ce6158d03c42f274c70d566e7a478a9477e31a2e099fc25",
+            "empirical_band_contains_label": true,
+            "forecast": 0.33,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:08:41.970652+00:00",
+            "label_event_at": "2026-11-06T04:08:37.369000+00:00",
+            "label_id": "9707b81e225d7f5eed04e16b6b591fd33ac12463a5a25c526ecb221028d8d046",
+            "label_source_delay_after_target_seconds": 6.308429956436157,
+            "observed_future_bid": 0.33
+          }
+        ],
+        "token_id": "51699731593220798404378104978434018325263546766663573208722653674626387696963",
+        "unchanged_bid_mae": 0.0012500000000000011
+      },
+      {
+        "event_id": "1313864",
+        "first_decision_at": "2026-11-06T04:08:01.495092+00:00",
+        "labels": 47,
+        "last_label_at": "2026-11-06T04:16:52.978214+00:00",
+        "market_id": "6675981",
+        "model_mae": 0.0,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.29,
+            "decision_available_at": "2026-11-06T04:08:01.495092+00:00",
+            "decision_id": "15ae44158108666177ee5abc9e73f2a93a16e7fea8e6066c0642dec42378bf69",
+            "empirical_band_contains_label": true,
+            "forecast": 0.29,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:09:10.144411+00:00",
+            "label_event_at": "2026-11-06T04:09:10.100000+00:00",
+            "label_id": "e66986651109c2e1dba13afbd20f345a13a4ae429245bc61386e8617c2241aac",
+            "label_source_delay_after_target_seconds": 8.604907989501953,
+            "observed_future_bid": 0.29
+          },
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.29,
+            "decision_available_at": "2026-11-06T04:08:43.108868+00:00",
+            "decision_id": "bd2181eb16f898bd01eab57ba520b1106ae0cd4f301e71b5905cc6b0fbfed2d2",
+            "empirical_band_contains_label": true,
+            "forecast": 0.29,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:09:48.759231+00:00",
+            "label_event_at": "2026-11-06T04:09:48.717000+00:00",
+            "label_id": "55f08c874d4810267e7f313f98455dd4200a88842c1992e6c0db91cb600b445a",
+            "label_source_delay_after_target_seconds": 5.6081321239471436,
+            "observed_future_bid": 0.29
+          }
+        ],
+        "token_id": "53074900940347469437926563698638990521296944474603016416365056816868268952572",
+        "unchanged_bid_mae": 0.0
+      },
+      {
+        "event_id": "1292829",
+        "first_decision_at": "2026-11-06T04:11:15.398615+00:00",
+        "labels": 40,
+        "last_label_at": "2026-11-06T04:16:48.244567+00:00",
+        "market_id": "6507381",
+        "model_mae": 0.0,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.36,
+            "decision_available_at": "2026-11-06T04:11:15.398615+00:00",
+            "decision_id": "f8398b1d620d76742f78e32914e756541ed956d06303c7bb0d061445f96cef09",
+            "empirical_band_contains_label": true,
+            "forecast": 0.36,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:12:17.569359+00:00",
+            "label_event_at": "2026-11-06T04:12:17.526000+00:00",
+            "label_id": "7dc8643b5bc5908f6f39a9c08729bffa02bd3c3364658008ed293432a0411020",
+            "label_source_delay_after_target_seconds": 2.127385139465332,
+            "observed_future_bid": 0.36
+          },
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.36,
+            "decision_available_at": "2026-11-06T04:11:20.609948+00:00",
+            "decision_id": "0f112d602d284158e0f4522471305c524de4b52c73253687f0b7704faf51f161",
+            "empirical_band_contains_label": true,
+            "forecast": 0.36,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:12:29.731471+00:00",
+            "label_event_at": "2026-11-06T04:12:29.690000+00:00",
+            "label_id": "dacf9dd21c20014318567f2b954cd9a885ed6b004fb60abb569401ba3b3a03a3",
+            "label_source_delay_after_target_seconds": 9.080052137374878,
+            "observed_future_bid": 0.36
+          }
+        ],
+        "token_id": "54329273621608149992306664731902892300569321538646418359338740051715832033113",
+        "unchanged_bid_mae": 0.0
+      },
+      {
+        "event_id": "79987",
+        "first_decision_at": "2026-11-06T04:11:31.801770+00:00",
+        "labels": 42,
+        "last_label_at": "2026-11-06T04:17:05.408810+00:00",
+        "market_id": "679022",
+        "model_mae": 0.0,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.152,
+            "decision_available_at": "2026-11-06T04:11:31.801770+00:00",
+            "decision_id": "062ef528aaabb95f0824748516f95faf74754f10aa8e43a18cf3e625d3e7b4c9",
+            "empirical_band_contains_label": true,
+            "forecast": 0.152,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:12:34.716347+00:00",
+            "label_event_at": "2026-11-06T04:12:34.670000+00:00",
+            "label_id": "cddadbc7ae6010afe80923112414e1686b05ab76c42b1014a0ac631b49f206b1",
+            "label_source_delay_after_target_seconds": 2.868230104446411,
+            "observed_future_bid": 0.152
+          },
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.152,
+            "decision_available_at": "2026-11-06T04:11:35.291422+00:00",
+            "decision_id": "05ce0ea1f1915f1e402e92e5e77a2a7533d54eb4568c61a49a07dd9d00956e65",
+            "empirical_band_contains_label": true,
+            "forecast": 0.152,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:12:40.872748+00:00",
+            "label_event_at": "2026-11-06T04:12:40.828000+00:00",
+            "label_id": "b4f27b547fbea7b88990b2f44981843bf6b490d9574660828d57c4ddd1511475",
+            "label_source_delay_after_target_seconds": 5.536578178405762,
+            "observed_future_bid": 0.152
+          }
+        ],
+        "token_id": "55404192439775628931124671719520886657525387168536821457706619003199189099864",
+        "unchanged_bid_mae": 0.0
+      },
+      {
+        "event_id": "79987",
+        "first_decision_at": "2026-11-06T04:11:50.694331+00:00",
+        "labels": 34,
+        "last_label_at": "2026-11-06T04:16:59.404087+00:00",
+        "market_id": "679018",
+        "model_mae": 0.0,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.442,
+            "decision_available_at": "2026-11-06T04:11:50.694331+00:00",
+            "decision_id": "1fe1f45fd7ca20b552726ae85105642b6efb6a01545ec4fb3bbc74600e1f7576",
+            "empirical_band_contains_label": true,
+            "forecast": 0.442,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:12:52.441892+00:00",
+            "label_event_at": "2026-11-06T04:12:52.325000+00:00",
+            "label_id": "42c0689685d8d505736563bc54ee949e117ba94095c5878371f2b303de7f53ed",
+            "label_source_delay_after_target_seconds": 1.630669116973877,
+            "observed_future_bid": 0.442
+          },
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.442,
+            "decision_available_at": "2026-11-06T04:11:56.466405+00:00",
+            "decision_id": "411c0717212655309e10a408b69559058832f189c417340b9ff5ed586934f8b9",
+            "empirical_band_contains_label": true,
+            "forecast": 0.442,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:12:57.829191+00:00",
+            "label_event_at": "2026-11-06T04:12:57.783000+00:00",
+            "label_id": "f28adf5ff6e0ad1ef81947e074658231fa30093fdf59974ad49e42dbdc0d2ddf",
+            "label_source_delay_after_target_seconds": 1.3165950775146484,
+            "observed_future_bid": 0.442
+          }
+        ],
+        "token_id": "55764212211467781322980371912612507865974994976253196346176314491480419639168",
+        "unchanged_bid_mae": 0.0
+      },
+      {
+        "event_id": "991810",
+        "first_decision_at": "2026-11-06T04:04:04.056560+00:00",
+        "labels": 33,
+        "last_label_at": "2026-11-06T04:16:37.841234+00:00",
+        "market_id": "4397025",
+        "model_mae": 0.0,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.16,
+            "decision_available_at": "2026-11-06T04:04:04.056560+00:00",
+            "decision_id": "410111b2f35a36ef1ff236efc3f041f582786f8f61a7aff6f5ae88450a23d374",
+            "empirical_band_contains_label": true,
+            "forecast": 0.16,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:05:05.210593+00:00",
+            "label_event_at": "2026-11-06T04:05:05.050000+00:00",
+            "label_id": "2c2b02ccfc617bcee91996aee5236e8d09cfe65220ec6fc0490c55114101306b",
+            "label_source_delay_after_target_seconds": 0.9934399127960205,
+            "observed_future_bid": 0.16
+          },
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.16,
+            "decision_available_at": "2026-11-06T04:04:11.046041+00:00",
+            "decision_id": "f5f5c9351f9dc04bf6fdb799d82f2106dbcdc2d2699b94e1e89e230192a1904e",
+            "empirical_band_contains_label": true,
+            "forecast": 0.16,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:05:42.251910+00:00",
+            "label_event_at": "2026-11-06T04:05:39.532000+00:00",
+            "label_id": "88a876c92d474bfcc395a97643ef09d7b05cf6366d5321f7599acf7b25a2e77a",
+            "label_source_delay_after_target_seconds": 28.48595905303955,
+            "observed_future_bid": 0.16
+          }
+        ],
+        "token_id": "56360910151195441905859355697297471571491885496299657191480344412119595418796",
+        "unchanged_bid_mae": 0.0
+      },
+      {
+        "event_id": "79987",
+        "first_decision_at": "2026-11-06T04:11:50.694331+00:00",
+        "labels": 34,
+        "last_label_at": "2026-11-06T04:16:59.404087+00:00",
+        "market_id": "679018",
+        "model_mae": 0.0,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.557,
+            "decision_available_at": "2026-11-06T04:11:50.694331+00:00",
+            "decision_id": "2e64e21062112f42ee44681474471f9379a0d535961689ff3c1e7f96c4d9eaf5",
+            "empirical_band_contains_label": true,
+            "forecast": 0.557,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:12:52.441892+00:00",
+            "label_event_at": "2026-11-06T04:12:52.325000+00:00",
+            "label_id": "c00759177ccb388ff16d3ced48144829498e088742b741e7d0cfb500ed12d274",
+            "label_source_delay_after_target_seconds": 1.630669116973877,
+            "observed_future_bid": 0.557
+          },
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.557,
+            "decision_available_at": "2026-11-06T04:11:56.466405+00:00",
+            "decision_id": "99a69c9fad1b202d1bdf680c6b3d5151446107c6b10a36c837fb88034119a7a5",
+            "empirical_band_contains_label": true,
+            "forecast": 0.557,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:12:57.829191+00:00",
+            "label_event_at": "2026-11-06T04:12:57.783000+00:00",
+            "label_id": "44378c996b4073f3bdd112b328bbf1239cf9bd117a08bc3591342e24b2b488c1",
+            "label_source_delay_after_target_seconds": 1.3165950775146484,
+            "observed_future_bid": 0.557
+          }
+        ],
+        "token_id": "5649717099758674861276159343380402289083378331461490840325685141994171250523",
+        "unchanged_bid_mae": 0.0
+      },
+      {
+        "event_id": "1283785",
+        "first_decision_at": "2026-11-06T04:12:24.099506+00:00",
+        "labels": 36,
+        "last_label_at": "2026-11-06T04:17:05.738772+00:00",
+        "market_id": "6423892",
+        "model_mae": 0.001666666666666665,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.0020000000000000018,
+            "baseline_bid": 0.987,
+            "decision_available_at": "2026-11-06T04:12:24.099506+00:00",
+            "decision_id": "0de38b6bb5d45d2e9b82f54537b96f232944f663e9f97aa68309bc5ce63ef55a",
+            "empirical_band_contains_label": true,
+            "forecast": 0.9884999999999999,
+            "forecast_absolute_error": 0.000500000000000056,
+            "label_available_at": "2026-11-06T04:13:25.383083+00:00",
+            "label_event_at": "2026-11-06T04:13:25.341000+00:00",
+            "label_id": "839c655889682f136468698fe5cd2beac94b405ff08a1ce5d06ee3f3268807dd",
+            "label_source_delay_after_target_seconds": 1.2414941787719727,
+            "observed_future_bid": 0.989
+          },
+          {
+            "baseline_absolute_error": 0.0020000000000000018,
+            "baseline_bid": 0.988,
+            "decision_available_at": "2026-11-06T04:12:29.898434+00:00",
+            "decision_id": "95a7642de8fcb833cb479c42cf9f088fa4d0c84c5dfe5084eb02f936a08c75de",
+            "empirical_band_contains_label": true,
+            "forecast": 0.988,
+            "forecast_absolute_error": 0.0020000000000000018,
+            "label_available_at": "2026-11-06T04:13:30.253203+00:00",
+            "label_event_at": "2026-11-06T04:13:30.212000+00:00",
+            "label_id": "dafc99b3bcb6fd7824e9b582215558d67a6feb472cfa4a8c1fc85acc8f429356",
+            "label_source_delay_after_target_seconds": 0.3135659694671631,
+            "observed_future_bid": 0.99
+          }
+        ],
+        "token_id": "63766384375100326468742425255147738274545018462000914589893920075817188460054",
+        "unchanged_bid_mae": 0.0022222222222222244
+      },
+      {
+        "event_id": "1317036",
+        "first_decision_at": "2026-11-06T03:52:06.908219+00:00",
+        "labels": 36,
+        "last_label_at": "2026-11-06T04:16:19.442250+00:00",
+        "market_id": "6702336",
+        "model_mae": 0.0,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.8,
+            "decision_available_at": "2026-11-06T03:52:06.908219+00:00",
+            "decision_id": "cbe6222f9dfb700129d6ff1353ea1770ffb6431c0765b389c9e3b63f4ccfd72e",
+            "empirical_band_contains_label": true,
+            "forecast": 0.8,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T03:53:23.196240+00:00",
+            "label_event_at": "2026-11-06T03:53:23.128000+00:00",
+            "label_id": "3031ab290249c8e35a4b06ac40536a7696bb72dd878db89f2e1d32f7abd075b5",
+            "label_source_delay_after_target_seconds": 16.219780921936035,
+            "observed_future_bid": 0.8
+          },
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.8,
+            "decision_available_at": "2026-11-06T03:52:10.204380+00:00",
+            "decision_id": "f3c9976a31e1bc5842cd008d11d464e0f035ee78f359897f99b9d9f049fb8201",
+            "empirical_band_contains_label": true,
+            "forecast": 0.8,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T03:53:23.196240+00:00",
+            "label_event_at": "2026-11-06T03:53:23.128000+00:00",
+            "label_id": "3031ab290249c8e35a4b06ac40536a7696bb72dd878db89f2e1d32f7abd075b5",
+            "label_source_delay_after_target_seconds": 12.923619985580444,
+            "observed_future_bid": 0.8
+          }
+        ],
+        "token_id": "65145375650244944599892485077245020565451866289239847465897058026883954687333",
+        "unchanged_bid_mae": 0.0
+      },
+      {
+        "event_id": "1292829",
+        "first_decision_at": "2026-11-06T04:11:15.398615+00:00",
+        "labels": 40,
+        "last_label_at": "2026-11-06T04:16:48.244567+00:00",
+        "market_id": "6507381",
+        "model_mae": 0.0,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.63,
+            "decision_available_at": "2026-11-06T04:11:15.398615+00:00",
+            "decision_id": "d25a84121e9b14ae65d5731386e9c3b2e3decae244e26c195a194821d6ceaa9c",
+            "empirical_band_contains_label": true,
+            "forecast": 0.63,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:12:17.569359+00:00",
+            "label_event_at": "2026-11-06T04:12:17.526000+00:00",
+            "label_id": "d08835f88e1037a224e0e0b7b89a9cede8e186a70d769fd2c8366f55b4abdf73",
+            "label_source_delay_after_target_seconds": 2.127385139465332,
+            "observed_future_bid": 0.63
+          },
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.63,
+            "decision_available_at": "2026-11-06T04:11:20.609948+00:00",
+            "decision_id": "d8b54f416dc8aa864acc30b1cd76e8db7829b35c7186cd978ebd26d54467cddd",
+            "empirical_band_contains_label": true,
+            "forecast": 0.63,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:12:29.731471+00:00",
+            "label_event_at": "2026-11-06T04:12:29.690000+00:00",
+            "label_id": "cb2d4e90e079c3f86cc3b31fe1a8bddba098fcdfdc528d020737052ca9b48376",
+            "label_source_delay_after_target_seconds": 9.080052137374878,
+            "observed_future_bid": 0.63
+          }
+        ],
+        "token_id": "69357524485878491827088979650618658940820077589928089667486807593191609337515",
+        "unchanged_bid_mae": 0.0
+      },
+      {
+        "event_id": "48978",
+        "first_decision_at": "2026-11-06T04:08:36.495475+00:00",
+        "labels": 8,
+        "last_label_at": "2026-11-06T04:16:25.547155+00:00",
+        "market_id": "2374271",
+        "model_mae": 0.0,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.984,
+            "decision_available_at": "2026-11-06T04:08:36.495475+00:00",
+            "decision_id": "bb61942511b0a41ba705ff8db480d662c0e3eefdee9c0a56213b8f6650ffb0a1",
+            "empirical_band_contains_label": true,
+            "forecast": 0.984,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:09:57.110998+00:00",
+            "label_event_at": "2026-11-06T04:09:52.373000+00:00",
+            "label_id": "e326788fc5d26d35dab4e052488a5737870e9e8669cbf6eafd4bb93d3cf70494",
+            "label_source_delay_after_target_seconds": 15.877524852752686,
+            "observed_future_bid": 0.984
+          },
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.984,
+            "decision_available_at": "2026-11-06T04:08:40.969583+00:00",
+            "decision_id": "5a3e9bbbecb6aaf4327434aacd929d1292fed5ac863f715f0f0a532c478d47cc",
+            "empirical_band_contains_label": true,
+            "forecast": 0.984,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:09:57.110998+00:00",
+            "label_event_at": "2026-11-06T04:09:52.373000+00:00",
+            "label_id": "e326788fc5d26d35dab4e052488a5737870e9e8669cbf6eafd4bb93d3cf70494",
+            "label_source_delay_after_target_seconds": 11.403416872024536,
+            "observed_future_bid": 0.984
+          }
+        ],
+        "token_id": "72433435487515814631344400459815549868044734165082020724691045649454520502781",
+        "unchanged_bid_mae": 0.0
+      },
+      {
+        "event_id": "1317036",
+        "first_decision_at": "2026-11-06T03:52:06.908219+00:00",
+        "labels": 36,
+        "last_label_at": "2026-11-06T04:16:19.442250+00:00",
+        "market_id": "6702336",
+        "model_mae": 0.0,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.19,
+            "decision_available_at": "2026-11-06T03:52:06.908219+00:00",
+            "decision_id": "32d323b82205030977bd49f29ed0c3a7a8f177332be4dd1015cb1d04a34eac47",
+            "empirical_band_contains_label": true,
+            "forecast": 0.19,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T03:53:23.196240+00:00",
+            "label_event_at": "2026-11-06T03:53:23.128000+00:00",
+            "label_id": "9ba25b6d2aeb402c6bc1b831152b1984f2beaa30e0f7b50feea1b1d3d189ad3f",
+            "label_source_delay_after_target_seconds": 16.219780921936035,
+            "observed_future_bid": 0.19
+          },
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.19,
+            "decision_available_at": "2026-11-06T03:52:10.204380+00:00",
+            "decision_id": "2247a58a14e2c57fbbda9f88603393765416c82d7d1eaacc92762f117c02aa00",
+            "empirical_band_contains_label": true,
+            "forecast": 0.19,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T03:53:23.196240+00:00",
+            "label_event_at": "2026-11-06T03:53:23.128000+00:00",
+            "label_id": "9ba25b6d2aeb402c6bc1b831152b1984f2beaa30e0f7b50feea1b1d3d189ad3f",
+            "label_source_delay_after_target_seconds": 12.923619985580444,
+            "observed_future_bid": 0.19
+          }
+        ],
+        "token_id": "76153514125580548796542796529378459189044281454941283459088512396855284900422",
+        "unchanged_bid_mae": 0.0
+      },
+      {
+        "event_id": "770450",
+        "first_decision_at": "2026-11-06T04:08:56.633937+00:00",
+        "labels": 31,
+        "last_label_at": "2026-11-06T04:17:05.885823+00:00",
+        "market_id": "3215006",
+        "model_mae": 0.0005241935483870964,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.009,
+            "decision_available_at": "2026-11-06T04:08:56.633937+00:00",
+            "decision_id": "637310fdec679ec73ae7b15ff03e43e942e58ec77b29bc8fea36fea52f1a6d31",
+            "empirical_band_contains_label": true,
+            "forecast": 0.008749999999999999,
+            "forecast_absolute_error": 0.0002500000000000002,
+            "label_available_at": "2026-11-06T04:09:59.953527+00:00",
+            "label_event_at": "2026-11-06T04:09:59.811000+00:00",
+            "label_id": "a8ffdbd5810538d325ece8b1a1ebe1b6577094833e36a7891b5ae13653f58696",
+            "label_source_delay_after_target_seconds": 3.177063226699829,
+            "observed_future_bid": 0.009
+          },
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.009,
+            "decision_available_at": "2026-11-06T04:08:59.512967+00:00",
+            "decision_id": "c1512369d43af092254b00a8e0c4770aef9fa0b2963c6a7dd23751b3fee37709",
+            "empirical_band_contains_label": true,
+            "forecast": 0.009,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:09:59.953527+00:00",
+            "label_event_at": "2026-11-06T04:09:59.811000+00:00",
+            "label_id": "a8ffdbd5810538d325ece8b1a1ebe1b6577094833e36a7891b5ae13653f58696",
+            "label_source_delay_after_target_seconds": 0.2980329990386963,
+            "observed_future_bid": 0.009
+          }
+        ],
+        "token_id": "77367448845023382525249480243608609306658725883285195065573683809293972009019",
+        "unchanged_bid_mae": 0.0004516129032258062
+      },
+      {
+        "event_id": "1217417",
+        "first_decision_at": "2026-11-06T03:53:06.133835+00:00",
+        "labels": 36,
+        "last_label_at": "2026-11-06T04:16:19.989403+00:00",
+        "market_id": "5920626",
+        "model_mae": 0.0,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.74,
+            "decision_available_at": "2026-11-06T03:53:06.133835+00:00",
+            "decision_id": "3bc45c4cd6d47b9d0eb1ecfd15386d5e18cb6f0a84d9ab62499d9beab5280853",
+            "empirical_band_contains_label": true,
+            "forecast": 0.74,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T03:54:13.017461+00:00",
+            "label_event_at": "2026-11-06T03:54:10.457000+00:00",
+            "label_id": "fceed0ac53e92a620e7980753cbc522cf7497fd644bc2bafbb981c0809ff7f37",
+            "label_source_delay_after_target_seconds": 4.323164939880371,
+            "observed_future_bid": 0.74
+          },
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.74,
+            "decision_available_at": "2026-11-06T03:53:23.866704+00:00",
+            "decision_id": "f14b4bfdfda6836b66681a669ffec6ce17d84a3a490ee43414e6fb61c4116d3f",
+            "empirical_band_contains_label": true,
+            "forecast": 0.74,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T03:54:38.756144+00:00",
+            "label_event_at": "2026-11-06T03:54:38.708000+00:00",
+            "label_id": "eed385da651eff6443346bc7854c239e3802eeea669d4b1df77017f828ef1165",
+            "label_source_delay_after_target_seconds": 14.841295957565308,
+            "observed_future_bid": 0.74
+          }
+        ],
+        "token_id": "77848626876688716983588852240686636563373445326764845068265008490716712317223",
+        "unchanged_bid_mae": 0.0
+      },
+      {
+        "event_id": "79987",
+        "first_decision_at": "2026-11-06T04:11:31.801770+00:00",
+        "labels": 42,
+        "last_label_at": "2026-11-06T04:17:05.408810+00:00",
+        "market_id": "679022",
+        "model_mae": 0.0,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.847,
+            "decision_available_at": "2026-11-06T04:11:31.801770+00:00",
+            "decision_id": "1e07f14f3ae41661167655d11376e4fc61450731c9a3cd1859c3861cf2193f5c",
+            "empirical_band_contains_label": true,
+            "forecast": 0.847,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:12:34.716347+00:00",
+            "label_event_at": "2026-11-06T04:12:34.670000+00:00",
+            "label_id": "c25526e3ed2d0f8681fc2951e5af2754944f674bde1c4b581989cc5ee67e6307",
+            "label_source_delay_after_target_seconds": 2.868230104446411,
+            "observed_future_bid": 0.847
+          },
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.847,
+            "decision_available_at": "2026-11-06T04:11:35.291422+00:00",
+            "decision_id": "a896f000fa87bf513200e2785e6960fabc4ca64ac87755f5d195115c3d516f61",
+            "empirical_band_contains_label": true,
+            "forecast": 0.847,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:12:40.872748+00:00",
+            "label_event_at": "2026-11-06T04:12:40.828000+00:00",
+            "label_id": "c6310f85074f947658b1ffc6cfa7c0c81d8053d45ca48405b88daae4bdd43104",
+            "label_source_delay_after_target_seconds": 5.536578178405762,
+            "observed_future_bid": 0.847
+          }
+        ],
+        "token_id": "79358475953126059185096320578578995575874288599466094920037110232928386404141",
+        "unchanged_bid_mae": 0.0
+      },
+      {
+        "event_id": "770450",
+        "first_decision_at": "2026-11-06T04:11:55.795901+00:00",
+        "labels": 36,
+        "last_label_at": "2026-11-06T04:16:58.212453+00:00",
+        "market_id": "3215007",
+        "model_mae": 0.0077777777777777845,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.66,
+            "decision_available_at": "2026-11-06T04:11:55.795901+00:00",
+            "decision_id": "5731e120453aaeb7d9c1f87ef6025eee9203bfe2aa98ca5d419e45fb68469b1c",
+            "empirical_band_contains_label": true,
+            "forecast": 0.66,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:13:03.964899+00:00",
+            "label_event_at": "2026-11-06T04:13:02.991000+00:00",
+            "label_id": "d0d8d3cf14ad747924285e173e52d2d84e2d4c2670e145591d06d2d0ce635962",
+            "label_source_delay_after_target_seconds": 7.195098876953125,
+            "observed_future_bid": 0.66
+          },
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.66,
+            "decision_available_at": "2026-11-06T04:12:00.815459+00:00",
+            "decision_id": "af5da76019e1dc6d3ff3b0bca9599ca6856eaeac8e63254edef5ad4c6fc4d75a",
+            "empirical_band_contains_label": true,
+            "forecast": 0.66,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:13:03.964899+00:00",
+            "label_event_at": "2026-11-06T04:13:02.991000+00:00",
+            "label_id": "d0d8d3cf14ad747924285e173e52d2d84e2d4c2670e145591d06d2d0ce635962",
+            "label_source_delay_after_target_seconds": 2.1755409240722656,
+            "observed_future_bid": 0.66
+          }
+        ],
+        "token_id": "8077351031134730167836761678618167504307708651130165095377248922919635337796",
+        "unchanged_bid_mae": 0.006111111111111117
+      },
+      {
+        "event_id": "991810",
+        "first_decision_at": "2026-11-06T04:12:52.505881+00:00",
+        "labels": 34,
+        "last_label_at": "2026-11-06T04:17:05.635090+00:00",
+        "market_id": "4397022",
+        "model_mae": 0.0,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.46,
+            "decision_available_at": "2026-11-06T04:12:52.505881+00:00",
+            "decision_id": "d9999748197037ddd4cff3e85cff92088acfff85721420f220b27d139f59726f",
+            "empirical_band_contains_label": true,
+            "forecast": 0.46,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:13:54.230082+00:00",
+            "label_event_at": "2026-11-06T04:13:54.187000+00:00",
+            "label_id": "65d360607f9c6b402df03fd2843a1f1e146154e4962cb36f7a5fea3971108b30",
+            "label_source_delay_after_target_seconds": 1.6811189651489258,
+            "observed_future_bid": 0.46
+          },
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.46,
+            "decision_available_at": "2026-11-06T04:12:57.424139+00:00",
+            "decision_id": "31b20f7c9e5e31dd2bf812d1ab3e3609d1bc7982cc5b285d7ed913236ae33e56",
+            "empirical_band_contains_label": true,
+            "forecast": 0.46,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:13:59.617496+00:00",
+            "label_event_at": "2026-11-06T04:13:59.576000+00:00",
+            "label_id": "daf265b2b9310c863422e815e6bfa2c309323cb123e44d9a106b5e81e19dee0c",
+            "label_source_delay_after_target_seconds": 2.1518609523773193,
+            "observed_future_bid": 0.46
+          }
+        ],
+        "token_id": "82487289327586076731223934931200437075809701560479426984178227650142334617441",
+        "unchanged_bid_mae": 0.0
+      },
+      {
+        "event_id": "1283785",
+        "first_decision_at": "2026-11-06T04:12:05.169247+00:00",
+        "labels": 36,
+        "last_label_at": "2026-11-06T04:17:05.396341+00:00",
+        "market_id": "6423884",
+        "model_mae": 0.0006805555555555562,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.011,
+            "decision_available_at": "2026-11-06T04:12:05.169247+00:00",
+            "decision_id": "f9ffc32a4c3c3034790e8e1dfb710e6b493996f6cc06b45dc3a8411f29ff2cf5",
+            "empirical_band_contains_label": true,
+            "forecast": 0.011,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:13:07.040187+00:00",
+            "label_event_at": "2026-11-06T04:13:06.980000+00:00",
+            "label_id": "19260c8b36a52033ab23f21649506179d20a2b6cd9ea4f55e550618ead33e527",
+            "label_source_delay_after_target_seconds": 1.8107531070709229,
+            "observed_future_bid": 0.011
+          },
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.011,
+            "decision_available_at": "2026-11-06T04:12:12.552884+00:00",
+            "decision_id": "194c4a64abb8965026c9d25d75de3208cf7c58d86584ad6a8f74bcc553d09eac",
+            "empirical_band_contains_label": true,
+            "forecast": 0.011,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:13:14.346360+00:00",
+            "label_event_at": "2026-11-06T04:13:14.305000+00:00",
+            "label_id": "dccf475fd625ea3eadd4aa3d01e57e92cc9f5d4bf0156ae786aab84d05cb66e8",
+            "label_source_delay_after_target_seconds": 1.7521159648895264,
+            "observed_future_bid": 0.011
+          }
+        ],
+        "token_id": "83498532290756021709548766188800785225081833833817577184570532439888232642715",
+        "unchanged_bid_mae": 0.00044444444444444485
+      },
+      {
+        "event_id": "1034268",
+        "first_decision_at": "2026-11-06T04:07:25.303575+00:00",
+        "labels": 32,
+        "last_label_at": "2026-11-06T04:16:52.996881+00:00",
+        "market_id": "4620900",
+        "model_mae": 0.0018750000000000017,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.66,
+            "decision_available_at": "2026-11-06T04:07:25.303575+00:00",
+            "decision_id": "2167f2705026c60aeba4c0d8e00a48cc058bbfd996c35d155b4fb3e6bc591613",
+            "empirical_band_contains_label": true,
+            "forecast": 0.66,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:08:42.093563+00:00",
+            "label_event_at": "2026-11-06T04:08:37.369000+00:00",
+            "label_id": "4dc35c6e7f6f065ae3c50300f35fe723414be9572788d8cf901472bd5f4ce5de",
+            "label_source_delay_after_target_seconds": 12.065424919128418,
+            "observed_future_bid": 0.66
+          },
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.66,
+            "decision_available_at": "2026-11-06T04:07:31.060570+00:00",
+            "decision_id": "ee7a33eacd4be007266671864ae5383653927163c6ad46e04f6432563f5429e6",
+            "empirical_band_contains_label": true,
+            "forecast": 0.66,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:08:42.093563+00:00",
+            "label_event_at": "2026-11-06T04:08:37.369000+00:00",
+            "label_id": "4dc35c6e7f6f065ae3c50300f35fe723414be9572788d8cf901472bd5f4ce5de",
+            "label_source_delay_after_target_seconds": 6.308429956436157,
+            "observed_future_bid": 0.66
+          }
+        ],
+        "token_id": "834988939366537589681339435844742816680296103724655311351481456389958777625",
+        "unchanged_bid_mae": 0.0012500000000000011
+      },
+      {
+        "event_id": "455875",
+        "first_decision_at": "2026-11-06T04:10:31.965126+00:00",
+        "labels": 39,
+        "last_label_at": "2026-11-06T04:17:02.961148+00:00",
+        "market_id": "2176270",
+        "model_mae": 0.0,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.1,
+            "decision_available_at": "2026-11-06T04:10:31.965126+00:00",
+            "decision_id": "fd1c0c44244846ad9949bcb24cdd0f4341cb0e0bda153a9f0b203b7066804081",
+            "empirical_band_contains_label": true,
+            "forecast": 0.1,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:11:38.145939+00:00",
+            "label_event_at": "2026-11-06T04:11:38.104000+00:00",
+            "label_id": "5be2d58e90694665f3155eed64e72ec139f43fc3397f773bf14529986889c031",
+            "label_source_delay_after_target_seconds": 6.138874053955078,
+            "observed_future_bid": 0.1
+          },
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.1,
+            "decision_available_at": "2026-11-06T04:10:37.412722+00:00",
+            "decision_id": "a239ad8ec8e05705585f949e8ebd987b89151c707eb452cff925712561bdf87d",
+            "empirical_band_contains_label": true,
+            "forecast": 0.1,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:11:38.145939+00:00",
+            "label_event_at": "2026-11-06T04:11:38.104000+00:00",
+            "label_id": "5be2d58e90694665f3155eed64e72ec139f43fc3397f773bf14529986889c031",
+            "label_source_delay_after_target_seconds": 0.6912779808044434,
+            "observed_future_bid": 0.1
+          }
+        ],
+        "token_id": "83783489454659420807679723574840032660002326710045123865554753994450797728825",
+        "unchanged_bid_mae": 0.0
+      },
+      {
+        "event_id": "991810",
+        "first_decision_at": "2026-11-06T04:09:11.678314+00:00",
+        "labels": 38,
+        "last_label_at": "2026-11-06T04:17:01.471747+00:00",
+        "market_id": "4397033",
+        "model_mae": 0.0007631578947368398,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.745,
+            "decision_available_at": "2026-11-06T04:09:11.678314+00:00",
+            "decision_id": "3af5db4711770a199134790d8b23407910914fb8a93e40279da054216d69f282",
+            "empirical_band_contains_label": true,
+            "forecast": 0.745,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:10:11.724430+00:00",
+            "label_event_at": "2026-11-06T04:10:11.682000+00:00",
+            "label_id": "df60055483ba43ef0e66d0f806bcf3210300a35c26d5b5b2f7c226204ef21e80",
+            "label_source_delay_after_target_seconds": 0.0036859512329101562,
+            "observed_future_bid": 0.745
+          },
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.745,
+            "decision_available_at": "2026-11-06T04:09:54.398700+00:00",
+            "decision_id": "3aea69495d57028cbb843ea853ac914a64c10b72bad2181ef5bcaec9932c1169",
+            "empirical_band_contains_label": true,
+            "forecast": 0.745,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:10:57.511500+00:00",
+            "label_event_at": "2026-11-06T04:10:56.942000+00:00",
+            "label_id": "3c2b6b4f9fc5e48c710f6970333eae8ab32dbd301eb0c9e82491aa12c23b9a9b",
+            "label_source_delay_after_target_seconds": 2.543299913406372,
+            "observed_future_bid": 0.745
+          }
+        ],
+        "token_id": "869171973276415956635131341744431858844932704288749717904028189815261072106",
+        "unchanged_bid_mae": 0.00028947368421052656
+      },
+      {
+        "event_id": "1299077",
+        "first_decision_at": "2026-11-06T04:12:29.084436+00:00",
+        "labels": 35,
+        "last_label_at": "2026-11-06T04:17:05.902139+00:00",
+        "market_id": "6563871",
+        "model_mae": 0.0011642857142857154,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.067,
+            "decision_available_at": "2026-11-06T04:12:29.084436+00:00",
+            "decision_id": "b8843f09364c0db6580458b396e0b7a2f5982381873036a834280bc6839e4377",
+            "empirical_band_contains_label": true,
+            "forecast": 0.068,
+            "forecast_absolute_error": 0.0010000000000000009,
+            "label_available_at": "2026-11-06T04:13:36.987788+00:00",
+            "label_event_at": "2026-11-06T04:13:36.947000+00:00",
+            "label_id": "72b764857f597a6bd576f949b1cd210f8bd48501ff15e3027e48c5f1fa7a9ecc",
+            "label_source_delay_after_target_seconds": 7.8625640869140625,
+            "observed_future_bid": 0.067
+          },
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.067,
+            "decision_available_at": "2026-11-06T04:12:35.216365+00:00",
+            "decision_id": "3c8d24600e4bff2114086c045b80511bf5a8d464b98fca757a9164f68345de26",
+            "empirical_band_contains_label": true,
+            "forecast": 0.068,
+            "forecast_absolute_error": 0.0010000000000000009,
+            "label_available_at": "2026-11-06T04:13:36.987788+00:00",
+            "label_event_at": "2026-11-06T04:13:36.947000+00:00",
+            "label_id": "72b764857f597a6bd576f949b1cd210f8bd48501ff15e3027e48c5f1fa7a9ecc",
+            "label_source_delay_after_target_seconds": 1.7306349277496338,
+            "observed_future_bid": 0.067
+          }
+        ],
+        "token_id": "88724083667436955983565641618529405957033042505293876755439374174582202767673",
+        "unchanged_bid_mae": 0.00028571428571428595
+      },
+      {
+        "event_id": "89502",
+        "first_decision_at": "2026-11-06T04:12:52.426392+00:00",
+        "labels": 34,
+        "last_label_at": "2026-11-06T04:17:05.628155+00:00",
+        "market_id": "1345531",
+        "model_mae": 0.0,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.22,
+            "decision_available_at": "2026-11-06T04:12:52.426392+00:00",
+            "decision_id": "0eee2af9afbc839da922333a8904ecd0f3f3c718510b51388b4dc15c2d5641d5",
+            "empirical_band_contains_label": true,
+            "forecast": 0.22,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:13:53.464244+00:00",
+            "label_event_at": "2026-11-06T04:13:53.397000+00:00",
+            "label_id": "6c763fe49841f58a941be79c6d315c3615420f2465a7c7738052b332d96532c2",
+            "label_source_delay_after_target_seconds": 0.9706079959869385,
+            "observed_future_bid": 0.22
+          },
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.22,
+            "decision_available_at": "2026-11-06T04:12:57.570049+00:00",
+            "decision_id": "b1cf0680ae5d1cbd866ad973925c037f8b38c2c9eb279cbf13955983bdddac64",
+            "empirical_band_contains_label": true,
+            "forecast": 0.22,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:13:59.843253+00:00",
+            "label_event_at": "2026-11-06T04:13:59.803000+00:00",
+            "label_id": "f983068e6129b93b99f297f2dd7c037f744f4c96d84a7b108c09f213bc03292f",
+            "label_source_delay_after_target_seconds": 2.2329509258270264,
+            "observed_future_bid": 0.22
+          }
+        ],
+        "token_id": "89384721767526056909881321094852287855436067743554155484781205764118128944311",
+        "unchanged_bid_mae": 0.0
+      },
+      {
+        "event_id": "89502",
+        "first_decision_at": "2026-11-06T04:12:57.570049+00:00",
+        "labels": 34,
+        "last_label_at": "2026-11-06T04:17:05.628155+00:00",
+        "market_id": "1345531",
+        "model_mae": 0.0,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.77,
+            "decision_available_at": "2026-11-06T04:12:57.570049+00:00",
+            "decision_id": "f6b048db6f2676c0f8d63108ad3b71185c40941c031eec302355cfa809235829",
+            "empirical_band_contains_label": true,
+            "forecast": 0.77,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:13:59.843253+00:00",
+            "label_event_at": "2026-11-06T04:13:59.803000+00:00",
+            "label_id": "4f3134fb4921a3194f622f19efd86872316f17c0f43738b1cc690eb3c843ac29",
+            "label_source_delay_after_target_seconds": 2.2329509258270264,
+            "observed_future_bid": 0.77
+          },
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.77,
+            "decision_available_at": "2026-11-06T04:13:03.753478+00:00",
+            "decision_id": "7cbdb1ba46c1421d8352a21ccde97e6ca1f9098747a41149dcc3ec88ff805086",
+            "empirical_band_contains_label": true,
+            "forecast": 0.77,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:14:05.173709+00:00",
+            "label_event_at": "2026-11-06T04:14:05.133000+00:00",
+            "label_id": "105ae6aa8425b273cba20ca32a573e8f7286cd0aef0010297c8c4b29a37bc4c2",
+            "label_source_delay_after_target_seconds": 1.3795218467712402,
+            "observed_future_bid": 0.77
+          }
+        ],
+        "token_id": "89935193776001764234914810530894985625350942201527563326613427606200761992090",
+        "unchanged_bid_mae": 0.0
+      },
+      {
+        "event_id": "1283785",
+        "first_decision_at": "2026-11-06T04:11:40.713340+00:00",
+        "labels": 38,
+        "last_label_at": "2026-11-06T04:17:00.159199+00:00",
+        "market_id": "6423885",
+        "model_mae": 0.0008289473684210527,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.0020000000000000018,
+            "baseline_bid": 0.032,
+            "decision_available_at": "2026-11-06T04:11:40.713340+00:00",
+            "decision_id": "69186a4f468dda77b64e71ccfdd6177789cb4e24d21027485abe90b06666d388",
+            "empirical_band_contains_label": true,
+            "forecast": 0.03,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:12:41.061651+00:00",
+            "label_event_at": "2026-11-06T04:12:41.018000+00:00",
+            "label_id": "36dcc1b2592ba7da3fdcd5190dd06332c88eba746c089afa59831f4b75435ef7",
+            "label_source_delay_after_target_seconds": 0.3046598434448242,
+            "observed_future_bid": 0.03
+          },
+          {
+            "baseline_absolute_error": 0.0009999999999999974,
+            "baseline_bid": 0.03,
+            "decision_available_at": "2026-11-06T04:11:55.701764+00:00",
+            "decision_id": "3c7f8d58f14a1f08aa3e9e12db75301ef1461a21f65ded4277ed6eb46a884e2b",
+            "empirical_band_contains_label": true,
+            "forecast": 0.03,
+            "forecast_absolute_error": 0.0009999999999999974,
+            "label_available_at": "2026-11-06T04:12:57.486498+00:00",
+            "label_event_at": "2026-11-06T04:12:57.443000+00:00",
+            "label_id": "cd1c51436c186491149bcc7bd8b68343e9598f8b9016d8ba050203c51a226a5a",
+            "label_source_delay_after_target_seconds": 1.7412359714508057,
+            "observed_future_bid": 0.029
+          }
+        ],
+        "token_id": "91457518831181409364732250528693768969886008774755022482972640575046049876243",
+        "unchanged_bid_mae": 0.0010263157894736842
+      },
+      {
+        "event_id": "1283785",
+        "first_decision_at": "2026-11-06T04:09:19.557888+00:00",
+        "labels": 37,
+        "last_label_at": "2026-11-06T04:16:48.798198+00:00",
+        "market_id": "6423883",
+        "model_mae": 0.0003648648648648637,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.0010000000000000009,
+            "baseline_bid": 0.995,
+            "decision_available_at": "2026-11-06T04:09:19.557888+00:00",
+            "decision_id": "5fedd6053e488ec03170b84a50b6c1bafc4d7867112029828fe010bbc7cc9f7c",
+            "empirical_band_contains_label": true,
+            "forecast": 0.995,
+            "forecast_absolute_error": 0.0010000000000000009,
+            "label_available_at": "2026-11-06T04:10:31.079811+00:00",
+            "label_event_at": "2026-11-06T04:10:31.031000+00:00",
+            "label_id": "20e2c48a8fb7ea94eaf619856928c276fca4dda795973db335961aac70771cfd",
+            "label_source_delay_after_target_seconds": 11.473111867904663,
+            "observed_future_bid": 0.994
+          },
+          {
+            "baseline_absolute_error": 0.0010000000000000009,
+            "baseline_bid": 0.995,
+            "decision_available_at": "2026-11-06T04:09:20.093597+00:00",
+            "decision_id": "82ff4a9fcb6be9ce6e1279107890bd2f24605cfbecf278f5c49e9d8da3b9bbf1",
+            "empirical_band_contains_label": true,
+            "forecast": 0.995,
+            "forecast_absolute_error": 0.0010000000000000009,
+            "label_available_at": "2026-11-06T04:10:31.079811+00:00",
+            "label_event_at": "2026-11-06T04:10:31.031000+00:00",
+            "label_id": "20e2c48a8fb7ea94eaf619856928c276fca4dda795973db335961aac70771cfd",
+            "label_source_delay_after_target_seconds": 10.937402963638306,
+            "observed_future_bid": 0.994
+          }
+        ],
+        "token_id": "94374810691768600626762739701479727827766901905556938989055498697959112550416",
+        "unchanged_bid_mae": 0.0002702702702702705
+      },
+      {
+        "event_id": "79987",
+        "first_decision_at": "2026-11-06T04:06:52.448724+00:00",
+        "labels": 41,
+        "last_label_at": "2026-11-06T04:17:03.042942+00:00",
+        "market_id": "679034",
+        "model_mae": 0.0,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.021,
+            "decision_available_at": "2026-11-06T04:06:52.448724+00:00",
+            "decision_id": "cf6b9a9caa66adf8f5e7b368597aa7364ec64e99af09a649083a0ed7850eced5",
+            "empirical_band_contains_label": true,
+            "forecast": 0.021,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:08:01.966331+00:00",
+            "label_event_at": "2026-11-06T04:08:01.916000+00:00",
+            "label_id": "518367de6e638f5c177fe60f0066a042f26ede726240c9fda1bdda335a080597",
+            "label_source_delay_after_target_seconds": 9.467275857925415,
+            "observed_future_bid": 0.021
+          },
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.021,
+            "decision_available_at": "2026-11-06T04:07:02.353104+00:00",
+            "decision_id": "1c0efa45455bc67890240bc41f464ec600ddeee2c8d713530d15478943e4da3a",
+            "empirical_band_contains_label": true,
+            "forecast": 0.021,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:08:10.564358+00:00",
+            "label_event_at": "2026-11-06T04:08:09.001000+00:00",
+            "label_id": "471188e415022d62d3fed6af94bf257827f52898a33529b7dfa05903a8b19f76",
+            "label_source_delay_after_target_seconds": 6.647895812988281,
+            "observed_future_bid": 0.021
+          }
+        ],
+        "token_id": "94391324985187701312427605791553049327097814064787849723991205429060004737042",
+        "unchanged_bid_mae": 0.0
+      },
+      {
+        "event_id": "770450",
+        "first_decision_at": "2026-11-06T04:12:01.571414+00:00",
+        "labels": 37,
+        "last_label_at": "2026-11-06T04:17:05.719948+00:00",
+        "market_id": "3215008",
+        "model_mae": 0.003513513513513497,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.34,
+            "decision_available_at": "2026-11-06T04:12:01.571414+00:00",
+            "decision_id": "e5c065eb97d76644220928fba743fcdd62c62657bc55ca38485a6e356fb19d2e",
+            "empirical_band_contains_label": true,
+            "forecast": 0.34,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:13:05.177000+00:00",
+            "label_event_at": "2026-11-06T04:13:05+00:00",
+            "label_id": "74a6ae58a02666b6e9b78a1dca112ea83069f2d88d7f4034c21352910cd4c068",
+            "label_source_delay_after_target_seconds": 3.428586006164551,
+            "observed_future_bid": 0.34
+          },
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.34,
+            "decision_available_at": "2026-11-06T04:12:07.343268+00:00",
+            "decision_id": "0099bb9d10e209ee9bbcce7c7a4323770f78a268bf7aa5bf7dd9585b6d65035c",
+            "empirical_band_contains_label": true,
+            "forecast": 0.34,
+            "forecast_absolute_error": 0.0,
+            "label_available_at": "2026-11-06T04:13:13.271274+00:00",
+            "label_event_at": "2026-11-06T04:13:13.151000+00:00",
+            "label_id": "883ac2861f551780d7043d844459e13fe4fddae52be38060a3f8b595b1b61b62",
+            "label_source_delay_after_target_seconds": 5.807732105255127,
+            "observed_future_bid": 0.34
+          }
+        ],
+        "token_id": "94483965432909797688470702512207472940215538148754820061518518664128018848687",
+        "unchanged_bid_mae": 0.002432432432432421
+      },
+      {
+        "event_id": "1292829",
+        "first_decision_at": "2026-11-06T04:10:05.020304+00:00",
+        "labels": 40,
+        "last_label_at": "2026-11-06T04:17:05.595969+00:00",
+        "market_id": "6507380",
+        "model_mae": 0.01137500000000001,
+        "representatives": [
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.9,
+            "decision_available_at": "2026-11-06T04:10:05.020304+00:00",
+            "decision_id": "949336561cf9aee01662495a69b5d40e8813dbd141c8bf7c805cb0f3c954ae95",
+            "empirical_band_contains_label": true,
+            "forecast": 0.91,
+            "forecast_absolute_error": 0.010000000000000009,
+            "label_available_at": "2026-11-06T04:11:35.815493+00:00",
+            "label_event_at": "2026-11-06T04:11:33.336000+00:00",
+            "label_id": "b9f23296f24eb405e6fa16b24ced7bd5a8a754596afad26655b99da3df1652b2",
+            "label_source_delay_after_target_seconds": 28.315696001052856,
+            "observed_future_bid": 0.9
+          },
+          {
+            "baseline_absolute_error": 0.0,
+            "baseline_bid": 0.9,
+            "decision_available_at": "2026-11-06T04:10:07.142017+00:00",
+            "decision_id": "52b1be7fbec658e6997a6224e909338525de56d5caf2542f4b0497c827cb4b6c",
+            "empirical_band_contains_label": true,
+            "forecast": 0.91,
+            "forecast_absolute_error": 0.010000000000000009,
+            "label_available_at": "2026-11-06T04:11:35.815493+00:00",
+            "label_event_at": "2026-11-06T04:11:33.336000+00:00",
+            "label_id": "b9f23296f24eb405e6fa16b24ced7bd5a8a754596afad26655b99da3df1652b2",
+            "label_source_delay_after_target_seconds": 26.19398307800293,
+            "observed_future_bid": 0.9
+          }
+        ],
+        "token_id": "96702946516119890890648295182831714858831451101594362483765027848416290349109",
+        "unchanged_bid_mae": 0.0040000000000000036
+      }
+    ],
+    "tokens_with_labels": 57,
+    "uncertainty_limitation": "Overlapping horizon labels and unreviewed cross-event dependencies preclude an independent-event confidence interval; empirical band coverage is not calibrated probability coverage.",
+    "unchanged_bid_mae": 0.0007465194431108978
+  },
+  "coordinator_pid": 3014492,
+  "cpu_workers": 2,
+  "dataset_version": "phase10-diagnostics-v1",
+  "full_report_path": "/home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/poly-phase10-diagnostics/data/phase10/audit-baseline-v2/report.json",
+  "full_report_sha256": "b5de6f6e0e96e7075c3fb3ed7410bb2cc5147ed90e30079db6d81f53c97f6aa3",
+  "input_sha256": {
+    "experimental.json": "5aadf1a06e88e671479e81c5bf9e636ebcf85ea46ab43d6ad44cf64ae864386d",
+    "frame.json": "bb7ac265505ce243835f4ac87c10660b179b8042d4d8257b219d0e9cc234a530",
+    "observed_fees.json": "34105a61c212615a3449e529041137b9a7cf1a5a61f2a0f0bae548f41cfc5b6b",
+    "selected_tokens.json": "72f3def91e55edbdb04fb3b7c0a76830774736771bcc31517d160a9b6ae35eda",
+    "strategy_engine.json": "ab6e14328f1ee6655e9577a9e8dc771c22ea60f1508edb8dc98711894c6bb47c"
+  },
+  "observed_job_processes": 4,
+  "resource_tracker_pid": 3014496,
+  "schema_version": "1.0",
+  "source_sha256": "7c6d93fa3011b650c91d7ccda7c8f8cc5d537b4464413ff58a1665a18c1618c3",
+  "worker_execution_overlap_observed": true,
+  "worker_processes": [
+    {
+      "cpu_time_seconds": 0.208794334,
+      "end_ns": 1793938992453200776,
+      "kind": "history",
+      "numerical_threads": 1,
+      "pid": 3014505,
+      "start_ns": 1793938992435805107
+    },
+    {
+      "cpu_time_seconds": 0.88556808,
+      "end_ns": 1793938993117893800,
+      "kind": "quality",
+      "numerical_threads": 1,
+      "pid": 3014498,
+      "start_ns": 1793938992435945944
+    }
+  ]
+}
