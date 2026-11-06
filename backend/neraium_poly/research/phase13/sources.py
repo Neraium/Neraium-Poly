@@ -157,12 +157,18 @@ def parse_nfl_csv(raw, artifact, *, minimum_season):
             if bool(scores[0]) != bool(scores[1]):
                 raise ValueError("incomplete_score")
             if all(scores):
-                if starts + timedelta(hours=1) >= artifact.available_at:
-                    raise ValueError("implausible_future_or_in_progress_final_score")
+                if starts >= artifact.available_at:
+                    raise ValueError("implausible_future_final_score")
                 home, away = (int(x) for x in scores)
                 if int(row["result"]) != home - away or int(row["total"]) != home + away:
                     raise ValueError("contradictory_score_result_total")
-                status, observed = "final", artifact.available_at
+                if starts + timedelta(hours=6) >= artifact.available_at:
+                    # Scores can appear while a game is in progress. This source
+                    # lacks an official completion status: embargo recent scores
+                    # and preserve the raw report without admitting a final label.
+                    status, home, away, observed = "unknown", None, None, None
+                else:
+                    status, observed = "final", artifact.available_at
             else:
                 home = away = observed = None
                 # This CSV has no cancellation/postponement/finality status field.
@@ -355,7 +361,16 @@ def load_sports(directory):
     minimum = manifest["report"]["minimum_season"]
     if minimum != artifact.retrieved_at.year - 2:
         raise ValueError("nflverse_season_policy_changed")
-    games, _ = parse_nfl_csv(raw["games.csv"], artifact, minimum_season=minimum)
+    games, rejected = parse_nfl_csv(raw["games.csv"], artifact, minimum_season=minimum)
+    report = manifest["report"]
+    if (
+        report.get("games") != len(games)
+        or report.get("statuses") != dict(Counter(g.status for g in games))
+        or report.get("rejected_rows") != rejected
+        or report.get("official_results") is not False
+        or report.get("certification_authority") is not False
+    ):
+        raise ValueError("sports_source_report_mismatch")
     if digest([g.model_dump(mode="json") for g in games]) != manifest["games_sha256"]:
         raise ValueError("sports_source_normalization_changed")
     return {

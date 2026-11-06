@@ -1,15 +1,16 @@
 {
-  "captured_at": "2026-11-06T06:02:51.460476+00:00",
+  "captured_at": "2026-11-06T06:05:18.219596+00:00",
   "source_report": {
     "provider": "nflverse/nflverse-data",
     "license": "CC-BY-4.0",
     "attribution": "nflverse contributors; Lee Sharpe schedules; normalized fields, odds discarded",
     "license_url": "https://github.com/nflverse/nflverse-data/blob/main/LICENSE.md",
     "source_url": "https://github.com/nflverse/nflverse-data/releases/download/schedules/games.csv",
-    "collected_at": "2026-11-06T06:02:51.364369+00:00",
+    "collected_at": "2026-11-06T06:05:18.125309+00:00",
     "games": 842,
     "statuses": {
-      "final": 692,
+      "final": 691,
+      "unknown": 1,
       "scheduled": 150
     },
     "rejected_rows": {},
@@ -32,7 +33,7 @@
       "lineups"
     ]
   },
-  "manifest_sha256": "fef4c9717d7ff071d3aecc4399bc0f10a0a9e471db9a7f79773e8cfa0b5b4269",
+  "manifest_sha256": "e492738f48894f2c7e0aa54a0adb35a77feaa8e9081e658c963393dd7771f21d",
   "raw_games_sha256": "ea6beb0888cd123d84ecd998364b32661a85622e7522bd3cd63441cff3fe474f",
   "actual_mappings": [
     {
@@ -109,5 +110,5 @@
     "mapping_unsupported_contract_question": 2
   },
   "replay_verified": true,
-  "raw_snapshot": "/home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/poly-phase13-sources/data/phase13-source-capture-v2"
+  "raw_snapshot": "/home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/poly-phase13-sources/data/phase13-source-capture-v3"
 }

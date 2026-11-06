@@ -157,3 +157,33 @@ def test_future_or_backdated_source_availability():
         artifact().model_validate({**artifact().model_dump(), "available_at": NOW - timedelta(days=1)})
     with pytest.raises(ValueError, match="future source"):
         artifact().model_validate({**artifact().model_dump(), "source_timestamp": NOW + timedelta(days=1)})
+
+
+def test_recent_reported_scores_are_embargoed_not_final():
+    raw = CSV.replace(b"2026-09-01,13:00", b"2026-11-05,23:00")
+    games, rejected = sources.parse_nfl_csv(raw, artifact(raw), minimum_season=2024)
+    assert not rejected
+    assert games[0].status == "unknown" and games[0].home_score is None
+    assert games[0].result_observed_at is None
+    later = artifact(raw).model_copy(
+        update={"retrieved_at": NOW + timedelta(hours=3), "available_at": NOW + timedelta(hours=3)}
+    )
+    games, _ = sources.parse_nfl_csv(raw, later, minimum_season=2024)
+    assert games[0].status == "unknown"  # still < six hours after kickoff
+    later = artifact(raw).model_copy(
+        update={"retrieved_at": NOW + timedelta(hours=5), "available_at": NOW + timedelta(hours=5)}
+    )
+    games, _ = sources.parse_nfl_csv(raw, later, minimum_season=2024)
+    assert games[0].status == "final" and games[0].result_observed_at == NOW + timedelta(hours=5)
+
+
+@pytest.mark.asyncio
+async def test_replay_recomputes_report_status_counts(tmp_path):
+    async with client() as http:
+        await sources.collect_sports(tmp_path, client=http, clock=lambda: NOW)
+    p = tmp_path / "manifest.json"
+    manifest = json.loads(p.read_text())
+    manifest["report"]["statuses"] = {"final": 200}
+    p.write_text(json.dumps(manifest))
+    with pytest.raises(ValueError, match="report_mismatch"):
+        sources.load_sports(tmp_path)

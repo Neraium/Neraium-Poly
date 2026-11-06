@@ -51,7 +51,10 @@ metadata and availability times for forecast replay.
 Normalization retains only identities, source provenance, schedule, and reported
 scores. The raw upstream CSV contains betting columns; **none are copied into
 SportsGame or model features**. Result and total must agree with home/away scores.
-Only 2024 and later seasons are retained at the November 2026 capture. Past blank
+Only 2024 and later seasons are retained at the November 2026 capture. Reported
+scores within six hours of kickoff are withheld as unknown even if result/total
+are filled, because this source lacks an official completion flag. The six-hour
+embargo is a conservative research guard, not proof of finality. Past blank
 scores are `unknown`, never guessed final or canceled. Future blank scores are a
 publisher schedule, not an official guarantee that a game will take place.
 The schema cannot prove injury availability, lineup status, postponement or
@@ -112,9 +115,12 @@ any experimental trade.
 
 ## Actual observed evidence
 
-At the first source capture, November 6, 2026 06:00:30 UTC, the release asset was
-updated at 05:06:25 UTC and yielded **842** retained games: **692** publisher-reported
-score records and **150** future schedule records. Zero parse rows were rejected.
+At the final reviewed source capture, November 6, 2026 06:05:18 UTC, the release
+asset was updated at 05:06:25 UTC and yielded **842** retained games: **691**
+publisher-reported older score records, **one unknown recent scored game** under
+the six-hour embargo, and **150** future schedule records. Zero parse rows were
+rejected. Earlier v1/v2 captures are retained, but their previous normalization
+counts are not used by the final model input replay.
 These counts are not independently verified settlement counts. Four outcome tokens
 map to two actual upcoming source games:
 
@@ -123,5 +129,5 @@ map to two actual upcoming source games:
 
 Exact capture hashes and mapping identities are in
 `.planning/evidence/phase13-sources/source-capture.json`. Raw snapshots remain
-ignored under the source agent's `data/phase13-source-capture-v1` and `v2`.
+ignored under the source agent's `data/phase13-source-capture-v1`, `v2` and authoritative `v3`.
 Controlled fixtures exercise failures and are never included in these counts.
