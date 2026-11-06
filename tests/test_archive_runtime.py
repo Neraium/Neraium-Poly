@@ -62,7 +62,7 @@ def test_quote_references_and_history_survive_legacy_rotation_and_restart(tmp_pa
         store.close()
 
 
-async def test_experimental_managed_archive_preserves_stop_and_certified_account(tmp_path, now):
+async def test_experimental_managed_archive_preserves_stop_and_certified_account(tmp_path, now, monkeypatch):
     certified = tmp_path / "certified"
     certified.mkdir()
     sentinel = certified / "existing-evidence"
@@ -82,6 +82,11 @@ async def test_experimental_managed_archive_preserves_stop_and_certified_account
         assert r.state()["cash"] == 500
         assert r.archive_state()["cash"] == 500
         assert r.archive_state()["kill_switch"] is True
+        with monkeypatch.context() as patch:
+            def fail_history(*_args, **_kwargs):
+                raise AssertionError("Archive status must not scan strategy/order histories")
+            patch.setattr(r.account, "snapshot", fail_history)
+            assert r.archive_state()["cash"] == 500
         count = r.events.count()
     finally:
         await r.close()
