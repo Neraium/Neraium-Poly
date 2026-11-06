@@ -84,6 +84,16 @@ class SportsMapping(SportsRecord):
     method: Literal["exact_alias_schedule_rules_v1"] = "exact_alias_schedule_rules_v1"
     includes_overtime: Literal[True] = True
 
+    @model_validator(mode="after")
+    def valid(self):
+        if self.event_start.tzinfo is None or self.event_start.utcoffset() is None:
+            raise ValueError("aware sporting event start required")
+        if self.selected_team_id == self.opponent_team_id:
+            raise ValueError("distinct mapped participants required")
+        if not all((self.event_id, self.market_id, self.token_id, self.game_id, self.provider)):
+            raise ValueError("complete event and token identity required")
+        return self
+
 
 class SportsPrediction(SportsRecord):
     game_id: str
