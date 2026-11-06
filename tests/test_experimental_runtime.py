@@ -74,6 +74,7 @@ async def test_real_frame_pipeline_archives_inputs_and_rejections_without_approv
         await r.cycle()
         s = r.state()
         assert s["account_id"] == "experimental-paper" and s["cash"] == 500
+        assert s["source_fresh_books"] == s["experimental_fresh_books"] == 1
         assert s["experimental_totals"]["signals"] == 6 and not s["orders"]
         assert s["rejection_reasons"]["unknown_fee_schedule"] > 0
         assert s["last_cycle"]["market_record_ids"] == [feed.market.id]

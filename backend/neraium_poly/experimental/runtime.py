@@ -403,6 +403,10 @@ class ExperimentalRuntime:
                 if frame
                 else None,
                 fresh_books=sum(assess_book(b, now).healthy for b in books),
+                source_fresh_books=sum(assess_book(b, now).healthy for b in books),
+                experimental_fresh_books=sum(
+                    assess_book(b, now).healthy for b in books if b.token_id in self.selected
+                ),
                 selected_tokens=len(self.selected),
                 qualified_opportunities=self.totals["qualified_opportunities"],
                 experimental_totals=dict(self.totals),
