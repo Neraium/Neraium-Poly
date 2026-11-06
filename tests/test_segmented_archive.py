@@ -91,3 +91,40 @@ def test_source_corruption_rejected_on_recovery(tmp_path):
         handle.write(b"CORRUPTED")
     with pytest.raises(ValueError, match="immutable archive source changed"):
         managed(path)
+
+
+def test_frequent_status_calls_do_not_create_fake_growth_window(tmp_path):
+    now = [NOW]
+    store = managed(tmp_path / "events.sqlite", clock=lambda: now[0])
+    try:
+        store.append(record(0))
+        for i in range(100):
+            now[0] = NOW + timedelta(milliseconds=i)
+            assert store.status()["growth_bytes_per_second"] is None
+        assert len(store._samples) == 1
+        now[0] = NOW + timedelta(seconds=10)
+        assert store.status()["growth_bytes_per_second"] > 0
+        assert len(store._samples) == 2
+    finally:
+        store.close()
+
+
+def test_published_manifest_recovers_interrupted_catalogue_seal(tmp_path):
+    path = tmp_path / "events.sqlite"
+    store = managed(path)
+    store.append(record(0))
+    source = store._source(store.active_name)
+    name = store.active_name
+    store.active.connection.execute("PRAGMA wal_checkpoint(TRUNCATE)")
+    store.active.close()
+    store.active = None
+    store._write_manifest(name, hashlib.sha256(source.read_bytes()).hexdigest(), source.stat().st_size, 1)
+    store.close()
+    recovered = managed(path)
+    try:
+        assert recovered.active_name != name
+        assert recovered.count() == 1
+        assert recovered.catalog.execute("SELECT status FROM segments WHERE name=?", (name,)).fetchone()[0] == "sealed"
+        assert recovered.maintain()["compressed_segments"] == 1
+    finally:
+        recovered.close()

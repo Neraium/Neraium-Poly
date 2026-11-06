@@ -96,6 +96,12 @@ class ManagedEventStore:
                   qualified INTEGER NOT NULL);
                 CREATE INDEX IF NOT EXISTS records_kind_time ON records(kind,available_at,id);
                 CREATE TABLE IF NOT EXISTS archive_meta(key TEXT PRIMARY KEY,value TEXT NOT NULL);
+                CREATE TRIGGER IF NOT EXISTS records_no_update BEFORE UPDATE ON records
+                  BEGIN SELECT RAISE(ABORT,'append only archive index'); END;
+                CREATE TRIGGER IF NOT EXISTS records_no_delete BEFORE DELETE ON records
+                  BEGIN SELECT RAISE(ABORT,'append only archive index'); END;
+                CREATE TRIGGER IF NOT EXISTS segments_no_delete BEFORE DELETE ON segments
+                  BEGIN SELECT RAISE(ABORT,'archive sources cannot be deleted'); END;
             """)
             version = self.catalog.execute("SELECT value FROM archive_meta WHERE key='version'").fetchone()
             if version and version[0] != "1":
@@ -148,7 +154,12 @@ class ManagedEventStore:
         rid, kind, available, event, payload, digest = row
         if hashlib.sha256(payload.encode()).hexdigest() != digest:
             raise ValueError("corrupt archive payload digest")
-        qualified = int(json.loads(payload).get("qualified") is True)
+        parsed = json.loads(payload)
+        if (parsed.get("id") != rid
+            or datetime.fromisoformat(parsed["timestamp"]) != datetime.fromisoformat(event)
+            or datetime.fromisoformat(parsed["available_at"]) != datetime.fromisoformat(available)):
+            raise ValueError("archive row metadata does not match original payload")
+        qualified = int(parsed["qualified"]) if type(parsed.get("qualified")) is bool else -1
         previous = self.catalog.execute("SELECT * FROM records WHERE id=?", (rid,)).fetchone()
         expected = (rid, kind, available, event, digest, segment, qualified)
         if previous:
@@ -181,18 +192,56 @@ class ManagedEventStore:
             source.close()
         return total
 
+    def _manifest(self, name, *, digest, size, records):
+        return {"schema_version": "1.0", "segment": name, "raw_sha256": digest,
+                "raw_bytes": size, "records": records, "retention_policy": "retain_original"}
+
+    def _read_manifest(self, path):
+        if path.is_symlink() or path.stat().st_size > 16384:
+            raise ValueError("invalid immutable archive manifest")
+        return json.loads(path.read_text())
+
+    def _write_manifest(self, name, digest, size, records):
+        path = Path(str(self._source(name)) + ".manifest.json")
+        expected = self._manifest(name, digest=digest, size=size, records=records)
+        if path.exists():
+            if self._read_manifest(path) != expected:
+                raise ValueError("immutable archive manifest changed")
+            return
+        pending = Path(str(path) + ".pending")
+        if pending.exists():
+            if pending.is_symlink():
+                raise ValueError("symlinked pending archive manifest")
+            pending.unlink()
+        with pending.open("x") as handle:
+            handle.write(json.dumps(expected, sort_keys=True) + "\n")
+            handle.flush()
+            os.fsync(handle.fileno())
+        os.link(pending, path)
+        _sync_dir(path.parent)
+        pending.unlink()
+        _sync_dir(path.parent)
+
     def _recover(self):
         known = {r["name"]: r for r in self.catalog.execute("SELECT * FROM segments")}
         if self.path.exists() and "legacy" not in known:
             if Path(str(self.path) + "-wal").exists() and Path(str(self.path) + "-wal").stat().st_size:
                 raise ValueError("legacy archive must be closed and checkpointed before adoption")
-            self._index_segment(self.path, "legacy")
+            total = self._index_segment(self.path, "legacy")
             with self.catalog:
                 self.catalog.execute(
                     "INSERT INTO segments(name,status,raw_sha,raw_size,records) VALUES(?,?,?,?,?)",
-                    ("legacy", "legacy", _sha(self.path), self.path.stat().st_size, self.count()),
+                    ("legacy", "legacy", _sha(self.path), self.path.stat().st_size, total),
                 )
-        known = {r["name"]: r for r in self.catalog.execute("SELECT * FROM segments")}
+        known = {r["name"]: dict(r) for r in self.catalog.execute("SELECT * FROM segments")}
+        unknown = [p for p in self.segment_dir.iterdir() if NAME.fullmatch(p.name) and p.name not in known]
+        if len(unknown) > 1:
+            raise ValueError("ambiguous interrupted archive rotation")
+        for p in unknown:
+            total = self._index_segment(p)
+            with self.catalog:
+                self.catalog.execute("INSERT INTO segments(name,status,records) VALUES(?,?,?)", (p.name, "active", total))
+            known[p.name] = dict(self.catalog.execute("SELECT * FROM segments WHERE name=?", (p.name,)).fetchone())
         for name, row in known.items():
             path = self._source(name)
             if not path.is_file() or path.is_symlink():
@@ -202,23 +251,25 @@ class ManagedEventStore:
                     raise ValueError("immutable archive source changed")
             elif row["status"] != "active":
                 raise ValueError("invalid archive segment state")
-            self._index_segment(path, name)
+            total = self._index_segment(path, name)
+            manifest_path = Path(str(path) + ".manifest.json")
+            if name != "legacy" and (row["status"] == "sealed" or manifest_path.exists()):
+                if not manifest_path.exists():
+                    raise ValueError("sealed archive manifest missing")
+                actual = self._manifest(name, digest=_sha(path), size=path.stat().st_size, records=total)
+                if self._read_manifest(manifest_path) != actual:
+                    raise ValueError("immutable archive manifest changed")
+                if row["status"] == "active":
+                    with self.catalog:
+                        self.catalog.execute("UPDATE segments SET status='sealed',raw_sha=?,raw_size=? WHERE name=?", (actual["raw_sha256"], actual["raw_bytes"], name))
             if row["gzip_sha"]:
                 self._verify_compressed(row)
-        unknown = [p for p in self.segment_dir.iterdir() if NAME.fullmatch(p.name) and p.name not in known]
-        active = [r["name"] for r in self.catalog.execute("SELECT name FROM segments WHERE status='active'")]
-        if len(active) > 1 or len(unknown) > 1 or (active and unknown):
-            raise ValueError("ambiguous interrupted archive rotation")
-        if unknown:
-            p = unknown[0]
-            self._index_segment(p)
-            with self.catalog:
-                self.catalog.execute("INSERT INTO segments(name,status,records) VALUES(?,?,?)",
-                                     (p.name, "active", self.catalog.execute("SELECT count(*) FROM records WHERE segment=?", (p.name,)).fetchone()[0]))
-            active = [p.name]
         orphan = self.catalog.execute("SELECT count(*) FROM records r LEFT JOIN segments s ON r.segment=s.name WHERE s.name IS NULL").fetchone()[0]
         if orphan:
             raise ValueError("catalogue references an unknown archive source")
+        active = [r[0] for r in self.catalog.execute("SELECT name FROM segments WHERE status='active'")]
+        if len(active) > 1:
+            raise ValueError("ambiguous interrupted archive rotation")
         if active:
             self.active_name = active[0]
             self.active = EventStore(self._source(self.active_name))
@@ -255,6 +306,8 @@ class ManagedEventStore:
         with path.open("rb") as source:
             os.fsync(source.fileno())
         digest, size = _sha(path), path.stat().st_size
+        records = self.catalog.execute("SELECT count(*) FROM records WHERE segment=?", (name,)).fetchone()[0]
+        self._write_manifest(name, digest, size, records)
         with self.catalog:
             self.catalog.execute("UPDATE segments SET status='sealed',raw_sha=?,raw_size=? WHERE name=?",
                                  (digest, size, name))
@@ -452,13 +505,16 @@ class ManagedEventStore:
 
     def status(self):
         with self._lock:
-            usage = self._measure()
             now = self.clock()
-            if not self._samples or now > self._samples[-1][0]:
-                self._samples.append((now, usage))
+            sample_due = not self._samples or (now - self._samples[-1][0]).total_seconds() >= 5
+            if sample_due:
+                self._usage_at = None
+            usage = self._measure()
+            if sample_due:
+                self._samples.append((now, self._usage))
             elapsed = (now - self._samples[0][0]).total_seconds() if self._samples else 0
             delta = usage - self._samples[0][1] if self._samples else 0
-            rate = delta / elapsed if elapsed >= 1 and delta >= 0 else None
+            rate = delta / elapsed if elapsed >= 10 and delta >= 0 else None
             free = shutil.disk_usage(self.directory).free
             remaining = max(0, self.budget_bytes - usage)
             error = self._last_error
@@ -468,7 +524,7 @@ class ManagedEventStore:
                 error = "archive_global_free_floor_reached"
             rows = list(self.catalog.execute("SELECT * FROM segments"))
             active_bytes = sum(p.stat().st_size for p in self.segment_dir.glob((self.active_name or "NOACTIVE") + "*") if p.is_file())
-            return {"managed": True, "usage_bytes": usage, "budget_bytes": self.budget_bytes,
+            return {"managed": True, "usage_bytes": usage, "usage_is_conservative_estimate": bool(self._pending), "budget_bytes": self.budget_bytes,
                     "active_bytes": active_bytes, "segment_bytes": self.segment_bytes,
                     "segments": sum(r["status"] != "legacy" for r in rows),
                     "sealed_segments": sum(r["status"] == "sealed" for r in rows),
