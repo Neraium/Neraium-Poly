@@ -1,0 +1,131 @@
+{
+  "source_path": "data/phase15/analysis/summary.json",
+  "source_sha256": "c866405944119ec72e655c80ff077c9a483e3138fb0af09edffc58a63e45a5af",
+  "evidence": {
+    "execution": {
+      "coordinator_pid": 3183145,
+      "actual_worker_pids": [
+        3183147,
+        3183150
+      ],
+      "requested_process_workers": 2,
+      "parallel_tasks": 2,
+      "only_one_task_per_worker": true,
+      "no_source_or_production_state_mutations": true
+    },
+    "historical": {
+      "dataset_manifest_sha256": "2fa0433a391ffbe245a27c02f246179df044016e4dc7864b8cdbda42ef1e5588",
+      "dataset_sha256_verified": true,
+      "file_checks": {
+        "events.jsonl": {
+          "expected_sha256": "da926cc53363c15f8926f7920c0f3e28c6da69e935b8f10c7d3d583af5190961",
+          "actual_sha256": "da926cc53363c15f8926f7920c0f3e28c6da69e935b8f10c7d3d583af5190961",
+          "verified": true
+        },
+        "evidence.jsonl": {
+          "expected_sha256": "6bc0979352eed16d314232a67131e69b59540c9a564010f98c1cbc4d5fad0d54",
+          "actual_sha256": "6bc0979352eed16d314232a67131e69b59540c9a564010f98c1cbc4d5fad0d54",
+          "verified": true
+        },
+        "outcomes.jsonl": {
+          "expected_sha256": "9f2798565260be0bc7ca2c12ad4ff7de830606426146f115799fd9d9af608650",
+          "actual_sha256": "9f2798565260be0bc7ca2c12ad4ff7de830606426146f115799fd9d9af608650",
+          "verified": true
+        },
+        "source_bundle": {
+          "verified": true
+        }
+      },
+      "qualification_source_matches": [
+        "data/phase9qualification/qualified-v2/events.jsonl",
+        "data/phase9qualification/qualified-main-v1/events.jsonl"
+      ],
+      "proof_source_matches": [
+        "data/phase9qualification/chain/proofs.json"
+      ],
+      "original_market_raw_files": 17,
+      "original_market_raw_files_verified": 17,
+      "qualification_funnel": {
+        "canonical_market_propositions": 250,
+        "parent_event_groups": 250,
+        "official_API_outcome_groups": 51,
+        "corroborated_finalized_outcome_groups": 47,
+        "historical_market_price_rows": 616,
+        "actual_historical_book_rows": 0,
+        "external_context_rows": 95,
+        "resolved_events_with_predecision_available_price": 0,
+        "reviewed_independent_events": 0,
+        "fully_qualified_training_events": 0,
+        "fully_qualified_heldout_events": 0,
+        "required_training_events": 100,
+        "required_heldout_events": 100
+      },
+      "funnel_matches_manifest": true,
+      "missing_field_counts": {
+        "historical_rule_version": 250,
+        "predecision_availability": 250,
+        "historical_executable_depth": 250,
+        "reviewed_independent_group": 250,
+        "qualified_external_context": 250,
+        "corroborated_final_settlement": 203
+      },
+      "missing_counts_match_manifest": true,
+      "training_heldout_deficit": {
+        "training": 100,
+        "heldout": 100
+      },
+      "settlement_timing_note": "47 finalized CTF resolution timestamps corroborated; predecision price availability, executable depth, historical rules, independent grouping and external context remain unqualified.",
+      "no_new_certification_authority": true,
+      "worker": {
+        "study": "historical_integrity",
+        "pid": 3183147,
+        "started_at": "2026-11-06T20:45:22.161257+00:00",
+        "completed_at": "2026-11-06T20:45:22.202874+00:00",
+        "cpu_seconds": 0.041608903,
+        "max_rss_kib": 34428,
+        "numerical_threads": 1
+      }
+    },
+    "capacity": {
+      "collector": {
+        "observed_interval_seconds": 64.86638195603155,
+        "growth_bytes_per_second": {
+          "tree_bytes": 109809.85504676629,
+          "catalog_bytes": 17870.088712296612,
+          "sealed_raw_bytes": 0.0,
+          "gzip_bytes": 0.0
+        },
+        "rows_per_second": 39.265331643229864,
+        "remaining_budget_bytes": 61915524520,
+        "conditional_seconds_to_budget": 563843.0584725856,
+        "conditional_90d_additional_bytes": 853881432843.6547,
+        "conditional_90d_total_bytes": 860685385059.6547,
+        "capacity_claim": "Short window conditional extrapolation, not a long-term rate estimate; originals and compressed copies both retained. No deletion authorized."
+      },
+      "experimental": {
+        "observed_interval_seconds": 64.86638195603155,
+        "growth_bytes_per_second": {
+          "tree_bytes": 55804.05274420296,
+          "catalog_bytes": 4230.727716338774,
+          "sealed_raw_bytes": 70028.01548387612,
+          "gzip_bytes": 23344.711919132948
+        },
+        "rows_per_second": 7.384410623128034,
+        "remaining_budget_bytes": 15183471457,
+        "conditional_seconds_to_budget": 272085.46172441373,
+        "conditional_90d_additional_bytes": 433932314138.9223,
+        "conditional_90d_total_bytes": 435928711865.9223,
+        "capacity_claim": "Short window conditional extrapolation, not a long-term rate estimate; originals and compressed copies both retained. No deletion authorized."
+      }
+    },
+    "capacity_worker": {
+      "study": "archive_capacity",
+      "pid": 3183150,
+      "started_at": "2026-11-06T20:45:22.161156+00:00",
+      "completed_at": "2026-11-06T20:46:27.155435+00:00",
+      "cpu_seconds": 0.067532593,
+      "max_rss_kib": 26464,
+      "numerical_threads": 1
+    }
+  }
+}

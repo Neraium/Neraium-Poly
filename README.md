@@ -12,6 +12,7 @@ uv run neraium-poly monitor --view domains
 uv run neraium-poly monitor --view events
 uv run neraium-poly monitor --view research
 uv run neraium-poly monitor --view archives
+uv run neraium-poly monitor --view operations
 ```
 
 See [architecture](docs/phase14-architecture.md), [actual readiness and limitations](docs/phase14-readiness.md)
@@ -20,6 +21,8 @@ and [storage audit](docs/phase14-storage.md). The expanded root filesystem and
 live collection. Managed archives retain all originals, use separate 64 GiB/16 GiB
 service budgets and stop safely at finite limits. New models remain research-only;
 no independent non-sports forecasting advantage is claimed.
+
+Phase 15 adds [verified cold recovery, bounded capacity alerts and continuous relationship research](docs/phase15-architecture.md). Originals remain retained. [Retention](docs/phase15-retention.md) and [experimental-stop recovery](docs/phase15-stop-readiness.md) require separate owner decisions; neither is automatic. New domain inputs remain research-only pending mapping and calibration.
 
 ## Isolated experimental research and SSH monitor
 

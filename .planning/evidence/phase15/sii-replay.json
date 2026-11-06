@@ -1,0 +1,258 @@
+{
+  "source_path": "data/phase15/sii/analysis.json",
+  "source_sha256": "e38f08aa30f85389b42c6d86649cab37f9a05e1e647a0fd07476fd115e26d38e",
+  "evidence": {
+    "first_observed_at": "2026-11-06T20:35:28.738361+00:00",
+    "last_observed_at": "2026-11-06T20:43:28.727887+00:00",
+    "cycles": 25,
+    "pairs": [
+      {
+        "event_id": "1243079",
+        "market_ids": [
+          "6099746",
+          "6099748"
+        ],
+        "token_ids": [
+          "68626371214639187230033863741936444965982404184257208495352191253488599546518",
+          "37392779839101083370941254154648644961428169742590991532195614511174946460243"
+        ]
+      },
+      {
+        "event_id": "1244078",
+        "market_ids": [
+          "6104867",
+          "6104872"
+        ],
+        "token_ids": [
+          "34953851182503598072451487127139709387390537466410132722438885799412882080146",
+          "76499312539476240382019556135838322573746035668480656918737120465469447830353"
+        ]
+      },
+      {
+        "event_id": "1244079",
+        "market_ids": [
+          "6104870",
+          "6104879"
+        ],
+        "token_ids": [
+          "3813343922437120074363958698006000681974105153264306593496088597236111747892",
+          "15460980297728244780258453865102052550094525230468890577879911643556558090970"
+        ]
+      }
+    ],
+    "raw_capture_bytes": 708201,
+    "last_chain_sha256": "23a81707d59a10a75b2dbfe5839b6404a9007e8219fa44f3de8cd429043ceeda",
+    "min_source_age_seconds": 0.234382,
+    "max_source_age_seconds": 11.750061,
+    "max_availability_age_seconds": 11.075126,
+    "unique_source_books_per_market": {
+      "6099746": 25,
+      "6104870": 25,
+      "6104879": 25,
+      "6099748": 25,
+      "6104872": 25,
+      "6104867": 25
+    },
+    "source_book_records": 150,
+    "manifest": [
+      {
+        "file": "cycle-000.json",
+        "bytes": 28536,
+        "sha256": "da008aa09bf9f3b593880894ae4dbc973bf652a97f6a8cd466a60299ebc610f5"
+      },
+      {
+        "file": "cycle-001.json",
+        "bytes": 28822,
+        "sha256": "0a4888d56d919c64766b2832d8642731942d06d33dd0c982ba22c0bf3e72bacd"
+      },
+      {
+        "file": "cycle-002.json",
+        "bytes": 28826,
+        "sha256": "bc0feb5cfa268221119d1e9d4bd78d7c52929fc29ce1929666d2691e1722ed33"
+      },
+      {
+        "file": "cycle-003.json",
+        "bytes": 28802,
+        "sha256": "590d04058b73bdbe3fa449e63dcdd22f5db4d47af43610333a5b25eae9a17943"
+      },
+      {
+        "file": "cycle-004.json",
+        "bytes": 28749,
+        "sha256": "6cb163af0b256d86d3356aefd026dd04163e7320bf7b0483631815df472d1f7a"
+      },
+      {
+        "file": "cycle-005.json",
+        "bytes": 28802,
+        "sha256": "e4f1ba312547a87319a6886751c4cf2818bc82814660d052c4871a37898f0d5a"
+      },
+      {
+        "file": "cycle-006.json",
+        "bytes": 27675,
+        "sha256": "bc179b159499874372e37d6be409b8fb5a79f510c0dd79aa7ee53fb9216083fc"
+      },
+      {
+        "file": "cycle-007.json",
+        "bytes": 27640,
+        "sha256": "971a08a9a74be6afed567152ee3e3f08bdc6f575fcd69e1407028813ec0b05de"
+      },
+      {
+        "file": "cycle-008.json",
+        "bytes": 27718,
+        "sha256": "cf6f387aae9300bad0f81be22442ed2a600e36ba2151f400b7e96beb0ef36a3e"
+      },
+      {
+        "file": "cycle-009.json",
+        "bytes": 28410,
+        "sha256": "4914ea5701c6601f7a492d0fe3d63a6da531016da3ec47e79043315646fff175"
+      },
+      {
+        "file": "cycle-010.json",
+        "bytes": 28169,
+        "sha256": "d08b442e65d819536ae621fef5616b73b0898b7134241ad88c35c2cf558e091a"
+      },
+      {
+        "file": "cycle-011.json",
+        "bytes": 28168,
+        "sha256": "83e4fefc523baa57b4d7c9f5ba30efe2e0dec4887569d1556c66bfb2ebd94188"
+      },
+      {
+        "file": "cycle-012.json",
+        "bytes": 28252,
+        "sha256": "0416b6e58737ce9a86ec1fa05d806acb9f9e26e7de6408d1d1d36b23109ed89d"
+      },
+      {
+        "file": "cycle-013.json",
+        "bytes": 28346,
+        "sha256": "8f38fd5efa443954b5f3af9e734115edbed4724723ea0cc3ef3a1d36bf5af23d"
+      },
+      {
+        "file": "cycle-014.json",
+        "bytes": 28362,
+        "sha256": "6873ec8e6ff161e6193d5a7345203d5e2c7e1bb87c5c7e7963313951fde4026d"
+      },
+      {
+        "file": "cycle-015.json",
+        "bytes": 28225,
+        "sha256": "6bd1c21aacfe9b20fd93309586beea42df6671947df3067f4b56f3f6582c0791"
+      },
+      {
+        "file": "cycle-016.json",
+        "bytes": 28227,
+        "sha256": "d4f8a2ce68f43e9980063a7c63671caf650b3cc4a8c2a471194b644111db9193"
+      },
+      {
+        "file": "cycle-017.json",
+        "bytes": 28338,
+        "sha256": "709318b0d97fcee134b2f0b5978e3fbd3dc62e23474ec9054b1e21420c9cba4f"
+      },
+      {
+        "file": "cycle-018.json",
+        "bytes": 28364,
+        "sha256": "f75484421cb43d718e5d2a398dd98c8490d875cce9f5b787876015a469954715"
+      },
+      {
+        "file": "cycle-019.json",
+        "bytes": 28263,
+        "sha256": "f92845ab045a447bc170616fb89c904d88394d7da57c19ae0efec2b4a226d8f3"
+      },
+      {
+        "file": "cycle-020.json",
+        "bytes": 28317,
+        "sha256": "3efa600ad60748eb26fdc2a9c6a7b7d0b3b502e47747cbf4831358c8f0414d93"
+      },
+      {
+        "file": "cycle-021.json",
+        "bytes": 28299,
+        "sha256": "6e9d6dc6e262dd421452e38f22d42c91205845de02ede1e7f8fd667e16f06cbe"
+      },
+      {
+        "file": "cycle-022.json",
+        "bytes": 28380,
+        "sha256": "f67498d9fe1688cdaf804901bb807928de60a02bcf57d54956989eb5ce5809f5"
+      },
+      {
+        "file": "cycle-023.json",
+        "bytes": 28240,
+        "sha256": "217894769f8148f73e87ba554e7948a1a078c4b2775ab99b0d2030cd91795c13"
+      },
+      {
+        "file": "cycle-024.json",
+        "bytes": 28271,
+        "sha256": "23a81707d59a10a75b2dbfe5839b6404a9007e8219fa44f3de8cd429043ceeda"
+      }
+    ],
+    "dataset_sha256": "8e976c1e4854024961c908d19b86b8fd05f3371e077d82d806710fe18315b882",
+    "summary": {
+      "cycles": 25,
+      "last_evaluation_at": "2026-11-06T20:43:28.727887+00:00",
+      "candidate_parent_pairs_cumulative": 75,
+      "registered_statistical_candidates": 3,
+      "parent_event_groups": 3,
+      "current_qualified_market_tokens": 6,
+      "source_freshness_limit_seconds": 15,
+      "statuses_cumulative": {
+        "warming_up": 30,
+        "insufficient_joint_variation_for_relationship_baseline": 30,
+        "observing_joint_relationship": 15
+      },
+      "source_rejections_cumulative": {},
+      "engine": {
+        "registered_relationships": 3,
+        "evaluations": 75,
+        "persistent_findings": 0,
+        "rejections": {
+          "insufficient_joint_variation_for_relationship_baseline": 30
+        },
+        "graph": [
+          {
+            "id": "918be4813d3ef453a47c2b36897f663fd63218409c8af44528de5e1757471cb2",
+            "left": "68626371214639187230033863741936444965982404184257208495352191253488599546518",
+            "right": "37392779839101083370941254154648644961428169742590991532195614511174946460243",
+            "domains": [
+              "other",
+              "other"
+            ],
+            "claim_type": "statistical_relationship",
+            "definition_sha256": "db5b3d95a619a9034db2269a76fc5db6af01368cd6e6b11290a594e862baed8e"
+          },
+          {
+            "id": "cbc365bd57350e03d2595fcf2da261f83df35681fe639741543786ee887ecada",
+            "left": "34953851182503598072451487127139709387390537466410132722438885799412882080146",
+            "right": "76499312539476240382019556135838322573746035668480656918737120465469447830353",
+            "domains": [
+              "other",
+              "other"
+            ],
+            "claim_type": "statistical_relationship",
+            "definition_sha256": "6a8e00c610a0f232982f8d12c9001f8d490a896d3e18b5826488931813de8a50"
+          },
+          {
+            "id": "029ca26cd995870b47fc9d25bf5e34ef01a0af2bb755a1bfd39211efcaffade7",
+            "left": "3813343922437120074363958698006000681974105153264306593496088597236111747892",
+            "right": "15460980297728244780258453865102052550094525230468890577879911643556558090970",
+            "domains": [
+              "other",
+              "other"
+            ],
+            "claim_type": "statistical_relationship",
+            "definition_sha256": "228524054bb0bf6e2a7f3fb9b89e609af54a92488e2aacc05626797e98533e3a"
+          }
+        ],
+        "causality_verified": false,
+        "forecast_improvement_verified": false,
+        "executable_opportunities": 0,
+        "certification_authority": false,
+        "trading_authority": false
+      },
+      "semantics": "order_book_midpoint_USD_per_outcome_share_not_independent_probability",
+      "cross_domain_reviewed_findings": 0,
+      "reviewed_logical_constraints": 0,
+      "research_only": true,
+      "trading_authority": false,
+      "certification_authority": false,
+      "counter_scope": "cumulative_since_instance_creation_or_checkpoint_restore"
+    },
+    "checkpoint_sha256": "402d8dbaada1627c21e8046b26f3cdf7ca8705a715fe579ad0276d2f093663d3",
+    "limitations": "Bounded 8-minute descriptive same-parent research. No independent event outcomes, forecasts, calibration or execution/profit claim."
+  }
+}

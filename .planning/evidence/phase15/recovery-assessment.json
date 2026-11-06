@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "assessed_at": "2026-11-06T21:04:33.375712+00:00",
+  "account_id": "experimental-paper",
+  "evidence_sha256": "6a5b5152defcc2d92452a8e925cad3135924a896e701a5a6bfa5c3f4f87ce16d",
+  "original_stop": {
+    "seq": 5249,
+    "timestamp": "2026-11-06T06:49:37.230323+00:00",
+    "action": "kill_switch",
+    "payload": {
+      "active": true
+    }
+  },
+  "cause_classification": "storage_auto_stop_strongly_corroborated_actor_unrecorded",
+  "technical_conditions_pass": true,
+  "blockers": [],
+  "warnings": [
+    "Original stop audit records no actor or reason; owner must confirm reset intent"
+  ],
+  "operator_reset_candidate": true,
+  "reset_authorized": false,
+  "automatic_reset_authority": false,
+  "certified_strategy_authority": false,
+  "observation_window": {
+    "all_healthy": true,
+    "samples": 31,
+    "duration_seconds": 600.4975017190445,
+    "ended_at": "2026-11-06T21:03:35.915761+00:00",
+    "source_evidence_sha256": "33450792f525aabe7ceb4cd15f9f560ba3c2e2e4963576a36743c6ac3f87bc1d"
+  },
+  "valid_until": "2026-11-06T21:09:33.375712+00:00",
+  "approval_required": "Explicit owner approval of this source-bound assessment, original stop intent, account identity and one-time operator reset; revalidate immediately before any action",
+  "assessment_sha256": "09451a2fca2d30e3e628019cea944cf1d163cabed9efdaa74332b9c4d6d845bb",
+  "owner_approval_request": "Approve one operator-reviewed reset of experimental-paper stop audit seq5249 under assessment 09451a2fca2d30e3e628019cea944cf1d163cabed9efdaa74332b9c4d6d845bb, exclusively paper-only, with unchanged risk/strategy gates. Acknowledge that the original audit does not identify the actor. Do not replay expired signals."
+}

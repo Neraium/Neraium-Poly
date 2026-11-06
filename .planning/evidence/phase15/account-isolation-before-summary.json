@@ -1,0 +1,53 @@
+{
+  "observed_at": "2026-11-06T20:47:33.922211+00:00",
+  "accounts": {
+    "paper-live": {
+      "cash": 500.0,
+      "realized_pnl": 0.0,
+      "emergency_stop": false,
+      "open_positions": 0
+    },
+    "experimental-paper": {
+      "cash": 500.0,
+      "realized_pnl": 0.0,
+      "emergency_stop": true,
+      "open_positions": 0
+    }
+  },
+  "services": {
+    "neraium-poly-paper": {
+      "pid": 3167124,
+      "flags": [
+        "PAPER_TRADING=true",
+        "LIVE_TRADING_ENABLED=false"
+      ]
+    },
+    "neraium-poly-experimental": {
+      "pid": 3167125,
+      "flags": [
+        "PAPER_TRADING=true",
+        "LIVE_TRADING_ENABLED=false"
+      ]
+    }
+  },
+  "journals": {
+    "event-intelligence/forecasts.sqlite": {
+      "records": 672,
+      "head_sha256": "f61ae6860c0837b692e419eeedfef665392c7edb67b44472ed0687a3351e1a2c",
+      "integrity": "verified",
+      "original_forecast_prefix_preserved": true
+    },
+    "event-intelligence/sports/prospective.sqlite": {
+      "records": 2,
+      "head_sha256": "99cae7acba2bf51e98df23f75be2201010c003bc8e871a7a4d5f1d287228f590",
+      "integrity": "verified",
+      "original_forecast_prefix_preserved": true
+    },
+    "event-intelligence/domains/forecasts.sqlite": {
+      "records": 15,
+      "head_sha256": "cb9688f3e02c7134cdddebe920d9c6544a57199244ac4e1502d7ae769d285d91",
+      "integrity": "verified",
+      "original_forecast_prefix_preserved": true
+    }
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "observed_at": "2026-11-06T21:04:33.231642+00:00",
+  "capacity": {
+    "collector": {
+      "usage_bytes": 6977889518,
+      "budget_bytes": 68719476736,
+      "whole_window_net_growth_bytes_per_second": 200307.96460199408,
+      "bounded_cache_growth_bytes_per_second": 87008.05506164176,
+      "non_cache_net_growth_bytes_per_second": 113299.90954035232,
+      "endpoint_rolling_growth_bytes_per_second": 218292.41185631242,
+      "endpoint_rolling_seconds_to_exhaustion": 282838.9071931664,
+      "sealed_added": 3,
+      "compressed_added": 4,
+      "cold_proofs_added": 7,
+      "records_added": 19361,
+      "forecast_caveat": "10minute observation; cache creation, WAL/checkpoints, lumpy rotation and variable load prevent long-term guarantee; keep64/16GiB unchanged"
+    },
+    "experimental": {
+      "usage_bytes": 2087646552,
+      "budget_bytes": 17179869184,
+      "whole_window_net_growth_bytes_per_second": 119620.34487972758,
+      "bounded_cache_growth_bytes_per_second": 72163.50151233135,
+      "non_cache_net_growth_bytes_per_second": 47456.84336739623,
+      "endpoint_rolling_growth_bytes_per_second": 124078.44485320093,
+      "endpoint_rolling_seconds_to_exhaustion": 121634.52443215126,
+      "sealed_added": 4,
+      "compressed_added": 4,
+      "cold_proofs_added": 10,
+      "records_added": 5078,
+      "forecast_caveat": "10minute observation; cache creation, WAL/checkpoints, lumpy rotation and variable load prevent long-term guarantee; keep64/16GiB unchanged"
+    }
+  },
+  "forecast_activity": {
+    "market_baselines": {
+      "forecast_records": 233,
+      "dependency_groups": 34,
+      "outcome_records": 0
+    },
+    "sports": {
+      "forecast_records": 2,
+      "dependency_groups": 2,
+      "outcome_records": 0
+    },
+    "domains": {
+      "forecast_records": 0,
+      "dependency_groups": 0,
+      "outcome_records": 0
+    }
+  },
+  "services": {
+    "neraium-poly-paper": {
+      "MainPID": "3185204",
+      "NRestarts": "0",
+      "MemoryCurrent": "412844032",
+      "TasksCurrent": "4",
+      "ActiveState": "active"
+    },
+    "neraium-poly-experimental": {
+      "MainPID": "3185205",
+      "NRestarts": "0",
+      "MemoryCurrent": "351711232",
+      "TasksCurrent": "3",
+      "ActiveState": "active"
+    },
+    "docker": {
+      "MainPID": "1349",
+      "NRestarts": "0",
+      "MemoryCurrent": "429527040",
+      "TasksCurrent": "92",
+      "ActiveState": "active"
+    },
+    "postgresql@16-main": {
+      "MainPID": "1026336",
+      "NRestarts": "0",
+      "MemoryCurrent": "33312768",
+      "TasksCurrent": "6",
+      "ActiveState": "active"
+    }
+  },
+  "filesystem": {
+    "capacity_bytes": 1038993555456,
+    "free_bytes": 513073233920,
+    "used_bytes": 525903544320
+  },
+  "source_commit": "8e1c68ed7a52c04229db501353e9a0f9d55f297f",
+  "soak_evidence_sha256": "33450792f525aabe7ceb4cd15f9f560ba3c2e2e4963576a36743c6ac3f87bc1d"
+}

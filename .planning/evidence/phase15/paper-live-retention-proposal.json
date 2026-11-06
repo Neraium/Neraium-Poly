@@ -1,0 +1,20 @@
+{
+  "schema_version": "phase15-retention-proposal-v1",
+  "observed_at": "2026-11-06T21:04:33.231642+00:00",
+  "directory": "/home/ubuntu/Neraium-Poly/data/paper-live",
+  "retention_class": "proposed_raw_after_verified_cold",
+  "warm_seconds": 86400,
+  "process_reference_audit": {
+    "scope": "no age-qualified verified candidates",
+    "complete": true,
+    "references": []
+  },
+  "candidates": [],
+  "raw_bytes_proposed": 0,
+  "approval_required": true,
+  "removal_authorized": false,
+  "required_owner_action": "Explicit approval of this exact proposal hash and named originals after revalidation; this program has no deletion API",
+  "revalidate_before_any_future_action": true,
+  "original_removal_implemented": false,
+  "proposal_sha256": "1bf44e0faa4fe88f9d28e3b252141c54ab0cda2b92d7a97d2d2952fc3d32dcdf"
+}

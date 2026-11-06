@@ -1,0 +1,32 @@
+{
+  "source_commit": "8e1c68ed7a52c04229db501353e9a0f9d55f297f",
+  "backend": {
+    "passed": 921,
+    "failed": 0,
+    "parallel_workers": 2,
+    "logs": [
+      "tests/backend-1.txt",
+      "tests/backend-2.txt"
+    ]
+  },
+  "browser": {
+    "passed": 5,
+    "failed": 0,
+    "workers": 1,
+    "data": "controlled test fixtures, not genuine market outcomes"
+  },
+  "ruff": "passed",
+  "frontend_build": "passed",
+  "pip_audit": "no known vulnerabilities in frozen production, development and research exports",
+  "npm_audit": "zero vulnerabilities",
+  "controlled_scenario": "passed; synthetic test only",
+  "github_ci": {
+    "run_id": 42291947924,
+    "conclusion": "success",
+    "source_head": "8e1c68ed7a52c04229db501353e9a0f9d55f297f"
+  },
+  "limitations": [
+    "Starlette/httpx test-client deprecation warning",
+    "audits report currently known vulnerabilities; not a security guarantee"
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "source_path": "data/phase15/independent-restore.json",
+  "source_sha256": "4caa38ac7470616fa754280318f91ae162ffcc728ca1d1e47c46e066ca6f0abd",
+  "evidence": {
+    "started_at": "2026-11-06T20:56:15.640588+00:00",
+    "sources": [
+      {
+        "account": "paper-live",
+        "segment": "segment-00000001.sqlite",
+        "elapsed_seconds": 0.3991661260370165,
+        "proof": {
+          "schema_version": "phase15-cold-proof-v1",
+          "segment": "segment-00000001.sqlite",
+          "raw_sha256": "80be8c2974ff0d6caad93f8136c0c370f1217df71fcdff7bd4459ff5562c78b3",
+          "raw_bytes": 12603392,
+          "gzip_sha256": "0ba2bcc10a7da7a6170a7384880ad5b404e4f2e09ac9b94a0c088149adee49df",
+          "gzip_bytes": 3402003,
+          "manifest_sha256": "d43bbd5ab1bd475c6868af1f624da4c0edc44dab7941cda0c358c66bbe6854fc",
+          "records": 4889,
+          "catalog_records_sha256": "b3d6146f9981ba8d533370ec8e819201809ad32bf2fed8a8450e3d332b01f0f3",
+          "catalog_match_count": 4889,
+          "sqlite_quick_check": "ok",
+          "recovery_tested": true,
+          "raw_present": true,
+          "original_modified": false,
+          "approval_required": true,
+          "removal_authorized": false
+        }
+      },
+      {
+        "account": "paper-live",
+        "segment": "segment-00000002.sqlite",
+        "elapsed_seconds": 0.3946813440416008,
+        "proof": {
+          "schema_version": "phase15-cold-proof-v1",
+          "segment": "segment-00000002.sqlite",
+          "raw_sha256": "6e6ebaf9a7001ff205a7c763a05f7d01684602384b4ec0bdc030fcf5fe3f31a9",
+          "raw_bytes": 13131776,
+          "gzip_sha256": "4bfd5237d5165964ce77f3f5193a7b408ce0dbc8c682471eae8445b740c7fe1a",
+          "gzip_bytes": 3515059,
+          "manifest_sha256": "dab8e0e72961fa628c195b390c82139497d19a463db88778cf0aadb4cf312ef3",
+          "records": 5180,
+          "catalog_records_sha256": "6a329374ee8e24d5aedaba8c2d9f19f9ef6d688a9db44e059173ee6a2f222d44",
+          "catalog_match_count": 5180,
+          "sqlite_quick_check": "ok",
+          "recovery_tested": true,
+          "raw_present": true,
+          "original_modified": false,
+          "approval_required": true,
+          "removal_authorized": false
+        }
+      },
+      {
+        "account": "experimental-paper",
+        "segment": "segment-00000001.sqlite",
+        "elapsed_seconds": 0.13492671609856188,
+        "proof": {
+          "schema_version": "phase15-cold-proof-v1",
+          "segment": "segment-00000001.sqlite",
+          "raw_sha256": "c24e8b9b08711de5c59cdd35a387442f18c83eb49b3f9e8981e60ccd8c5a4748",
+          "raw_bytes": 5013504,
+          "gzip_sha256": "cd86a6fb7d487466bcb26fd2379d254808657e9e0d643fb07cd05b25bf76bf0e",
+          "gzip_bytes": 1663150,
+          "manifest_sha256": "3871aca5db6bd10054bd685b7b327f2243e197352e9aab5dd2ca7f8eb3999a8c",
+          "records": 1596,
+          "catalog_records_sha256": "9a8fc0bdedaad2134c3e5ba2ce4fb22dfb54a23a3216a585f6ccdd9b279a8887",
+          "catalog_match_count": 1596,
+          "sqlite_quick_check": "ok",
+          "recovery_tested": true,
+          "raw_present": true,
+          "original_modified": false,
+          "approval_required": true,
+          "removal_authorized": false
+        }
+      },
+      {
+        "account": "experimental-paper",
+        "segment": "segment-00000002.sqlite",
+        "elapsed_seconds": 0.12284512678161263,
+        "proof": {
+          "schema_version": "phase15-cold-proof-v1",
+          "segment": "segment-00000002.sqlite",
+          "raw_sha256": "e8a558636deefbe261fedc3b6b44f0bc558aa28e513b5b4bf5d97d16b9cd7027",
+          "raw_bytes": 4296704,
+          "gzip_sha256": "409ddcec46bf84162a80124ada2c9f3d5fa3ed72dbe1b2756e268e1475d7e5b3",
+          "gzip_bytes": 1445686,
+          "manifest_sha256": "785c60e42157a0232960c6682b0901419e913669e8c95f77e6834bc24e696d67",
+          "records": 1365,
+          "catalog_records_sha256": "76e1cb28ad1cd91367461ed787f413be82ae9237ab3ab49d7e63414306306f22",
+          "catalog_match_count": 1365,
+          "sqlite_quick_check": "ok",
+          "recovery_tested": true,
+          "raw_present": true,
+          "original_modified": false,
+          "approval_required": true,
+          "removal_authorized": false
+        }
+      }
+    ],
+    "originals_deleted": 0,
+    "completed_at": "2026-11-06T20:56:16.725461+00:00"
+  }
+}

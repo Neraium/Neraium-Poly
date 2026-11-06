@@ -1,0 +1,20 @@
+{
+  "schema_version": "phase15-retention-proposal-v1",
+  "observed_at": "2026-11-06T21:04:33.231642+00:00",
+  "directory": "/home/ubuntu/Neraium-Poly/data/experimental-paper",
+  "retention_class": "proposed_raw_after_verified_cold",
+  "warm_seconds": 43200,
+  "process_reference_audit": {
+    "scope": "no age-qualified verified candidates",
+    "complete": true,
+    "references": []
+  },
+  "candidates": [],
+  "raw_bytes_proposed": 0,
+  "approval_required": true,
+  "removal_authorized": false,
+  "required_owner_action": "Explicit approval of this exact proposal hash and named originals after revalidation; this program has no deletion API",
+  "revalidate_before_any_future_action": true,
+  "original_removal_implemented": false,
+  "proposal_sha256": "eca67adca3365da04503033748ed0367519da4f76420178372ad47589b678e4b"
+}

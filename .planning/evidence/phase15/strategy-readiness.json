@@ -1,0 +1,812 @@
+{
+  "schema_version": "1.0",
+  "evidence_sha256": "6a5b5152defcc2d92452a8e925cad3135924a896e701a5a6bfa5c3f4f87ce16d",
+  "captured_at": "2026-11-06T21:04:33.374231+00:00",
+  "trace_epoch_started_at": "2026-11-06T04:22:19.671107+00:00",
+  "last_evaluation_at": "2026-11-06T21:04:31.767337+00:00",
+  "strategies": [
+    {
+      "strategy_id": "cross_market_consistency",
+      "registered": true,
+      "suspended": false,
+      "order_admission_supported_by_current_engine": false,
+      "valuation_target": "logical complete-payoff constraints",
+      "missing_prerequisites": [
+        "independently reviewed exhaustive payoff scope",
+        "multi-leg execution and hedge support"
+      ],
+      "calibration": "unsupported/insufficient independent evidence",
+      "epoch_counts": {
+        "cancelled_orders": 0,
+        "candidate_signals": 0,
+        "duplicate_signals": 76042,
+        "emitted_signals": 220470,
+        "expired_orders": 0,
+        "fills": 0,
+        "markets_considered": 296512,
+        "order_attempts": 0,
+        "qualified_opportunities": 0,
+        "rejected_signals": 296512,
+        "risk_rejections": 0,
+        "submitted_orders": 0,
+        "valid_observations": 216865
+      },
+      "latest_cycle_counts": {
+        "cancelled_orders": 0,
+        "candidate_signals": 0,
+        "duplicate_signals": 16,
+        "emitted_signals": 48,
+        "expired_orders": 0,
+        "fills": 0,
+        "markets_considered": 64,
+        "order_attempts": 0,
+        "qualified_opportunities": 0,
+        "rejected_signals": 64,
+        "risk_rejections": 0,
+        "submitted_orders": 0,
+        "valid_observations": 51
+      },
+      "epoch_rejections": {
+        "independently_reviewed_exhaustive_payoff_scope_required": {
+          "count": 296512,
+          "category": "MISSING EVIDENCE"
+        },
+        "large_spread": {
+          "count": 10,
+          "category": "MARKET CONDITION"
+        },
+        "missing_book": {
+          "count": 11654,
+          "category": "MISSING EVIDENCE"
+        },
+        "missing_liquidity": {
+          "count": 11279,
+          "category": "MISSING EVIDENCE"
+        },
+        "multi_leg_execution_and_hedging_not_supported": {
+          "count": 296512,
+          "category": "STRATEGY LIMITATION"
+        },
+        "out_of_order_book": {
+          "count": 82,
+          "category": "MISSING EVIDENCE"
+        },
+        "stale_book": {
+          "count": 61062,
+          "category": "MISSING EVIDENCE"
+        },
+        "unknown_fee_schedule": {
+          "count": 23500,
+          "category": "MISSING EVIDENCE"
+        }
+      },
+      "recorded_recent_attempts": [],
+      "current_estimated_net_edge": null,
+      "realized_trading_advantage": null,
+      "baseline_superiority": null,
+      "liquidity": "current authentic complete bid/ask, spread<=0.05, source age<=15s, participation<=25%, verified fees",
+      "cost_model": "lower exit-bid mark*(1-fee)-entry ask*(1+fee)-0.02; minimum0.03/share",
+      "risk_ready": false,
+      "certified_approval": false,
+      "experimental_authorization_is_not_certification": true
+    },
+    {
+      "strategy_id": "persistent_relationship",
+      "registered": true,
+      "suspended": false,
+      "order_admission_supported_by_current_engine": true,
+      "valuation_target": "unvalidated sixty-second executable bid mark",
+      "missing_prerequisites": [
+        "persistent qualified relationship evidence",
+        "causal bid history and matured errors",
+        "positive conservative cost-adjusted edge"
+      ],
+      "calibration": "unvalidated mark-error envelope; not terminal probability calibration",
+      "epoch_counts": {
+        "cancelled_orders": 0,
+        "candidate_signals": 16115,
+        "duplicate_signals": 74569,
+        "emitted_signals": 221943,
+        "expired_orders": 0,
+        "fills": 0,
+        "markets_considered": 296512,
+        "order_attempts": 0,
+        "qualified_opportunities": 0,
+        "rejected_signals": 296512,
+        "risk_rejections": 0,
+        "submitted_orders": 0,
+        "valid_observations": 216865
+      },
+      "latest_cycle_counts": {
+        "cancelled_orders": 0,
+        "candidate_signals": 4,
+        "duplicate_signals": 14,
+        "emitted_signals": 50,
+        "expired_orders": 0,
+        "fills": 0,
+        "markets_considered": 64,
+        "order_attempts": 0,
+        "qualified_opportunities": 0,
+        "rejected_signals": 64,
+        "risk_rejections": 0,
+        "submitted_orders": 0,
+        "valid_observations": 51
+      },
+      "epoch_rejections": {
+        "conservative_roundtrip_edge_insufficient": {
+          "count": 220690,
+          "category": "MARKET CONDITION"
+        },
+        "excessive_model_uncertainty": {
+          "count": 1191,
+          "category": "MARKET CONDITION"
+        },
+        "insufficient_causal_bid_history": {
+          "count": 32909,
+          "category": "MISSING EVIDENCE"
+        },
+        "insufficient_matured_horizon_forecast_errors": {
+          "count": 6461,
+          "category": "MISSING EVIDENCE"
+        },
+        "large_spread": {
+          "count": 10,
+          "category": "MARKET CONDITION"
+        },
+        "missing_book": {
+          "count": 11654,
+          "category": "MISSING EVIDENCE"
+        },
+        "missing_liquidity": {
+          "count": 11279,
+          "category": "MISSING EVIDENCE"
+        },
+        "out_of_order_book": {
+          "count": 82,
+          "category": "MISSING EVIDENCE"
+        },
+        "persistent_contextual_relationship_evidence_required": {
+          "count": 279389,
+          "category": "MISSING EVIDENCE"
+        },
+        "stale_book": {
+          "count": 61062,
+          "category": "MISSING EVIDENCE"
+        },
+        "unknown_fee_schedule": {
+          "count": 23500,
+          "category": "MISSING EVIDENCE"
+        }
+      },
+      "recorded_recent_attempts": [],
+      "current_estimated_net_edge": null,
+      "realized_trading_advantage": null,
+      "baseline_superiority": null,
+      "liquidity": "current authentic complete bid/ask, spread<=0.05, source age<=15s, participation<=25%, verified fees",
+      "cost_model": "lower exit-bid mark*(1-fee)-entry ask*(1+fee)-0.02; minimum0.03/share",
+      "risk_ready": false,
+      "certified_approval": false,
+      "experimental_authorization_is_not_certification": true
+    },
+    {
+      "strategy_id": "liquidity_spread",
+      "registered": true,
+      "suspended": false,
+      "order_admission_supported_by_current_engine": false,
+      "valuation_target": "passive spread compensation",
+      "missing_prerequisites": [
+        "validated queue/adverse-selection model",
+        "two-sided inventory execution support"
+      ],
+      "calibration": "unsupported/insufficient independent evidence",
+      "epoch_counts": {
+        "cancelled_orders": 0,
+        "candidate_signals": 0,
+        "duplicate_signals": 76042,
+        "emitted_signals": 220470,
+        "expired_orders": 0,
+        "fills": 0,
+        "markets_considered": 296512,
+        "order_attempts": 0,
+        "qualified_opportunities": 0,
+        "rejected_signals": 296512,
+        "risk_rejections": 0,
+        "submitted_orders": 0,
+        "valid_observations": 216865
+      },
+      "latest_cycle_counts": {
+        "cancelled_orders": 0,
+        "candidate_signals": 0,
+        "duplicate_signals": 16,
+        "emitted_signals": 48,
+        "expired_orders": 0,
+        "fills": 0,
+        "markets_considered": 64,
+        "order_attempts": 0,
+        "qualified_opportunities": 0,
+        "rejected_signals": 64,
+        "risk_rejections": 0,
+        "submitted_orders": 0,
+        "valid_observations": 51
+      },
+      "epoch_rejections": {
+        "large_spread": {
+          "count": 10,
+          "category": "MARKET CONDITION"
+        },
+        "missing_book": {
+          "count": 11654,
+          "category": "MISSING EVIDENCE"
+        },
+        "missing_liquidity": {
+          "count": 11279,
+          "category": "MISSING EVIDENCE"
+        },
+        "out_of_order_book": {
+          "count": 82,
+          "category": "MISSING EVIDENCE"
+        },
+        "stale_book": {
+          "count": 61062,
+          "category": "MISSING EVIDENCE"
+        },
+        "two_sided_inventory_execution_not_supported": {
+          "count": 296512,
+          "category": "STRATEGY LIMITATION"
+        },
+        "unknown_fee_schedule": {
+          "count": 23500,
+          "category": "MISSING EVIDENCE"
+        },
+        "validated_queue_and_adverse_selection_model_required": {
+          "count": 296512,
+          "category": "MISSING EVIDENCE"
+        }
+      },
+      "recorded_recent_attempts": [],
+      "current_estimated_net_edge": null,
+      "realized_trading_advantage": null,
+      "baseline_superiority": null,
+      "liquidity": "current authentic complete bid/ask, spread<=0.05, source age<=15s, participation<=25%, verified fees",
+      "cost_model": "lower exit-bid mark*(1-fee)-entry ask*(1+fee)-0.02; minimum0.03/share",
+      "risk_ready": false,
+      "certified_approval": false,
+      "experimental_authorization_is_not_certification": true
+    },
+    {
+      "strategy_id": "event_driven",
+      "registered": true,
+      "suspended": false,
+      "order_admission_supported_by_current_engine": false,
+      "valuation_target": "independent event-response repricing",
+      "missing_prerequisites": [
+        "independent predecision event context",
+        "qualified response model"
+      ],
+      "calibration": "unsupported/insufficient independent evidence",
+      "epoch_counts": {
+        "cancelled_orders": 0,
+        "candidate_signals": 0,
+        "duplicate_signals": 76042,
+        "emitted_signals": 220470,
+        "expired_orders": 0,
+        "fills": 0,
+        "markets_considered": 296512,
+        "order_attempts": 0,
+        "qualified_opportunities": 0,
+        "rejected_signals": 296512,
+        "risk_rejections": 0,
+        "submitted_orders": 0,
+        "valid_observations": 216865
+      },
+      "latest_cycle_counts": {
+        "cancelled_orders": 0,
+        "candidate_signals": 0,
+        "duplicate_signals": 16,
+        "emitted_signals": 48,
+        "expired_orders": 0,
+        "fills": 0,
+        "markets_considered": 64,
+        "order_attempts": 0,
+        "qualified_opportunities": 0,
+        "rejected_signals": 64,
+        "risk_rejections": 0,
+        "submitted_orders": 0,
+        "valid_observations": 51
+      },
+      "epoch_rejections": {
+        "independent_predecision_context_and_response_model_required": {
+          "count": 296512,
+          "category": "MISSING EVIDENCE"
+        },
+        "large_spread": {
+          "count": 10,
+          "category": "MARKET CONDITION"
+        },
+        "missing_book": {
+          "count": 11654,
+          "category": "MISSING EVIDENCE"
+        },
+        "missing_liquidity": {
+          "count": 11279,
+          "category": "MISSING EVIDENCE"
+        },
+        "out_of_order_book": {
+          "count": 82,
+          "category": "MISSING EVIDENCE"
+        },
+        "stale_book": {
+          "count": 61062,
+          "category": "MISSING EVIDENCE"
+        },
+        "unknown_fee_schedule": {
+          "count": 23500,
+          "category": "MISSING EVIDENCE"
+        }
+      },
+      "recorded_recent_attempts": [],
+      "current_estimated_net_edge": null,
+      "realized_trading_advantage": null,
+      "baseline_superiority": null,
+      "liquidity": "current authentic complete bid/ask, spread<=0.05, source age<=15s, participation<=25%, verified fees",
+      "cost_model": "lower exit-bid mark*(1-fee)-entry ask*(1+fee)-0.02; minimum0.03/share",
+      "risk_ready": false,
+      "certified_approval": false,
+      "experimental_authorization_is_not_certification": true
+    },
+    {
+      "strategy_id": "short_horizon",
+      "registered": true,
+      "suspended": false,
+      "order_admission_supported_by_current_engine": true,
+      "valuation_target": "unvalidated sixty-second executable bid mark",
+      "missing_prerequisites": [
+        "forty causal prior bid observations",
+        "twenty matured historical mark errors",
+        "positive conservative cost-adjusted edge"
+      ],
+      "calibration": "unvalidated mark-error envelope; not terminal probability calibration",
+      "epoch_counts": {
+        "cancelled_orders": 0,
+        "candidate_signals": 185774,
+        "duplicate_signals": 76042,
+        "emitted_signals": 220470,
+        "expired_orders": 0,
+        "fills": 0,
+        "markets_considered": 296512,
+        "order_attempts": 5,
+        "qualified_opportunities": 5,
+        "rejected_signals": 296507,
+        "risk_rejections": 5,
+        "submitted_orders": 0,
+        "valid_observations": 216865
+      },
+      "latest_cycle_counts": {
+        "cancelled_orders": 0,
+        "candidate_signals": 41,
+        "duplicate_signals": 16,
+        "emitted_signals": 48,
+        "expired_orders": 0,
+        "fills": 0,
+        "markets_considered": 64,
+        "order_attempts": 0,
+        "qualified_opportunities": 0,
+        "rejected_signals": 64,
+        "risk_rejections": 0,
+        "submitted_orders": 0,
+        "valid_observations": 51
+      },
+      "epoch_rejections": {
+        "conservative_roundtrip_edge_insufficient": {
+          "count": 220690,
+          "category": "MARKET CONDITION"
+        },
+        "excessive_model_uncertainty": {
+          "count": 1191,
+          "category": "MARKET CONDITION"
+        },
+        "insufficient_causal_bid_history": {
+          "count": 32909,
+          "category": "MISSING EVIDENCE"
+        },
+        "insufficient_matured_horizon_forecast_errors": {
+          "count": 6461,
+          "category": "MISSING EVIDENCE"
+        },
+        "kill_switch": {
+          "count": 5,
+          "category": "RISK REJECTION"
+        },
+        "large_spread": {
+          "count": 10,
+          "category": "MARKET CONDITION"
+        },
+        "missing_book": {
+          "count": 11654,
+          "category": "MISSING EVIDENCE"
+        },
+        "missing_liquidity": {
+          "count": 11279,
+          "category": "MISSING EVIDENCE"
+        },
+        "out_of_order_book": {
+          "count": 82,
+          "category": "MISSING EVIDENCE"
+        },
+        "stale_book": {
+          "count": 61062,
+          "category": "MISSING EVIDENCE"
+        },
+        "unknown_fee_schedule": {
+          "count": 23500,
+          "category": "MISSING EVIDENCE"
+        }
+      },
+      "recorded_recent_attempts": [
+        {
+          "signal_id": "4a84ac4521db563bf74a4d0b24feb2477585f122a7b25f8b29e904fe7c0a700f",
+          "signal_sha256": "1163c5de7bcf3c3f2b77d8d01928eb3f8622de24d76361942da7b6d2382475d7",
+          "timestamp": "2026-11-06T20:54:54.361254Z",
+          "strategy_id": "short_horizon",
+          "market_id": "6736347",
+          "event_id": "1322444",
+          "estimated_net_edge": 0.17599999999999985,
+          "lower_value": 0.7699999999999999,
+          "fee_rate": 0.05,
+          "slippage_per_share": 0.01,
+          "result": {
+            "account_id": "experimental-paper",
+            "intent": {
+              "available_at": "2026-11-06T20:54:55.054506Z",
+              "client_order_id": "1be1d898d9253055d12ba3cb75623e5ac24179e395ba9eec212a4a2b7c93a2a7",
+              "event_id": "1322444",
+              "expires_at": "2026-11-06T20:55:25.054506Z",
+              "id": "faea339ea505291ee16a023b21f1036ad373e267fca1f9ba79415dc6f36cc9ef",
+              "limit_price": 0.51,
+              "market_id": "6736347",
+              "opportunity_id": "4a84ac4521db563bf74a4d0b24feb2477585f122a7b25f8b29e904fe7c0a700f",
+              "quantity": 5.0,
+              "schema_version": "1.0",
+              "side": "BUY",
+              "source": "experimental-paper/v1",
+              "tier": "standard",
+              "timestamp": "2026-11-06T20:54:55.054506Z",
+              "token_id": "111789010703112639001444379579956541933305260515284197833650660561804608023171"
+            },
+            "reasons": [
+              "kill_switch"
+            ],
+            "risk_decision": {
+              "approved": false,
+              "approved_notional": 0.0,
+              "available_at": "2026-11-06T20:54:55.054506Z",
+              "expires_at": "2026-11-06T20:54:55.054506Z",
+              "id": "cbba2dfd-8735-4d1c-8c52-2c39c3485dc7",
+              "intent_id": "faea339ea505291ee16a023b21f1036ad373e267fca1f9ba79415dc6f36cc9ef",
+              "reasons": [
+                "kill_switch"
+              ],
+              "reservation_id": null,
+              "schema_version": "1.0",
+              "source": "risk/v1",
+              "timestamp": "2026-11-06T20:54:55.054506Z"
+            },
+            "signal_id": "4a84ac4521db563bf74a4d0b24feb2477585f122a7b25f8b29e904fe7c0a700f",
+            "status": "rejected",
+            "strategy_id": "short_horizon",
+            "validation_status": "unvalidated"
+          }
+        },
+        {
+          "signal_id": "5e770bba9a19446560f213684f5e85a2363f5c123d076109387a2bb083349a13",
+          "signal_sha256": "63f812444651d3fb8fc7366af5e1b5db0e934cb253a852f1ebc4b15edc03a518",
+          "timestamp": "2026-11-06T20:54:47.862275Z",
+          "strategy_id": "short_horizon",
+          "market_id": "6736347",
+          "event_id": "1322444",
+          "estimated_net_edge": 0.18649999999999992,
+          "lower_value": 0.7699999999999999,
+          "fee_rate": 0.05,
+          "slippage_per_share": 0.01,
+          "result": {
+            "account_id": "experimental-paper",
+            "intent": {
+              "available_at": "2026-11-06T20:54:48.496294Z",
+              "client_order_id": "ddffc1872b738e02b859a3ae5f8cd6a4e5ffe8586b60539e65ef129e20b26313",
+              "event_id": "1322444",
+              "expires_at": "2026-11-06T20:55:18.496294Z",
+              "id": "7fb9161df08d92e0e512b45f6ca1803004f96f2c2d39f258bccc950d397f6f1d",
+              "limit_price": 0.5,
+              "market_id": "6736347",
+              "opportunity_id": "5e770bba9a19446560f213684f5e85a2363f5c123d076109387a2bb083349a13",
+              "quantity": 5.0,
+              "schema_version": "1.0",
+              "side": "BUY",
+              "source": "experimental-paper/v1",
+              "tier": "standard",
+              "timestamp": "2026-11-06T20:54:48.496294Z",
+              "token_id": "111789010703112639001444379579956541933305260515284197833650660561804608023171"
+            },
+            "reasons": [
+              "kill_switch"
+            ],
+            "risk_decision": {
+              "approved": false,
+              "approved_notional": 0.0,
+              "available_at": "2026-11-06T20:54:48.496294Z",
+              "expires_at": "2026-11-06T20:54:48.496294Z",
+              "id": "c441cb99-b5ce-4b17-8de2-f72e05b1656d",
+              "intent_id": "7fb9161df08d92e0e512b45f6ca1803004f96f2c2d39f258bccc950d397f6f1d",
+              "reasons": [
+                "kill_switch"
+              ],
+              "reservation_id": null,
+              "schema_version": "1.0",
+              "source": "risk/v1",
+              "timestamp": "2026-11-06T20:54:48.496294Z"
+            },
+            "signal_id": "5e770bba9a19446560f213684f5e85a2363f5c123d076109387a2bb083349a13",
+            "status": "rejected",
+            "strategy_id": "short_horizon",
+            "validation_status": "unvalidated"
+          }
+        },
+        {
+          "signal_id": "bfbae5377e0a6a5af3fce59b6ae44d356ab7266a43a3beafea499972c4163ef2",
+          "signal_sha256": "11d8732f33dec905d79de4a671133186cfb50ae8ae1c8fd5b4bea7a791d44be4",
+          "timestamp": "2026-11-06T20:54:39.163427Z",
+          "strategy_id": "short_horizon",
+          "market_id": "6736347",
+          "event_id": "1322444",
+          "estimated_net_edge": 0.1654999999999999,
+          "lower_value": 0.7699999999999999,
+          "fee_rate": 0.05,
+          "slippage_per_share": 0.01,
+          "result": {
+            "account_id": "experimental-paper",
+            "intent": {
+              "available_at": "2026-11-06T20:54:39.480926Z",
+              "client_order_id": "3df1536fd4ec57ba5e958321f10db10ad80ac7facc398c41ed3ce86a697bdc15",
+              "event_id": "1322444",
+              "expires_at": "2026-11-06T20:55:09.480926Z",
+              "id": "743ac58e0933b2fd9fb7bf96bfed333f4c7e44313f31d9de2ca28529b010d6d4",
+              "limit_price": 0.52,
+              "market_id": "6736347",
+              "opportunity_id": "bfbae5377e0a6a5af3fce59b6ae44d356ab7266a43a3beafea499972c4163ef2",
+              "quantity": 5.0,
+              "schema_version": "1.0",
+              "side": "BUY",
+              "source": "experimental-paper/v1",
+              "tier": "standard",
+              "timestamp": "2026-11-06T20:54:39.480926Z",
+              "token_id": "111789010703112639001444379579956541933305260515284197833650660561804608023171"
+            },
+            "reasons": [
+              "kill_switch"
+            ],
+            "risk_decision": {
+              "approved": false,
+              "approved_notional": 0.0,
+              "available_at": "2026-11-06T20:54:39.480926Z",
+              "expires_at": "2026-11-06T20:54:39.480926Z",
+              "id": "feecbea8-27c5-4d24-8d0e-9fc8d16292a3",
+              "intent_id": "743ac58e0933b2fd9fb7bf96bfed333f4c7e44313f31d9de2ca28529b010d6d4",
+              "reasons": [
+                "kill_switch"
+              ],
+              "reservation_id": null,
+              "schema_version": "1.0",
+              "source": "risk/v1",
+              "timestamp": "2026-11-06T20:54:39.480926Z"
+            },
+            "signal_id": "bfbae5377e0a6a5af3fce59b6ae44d356ab7266a43a3beafea499972c4163ef2",
+            "status": "rejected",
+            "strategy_id": "short_horizon",
+            "validation_status": "unvalidated"
+          }
+        },
+        {
+          "signal_id": "48e42bb25aeddc0de55dfb01c2885e57759588ae427435eaca31dc67e78ef2fc",
+          "signal_sha256": "893326f7636d1b8e1ad4210423b5018a225d2659061fbf7c23a59f694d2c40b8",
+          "timestamp": "2026-11-06T19:18:13.585026Z",
+          "strategy_id": "short_horizon",
+          "market_id": "6736347",
+          "event_id": "1322444",
+          "estimated_net_edge": 0.0332500000000001,
+          "lower_value": 0.2550000000000001,
+          "fee_rate": 0.05,
+          "slippage_per_share": 0.01,
+          "result": {
+            "account_id": "experimental-paper",
+            "intent": {
+              "available_at": "2026-11-06T19:18:13.980489Z",
+              "client_order_id": "7c40a952aac911f467768296c450b24b89f703297435b85d061aeac5cc7ba810",
+              "event_id": "1322444",
+              "expires_at": "2026-11-06T19:18:43.980489Z",
+              "id": "c7c61ef11f69a0fdd925a05f5c000ce4e6f5528eb6670a616b65293549b33650",
+              "limit_price": 0.18,
+              "market_id": "6736347",
+              "opportunity_id": "48e42bb25aeddc0de55dfb01c2885e57759588ae427435eaca31dc67e78ef2fc",
+              "quantity": 11.11111111111111,
+              "schema_version": "1.0",
+              "side": "BUY",
+              "source": "experimental-paper/v1",
+              "tier": "standard",
+              "timestamp": "2026-11-06T19:18:13.980489Z",
+              "token_id": "111789010703112639001444379579956541933305260515284197833650660561804608023171"
+            },
+            "reasons": [
+              "kill_switch"
+            ],
+            "risk_decision": {
+              "approved": false,
+              "approved_notional": 0.0,
+              "available_at": "2026-11-06T19:18:13.980489Z",
+              "expires_at": "2026-11-06T19:18:13.980489Z",
+              "id": "bacf01b5-a182-46e1-b1a7-b0f951aa1ecf",
+              "intent_id": "c7c61ef11f69a0fdd925a05f5c000ce4e6f5528eb6670a616b65293549b33650",
+              "reasons": [
+                "kill_switch"
+              ],
+              "reservation_id": null,
+              "schema_version": "1.0",
+              "source": "risk/v1",
+              "timestamp": "2026-11-06T19:18:13.980489Z"
+            },
+            "signal_id": "48e42bb25aeddc0de55dfb01c2885e57759588ae427435eaca31dc67e78ef2fc",
+            "status": "rejected",
+            "strategy_id": "short_horizon",
+            "validation_status": "unvalidated"
+          }
+        },
+        {
+          "signal_id": "2bc49b2d900208977c25677e72676f8fcd9206dc39a28739cc50e65f42381df4",
+          "signal_sha256": "c1c403a80c027eacdaeffc811296624c165fa90c8ef9f7116a6dde3471cea492",
+          "timestamp": "2026-11-06T17:53:30.181453Z",
+          "strategy_id": "short_horizon",
+          "market_id": "6722815",
+          "event_id": "1320893",
+          "estimated_net_edge": 0.03799999999999999,
+          "lower_value": 0.26,
+          "fee_rate": 0.05,
+          "slippage_per_share": 0.01,
+          "result": {
+            "account_id": "experimental-paper",
+            "intent": {
+              "available_at": "2026-11-06T17:53:30.585931Z",
+              "client_order_id": "9458525594f738de5ecc2283d663c3bc5a747acdc6541c31845386f7196c01e8",
+              "event_id": "1320893",
+              "expires_at": "2026-11-06T17:54:00.585931Z",
+              "id": "21fd5ee17129c5e042575012b7ea6109a57b6d43578d1bd8a6e98dce2c55dbbf",
+              "limit_price": 0.18,
+              "market_id": "6722815",
+              "opportunity_id": "2bc49b2d900208977c25677e72676f8fcd9206dc39a28739cc50e65f42381df4",
+              "quantity": 11.11111111111111,
+              "schema_version": "1.0",
+              "side": "BUY",
+              "source": "experimental-paper/v1",
+              "tier": "standard",
+              "timestamp": "2026-11-06T17:53:30.585931Z",
+              "token_id": "57348904306920876724743027504363549796773646692053685107954202809389155083101"
+            },
+            "reasons": [
+              "kill_switch"
+            ],
+            "risk_decision": {
+              "approved": false,
+              "approved_notional": 0.0,
+              "available_at": "2026-11-06T17:53:30.585931Z",
+              "expires_at": "2026-11-06T17:53:30.585931Z",
+              "id": "5a5a3dee-42ec-4c0f-92d4-8f2637edde74",
+              "intent_id": "21fd5ee17129c5e042575012b7ea6109a57b6d43578d1bd8a6e98dce2c55dbbf",
+              "reasons": [
+                "kill_switch"
+              ],
+              "reservation_id": null,
+              "schema_version": "1.0",
+              "source": "risk/v1",
+              "timestamp": "2026-11-06T17:53:30.585931Z"
+            },
+            "signal_id": "2bc49b2d900208977c25677e72676f8fcd9206dc39a28739cc50e65f42381df4",
+            "status": "rejected",
+            "strategy_id": "short_horizon",
+            "validation_status": "unvalidated"
+          }
+        }
+      ],
+      "current_estimated_net_edge": null,
+      "realized_trading_advantage": null,
+      "baseline_superiority": null,
+      "liquidity": "current authentic complete bid/ask, spread<=0.05, source age<=15s, participation<=25%, verified fees",
+      "cost_model": "lower exit-bid mark*(1-fee)-entry ask*(1+fee)-0.02; minimum0.03/share",
+      "risk_ready": false,
+      "certified_approval": false,
+      "experimental_authorization_is_not_certification": true
+    },
+    {
+      "strategy_id": "calibrated_forecast",
+      "registered": true,
+      "suspended": false,
+      "order_admission_supported_by_current_engine": false,
+      "valuation_target": "independent terminal outcome probability",
+      "missing_prerequisites": [
+        "independent context",
+        "verified event labels",
+        "held-out probability calibration"
+      ],
+      "calibration": "unsupported/insufficient independent evidence",
+      "epoch_counts": {
+        "cancelled_orders": 0,
+        "candidate_signals": 0,
+        "duplicate_signals": 76042,
+        "emitted_signals": 220470,
+        "expired_orders": 0,
+        "fills": 0,
+        "markets_considered": 296512,
+        "order_attempts": 0,
+        "qualified_opportunities": 0,
+        "rejected_signals": 296512,
+        "risk_rejections": 0,
+        "submitted_orders": 0,
+        "valid_observations": 216865
+      },
+      "latest_cycle_counts": {
+        "cancelled_orders": 0,
+        "candidate_signals": 0,
+        "duplicate_signals": 16,
+        "emitted_signals": 48,
+        "expired_orders": 0,
+        "fills": 0,
+        "markets_considered": 64,
+        "order_attempts": 0,
+        "qualified_opportunities": 0,
+        "rejected_signals": 64,
+        "risk_rejections": 0,
+        "submitted_orders": 0,
+        "valid_observations": 51
+      },
+      "epoch_rejections": {
+        "independent_context_verified_labels_and_calibration_required": {
+          "count": 296512,
+          "category": "CERTIFICATION DEPENDENCY"
+        },
+        "large_spread": {
+          "count": 10,
+          "category": "MARKET CONDITION"
+        },
+        "missing_book": {
+          "count": 11654,
+          "category": "MISSING EVIDENCE"
+        },
+        "missing_liquidity": {
+          "count": 11279,
+          "category": "MISSING EVIDENCE"
+        },
+        "out_of_order_book": {
+          "count": 82,
+          "category": "MISSING EVIDENCE"
+        },
+        "stale_book": {
+          "count": 61062,
+          "category": "MISSING EVIDENCE"
+        },
+        "unknown_fee_schedule": {
+          "count": 23500,
+          "category": "MISSING EVIDENCE"
+        }
+      },
+      "recorded_recent_attempts": [],
+      "current_estimated_net_edge": null,
+      "realized_trading_advantage": null,
+      "baseline_superiority": null,
+      "liquidity": "current authentic complete bid/ask, spread<=0.05, source age<=15s, participation<=25%, verified fees",
+      "cost_model": "lower exit-bid mark*(1-fee)-entry ask*(1+fee)-0.02; minimum0.03/share",
+      "risk_ready": false,
+      "certified_approval": false,
+      "experimental_authorization_is_not_certification": true
+    }
+  ],
+  "scope": "Trace epoch counters cumulative; latest-cycle counters replace; rejection counts overlap. Recent attempts last100, not independent validation events.",
+  "trading_authority": false,
+  "certified_authority": false
+}
