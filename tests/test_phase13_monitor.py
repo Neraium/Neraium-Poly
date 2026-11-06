@@ -32,7 +32,7 @@ def test_sports_view_phone_keeps_distinctions_and_null_scores():
         assert "Independent 0 Baseline 24" in out
         assert "Brier unavailable" in out
         assert "research-only" in out
-        assert "Upcoming 2 Map fail 4" in out
+        assert "Upcoming 2 Map rej 4" in out
 
 
 def test_sports_unavailable_never_invents_observations():

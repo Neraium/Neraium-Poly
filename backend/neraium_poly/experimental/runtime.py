@@ -108,6 +108,7 @@ class ExperimentalRuntime:
                     interval=config.event_forecast_interval,
                     max_forecasts=config.event_forecasts_per_cycle,
                     max_bytes=config.event_ledger_mb * 1024 * 1024,
+                    sports_enabled=config.sports_research_enabled,
                 )
             except Exception as error:
                 self.event_research_initialization_error = f"{type(error).__name__}:{str(error)[:160]}"
@@ -228,7 +229,17 @@ class ExperimentalRuntime:
         now = self.clock()
         if not self._budget_ok():
             self.last_error = "experimental_storage_budget_exhausted"
-            self.account.stop(now=now)
+            if not self.account.snapshot(now=now)["kill_switch"]:
+                self.account.stop(now=now)
+            # The paper account remains fail-closed. Separately bounded research
+            # may read public observations without writing paper execution evidence.
+            if self.event_intelligence is not None:
+                try:
+                    research_frame = await self.feed.read()
+                    with self._lock:
+                        self.event_intelligence.on_sports_frame(research_frame, self.clock())
+                except Exception as error:  # noqa: BLE001 - source failure preserves the stop
+                    self.event_intelligence.sports_error = f"{type(error).__name__}:{str(error)[:120]}"
             self._cancel_and_checkpoint(now)
             return
         frame = await self.feed.read()
@@ -346,7 +357,7 @@ class ExperimentalRuntime:
             self._trace_execution()
             if self.event_intelligence is not None:
                 try:
-                    self.event_intelligence.on_frame(selected, self.clock())
+                    self.event_intelligence.on_frame(selected, self.clock(), sports_frame=frame)
                 except Exception as error:
                     self.event_intelligence.last_error = f"{type(error).__name__}:{str(error)[:160]}"
                     log.exception("event_research_withheld")

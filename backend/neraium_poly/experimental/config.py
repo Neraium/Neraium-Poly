@@ -25,6 +25,7 @@ class ExperimentalConfig(BaseModel):
     research_report_path: Path | None = Path("data/phase11-results/latest.json")
     event_model_report_path: Path | None = Path("data/phase12-results/latest.json")
     event_research_enabled: bool = True
+    sports_research_enabled: bool = True
     event_dataset_path: Path | None = Path("data/phase12/dataset-v3")
     event_forecast_interval: float = Field(default=300, ge=60, le=86400)
     event_forecasts_per_cycle: int = Field(default=6, ge=1, le=20)

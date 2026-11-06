@@ -3,7 +3,7 @@
 from datetime import datetime
 from typing import Literal
 
-from pydantic import Field, model_validator
+from pydantic import BaseModel, ConfigDict, Field, model_validator
 
 from neraium_poly.contracts import Record
 
@@ -91,4 +91,28 @@ class VerifiedEventOutcome(Record):
     def finalized(self):
         if self.settled_at.tzinfo is None or self.settled_at > self.available_at:
             raise ValueError("verified past settlement time required")
+        return self
+
+
+class SettlementProofReference(BaseModel):
+    """Bind exchange proof to an original external forecast, without binary semantics.
+
+    This is a read-only proof locator, never a forecast/model admission record.
+    The caller must verify the original immutable journal record separately.
+    """
+    model_config = ConfigDict(extra="forbid", frozen=True, allow_inf_nan=False)
+    reference_kind: Literal["original_external_forecast_v1"] = "original_external_forecast_v1"
+    id: str = Field(min_length=1, max_length=256)
+    event_id: str = Field(min_length=1, max_length=256)
+    market_id: str = Field(min_length=1, max_length=256)
+    token_id: str = Field(min_length=1, max_length=256)
+    timestamp: datetime
+    evidence_cutoff: datetime
+    resolution_rules_sha256: str = Field(pattern=SHA)
+    original_record_sha256: str = Field(pattern=SHA)
+
+    @model_validator(mode="after")
+    def causal(self):
+        if self.timestamp.tzinfo is None or self.evidence_cutoff.tzinfo is None or self.evidence_cutoff > self.timestamp:
+            raise ValueError("aware original preforecast cutoff required")
         return self

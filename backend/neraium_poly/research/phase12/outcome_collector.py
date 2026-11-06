@@ -16,7 +16,11 @@ import httpx
 from neraium_poly.contracts import MarketSnapshot
 from neraium_poly.data.operational import OperationalPolymarketAdapter, SettlementObservation
 from neraium_poly.data.polymarket import CLOB, DATA, GAMMA
-from neraium_poly.research.phase12.contracts import EventForecast, VerifiedEventOutcome
+from neraium_poly.research.phase12.contracts import (
+    EventForecast,
+    SettlementProofReference,
+    VerifiedEventOutcome,
+)
 from neraium_poly.research.qualification import _load_proofs
 from neraium_poly.research.settlement_evidence import HEX32, ReadOnlySettlementClient, canonical
 
@@ -29,6 +33,14 @@ TOTAL_BYTES = 32 * 1024 * 1024
 def _sha(value):
     return hashlib.sha256(canonical(value)).hexdigest()
 
+
+
+def _forecast_reference(value):
+    # Only an explicitly typed proof reference may omit binary forecast fields.
+    # Full revalidation also rejects model_copy bypasses of shared contracts.
+    if isinstance(value, SettlementProofReference):
+        return SettlementProofReference.model_validate(value.model_dump())
+    return EventForecast.model_validate(value.model_dump() if isinstance(value, EventForecast) else value)
 
 def _inputs(forecast, market):
     return (
@@ -217,7 +229,7 @@ async def acquire_verified_outcome(
     only for an actual pending forecast whose scheduled event has ended. The
     caller controls cadence; this function does not create a service or trade.
     """
-    forecast = forecast if isinstance(forecast, EventForecast) else EventForecast.model_validate(forecast)
+    forecast = _forecast_reference(forecast)
     market = market if isinstance(market, MarketSnapshot) else MarketSnapshot.model_validate(market)
     if not _inputs(forecast, market):
         return None
@@ -291,7 +303,7 @@ def verify_collected_outcome(outcome, market, forecast, rootdirectory):
             if isinstance(outcome, VerifiedEventOutcome)
             else VerifiedEventOutcome.model_validate(outcome)
         )
-        forecast = forecast if isinstance(forecast, EventForecast) else EventForecast.model_validate(forecast)
+        forecast = _forecast_reference(forecast)
         market = market if isinstance(market, MarketSnapshot) else MarketSnapshot.model_validate(market)
         if not _inputs(forecast, market) or outcome.proof_sha256 != _sha(outcome.verification):
             return False

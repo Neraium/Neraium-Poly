@@ -22,7 +22,12 @@ from neraium_poly.contracts import MarketSnapshot, OrderBookSnapshot
 from neraium_poly.data import assess_book
 from neraium_poly.experimental.account import PUBLIC_BOOK_SOURCES
 from neraium_poly.research.phase12.admission import assess_event_proposal
-from neraium_poly.research.phase12.contracts import EventEvidence, EventForecast, VerifiedEventOutcome
+from neraium_poly.research.phase12.contracts import (
+    EventEvidence,
+    EventForecast,
+    SettlementProofReference,
+    VerifiedEventOutcome,
+)
 from neraium_poly.research.phase12.ledger import content_sha256
 from neraium_poly.research.phase13.contracts import SportsGame, SportsMapping, SportsPrediction
 
@@ -136,16 +141,8 @@ class TernarySportsOutcome(BaseModel):
         return self
 
 
-class SportsSettlementReference(BaseModel):
-    """Original journal reference for settlement proofs, not a binary forecast."""
-
-    id: str
-    event_id: str
-    market_id: str
-    token_id: str
-    timestamp: datetime
-    evidence_cutoff: datetime
-    resolution_rules_sha256: str
+class SportsSettlementReference(SettlementProofReference):
+    """Original sports journal proof reference; no binary probability assertion."""
 
 
 class SportsForecastJournal:
@@ -200,6 +197,10 @@ class SportsForecastJournal:
                 or row["chain"] != content_sha256([previous, row["kind"], row["id"], row["digest"]])
             ):
                 raise ValueError("corrupt sports forecast journal")
+            payload = self._typed(row["kind"], json.loads(row["payload"])).model_dump(mode="json")
+            expected_id = payload["id"] if row["kind"] == "forecast" else "outcome:" + payload["forecast_id"]
+            if expected_id != row["id"]:
+                raise ValueError("sports journal payload identity mismatch")
             previous = row["chain"]
         return {"records": count, "head_sha256": previous, "integrity": "verified"}
 
@@ -223,6 +224,9 @@ class SportsForecastJournal:
 
     def _append(self, kind, identity, payload):
         payload = self._typed(kind, payload).model_dump(mode="json")
+        expected_id = payload["id"] if kind == "forecast" else "outcome:" + payload["forecast_id"]
+        if identity != expected_id:
+            raise ValueError("sports journal payload identity mismatch")
         text = json.dumps(payload, sort_keys=True, separators=(",", ":"), allow_nan=False)
         if kind not in {"forecast", "outcome"} or len(text.encode()) > 128 * 1024:
             raise ValueError("bounded typed sports record required")
@@ -372,7 +376,8 @@ class SportsResearchRuntime:
             now = self.clock()
             if (
                 self.last_attempt
-                and (now - datetime.fromisoformat(self.last_attempt)).total_seconds() < self.interval
+                and (now - datetime.fromisoformat(self.last_attempt)).total_seconds()
+                < (min(300, self.interval) if self.last_error else self.interval)
             ):
                 return
             self.last_attempt = now.isoformat()
@@ -746,6 +751,26 @@ class SportsResearchRuntime:
             self.outcome_status["last_result"] = result
             return result
 
+    def replay_ternary_forecast(self, record):
+        """Revalidate original independent derivation before scoring a recovered record."""
+        from neraium_poly.research.phase13.mapping import map_market
+        from neraium_poly.research.phase13.models import predict_game
+
+        try:
+            original = TernarySportsForecast.model_validate(record)
+            data = self._load(original.snapshot)
+            if self._dataset_identity(data) != original.source_dataset_sha256:
+                return False
+            mapping = map_market(original.market, data["games"], now=original.timestamp)
+            if mapping != original.mapping or any(a.available_at > original.timestamp for a in data["artifacts"]):
+                return False
+            target = self._target(data, mapping)
+            prediction = predict_game(data["games"], target, mapping.selected_team_id,
+                                      original.timestamp, method="frequency")
+            return prediction == original.prediction
+        except Exception:  # noqa: BLE001 - a stored record cannot self-attest model derivation
+            return False
+
     def _replay_outcome(self, result):
         """Reverify original source, result source and exchange proof after restart."""
         from neraium_poly.research.phase12.outcome_collector import verify_collected_outcome
@@ -754,6 +779,8 @@ class SportsResearchRuntime:
         try:
             result = TernarySportsOutcome.model_validate(result).model_dump(mode="json")
             original = next(f for f in self.journal.records("forecast") if f["id"] == result["forecast_id"])
+            if self.replay_ternary_forecast(original) is not True:
+                return False
             mapping = SportsMapping.model_validate(original["mapping"])
             source = self._load(original["snapshot"])
             if self._dataset_identity(source) != original["source_dataset_sha256"]:
@@ -762,6 +789,7 @@ class SportsResearchRuntime:
             market = MarketSnapshot.model_validate(original["market"])
             reference = SportsSettlementReference(
                 id=original["id"],
+                original_record_sha256=content_sha256(original),
                 event_id=mapping.event_id,
                 market_id=mapping.market_id,
                 token_id=mapping.token_id,
@@ -781,6 +809,8 @@ class SportsResearchRuntime:
             if checked != result["corroboration"]:
                 return False
             game = self._target(data, mapping)
+            if SportsGame.model_validate(result["sports_result"]) != game:
+                return False
             if self.data is not None:
                 latest = self._target(self.data, mapping)
                 if (latest.status, latest.starts_at, latest.home_score, latest.away_score) != (
@@ -844,6 +874,7 @@ class SportsResearchRuntime:
                 market = MarketSnapshot.model_validate(record["market"])
                 reference = SportsSettlementReference(
                     id=record["id"],
+                    original_record_sha256=content_sha256(record),
                     event_id=mapping.event_id,
                     market_id=mapping.market_id,
                     token_id=mapping.token_id,
@@ -865,7 +896,7 @@ class SportsResearchRuntime:
                 ):
                     raise ValueError("native_and_finalized_exchange_proof_unavailable")
                 result = corroborate_sports_outcome(
-                    outcome, reference, market, mapping, self.data["games"], self.data["artifacts"], now=now
+                    outcome, reference, market, mapping, self.data["games"], self.data["artifacts"], now=self.clock()
                 )
                 if not result["accepted"]:
                     self.outcome_status["last_result"] = result
@@ -927,6 +958,11 @@ class SportsResearchRuntime:
         now = self.clock()
         return {
             "status": "research_only" if self.data else "external_evidence_unavailable",
+            "model_version": forecasts[-1]["prediction"]["model_version"] if forecasts else None,
+            "model_versions": [{"model_version": v[0], "model_sha256": v[1], "feature_version": v[2]}
+                               for v in sorted({(f["prediction"]["model_version"], f["prediction"]["model_sha256"],
+                                                 f["prediction"]["feature_version"]) for f in forecasts})],
+            "source_status": "qualified_research_only" if self.data else "unavailable",
             "upcoming_mapped_events_last_frame": len(self.last_eligible_games),
             "mapping_failures": dict(self.rejections),
             "upcoming_source_events": sum(g.status == "scheduled" and g.starts_at > now for g in games),

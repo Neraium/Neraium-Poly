@@ -34,6 +34,7 @@ class EventResearchRuntime:
         interval=300,
         max_forecasts=6,
         max_bytes=64 * 1024 * 1024,
+        sports_enabled=False,
     ):
         from neraium_poly.research.phase12.ledger import EventForecastLedger
         from neraium_poly.research.phase12.relationships import EventRelationshipEngine
@@ -74,6 +75,19 @@ class EventResearchRuntime:
             if state.get("relationships"):
                 self.relationships.restore(state["relationships"])
             self.relationship_status = state.get("relationship_status", {})
+            self.sports = None
+            self.sports_error = None
+            if sports_enabled:
+                from neraium_poly.research.phase13.runtime import SportsResearchRuntime
+
+                try:
+                    self.sports = SportsResearchRuntime(
+                        self.ledger, self.directory / "sports", clock=self.clock,
+                        state=state.get("sports", {}),
+                    )
+                except Exception as error:  # noqa: BLE001 - withhold child, preserve baseline ledger/account
+                    self.sports_error = f"{type(error).__name__}:{str(error)[:160]}"
+
         except BaseException:
             self.ledger.close()
             raise
@@ -100,7 +114,16 @@ class EventResearchRuntime:
             ):
                 self.ledger.record_outcome(outcome)
 
-    def on_frame(self, frame, now):
+    def on_sports_frame(self, frame, now):
+        """Independent bounded research can continue while paper admission is suspended."""
+        if self.sports is not None:
+            try:
+                self.sports.on_frame(frame, now)
+                self.sports_error = None
+            except Exception as error:  # noqa: BLE001 - research failure cannot grant order authority
+                self.sports_error = f"{type(error).__name__}:{str(error)[:160]}"
+
+    def on_frame(self, frame, now, *, sports_frame=None):
         if (
             frame.producer_health.get("status") != "ok"
             or frame.timestamp > now
@@ -110,6 +133,7 @@ class EventResearchRuntime:
             self.last_error = "fresh_healthy_event_frame_required"
             self.rejections[self.last_error] += 1
             return
+        self.on_sports_frame(sports_frame or frame, now)
         self.relationship_status = self.relationships.observe(frame, now)
         if self.last_at and (now - datetime.fromisoformat(self.last_at)).total_seconds() < self.interval:
             return
@@ -217,6 +241,7 @@ class EventResearchRuntime:
     def checkpoint(self):
         return {
             "ledger_head": self.ledger.verify(),
+            "sports": self.sports.checkpoint() if self.sports is not None else {},
             "resolution_attempts": self.resolution_attempts,
             "resolution_status": self.resolution_status,
             "last_at": self.last_at,
@@ -242,6 +267,9 @@ class EventResearchRuntime:
         }
         return {
             **self.ledger.summary(now=self.clock()),
+            "sports": self.sports.summary() if self.sports is not None else {
+                "status": "unavailable", "last_error": self.sports_error or "sports research disabled",
+            },
             "last_evaluation_at": self.last_at,
             "last_error": self.last_error,
             "totals": dict(self.totals),
@@ -270,6 +298,12 @@ class EventResearchRuntime:
             verify_collected_outcome,
         )
 
+        if self.sports is not None:
+            try:
+                await self.sports.refresh()
+                await self.sports.resolve_pending()
+            except Exception as error:  # noqa: BLE001 - retain independent and baseline records unscored
+                self.sports_error = f"{type(error).__name__}:{str(error)[:160]}"
         now = self.clock()
         for forecast in self.ledger.pending_forecasts():
             if (
@@ -320,4 +354,8 @@ class EventResearchRuntime:
             return
 
     def close(self):
-        self.ledger.close()
+        try:
+            if self.sports is not None:
+                self.sports.close()
+        finally:
+            self.ledger.close()

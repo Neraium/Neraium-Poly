@@ -651,8 +651,15 @@ def _render_sports_events(certified, experimental, event, width, height, errors)
     sports = _mapping(event.get("sports"))
     available = sports.get("status") not in {None, "unavailable", "invalid", "stale"}
     operation = _mapping(certified.get("operation"))
-    scores = _mapping(event.get("scores")) if available else {}
-    source = _mapping(sports.get("source"))
+    scores = _mapping(sports.get("scores")) if available else {}
+    source = _mapping(sports.get("source_qualification", sports.get("source")))
+    ternary = sports.get("ternary_research_forecasts", event.get("independent_model_forecasts")) if available else None
+    mapping_failures = sports.get("mapping_failures") if available else None
+    if isinstance(mapping_failures, dict):
+        mapping_failures = sum(v for k, v in mapping_failures.items() if k.startswith("mapping_") and isinstance(v, int))
+    versions = sorted({str(_mapping(row).get("model_version")) for row in sports.get("model_versions", [])
+                       if isinstance(row, dict)})
+    model_version = sports.get("model_version") or (versions[0] if versions else None)
     rejection = sports.get("last_rejection") or sports.get("last_error")
     reasons = _mapping(sports.get("rejections"))
     if not rejection and reasons:
@@ -671,21 +678,21 @@ def _render_sports_events(certified, experimental, event, width, height, errors)
         ("REAL MARKET DATA", "bold cyan", 0),
         (f"Markets {_number(_mapping(operation.get('scan')).get('discovered_markets'))} WS {_flag(_mapping(operation.get('connectivity')).get('ws_connected'), 'up', 'down')}", "white", 2),
         ("RESEARCH FORECAST", "bold yellow", 0),
-        (f"Upcoming {number('upcoming_eligible_events')} Map fail {number('mapping_failures')}", "white", 1),
-        (f"Independent {count('independent_model_forecasts')} Baseline {count('market_baseline_forecasts')}", "white", 0),
-        (f"Pending {count('forecasts_pending')} Resolved {count('forecasts_resolved')}", "white", 1),
+        (f"Upcoming {_number(sports.get('upcoming_mapped_events_last_frame', sports.get('upcoming_eligible_events')) if available else None)} Map rej {_number(mapping_failures)}", "white", 1),
+        (f"Independent {_number(ternary)} Baseline {count('market_baseline_forecasts')}", "white", 0),
+        (f"WTL pending {_number(sports.get('ternary_pending') if available else None)} done {_number(sports.get('ternary_resolved') if available else None)}", "white", 1),
         (f"Independent groups {count('independent_event_groups')}", "dim", 2),
-        (f"Model {_research_text(sports.get('model_version'))}", "dim", 2),
-        (f"Source {_research_text(source.get('status', sports.get('source_status')))}", "dim", 1),
-        (f"Data as of {_seen(sports.get('last_refresh_at'))}", "dim", 3),
+        (f"Model {_research_text(model_version if available else None)}", "dim", 2),
+        (f"Source {_research_text(sports.get('source_status') or source.get('license') or 'unavailable')}", "dim", 1),
+        (f"Data as of {_seen(sports.get('last_source_success', sports.get('last_refresh_at')))}", "dim", 3),
         (f"Block {_reason_label(rejection or 'insufficient_independent_evidence')}", "yellow", 1),
         (f"Brier {_event_metric(scores.get('brier'))} n={_number(scores.get('count'))}", "white", 2),
         (f"Market Brier {_event_metric(scores.get('market_brier'))}", "dim", 2),
         (f"Log loss {_event_metric(scores.get('log_loss'))}", "white", 3),
-        (f"Cal {_research_text(event.get('calibration_status'))}", "dim", 2),
+        (f"Cal {_research_text(sports.get('calibration_status'))}", "dim", 2),
         (f"Settlement {_number(resolution.get('verified'))}/{_number(resolution.get('attempts'))}", "dim", 3),
         (f"History {_number(history.get('chain_corroborated_exact_settlement_groups'))} Train/test {_number(history.get('qualified_training_events'))}/{_number(history.get('qualified_heldout_events'))}", "dim", 3),
-        (f"SII {_number(_mapping(sports.get('relationships')).get('persistent_findings'))} descriptive only", "dim", 3),
+        (f"SII {_number(_mapping(sports.get('relationships')).get('descriptive_findings'))} descriptive only", "dim", 3),
         ("EXPERIMENTAL PAPER", "bold yellow", 0),
         (f"{_number(experimental.get('cash'), True)} P/L {_number(experimental.get('simulated_pnl'), True)}", "white", 0),
         (f"Orders {_number(_count(experimental.get('orders')))} Fills {_number(experimental.get('fills'))}", "white", 2),
