@@ -520,3 +520,69 @@ async def test_expiry_during_fee_fetch_never_submits_order(tmp_path, now):
         assert "strategy_revoked_or_expired" in runtime.last_cycle["suppression_reasons"]
     finally:
         await runtime.close()
+
+
+async def test_reviewed_settlement_rejects_misrouted_resolution_before_capital_changes(tmp_path, now):
+    clock = Clock(now)
+    adapter = FakeAdapter(clock)
+    validation = TestOnlyValidation(clock)
+    validation.activation = fixture_activation(clock, adapter.markets())
+    runtime = LivePaperRuntime(configuration(tmp_path), adapter=adapter, validation=validation, clock=clock)
+    try:
+        for _ in range(20):
+            await cycle(runtime, clock)
+        for _ in range(3):
+            await cycle(runtime, clock, shift=True)
+        position = runtime.risk.positions(now=clock())[0]
+        market = runtime.markets[position.token_id]
+        runtime.config = LivePaperConfig.model_validate(
+            {
+                **runtime.config.model_dump(),
+                "allow_simulated_settlement": True,
+                "settlement_review_actor": "TEST-ONLY external semantics review",
+                "settlement_rule_hashes": {
+                    market.token_id: identity(
+                        market.market_id,
+                        market.token_id,
+                        market.outcome,
+                        market.resolution_rules,
+                        market.resolution_source,
+                    )
+                },
+            }
+        )
+        valid = SettlementObservation(
+            id="misrouted-test-resolution",
+            timestamp=clock(),
+            available_at=clock(),
+            source="synthetic-resolution-test",
+            market_id=market.market_id,
+            event_id=market.event_id,
+            token_id=market.token_id,
+            condition_id="test-condition",
+            payout=1,
+            resolution_source=market.resolution_source,
+            resolution_rules=market.resolution_rules,
+            transaction_hash="test-tx",
+            outcome_index=0,
+            reporter="UMA_OO",
+        )
+        before = runtime.risk.snapshot(now=clock())
+        for updates in [
+            {"token_id": "wrong-token"},
+            {"market_id": "wrong-market"},
+            {"event_id": "wrong-event"},
+            {"resolution_rules": "changed-rules"},
+            {"resolution_source": "wrong-source"},
+            {"payout": 0.5},
+            {"condition_id": ""},
+            {"transaction_hash": ""},
+        ]:
+            adapter.settlement_result = valid.model_copy(update=updates)
+            await runtime._settle(clock())
+            assert runtime.risk.snapshot(now=clock())["cash"] == before["cash"]
+            assert runtime.risk.positions(now=clock())
+            assert runtime.last_error == "settlement_observation_identity_or_rules_mismatch"
+        assert runtime.state()["operation"]["settlements"] == 0
+    finally:
+        await runtime.close()
