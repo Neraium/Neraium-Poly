@@ -1,0 +1,64 @@
+{
+  "automatic_promotion": false,
+  "certification_authority": false,
+  "created_at": "2026-11-06T04:52:28.028371+00:00",
+  "dataset": "/home/ubuntu/Neraium-Poly/data/phase11-adaptive/dataset-20261106T045212956959Z",
+  "dataset_sha256": "8a996096cc3870389d9cde14064a844aeb46d254a07cb47647aac0389af6359e",
+  "experiment_id": "81416ab5993cb25953a46266980ccc97",
+  "processes": {
+    "actual_cpu_worker_pids": [
+      3033143,
+      3033146
+    ],
+    "control_processes": "Coordinator plus multiprocessing resource tracker; not CPU workers",
+    "coordinator_pid": 3033116,
+    "peak_concurrent_tasks": 2,
+    "requested_workers": 2,
+    "resource_tracker_pid": 3033142,
+    "tasks": [
+      {
+        "completed_at": "2026-11-06T04:52:24.461668+00:00",
+        "numerical_threads": 1,
+        "peak_rss_kib": 669664,
+        "pid": 3033143,
+        "started_at": "2026-11-06T04:52:21.122190+00:00",
+        "study": "microstructure"
+      },
+      {
+        "completed_at": "2026-11-06T04:52:26.937644+00:00",
+        "numerical_threads": 1,
+        "peak_rss_kib": 669664,
+        "pid": 3033146,
+        "started_at": "2026-11-06T04:52:21.122046+00:00",
+        "study": "models"
+      },
+      {
+        "completed_at": "2026-11-06T04:52:27.771753+00:00",
+        "numerical_threads": 1,
+        "peak_rss_kib": 669664,
+        "pid": 3033143,
+        "started_at": "2026-11-06T04:52:24.591551+00:00",
+        "study": "relationships"
+      }
+    ]
+  },
+  "result_files": {
+    "microstructure.json": "69864df4a96a4aa94cf45c8ff56f709c0047f72cf0c61a501319ffce77dea425",
+    "models.json": "6432daaddc1915f80924cf9806ab3123d2944353c77f1b2c63f80403aebac875",
+    "relationships.json": "b315e05bdda47280c86c3a05e1577361e0a8e574741b57fcc2feeecdc67f6879",
+    "summary.json": "29e5c2096e9050bf2ca38b311762721ab86b26eb66089107defdb3bf6335094e"
+  },
+  "schema_version": "1.0",
+  "source_files": {
+    "__init__.py": "51dd764222b8016f7ce89aa97b9d7a75b4c6a3dae19c3f0db01593865d6fe506",
+    "adaptive.py": "ba5b2832f8dc68308f3faff3f68855ee2ce96b3f530067a65110f35e60c81369",
+    "contracts.py": "6a601a96348c87cd2b9fe716a1d7e00a083771fb08767175b33b2cb7787faca0",
+    "dataset.py": "58cc81ae042f2503791bc205556065d8fbcbbcdd6b3c1ee7a6db5a155a10fd16",
+    "framework.py": "793b9c0c913ebe890113a46f5bba4a9bee6616cbf4d9ebc55e06e8d1fc46b526",
+    "historical.py": "15566de2ab0d560c841fe5e9b2d2efd27ee77658d9e2d2b8b8f443c5db9d6edb",
+    "microstructure.py": "2b3bc7c7ca5ed47f3c28032c67037f1e953b31e661df79aa3dfdf4405d184720",
+    "models.py": "57b1fe84cec430c1251e1848fe89243bc8938523f12a9f9f024221feeab5d790",
+    "relationships.py": "f1f5cbf6aca3aed2ff38ad5b01af4443b6affda0276f6799183f31f90245d74d",
+    "segments.py": "9ad0e44edb8af25a9e9906a8fdaa235bc024fa49693ea0b8d69836f2ddb07425"
+  }
+}

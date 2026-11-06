@@ -1,0 +1,50 @@
+{
+  "certified": {
+    "cash": 500.0,
+    "bankroll": 500.0,
+    "simulated_pnl": 0.0,
+    "positions": [],
+    "orders": [],
+    "health": {
+      "status": "ok",
+      "paper_trading": true,
+      "live_trading_enabled": false,
+      "mode": "live_market_paper",
+      "trading_status": "validation_blocked",
+      "last_ingestion_at": "2026-11-06T04:41:20.664727+00:00",
+      "last_ingestion_age_seconds": 0.008197,
+      "last_error": null,
+      "ledger_consistent": true,
+      "timestamp": "2026-11-06T04:41:20.672924+00:00"
+    }
+  },
+  "experimental": {
+    "cash": 500.0,
+    "bankroll": 500.0,
+    "simulated_pnl": 0.0,
+    "positions": [],
+    "orders": [],
+    "health": {
+      "status": "ok",
+      "account_id": "experimental-paper",
+      "validation_status": "unvalidated",
+      "paper_trading": true,
+      "live_trading_enabled": false,
+      "last_ingestion_at": "2026-11-06T04:41:19.721540+00:00",
+      "last_ingestion_age_seconds": 1.009113,
+      "last_error": null,
+      "fee_error": null,
+      "timestamp": "2026-11-06T04:41:20.730653+00:00"
+    }
+  },
+  "timestamp": "2026-11-06T04:41:20.745321+00:00",
+  "logical_cpus": 32,
+  "disk_free_bytes": 30094917632,
+  "base_head": "4a2ab3aedf2772ffc38c827224f061c1b8f9246b",
+  "worktree": "/home/ubuntu/Neraium-Poly",
+  "branch": "main",
+  "archive_bytes": {
+    "paper-live": 1081027320,
+    "experimental-paper": 230092008
+  }
+}

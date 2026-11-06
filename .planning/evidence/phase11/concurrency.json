@@ -1,0 +1,167 @@
+{
+  "writing_subagents": 3,
+  "coordinator_agents": 1,
+  "peak_analysis_tasks_across_jobs": 4,
+  "analysis_worker_launches": 8,
+  "analysis_runs": [
+    {
+      "actual_cpu_worker_pids": [
+        3032959,
+        3032962
+      ],
+      "control_processes": "Coordinator plus multiprocessing resource tracker; not CPU workers",
+      "coordinator_pid": 3032565,
+      "peak_concurrent_tasks": 2,
+      "requested_workers": 2,
+      "resource_tracker_pid": 3032958,
+      "tasks": [
+        {
+          "completed_at": "2026-11-06T04:51:44.823190+00:00",
+          "numerical_threads": 1,
+          "peak_rss_kib": 1898432,
+          "pid": 3032959,
+          "started_at": "2026-11-06T04:51:34.524357+00:00",
+          "study": "microstructure"
+        },
+        {
+          "completed_at": "2026-11-06T04:51:55.054594+00:00",
+          "numerical_threads": 1,
+          "peak_rss_kib": 1883596,
+          "pid": 3032962,
+          "started_at": "2026-11-06T04:51:34.526301+00:00",
+          "study": "models"
+        },
+        {
+          "completed_at": "2026-11-06T04:51:55.132009+00:00",
+          "numerical_threads": 1,
+          "peak_rss_kib": 1898432,
+          "pid": 3032959,
+          "started_at": "2026-11-06T04:51:45.221905+00:00",
+          "study": "relationships"
+        }
+      ]
+    },
+    {
+      "actual_cpu_worker_pids": [
+        3033148,
+        3033151
+      ],
+      "control_processes": "Coordinator plus multiprocessing resource tracker; not CPU workers",
+      "coordinator_pid": 3033112,
+      "peak_concurrent_tasks": 2,
+      "requested_workers": 2,
+      "resource_tracker_pid": 3033147,
+      "tasks": [
+        {
+          "completed_at": "2026-11-06T04:52:31.550760+00:00",
+          "numerical_threads": 1,
+          "peak_rss_kib": 1898760,
+          "pid": 3033148,
+          "started_at": "2026-11-06T04:52:21.148154+00:00",
+          "study": "microstructure"
+        },
+        {
+          "completed_at": "2026-11-06T04:52:41.796067+00:00",
+          "numerical_threads": 1,
+          "peak_rss_kib": 1883552,
+          "pid": 3033151,
+          "started_at": "2026-11-06T04:52:21.150197+00:00",
+          "study": "models"
+        },
+        {
+          "completed_at": "2026-11-06T04:52:41.754028+00:00",
+          "numerical_threads": 1,
+          "peak_rss_kib": 1898760,
+          "pid": 3033148,
+          "started_at": "2026-11-06T04:52:31.948973+00:00",
+          "study": "relationships"
+        }
+      ]
+    },
+    {
+      "actual_cpu_worker_pids": [
+        3033143,
+        3033146
+      ],
+      "control_processes": "Coordinator plus multiprocessing resource tracker; not CPU workers",
+      "coordinator_pid": 3033116,
+      "peak_concurrent_tasks": 2,
+      "requested_workers": 2,
+      "resource_tracker_pid": 3033142,
+      "tasks": [
+        {
+          "completed_at": "2026-11-06T04:52:24.461668+00:00",
+          "numerical_threads": 1,
+          "peak_rss_kib": 669664,
+          "pid": 3033143,
+          "started_at": "2026-11-06T04:52:21.122190+00:00",
+          "study": "microstructure"
+        },
+        {
+          "completed_at": "2026-11-06T04:52:26.937644+00:00",
+          "numerical_threads": 1,
+          "peak_rss_kib": 669664,
+          "pid": 3033146,
+          "started_at": "2026-11-06T04:52:21.122046+00:00",
+          "study": "models"
+        },
+        {
+          "completed_at": "2026-11-06T04:52:27.771753+00:00",
+          "numerical_threads": 1,
+          "peak_rss_kib": 669664,
+          "pid": 3033143,
+          "started_at": "2026-11-06T04:52:24.591551+00:00",
+          "study": "relationships"
+        }
+      ]
+    },
+    {
+      "actual_cpu_worker_pids": [
+        3033311,
+        3033314
+      ],
+      "control_processes": "Coordinator plus multiprocessing resource tracker; not CPU workers",
+      "coordinator_pid": 3033116,
+      "peak_concurrent_tasks": 2,
+      "requested_workers": 2,
+      "resource_tracker_pid": 3033142,
+      "tasks": [
+        {
+          "completed_at": "2026-11-06T04:53:09.235210+00:00",
+          "numerical_threads": 1,
+          "peak_rss_kib": 671488,
+          "pid": 3033311,
+          "started_at": "2026-11-06T04:53:06.018054+00:00",
+          "study": "microstructure"
+        },
+        {
+          "completed_at": "2026-11-06T04:53:11.740495+00:00",
+          "numerical_threads": 1,
+          "peak_rss_kib": 671488,
+          "pid": 3033314,
+          "started_at": "2026-11-06T04:53:06.019098+00:00",
+          "study": "models"
+        },
+        {
+          "completed_at": "2026-11-06T04:53:11.931299+00:00",
+          "numerical_threads": 1,
+          "peak_rss_kib": 671488,
+          "pid": 3033311,
+          "started_at": "2026-11-06T04:53:09.364325+00:00",
+          "study": "relationships"
+        }
+      ]
+    }
+  ],
+  "test_worker_processes": 2,
+  "test_worker_pids": [
+    3032573,
+    3032574
+  ],
+  "browser_test_workers": 1,
+  "notes": [
+    "Two CPU workers per job; replay and first adaptive job genuinely overlapped, reaching four analysis tasks",
+    "Control processes (coordinator/resource tracker) are distinct from CPU workers",
+    "Controlled spawn tests also start bounded helper workers; no claim of a complete host-wide process census"
+  ]
+}

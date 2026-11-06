@@ -1,0 +1,126 @@
+{
+  "schema_version": "1.0",
+  "hypothesis": "Describe model errors across all available categories; no subgroup selection, fitting or trading rule",
+  "dataset_sha256": "4bca310fb839d1f8a24ddaa334e71147f374bef83f3f8546014ee726f540c95d",
+  "source_model_sha256": "ab8f426ba39360ce560d4967fc12ca8a8a06f30f388605a154a2521ebdf42fc1",
+  "source_segments_sha256": "130919ef8cbda170622aeedec79aed81882ac328852b78145e8b65464609ae43",
+  "source_script_sha256": "37761b47d606ca93b38145579d408c52182046caa2da624a82c8ec9a4d6c2195",
+  "split_intervals": {
+    "training_interval": [
+      "2026-11-06T03:35:34.486634+00:00",
+      "2026-11-06T04:13:54.554327+00:00"
+    ],
+    "validation_interval": [
+      "2026-11-06T04:14:56.077820+00:00",
+      "2026-11-06T04:26:32.226959+00:00"
+    ],
+    "heldout_interval": [
+      "2026-11-06T04:27:34.062315+00:00",
+      "2026-11-06T04:40:28.583172+00:00"
+    ]
+  },
+  "rows": [
+    {
+      "segment": "Economics",
+      "heldout_labels": 610,
+      "tokens": 10,
+      "heldout_mae": {
+        "midpoint": 0.004550819672131141,
+        "ridge": 0.0008329337765471041,
+        "training_mean_change": 0.0007585661309215104,
+        "unchanged_bid": 0.0007540983606557363
+      },
+      "directional_brier": {
+        "bayesian_frequency_bid_rise": 0.03746535595121493,
+        "historical_frequency_bid_rise": 0.03746156738669641,
+        "logistic_bid_rise": 0.03661489285415812,
+        "validation_temperature_logistic_bid_rise": 0.03661489285415812
+      },
+      "independent_confidence_interval": null,
+      "cost_adjusted_advantage": null
+    },
+    {
+      "segment": "Financial markets",
+      "heldout_labels": 2213,
+      "tokens": 21,
+      "heldout_mae": {
+        "midpoint": 0.004068459105286942,
+        "ridge": 0.0011022166869519962,
+        "training_mean_change": 0.001047068017667302,
+        "unchanged_bid": 0.0010433800271125175
+      },
+      "directional_brier": {
+        "bayesian_frequency_bid_rise": 0.1258552972996164,
+        "historical_frequency_bid_rise": 0.12586289845758333,
+        "logistic_bid_rise": 0.12212796660443133,
+        "validation_temperature_logistic_bid_rise": 0.12212796660443133
+      },
+      "independent_confidence_interval": null,
+      "cost_adjusted_advantage": null
+    },
+    {
+      "segment": "Politics",
+      "heldout_labels": 978,
+      "tokens": 10,
+      "heldout_mae": {
+        "midpoint": 0.0031605316973415125,
+        "ridge": 0.0013875292306379675,
+        "training_mean_change": 0.001314870189066358,
+        "unchanged_bid": 0.0013108384458077687
+      },
+      "directional_brier": {
+        "bayesian_frequency_bid_rise": 0.07082736764307272,
+        "historical_frequency_bid_rise": 0.07082787802987071,
+        "logistic_bid_rise": 0.06557053904112699,
+        "validation_temperature_logistic_bid_rise": 0.06557053904112699
+      },
+      "independent_confidence_interval": null,
+      "cost_adjusted_advantage": null
+    },
+    {
+      "segment": "Sports",
+      "heldout_labels": 937,
+      "tokens": 14,
+      "heldout_mae": {
+        "midpoint": 0.004770544290288149,
+        "ridge": 0.00030477955489290206,
+        "training_mean_change": 0.00025335372044223847,
+        "unchanged_bid": 0.0002486659551760935
+      },
+      "directional_brier": {
+        "bayesian_frequency_bid_rise": 0.017983642453376893,
+        "historical_frequency_bid_rise": 0.017977343520518985,
+        "logistic_bid_rise": 0.016341355604823415,
+        "validation_temperature_logistic_bid_rise": 0.016341355604823415
+      },
+      "independent_confidence_interval": null,
+      "cost_adjusted_advantage": null
+    },
+    {
+      "segment": "Unknown",
+      "heldout_labels": 498,
+      "tokens": 7,
+      "heldout_mae": {
+        "midpoint": 0.007570281124497993,
+        "ridge": 0.00014175096983995927,
+        "training_mean_change": 4.832162876103244e-06,
+        "unchanged_bid": 0.0
+      },
+      "directional_brier": {
+        "bayesian_frequency_bid_rise": 0.005196475189405115,
+        "historical_frequency_bid_rise": 0.00518852853188205,
+        "logistic_bid_rise": 0.004519085548966086,
+        "validation_temperature_logistic_bid_rise": 0.004519085548966086
+      },
+      "independent_confidence_interval": null,
+      "cost_adjusted_advantage": null
+    }
+  ],
+  "limitations": [
+    "Current tags were acquired after model observations; descriptive grouping only, not point-in-time features",
+    "Tokens absent from the captured current universe remain Unknown",
+    "Quote labels overlap and event independence is unreviewed; confidence intervals and executable advantage unavailable"
+  ],
+  "certification_authority": false,
+  "automatic_promotion": false
+}

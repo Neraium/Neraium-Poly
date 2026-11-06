@@ -1,0 +1,19 @@
+{
+  "experiment_id": "eb8577019f445ac1ad5edde5a238e696",
+  "dataset_sha256": "4bca310fb839d1f8a24ddaa334e71147f374bef83f3f8546014ee726f540c95d",
+  "numerical_output_sha256": {
+    "models.json": "ab8f426ba39360ce560d4967fc12ca8a8a06f30f388605a154a2521ebdf42fc1",
+    "microstructure.json": "d2426904fbc4a6d00238e236e99820edbd8b95b20010aeae6d32c94492304769",
+    "relationships.json": "88603db02832d89ce8b5ec7d21869eb095c70b975a3312409765465f90e081ec"
+  },
+  "replay_identical": true,
+  "excluded_metadata": [
+    "generated_at",
+    "worker PIDs and resource times",
+    "summary generation timestamp"
+  ],
+  "runs": [
+    "data/phase11-results/run-v1",
+    "data/phase11-results/run-v1-replay"
+  ]
+}

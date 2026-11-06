@@ -1,0 +1,151 @@
+{
+  "actual_fills": 0,
+  "actual_orders": 0,
+  "calibration": {
+    "reason": "No independently verified point-in-time terminal target dataset",
+    "terminal_brier": null,
+    "terminal_log_loss": null
+  },
+  "cost_sensitivity": {
+    "15": {
+      "complete_known_cost_scenarios": 1325,
+      "depth_complete": 1393,
+      "independent_confidence_interval": null,
+      "median_hypothetical_net_difference": -1.9453125,
+      "portfolio_pnl": null,
+      "positive_at_additional_slippage_01": 0,
+      "positive_protocol_curve_with_slippage_01": 0,
+      "protocol_curve_counterfactual_median": -0.7591153846153837,
+      "quote_scenarios": 1744
+    },
+    "2": {
+      "complete_known_cost_scenarios": 633,
+      "depth_complete": 706,
+      "independent_confidence_interval": null,
+      "median_hypothetical_net_difference": -0.33027027027027067,
+      "portfolio_pnl": null,
+      "positive_at_additional_slippage_01": 0,
+      "positive_protocol_curve_with_slippage_01": 0,
+      "protocol_curve_counterfactual_median": -0.27970588235294125,
+      "quote_scenarios": 768
+    },
+    "25": {
+      "complete_known_cost_scenarios": 1286,
+      "depth_complete": 1354,
+      "independent_confidence_interval": null,
+      "median_hypothetical_net_difference": -3.3189655172413772,
+      "portfolio_pnl": null,
+      "positive_at_additional_slippage_01": 0,
+      "positive_protocol_curve_with_slippage_01": 0,
+      "protocol_curve_counterfactual_median": -1.2494445702238806,
+      "quote_scenarios": 1744
+    },
+    "5": {
+      "complete_known_cost_scenarios": 1433,
+      "depth_complete": 1539,
+      "independent_confidence_interval": null,
+      "median_hypothetical_net_difference": -0.6562576666007907,
+      "portfolio_pnl": null,
+      "positive_at_additional_slippage_01": 0,
+      "positive_protocol_curve_with_slippage_01": 0,
+      "protocol_curve_counterfactual_median": -0.2699339812703376,
+      "quote_scenarios": 1744
+    }
+  },
+  "execution_rejections": {
+    "displayed_depth_insufficient": 1008,
+    "minimum_lot_unverified_or_unmet": 976,
+    "point_in_time_fee_unavailable": 505,
+    "post_latency_entry_or_horizon_exit_missing": 513,
+    "trial_budget_exhausted": 1
+  },
+  "feature_rejections": {
+    "missing_liquidity": 559,
+    "out_of_order_observation": 2,
+    "stale_book": 491
+  },
+  "feature_summary": {
+    "median_abs_imbalance": 0.35954069979954506,
+    "median_quote_persistence_seconds": 512.965187,
+    "median_spread": 0.009999999999999981
+  },
+  "imbalance_groups": {
+    "ask_heavy": {
+      "independent_confidence_interval": null,
+      "mean_net_difference": -1.0734448096828335,
+      "scenarios": 178
+    },
+    "balanced": {
+      "independent_confidence_interval": null,
+      "mean_net_difference": -0.9399696571579663,
+      "scenarios": 162
+    },
+    "bid_heavy": {
+      "independent_confidence_interval": null,
+      "mean_net_difference": -2.069275668914677,
+      "scenarios": 293
+    }
+  },
+  "independent_edge_established": false,
+  "observations": 30000,
+  "passive_execution": {
+    "fills": null,
+    "queue_position": null,
+    "reason": "Displayed snapshots do not establish queue priority or adverse-selection behavior"
+  },
+  "profitability_claim": false,
+  "spec": {
+    "automatic_promotion": false,
+    "certification_authority": false,
+    "dataset_sha256": "4bca310fb839d1f8a24ddaa334e71147f374bef83f3f8546014ee726f540c95d",
+    "experiment_id": "phase11-microstructure-execution-v1",
+    "failure_conditions": [
+      "Unavailable post-latency book",
+      "Missing/expired fee evidence",
+      "Inadequate displayed liquidity",
+      "Unknown minimum lot",
+      "Dependent labels do not support independent inference"
+    ],
+    "feature_definitions": {
+      "imbalance": "(top5 bid shares - top5 ask shares)/(sum)",
+      "persistence": "time since last actually observed top quote change",
+      "spread": "actual best ask minus bid",
+      "volatility": "standard deviation of prior-only bid differences over20 observations"
+    },
+    "grouping": {
+      "independently_reviewed_events": 0,
+      "reported_event_groups": 20,
+      "tokens": 65
+    },
+    "heldout_interval": null,
+    "hypothesis": "Top-five depth imbalance and quote persistence may predict 60s bid repricing large enough to cover observed spread, fee bound and depth costs",
+    "limitations": [
+      "Sampled snapshots do not identify queue priority, realized market impact or passive fills",
+      "Retrospective scenarios are not operational P/L",
+      "No event-independent test or causal treatment effect",
+      "No calibrated terminal probabilities or promotion"
+    ],
+    "model_version": "fixed-descriptive-imbalance-v1",
+    "schema_version": "1.0",
+    "split_policy": "Fixed descriptive hypothesis, no optimized rule or certification; quote scenarios exploratory, labels not independent",
+    "target_definitions": {
+      "cost": "Actual post100ms entry asks and60s exit bids,10% displayed participation,\u00b1.01 price bounds",
+      "mark": "First fresh bid with source and receipt at least60s after decision, at most90s receipt"
+    },
+    "training_interval": null,
+    "transaction_cost_assumptions": {
+      "additional_slippage_per_leg": [
+        0,
+        0.005,
+        0.01,
+        0.02
+      ],
+      "fee": "conservative observed global notional bound separately at entry/exit; unknown remainsnull",
+      "latency_ms": 100,
+      "maker_fills": null,
+      "participation": 0.1
+    },
+    "validation_interval": null
+  },
+  "valid_features": 28976
+}

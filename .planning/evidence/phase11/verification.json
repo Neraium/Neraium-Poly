@@ -1,0 +1,33 @@
+{
+  "verified_source_head": "1f30a2335c724b8df8bbcb447fd0db05f8f569b8",
+  "ci_run_id": 42165283884,
+  "ci_conclusion": "success",
+  "local_backend_passed": 496,
+  "ci_backend_passed": 496,
+  "browser_passed": 5,
+  "ruff": "passed",
+  "build": "passed",
+  "runtime_python_audit": "no known vulnerabilities",
+  "npm_audit": "0 vulnerabilities",
+  "quantitative_replay": "three output files byte-identical",
+  "adaptive_iterations": 2,
+  "operational_risk_account_execution_code_changed": false,
+  "live_execution_enabled": false,
+  "accounts_preserved": true,
+  "final_validator": {
+    "source_head": "1f30a2335c724b8df8bbcb447fd0db05f8f569b8",
+    "verdict": "pass",
+    "tests": "21 focused passed; Ruff passed",
+    "defects": []
+  },
+  "policy_review": {
+    "rules": [
+      "P-001",
+      "P-002",
+      "P-004",
+      "P-007"
+    ],
+    "verdict": "allow for authorized verified non-force push and existing experimental restart only",
+    "trusted_hooks_claimed": false
+  }
+}

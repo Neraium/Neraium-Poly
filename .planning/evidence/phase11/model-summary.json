@@ -1,0 +1,810 @@
+{
+  "adaptive_comparisons": [
+    {
+      "baseline_value": 0.0008181818181818177,
+      "independent_events": 0,
+      "metric": "heldout_mae",
+      "model": "unchanged_bid",
+      "sample_count": 5236,
+      "value": 0.0008181818181818177
+    },
+    {
+      "baseline_value": 0.0008181818181818177,
+      "independent_events": 0,
+      "metric": "heldout_mae",
+      "model": "midpoint",
+      "sample_count": 5236,
+      "value": 0.004413770053475935
+    },
+    {
+      "baseline_value": 0.0008181818181818177,
+      "independent_events": 0,
+      "metric": "heldout_mae",
+      "model": "training_mean_change",
+      "sample_count": 5236,
+      "value": 0.0008223125975999686
+    },
+    {
+      "baseline_value": 0.0008181818181818177,
+      "independent_events": 0,
+      "metric": "heldout_mae",
+      "model": "ridge",
+      "sample_count": 5236,
+      "value": 0.0008900819605418989
+    }
+  ],
+  "boundaries": [
+    "2026-11-06T04:14:56.077820+00:00",
+    "2026-11-06T04:27:34.062315+00:00"
+  ],
+  "conclusion": "Forecast improvements alone are not evidence of executable cost-adjusted edge",
+  "confidence_interval": null,
+  "confidence_interval_reason": "Overlapping labels and unreviewed inter-event dependence prevent independent inference",
+  "credible_cost_adjusted_advantage": false,
+  "ensemble": "deferred: no independent validation gain demonstrated over the selected simple baseline",
+  "gradient_boosting": "deferred: simple models must establish repeatable heldout improvement first",
+  "heldout_mae_improvement": 0.0,
+  "heldout_temporal_blocks": [
+    {
+      "count": 1745,
+      "directional_probability": {
+        "bayesian_frequency_bid_rise": {
+          "brier": 0.06846390329820827,
+          "calibration_status": "exploratory_correlated_labels_not_independently_certified",
+          "ece": 0.001838920230577537,
+          "log_loss": 0.2637017183825672,
+          "reliability_bins": [
+            {
+              "bin": 0,
+              "count": 1745,
+              "mean_probability": 0.07208658120208722,
+              "observed_rate": 0.07392550143266476
+            }
+          ],
+          "target": "60_second_observed_bid_rise_not_settlement"
+        },
+        "historical_frequency_bid_rise": {
+          "brier": 0.06846410913448182,
+          "calibration_status": "exploratory_correlated_labels_not_independently_certified",
+          "ece": 0.0018940601595509032,
+          "log_loss": 0.2637032575435023,
+          "reliability_bins": [
+            {
+              "bin": 0,
+              "count": 1745,
+              "mean_probability": 0.07203144127311385,
+              "observed_rate": 0.07392550143266476
+            }
+          ],
+          "target": "60_second_observed_bid_rise_not_settlement"
+        },
+        "logistic_bid_rise": {
+          "brier": 0.06547061355148129,
+          "calibration_status": "exploratory_correlated_labels_not_independently_certified",
+          "ece": 0.026140638104648558,
+          "log_loss": 0.24535410261635307,
+          "reliability_bins": [
+            {
+              "bin": 0,
+              "count": 1525,
+              "mean_probability": 0.06569212353005752,
+              "observed_rate": 0.05180327868852459
+            },
+            {
+              "bin": 1,
+              "count": 218,
+              "mean_probability": 0.11496640685405032,
+              "observed_rate": 0.22477064220183487
+            },
+            {
+              "bin": 2,
+              "count": 2,
+              "mean_probability": 0.2511990982715027,
+              "observed_rate": 0.5
+            }
+          ],
+          "target": "60_second_observed_bid_rise_not_settlement"
+        },
+        "validation_temperature_logistic_bid_rise": {
+          "brier": 0.06547061355148129,
+          "calibration_status": "exploratory_correlated_labels_not_independently_certified",
+          "ece": 0.026140638104648558,
+          "log_loss": 0.24535410261635307,
+          "reliability_bins": [
+            {
+              "bin": 0,
+              "count": 1525,
+              "mean_probability": 0.06569212353005752,
+              "observed_rate": 0.05180327868852459
+            },
+            {
+              "bin": 1,
+              "count": 218,
+              "mean_probability": 0.11496640685405032,
+              "observed_rate": 0.22477064220183487
+            },
+            {
+              "bin": 2,
+              "count": 2,
+              "mean_probability": 0.25119909827150266,
+              "observed_rate": 0.5
+            }
+          ],
+          "target": "60_second_observed_bid_rise_not_settlement"
+        }
+      },
+      "horizon_mark": {
+        "midpoint": {
+          "mae": 0.004624068767908308
+        },
+        "ridge": {
+          "mae": 0.0009628697174247449
+        },
+        "training_mean_change": {
+          "mae": 0.0008947175183119114
+        },
+        "unchanged_bid": {
+          "mae": 0.0008905444126074486
+        }
+      }
+    },
+    {
+      "count": 1745,
+      "directional_probability": {
+        "bayesian_frequency_bid_rise": {
+          "brier": 0.10132373030045487,
+          "calibration_status": "exploratory_correlated_labels_not_independently_certified",
+          "ece": 0.04023433570335691,
+          "log_loss": 0.3618047124241765,
+          "reliability_bins": [
+            {
+              "bin": 0,
+              "count": 1745,
+              "mean_probability": 0.07208658120208722,
+              "observed_rate": 0.11232091690544413
+            }
+          ],
+          "target": "60_second_observed_bid_rise_not_settlement"
+        },
+        "historical_frequency_bid_rise": {
+          "brier": 0.10132817037769257,
+          "calibration_status": "exploratory_correlated_labels_not_independently_certified",
+          "ece": 0.04028947563233028,
+          "log_loss": 0.3618379134824297,
+          "reliability_bins": [
+            {
+              "bin": 0,
+              "count": 1745,
+              "mean_probability": 0.07203144127311385,
+              "observed_rate": 0.11232091690544413
+            }
+          ],
+          "target": "60_second_observed_bid_rise_not_settlement"
+        },
+        "logistic_bid_rise": {
+          "brier": 0.09669975632910785,
+          "calibration_status": "exploratory_correlated_labels_not_independently_certified",
+          "ece": 0.03952618417242129,
+          "log_loss": 0.33147509574753903,
+          "reliability_bins": [
+            {
+              "bin": 0,
+              "count": 1538,
+              "mean_probability": 0.06693723471994902,
+              "observed_rate": 0.07217165149544863
+            },
+            {
+              "bin": 1,
+              "count": 204,
+              "mean_probability": 0.11439844310420746,
+              "observed_rate": 0.4117647058823529
+            },
+            {
+              "bin": 2,
+              "count": 3,
+              "mean_probability": 0.24668640886164758,
+              "observed_rate": 0.3333333333333333
+            }
+          ],
+          "target": "60_second_observed_bid_rise_not_settlement"
+        },
+        "validation_temperature_logistic_bid_rise": {
+          "brier": 0.09669975632910785,
+          "calibration_status": "exploratory_correlated_labels_not_independently_certified",
+          "ece": 0.03952618417242129,
+          "log_loss": 0.33147509574753903,
+          "reliability_bins": [
+            {
+              "bin": 0,
+              "count": 1538,
+              "mean_probability": 0.06693723471994902,
+              "observed_rate": 0.07217165149544863
+            },
+            {
+              "bin": 1,
+              "count": 204,
+              "mean_probability": 0.11439844310420746,
+              "observed_rate": 0.4117647058823529
+            },
+            {
+              "bin": 2,
+              "count": 3,
+              "mean_probability": 0.24668640886164758,
+              "observed_rate": 0.3333333333333333
+            }
+          ],
+          "target": "60_second_observed_bid_rise_not_settlement"
+        }
+      },
+      "horizon_mark": {
+        "midpoint": {
+          "mae": 0.004544985673352433
+        },
+        "ridge": {
+          "mae": 0.001119458686101518
+        },
+        "training_mean_change": {
+          "mae": 0.0010584925239471282
+        },
+        "unchanged_bid": {
+          "mae": 0.0010544412607449854
+        }
+      }
+    },
+    {
+      "count": 1746,
+      "directional_probability": {
+        "bayesian_frequency_bid_rise": {
+          "brier": 0.053722739176797284,
+          "calibration_status": "exploratory_correlated_labels_not_independently_certified",
+          "ece": 0.015385550274252167,
+          "log_loss": 0.21969198163409628,
+          "reliability_bins": [
+            {
+              "bin": 0,
+              "count": 1746,
+              "mean_probability": 0.07208658120208722,
+              "observed_rate": 0.05670103092783505
+            }
+          ],
+          "target": "60_second_observed_bid_rise_not_settlement"
+        },
+        "historical_frequency_bid_rise": {
+          "brier": 0.05372104550091037,
+          "calibration_status": "exploratory_correlated_labels_not_independently_certified",
+          "ece": 0.015330410345278801,
+          "log_loss": 0.21967931703112456,
+          "reliability_bins": [
+            {
+              "bin": 0,
+              "count": 1746,
+              "mean_probability": 0.07203144127311385,
+              "observed_rate": 0.05670103092783505
+            }
+          ],
+          "target": "60_second_observed_bid_rise_not_settlement"
+        },
+        "logistic_bid_rise": {
+          "brier": 0.05229514391886699,
+          "calibration_status": "exploratory_correlated_labels_not_independently_certified",
+          "ece": 0.032863293103708974,
+          "log_loss": 0.20928807907134367,
+          "reliability_bins": [
+            {
+              "bin": 0,
+              "count": 1502,
+              "mean_probability": 0.06628298033920907,
+              "observed_rate": 0.03794940079893475
+            },
+            {
+              "bin": 1,
+              "count": 244,
+              "mean_probability": 0.1113841258623613,
+              "observed_rate": 0.1721311475409836
+            }
+          ],
+          "target": "60_second_observed_bid_rise_not_settlement"
+        },
+        "validation_temperature_logistic_bid_rise": {
+          "brier": 0.05229514391886699,
+          "calibration_status": "exploratory_correlated_labels_not_independently_certified",
+          "ece": 0.032863293103708974,
+          "log_loss": 0.20928807907134367,
+          "reliability_bins": [
+            {
+              "bin": 0,
+              "count": 1502,
+              "mean_probability": 0.06628298033920907,
+              "observed_rate": 0.03794940079893475
+            },
+            {
+              "bin": 1,
+              "count": 244,
+              "mean_probability": 0.1113841258623613,
+              "observed_rate": 0.1721311475409836
+            }
+          ],
+          "target": "60_second_observed_bid_rise_not_settlement"
+        }
+      },
+      "horizon_mark": {
+        "midpoint": {
+          "mae": 0.004072451317296678
+        },
+        "ridge": {
+          "mae": 0.0005880905390859413
+        },
+        "training_mean_change": {
+          "mae": 0.0005139044887121487
+        },
+        "unchanged_bid": {
+          "mae": 0.0005097365406643758
+        }
+      }
+    }
+  ],
+  "model_selection_scope": "validation_only; heldout scores never choose fitted model or temperature",
+  "operational_reference_comparison": {
+    "heldout": {
+      "count": 5224,
+      "operational_horizon_mae": 0.001518041730474731,
+      "unchanged_bid_mae_same_rows": 0.0008177641653905049
+    },
+    "train": {
+      "count": 12994,
+      "operational_horizon_mae": 0.0009849930737263351,
+      "unchanged_bid_mae_same_rows": 0.0005503309219639834
+    },
+    "validation": {
+      "count": 4731,
+      "operational_horizon_mae": 0.0010215070809554006,
+      "unchanged_bid_mae_same_rows": 0.00061001902346227
+    }
+  },
+  "operational_reference_note": "Exact existing horizon forecast helper on sequential actual books; no fee/risk/admission bypass; compared on same available subset and not selected as challenger",
+  "overfit_warning": false,
+  "promotion_allowed": false,
+  "purged_labels": 915,
+  "results": {
+    "heldout": {
+      "count": 5236,
+      "directional_probability": {
+        "bayesian_frequency_bid_rise": {
+          "brier": 0.07449948877623286,
+          "calibration_status": "exploratory_correlated_labels_not_independently_certified",
+          "ece": 0.00889126448164082,
+          "log_loss": 0.28172095525036284,
+          "reliability_bins": [
+            {
+              "bin": 0,
+              "count": 5236,
+              "mean_probability": 0.07208658120208722,
+              "observed_rate": 0.08097784568372804
+            }
+          ],
+          "target": "60_second_observed_bid_rise_not_settlement"
+        },
+        "historical_frequency_bid_rise": {
+          "brier": 0.07450047234402861,
+          "calibration_status": "exploratory_correlated_labels_not_independently_certified",
+          "ece": 0.008946404410614187,
+          "log_loss": 0.2817283099649723,
+          "reliability_bins": [
+            {
+              "bin": 0,
+              "count": 5236,
+              "mean_probability": 0.07203144127311385,
+              "observed_rate": 0.08097784568372804
+            }
+          ],
+          "target": "60_second_observed_bid_rise_not_settlement"
+        },
+        "logistic_bid_rise": {
+          "brier": 0.0714848389465183,
+          "calibration_status": "exploratory_correlated_labels_not_independently_certified",
+          "ece": 0.02976830569731206,
+          "log_loss": 0.2620290178005267,
+          "reliability_bins": [
+            {
+              "bin": 0,
+              "count": 4565,
+              "mean_probability": 0.06630602231152494,
+              "observed_rate": 0.05410733844468784
+            },
+            {
+              "bin": 1,
+              "count": 666,
+              "mean_probability": 0.11348000870549167,
+              "observed_rate": 0.2627627627627628
+            },
+            {
+              "bin": 2,
+              "count": 5,
+              "mean_probability": 0.24849148462558965,
+              "observed_rate": 0.4
+            }
+          ],
+          "target": "60_second_observed_bid_rise_not_settlement"
+        },
+        "validation_temperature_logistic_bid_rise": {
+          "brier": 0.0714848389465183,
+          "calibration_status": "exploratory_correlated_labels_not_independently_certified",
+          "ece": 0.02976830569731206,
+          "log_loss": 0.2620290178005267,
+          "reliability_bins": [
+            {
+              "bin": 0,
+              "count": 4565,
+              "mean_probability": 0.06630602231152494,
+              "observed_rate": 0.05410733844468784
+            },
+            {
+              "bin": 1,
+              "count": 666,
+              "mean_probability": 0.11348000870549167,
+              "observed_rate": 0.2627627627627628
+            },
+            {
+              "bin": 2,
+              "count": 5,
+              "mean_probability": 0.24849148462558962,
+              "observed_rate": 0.4
+            }
+          ],
+          "target": "60_second_observed_bid_rise_not_settlement"
+        }
+      },
+      "horizon_mark": {
+        "midpoint": {
+          "mae": 0.004413770053475935
+        },
+        "ridge": {
+          "mae": 0.0008900819605418989
+        },
+        "training_mean_change": {
+          "mae": 0.0008223125975999686
+        },
+        "unchanged_bid": {
+          "mae": 0.0008181818181818177
+        }
+      }
+    },
+    "train": {
+      "count": 15521,
+      "directional_probability": {
+        "bayesian_frequency_bid_rise": {
+          "brier": 0.06684291578164357,
+          "calibration_status": "exploratory_correlated_labels_not_independently_certified",
+          "ece": 5.513992897336617e-05,
+          "log_loss": 0.2588622611125031,
+          "reliability_bins": [
+            {
+              "bin": 0,
+              "count": 15521,
+              "mean_probability": 0.07208658120208722,
+              "observed_rate": 0.07203144127311385
+            }
+          ],
+          "target": "60_second_observed_bid_rise_not_settlement"
+        },
+        "historical_frequency_bid_rise": {
+          "brier": 0.06684291274123179,
+          "calibration_status": "exploratory_correlated_labels_not_independently_certified",
+          "ece": 0.0,
+          "log_loss": 0.2588622383802396,
+          "reliability_bins": [
+            {
+              "bin": 0,
+              "count": 15521,
+              "mean_probability": 0.07203144127311385,
+              "observed_rate": 0.07203144127311385
+            }
+          ],
+          "target": "60_second_observed_bid_rise_not_settlement"
+        },
+        "logistic_bid_rise": {
+          "brier": 0.06439763185320993,
+          "calibration_status": "exploratory_correlated_labels_not_independently_certified",
+          "ece": 0.0252794342323652,
+          "log_loss": 0.24146151904330404,
+          "reliability_bins": [
+            {
+              "bin": 0,
+              "count": 13528,
+              "mean_probability": 0.06881652431786983,
+              "observed_rate": 0.05307510348905973
+            },
+            {
+              "bin": 1,
+              "count": 1990,
+              "mean_probability": 0.111267030176327,
+              "observed_rate": 0.20100502512562815
+            },
+            {
+              "bin": 2,
+              "count": 2,
+              "mean_probability": 0.22883592410229708,
+              "observed_rate": 0
+            },
+            {
+              "bin": 3,
+              "count": 1,
+              "mean_probability": 0.37587595108324584,
+              "observed_rate": 0
+            }
+          ],
+          "target": "60_second_observed_bid_rise_not_settlement"
+        },
+        "validation_temperature_logistic_bid_rise": {
+          "brier": 0.06439763185320993,
+          "calibration_status": "exploratory_correlated_labels_not_independently_certified",
+          "ece": 0.0252794342323652,
+          "log_loss": 0.24146151904330404,
+          "reliability_bins": [
+            {
+              "bin": 0,
+              "count": 13528,
+              "mean_probability": 0.06881652431786983,
+              "observed_rate": 0.05307510348905973
+            },
+            {
+              "bin": 1,
+              "count": 1990,
+              "mean_probability": 0.111267030176327,
+              "observed_rate": 0.20100502512562815
+            },
+            {
+              "bin": 2,
+              "count": 2,
+              "mean_probability": 0.22883592410229708,
+              "observed_rate": 0
+            },
+            {
+              "bin": 3,
+              "count": 1,
+              "mean_probability": 0.3758759510832459,
+              "observed_rate": 0
+            }
+          ],
+          "target": "60_second_observed_bid_rise_not_settlement"
+        }
+      },
+      "horizon_mark": {
+        "midpoint": {
+          "mae": 0.00400112750467109
+        },
+        "ridge": {
+          "mae": 0.0006190478503792257
+        },
+        "training_mean_change": {
+          "mae": 0.0005414467155470439
+        },
+        "unchanged_bid": {
+          "mae": 0.0005372720829843438
+        }
+      }
+    },
+    "validation": {
+      "count": 4803,
+      "directional_probability": {
+        "bayesian_frequency_bid_rise": {
+          "brier": 0.07201618455822348,
+          "calibration_status": "exploratory_correlated_labels_not_independently_certified",
+          "ece": 0.00598962117142933,
+          "log_loss": 0.2743070519791672,
+          "reliability_bins": [
+            {
+              "bin": 0,
+              "count": 4803,
+              "mean_probability": 0.07208658120208722,
+              "observed_rate": 0.07807620237351655
+            }
+          ],
+          "target": "60_second_observed_bid_rise_not_settlement"
+        },
+        "historical_frequency_bid_rise": {
+          "brier": 0.07201684813320718,
+          "calibration_status": "exploratory_correlated_labels_not_independently_certified",
+          "ece": 0.006044761100402696,
+          "log_loss": 0.2743120139202799,
+          "reliability_bins": [
+            {
+              "bin": 0,
+              "count": 4803,
+              "mean_probability": 0.07203144127311385,
+              "observed_rate": 0.07807620237351655
+            }
+          ],
+          "target": "60_second_observed_bid_rise_not_settlement"
+        },
+        "logistic_bid_rise": {
+          "brier": 0.06992974368914077,
+          "calibration_status": "exploratory_correlated_labels_not_independently_certified",
+          "ece": 0.010102044676937006,
+          "log_loss": 0.25994822766378545,
+          "reliability_bins": [
+            {
+              "bin": 0,
+              "count": 4113,
+              "mean_probability": 0.06747080196836318,
+              "observed_rate": 0.06418672501823487
+            },
+            {
+              "bin": 1,
+              "count": 689,
+              "mean_probability": 0.11073083795232992,
+              "observed_rate": 0.16110304789550073
+            },
+            {
+              "bin": 3,
+              "count": 1,
+              "mean_probability": 0.3062594366060271,
+              "observed_rate": 0
+            }
+          ],
+          "target": "60_second_observed_bid_rise_not_settlement"
+        },
+        "validation_temperature_logistic_bid_rise": {
+          "brier": 0.06992974368914077,
+          "calibration_status": "exploratory_correlated_labels_not_independently_certified",
+          "ece": 0.010102044676937006,
+          "log_loss": 0.25994822766378545,
+          "reliability_bins": [
+            {
+              "bin": 0,
+              "count": 4113,
+              "mean_probability": 0.06747080196836318,
+              "observed_rate": 0.06418672501823487
+            },
+            {
+              "bin": 1,
+              "count": 689,
+              "mean_probability": 0.11073083795232992,
+              "observed_rate": 0.16110304789550073
+            },
+            {
+              "bin": 3,
+              "count": 1,
+              "mean_probability": 0.3062594366060271,
+              "observed_rate": 0
+            }
+          ],
+          "target": "60_second_observed_bid_rise_not_settlement"
+        }
+      },
+      "horizon_mark": {
+        "midpoint": {
+          "mae": 0.004165001041016032
+        },
+        "ridge": {
+          "mae": 0.0006960156932802597
+        },
+        "training_mean_change": {
+          "mae": 0.0006165139067360436
+        },
+        "unchanged_bid": {
+          "mae": 0.0006123256298146991
+        }
+      }
+    }
+  },
+  "samples": 26475,
+  "skipped": {
+    "causal_warmup": 326,
+    "future_label_missing_or_not_source_matured": 1466,
+    "reused_or_out_of_order_source": 711
+  },
+  "spec": {
+    "automatic_promotion": false,
+    "certification_authority": false,
+    "dataset_sha256": "4bca310fb839d1f8a24ddaa334e71147f374bef83f3f8546014ee726f540c95d",
+    "experiment_id": "phase11-chronological-challengers-v1",
+    "failure_conditions": [
+      "Insufficient purged labels",
+      "Heldout baseline improvement absent",
+      "Unreviewed event dependence"
+    ],
+    "feature_definitions": {
+      "bid_level": "Current book or receipt-time past only; scaling fitted on training only",
+      "last_bid_change": "Current book or receipt-time past only; scaling fitted on training only",
+      "last_five_bid_change": "Current book or receipt-time past only; scaling fitted on training only",
+      "log_depth": "Current book or receipt-time past only; scaling fitted on training only",
+      "spread": "Current book or receipt-time past only; scaling fitted on training only",
+      "top_five_imbalance": "Current book or receipt-time past only; scaling fitted on training only"
+    },
+    "grouping": {
+      "reported_events": {
+        "heldout": 18,
+        "train": 20,
+        "validation": 19
+      },
+      "reviewed_independent_events": 0,
+      "train_heldout_event_overlap": 18
+    },
+    "heldout_interval": [
+      "2026-11-06T04:27:34.062315+00:00",
+      "2026-11-06T04:40:28.583172+00:00"
+    ],
+    "hypothesis": "Causal book imbalance and lagged bids improve future bid marks or bid-rise probabilities over simple baselines",
+    "limitations": [
+      "Single captured live-data window; repeated market events are dependent",
+      "No terminal-outcome calibration authority",
+      "No independent external context",
+      "Selection is exploratory and cannot certify a strategy"
+    ],
+    "model_version": "standard-library-ridge-logistic-v1",
+    "schema_version": "1.0",
+    "split_policy": "60/20/20 unique global decision times; labels purged across train/validation boundaries",
+    "target_definitions": {
+      "direction": "future_bid > current_bid; not final resolution outcome",
+      "mark": "First actually observed bid source+receipt at least60s after decision, receipt within90s"
+    },
+    "training_interval": [
+      "2026-11-06T03:35:34.486634+00:00",
+      "2026-11-06T04:13:54.554327+00:00"
+    ],
+    "transaction_cost_assumptions": {
+      "executable_returns": null,
+      "forecast_scores_are_not_execution_returns": true,
+      "reason": "Separate depth/cost study required"
+    },
+    "validation_interval": [
+      "2026-11-06T04:14:56.077820+00:00",
+      "2026-11-06T04:26:32.226959+00:00"
+    ]
+  },
+  "split_counts": {
+    "heldout": 5236,
+    "train": 15521,
+    "validation": 4803
+  },
+  "status": "exploratory_evaluated",
+  "terminal_probability": {
+    "brier": null,
+    "calibration": null,
+    "log_loss": null,
+    "reason": "No qualified point-in-time verified independent final-outcome dataset"
+  },
+  "training_parameters": {
+    "bayesian_frequency": 0.07208658120208722,
+    "centers": [
+      0.0076453192448940124,
+      0.0006836751463447747,
+      -1.6107209587011092e-06,
+      -4.6388763610591795e-06,
+      10.740025545347674,
+      0.49604001030861417
+    ],
+    "frequency": 0.07203144127311385,
+    "logistic": [
+      -2.5659315313185656,
+      -0.03832692459887903,
+      0.06472794079142868,
+      -0.05419646675983002,
+      -0.04215672677115649,
+      -0.29164761889760404,
+      0.013686861590651352
+    ],
+    "mean_change": -4.832162876103244e-06,
+    "ridge": [
+      -4.832162876103241e-06,
+      8.379029019086027e-05,
+      9.81864739350723e-05,
+      -8.30178800408726e-05,
+      -6.441700488987962e-05,
+      -1.4891978073753899e-05,
+      3.8231243529112214e-05
+    ],
+    "scales": [
+      0.004569083168441781,
+      0.46935308937308834,
+      0.0007930241463494393,
+      0.0017021584360269381,
+      2.2277851769019374,
+      0.3278269033915725
+    ],
+    "training_count": 15521
+  },
+  "validation_only_temperature": 1.0,
+  "validation_selected_mark_model": "unchanged_bid"
+}
