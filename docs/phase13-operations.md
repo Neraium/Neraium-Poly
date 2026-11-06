@@ -44,7 +44,9 @@ a 16MiB/10,000-record journal ceiling, a 256-file ceiling, and the existing 8GiB
 disk floor. Acquisition reserves the provider's full 12MiB snapshot ceiling; proof
 attempts reserve 8MiB. All path, symlink and hardlink checks occur before source
 replay. Budget exhaustion preserves evidence and withholds further acquisition.
-No archive is deleted or threshold weakened to maintain activity.
+No archive is deleted or threshold weakened to maintain activity. Sources older
+than twice the configured cadence withhold new forecasts even if an earlier
+immutable snapshot remains readable.
 
 Failures leave research unavailable with explicit bounded rejection categories.
 They do not authorize orders. Counter scope is explicit: totals/rejections are

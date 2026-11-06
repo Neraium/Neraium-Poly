@@ -298,3 +298,12 @@ def test_child_initialization_failure_closes_journal_and_preserves_ledger_review
         recovered.close()
     finally:
         ledger.close()
+
+
+def test_budget_exhausted_old_source_does_not_keep_issuing_forecasts(controlled):
+    r, _ledger, frame, _raw, data, _model = controlled
+    old = NOW - timedelta(seconds=2 * r.interval + 1)
+    data["artifacts"][0] = data["artifacts"][0].model_copy(update={"retrieved_at": old, "available_at": old})
+    r.on_frame(frame, NOW)
+    assert not r.journal.records("forecast")
+    assert r.rejections["external_sports_snapshot_stale"] == 1

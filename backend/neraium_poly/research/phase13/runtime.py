@@ -507,6 +507,9 @@ class SportsResearchRuntime:
         if self.data is None or not self.snapshot:
             self._reject("qualified_external_sports_dataset_unavailable")
             return
+        if any((now - a.retrieved_at).total_seconds() > 2 * self.interval for a in self.data["artifacts"]):
+            self._reject("external_sports_snapshot_stale")
+            return
         books = {b.token_id: b for b in frame.books}
         existing = self._existing()
         parents = {f.event_id: f.dependency_group for f in self.ledger.forecasts()}
