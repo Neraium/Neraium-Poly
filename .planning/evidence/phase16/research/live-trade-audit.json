@@ -1,0 +1,1637 @@
+{
+  "observed_at": "2026-11-06T23:38:31.027824+00:00",
+  "audit_scope": "Independent read-only audit of first actual experimental paper entry and horizon exit; no order/account/model mutation",
+  "client_order_id": "c54921e0d330d6412a2fdc4593f3a72056c0fa63ce3b55ecc59a8e0829d52098",
+  "original_signal_id": "c9971154418564bbbd5166f7d82d12ba12b958607b3f530972d23fa81f709dd6",
+  "market": {
+    "schema_version": "1.0",
+    "id": "f4a9b4aa105449dbeba9cd68a557411b5f705807b6ab3274899c43a29336c831",
+    "timestamp": "2026-11-06T23:27:08.812116Z",
+    "available_at": "2026-11-06T23:27:08.812116Z",
+    "source": "https://gamma-api.polymarket.com",
+    "exchange": "polymarket",
+    "market_id": "6736353",
+    "event_id": "1322448",
+    "question": "Rolex Paris Masters: Casper Ruud vs Nuno Borges",
+    "token_id": "94471500152405942388262846298840204024899302380222365052282992568188988591230",
+    "outcome": "Nuno Borges",
+    "probability": 0.285,
+    "status": "active",
+    "resolution_rules": "This market refers to the tennis match between Casper Ruud and Nuno Borges in the Rolex Paris Masters, originally scheduled for November 6, 2026 at 2:30PM ET.\n\nThis market will resolve to 'Casper Ruud' if Casper Ruud advances against Nuno Borges.\n\nThis market will resolve to 'Nuno Borges' if Nuno Borges advances against Casper Ruud.\n\nIf the match is canceled (not played at all), ends in a tie, or a winner has not been determined by November 20, 2026, 11:59 PM ET (14 days after the scheduled start), this market will resolve to 50-50.\n\nIf the match begins but is not completed, and one player advances due to the opponent's retirement, default, or disqualification, this market will resolve to the player who advances.\n\nIf the match ends in a walkover (player withdraws before the start and the other advances automatically), this market will resolve to 50-50.\n\nThe primary resolution source will be official information from the ATP Tour. A consensus of credible reporting may also be used.",
+    "resolution_source": "https://www.atptour.com/en/scores/current",
+    "end_time": "2026-11-13T19:30:00Z",
+    "tick_size": 0.01,
+    "min_order_size": 5.0
+  },
+  "original_signal": {
+    "schema_version": "1.0",
+    "id": "c9971154418564bbbd5166f7d82d12ba12b958607b3f530972d23fa81f709dd6",
+    "timestamp": "2026-11-06T23:31:48.038424Z",
+    "available_at": "2026-11-06T23:31:48.038424Z",
+    "source": "experimental-public-observation-model/v1",
+    "account_id": "experimental-paper",
+    "validation_status": "unvalidated",
+    "strategy_id": "short_horizon",
+    "strategy_version": "1",
+    "market_id": "6736353",
+    "token_id": "94471500152405942388262846298840204024899302380222365052282992568188988591230",
+    "event_id": "1322448",
+    "side": "BUY",
+    "tier": "standard",
+    "eligible": true,
+    "valuation_kind": "horizon_mark",
+    "forecast_value": 0.31,
+    "lower_value": 0.24,
+    "upper_value": 0.38,
+    "estimated_net_edge": 0.039999999999999966,
+    "fee_rate": 0.05,
+    "slippage_per_share": 0.01,
+    "horizon_seconds": 60.0,
+    "evidence_ids": [
+      "a13cc0440460bdcaca7e863c53e0867cd6671ff08fec14eb69d4c7f6c03eb4fc",
+      "713c218e62bddf066c5a72668a75739e8f44890080e372ca35782aa34584b079",
+      "193e381a8519db61316268b42e1f25942397bb874cb84e1d49e0f65a218c60c0",
+      "02f247eb44cfc3db34022600013252ca0f622935c1e1bb88904db857feef5d06",
+      "fbd6b1530d46435463476730fdb909e4918aed5b473d4e24c25fadd56d543858",
+      "53fd2c5e76e69898ed7175956c38f36d5c100d51cbe675c6b8b8b13c2d3165f9",
+      "144f6fbaa997ea5958f0235f5de267eb6425d0aa1ad7e16fe7560005857eb127",
+      "94213c6d3ec1beb78c1385359cb9c7abbf5870b0d8c7d49f063fd23261b23dea",
+      "56d1d3059e5f088235653e1ebb407ba5c7ad74f64cf44c80fdaf0ee011e0c134",
+      "e5d3f9c19fdd5ba45f15da6e3b340a5160715bb8abddd2fa5af62b4ed095ad41",
+      "7cfb11a272d6a1da7af33e34ebca597bfd201631dd4828ee1206cadd8fa5b93d",
+      "21a4f5c098ed884db532b81568b01a4eeca1e027a66e0612af622f06b9f39c08",
+      "3055ee599bdba27e3f87951a5e5573458370a739570822d0c120be01f501601d",
+      "63eee03cb488bfb37078612f345a5755a4c50304e88d851d35b31297e3f79fb3",
+      "576e8647f5f4603248d593bf685f70b4f849e5027c9772e32045a4b6f3076b60",
+      "bf95b9c7471bf4f8e17d31798051abbb8699713dc509c2d2ccdb4862d894b952",
+      "272b2470941028951b23ee3957fbbf896f6115356424f29e914b6d376df10af0",
+      "8ed071a876f0b076d781fe8dc112c255fe3e810a0e887e8455cb76809de291b5",
+      "7fa3df3bc6259b081d9d36085121f588d241ff3567107c4dd54d4697feb03b91",
+      "cf3534ca9e0912fd6daf643d6c158a76e0054edec526d28856b25a84d64fc613",
+      "8e7161f925940c5b79b021841f0709b37477d459638d17a25c1ef80479682aa9",
+      "1bc041b99287077fffbfd49f589d1eca68e29dddb4f4486b492e276e800ef73f",
+      "6e1d054a5b33b444042f2a4ba99b784b40dfdb6fb4a24b10fc8bbb38d6bcf7d3",
+      "f0d0852be37bd3952d27672d05dfc3d8b8b51385aea3ce11affd019543b5f7a2",
+      "caa593083af553cddef58e9c4f745e9f1c56e029e2203518d7916e157845d8e5",
+      "8af70b3ab22a91c0a2b4b8713b210a283d300974763e9ddb2c36bf26ee307233",
+      "865b58a7b2a75ed1ab29a250d6ee2b9c1bd137f6f95310eecc67ffb89d9c3979",
+      "9671426f272faf5abc0eecde1b5e31171cf6fa40c8a7d4525d4b0032968a309f",
+      "85313153dde97facce4ae1315f1d129ffcb101b847fc0ddb9058dc754945c2e0",
+      "3d2171b418291da321721bb1c7879fe290c9336c515c2df4fd59d1519d4fb2f7",
+      "cb8d0c646792291b81ca91b401c8e6936295b417e757cfd060d08dd1abe21fce",
+      "45d6c5153c3da2cd9218577a2e65c98923bb726a881f55d76bb30e8b76edb671",
+      "1f013f0e9fbe20082263e26a6b460ed209246c91b1dd8c717b7eb704ec1d6917",
+      "1c973262fa25ed6565d13399dda56c563853effb0a8a4871e14b7212db861d2d",
+      "c1b99deb6d60fb4d53e12b3ac86b3a6161584aab10de04bdbdf10cec6aa7e3a8",
+      "a616a257a356c2e4599045164b66c1e28c244fd298a3af2c5e4562505bbb921d",
+      "04bc6c5aad4f50d34411dd9ad7892be33f2ee74f379b096af086c48400937fec",
+      "acb19c9e5e10bb63221b87c73503d73762aa0032852928368df9d928c75ee614",
+      "8cfb05acc789d31b17e0273f59a1b30dfa9b2b71073cd715b6ca35a9d3a431b9",
+      "9a5ac10ccc05b64cbcb82e5c56dad92b7f846ada9df0c9976e6c971769794395",
+      "12eb1256bc48fb854ef06a87e0e9ccd607ef47d55a41dd2255e1360a91a322bd",
+      "9589f437d1888c3eeb8aec726f50f16637beb7b4baaf5040bd994e55cb9e57d3",
+      "6a6b401f09281bcecbfe25c0f73a9c44bc40f1129054ac9c207a0827b45d10ad",
+      "b235e527eedae1edfd57adaa694933c7e5a5e2e9af47e1f85fffbbc804e1a5bd",
+      "b5cefaeba60440f78fe2bf03e21e7df276187ecd7fde40a83b6d658f6ddaa245",
+      "c2fb6fe45eb8729b5a6b6ad7155b893e550c8cdc61db9103bbce817c1d48d6c7",
+      "9a3109c828490de70df3a2b2a0c0f8f013940191d0fb896c1c15e6b7169b5e80",
+      "75bbdc1ec2c5bc696d1fa83dbf6c154922716dd1d1bbed4a254d9aa7292b4d8e",
+      "766c8d66e2d78e5f75fab2ad27893e9cb8426aaeaf8c53f17fb28887e8493c49",
+      "5bf8335f952594ff383ee9777b56802c61432604281ce331d00a5c58ca232931",
+      "ce5b31f6e7ec19a043559d0c5ee316d30eaf3298b2ee77b8e4de37ebaf2d48db",
+      "cde8c3ea30ca28b9011b2b0d4f35d56bbf947ccf8c42ed11a9301768a0f12dbf",
+      "381921c8e191e90e62a88eafac45a197a3aed9be1a79e9ad2e4fb81d1168f578",
+      "1322c5a4ef3f303318b574a17e9872fde8cdd76c1ea8ea14a94b6e8fc0014f58",
+      "4b53a9c1fb61c9ca23e20e6f48eecc40d99d995b34beefded76d30f176cc3ed4",
+      "95a88baaad7b0f11e7a21a1b943fd09288ee60ad00f9081cdd08626e62f6f2a4",
+      "b135b5ebd47e1c24dc45c5af0af6d3107a74dd1085153abfafa74f291c49f0c3",
+      "86b1b784b4684dcdd5a3cbddd2adab190d651885359418284495ea6e6e7d47b3",
+      "f23f8cfb8cdb5cb48e661d3e0577dd1e98ba1086ff6560dbf44ebf48da2be246",
+      "85d2958be169d1970767027f10ef52dde09f310baed04e185f41d895904fc2bb",
+      "d72436fbbd6dab608e463fae656a48af014bb4d5de1ebb562f887a76b9fb449b",
+      "0f14d3e9f29fd8d3fe4b45d391980cbfe6b289743f7e8d9bc5c95350d016ea5e",
+      "17a9b11a1ae747d5341f4ffbc0c6ad276636f1a8b1fb5e52777941e544c49698",
+      "971aa7d5c391e9744f129a0bc9605af70e966a4b10716eb2895a65bec406ea98",
+      "a15a620182436787e5b221200f004855ead868b8d8f0c014c05267ccf25f3572",
+      "ed76170beec5b25996f62bfa05f23344c6dd4641d810f8828db5d72968450dc1",
+      "e0d6a2dff1dd3468c87e8e609a7afd5e1eda5f3f311cb5b9a7a526bd512567bd",
+      "eba9536459f1bc98f2d804c91431f602abcfe8e2d7e57012ffb7263484f7cf6b",
+      "3eb2782e382084b10e06ea61d4f87ff7cdb4cab5d2b1be11c492037e374f8a6e",
+      "1bbe9f2161b5269ce764e54d96c5967768b81a3048b5371736239d488eaf70f8",
+      "556c4c14e3e2c8aef02385cfd256276297ceb096067f87e8e6847da60cfe6b32",
+      "8332bc19c220f2d1b9f5084671c8ca21d6fb38e141b9de3c2359adbf5ec9b8d4"
+    ],
+    "independent_sources": [],
+    "hypothesis": "A trailing bid-level reference may predict a temporary dislocation reversal over sixty seconds.",
+    "uncertainty": "Unvalidated empirical horizon-error envelope; no calibrated probability or guaranteed coverage",
+    "assumptions": [
+      "Observed future bid target is a monetary mark, not terminal outcome probability",
+      "Trailing20 bid median plus median prior matured horizon residual",
+      "Prior90th-percentile absolute residual envelope with $.01 policy floor",
+      "Round-trip global fee bound and $.01/share slippage per leg",
+      "Actual execution requires separate current risk approval and observed liquidity"
+    ],
+    "reasons": [],
+    "diagnostics": {
+      "book_age_seconds": 0.325424,
+      "fee_reference": "https://clob.polymarket.com",
+      "fee_observed_at": "2026-11-06T23:28:11.528065+00:00",
+      "forecast": 0.31,
+      "lower": 0.24,
+      "upper": 0.38,
+      "observations": 95,
+      "matured_errors": 60,
+      "empirical_error_envelope": 0.07,
+      "reference_bid": 0.29,
+      "bias": 0.020000000000000018,
+      "entry_ask": 0.16,
+      "current_bid": 0.15,
+      "spread": 0.010000000000000009,
+      "forecast_gross_edge": 0.15,
+      "uncertainty_haircut": 0.07,
+      "conservative_pre_cost_edge": 0.07999999999999999,
+      "entry_fee_bound": 0.008,
+      "exit_fee_bound": 0.012,
+      "roundtrip_slippage_bound": 0.02,
+      "minimum_net_edge": 0.03,
+      "cost_model": "global_notional_bound_matches_broker",
+      "data_gate_passed": 1,
+      "valuation_ready": 1,
+      "evidence_gate_passed": 1,
+      "candidate_before_costs": 1,
+      "qualified_before_risk": 1
+    }
+  },
+  "execution_pass": {
+    "schema_version": "1.0",
+    "id": "c839031126525c600e39575dd1f25e0328201c2157032a651c94c38c8a18ccb7",
+    "timestamp": "2026-11-06T23:31:48.038424Z",
+    "available_at": "2026-11-06T23:31:48.038424Z",
+    "source": "phase16-conservative-execution-check",
+    "original_signal_id": "c9971154418564bbbd5166f7d82d12ba12b958607b3f530972d23fa81f709dd6",
+    "original_signal": {
+      "schema_version": "1.0",
+      "id": "c9971154418564bbbd5166f7d82d12ba12b958607b3f530972d23fa81f709dd6",
+      "timestamp": "2026-11-06T23:31:48.038424Z",
+      "available_at": "2026-11-06T23:31:48.038424Z",
+      "source": "experimental-public-observation-model/v1",
+      "account_id": "experimental-paper",
+      "validation_status": "unvalidated",
+      "strategy_id": "short_horizon",
+      "strategy_version": "1",
+      "market_id": "6736353",
+      "token_id": "94471500152405942388262846298840204024899302380222365052282992568188988591230",
+      "event_id": "1322448",
+      "side": "BUY",
+      "tier": "standard",
+      "eligible": true,
+      "valuation_kind": "horizon_mark",
+      "forecast_value": 0.31,
+      "lower_value": 0.24,
+      "upper_value": 0.38,
+      "estimated_net_edge": 0.039999999999999966,
+      "fee_rate": 0.05,
+      "slippage_per_share": 0.01,
+      "horizon_seconds": 60.0,
+      "evidence_ids": [
+        "a13cc0440460bdcaca7e863c53e0867cd6671ff08fec14eb69d4c7f6c03eb4fc",
+        "713c218e62bddf066c5a72668a75739e8f44890080e372ca35782aa34584b079",
+        "193e381a8519db61316268b42e1f25942397bb874cb84e1d49e0f65a218c60c0",
+        "02f247eb44cfc3db34022600013252ca0f622935c1e1bb88904db857feef5d06",
+        "fbd6b1530d46435463476730fdb909e4918aed5b473d4e24c25fadd56d543858",
+        "53fd2c5e76e69898ed7175956c38f36d5c100d51cbe675c6b8b8b13c2d3165f9",
+        "144f6fbaa997ea5958f0235f5de267eb6425d0aa1ad7e16fe7560005857eb127",
+        "94213c6d3ec1beb78c1385359cb9c7abbf5870b0d8c7d49f063fd23261b23dea",
+        "56d1d3059e5f088235653e1ebb407ba5c7ad74f64cf44c80fdaf0ee011e0c134",
+        "e5d3f9c19fdd5ba45f15da6e3b340a5160715bb8abddd2fa5af62b4ed095ad41",
+        "7cfb11a272d6a1da7af33e34ebca597bfd201631dd4828ee1206cadd8fa5b93d",
+        "21a4f5c098ed884db532b81568b01a4eeca1e027a66e0612af622f06b9f39c08",
+        "3055ee599bdba27e3f87951a5e5573458370a739570822d0c120be01f501601d",
+        "63eee03cb488bfb37078612f345a5755a4c50304e88d851d35b31297e3f79fb3",
+        "576e8647f5f4603248d593bf685f70b4f849e5027c9772e32045a4b6f3076b60",
+        "bf95b9c7471bf4f8e17d31798051abbb8699713dc509c2d2ccdb4862d894b952",
+        "272b2470941028951b23ee3957fbbf896f6115356424f29e914b6d376df10af0",
+        "8ed071a876f0b076d781fe8dc112c255fe3e810a0e887e8455cb76809de291b5",
+        "7fa3df3bc6259b081d9d36085121f588d241ff3567107c4dd54d4697feb03b91",
+        "cf3534ca9e0912fd6daf643d6c158a76e0054edec526d28856b25a84d64fc613",
+        "8e7161f925940c5b79b021841f0709b37477d459638d17a25c1ef80479682aa9",
+        "1bc041b99287077fffbfd49f589d1eca68e29dddb4f4486b492e276e800ef73f",
+        "6e1d054a5b33b444042f2a4ba99b784b40dfdb6fb4a24b10fc8bbb38d6bcf7d3",
+        "f0d0852be37bd3952d27672d05dfc3d8b8b51385aea3ce11affd019543b5f7a2",
+        "caa593083af553cddef58e9c4f745e9f1c56e029e2203518d7916e157845d8e5",
+        "8af70b3ab22a91c0a2b4b8713b210a283d300974763e9ddb2c36bf26ee307233",
+        "865b58a7b2a75ed1ab29a250d6ee2b9c1bd137f6f95310eecc67ffb89d9c3979",
+        "9671426f272faf5abc0eecde1b5e31171cf6fa40c8a7d4525d4b0032968a309f",
+        "85313153dde97facce4ae1315f1d129ffcb101b847fc0ddb9058dc754945c2e0",
+        "3d2171b418291da321721bb1c7879fe290c9336c515c2df4fd59d1519d4fb2f7",
+        "cb8d0c646792291b81ca91b401c8e6936295b417e757cfd060d08dd1abe21fce",
+        "45d6c5153c3da2cd9218577a2e65c98923bb726a881f55d76bb30e8b76edb671",
+        "1f013f0e9fbe20082263e26a6b460ed209246c91b1dd8c717b7eb704ec1d6917",
+        "1c973262fa25ed6565d13399dda56c563853effb0a8a4871e14b7212db861d2d",
+        "c1b99deb6d60fb4d53e12b3ac86b3a6161584aab10de04bdbdf10cec6aa7e3a8",
+        "a616a257a356c2e4599045164b66c1e28c244fd298a3af2c5e4562505bbb921d",
+        "04bc6c5aad4f50d34411dd9ad7892be33f2ee74f379b096af086c48400937fec",
+        "acb19c9e5e10bb63221b87c73503d73762aa0032852928368df9d928c75ee614",
+        "8cfb05acc789d31b17e0273f59a1b30dfa9b2b71073cd715b6ca35a9d3a431b9",
+        "9a5ac10ccc05b64cbcb82e5c56dad92b7f846ada9df0c9976e6c971769794395",
+        "12eb1256bc48fb854ef06a87e0e9ccd607ef47d55a41dd2255e1360a91a322bd",
+        "9589f437d1888c3eeb8aec726f50f16637beb7b4baaf5040bd994e55cb9e57d3",
+        "6a6b401f09281bcecbfe25c0f73a9c44bc40f1129054ac9c207a0827b45d10ad",
+        "b235e527eedae1edfd57adaa694933c7e5a5e2e9af47e1f85fffbbc804e1a5bd",
+        "b5cefaeba60440f78fe2bf03e21e7df276187ecd7fde40a83b6d658f6ddaa245",
+        "c2fb6fe45eb8729b5a6b6ad7155b893e550c8cdc61db9103bbce817c1d48d6c7",
+        "9a3109c828490de70df3a2b2a0c0f8f013940191d0fb896c1c15e6b7169b5e80",
+        "75bbdc1ec2c5bc696d1fa83dbf6c154922716dd1d1bbed4a254d9aa7292b4d8e",
+        "766c8d66e2d78e5f75fab2ad27893e9cb8426aaeaf8c53f17fb28887e8493c49",
+        "5bf8335f952594ff383ee9777b56802c61432604281ce331d00a5c58ca232931",
+        "ce5b31f6e7ec19a043559d0c5ee316d30eaf3298b2ee77b8e4de37ebaf2d48db",
+        "cde8c3ea30ca28b9011b2b0d4f35d56bbf947ccf8c42ed11a9301768a0f12dbf",
+        "381921c8e191e90e62a88eafac45a197a3aed9be1a79e9ad2e4fb81d1168f578",
+        "1322c5a4ef3f303318b574a17e9872fde8cdd76c1ea8ea14a94b6e8fc0014f58",
+        "4b53a9c1fb61c9ca23e20e6f48eecc40d99d995b34beefded76d30f176cc3ed4",
+        "95a88baaad7b0f11e7a21a1b943fd09288ee60ad00f9081cdd08626e62f6f2a4",
+        "b135b5ebd47e1c24dc45c5af0af6d3107a74dd1085153abfafa74f291c49f0c3",
+        "86b1b784b4684dcdd5a3cbddd2adab190d651885359418284495ea6e6e7d47b3",
+        "f23f8cfb8cdb5cb48e661d3e0577dd1e98ba1086ff6560dbf44ebf48da2be246",
+        "85d2958be169d1970767027f10ef52dde09f310baed04e185f41d895904fc2bb",
+        "d72436fbbd6dab608e463fae656a48af014bb4d5de1ebb562f887a76b9fb449b",
+        "0f14d3e9f29fd8d3fe4b45d391980cbfe6b289743f7e8d9bc5c95350d016ea5e",
+        "17a9b11a1ae747d5341f4ffbc0c6ad276636f1a8b1fb5e52777941e544c49698",
+        "971aa7d5c391e9744f129a0bc9605af70e966a4b10716eb2895a65bec406ea98",
+        "a15a620182436787e5b221200f004855ead868b8d8f0c014c05267ccf25f3572",
+        "ed76170beec5b25996f62bfa05f23344c6dd4641d810f8828db5d72968450dc1",
+        "e0d6a2dff1dd3468c87e8e609a7afd5e1eda5f3f311cb5b9a7a526bd512567bd",
+        "eba9536459f1bc98f2d804c91431f602abcfe8e2d7e57012ffb7263484f7cf6b",
+        "3eb2782e382084b10e06ea61d4f87ff7cdb4cab5d2b1be11c492037e374f8a6e",
+        "1bbe9f2161b5269ce764e54d96c5967768b81a3048b5371736239d488eaf70f8",
+        "556c4c14e3e2c8aef02385cfd256276297ceb096067f87e8e6847da60cfe6b32",
+        "8332bc19c220f2d1b9f5084671c8ca21d6fb38e141b9de3c2359adbf5ec9b8d4"
+      ],
+      "independent_sources": [],
+      "hypothesis": "A trailing bid-level reference may predict a temporary dislocation reversal over sixty seconds.",
+      "uncertainty": "Unvalidated empirical horizon-error envelope; no calibrated probability or guaranteed coverage",
+      "assumptions": [
+        "Observed future bid target is a monetary mark, not terminal outcome probability",
+        "Trailing20 bid median plus median prior matured horizon residual",
+        "Prior90th-percentile absolute residual envelope with $.01 policy floor",
+        "Round-trip global fee bound and $.01/share slippage per leg",
+        "Actual execution requires separate current risk approval and observed liquidity"
+      ],
+      "reasons": [],
+      "diagnostics": {
+        "book_age_seconds": 0.325424,
+        "fee_reference": "https://clob.polymarket.com",
+        "fee_observed_at": "2026-11-06T23:28:11.528065+00:00",
+        "forecast": 0.31,
+        "lower": 0.24,
+        "upper": 0.38,
+        "observations": 95,
+        "matured_errors": 60,
+        "empirical_error_envelope": 0.07,
+        "reference_bid": 0.29,
+        "bias": 0.020000000000000018,
+        "entry_ask": 0.16,
+        "current_bid": 0.15,
+        "spread": 0.010000000000000009,
+        "forecast_gross_edge": 0.15,
+        "uncertainty_haircut": 0.07,
+        "conservative_pre_cost_edge": 0.07999999999999999,
+        "entry_fee_bound": 0.008,
+        "exit_fee_bound": 0.012,
+        "roundtrip_slippage_bound": 0.02,
+        "minimum_net_edge": 0.03,
+        "cost_model": "global_notional_bound_matches_broker",
+        "data_gate_passed": 1,
+        "valuation_ready": 1,
+        "evidence_gate_passed": 1,
+        "candidate_before_costs": 1,
+        "qualified_before_risk": 1
+      }
+    },
+    "original_signal_sha256": "d863a1c5589924a04001fdb70d78b7680b6521ca0aa9ab963ff78f20825dd440",
+    "legacy_model_code_sha256": "a095ccd661a0e34046fb4a2415d63cabf95de0a947530ef75f55a18e19cc650f",
+    "strategy_id": "short_horizon",
+    "assessment": {
+      "schema_version": "phase16-executable-depth-v1",
+      "evaluated_at": "2026-11-06T23:31:48.038424+00:00",
+      "research_only": true,
+      "trading_authority": false,
+      "certification_authority": false,
+      "policy": {
+        "source_max_age_seconds": 15,
+        "market_max_age_seconds": 3600,
+        "fee_max_age_seconds": 300,
+        "max_spread": 0.05,
+        "participation": 0.25,
+        "slippage_per_share_per_leg": 0.01,
+        "minimum_net_edge_per_share": 0.03,
+        "standard_min_notional": 2,
+        "standard_max_notional": 5
+      },
+      "execution_checks_pass": true,
+      "cost_adjusted_edge_pass": true,
+      "estimated_net_edge_per_share": 0.039999999999999966,
+      "reasons": [],
+      "execution_reasons": [],
+      "valuation_reasons": [],
+      "future_exit_liquidity_verified": false,
+      "settlement_rule_review_verified": false,
+      "probability_semantics": "future_executable_bid_mark_USD_per_share_not_terminal_probability",
+      "market_id": "6736353",
+      "token_id": "94471500152405942388262846298840204024899302380222365052282992568188988591230",
+      "event_id": "1322448",
+      "book_id": "a13cc0440460bdcaca7e863c53e0867cd6671ff08fec14eb69d4c7f6c03eb4fc",
+      "source": "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+      "source_at": "2026-11-06T23:31:47.713000+00:00",
+      "available_at": "2026-11-06T23:31:47.754925+00:00",
+      "source_age_seconds": 0.325424,
+      "book_sha256": "a4de700b40b74ed1b4ff9e34e88bf09dc814269e4af27eba0936a71b67513f87",
+      "market_sha256": "13f6ea78da3bbb6323957960d8a2047d898716504d1779f4767f798fc5f2d773",
+      "resolution_rules_sha256": "1fa9c377fd15e025d7083184e381e791309df9ffb7ba4b942b90311f5a49bfef",
+      "fee_rate": 0.05,
+      "fee_evidence_id": "e6c75fc1-48cf-42f4-992a-e162c867fa32",
+      "raw_fee_response_ids": [
+        "8a54b11429d96a092195f899b2d0670c20c490a6f40e8c5c6ad0423ff6cc04de",
+        "ff8f5b2fd042f4223692ab1d2cb1d4eb5d3c1453439c2d84b724efbedf1a4368"
+      ],
+      "target_notional": 2.0,
+      "quantity_shares": 12.5,
+      "current_best_bid": 0.15,
+      "current_best_ask": 0.16,
+      "spread": 0.010000000000000009,
+      "broker_limit_price": 0.16,
+      "broker_limit_capacity_shares": 619.195,
+      "broker_limit_notional": 2.0,
+      "broker_fee_inclusive_reservation": 2.1,
+      "hypothetical_sweep_entry": {
+        "requested_shares": 12.5,
+        "depth_supported_shares": 12.5,
+        "unavailable_shares": 0.0,
+        "complete": true,
+        "vwap": 0.16,
+        "notional": 2.0,
+        "levels_used": [
+          {
+            "price": 0.16,
+            "gross_observed_size": 2476.78,
+            "modeled_shares": 12.5
+          }
+        ],
+        "participation": 0.25,
+        "semantics": "observed_fractional_depth_quote_not_a_simulated_fill"
+      },
+      "current_exit_depth_proxy": {
+        "requested_shares": 12.5,
+        "depth_supported_shares": 12.5,
+        "unavailable_shares": 0.0,
+        "complete": true,
+        "vwap": 0.15,
+        "notional": 1.875,
+        "levels_used": [
+          {
+            "price": 0.15,
+            "gross_observed_size": 5389.16,
+            "modeled_shares": 12.5
+          }
+        ],
+        "participation": 0.25,
+        "semantics": "observed_fractional_depth_quote_not_a_simulated_fill"
+      },
+      "current_exit_is_not_future_liquidity": true,
+      "forecast_lower_bid": 0.24,
+      "depth_adjusted_lower_exit_bid": 0.24,
+      "entry_impact_per_share": 0.0,
+      "exit_impact_proxy_per_share": 0.0,
+      "entry_fee_per_share": 0.008,
+      "exit_fee_per_share": 0.012,
+      "roundtrip_slippage_per_share": 0.02,
+      "status": "execution_supported_research_valuation_only",
+      "assumptions": [
+        "existing broker submits best-ask limit; deeper asks cannot authorize that order",
+        "25% per-level fractional depth and $.01/share per-leg slippage",
+        "current bid curvature is a future-exit proxy, not verified future liquidity",
+        "resolution metadata presence is not independent settlement-rule review",
+        "no reservation, latency fill, queue position or order is created by this assessment"
+      ]
+    },
+    "vetoed": false,
+    "qualified": false,
+    "trading_authority": false
+  },
+  "execution_pass_record_sha256": "faf050a62eec72bfead0a75b128a01e6d104867c26198c5519df0c1b22c5f781",
+  "legacy_strategy_code_sha256": "a095ccd661a0e34046fb4a2415d63cabf95de0a947530ef75f55a18e19cc650f",
+  "risk_approval_audit": [
+    {
+      "seq": 14185,
+      "timestamp": "2026-11-06T23:31:48.492951+00:00",
+      "action": "approved",
+      "payload": "{\"decision\": {\"approved\": true, \"approved_notional\": 2.1, \"available_at\": \"2026-11-06T23:31:48.492951Z\", \"expires_at\": \"2026-11-06T23:31:58.492951Z\", \"id\": \"4c4e3046-766b-4b6e-97e5-b3bd7ba4dc8c\", \"intent_id\": \"5aded74b8d8b563220a74a8dd2647b755c0046048e5c0767520f17c8646290ac\", \"reasons\": [\"approved\"], \"reservation_id\": \"7a4ef473-4e18-42f2-9a40-4706ee9b071a\", \"schema_version\": \"1.0\", \"source\": \"risk/v1\", \"timestamp\": \"2026-11-06T23:31:48.492951Z\"}, \"intent\": {\"available_at\": \"2026-11-06T23:31:48.492951Z\", \"client_order_id\": \"c54921e0d330d6412a2fdc4593f3a72056c0fa63ce3b55ecc59a8e0829d52098\", \"event_id\": \"1322448\", \"expires_at\": \"2026-11-06T23:32:18.492951Z\", \"id\": \"5aded74b8d8b563220a74a8dd2647b755c0046048e5c0767520f17c8646290ac\", \"limit_price\": 0.16, \"market_id\": \"6736353\", \"opportunity_id\": \"c9971154418564bbbd5166f7d82d12ba12b958607b3f530972d23fa81f709dd6\", \"quantity\": 12.5, \"schema_version\": \"1.0\", \"side\": \"BUY\", \"source\": \"experimental-paper/v1\", \"tier\": \"standard\", \"timestamp\": \"2026-11-06T23:31:48.492951Z\", \"token_id\": \"94471500152405942388262846298840204024899302380222365052282992568188988591230\"}}"
+    }
+  ],
+  "risk_decision": {
+    "schema_version": "1.0",
+    "id": "4c4e3046-766b-4b6e-97e5-b3bd7ba4dc8c",
+    "timestamp": "2026-11-06T23:31:48.492951Z",
+    "available_at": "2026-11-06T23:31:48.492951Z",
+    "source": "risk/v1",
+    "intent_id": "5aded74b8d8b563220a74a8dd2647b755c0046048e5c0767520f17c8646290ac",
+    "approved": true,
+    "reasons": [
+      "approved"
+    ],
+    "approved_notional": 2.1,
+    "reservation_id": "7a4ef473-4e18-42f2-9a40-4706ee9b071a",
+    "expires_at": "2026-11-06T23:31:58.492951Z"
+  },
+  "intent": {
+    "schema_version": "1.0",
+    "id": "5aded74b8d8b563220a74a8dd2647b755c0046048e5c0767520f17c8646290ac",
+    "timestamp": "2026-11-06T23:31:48.492951Z",
+    "available_at": "2026-11-06T23:31:48.492951Z",
+    "source": "experimental-paper/v1",
+    "client_order_id": "c54921e0d330d6412a2fdc4593f3a72056c0fa63ce3b55ecc59a8e0829d52098",
+    "market_id": "6736353",
+    "token_id": "94471500152405942388262846298840204024899302380222365052282992568188988591230",
+    "event_id": "1322448",
+    "opportunity_id": "c9971154418564bbbd5166f7d82d12ba12b958607b3f530972d23fa81f709dd6",
+    "side": "BUY",
+    "limit_price": 0.16,
+    "quantity": 12.5,
+    "expires_at": "2026-11-06T23:32:18.492951Z",
+    "tier": "standard"
+  },
+  "broker_terms": {
+    "submitted": "2026-11-06T23:31:48.492951+00:00",
+    "ready": "2026-11-06T23:31:48.592951+00:00",
+    "fee_rate": 0.05,
+    "maker": 0,
+    "pending": null
+  },
+  "entry_quote": {
+    "id": "a13cc0440460bdcaca7e863c53e0867cd6671ff08fec14eb69d4c7f6c03eb4fc",
+    "market_id": "6736353",
+    "token_id": "94471500152405942388262846298840204024899302380222365052282992568188988591230",
+    "source": "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+    "source_at": "2026-11-06T23:31:47.713000+00:00",
+    "available_at": "2026-11-06T23:31:47.754925+00:00",
+    "best_bid": {
+      "price": 0.15,
+      "size": 5389.16
+    },
+    "best_ask": {
+      "price": 0.16,
+      "size": 2476.78
+    },
+    "complete": true,
+    "depth_levels": {
+      "bids": 15,
+      "asks": 32
+    }
+  },
+  "entry_fee_proof": {
+    "fee_rate_bound": 0.05,
+    "observed_at": "2026-11-06T23:28:11.528065+00:00",
+    "age_at_action_seconds": 216.964886,
+    "condition_id": "0xaafa9dd0b668b5db4241e66f624d8ebd862ecbe77711825be56381ae5136b260",
+    "raw_response_ids": [
+      "8a54b11429d96a092195f899b2d0670c20c490a6f40e8c5c6ad0423ff6cc04de",
+      "ff8f5b2fd042f4223692ab1d2cb1d4eb5d3c1453439c2d84b724efbedf1a4368"
+    ],
+    "raw_response_sha256": [
+      "5a8300c620e169d84d4073be54886b63afd53001aad5f9176e8fd74f557af400",
+      "46d2e5b1cd75e247a05a5581792b63947342a734cac3c903ab2bc66157b36527"
+    ],
+    "curve_exponent": 1,
+    "taker_only": true,
+    "verified": true,
+    "semantics": "conservative global notional bound, not a claim of exact venue charge"
+  },
+  "entry_25_percent_capacity_shares": 619.195,
+  "fill_report": {
+    "schema_version": "1.0",
+    "id": "10405bee-02ff-41b4-920a-97061738c2d9",
+    "timestamp": "2026-11-06T23:31:54.010756Z",
+    "available_at": "2026-11-06T23:31:54.010756Z",
+    "source": "paper-broker/v1",
+    "intent_id": "5aded74b8d8b563220a74a8dd2647b755c0046048e5c0767520f17c8646290ac",
+    "client_order_id": "c54921e0d330d6412a2fdc4593f3a72056c0fa63ce3b55ecc59a8e0829d52098",
+    "status": "filled",
+    "filled_quantity": 12.5,
+    "average_price": 0.16,
+    "fees": 0.1,
+    "remaining_quantity": 0.0,
+    "reason": ""
+  },
+  "fill_quote": {
+    "id": "93ad15a5fcca8510b295909b5cd51ac358ed35383a7b7affe83b2cb0e5fde995",
+    "market_id": "6736353",
+    "token_id": "94471500152405942388262846298840204024899302380222365052282992568188988591230",
+    "source": "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+    "source_at": "2026-11-06T23:31:53.494000+00:00",
+    "available_at": "2026-11-06T23:31:53.534742+00:00",
+    "best_bid": {
+      "price": 0.15,
+      "size": 4756.83
+    },
+    "best_ask": {
+      "price": 0.16,
+      "size": 23399.47
+    },
+    "complete": true,
+    "depth_levels": {
+      "bids": 15,
+      "asks": 31
+    }
+  },
+  "fill_quote_10_percent_capacity_shares": 2339.947,
+  "actual_fill_latency_seconds": 5.517805,
+  "simulated_configured_latency_seconds": 0.1,
+  "exit": {
+    "id": "ac954808c7d9120e2e87bc2eca6aaf3125d2d0b008753335354baf973d87879c",
+    "token": "94471500152405942388262846298840204024899302380222365052282992568188988591230",
+    "strategy": "short_horizon",
+    "submitted": "2026-11-06T23:32:51.221624+00:00",
+    "ready": "2026-11-06T23:32:51.321624+00:00",
+    "expires": "2026-11-06T23:33:21.221624+00:00",
+    "requested": 12.5,
+    "filled": 12.5,
+    "proceeds": 0.8750000000000001,
+    "fees": 0.04375000000000001,
+    "pnl": -1.26875,
+    "status": "filled"
+  },
+  "exit_fill_audit": {
+    "seq": 14210,
+    "timestamp": "2026-11-06T23:32:57.219641+00:00",
+    "action": "experimental_exit_fill",
+    "payload": "{\"assumption\": \"post-latency displayed bids, bounded participation\", \"available_at\": \"2026-11-06T23:32:56.868914+00:00\", \"book_id\": \"b97c01b179c88c036e15d703f6a8d6e75ba8f46ad28e5c0f1172d1d0e6217037\", \"fee_evidence\": {\"evidence_id\": \"9151704d-9c9d-4361-8868-e0002aa63196\", \"fee_rate\": 0.05, \"observed_at\": \"2026-11-06T23:32:14.426266+00:00\", \"raw_response_ids\": [\"8a54b11429d96a092195f899b2d0670c20c490a6f40e8c5c6ad0423ff6cc04de\", \"ff8f5b2fd042f4223692ab1d2cb1d4eb5d3c1453439c2d84b724efbedf1a4368\"], \"reference\": \"/markets-by-token/94471500152405942388262846298840204024899302380222365052282992568188988591230\", \"source\": \"https://clob.polymarket.com\"}, \"fees\": 0.04375000000000001, \"id\": \"ac954808c7d9120e2e87bc2eca6aaf3125d2d0b008753335354baf973d87879c\", \"pnl\": -1.26875, \"proceeds\": 0.8750000000000001, \"quantity\": 12.5, \"source_at\": \"2026-11-06T23:32:56.828000+00:00\", \"strategy_id\": \"short_horizon\", \"token\": \"94471500152405942388262846298840204024899302380222365052282992568188988591230\"}"
+  },
+  "exit_quote": {
+    "id": "b97c01b179c88c036e15d703f6a8d6e75ba8f46ad28e5c0f1172d1d0e6217037",
+    "market_id": "6736353",
+    "token_id": "94471500152405942388262846298840204024899302380222365052282992568188988591230",
+    "source": "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+    "source_at": "2026-11-06T23:32:56.828000+00:00",
+    "available_at": "2026-11-06T23:32:56.868914+00:00",
+    "best_bid": {
+      "price": 0.07,
+      "size": 25936.61
+    },
+    "best_ask": {
+      "price": 0.08,
+      "size": 8779.47
+    },
+    "complete": true,
+    "depth_levels": {
+      "bids": 7,
+      "asks": 25
+    }
+  },
+  "exit_quote_archive_proof": {
+    "kind": "OrderBookSnapshot",
+    "record_id": "b97c01b179c88c036e15d703f6a8d6e75ba8f46ad28e5c0f1172d1d0e6217037",
+    "record_sha256": "b06cbb4d8884f2a4e5c7e0556780011edf06161c5f229091250f1ba8bfd52cf3"
+  },
+  "exit_fee_proof": {
+    "fee_rate_bound": 0.05,
+    "observed_at": "2026-11-06T23:32:14.426266+00:00",
+    "age_at_action_seconds": 42.793375,
+    "condition_id": "0xaafa9dd0b668b5db4241e66f624d8ebd862ecbe77711825be56381ae5136b260",
+    "raw_response_ids": [
+      "8a54b11429d96a092195f899b2d0670c20c490a6f40e8c5c6ad0423ff6cc04de",
+      "ff8f5b2fd042f4223692ab1d2cb1d4eb5d3c1453439c2d84b724efbedf1a4368"
+    ],
+    "raw_response_sha256": [
+      "5a8300c620e169d84d4073be54886b63afd53001aad5f9176e8fd74f557af400",
+      "46d2e5b1cd75e247a05a5581792b63947342a734cac3c903ab2bc66157b36527"
+    ],
+    "curve_exponent": 1,
+    "taker_only": true,
+    "verified": true,
+    "semantics": "conservative global notional bound, not a claim of exact venue charge"
+  },
+  "exit_10_percent_bid_capacity_shares": 9193.629,
+  "checks": {
+    "pass_stored_original_signal_hash_matches_native": true,
+    "existing_strategy_code_hash_unchanged": true,
+    "new_research_models_have_no_admission_authority": true,
+    "execution_check_precedes_risk_and_order": true,
+    "execution_pass_and_original_signal_agree": true,
+    "entry_source_time_causal_and_fresh": true,
+    "entry_standard_size_and_tick": true,
+    "risk_entry_participation_bound": true,
+    "risk_approval_and_reservation": true,
+    "risk_approval_has_native_audit": true,
+    "net_edge_matches_existing_cost_model": true,
+    "all_original_signal_quotes_causal": true,
+    "entry_quote_is_observed_evidence": true,
+    "actual_fill_book_post_latency_and_fresh": true,
+    "fill_before_approval_and_order_expiry": true,
+    "fill_cost_and_fee_accounting": true,
+    "fill_depth_10_percent_supported": true,
+    "fill_depth_consumed_idempotently": true,
+    "horizon_exit_is_post_latency_source_observation": true,
+    "exit_current_bid_depth_supported": true,
+    "exit_and_realized_pnl_arithmetic": true,
+    "account_matches_closed_roundtrip": true,
+    "certified_cash_and_pnl_unchanged": true
+  },
+  "defects": [],
+  "signal_evidence_quote_count": 72,
+  "signal_evidence_provenance": [
+    {
+      "id": "a13cc0440460bdcaca7e863c53e0867cd6671ff08fec14eb69d4c7f6c03eb4fc",
+      "source_at": "2026-11-06T23:31:47.713000+00:00",
+      "available_at": "2026-11-06T23:31:47.754925+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "75b17a926ae898d69a9294de495879c0e71f48c7428b7b79d1c942f3ae0949e9",
+        "record_sha256": "5dad642a50c37702fca77d7bca5605817382a6a21cd38377e178529d08f64247",
+        "canonical_full_book_id": "8ed071a876f0b076d781fe8dc112c255fe3e810a0e887e8455cb76809de291b5",
+        "canonical_full_sha256": "906b04eac78dc5f91e1d8f76629ce721091f95d374529e42d645e78ee6db35cf"
+      }
+    },
+    {
+      "id": "713c218e62bddf066c5a72668a75739e8f44890080e372ca35782aa34584b079",
+      "source_at": "2026-11-06T23:28:33.911000+00:00",
+      "available_at": "2026-11-06T23:28:33.952195+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "a9acd9269f7d0f1e0b58b519ae5401a633b4c9f37aa24066d2abb08f359ae4f1",
+        "record_sha256": "253ab8843e880f8b2d429de85645c8b16fa46dc5730f13a7b3173e024a08dc7f",
+        "canonical_full_book_id": "85d2958be169d1970767027f10ef52dde09f310baed04e185f41d895904fc2bb",
+        "canonical_full_sha256": "69cdd2f124bfda8e53c0e50c0c0cbda249ffc555cc7b23acf7d0fdfc9ca25345"
+      }
+    },
+    {
+      "id": "193e381a8519db61316268b42e1f25942397bb874cb84e1d49e0f65a218c60c0",
+      "source_at": "2026-11-06T23:28:39.524000+00:00",
+      "available_at": "2026-11-06T23:28:39.565395+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "b33c2afdd5ba34a06c116a9c716a2ca5944923c1de8b54211dbab97db2da6de7",
+        "record_sha256": "80cda8875cc78f14a1ae7574869b948c925961867282cf626924a38fe83d36b7",
+        "canonical_full_book_id": "85d2958be169d1970767027f10ef52dde09f310baed04e185f41d895904fc2bb",
+        "canonical_full_sha256": "69cdd2f124bfda8e53c0e50c0c0cbda249ffc555cc7b23acf7d0fdfc9ca25345"
+      }
+    },
+    {
+      "id": "02f247eb44cfc3db34022600013252ca0f622935c1e1bb88904db857feef5d06",
+      "source_at": "2026-11-06T23:28:46.134000+00:00",
+      "available_at": "2026-11-06T23:28:46.174770+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "5879ef41121860887d08cc2836be1dfd7c75ea4c991fec4ba9111f6da7376f93",
+        "record_sha256": "96d95e13ea7d8efa10838825f1992e27db95b5c570c9160f4ed2b585d4d3fb5d",
+        "canonical_full_book_id": "85d2958be169d1970767027f10ef52dde09f310baed04e185f41d895904fc2bb",
+        "canonical_full_sha256": "69cdd2f124bfda8e53c0e50c0c0cbda249ffc555cc7b23acf7d0fdfc9ca25345"
+      }
+    },
+    {
+      "id": "fbd6b1530d46435463476730fdb909e4918aed5b473d4e24c25fadd56d543858",
+      "source_at": "2026-11-06T23:28:51.423000+00:00",
+      "available_at": "2026-11-06T23:28:54.353254+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "b5e9c6bb1dec6c4b94e6aa63a7143cbbe6386d509730bdbed9091b1ba702b553",
+        "record_sha256": "8928c150d3997e3b78eabd62c6e79e5ad79a1edb6ff9e0db32c4259cd8fd44ef",
+        "canonical_full_book_id": "85d2958be169d1970767027f10ef52dde09f310baed04e185f41d895904fc2bb",
+        "canonical_full_sha256": "69cdd2f124bfda8e53c0e50c0c0cbda249ffc555cc7b23acf7d0fdfc9ca25345"
+      }
+    },
+    {
+      "id": "53fd2c5e76e69898ed7175956c38f36d5c100d51cbe675c6b8b8b13c2d3165f9",
+      "source_at": "2026-11-06T23:29:00.354000+00:00",
+      "available_at": "2026-11-06T23:29:00.399783+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "19f99b4cdba8d6071edd82a051d44fc7d9bc1f55a050c8ac5faf15f2d2f37f1e",
+        "record_sha256": "05be1a3a4f8c89bbe2707ba4abb2bd4692ad77af36ce5acabf1e21f9100c5b34",
+        "canonical_full_book_id": "85d2958be169d1970767027f10ef52dde09f310baed04e185f41d895904fc2bb",
+        "canonical_full_sha256": "69cdd2f124bfda8e53c0e50c0c0cbda249ffc555cc7b23acf7d0fdfc9ca25345"
+      }
+    },
+    {
+      "id": "144f6fbaa997ea5958f0235f5de267eb6425d0aa1ad7e16fe7560005857eb127",
+      "source_at": "2026-11-06T23:29:06.653000+00:00",
+      "available_at": "2026-11-06T23:29:06.693402+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "4328e3c9e8b8123661f911e3fffcd053759560be49e5278ab2453845860bbba8",
+        "record_sha256": "341e64898cc1e65e0ccb1e1e2e694f848845bc7964daf06272afe6baf384b7cc",
+        "canonical_full_book_id": "85d2958be169d1970767027f10ef52dde09f310baed04e185f41d895904fc2bb",
+        "canonical_full_sha256": "69cdd2f124bfda8e53c0e50c0c0cbda249ffc555cc7b23acf7d0fdfc9ca25345"
+      }
+    },
+    {
+      "id": "94213c6d3ec1beb78c1385359cb9c7abbf5870b0d8c7d49f063fd23261b23dea",
+      "source_at": "2026-11-06T23:29:12.815000+00:00",
+      "available_at": "2026-11-06T23:29:12.857870+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "099a3628ef4ec5d970b54b5db055adc2ffd63b352fd4bd98866d3d74e3353cd1",
+        "record_sha256": "998b3ea4490f1112be5d2235daaaa5783f72cb9c21ad020f17353676f33b4d46",
+        "canonical_full_book_id": "85d2958be169d1970767027f10ef52dde09f310baed04e185f41d895904fc2bb",
+        "canonical_full_sha256": "69cdd2f124bfda8e53c0e50c0c0cbda249ffc555cc7b23acf7d0fdfc9ca25345"
+      }
+    },
+    {
+      "id": "56d1d3059e5f088235653e1ebb407ba5c7ad74f64cf44c80fdaf0ee011e0c134",
+      "source_at": "2026-11-06T23:29:17.052000+00:00",
+      "available_at": "2026-11-06T23:29:20.669574+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "5909826d424cb29fe5982c9a8c5618cdad1c8065277a03b0e99b202803d9762e",
+        "record_sha256": "580b74dd95ee7ca06363b1aa93e577c4d9323cb7af58fff3c44718f166cd93b9",
+        "canonical_full_book_id": "85d2958be169d1970767027f10ef52dde09f310baed04e185f41d895904fc2bb",
+        "canonical_full_sha256": "69cdd2f124bfda8e53c0e50c0c0cbda249ffc555cc7b23acf7d0fdfc9ca25345"
+      }
+    },
+    {
+      "id": "e5d3f9c19fdd5ba45f15da6e3b340a5160715bb8abddd2fa5af62b4ed095ad41",
+      "source_at": "2026-11-06T23:29:26.888000+00:00",
+      "available_at": "2026-11-06T23:29:26.929959+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "4f61832761c0880fe865bebdc61b9b110517ce9cfdfa86a2d6d8ce03e52669c2",
+        "record_sha256": "cf9a5469d48feb7bc4605b7e64c80464a3dcb76ab7540cef845e06b7ad3699c4",
+        "canonical_full_book_id": "85d2958be169d1970767027f10ef52dde09f310baed04e185f41d895904fc2bb",
+        "canonical_full_sha256": "69cdd2f124bfda8e53c0e50c0c0cbda249ffc555cc7b23acf7d0fdfc9ca25345"
+      }
+    },
+    {
+      "id": "7cfb11a272d6a1da7af33e34ebca597bfd201631dd4828ee1206cadd8fa5b93d",
+      "source_at": "2026-11-06T23:29:33.004000+00:00",
+      "available_at": "2026-11-06T23:29:33.048247+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "3bcb98ff03f5bd20bc024a0a9ddf4ab1c0bb695ddeb69b30eecc9f1e2ce44861",
+        "record_sha256": "675de66e038fcb32ab4b775019f9b8cd0480f38f60a9fb18dac8ba3024d97cca",
+        "canonical_full_book_id": "85d2958be169d1970767027f10ef52dde09f310baed04e185f41d895904fc2bb",
+        "canonical_full_sha256": "69cdd2f124bfda8e53c0e50c0c0cbda249ffc555cc7b23acf7d0fdfc9ca25345"
+      }
+    },
+    {
+      "id": "21a4f5c098ed884db532b81568b01a4eeca1e027a66e0612af622f06b9f39c08",
+      "source_at": "2026-11-06T23:29:38.574000+00:00",
+      "available_at": "2026-11-06T23:29:38.614723+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "ac79c7352922afb9b3001856bddd382d9c17fe6b6f19965b022c307ecfda76a0",
+        "record_sha256": "e26d39df8ba583a5947e31140879b89e34313abecd9292e125bd3af629795821",
+        "canonical_full_book_id": "85d2958be169d1970767027f10ef52dde09f310baed04e185f41d895904fc2bb",
+        "canonical_full_sha256": "69cdd2f124bfda8e53c0e50c0c0cbda249ffc555cc7b23acf7d0fdfc9ca25345"
+      }
+    },
+    {
+      "id": "3055ee599bdba27e3f87951a5e5573458370a739570822d0c120be01f501601d",
+      "source_at": "2026-11-06T23:29:44.534000+00:00",
+      "available_at": "2026-11-06T23:29:47.464263+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "c108a0e21a1b2a156856310b1c48dac6a101bc0e455cb1f8cb3d693d48744913",
+        "record_sha256": "bb68a8d67a7a4675f0595ff6dc89551e605d24fdec56b8d2b2fe3c1d3d8f3fca",
+        "canonical_full_book_id": "85d2958be169d1970767027f10ef52dde09f310baed04e185f41d895904fc2bb",
+        "canonical_full_sha256": "69cdd2f124bfda8e53c0e50c0c0cbda249ffc555cc7b23acf7d0fdfc9ca25345"
+      }
+    },
+    {
+      "id": "63eee03cb488bfb37078612f345a5755a4c50304e88d851d35b31297e3f79fb3",
+      "source_at": "2026-11-06T23:29:54.095000+00:00",
+      "available_at": "2026-11-06T23:29:54.135690+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "9ac5ce3d1255dc73ab17f52748edf8262bdd9342511b8ffa54814be21ddf2eb1",
+        "record_sha256": "a82ffadff1af20c1b032496a2ecd9f6c3f927968845845da9f30f2c7335389b9",
+        "canonical_full_book_id": "85d2958be169d1970767027f10ef52dde09f310baed04e185f41d895904fc2bb",
+        "canonical_full_sha256": "69cdd2f124bfda8e53c0e50c0c0cbda249ffc555cc7b23acf7d0fdfc9ca25345"
+      }
+    },
+    {
+      "id": "576e8647f5f4603248d593bf685f70b4f849e5027c9772e32045a4b6f3076b60",
+      "source_at": "2026-11-06T23:30:00.132000+00:00",
+      "available_at": "2026-11-06T23:30:00.184605+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "342b700ac1c8b324360868adcf6c89fd0ca9aa8224efdf88e23fab6a5e9c984a",
+        "record_sha256": "1fc4ec61e320813bf5d46c9cbda0c05961db12961ba1911bc32ce99d49b8b120",
+        "canonical_full_book_id": "85d2958be169d1970767027f10ef52dde09f310baed04e185f41d895904fc2bb",
+        "canonical_full_sha256": "69cdd2f124bfda8e53c0e50c0c0cbda249ffc555cc7b23acf7d0fdfc9ca25345"
+      }
+    },
+    {
+      "id": "bf95b9c7471bf4f8e17d31798051abbb8699713dc509c2d2ccdb4862d894b952",
+      "source_at": "2026-11-06T23:30:05.954000+00:00",
+      "available_at": "2026-11-06T23:30:05.995357+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "4aa0357c84d4809f780894e9ffee69a3406772d31e66426e330e26a545165f9d",
+        "record_sha256": "806ab2af1f177962762ba2e1a15401dd910b8a53fbe8d9dd8a349ededd742f43",
+        "canonical_full_book_id": "85d2958be169d1970767027f10ef52dde09f310baed04e185f41d895904fc2bb",
+        "canonical_full_sha256": "69cdd2f124bfda8e53c0e50c0c0cbda249ffc555cc7b23acf7d0fdfc9ca25345"
+      }
+    },
+    {
+      "id": "272b2470941028951b23ee3957fbbf896f6115356424f29e914b6d376df10af0",
+      "source_at": "2026-11-06T23:31:17.372000+00:00",
+      "available_at": "2026-11-06T23:31:17.413383+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "67c04d95665a5cabfcc73fb07462693f840a2c310f8c40192f51d5c8e289fd70",
+        "record_sha256": "f9bbfdacad010f3c2696fca896119e73728ee8cc6b3945f7ac7c49d8de9d3d3c",
+        "canonical_full_book_id": "85d2958be169d1970767027f10ef52dde09f310baed04e185f41d895904fc2bb",
+        "canonical_full_sha256": "69cdd2f124bfda8e53c0e50c0c0cbda249ffc555cc7b23acf7d0fdfc9ca25345"
+      }
+    },
+    {
+      "id": "8ed071a876f0b076d781fe8dc112c255fe3e810a0e887e8455cb76809de291b5",
+      "source_at": "2026-11-06T23:31:23.721000+00:00",
+      "available_at": "2026-11-06T23:31:23.765532+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "OrderBookSnapshot",
+        "record_id": "8ed071a876f0b076d781fe8dc112c255fe3e810a0e887e8455cb76809de291b5",
+        "record_sha256": "906b04eac78dc5f91e1d8f76629ce721091f95d374529e42d645e78ee6db35cf"
+      }
+    },
+    {
+      "id": "7fa3df3bc6259b081d9d36085121f588d241ff3567107c4dd54d4697feb03b91",
+      "source_at": "2026-11-06T23:31:29.651000+00:00",
+      "available_at": "2026-11-06T23:31:29.692797+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "3992c514a540b1a6cbd87d04888ef96d9902ff9c2848c756c399109c7c8215dd",
+        "record_sha256": "e878f2e233e6e7a682b80f6192763c3ba824166f6f4d3cdea5fd3286fdb6ba95",
+        "canonical_full_book_id": "8ed071a876f0b076d781fe8dc112c255fe3e810a0e887e8455cb76809de291b5",
+        "canonical_full_sha256": "906b04eac78dc5f91e1d8f76629ce721091f95d374529e42d645e78ee6db35cf"
+      }
+    },
+    {
+      "id": "cf3534ca9e0912fd6daf643d6c158a76e0054edec526d28856b25a84d64fc613",
+      "source_at": "2026-11-06T23:31:34.620000+00:00",
+      "available_at": "2026-11-06T23:31:35.694533+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "a4e208b77f7531b315ab8677387122368f9748b05180df6d0a79499ec45cdbe0",
+        "record_sha256": "751cc3a52ec97f3f8eb5bfdd2bce8fda6084624c19c29e4bc2954ec244137807",
+        "canonical_full_book_id": "8ed071a876f0b076d781fe8dc112c255fe3e810a0e887e8455cb76809de291b5",
+        "canonical_full_sha256": "906b04eac78dc5f91e1d8f76629ce721091f95d374529e42d645e78ee6db35cf"
+      }
+    },
+    {
+      "id": "8e7161f925940c5b79b021841f0709b37477d459638d17a25c1ef80479682aa9",
+      "source_at": "2026-11-06T23:31:41.620000+00:00",
+      "available_at": "2026-11-06T23:31:41.662212+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "d15c3bc69b90fd14f24b86bd677560bfa992f20683a17ef880d4106ec1c71d65",
+        "record_sha256": "1b3f75a33b5052e57d6f3f20c1e0049ffd7fbcce9dcedda2709f87db3facb7d2",
+        "canonical_full_book_id": "8ed071a876f0b076d781fe8dc112c255fe3e810a0e887e8455cb76809de291b5",
+        "canonical_full_sha256": "906b04eac78dc5f91e1d8f76629ce721091f95d374529e42d645e78ee6db35cf"
+      }
+    },
+    {
+      "id": "1bc041b99287077fffbfd49f589d1eca68e29dddb4f4486b492e276e800ef73f",
+      "source_at": "2026-11-06T23:22:30.679000+00:00",
+      "available_at": "2026-11-06T23:22:30.722667+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "c11ddc56efd0f04d5b278c8971703f60cf15516c7fd73f945e5635074d32062a",
+        "record_sha256": "dc775ed74d78ec2587d301e2fe58325daecc893f4097f603524db2d9d1f40819",
+        "canonical_full_book_id": "210f58de641f21ed96d18666eee0c975fb79017a610e9729d3b4fdcc9d1e1127",
+        "canonical_full_sha256": "5ef8776d1fd33f1c626e93f4f71ac561b2749adb95c377b98b83f4903198fbac"
+      }
+    },
+    {
+      "id": "6e1d054a5b33b444042f2a4ba99b784b40dfdb6fb4a24b10fc8bbb38d6bcf7d3",
+      "source_at": "2026-11-06T23:23:39.720000+00:00",
+      "available_at": "2026-11-06T23:23:39.761141+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "4d341f5582377f8313257ea2554734d91949b18488259b399da86096e3dd9528",
+        "record_sha256": "f7420711efabb8796fa308b9092ae897fc4f914af5a0e6fea57cadcb1a03534c",
+        "canonical_full_book_id": "210f58de641f21ed96d18666eee0c975fb79017a610e9729d3b4fdcc9d1e1127",
+        "canonical_full_sha256": "5ef8776d1fd33f1c626e93f4f71ac561b2749adb95c377b98b83f4903198fbac"
+      }
+    },
+    {
+      "id": "f0d0852be37bd3952d27672d05dfc3d8b8b51385aea3ce11affd019543b5f7a2",
+      "source_at": "2026-11-06T23:22:35.722000+00:00",
+      "available_at": "2026-11-06T23:22:39.305227+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "add146a033ad00b3fd1c172707ae4efc67fa26894c4a7aa6e10af342e3084250",
+        "record_sha256": "ac13d110d50818b2a9bdab52111e933057a9e405855327c026eb11e1abe5b090",
+        "canonical_full_book_id": "210f58de641f21ed96d18666eee0c975fb79017a610e9729d3b4fdcc9d1e1127",
+        "canonical_full_sha256": "5ef8776d1fd33f1c626e93f4f71ac561b2749adb95c377b98b83f4903198fbac"
+      }
+    },
+    {
+      "id": "caa593083af553cddef58e9c4f745e9f1c56e029e2203518d7916e157845d8e5",
+      "source_at": "2026-11-06T23:22:45.490000+00:00",
+      "available_at": "2026-11-06T23:22:45.531397+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "a0f96c91802c8bb6a67954c775bb471e3922583ea2a84f7dfdd1bb6052840e30",
+        "record_sha256": "64522bc70352406944e2d732e2a97031da44b760acab27f9b8306bc1fefe383e",
+        "canonical_full_book_id": "210f58de641f21ed96d18666eee0c975fb79017a610e9729d3b4fdcc9d1e1127",
+        "canonical_full_sha256": "5ef8776d1fd33f1c626e93f4f71ac561b2749adb95c377b98b83f4903198fbac"
+      }
+    },
+    {
+      "id": "8af70b3ab22a91c0a2b4b8713b210a283d300974763e9ddb2c36bf26ee307233",
+      "source_at": "2026-11-06T23:23:45.840000+00:00",
+      "available_at": "2026-11-06T23:23:45.884377+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "fed046987b052611e5254dbc13d8ef087da244682f77e03b3ccdacdb9d82129c",
+        "record_sha256": "63e22bfb09740a2f9f61a86d5b1a2cd64339832514cf6393105c4bc77e28852e",
+        "canonical_full_book_id": "210f58de641f21ed96d18666eee0c975fb79017a610e9729d3b4fdcc9d1e1127",
+        "canonical_full_sha256": "5ef8776d1fd33f1c626e93f4f71ac561b2749adb95c377b98b83f4903198fbac"
+      }
+    },
+    {
+      "id": "865b58a7b2a75ed1ab29a250d6ee2b9c1bd137f6f95310eecc67ffb89d9c3979",
+      "source_at": "2026-11-06T23:22:52.295000+00:00",
+      "available_at": "2026-11-06T23:22:52.336569+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "94bf10ab7a68fe32e1b93697fdea449e54cfe7767a645506f83ef8c069acf5ac",
+        "record_sha256": "ca37e1e2923c93796f4208fbec76f977478b6fd14f55fc95026282919a5a6d77",
+        "canonical_full_book_id": "210f58de641f21ed96d18666eee0c975fb79017a610e9729d3b4fdcc9d1e1127",
+        "canonical_full_sha256": "5ef8776d1fd33f1c626e93f4f71ac561b2749adb95c377b98b83f4903198fbac"
+      }
+    },
+    {
+      "id": "9671426f272faf5abc0eecde1b5e31171cf6fa40c8a7d4525d4b0032968a309f",
+      "source_at": "2026-11-06T23:23:56.387000+00:00",
+      "available_at": "2026-11-06T23:24:01.158248+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "9309e0f53eb2b01280163aa577677f60115262bceeaac25cdd88f3510107997c",
+        "record_sha256": "c0e2682ffb476af43548300f592ee9c1a4c8e07403fae478df9a9f220a163874",
+        "canonical_full_book_id": "210f58de641f21ed96d18666eee0c975fb79017a610e9729d3b4fdcc9d1e1127",
+        "canonical_full_sha256": "5ef8776d1fd33f1c626e93f4f71ac561b2749adb95c377b98b83f4903198fbac"
+      }
+    },
+    {
+      "id": "85313153dde97facce4ae1315f1d129ffcb101b847fc0ddb9058dc754945c2e0",
+      "source_at": "2026-11-06T23:22:58.800000+00:00",
+      "available_at": "2026-11-06T23:22:58.841584+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "79bb3af288fb88fc882416b83f5c4ee24607844e5c350c90c60d3ba07b5e2de4",
+        "record_sha256": "2a24e1b0926cd810ca738c4c66e66ed5fd5cf3ca1653ded80bd2e8e08288c8de",
+        "canonical_full_book_id": "210f58de641f21ed96d18666eee0c975fb79017a610e9729d3b4fdcc9d1e1127",
+        "canonical_full_sha256": "5ef8776d1fd33f1c626e93f4f71ac561b2749adb95c377b98b83f4903198fbac"
+      }
+    },
+    {
+      "id": "3d2171b418291da321721bb1c7879fe290c9336c515c2df4fd59d1519d4fb2f7",
+      "source_at": "2026-11-06T23:24:07.489000+00:00",
+      "available_at": "2026-11-06T23:24:07.530002+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "3b9c1a8fc100259d552f1bba38a9d67baf40f2ae4ec056206827ff11fe9775dc",
+        "record_sha256": "4a5118add6b786ad5768eb2f5974dad5e6c4e06bbb477f3ed84b1fa38a9e8ad4",
+        "canonical_full_book_id": "210f58de641f21ed96d18666eee0c975fb79017a610e9729d3b4fdcc9d1e1127",
+        "canonical_full_sha256": "5ef8776d1fd33f1c626e93f4f71ac561b2749adb95c377b98b83f4903198fbac"
+      }
+    },
+    {
+      "id": "cb8d0c646792291b81ca91b401c8e6936295b417e757cfd060d08dd1abe21fce",
+      "source_at": "2026-11-06T23:23:03.067000+00:00",
+      "available_at": "2026-11-06T23:23:06.651837+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "046cbd67db0d14c9efc1de0be94f1311ff897c91572b9f63f53dd8393ce818cc",
+        "record_sha256": "44553cbcdfce80543e3261de5c5850bf1de609e2235873900ecdb7c4579fa6c4",
+        "canonical_full_book_id": "210f58de641f21ed96d18666eee0c975fb79017a610e9729d3b4fdcc9d1e1127",
+        "canonical_full_sha256": "5ef8776d1fd33f1c626e93f4f71ac561b2749adb95c377b98b83f4903198fbac"
+      }
+    },
+    {
+      "id": "45d6c5153c3da2cd9218577a2e65c98923bb726a881f55d76bb30e8b76edb671",
+      "source_at": "2026-11-06T23:23:13.340000+00:00",
+      "available_at": "2026-11-06T23:23:13.380704+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "5906abb2437df2d5578528b5fdcf9631f29f0379a9958b92a396f2cd31e9da95",
+        "record_sha256": "02b769d9944393637813ef17787108111a490729891e652d1a6bfae2f71e3cc7",
+        "canonical_full_book_id": "210f58de641f21ed96d18666eee0c975fb79017a610e9729d3b4fdcc9d1e1127",
+        "canonical_full_sha256": "5ef8776d1fd33f1c626e93f4f71ac561b2749adb95c377b98b83f4903198fbac"
+      }
+    },
+    {
+      "id": "1f013f0e9fbe20082263e26a6b460ed209246c91b1dd8c717b7eb704ec1d6917",
+      "source_at": "2026-11-06T23:24:13.548000+00:00",
+      "available_at": "2026-11-06T23:24:13.588191+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "47156fe0f9760816a7595fd3e5bbec4cf92c99f8c03464d30e077593fdd9bbee",
+        "record_sha256": "7f505ecb2a5921c4c7e293bbb6453f499b507c35249a13856e57585aa63c040d",
+        "canonical_full_book_id": "210f58de641f21ed96d18666eee0c975fb79017a610e9729d3b4fdcc9d1e1127",
+        "canonical_full_sha256": "5ef8776d1fd33f1c626e93f4f71ac561b2749adb95c377b98b83f4903198fbac"
+      }
+    },
+    {
+      "id": "1c973262fa25ed6565d13399dda56c563853effb0a8a4871e14b7212db861d2d",
+      "source_at": "2026-11-06T23:23:19.344000+00:00",
+      "available_at": "2026-11-06T23:23:19.385274+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "f123eabba9a180a80a682b7f50377a60e07e5325243e4365e0aee1d495c75717",
+        "record_sha256": "7219d146529e49030e09972e0f7e4691d0d12b7bf61f9e43483fa19622a60bd0",
+        "canonical_full_book_id": "210f58de641f21ed96d18666eee0c975fb79017a610e9729d3b4fdcc9d1e1127",
+        "canonical_full_sha256": "5ef8776d1fd33f1c626e93f4f71ac561b2749adb95c377b98b83f4903198fbac"
+      }
+    },
+    {
+      "id": "c1b99deb6d60fb4d53e12b3ac86b3a6161584aab10de04bdbdf10cec6aa7e3a8",
+      "source_at": "2026-11-06T23:24:19.529000+00:00",
+      "available_at": "2026-11-06T23:24:19.569552+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "d1322a4dbbcce215138c6d5daf7d90f77bae60bce0459c14b5f0b1f35572e8da",
+        "record_sha256": "5675e3b86f12e2f00ae99ca3aab883c5146793cdc66faaccf7830a7a64d7a85c",
+        "canonical_full_book_id": "210f58de641f21ed96d18666eee0c975fb79017a610e9729d3b4fdcc9d1e1127",
+        "canonical_full_sha256": "5ef8776d1fd33f1c626e93f4f71ac561b2749adb95c377b98b83f4903198fbac"
+      }
+    },
+    {
+      "id": "a616a257a356c2e4599045164b66c1e28c244fd298a3af2c5e4562505bbb921d",
+      "source_at": "2026-11-06T23:23:25.696000+00:00",
+      "available_at": "2026-11-06T23:23:25.736007+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "93609c3b31b2d05b8a460511321537c7ccae5449c89f8278ed855c8add16df85",
+        "record_sha256": "bfff8917a9098a3802184830d3b1a19108817245a2082cd9340244b29e3690bd",
+        "canonical_full_book_id": "210f58de641f21ed96d18666eee0c975fb79017a610e9729d3b4fdcc9d1e1127",
+        "canonical_full_sha256": "5ef8776d1fd33f1c626e93f4f71ac561b2749adb95c377b98b83f4903198fbac"
+      }
+    },
+    {
+      "id": "04bc6c5aad4f50d34411dd9ad7892be33f2ee74f379b096af086c48400937fec",
+      "source_at": "2026-11-06T23:24:34.886000+00:00",
+      "available_at": "2026-11-06T23:24:34.926273+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "7cc22982e226171da58714747767161ed8002d60823fe917f6b02b5d08ec84a5",
+        "record_sha256": "44fab3268a00d42810218aa84e458f1c3516c967786728eefa8db243341a9a2f",
+        "canonical_full_book_id": "210f58de641f21ed96d18666eee0c975fb79017a610e9729d3b4fdcc9d1e1127",
+        "canonical_full_sha256": "5ef8776d1fd33f1c626e93f4f71ac561b2749adb95c377b98b83f4903198fbac"
+      }
+    },
+    {
+      "id": "acb19c9e5e10bb63221b87c73503d73762aa0032852928368df9d928c75ee614",
+      "source_at": "2026-11-06T23:23:29.805000+00:00",
+      "available_at": "2026-11-06T23:23:33.326465+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "17ce96c58e2d8ae3b35c141c122d54878a352cf258b258f0c11be3de76fc8dbd",
+        "record_sha256": "3ae41bcde62b90652080d8f86acce874484b1bbd6e0cfe47deb4ea92b4e2bbd2",
+        "canonical_full_book_id": "210f58de641f21ed96d18666eee0c975fb79017a610e9729d3b4fdcc9d1e1127",
+        "canonical_full_sha256": "5ef8776d1fd33f1c626e93f4f71ac561b2749adb95c377b98b83f4903198fbac"
+      }
+    },
+    {
+      "id": "8cfb05acc789d31b17e0273f59a1b30dfa9b2b71073cd715b6ca35a9d3a431b9",
+      "source_at": "2026-11-06T23:24:41.535000+00:00",
+      "available_at": "2026-11-06T23:24:41.577585+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "c31c59443c0d5a338bff137735b19c2235a8aa9ea9dedfbab878cee38dda741a",
+        "record_sha256": "c570f75b3a9bf364cfa171496d0387ec1b51abff1d215677909a10a3c94695ce",
+        "canonical_full_book_id": "210f58de641f21ed96d18666eee0c975fb79017a610e9729d3b4fdcc9d1e1127",
+        "canonical_full_sha256": "5ef8776d1fd33f1c626e93f4f71ac561b2749adb95c377b98b83f4903198fbac"
+      }
+    },
+    {
+      "id": "9a5ac10ccc05b64cbcb82e5c56dad92b7f846ada9df0c9976e6c971769794395",
+      "source_at": "2026-11-06T23:24:47.764000+00:00",
+      "available_at": "2026-11-06T23:24:47.804818+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "1037678dd66083d5ab216bb5d278cbc951ecf8f7d8765a1f4237b3117e678e32",
+        "record_sha256": "68bbc5b175adb43a3a8276f39bdc872249752b2b25b139191a9b90b3a0927579",
+        "canonical_full_book_id": "210f58de641f21ed96d18666eee0c975fb79017a610e9729d3b4fdcc9d1e1127",
+        "canonical_full_sha256": "5ef8776d1fd33f1c626e93f4f71ac561b2749adb95c377b98b83f4903198fbac"
+      }
+    },
+    {
+      "id": "12eb1256bc48fb854ef06a87e0e9ccd607ef47d55a41dd2255e1360a91a322bd",
+      "source_at": "2026-11-06T23:23:51.959000+00:00",
+      "available_at": "2026-11-06T23:23:51.999525+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "15b6b88d9edec2adc26c51acce29cd6e2503466840ff4ae0aad4d9aae2fb6c38",
+        "record_sha256": "d0380bd0f761170f795dfb567f1a61016539b8019600939fa11fef95fdaffb66",
+        "canonical_full_book_id": "210f58de641f21ed96d18666eee0c975fb79017a610e9729d3b4fdcc9d1e1127",
+        "canonical_full_sha256": "5ef8776d1fd33f1c626e93f4f71ac561b2749adb95c377b98b83f4903198fbac"
+      }
+    },
+    {
+      "id": "9589f437d1888c3eeb8aec726f50f16637beb7b4baaf5040bd994e55cb9e57d3",
+      "source_at": "2026-11-06T23:25:01.666000+00:00",
+      "available_at": "2026-11-06T23:25:01.707415+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "6f57f0063355d84d672c81fd49c79dd036bb86ec7bb09a729a596327e7dae1f1",
+        "record_sha256": "09a7f2247cede3016b9261db0cbc4b17695535d3c860dd7d323ccc1a3b2213af",
+        "canonical_full_book_id": "210f58de641f21ed96d18666eee0c975fb79017a610e9729d3b4fdcc9d1e1127",
+        "canonical_full_sha256": "5ef8776d1fd33f1c626e93f4f71ac561b2749adb95c377b98b83f4903198fbac"
+      }
+    },
+    {
+      "id": "6a6b401f09281bcecbfe25c0f73a9c44bc40f1129054ac9c207a0827b45d10ad",
+      "source_at": "2026-11-06T23:25:07.837000+00:00",
+      "available_at": "2026-11-06T23:25:07.877735+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "32cac65e81f1cdcb6c93c743a419355024cd3d62825ac9c47fee2626b351e5a1",
+        "record_sha256": "a0c54f5576702f073a924efccae970a35e6bb9f52fa5c653255c8a1e140a7486",
+        "canonical_full_book_id": "210f58de641f21ed96d18666eee0c975fb79017a610e9729d3b4fdcc9d1e1127",
+        "canonical_full_sha256": "5ef8776d1fd33f1c626e93f4f71ac561b2749adb95c377b98b83f4903198fbac"
+      }
+    },
+    {
+      "id": "b235e527eedae1edfd57adaa694933c7e5a5e2e9af47e1f85fffbbc804e1a5bd",
+      "source_at": "2026-11-06T23:25:13.993000+00:00",
+      "available_at": "2026-11-06T23:25:14.033612+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "6b351d0b84e6d107eed600d64289fb90e348fc8a2cefe9812fbe2d13ca6b11d8",
+        "record_sha256": "069b75986edbfd44d88934f50dcd46b50e94b6a222287de3e89dc0af04b2d924",
+        "canonical_full_book_id": "210f58de641f21ed96d18666eee0c975fb79017a610e9729d3b4fdcc9d1e1127",
+        "canonical_full_sha256": "5ef8776d1fd33f1c626e93f4f71ac561b2749adb95c377b98b83f4903198fbac"
+      }
+    },
+    {
+      "id": "b5cefaeba60440f78fe2bf03e21e7df276187ecd7fde40a83b6d658f6ddaa245",
+      "source_at": "2026-11-06T23:25:28.168000+00:00",
+      "available_at": "2026-11-06T23:25:28.225301+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "afddfd37accb6f13025ec08a569579c28570692450c78203bbe923ff472a50e9",
+        "record_sha256": "181dcc5a71da1cb1e831f924b71521617bc0a3a92e543a8e0c80abebe956a6e4",
+        "canonical_full_book_id": "210f58de641f21ed96d18666eee0c975fb79017a610e9729d3b4fdcc9d1e1127",
+        "canonical_full_sha256": "5ef8776d1fd33f1c626e93f4f71ac561b2749adb95c377b98b83f4903198fbac"
+      }
+    },
+    {
+      "id": "c2fb6fe45eb8729b5a6b6ad7155b893e550c8cdc61db9103bbce817c1d48d6c7",
+      "source_at": "2026-11-06T23:24:24.364000+00:00",
+      "available_at": "2026-11-06T23:24:24.404610+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "03d176a200062095b89995037f855b7f840240abd3233565b72b853170d1b5ca",
+        "record_sha256": "a5da8d028c283327be754089b29eb4bf8b311c9b5472fc5b14b13a7882d9fd7d",
+        "canonical_full_book_id": "210f58de641f21ed96d18666eee0c975fb79017a610e9729d3b4fdcc9d1e1127",
+        "canonical_full_sha256": "5ef8776d1fd33f1c626e93f4f71ac561b2749adb95c377b98b83f4903198fbac"
+      }
+    },
+    {
+      "id": "9a3109c828490de70df3a2b2a0c0f8f013940191d0fb896c1c15e6b7169b5e80",
+      "source_at": "2026-11-06T23:25:40.655000+00:00",
+      "available_at": "2026-11-06T23:25:40.696710+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "bd13da5509cd5db8529d598a86c8a1bc60865687688d7874582c33c18756bf97",
+        "record_sha256": "fccc626e06a416c8feced777c49ff374d7973330235a92a70bc3549277d4d3b7",
+        "canonical_full_book_id": "210f58de641f21ed96d18666eee0c975fb79017a610e9729d3b4fdcc9d1e1127",
+        "canonical_full_sha256": "5ef8776d1fd33f1c626e93f4f71ac561b2749adb95c377b98b83f4903198fbac"
+      }
+    },
+    {
+      "id": "75bbdc1ec2c5bc696d1fa83dbf6c154922716dd1d1bbed4a254d9aa7292b4d8e",
+      "source_at": "2026-11-06T23:25:45.225000+00:00",
+      "available_at": "2026-11-06T23:25:48.432038+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "1aa57f6cc15c2780b9b457160a9ec6ef94874876a7e634dc3ddc7ad5e7b021ba",
+        "record_sha256": "45381ab6bf11058ef5e1afc58571f7932bf84571be030aed9364afa4317278be",
+        "canonical_full_book_id": "210f58de641f21ed96d18666eee0c975fb79017a610e9729d3b4fdcc9d1e1127",
+        "canonical_full_sha256": "5ef8776d1fd33f1c626e93f4f71ac561b2749adb95c377b98b83f4903198fbac"
+      }
+    },
+    {
+      "id": "766c8d66e2d78e5f75fab2ad27893e9cb8426aaeaf8c53f17fb28887e8493c49",
+      "source_at": "2026-11-06T23:25:54.969000+00:00",
+      "available_at": "2026-11-06T23:25:55.010900+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "714cb7a1b32a2642de2c5f05b5c0d5dbebf6836d98943f45dcbb911cf6ffb965",
+        "record_sha256": "98cb47dad442ea0579c6a6f9c1721fef9e4f6a2aa4ba60c0f1778b1c97edf60e",
+        "canonical_full_book_id": "210f58de641f21ed96d18666eee0c975fb79017a610e9729d3b4fdcc9d1e1127",
+        "canonical_full_sha256": "5ef8776d1fd33f1c626e93f4f71ac561b2749adb95c377b98b83f4903198fbac"
+      }
+    },
+    {
+      "id": "5bf8335f952594ff383ee9777b56802c61432604281ce331d00a5c58ca232931",
+      "source_at": "2026-11-06T23:24:51.690000+00:00",
+      "available_at": "2026-11-06T23:24:55.190160+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "a5d0df952794a0c28addb03dd1f2b2203a33b1e681550b6b16757200fee2c689",
+        "record_sha256": "b1d66739798260bfd55fc866de978ffcf7144ca133e7da0982643a44a67e4d2b",
+        "canonical_full_book_id": "210f58de641f21ed96d18666eee0c975fb79017a610e9729d3b4fdcc9d1e1127",
+        "canonical_full_sha256": "5ef8776d1fd33f1c626e93f4f71ac561b2749adb95c377b98b83f4903198fbac"
+      }
+    },
+    {
+      "id": "ce5b31f6e7ec19a043559d0c5ee316d30eaf3298b2ee77b8e4de37ebaf2d48db",
+      "source_at": "2026-11-06T23:26:01.073000+00:00",
+      "available_at": "2026-11-06T23:26:01.143987+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "60313a068376d75aad06230569a7914facd31d1dd030d8fc78a55d3957b93d55",
+        "record_sha256": "b60b2c8a40828b35cf19e6583e3e68a2535fd2c9fb1080d577b100120df60814",
+        "canonical_full_book_id": "210f58de641f21ed96d18666eee0c975fb79017a610e9729d3b4fdcc9d1e1127",
+        "canonical_full_sha256": "5ef8776d1fd33f1c626e93f4f71ac561b2749adb95c377b98b83f4903198fbac"
+      }
+    },
+    {
+      "id": "cde8c3ea30ca28b9011b2b0d4f35d56bbf947ccf8c42ed11a9301768a0f12dbf",
+      "source_at": "2026-11-06T23:26:07.209000+00:00",
+      "available_at": "2026-11-06T23:26:07.327840+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "a9365e7630a9e60f14301f5b6ad7ecd4bcc50168db139d494221037d6887e3e9",
+        "record_sha256": "5d890fc6dd63954b6a56ec4e00261fd6ae3a6cf8dab2a66b354c491b3c38a8ba",
+        "canonical_full_book_id": "210f58de641f21ed96d18666eee0c975fb79017a610e9729d3b4fdcc9d1e1127",
+        "canonical_full_sha256": "5ef8776d1fd33f1c626e93f4f71ac561b2749adb95c377b98b83f4903198fbac"
+      }
+    },
+    {
+      "id": "381921c8e191e90e62a88eafac45a197a3aed9be1a79e9ad2e4fb81d1168f578",
+      "source_at": "2026-11-06T23:26:11.608000+00:00",
+      "available_at": "2026-11-06T23:26:14.769061+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "cf8e6f598034af4c02e6cc202e6ec46e75329bce2ab08ea9b2598f13ecfc7849",
+        "record_sha256": "95959ea51cc69a05b731b621e2c1b761f6599972182c65c707e012b252d65296",
+        "canonical_full_book_id": "210f58de641f21ed96d18666eee0c975fb79017a610e9729d3b4fdcc9d1e1127",
+        "canonical_full_sha256": "5ef8776d1fd33f1c626e93f4f71ac561b2749adb95c377b98b83f4903198fbac"
+      }
+    },
+    {
+      "id": "1322c5a4ef3f303318b574a17e9872fde8cdd76c1ea8ea14a94b6e8fc0014f58",
+      "source_at": "2026-11-06T23:26:20.225000+00:00",
+      "available_at": "2026-11-06T23:26:20.281323+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "OrderBookSnapshot",
+        "record_id": "1322c5a4ef3f303318b574a17e9872fde8cdd76c1ea8ea14a94b6e8fc0014f58",
+        "record_sha256": "25d0b7c2372c5b2e210282da87bde8db34c79b98d339b634d8a84e053429c6ea"
+      }
+    },
+    {
+      "id": "4b53a9c1fb61c9ca23e20e6f48eecc40d99d995b34beefded76d30f176cc3ed4",
+      "source_at": "2026-11-06T23:25:18.792000+00:00",
+      "available_at": "2026-11-06T23:25:21.681931+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "bc900c7c13ad3cdfa68f9b4268896d3c46a2dad0778a9987623c5a8158e1cda8",
+        "record_sha256": "0b985f530f16741b7c76987c52d75b158ab903aaa780e66803b8a7f4bc028a26",
+        "canonical_full_book_id": "210f58de641f21ed96d18666eee0c975fb79017a610e9729d3b4fdcc9d1e1127",
+        "canonical_full_sha256": "5ef8776d1fd33f1c626e93f4f71ac561b2749adb95c377b98b83f4903198fbac"
+      }
+    },
+    {
+      "id": "95a88baaad7b0f11e7a21a1b943fd09288ee60ad00f9081cdd08626e62f6f2a4",
+      "source_at": "2026-11-06T23:26:26.406000+00:00",
+      "available_at": "2026-11-06T23:26:26.477200+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "c81d602bc689ae33b7d659a8b552ee582444ccf2bc385512fb95eb439419c18f",
+        "record_sha256": "7cdf8cc2bdaaa893dc97106e327866834b35d1714619f48b63ba9b825a5f2f04",
+        "canonical_full_book_id": "1322c5a4ef3f303318b574a17e9872fde8cdd76c1ea8ea14a94b6e8fc0014f58",
+        "canonical_full_sha256": "25d0b7c2372c5b2e210282da87bde8db34c79b98d339b634d8a84e053429c6ea"
+      }
+    },
+    {
+      "id": "b135b5ebd47e1c24dc45c5af0af6d3107a74dd1085153abfafa74f291c49f0c3",
+      "source_at": "2026-11-06T23:26:33.282000+00:00",
+      "available_at": "2026-11-06T23:26:33.322909+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "3d4c297fee168d841df9470c707e34f3e94461718865d03c15880c10963c0209",
+        "record_sha256": "0c91f764ab2e46edc5b4e7999ba34a16d89bb478756d83e16c334ecb8745f4d9",
+        "canonical_full_book_id": "1322c5a4ef3f303318b574a17e9872fde8cdd76c1ea8ea14a94b6e8fc0014f58",
+        "canonical_full_sha256": "25d0b7c2372c5b2e210282da87bde8db34c79b98d339b634d8a84e053429c6ea"
+      }
+    },
+    {
+      "id": "86b1b784b4684dcdd5a3cbddd2adab190d651885359418284495ea6e6e7d47b3",
+      "source_at": "2026-11-06T23:25:33.460000+00:00",
+      "available_at": "2026-11-06T23:25:33.501760+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "f95093ba3a3c3a8afcc265bf703df1de2137c8451e679109254a4ebe79c11695",
+        "record_sha256": "85331547d2f33d72534f1e9957552bbd29c2858d801359a837dd2020d911784a",
+        "canonical_full_book_id": "210f58de641f21ed96d18666eee0c975fb79017a610e9729d3b4fdcc9d1e1127",
+        "canonical_full_sha256": "5ef8776d1fd33f1c626e93f4f71ac561b2749adb95c377b98b83f4903198fbac"
+      }
+    },
+    {
+      "id": "f23f8cfb8cdb5cb48e661d3e0577dd1e98ba1086ff6560dbf44ebf48da2be246",
+      "source_at": "2026-11-06T23:26:39.629000+00:00",
+      "available_at": "2026-11-06T23:26:39.668457+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "8e825494ba62ccece75137989f2fbc7d804e84f01e9b48b83af1cbe39e1b176a",
+        "record_sha256": "d2f46db81059f50f71283e66744fa798f52fe5a8223983c1dafdf0e2500f08f9",
+        "canonical_full_book_id": "1322c5a4ef3f303318b574a17e9872fde8cdd76c1ea8ea14a94b6e8fc0014f58",
+        "canonical_full_sha256": "25d0b7c2372c5b2e210282da87bde8db34c79b98d339b634d8a84e053429c6ea"
+      }
+    },
+    {
+      "id": "85d2958be169d1970767027f10ef52dde09f310baed04e185f41d895904fc2bb",
+      "source_at": "2026-11-06T23:26:52.143000+00:00",
+      "available_at": "2026-11-06T23:26:52.183111+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "OrderBookSnapshot",
+        "record_id": "85d2958be169d1970767027f10ef52dde09f310baed04e185f41d895904fc2bb",
+        "record_sha256": "69cdd2f124bfda8e53c0e50c0c0cbda249ffc555cc7b23acf7d0fdfc9ca25345"
+      }
+    },
+    {
+      "id": "d72436fbbd6dab608e463fae656a48af014bb4d5de1ebb562f887a76b9fb449b",
+      "source_at": "2026-11-06T23:26:58.039000+00:00",
+      "available_at": "2026-11-06T23:26:58.078891+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "8cdc27dda2b73844d98a6fb860fff83dc1839bd9896ce9f422383c7a42084a2e",
+        "record_sha256": "6465d8531856e5ccdfc444e223f06d83bfd6e6461133b3298b89dd116f53b31f",
+        "canonical_full_book_id": "85d2958be169d1970767027f10ef52dde09f310baed04e185f41d895904fc2bb",
+        "canonical_full_sha256": "69cdd2f124bfda8e53c0e50c0c0cbda249ffc555cc7b23acf7d0fdfc9ca25345"
+      }
+    },
+    {
+      "id": "0f14d3e9f29fd8d3fe4b45d391980cbfe6b289743f7e8d9bc5c95350d016ea5e",
+      "source_at": "2026-11-06T23:27:03.854000+00:00",
+      "available_at": "2026-11-06T23:27:03.894702+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "790380a68d9773e0435e9c20d340c121759dcb525028e746aa3e5111eece30e1",
+        "record_sha256": "0930eb32a258b56ee8782580d7df77777bb4ac4072161fa0d2ad748949f0eb5b",
+        "canonical_full_book_id": "85d2958be169d1970767027f10ef52dde09f310baed04e185f41d895904fc2bb",
+        "canonical_full_sha256": "69cdd2f124bfda8e53c0e50c0c0cbda249ffc555cc7b23acf7d0fdfc9ca25345"
+      }
+    },
+    {
+      "id": "17a9b11a1ae747d5341f4ffbc0c6ad276636f1a8b1fb5e52777941e544c49698",
+      "source_at": "2026-11-06T23:27:10.451000+00:00",
+      "available_at": "2026-11-06T23:27:10.492167+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "1c8ab1152b5e78cbbf30ee227b5ce6271e73b5c5f8bf9cd94a556a23392072d0",
+        "record_sha256": "0b5e08b850cf78073c0d57cb710abc1d2e9c69a22983c4173c3c02372a5ab9cf",
+        "canonical_full_book_id": "85d2958be169d1970767027f10ef52dde09f310baed04e185f41d895904fc2bb",
+        "canonical_full_sha256": "69cdd2f124bfda8e53c0e50c0c0cbda249ffc555cc7b23acf7d0fdfc9ca25345"
+      }
+    },
+    {
+      "id": "971aa7d5c391e9744f129a0bc9605af70e966a4b10716eb2895a65bec406ea98",
+      "source_at": "2026-11-06T23:27:35.315000+00:00",
+      "available_at": "2026-11-06T23:27:35.356714+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "8b36c444cf78a25f9ed9c8cfb583648f8c75d8147d989fbfc929ad660f1d16e4",
+        "record_sha256": "923de7a07fe6a4f3739d457dae804ce106ac0e1f6c97118d9590594890b97e87",
+        "canonical_full_book_id": "85d2958be169d1970767027f10ef52dde09f310baed04e185f41d895904fc2bb",
+        "canonical_full_sha256": "69cdd2f124bfda8e53c0e50c0c0cbda249ffc555cc7b23acf7d0fdfc9ca25345"
+      }
+    },
+    {
+      "id": "a15a620182436787e5b221200f004855ead868b8d8f0c014c05267ccf25f3572",
+      "source_at": "2026-11-06T23:27:41.172000+00:00",
+      "available_at": "2026-11-06T23:27:41.212671+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "2848318863547798d0f5e1c7b907f99c240f3a30fa592d1f9680de039d6498b4",
+        "record_sha256": "b746957f3a042335992ee73147feb67ab2192b2a0e8e4c2c5b8979ad7385b359",
+        "canonical_full_book_id": "85d2958be169d1970767027f10ef52dde09f310baed04e185f41d895904fc2bb",
+        "canonical_full_sha256": "69cdd2f124bfda8e53c0e50c0c0cbda249ffc555cc7b23acf7d0fdfc9ca25345"
+      }
+    },
+    {
+      "id": "ed76170beec5b25996f62bfa05f23344c6dd4641d810f8828db5d72968450dc1",
+      "source_at": "2026-11-06T23:27:53.585000+00:00",
+      "available_at": "2026-11-06T23:27:53.625930+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "e0072f079f9f0dad89ed9a59000ddf1b1cebe5536e030655f8779af2da8ec381",
+        "record_sha256": "9d9b42ddba2a5dfc4b9d41cf4588017c9ace0d8716a6e6ccfeb8cee2b6621ea8",
+        "canonical_full_book_id": "85d2958be169d1970767027f10ef52dde09f310baed04e185f41d895904fc2bb",
+        "canonical_full_sha256": "69cdd2f124bfda8e53c0e50c0c0cbda249ffc555cc7b23acf7d0fdfc9ca25345"
+      }
+    },
+    {
+      "id": "e0d6a2dff1dd3468c87e8e609a7afd5e1eda5f3f311cb5b9a7a526bd512567bd",
+      "source_at": "2026-11-06T23:28:06.750000+00:00",
+      "available_at": "2026-11-06T23:28:06.791605+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "ea97aab52e67f4aac3c03174d27664d45d447e6e44817515d47f03cef87fc852",
+        "record_sha256": "798d1221c3be9dbc35857d66eb653c7975ce6ae69df867b6daa1662f642c422b",
+        "canonical_full_book_id": "85d2958be169d1970767027f10ef52dde09f310baed04e185f41d895904fc2bb",
+        "canonical_full_sha256": "69cdd2f124bfda8e53c0e50c0c0cbda249ffc555cc7b23acf7d0fdfc9ca25345"
+      }
+    },
+    {
+      "id": "eba9536459f1bc98f2d804c91431f602abcfe8e2d7e57012ffb7263484f7cf6b",
+      "source_at": "2026-11-06T23:28:12.561000+00:00",
+      "available_at": "2026-11-06T23:28:12.602636+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "a0b8159eb285d87622535087b20be143eed3980912345b37e7cb40c6515fc354",
+        "record_sha256": "fd10a72b2b280bedc3db189f44f94831f4800a658073877bcc6c23ac2690ea3a",
+        "canonical_full_book_id": "85d2958be169d1970767027f10ef52dde09f310baed04e185f41d895904fc2bb",
+        "canonical_full_sha256": "69cdd2f124bfda8e53c0e50c0c0cbda249ffc555cc7b23acf7d0fdfc9ca25345"
+      }
+    },
+    {
+      "id": "3eb2782e382084b10e06ea61d4f87ff7cdb4cab5d2b1be11c492037e374f8a6e",
+      "source_at": "2026-11-06T23:27:47.285000+00:00",
+      "available_at": "2026-11-06T23:27:47.327784+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "316d7c1b15675d449c13648c8f898eb169e247ab56977e029358afda27db471d",
+        "record_sha256": "7595ebf011bd2ec54137f30665a97660e5ae694d42222a20a2e8b4370c6d6979",
+        "canonical_full_book_id": "85d2958be169d1970767027f10ef52dde09f310baed04e185f41d895904fc2bb",
+        "canonical_full_sha256": "69cdd2f124bfda8e53c0e50c0c0cbda249ffc555cc7b23acf7d0fdfc9ca25345"
+      }
+    },
+    {
+      "id": "1bbe9f2161b5269ce764e54d96c5967768b81a3048b5371736239d488eaf70f8",
+      "source_at": "2026-11-06T23:27:57.172000+00:00",
+      "available_at": "2026-11-06T23:28:00.669259+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "133bd6b6fe1a7284de248ea00616623e20811785192301172a102efad3c11870",
+        "record_sha256": "1b9228109429ae224c168e5048eeb8260ecb2e292e0b3049863813a48b247790",
+        "canonical_full_book_id": "85d2958be169d1970767027f10ef52dde09f310baed04e185f41d895904fc2bb",
+        "canonical_full_sha256": "69cdd2f124bfda8e53c0e50c0c0cbda249ffc555cc7b23acf7d0fdfc9ca25345"
+      }
+    },
+    {
+      "id": "556c4c14e3e2c8aef02385cfd256276297ceb096067f87e8e6847da60cfe6b32",
+      "source_at": "2026-11-06T23:28:18.682000+00:00",
+      "available_at": "2026-11-06T23:28:18.723083+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "66ff0471734dbd5b3cc1007397874615c09f74ffbc73018947713de2c29fb829",
+        "record_sha256": "a15ce3a5e9b51aaa1f9cc3c02dd418b58ea00144c5b752e776e677830a6a5750",
+        "canonical_full_book_id": "85d2958be169d1970767027f10ef52dde09f310baed04e185f41d895904fc2bb",
+        "canonical_full_sha256": "69cdd2f124bfda8e53c0e50c0c0cbda249ffc555cc7b23acf7d0fdfc9ca25345"
+      }
+    },
+    {
+      "id": "8332bc19c220f2d1b9f5084671c8ca21d6fb38e141b9de3c2359adbf5ec9b8d4",
+      "source_at": "2026-11-06T23:28:24.167000+00:00",
+      "available_at": "2026-11-06T23:28:27.733556+00:00",
+      "same_token": true,
+      "raw_archive_proof": {
+        "kind": "BookDelta",
+        "record_id": "91fd14f3ca936a6c1d3cbf73b9f2eef50b4c1d85a1ff8ad6560a66ad2333051c",
+        "record_sha256": "0bb2a79213473c61ed74d5791543525bd2f9e31c318ea49d214bbe601fc1de29",
+        "canonical_full_book_id": "85d2958be169d1970767027f10ef52dde09f310baed04e185f41d895904fc2bb",
+        "canonical_full_sha256": "69cdd2f124bfda8e53c0e50c0c0cbda249ffc555cc7b23acf7d0fdfc9ca25345"
+      }
+    }
+  ],
+  "current_experimental_account": {
+    "id": 1,
+    "cash": 498.73125,
+    "peak": 500.0,
+    "realized": -1.26875,
+    "kill": 0,
+    "limits": {
+      "bankroll": 500.0,
+      "aggregate_fraction": 0.2,
+      "market_fraction": 0.05,
+      "event_fraction": 0.1,
+      "correlation_fraction": 0.1,
+      "daily_loss_fraction": 0.05,
+      "drawdown_fraction": 0.1,
+      "max_book_age_seconds": 15.0,
+      "max_market_age_seconds": 3600.0,
+      "max_estimate_age_seconds": 300.0,
+      "max_evidence_age_seconds": 3600.0,
+      "max_spread": 0.05,
+      "min_net_edge": 0.03,
+      "max_liquidity_participation": 0.25,
+      "approval_ttl_seconds": 10.0,
+      "standard_min": 2.0,
+      "standard_max": 5.0,
+      "high_min": 5.0,
+      "high_max": 15.0,
+      "exceptional_min": 15.0,
+      "exceptional_max": 25.0,
+      "kelly_fraction": 0.1
+    }
+  },
+  "current_positions": [],
+  "certified_account": {
+    "cash": 500.0,
+    "realized_pnl": 0.0,
+    "kill": 0
+  },
+  "realized_simulated_pnl_this_trade": -1.26875,
+  "mark_research_observation": {
+    "target_at": "2026-11-06T23:32:48.038424+00:00",
+    "first_source_label_at": "2026-11-06T23:32:56.828000+00:00",
+    "label_delay_seconds": 8.789576,
+    "actual_bid_mark": 0.07,
+    "forecast_bid_mark": 0.31,
+    "lower_mark": 0.24,
+    "entry_unchanged_bid_baseline": 0.15,
+    "model_absolute_error": 0.24,
+    "baseline_absolute_error": 0.07999999999999999,
+    "independent_event_samples": 0,
+    "statistical_superiority": null
+  },
+  "limitations": [
+    "This is one unvalidated legacy bid-mark research trade, not independent event forecasting or evidence of profitable advantage.",
+    "Fee ledger deliberately charges the conservative global notional bound, not a claim of exact fees charged by Polymarket.",
+    "Displayed-book participation is a documented paper assumption; latency/depth support cannot prove an actual exchange fill.",
+    "The negative realized result and missed forecast band are evidence of model/regime risk; they are not by themselves an execution or risk-control defect."
+  ],
+  "source_files_readonly": [
+    "risk.sqlite",
+    "broker.sqlite",
+    "events-archive.sqlite",
+    "immutable/raw event segments"
+  ],
+  "output_only": "/home/ubuntu/Neraium-Poly/data/phase16/live-trade-audit.json"
+}

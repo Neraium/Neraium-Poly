@@ -1,0 +1,289 @@
+{
+  "scope": "Lifetime phase10_epoch pre-veto strategy gate; repeated/duplicate evaluations included. These are not phase16-only counts.",
+  "strategies": {
+    "calibrated_forecast": {
+      "markets_considered": 386496,
+      "valid_observations": 282064,
+      "candidate_signals": 0,
+      "qualified_opportunities": 0,
+      "order_attempts": 0,
+      "fills": 0,
+      "risk_rejections": 0,
+      "rejected_signals": 386496,
+      "reasons": {
+        "independent_context_verified_labels_and_calibration_required": {
+          "count": 386496,
+          "category": "CERTIFICATION DEPENDENCY"
+        },
+        "large_spread": {
+          "count": 14,
+          "category": "MARKET CONDITION"
+        },
+        "missing_book": {
+          "count": 15626,
+          "category": "MISSING EVIDENCE"
+        },
+        "missing_liquidity": {
+          "count": 12783,
+          "category": "MISSING EVIDENCE"
+        },
+        "out_of_order_book": {
+          "count": 128,
+          "category": "MISSING EVIDENCE"
+        },
+        "stale_book": {
+          "count": 80359,
+          "category": "MISSING EVIDENCE"
+        },
+        "unknown_fee_schedule": {
+          "count": 29227,
+          "category": "MISSING EVIDENCE"
+        }
+      }
+    },
+    "cross_market_consistency": {
+      "markets_considered": 386496,
+      "valid_observations": 282064,
+      "candidate_signals": 0,
+      "qualified_opportunities": 0,
+      "order_attempts": 0,
+      "fills": 0,
+      "risk_rejections": 0,
+      "rejected_signals": 386496,
+      "reasons": {
+        "independently_reviewed_exhaustive_payoff_scope_required": {
+          "count": 386496,
+          "category": "MISSING EVIDENCE"
+        },
+        "large_spread": {
+          "count": 14,
+          "category": "MARKET CONDITION"
+        },
+        "missing_book": {
+          "count": 15626,
+          "category": "MISSING EVIDENCE"
+        },
+        "missing_liquidity": {
+          "count": 12783,
+          "category": "MISSING EVIDENCE"
+        },
+        "multi_leg_execution_and_hedging_not_supported": {
+          "count": 386496,
+          "category": "STRATEGY LIMITATION"
+        },
+        "out_of_order_book": {
+          "count": 128,
+          "category": "MISSING EVIDENCE"
+        },
+        "stale_book": {
+          "count": 80359,
+          "category": "MISSING EVIDENCE"
+        },
+        "unknown_fee_schedule": {
+          "count": 29227,
+          "category": "MISSING EVIDENCE"
+        }
+      }
+    },
+    "event_driven": {
+      "markets_considered": 386496,
+      "valid_observations": 282064,
+      "candidate_signals": 0,
+      "qualified_opportunities": 0,
+      "order_attempts": 0,
+      "fills": 0,
+      "risk_rejections": 0,
+      "rejected_signals": 386496,
+      "reasons": {
+        "independent_predecision_context_and_response_model_required": {
+          "count": 386496,
+          "category": "MISSING EVIDENCE"
+        },
+        "large_spread": {
+          "count": 14,
+          "category": "MARKET CONDITION"
+        },
+        "missing_book": {
+          "count": 15626,
+          "category": "MISSING EVIDENCE"
+        },
+        "missing_liquidity": {
+          "count": 12783,
+          "category": "MISSING EVIDENCE"
+        },
+        "out_of_order_book": {
+          "count": 128,
+          "category": "MISSING EVIDENCE"
+        },
+        "stale_book": {
+          "count": 80359,
+          "category": "MISSING EVIDENCE"
+        },
+        "unknown_fee_schedule": {
+          "count": 29227,
+          "category": "MISSING EVIDENCE"
+        }
+      }
+    },
+    "liquidity_spread": {
+      "markets_considered": 386496,
+      "valid_observations": 282064,
+      "candidate_signals": 0,
+      "qualified_opportunities": 0,
+      "order_attempts": 0,
+      "fills": 0,
+      "risk_rejections": 0,
+      "rejected_signals": 386496,
+      "reasons": {
+        "large_spread": {
+          "count": 14,
+          "category": "MARKET CONDITION"
+        },
+        "missing_book": {
+          "count": 15626,
+          "category": "MISSING EVIDENCE"
+        },
+        "missing_liquidity": {
+          "count": 12783,
+          "category": "MISSING EVIDENCE"
+        },
+        "out_of_order_book": {
+          "count": 128,
+          "category": "MISSING EVIDENCE"
+        },
+        "stale_book": {
+          "count": 80359,
+          "category": "MISSING EVIDENCE"
+        },
+        "two_sided_inventory_execution_not_supported": {
+          "count": 386496,
+          "category": "STRATEGY LIMITATION"
+        },
+        "unknown_fee_schedule": {
+          "count": 29227,
+          "category": "MISSING EVIDENCE"
+        },
+        "validated_queue_and_adverse_selection_model_required": {
+          "count": 386496,
+          "category": "MISSING EVIDENCE"
+        }
+      }
+    },
+    "persistent_relationship": {
+      "markets_considered": 386496,
+      "valid_observations": 282064,
+      "candidate_signals": 21868,
+      "qualified_opportunities": 0,
+      "order_attempts": 0,
+      "fills": 0,
+      "risk_rejections": 0,
+      "rejected_signals": 386496,
+      "reasons": {
+        "conservative_roundtrip_edge_insufficient": {
+          "count": 285947,
+          "category": "MARKET CONDITION"
+        },
+        "excessive_model_uncertainty": {
+          "count": 1200,
+          "category": "MARKET CONDITION"
+        },
+        "insufficient_causal_bid_history": {
+          "count": 45684,
+          "category": "MISSING EVIDENCE"
+        },
+        "insufficient_matured_horizon_forecast_errors": {
+          "count": 9171,
+          "category": "MISSING EVIDENCE"
+        },
+        "large_spread": {
+          "count": 14,
+          "category": "MARKET CONDITION"
+        },
+        "missing_book": {
+          "count": 15626,
+          "category": "MISSING EVIDENCE"
+        },
+        "missing_liquidity": {
+          "count": 12783,
+          "category": "MISSING EVIDENCE"
+        },
+        "out_of_order_book": {
+          "count": 128,
+          "category": "MISSING EVIDENCE"
+        },
+        "persistent_contextual_relationship_evidence_required": {
+          "count": 363065,
+          "category": "MISSING EVIDENCE"
+        },
+        "stale_book": {
+          "count": 80359,
+          "category": "MISSING EVIDENCE"
+        },
+        "unknown_fee_schedule": {
+          "count": 29227,
+          "category": "MISSING EVIDENCE"
+        }
+      }
+    },
+    "short_horizon": {
+      "markets_considered": 386496,
+      "valid_observations": 282064,
+      "candidate_signals": 240518,
+      "qualified_opportunities": 16,
+      "order_attempts": 6,
+      "fills": 2,
+      "risk_rejections": 5,
+      "rejected_signals": 386480,
+      "reasons": {
+        "conservative_roundtrip_edge_insufficient": {
+          "count": 285947,
+          "category": "MARKET CONDITION"
+        },
+        "excessive_model_uncertainty": {
+          "count": 1200,
+          "category": "MARKET CONDITION"
+        },
+        "insufficient_causal_bid_history": {
+          "count": 45684,
+          "category": "MISSING EVIDENCE"
+        },
+        "insufficient_matured_horizon_forecast_errors": {
+          "count": 9171,
+          "category": "MISSING EVIDENCE"
+        },
+        "kill_switch": {
+          "count": 5,
+          "category": "RISK REJECTION"
+        },
+        "large_spread": {
+          "count": 14,
+          "category": "MARKET CONDITION"
+        },
+        "missing_book": {
+          "count": 15626,
+          "category": "MISSING EVIDENCE"
+        },
+        "missing_liquidity": {
+          "count": 12783,
+          "category": "MISSING EVIDENCE"
+        },
+        "out_of_order_book": {
+          "count": 128,
+          "category": "MISSING EVIDENCE"
+        },
+        "stale_book": {
+          "count": 80359,
+          "category": "MISSING EVIDENCE"
+        },
+        "unknown_fee_schedule": {
+          "count": 29227,
+          "category": "MISSING EVIDENCE"
+        },
+        "token_position_or_order_already_owned": {
+          "count": 10,
+          "category": "MISSING EVIDENCE"
+        }
+      }
+    }
+  }
+}

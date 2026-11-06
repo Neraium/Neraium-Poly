@@ -1,0 +1,76 @@
+{
+  "frozen_result_sha256": "43e5ed2c1cef03fab35914c1adb1c5479592f5b4776592fc60e9e2fe552236e9",
+  "source_dataset_sha256": "76a512397eecaef89328ac3dfd1885b0863b283acff8cd522417d138f56def46",
+  "model_source_sha256": "6908ad47f76de1cb980ebd5ddceb4037aa5e5e8d3585f72aa65dd29fbcc13f62",
+  "feature_source_sha256": "04ebe3f6917a54c541b348a55a8495d04c2a08063e693c544ab8ee722d41dcfa",
+  "all_heldout_fitting_labels_before_training_end": true,
+  "all_labels_match_60_to90_second_source_window": true,
+  "effective_source_horizon_seconds": {
+    "minimum": 60.000183,
+    "maximum": 88.119721,
+    "mean": 66.26685226734926
+  },
+  "per_token": {
+    "100205215067722297517595068937257697192973299370955287626157382353628199508318": {
+      "market_ids": [
+        "3580932"
+      ],
+      "parent_event_ids": [
+        "848341"
+      ],
+      "examples": 211,
+      "distinct_actual_bid_marks": 1,
+      "distinct_baseline_bid_marks": 1,
+      "model_equals_baseline": true,
+      "actual_bid_mark_values": [
+        0.68
+      ]
+    },
+    "111662129652828266889360374468657435151479595863413519836161861837506140152890": {
+      "market_ids": [
+        "3215008"
+      ],
+      "parent_event_ids": [
+        "770450"
+      ],
+      "examples": 276,
+      "distinct_actual_bid_marks": 1,
+      "distinct_baseline_bid_marks": 1,
+      "model_equals_baseline": true,
+      "actual_bid_mark_values": [
+        0.76
+      ]
+    },
+    "15907269680083135091620869613557617263613890890387514554477997501123964677519": {
+      "market_ids": [
+        "4397022"
+      ],
+      "parent_event_ids": [
+        "991810"
+      ],
+      "examples": 251,
+      "distinct_actual_bid_marks": 1,
+      "distinct_baseline_bid_marks": 1,
+      "model_equals_baseline": true,
+      "actual_bid_mark_values": [
+        0.53
+      ]
+    },
+    "17738982004398511179681739795672463001490109109158945924609690414196729397366": {
+      "market_ids": [
+        "6428601"
+      ],
+      "parent_event_ids": [
+        "1284234"
+      ],
+      "examples": 141,
+      "distinct_actual_bid_marks": 1,
+      "distinct_baseline_bid_marks": 1,
+      "model_equals_baseline": true,
+      "actual_bid_mark_values": [
+        0.61
+      ]
+    }
+  },
+  "claim": "Equal zero MAE is uninformative on unchanged held-out monetary marks; no forecasting advantage or probability calibration established."
+}

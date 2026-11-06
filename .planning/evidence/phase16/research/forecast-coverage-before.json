@@ -1,0 +1,193 @@
+{
+  "observed_at": "2026-11-06T22:50:18.005922+00:00",
+  "source_mode": "nativeSQLitemode=ro/query_only snapshots and boundedpublicGETs; no owner class or account writes",
+  "baseline_forecasts": {
+    "count": 289,
+    "dependency_groups": 36,
+    "resolved_records": 0,
+    "due_forecast_records": 30,
+    "due_distinct_markets": 17,
+    "future_forecast_records": 259,
+    "independence_reviewed": 0,
+    "journal_integrity": "verified",
+    "journal_head": "e994bfe93d8ce65f49004a18b81cfb3a1fca7a4a55174e5306f339413e157b3c"
+  },
+  "sports": {
+    "forecasts": 2,
+    "outcomes": 0,
+    "events": [
+      {
+        "id": "f18c896710653d210eee5d140fc08a035f9adf9bae7bb2e07ca3456228ce16d1",
+        "market_id": "5920626",
+        "game_id": "2026_09_DET_MIA",
+        "event_start": "2026-11-08T18:00:00Z",
+        "dependency_group": "unreviewed-sports-game:NFL:2026_09_DET_MIA",
+        "independence_reviewed": false,
+        "kind": "independent_ternary_research"
+      },
+      {
+        "id": "47697de92df0a8cf359d87dfa4ef7a9bf6759a1ee88331426c111809526ab56e",
+        "market_id": "5968098",
+        "game_id": "2026_09_BUF_MIN",
+        "event_start": "2026-11-10T01:15:00Z",
+        "dependency_group": "unreviewed-sports-game:NFL:2026_09_BUF_MIN",
+        "independence_reviewed": false,
+        "kind": "independent_ternary_research"
+      }
+    ],
+    "journal_integrity": "verified",
+    "journal_head": "99cae7acba2bf51e98df23f75be2201010c003bc8e871a7a4d5f1d287228f590"
+  },
+  "domain_journal": {
+    "kinds": {
+      "domain_evidence": 22
+    },
+    "journal_head": "ef279b48330b97a9c6be3ccc047ccd3e8415e75dd5b26031e06368050e185b99",
+    "integrity": "verified"
+  },
+  "due_examples": [
+    {
+      "forecast_id": "fc1b12b94416c0afbfbb2fbd2e0333918c093d953dfb8306319b51d6ea289752",
+      "event_id": "1313864",
+      "market_id": "6675981",
+      "kind": "market_baseline",
+      "forecast_at": "2026-11-06T05:41:08.128088Z",
+      "scheduled_close_at": "2026-11-06T12:30:00+00:00",
+      "dependency_group": "unreviewed-parent:1313864",
+      "independence_reviewed": false
+    },
+    {
+      "forecast_id": "e999bdb8ba8fd646a56e89215b4fe266103fb052a16b3ca41343b3d4f4c9f04d",
+      "event_id": "1290048",
+      "market_id": "6490622",
+      "kind": "market_baseline",
+      "forecast_at": "2026-11-06T05:41:08.128088Z",
+      "scheduled_close_at": "2026-11-06T14:55:00+00:00",
+      "dependency_group": "unreviewed-parent:1290048",
+      "independence_reviewed": false
+    },
+    {
+      "forecast_id": "73893693da90fc112d3582e3dc27e59e3831d996e46d4c76b652a1c803939437",
+      "event_id": "1263843",
+      "market_id": "6288562",
+      "kind": "market_baseline",
+      "forecast_at": "2026-11-06T05:41:08.128088Z",
+      "scheduled_close_at": "2026-11-06T17:00:00+00:00",
+      "dependency_group": "unreviewed-parent:1263843",
+      "independence_reviewed": false
+    },
+    {
+      "forecast_id": "ac8a994971f6e49165403b7e6f71e1da6633aa6b8eafbe229a8800877433ee14",
+      "event_id": "1283785",
+      "market_id": "6423883",
+      "kind": "market_baseline",
+      "forecast_at": "2026-11-06T05:41:08.128088Z",
+      "scheduled_close_at": "2026-11-06T17:00:00+00:00",
+      "dependency_group": "unreviewed-parent:1283785",
+      "independence_reviewed": false
+    },
+    {
+      "forecast_id": "b7f48477a8811c8041f0842c643cc3a02a777e67ec407b85ab90d722620549aa",
+      "event_id": "1283785",
+      "market_id": "6423884",
+      "kind": "market_baseline",
+      "forecast_at": "2026-11-06T05:41:08.128088Z",
+      "scheduled_close_at": "2026-11-06T17:00:00+00:00",
+      "dependency_group": "unreviewed-parent:1283785",
+      "independence_reviewed": false
+    }
+  ],
+  "native_due_market_checks": [
+    {
+      "market_id": "6675981",
+      "url": "https://gamma-api.polymarket.com/markets/6675981",
+      "retrieved_at": "2026-11-06T22:50:18.040089+00:00",
+      "status": 200,
+      "sha256": "ed3b0df03876f5bea385ba20c0d1c174debc289b25391bedc825c8dd564fc9b8",
+      "bytes": 5552,
+      "fields": {
+        "question": "Counter-Strike: PARIVISION vs Natus Vincere (BO3) - IEM Beijing Playoffs",
+        "active": true,
+        "closed": true,
+        "endDate": "2026-11-06T12:30:00Z",
+        "umaResolutionStatus": "resolved",
+        "umaEndDate": "2026-11-06 10:29:38.065263+00:00:00",
+        "resolutionSource": "https://hltv.org",
+        "negRisk": false,
+        "version": "v1"
+      },
+      "interpretation": "scheduled close and native flags alone do not verify final payout or finalized chain timing"
+    },
+    {
+      "market_id": "6490622",
+      "url": "https://gamma-api.polymarket.com/markets/6490622",
+      "retrieved_at": "2026-11-06T22:50:18.154647+00:00",
+      "status": 200,
+      "sha256": "1d6ace3fafa49072827d98aa147f274ff673ee2f88d768c3d53eb8b8d5be6099",
+      "bytes": 6575,
+      "fields": {
+        "question": "Will Al Nassr Saudi Club win on 2026-11-06?",
+        "active": true,
+        "closed": false,
+        "endDate": "2026-11-06T14:55:00Z",
+        "umaResolutionStatus": null,
+        "umaEndDate": null,
+        "resolutionSource": "https://www.slstat.com/",
+        "negRisk": true,
+        "version": "v1"
+      },
+      "interpretation": "scheduled close and native flags alone do not verify final payout or finalized chain timing"
+    },
+    {
+      "market_id": "6288562",
+      "url": "https://gamma-api.polymarket.com/markets/6288562",
+      "retrieved_at": "2026-11-06T22:50:18.169316+00:00",
+      "status": 200,
+      "sha256": "eaec528221950a42a21586c629801893fca84a9fd6aac1daf625b9bc798c20dc",
+      "bytes": 4000,
+      "fields": {
+        "question": "Will Elon Musk post 260-279 tweets from October 30 to November 6, 2026?",
+        "active": true,
+        "closed": true,
+        "endDate": "2026-11-06T17:00:00Z",
+        "umaResolutionStatus": "resolved",
+        "umaEndDate": "2026-11-06 08:27:34.34294+00:00:00",
+        "resolutionSource": "https://x.com/elonmusk",
+        "negRisk": true,
+        "version": "v1"
+      },
+      "interpretation": "scheduled close and native flags alone do not verify final payout or finalized chain timing"
+    }
+  ],
+  "historical_qualification_funnel": {
+    "canonical_market_propositions": 250,
+    "parent_event_groups": 250,
+    "official_API_outcome_groups": 51,
+    "corroborated_finalized_outcome_groups": 47,
+    "historical_market_price_rows": 616,
+    "actual_historical_book_rows": 0,
+    "external_context_rows": 95,
+    "resolved_events_with_predecision_available_price": 0,
+    "reviewed_independent_events": 0,
+    "fully_qualified_training_events": 0,
+    "fully_qualified_heldout_events": 0,
+    "required_training_events": 100,
+    "required_heldout_events": 100
+  },
+  "historical_missing_fields": {
+    "historical_rule_version": 250,
+    "predecision_availability": 250,
+    "historical_executable_depth": 250,
+    "reviewed_independent_group": 250,
+    "qualified_external_context": 250,
+    "corroborated_final_settlement": 203
+  },
+  "historical_manifest_sha256": "2fa0433a391ffbe245a27c02f246179df044016e4dc7864b8cdbda42ef1e5588",
+  "independent_binary_calibration_training_events": 0,
+  "independent_binary_calibration_heldout_events": 0,
+  "brier": null,
+  "log_loss": null,
+  "calibration_status": "No independent binary event-outcome forecasts with verified matched outcomes; NFL ternary forecasts remain unresolved and unreviewed for certification. Baseline records cannot masquerade as independent predictions.",
+  "trading_authority": false,
+  "certification_authority": false
+}

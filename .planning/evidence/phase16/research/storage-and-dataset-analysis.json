@@ -1,0 +1,93 @@
+{
+  "frozen_dataset": {
+    "dataset_sha256": "0fa0fde7855e6aa6ec9766f4c197115af343f6b3b77c6de93c58f862b772cd63",
+    "frames": 240,
+    "tokens": 6,
+    "parent_groups": 3,
+    "unique_quote_ids": 558,
+    "source_observations_future_at_cutoff": 0,
+    "source_observations_older_than15s": 86,
+    "known_missing_context": [
+      "producer_health",
+      "original_frame_id"
+    ],
+    "independent_certification_events": 0,
+    "worker": {
+      "pid": 3193594,
+      "started_at": "2026-11-06T22:57:35.977818+00:00",
+      "completed_at": "2026-11-06T22:57:36.008511+00:00",
+      "cpu_seconds": 0.030680792999999998,
+      "max_rss_kib": 40028,
+      "kind": "frozen_dataset"
+    }
+  },
+  "storage_growth": {
+    "collector": {
+      "started_at": "2026-11-06T20:53:35.961681+00:00",
+      "ended_at": "2026-11-06T22:45:12.456611+00:00",
+      "seconds": 6696.49493,
+      "retained_growth_bytes_per_second": 117624.90082255614,
+      "component_growth_bytes_per_second": {
+        "active": 1148.7036248678232,
+        "warm": 72981.21496524451,
+        "cold": 19533.96371794162,
+        "protected": 0.0,
+        "derived_cache": 7770.156259940602,
+        "segment_metadata": 195.24169191000942,
+        "catalog_state": 15995.620562651573
+      },
+      "usage_bytes": 7645379266,
+      "budget_bytes": 68719476736,
+      "conditional_days_to_budget": 6.00957895124063,
+      "conditional90d_usage_bytes": 922296608062.1965,
+      "free_bytes": 511912292352,
+      "reserve_bytes": 68719476736,
+      "includes_cache_and_operator_backup_changes": true,
+      "representative24h_available": false,
+      "retention_changed": false,
+      "budget_change_authority": false,
+      "removal_authority": false,
+      "proposal": "Keep64/16GiB; protectalloriginals;measure24h/7d; completedraw retirement requiresseparateexactbatchapproval. Gzipalonecannotboundlinearall-historycatalog."
+    },
+    "experimental": {
+      "started_at": "2026-11-06T20:53:35.961211+00:00",
+      "ended_at": "2026-11-06T22:45:12.665360+00:00",
+      "seconds": 6696.704149,
+      "retained_growth_bytes_per_second": 58132.92335127765,
+      "component_growth_bytes_per_second": {
+        "active": 131.50349491421142,
+        "warm": 32116.82332302478,
+        "cold": 10655.664250996613,
+        "protected": 0.0,
+        "derived_cache": 9206.564994991837,
+        "segment_metadata": 231.72951432112012,
+        "catalog_state": 5790.637773029086
+      },
+      "usage_bytes": 2405173319,
+      "budget_bytes": 17179869184,
+      "conditional_days_to_budget": 2.9415934122237397,
+      "conditional90d_usage_bytes": 454446785298.535,
+      "free_bytes": 511912284160,
+      "reserve_bytes": 68719476736,
+      "includes_cache_and_operator_backup_changes": true,
+      "representative24h_available": false,
+      "retention_changed": false,
+      "budget_change_authority": false,
+      "removal_authority": false,
+      "proposal": "Keep64/16GiB; protectalloriginals;measure24h/7d; completedraw retirement requiresseparateexactbatchapproval. Gzipalonecannotboundlinearall-historycatalog."
+    },
+    "worker": {
+      "pid": 3193597,
+      "started_at": "2026-11-06T22:57:35.977821+00:00",
+      "completed_at": "2026-11-06T22:57:35.979257+00:00",
+      "cpu_seconds": 0.0014223680000000002,
+      "max_rss_kib": 20472,
+      "kind": "storage_growth"
+    }
+  },
+  "concurrency": {
+    "workers": 2,
+    "actual_overlap": true,
+    "scope": "two genuine bounded process jobs, not saturatedCPUs"
+  }
+}

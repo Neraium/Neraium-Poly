@@ -1,0 +1,124 @@
+{
+  "source_commit": "386428eb4a2ed3b68e17d41555ab827303a2c2d4",
+  "created_at": "2026-11-06T23:36:51.423759+00:00",
+  "artifacts": [
+    {
+      "path": "data/phase16/prepared-core/manifest.json",
+      "bytes": 1421,
+      "sha256": "3dead3a1412c3288cc21fe68a9e05d636c82ecac6fcd30041d35530d24bc2853"
+    },
+    {
+      "path": "data/phase16/prepared-core/frames.jsonl",
+      "bytes": 33281155,
+      "sha256": "76a512397eecaef89328ac3dfd1885b0863b283acff8cd522417d138f56def46"
+    },
+    {
+      "path": "data/phase16/experiments/experiment-manifest.json",
+      "bytes": 4898,
+      "sha256": "e3bfadb3b31dda958c55d0219cbfd81e15e2f866bcf691e9df02d1943c229ab4"
+    },
+    {
+      "path": "data/phase16/experiments/frozen-depth-mark-results.json",
+      "bytes": 2907086,
+      "sha256": "43e5ed2c1cef03fab35914c1adb1c5479592f5b4776592fc60e9e2fe552236e9"
+    },
+    {
+      "path": "data/phase16/experiments/frozen-depth-mark-profile.json",
+      "bytes": 2355,
+      "sha256": "fe4b3b24e94d405de5631dfa9ced39a44221f80db1363efbd7fe1a87695473b8"
+    },
+    {
+      "path": "data/phase16/experiments/execution_replay.py",
+      "bytes": 12510,
+      "sha256": "5a37d568d505aadb73573a61f166e45be411b2f04390550c3e782c40fc5dfb22"
+    },
+    {
+      "path": "data/phase16/prepare_core.py",
+      "bytes": 6298,
+      "sha256": "4bf781a46415edca65c8685537b57af048e2136378fddd89226ce3101d6b484d"
+    },
+    {
+      "path": "data/phase16/sample_v3.py",
+      "bytes": 2366,
+      "sha256": "047d068b573fcaaa1891a82f186fcba5a29b0a3009f1fe83519d35c830aba3f6"
+    },
+    {
+      "path": "data/phase16/prospective-v3/manifest.json",
+      "bytes": 16076,
+      "sha256": "168d193513298f5d2c924a2c38a0ad533643b2c5d2a143d12464c23a4d3c754d"
+    },
+    {
+      "path": "data/phase16/prospective-v3-analysis.json",
+      "bytes": 64298,
+      "sha256": "9ee64dbe0956966723eae113feffb798f7d3aaca05a791a1e3d91c4841743427"
+    },
+    {
+      "path": "data/phase16/parallel_analysis.py",
+      "bytes": 3756,
+      "sha256": "61f5f5dbf394091229dcc1b3f768c1f5f66b928f5514730940168e274600bde5"
+    },
+    {
+      "path": "data/phase16/parallel-analysis.json",
+      "bytes": 3488,
+      "sha256": "1cb20a2516ce5984efddaa473f91cebfe2d3cb729396cc837cfaa427bf0756fe"
+    },
+    {
+      "path": "data/phase16/compression.py",
+      "bytes": 2805,
+      "sha256": "c674f1d30f2aeff213bb1d67dc332abfdaa063bd8669994e6039782de541f956"
+    },
+    {
+      "path": "data/phase16/compression-preview/results.json",
+      "bytes": 4132,
+      "sha256": "efb6ae6484882517575a8f1f6ac7631d2c5c279415588d21845f158422b7271a"
+    },
+    {
+      "path": "data/phase16/outcome-fix/attempt.py",
+      "bytes": 1799,
+      "sha256": "e2002bd6b83324fa13ea6bf548c1d8c7a2bb8be792e08e09f357afdd6013db0a"
+    },
+    {
+      "path": "data/phase16/outcome-fix/analysis.json",
+      "bytes": 2286,
+      "sha256": "8cf5f0fff814b0175bee1d2f8393e6785a5fe5f4eddb7fcc92a17122bd0a217f"
+    },
+    {
+      "path": "data/phase16/readiness/coverage.json",
+      "bytes": 7534,
+      "sha256": "733c5b285993043f96e22449c16b12053dab75c03ac41e203fc090f17030d1e5"
+    },
+    {
+      "path": "data/phase16/recover_live_readonly.py",
+      "bytes": 2056,
+      "sha256": "d9dc16f369e548a3d38994ed7ed4488fbdda6916dd8afafd009b1c71a74cd523"
+    },
+    {
+      "path": "data/phase16/integrity.py",
+      "bytes": 2635,
+      "sha256": "64f399fc4314f0fd3be8949858c9f82e5c16e3f04019d94f11042f78505bd0ee"
+    },
+    {
+      "path": "data/phase16/accounts.py",
+      "bytes": 1790,
+      "sha256": "96aeea236fdce66ff795bcd3685b383a4f7c1daa6263f7cc10c8c36315f672ca"
+    },
+    {
+      "path": "data/phase16/verify.py",
+      "bytes": 1692,
+      "sha256": "843250b48b684df320b728bfd5eb0b89da26db606dd6715108307f9a85ea7505"
+    },
+    {
+      "path": "data/phase16/soak_v2.py",
+      "bytes": 2965,
+      "sha256": "d6a675cd98096cc191fff2527acd073dcffcc4efc5529d096bc212bb9c519c49"
+    }
+  ],
+  "excluded_datasets": [
+    "prepared: expired contracts and missing context",
+    "prospective: request-start cutoff pilot",
+    "prospective-v2: empty token cohort"
+  ],
+  "local_raw_evidence_retained": true,
+  "synthetic_results_counted_as_research_evidence": false,
+  "replication": "Use original local archive record IDs/hashes and retained source data, not current snapshots. Execution replay independently verifies native provenance. No replay may treat current or future information as historical."
+}

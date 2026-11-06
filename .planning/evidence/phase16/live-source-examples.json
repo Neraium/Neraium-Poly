@@ -1,0 +1,868 @@
+{
+  "observed_at": "2026-11-06T23:39:19.416652+00:00",
+  "frame_id": "6085eb57af972aa6a3f885a6ee62c5d877ef0f89f8541d3d53b478eaeae2e4ba",
+  "producer_health": {
+    "status": "ok",
+    "last_error": null,
+    "books_withheld_at_export": 0,
+    "last_ingestion_at": "2026-11-06T23:39:19.058965+00:00",
+    "paper_trading": true,
+    "live_trading_enabled": false
+  },
+  "actual_fresh_examples": [
+    {
+      "market": {
+        "schema_version": "1.0",
+        "id": "5a073c9e3c83ff9c31ed9f968561bd1b923febf05dbb288d43b30413b7f78b97",
+        "timestamp": "2026-11-06T23:38:04.328395Z",
+        "available_at": "2026-11-06T23:38:04.328395Z",
+        "source": "https://gamma-api.polymarket.com",
+        "exchange": "polymarket",
+        "market_id": "5325719",
+        "event_id": "386812",
+        "question": "Israel withdraws from Lebanon by December 31, 2027?",
+        "token_id": "2448516498521898227947595584180815013624021671453566218015076451922301955509",
+        "outcome": "No",
+        "probability": 0.69,
+        "status": "active",
+        "resolution_rules": "This market will resolve to \"Yes\" if Israel announces it has withdrawn all ground forces from Lebanon by the specified date, 11:59 PM ET. Otherwise, this market will resolve to \"No\".\n\nFor this market to resolve to \"Yes\" it is sufficient that Israel announces its ground forces have withdrawn from all Lebanese territory, regardless of if some Lebanese territory remains under their control or ground incursions by Israeli forces continue. However, an announcement of a planned or future withdrawal will not suffice.\n\nThe Shebaa Farms area is considered Israeli territory for the purposes of this market and will not be considered toward its resolution.\n\nThe primary resolution source for this market will be information from the Israeli government, however an overwhelming consensus of credible reporting confirming that Israel has withdrawn may also be used.",
+        "resolution_source": "",
+        "end_time": "2028-01-01T04:59:00Z",
+        "tick_size": 0.01,
+        "min_order_size": 5.0
+      },
+      "book": {
+        "schema_version": "1.0",
+        "id": "41bf2ea9027829f7f0ab099d3e5305957470281f85465d83687b050edcf767d9",
+        "timestamp": "2026-11-06T23:39:13.488000Z",
+        "available_at": "2026-11-06T23:39:13.529949Z",
+        "source": "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+        "exchange": "polymarket",
+        "market_id": "5325719",
+        "token_id": "2448516498521898227947595584180815013624021671453566218015076451922301955509",
+        "bids": [
+          {
+            "price": 0.68,
+            "size": 64.43
+          },
+          {
+            "price": 0.67,
+            "size": 275.94
+          },
+          {
+            "price": 0.66,
+            "size": 1072.22
+          },
+          {
+            "price": 0.65,
+            "size": 20.32
+          },
+          {
+            "price": 0.64,
+            "size": 20.06
+          },
+          {
+            "price": 0.63,
+            "size": 19.82
+          },
+          {
+            "price": 0.62,
+            "size": 60.0
+          },
+          {
+            "price": 0.59,
+            "size": 254.0
+          },
+          {
+            "price": 0.58,
+            "size": 573.75
+          },
+          {
+            "price": 0.57,
+            "size": 2550.0
+          },
+          {
+            "price": 0.56,
+            "size": 1736.19
+          },
+          {
+            "price": 0.55,
+            "size": 3272.0
+          },
+          {
+            "price": 0.49,
+            "size": 20.39
+          },
+          {
+            "price": 0.29,
+            "size": 2731.0
+          },
+          {
+            "price": 0.28,
+            "size": 1249.0
+          },
+          {
+            "price": 0.27,
+            "size": 6110.0
+          },
+          {
+            "price": 0.23,
+            "size": 217.0
+          },
+          {
+            "price": 0.22,
+            "size": 50.0
+          },
+          {
+            "price": 0.19,
+            "size": 4889.0
+          },
+          {
+            "price": 0.18,
+            "size": 4500.0
+          },
+          {
+            "price": 0.17,
+            "size": 588.0
+          },
+          {
+            "price": 0.16,
+            "size": 1687.5
+          },
+          {
+            "price": 0.15,
+            "size": 10714.28
+          },
+          {
+            "price": 0.14,
+            "size": 14285.71
+          },
+          {
+            "price": 0.13,
+            "size": 20.0
+          },
+          {
+            "price": 0.12,
+            "size": 1992.44
+          },
+          {
+            "price": 0.11,
+            "size": 22727.27
+          },
+          {
+            "price": 0.09,
+            "size": 5.95
+          },
+          {
+            "price": 0.08,
+            "size": 6965.53
+          },
+          {
+            "price": 0.07,
+            "size": 37142.85
+          },
+          {
+            "price": 0.05,
+            "size": 5.0
+          },
+          {
+            "price": 0.04,
+            "size": 77500.0
+          },
+          {
+            "price": 0.02,
+            "size": 11.28
+          },
+          {
+            "price": 0.01,
+            "size": 22.23
+          }
+        ],
+        "asks": [
+          {
+            "price": 0.7,
+            "size": 5.0
+          },
+          {
+            "price": 0.71,
+            "size": 110.61
+          },
+          {
+            "price": 0.72,
+            "size": 182.54
+          },
+          {
+            "price": 0.73,
+            "size": 835.49
+          },
+          {
+            "price": 0.74,
+            "size": 73.57
+          },
+          {
+            "price": 0.75,
+            "size": 24.18
+          },
+          {
+            "price": 0.81,
+            "size": 20.0
+          },
+          {
+            "price": 0.82,
+            "size": 10.0
+          },
+          {
+            "price": 0.83,
+            "size": 110.0
+          },
+          {
+            "price": 0.85,
+            "size": 924.6
+          },
+          {
+            "price": 0.86,
+            "size": 2256.0
+          },
+          {
+            "price": 0.87,
+            "size": 1000.0
+          },
+          {
+            "price": 0.89,
+            "size": 559.35
+          },
+          {
+            "price": 0.9,
+            "size": 3245.38
+          },
+          {
+            "price": 0.91,
+            "size": 3380.51
+          },
+          {
+            "price": 0.92,
+            "size": 6952.54
+          },
+          {
+            "price": 0.93,
+            "size": 30900.19
+          },
+          {
+            "price": 0.94,
+            "size": 12979.17
+          },
+          {
+            "price": 0.95,
+            "size": 54225.0
+          },
+          {
+            "price": 0.96,
+            "size": 10323.63
+          },
+          {
+            "price": 0.97,
+            "size": 94632.75
+          },
+          {
+            "price": 0.98,
+            "size": 167082.5
+          },
+          {
+            "price": 0.99,
+            "size": 35760.54
+          }
+        ],
+        "sequence": 0,
+        "complete": true
+      }
+    },
+    {
+      "market": {
+        "schema_version": "1.0",
+        "id": "deef41574c571fcc35ff3b4168222a5a12c89833cc4ab60c0dae1968070ed9a9",
+        "timestamp": "2026-11-06T23:38:04.328395Z",
+        "available_at": "2026-11-06T23:38:04.328395Z",
+        "source": "https://gamma-api.polymarket.com",
+        "exchange": "polymarket",
+        "market_id": "5325719",
+        "event_id": "386812",
+        "question": "Israel withdraws from Lebanon by December 31, 2027?",
+        "token_id": "98894757318427994290711622284582241864681766023603377753923280978567255732900",
+        "outcome": "Yes",
+        "probability": 0.31,
+        "status": "active",
+        "resolution_rules": "This market will resolve to \"Yes\" if Israel announces it has withdrawn all ground forces from Lebanon by the specified date, 11:59 PM ET. Otherwise, this market will resolve to \"No\".\n\nFor this market to resolve to \"Yes\" it is sufficient that Israel announces its ground forces have withdrawn from all Lebanese territory, regardless of if some Lebanese territory remains under their control or ground incursions by Israeli forces continue. However, an announcement of a planned or future withdrawal will not suffice.\n\nThe Shebaa Farms area is considered Israeli territory for the purposes of this market and will not be considered toward its resolution.\n\nThe primary resolution source for this market will be information from the Israeli government, however an overwhelming consensus of credible reporting confirming that Israel has withdrawn may also be used.",
+        "resolution_source": "",
+        "end_time": "2028-01-01T04:59:00Z",
+        "tick_size": 0.01,
+        "min_order_size": 5.0
+      },
+      "book": {
+        "schema_version": "1.0",
+        "id": "aac5b51401126ad30c2e42e893d90aab24241a15b0085333ed383c72854c8e7c",
+        "timestamp": "2026-11-06T23:39:13.488000Z",
+        "available_at": "2026-11-06T23:39:13.529949Z",
+        "source": "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+        "exchange": "polymarket",
+        "market_id": "5325719",
+        "token_id": "98894757318427994290711622284582241864681766023603377753923280978567255732900",
+        "bids": [
+          {
+            "price": 0.3,
+            "size": 5.0
+          },
+          {
+            "price": 0.29,
+            "size": 110.61
+          },
+          {
+            "price": 0.28,
+            "size": 182.54
+          },
+          {
+            "price": 0.27,
+            "size": 835.49
+          },
+          {
+            "price": 0.26,
+            "size": 73.57
+          },
+          {
+            "price": 0.25,
+            "size": 24.18
+          },
+          {
+            "price": 0.19,
+            "size": 20.0
+          },
+          {
+            "price": 0.18,
+            "size": 10.0
+          },
+          {
+            "price": 0.17,
+            "size": 110.0
+          },
+          {
+            "price": 0.15,
+            "size": 924.6
+          },
+          {
+            "price": 0.14,
+            "size": 2256.0
+          },
+          {
+            "price": 0.13,
+            "size": 1000.0
+          },
+          {
+            "price": 0.11,
+            "size": 559.35
+          },
+          {
+            "price": 0.1,
+            "size": 3245.38
+          },
+          {
+            "price": 0.09,
+            "size": 3380.51
+          },
+          {
+            "price": 0.08,
+            "size": 6952.54
+          },
+          {
+            "price": 0.07,
+            "size": 30900.19
+          },
+          {
+            "price": 0.06,
+            "size": 12979.17
+          },
+          {
+            "price": 0.05,
+            "size": 54225.0
+          },
+          {
+            "price": 0.04,
+            "size": 10323.63
+          },
+          {
+            "price": 0.03,
+            "size": 94632.75
+          },
+          {
+            "price": 0.02,
+            "size": 167082.5
+          },
+          {
+            "price": 0.01,
+            "size": 35760.54
+          }
+        ],
+        "asks": [
+          {
+            "price": 0.32,
+            "size": 64.43
+          },
+          {
+            "price": 0.33,
+            "size": 275.94
+          },
+          {
+            "price": 0.34,
+            "size": 1072.22
+          },
+          {
+            "price": 0.35,
+            "size": 20.32
+          },
+          {
+            "price": 0.36,
+            "size": 20.06
+          },
+          {
+            "price": 0.37,
+            "size": 19.82
+          },
+          {
+            "price": 0.38,
+            "size": 60.0
+          },
+          {
+            "price": 0.41,
+            "size": 254.0
+          },
+          {
+            "price": 0.42,
+            "size": 573.75
+          },
+          {
+            "price": 0.43,
+            "size": 2550.0
+          },
+          {
+            "price": 0.44,
+            "size": 1736.19
+          },
+          {
+            "price": 0.45,
+            "size": 3272.0
+          },
+          {
+            "price": 0.51,
+            "size": 20.39
+          },
+          {
+            "price": 0.71,
+            "size": 2731.0
+          },
+          {
+            "price": 0.72,
+            "size": 1249.0
+          },
+          {
+            "price": 0.73,
+            "size": 6110.0
+          },
+          {
+            "price": 0.77,
+            "size": 217.0
+          },
+          {
+            "price": 0.78,
+            "size": 50.0
+          },
+          {
+            "price": 0.81,
+            "size": 4889.0
+          },
+          {
+            "price": 0.82,
+            "size": 4500.0
+          },
+          {
+            "price": 0.83,
+            "size": 588.0
+          },
+          {
+            "price": 0.84,
+            "size": 1687.5
+          },
+          {
+            "price": 0.85,
+            "size": 10714.28
+          },
+          {
+            "price": 0.86,
+            "size": 14285.71
+          },
+          {
+            "price": 0.87,
+            "size": 20.0
+          },
+          {
+            "price": 0.88,
+            "size": 1992.44
+          },
+          {
+            "price": 0.89,
+            "size": 22727.27
+          },
+          {
+            "price": 0.91,
+            "size": 5.95
+          },
+          {
+            "price": 0.92,
+            "size": 6965.53
+          },
+          {
+            "price": 0.93,
+            "size": 37142.85
+          },
+          {
+            "price": 0.95,
+            "size": 5.0
+          },
+          {
+            "price": 0.96,
+            "size": 77500.0
+          },
+          {
+            "price": 0.98,
+            "size": 11.28
+          },
+          {
+            "price": 0.99,
+            "size": 22.23
+          }
+        ],
+        "sequence": 0,
+        "complete": true
+      }
+    },
+    {
+      "market": {
+        "schema_version": "1.0",
+        "id": "20ccaa23a833b960f4cb0b64e85510dbe59ff87ac4087ba5b3a6896efdbed4af",
+        "timestamp": "2026-11-06T23:38:04.046676Z",
+        "available_at": "2026-11-06T23:38:04.046676Z",
+        "source": "https://gamma-api.polymarket.com",
+        "exchange": "polymarket",
+        "market_id": "5339986",
+        "event_id": "711714",
+        "question": "Israel x Iran ceasefire continues through November 15?",
+        "token_id": "81002737208387436195452690077971321124621678141221296249970319056583686458028",
+        "outcome": "Yes",
+        "probability": 0.785,
+        "status": "active",
+        "resolution_rules": "This market will resolve to \"Yes\" if a state of ceasefire remains in effect between Israel and Iran through the listed date, 11:59 PM Iran Standard Time (IRST). Otherwise this market will resolve to \u201cNo\u201d. \n\nA state of ceasefire will be considered to no longer be in effect between Israel and Iran if either Israel or Iran takes a qualifying military action against the other country between market creation and the listed date, 11:59 PM IRST.\n\nA qualifying military action refers to an air strike or a surface-to-surface missile strike, initiated by Israel or Iran, that directly impacts the other country. An air strike includes bombs, air-to-surface missiles, and air-launched drones. A surface-to-surface missile strike includes one-way attack drones and surface-to-surface missiles such as cruise or ballistic missiles.\n\nThe following actions do not constitute a qualifying military action:\nMunitions destroyed or intercepted before impact;\nSurface-to-air missile strikes;\nSmall-arms fire;\nGround incursions;\nCyber operations;\nNaval gunfire and artillery fire;\nHowitzers, artillery pieces, mortars, and rocket artillery (e.g. MLRS systems);\nMinor surface-to-surface strikes, including short range loitering munitions, FPV drones, and ATGM strikes;\nAny threat, authorization, or announcement of force that has not been executed.\n\nAny munition that is intercepted or destroyed before impact does not constitute a qualifying military action. Debris, fragments, or any wreckage from intercepted munitions that land on Israel or Iran do not constitute a military action regardless of any damage incurred.\n\nA military action will be considered to impact Israel or Iran if it directly impacts the terrestrial territory of Israel or Iran, including any internal waters. Maritime territory and airspace are not encompassed. Where territorial borders are disputed, all territory claimed by and under the de facto control of the relevant state as of market creation will qualify.\n\nThe occurrence, attribution, and timing of a qualifying military action will be primarily determined based on a consensus of information available from the resolution sources. Where multiple sources conflict regarding the occurrence, attribution, or timing of a relevant military action, this market will remain open until the earlier of: i) the confirmation of the occurrence, attribution, and timing of the action based on a consensus of information available from the resolution sources or ii) 3 full calendar days (IRST) from the date of the first credibly reported evidence of the action. If this period would extend past the end date, this market will remain open to allow for 3 full calendar days to pass. If, at the end of the third calendar day, conflicting reports remain as to the occurrence, attribution, or timing of the action, this market will resolve based on the totality of information available from the resolution sources at that time. No single statement, denial, or presentation of evidence will govern where it is contradicted by the totality of information.\n\nThe resolution sources for this market will be official information from the governments and militaries of Israel and Iran and credible reporting.",
+        "resolution_source": "",
+        "end_time": "2026-11-16T04:59:00Z",
+        "tick_size": 0.01,
+        "min_order_size": 5.0
+      },
+      "book": {
+        "schema_version": "1.0",
+        "id": "ed1dd42c4958196e3c112a8cbc7a31e5ad44aeb6b2d6711a88e7a86e4a23dccb",
+        "timestamp": "2026-11-06T23:39:13.743000Z",
+        "available_at": "2026-11-06T23:39:13.786153Z",
+        "source": "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+        "exchange": "polymarket",
+        "market_id": "5339986",
+        "token_id": "81002737208387436195452690077971321124621678141221296249970319056583686458028",
+        "bids": [
+          {
+            "price": 0.78,
+            "size": 8117.07
+          },
+          {
+            "price": 0.77,
+            "size": 3038.96
+          },
+          {
+            "price": 0.76,
+            "size": 213.46
+          },
+          {
+            "price": 0.75,
+            "size": 1026.42
+          },
+          {
+            "price": 0.74,
+            "size": 218.28
+          },
+          {
+            "price": 0.73,
+            "size": 1020.05
+          },
+          {
+            "price": 0.72,
+            "size": 1019.58
+          },
+          {
+            "price": 0.71,
+            "size": 1219.15
+          },
+          {
+            "price": 0.7,
+            "size": 2177.9
+          },
+          {
+            "price": 0.69,
+            "size": 2000.0
+          },
+          {
+            "price": 0.68,
+            "size": 10399.99
+          },
+          {
+            "price": 0.67,
+            "size": 1521.0
+          },
+          {
+            "price": 0.66,
+            "size": 1400.0
+          },
+          {
+            "price": 0.65,
+            "size": 14.59
+          },
+          {
+            "price": 0.63,
+            "size": 566.0
+          },
+          {
+            "price": 0.61,
+            "size": 2000.0
+          },
+          {
+            "price": 0.59,
+            "size": 1359.31
+          },
+          {
+            "price": 0.58,
+            "size": 2000.0
+          },
+          {
+            "price": 0.57,
+            "size": 2000.0
+          },
+          {
+            "price": 0.56,
+            "size": 4174.57
+          },
+          {
+            "price": 0.54,
+            "size": 453.29
+          },
+          {
+            "price": 0.53,
+            "size": 660.0
+          },
+          {
+            "price": 0.52,
+            "size": 2000.0
+          },
+          {
+            "price": 0.51,
+            "size": 4097.85
+          },
+          {
+            "price": 0.5,
+            "size": 1136.35
+          },
+          {
+            "price": 0.48,
+            "size": 30.26
+          },
+          {
+            "price": 0.45,
+            "size": 499.0
+          },
+          {
+            "price": 0.41,
+            "size": 2050.0
+          },
+          {
+            "price": 0.4,
+            "size": 5050.0
+          },
+          {
+            "price": 0.32,
+            "size": 8280.0
+          },
+          {
+            "price": 0.31,
+            "size": 9677.0
+          },
+          {
+            "price": 0.3,
+            "size": 166.0
+          },
+          {
+            "price": 0.28,
+            "size": 4500.0
+          },
+          {
+            "price": 0.27,
+            "size": 5200.0
+          },
+          {
+            "price": 0.26,
+            "size": 6153.0
+          },
+          {
+            "price": 0.25,
+            "size": 398.61
+          },
+          {
+            "price": 0.24,
+            "size": 2416.0
+          },
+          {
+            "price": 0.19,
+            "size": 7000.0
+          },
+          {
+            "price": 0.18,
+            "size": 16666.0
+          },
+          {
+            "price": 0.16,
+            "size": 12500.0
+          },
+          {
+            "price": 0.15,
+            "size": 100.0
+          },
+          {
+            "price": 0.12,
+            "size": 20833.33
+          },
+          {
+            "price": 0.1,
+            "size": 96.77
+          },
+          {
+            "price": 0.09,
+            "size": 5.91
+          },
+          {
+            "price": 0.08,
+            "size": 32500.0
+          },
+          {
+            "price": 0.07,
+            "size": 5.0
+          },
+          {
+            "price": 0.05,
+            "size": 10.0
+          },
+          {
+            "price": 0.04,
+            "size": 77500.0
+          },
+          {
+            "price": 0.02,
+            "size": 5.29
+          },
+          {
+            "price": 0.01,
+            "size": 24.61
+          }
+        ],
+        "asks": [
+          {
+            "price": 0.79,
+            "size": 654.99
+          },
+          {
+            "price": 0.8,
+            "size": 5350.14
+          },
+          {
+            "price": 0.81,
+            "size": 8316.41
+          },
+          {
+            "price": 0.82,
+            "size": 325.88
+          },
+          {
+            "price": 0.83,
+            "size": 6743.47
+          },
+          {
+            "price": 0.84,
+            "size": 883.0
+          },
+          {
+            "price": 0.85,
+            "size": 1322.87
+          },
+          {
+            "price": 0.86,
+            "size": 5220.0
+          },
+          {
+            "price": 0.87,
+            "size": 7700.0
+          },
+          {
+            "price": 0.88,
+            "size": 200.0
+          },
+          {
+            "price": 0.89,
+            "size": 13279.54
+          },
+          {
+            "price": 0.9,
+            "size": 300.0
+          },
+          {
+            "price": 0.91,
+            "size": 13541.67
+          },
+          {
+            "price": 0.92,
+            "size": 524.74
+          },
+          {
+            "price": 0.93,
+            "size": 19437.49
+          },
+          {
+            "price": 0.94,
+            "size": 29472.55
+          },
+          {
+            "price": 0.95,
+            "size": 38614.1
+          },
+          {
+            "price": 0.96,
+            "size": 61437.5
+          },
+          {
+            "price": 0.97,
+            "size": 86099.57
+          },
+          {
+            "price": 0.98,
+            "size": 145086.5
+          },
+          {
+            "price": 0.99,
+            "size": 287435.38
+          }
+        ],
+        "sequence": 0,
+        "complete": true
+      }
+    }
+  ]
+}

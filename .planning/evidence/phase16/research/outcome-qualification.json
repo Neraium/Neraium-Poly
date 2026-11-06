@@ -1,0 +1,58 @@
+{
+  "observed_at": "2026-11-06T22:59:03.402245+00:00",
+  "market_id": "6675981",
+  "event_id": "1313864",
+  "condition_id": "0x40bfc21d6adad8cf8a53385179edccaeb41a1a4d9d3e72a090b789749e00f9cd",
+  "native_manifest_sha256": "cbf8b75e82558686e259de4dd710fc32cf27aca251ada0ff4541c73ef8eddec7",
+  "native_response_bytes": 180473,
+  "requests": [
+    {
+      "base": "https://gamma-api.polymarket.com",
+      "path": "/markets/6675981",
+      "status": 200,
+      "received_at": "2026-11-06T22:58:05.728795+00:00",
+      "bytes": 5552,
+      "sha256": "363ed6c5def0ec48d192d46fe642f36402df1458c4b0b075cb2125b24c89de4a"
+    },
+    {
+      "base": "https://gamma-api.polymarket.com",
+      "path": "/events/1313864",
+      "status": 200,
+      "received_at": "2026-11-06T22:58:05.987336+00:00",
+      "bytes": 174228,
+      "sha256": "2d9acab8401acc3d0709266168128b662a8eea7a698845163d233d858c6149d8"
+    },
+    {
+      "base": "https://clob.polymarket.com",
+      "path": "/markets-by-token/107157641296911498592890920947053829105931739511040760439170568486187692171415",
+      "status": 200,
+      "received_at": "2026-11-06T22:58:06.340693+00:00",
+      "bytes": 287,
+      "sha256": "95921e00183e62804f4a6cbbd573e30f7f484e4daa702798831d41bce8344368"
+    },
+    {
+      "base": "https://data-api.polymarket.com",
+      "path": "/v2/resolutions",
+      "status": 200,
+      "received_at": "2026-11-06T22:58:06.716025+00:00",
+      "bytes": 406,
+      "sha256": "0e4cb1120007d025848e40d160d45a27a5220f4b2a72bcb21a374c27cddd856a"
+    }
+  ],
+  "detail_parent_missing": true,
+  "official_parent_match_count": 1,
+  "forecast_question_matches_current_detail": true,
+  "forecast_close_matches_current_detail": true,
+  "native_status_reported": "resolved",
+  "native_missing_required_fields": [
+    "market_type",
+    "reporter",
+    "transaction_hash"
+  ],
+  "first_failing_gate": "native market_type missing; no unreviewed binary-type inference",
+  "chain_rpc_attempted": false,
+  "outcome_verified": false,
+  "ledger_records_written": 0,
+  "trade_authority": false,
+  "next_requirement": "A legitimate source must provide all required native type/reporter/transaction provenance and finalized chain inclusion; preserve the existing gate. Binary payout values/closed flags alone do not qualify."
+}

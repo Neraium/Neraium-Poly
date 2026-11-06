@@ -1,0 +1,20 @@
+
+> neraium-poly-dashboard@0.1.0 test
+> playwright test
+
+[WebServer] INFO:     Started server process [3196279]
+[WebServer] INFO:     Waiting for application startup.
+[WebServer] INFO:     Application startup complete.
+[WebServer] INFO:     Uvicorn running on http://127.0.0.1:18940 (Press CTRL+C to quit)
+
+Running 5 tests using 1 worker
+
+(node:3196282) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 tests/connected.spec.ts:2:1 › connected paper workflow exposes audited fills and latches emergency stop (443ms)
+  ✓  2 tests/dashboard.spec.ts:3:1 › all workflows render, replay and emergency stop work (669ms)
+  ✓  3 tests/dashboard.spec.ts:14:1 › service failure is visible (151ms)
+  ✓  4 tests/live-operation.spec.ts:2:1 › live-market gate and observed books render without enabling synthetic replay (282ms)
+  ✓  5 tests/research.spec.ts:3:1 › research deficits and null performance remain visible (240ms)
+
+  5 passed (2.6s)

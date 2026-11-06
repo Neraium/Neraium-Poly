@@ -1,0 +1,105 @@
+{
+  "measurements": [
+    {
+      "label": "collector",
+      "source": "data/paper-live/events-segments/segment-00000001.sqlite.gz",
+      "source_gzip_sha256": "0ba2bcc10a7da7a6170a7384880ad5b404e4f2e09ac9b94a0c088149adee49df",
+      "source_raw_sha256": "80be8c2974ff0d6caad93f8136c0c370f1217df71fcdff7bd4459ff5562c78b3",
+      "preview_results": [
+        {
+          "level": 1,
+          "bytes": 3401968,
+          "raw_bytes": 12603392,
+          "ratio": 0.26992479484887877,
+          "seconds": 0.13736400799825788,
+          "sha256": "b55c681889660d16a2be68d9725e8f422034d988d67552f34f0ab922f3537466",
+          "roundtrip_verified": true,
+          "path": "data/phase16/compression-preview/collector/segment-00000001.sqlite.level1.gz"
+        },
+        {
+          "level": 6,
+          "bytes": 2966373,
+          "raw_bytes": 12603392,
+          "ratio": 0.23536306733933215,
+          "seconds": 0.24035510094836354,
+          "sha256": "1522cb62209a23971cf6c7a540a9b7c1650aff1249162966b9e3b176a1c02311",
+          "roundtrip_verified": true,
+          "path": "data/phase16/compression-preview/collector/segment-00000001.sqlite.level6.gz"
+        },
+        {
+          "level": 9,
+          "bytes": 2951076,
+          "raw_bytes": 12603392,
+          "ratio": 0.23414934646165095,
+          "seconds": 0.3463141049724072,
+          "sha256": "21aaca081caab5ee178a39b609a50fbfe90fc912da8d0acfa619a5142d39b1ac",
+          "roundtrip_verified": true,
+          "path": "data/phase16/compression-preview/collector/segment-00000001.sqlite.level9.gz"
+        }
+      ],
+      "original_database_opened": false,
+      "originals_removed": 0,
+      "retention_policy_changed": false,
+      "worker": {
+        "pid": 3196812,
+        "started_at": "2026-11-06T23:23:41.231732+00:00",
+        "completed_at": "2026-11-06T23:23:42.013587+00:00",
+        "cpu_seconds": 0.781752328,
+        "max_rss_kib": 69208
+      }
+    },
+    {
+      "label": "experimental",
+      "source": "data/experimental-paper/events-segments/segment-00000001.sqlite.gz",
+      "source_gzip_sha256": "cd86a6fb7d487466bcb26fd2379d254808657e9e0d643fb07cd05b25bf76bf0e",
+      "source_raw_sha256": "c24e8b9b08711de5c59cdd35a387442f18c83eb49b3f9e8981e60ccd8c5a4748",
+      "preview_results": [
+        {
+          "level": 1,
+          "bytes": 1663115,
+          "raw_bytes": 5013504,
+          "ratio": 0.3317270715252247,
+          "seconds": 0.060000537894666195,
+          "sha256": "e8fb13599724cbbdb8434dd3818e5c334af12caa8191fdd5846fe50cf0a5fcca",
+          "roundtrip_verified": true,
+          "path": "data/phase16/compression-preview/experimental/segment-00000001.sqlite.level1.gz"
+        },
+        {
+          "level": 6,
+          "bytes": 1526461,
+          "raw_bytes": 5013504,
+          "ratio": 0.30446988772722633,
+          "seconds": 0.11689683678559959,
+          "sha256": "dd789346f67b9824117a4403d17aaea38a18e1d1c635501118aa246871a5ab48",
+          "roundtrip_verified": true,
+          "path": "data/phase16/compression-preview/experimental/segment-00000001.sqlite.level6.gz"
+        },
+        {
+          "level": 9,
+          "bytes": 1518856,
+          "raw_bytes": 5013504,
+          "ratio": 0.30295298457924835,
+          "seconds": 0.17204382503405213,
+          "sha256": "8e7584686aa9394d3b1b736101cdfdf524693f80a6d15bfb791f9a704a2d0c62",
+          "roundtrip_verified": true,
+          "path": "data/phase16/compression-preview/experimental/segment-00000001.sqlite.level9.gz"
+        }
+      ],
+      "original_database_opened": false,
+      "originals_removed": 0,
+      "retention_policy_changed": false,
+      "worker": {
+        "pid": 3196815,
+        "started_at": "2026-11-06T23:23:41.232124+00:00",
+        "completed_at": "2026-11-06T23:23:41.607165+00:00",
+        "cpu_seconds": 0.375022939,
+        "max_rss_kib": 44464
+      }
+    }
+  ],
+  "process_workers": 2,
+  "actual_overlap": true,
+  "purpose": "reversible extra preview copies only; no active SQLite opened/compressed and no original or existing copy removed",
+  "budget_per_worker_bytes": 33554432,
+  "policy_change_authority": false
+}

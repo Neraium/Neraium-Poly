@@ -1,0 +1,87 @@
+{
+  "schema_version": "phase16-frozen-experiment-v1",
+  "hypothesis": "A median of the prior20 fixed5share participating-depth bid marks plus training-matured median residual may improve60second future bid-mark accuracy versus the unchanged contemporaneous executable bid. This does not imply independent terminal event forecasting or profitable trading.",
+  "dataset_identity": "prepared-core900-authentic-experimentalcycles-firstcycle8tokens-fixed",
+  "dataset_sha256": "76a512397eecaef89328ac3dfd1885b0863b283acff8cd522417d138f56def46",
+  "dataset_manifest_sha256": "3dead3a1412c3288cc21fe68a9e05d636c82ecac6fcd30041d35530d24bc2853",
+  "result_sha256": "43e5ed2c1cef03fab35914c1adb1c5479592f5b4776592fc60e9e2fe552236e9",
+  "profile_sha256": "fe4b3b24e94d405de5631dfa9ced39a44221f80db1363efbd7fe1a87695473b8",
+  "model_version": "phase16-causal-depth-bid-median-v1",
+  "feature_version": "fixed-shares-top3-quarter-depth-v1",
+  "model_source_sha256": "6908ad47f76de1cb980ebd5ddceb4037aa5e5e8d3585f72aa65dd29fbcc13f62",
+  "feature_source_sha256": "04ebe3f6917a54c541b348a55a8495d04c2a08063e693c544ab8ee722d41dcfa",
+  "policy": {
+    "horizon_seconds": 60,
+    "max_label_delay_seconds": 30,
+    "min_prior": 40,
+    "min_matured_errors": 20,
+    "training_fraction": 0.6,
+    "purge_seconds": 90,
+    "feature_window": 20,
+    "max_error_window": 60,
+    "envelope_floor": 0.01,
+    "uncertainty_width_ceiling": 0.35,
+    "minimum_net_edge": 0.03,
+    "roundtrip_slippage_per_share": 0.02,
+    "quantity": 5.0,
+    "calibration_policy": "frozen_training_residuals_for_heldout"
+  },
+  "policy_sha256": "3c29ff2e4ce290dc7c155b64fa2c04623ccd361c73fdcee3763e3fa93334b692",
+  "training_interval": {
+    "start": "2026-11-06T21:24:46.767638+00:00",
+    "end": "2026-11-06T22:26:57.167233+00:00"
+  },
+  "heldout_interval": {
+    "start": "2026-11-06T22:28:27.167233+00:00",
+    "end": "2026-11-06T23:04:42.361241+00:00"
+  },
+  "event_grouping": "Official parentevent IDs; token outcomes and repeat snapshots are not independent events. Fourheldout groups overlaptraining.",
+  "source_timestamps": "Original raw OrderBookSnapshot/BookReceipt/BookDelta timestamps; decision and label receipt times rechecked against corresponding archived cycle cutoff.",
+  "features": [
+    "prior20 fixed5share top3 depth VWAP bid marks",
+    "past60second residuals matured and available by training cutoff",
+    "contemporaneous decision bid mark as unchanged baseline only"
+  ],
+  "target": "first source observed fixed5share top3 depth bid at decision+60s, max30s matching delay; no interpolation",
+  "execution_costs": "Existing conservative official global notional bound verified from raw CLOBcurvefd.r/exponent1,takeronly and token-conditionmembership; $.01/share perleg slippage;25%observedlevelparticipation. Currentquotes/futuremarks are notactualfills.",
+  "forecast_accuracy": {
+    "model_mae": 0.0,
+    "baseline_mae": 0.0,
+    "heldout_mark_examples": 879,
+    "zero_error_interpretation": "Bothmatchbecauseeachheldouttokenhasoneunchangedmonetarybidmark; no measuredsuperiority."
+  },
+  "statistical_uncertainty": {
+    "confidence_interval": null,
+    "reason": "Exploratorydependentquoteobservations,4overlappingparentgroups; insufficientindependentheldouteventstoclaimsuperiority."
+  },
+  "probability_calibration": {
+    "brier": null,
+    "log_loss": null,
+    "reason": "TargetsareUSDper-sharebidmarks,notverifiedeventoutcomes."
+  },
+  "cost_adjusted_quote_marks": {
+    "mean_per_share": -0.09231717861205922,
+    "positive_projected_mark_examples": 0,
+    "selected_mean": null,
+    "paper_account_pnl": null,
+    "execution_certified": false
+  },
+  "failure_conditions": [
+    "Missingfixedsharedepth/source/context/feeprovenance",
+    "Sourcegap>120s resetscausalcohort",
+    "Insufficient40prior/20maturedtraininglabels",
+    "Targetlaterthan90s/unavailablebycutoff",
+    "Changedcontractruleidentity orambiguousquoteidentity",
+    "Missingoriginalproducerhealth prevents executioncertification"
+  ],
+  "known_limitations": [
+    "Producer health and original frame timestamps were not recorded in legacy cycles; cannot certify execution.",
+    "Point evidence independently rebound to raw archived cycle/market/quote/fee records, not current quotes or constant verification.",
+    "Quote MAE and fee/slippage mark arithmetic are not account P/L, actual fills or independently verified event outcomes.",
+    "Frozen temporal heldout is exploratory; six shared parent groups and repeated tokens cannot establish100training+100heldoutindependentevents.",
+    "No parameter selection or threshold change followed viewing heldout results."
+  ],
+  "future_holdout_policy": "No retuning of this holdout. Predeclare causal activity strata and collect a new prospective cohort before testing more hypotheses.",
+  "model_promotion_authority": false,
+  "created_at": "2026-11-06T23:16:13.141930+00:00"
+}

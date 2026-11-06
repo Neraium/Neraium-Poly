@@ -24,6 +24,8 @@ no independent non-sports forecasting advantage is claimed.
 
 Phase 15 adds [verified cold recovery, bounded capacity alerts and continuous relationship research](docs/phase15-architecture.md). Originals remain retained. [Retention](docs/phase15-retention.md) and [experimental-stop recovery](docs/phase15-stop-readiness.md) require separate owner decisions; neither is automatic. New domain inputs remain research-only pending mapping and calibration.
 
+Phase 16 adds [causal qualification history and depth-aware execution checks](docs/phase16-architecture.md). The [readiness report](docs/phase16-readiness.md) records negative research findings and one losing, risk-approved experimental paper round trip. Certification remains blocked. Use `uv run neraium-poly monitor --view readiness` for current evidence and cost readiness.
+
 ## Isolated experimental research and SSH monitor
 
 ```sh
