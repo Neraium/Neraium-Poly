@@ -1,0 +1,76 @@
+{
+  "actual_public_data": true,
+  "fixtures": false,
+  "observed_at": "2026-11-06T08:39:34.086514+00:00",
+  "market_id": "6667068",
+  "event_id": "1312086",
+  "question": "Will the highest temperature in Seoul (Incheon) be 12\u00b0C on November 6?",
+  "station": {
+    "id": "RKSI",
+    "name": "Incheon Intl Airport",
+    "timezone": "Asia/Seoul",
+    "latitude": 37.469,
+    "longitude": 126.451,
+    "units": "Celsius"
+  },
+  "contract_rules_sha256": "ee971bac629c2bcdd0f492014b5bf6d3908357c3739f0a8ac3314bab91924051",
+  "compatible_mapping": true,
+  "raw_capture_path": "/dev/shm/neraium-poly-phase14/weather/actual-adapter-evidence.json",
+  "capture_durability": "temporary RAM-backed; not durable or restart safe",
+  "source_url": "https://aviationweather.gov/api/data/metar?ids=RKSI&format=json&date=2026-11-06T18%3A00%3A00Z&hours=30",
+  "source_product": "observations_not_probabilistic_forecast",
+  "retrieved_at": "2026-11-06T08:39:34.083581+00:00",
+  "last_observation_at": "2026-11-06T08:30:00+00:00",
+  "source_timestamp": "2026-11-06T08:34:30.931000+00:00",
+  "available_at": "2026-11-06T08:39:34.083581+00:00",
+  "raw_sha256": "adae2726d0f15ccf0e3ab6d3105f5f2c785959d5c2b3850dc6c1424cb9007c84",
+  "evidence_sha256": "3addffaa7f762f49ba63e5b50e0369d0eba11a3e94b5cf7abeb9b672ce413309",
+  "raw_bytes": 17491,
+  "returned_rows": 42,
+  "qualified_observations": 36,
+  "maximum_observed_celsius": 13.0,
+  "first_observation": {
+    "station": "RKSI",
+    "observation_at": "2026-11-05T15:00:00+00:00",
+    "provider_receipt_at": "2026-11-05T15:04:31.001000+00:00",
+    "available_at": "2026-11-06T08:39:34.083581+00:00",
+    "temperature_celsius": 13.0,
+    "rounded_celsius": 13,
+    "precision": "whole_Celsius_METAR_body",
+    "raw_report": "METAR RKSI 051500Z 32018KT 9999 BKN025 OVC090 13/09 Q1016 NOSIG",
+    "correction": false
+  },
+  "last_observation": {
+    "station": "RKSI",
+    "observation_at": "2026-11-06T08:30:00+00:00",
+    "provider_receipt_at": "2026-11-06T08:34:30.931000+00:00",
+    "available_at": "2026-11-06T08:39:34.083581+00:00",
+    "temperature_celsius": 8.0,
+    "rounded_celsius": 8,
+    "precision": "whole_Celsius_METAR_body",
+    "raw_report": "METAR RKSI 060830Z 32018KT CAVOK 08/M08 Q1027 NOSIG",
+    "correction": false
+  },
+  "rejected_rows": {
+    "outside_station_local_observation_day": 6
+  },
+  "period_complete": false,
+  "result": {
+    "domain": "weather",
+    "model_version": "weather-observation-research-v1",
+    "qualified": false,
+    "probability": null,
+    "uncertainty": null,
+    "calibration_status": "unavailable",
+    "support_status": "observation_research_only",
+    "qualified_observations": 36,
+    "reasons": [
+      "qualified_station_matched_predictive_distribution_and_calibration_required"
+    ],
+    "forecast_recorded": false,
+    "trading_authority": false,
+    "certification_authority": false
+  },
+  "forecast_records": 0,
+  "trading_authority": false
+}
