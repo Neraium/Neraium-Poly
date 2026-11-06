@@ -236,7 +236,7 @@ class ExperimentalRuntime:
             # may read public observations without writing paper execution evidence.
             if self.event_intelligence is not None:
                 try:
-                    research_frame = await self.feed.read()
+                    research_frame = await getattr(self.feed, "read_research", self.feed.read)()
                     with self._lock:
                         self.event_intelligence.on_research_frame(research_frame, self.clock())
                 except Exception as error:  # noqa: BLE001 - source failure preserves the stop

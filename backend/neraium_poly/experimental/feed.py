@@ -94,6 +94,13 @@ class SharedFeedClient:
         self.client = client or httpx.AsyncClient(timeout=10, follow_redirects=False)
 
     async def read(self, now=None) -> SharedMarketFrame:
+        return await self._read(now)
+
+    async def read_research(self, now=None) -> SharedMarketFrame:
+        """Diagnostics may classify cached metadata; degraded books are always stripped."""
+        return await self._read(now, diagnostics=True)
+
+    async def _read(self, now=None, *, diagnostics=False) -> SharedMarketFrame:
         data = bytearray()
         async with self.client.stream("GET", self.url) as response:
             response.raise_for_status()
@@ -107,7 +114,7 @@ class SharedFeedClient:
             raise ValueError("stale or future shared frame")
         if frame.source != "neraium-poly/public-market-frame/v1":
             raise ValueError("unexpected public-data producer")
-        if frame.producer_health.get("status") != "ok":
+        if frame.producer_health.get("status") != "ok" and not diagnostics:
             raise ValueError("public-data producer is degraded")
         if frame.producer_health.get("live_trading_enabled") is not False:
             raise ValueError("public-data producer mode mismatch")
@@ -128,6 +135,8 @@ class SharedFeedClient:
             ):
                 raise ValueError("untrusted or mismatched actual book")
             seen.add(book.token_id)
+        if frame.producer_health.get("status") != "ok":
+            return frame.model_copy(update={"books": (), "fees": {}, "evidence": (), "relationships": ()})
         return frame
 
     async def close(self):

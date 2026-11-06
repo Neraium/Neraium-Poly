@@ -99,6 +99,24 @@ async def test_response_budget_and_remote_urls_reject(now):
         await client.close()
 
 
+async def test_degraded_diagnostics_never_exposes_execution_inputs(now):
+    data = frame(now).model_dump(mode="json")
+    data["producer_health"]["status"] = "degraded"
+    client = SharedFeedClient(
+        client=httpx.AsyncClient(transport=httpx.MockTransport(lambda r: httpx.Response(200, json=data)))
+    )
+    try:
+        with pytest.raises(ValueError, match="degraded"):
+            await client.read(now)
+        diagnostic = await client.read_research(now)
+        assert len(diagnostic.markets) == 1
+        assert diagnostic.producer_health["status"] == "degraded"
+        assert not diagnostic.books and not diagnostic.fees and not diagnostic.evidence
+        assert not diagnostic.relationships
+    finally:
+        await client.close()
+
+
 def test_export_never_reads_or_mutates_certified_account(now):
     f = frame(now)
 
