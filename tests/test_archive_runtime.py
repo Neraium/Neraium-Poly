@@ -80,6 +80,8 @@ async def test_experimental_managed_archive_preserves_stop_and_certified_account
         assert r.state()["archive"]["health"] == "ok"
         assert r.state()["kill_switch"] is True
         assert r.state()["cash"] == 500
+        assert r.archive_state()["cash"] == 500
+        assert r.archive_state()["kill_switch"] is True
         count = r.events.count()
     finally:
         await r.close()
@@ -177,3 +179,35 @@ async def test_failed_post_open_initialization_releases_both_owner_locks(tmp_pat
         assert recovered.events.status()["health"] == "ok"
     finally:
         await recovered.close()
+
+
+def test_archive_api_cannot_fallback_to_synthetic_state():
+    from fastapi.testclient import TestClient
+    from neraium_poly.ops.api import create_app
+
+    assert TestClient(create_app()).get("/api/archive-state").status_code == 404
+
+
+async def test_small_archive_endpoint_bypasses_expensive_history_queries(tmp_path, now, monkeypatch):
+    from fastapi.testclient import TestClient
+    from neraium_poly.ops.api import create_app
+
+    clock = Clock(now)
+    config = LivePaperConfig(data_dir=tmp_path / "collector", coverage_enabled=False,
+                            archive_management_enabled=True, archive_reserve_disk_mb=8192,
+                            archive_budget_mb=64)
+    r = LivePaperRuntime(config, adapter=FakeAdapter(clock), clock=clock)
+
+    def fail(*_args, **_kwargs):
+        raise AssertionError("Historical state must not be queried for operational archive health")
+
+    monkeypatch.setattr(r, "state", fail)
+    monkeypatch.setattr(r.events, "latest", fail)
+    try:
+        response = TestClient(create_app(runtime=r)).get("/api/archive-state")
+        assert response.status_code == 200
+        data = response.json()
+        assert data["cash"] == 500 and data["archive"]["health"] == "ok"
+        assert data["operation"]["service"]["live_trading_enabled"] is False
+    finally:
+        await r.close()

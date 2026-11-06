@@ -794,6 +794,20 @@ class LivePaperRuntime:
             "timestamp": now.isoformat(),
         }
 
+    def archive_state(self):
+        """Small operational view without the historical-query/global-cycle lock."""
+        account = self.risk.snapshot(now=self.clock())
+        return {
+            "mode": "live_market_paper", "generated_at": self.clock().isoformat(),
+            "cash": account["cash"], "bankroll": account["equity"],
+            "simulated_pnl": account["equity"] - self.config.risk_limits.bankroll,
+            "suspended": account["kill_switch"], "archive": self._archive_status(),
+            "operation": {"cycles": self.totals["cycles"], "scan": dict(self.scan),
+                          "service": self.health(),
+                          "connectivity": self.coverage.metrics() if self.coverage else {"ws_connected": False}},
+            "scope": "archive health and current simulated capital; full event history remains in /api/state",
+        }
+
     def state(self):
         with self._lock:
             now = self.clock()

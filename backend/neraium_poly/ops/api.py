@@ -67,6 +67,12 @@ def create_app(runtime=None, frontend_path: Path | None = None, local_port: int 
         with lock:
             return runtime.state()
 
+    @app.get("/api/archive-state")
+    def archive_state():
+        if not hasattr(runtime, "archive_state"):
+            raise HTTPException(404, "Managed archive state unavailable in this mode")
+        return runtime.archive_state()
+
     @app.post("/api/scenario")
     def scenario():
         with lock:

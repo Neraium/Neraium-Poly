@@ -648,6 +648,15 @@ class ExperimentalRuntime:
                 "independent_models_enabled": 0,
             }
 
+    def archive_state(self):
+        """Keep storage/account health readable without copying research histories."""
+        state = self.account.snapshot(now=self.clock())
+        keep = {k: state[k] for k in ("account_id", "cash", "bankroll", "simulated_pnl", "kill_switch",
+                                      "orders_attempted", "fills", "positions")}
+        return {**keep, "generated_at": self.clock().isoformat(), "service": self.health(),
+                "archive": self._archive_status(), "experimental_totals": dict(self.totals),
+                "scope": "archive health and current simulated capital; research histories remain in /api/state"}
+
     def state(self):
         with self._lock:
             now = self.clock()

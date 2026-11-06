@@ -1006,6 +1006,9 @@ def monitor(
 ):
     loopback_url(certified_url)
     loopback_url(experimental_url)
+    if view == "archives":
+        certified_url = certified_url.removesuffix("/api/state") + "/api/archive-state" if certified_url.endswith("/api/state") else certified_url
+        experimental_url = experimental_url.removesuffix("/api/state") + "/api/archive-state" if experimental_url.endswith("/api/state") else experimental_url
     if not 1 <= refresh <= 60:
         raise ValueError("monitor refresh must be1–60 seconds")
     console = Console(width=width, no_color=no_color)
