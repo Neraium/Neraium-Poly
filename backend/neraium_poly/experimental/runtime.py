@@ -433,8 +433,6 @@ class ExperimentalRuntime:
                 if stale_marks
                 else "fresh_observed_bid_marks_or_cash",
                 strategy_code_sha256=self.model_hash,
-                relationship_definition_ids=tuple(definition_ids),
-                relationship_evidence_ids=tuple(e.id for e in self.engine.intelligence.latest),
                 generated_at=now.isoformat(),
                 suspended=state["kill_switch"],
                 service=self.health(),
