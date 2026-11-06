@@ -126,3 +126,35 @@ def test_export_never_reads_or_mutates_certified_account(now):
 
 def test_synthetic_runtime_cannot_export_live_frame():
     assert TestClient(create_app()).get("/api/market-frame").status_code == 404
+
+
+def test_discovery_scope_transition_withholds_inconsistent_books(now):
+    f = frame(now)
+    current = f.books[0]
+    departed = current.model_copy(
+        update={"id": "old-scope", "market_id": "departed-market", "token_id": "departed-token"}
+    )
+    future = current.model_copy(
+        update={
+            "id": "future-receipt",
+            "token_id": "future-token",
+            "available_at": now + timedelta(seconds=1),
+        }
+    )
+    runtime = SimpleNamespace(
+        _lock=RLock(),
+        _current_books=lambda: {b.token_id: b for b in (current, departed, future)},
+        markets={m.token_id: m for m in f.markets},
+        clock=lambda: now,
+        last_success=now,
+        last_error=None,
+        fees={},
+        relationships={},
+        coverage=None,
+    )
+    result = market_frame(runtime)
+    assert result.books == (current,)
+    assert result.producer_health["books_withheld_at_export"] == 2
+    assert result.producer_health["status"] == "ok"
+    runtime._current_books = lambda: {departed.token_id: departed}
+    assert market_frame(runtime).producer_health["status"] == "degraded"

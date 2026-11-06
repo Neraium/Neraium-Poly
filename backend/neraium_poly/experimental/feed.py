@@ -6,6 +6,7 @@ from urllib.parse import urlparse
 
 import httpx
 
+from neraium_poly.data import assess_book
 from neraium_poly.experimental.contracts import SharedMarketFrame
 
 BOOK_SOURCES = {
@@ -18,16 +19,28 @@ def market_frame(runtime) -> SharedMarketFrame:
     # Never call risk.snapshot/state here: sharing observations cannot expire or
     # otherwise mutate the certified account's reservations or capital.
     with runtime._lock:
-        books = tuple(runtime._current_books().values())
+        raw_books = tuple(runtime._current_books().values())
         markets = tuple(runtime.markets.values())
         last_success = runtime.last_success
         now = runtime.clock()
         age = (now - last_success).total_seconds() if last_success else None
+        by_token = {m.token_id: m for m in markets}
+        books = tuple(
+            b
+            for b in raw_books
+            if b.token_id in by_token
+            and b.market_id == by_token[b.token_id].market_id
+            and b.exchange == by_token[b.token_id].exchange == "polymarket"
+            and b.source in BOOK_SOURCES
+            and b.available_at <= now
+        )
+        has_fresh_books = any(assess_book(b, now).healthy for b in books)
         health = {
             "status": "ok"
-            if age is not None and 0 <= age < 60 and runtime.last_error is None
+            if age is not None and 0 <= age < 60 and runtime.last_error is None and has_fresh_books
             else "degraded",
             "last_error": runtime.last_error,
+            "books_withheld_at_export": len(raw_books) - len(books),
             "last_ingestion_at": last_success.isoformat() if last_success else None,
             "paper_trading": True,
             "live_trading_enabled": False,
