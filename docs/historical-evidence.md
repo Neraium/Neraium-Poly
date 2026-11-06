@@ -29,3 +29,12 @@ These initial counts do not prove that200 historical outcome groups are globally
 - [Rocklabs publisher archive](https://github.com/rocklabs-io/polymarket-dataset): very large captured stream archive; downloading it wholesale exceeds this task's bounded acquisition budget.
 
 Publisher archives are legitimate investigation leads, not certified evidence merely because a README says they are historical. No paid download, account bypass, wallet connection or huge archive transfer is performed by this pipeline. Each external archive needs attribution, exact-file hashes, schema and timestamp checks, independent-event grouping, resolution verification and owner-reviewed applicability before it can change any activation result.
+
+
+## Event-first secondary acquisition
+
+`acquire(event_first=True)` walks bounded closed-event pages instead of sampled market pages. It chooses one supported binary outcome per parent/event group without selecting by eventual payout. Named binary outcomes such as Up/Down retain their actual token/outcome mapping; they are not renamed YES. The same final-resolution and provenance checks apply. A nullable resolution type can qualify only when the two-token payout vector and unique CLOB winner flags explicitly agree; nonbinary named types, empty transaction references and conflicting proofs remain withheld.
+
+The actual secondary acquisition on2026-11-06 obtained250 parent/event metadata groups,51 strict verified outcome groups,616 historical price points across50 groups and95 public METAR observations in132 GET requests/13,369,612 response bytes. It contains0 historical L2 books and0 certifiable events. The other199 resolution rows report explicit final payouts but omit required transaction references; they are not silently upgraded to verified labels. Their nullable type is therefore not the only missing proof. The API payloads remain available for later on-chain corroboration.
+
+The250 distinct IDs are **not**250 independently certified statistical examples. In particular148 records are categorized Up or Down, with likely shared asset, series and adjacent-window dependence. Event-level deduplication removes known multi-leg duplication but cannot prove independence across neighboring crypto windows. Asset/series correlation review, chronological splitting and external context remain necessary. The secondary dataset's raw provenance and normalized manifest are separate from the initial market-window sample; neither is overwritten.

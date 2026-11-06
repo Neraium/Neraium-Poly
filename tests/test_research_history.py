@@ -342,3 +342,83 @@ async def test_label_availability_follows_resolution_fetch_not_metadata_receipt(
         )
         b = await p.acquire(max_events=2, max_history_requests=0, max_context_requests=0)
     assert all(e.available_at == now + timedelta(seconds=10) for e in b.events)
+
+
+async def test_event_first_can_assemble_200_verified_groups_without_claiming_certification(tmp_path, now):
+    markets = [raw_market(now, i) for i in range(1, 206)]
+
+    def handler(request):
+        if request.url.path == "/events":
+            offset = int(request.url.params["offset"])
+            limit = int(request.url.params["limit"])
+            return httpx.Response(
+                200,
+                json=[
+                    {"id": f"event{r['id']}", "tags": [{"label": "controlled"}], "markets": [r]}
+                    for r in markets[offset : offset + limit]
+                ],
+            )
+        if request.url.path == "/v2/resolutions":
+            ids = [int(c.replace("condition", "")) for c in request.url.params["condition"].split(",")]
+            return httpx.Response(200, json={"data": [native(now, i) for i in ids]})
+        raise AssertionError(str(request.url))
+
+    async with httpx.AsyncClient(transport=httpx.MockTransport(handler)) as client:
+        p = HistoryPipeline(tmp_path, client=client, clock=lambda: now, min_interval=0, max_requests=100)
+        b = await p.acquire(max_events=205, max_history_requests=0, max_context_requests=0, event_first=True)
+    report = completeness_report(b)
+    assert report["verified_outcome_events"] == 205
+    assert not report["certification_split_feasible"]
+    assert report["certifiable_independent_events"] == 0
+    assert load_bundle(tmp_path) == b
+
+
+async def test_event_first_named_binary_tokens_are_not_renamed_or_inferred_from_price(tmp_path, now):
+    market = raw_market(now, 1)
+    market["outcomes"] = '["Up","Down"]'
+    market["outcomePrices"] = '["0","1"]'
+
+    def handler(request):
+        if request.url.path == "/events":
+            return httpx.Response(200, json=[{"id": "event1", "markets": [market]}])
+        return httpx.Response(200, json={"data": [native(now)]})
+
+    async with httpx.AsyncClient(transport=httpx.MockTransport(handler)) as client:
+        p = HistoryPipeline(tmp_path, client=client, clock=lambda: now, min_interval=0, max_requests=10)
+        b = await p.acquire(max_events=1, max_history_requests=0, max_context_requests=0, event_first=True)
+    assert b.events[0].token_id == "t1"
+    assert b.events[0].outcome == 1 and b.events[0].outcome_verified
+
+
+async def test_nullable_type_requires_winner_corroboration_and_transaction_ref(tmp_path, now):
+    bundle, _ = await acquire(
+        tmp_path / "valid",
+        now,
+        resolution_transform=lambda r: {k: v for k, v in r.items() if k != "market_type"},
+    )
+    assert all(e.outcome_verified for e in bundle.events)
+
+    def no_tx(row):
+        row.pop("market_type")
+        row["transaction_hash"] = ""
+        return row
+
+    rejected, _ = await acquire(tmp_path / "missing-tx", now, resolution_transform=no_tx)
+    assert not any(e.outcome_verified for e in rejected.events)
+
+
+async def test_nullable_type_with_conflicting_payout_and_winner_withheld(tmp_path, now):
+    def conflict(row):
+        row.pop("market_type")
+        row["payouts"] = [0, 1000000]
+        return row
+
+    bundle, _ = await acquire(tmp_path, now, resolution_transform=conflict)
+    assert not any(e.outcome_verified for e in bundle.events)
+
+
+async def test_known_nonbinary_type_never_becomes_binary_from_winner_flags(tmp_path, now):
+    bundle, _ = await acquire(
+        tmp_path, now, resolution_transform=lambda r: {**r, "market_type": "INCREMENTAL_NEGRISK"}
+    )
+    assert not any(e.outcome_verified for e in bundle.events)

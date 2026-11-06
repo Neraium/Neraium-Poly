@@ -153,15 +153,15 @@ class HistoryPipeline:
                 await self.sleep(2**attempt)
         raise AcquisitionLimit("retry budget exhausted")
 
-    def _event(self, raw, meta, resolution, clob):
+    def _event(self, raw, meta, resolution, clob, *, allow_named_binary=False):
         tokens = _array(raw.get("positionIds") if raw.get("version") == "v2" else raw.get("clobTokenIds", []))
         outcomes = _array(raw.get("outcomes", []))
         if len(tokens) != 2 or len(set(tokens)) != 2 or len(outcomes) != 2:
             raise ValueError("binary outcome identity unavailable")
         yes = [i for i, value in enumerate(outcomes) if str(value).casefold() == "yes"]
-        if len(yes) != 1:
+        if len(yes) != 1 and not allow_named_binary:
             raise ValueError("unambiguous YES token required")
-        index = yes[0]
+        index = yes[0] if len(yes) == 1 else 0
         group = next(
             (str(e.get("parentEventId") or e["id"]) for e in raw.get("events", []) if e.get("id")),
             str(raw.get("eventId") or ""),
@@ -188,17 +188,13 @@ class HistoryPipeline:
             and row.get("transaction_hash")
         ):
             payouts = row.get("payouts")
-            if (
-                row.get("market_type") == "BINARY"
-                and row.get("resolution_source") == "reported"
-                and payouts in ([1_000_000, 0], [0, 1_000_000])
-                and all(type(v) is int for v in payouts)
-            ):
-                outcome, verified = int(payouts[index] == 1_000_000), True
-            elif clob:
+            exact_binary_payout = payouts in ([1_000_000, 0], [0, 1_000_000]) and all(
+                type(v) is int for v in payouts
+            )
+            winner = None
+            if clob:
                 details, _ = clob
                 ctokens = details.get("tokens", [])
-                # Corroborated explicit winner flags, not their displayed prices.
                 matched = {str(t.get("token_id")): t for t in ctokens if isinstance(t, dict)}
                 if (
                     details.get("condition_id") == raw.get("conditionId")
@@ -212,7 +208,29 @@ class HistoryPipeline:
                         for t, o in zip(tokens, outcomes, strict=True)
                     )
                 ):
-                    outcome, verified = int(matched[str(tokens[index])]["winner"]), True
+                    winner = int(matched[str(tokens[index])]["winner"])
+            if (
+                row.get("market_type") == "BINARY"
+                and row.get("resolution_source") == "reported"
+                and exact_binary_payout
+            ):
+                outcome, verified = int(payouts[index] == 1_000_000), True
+            elif (
+                row.get("market_type") is None
+                and row.get("resolution_source") == "reported"
+                and exact_binary_payout
+                and winner == int(payouts[index] == 1_000_000)
+            ):
+                # Nullable schema type requires an additional matching two-token
+                # CLOB winner proof. Empty transaction references still reject above.
+                outcome, verified = winner, True
+            elif (
+                payouts is None
+                and row.get("market_type") in (None, "BINARY")
+                and row.get("resolution_source") in (None, "reported")
+                and winner is not None
+            ):
+                outcome, verified = winner, True
             if verified:
                 settled = _optional_time(row.get("resolved_at"))
                 if settled and settled > received:
@@ -258,6 +276,63 @@ class HistoryPipeline:
         }
         return ResearchEvent(id=_hash(_bytes(values)), **values)
 
+    async def _event_candidates(self, max_events):
+        """One outcome token from each independent parent/event metadata group.
+
+        The original named binary outcome identity is retained, not renamed YES.
+        Counts still require correlation review and are not certification claims.
+        """
+        selected, groups = [], set()
+        offset = 0
+        for _ in range(25):
+            limit = min(20, max_events - len(selected))
+            try:
+                events, meta = await self._fetch(
+                    GAMMA + "/events",
+                    {
+                        "closed": "true",
+                        "limit": limit,
+                        "offset": offset,
+                        "order": "closedTime",
+                        "ascending": "false",
+                    },
+                )
+            except httpx.HTTPError as exc:
+                self.errors.append("event_page_unavailable:" + type(exc).__name__)
+                break
+            if not isinstance(events, list):
+                raise TypeError("invalid closed-event discovery")
+            offset += len(events)
+            for event in events:
+                group = str(event.get("parentEventId") or event.get("id") or "")
+                if not group or group in groups:
+                    continue
+                # Fixed metadata order, never selected by eventual payout.
+                for market in event.get("markets", []):
+                    raw = {
+                        **market,
+                        "events": [
+                            {
+                                "id": event["id"],
+                                "parentEventId": event.get("parentEventId"),
+                                "tags": event.get("tags") or [],
+                            }
+                        ],
+                    }
+                    try:
+                        preliminary = self._event(raw, meta, None, None, allow_named_binary=True)
+                    except (ValueError, TypeError, KeyError):
+                        self.errors.append("unsupported_event_market_metadata")
+                        continue
+                    selected.append((raw, meta, preliminary))
+                    groups.add(group)
+                    break
+                if len(selected) >= max_events:
+                    break
+            if len(selected) >= max_events or len(events) < limit:
+                break
+        return selected
+
     async def acquire(
         self,
         max_events: int = 250,
@@ -265,6 +340,7 @@ class HistoryPipeline:
         *,
         max_context_requests: int = 5,
         archive_path: str | Path | None = None,
+        event_first: bool = False,
     ) -> ResearchBundle:
         if (
             not 1 <= max_events <= 250
@@ -272,38 +348,41 @@ class HistoryPipeline:
             or not 0 <= max_context_requests <= 10
         ):
             raise ValueError("bounded evidence acquisition required")
-        selected, chosen_groups = [], set()
-        for page in range((self.max_market_rows + 99) // 100):
-            limit = min(100, self.max_market_rows - page * 100)
-            try:
-                rows, meta = await self._fetch(
-                    GAMMA + "/markets",
-                    {
-                        "closed": "true",
-                        "limit": limit,
-                        "offset": page * self.offset_stride,
-                        "order": "closedTime",
-                        "ascending": "false",
-                    },
-                )
-            except httpx.HTTPError as exc:
-                self.errors.append("discovery_page_unavailable:" + type(exc).__name__)
-                break
-            if not isinstance(rows, list):
-                raise TypeError("invalid closed-market discovery")
-            for raw in rows:
+        if event_first:
+            selected = await self._event_candidates(max_events)
+        else:
+            selected, chosen_groups = [], set()
+            for page in range((self.max_market_rows + 99) // 100):
+                limit = min(100, self.max_market_rows - page * 100)
                 try:
-                    preliminary = self._event(raw, meta, None, None)
-                except (ValueError, TypeError, KeyError):
-                    self.errors.append("unsupported_market_metadata")
-                    continue
-                if preliminary.event_id not in chosen_groups:
-                    selected.append((raw, meta, preliminary))
-                    chosen_groups.add(preliminary.event_id)
-                if len(selected) >= max_events:
+                    rows, meta = await self._fetch(
+                        GAMMA + "/markets",
+                        {
+                            "closed": "true",
+                            "limit": limit,
+                            "offset": page * self.offset_stride,
+                            "order": "closedTime",
+                            "ascending": "false",
+                        },
+                    )
+                except httpx.HTTPError as exc:
+                    self.errors.append("discovery_page_unavailable:" + type(exc).__name__)
                     break
-            if len(selected) >= max_events or len(rows) < limit:
-                break
+                if not isinstance(rows, list):
+                    raise TypeError("invalid closed-market discovery")
+                for raw in rows:
+                    try:
+                        preliminary = self._event(raw, meta, None, None)
+                    except (ValueError, TypeError, KeyError):
+                        self.errors.append("unsupported_market_metadata")
+                        continue
+                    if preliminary.event_id not in chosen_groups:
+                        selected.append((raw, meta, preliminary))
+                        chosen_groups.add(preliminary.event_id)
+                    if len(selected) >= max_events:
+                        break
+                if len(selected) >= max_events or len(rows) < limit:
+                    break
         resolution_map = {}
         conditions = list(
             dict.fromkeys(str(row[0].get("conditionId", "")) for row in selected if row[0].get("conditionId"))
@@ -329,7 +408,8 @@ class HistoryPipeline:
             clob = None
             if (
                 resolution
-                and resolution[0].get("payouts") is None
+                and resolution[0].get("transaction_hash")
+                and (resolution[0].get("payouts") is None or resolution[0].get("market_type") is None)
                 and resolution[0].get("status") == "resolved"
             ):
                 try:
@@ -338,7 +418,7 @@ class HistoryPipeline:
                     if isinstance(exc, AcquisitionLimit):
                         raise
                     self.errors.append("winner_flags_unavailable:" + type(exc).__name__)
-            event = self._event(raw, meta, resolution, clob)
+            event = self._event(raw, meta, resolution, clob, allow_named_binary=event_first)
             events.append(event)
             if resolution and resolution[0].get("new_version_q") is True:
                 self.errors.append("historical_rule_version_review_required")
@@ -402,16 +482,36 @@ class HistoryPipeline:
             "context": [c.model_dump(mode="json") for c in context],
             "deficiencies": list(deficiencies),
         }
+        label_diagnostics = []
+        for raw, _, preliminary in selected:
+            proof = resolution_map.get(raw.get("conditionId"))
+            row = proof[0] if proof else {}
+            label_diagnostics.append(
+                {
+                    "market_id": preliminary.market_id,
+                    "event_group": preliminary.event_id,
+                    "resolution_status": row.get("status"),
+                    "market_type": row.get("market_type"),
+                    "resolution_source": row.get("resolution_source"),
+                    "transaction_reference_present": bool(row.get("transaction_hash")),
+                    "explicit_binary_payout_present": row.get("payouts") in ([1_000_000, 0], [0, 1_000_000]),
+                    "resolved_block": row.get("resolved_block"),
+                    "rules_changed": row.get("new_version_q"),
+                }
+            )
         manifest = {
+            "label_diagnostics": label_diagnostics,
             "normalized_evidence_sha256": _hash(_bytes(normalized)),
             "schema_version": "1.0",
             "created_at": self.clock().isoformat(),
             "origin": "authentic_public_api_download",
             "selection": {
+                "mode": "closed_events" if event_first else "sampled_closed_markets",
                 "max_events": max_events,
                 "max_market_rows": self.max_market_rows,
                 "offset_stride": self.offset_stride,
-                "ordering": "closedTime descending; fixed sampled windows; one parent/event group",
+                "ordering": "closedTime descending; one parent/event group; first supported token, never selected by payout",
+                "named_binary_outcomes_allowed": event_first,
             },
             "limits": {
                 "max_bytes": self.max_bytes,
@@ -593,7 +693,9 @@ def completeness_report(bundle: ResearchBundle) -> dict:
                 for c in bundle.context
             ):
                 candidate_ids.add(event.event_id)
-    limitations = list(bundle.deficiencies)
+    limitations = list(bundle.deficiencies) + [
+        "event_group_ids_do_not_establish_statistical_independence_or_asset_series_diversity"
+    ]
     if len(verified) < 200:
         limitations.append("fewer_than_200_verified_independent_parent_event_groups_in_bounded_sample")
     if len(candidate_ids) < 200:
@@ -606,6 +708,8 @@ def completeness_report(bundle: ResearchBundle) -> dict:
         "events": len(bundle.events),
         "distinct_event_groups": len(by_event),
         "verified_outcome_events": len(verified),
+        "verified_outcome_event_groups": len(verified),
+        "event_group_dependence_review_required": True,
         "historical_price_points": len(bundle.prices),
         "events_with_prices": len(prices_by_event),
         "actual_orderbook_snapshots": len(bundle.books),
