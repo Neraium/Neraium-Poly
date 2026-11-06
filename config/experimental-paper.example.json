@@ -4,7 +4,14 @@
   "source_url": "http://127.0.0.1:18742/api/market-frame",
   "host": "127.0.0.1",
   "port": 18743,
-  "enabled_strategies": ["cross_market_consistency", "persistent_relationship", "liquidity_spread", "event_driven", "short_horizon", "calibrated_forecast"],
+  "enabled_strategies": [
+    "cross_market_consistency",
+    "persistent_relationship",
+    "liquidity_spread",
+    "event_driven",
+    "short_horizon",
+    "calibrated_forecast"
+  ],
   "max_tokens": 64,
   "poll_seconds": 5,
   "fee_batch": 8,
@@ -24,5 +31,6 @@
     "max_spread": 0.05,
     "min_net_edge": 0.03,
     "max_liquidity_participation": 0.25
-  }
+  },
+  "domain_research_enabled": true
 }

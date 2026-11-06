@@ -35,6 +35,7 @@ class EventResearchRuntime:
         max_forecasts=6,
         max_bytes=64 * 1024 * 1024,
         sports_enabled=False,
+        domains_enabled=False,
     ):
         from neraium_poly.research.phase12.ledger import EventForecastLedger
         from neraium_poly.research.phase12.relationships import EventRelationshipEngine
@@ -75,6 +76,11 @@ class EventResearchRuntime:
             if state.get("relationships"):
                 self.relationships.restore(state["relationships"])
             self.relationship_status = state.get("relationship_status", {})
+            self.domains = None
+            if domains_enabled:
+                from neraium_poly.research.phase14.runtime import DomainResearchRuntime
+                self.domains = DomainResearchRuntime(self.directory / "domains",clock=self.clock,
+                    state=state.get("domains",{}))
             self.sports = None
             self.sports_error = None
             if sports_enabled:
@@ -114,6 +120,14 @@ class EventResearchRuntime:
             ):
                 self.ledger.record_outcome(outcome)
 
+    def on_research_frame(self, frame, now):
+        if self.domains is not None:
+            try:
+                self.domains.on_frame(frame, now)
+            except Exception as error:  # noqa: BLE001 - preserve accounts and withhold unavailable research
+                self.domains.last_error = f"{type(error).__name__}:{str(error)[:160]}"
+        self.on_sports_frame(frame, now)
+
     def on_sports_frame(self, frame, now):
         """Independent bounded research can continue while paper admission is suspended."""
         if self.sports is not None:
@@ -123,7 +137,7 @@ class EventResearchRuntime:
             except Exception as error:  # noqa: BLE001 - research failure cannot grant order authority
                 self.sports_error = f"{type(error).__name__}:{str(error)[:160]}"
 
-    def on_frame(self, frame, now, *, sports_frame=None):
+    def on_frame(self, frame, now, *, sports_frame=None, include_research=True):
         if (
             frame.producer_health.get("status") != "ok"
             or frame.timestamp > now
@@ -133,7 +147,8 @@ class EventResearchRuntime:
             self.last_error = "fresh_healthy_event_frame_required"
             self.rejections[self.last_error] += 1
             return
-        self.on_sports_frame(sports_frame or frame, now)
+        if include_research:
+            self.on_research_frame(sports_frame or frame, now)
         self.relationship_status = self.relationships.observe(frame, now)
         if self.last_at and (now - datetime.fromisoformat(self.last_at)).total_seconds() < self.interval:
             return
@@ -242,6 +257,7 @@ class EventResearchRuntime:
         return {
             "ledger_head": self.ledger.verify(),
             "sports": self.sports.checkpoint() if self.sports is not None else {},
+            "domains": self.domains.checkpoint() if self.domains is not None else {},
             "resolution_attempts": self.resolution_attempts,
             "resolution_status": self.resolution_status,
             "last_at": self.last_at,
@@ -267,6 +283,7 @@ class EventResearchRuntime:
         }
         return {
             **self.ledger.summary(now=self.clock()),
+            "domains": self.domains.summary(legacy_sports=self.sports.summary() if self.sports is not None else None) if self.domains is not None else {"status":"unavailable"},
             "sports": self.sports.summary() if self.sports is not None else {
                 "status": "unavailable", "last_error": self.sports_error or "sports research disabled",
             },
@@ -298,6 +315,12 @@ class EventResearchRuntime:
             verify_collected_outcome,
         )
 
+        if self.domains is not None:
+            try:
+                await self.domains.refresh()
+                await self.domains.resolve_pending()
+            except Exception as error:  # noqa: BLE001 - research sources fail closed
+                self.domains.last_error = f"{type(error).__name__}:{str(error)[:160]}"
         if self.sports is not None:
             try:
                 await self.sports.refresh()
@@ -355,6 +378,8 @@ class EventResearchRuntime:
 
     def close(self):
         try:
+            if self.domains is not None:
+                self.domains.close()
             if self.sports is not None:
                 self.sports.close()
         finally:

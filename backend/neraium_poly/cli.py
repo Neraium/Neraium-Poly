@@ -23,6 +23,7 @@ def main():
             "research-experiment",
             "event-research",
             "sports-research",
+            "domain-research",
             "research-watch",
             "strategy-validate",
             "strategy-package",
@@ -59,7 +60,7 @@ def main():
     parser.add_argument("--width", type=int)
     parser.add_argument("--no-color", action="store_true")
     parser.add_argument(
-        "--view", choices=("summary", "strategies", "rejections", "research", "events"), default="summary"
+        "--view", choices=("summary", "strategies", "rejections", "research", "events", "domains"), default="summary"
     )
     parser.add_argument("--scope", choices=("cycle", "epoch"), default="cycle")
     parser.add_argument("--refresh", type=float, default=3)
@@ -84,6 +85,12 @@ def main():
             view=args.view,
             scope=args.scope,
         )
+    elif args.command == "domain-research":
+        from neraium_poly.research.phase14.framework import run_domain_research
+
+        if not args.output:
+            parser.error("domain-research requires a new --output; RAM outputs are volatile research only")
+        print(json.dumps(run_domain_research(args.output, workers=args.workers), indent=2))
     elif args.command == "sports-research":
         from neraium_poly.research.phase13.framework import run_sports_research
 

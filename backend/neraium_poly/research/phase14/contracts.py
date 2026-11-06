@@ -1,4 +1,5 @@
 """Versioned multi-domain evidence/model boundaries with explicit probability semantics."""
+
 from datetime import datetime
 from typing import Literal, Protocol
 
@@ -6,8 +7,20 @@ from pydantic import Field, model_validator
 
 from neraium_poly.contracts import Record
 
-Domain = Literal["weather", "crypto", "finance", "economics", "politics", "sports", "esports",
-                 "technology", "science", "geopolitics", "entertainment", "other"]
+Domain = Literal[
+    "weather",
+    "crypto",
+    "finance",
+    "economics",
+    "politics",
+    "sports",
+    "esports",
+    "technology",
+    "science",
+    "geopolitics",
+    "entertainment",
+    "other",
+]
 SHA = r"^[0-9a-f]{64}$"
 
 
@@ -33,7 +46,9 @@ class DomainContract(Record):
     market_id: str
     token_id: str
     contract_type: str
-    probability_semantics: Literal["binary_event_probability", "expected_payout", "outcome_distribution", "unsupported"]
+    probability_semantics: Literal[
+        "binary_event_probability", "expected_payout", "outcome_distribution", "unsupported"
+    ]
     rules_sha256: str = Field(pattern=SHA)
     parameters: dict
     compatible: bool = False
@@ -58,7 +73,9 @@ class DomainEvidence(Record):
     def causal(self):
         if self.retrieved_at.tzinfo is None or self.available_at < self.retrieved_at:
             raise ValueError("external evidence availability cannot precede actual retrieval")
-        if self.source_timestamp and (self.source_timestamp.tzinfo is None or self.source_timestamp > self.retrieved_at):
+        if self.source_timestamp and (
+            self.source_timestamp.tzinfo is None or self.source_timestamp > self.retrieved_at
+        ):
             raise ValueError("aware nonfuture publication timestamp required")
         return self
 
@@ -97,9 +114,28 @@ class DomainForecast(Record):
             raise ValueError("supporting evidence and uncertainty required")
         if self.probability_semantics != "outcome_distribution" and self.probability is None:
             raise ValueError("typed probability required")
+        if self.probability_semantics != "outcome_distribution":
+            lower, upper = (
+                self.uncertainty.get("lower_probability"),
+                self.uncertainty.get("upper_probability"),
+            )
+            if (
+                isinstance(lower, bool)
+                or isinstance(upper, bool)
+                or not isinstance(lower, (int, float))
+                or not isinstance(upper, (int, float))
+                or not 0 <= lower <= self.probability <= upper <= 1
+            ):
+                raise ValueError("explicit containing probability uncertainty bounds required")
         if self.probability_semantics == "outcome_distribution":
+            if self.probability is not None:
+                raise ValueError("distribution is not an ambiguously labeled scalar probability")
             values = self.outcome_probabilities.values()
-            if not self.outcome_probabilities or any(not 0 <= p <= 1 for p in values) or abs(sum(values)-1) > 1e-10:
+            if (
+                not self.outcome_probabilities
+                or any(not 0 <= p <= 1 for p in values)
+                or abs(sum(values) - 1) > 1e-10
+            ):
                 raise ValueError("normalized outcome distribution required")
         return self
 
@@ -109,6 +145,8 @@ class DomainModel(Protocol):
     model_version: str
     supported_contract_types: tuple[str, ...]
 
-    def forecast(self, contract: DomainContract, evidence: tuple[DomainEvidence, ...], *, cutoff: datetime) -> dict:
+    def forecast(
+        self, contract: DomainContract, evidence: tuple[DomainEvidence, ...], *, cutoff: datetime
+    ) -> dict:
         """Return independently derived probabilities or explicit qualification failures."""
         ...

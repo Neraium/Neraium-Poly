@@ -21,6 +21,28 @@ def metric(value=0.02):
     ]
 
 
+def test_budget_checks_destination_ancestor_and_preserves_floor(tmp_path, monkeypatch):
+    from collections import namedtuple
+
+    from neraium_poly.research.phase11 import framework
+
+    usage = namedtuple("Usage", "total used free")
+    checked = []
+
+    def disk_usage(path):
+        checked.append(path)
+        return usage(20 * 1024**3, 10 * 1024**3, 10 * 1024**3)
+
+    monkeypatch.setattr(framework.shutil, "disk_usage", disk_usage)
+    destination = tmp_path / "missing" / "nested" / "run"
+    framework._budget(destination)
+    assert checked == [tmp_path]
+    assert not destination.exists()
+    monkeypatch.setattr(framework.shutil, "disk_usage", lambda _: usage(10, 9, 1))
+    with pytest.raises(ValueError, match="free-disk floor"):
+        framework._budget(destination)
+
+
 def test_registry_is_idempotent_drift_versioned_and_rollback_is_research_only(tmp_path):
     r = ResearchRegistry(tmp_path / "research.sqlite")
     now = datetime(2026, 11, 6, tzinfo=UTC)

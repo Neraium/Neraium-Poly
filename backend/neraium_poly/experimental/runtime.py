@@ -109,6 +109,7 @@ class ExperimentalRuntime:
                     max_forecasts=config.event_forecasts_per_cycle,
                     max_bytes=config.event_ledger_mb * 1024 * 1024,
                     sports_enabled=config.sports_research_enabled,
+                    domains_enabled=config.domain_research_enabled,
                 )
             except Exception as error:
                 self.event_research_initialization_error = f"{type(error).__name__}:{str(error)[:160]}"
@@ -237,7 +238,7 @@ class ExperimentalRuntime:
                 try:
                     research_frame = await self.feed.read()
                     with self._lock:
-                        self.event_intelligence.on_sports_frame(research_frame, self.clock())
+                        self.event_intelligence.on_research_frame(research_frame, self.clock())
                 except Exception as error:  # noqa: BLE001 - source failure preserves the stop
                     self.event_intelligence.sports_error = f"{type(error).__name__}:{str(error)[:120]}"
             self._cancel_and_checkpoint(now)
@@ -245,6 +246,9 @@ class ExperimentalRuntime:
         frame = await self.feed.read()
         now = self.clock()
         self.last_frame = frame
+        if self.event_intelligence is not None:
+            with self._lock:
+                self.event_intelligence.on_research_frame(frame, self.clock())
         selected = self._select(frame, now)
         books = {b.token_id: b for b in frame.books}
         markets = {m.token_id: m for m in selected.markets}
@@ -357,7 +361,7 @@ class ExperimentalRuntime:
             self._trace_execution()
             if self.event_intelligence is not None:
                 try:
-                    self.event_intelligence.on_frame(selected, self.clock(), sports_frame=frame)
+                    self.event_intelligence.on_frame(selected, self.clock(), sports_frame=frame, include_research=False)
                 except Exception as error:
                     self.event_intelligence.last_error = f"{type(error).__name__}:{str(error)[:160]}"
                     log.exception("event_research_withheld")

@@ -42,6 +42,7 @@ class EventForecastLedger:
         independence_validator=None,
         max_records=100000,
         max_bytes=128 * 1024**2,
+        max_record_bytes=256 * 1024,
     ):
         self.directory = Path(directory)
         if not 1 <= max_records <= 1000000 or not 4096 <= max_bytes <= 512 * 1024**2:
@@ -60,6 +61,9 @@ class EventForecastLedger:
         self.outcome_validator = outcome_validator
         self.independent_forecast_validator = independent_forecast_validator
         self.independence_validator = independence_validator
+        if type(max_record_bytes) is not int or not 4096 <= max_record_bytes <= 512 * 1024:
+            raise ValueError("bounded forecast record size required")
+        self.max_record_bytes = max_record_bytes
         self.max_records, self.max_bytes = max_records, max_bytes
         self._lock = RLock()
         self.owner = (self.directory / "forecast.lock").open("a+")
@@ -115,7 +119,7 @@ class EventForecastLedger:
 
     def _append(self, kind, record):
         payload = canonical(record.model_dump(mode="json"))
-        if len(payload.encode()) > 256 * 1024:
+        if len(payload.encode()) > self.max_record_bytes:
             raise ValueError("forecast record byte limit exceeded")
         with self._lock:
             existing = self.db.execute("SELECT kind,payload FROM journal WHERE id=?", (record.id,)).fetchone()

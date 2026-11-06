@@ -104,11 +104,13 @@ def render_monitor(
     """
     width, height = max(30, min(int(width), 160)), max(12, min(int(height or 24), 100))
     certified, experimental = _mapping(certified), _mapping(experimental)
-    if view not in {"summary", "strategies", "rejections", "research", "events"} or scope not in {
+    if view not in {"summary", "strategies", "rejections", "research", "events", "domains"} or scope not in {
         "cycle",
         "epoch",
     }:
         raise ValueError("monitor view or scope invalid")
+    if view == "domains":
+        return _render_domains(certified, experimental, width, height, errors)
     if view == "events":
         return _render_events(certified, experimental, width, height, errors)
     if view == "research":
@@ -532,6 +534,48 @@ def _event_metric(value):
     except (ValueError, TypeError):
         return "unavailable"
 
+
+
+def _render_domains(certified, experimental, width, height, errors):
+    domain = _mapping(_mapping(experimental.get("event_intelligence")).get("domains"))
+    rows = _mapping(domain.get("domains"))
+    operation = _mapping(certified.get("operation"))
+    connection = _mapping(operation.get("connectivity"))
+    source = domain.get("market_source_status", "unavailable")
+    lines = [
+        ("REAL MARKET DATA", "bold cyan", 0),
+        (f"Markets {_number(domain.get('markets_monitored'))} Fresh {_number(connection.get('fresh_books'))} {_clean(source)}", "white", 1),
+        ("MULTI-DOMAIN RESEARCH", "bold yellow", 0),
+        ("Domain       Mkt Fcst Pend Done", "dim", 1),
+    ]
+    names = [('weather','Weather'),('crypto','Crypto'),('finance','Finance'),('economics','Economics'),
+             ('politics','Politics'),('sports','Sports'),('esports','Esports'),('technology','Tech/AI'),
+             ('science','Science'),('geopolitics','Geopolitics'),('entertainment','Culture'),('other','Other/review')]
+    for d,label in names:
+        row = _mapping(rows.get(d))
+        text=f"{label:<12} {_number(row.get('monitored_markets')):>3} {_number(row.get('independent_forecasts')):>4} {_number(row.get('pending')):>4} {_number(row.get('resolved')):>4}"
+        if width>=80:
+            text+=' '+_research_text(row.get('capability'))
+        lines.append((text,"white",2 if row.get('monitored_markets') else 3))
+    reason = domain.get('last_error') or domain.get('status') or 'unavailable'
+    if errors:reason='API '+_clean(errors[0])
+    lines += [(f"State {_reason_label(reason)}",'yellow',0),
+              ('Accuracy unavailable; no qualified cohort','dim',2),
+              ('EXPERIMENTAL PAPER','bold yellow',0),
+              (f"{_number(experimental.get('cash'),True)} P/L {_number(experimental.get('simulated_pnl'),True)} O{_number(_count(experimental.get('orders')))} F{_number(experimental.get('fills'))}",'white',0),
+              ('CERTIFIED PAPER','bold green',0),
+              (f"{_number(certified.get('cash'),True)} P/L {_number(certified.get('simulated_pnl'),True)}",'white',0)]
+    keep=list(range(len(lines)))
+    for i in sorted(keep,key=lambda i:(lines[i][2],-i),reverse=True):
+        if len(keep)<=height-2:break
+        keep.remove(i)
+    output=Text()
+    final=[(lines[i][0],lines[i][1]) for i in keep]+[(_safety_footer(certified,experimental),'dim'),('Ctrl-C exits monitor only','dim')]
+    for i,(text,style) in enumerate(final):
+        if i:output.append('\n')
+        row=Text(_clean(text),style=style,no_wrap=True,overflow='ellipsis');row.truncate(width,overflow='ellipsis')
+        output.append_text(row)
+    return output
 
 def _render_events(certified, experimental, width, height, errors):
     """Outcome forecasting is explicit research, separate from both paper accounts."""

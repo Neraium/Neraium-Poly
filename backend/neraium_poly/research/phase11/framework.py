@@ -79,7 +79,11 @@ def run_studies(dataset, *, workers=2):
 
 
 def _budget(output, *, max_bytes=512 * 1024 * 1024):
-    if shutil.disk_usage(output.parent if output.parent.exists() else Path.cwd()).free < 8 * 1024**3:
+    # Check the destination filesystem even when intermediate directories do not exist.
+    ancestor = output.absolute()
+    while not ancestor.exists():
+        ancestor = ancestor.parent
+    if shutil.disk_usage(ancestor).free < 8 * 1024**3:
         raise ValueError("research free-disk floor reached")
     if output.exists() and sum(p.stat().st_size for p in output.rglob("*") if p.is_file()) >= max_bytes:
         raise ValueError("research artifact storage budget exhausted; preserve prior runs")
