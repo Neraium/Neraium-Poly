@@ -91,7 +91,7 @@ and **CERTIFIED PAPER**, retaining all identities at narrow phone widths and
 showing unavailable/stale metrics explicitly. Physical Termius/iPhone rendering
 has not been observed. Tests use controlled inputs only.
 
-Verification in this workstream: eight controlled ledger tests plus 38 monitor
+Verification in this workstream: nine controlled ledger tests plus 38 monitor
 tests passed. They cover prospective timestamps, future/missing evidence, model
 review, false outcome flags, append-only storage, deduplication, grouping, causal
 scoring, unknown/expired rules, restart, tamper detection, ownership, storage limits

@@ -258,13 +258,17 @@ def test_earliest_forecast_per_dependency_model_scores_once(tmp_path):
         }
     )
     ledger.record_forecast(f2)
+    ledger.record_forecast(
+        f2.model_copy(update={"id": "changed-model-hash", "model_sha256": "d" * 64, "probability": 0.6})
+    )
     clock.now = NOW + timedelta(hours=2)
     ledger.record_outcome(outcome(f, clock))
     s = ledger.summary()
-    assert s["forecasts_resolved"] == 2 and s["resolved_forecast_groups"] == 1
+    assert s["forecasts_resolved"] == 3 and s["resolved_forecast_groups"] == 2
     assert s["scores"]["count"] == s["independent_event_groups"] == 1
     assert s["scores"]["brier"] == pytest.approx(0.09)
-    assert next(iter(s["model_scores"].values()))["count"] == 1
+    assert len(s["model_scores"]) == 2
+    assert all(m["count"] == 1 for m in s["model_scores"].values())
     assert ledger.summary(now=NOW)["forecasts_resolved"] == 0
     assert ledger.summary(now=NOW)["forecasts"] == 1
     ledger.close()
