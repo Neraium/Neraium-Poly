@@ -1,0 +1,53 @@
+{
+  "fresh_discovery_report": {
+    "observed_at": "2026-11-06T08:57:41.703738+00:00",
+    "status": "metadata_research_only",
+    "requests": 2,
+    "response_bytes": 15625,
+    "request_rate_cap": 2,
+    "candidate_markets": 0,
+    "selected_markets": 0,
+    "candidate_categories": {},
+    "selected_categories": {},
+    "categories_queried": [],
+    "actual_tag_ids": {
+      "geopolitics": "1396",
+      "economics": "102000"
+    },
+    "errors": [
+      "ValueError:discovery_response_byte_budget"
+    ],
+    "universe_complete": false,
+    "selection": "bounded tag-aware category round robin, liquidity priority within category",
+    "executable_markets_verified": 0,
+    "independent_forecasts": 0,
+    "raw_evidence_persistence": "bounded response objects in memory; caller must persist before forecast qualification",
+    "subscription_expansion_authority": false,
+    "trading_authority": false
+  },
+  "ram_capture_path": "/dev/shm/neraium-poly-phase14/discovery/fresh-metadata-v1.json",
+  "ram_capture_bytes": 34377,
+  "ram_capture_sha256": "8cc6966fe567db750625c160659616428ab2681e922105e3f2ddac69c245c1aa",
+  "persistent_archive": false,
+  "cached_existing_universe": {
+    "snapshot_time": "2026-11-06T08:25:51.997959Z",
+    "classification_time": "2026-11-06T08:57:41.707484+00:00",
+    "live_observation": false,
+    "reason": "Existing producer is budget-degraded; cached metadata only, no executable freshness implied",
+    "markets": 200,
+    "categories": {
+      "economics": 9,
+      "esports": 13,
+      "other": 131,
+      "crypto": 34,
+      "politics": 6,
+      "sports": 6,
+      "weather": 1
+    },
+    "review_required": 131
+  },
+  "actual_source_endpoint": "https://gamma-api.polymarket.com",
+  "newly_discovered_vs_cached": 0,
+  "subscription_change": false,
+  "forecast_or_trade_activity": false
+}
