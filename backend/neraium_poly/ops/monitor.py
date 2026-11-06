@@ -5,6 +5,7 @@ import math
 import re
 import unicodedata
 from datetime import UTC, datetime
+from urllib.parse import urlsplit, urlunsplit
 
 import httpx
 from rich.console import Console
@@ -104,11 +105,13 @@ def render_monitor(
     """
     width, height = max(30, min(int(width), 160)), max(12, min(int(height or 24), 100))
     certified, experimental = _mapping(certified), _mapping(experimental)
-    if view not in {"summary", "strategies", "rejections", "research", "events", "domains", "archives"} or scope not in {
+    if view not in {"summary", "strategies", "rejections", "research", "events", "domains", "archives", "operations"} or scope not in {
         "cycle",
         "epoch",
     }:
         raise ValueError("monitor view or scope invalid")
+    if view == "operations":
+        return _render_operations(certified, experimental, width, height, errors)
     if view == "archives":
         return _render_archives(certified, experimental, width, height, errors)
     if view == "domains":
@@ -536,6 +539,123 @@ def _event_metric(value):
     except (ValueError, TypeError):
         return "unavailable"
 
+
+
+def _ops_fresh(value, now):
+    try:
+        at = datetime.fromisoformat(value)
+        return at.tzinfo is not None and 0 <= (now-at).total_seconds() <= 60
+    except (TypeError, ValueError, AttributeError):
+        return False
+
+
+def _ops_bytes(value):
+    if isinstance(value, bool) or not isinstance(value, (int, float)) or not math.isfinite(value) or value < 0:
+        return "—"
+    if value >= 1024**3:
+        return f"{value/1024**3:.1f}GiB"
+    if value >= 1024**2:
+        return f"{value/1024**2:.1f}MiB"
+    return f"{value/1024:.1f}KiB"
+
+
+def _ops_horizon(value):
+    if isinstance(value, bool) or not isinstance(value, (int, float)) or not math.isfinite(value) or value < 0:
+        return "unknown"
+    return f"{value/86400:.1f}d" if value >= 86400 else f"{value/3600:.1f}h"
+
+
+def _render_operations(certified, experimental, width, height, errors):
+    """Small read-only snapshots; stale sources never masquerade as live counts."""
+    now = datetime.now(UTC)
+    c_fresh, e_fresh = (_ops_fresh(account.get("generated_at"), now) for account in (certified, experimental))
+    operation = _mapping(certified.get("operation"))
+    connection = _mapping(operation.get("connectivity"))
+    c_service, e_service = _mapping(operation.get("service")), _mapping(experimental.get("service"))
+    services = ((c_service, c_fresh), (e_service, e_fresh))
+    source_fresh = (c_fresh and certified.get("mode") == "live_market_paper"
+        and _ops_fresh(c_service.get("timestamp"), now) and c_service.get("status") == "ok"
+        and _ops_fresh(connection.get("last_message_at"), now) and connection.get("ws_connected") is True)
+    lines = []
+
+    def line(value, priority=2, style="white"):
+        lines.append((_clean(value), style, priority))
+
+    line("OPERATIONS · PAPER ONLY", 0, "bold cyan")
+    line("REAL MARKET DATA" if source_fresh else "DATA STALE / UNAVAILABLE", 0, "cyan" if source_fresh else "yellow")
+    markets = _mapping(operation.get("scan")).get("discovered_markets")
+    line(f"{'Mkts' if source_fresh else 'Last mkts'} {_number(markets)} Fresh {_number(connection.get('fresh_books')) if source_fresh else '—'} WS {_flag(connection.get('ws_connected'), 'on', 'off') if source_fresh else 'stale'}", 1)
+    for label, account, fresh in (("EXPERIMENTAL PAPER", experimental, e_fresh), ("CERTIFIED PAPER", certified, c_fresh)):
+        line(label + (" · stale" if account and not fresh else ""), 0, "bold yellow" if label.startswith("EXP") else "bold green")
+        line(f"{'Last ' if account and not fresh else ''}{_number(account.get('cash'), True)} P/L {_number(account.get('simulated_pnl'), True)}", 0)
+        if label.startswith("EXP"):
+            health = _clean(e_service.get("status", "unavailable")) if fresh else "stale/unavailable"
+            line(f"Stop {_flag(account.get('kill_switch', account.get('suspended')))} · svc {health}", 0, "yellow")
+        else:
+            line(f"Gate {_clean(c_service.get('trading_status', 'unavailable'))}" + (" · stale" if not fresh else ""), 1, "yellow")
+    research = _mapping(experimental.get("operations_research")) or _mapping(certified.get("operations_research"))
+    readiness = _mapping(research.get("readiness_snapshot"))
+    readiness_fresh = _ops_fresh(readiness.get("generated_at"), now)
+    assessment = readiness.get("assessment")
+    if not readiness_fresh:
+        line("Readiness unavailable/stale", 2, "yellow")
+    else:
+        text = assessment if isinstance(assessment, str) else _mapping(assessment).get("current_blocker", _mapping(assessment).get("status", "review required"))
+        line(f"Readiness {_clean(text)}", 2, "yellow")
+    for label, account, fresh in (("Col", certified, c_fresh), ("Exp", experimental, e_fresh)):
+        archive, capacity = _mapping(account.get("archive")), _mapping(account.get("capacity"))
+        line(f"{label} {_ops_bytes(archive.get('usage_bytes'))}/{_ops_bytes(archive.get('budget_bytes'))} {'last' if not fresh else _clean(capacity.get('status', archive.get('health', 'unknown')))}", 1)
+        horizon = capacity.get("seconds_to_capacity", archive.get("seconds_to_exhaustion"))
+        line(f"{label} +{_ops_bytes(archive.get('growth_bytes_per_second'))}/s full {_ops_horizon(horizon)}", 2, "dim")
+        tiers = _mapping(archive.get("tier_usage_bytes"))
+        line(f"{label} A/W/C {_ops_bytes(tiers.get('active'))}/{_ops_bytes(tiers.get('warm'))}/{_ops_bytes(tiers.get('cold'))}", 3, "dim")
+        archive_tiers = _mapping(archive.get("archive_tiers"))
+        verified = archive.get("cold_verified_segments")
+        if verified is not None:
+            line(f"{label} Cold verified {_number(verified)}", 3, "dim")
+        else:
+            line(f"{label} Gzip {_number(archive.get('compressed_segments'))} Proofs {_number(archive_tiers.get('cold_proofs_present'))}", 3, "dim")
+        alerts = capacity.get("alerts")
+        if isinstance(alerts, (list, tuple)):
+            for alert in alerts[:1]:
+                text = _mapping(alert).get("reason", _mapping(alert).get("code", alert)) if isinstance(alert, dict) else alert
+                line(f"{label} alert {_clean(text)}", 1, "yellow")
+        if archive.get("last_error"):
+            line(f"{label} block {_clean(archive['last_error'])}", 1, "yellow")
+    domains = _mapping(research.get("domains"))
+    rows = _mapping(domains.get("domains"))
+    domain_fresh = e_fresh and _ops_fresh(domains.get("last_frame_at", domains.get("generated_at")), now)
+    forecasts = [r.get("independent_forecasts") for r in rows.values() if isinstance(r, dict)]
+    forecast_total = sum(forecasts) if forecasts and all(type(x) is int and x >= 0 for x in forecasts) else None
+    line(f"Forecasts {_number(forecast_total)}" + (" · research snapshot stale" if not domain_fresh else " · independent"), 2)
+    relationships = _mapping(research.get("relationships"))
+    engine = _mapping(relationships.get("engine")) or relationships
+    rel_fresh = _ops_fresh(relationships.get("last_evaluation_at"), now)
+    line(f"SII eval {_number(engine.get('evaluations'))} finds {_number(engine.get('persistent_findings'))}" + (" · stale" if not rel_fresh else ""), 2)
+    history = _mapping(research.get("historical_qualification"))
+    line(f"Train/test {_number(history.get('qualified_training_events', history.get('qualifying_training_events', history.get('training_events'))))} / {_number(history.get('qualified_heldout_events', history.get('qualifying_heldout_events', history.get('heldout_events'))))}", 2)
+    line(f"Outcomes {_number(history.get('chain_corroborated_exact_settlement_groups', history.get('outcomes_verified')))}", 3)
+    strategies = readiness.get("strategies")
+    if isinstance(strategies, list) and readiness_fresh:
+        line(f"Strategies {_number(len(strategies))} · no auto promotion", 3, "dim")
+    for error in tuple(errors)[:2]:
+        line(f"API {_clean(error)}", 1, "red")
+    unsafe = any(service.get("live_trading_enabled") is True or service.get("paper_trading") is False for service, _ in services)
+    verified = all(fresh and _ops_fresh(service.get("timestamp"), now) and service.get("live_trading_enabled") is False and service.get("paper_trading") is True for service, fresh in services)
+    footer = "WARNING LIVE CONFIG UNSAFE" if unsafe else "LIVE TRADING DISABLED" if verified else "LIVE CONFIG UNVERIFIED"
+    keep = list(range(len(lines)))
+    for index in sorted(keep, key=lambda i: (lines[i][2], i), reverse=True):
+        if len(keep) <= height-1:
+            break
+        keep.remove(index)
+    rendered = Text()
+    for index, (value, style) in enumerate([(lines[i][0], lines[i][1]) for i in keep] + [(footer, "red" if unsafe else "dim")]):
+        if index:
+            rendered.append("\n")
+        row = Text(value, style=style, no_wrap=True, overflow="ellipsis")
+        row.truncate(width, overflow="ellipsis")
+        rendered.append_text(row)
+    return rendered
 
 
 def _render_archives(certified, experimental, width, height, errors):
@@ -1006,7 +1126,12 @@ def monitor(
 ):
     loopback_url(certified_url)
     loopback_url(experimental_url)
-    if view == "archives":
+    if view == "operations":
+        def operations_url(value):
+            parsed = urlsplit(value)
+            return urlunsplit((parsed.scheme, parsed.netloc, "/api/operations-state", "", ""))
+        certified_url, experimental_url = operations_url(certified_url), operations_url(experimental_url)
+    elif view == "archives":
         certified_url = certified_url.removesuffix("/api/state") + "/api/archive-state" if certified_url.endswith("/api/state") else certified_url
         experimental_url = experimental_url.removesuffix("/api/state") + "/api/archive-state" if experimental_url.endswith("/api/state") else experimental_url
     if not 1 <= refresh <= 60:
