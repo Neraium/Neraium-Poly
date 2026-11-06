@@ -559,3 +559,11 @@ def test_stale_research_does_not_republish_old_edge_as_current():
     assert "Edge unavailable" in output and "old positive result" not in output
     assert "999" not in output and "100.0%" not in output
     assert "Report unavailable/stale" in output
+
+
+def test_compact_research_counts_do_not_cap_real_higher_counts_at_99k():
+    from neraium_poly.ops.monitor import _compact_count
+
+    assert _compact_count(123456) == "123k"
+    assert _compact_count(123456789) == "123M"
+    assert _compact_count(None) == "—"

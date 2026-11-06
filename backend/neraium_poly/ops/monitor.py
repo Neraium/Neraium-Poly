@@ -316,7 +316,7 @@ def _compact_count(value):
         return "—"
     for scale, suffix in ((1e9, "G"), (1e6, "M"), (1e3, "k")):
         if number >= scale:
-            return f"{min(99, int(number / scale))}{suffix}"
+            return f"{int(number / scale)}{suffix}"
     return str(int(number))
 
 
