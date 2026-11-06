@@ -17,6 +17,7 @@ def main():
             "collect",
             "paper-live",
             "experimental-paper",
+            "experimental-migrate",
             "monitor",
             "research-qualify",
             "strategy-validate",
@@ -48,10 +49,13 @@ def main():
     parser.add_argument("--max-events", type=int, default=250)
     parser.add_argument("--max-history-requests", type=int, default=50)
     parser.add_argument("--event-first", action="store_true")
+    parser.add_argument("--expected-previous-hash")
     parser.add_argument("--reason", default="operator revoked")
     parser.add_argument("--once", action="store_true")
     parser.add_argument("--width", type=int)
     parser.add_argument("--no-color", action="store_true")
+    parser.add_argument("--view", choices=("summary", "strategies", "rejections"), default="summary")
+    parser.add_argument("--scope", choices=("cycle", "epoch"), default="cycle")
     parser.add_argument("--refresh", type=float, default=3)
     parser.add_argument("--certified-url", default="http://127.0.0.1:18742/api/state")
     parser.add_argument("--experimental-url", default="http://127.0.0.1:18743/api/state")
@@ -69,6 +73,27 @@ def main():
             certified_url=args.certified_url,
             experimental_url=args.experimental_url,
             no_color=args.no_color,
+            view=args.view,
+            scope=args.scope,
+        )
+    elif args.command == "experimental-migrate":
+        from neraium_poly.experimental.config import ExperimentalConfig
+        from neraium_poly.experimental.migration import migrate_research_baseline
+
+        if not args.expected_previous_hash:
+            parser.error("experimental-migrate requires --expected-previous-hash")
+        config = (
+            ExperimentalConfig.model_validate_json(args.config.read_text())
+            if args.config
+            else ExperimentalConfig()
+        )
+        print(
+            json.dumps(
+                migrate_research_baseline(
+                    config, expected_previous_hash=args.expected_previous_hash, reason=args.reason
+                ),
+                indent=2,
+            )
         )
     elif args.command == "experimental-paper":
         import asyncio

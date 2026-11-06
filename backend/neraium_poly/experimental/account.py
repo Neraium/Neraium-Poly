@@ -367,7 +367,13 @@ class ExperimentalAccount:
                 )
             except Exception as exc:  # noqa: BLE001 - unavailable risk/execution fails closed
                 return self._finish(
-                    signal, {"status": "error", "reasons": ["risk_unavailable:" + type(exc).__name__]}
+                    signal,
+                    {
+                        "status": "error",
+                        "intent": intent.model_dump(mode="json"),
+                        "risk_evaluated": True,
+                        "reasons": ["risk_unavailable:" + type(exc).__name__],
+                    },
                 )
             if not decision.approved:
                 return self._finish(
@@ -396,7 +402,13 @@ class ExperimentalAccount:
                 if decision.reservation_id:
                     self.risk.release(decision.reservation_id, now=now)
                 return self._finish(
-                    signal, {"status": "error", "reasons": ["broker_unavailable:" + type(exc).__name__]}
+                    signal,
+                    {
+                        "status": "error",
+                        "intent": intent.model_dump(mode="json"),
+                        "risk_decision": decision.model_dump(mode="json"),
+                        "reasons": ["broker_unavailable:" + type(exc).__name__],
+                    },
                 )
             return self._finish(
                 signal,
@@ -636,9 +648,14 @@ class ExperimentalAccount:
                 if report.status in {"open", "partial"}:
                     self.broker.cancel(report.client_order_id, now=now)
             with self.risk._transaction():
-                self.risk.db.execute(
-                    "UPDATE experimental_exits SET status='cancelled' WHERE status IN ('open','partial')"
-                )
+                exits = self.risk.db.execute(
+                    "SELECT id FROM experimental_exits WHERE status IN ('open','partial')"
+                ).fetchall()
+                for exit_order in exits:
+                    self.risk.db.execute(
+                        "UPDATE experimental_exits SET status='cancelled' WHERE id=?", (exit_order["id"],)
+                    )
+                    self.risk._audit("experimental_exit_cancelled", {"id": exit_order["id"]}, now)
             return self.snapshot(now=now)
 
     def settle(self, proof, market, *, now, rule_review_hash="", review_actor=""):

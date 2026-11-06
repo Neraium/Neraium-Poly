@@ -7,7 +7,6 @@ import logging
 import shutil
 from collections import Counter, deque
 from datetime import UTC, datetime, timedelta
-from pathlib import Path
 from threading import RLock
 
 import httpx
@@ -19,7 +18,9 @@ from neraium_poly.experimental.config import ExperimentalConfig
 from neraium_poly.experimental.contracts import ExperimentalSignal, SharedMarketFrame
 from neraium_poly.experimental.feed import SharedFeedClient
 from neraium_poly.experimental.fees import AuditedFeeAdapter, merge_fee_observations
+from neraium_poly.experimental.migration import strategy_code_hash
 from neraium_poly.experimental.strategies import ExperimentalStrategyEngine
+from neraium_poly.experimental.trace import DecisionTrace
 from neraium_poly.research.archive import QuoteArchive
 from neraium_poly.settings import Settings
 
@@ -45,6 +46,7 @@ class ExperimentalCycle(Record):
     rejection_counts: dict[str, int]
     signal_digest: str
     representative_rejections: tuple[ExperimentalSignal, ...] = ()
+    decision_trace: dict = Field(default_factory=dict)
     note: str = "Non-executable setup rejections aggregated; all eligible signals, risk decisions and trades retained individually"
 
 
@@ -66,10 +68,7 @@ class ExperimentalRuntime:
             )
         self.account = account
         self.ledger = account.ledger
-        model_files = ("strategies.py", "intelligence.py")
-        self.model_hash = hashlib.sha256(
-            b"".join(Path(__file__).with_name(name).read_bytes() for name in model_files)
-        ).hexdigest()
+        self.model_hash = strategy_code_hash()
         previous_hash = self.ledger.get("strategy_code_hash")
         if previous_hash is not None and previous_hash != self.model_hash:
             account.close()
@@ -82,6 +81,19 @@ class ExperimentalRuntime:
         checkpoint = self.ledger.get("strategy_engine")
         if checkpoint:
             self.engine.restore(checkpoint)
+        self.trace = DecisionTrace(epoch_started_at=self.clock())
+        trace_state = self.ledger.get("decision_trace", {})
+        if trace_state:
+            self.trace.restore(trace_state["checkpoint"])
+        self.trace_cursors = trace_state.get(
+            "cursors",
+            {
+                "risk": self.account.risk.db.execute("SELECT COALESCE(MAX(seq),0) FROM audit").fetchone()[0],
+                "broker": self.account.broker.db.execute("SELECT COALESCE(MAX(seq),0) FROM audit").fetchone()[
+                    0
+                ],
+            },
+        )
         self.feed = feed or SharedFeedClient(config.source_url)
         self.fee_adapter = fee_adapter or AuditedFeeAdapter(
             self.events, self._budget_ok, client=httpx.AsyncClient(timeout=5, follow_redirects=False)
@@ -112,6 +124,9 @@ class ExperimentalRuntime:
         )
 
     def _save(self):
+        self.ledger.put(
+            "decision_trace", {"checkpoint": self.trace.checkpoint(), "cursors": self.trace_cursors}
+        )
         self.ledger.put("strategy_code_hash", self.model_hash)
         self.ledger.put("mark_sources", self.mark_sources)
         self.ledger.put("strategy_engine", self.engine.checkpoint())
@@ -129,6 +144,7 @@ class ExperimentalRuntime:
     def stop(self):
         with self._lock:
             self.account.stop(now=self.clock())
+            self._trace_execution()
             self.activity.append(f"{self.clock().isoformat()} experimental emergency stop activated")
             self._save()
 
@@ -139,6 +155,12 @@ class ExperimentalRuntime:
         for report in self.account.broker.history():
             if report.status in {"open", "partial"}:
                 self.account.cancel(report.client_order_id, now=now)
+
+    def _cancel_and_checkpoint(self, now):
+        with self._lock:
+            self._cancel_pending(now)
+            self._trace_execution()
+            self._save()
 
     def _select(self, frame, now):
         markets = {m.token_id: m for m in frame.markets}
@@ -183,7 +205,7 @@ class ExperimentalRuntime:
         if not self._budget_ok():
             self.last_error = "experimental_storage_budget_exhausted"
             self.account.stop(now=now)
-            self._cancel_pending(now)
+            self._cancel_and_checkpoint(now)
             return
         frame = await self.feed.read()
         now = self.clock()
@@ -200,6 +222,9 @@ class ExperimentalRuntime:
                 if self.archive.record(book):
                     self.totals["observations"] += 1
             signals = self.engine.evaluate_frame(selected, now)
+            self.trace.record_engine(
+                selected, signals, self.engine.status(), now, details=getattr(self.engine, "last_trace", None)
+            )
             definition_ids = []
             for relationship in self.engine.intelligence.definitions.values():
                 definition = relationship.model_dump(mode="json")
@@ -247,6 +272,9 @@ class ExperimentalRuntime:
                     self.events.append(signal)
                     if stale_marks:
                         rejected["held_position_marks_stale"] += 1
+                        self.trace.record_admission(
+                            signal, {"status": "withheld", "reasons": ["held_position_marks_stale"]}, now
+                        )
                         self.activity.append(
                             f"{now.isoformat()} {signal.strategy_id}: entry withheld; held marks stale"
                         )
@@ -255,6 +283,9 @@ class ExperimentalRuntime:
                     book = books.get(signal.token_id)
                     if market is None or book is None:
                         rejected["current_book_unavailable"] += 1
+                        self.trace.record_admission(
+                            signal, {"status": "withheld", "reasons": ["current_book_unavailable"]}, now
+                        )
                         continue
                     # Fixed standard sizing respects observed exchange minimum lots.
                     target = min(
@@ -269,6 +300,7 @@ class ExperimentalRuntime:
                         target_notional=target,
                         fee_schedule=selected.fees.get(signal.token_id),
                     )
+                    self.trace.record_admission(signal, result, self.clock())
                     reasons = result.get("reasons", [])
                     rejected.update(reasons if result.get("status") != "submitted" else [])
                     self.activity.append(
@@ -287,6 +319,7 @@ class ExperimentalRuntime:
                         "available_at": book.available_at.isoformat(),
                         "source": book.source,
                     }
+            self._trace_execution()
             self.totals["cycles"] += 1
             self.totals["signals"] += len(signals)
             self.totals["qualified_opportunities"] += qualified
@@ -309,6 +342,7 @@ class ExperimentalRuntime:
                 signal_count=len(signals),
                 eligible_count=qualified,
                 rejection_counts=dict(rejected),
+                decision_trace=self._trace_cycle_summary(),
                 signal_digest=hashlib.sha256(
                     "".join(s.model_dump_json() for s in signals).encode()
                 ).hexdigest(),
@@ -332,6 +366,77 @@ class ExperimentalRuntime:
                 }
             ),
         )
+
+    def _trace_cycle_summary(self):
+        # Keep every cycle's counters, but avoid duplicating bounded samples in
+        # the append-only archive. Examples remain in the trace checkpoint and
+        # representative_rejections, with actual book/market evidence IDs.
+        rows = self.trace.status()["latest_cycle"]["strategies"]
+        return {
+            "strategies": {
+                strategy: {
+                    **row,
+                    "reasons": {
+                        reason: {k: v for k, v in detail.items() if k != "samples"}
+                        for reason, detail in row["reasons"].items()
+                    },
+                }
+                for strategy, row in rows.items()
+            }
+        }
+
+    def _trace_execution(self):
+        """Consume durable audit sequences once; never infer fills from a quote.
+
+        Cursors and counters checkpoint together. At first deployment cursors
+        start after legacy events, so no historical Phase10 counts are invented.
+        Per-cycle work is bounded; remaining records resume next cycle.
+        """
+        for source, db in (("risk", self.account.risk.db), ("broker", self.account.broker.db)):
+            rows = db.execute(
+                "SELECT * FROM audit WHERE seq>? ORDER BY seq LIMIT 5000", (self.trace_cursors[source],)
+            ).fetchall()
+            for event in rows:
+                payload = json.loads(event["payload"])
+                strategy = None
+                side, status, filled = "BUY", "observed", 0
+                if source == "risk" and event["action"] == "fill":
+                    reservation = db.execute(
+                        "SELECT opportunity FROM reservations WHERE id=?", (payload["reservation_id"],)
+                    ).fetchone()
+                    if reservation:
+                        strategy = json.loads(reservation[0])["strategy_id"]
+                        # Count new fill events; quantity here is cumulative, not traded volume.
+                        filled = payload["quantity"]
+                elif source == "risk" and event["action"] in {
+                    "experimental_exit_fill",
+                    "experimental_exit_expired",
+                    "experimental_exit_cancelled",
+                }:
+                    side = "SELL"
+                    row = db.execute(
+                        "SELECT strategy FROM experimental_exits WHERE id=?", (payload["id"],)
+                    ).fetchone()
+                    strategy = row[0] if row else None
+                    filled = payload.get("quantity", 0)
+                    status = event["action"].removeprefix("experimental_exit_")
+                elif source == "broker" and event["action"] in {"cancelled", "expired"}:
+                    row = self.account.risk.db.execute(
+                        "SELECT opportunity FROM reservations WHERE client_id=?",
+                        (payload["client_order_id"],),
+                    ).fetchone()
+                    strategy = json.loads(row[0])["strategy_id"] if row else None
+                    status = event["action"]
+                if strategy:
+                    self.trace.record_execution(
+                        strategy,
+                        f"{source}:{event['seq']}",
+                        status,
+                        filled,
+                        datetime.fromisoformat(event["timestamp"]),
+                        side=side,
+                    )
+                self.trace_cursors[source] = event["seq"]
 
     async def _fees_loop(self, should_exit):
         while not self.stopping and not should_exit():
@@ -376,7 +481,7 @@ class ExperimentalRuntime:
                 except Exception as error:
                     self.last_error = f"cycle_failed:{type(error).__name__}"
                     log.exception("experimental_cycle_withheld")
-                    self._cancel_pending(self.clock())
+                    self._cancel_and_checkpoint(self.clock())
                 await asyncio.sleep(self.config.poll_seconds)
 
         await asyncio.gather(cycles(), self._fees_loop(should_exit))
@@ -453,6 +558,7 @@ class ExperimentalRuntime:
                 latest_activity=list(self.activity),
                 last_cycle=self.last_cycle,
                 strategy_engine=self.engine.status(),
+                decision_trace=self.trace.status(),
                 data_source=self.config.source_url,
                 certification_authority=False,
                 historical_qualification=self._qualification(),
@@ -461,8 +567,7 @@ class ExperimentalRuntime:
 
     async def close(self):
         self.stopping = True
-        self._cancel_pending(self.clock())
-        self._save()
+        self._cancel_and_checkpoint(self.clock())
         await self.feed.close()
         await self.fee_adapter.close()
         self.events.close()

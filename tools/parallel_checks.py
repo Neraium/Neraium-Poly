@@ -3,6 +3,7 @@
 Records actual PIDs, launch/completion times and exit codes. No synthetic results.
 """
 
+import argparse
 import json
 import os
 import subprocess
@@ -14,7 +15,10 @@ from pathlib import Path
 
 def main():
     root = Path(__file__).resolve().parents[1]
-    target = root / ".planning/evidence/phase9"
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--evidence-dir", type=Path, default=Path(".planning/evidence/phase9"))
+    args = parser.parse_args()
+    target = root / args.evidence_dir
     target.mkdir(parents=True, exist_ok=True)
     files = sorted(str(p.relative_to(root)) for p in (root / "tests").glob("test_*.py"))
     env = dict(

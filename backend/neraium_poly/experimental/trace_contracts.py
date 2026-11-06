@@ -25,7 +25,7 @@ STAGES = (
 )
 COUNTER_SCOPE = {
     "phase10_epoch": "Cumulative since explicit trace epoch; persisted across restart; legacy counts retained separately",
-    "latest_cycle": "Latest completed experimental cycle; replaced on each completed cycle",
+    "latest_cycle": "Latest engine evaluation plus subsequent admission/execution events; replaced on each evaluation; service health reports later cycle failures",
     "strategy_id": "Each strategy has independent counters; rejected reasons are nonexclusive and do not sum to rejected signals",
     "candidate_signals": "Data/evidence prerequisites passed with a numerical valuation; cost/risk can still reject",
     "qualified_opportunities": "Strategy admission predicates passed before portfolio risk",
