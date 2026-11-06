@@ -96,7 +96,30 @@ class UniversalForecastLedger:
             try:
                 c = DomainContract.model_validate(f.contemporaneous_market["contract"])
                 m = MarketSnapshot.model_validate(f.contemporaneous_market["market"])
+                b = OrderBookSnapshot.model_validate(f.contemporaneous_market["book"])
                 selected = tuple(available[i] for i in f.evidence_ids)
+                if (
+                    not c.compatible or c.review_required or m.status != "active"
+                    or len({(r.event_id, r.market_id, r.token_id) for r in (f, c, m)}) != 1
+                    or c.domain != f.domain or c.contract_type != f.contract_type
+                    or c.probability_semantics != f.probability_semantics
+                    or f.rules_sha256 != c.rules_sha256
+                    or f.rules_sha256 != hashlib.sha256(m.resolution_rules.encode()).hexdigest()
+                    or not m.resolution_source or m.available_at > f.evidence_cutoff
+                    or c.timestamp > f.evidence_cutoff or c.available_at > f.evidence_cutoff
+                    or f.available_at > self.clock()
+                    or (m.end_time and m.end_time <= f.timestamp)
+                    or not assess_book(b, f.timestamp, expected_token=f.token_id, max_spread=0.05).healthy
+                    or b.market_id != f.market_id or b.source not in PUBLIC_BOOK_SOURCES
+                    or b.exchange != "polymarket"
+                    or not f.independent_of_polymarket
+                    or len(set(f.evidence_ids)) != len(f.evidence_ids)
+                    or any(e.domain != f.domain or not e.independent_of_polymarket
+                           or e.qualification != "qualified_research"
+                           or e.available_at > f.evidence_cutoff or e.timestamp > f.evidence_cutoff
+                           or "polymarket.com" in e.source.lower() for e in selected)
+                ):
+                    raise ValueError("stored forecast original admission invariants failed")
                 if self.forecast_validator is None or self.forecast_validator(f, c, m, selected) is not True:
                     raise ValueError("stored forecast model replay failed")
             except (KeyError, ValueError) as error:

@@ -190,6 +190,22 @@ def test_parallel_duplicate_processing_is_idempotent(tmp_path):
         ledger.close()
 
 
+def test_hash_consistent_recovery_rejects_untrusted_original_book(tmp_path):
+    _m, b, _c, e, f = records()
+    ledger = UniversalForecastLedger(tmp_path / "d", clock=lambda: NOW, forecast_validator=lambda *a: True)
+    try:
+        ledger.record_evidence(e)
+        poisoned = f.model_copy(update={"contemporaneous_market": {
+            **f.contemporaneous_market,
+            "book": b.model_copy(update={"token_id": "different"}).model_dump(mode="json"),
+        }})
+        ledger.engine._append("domain_forecast", poisoned)
+        with pytest.raises(ValueError, match="unverified stored"):
+            ledger.verify()
+    finally:
+        ledger.close()
+
+
 def test_domain_outcome_reviewer_required_and_immutable(tmp_path):
     now = [NOW]
     m, b, c, e, f = records()
