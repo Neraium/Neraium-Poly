@@ -154,8 +154,16 @@ def execution_scenarios(observations, features, *, horizon=60, max_trials=6000):
         if entry is None or exit_obs is None:
             reasons["post_latency_entry_or_horizon_exit_missing"] += 1
             continue
-        entry_rate = verified_fee_rate(entry.fee or {}, entry.book.available_at)
-        exit_rate = verified_fee_rate(exit_obs.fee or {}, exit_obs.book.available_at)
+        # FeeObservation archives bind immutable evidence IDs, whereas the
+        # operational cache also includes a convenience URL reference. Use the
+        # actual archived evidence ID as that reference; never assume zero fee.
+        entry_schedule = dict(entry.fee or {})
+        exit_schedule = dict(exit_obs.fee or {})
+        for schedule in (entry_schedule, exit_schedule):
+            if not schedule.get("reference") and schedule.get("evidence_id"):
+                schedule["reference"] = schedule["evidence_id"]
+        entry_rate = verified_fee_rate(entry_schedule, entry.book.available_at)
+        exit_rate = verified_fee_rate(exit_schedule, exit_obs.book.available_at)
         context = entry.market
         if (
             context is None

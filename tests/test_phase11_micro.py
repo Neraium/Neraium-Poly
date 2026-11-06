@@ -132,11 +132,14 @@ def test_observed_fee_availability_ttl_and_raw_provenance(tmp_path):
                 raw_response_ids=tuple(refs),
             )
         )
-        for second in (-0.5, 1, 301):
+        for second in (-0.5, 1, 60, 301):
             store.append(quote(second))
         extract_dataset(tmp_path / "source.sqlite", tmp_path / "dataset", min_free_bytes=0)
         rows = load_dataset(tmp_path / "dataset")
-        assert rows[0].fee is None and rows[1].fee["fee_rate"] == 0.02 and rows[2].fee is None
+        assert rows[0].fee is None and rows[1].fee["fee_rate"] == 0.02 and rows[-1].fee is None
+        features, _ = causal_features(rows)
+        scenarios, _ = execution_scenarios(rows, features)
+        assert any(r["hypothetical_net_difference_after_fee_bound"] is not None for r in scenarios)
     finally:
         store.close()
 
