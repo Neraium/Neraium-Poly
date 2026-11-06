@@ -51,6 +51,11 @@ class EventForecastLedger:
             (self.directory / n).exists() for n in ("risk.sqlite", "broker.sqlite")
         ):
             raise ValueError("forecast ledger must not alias an account directory")
+        # Reject aliases before opening the owner file or asking SQLite to create
+        # tables/WAL files. Account-directory checks do not cover nested stores.
+        for entry in self.directory.iterdir():
+            if entry.is_symlink() or (entry.is_file() and entry.stat().st_nlink != 1):
+                raise ValueError("forecast ledger storage aliases are forbidden")
         self.clock = clock or (lambda: datetime.now(UTC))
         self.outcome_validator = outcome_validator
         self.independent_forecast_validator = independent_forecast_validator

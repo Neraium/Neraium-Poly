@@ -1,6 +1,7 @@
 """Controlled fixtures only; these forecasts/outcomes never enter real paper accounts."""
 
 import hashlib
+import os
 import sqlite3
 from datetime import UTC, datetime, timedelta
 
@@ -414,3 +415,34 @@ def test_verified_market_resolution_blocks_complementary_token_forecasts(tmp_pat
         ledger.record_forecast(complement)
     assert len(ledger.forecasts()) == 1
     ledger.close()
+
+
+@pytest.mark.parametrize(
+    "filename",
+    [
+        "forecast.lock",
+        "forecasts.sqlite",
+        "forecasts.sqlite-wal",
+        "forecasts.sqlite-shm",
+        "other-evidence.json",
+    ],
+)
+@pytest.mark.parametrize("link_kind", ["symlink", "hardlink"])
+def test_nested_forecast_file_aliases_reject_before_any_mutation(tmp_path, filename, link_kind):
+    certified = tmp_path / "certified"
+    certified.mkdir()
+    sentinel = certified / "risk.sqlite"
+    sentinel.write_bytes(b"CONTROLLED certified account sentinel; do not mutate")
+    before = sentinel.read_bytes()
+    directory = tmp_path / "experimental" / "event-forecasts"
+    directory.mkdir(parents=True)
+    alias = directory / filename
+    if link_kind == "symlink":
+        alias.symlink_to(sentinel)
+    else:
+        os.link(sentinel, alias)
+    entries_before = sorted(p.name for p in directory.iterdir())
+    with pytest.raises(ValueError, match="storage aliases"):
+        EventForecastLedger(directory, clock=Clock())
+    assert sentinel.read_bytes() == before
+    assert sorted(p.name for p in directory.iterdir()) == entries_before
