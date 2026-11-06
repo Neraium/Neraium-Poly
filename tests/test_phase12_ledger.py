@@ -370,3 +370,47 @@ def test_independent_forecast_baseline_uses_same_immutable_quote_cutoff(tmp_path
     assert s["category_scores"]["Unknown"]["count"] == s["horizon_scores"]["under_24h"]["count"] == 1
     assert s["rolling_calibration"]["count"] == 1
     ledger.close()
+
+
+def test_verified_market_resolution_blocks_complementary_token_forecasts(tmp_path):
+    clock = Clock()
+    ledger = EventForecastLedger(tmp_path, clock=clock, outcome_validator=lambda o: True)
+    original, _ = evidence(ledger, clock)
+    ledger.record_forecast(original)
+    clock.now = NOW + timedelta(hours=2)
+    ledger.record_outcome(outcome(original, clock))
+    # A fresh quote for a different token cannot reopen the verified settled market.
+    b = book(clock()).model_copy(update={"token_id": "controlled-complement"})
+    m = market(clock()).model_copy(update={"token_id": "controlled-complement"})
+    ids = []
+    for kind, payload in [
+        ("order_book", {"book": b.model_dump(mode="json")}),
+        ("resolution_rules", {"market": m.model_dump(mode="json")}),
+    ]:
+        e = EventEvidence(
+            id="complement-" + kind,
+            timestamp=clock(),
+            available_at=clock(),
+            source="CONTROLLED fixture",
+            event_id=original.event_id,
+            market_id=original.market_id,
+            kind=kind,
+            payload=payload,
+            content_sha256=content_sha256(payload),
+        )
+        ledger.record_evidence(e)
+        ids.append(e.id)
+    complement = original.model_copy(
+        update={
+            "id": "complement-forecast",
+            "timestamp": clock(),
+            "available_at": clock(),
+            "evidence_cutoff": clock(),
+            "token_id": b.token_id,
+            "evidence_ids": tuple(ids),
+        }
+    )
+    with pytest.raises(ValueError, match="known resolved"):
+        ledger.record_forecast(complement)
+    assert len(ledger.forecasts()) == 1
+    ledger.close()

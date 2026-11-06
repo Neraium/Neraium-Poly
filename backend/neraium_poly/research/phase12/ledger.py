@@ -256,7 +256,7 @@ class EventForecastLedger:
                     raise ValueError("inconsistent dependency group for the same event")
             for row in self.db.execute("SELECT payload FROM journal WHERE kind='outcome'"):
                 outcome = VerifiedEventOutcome.model_validate_json(row[0])
-                if outcome.market_id == forecast.market_id and outcome.token_id == forecast.token_id:
+                if (outcome.event_id, outcome.market_id) == (forecast.event_id, forecast.market_id):
                     raise ValueError("cannot forecast a known resolved outcome")
             return self._append("forecast", forecast)
 
