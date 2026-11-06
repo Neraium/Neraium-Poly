@@ -1,0 +1,159 @@
+{
+  "writing_subagents": 3,
+  "coordinator_agents": 1,
+  "agents": [
+    "/root/p13_sources",
+    "/root/p13_models",
+    "/root/p13_operations"
+  ],
+  "isolated_worktrees": [
+    "poly-phase13-sources",
+    "poly-phase13-models",
+    "poly-phase13-operations"
+  ],
+  "research_workers_per_job": 2,
+  "research_worker_launches": 4,
+  "research_runs": [
+    {
+      "processes": [
+        {
+          "study": "qualification",
+          "pid": 3066745,
+          "started_at": "2026-11-06T06:07:27.605418+00:00",
+          "completed_at": "2026-11-06T06:07:27.666848+00:00",
+          "peak_rss_kib": 58232,
+          "numerical_threads": 1
+        },
+        {
+          "study": "models",
+          "pid": 3066748,
+          "started_at": "2026-11-06T06:07:27.605488+00:00",
+          "completed_at": "2026-11-06T06:07:27.830388+00:00",
+          "peak_rss_kib": 84960,
+          "numerical_threads": 1
+        }
+      ],
+      "actual_overlap": 2
+    },
+    {
+      "processes": [
+        {
+          "study": "qualification",
+          "pid": 3066864,
+          "started_at": "2026-11-06T06:07:56.143256+00:00",
+          "completed_at": "2026-11-06T06:07:56.205165+00:00",
+          "peak_rss_kib": 57996,
+          "numerical_threads": 1
+        },
+        {
+          "study": "models",
+          "pid": 3066867,
+          "started_at": "2026-11-06T06:07:56.145393+00:00",
+          "completed_at": "2026-11-06T06:07:56.373474+00:00",
+          "peak_rss_kib": 84540,
+          "numerical_threads": 1
+        }
+      ],
+      "actual_overlap": 2
+    }
+  ],
+  "backend_workers": {
+    "workers": [
+      {
+        "name": "backend-2",
+        "pid": 3073115,
+        "started_at": "2026-11-06T06:24:27.665537+00:00",
+        "files": 25,
+        "command": [
+          "uv",
+          "run",
+          "--extra",
+          "dev",
+          "pytest",
+          "-q",
+          "tests/test_contracts.py",
+          "tests/test_execution.py",
+          "tests/test_experimental_account.py",
+          "tests/test_experimental_fees.py",
+          "tests/test_experimental_strategies.py",
+          "tests/test_intelligence.py",
+          "tests/test_monitor.py",
+          "tests/test_phase10_diagnostics.py",
+          "tests/test_phase10_runtime.py",
+          "tests/test_phase11_framework.py",
+          "tests/test_phase11_models.py",
+          "tests/test_phase12_data.py",
+          "tests/test_phase12_models.py",
+          "tests/test_phase12_runtime.py",
+          "tests/test_phase13_evaluation.py",
+          "tests/test_phase13_integration.py",
+          "tests/test_phase13_missing_book_side.py",
+          "tests/test_phase13_monitor.py",
+          "tests/test_phase13_relationships.py",
+          "tests/test_phase13_settlement_bridge.py",
+          "tests/test_phase8_runtime.py",
+          "tests/test_quote_archive.py",
+          "tests/test_research_history.py",
+          "tests/test_risk.py",
+          "tests/test_strategy.py"
+        ],
+        "exit_code": 0,
+        "completed_at": "2026-11-06T06:24:58.505733+00:00"
+      },
+      {
+        "name": "backend-1",
+        "pid": 3073114,
+        "started_at": "2026-11-06T06:24:27.663526+00:00",
+        "files": 26,
+        "command": [
+          "uv",
+          "run",
+          "--extra",
+          "dev",
+          "pytest",
+          "-q",
+          "tests/test_connectivity.py",
+          "tests/test_data.py",
+          "tests/test_execution_recovery.py",
+          "tests/test_experimental_feed.py",
+          "tests/test_experimental_runtime.py",
+          "tests/test_integration.py",
+          "tests/test_live_operation.py",
+          "tests/test_operational_data.py",
+          "tests/test_phase10_intelligence.py",
+          "tests/test_phase10_trace.py",
+          "tests/test_phase11_micro.py",
+          "tests/test_phase11_segments.py",
+          "tests/test_phase12_ledger.py",
+          "tests/test_phase12_outcome_collector.py",
+          "tests/test_phase13_contracts.py",
+          "tests/test_phase13_framework.py",
+          "tests/test_phase13_mapping.py",
+          "tests/test_phase13_models.py",
+          "tests/test_phase13_outcomes.py",
+          "tests/test_phase13_runtime.py",
+          "tests/test_phase13_sources.py",
+          "tests/test_phase9_qualification.py",
+          "tests/test_real_validation.py",
+          "tests/test_research_strategies.py",
+          "tests/test_risk_provenance.py",
+          "tests/test_workflow.py"
+        ],
+        "exit_code": 0,
+        "completed_at": "2026-11-06T06:25:08.617371+00:00"
+      }
+    ],
+    "actual_processes": 2,
+    "numerical_threads": 1,
+    "overlap": true
+  },
+  "browser_workers": 1,
+  "browser_overlap": "One browser worker and its test API overlapped the prior full backend pass; final backend pass ran separately",
+  "host_cpu_count": 32,
+  "initial_available_ram_gib": 238,
+  "initial_free_disk_gib": 19,
+  "final_free_disk_gib": 15.77,
+  "all_host_process_count_claimed": false,
+  "backend_worker_launches": 6,
+  "backend_runs": "Three sequential full passes:655,656,660 tests; two actual worker processes per pass"
+}

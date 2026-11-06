@@ -1,0 +1,155 @@
+{
+  "original_cutoff": "2026-11-06T06:07:27.426096+00:00",
+  "source_manifest": "e492738f48894f2c7e0aa54a0adb35a77feaa8e9081e658c963393dd7771f21d",
+  "reports_identical": true,
+  "byte_identical_reports": {
+    "qualification": true,
+    "models": true
+  },
+  "runs": [
+    {
+      "schema_version": "1.0",
+      "cutoff": "2026-11-06T06:07:27.426096+00:00",
+      "dataset": "/home/ubuntu/Neraium-Poly/data/phase13/source-capture-v3",
+      "market_frame_sha256": "37218a44431d76d8e844883cda4233de6aece53ab6e94ed35cfe887e4ae35359",
+      "git_head": "b9723d6cc3ca974e7e9f88cac60da3a9c8bf2c46",
+      "reports": {
+        "qualification": "0d8cb507c1fb25b4740f25eab7228d0fd065fbdb25b56366bf492d81cc0802f2",
+        "models": "c8cdd79855a323a386733ad1de5ff6c11aa0d6c6a542a6f742f866a34503805d"
+      },
+      "workers_requested": 2,
+      "processes": [
+        {
+          "study": "qualification",
+          "pid": 3066745,
+          "started_at": "2026-11-06T06:07:27.605418+00:00",
+          "completed_at": "2026-11-06T06:07:27.666848+00:00",
+          "peak_rss_kib": 58232,
+          "numerical_threads": 1
+        },
+        {
+          "study": "models",
+          "pid": 3066748,
+          "started_at": "2026-11-06T06:07:27.605488+00:00",
+          "completed_at": "2026-11-06T06:07:27.830388+00:00",
+          "peak_rss_kib": 84960,
+          "numerical_threads": 1
+        }
+      ],
+      "actual_overlapping_studies": 2,
+      "certification_authority": false,
+      "automatic_promotion": false,
+      "model_registry": {
+        "versions": 1,
+        "selected_research_version": "ae2ca4530f77befd88357d51a811f6eb0411175a77925365c68a751f17893c59",
+        "history": [
+          {
+            "automatic_promotion": false,
+            "available_at": "2026-11-06T06:07:27.426096+00:00",
+            "certification_authority": false,
+            "dataset_sha256": "e492738f48894f2c7e0aa54a0adb35a77feaa8e9081e658c963393dd7771f21d",
+            "metrics": [
+              {
+                "baseline_value": null,
+                "disposition": "insufficient_evidence",
+                "model": "external-sports-frequency",
+                "promotion_eligible": false,
+                "reason": "No prospectively verified resolved cohort",
+                "value": null
+              }
+            ],
+            "provenance": {
+              "estimand": "win/tie/loss distribution; payout comparator distinct",
+              "git_head": "b9723d6cc3ca974e7e9f88cac60da3a9c8bf2c46",
+              "model_hashes": [
+                "886b8b4054711106a7bccfc086f461d33e8984a05cef16db2e94db665c197654"
+              ],
+              "reports": {
+                "models": "c8cdd79855a323a386733ad1de5ff6c11aa0d6c6a542a6f742f866a34503805d",
+                "qualification": "0d8cb507c1fb25b4740f25eab7228d0fd065fbdb25b56366bf492d81cc0802f2"
+              },
+              "rollback": "ResearchRegistry.rollback records research selection only"
+            },
+            "version_id": "ae2ca4530f77befd88357d51a811f6eb0411175a77925365c68a751f17893c59"
+          }
+        ],
+        "drift": [],
+        "certification_authority": false,
+        "automatic_promotion": false,
+        "operational_effect": false
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "cutoff": "2026-11-06T06:07:27.426096+00:00",
+      "dataset": "/home/ubuntu/Neraium-Poly/data/phase13/source-capture-v3",
+      "market_frame_sha256": "37218a44431d76d8e844883cda4233de6aece53ab6e94ed35cfe887e4ae35359",
+      "git_head": "e15a2799e7f4918ff9fed9e494d4f259f4ab21bd",
+      "reports": {
+        "qualification": "0d8cb507c1fb25b4740f25eab7228d0fd065fbdb25b56366bf492d81cc0802f2",
+        "models": "c8cdd79855a323a386733ad1de5ff6c11aa0d6c6a542a6f742f866a34503805d"
+      },
+      "workers_requested": 2,
+      "processes": [
+        {
+          "study": "qualification",
+          "pid": 3066864,
+          "started_at": "2026-11-06T06:07:56.143256+00:00",
+          "completed_at": "2026-11-06T06:07:56.205165+00:00",
+          "peak_rss_kib": 57996,
+          "numerical_threads": 1
+        },
+        {
+          "study": "models",
+          "pid": 3066867,
+          "started_at": "2026-11-06T06:07:56.145393+00:00",
+          "completed_at": "2026-11-06T06:07:56.373474+00:00",
+          "peak_rss_kib": 84540,
+          "numerical_threads": 1
+        }
+      ],
+      "actual_overlapping_studies": 2,
+      "certification_authority": false,
+      "automatic_promotion": false,
+      "model_registry": {
+        "versions": 1,
+        "selected_research_version": "ae2ca4530f77befd88357d51a811f6eb0411175a77925365c68a751f17893c59",
+        "history": [
+          {
+            "automatic_promotion": false,
+            "available_at": "2026-11-06T06:07:27.426096+00:00",
+            "certification_authority": false,
+            "dataset_sha256": "e492738f48894f2c7e0aa54a0adb35a77feaa8e9081e658c963393dd7771f21d",
+            "metrics": [
+              {
+                "baseline_value": null,
+                "disposition": "insufficient_evidence",
+                "model": "external-sports-frequency",
+                "promotion_eligible": false,
+                "reason": "No prospectively verified resolved cohort",
+                "value": null
+              }
+            ],
+            "provenance": {
+              "estimand": "win/tie/loss distribution; payout comparator distinct",
+              "git_head": "e15a2799e7f4918ff9fed9e494d4f259f4ab21bd",
+              "model_hashes": [
+                "886b8b4054711106a7bccfc086f461d33e8984a05cef16db2e94db665c197654"
+              ],
+              "reports": {
+                "models": "c8cdd79855a323a386733ad1de5ff6c11aa0d6c6a542a6f742f866a34503805d",
+                "qualification": "0d8cb507c1fb25b4740f25eab7228d0fd065fbdb25b56366bf492d81cc0802f2"
+              },
+              "rollback": "ResearchRegistry.rollback records research selection only"
+            },
+            "version_id": "ae2ca4530f77befd88357d51a811f6eb0411175a77925365c68a751f17893c59"
+          }
+        ],
+        "drift": [],
+        "certification_authority": false,
+        "automatic_promotion": false,
+        "operational_effect": false
+      }
+    }
+  ]
+}

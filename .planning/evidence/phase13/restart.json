@@ -1,0 +1,227 @@
+{
+  "observed_at": "2026-11-06T06:17:53.910041+00:00",
+  "head": "7efea1bbd9832296a8e697cb4f68136af047b15e",
+  "account_tables_unchanged": true,
+  "original_baseline_records_preserved": 102,
+  "prospective_ids_preserved": [
+    "f18c896710653d210eee5d140fc08a035f9adf9bae7bb2e07ca3456228ce16d1",
+    "47697de92df0a8cf359d87dfa4ef7a9bf6759a1ee88331426c111809526ab56e"
+  ],
+  "no_duplicate_forecasts_after_two_restarts": true,
+  "services": {
+    "neraium-poly-paper": {
+      "pid": 2981665,
+      "flags": [
+        "PAPER_TRADING=true",
+        "LIVE_TRADING_ENABLED=false"
+      ]
+    },
+    "neraium-poly-experimental": {
+      "pid": 3072065,
+      "flags": [
+        "PAPER_TRADING=true",
+        "LIVE_TRADING_ENABLED=false"
+      ]
+    }
+  },
+  "experimental": {
+    "cash": 500.0,
+    "equity": 500.0,
+    "bankroll": 500.0,
+    "simulated_pnl": 0.0,
+    "orders": [],
+    "fills": 0,
+    "positions": [],
+    "service": {
+      "status": "ok",
+      "account_id": "experimental-paper",
+      "validation_status": "unvalidated",
+      "paper_trading": true,
+      "live_trading_enabled": false,
+      "last_ingestion_at": "2026-11-06T06:17:49.767823+00:00",
+      "last_ingestion_age_seconds": 4.828506,
+      "last_error": null,
+      "fee_error": null,
+      "timestamp": "2026-11-06T06:17:54.596329+00:00"
+    }
+  },
+  "certified": {
+    "cash": 500.0,
+    "equity": null,
+    "bankroll": 500.0,
+    "simulated_pnl": 0.0,
+    "orders": [],
+    "fills": null,
+    "positions": [],
+    "service": null
+  },
+  "sports": {
+    "status": "research_only",
+    "model_version": "sports-independent-baselines-v1/frequency",
+    "model_versions": [
+      {
+        "model_version": "sports-independent-baselines-v1/frequency",
+        "model_sha256": "886b8b4054711106a7bccfc086f461d33e8984a05cef16db2e94db665c197654",
+        "feature_version": "causal-external-publisher-results-v1"
+      }
+    ],
+    "source_status": "qualified_research_only",
+    "upcoming_mapped_events_last_frame": 2,
+    "mapping_failures": {
+      "binary_ledger_expected_payout_not_win_probability": 2,
+      "event_strategy_not_enabled_for_experimental_operation": 2,
+      "fresh_executable_sports_baseline_required": 38,
+      "mapping_unsupported_contract_question": 26,
+      "mapping_unsupported_league_or_resolution_source": 5122,
+      "qualified_external_sports_dataset_unavailable": 1
+    },
+    "upcoming_source_events": 150,
+    "source_games": 842,
+    "source_artifacts": 3,
+    "source_qualification": {
+      "attribution": "nflverse contributors; Lee Sharpe schedules; normalized fields, odds discarded",
+      "availability": "First observed retrieval, not historical event time or publisher update time",
+      "certification_authority": false,
+      "collected_at": "2026-11-06T06:16:37.146177+00:00",
+      "games": 842,
+      "license": "CC-BY-4.0",
+      "license_url": "https://github.com/nflverse/nflverse-data/blob/main/LICENSE.md",
+      "minimum_season": 2024,
+      "missingness": [
+        "row_publication_times",
+        "official_result_finality",
+        "cancellation_status",
+        "injuries",
+        "lineups"
+      ],
+      "official_results": false,
+      "provider": "nflverse/nflverse-data",
+      "rejected_rows": {},
+      "result_status_semantics": "publisher_reported_scores_not_official_finality",
+      "source_updated_at": "2026-11-06T05:06:25+00:00",
+      "source_url": "https://github.com/nflverse/nflverse-data/releases/download/schedules/games.csv",
+      "statuses": {
+        "final": 691,
+        "scheduled": 150,
+        "unknown": 1
+      },
+      "withheld_providers": {
+        "ATP/esports": "No qualified provider configured",
+        "NBA": "NBA terms prohibit gambling/database use absent consent",
+        "NFL.com": "No licensed official automated result access configured"
+      }
+    },
+    "last_source_success": "2026-11-06T06:16:37.368048+00:00",
+    "last_source_attempt": "2026-11-06T06:16:36.192719+00:00",
+    "last_error": null,
+    "totals": {
+      "refreshes": 1,
+      "markets_considered": 5200,
+      "mapped": 52,
+      "independent_forecasts": 2,
+      "proposal_evaluations": 0
+    },
+    "rejections": {
+      "binary_ledger_expected_payout_not_win_probability": 2,
+      "event_strategy_not_enabled_for_experimental_operation": 2,
+      "fresh_executable_sports_baseline_required": 38,
+      "mapping_unsupported_contract_question": 26,
+      "mapping_unsupported_league_or_resolution_source": 5122,
+      "qualified_external_sports_dataset_unavailable": 1
+    },
+    "recent_candidates": [
+      {
+        "market_id": "3215008",
+        "reason": "mapping_unsupported_league_or_resolution_source"
+      },
+      {
+        "market_id": "3215008",
+        "reason": "mapping_unsupported_league_or_resolution_source"
+      },
+      {
+        "market_id": "6369333",
+        "reason": "mapping_unsupported_league_or_resolution_source"
+      },
+      {
+        "market_id": "6369333",
+        "reason": "mapping_unsupported_league_or_resolution_source"
+      },
+      {
+        "market_id": "634976",
+        "reason": "mapping_unsupported_league_or_resolution_source"
+      },
+      {
+        "market_id": "634976",
+        "reason": "mapping_unsupported_league_or_resolution_source"
+      },
+      {
+        "market_id": "5177555",
+        "reason": "mapping_unsupported_league_or_resolution_source"
+      },
+      {
+        "market_id": "5177555",
+        "reason": "mapping_unsupported_league_or_resolution_source"
+      }
+    ],
+    "outcome_verification": {
+      "checks": 0,
+      "corroborated": 0
+    },
+    "trading_enabled": false,
+    "certification_authority": false,
+    "ternary_forecasts": 2,
+    "ternary_research_forecasts": 2,
+    "independent_binary_forecasts": 0,
+    "counter_scope": "totals and rejections cumulative since Phase13 start; journal counts durable current state; recent candidates last frame",
+    "ternary_pending": 2,
+    "ternary_resolved": 0,
+    "recorded_outcomes": 0,
+    "outcomes_under_review": 0,
+    "outcome_reverification_pending": 0,
+    "journal_integrity": {
+      "records": 2,
+      "head_sha256": "99cae7acba2bf51e98df23f75be2201010c003bc8e871a7a4d5f1d287228f590",
+      "integrity": "verified"
+    },
+    "relationships": {
+      "evaluations": 8,
+      "descriptive_findings": 0,
+      "latest": {
+        "status": "withheld",
+        "reason": "duplicate_evidence_does_not_add_persistence",
+        "executable_opportunity": false
+      },
+      "trading_authority": false
+    },
+    "scores": {
+      "brier": null,
+      "log_loss": null,
+      "market_win_brier": null,
+      "reason": "No independently reviewed resolved ternary events; market quote is expected payout, not win probability"
+    },
+    "evaluation": {
+      "schema_version": "1.0",
+      "models": [],
+      "descriptive_matched_forecasts": [],
+      "independent_forecasts": 2,
+      "matched_verified_forecasts": 0,
+      "rejections": {},
+      "headline_minimum_independent_events": 20,
+      "market_baseline": "original same-record contemporaneous expected-payout quote, not unconditional win probability",
+      "market_win_probability": null,
+      "certification_authority": false,
+      "automatic_promotion": false,
+      "limitations": [
+        "Canceled/postponed/disputed/fractional or conflicting results remain unresolved",
+        "Expected-payout MSE is distinct from win-probability skill and trading profitability",
+        "Repeated tokens/forecasts of the same sports game are not independent samples"
+      ]
+    },
+    "calibration_status": "insufficient prospective independent outcomes",
+    "limitations": [
+      "Research-only models; no automatic order admission",
+      "Source snapshots first available at retrieval, never backdated",
+      "No reviewed independence inferred from repeated forecasts"
+    ]
+  }
+}

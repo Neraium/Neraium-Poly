@@ -1,0 +1,24 @@
+{
+  "certification_requirement": {
+    "heldout": 100,
+    "training": 100
+  },
+  "dataset_sha256": "e492738f48894f2c7e0aa54a0adb35a77feaa8e9081e658c963393dd7771f21d",
+  "earliest_verified_availability": "2026-11-06T06:05:18.125309+00:00",
+  "games": 842,
+  "independently_verified_sports_results": 0,
+  "missing_fields": [
+    "historical_availability_vintages",
+    "reviewed_independent_groups",
+    "independent_result_corroboration",
+    "historical_executable_depth",
+    "heldout_model_calibration",
+    "injuries_and_lineups"
+  ],
+  "publisher_reported_final": 691,
+  "qualified_certification_heldout_events": 0,
+  "qualified_certification_training_events": 0,
+  "reason": "Retrieval-time records do not establish historical feature vintages, independent verification or calibration",
+  "retrospective_point_in_time_training_events": 0,
+  "scheduled": 150
+}

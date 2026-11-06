@@ -1,0 +1,22 @@
+{
+  "observed_at": "2026-11-06T06:19:06.210697+00:00",
+  "source_head": "7efea1bbd9832296a8e697cb4f68136af047b15e",
+  "backend_passed": 656,
+  "backend_workers_passed": [
+    312,
+    344
+  ],
+  "ruff": "passed",
+  "frontend_build": "passed",
+  "browser_tests": 5,
+  "runtime_dependency_audit": "no known vulnerabilities",
+  "frontend_dependency_audit": "0 vulnerabilities",
+  "scenario": "passed; controlled paper scenario, not operational fills",
+  "read_only_real_book_evidence": "prospective-observed.json",
+  "real_accounts": "restart.json",
+  "controlled_test_warning": "Starlette FastAPI testclient httpx deprecation; no test failures",
+  "ci_run": 42173364539,
+  "ci_backend": "success",
+  "ci_dashboard": "success",
+  "live_financial_trading_enabled": false
+}

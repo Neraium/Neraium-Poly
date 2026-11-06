@@ -84,3 +84,19 @@ Browser tests serve the production frontend build with their own backend on port
 This initial release is a local research platform. Calibration and backtest fixtures are synthetic; no real-market profitability has been established. BUY-only simulation, bounded public collection, a conservative maker approximation, and SQLite single-owner operation are deliberate limits. Historical order-book depth is not assumed. Long-running WebSocket soak tests, qualified real-label out-of-sample evaluation and production throughput certification remain future work. PostgreSQL multi-process operation and additional exchanges need separate engineering validation.
 
 `PAPER_TRADING=true` and `LIVE_TRADING_ENABLED=false` are enforced at startup and in execution components. No wallets, transaction signing, deposits or live orders are included. Detached owner signatures authorize paper strategy activation only. See [security](SECURITY.md), [eligibility](docs/eligibility.md), [architecture](docs/architecture.md), [operations](docs/operations.md) and [roadmap](docs/roadmap.md).
+
+### Independent sports event research (Phase 13)
+
+The event view distinguishes prospective external-data NFL win/tie/loss research
+forecasts from market-baseline records. Exact schedule/rule mappings, immutable
+source snapshots, separate forecast journals and verified result checks preserve
+provenance. These models are unvalidated research and have no trading authority.
+
+```bash
+uv run neraium-poly monitor --view events
+```
+
+See [Phase 13 readiness and actual observations](docs/phase13-readiness.md),
+[architecture](docs/phase13-architecture.md) and
+[source inventory](docs/phase13-sources.md). Historical certification and explicit
+owner approval remain required; live financial trading remains disabled.

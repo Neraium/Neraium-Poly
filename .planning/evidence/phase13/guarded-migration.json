@@ -1,0 +1,46 @@
+{
+  "observed_at": "2026-11-06T06:25:59.396295+00:00",
+  "source_head": "cdc4db51b1aee801f94decff992dcd36d9f734cb",
+  "migration": {
+    "timestamp": "2026-11-06T06:25:33.570141+00:00",
+    "previous_hash": "5b8e3826fd59f57e9d9593c9af67271d3c0c9dc34cac80f2228ff361b67a7eea",
+    "new_hash": "a095ccd661a0e34046fb4a2415d63cabf95de0a947530ef75f55a18e19cc650f",
+    "reason": "Reviewed missing-bid diagnostic crash guard only; valid strategy mathematics and all admission thresholds unchanged; preserve all checkpoints, accounts and forecasts",
+    "checkpoint_preserved": true,
+    "certification_authority": false,
+    "account_mutation": false
+  },
+  "account_tables_unchanged": true,
+  "existing_baseline_prefix_preserved": true,
+  "services": {
+    "neraium-poly-paper": {
+      "pid": 2981665,
+      "flags": [
+        "PAPER_TRADING=true",
+        "LIVE_TRADING_ENABLED=false"
+      ]
+    },
+    "neraium-poly-experimental": {
+      "pid": 3073639,
+      "flags": [
+        "PAPER_TRADING=true",
+        "LIVE_TRADING_ENABLED=false"
+      ]
+    }
+  },
+  "experimental_service": {
+    "status": "ok",
+    "account_id": "experimental-paper",
+    "validation_status": "unvalidated",
+    "paper_trading": true,
+    "live_trading_enabled": false,
+    "last_ingestion_at": "2026-11-06T06:25:57.940627+00:00",
+    "last_ingestion_age_seconds": 1.559462,
+    "last_error": null,
+    "fee_error": null,
+    "timestamp": "2026-11-06T06:25:59.500089+00:00"
+  },
+  "ternary_forecasts": 2,
+  "pending": 2,
+  "resolved": 0
+}

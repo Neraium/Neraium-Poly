@@ -1,0 +1,32 @@
+{
+  "verdict": "pass",
+  "source_head": "cdc4db51b1aee801f94decff992dcd36d9f734cb",
+  "reviewer": "/root/p13_models",
+  "findings_repaired": [
+    "typed external settlement reference accepted by real native/CTF adapter, original record hash bound",
+    "post-acquisition cutoff refreshed without changing original forecast cutoff",
+    "journal schema/identity validation and original model replay",
+    "exact replayed sports result bound to scored record",
+    "model monitor versions derived from actual journal",
+    "live-soak mature horizon ask-only book diagnostic guard; valid-book math and risk unchanged"
+  ],
+  "regressions": [
+    "test_phase13_settlement_bridge.py",
+    "test_phase13_integration.py",
+    "test_phase13_missing_book_side.py"
+  ],
+  "policy": {
+    "verdict": "allow",
+    "reviewers": [
+      "/root/p13_sources",
+      "/root/p13_models"
+    ],
+    "rules": [
+      "P-001",
+      "P-002",
+      "P-004",
+      "P-007"
+    ],
+    "scope": "User-authorized verified non-force source/docs/evidence push and existing experimental-unit restart only; no new deployment or trading authority; existing stopped-service exact-hash experimental research migration"
+  }
+}

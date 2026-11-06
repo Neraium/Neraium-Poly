@@ -1,0 +1,5 @@
+Observed existing horizon diagnostic bug; repaired cdc4db5. Four controlled regressions + 660 full tests passed.
+Nov 06 06:25:29 ip-172-31-67-49 neraium-poly[3072065]: IndexError: tuple index out of range
+Nov 06 06:25:22 ip-172-31-67-49 neraium-poly[3072065]: IndexError: tuple index out of range
+Nov 06 06:25:16 ip-172-31-67-49 neraium-poly[3072065]: IndexError: tuple index out of range
+Nov 06 06:25:11 ip-172-31-67-49 neraium-poly[3072065]: IndexError: tuple index out of range

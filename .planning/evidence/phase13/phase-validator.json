@@ -1,0 +1,20 @@
+{
+  "verdict": "pass",
+  "source_head": "cdc4db51b1aee801f94decff992dcd36d9f734cb",
+  "reviewer": "/root/p13_sources",
+  "observed_at": "2026-11-06T06:29:34.345576+00:00",
+  "findings": [],
+  "verified": [
+    "Both original actual NFL forecast records strictly validated and replayed against raw runtime source",
+    "External retrieval precedes cutoffs and starts; source/receipt/book depth match report",
+    "Two true ternary forecasts distinct from34marketbaselines/0binaryindependent/0reviewedgroups",
+    "660 backendtests + finalsourceCI bothjobs successful",
+    "Account hashes, forecastIDs and baselineprefix preserved; paper-onlyservice flags healthy"
+  ],
+  "limitations": [
+    "No prospective verified results or independent forecasting skill established",
+    "Publisher sports results are not official league finality",
+    "Fractional/disputed/canceled results remain unresolved"
+  ],
+  "pending_delivery": "Documentation/evidence commit and non-force push"
+}
