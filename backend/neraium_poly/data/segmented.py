@@ -86,6 +86,7 @@ class ManagedEventStore:
             self.catalog.row_factory = sqlite3.Row
             self.catalog.execute("PRAGMA journal_mode=WAL")
             self.catalog.execute("PRAGMA synchronous=FULL")
+            self.catalog.execute("PRAGMA cache_size=-65536")  # Bounded64MiB; keep normal cache spilling.
             self.catalog.executescript("""
                 CREATE TABLE IF NOT EXISTS segments(
                   name TEXT PRIMARY KEY,status TEXT NOT NULL,raw_sha TEXT,raw_size INTEGER,
