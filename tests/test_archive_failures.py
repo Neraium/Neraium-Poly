@@ -208,6 +208,11 @@ def test_catalog_pointer_without_source_payload_fails_closed(tmp_path):
     # Controlled on-disk corruption: never run against an operational database.
     db = sqlite3.connect(catalog_path)
     try:
+        with pytest.raises(sqlite3.IntegrityError, match="append only"):
+            db.execute("UPDATE records SET segment='segment-99999999.sqlite' WHERE id=?", (sample(1).id,))
+        db.rollback()
+        # Explicit fixture-only bypass emulates damage beyond ordinary SQL writes.
+        db.execute("DROP TRIGGER records_no_update")
         db.execute("UPDATE records SET segment='segment-99999999.sqlite' WHERE id=?", (sample(1).id,))
         db.commit()
     finally:
