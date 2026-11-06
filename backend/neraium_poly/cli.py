@@ -22,6 +22,7 @@ def main():
             "research-qualify",
             "research-experiment",
             "event-research",
+            "sports-research",
             "research-watch",
             "strategy-validate",
             "strategy-package",
@@ -83,6 +84,12 @@ def main():
             view=args.view,
             scope=args.scope,
         )
+    elif args.command == "sports-research":
+        from neraium_poly.research.phase13.framework import run_sports_research
+
+        if not args.dataset or not args.output or not args.manifest:
+            parser.error("sports-research requires --dataset, frozen market-frame --manifest and new --output")
+        print(json.dumps(run_sports_research(args.dataset, args.manifest, args.output, workers=args.workers), indent=2))
     elif args.command == "event-research":
         from neraium_poly.research.phase12.framework import run_event_research
 
