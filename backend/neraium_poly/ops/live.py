@@ -18,6 +18,7 @@ from neraium_poly.contracts import MarketRelationship, MarketSnapshot, Record
 from neraium_poly.data import EventStore, assess_book
 from neraium_poly.execution import PaperBroker
 from neraium_poly.intelligence import EvidenceContext, RelationshipEngine, RelationshipPolicy
+from neraium_poly.research.archive import QuoteArchive
 from neraium_poly.risk import RiskEngine
 from neraium_poly.settings import Settings
 from neraium_poly.workflow import PaperWorkflow
@@ -65,7 +66,23 @@ class LivePaperRuntime:
             self.validation = validation or ValidationStore(
                 str(self.directory / "approval.sqlite"), owner_public_key=config.owner_public_key
             )
-            self.adapter = adapter or OperationalPolymarketAdapter()
+            self.coverage = None
+            if adapter is None and config.coverage_enabled:
+                from neraium_poly.data.connectivity import CoverageFeed
+
+                self.coverage = CoverageFeed(
+                    max_tokens=config.max_subscription_tokens,
+                    concurrency=config.collection_concurrency,
+                    rate=config.request_rate,
+                    queue_size=config.stream_queue_size,
+                )
+                self.adapter = self.coverage.adapter
+            else:
+                self.adapter = adapter or OperationalPolymarketAdapter()
+            self.quote_archive = QuoteArchive(self.events, self.ledger.get("quote_archive", {}))
+            self.stream_notifications = 0
+            self.stream_generation = 0
+            self.last_research = None
             self.engine = RelationshipEngine(
                 RelationshipPolicy(
                     max_relationships=config.max_relationships, max_age_seconds=config.max_book_age_seconds
@@ -96,6 +113,7 @@ class LivePaperRuntime:
             self.workflow = None
             self.activation_id = None
             self.activation = None
+            self.order_activations = self.ledger.get("order_activations", {})
             self.scan = self.ledger.get("scan", {})
             self.totals = self.ledger.get(
                 "totals",
@@ -148,6 +166,8 @@ class LivePaperRuntime:
         self.ledger.put("totals", self.totals)
         self.ledger.put("scan", self.scan)
         self.ledger.put("book_offset", self.offset)
+        self.ledger.put("quote_archive", self.quote_archive.state)
+        self.ledger.put("order_activations", self.order_activations)
 
     def _budget_ok(self):
         files = [p for p in self.directory.glob("events.sqlite*") if p.is_file()]
@@ -163,7 +183,10 @@ class LivePaperRuntime:
         now = self.clock()
         with self._lock:
             self._activation(now)
-        batch = await self.adapter.discover_bounded(
+        if self.coverage and not self.config.rotate_liquid_universe:
+            self.adapter.discovery_offset = 0
+        discover = self.coverage.discover if self.coverage else self.adapter.discover_bounded
+        batch = await discover(
             max_markets=self.config.max_markets,
             page_size=self.config.page_size,
             max_pages=self.config.max_pages,
@@ -193,6 +216,7 @@ class LivePaperRuntime:
             self.prices = {key: value for key, value in self.prices.items() if key in retained_tokens}
             self.books = {key: value for key, value in self.books.items() if key in retained_tokens}
             self.fees = {key: value for key, value in self.fees.items() if key in retained_tokens}
+            self.quote_archive.retain(retained_tokens)
             self.token_map = {key: value for key, value in self.token_map.items() if value in retained_tokens}
             for m in (*batch.markets, *approved_metadata):
                 self.events.append(m)
@@ -220,11 +244,54 @@ class LivePaperRuntime:
                 "outcomes": len(batch.markets),
                 "bounded": batch.truncated,
                 "next_offset": batch.next_offset,
+                "selection_order": "volume24hr_desc" if self.coverage else "active_market_id_pages",
                 "errors": list(batch.errors),
                 "at": now.isoformat(),
             }
             self.last_discovery = now
             self._save()
+        if self.coverage and self.config.websocket_enabled:
+            await self.coverage.stop_stream()
+            self.stream_generation += 1
+            self.coverage.start_stream(list(self.markets.values()), self._stream_observed)
+
+    def _stream_observed(self, book):
+        # Native updates are sampled from authoritative feed.latest in cycle().
+        # This callback never writes an unbounded tick stream to disk.
+        self.stream_notifications += 1
+        self.last_receipt = self.clock()
+        if assess_book(book, self.clock(), max_age_seconds=self.config.max_book_age_seconds).healthy:
+            self.last_success = self.clock()
+
+    def _current_books(self):
+        return dict(self.coverage.latest) if self.coverage else dict(self.books)
+
+    def _archive_observation(self, book):
+        if not self._budget_ok():
+            self.last_error = "archive_or_disk_budget_exhausted"
+            return False
+        return self.quote_archive.record(book)
+
+    def _refresh_research(self):
+        now = self.clock()
+        if (
+            self.last_research
+            and (now - self.last_research).total_seconds() < self.config.research_interval_seconds
+        ):
+            return
+        self.last_research = now
+        path = self.config.research_bundle_path
+        if path is None or self.config.research_report_path is None or not (path / "bundle.json").is_file():
+            return
+        from neraium_poly.research.evaluation import write_report
+        from neraium_poly.research.history import load_bundle
+
+        try:
+            bundle = load_bundle(path)
+            self.config.research_report_path.parent.mkdir(parents=True, exist_ok=True)
+            write_report(bundle, self.config.research_report_path)
+        except (OSError, ValueError, KeyError, TypeError):
+            self.last_error = "research_report_withheld_invalid_evidence"
 
     def _book_market(self, book):
         market = self.markets.get(book.token_id)
@@ -252,7 +319,7 @@ class LivePaperRuntime:
             ),
             timestamp=book.timestamp,
             available_at=book.available_at,
-            source="https://clob.polymarket.com/book:observed-midpoint",
+            source=book.source + ":observed-midpoint",
             probability=(book.bids[0].price + book.asks[0].price) / 2,
         )
         observed = MarketSnapshot.model_validate(values)
@@ -351,6 +418,8 @@ class LivePaperRuntime:
             if (
                 self.workflow is None
                 or self.activation.relationship_tokens.get(intent["market_id"]) != intent["token_id"]
+                or intent["tier"] not in self.activation.allowed_tiers
+                or self.order_activations.get(report.client_order_id) != self.activation_id
                 or market is None
                 or market.status != "active"
                 or (market.end_time is not None and market.end_time <= self.clock())
@@ -358,12 +427,23 @@ class LivePaperRuntime:
                 self.events.append(self.broker.cancel(report.client_order_id, now=self.clock()))
                 return
         try:
-            book = await self.adapter.book(intent["market_id"], intent["token_id"])
+            book = (
+                await self.coverage.execution_book(intent["token_id"])
+                if self.coverage
+                else await self.adapter.book(intent["market_id"], intent["token_id"])
+            )
+            if self.coverage:
+                book = self.coverage.latest.get(intent["token_id"])
+            if book is None:
+                self.events.append(self.broker.cancel(report.client_order_id, now=self.clock()))
+                return
             with self._lock:
                 self._activation(self.clock())
                 if (
                     self.workflow is None
                     or self.activation.relationship_tokens.get(intent["market_id"]) != intent["token_id"]
+                    or intent["tier"] not in self.activation.allowed_tiers
+                    or self.order_activations.get(report.client_order_id) != self.activation_id
                 ):
                     self.events.append(self.broker.cancel(report.client_order_id, now=self.clock()))
                     return
@@ -384,6 +464,13 @@ class LivePaperRuntime:
         reasons = []
         for book in books:
             now = self.clock()
+            if self.coverage and book.source.startswith("wss:"):
+                current = self.coverage.latest.get(book.token_id)
+                if current is None:
+                    reasons.append("websocket_gap_invalidated_quote")
+                    continue
+                book = current
+                self._book_market(book)
             if not assess_book(book, now, max_age_seconds=self.config.max_book_age_seconds).healthy:
                 reasons.append("stale_or_incomplete_execution_book")
                 continue
@@ -402,12 +489,28 @@ class LivePaperRuntime:
                 if self.workflow is None:
                     reasons.append("strategy_revoked_or_expired")
                     break
+                if self.coverage:
+                    current = self.coverage.latest.get(book.token_id)
+                    if current is None:
+                        reasons.append("feed_gap_or_resolution_invalidated_quote")
+                        continue
+                    book = current
+                    self._book_market(book)
+                if (
+                    self.activation.relationship_tokens.get(book.market_id) != book.token_id
+                    or self.config.position_tier not in self.activation.allowed_tiers
+                ):
+                    reasons.append("strategy_scope_or_tier_changed")
+                    continue
                 for market in self.prices.values():
                     self.workflow.ingest_market(market, self.clock())
                 qty = self.config.position_notional / book.asks[0].price
                 result = self.workflow.evaluate(
                     book, self.clock(), fee_model=fee, quantity=qty, tier=self.config.position_tier
                 )
+                if result.execution:
+                    self.order_activations[result.execution.client_order_id] = self.activation_id
+                    self.ledger.put("order_activations", self.order_activations)
                 self.totals["qualified_opportunities"] = self.events.connection.execute(
                     "SELECT count(*) FROM events WHERE kind='TradingOpportunity'"
                 ).fetchone()[0]
@@ -467,6 +570,8 @@ class LivePaperRuntime:
         now = self.clock()
         if not self._budget_ok():
             self.last_error = "archive_or_disk_budget_exhausted"
+            if self.coverage:
+                await self.coverage.stop_stream()
             return
         self.working = True
         self.last_error = None
@@ -484,19 +589,31 @@ class LivePaperRuntime:
                 for i in range(min(len(markets), self.config.books_per_cycle))
             ]
             self.offset = (self.offset + len(chosen)) % len(markets)
+            self._refresh_research()
             received = []
             failures = []
-            for market in chosen:
+            if self.coverage:
+                await self.coverage.books(markets, limit=self.config.books_per_cycle)
+                candidates = list(self.coverage.latest.values())
+            else:
+                candidates = []
+                for market in chosen:
+                    try:
+                        candidates.append(await self.adapter.book(market.market_id, market.token_id))
+                    except Exception as error:  # noqa: BLE001 - no quote is invented on a public-data failure
+                        failures.append(f"book_unavailable:{market.market_id}:{type(error).__name__}")
+            for book in candidates:
                 try:
-                    book = await self.adapter.book(market.market_id, market.token_id)
-                    if (book.market_id, book.token_id, book.exchange) != (
+                    market = self.markets.get(book.token_id)
+                    if market is None or (book.market_id, book.token_id, book.exchange) != (
                         market.market_id,
                         market.token_id,
                         market.exchange,
                     ):
                         raise ValueError("order book instrument identity mismatch")
                     with self._lock:
-                        self.events.append(book)
+                        if self._archive_observation(book):
+                            received.append(book)
                         self.books[book.token_id] = book
                         self.last_receipt = self.clock()
                         if assess_book(
@@ -504,9 +621,10 @@ class LivePaperRuntime:
                         ).healthy:
                             self.last_success = self.clock()
                         self._book_market(book)
-                    received.append(book)
-                except Exception as error:  # noqa: BLE001 - individual public-data failure withholds that instrument
-                    failures.append(f"book_unavailable:{market.market_id}:{type(error).__name__}")
+                except Exception as error:  # noqa: BLE001 - withhold malformed or misrouted public evidence
+                    failures.append(f"book_unavailable:{book.market_id}:{type(error).__name__}")
+            if self.coverage:
+                self.books = self._current_books()
             now = self.clock()
             before_opportunities = self.totals["qualified_opportunities"]
             before_orders = self.totals["orders"]
@@ -602,7 +720,7 @@ class LivePaperRuntime:
             and self.last_error is None
             and any(
                 assess_book(b, now, max_age_seconds=self.config.max_book_age_seconds).healthy
-                for b in self.books.values()
+                for b in self._current_books().values()
             )
             else "degraded",
             "paper_trading": True,
@@ -633,15 +751,19 @@ class LivePaperRuntime:
                 alerts.append(self.last_error)
             if self.suspended:
                 alerts.append("Persistent emergency stop active.")
+            view_books = self._current_books()
+            from .research_view import research_view
+
+            research = research_view(self.config.research_report_path, self.config.public_archive_report_path)
             healthy = sum(
                 assess_book(b, now, max_age_seconds=self.config.max_book_age_seconds).healthy
-                for b in self.books.values()
+                for b in self._current_books().values()
             )
             settlements = [a for a in self.risk.audit() if a["action"] == "simulated_settlement"]
             market_rows = []
             for token, metadata in self.markets.items():
                 row = self.prices.get(token, metadata).model_dump(mode="json")
-                book = self.books.get(token)
+                book = view_books.get(token)
                 row.update(
                     metadata_probability=metadata.probability,
                     best_bid=book.bids[0].price if book and book.bids else None,
@@ -710,6 +832,7 @@ class LivePaperRuntime:
                         "detail": "No wallet, signer or live broker transport",
                     },
                 ],
+                "research": research,
                 "operation": {
                     **self.totals,
                     "scan": self.scan,
@@ -727,6 +850,9 @@ class LivePaperRuntime:
                         ]
                     ),
                     "service": self.health(),
+                    "connectivity": self.coverage.metrics() if self.coverage else {"ws_connected": False},
+                    "stream_notifications": self.stream_notifications,
+                    "archive_representation": "sampled actual full states with exact quote-level deltas and receipt references",
                 },
                 "settlements": settlements,
                 "replay_digest": identity(self.totals, self.scan),
@@ -736,7 +862,10 @@ class LivePaperRuntime:
         self.stopping = True
         with self._lock:
             self._save()
-        await self.adapter.close()
+        if self.coverage:
+            await self.coverage.close()
+        else:
+            await self.adapter.close()
         self.validation.close()
         self.broker.close()
         self.risk.close()

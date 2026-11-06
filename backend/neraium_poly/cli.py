@@ -18,6 +18,10 @@ def main():
             "paper-live",
             "strategy-validate",
             "strategy-package",
+            "research-acquire",
+            "research-evaluate",
+            "research-cycle",
+            "research-audit",
             "strategy-approve",
             "strategy-status",
             "strategy-revoke",
@@ -37,10 +41,60 @@ def main():
     parser.add_argument("--owner-public-key", type=Path)
     parser.add_argument("--owner-request-id")
     parser.add_argument("--owner-signature", type=Path)
+    parser.add_argument("--research-dir", type=Path, default=Path("data/phase8-history"))
+    parser.add_argument("--max-events", type=int, default=250)
+    parser.add_argument("--max-history-requests", type=int, default=50)
+    parser.add_argument("--event-first", action="store_true")
     parser.add_argument("--reason", default="operator revoked")
     args = parser.parse_args()
     Settings.from_env()
-    if args.command == "paper-live":
+    if args.command == "research-audit":
+        from neraium_poly.research.public_archive import audit_public_archive
+
+        result = audit_public_archive(args.research_dir)
+        if args.output:
+            args.output.parent.mkdir(parents=True, exist_ok=True)
+            args.output.write_text(json.dumps(result, indent=2) + "\n")
+        print(json.dumps(result, indent=2))
+    elif args.command.startswith("research-"):
+        from neraium_poly.research.evaluation import write_report
+        from neraium_poly.research.history import HistoryPipeline, completeness_report, load_bundle
+
+        if args.command in {"research-acquire", "research-cycle"}:
+            import asyncio
+
+            async def acquire():
+                pipeline = HistoryPipeline(args.research_dir)
+                try:
+                    return await pipeline.acquire(
+                        max_events=args.max_events,
+                        max_history_requests=args.max_history_requests,
+                        archive_path=args.database,
+                        event_first=args.event_first,
+                    )
+                finally:
+                    await pipeline.close()
+
+            bundle = asyncio.run(acquire())
+        else:
+            bundle = load_bundle(args.research_dir)
+        if args.command in {"research-evaluate", "research-cycle"}:
+            target = args.output or Path("data/paper-live/research/report.json")
+            result = write_report(bundle, target)
+            print(
+                json.dumps(
+                    {
+                        "dataset_hash": result["dataset_hash"],
+                        "coverage": result["coverage"],
+                        "certification": result["certification"],
+                        "report": str(target),
+                    },
+                    indent=2,
+                )
+            )
+        else:
+            print(json.dumps(completeness_report(bundle), indent=2))
+    elif args.command == "paper-live":
         import asyncio
 
         from neraium_poly.ops.live import serve_live

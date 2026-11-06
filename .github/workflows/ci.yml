@@ -22,7 +22,7 @@ jobs:
       - uses: astral-sh/setup-uv@v6
         with:
           version: '0.9.7'
-      - run: uv sync --frozen --extra dev --python 3.12
+      - run: uv sync --frozen --extra dev --extra research --python 3.12
       - run: uv run --frozen ruff check backend tests
       - run: uv run --frozen pytest -q --junitxml=certification.xml
       - run: uv run --frozen neraium-poly scenario --output scenario.json

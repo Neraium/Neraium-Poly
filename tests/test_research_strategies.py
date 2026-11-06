@@ -196,7 +196,7 @@ def test_correlated_legs_and_repeated_snapshots_cannot_reach200_independent_even
     b = bundle(correlated=True)
     b = b.model_copy(update={"prices": b.prices * 3})
     result = evaluate_bundle(b)
-    assert result["coverage"]["independent_verified_events"] == 100
+    assert result["coverage"]["distinct_verified_outcome_groups"] == 100
     assert result["coverage"]["forecast_rows"] == 100
     assert result["coverage"]["heldout_events"] == 0
     assert "fewer_than100_independent_heldout_events" in result["certification"]["deficiencies"]
@@ -241,7 +241,7 @@ def test_future_data_and_contradictory_labels_are_excluded():
     b = bundle()
     future = b.events[0].model_copy(update={"available_at": NOW + timedelta(days=1)})
     report = evaluate_bundle(b.model_copy(update={"events": (future, *b.events[1:])}))
-    assert report["coverage"]["independent_verified_events"] == 199
+    assert report["coverage"]["distinct_verified_outcome_groups"] == 199
     assert "future_record_unavailable_as_of_bundle" in report["certification"]["deficiencies"]
     contradictory = b.events[0].model_copy(update={"id": "changed", "outcome": 1 - b.events[0].outcome})
     report = evaluate_bundle(b.model_copy(update={"events": (*b.events, contradictory)}))

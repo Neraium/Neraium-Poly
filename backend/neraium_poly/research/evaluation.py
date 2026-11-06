@@ -88,6 +88,8 @@ def _rows(bundle):
             and e.available_at >= e.settlement_at
         ]
         if not valid:
+            if any(e.outcome_verified and e.settlement_at is None for e in events):
+                reasons.add("verified_outcome_missing_exact_settlement_time")
             continue
         by_token = defaultdict(set)
         for event in valid:
@@ -359,6 +361,7 @@ def evaluate_bundle(bundle: ResearchBundle) -> dict:
     dataset_hash = _canonical(bundle)
     rows, verified_count, reasons = _rows(bundle)
     reasons.update(bundle.deficiencies)
+    reasons.add("cross_event_dependency_review_required")
     contradictory = False
     for kind in ("events", "prices", "books", "context"):
         seen = {}
@@ -542,9 +545,20 @@ def evaluate_bundle(bundle: ResearchBundle) -> dict:
         "dataset_hash": dataset_hash,
         "evaluation_as_of": bundle.available_at.isoformat(),
         "analysis_mode": "point_in_time_archive" if archive_mode else "retrospective_event_time_only",
+        "uncertainty_basis": "Nominal event-level intervals assume independence; cross-event dependency review is missing",
         "coverage": {
             "events": len(bundle.events),
-            "independent_verified_events": verified_count,
+            "distinct_verified_outcome_groups": verified_count,
+            "reported_verified_outcome_groups": len(
+                {
+                    e.event_id
+                    for e in bundle.events
+                    if e.outcome_verified and e.available_at <= bundle.available_at
+                }
+            ),
+            "causally_usable_verified_outcome_groups": verified_count,
+            "independent_verified_events": 0,
+            "independence_basis": "Event/parent-ID deduplication only; asset/series and overlapping-window dependence not reviewed",
             "forecast_rows": len(rows),
             "train_events": len(train),
             "heldout_events": len(test),

@@ -39,6 +39,7 @@ def documents(tmp_path, now, mutate=None):
                 "source": "https://clob.polymarket.com",
                 "market_id": f"m-{i}",
                 "event_id": f"e-{i}",
+                "dependency_group": f"TEST-ONLY independently-assumed-event-{i}",
                 "probability": 0.4,
                 "outcome": int(i % 20 < 17),
                 "label_available_at": (at + timedelta(minutes=1)).isoformat(),
@@ -69,6 +70,8 @@ def documents(tmp_path, now, mutate=None):
         "dataset_sha256": "pending",
         "train_cutoff": cutoff.isoformat(),
         "expires_at": (now + timedelta(days=2)).isoformat(),
+        "dependency_reviewed": True,
+        "dependency_review_method": "Controlled test assertion of independent event groupings; no actual research claim.",
         "provenance_reviewed": True,
         "provenance_reviewer": "controlled-test-reviewer",
         "collection_description": "Controlled assertions; this file is not empirical research.",
@@ -315,3 +318,12 @@ def test_owner_request_integrity_and_context_reject(tmp_path, now):
     with pytest.raises(ValueError, match="changed"):
         store.approve(report.id, "operator", now, **owner)
     assert store.load_active(now) is None
+
+
+def test_distinct_event_ids_do_not_override_shared_dependency(tmp_path, now):
+    def correlated(rows, manifest):
+        rows[200]["dependency_group"] = rows[0]["dependency_group"]
+
+    dataset, manifest = documents(tmp_path, now, correlated)
+    report = ValidationStore(":memory:").validate(dataset, manifest, now)
+    assert not report.passed and "duplicate_or_correlated_dependency_groups" in report.reasons

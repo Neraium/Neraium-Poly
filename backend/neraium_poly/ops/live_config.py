@@ -12,8 +12,8 @@ class LivePaperConfig(BaseModel):
     data_dir: Path = Path("data/paper-live")
     host: str = "127.0.0.1"
     port: int = Field(default=18742, ge=1024, le=65535)
-    max_markets: int = Field(default=50, ge=1, le=200)
-    page_size: int = Field(default=50, ge=1, le=100)
+    max_markets: int = Field(default=200, ge=1, le=500)
+    page_size: int = Field(default=100, ge=1, le=100)
     max_pages: int = Field(default=4, ge=1, le=10)
     books_per_cycle: int = Field(default=100, ge=1, le=400)
     cycle_interval_seconds: float = Field(default=5, ge=1, le=300)
@@ -22,6 +22,17 @@ class LivePaperConfig(BaseModel):
     min_free_disk_mb: int = Field(default=2048, ge=100)
     max_relationships: int = Field(default=200, ge=1, le=1000)
     max_book_age_seconds: float = Field(default=15, gt=0, le=60)
+    coverage_enabled: bool = True
+    websocket_enabled: bool = True
+    rotate_liquid_universe: bool = False
+    collection_concurrency: int = Field(default=4, ge=1, le=16)
+    request_rate: float = Field(default=8, gt=0, le=20)
+    max_subscription_tokens: int = Field(default=800, ge=1, le=2000)
+    stream_queue_size: int = Field(default=512, ge=1, le=10000)
+    research_bundle_path: Path | None = None
+    research_report_path: Path | None = None
+    public_archive_report_path: Path | None = None
+    research_interval_seconds: float = Field(default=3600, ge=60, le=86400)
     max_fee_age_seconds: float = Field(default=300, gt=0, le=3600)
     owner_public_key: Path | None = None
     allow_simulated_settlement: bool = False
@@ -37,6 +48,8 @@ class LivePaperConfig(BaseModel):
             not self.settlement_rule_hashes or not self.settlement_review_actor.strip()
         ):
             raise ValueError("simulated settlement requires separately reviewed token rule hashes and actor")
+        if self.coverage_enabled and self.max_markets * 2 > self.max_subscription_tokens:
+            raise ValueError("subscription cap must cover configured binary market universe")
         if self.host != "127.0.0.1":
             raise ValueError("operational API must bind loopback")
         if self.position_tier not in ("standard", "high", "exceptional"):

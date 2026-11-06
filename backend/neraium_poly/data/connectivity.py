@@ -281,6 +281,10 @@ class CoverageFeed:
             self._metrics["gaps"] += 1
             self.last_gap_at = self.adapter.clock()
 
+    async def execution_book(self, token: str):
+        """A pending order cannot bypass resolution/gap guards via raw REST."""
+        return await self._resnapshot(token)
+
     async def _resnapshot(self, token: str):
         self.latest.pop(token, None)
         market = self._markets.get(token)
@@ -474,7 +478,7 @@ class CoverageFeed:
                 self._invalidate(gap=False)
                 self._queue = asyncio.Queue(maxsize=self.queue_size)
                 async with self.connector(
-                    MARKET_WS, open_timeout=15, close_timeout=5, ping_interval=None, max_size=4 * 1024 * 1024
+                    MARKET_WS, open_timeout=15, close_timeout=5, ping_interval=None, max_size=16 * 1024 * 1024
                 ) as socket:
                     await socket.send(json.dumps({"assets_ids": list(self._markets), "type": "market"}))
                     self.connected = True

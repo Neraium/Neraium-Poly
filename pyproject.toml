@@ -10,6 +10,9 @@ dependencies = ["pydantic>=2.10,<3", "httpx>=0.28,<1", "fastapi>=0.115,<1", "uvi
 
 [project.optional-dependencies]
 dev = ["pytest>=8,<10", "pytest-asyncio>=0.25,<2", "ruff>=0.9,<1", "pip-audit>=2.8,<3"]
+research = [
+    "pyarrow>=26,<27",
+]
 
 [project.scripts]
 neraium-poly = "neraium_poly.cli:main"

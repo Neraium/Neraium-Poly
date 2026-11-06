@@ -70,6 +70,7 @@ class ValidationPolicy(BaseModel):
 
 class ValidationObservation(LabeledForecast):
     partition: Literal["train", "heldout"]
+    dependency_group: str = ""
     book: OrderBookSnapshot
     independent_evidence_source: str
     independent_evidence_ref: str
@@ -95,6 +96,8 @@ class ValidationManifest(BaseModel):
     dataset_sha256: str
     train_cutoff: datetime
     expires_at: datetime
+    dependency_reviewed: bool = False
+    dependency_review_method: str = ""
     provenance_reviewed: bool = False
     provenance_reviewer: str = ""
     collection_description: str = ""
@@ -223,6 +226,8 @@ class ValidationStore:
                 reasons.append("dataset_hash_mismatch")
             if manifest.data_origin != "real":
                 reasons.append("real_observations_required")
+            if not manifest.dependency_reviewed or len(manifest.dependency_review_method.strip()) < 30:
+                reasons.append("cross_event_dependency_review_required")
             if not manifest.provenance_reviewed or not manifest.provenance_reviewer.strip():
                 reasons.append("independent_provenance_review_required")
             if (
@@ -264,6 +269,10 @@ class ValidationStore:
             reasons.append("insufficient_training_events")
         if len(heldout) < policy.minimum_heldout_events:
             reasons.append("insufficient_heldout_events")
+        if any(not r.dependency_group.strip() for r in observations):
+            reasons.append("reviewed_dependency_groups_required")
+        if len({r.dependency_group for r in observations}) != len(observations):
+            reasons.append("duplicate_or_correlated_dependency_groups")
         for row in observations:
             if (
                 not _source(row.source)
@@ -290,7 +299,8 @@ class ValidationStore:
                 reasons.append("training_or_holdout_leakage")
             book = row.book
             if (
-                book.source != "https://clob.polymarket.com"
+                book.source
+                not in {"https://clob.polymarket.com", "wss://ws-subscriptions-clob.polymarket.com/ws/market"}
                 or book.market_id != row.market_id
                 or not book.complete
                 or not book.asks
@@ -531,6 +541,13 @@ class ValidationStore:
                     raise ValueError("explicit_approval_audit_missing_or_changed")
                 report, data, raw, policy = self._stored(active["report_id"])
                 manifest = ValidationManifest.model_validate_json(raw)
+                dependency_groups = [r.get("dependency_group", "") for r in json.loads(data)]
+                if (
+                    not manifest.dependency_reviewed
+                    or not all(dependency_groups)
+                    or len(set(dependency_groups)) != len(dependency_groups)
+                ):
+                    raise ValueError("Current event-independence review required")
                 owner = self.db.execute(
                     "SELECT * FROM owner_approvals WHERE report_id=?", (report.id,)
                 ).fetchone()
