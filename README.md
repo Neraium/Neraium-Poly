@@ -4,6 +4,20 @@
 
 Python modular monolith · React/TypeScript dashboard · versioned Pydantic contracts · SQLite research ledgers · public Polymarket data adapter.
 
+Phase14 adds domain-neutral discovery, evidence/model contracts, weather/crypto/
+economic research adapters and a multi-domain SSH view:
+
+```sh
+uv run neraium-poly monitor --view domains
+uv run neraium-poly monitor --view events
+uv run neraium-poly monitor --view research
+```
+
+See [architecture](docs/phase14-architecture.md), [actual readiness and limitations](docs/phase14-readiness.md)
+and [storage audit](docs/phase14-storage.md). Persistent collection is currently
+capacity-blocked; cached markets are not fresh books. New models remain
+research-only, and no independent non-sports forecasting advantage is claimed.
+
 ## Isolated experimental research and SSH monitor
 
 ```sh

@@ -1,0 +1,327 @@
+{
+  "observed_at": "2026-11-06T09:56:03.457202+00:00",
+  "head": "f630ac1b37f65f343a08b473f1082ec5d37d7e98",
+  "root_free_bytes": 2764972032,
+  "account_table_hashes_unchanged": true,
+  "baseline_journal_unchanged": true,
+  "sports_journal_unchanged": true,
+  "sports_journal_integrity": {
+    "records": 2,
+    "head_sha256": "99cae7acba2bf51e98df23f75be2201010c003bc8e871a7a4d5f1d287228f590",
+    "integrity": "verified"
+  },
+  "services": {
+    "neraium-poly-paper": {
+      "pid": 2981665,
+      "flags": [
+        "PAPER_TRADING=true",
+        "LIVE_TRADING_ENABLED=false"
+      ]
+    },
+    "neraium-poly-experimental": {
+      "pid": 3137664,
+      "flags": [
+        "PAPER_TRADING=true",
+        "LIVE_TRADING_ENABLED=false"
+      ]
+    }
+  },
+  "experimental": {
+    "cash": 500.0,
+    "bankroll": 500.0,
+    "equity": 500.0,
+    "simulated_pnl": 0.0,
+    "fills": 0,
+    "orders_attempted": 0,
+    "orders_submitted": 0,
+    "positions": [],
+    "kill_switch": true
+  },
+  "certified": {
+    "cash": 500.0,
+    "bankroll": 500.0,
+    "simulated_pnl": 0.0,
+    "positions": []
+  },
+  "domains": {
+    "schema_version": "1.0",
+    "status": "storage_blocked",
+    "market_source_status": "degraded_cached_universe",
+    "last_frame_at": "2026-11-06T09:56:02.537920+00:00",
+    "last_error": "domain_durable_storage_below_8GiB_floor",
+    "markets_monitored": 200,
+    "domains": {
+      "weather": {
+        "monitored_markets": 1,
+        "fresh_markets": 0,
+        "structurally_supported_markets": 1,
+        "independent_forecasts": 0,
+        "pending": 0,
+        "resolved": 0,
+        "model_versions": [],
+        "capability": "observations implemented; qualified predictive distribution unavailable"
+      },
+      "crypto": {
+        "monitored_markets": 34,
+        "fresh_markets": 0,
+        "structurally_supported_markets": 10,
+        "independent_forecasts": 0,
+        "pending": 0,
+        "resolved": 0,
+        "model_versions": [],
+        "capability": "closed-candle evidence implemented; terminal time convention requires review"
+      },
+      "finance": {
+        "monitored_markets": 0,
+        "fresh_markets": 0,
+        "structurally_supported_markets": 0,
+        "independent_forecasts": 0,
+        "pending": 0,
+        "resolved": 0,
+        "model_versions": [],
+        "capability": "exact reference/settlement interpretation required; no general price model"
+      },
+      "economics": {
+        "monitored_markets": 9,
+        "fresh_markets": 0,
+        "structurally_supported_markets": 0,
+        "independent_forecasts": 0,
+        "pending": 0,
+        "resolved": 0,
+        "model_versions": [],
+        "capability": "official calendar context implemented; vintage/model evidence insufficient"
+      },
+      "politics": {
+        "monitored_markets": 6,
+        "fresh_markets": 0,
+        "structurally_supported_markets": 0,
+        "independent_forecasts": 0,
+        "pending": 0,
+        "resolved": 0,
+        "model_versions": [],
+        "capability": "evidence/interpretation contracts only; human review required"
+      },
+      "sports": {
+        "monitored_markets": 6,
+        "fresh_markets": 0,
+        "structurally_supported_markets": 0,
+        "independent_forecasts": 2,
+        "pending": 2,
+        "resolved": 0,
+        "model_versions": [
+          {
+            "model_version": "sports-independent-baselines-v1/frequency",
+            "model_sha256": "886b8b4054711106a7bccfc086f461d33e8984a05cef16db2e94db665c197654",
+            "feature_version": "causal-external-publisher-results-v1"
+          }
+        ],
+        "capability": "legacy NFL ternary research preserved; no trading authority",
+        "forecast_scope": "Read-only Phase13 ternary journal; no duplicated records"
+      },
+      "esports": {
+        "monitored_markets": 13,
+        "fresh_markets": 0,
+        "structurally_supported_markets": 0,
+        "independent_forecasts": 0,
+        "pending": 0,
+        "resolved": 0,
+        "model_versions": [],
+        "capability": "evidence/interpretation contracts only; human review required"
+      },
+      "technology": {
+        "monitored_markets": 0,
+        "fresh_markets": 0,
+        "structurally_supported_markets": 0,
+        "independent_forecasts": 0,
+        "pending": 0,
+        "resolved": 0,
+        "model_versions": [],
+        "capability": "evidence/interpretation contracts only; human review required"
+      },
+      "science": {
+        "monitored_markets": 0,
+        "fresh_markets": 0,
+        "structurally_supported_markets": 0,
+        "independent_forecasts": 0,
+        "pending": 0,
+        "resolved": 0,
+        "model_versions": [],
+        "capability": "evidence/interpretation contracts only; human review required"
+      },
+      "geopolitics": {
+        "monitored_markets": 0,
+        "fresh_markets": 0,
+        "structurally_supported_markets": 0,
+        "independent_forecasts": 0,
+        "pending": 0,
+        "resolved": 0,
+        "model_versions": [],
+        "capability": "evidence/interpretation contracts only; human review required"
+      },
+      "entertainment": {
+        "monitored_markets": 0,
+        "fresh_markets": 0,
+        "structurally_supported_markets": 0,
+        "independent_forecasts": 0,
+        "pending": 0,
+        "resolved": 0,
+        "model_versions": [],
+        "capability": "evidence/interpretation contracts only; human review required"
+      },
+      "other": {
+        "monitored_markets": 131,
+        "fresh_markets": 0,
+        "structurally_supported_markets": 0,
+        "independent_forecasts": 0,
+        "pending": 0,
+        "resolved": 0,
+        "model_versions": [],
+        "capability": "evidence/interpretation contracts only; human review required"
+      }
+    },
+    "discovered_markets": 0,
+    "discovery": {},
+    "source_reports": {},
+    "model_registry": {
+      "crypto": {
+        "model_version": "binance-terminal-logdiffusion-research-v1",
+        "feature_version": "closed-contiguous-1m-logreturns-v1",
+        "supported_contract_types": [
+          "binance_minute_terminal_close_above"
+        ],
+        "input_requirements": [
+          "exact reviewed candle-time convention",
+          "720+ completed causal contiguous reference candles",
+          "held-out calibration missing"
+        ],
+        "authorization": "research_only",
+        "trading_authority": false
+      },
+      "weather": {
+        "model_version": "weather-observation-research-v1",
+        "feature_version": "exact-metAR-station-variable-window-v1",
+        "supported_contract_types": [
+          "metar_daily_high_celsius_bin"
+        ],
+        "input_requirements": [
+          "exact station/units/local observation window",
+          "qualified calibrated predictive distribution unavailable"
+        ],
+        "authorization": "research_only",
+        "trading_authority": false
+      },
+      "economics": {
+        "model_version": "official-economic-context-only-v1",
+        "feature_version": "release-vintage-qualification-v1",
+        "supported_contract_types": [
+          "fomc_target_upper_bound_change"
+        ],
+        "input_requirements": [
+          "exact first-release vintage",
+          "verified publication availability",
+          "qualified probability model unavailable"
+        ],
+        "authorization": "research_only",
+        "trading_authority": false
+      }
+    },
+    "totals": {
+      "cycles": 48,
+      "source_attempts": 0,
+      "source_successes": 0,
+      "forecasts": 0
+    },
+    "rejections": {
+      "fresh_healthy_public_frame_required_for_domain_forecasts": 48
+    },
+    "ledger": {
+      "forecasts": 0,
+      "outcomes": 0,
+      "evidence_records": 0,
+      "domains": {}
+    },
+    "book_metrics": {},
+    "relationships": {
+      "qualified_findings": 0,
+      "reason": "No reviewed aligned cross-domain evidence"
+    },
+    "experimental_opportunities": 0,
+    "event_order_attempts": 0,
+    "outcome_collection": {
+      "status": "not_active; storage/provenance gates"
+    },
+    "trading_authority": false,
+    "certification_authority": false,
+    "scores": {
+      "brier": null,
+      "log_loss": null,
+      "confidence_interval": null,
+      "reason": "No reviewed independent resolved domain cohort"
+    },
+    "counter_scope": "market counts current cached/fresh frame; totals/rejections cumulative; forecasts durable journal"
+  },
+  "sports_summary": {
+    "ternary_forecasts": 2,
+    "ternary_pending": 2,
+    "ternary_resolved": 0,
+    "source_games": 842,
+    "calibration_status": "insufficient prospective independent outcomes"
+  },
+  "baseline_summary": {
+    "forecasts": 39,
+    "pending": null,
+    "resolved": null,
+    "integrity": {
+      "records": 117,
+      "head_sha256": "e5fd13f29864dd62bae9c22b0c22492b7e03171d86eb161a8e4ff2d19b1c801b",
+      "integrity": "verified"
+    }
+  },
+  "frame": {
+    "timestamp": "2026-11-06T09:56:03.061411Z",
+    "producer_health": {
+      "status": "degraded",
+      "last_error": "archive_or_disk_budget_exhausted",
+      "books_withheld_at_export": 0,
+      "last_ingestion_at": "2026-11-06T07:32:49.507749+00:00",
+      "paper_trading": true,
+      "live_trading_enabled": false
+    },
+    "connectivity": {
+      "messages": 11472308,
+      "native_book_frames": 90675,
+      "native_delta_frames": 11367987,
+      "native_books_delivered": 17453811,
+      "rest_books": 109475,
+      "reconnects": 1,
+      "gaps": 4926673,
+      "out_of_order": 447431,
+      "queue_overflows": 0,
+      "invalid_frames": 0,
+      "callbacks_failed": 0,
+      "invalidations": 4927698,
+      "resnapshot_failures": 0,
+      "gap_missing_baseline": 4882151,
+      "gap_source_time": 24034,
+      "gap_top_integrity": 19105,
+      "gap_invalid_delta": 1250,
+      "stale_recovery_baselines": 2398,
+      "ws_connected": false,
+      "subscribed_tokens": 400,
+      "cached_books": 0,
+      "resolved_tokens_withheld": 0,
+      "gap_tokens_withheld": 10,
+      "fresh_books": 0,
+      "queue_depth": 0,
+      "resnapshot_pending": 0,
+      "connection_generation": 112,
+      "last_message_at": "2026-11-06T07:32:49.507099+00:00",
+      "last_gap_at": "2026-11-06T07:32:49.328652+00:00",
+      "http_requests": 110052,
+      "http_rate_limits": 0,
+      "http_peak_inflight": 4,
+      "rate_requests_per_second": 8.0
+    }
+  },
+  "baseline_journal_records": 117
+}

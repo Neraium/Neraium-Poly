@@ -1,5 +1,5 @@
 # Phase14 universal prediction intelligence
-Status: in-progress
+Status: blocked-capacity (independently executable source implementation verified)
 Baseline: e16d789d7a1ac907c74c093f9ad83748b619f737, main,/home/ubuntu/Neraium-Poly.
 Direction: domain-neutral discovery, evidence and forecasts; preserve sports and all journals/accounts.
 Checkpoint: committedbaseline and logicalsourcecommits; no reset/stash. Existinguntrackedinspectionpreserved.
@@ -7,11 +7,11 @@ Checkpoint: committedbaseline and logicalsourcecommits; no reset/stash. Existing
 ## Phase End Conditions
 | Phase | Status | Condition | validator_retries_remaining |
 |---|---|---|---|
-| 1 inspect/contracts/storage | in-progress | actual health/resources, readonly storage audit, schemas | 3 |
-| 2 parallel adapters | pending | discovery/classification/weather/finance/economics/general contracts+actual bounded observations | 3 |
-| 3 integration | pending | universal journal/SII/domain monitor with legacy compatibility and no order authority | 3 |
-| 4 certification | pending | backend/browser/replay/temporal/risk/audits/CI | 3 |
-| 5 delivery | pending | report/blocked-capacity limitations, committed/pushed/resumable | 3 |
+| 1 inspect/contracts/storage | blocked-capacity | audit complete; no approved secondary destination; root below8GiB | 3 |
+| 2 parallel adapters | completed | bounded real source captures and domain contracts; no new qualified non-sports forecasts | 3 |
+| 3 integration | completed | guarded universal journal/runtime/SII/domain monitor; no order authority | 3 |
+| 4 certification | completed |797backend/5browser/build/audits pass; GitHubCI42198626025success onf630ac1 | 3 |
+| 5 delivery | completed | docs/evidence/handoff committed/pushed; overall operational phase remains capacity-blocked | 3 |
 
 ## Shared ownership
 Coordinator owns phase14/contracts.py, universalledger/runtime/SII, main integration/monitor.
@@ -33,4 +33,23 @@ Continueindependentdevelopment. No secondarypersistentmountconfirmed.
 ## Exit Evidence
 | Target | ID | Type | Required | Evidence | Status | Subject |
 |---|---|---|---|---|---|---|
-|phase:1|contracts|file_diff|yes|backend/neraium_poly/research/phase14/contracts.py|pending|sharedfoundation|
+|phase:1|contracts|file_diff|yes|backend/neraium_poly/research/phase14/contracts.py|passed|sharedfoundation|
+|phase:1|capacity|file_exists|yes|.planning/evidence/phase14/service-verification.json|blocked|below8GiB,noapprovedsecondarydestination|
+|phase:2|sources|file_exists|yes|.planning/evidence/phase14-experiments/sources.json|passed|actualboundedvolatilecaptures,noqualifiednewforecasts|
+|phase:3|integration|file_exists|yes|.planning/evidence/phase14/service-verification.json|passed|cachedmetadataonly,noexecutioninputs,paperflagsandaccountsverified|
+|phase:4|tests|file_exists|yes|.planning/evidence/phase14/final-tests/summary.json|passed|797backend,5browser,build,audits|
+
+## Current checkpoint
+Source HEAD f630ac1, branch main, checkout /home/ubuntu/Neraium-Poly. Source pushed.
+Three simultaneous writing agents in separate native worktrees, plus coordinator.
+Two real analysis workers overlapped; repeated reports byte-identical. Two parallel
+pytest coordinators passed797tests, with bounded nested CPU workers in the existing
+framework test; one browser worker passed5tests. No32agent claim.
+At09:56:03UTC root free2,764,972,032bytes. Only verified disposable cleanup reclaimed
+452,878,336bytes. Original archives/dbs/repos/evidence preserved; all floor/cap limits
+unchanged. Bothservicesactivebutbudget-degraded,WSdisconnected,0freshbooks.
+200cachedmarkets,39marketbaselines,2NFLternarypending,0newdomains/0orders/0fills.
+Bothaccounts500cash/PnL0; hashes/oldjournals unchanged. Liveflagsfalse.
+Next: approveddurablecapacity/integrityverifiedarchiveplan; source revalidation;
+reviewedweatherdistribution/cryptoconvention/economicvintages; independentdomain
+outcomeverifiers. No automatic kill-switchclear/thresholdlowering/modelpromotion.
