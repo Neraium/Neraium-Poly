@@ -1,0 +1,16 @@
+{
+  "verdict": "pass",
+  "phase": 4,
+  "subject": "a2de88e6c10200a046bfebac5499b481f809160a",
+  "independent_backend_tests": 140,
+  "independent_workflow_tests": 10,
+  "independent_ruff": "passed",
+  "independent_npm_vulnerabilities": 0,
+  "browser_evidence": "coordinator3 passed; independent rerun declined occupied port without stopping service",
+  "limitations": [
+    "Synthetic evidence only; no real profitability claim",
+    "Upstream Starlette TestClient deprecation",
+    "Temporal relationship recovery requires input replay"
+  ],
+  "required_omissions": []
+}
