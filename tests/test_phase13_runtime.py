@@ -26,8 +26,11 @@ def controlled(tmp_path, monkeypatch):
     source_module, mapping_module, model_module = [
         types.ModuleType("controlled " + name) for name in ("source", "mapping", "model")
     ]
+    import neraium_poly.research.phase13 as package
+
     for name, module in [("sources", source_module), ("mapping", mapping_module), ("models", model_module)]:
         monkeypatch.setitem(sys.modules, "neraium_poly.research.phase13." + name, module)
+        monkeypatch.setattr(package, name, module, raising=False)
     m, b = market(NOW), book(NOW)
     directory = tmp_path / "sports"
     snapshot = directory / "sources/controlled"
@@ -250,5 +253,48 @@ def test_cannot_replace_an_existing_independent_reviewer(tmp_path):
     try:
         with pytest.raises(ValueError, match="replace"):
             SportsResearchRuntime(ledger, tmp_path / "sports", clock=lambda: NOW)
+    finally:
+        ledger.close()
+
+
+def test_uncorroborated_independent_claim_cannot_use_binary_ledger_reviewer(controlled):
+    r, _ledger, _frame, _raw, _data, _model = controlled
+    assert r.validate_forecast(object(), ()) is False
+
+
+def test_model_replay_mismatch_withholds_prospective_append(controlled):
+    r, _ledger, frame, _raw, _data, model = controlled
+    original = model.predict_game
+    calls = []
+
+    def changing(*args, **kwargs):
+        result = original(*args, **kwargs)
+        calls.append(1)
+        return result if len(calls) == 1 else result.model_copy(update={"training_games": 51})
+
+    model.predict_game = changing
+    r.on_frame(frame, NOW)
+    assert not r.journal.records("forecast")
+    assert r.rejections["sports_model_replay_failed"] == 1
+
+
+def test_child_initialization_failure_closes_journal_and_preserves_ledger_reviewer(tmp_path, monkeypatch):
+    from neraium_poly.research.phase13.relationships import SportsRelationshipResearch
+
+    ledger = EventForecastLedger(tmp_path / "binary", clock=lambda: NOW)
+
+    def fail(*args):
+        raise ValueError("controlled invalid relationship checkpoint")
+
+    monkeypatch.setattr(SportsRelationshipResearch, "restore", fail)
+    try:
+        with pytest.raises(ValueError, match="controlled invalid"):
+            SportsResearchRuntime(
+                ledger, tmp_path / "sports", clock=lambda: NOW, state={"relationships": {"bad": True}}
+            )
+        assert ledger.independent_forecast_validator is None
+        recovered = SportsForecastJournal(tmp_path / "sports")
+        assert recovered.verify()["records"] == 0
+        recovered.close()
     finally:
         ledger.close()
