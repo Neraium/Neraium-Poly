@@ -342,3 +342,96 @@ async def test_unavailable_rest_does_not_manufacture_liquidity(now, market):
     finally:
         await f.close()
         await client.aclose()
+
+
+async def test_429_retry_after_applies_to_all_following_requests(monkeypatch):
+    import neraium_poly.data.connectivity as module
+
+    clock = [100.0]
+    starts = []
+
+    async def sleep(delay):
+        clock[0] += delay
+
+    monkeypatch.setattr(module, "monotonic", lambda: clock[0])
+    responses = iter([429, 200])
+
+    async def handler(request):
+        starts.append(clock[0])
+        return httpx.Response(next(responses), json=[], headers={"Retry-After": "5"})
+
+    client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+    adapter = ConcurrentPublicAdapter(client=client, sleep=sleep, retries=1, rate=20)
+    try:
+        with pytest.raises(httpx.HTTPStatusError):
+            await adapter._get(GAMMA, "/markets")
+        assert adapter._next_start >= 105
+        assert await adapter._get(GAMMA, "/markets") == []
+        assert starts[1] - starts[0] >= 5
+    finally:
+        await client.aclose()
+
+
+async def test_global_cooldown_extension_while_another_request_waits(monkeypatch):
+    import neraium_poly.data.connectivity as module
+
+    clock = [100.0]
+    calls = 0
+    monkeypatch.setattr(module, "monotonic", lambda: clock[0])
+    adapter = None
+
+    async def sleep(delay):
+        nonlocal calls
+        calls += 1
+        clock[0] += delay
+        if calls == 1:
+            adapter._next_start = clock[0] + 5
+
+    starts = []
+
+    async def handler(request):
+        starts.append(clock[0])
+        return httpx.Response(200, json=[])
+
+    client = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+    adapter = ConcurrentPublicAdapter(client=client, sleep=sleep, rate=20)
+    adapter._next_start = 101
+    try:
+        await adapter._get(GAMMA, "/markets")
+        assert starts == [106] and calls == 2
+    finally:
+        await client.aclose()
+
+
+@pytest.mark.parametrize("payload", [{"assets_ids": ["t1"]}, {"conditionId": "unknown-condition"}])
+async def test_resolution_scope_invalidates_and_withholds_closed_tokens(feed, now, market, payload):
+    await feed.handle(full(now))
+    await feed.handle({"event_type": "market_resolved", **payload})
+    assert not feed.latest
+    assert not await feed.handle(full(now))
+    assert not await feed.books([market])
+    assert feed.metrics()["resolved_tokens_withheld"] == 1
+
+
+async def test_tick_change_without_asset_identifier_invalidates_all(feed, now):
+    await feed.handle(full(now))
+    await feed.handle({"event_type": "tick_size_change", "conditionId": "unknown-condition"})
+    assert not feed.latest
+
+
+async def test_rest_resnapshot_cannot_regress_newer_native_state(feed, now):
+    later = now + timedelta(seconds=1)
+
+    async def stale_response(market_id, token_id):
+        # A newer native frame arrives while REST was awaiting network IO.
+        feed.latest[token_id] = OrderBookSnapshot.model_validate(
+            {**(await feed.handle(full(now)))[0].model_dump(), "timestamp": later, "available_at": later}
+        )
+        return OrderBookSnapshot.model_validate(
+            {**feed.latest[token_id].model_dump(), "timestamp": now, "available_at": now}
+        )
+
+    feed.adapter.book = stale_response
+    result = await feed._resnapshot("t1")
+    assert result.timestamp == later and feed.latest["t1"].timestamp == later
+    assert feed.metrics()["out_of_order"] == 1

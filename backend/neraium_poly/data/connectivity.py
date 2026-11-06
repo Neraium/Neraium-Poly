@@ -57,10 +57,17 @@ class ConcurrentPublicAdapter(OperationalPolymarketAdapter):
         for attempt in range(self.retries):
             async with self._semaphore:
                 async with self._rate_lock:
-                    delay = max(0, self._next_start - monotonic())
-                    if delay:
-                        await self.sleep(delay)
-                    self._next_start = monotonic() + 1 / self.rate
+                    # A 429 response may extend the global start time while a
+                    # different request is sleeping here. Recheck before IO.
+                    while True:
+                        target = self._next_start
+                        delay = max(0, target - monotonic())
+                        if delay:
+                            await self.sleep(delay)
+                        if self._next_start > target:
+                            continue
+                        self._next_start = max(monotonic(), target) + 1 / self.rate
+                        break
                 self.requests += 1
                 self._inflight += 1
                 self.peak_inflight = max(self.peak_inflight, self._inflight)
@@ -76,15 +83,19 @@ class ConcurrentPublicAdapter(OperationalPolymarketAdapter):
             if response is not None and response.status_code not in {429, 500, 502, 503, 504}:
                 response.raise_for_status()
                 return response.json()
-            if response is not None:
-                if response.status_code == 429:
-                    self.rate_limits += 1
-                if attempt == self.retries - 1:
-                    response.raise_for_status()
             delay = min(30, 2**attempt)
             if response is not None:
                 with suppress(ValueError):
-                    delay = max(delay, min(60, float(response.headers.get("Retry-After", "0"))))
+                    retry_after = float(response.headers.get("Retry-After", "0"))
+                    if math.isfinite(retry_after):
+                        delay = max(delay, min(60, retry_after))
+                if response.status_code == 429:
+                    self.rate_limits += 1
+                    # Single-loop atomic update is intentional: no await or
+                    # limiter lock can let another sleeping waiter miss it.
+                    self._next_start = max(self._next_start, monotonic() + delay)
+                if attempt == self.retries - 1:
+                    response.raise_for_status()
             await self.sleep(delay)
         raise RuntimeError("public request retry budget exhausted")
 
@@ -123,6 +134,7 @@ class CoverageFeed:
         self.connector, self.max_reconnects, self.max_gap_seconds = connector, max_reconnects, max_gap_seconds
         self.latest: dict[str, OrderBookSnapshot] = {}
         self._markets: dict[str, MarketSnapshot] = {}
+        self._resolved_tokens: set[str] = set()
         self._queue = asyncio.Queue(maxsize=queue_size)
         self._task = None
         self.connected = False
@@ -155,6 +167,7 @@ class CoverageFeed:
             "ws_connected": self.connected,
             "subscribed_tokens": len(self._markets),
             "cached_books": len(self.latest),
+            "resolved_tokens_withheld": len(self._resolved_tokens),
             "fresh_books": sum(assess_book(b, now).healthy for b in self.latest.values()),
             "queue_depth": self._queue.qsize(),
             "last_message_at": self.last_message_at.isoformat() if self.last_message_at else None,
@@ -223,6 +236,7 @@ class CoverageFeed:
             if unique[m.token_id].market_id != m.market_id:
                 raise ValueError("ambiguous token identity")
         self._markets = unique
+        self._resolved_tokens.intersection_update(unique)
         self.latest = {k: v for k, v in self.latest.items() if k in unique}
 
     async def books(
@@ -239,12 +253,18 @@ class CoverageFeed:
         self._cursor = (self._cursor + count) % len(values)
 
         async def one(m):
+            if m.token_id in self._resolved_tokens:
+                return None
             try:
                 b = await self.adapter.book(m.market_id, m.token_id)
-                old = self.latest.get(m.token_id)
-                if old is None or b.timestamp >= old.timestamp:
-                    self.latest[m.token_id] = b
                 self._metrics["rest_books"] += 1
+                if m.token_id in self._resolved_tokens:
+                    return None
+                old = self.latest.get(m.token_id)
+                if old is not None and b.timestamp < old.timestamp:
+                    self._metrics["out_of_order"] += 1
+                    return old
+                self.latest[m.token_id] = b
                 return b
             except (httpx.HTTPError, ValueError, TypeError, KeyError):
                 self.latest.pop(m.token_id, None)
@@ -264,12 +284,18 @@ class CoverageFeed:
     async def _resnapshot(self, token: str):
         self.latest.pop(token, None)
         market = self._markets.get(token)
-        if market is None:
+        if market is None or token in self._resolved_tokens:
             return None
         try:
             book = await self.adapter.book(market.market_id, token)
-            self.latest[token] = book
             self._metrics["rest_books"] += 1
+            if token in self._resolved_tokens:
+                return None
+            current = self.latest.get(token)
+            if current is not None and current.timestamp > book.timestamp:
+                self._metrics["out_of_order"] += 1
+                return current
+            self.latest[token] = book
             return book
         except (httpx.HTTPError, ValueError, TypeError, KeyError):
             return None
@@ -286,7 +312,7 @@ class CoverageFeed:
         if kind == "book":
             self._metrics["native_book_frames"] += 1
             token = str(payload.get("asset_id") or payload.get("assetId") or "")
-            if token not in self._markets:
+            if token not in self._markets or token in self._resolved_tokens:
                 return []
             try:
                 book = normalize_book(payload, self._markets[token].market_id, token, received)
@@ -315,7 +341,7 @@ class CoverageFeed:
                 if not isinstance(change, dict):
                     raise StreamGap("invalid price change")
                 token = str(change.get("asset_id") or change.get("assetId") or "")
-                if token in self._markets:
+                if token in self._markets and token not in self._resolved_tokens:
                     grouped[token].append(change)
             result = []
             for token, updates in grouped.items():
@@ -381,7 +407,17 @@ class CoverageFeed:
             return result
         if kind in {"tick_size_change", "market_resolved"}:
             token = str(payload.get("asset_id") or payload.get("assetId") or "")
-            tokens = [token] if token in self._markets else []
+            supplied = payload.get("assets_ids", payload.get("asset_ids", payload.get("assetIds", [])))
+            candidates = {str(value) for value in supplied} if isinstance(supplied, list) else set()
+            if token:
+                candidates.add(token)
+            tokens = sorted(candidates.intersection(self._markets))
+            # Condition IDs aren't Gamma market IDs. If the venue's event does
+            # not identify subscribed assets, do not guess an unaffected scope.
+            if not tokens:
+                tokens = list(self._markets)
+            if kind == "market_resolved":
+                self._resolved_tokens.update(tokens)
             self._invalidate(tokens)
         return []
 
