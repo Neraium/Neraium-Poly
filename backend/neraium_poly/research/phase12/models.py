@@ -45,6 +45,17 @@ def _parse(dataset):
         proof = json.dumps(outcome.verification, sort_keys=True, separators=(",", ":"), allow_nan=False)
         if hashlib.sha256(proof.encode()).hexdigest() != outcome.proof_sha256:
             raise ValueError("outcome verification integrity failed")
+        v = outcome.verification
+        if (
+            v.get("proof_status") != "rpc_corroborated_finalized_ctf_resolution"
+            or v.get("official_source_outcome_verified") is not True
+            or v.get("chain_id") != 137
+            or v.get("contract", "").lower() != "0x4d97dcd97ec945f40cf65f87097ace5ea0476045"
+            or type(v.get("block_number")) is not int
+            or type(v.get("finalized_height_at_acquisition")) is not int
+            or not 0 < v["block_number"] <= v["finalized_height_at_acquisition"]
+        ):
+            raise ValueError("supported finalized outcome proof required")
     return dataset.get("manifest", {}), events, evidence, outcomes
 
 

@@ -78,6 +78,14 @@ def dataset(count=60):
                 independent=True,
             )
         )
+        verification = {
+            "proof_status": "rpc_corroborated_finalized_ctf_resolution",
+            "official_source_outcome_verified": True,
+            "chain_id": 137,
+            "contract": "0x4d97dcd97ec945f40cf65f87097ace5ea0476045",
+            "block_number": 1,
+            "finalized_height_at_acquisition": 2,
+        }
         outcomes.append(
             VerifiedEventOutcome(
                 id=f"outcome-{n}",
@@ -92,9 +100,9 @@ def dataset(count=60):
                 settled_at=at + timedelta(hours=1),
                 verification_source="CONTROLLED fixture",
                 proof_sha256=hashlib.sha256(
-                    json.dumps({"finalized": True}, sort_keys=True, separators=(",", ":")).encode()
+                    json.dumps(verification, sort_keys=True, separators=(",", ":")).encode()
                 ).hexdigest(),
-                verification={"finalized": True},
+                verification=verification,
             )
         )
     return {"manifest": {"dataset_sha256": "a" * 64}, "events": events, "evidence": ev, "outcomes": outcomes}
@@ -291,3 +299,19 @@ def test_live_relationship_rejects_ambiguous_books_and_old_frame():
         engine.observe(ambiguous, NOW)
     assert engine.observe(f, NOW + timedelta(seconds=16))["status"] == "withheld"
     assert engine.cycles == 0
+
+
+def test_hash_valid_unfinalized_or_wrong_chain_outcome_is_not_verified():
+    data = dataset(1)
+    outcome = data["outcomes"][0]
+    for change in (
+        {"proof_status": "pending"},
+        {"chain_id": 1},
+        {"block_number": 3},
+        {"official_source_outcome_verified": False},
+    ):
+        v = {**outcome.verification, **change}
+        digest = hashlib.sha256(json.dumps(v, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
+        data["outcomes"][0] = outcome.model_copy(update={"verification": v, "proof_sha256": digest})
+        with pytest.raises(ValueError, match="supported finalized"):
+            build_samples(data)
