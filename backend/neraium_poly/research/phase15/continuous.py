@@ -2,6 +2,7 @@
 
 from copy import deepcopy
 from datetime import datetime
+from threading import RLock
 
 from neraium_poly.contracts import Record
 from neraium_poly.research.phase15.relationships import RelationshipResearch, digest
@@ -23,6 +24,8 @@ class ContinuousRelationships:
         self.store, self.interval = store, interval
         self.engine = RelationshipResearch(max_pairs=3)
         self.last_error = None
+        self._lock = RLock()
+        self._pending = None
         previous = store.latest("RelationshipStudy", limit=1)
         if previous:
             row = RelationshipStudy.model_validate(previous[0])
@@ -31,6 +34,17 @@ class ContinuousRelationships:
             self.engine.restore(row.checkpoint)
 
     def observe(self, frame, *, now):
+        with self._lock:
+            return self._observe(frame, now=now)
+
+    def _observe(self, frame, *, now):
+        if self._pending is not None:
+            # Reconcile an ambiguous segment-before-catalog commit idempotently
+            # before advancing the research timeline. Restart uses durable latest.
+            self.store.append(self._pending)
+            self.engine.restore(self._pending.checkpoint)
+            self._pending = None
+            self.last_error = None
         if self.engine.last_at and (now - datetime.fromisoformat(self.engine.last_at)).total_seconds() < self.interval:
             return False
         before = self.engine.checkpoint()
@@ -42,11 +56,13 @@ class ContinuousRelationships:
             raw = {key: [deepcopy(v) for v in frame[key] if v.get("token_id") in tokens]
                    for key in ("markets", "books")}
             checkpoint = self.engine.checkpoint()
-            self.store.append(RelationshipStudy(
+            self._pending = RelationshipStudy(
                 id=digest(["phase15-study", now.isoformat(), digest(raw)]),
                 timestamp=now, available_at=now, source="phase15-source-relationship-research",
                 raw_sources=raw, result=result, checkpoint=checkpoint,
-                checkpoint_sha256=digest(checkpoint)))
+                checkpoint_sha256=digest(checkpoint))
+            self.store.append(self._pending)
+            self._pending = None
             self.last_error = None
             return True
         except Exception:
@@ -56,6 +72,8 @@ class ContinuousRelationships:
             raise
 
     def summary(self):
-        return {**self.engine.summary(), "last_error": self.last_error,
-                "persistence": "append-only RelationshipStudy in managed service archive",
-                "interval_seconds": self.interval}
+        with self._lock:
+            return {**self.engine.summary(), "last_error": self.last_error,
+                    "pending_commit_reconciliation": self._pending is not None,
+                    "persistence": "append-only RelationshipStudy in managed service archive",
+                    "interval_seconds": self.interval}

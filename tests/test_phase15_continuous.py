@@ -101,3 +101,25 @@ async def test_continuous_runtime_recovery_preserves_isolated_stop(tmp_path, now
         assert runtime.account.snapshot(now=now)["kill_switch"] is True
     finally:
         await runtime.close()
+
+
+def test_ambiguous_commit_reconciles_before_next_research_cycle(tmp_path, monkeypatch):
+    store = EventStore(tmp_path / "controlled.sqlite")
+    try:
+        service = ContinuousRelationships(store)
+        append = store.append
+        def committed_then_failed(record):
+            append(record)
+            raise OSError("CONTROLLED committed segment before failed catalog acknowledgement")
+        monkeypatch.setattr(store, "append", committed_then_failed)
+        f, now = frame()
+        with pytest.raises(OSError):
+            service.observe(f, now=now)
+        assert store.count() == 1 and service.engine.cycles == 0
+        monkeypatch.setattr(store, "append", append)
+        f, later = frame(1)
+        assert service.observe(f, now=later)
+        assert service.engine.cycles == 2 and store.count() == 2
+        assert ContinuousRelationships(store).engine.checkpoint() == service.engine.checkpoint()
+    finally:
+        store.close()

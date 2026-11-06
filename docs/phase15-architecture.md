@@ -52,7 +52,9 @@ risk-controlled pathway and cannot consume this component as order authorization
 ## Operations and recovery
 
 `neraium-poly monitor --view operations` uses a compact loopback read-only endpoint,
-without loading full historical event or order histories. It exposes source freshness,
+without loading full historical event or order histories. Account and source observations
+can span adjacent cycles; they are not a multi-database atomic snapshot. Existing
+risk snapshots may expire reservations but cannot reset an emergency stop. It exposes source freshness,
 archives and capacity alerts, domain progress, capability prerequisites and both
 accounts. Missing or stale observations are labeled rather than shown as live.
 
