@@ -51,7 +51,7 @@ def _readonly(path):
 class ManagedEventStore:
     """Single-owner append-only event archive; budgets include the service tree."""
 
-    def __init__(self, path, *, segment_bytes, budget_bytes, min_free_bytes, compress=True, clock=None):
+    def __init__(self, path, *, segment_bytes, budget_bytes, min_free_bytes, compress=True, clock=None, cold_verification_enabled=False):
         if segment_bytes < 4096 or budget_bytes < segment_bytes or min_free_bytes < 0:
             raise ValueError("invalid bounded archive configuration")
         self.path = Path(path).absolute()
@@ -71,6 +71,11 @@ class ManagedEventStore:
         self._samples = deque(maxlen=64)
         self._cold = None
         self._cold_verified = {}
+        if type(cold_verification_enabled) is not bool:
+            raise ValueError("explicit boolean cold verification configuration required")
+        self.cold_verification_enabled = cold_verification_enabled
+        self._cold_scan_at = self._cold_success_at = self._cold_proof_name = None
+        self._cold_error = None
         self.directory.mkdir(parents=True, exist_ok=True)
         try:
             for p in [self.path, self.segment_dir, self.catalog_path, self.directory / "events-archive.lock"]:
@@ -188,6 +193,36 @@ class ManagedEventStore:
         self._verify_cold(name, row)
         with self._cold_reader().open(path, catalog_row=row) as source:
             yield source
+
+    def _maintain_cold_proof(self):
+        if not self.cold_verification_enabled:
+            if self._cold_error:
+                raise ValueError(self._cold_error)
+            return
+        now = self.clock()
+        if self._cold_scan_at is not None and (now - self._cold_scan_at).total_seconds() < 60:
+            if self._cold_error:
+                raise ValueError(self._cold_error)
+            return
+        self._cold_scan_at = now
+        for row in self.catalog.execute("SELECT * FROM segments WHERE status='sealed' AND gzip_sha IS NOT NULL ORDER BY name"):
+            path = self._source(row["name"])
+            if path.exists() and not Path(str(path) + ".cold-proof.json").exists():
+                from neraium_poly.data.cold import verify_cold_segment
+
+                try:
+                    self._check_budget(row["raw_size"] + 32768, refresh=True)
+                    verify_cold_segment(path, catalog_row=row, cache_directory=self.directory / "events-cold-cache",
+                                        min_free_bytes=max(self.min_free_bytes, 8 * 1024**3), max_cache_bytes=64 * 1024**2)
+                except Exception as error:  # Retain failed integrity admission between scans.
+                    self._cold_error = f"cold_verification:{type(error).__name__}:{str(error)[:160]}"
+                    raise
+                self._cold_error = None
+                self._cold_success_at, self._cold_proof_name = now, row["name"]
+                self._usage_at = None
+                return  # One complete independent restoration per scan, never an unbounded batch.
+        if self._cold_error:
+            raise ValueError(self._cold_error)
 
     def _catalog_record(self, row, segment):
         # Deliberately separate from segment commit: an orphan durable row is replayed.
@@ -498,6 +533,7 @@ class ManagedEventStore:
                     row = self.catalog.execute("SELECT * FROM segments WHERE status='sealed' AND gzip_sha IS NULL ORDER BY name LIMIT 1").fetchone()
                     if row:
                         self._compress(row)
+                self._maintain_cold_proof()
                 self._last_error = None
             except Exception as error:  # noqa: BLE001 - a maintenance failure must stop archive writes
                 self._last_error = f"archive_maintenance:{type(error).__name__}:{str(error)[:160]}"
@@ -585,6 +621,21 @@ class ManagedEventStore:
             missing = [r["name"] for r in sealed if not self._source(r["name"]).exists()]
             cache = self.directory / "events-cold-cache"
             cache_bytes = sum(p.stat().st_size for p in cache.iterdir() if p.is_file()) if cache.exists() else 0
+            warm_bytes = cold_bytes = segment_metadata_bytes = 0
+            for p in self.segment_dir.iterdir():
+                if p.is_file() and not p.name.startswith(self.active_name or "NOACTIVE"):
+                    size = p.stat().st_size
+                    if NAME.fullmatch(p.name):
+                        warm_bytes += size
+                    elif p.name.endswith(".sqlite.gz"):
+                        cold_bytes += size
+                    else:
+                        segment_metadata_bytes += size
+            protected_bytes = self.path.stat().st_size if self.path.exists() else 0
+            allocations = {"active": active_bytes, "warm": warm_bytes, "cold": cold_bytes,
+                           "protected": protected_bytes, "derived_cache": cache_bytes,
+                           "segment_metadata": segment_metadata_bytes}
+            allocations["catalog_state"] = max(0, usage - sum(allocations.values()))
             tiers = {"active_segments": sum(r["status"] == "active" for r in rows),
                      "sealed_originals_present": len(sealed) - len(missing),
                      "cold_only_segments": len(missing), "cold_only_verified_this_process": len(self._cold_verified),
@@ -601,7 +652,13 @@ class ManagedEventStore:
                     "remaining_bytes": remaining,
                     "seconds_to_exhaustion": min(remaining, max(0, free - self.min_free_bytes)) / rate if rate else None,
                     "global_floor_bytes": self.min_free_bytes, "retention_policy": "retain_all_originals_and_verified_copies",
-                    "archive_tiers": tiers,
+                    "archive_tiers": tiers, "tier_usage_bytes": allocations,
+                    "cold_verification": {"enabled": self.cold_verification_enabled,
+                                          "minimum_scan_interval_seconds": 60,
+                                          "last_scan_at": self._cold_scan_at.isoformat() if self._cold_scan_at else None,
+                                          "last_success_at": self._cold_success_at.isoformat() if self._cold_success_at else None,
+                                          "last_segment": self._cold_proof_name, "last_error": self._cold_error,
+                                          "scope": "process-local progress; immutable proof presence is reported separately"},
                     "warnings": ["sealed_original_absent_verified_cold_recovery"] if missing else [],
                     "cold_only_names_sample": missing[:10],
                     "health": "blocked" if error else "ok", "last_error": error}
