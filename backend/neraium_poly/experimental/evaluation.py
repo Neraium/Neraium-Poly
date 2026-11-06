@@ -286,7 +286,7 @@ def _archive_worker(args):
                 "no_certified_execution_simulation",
             ],
             "numerical_threads": {
-                name: os.environ[name]
+                name: os.environ.get(name)
                 for name in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS")
             },
         }

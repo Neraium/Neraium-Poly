@@ -297,12 +297,14 @@ def test_adaptive_drawdown_suspension_and_corrupt_checkpoints_reject():
         tracker.record("s", "bad", 1.0, 0.1, START, [])
 
 
-def test_readonly_archive_diagnostic_scores_quotes_without_inventing_execution(tmp_path):
+def test_readonly_archive_diagnostic_scores_quotes_without_inventing_execution(tmp_path, monkeypatch):
     import sqlite3
 
     from neraium_poly.data import EventStore
     from neraium_poly.experimental.evaluation import _archive_worker
 
+    for name in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS"):
+        monkeypatch.delenv(name, raising=False)
     path = tmp_path / "controlled-test-quotes.sqlite"
     store = EventStore(path)
     for i in range(100):
@@ -314,6 +316,7 @@ def test_readonly_archive_diagnostic_scores_quotes_without_inventing_execution(t
     readonly.close()
     result = _archive_worker((str(path), high_water, 100, 60))
     assert result["raw_records_checked"] == 100
+    assert all(value is None for value in result["numerical_threads"].values())
     assert result["scored_monetary_forecasts"] > 0
     assert result["future_bid_mae"] == 0 and result["unchanged_current_bid_baseline_mae"] == 0
     assert result["execution_pnl"] is None and result["simulated_fills"] is None
