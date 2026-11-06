@@ -1,0 +1,13 @@
+{
+  "observed_at": "2026-11-06T01:21:56.839866+00:00",
+  "scope": "latest100 native sampled observations, not every exchange tick",
+  "reconstructed": 100,
+  "kinds": {
+    "OrderBookSnapshot": 8,
+    "BookDelta": 92
+  },
+  "earliest_source_at": "2026-11-06T01:21:49.021000+00:00",
+  "latest_source_at": "2026-11-06T01:21:49.784000+00:00",
+  "hash_and_quote_integrity": "passed",
+  "does_not_establish_strategy_certification": true
+}

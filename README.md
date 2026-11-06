@@ -13,7 +13,7 @@ uv run neraium-poly paper-live --config config/paper-live.example.json
 uv run neraium-poly strategy-status --data-dir data/paper-live
 ```
 
-It scans up to 200 liquid real public markets with bounded REST and native WebSocket ingestion, feeds observed books into relationship intelligence, and evaluates the explicit real-strategy approval gate before any paper order. With no passing real-data report and explicit signed owner approval, it continues collection and records why trading is withheld. No strategy or probability estimate is fabricated to create activity. See [persistent operation](docs/live-paper-operation.md) and [validation requirements](docs/real-strategy-validation.md). The commands below remain separate synthetic research demonstrations.
+It scans up to 200 liquid real public markets with bounded REST and native WebSocket ingestion, feeds observed books into relationship intelligence, and evaluates the explicit real-strategy approval gate before any paper order. With no passing real-data report and explicit signed owner approval, it continues collection and records why trading is withheld. No strategy or probability estimate is fabricated to create activity. Phase8 research sources and unresolved activation blockers are in [readiness](docs/phase8-readiness.md). See [persistent operation](docs/live-paper-operation.md) and [validation requirements](docs/real-strategy-validation.md). The commands below remain separate synthetic research demonstrations.
 
 ## Run locally
 

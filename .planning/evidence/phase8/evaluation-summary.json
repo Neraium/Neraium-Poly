@@ -1,0 +1,55 @@
+{
+  "dataset_hash": "25c729969c73a66e456614c49dfb1b12acf42f8ef3bb4b3a3fc877e31e59739f",
+  "coverage": {
+    "events": 250,
+    "distinct_verified_outcome_groups": 0,
+    "reported_verified_outcome_groups": 51,
+    "causally_usable_verified_outcome_groups": 0,
+    "independent_verified_events": 0,
+    "independence_basis": "Event/parent-ID deduplication only; asset/series and overlapping-window dependence not reviewed",
+    "forecast_rows": 0,
+    "train_events": 0,
+    "heldout_events": 0,
+    "point_in_time_rows": 0,
+    "books": 0,
+    "independent_context": 0,
+    "related_legs_not_independent": 0
+  },
+  "certification": {
+    "status": "blocked",
+    "thresholds": {
+      "minimum_train_events": 100,
+      "minimum_heldout_events": 100,
+      "minimum_bin_samples": 30,
+      "bins": 5,
+      "minimum_brier_improvement": 0.005,
+      "maximum_brier": 0.2,
+      "maximum_calibration_error": 0.08,
+      "maximum_interval_width": 0.35,
+      "maximum_book_age_seconds": 15.0,
+      "minimum_heldout_trades": 20,
+      "minimum_net_edge": 0.03,
+      "latency_slippage_per_share": 0.01,
+      "maximum_approval_days": 7,
+      "maximum_dataset_bytes": 20000000
+    },
+    "deficiencies": [
+      "authentic_historical_order_books_missing",
+      "cross_event_dependency_review_required",
+      "downloaded_now_history_not_verified_point_in_time_archive",
+      "explicit_owner_approval_required",
+      "fewer_than100_independent_heldout_events",
+      "fewer_than100_independent_training_events",
+      "historical_orderbook_depth_not_provided_by_price_history",
+      "historical_point_in_time_availability_unverified",
+      "historical_rule_version_review_required",
+      "independent_context_authenticity_and_predecision_availability_require_review",
+      "independent_point_in_time_context_missing",
+      "strict_strategy_validation_package_required",
+      "terminal_or_postclose_chart_points_excluded",
+      "verified_outcome_missing_exact_settlement_time"
+    ],
+    "owner_approval_required": true
+  },
+  "report": "data/paper-live/research/report.json"
+}

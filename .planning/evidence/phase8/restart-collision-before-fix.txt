@@ -1,0 +1,47 @@
+Nov 06 01:14:03 ip-172-31-67-49 systemd[1]: Stopping neraium-poly-paper.service - Neraium-Poly real-market paper-only coordinator...
+Nov 06 01:14:03 ip-172-31-67-49 neraium-poly[2909460]: INFO:     Shutting down
+Nov 06 01:14:03 ip-172-31-67-49 neraium-poly[2909460]: INFO:     Waiting for application shutdown.
+Nov 06 01:14:03 ip-172-31-67-49 neraium-poly[2909460]: INFO:     Application shutdown complete.
+Nov 06 01:14:03 ip-172-31-67-49 neraium-poly[2909460]: INFO:     Finished server process [2909460]
+Nov 06 01:14:03 ip-172-31-67-49 systemd[1]: neraium-poly-paper.service: Deactivated successfully.
+Nov 06 01:14:03 ip-172-31-67-49 systemd[1]: Stopped neraium-poly-paper.service - Neraium-Poly real-market paper-only coordinator.
+Nov 06 01:14:03 ip-172-31-67-49 systemd[1]: neraium-poly-paper.service: Consumed 36.144s CPU time, 142.3M memory peak, 0B memory swap peak.
+Nov 06 01:14:03 ip-172-31-67-49 systemd[1]: Started neraium-poly-paper.service - Neraium-Poly real-market paper-only coordinator.
+Nov 06 01:14:04 ip-172-31-67-49 neraium-poly[2916394]: INFO:     Started server process [2916394]
+Nov 06 01:14:04 ip-172-31-67-49 neraium-poly[2916394]: INFO:     Waiting for application startup.
+Nov 06 01:14:04 ip-172-31-67-49 neraium-poly[2916394]: INFO:     Application startup complete.
+Nov 06 01:14:04 ip-172-31-67-49 neraium-poly[2916394]: INFO:     Uvicorn running on http://127.0.0.1:18742 (Press CTRL+C to quit)
+Nov 06 01:14:05 ip-172-31-67-49 neraium-poly[2916394]: 2026-11-06 01:14:05,386 ERROR neraium_poly.ops.live paper coordinator cycle withheld
+Nov 06 01:14:05 ip-172-31-67-49 neraium-poly[2916394]: Traceback (most recent call last):
+Nov 06 01:14:05 ip-172-31-67-49 neraium-poly[2916394]:   File "/home/ubuntu/Neraium-Poly/backend/neraium_poly/ops/live.py", line 696, in run
+Nov 06 01:14:05 ip-172-31-67-49 neraium-poly[2916394]:     await self.cycle()
+Nov 06 01:14:05 ip-172-31-67-49 neraium-poly[2916394]:   File "/home/ubuntu/Neraium-Poly/backend/neraium_poly/ops/live.py", line 588, in cycle
+Nov 06 01:14:05 ip-172-31-67-49 neraium-poly[2916394]:     await self.discover()
+Nov 06 01:14:05 ip-172-31-67-49 neraium-poly[2916394]:   File "/home/ubuntu/Neraium-Poly/backend/neraium_poly/ops/live.py", line 239, in discover
+Nov 06 01:14:05 ip-172-31-67-49 neraium-poly[2916394]:     self.events.append(self.relationships[relationship.id])
+Nov 06 01:14:05 ip-172-31-67-49 neraium-poly[2916394]:   File "/home/ubuntu/Neraium-Poly/backend/neraium_poly/data/store.py", line 54, in append
+Nov 06 01:14:05 ip-172-31-67-49 neraium-poly[2916394]:     raise ValueError("event ID collision with different payload")
+Nov 06 01:14:05 ip-172-31-67-49 neraium-poly[2916394]: ValueError: event ID collision with different payload
+Nov 06 01:14:16 ip-172-31-67-49 neraium-poly[2916394]: 2026-11-06 01:14:16,356 ERROR neraium_poly.ops.live paper coordinator cycle withheld
+Nov 06 01:14:16 ip-172-31-67-49 neraium-poly[2916394]: Traceback (most recent call last):
+Nov 06 01:14:16 ip-172-31-67-49 neraium-poly[2916394]:   File "/home/ubuntu/Neraium-Poly/backend/neraium_poly/ops/live.py", line 696, in run
+Nov 06 01:14:16 ip-172-31-67-49 neraium-poly[2916394]:     await self.cycle()
+Nov 06 01:14:16 ip-172-31-67-49 neraium-poly[2916394]:   File "/home/ubuntu/Neraium-Poly/backend/neraium_poly/ops/live.py", line 588, in cycle
+Nov 06 01:14:16 ip-172-31-67-49 neraium-poly[2916394]:     await self.discover()
+Nov 06 01:14:16 ip-172-31-67-49 neraium-poly[2916394]:   File "/home/ubuntu/Neraium-Poly/backend/neraium_poly/ops/live.py", line 239, in discover
+Nov 06 01:14:16 ip-172-31-67-49 neraium-poly[2916394]:     self.events.append(self.relationships[relationship.id])
+Nov 06 01:14:16 ip-172-31-67-49 neraium-poly[2916394]:   File "/home/ubuntu/Neraium-Poly/backend/neraium_poly/data/store.py", line 54, in append
+Nov 06 01:14:16 ip-172-31-67-49 neraium-poly[2916394]:     raise ValueError("event ID collision with different payload")
+Nov 06 01:14:16 ip-172-31-67-49 neraium-poly[2916394]: ValueError: event ID collision with different payload
+Nov 06 01:14:24 ip-172-31-67-49 neraium-poly[2916394]: INFO:     127.0.0.1:34400 - "GET /api/state HTTP/1.1" 200 OK
+Nov 06 01:14:27 ip-172-31-67-49 neraium-poly[2916394]: 2026-11-06 01:14:27,278 ERROR neraium_poly.ops.live paper coordinator cycle withheld
+Nov 06 01:14:27 ip-172-31-67-49 neraium-poly[2916394]: Traceback (most recent call last):
+Nov 06 01:14:27 ip-172-31-67-49 neraium-poly[2916394]:   File "/home/ubuntu/Neraium-Poly/backend/neraium_poly/ops/live.py", line 696, in run
+Nov 06 01:14:27 ip-172-31-67-49 neraium-poly[2916394]:     await self.cycle()
+Nov 06 01:14:27 ip-172-31-67-49 neraium-poly[2916394]:   File "/home/ubuntu/Neraium-Poly/backend/neraium_poly/ops/live.py", line 588, in cycle
+Nov 06 01:14:27 ip-172-31-67-49 neraium-poly[2916394]:     await self.discover()
+Nov 06 01:14:27 ip-172-31-67-49 neraium-poly[2916394]:   File "/home/ubuntu/Neraium-Poly/backend/neraium_poly/ops/live.py", line 239, in discover
+Nov 06 01:14:27 ip-172-31-67-49 neraium-poly[2916394]:     self.events.append(self.relationships[relationship.id])
+Nov 06 01:14:27 ip-172-31-67-49 neraium-poly[2916394]:   File "/home/ubuntu/Neraium-Poly/backend/neraium_poly/data/store.py", line 54, in append
+Nov 06 01:14:27 ip-172-31-67-49 neraium-poly[2916394]:     raise ValueError("event ID collision with different payload")
+Nov 06 01:14:27 ip-172-31-67-49 neraium-poly[2916394]: ValueError: event ID collision with different payload

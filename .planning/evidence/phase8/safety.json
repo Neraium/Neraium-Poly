@@ -1,0 +1,11 @@
+{
+  "observed_at": "2026-11-06T01:13:38.313885+00:00",
+  "paper_trading": true,
+  "live_trading_enabled": false,
+  "live_broker": "constructor always raises RiskViolation",
+  "owner_public_key_configured": false,
+  "active_strategies": 0,
+  "owner_approvals": 0,
+  "authority": "explicit user authorized implementation, tests, commits, push and scoped persistent paper-service operation; owner strategy activation not authorized without separate approval",
+  "hook_trust": "not established; no automatic enforcement claim"
+}

@@ -1,0 +1,23 @@
+{
+  "source_head": "f626544f0c74d06dd0399e3992728502f9d3f895",
+  "backend": {
+    "command": ".venv/bin/pytest -q",
+    "passed": 309,
+    "warnings": [
+      "Existing Starlette TestClient deprecation"
+    ],
+    "artifact": "backend-tests.txt"
+  },
+  "browser": {
+    "command": "npm test --prefix frontend",
+    "passed": 5,
+    "artifact": "browser-tests.txt"
+  },
+  "frontend_build": "passed",
+  "ruff_lint": "passed",
+  "ruff_format": "passed",
+  "python_audit": "no known vulnerabilities; includes optional research extra",
+  "npm_audit": "0 vulnerabilities",
+  "actual_replay": "100 native observations reconstructed and hash/quote verified; not every tick",
+  "test_fixtures": "Controlled tests remain explicitly separate from actual operational evidence; no test owner key installed"
+}

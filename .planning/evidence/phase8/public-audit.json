@@ -1,0 +1,33 @@
+{
+  "kind": "publisher_archive_quality_sample",
+  "source_file_rows": {
+    "updown_4h.parquet": 489941,
+    "updown_15m.parquet": 239310,
+    "updown_5m.parquet": 167941
+  },
+  "source_total_rows": 897192,
+  "sample_is_representative": false,
+  "sample_max_rows": 5000,
+  "batch_size": 512,
+  "sampled_rows": 5000,
+  "one_sided": 242,
+  "invalid_or_zero_levels": 0,
+  "crossed_or_locked": 69,
+  "unsorted_ladders": 0,
+  "capture_at_or_after_end": 0,
+  "sample_distinct_market_slugs": 2,
+  "sample_distinct_tokens": 4,
+  "official_event_mapping_count": 0,
+  "verified_outcome_count": 0,
+  "certification_eligible_events": 0,
+  "first_sample_capture": "2026-08-21T03:56:51+00:00",
+  "last_sample_capture": "2026-08-21T11:59:35+00:00",
+  "timestamp_meaning": "Publisher captured_at; no original exchange or receipt timestamp",
+  "deficiencies": [
+    "Publisher outcome columns are withheld, not official verified settlement labels",
+    "No linked original exchange timestamps or historical receipt proof",
+    "No official parent event mapping, independent context or dependency review",
+    "Adjacent and overlapping same-asset windows do not prove independent events",
+    "Quality sample cannot establish full capture completeness or fill availability"
+  ]
+}

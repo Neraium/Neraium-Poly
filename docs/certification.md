@@ -42,3 +42,27 @@ One upstream Starlette TestClient deprecation warning recommends httpx2. Tests p
 Live execution remains disabled and unimplemented. No funded wallets, transactions or production infrastructure changes occurred. Native Citadel hook trust was not established by this build; explicit checkpoints, policy review, isolated worktrees and verification evidence were used.
 
 Implementation and certification were pushed to `main` at `6fad59e`. [GitHub Actions certification](https://github.com/Neraium/Neraium-Poly/actions/runs/42133842212) passed both backend and dashboard jobs. Delivery evidence is recorded in `.planning/evidence/delivery.json`; the final documentation commit records this result.
+
+
+## Phase8 verification (2026-11-06)
+
+The integrated source at f626544 passed309 backend tests,5 browser tests,
+frontend production build, Ruff checks/formatting and Python/npm dependency
+audits (no known vulnerabilities). The single existing Starlette deprecation
+warning remains. Tests include historical raw integrity, point-in-time leakage,
+six strategy preconditions, owner approval signatures, replay compression,
+400-token bootstrap fairness, source-watermark recovery, fee-wait invalidation,
+resolution guards, bankroll recovery and relationship re-entry after restart.
+Controlled positive validation fixtures and test-only signing keys do not certify
+a real strategy. Actual research has0 usable training/heldout rows and no
+numerical calibrated model results. No strategy activation occurred.
+
+The original400-token service probe exposed queue overflow from inline REST
+recovery. A later restart exposed stable relationship IDs re-entering discovery
+with new timestamps. Both faults have focused regressions and fixes; archived
+records were preserved rather than edited. The final operational measurement,
+public-source timestamps, order/bankroll status and GitHubCI result are recorded
+under `.planning/evidence/phase8/`. Bounded probe success is not long-duration
+streaming or profitability certification. See [readiness](phase8-readiness.md).
+
+[Phase8 GitHub Actions](https://github.com/Neraium/Neraium-Poly/actions/runs/42142646991) passed both backend and dashboard jobs for source f626544. Browser dependency installation was slow but completed within the workflow timeout.

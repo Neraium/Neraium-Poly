@@ -21,3 +21,12 @@ Actual400token WSload exposed inlineRESTrecovery blockingconsumer; bounded
 backgroundrecovery and connectiongenerationguards are required before stable
 coverageclaims. Quote archive samples actual source states; not all exchange
 ticks. Record nativecounts separate fromREST/bootstrap and persist gaps.
+
+Final source f626544 also recovers relationships that leave/re-enter the liquid
+universe: reload exact archived definition after digest/schema/semantic equality
+checks, preserving original timestamps and append-only collision rules. Actual
+restart before the fix stopped collection on an ID collision; after fix, service
+ran through its five-minute discovery refresh with native data and no overflow.
+A bounded actual replay reconstructed100 native records (8full/92delta) with
+hash and quote integrity at2026-11-06T01:21:56Z. This is not strategy certification.
+Local final backend309/browser5 passed; real models still0 usable rows/approvals.

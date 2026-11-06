@@ -1,0 +1,60 @@
+{
+  "observed_at": "2026-11-06T01:10:33.525841+00:00",
+  "market_count": 200,
+  "tokens": 400,
+  "callbacks": 23661,
+  "metrics": {
+    "messages": 12258,
+    "native_book_frames": 466,
+    "native_delta_frames": 12156,
+    "native_books_delivered": 23603,
+    "rest_books": 58,
+    "reconnects": 0,
+    "gaps": 1083,
+    "out_of_order": 92,
+    "queue_overflows": 0,
+    "invalid_frames": 0,
+    "callbacks_failed": 0,
+    "invalidations": 1084,
+    "resnapshot_failures": 0,
+    "ws_connected": true,
+    "subscribed_tokens": 400,
+    "cached_books": 400,
+    "resolved_tokens_withheld": 0,
+    "fresh_books": 286,
+    "queue_depth": 1,
+    "resnapshot_pending": 0,
+    "connection_generation": 1,
+    "last_message_at": "2026-11-06T01:10:33.525825+00:00",
+    "last_gap_at": "2026-11-06T01:10:33.367523+00:00",
+    "http_requests": 61,
+    "http_rate_limits": 0,
+    "http_peak_inflight": 2,
+    "rate_requests_per_second": 8
+  },
+  "native_cached_books": 381,
+  "examples": [
+    {
+      "market_id": "562001",
+      "token_id": "25583872291729778177187717614560645987351882646783629615247519807465184364234",
+      "source": "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+      "timestamp": "2026-11-06T01:09:46.008000+00:00",
+      "available_at": "2026-11-06T01:10:14.724111+00:00"
+    },
+    {
+      "market_id": "5998481",
+      "token_id": "77183283395539936990512816590463646668940212192653030632263044982615758476264",
+      "source": "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+      "timestamp": "2026-11-06T01:10:11.932000+00:00",
+      "available_at": "2026-11-06T01:10:14.724812+00:00"
+    },
+    {
+      "market_id": "666861",
+      "token_id": "59252515735652674747158950210016502214756531287333895140318848923768750410355",
+      "source": "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+      "timestamp": "2026-11-06T01:10:09.009000+00:00",
+      "available_at": "2026-11-06T01:10:14.725137+00:00"
+    }
+  ],
+  "duration_seconds": 20
+}

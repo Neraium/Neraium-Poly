@@ -1,0 +1,16 @@
+{
+  "observed_at": "2026-11-06T01:26:12.996159+00:00",
+  "source_head": "f626544f0c74d06dd0399e3992728502f9d3f895",
+  "branch": "main",
+  "worktree": "/home/ubuntu/Neraium-Poly",
+  "ci": "https://github.com/Neraium/Neraium-Poly/actions/runs/42142646991",
+  "ci_conclusion": "success",
+  "backend_tests": 309,
+  "browser_tests": 5,
+  "service": "neraium-poly-paper.service",
+  "bankroll": 500,
+  "paper_only": true,
+  "strategies_activated": 0,
+  "certification": "blocked; exact deficiencies in evaluation-summary.json",
+  "preserved_untracked": ".planning/evidence/live-inspection-20261106/"
+}

@@ -1,0 +1,286 @@
+{
+  "observed_at": "2026-11-06T01:21:24.699378+00:00",
+  "source_head": "f626544f0c74d06dd0399e3992728502f9d3f895",
+  "service": {
+    "status": "ok",
+    "paper_trading": true,
+    "live_trading_enabled": false,
+    "mode": "live_market_paper",
+    "trading_status": "validation_blocked",
+    "last_ingestion_at": "2026-11-06T01:21:24.691175+00:00",
+    "last_ingestion_age_seconds": 0.014609,
+    "last_error": null,
+    "ledger_consistent": true,
+    "timestamp": "2026-11-06T01:21:24.705784+00:00"
+  },
+  "markets": 200,
+  "outcome_tokens": 400,
+  "operation": {
+    "books": 14252,
+    "cycles": 117,
+    "evaluations": 14252,
+    "orders": 0,
+    "qualified_evidence": 0,
+    "qualified_opportunities": 0,
+    "scan": {
+      "markets_scanned": 200,
+      "discovered_markets": 200,
+      "outcomes": 400,
+      "bounded": true,
+      "next_offset": 200,
+      "selection_order": "volume24hr_desc",
+      "errors": [],
+      "at": "2026-11-06T01:21:10.357499+00:00"
+    },
+    "last_cycle": {
+      "schema_version": "1.0",
+      "id": "fda74426-eb22-4c20-9bc5-296702683421",
+      "timestamp": "2026-11-06T01:20:59.391115Z",
+      "available_at": "2026-11-06T01:20:59.391116Z",
+      "source": "real-polymarket-paper-coordinator",
+      "markets_scanned": 200,
+      "outcomes_observed": 400,
+      "books_received": 328,
+      "fresh_books": 270,
+      "evidence_qualified": 0,
+      "opportunities_qualified": 0,
+      "orders_submitted": 0,
+      "suppression_reasons": [
+        "no_approved_real_market_strategy"
+      ]
+    },
+    "fresh_books": 284,
+    "current_books": 362,
+    "validation": {
+      "active": false,
+      "owner_approval_required": true,
+      "owner_public_key_configured": false,
+      "report_id": null,
+      "model_id": null,
+      "reports": 0,
+      "passing_reports": 0,
+      "latest_report": null,
+      "blockers": [
+        "no_explicit_real_strategy_approval"
+      ],
+      "requirements": [
+        "At least 100 independent training events and 100 heldout events",
+        "Point-in-time executable books and independent evidence with verified final labels",
+        "Heldout calibration, confidence-bounded improvement and cost-adjusted edge",
+        "Explicit provenance review and separate actor approval; no automatic promotion"
+      ]
+    },
+    "settlements": 0,
+    "fills": 0,
+    "service": {
+      "status": "ok",
+      "paper_trading": true,
+      "live_trading_enabled": false,
+      "mode": "live_market_paper",
+      "trading_status": "validation_blocked",
+      "last_ingestion_at": "2026-11-06T01:21:24.691175+00:00",
+      "last_ingestion_age_seconds": 0.014609,
+      "last_error": null,
+      "ledger_consistent": true,
+      "timestamp": "2026-11-06T01:21:24.705784+00:00"
+    },
+    "connectivity": {
+      "messages": 279579,
+      "native_book_frames": 2346,
+      "native_delta_frames": 277216,
+      "native_books_delivered": 480455,
+      "rest_books": 2234,
+      "reconnects": 0,
+      "gaps": 71780,
+      "out_of_order": 4589,
+      "queue_overflows": 0,
+      "invalid_frames": 0,
+      "callbacks_failed": 0,
+      "invalidations": 71785,
+      "resnapshot_failures": 0,
+      "gap_missing_baseline": 70903,
+      "gap_source_time": 405,
+      "gap_top_integrity": 423,
+      "gap_invalid_delta": 41,
+      "stale_recovery_baselines": 33,
+      "ws_connected": true,
+      "subscribed_tokens": 400,
+      "cached_books": 372,
+      "resolved_tokens_withheld": 0,
+      "gap_tokens_withheld": 28,
+      "fresh_books": 284,
+      "queue_depth": 0,
+      "resnapshot_pending": 30,
+      "connection_generation": 3,
+      "last_message_at": "2026-11-06T01:21:24.690220+00:00",
+      "last_gap_at": "2026-11-06T01:21:24.679680+00:00",
+      "http_requests": 2244,
+      "http_rate_limits": 0,
+      "http_peak_inflight": 2,
+      "rate_requests_per_second": 8.0
+    },
+    "stream_notifications": 481266,
+    "archive_representation": "sampled actual full states with exact quote-level deltas and receipt references"
+  },
+  "bankroll": {
+    "initial_bankroll": 500.0,
+    "bankroll": 500.0,
+    "cash": 500.0,
+    "reserved": 0,
+    "exposure": 0,
+    "simulated_pnl": 0.0,
+    "simulated_realized_pnl": 0.0
+  },
+  "positions": 0,
+  "orders": 0,
+  "archived_book_sources": [
+    [
+      "https://clob.polymarket.com",
+      10410
+    ],
+    [
+      "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+      3973
+    ]
+  ],
+  "observed_native_examples": [
+    {
+      "id": "c74b95b07fd975b18e6820a021cdc258229cb701372fe370b3413aeb909a8936",
+      "market_id": "6681758",
+      "token_id": "13984747380180135944289049478414167525156663978378718038707367767865113008451",
+      "timestamp": "2026-11-06T01:20:57.696000Z",
+      "available_at": "2026-11-06T01:20:57.739390Z",
+      "source": "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+      "complete": true,
+      "best_bid": [
+        {
+          "price": 0.51,
+          "size": 95.0
+        }
+      ],
+      "best_ask": [
+        {
+          "price": 0.56,
+          "size": 66.66
+        }
+      ],
+      "bid_levels": 18,
+      "ask_levels": 17
+    },
+    {
+      "id": "dbd985fdc432a107fbd5beefec2c38d4249b39abb56d4f47ecf6ff0c2f9697af",
+      "market_id": "6681758",
+      "token_id": "92982013666155527134222607431028995283131662114456894623111820713704833369028",
+      "timestamp": "2026-11-06T01:20:57.696000Z",
+      "available_at": "2026-11-06T01:20:57.739390Z",
+      "source": "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+      "complete": true,
+      "best_bid": [
+        {
+          "price": 0.44,
+          "size": 66.66
+        }
+      ],
+      "best_ask": [
+        {
+          "price": 0.49,
+          "size": 95.0
+        }
+      ],
+      "bid_levels": 17,
+      "ask_levels": 18
+    },
+    {
+      "id": "7170b945e785e8fcec8e1fd3e1d2500c7839e35886daa5d67135f59f2fca0945",
+      "market_id": "6667440",
+      "token_id": "99518556436800716524670267675715206117471668040596478376944749644814203574332",
+      "timestamp": "2026-11-06T01:20:55.830000Z",
+      "available_at": "2026-11-06T01:20:55.873226Z",
+      "source": "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+      "complete": true,
+      "best_bid": [
+        {
+          "price": 0.999,
+          "size": 79218.7
+        }
+      ],
+      "best_ask": [],
+      "bid_levels": 74,
+      "ask_levels": 0
+    }
+  ],
+  "endpoints": {
+    "gamma": "https://gamma-api.polymarket.com",
+    "clob": "https://clob.polymarket.com",
+    "market_ws": "wss://ws-subscriptions-clob.polymarket.com/ws/market"
+  },
+  "historical_mode": "retrospective_event_time_only",
+  "research_certification": {
+    "deficiencies": [
+      "authentic_historical_order_books_missing",
+      "cross_event_dependency_review_required",
+      "downloaded_now_history_not_verified_point_in_time_archive",
+      "explicit_owner_approval_required",
+      "fewer_than100_independent_heldout_events",
+      "fewer_than100_independent_training_events",
+      "historical_orderbook_depth_not_provided_by_price_history",
+      "historical_point_in_time_availability_unverified",
+      "historical_rule_version_review_required",
+      "independent_context_authenticity_and_predecision_availability_require_review",
+      "independent_point_in_time_context_missing",
+      "strict_strategy_validation_package_required",
+      "terminal_or_postclose_chart_points_excluded",
+      "verified_outcome_missing_exact_settlement_time"
+    ],
+    "owner_approval_required": true,
+    "status": "blocked",
+    "thresholds": {
+      "bins": 5,
+      "latency_slippage_per_share": 0.01,
+      "maximum_approval_days": 7,
+      "maximum_book_age_seconds": 15.0,
+      "maximum_brier": 0.2,
+      "maximum_calibration_error": 0.08,
+      "maximum_dataset_bytes": 20000000,
+      "maximum_interval_width": 0.35,
+      "minimum_bin_samples": 30,
+      "minimum_brier_improvement": 0.005,
+      "minimum_heldout_events": 100,
+      "minimum_heldout_trades": 20,
+      "minimum_net_edge": 0.03,
+      "minimum_train_events": 100
+    }
+  },
+  "fresh_display_examples": [
+    {
+      "market_id": "5772981",
+      "token_id": "46946790888457602468068092945515694852016445093270213103048841484524699155316",
+      "question": "Jaguars vs. Ravens",
+      "book_timestamp": "2026-11-06T01:21:24.008000+00:00",
+      "book_age_seconds": 0.691378,
+      "best_bid": 0.83,
+      "best_ask": 0.84,
+      "ask_depth": 3628.55
+    },
+    {
+      "market_id": "5772981",
+      "token_id": "75442632507328767732122689740017101063097070455601175973569764093594701638351",
+      "question": "Jaguars vs. Ravens",
+      "book_timestamp": "2026-11-06T01:21:24.008000+00:00",
+      "book_age_seconds": 0.691378,
+      "best_bid": 0.16,
+      "best_ask": 0.17,
+      "ask_depth": 65545.19
+    },
+    {
+      "market_id": "3215008",
+      "token_id": "111662129652828266889360374468657435151479595863413519836161861837506140152890",
+      "question": "Will the Fed increase interest rates by 25 bps after the December 2026 meeting?",
+      "book_timestamp": "2026-11-06T01:21:22.834000+00:00",
+      "book_age_seconds": 1.865378,
+      "best_bid": 0.66,
+      "best_ask": 0.67,
+      "ask_depth": 11039.66
+    }
+  ]
+}
