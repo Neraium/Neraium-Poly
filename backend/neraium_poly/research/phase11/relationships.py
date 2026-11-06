@@ -48,6 +48,13 @@ def run_relationships(observations, dataset_manifest):
                 counts["bounded_pair_capacity"] += 1
                 continue
             left, right = latest[pair[0]], latest[pair[1]]
+            if any(
+                known[token].status != "active"
+                or (known[token].end_time is not None and known[token].end_time <= now)
+                for token in pair
+            ):
+                counts["known_peer_inactive_or_ended"] += 1
+                continue
             if not all(assess_book(b, now, max_spread=0.05).healthy for b in (left, right)):
                 counts["stale_or_incomplete_pair"] += 1
                 continue

@@ -22,7 +22,14 @@ Features use only the current book and earlier receipts: spread, top-five-level
 share imbalance, last bid change, last-five bid change, log total top-five depth,
 and current bid level. Warmup needs five prior observations. Incomplete, stale,
 wide-spread, duplicate and non-monotonic source observations cannot inflate the
-training sample. Reference prices are bounded to [0,1]. Dataset metadata/fees
+training sample. Forecast decisions also require point-in-time active metadata,
+explicit rules/source, and a known end strictly after the 60-second horizon.
+Later actual quotes can label an earlier decision without retrospectively using
+future metadata. Both known relationship legs must remain active and unexpired,
+even if no new metadata row arrives for an expiring peer. The actual frozen
+30,000-row universe audit found zero missing, inactive, ruleless or near-end
+metadata cases; these guards repair an unsupported-input capability gap rather
+than explaining observed zero trades. Reference prices are bounded to [0,1]. Dataset metadata/fees
 must have been available before the feature time; missing context stays missing.
 
 Unique global decision timestamps define 60/20/20 train, validation and held-out

@@ -60,9 +60,26 @@ def supervised_samples(observations, *, horizon=HORIZON):
             if history and (b.available_at - history[-1].book.available_at).total_seconds() > 120:
                 history.clear()
             last_source = b.timestamp
+            target = b.available_at + timedelta(seconds=horizon)
+            market = row.market
+            if market is None:
+                skipped["missing_point_in_time_metadata"] += 1
+                history.append(row)
+                continue
+            if market.status != "active":
+                skipped["inactive_forecast_market"] += 1
+                history.append(row)
+                continue
+            if not market.resolution_rules or not market.resolution_source:
+                skipped["missing_forecast_resolution_semantics"] += 1
+                history.append(row)
+                continue
+            if market.end_time is not None and market.end_time <= target:
+                skipped["market_ends_before_forecast_horizon"] += 1
+                history.append(row)
+                continue
             operational._remember(b.token_id, b)
             horizon_reference, _ = operational._horizon(b.token_id, b.available_at)
-            target = b.available_at + timedelta(seconds=horizon)
             j = bisect_left(times, target, lo=i + 1)
             while j < len(token_rows) and token_rows[j].book.available_at <= target + timedelta(seconds=30):
                 if token_rows[j].book.timestamp >= target:

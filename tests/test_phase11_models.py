@@ -244,3 +244,56 @@ def test_relationship_known_closed_leg_is_evicted_before_new_peer_quote():
     assert result["counts"]["paired_observations"] == 1
     assert result["counts"]["unsupported_outcome_or_lifecycle"] == 1
     assert not result["findings"]
+
+
+@pytest.mark.parametrize(
+    "case,reason",
+    [
+        ("missing", "missing_point_in_time_metadata"),
+        ("closed", "inactive_forecast_market"),
+        ("rules", "missing_forecast_resolution_semantics"),
+        ("near_end", "market_ends_before_forecast_horizon"),
+    ],
+)
+def test_forecast_decisions_require_point_in_time_active_horizon_universe(case, reason):
+    rows = fixture_rows(100)
+    samples, _ = supervised_samples(rows)
+    observed = samples[80]
+    changed = []
+    for observation in rows:
+        if observation.book.id == observed["id"]:
+            market = observation.market
+            if case == "missing":
+                market = None
+            elif case == "closed":
+                market = market.model_copy(update={"status": "closed"})
+            elif case == "rules":
+                market = market.model_copy(update={"resolution_rules": ""})
+            else:
+                market = market.model_copy(
+                    update={"end_time": observation.book.available_at + timedelta(seconds=60)}
+                )
+            observation = observation.model_copy(update={"market": market})
+        changed.append(observation)
+    after, rejected = supervised_samples(changed)
+    assert observed["id"] not in {r["id"] for r in after}
+    assert rejected[reason] == 1
+    # Unavailable metadata on a later outcome quote does not retroactively erase
+    # a real observed price label or inject new metadata into an earlier feature.
+    earlier = [r for r in after if r["label_id"] == observed["id"]]
+    assert earlier
+    for r in earlier:
+        original = next(before for before in samples if before["id"] == r["id"])
+        assert r["features"] == original["features"]
+        assert r["target_change"] == original["target_change"]
+
+
+def test_relationship_known_peer_expiry_with_no_new_peer_metadata_is_withheld():
+    leg = row(0, token="a")
+    leg = leg.model_copy(
+        update={"market": leg.market.model_copy(update={"end_time": START + timedelta(seconds=3)})}
+    )
+    result = run_relationships([leg, row(1, token="b")], MANIFEST)
+    assert result["counts"]["known_peer_inactive_or_ended"] == 1
+    assert result["counts"].get("paired_observations", 0) == 0
+    assert result["findings"] == []
