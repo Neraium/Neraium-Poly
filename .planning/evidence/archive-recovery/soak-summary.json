@@ -1,0 +1,47 @@
+{
+  "source_commit": "1f37342545a7dc187aa29816b3e4fdabff6e4f90",
+  "start": "2026-11-06T15:36:47.696788+00:00",
+  "end": "2026-11-06T15:51:49.044817+00:00",
+  "duration_seconds": 901.348029,
+  "healthy_samples": 44,
+  "all_post_readiness_samples_healthy": true,
+  "startup_unavailable_samples": 2,
+  "fresh_books_min": 248,
+  "fresh_books_max": 316,
+  "markets": 200,
+  "collector_completed_cycles": 33,
+  "experimental_completed_cycles": 141,
+  "accounts": {
+    "collector": {
+      "start_usage_bytes": 4587327123,
+      "end_usage_bytes": 4695881614,
+      "budget_bytes": 68719476736,
+      "remaining_bytes": 64023595122,
+      "measured_net_growth_bytes_per_second": 120435.7112983713,
+      "projected_days_at_measured_rate": 6.152774990424095,
+      "api_rolling_growth_bytes_per_second": 120354.71367413395,
+      "record_count_start": 871551,
+      "record_count_end": 900909,
+      "new_records": 29358,
+      "new_sealed_segments": 6,
+      "sealed_segments_end": 12,
+      "compressed_segments_end": 11
+    },
+    "experimental": {
+      "start_usage_bytes": 1179794473,
+      "end_usage_bytes": 1222993755,
+      "budget_bytes": 17179869184,
+      "remaining_bytes": 15956875429,
+      "measured_net_growth_bytes_per_second": 47927.41605917463,
+      "projected_days_at_measured_rate": 3.8534532714634944,
+      "api_rolling_growth_bytes_per_second": 49154.24330546227,
+      "record_count_start": 172608,
+      "record_count_end": 181210,
+      "new_records": 8602,
+      "new_sealed_segments": 6,
+      "sealed_segments_end": 12,
+      "compressed_segments_end": 12
+    }
+  },
+  "scope": "Authentic live public observations, finite retain-originals budgets; net rates include catalog, WAL, state and compression copies and are not guaranteed future rates."
+}

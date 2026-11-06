@@ -11,12 +11,15 @@ economic research adapters and a multi-domain SSH view:
 uv run neraium-poly monitor --view domains
 uv run neraium-poly monitor --view events
 uv run neraium-poly monitor --view research
+uv run neraium-poly monitor --view archives
 ```
 
 See [architecture](docs/phase14-architecture.md), [actual readiness and limitations](docs/phase14-readiness.md)
-and [storage audit](docs/phase14-storage.md). Persistent collection is currently
-capacity-blocked; cached markets are not fresh books. New models remain
-research-only, and no independent non-sports forecasting advantage is claimed.
+and [storage audit](docs/phase14-storage.md). The expanded root filesystem and
+[verified archive lifecycle](docs/archive-recovery-report.md) restored persistent
+live collection. Managed archives retain all originals, use separate 64 GiB/16 GiB
+service budgets and stop safely at finite limits. New models remain research-only;
+no independent non-sports forecasting advantage is claimed.
 
 ## Isolated experimental research and SSH monitor
 

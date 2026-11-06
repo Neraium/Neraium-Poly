@@ -1,0 +1,87 @@
+{
+  "observed_at": "2026-11-06T15:56:01.769034+00:00",
+  "account_tables": {
+    "paper-live/risk.sqlite/account": {
+      "rows": 1,
+      "sha256": "e91ed95451a68ccffb0226b3f1698422d13f68c51bc386ac2c00ba9dca2755ac"
+    },
+    "paper-live/risk.sqlite/reservations": {
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "paper-live/risk.sqlite/positions": {
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "paper-live/broker.sqlite/orders": {
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "experimental-paper/risk.sqlite/account": {
+      "rows": 1,
+      "sha256": "7a721fcead6b486d4ebba5c7e2408c5f5e7d703071ca24d9e59c05d8eeb81782"
+    },
+    "experimental-paper/risk.sqlite/reservations": {
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "experimental-paper/risk.sqlite/positions": {
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "experimental-paper/broker.sqlite/orders": {
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    }
+  },
+  "accounts": {
+    "paper-live": {
+      "cash": 500.0,
+      "realized_pnl": 0.0,
+      "emergency_stop": false,
+      "open_positions": 0
+    },
+    "experimental-paper": {
+      "cash": 500.0,
+      "realized_pnl": 0.0,
+      "emergency_stop": true,
+      "open_positions": 0
+    }
+  },
+  "services": {
+    "neraium-poly-paper": {
+      "pid": 3167124,
+      "flags": [
+        "PAPER_TRADING=true",
+        "LIVE_TRADING_ENABLED=false"
+      ]
+    },
+    "neraium-poly-experimental": {
+      "pid": 3167125,
+      "flags": [
+        "PAPER_TRADING=true",
+        "LIVE_TRADING_ENABLED=false"
+      ]
+    }
+  },
+  "journals": {
+    "event-intelligence/forecasts.sqlite": {
+      "records": 210,
+      "head_sha256": "c6499b38f872a368b37132c0ed0b7547b2c0aa4ca5a2655bd9cf7747bb90029a",
+      "integrity": "verified",
+      "original_forecast_prefix_preserved": true
+    },
+    "event-intelligence/sports/prospective.sqlite": {
+      "records": 2,
+      "head_sha256": "99cae7acba2bf51e98df23f75be2201010c003bc8e871a7a4d5f1d287228f590",
+      "integrity": "verified",
+      "original_forecast_prefix_preserved": true
+    },
+    "event-intelligence/domains/forecasts.sqlite": {
+      "records": 4,
+      "head_sha256": "5acfdc09e0a67eaae2fdd9bc1102b9a01d0df5441778a02ac1039da9d588484d",
+      "integrity": "verified",
+      "original_forecast_prefix_preserved": true
+    }
+  }
+}

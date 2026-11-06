@@ -1,0 +1,288 @@
+{
+  "observed_at": "2026-11-06T15:59:25.117358+00:00",
+  "production_application_commit": "1f37342545a7dc187aa29816b3e4fdabff6e4f90",
+  "verification_commit": "e9ff6d24d40945cb43c95d903e44358efa4a8909",
+  "application_files_identical_to_verification_commit": true,
+  "collector": {
+    "mode": "live_market_paper",
+    "generated_at": "2026-11-06T15:59:24.859918+00:00",
+    "cash": 500.0,
+    "bankroll": 500.0,
+    "simulated_pnl": 0.0,
+    "suspended": false,
+    "archive": {
+      "managed": true,
+      "usage_bytes": 4758287025,
+      "usage_is_conservative_estimate": false,
+      "budget_bytes": 68719476736,
+      "active_bytes": 6340208,
+      "segment_bytes": 16777216,
+      "segments": 16,
+      "sealed_segments": 15,
+      "compressed_segments": 15,
+      "legacy_records": 838222,
+      "records": 916503,
+      "free_bytes": 516593922048,
+      "growth_bytes_per_second": 130518.09278826858,
+      "remaining_bytes": 63961189711,
+      "seconds_to_exhaustion": 490056.1167006959,
+      "global_floor_bytes": 68719476736,
+      "retention_policy": "retain_all_originals_and_verified_copies",
+      "health": "ok",
+      "last_error": null
+    },
+    "operation": {
+      "cycles": 1095,
+      "scan": {
+        "markets_scanned": 200,
+        "discovered_markets": 200,
+        "outcomes": 400,
+        "bounded": true,
+        "next_offset": 200,
+        "selection_order": "volume24hr_desc",
+        "errors": [],
+        "at": "2026-11-06T15:58:01.746909+00:00"
+      },
+      "service": {
+        "status": "ok",
+        "paper_trading": true,
+        "live_trading_enabled": false,
+        "mode": "live_market_paper",
+        "trading_status": "validation_blocked",
+        "last_ingestion_at": "2026-11-06T15:59:24.886950+00:00",
+        "last_ingestion_age_seconds": 0.006089,
+        "last_error": null,
+        "ledger_consistent": true,
+        "timestamp": "2026-11-06T15:59:24.893039+00:00"
+      },
+      "connectivity": {
+        "messages": 964124,
+        "native_book_frames": 8198,
+        "native_delta_frames": 954694,
+        "native_books_delivered": 1479125,
+        "rest_books": 8425,
+        "reconnects": 0,
+        "gaps": 358352,
+        "out_of_order": 80236,
+        "queue_overflows": 0,
+        "invalid_frames": 0,
+        "callbacks_failed": 0,
+        "invalidations": 358366,
+        "resnapshot_failures": 0,
+        "gap_missing_baseline": 354930,
+        "gap_source_time": 2084,
+        "gap_top_integrity": 1186,
+        "gap_invalid_delta": 152,
+        "stale_recovery_baselines": 96,
+        "ws_connected": true,
+        "subscribed_tokens": 400,
+        "cached_books": 398,
+        "resolved_tokens_withheld": 0,
+        "gap_tokens_withheld": 2,
+        "fresh_books": 292,
+        "queue_depth": 0,
+        "resnapshot_pending": 2,
+        "connection_generation": 9,
+        "last_message_at": "2026-11-06T15:59:24.886320+00:00",
+        "last_gap_at": "2026-11-06T15:59:24.748988+00:00",
+        "http_requests": 8443,
+        "http_rate_limits": 0,
+        "http_peak_inflight": 3,
+        "rate_requests_per_second": 8.0
+      }
+    },
+    "scope": "archive health and current simulated capital; full event history remains in /api/state"
+  },
+  "experimental": {
+    "account_id": "experimental-paper",
+    "cash": 500.0,
+    "bankroll": 500.0,
+    "kill_switch": true,
+    "simulated_pnl": 0.0,
+    "generated_at": "2026-11-06T15:59:24.896815+00:00",
+    "service": {
+      "status": "ok",
+      "account_id": "experimental-paper",
+      "validation_status": "unvalidated",
+      "paper_trading": true,
+      "live_trading_enabled": false,
+      "last_ingestion_at": "2026-11-06T15:59:21.066604+00:00",
+      "last_ingestion_age_seconds": 3.830214,
+      "last_error": null,
+      "fee_error": null,
+      "timestamp": "2026-11-06T15:59:24.896818+00:00"
+    },
+    "archive": {
+      "managed": true,
+      "usage_bytes": 1244884083,
+      "usage_is_conservative_estimate": false,
+      "budget_bytes": 17179869184,
+      "active_bytes": 3081576,
+      "segment_bytes": 8388608,
+      "segments": 17,
+      "sealed_segments": 16,
+      "compressed_segments": 16,
+      "legacy_records": 164111,
+      "records": 185411,
+      "free_bytes": 516593922048,
+      "growth_bytes_per_second": 46314.7279658304,
+      "remaining_bytes": 15934985101,
+      "seconds_to_exhaustion": 344058.70013435784,
+      "global_floor_bytes": 68719476736,
+      "retention_policy": "retain_all_originals_and_verified_copies",
+      "health": "ok",
+      "last_error": null
+    },
+    "experimental_totals": {
+      "cycles": 2970,
+      "observations": 129513,
+      "qualified_opportunities": 0,
+      "signals": 860051
+    },
+    "scope": "archive health and current simulated capital; research histories remain in /api/state"
+  },
+  "connectivity": {
+    "messages": 964127,
+    "native_book_frames": 8198,
+    "native_delta_frames": 954697,
+    "native_books_delivered": 1479131,
+    "rest_books": 8425,
+    "reconnects": 0,
+    "gaps": 358352,
+    "out_of_order": 80236,
+    "queue_overflows": 0,
+    "invalid_frames": 0,
+    "callbacks_failed": 0,
+    "invalidations": 358366,
+    "resnapshot_failures": 0,
+    "gap_missing_baseline": 354930,
+    "gap_source_time": 2084,
+    "gap_top_integrity": 1186,
+    "gap_invalid_delta": 152,
+    "stale_recovery_baselines": 96,
+    "ws_connected": true,
+    "subscribed_tokens": 400,
+    "cached_books": 398,
+    "resolved_tokens_withheld": 0,
+    "gap_tokens_withheld": 2,
+    "fresh_books": 292,
+    "queue_depth": 0,
+    "resnapshot_pending": 2,
+    "connection_generation": 9,
+    "last_message_at": "2026-11-06T15:59:24.902464+00:00",
+    "last_gap_at": "2026-11-06T15:59:24.748988+00:00",
+    "http_requests": 8443,
+    "http_rate_limits": 0,
+    "http_peak_inflight": 3,
+    "rate_requests_per_second": 8.0
+  },
+  "source_health": {
+    "status": "ok",
+    "last_error": null,
+    "books_withheld_at_export": 0,
+    "last_ingestion_at": "2026-11-06T15:59:24.903181+00:00",
+    "paper_trading": true,
+    "live_trading_enabled": false
+  },
+  "source_book_samples": [
+    {
+      "id": "195ade310141cab6aea9908c5d95a6ee328d8d7e0fa955523b302548c4faa074",
+      "market_id": "6722815",
+      "token_id": "93395510039145497366326432622824906383417835465557619926558689669613149163560",
+      "timestamp": "2026-11-06T15:59:24.861000Z",
+      "available_at": "2026-11-06T15:59:24.902509Z",
+      "source": "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+      "bids": [
+        {
+          "price": 0.81,
+          "size": 4899.11
+        },
+        {
+          "price": 0.8,
+          "size": 8814.02
+        }
+      ],
+      "asks": [
+        {
+          "price": 0.83,
+          "size": 4757.5
+        },
+        {
+          "price": 0.84,
+          "size": 4058.54
+        }
+      ]
+    },
+    {
+      "id": "5503169b05384e978fffd03d6d8f3fe33663c5a72047a924e267d86d047c041a",
+      "market_id": "6722815",
+      "token_id": "57348904306920876724743027504363549796773646692053685107954202809389155083101",
+      "timestamp": "2026-11-06T15:59:24.861000Z",
+      "available_at": "2026-11-06T15:59:24.902509Z",
+      "source": "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+      "bids": [
+        {
+          "price": 0.17,
+          "size": 4757.5
+        },
+        {
+          "price": 0.16,
+          "size": 4058.54
+        }
+      ],
+      "asks": [
+        {
+          "price": 0.19,
+          "size": 4899.11
+        },
+        {
+          "price": 0.2,
+          "size": 8814.02
+        }
+      ]
+    },
+    {
+      "id": "22788fef990b60a4cca6344e22b86f161a4b9009a9ad6f5bc727889cdeb0967b",
+      "market_id": "6563867",
+      "token_id": "111146737156242383781157591839680365869569491056360900410802373148277331144103",
+      "timestamp": "2026-11-06T15:59:24.856000Z",
+      "available_at": "2026-11-06T15:59:24.898038Z",
+      "source": "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+      "bids": [
+        {
+          "price": 0.309,
+          "size": 214.0
+        },
+        {
+          "price": 0.308,
+          "size": 38.0
+        }
+      ],
+      "asks": [
+        {
+          "price": 0.333,
+          "size": 458.77
+        },
+        {
+          "price": 0.334,
+          "size": 458.77
+        }
+      ]
+    }
+  ],
+  "filesystem": {
+    "total_bytes": 1038993555456,
+    "used_bytes": 522382856192,
+    "free_bytes": 516593922048
+  },
+  "execution_counts": {
+    "paper-live": {
+      "orders": 0,
+      "broker_fill_acknowledgements": 0
+    },
+    "experimental-paper": {
+      "orders": 0,
+      "broker_fill_acknowledgements": 0
+    }
+  }
+}

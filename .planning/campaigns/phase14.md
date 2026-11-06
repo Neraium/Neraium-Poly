@@ -1,5 +1,5 @@
 # Phase14 universal prediction intelligence
-Status: blocked-capacity (independently executable source implementation verified)
+Status: research-only; previous capacity blocker resolved by archive-recovery follow-up
 Baseline: e16d789d7a1ac907c74c093f9ad83748b619f737, main,/home/ubuntu/Neraium-Poly.
 Direction: domain-neutral discovery, evidence and forecasts; preserve sports and all journals/accounts.
 Checkpoint: committedbaseline and logicalsourcecommits; no reset/stash. Existinguntrackedinspectionpreserved.
@@ -7,7 +7,7 @@ Checkpoint: committedbaseline and logicalsourcecommits; no reset/stash. Existing
 ## Phase End Conditions
 | Phase | Status | Condition | validator_retries_remaining |
 |---|---|---|---|
-| 1 inspect/contracts/storage | blocked-capacity | audit complete; no approved secondary destination; root below8GiB | 3 |
+| 1 inspect/contracts/storage | completed | initial audit preserved; owner expansion and managed archive recovery verified in follow-up | 3 |
 | 2 parallel adapters | completed | bounded real source captures and domain contracts; no new qualified non-sports forecasts | 3 |
 | 3 integration | completed | guarded universal journal/runtime/SII/domain monitor; no order authority | 3 |
 | 4 certification | completed |797backend/5browser/build/audits pass; GitHubCI42198626025success onf630ac1 | 3 |
@@ -34,7 +34,7 @@ Continueindependentdevelopment. No secondarypersistentmountconfirmed.
 | Target | ID | Type | Required | Evidence | Status | Subject |
 |---|---|---|---|---|---|---|
 |phase:1|contracts|file_diff|yes|backend/neraium_poly/research/phase14/contracts.py|passed|sharedfoundation|
-|phase:1|capacity|file_exists|yes|.planning/evidence/phase14/service-verification.json|blocked|below8GiB,noapprovedsecondarydestination|
+|phase:1|capacity|file_exists|yes|.planning/evidence/archive-recovery/final-state.json|passed|ownerexpandedrootandverifiedmanagedarchives;originalauditpreserved|
 |phase:2|sources|file_exists|yes|.planning/evidence/phase14-experiments/sources.json|passed|actualboundedvolatilecaptures,noqualifiednewforecasts|
 |phase:3|integration|file_exists|yes|.planning/evidence/phase14/service-verification.json|passed|cachedmetadataonly,noexecutioninputs,paperflagsandaccountsverified|
 |phase:4|tests|file_exists|yes|.planning/evidence/phase14/final-tests/summary.json|passed|797backend,5browser,build,audits|
@@ -53,3 +53,11 @@ Bothaccounts500cash/PnL0; hashes/oldjournals unchanged. Liveflagsfalse.
 Next: approveddurablecapacity/integrityverifiedarchiveplan; source revalidation;
 reviewedweatherdistribution/cryptoconvention/economicvintages; independentdomain
 outcomeverifiers. No automatic kill-switchclear/thresholdlowering/modelpromotion.
+
+## Capacity recovery follow-up2026-11-06
+
+The former capacity blocker is resolved by owner root expansion and verified managed
+archive lifecycle. See docs/archive-recovery-report.md and archive-recovery campaign.
+Live collection sustained15min/6newsegmentseach; globalfloor retained, all originals
+kept, both500accounts isolated. New-model calibration/evidence and owner-approval
+gates remain independent; no strategy certification or new trading authority granted.

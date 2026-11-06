@@ -1,0 +1,77 @@
+# Archive recovery checkpoint (in progress)
+
+Checkout /home/ubuntu/Neraium-Poly, branch main. Latest verified source1f37342,
+pushed. Fullbackend833tests,5browser,build,ruff/auditspass; finalGitHubCI42244244122
+success. PriorCIc4f545b42241746395 anddae8b2d42240034720 also passed.
+Preserve original untracked live-inspection,ebs750-blocker,ebs1000-recovery evidence.
+No stashing/reset/deletion. No AWS changes;1000GiBroot alreadyownerexpanded.
+
+Implemented data/segmented.py ManagedEventStore, integrationconfigs/readers/runtime
+guards,cheapcan_write,exactstatus,rates,immutablemanifests,gziproundtrip,streaming
+iter_replay andallhistoryget/latest/count. OldrawSQLresearch readers remainlegacy
+only; docs/archive-lifecycle.md explicit. Catalogcache64MiB. Models/riskapproval
+andtradingauthorityunchanged. Newlightweight/api/archive-state +monitor--viewarchives
+avoidfullhistoricalstatelock. EndpointdefersrealcapitaltoRiskEngine; no synthetic
+fallback. Appfullstatecanstillbeexpensive; archivesviewusesboundedcurrentview.
+
+Budgets: collector65536MiB,experimental16384MiB,segments16MiB/8MiB. Effectivefree
+threshold65536MiB includesunchanged8192MiBglobalfloor. Allservicetreefilescount,
+includingaccounts,forecasts,backupcopies,catalogs,rawsegments,gzip. Noautopurge;
+retainoriginalsandverifiedcopiesforeveruntilfinitecap=>failclosed. Runtime
+unexpectedmaintain/statusfaultsstopstream/latchaccount; noemergencystopreset.
+
+Threeindependentwritingagents/nativeworktreesretained. Storagecommitsallintegrated;
+source39bb2e2through1f37342. Independent10faulttestsplusruntime9/monitor7 cover
+interruption,ENOSPC,floor,globalidentity,corruption,post-opencleanup andsynthetic404.
+Twoactualbootstrapworkers3164611/3164612overlapped. Legacy838222collector and164111
+experimentalrecordsverified,logicalIDhashesmatchcatalog. Gracefuloldshutdownleft
+WALnonempty: consistentSQLitebackupcreatedinsidearchive-baseline/,verifiedallIDs,
+SQLiteFULLcheckpointthenverifiedidenticalIDs. NoWALmanuallyremoved; originals
+notmoved/replaced/compressed. Bothbackupcopiesretainedwithinservicebudgets.
+Migrationoutputsdata/archive-recovery/bootstrap-*.json; boundedproofbootstrap.json.
+
+Firststart15:19UTCservice3165463/3165464. Firstsoakhealthy15:22:48through~15:34,
+716sec/24healthysamples,5sealedsegmentsandgzipcopieseach. FullstateHTTPtimeouts
+motivatedlightweightendpoint; allrawphase1samplespreservedin
+.planning/evidence/archive-recovery/soak-pre-health-endpoint.json.
+Noactivityfabricated,833backendincludesnewendpointtests.
+
+Necessarysecondrestartfornewendpoint initiated15:35UTC. Driverexecsession95374:
+stopboth,recordpostrotationcatalogsnapshotdata/archive-recovery/postrotation-before-restart.json,
+startboth,runfinalsoaksampler. CheckcurrentPIDs/status/soak-final-progress before
+assumingready. SourcebootstrapfullhistoryreverificationcanpauseAPIstartup~1min;
+doNOTrepeatedlyrestartduringvalidindexing. Finalsamplerdata/archive-recovery/soak.py
+readsarchive-stateandactualmarket-frameevery20secs, requiresminimum900secplus>=3
+newsealedsegmentsperaccountsincehealthybaseline. Output
+.planning/evidence/archive-recovery/soak.json; final source1f37342. Do notfakepass.
+
+Next: finishactualsoak,verifyallsealedraw/gzip/manifests+catalogcountsandoriginal
+legacySHA/identityprefix,compareaccounttables/precutover117baselineforecastprefix/
+NFLjournalhead/liveflags/stilllatchedstop. Capturescriptdata/archive-recovery/capture.py
+fullAPIcanneed~30sectimeout; nativeSQLchecksindependent. Bothcash500/PnL0/0orders
+atlastphase1point, doNOTassumefinalvalues. CollectfinalfreshbooksourceIDs/times.
+Copyfinaltest/audit/build/browserlogsandCIfor1f,writeaccurateREADME/readiness,
+updatecampaign/handoff,commit/pushboundedproofs; finalmemorysync/reindex/checkHEAD.
+Do notcommitenv/db/rawmarkets/helperbackups or unrelatedevidence.
+
+## Completed checkpoint
+
+Final source verification e9ff6d2, application1f37342; backend/config/frontendtrees
+identical. CI42246335101backend/dashboardgreen,834backendtests+5browser/build/audits
+passed. Final15minsoak901.348secs,44healthysamples,33collectorcycles/141experimental,
+6newsealedsegmentsperaccount;248–316freshbooks. Allprefix/raw/gzip/catalogproofs
+pass. RunningPIDs3167124/3167125;both500cash/PnL0,0orders/fills/positions,experimental
+stoplatched,certifiedapprovalblocked,liveflagsfalse. FastarchiveAPIand40colmonitor
+responsive. No otherpreviouslyrunningserviceunitmissing.
+
+Reportdocs/archive-recovery-report.md;boundedevidence.planning/evidence/archive-recovery.
+Currentwindowmean120435.71B/scollector,47927.42B/sexperimental;retainoriginalsmeans
+finite6/4dayhorizonatthatrate. Noautopurge. Archivebudget64GiB/16GiB,effectivefree
+threshold64GiB(includes8GiBfloor),segments16MiB/8MiB,onecompressionsegment/cycle.
+Alloriginals,consistentbackups,forecastsandaccountrecordsretained. Volumeunchanged.
+
+Finaldeliverydocumentation/evidencecommitfollows;exactGitHEAD/branch/worktreeand
+nextactionsrecordedinignoreddata/archive-recovery/final-checkpoint.jsonafterpush.
+Preservealloriginaluntrackedebs/liveinspectionevidence. Futureworkrequiresapproved
+retention/migrationpolicybeforeretainedbudgetfills;rawSQLresearchconsumersremain
+legacy-onlyunlessusingmanagedstream. Do notclearstops/activateuncertifiedmodels.

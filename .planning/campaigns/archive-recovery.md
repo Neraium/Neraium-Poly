@@ -1,5 +1,5 @@
 # Post-expansion archive lifecycle
-Status: in-progress. Base1449909,main,/home/ubuntu/Neraium-Poly.
+Status: completed. Base1449909,main,/home/ubuntu/Neraium-Poly.
 User authorizes implementation, tests, commits/push, necessary scoped service restarts.
 Preserve original untracked evidence, all data, risk stops and account/model authority.
 At14:47UTC237GiBRAMavailable,~484GiBrootfree,32logicalCPU,load0.43. Limit3writingagents
@@ -45,13 +45,32 @@ Final budgets subject to measured preflight. Do not clear emergency stop.
 
 ## Phase End Conditions
 |Phase|Status|Condition|validator_retries_remaining|
-|inspect/contracts|in-progress|audit counts, budgets, consumers, shared contract|3|
-|implement|pending|segmented lifecycle, integration, monitoring, fault tests|3|
-|verify|pending|backend/integration/browser/audits/CI pass|3|
-|observe|pending|multiple real production rotations, source freshness, histories|3|
-|deliver|pending|commit/push verified evidence and exact remaining blockers|3|
+|inspect/contracts|completed|audit counts, budgets, consumers, shared contract|3|
+|implement|completed|segmented lifecycle, integration, monitoring, fault tests|3|
+|verify|completed|834backend,5browser,build,audits,CI42246335101passone9ff6d2|3|
+|observe|completed|901.348s,44healthysamples,33collector/141experimentalcycles,6newsealseach,248–316freshbooks|3|
+|deliver|completed|verifiedsourceandboundedproofscommitted/pushed;retainoriginalsfinitehorizonreported|3|
 
 ## Exit Evidence
 |Target|ID|Type|Required|Evidence|Status|Subject|
-|phase:implement|faults|command_passes|yes|tests/test_archive_failures.py|pending|storageimplementation|
-|phase:observe|rotations|file_exists|yes|.planning/evidence/archive-recovery/soak.json|pending|productionrecords|
+|phase:implement|faults|command_passes|yes|tests/test_archive_failures.py|passed|e9ff6d2|
+|phase:observe|rotations|file_exists|yes|.planning/evidence/archive-recovery/soak.json|passed|actual1f37342application;sameapptreease9ff6d2|
+
+## Current checkpoint
+Verifiedsourcec4f545b,pushedmain. Bootstrapworkers3164611/3164612overlapped;
+838222collector/164111experimentaloriginalidentitiesandpayloadhashesverified.
+ConsistentSQLitebackupcopiesretainedinsideeachservicebudget. SQLite-managedFULL
+checkpointcompletedwithidenticallogicalrecorddigest;noWALmanuallydeleted.
+Originallegacyfilesandnewpermanentsegmentsretained. Services3165463/3165464started
+15:19UTC;bothhealthyafterstartup. Firsthealthysoakpair15:22:48UTC;sampleevery20secs,
+minimum900secsand>=3newsealedsegmentsperaccount. Experimentalstopstilllatched,
+noapprovedcertifiedstrategy,liveflagsfalse. Do not confusestartupAPIwaitwithfailure.
+Final:application1f37342,verificatione9ff6d2,pushedmain;runningPIDs3167124/3167125.
+Postrotationrestartpreserved32014/8239newrecordsplusall1002333legacyrecords.
+Allclosedsegment/raw/gzip/manifestandcatalogproofspass;both500cash/PnL0,
+0orders/fills/positions,stoplatched,certifiedvalidationblocked,liveflagsfalse.
+At15:59:25UTCcollector4758287025bytes/68719476736budget,experimental1244884083/
+17179869184budget;rootfree516593922048bytes. Netsoakgrowth120435.71/47927.42B/s,
+roughly6/4dayremaininghorizon. Monitoringfastendpointfixverifiedbyrealsoak.
+Nooriginalpurgepolicy. Nextaction:approvefutureverifiedretention/migrationbefore
+finitebudgetfull;usemanagedstreamfornewresearch;preservetradingapprovalgates.

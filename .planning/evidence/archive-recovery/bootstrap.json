@@ -1,0 +1,99 @@
+{
+  "workers": [
+    {
+      "account": "paper-live",
+      "pid": 3164611,
+      "started_at": "2026-11-06T15:10:54.452811+00:00",
+      "completed_at": "2026-11-06T15:18:21.869622+00:00",
+      "cpu_seconds": 75.223965454,
+      "peak_rss_kib": 49716,
+      "original_file_sha256": "229e8cc91af9bf956232a204a10afe651e92e1413331646af8636b18de8fc04f",
+      "backup_file_sha256": "63d2a653b617bc8253ff8e6194d1effb1b838ed691cbcce8788ce374a01a9b72",
+      "backup_relative_path": "data/paper-live/archive-baseline/events-pre-segmentation.sqlite",
+      "checkpoint": [
+        0,
+        35963,
+        35963
+      ],
+      "before": {
+        "records": 838222,
+        "ordered_identity_sha256": "49e38b94822ac6a62aa4397e0ea5d301c560ab2059c8a8a0392d90dcc6838be8"
+      },
+      "after": {
+        "records": 838222,
+        "ordered_identity_sha256": "49e38b94822ac6a62aa4397e0ea5d301c560ab2059c8a8a0392d90dcc6838be8"
+      },
+      "status": {
+        "managed": true,
+        "usage_bytes": 4465523694,
+        "usage_is_conservative_estimate": false,
+        "budget_bytes": 68719476736,
+        "active_bytes": 57496,
+        "segment_bytes": 16777216,
+        "segments": 1,
+        "sealed_segments": 0,
+        "compressed_segments": 0,
+        "legacy_records": 838222,
+        "records": 838222,
+        "free_bytes": 517052641280,
+        "growth_bytes_per_second": null,
+        "remaining_bytes": 64253953042,
+        "seconds_to_exhaustion": null,
+        "global_floor_bytes": 68719476736,
+        "retention_policy": "retain_all_originals_and_verified_copies",
+        "health": "ok",
+        "last_error": null
+      },
+      "retention": "originals and consistent backups retained; no row deletion or file replacement"
+    },
+    {
+      "account": "experimental-paper",
+      "pid": 3164612,
+      "started_at": "2026-11-06T15:10:54.452211+00:00",
+      "completed_at": "2026-11-06T15:11:51.063031+00:00",
+      "cpu_seconds": 14.909879391,
+      "peak_rss_kib": 50620,
+      "original_file_sha256": "797ba753748f3f688a69fe194ce30870598736b248371fa305c54de8c858cba9",
+      "backup_file_sha256": "d7f12b4cd90cfe0f53afde91a4180bb11a3321dd1224bfdb9ddef9959dce9a04",
+      "backup_relative_path": "data/experimental-paper/archive-baseline/events-pre-segmentation.sqlite",
+      "checkpoint": [
+        0,
+        1001,
+        1001
+      ],
+      "before": {
+        "records": 164111,
+        "ordered_identity_sha256": "20977d6cab61af87b82f49e153e498c129d1584d3db2b9f6ca297a7636e70d03"
+      },
+      "after": {
+        "records": 164111,
+        "ordered_identity_sha256": "20977d6cab61af87b82f49e153e498c129d1584d3db2b9f6ca297a7636e70d03"
+      },
+      "status": {
+        "managed": true,
+        "usage_bytes": 1137879020,
+        "usage_is_conservative_estimate": false,
+        "budget_bytes": 17179869184,
+        "active_bytes": 57496,
+        "segment_bytes": 8388608,
+        "segments": 1,
+        "sealed_segments": 0,
+        "compressed_segments": 0,
+        "legacy_records": 164111,
+        "records": 164111,
+        "free_bytes": 517317263360,
+        "growth_bytes_per_second": null,
+        "remaining_bytes": 16041990164,
+        "seconds_to_exhaustion": null,
+        "global_floor_bytes": 68719476736,
+        "retention_policy": "retain_all_originals_and_verified_copies",
+        "health": "ok",
+        "last_error": null
+      },
+      "retention": "originals and consistent backups retained; no row deletion or file replacement"
+    }
+  ],
+  "actual_migration_workers": 2,
+  "overlap": true,
+  "note": "These are authentic historical records; no fixtures. SQLite consistent backups retained inside respective service budgets."
+}

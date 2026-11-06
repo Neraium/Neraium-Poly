@@ -1,0 +1,279 @@
+{
+  "observed_at": "2026-11-06T15:53:48.511873+00:00",
+  "accounts": {
+    "paper-live": {
+      "legacy_original_sha256_unchanged": true,
+      "consistent_backup_sha256_unchanged": true,
+      "legacy_records": 838222,
+      "catalog_records": 904958,
+      "all_prerestart_new_records_preserved": 32014,
+      "unique_index_records": 904958,
+      "catalog_quick_check": "ok",
+      "verified_closed_segments": [
+        {
+          "segment": "segment-00000001.sqlite",
+          "records": 4889,
+          "raw_bytes": 12603392,
+          "raw_sha256": "80be8c2974ff0d6caad93f8136c0c370f1217df71fcdff7bd4459ff5562c78b3",
+          "immutable_manifest_verified": true,
+          "gzip_verified": true,
+          "gzip_bytes": 3402003,
+          "gzip_sha256": "0ba2bcc10a7da7a6170a7384880ad5b404e4f2e09ac9b94a0c088149adee49df"
+        },
+        {
+          "segment": "segment-00000002.sqlite",
+          "records": 5180,
+          "raw_bytes": 13131776,
+          "raw_sha256": "6e6ebaf9a7001ff205a7c763a05f7d01684602384b4ec0bdc030fcf5fe3f31a9",
+          "immutable_manifest_verified": true,
+          "gzip_verified": true,
+          "gzip_bytes": 3515059,
+          "gzip_sha256": "4bfd5237d5165964ce77f3f5193a7b408ce0dbc8c682471eae8445b740c7fe1a"
+        },
+        {
+          "segment": "segment-00000003.sqlite",
+          "records": 5194,
+          "raw_bytes": 13148160,
+          "raw_sha256": "96c4b2f415aa19c7d47fb8848de6761aef0f5d78df73277eeab60822f1e68fc2",
+          "immutable_manifest_verified": true,
+          "gzip_verified": true,
+          "gzip_bytes": 3546739,
+          "gzip_sha256": "0eac2accf19837c2923b0ce7a0d9a1179b90186e31c71f591d04cb9667b66172"
+        },
+        {
+          "segment": "segment-00000004.sqlite",
+          "records": 5197,
+          "raw_bytes": 12988416,
+          "raw_sha256": "ef30bc9dea557481ee9ea5412ff84018bb6de8490faa672029aff50684ac7ca8",
+          "immutable_manifest_verified": true,
+          "gzip_verified": true,
+          "gzip_bytes": 3504568,
+          "gzip_sha256": "4b007d20df38efd4fe7059b0f73c67ed577d4b33604dd8ec5ca27f8746db9cdd"
+        },
+        {
+          "segment": "segment-00000005.sqlite",
+          "records": 5212,
+          "raw_bytes": 13111296,
+          "raw_sha256": "db8184a9c62c8bb790779e512012e2c7881ef5d1fb6b61925a7574cbcd808bc2",
+          "immutable_manifest_verified": true,
+          "gzip_verified": true,
+          "gzip_bytes": 3513712,
+          "gzip_sha256": "de476ed8370a953d54efbbc8878a6ad213d5e09adaf3a21abd44185803a6aaa7"
+        },
+        {
+          "segment": "segment-00000006.sqlite",
+          "records": 5192,
+          "raw_bytes": 13164544,
+          "raw_sha256": "0106bfc85adc2e4d86b56a292f4077d68728ffd49f215eb0ba19dfb1b33a9b0b",
+          "immutable_manifest_verified": true,
+          "gzip_verified": true,
+          "gzip_bytes": 3484214,
+          "gzip_sha256": "678260b1c8586c37876f18e31b901acfe90a7e3ae35dc9b24d978bc899512144"
+        },
+        {
+          "segment": "segment-00000007.sqlite",
+          "records": 4920,
+          "raw_bytes": 12591104,
+          "raw_sha256": "e55ebc3f4e377e144162df956ce8731d1e643228053e39c70883f31a8eca03df",
+          "immutable_manifest_verified": true,
+          "gzip_verified": true,
+          "gzip_bytes": 3338754,
+          "gzip_sha256": "dacc22f1b83ba400f568fa3f37f0ebeeaf4f119e42c94a7da9c6d200d7bbd488"
+        },
+        {
+          "segment": "segment-00000008.sqlite",
+          "records": 5210,
+          "raw_bytes": 12951552,
+          "raw_sha256": "25ec2f245fbfca1618dc02aa662ecec86c63c8931d6808bbdc25cb53749321bf",
+          "immutable_manifest_verified": true,
+          "gzip_verified": true,
+          "gzip_bytes": 3471442,
+          "gzip_sha256": "6d482487c24228a694eca423347eee7161a3c7a21ee34b1457d5a5566e474a6e"
+        },
+        {
+          "segment": "segment-00000009.sqlite",
+          "records": 5216,
+          "raw_bytes": 13078528,
+          "raw_sha256": "a74f3153b4a914c2080e0fd85aa007cacf16f04c82df9d287257dceb60e928ee",
+          "immutable_manifest_verified": true,
+          "gzip_verified": true,
+          "gzip_bytes": 3519898,
+          "gzip_sha256": "b4469262e934f7bc4dcc6e0f15348c414bf8c027ec824fca69a47384fd345d4b"
+        },
+        {
+          "segment": "segment-00000010.sqlite",
+          "records": 5225,
+          "raw_bytes": 13213696,
+          "raw_sha256": "94e189843a8e7749fbecc0c90cab3d8e805a81394fe48f73ef24da201eee8d59",
+          "immutable_manifest_verified": true,
+          "gzip_verified": true,
+          "gzip_bytes": 3486094,
+          "gzip_sha256": "11367584f633521572675973adf38687b76146547e9edea68e65545603ed8c67"
+        },
+        {
+          "segment": "segment-00000011.sqlite",
+          "records": 5195,
+          "raw_bytes": 13172736,
+          "raw_sha256": "b2a60fbae7c93aa425c3e537fc46ced73d15d42b8b31823f439066061ddeb577",
+          "immutable_manifest_verified": true,
+          "gzip_verified": true,
+          "gzip_bytes": 3474025,
+          "gzip_sha256": "0d8be5c309c670ce41228d02cb33cd3eb2f6a3ddb2485570e52a747d6ec6d911"
+        },
+        {
+          "segment": "segment-00000012.sqlite",
+          "records": 5211,
+          "raw_bytes": 13094912,
+          "raw_sha256": "d5c71dee4be042592fdb72d2b5370eaba04271d407f790d168c6ea7c7bc0b34e",
+          "immutable_manifest_verified": true,
+          "gzip_verified": true,
+          "gzip_bytes": 3531321,
+          "gzip_sha256": "185d8641477af7bb50e6ee28b6cf1eadbb1184f317ae1829230b047406e19511"
+        }
+      ]
+    },
+    "experimental-paper": {
+      "legacy_original_sha256_unchanged": true,
+      "consistent_backup_sha256_unchanged": true,
+      "legacy_records": 164111,
+      "catalog_records": 182437,
+      "all_prerestart_new_records_preserved": 8239,
+      "unique_index_records": 182437,
+      "catalog_quick_check": "ok",
+      "verified_closed_segments": [
+        {
+          "segment": "segment-00000001.sqlite",
+          "records": 1596,
+          "raw_bytes": 5013504,
+          "raw_sha256": "c24e8b9b08711de5c59cdd35a387442f18c83eb49b3f9e8981e60ccd8c5a4748",
+          "immutable_manifest_verified": true,
+          "gzip_verified": true,
+          "gzip_bytes": 1663150,
+          "gzip_sha256": "cd86a6fb7d487466bcb26fd2379d254808657e9e0d643fb07cd05b25bf76bf0e"
+        },
+        {
+          "segment": "segment-00000002.sqlite",
+          "records": 1365,
+          "raw_bytes": 4296704,
+          "raw_sha256": "e8a558636deefbe261fedc3b6b44f0bc558aa28e513b5b4bf5d97d16b9cd7027",
+          "immutable_manifest_verified": true,
+          "gzip_verified": true,
+          "gzip_bytes": 1445686,
+          "gzip_sha256": "409ddcec46bf84162a80124ada2c9f3d5fa3ed72dbe1b2756e268e1475d7e5b3"
+        },
+        {
+          "segment": "segment-00000003.sqlite",
+          "records": 1346,
+          "raw_bytes": 4239360,
+          "raw_sha256": "58803565b2ca91c2ee9f4917d6a5a57d3cbf4c1cf024d39b96a04c7f7e128f1c",
+          "immutable_manifest_verified": true,
+          "gzip_verified": true,
+          "gzip_bytes": 1453871,
+          "gzip_sha256": "9327b5561549db9c09e4d8358808a14ac9b218a76f55d6771849c6c851375c0c"
+        },
+        {
+          "segment": "segment-00000004.sqlite",
+          "records": 1295,
+          "raw_bytes": 4259840,
+          "raw_sha256": "90387019ae0806395020a1cd69aa3df6b8665b5baa6e0072f399977f73bc1b7e",
+          "immutable_manifest_verified": true,
+          "gzip_verified": true,
+          "gzip_bytes": 1433454,
+          "gzip_sha256": "37b2e25886edfacb8ce650df6d0de19674d2456cd04092d4e3b9f8f383995124"
+        },
+        {
+          "segment": "segment-00000005.sqlite",
+          "records": 1292,
+          "raw_bytes": 4247552,
+          "raw_sha256": "02dd66808c414bf5135a65bb38fe7dc8f47ca9fbbc0273f5b6b9cbbf32aea238",
+          "immutable_manifest_verified": true,
+          "gzip_verified": true,
+          "gzip_bytes": 1447292,
+          "gzip_sha256": "65aa8e850aae374d88f3afe1a76b7369ce10a894b624ce2ef2aab0864344ebb7"
+        },
+        {
+          "segment": "segment-00000006.sqlite",
+          "records": 1269,
+          "raw_bytes": 4321280,
+          "raw_sha256": "de9c15f8baecab188db8866234a0e8fa4c18e872e6a0bd8be65a4eaf00f8b77b",
+          "immutable_manifest_verified": true,
+          "gzip_verified": true,
+          "gzip_bytes": 1454718,
+          "gzip_sha256": "308fc14c67d1c1c11c1f7b7c1535358e15d4ad2a759b19e0ef23053d818d562e"
+        },
+        {
+          "segment": "segment-00000007.sqlite",
+          "records": 1304,
+          "raw_bytes": 4407296,
+          "raw_sha256": "eefd06ba004682ced674c50667985aff622db381fdbe69b151b2ac6f35208d20",
+          "immutable_manifest_verified": true,
+          "gzip_verified": true,
+          "gzip_bytes": 1489889,
+          "gzip_sha256": "5f5fdd36bf7dafe1c2fec20364e544a52d9ab78b190f34928d619341c2f87eb6"
+        },
+        {
+          "segment": "segment-00000008.sqlite",
+          "records": 1281,
+          "raw_bytes": 4481024,
+          "raw_sha256": "02944493cbe36428ab2913a97f56a339a23ae1ebda53ea6b85afc1104d879072",
+          "immutable_manifest_verified": true,
+          "gzip_verified": true,
+          "gzip_bytes": 1533124,
+          "gzip_sha256": "ad38b18af63a886e8fd8099e9f826c1298cd11d1619b304a8ba522439f80caee"
+        },
+        {
+          "segment": "segment-00000009.sqlite",
+          "records": 1301,
+          "raw_bytes": 4395008,
+          "raw_sha256": "0077cef4840c74b6c2c7fcb602a7e3f52ee48ca75ec231a7030ae89919670d88",
+          "immutable_manifest_verified": true,
+          "gzip_verified": true,
+          "gzip_bytes": 1476637,
+          "gzip_sha256": "43520f6b2039a251436f5b9c2b03fa4adab93b62e250c51ba6dda1b697694fd9"
+        },
+        {
+          "segment": "segment-00000010.sqlite",
+          "records": 1273,
+          "raw_bytes": 4292608,
+          "raw_sha256": "d2325b603f22782549b74456996ffc147da3b569ba17ee812a49320153639072",
+          "immutable_manifest_verified": true,
+          "gzip_verified": true,
+          "gzip_bytes": 1500045,
+          "gzip_sha256": "d77a8fce6052062f5f755d21b40361204d8b3c0815755899bff9476582404692"
+        },
+        {
+          "segment": "segment-00000011.sqlite",
+          "records": 1312,
+          "raw_bytes": 4354048,
+          "raw_sha256": "ed80efd07b39664d8b287beebe2383d8849e2ff148ad9c2a00ceafa3982330fb",
+          "immutable_manifest_verified": true,
+          "gzip_verified": true,
+          "gzip_bytes": 1487486,
+          "gzip_sha256": "07d1d99021611ba0272d63b4a37a41bcf9634609a20ea7b9f18db0face6c6a3b"
+        },
+        {
+          "segment": "segment-00000012.sqlite",
+          "records": 1304,
+          "raw_bytes": 4419584,
+          "raw_sha256": "d1649854d18e44a9439e4a85dff714adc55d8803348af832846c614164cf032c",
+          "immutable_manifest_verified": true,
+          "gzip_verified": true,
+          "gzip_bytes": 1530893,
+          "gzip_sha256": "93fb09985df4d991267f39072d33574fc96b28d379b34f6b5deb504316454741"
+        },
+        {
+          "segment": "segment-00000013.sqlite",
+          "records": 1283,
+          "raw_bytes": 4435968,
+          "raw_sha256": "dd7d703e6531acc0e98a85ebf4651ae0a2aaef1750129f91ea12699e27e387a0",
+          "immutable_manifest_verified": true,
+          "gzip_verified": true,
+          "gzip_bytes": 1532923,
+          "gzip_sha256": "5a6ae0785658767a9032aaff899f1e8aca508b3e8fb8b9b2b2dbc737976a1c50"
+        }
+      ]
+    }
+  },
+  "mode": "read-only original/closed segment verification; active SQLite files never copied/moved/compressed",
+  "completed_at": "2026-11-06T15:53:54.051561+00:00"
+}

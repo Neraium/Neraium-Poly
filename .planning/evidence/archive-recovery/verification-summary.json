@@ -1,0 +1,16 @@
+{
+  "backend_passed": 834,
+  "browser_passed": 5,
+  "ruff": "passed",
+  "build": "passed",
+  "runtime_dependency_audit": "no known vulnerabilities",
+  "npm_audit": "zero vulnerabilities",
+  "ci_run": 42246335101,
+  "ci_conclusion": "success",
+  "verification_commit": "e9ff6d24d40945cb43c95d903e44358efa4a8909",
+  "running_application_commit": "1f37342545a7dc187aa29816b3e4fdabff6e4f90",
+  "application_trees_identical": true,
+  "hard_process_crash_test": "passed controlled child exit19 between segment/catalog commits",
+  "controlled_scenario_sha256": "1be0733276964ce78d1a6cd2223aa5719119c5f592734672a75055c0cf2072c1",
+  "fixture_outputs_are_actual_market_evidence": false
+}
