@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "dataset_sha256": "4bca310fb839d1f8a24ddaa334e71147f374bef83f3f8546014ee726f540c95d",
+  "observations": 30000,
+  "observation_bytes": 162352233,
+  "source_database": "/home/ubuntu/Neraium-Poly/data/experimental-paper/events.sqlite",
+  "source_high_water": 77789,
+  "source_quote_rowid_min": 33487,
+  "source_quote_rowid_max": 77771,
+  "source_record_bindings_sha256": "ed69c8175e99dcd4d2fdbe1b4fd96687d0e576ceb63b574981265ef85fe48aa8",
+  "source_records": 33622,
+  "source_interval": [
+    "2026-11-06T03:34:59.236000+00:00",
+    "2026-11-06T04:41:30.222000+00:00"
+  ],
+  "availability_interval": [
+    "2026-11-06T03:35:04.111574+00:00",
+    "2026-11-06T04:41:30.279472+00:00"
+  ],
+  "markets": 34,
+  "tokens": 65,
+  "event_groups": 20,
+  "independently_reviewed_events": 0,
+  "completeness": {
+    "point_in_time_fresh_fee_unavailable": 2549
+  },
+  "selection": "Latest bounded quote observations by insertion high-water, then sorted by actual availability; no outcome selection",
+  "certification_authority": false,
+  "automatic_promotion": false,
+  "limitations": [
+    "Sampling is bounded, not complete tick history",
+    "Observed depth is not guaranteed future executable liquidity",
+    "Metadata and fee context missing at decision time remains null",
+    "Event IDs are not proof of event independence"
+  ]
+}
