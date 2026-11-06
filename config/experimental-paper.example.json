@@ -37,5 +37,7 @@
   "archive_budget_mb": 16384,
   "archive_segment_mb": 8,
   "archive_reserve_disk_mb": 65536,
-  "archive_compression_enabled": true
+  "archive_compression_enabled": true,
+  "archive_cold_verification_enabled": true,
+  "phase15_relationship_research_enabled": true
 }

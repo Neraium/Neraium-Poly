@@ -26,6 +26,7 @@ class ExperimentalConfig(BaseModel):
     event_model_report_path: Path | None = Path("data/phase12-results/latest.json")
     event_research_enabled: bool = True
     sports_research_enabled: bool = True
+    phase15_relationship_research_enabled: bool = False
     domain_research_enabled: bool = False
     event_dataset_path: Path | None = Path("data/phase12/dataset-v3")
     event_forecast_interval: float = Field(default=300, ge=60, le=86400)
@@ -46,6 +47,7 @@ class ExperimentalConfig(BaseModel):
     archive_segment_mb: int = Field(default=8, ge=1, le=1024)
     archive_reserve_disk_mb: int = Field(default=65536, ge=8192)
     archive_compression_enabled: bool = True
+    archive_cold_verification_enabled: bool = False
     position_notional: float = Field(default=2, ge=2, le=5)
     risk_limits: RiskLimits = Field(default_factory=RiskLimits)
 

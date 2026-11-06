@@ -549,12 +549,32 @@ class RiskEngine:
             self.db.execute("UPDATE reservations SET released=1,remaining=0 WHERE id=?", (reservation_id,))
             self._audit("release", {"reservation_id": reservation_id}, now)
 
-    def kill_switch(self, active: bool, *, now: datetime) -> None:
+    def kill_switch(self, active: bool, *, now: datetime, reason=None, actor=None, evidence=None) -> None:
+        payload = {"active": active}
+        try:
+            if any(v is not None for v in (reason, actor, evidence)):
+                if not isinstance(reason, str) or not 1 <= len(reason) <= 512:
+                    raise ValueError("explicit bounded stop reason required")
+                if not isinstance(actor, str) or not 1 <= len(actor) <= 128:
+                    raise ValueError("explicit stop actor required")
+                encoded = json.dumps(evidence or {}, sort_keys=True, separators=(",", ":"), allow_nan=False)
+                if len(encoded.encode()) > 4096:
+                    raise ValueError("bounded stop evidence required")
+                payload.update(reason=reason, actor=actor, evidence=json.loads(encoded),
+                               evidence_sha256=hashlib.sha256(encoded.encode()).hexdigest())
+        except (TypeError, ValueError) as error:
+            if not active:
+                raise
+            # Logging metadata must never prevent an emergency stop from latching.
+            context = {"context_validation_error": type(error).__name__}
+            encoded = json.dumps(context, sort_keys=True, separators=(",", ":"))
+            payload.update(reason="stop_context_invalid", actor="unknown_actor", evidence=context,
+                           evidence_sha256=hashlib.sha256(encoded.encode()).hexdigest())
         with self._transaction():
             self.db.execute("UPDATE account SET kill=? WHERE id=1", (int(active),))
             if active:
                 self.db.execute("UPDATE reservations SET released=1,remaining=0 WHERE released=0")
-            self._audit("kill_switch", {"active": active}, now)
+            self._audit("kill_switch", payload, now)
 
     def mark(self, prices: dict[str, float], *, now: datetime) -> dict:
         if any(not math.isfinite(p) or not 0 <= p <= 1 for p in prices.values()):

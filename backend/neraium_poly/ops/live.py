@@ -66,6 +66,7 @@ class LivePaperRuntime:
                     budget_bytes=config.archive_budget_mb * 1024**2,
                     min_free_bytes=max(8192, config.min_free_disk_mb, config.archive_reserve_disk_mb) * 1024**2,
                     compress=config.archive_compression_enabled,
+                    cold_verification_enabled=config.archive_cold_verification_enabled,
                     clock=self.clock,
                 )
             else:
@@ -769,8 +770,9 @@ class LivePaperRuntime:
         return market_frame(self).model_dump(mode="json")
 
     def health(self):
+        last_success = self.last_success
         now = self.clock()
-        age = (now - self.last_success).total_seconds() if self.last_success else None
+        age = (now - last_success).total_seconds() if last_success else None
         return {
             "status": "ok"
             if age is not None
@@ -787,7 +789,7 @@ class LivePaperRuntime:
             "trading_status": "suspended"
             if self.suspended
             else ("active" if self.workflow else "validation_blocked"),
-            "last_ingestion_at": self.last_success.isoformat() if self.last_success else None,
+            "last_ingestion_at": last_success.isoformat() if last_success else None,
             "last_ingestion_age_seconds": age,
             "last_error": self.last_error,
             "ledger_consistent": self.reconciliation["consistent"],
@@ -807,6 +809,11 @@ class LivePaperRuntime:
                           "connectivity": self.coverage.metrics() if self.coverage else {"ws_connected": False}},
             "scope": "archive health and current simulated capital; full event history remains in /api/state",
         }
+
+    def operations_state(self):
+        from neraium_poly.research.phase15.operations import add_capacity
+
+        return add_capacity(self.archive_state(), service="collector", now=self.clock())
 
     def state(self):
         with self._lock:

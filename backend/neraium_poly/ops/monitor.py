@@ -587,7 +587,9 @@ def _render_operations(certified, experimental, width, height, errors):
     line(f"{'Mkts' if source_fresh else 'Last mkts'} {_number(markets)} Fresh {_number(connection.get('fresh_books')) if source_fresh else '—'} WS {_flag(connection.get('ws_connected'), 'on', 'off') if source_fresh else 'stale'}", 1)
     for label, account, fresh in (("EXPERIMENTAL PAPER", experimental, e_fresh), ("CERTIFIED PAPER", certified, c_fresh)):
         line(label + (" · stale" if account and not fresh else ""), 0, "bold yellow" if label.startswith("EXP") else "bold green")
-        line(f"{'Last ' if account and not fresh else ''}{_number(account.get('cash'), True)} P/L {_number(account.get('simulated_pnl'), True)}", 0)
+        activity = (f" O{_number(account.get('orders_submitted'))} F{_number(account.get('fills'))} P{_number(account.get('open_positions'))}"
+                    if label.startswith("EXP") and "orders_submitted" in account else "")
+        line(f"{'Last ' if account and not fresh else ''}{_number(account.get('cash'), True)} P/L {_number(account.get('simulated_pnl'), True)}{activity}", 0)
         if label.startswith("EXP"):
             health = _clean(e_service.get("status", "unavailable")) if fresh else "stale/unavailable"
             line(f"Stop {_flag(account.get('kill_switch', account.get('suspended')))} · svc {health}", 0, "yellow")
@@ -638,6 +640,9 @@ def _render_operations(certified, experimental, width, height, errors):
     strategies = readiness.get("strategies")
     if isinstance(strategies, list) and readiness_fresh:
         line(f"Strategies {_number(len(strategies))} · no auto promotion", 3, "dim")
+    for name, row in rows.items():
+        if isinstance(row, dict) and row.get("monitored_markets"):
+            line(f"{name}: M{_number(row.get('monitored_markets'))} F{_number(row.get('independent_forecasts'))}", 3, "dim")
     for error in tuple(errors)[:2]:
         line(f"API {_clean(error)}", 1, "red")
     unsafe = any(service.get("live_trading_enabled") is True or service.get("paper_trading") is False for service, _ in services)

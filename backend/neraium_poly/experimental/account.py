@@ -641,9 +641,9 @@ class ExperimentalAccount:
                     now,
                 )
 
-    def stop(self, *, now):
+    def stop(self, *, now, reason="operator_emergency_stop", actor="local_operator", evidence=None):
         with self._lock:
-            self.risk.kill_switch(True, now=now)
+            self.risk.kill_switch(True, now=now, reason=reason, actor=actor, evidence=evidence)
             for report in self.broker.history():
                 if report.status in {"open", "partial"}:
                     self.broker.cancel(report.client_order_id, now=now)

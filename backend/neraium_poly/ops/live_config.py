@@ -25,6 +25,7 @@ class LivePaperConfig(BaseModel):
     archive_segment_mb: int = Field(default=16, ge=1, le=1024)
     archive_reserve_disk_mb: int = Field(default=65536, ge=8192)
     archive_compression_enabled: bool = True
+    archive_cold_verification_enabled: bool = False
     max_relationships: int = Field(default=200, ge=1, le=1000)
     max_book_age_seconds: float = Field(default=15, gt=0, le=60)
     coverage_enabled: bool = True

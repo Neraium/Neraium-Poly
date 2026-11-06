@@ -85,6 +85,7 @@ class ExperimentalRuntime:
                     budget_bytes=config.archive_budget_mb * 1024**2,
                     min_free_bytes=max(8192, config.min_free_disk_mb, config.archive_reserve_disk_mb) * 1024**2,
                     compress=config.archive_compression_enabled,
+                    cold_verification_enabled=config.archive_cold_verification_enabled,
                     clock=self.clock,
                 )
             except BaseException:
@@ -132,6 +133,11 @@ class ExperimentalRuntime:
                 except Exception as error:
                     self.event_research_initialization_error = f"{type(error).__name__}:{str(error)[:160]}"
                     log.exception("event_research_startup_withheld")
+            self.phase15_relationships = None
+            if config.phase15_relationship_research_enabled:
+                from neraium_poly.research.phase15.continuous import ContinuousRelationships
+
+                self.phase15_relationships = ContinuousRelationships(self.events)
             self.feed = feed or SharedFeedClient(config.source_url)
             self.fee_adapter = fee_adapter or AuditedFeeAdapter(
                 self.events, self._budget_ok, client=httpx.AsyncClient(timeout=5, follow_redirects=False)
@@ -279,7 +285,12 @@ class ExperimentalRuntime:
         if not self._budget_ok():
             self.last_error = self._archive_status().get("last_error") if self.config.archive_management_enabled else "experimental_storage_budget_exhausted"
             if not self.account.snapshot(now=now)["kill_switch"]:
-                self.account.stop(now=now)
+                status = self._archive_status()
+                self.account.stop(now=now, reason=self.last_error or "archive_budget_unavailable",
+                                  actor="experimental_storage_guard", evidence={
+                                      "archive": {k: status.get(k) for k in (
+                                          "health", "usage_bytes", "budget_bytes", "free_bytes", "global_floor_bytes")},
+                                      "observed_at": now.isoformat()})
             # The paper account remains fail-closed. Separately bounded research
             # may read public observations without writing paper execution evidence.
             if self.event_intelligence is not None and not self.config.archive_management_enabled:
@@ -297,6 +308,11 @@ class ExperimentalRuntime:
         if self.event_intelligence is not None:
             with self._lock:
                 self.event_intelligence.on_research_frame(frame, self.clock())
+        if self.phase15_relationships is not None:
+            try:
+                self.phase15_relationships.observe(frame.model_dump(mode="json"), now=now)
+            except Exception as error:  # noqa: BLE001 - research cannot acquire trading authority
+                log.warning("phase15_relationship_withheld:%s", type(error).__name__)
         selected = self._select(frame, now)
         books = {b.token_id: b for b in frame.books}
         markets = {m.token_id: m for m in selected.markets}
@@ -592,8 +608,9 @@ class ExperimentalRuntime:
         await asyncio.gather(cycles(), self._fees_loop(should_exit), self._event_resolution_loop(should_exit))
 
     def health(self):
+        last_success = self.last_success
         now = self.clock()
-        age = (now - self.last_success).total_seconds() if self.last_success else None
+        age = (now - last_success).total_seconds() if last_success else None
         return {
             "status": "ok"
             if age is not None and age < max(30, self.config.poll_seconds * 3) and self.last_error is None
@@ -602,7 +619,7 @@ class ExperimentalRuntime:
             "validation_status": "unvalidated",
             "paper_trading": True,
             "live_trading_enabled": False,
-            "last_ingestion_at": self.last_success.isoformat() if self.last_success else None,
+            "last_ingestion_at": last_success.isoformat() if last_success else None,
             "last_ingestion_age_seconds": age,
             "last_error": self.last_error,
             "fee_error": self.fee_error,
@@ -657,6 +674,19 @@ class ExperimentalRuntime:
                 "generated_at": self.clock().isoformat(), "service": self.health(),
                 "archive": self._archive_status(), "experimental_totals": dict(self.totals),
                 "scope": "archive health and current simulated capital; research histories remain in /api/state"}
+
+    def operations_state(self):
+        from neraium_poly.research.phase15.operations import add_capacity, experimental_research
+
+        state = add_capacity(self.archive_state(), service="experimental", now=self.clock())
+        state["operations_research"] = experimental_research(self)
+        with self.account.risk._lock:
+            state["open_positions"] = self.account.risk.db.execute("SELECT count(*) FROM positions").fetchone()[0]
+            state["fills"] = self.account.risk.db.execute(
+                "SELECT count(*) FROM audit WHERE action IN ('fill','experimental_exit_fill')").fetchone()[0]
+        with self.account.broker._lock:
+            state["orders_submitted"] = self.account.broker.db.execute("SELECT count(*) FROM orders").fetchone()[0]
+        return state
 
     def state(self):
         with self._lock:
