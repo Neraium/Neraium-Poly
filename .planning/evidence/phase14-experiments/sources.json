@@ -1,0 +1,68 @@
+{
+  "brier": null,
+  "calibration": null,
+  "confidence_interval": null,
+  "forecast_records_generated": 0,
+  "historical_qualification": {
+    "independent_heldout_events": 0,
+    "independent_training_events": 0,
+    "required_heldout_events": 100,
+    "required_training_events": 100
+  },
+  "limitations": [
+    "Completed underlying price candles are not independent resolved prediction-market events",
+    "Weather observations are not calibrated predictive distributions",
+    "Current official calendar is not a historical economic release vintage",
+    "Raw captures are volatile; this replay does not make them durable or execution certified"
+  ],
+  "log_loss": null,
+  "market_superiority": null,
+  "profitability": null,
+  "resolved_independent_cohort": 0,
+  "sources": {
+    "crypto": {
+      "closed_minutes": 1000,
+      "contract_forecast_status": "withheld_unreviewed_candle_close_convention",
+      "first_source_open_ms": 1793894400000,
+      "last_actual_close": 75653.63,
+      "last_source_close_ms": 1793954399999,
+      "payload_sha256": "2ea4bad07369378283cf754baeef5124a18105451212258627f1e3bde7a2e57f",
+      "provider": "Binance public market data",
+      "retrieved_at": "2026-11-06T08:40:54.802416+00:00",
+      "sigma_per_sqrt_minute": 0.0007547759814158766,
+      "source": "https://data-api.binance.vision"
+    },
+    "economics": {
+      "context_only": true,
+      "payload_sha256": "a92ece47a42c541848663de874e8a864702cf223d47d8a936d600f9d24e9f52a",
+      "provider": "Board of Governors of the Federal Reserve System",
+      "qualified_vintage_events": 0,
+      "retrieved_at": "2026-11-06T08:40:54.862774+00:00",
+      "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+    },
+    "weather": {
+      "forecast_result": {
+        "calibration_status": "unavailable",
+        "certification_authority": false,
+        "domain": "weather",
+        "forecast_recorded": false,
+        "model_version": "weather-observation-research-v1",
+        "probability": null,
+        "qualified": false,
+        "qualified_observations": 36,
+        "reasons": [
+          "qualified_station_matched_predictive_distribution_and_calibration_required"
+        ],
+        "support_status": "observation_research_only",
+        "trading_authority": false,
+        "uncertainty": null
+      },
+      "payload_sha256": "3addffaa7f762f49ba63e5b50e0369d0eba11a3e94b5cf7abeb9b672ce413309",
+      "provider": "NOAA/NWS Aviation Weather Center",
+      "qualified_observations": 36,
+      "retrieved_at": "2026-11-06T08:39:34.083581+00:00",
+      "station": "RKSI"
+    }
+  },
+  "study": "external_evidence_and_qualification_replay"
+}

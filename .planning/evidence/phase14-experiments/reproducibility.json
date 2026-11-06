@@ -1,0 +1,126 @@
+{
+  "actual_authentic_inputs": true,
+  "fixtures": false,
+  "study_reports_byte_identical": {
+    "discovery.json": true,
+    "sources.json": true
+  },
+  "input_hashes_identical": true,
+  "source_code_sha256": {
+    "framework.py": "6eed3f326a12b25509f3c8966230c51f1eba1d1989353f6ea1041a25056da555",
+    "finance.py": "e1bba59ab1074f4a9af2ca8d5211f51ddb41b2f25659b85ab3a3872ada04d488",
+    "economics.py": "6c362f145d29018079e4788dc94bfd9bad541acd705c12b9615511035057f806",
+    "weather.py": "107ae05bf871f05371ba1cc655486ffb106e4b1a76006bb9e92c66d749832478",
+    "discovery.py": "b12d9f08cff53fd128f97400f6d58f302c1e732bf2d6727fe5c75bebf003b845",
+    "contracts.py": "431ca50bbdeee7cbbf0ebdb0ad399adda923bc71035a9d1a9422f1eae4760efa"
+  },
+  "runs": [
+    {
+      "actual_overlapping_workers": 2,
+      "certification_authority": false,
+      "coordinator_pid": 3124974,
+      "durable_dataset": false,
+      "forecasts_recorded": 0,
+      "input_bytes": 8699782,
+      "input_hashes": {
+        "baseline": "f4f2c4f9140b17366696cdbc3368eeeb77ab2ca851824a6fc579fe68d4f13a45",
+        "crypto": "19667bd4d71044a3b1b82b287d39c5ca0d61aea12ac0dfc8603be320cb05f3ed",
+        "discovery": "0654f93061ce9e2e804b54833da819497e0a50a2448468b3e6bdac4b4e44dfef",
+        "economics": "e633b33493c1d6839c65ab8e566feb38a62c1a64a53c0177191c7b099084a256",
+        "weather": "1a8d9b72690173814d933f26f6901b2467e55c852159747698ac876cfdb4ec27"
+      },
+      "output_storage": "volatile_tmpfs",
+      "processes": [
+        {
+          "completed_at": "2026-11-06T09:30:53.901412+00:00",
+          "cpu_seconds": 0.141659,
+          "numerical_threads": 1,
+          "peak_rss_kib": 79652,
+          "pid": 3124977,
+          "started_at": "2026-11-06T09:30:53.759737+00:00",
+          "study": "discovery"
+        },
+        {
+          "completed_at": "2026-11-06T09:30:53.771816+00:00",
+          "cpu_seconds": 0.011897000000000005,
+          "numerical_threads": 1,
+          "peak_rss_kib": 79396,
+          "pid": 3124980,
+          "started_at": "2026-11-06T09:30:53.759908+00:00",
+          "study": "sources"
+        }
+      ],
+      "raw_capture_durability": "volatile; not execution-certified or qualified for durable forecasts",
+      "reports": {
+        "discovery.json": "ff5837c010d700c8e44876ec1dcdea5a48a97e36901241071f329eb345ed34d2",
+        "sources.json": "9e5bc7c9ca528164c37b6325f6d4ea9c0e685d06335506aa0d06de5ad3f9db30"
+      },
+      "schema_version": "1.0",
+      "source_files": {
+        "baseline": "/home/ubuntu/Neraium-Poly/data/phase14-operations/frame-baseline.json",
+        "crypto": "/dev/shm/neraium-poly-phase14/finance/crypto-evidence-v1.json",
+        "discovery": "/dev/shm/neraium-poly-phase14/discovery/fresh-metadata-v2.json",
+        "economics": "/dev/shm/neraium-poly-phase14/finance/economics-evidence-v1.json",
+        "weather": "/dev/shm/neraium-poly-phase14/weather/actual-adapter-evidence.json"
+      },
+      "trading_authority": false,
+      "workers_requested": 2
+    },
+    {
+      "actual_overlapping_workers": 2,
+      "certification_authority": false,
+      "coordinator_pid": 3125186,
+      "durable_dataset": false,
+      "forecasts_recorded": 0,
+      "input_bytes": 8699782,
+      "input_hashes": {
+        "baseline": "f4f2c4f9140b17366696cdbc3368eeeb77ab2ca851824a6fc579fe68d4f13a45",
+        "crypto": "19667bd4d71044a3b1b82b287d39c5ca0d61aea12ac0dfc8603be320cb05f3ed",
+        "discovery": "0654f93061ce9e2e804b54833da819497e0a50a2448468b3e6bdac4b4e44dfef",
+        "economics": "e633b33493c1d6839c65ab8e566feb38a62c1a64a53c0177191c7b099084a256",
+        "weather": "1a8d9b72690173814d933f26f6901b2467e55c852159747698ac876cfdb4ec27"
+      },
+      "output_storage": "volatile_tmpfs",
+      "processes": [
+        {
+          "completed_at": "2026-11-06T09:32:20.316025+00:00",
+          "cpu_seconds": 0.1418,
+          "numerical_threads": 1,
+          "peak_rss_kib": 79708,
+          "pid": 3125191,
+          "started_at": "2026-11-06T09:32:20.174193+00:00",
+          "study": "discovery"
+        },
+        {
+          "completed_at": "2026-11-06T09:32:20.183807+00:00",
+          "cpu_seconds": 0.00956399999999999,
+          "numerical_threads": 1,
+          "peak_rss_kib": 79628,
+          "pid": 3125188,
+          "started_at": "2026-11-06T09:32:20.174233+00:00",
+          "study": "sources"
+        }
+      ],
+      "raw_capture_durability": "volatile; not execution-certified or qualified for durable forecasts",
+      "reports": {
+        "discovery.json": "ff5837c010d700c8e44876ec1dcdea5a48a97e36901241071f329eb345ed34d2",
+        "sources.json": "9e5bc7c9ca528164c37b6325f6d4ea9c0e685d06335506aa0d06de5ad3f9db30"
+      },
+      "schema_version": "1.0",
+      "source_files": {
+        "baseline": "/home/ubuntu/Neraium-Poly/data/phase14-operations/frame-baseline.json",
+        "crypto": "/dev/shm/neraium-poly-phase14/finance/crypto-evidence-v1.json",
+        "discovery": "/dev/shm/neraium-poly-phase14/discovery/fresh-metadata-v2.json",
+        "economics": "/dev/shm/neraium-poly-phase14/finance/economics-evidence-v1.json",
+        "weather": "/dev/shm/neraium-poly-phase14/weather/actual-adapter-evidence.json"
+      },
+      "trading_authority": false,
+      "workers_requested": 2
+    }
+  ],
+  "actual_worker_launches": 4,
+  "peak_analysis_workers": 2,
+  "raw_evidence_is_durable": false,
+  "independent_forecasts_recorded": 0,
+  "model_skill_claim": null
+}
