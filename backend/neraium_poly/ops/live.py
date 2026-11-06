@@ -175,6 +175,9 @@ class LivePaperRuntime:
             for market_id in self.activation.relationship_tokens:
                 raw = await self.adapter._get(GAMMA, f"/markets/{market_id}")
                 approved_metadata.extend(normalize_market(raw, self.clock()))
+        # Discovery observations become available after network completion.
+        # Using the pre-request clock would wrongly suppress every real edge.
+        now = self.clock()
         with self._lock:
             incoming = {m.token_id: m for m in batch.markets}
             for approved in approved_metadata:

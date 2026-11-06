@@ -586,3 +586,24 @@ async def test_reviewed_settlement_rejects_misrouted_resolution_before_capital_c
         assert runtime.state()["operation"]["settlements"] == 0
     finally:
         await runtime.close()
+
+
+async def test_real_discovery_latency_uses_post_request_availability(tmp_path, now):
+    clock = Clock(now)
+    adapter = FakeAdapter(clock)
+    original = adapter.discover_bounded
+
+    async def delayed(**kwargs):
+        clock.advance(2)
+        return await original(**kwargs)
+
+    adapter.discover_bounded = delayed
+    runtime = LivePaperRuntime(configuration(tmp_path), adapter=adapter, clock=clock)
+    try:
+        await runtime.discover()
+        assert len(runtime.relationships) == 1
+        assert all(r.available_at <= clock() for r in runtime.relationships.values())
+        await cycle(runtime, clock)
+        assert runtime.events.replay(kind="RelationshipEvidence")
+    finally:
+        await runtime.close()
