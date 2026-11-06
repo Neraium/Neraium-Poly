@@ -435,3 +435,123 @@ async def test_rest_resnapshot_cannot_regress_newer_native_state(feed, now):
     result = await feed._resnapshot("t1")
     assert result.timestamp == later and feed.latest["t1"].timestamp == later
     assert feed.metrics()["out_of_order"] == 1
+
+
+async def test_native_consumer_not_blocked_by_gap_rest_recovery(feed, now, market):
+    second = market.model_copy(update={"market_id": "m2", "token_id": "t2"})
+    feed.set_markets([market, second])
+    gate = asyncio.Event()
+    requests = []
+
+    async def blocked(market_id, token_id):
+        requests.append(token_id)
+        await gate.wait()
+        return OrderBookSnapshot.model_validate(
+            {**(await feed.handle(full(now, token=token_id)))[0].model_dump()}
+        )
+
+    feed.adapter.book = blocked
+    delivered = []
+    feed._on_book = delivered.append
+    consumer = asyncio.create_task(feed._consume(delivered.append))
+    try:
+        for _ in range(5):
+            await feed._queue.put(
+                delta(now, [{"asset_id": "t1", "side": "BUY", "price": ".39", "size": "4"}])
+            )
+        await feed._queue.put(full(now, token="t2"))
+        await asyncio.wait_for(feed._queue.join(), timeout=0.5)
+        assert delivered and delivered[0].token_id == "t2"
+        assert requests == ["t1"] and feed.metrics()["resnapshot_pending"] == 1
+        assert "t1" not in feed.latest
+    finally:
+        consumer.cancel()
+        with pytest.raises(asyncio.CancelledError):
+            await consumer
+
+
+async def test_old_generation_background_recovery_cannot_restore_liquidity(feed, now):
+    gate = asyncio.Event()
+
+    async def delayed(market_id, token_id):
+        await gate.wait()
+        return OrderBookSnapshot.model_validate(
+            {
+                "id": "late-rest",
+                "timestamp": now,
+                "available_at": now,
+                "source": "https://clob.polymarket.com",
+                "market_id": market_id,
+                "token_id": token_id,
+                "bids": [{"price": 0.39, "size": 100}],
+                "asks": [{"price": 0.4, "size": 100}],
+            }
+        )
+
+    feed.adapter.book = delayed
+    await feed.handle(
+        delta(now, [{"asset_id": "t1", "side": "BUY", "price": ".39", "size": "4"}]), background_recovery=True
+    )
+    await asyncio.sleep(0)
+    feed._generation += 1
+    feed._invalidate()
+    gate.set()
+    for _ in range(10):
+        if not feed._refresh_tasks:
+            break
+        await asyncio.sleep(0)
+    assert "t1" not in feed.latest and not feed._refresh_tasks
+
+
+async def test_atomic_delta_only_checks_final_declared_top(feed, now):
+    await feed.handle(full(now))
+    result = await feed.handle(
+        delta(
+            now,
+            [
+                {
+                    "asset_id": "t1",
+                    "side": "BUY",
+                    "price": ".39",
+                    "size": "0",
+                    "best_bid": "0",
+                    "best_ask": ".4",
+                },
+                {
+                    "asset_id": "t1",
+                    "side": "BUY",
+                    "price": ".38",
+                    "size": "5",
+                    "best_bid": ".38",
+                    "best_ask": ".4",
+                },
+            ],
+        )
+    )
+    assert result[0].bids[0].price == 0.38 and feed.metrics()["rest_books"] == 0
+
+
+async def test_initial_400_book_burst_yields_to_bounded_consumer(now, market):
+    markets = [market.model_copy(update={"market_id": str(i), "token_id": f"t{i}"}) for i in range(400)]
+    initial = [full(now, token=f"t{i}") for i in range(400)]
+    following = [
+        delta(now, [{"asset_id": f"t{i}", "side": "BUY", "price": ".39", "size": "3"}]) for i in range(400)
+    ]
+    socket = Socket([json.dumps(initial), json.dumps(following)])
+    f = CoverageFeed(
+        OperationalPolymarketAdapter(clock=lambda: now),
+        max_tokens=800,
+        queue_size=512,
+        connector=lambda *a, **k: socket,
+    )
+    delivered = []
+    try:
+        f.start_stream(markets, delivered.append)
+        for _ in range(100):
+            if len(delivered) >= 800:
+                break
+            await asyncio.sleep(0.01)
+        assert len(delivered) == 800 and f.metrics()["queue_overflows"] == 0
+        assert len(f.latest) == 400
+    finally:
+        await f.close()

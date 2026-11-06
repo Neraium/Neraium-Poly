@@ -137,6 +137,9 @@ class CoverageFeed:
         self._resolved_tokens: set[str] = set()
         self._queue = asyncio.Queue(maxsize=queue_size)
         self._task = None
+        self._refresh_tasks = {}
+        self._generation = 0
+        self._on_book = None
         self.connected = False
         self._closed = False
         self._metrics = {
@@ -154,6 +157,11 @@ class CoverageFeed:
                 "invalid_frames",
                 "callbacks_failed",
                 "invalidations",
+                "resnapshot_failures",
+                "gap_missing_baseline",
+                "gap_source_time",
+                "gap_top_integrity",
+                "gap_invalid_delta",
             )
         }
         self.last_message_at = None
@@ -170,6 +178,8 @@ class CoverageFeed:
             "resolved_tokens_withheld": len(self._resolved_tokens),
             "fresh_books": sum(assess_book(b, now).healthy for b in self.latest.values()),
             "queue_depth": self._queue.qsize(),
+            "resnapshot_pending": len(self._refresh_tasks),
+            "connection_generation": self._generation,
             "last_message_at": self.last_message_at.isoformat() if self.last_message_at else None,
             "last_gap_at": self.last_gap_at.isoformat() if self.last_gap_at else None,
             "http_requests": self.adapter.requests,
@@ -285,15 +295,16 @@ class CoverageFeed:
         """A pending order cannot bypass resolution/gap guards via raw REST."""
         return await self._resnapshot(token)
 
-    async def _resnapshot(self, token: str):
-        self.latest.pop(token, None)
+    async def _resnapshot(self, token: str, *, generation=None, invalidate=True):
+        if invalidate:
+            self.latest.pop(token, None)
         market = self._markets.get(token)
         if market is None or token in self._resolved_tokens:
             return None
         try:
             book = await self.adapter.book(market.market_id, token)
             self._metrics["rest_books"] += 1
-            if token in self._resolved_tokens:
+            if token in self._resolved_tokens or (generation is not None and generation != self._generation):
                 return None
             current = self.latest.get(token)
             if current is not None and current.timestamp > book.timestamp:
@@ -304,7 +315,35 @@ class CoverageFeed:
         except (httpx.HTTPError, ValueError, TypeError, KeyError):
             return None
 
-    async def handle(self, event: dict) -> list[OrderBookSnapshot]:
+    def _schedule_resnapshot(self, token):
+        if token in self._refresh_tasks or token in self._resolved_tokens or token not in self._markets:
+            return
+        generation = self._generation
+
+        async def recover():
+            try:
+                book = await self._resnapshot(token, generation=generation, invalidate=False)
+                if book is not None and generation == self._generation and self._on_book is not None:
+                    value = self._on_book(book)
+                    if inspect.isawaitable(value):
+                        await value
+            except Exception:  # noqa: BLE001 - background failure leaves a token withheld
+                self._metrics["resnapshot_failures"] += 1
+            finally:
+                if self._refresh_tasks.get(token) is asyncio.current_task():
+                    self._refresh_tasks.pop(token, None)
+
+        self._refresh_tasks[token] = asyncio.create_task(recover())
+
+    async def _cancel_refreshes(self):
+        tasks = list(self._refresh_tasks.values())
+        self._refresh_tasks.clear()
+        for task in tasks:
+            task.cancel()
+        if tasks:
+            await asyncio.gather(*tasks, return_exceptions=True)
+
+    async def handle(self, event: dict, *, background_recovery=False) -> list[OrderBookSnapshot]:
         """Return verified full states; no callback is authorized by mere receipt."""
         if not isinstance(event, dict):
             raise StreamGap("invalid market frame")
@@ -357,8 +396,10 @@ class CoverageFeed:
                     if old and at < old.timestamp:
                         self._metrics["out_of_order"] += 1
                         continue
-                    if old is None or (at - old.timestamp).total_seconds() > self.max_gap_seconds:
-                        raise ValueError("missing baseline or detected time gap")
+                    if old is None:
+                        raise ValueError("missing baseline")
+                    if (at - old.timestamp).total_seconds() > self.max_gap_seconds:
+                        raise ValueError("detected source time gap")
                     bids = {Decimal(str(v.price)): Decimal(str(v.size)) for v in old.bids}
                     asks = {Decimal(str(v.price)): Decimal(str(v.size)) for v in old.asks}
                     for update in updates:
@@ -392,7 +433,9 @@ class CoverageFeed:
                         "complete": True,
                     }
                     book = OrderBookSnapshot(id=stable_id("ws-book", values), **values)
-                    for update in updates:
+                    # Best quotes describe the resulting token update. Earlier
+                    # updates in this same atomic batch may have intermediate tops.
+                    for update in updates[-1:]:
                         for camel, snake, actual in [
                             ("bestBid", "best_bid", book.bids[0].price if book.bids else 0),
                             ("bestAsk", "best_ask", book.asks[0].price if book.asks else 1),
@@ -403,11 +446,25 @@ class CoverageFeed:
                     self.latest[token] = book
                     self._metrics["native_books_delivered"] += 1
                     result.append(book)
-                except (ValueError, KeyError, TypeError, InvalidOperation):
+                except (ValueError, KeyError, TypeError, InvalidOperation) as error:
+                    reason = str(error)
+                    category = (
+                        "gap_missing_baseline"
+                        if reason == "missing baseline"
+                        else "gap_source_time"
+                        if reason == "detected source time gap"
+                        else "gap_top_integrity"
+                        if reason == "top-of-book integrity gap"
+                        else "gap_invalid_delta"
+                    )
+                    self._metrics[category] += 1
                     self._invalidate([token])
-                    refreshed = await self._resnapshot(token)
-                    if refreshed is not None:
-                        result.append(refreshed)
+                    if background_recovery:
+                        self._schedule_resnapshot(token)
+                    else:
+                        refreshed = await self._resnapshot(token)
+                        if refreshed is not None:
+                            result.append(refreshed)
             return result
         if kind in {"tick_size_change", "market_resolved"}:
             token = str(payload.get("asset_id") or payload.get("assetId") or "")
@@ -440,19 +497,24 @@ class CoverageFeed:
                     await socket.send("PONG")
                 continue
             events = json.loads(message)
-            for event in events if isinstance(events, list) else [events]:
+            for index, event in enumerate(events if isinstance(events, list) else [events]):
+                # A native initial full-book list can contain the whole universe.
+                # Yield to consumers before a second burst fills the bounded queue.
+                if index and index % 16 == 0:
+                    await asyncio.sleep(0)
                 try:
                     self._queue.put_nowait(event)
                 except asyncio.QueueFull:
                     self._metrics["queue_overflows"] += 1
                     self._invalidate()
                     raise StreamGap("market queue overflow") from None
+            await asyncio.sleep(0)
 
     async def _consume(self, on_book):
         while True:
             event = await self._queue.get()
             try:
-                for book in await self.handle(event):
+                for book in await self.handle(event, background_recovery=True):
                     try:
                         value = on_book(book)
                         if inspect.isawaitable(value):
@@ -469,12 +531,14 @@ class CoverageFeed:
         on_book: Callable[[OrderBookSnapshot], Awaitable[None] | None],
     ):
         self.set_markets(markets)
+        self._on_book = on_book
         if not self._markets:
             return
         attempt = 0
         while not self._closed:
             tasks = []
             try:
+                self._generation += 1
                 self._invalidate(gap=False)
                 self._queue = asyncio.Queue(maxsize=self.queue_size)
                 async with self.connector(
@@ -498,6 +562,8 @@ class CoverageFeed:
                     raise StreamGap("reconnect budget exhausted") from None
             finally:
                 self.connected = False
+                self._generation += 1
+                await self._cancel_refreshes()
                 self._invalidate(gap=not self._closed)
                 for task in tasks:
                     task.cancel()
@@ -520,6 +586,7 @@ class CoverageFeed:
             with suppress(asyncio.CancelledError, StreamGap):
                 await self._task
             self._task = None
+        await self._cancel_refreshes()
         self.connected = False
         self._invalidate(gap=False)
 
