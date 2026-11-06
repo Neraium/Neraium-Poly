@@ -177,7 +177,8 @@ def predict_game(
         sensitivities = [p]
     if target.league != "NFL" and selected_team_id == target.away_id:
         p, sensitivities = 1 - p, [1 - x for x in sensitivities]
-    p = max(0.001, min(0.999, p))
+    if target.league != "NFL":
+        p = max(0.001, min(0.999, p))
     penalty = min(0.45, 0.15 + 0.25 * sqrt(1 / counts[target.home_id] + 1 / counts[target.away_id]))
     lower = max(0.0, min(p, min(sensitivities)) - penalty)
     upper = min(1.0, max(p, max(sensitivities)) + penalty)
@@ -185,7 +186,7 @@ def predict_game(
         "method": method, "min_training_games": min_training_games, "min_team_games": min_team_games,
         "max_age_days": max_age_days, "initial_elo": 1500, "elo_k": 20, "home_advantage": 50,
         "frequency_prior": [1, 1, 1] if target.league == "NFL" else [1, 1],
-        "probability_clip": [0.001, 0.999], "league": target.league,
+        "probability_clip": None if target.league == "NFL" else [0.001, 0.999], "league": target.league,
     }
     return SportsPrediction(
         game_id=target.game_id,

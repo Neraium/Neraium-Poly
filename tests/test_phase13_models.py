@@ -121,3 +121,16 @@ def test_available_results_are_not_retrospective_forecast_evidence():
     assert report["qualified_historical_forecast_pairs"] == 0
     assert report["brier"] is report["log_loss"] is None
     assert report["certification_authority"] is False
+
+
+def test_nfl_extreme_form_keeps_complete_ternary_vector_without_binary_clip():
+    games, target = corpus("NFL")
+    base = games[0]
+    data = [base.model_copy(update={
+        "game_id": f"extreme-fixture-{i}", "home_id": "A", "away_id": "B",
+        "home_score": 21, "away_score": 7, "starts_at": NOW - timedelta(days=20, minutes=i),
+    }) for i in range(3000)]
+    p = predict_game(data, target, "A", NOW, method="frequency")
+    assert p.probability > 0.999
+    assert p.probability == p.uncertainty["outcome_probabilities"]["win"]
+    assert sum(p.uncertainty["outcome_probabilities"].values()) == pytest.approx(1)
