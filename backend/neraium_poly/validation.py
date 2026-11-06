@@ -227,6 +227,11 @@ class ValidationStore:
                 reasons.append("explicit_strategy_scope_required")
             if len({r.id for r in manifest.relationships}) != len(manifest.relationships):
                 reasons.append("duplicate_relationship_scope")
+            scoped_markets = {
+                mid for relationship in manifest.relationships for mid in relationship.market_ids
+            }
+            if any(not manifest.relationship_tokens.get(mid) for mid in scoped_markets):
+                reasons.append("explicit_outcome_token_scope_required")
             for relationship in manifest.relationships:
                 if relationship.available_at > now or len(set(relationship.market_ids)) < 2:
                     reasons.append("invalid_relationship_scope")

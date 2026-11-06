@@ -45,6 +45,8 @@ def create_app(runtime=None, frontend_path: Path | None = None) -> FastAPI:
 
     @app.get("/api/health")
     def health():
+        if hasattr(runtime, "health"):
+            return runtime.health()
         return {
             "status": "ok",
             "paper_trading": True,

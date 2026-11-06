@@ -6,7 +6,7 @@ observation. Persisted observation IDs and stable evidence IDs permit replay.
 
 from collections import deque
 from collections.abc import Mapping, Sequence
-from dataclasses import dataclass, field
+from dataclasses import asdict, dataclass, field
 from datetime import datetime
 from hashlib import sha256
 from itertools import pairwise
@@ -128,6 +128,84 @@ class RelationshipEngine:
         self.policy = policy or RelationshipPolicy()
         self.graph = RelationshipGraph()
         self._states: dict[str, _State] = {}
+
+    def retain(self, relationship_ids: set[str]) -> None:
+        """Retire inactive research edges without altering archived evidence."""
+        self._states = {key: value for key, value in self._states.items() if key in relationship_ids}
+        graph = RelationshipGraph()
+        for edge in self.graph.edges():
+            if edge.id in relationship_ids:
+                graph.add(edge)
+        self.graph = graph
+
+    def checkpoint(self) -> dict:
+        """Versioned temporal state; persistence never promotes a relationship."""
+        return {
+            "version": "1.0",
+            "policy": asdict(self.policy),
+            "states": [
+                {
+                    "definition": s.definition.model_dump(mode="json"),
+                    "baseline": s.baseline,
+                    "baseline_ids": s.baseline_ids,
+                    "run_ids": list(s.run_ids),
+                    "run_count": s.run_count,
+                    "direction": s.direction,
+                    "last_at": s.last_at.isoformat() if s.last_at else None,
+                    "last_pair": s.last_pair,
+                    "last_evidence": s.last_evidence.model_dump(mode="json") if s.last_evidence else None,
+                    "samples": s.samples,
+                }
+                for s in self._states.values()
+            ],
+        }
+
+    def restore(self, checkpoint: dict) -> None:
+        """Fail closed on incompatible policy or malformed persisted evidence."""
+        if checkpoint.get("version") != "1.0" or checkpoint.get("policy") != asdict(self.policy):
+            raise ValueError("relationship checkpoint policy/version mismatch")
+        restored = {}
+        graph = RelationshipGraph()
+        rows = checkpoint.get("states", [])
+        if len(rows) > self.policy.max_relationships:
+            raise ValueError("relationship checkpoint exceeds capacity")
+        for row in rows:
+            definition = MarketRelationship.model_validate(row["definition"])
+            graph.add(definition)
+            baseline = [float(v) for v in row["baseline"]]
+            baseline_ids = list(row["baseline_ids"])
+            runs = deque(tuple(v) for v in row["run_ids"])
+            if (
+                not all(isfinite(v) for v in baseline)
+                or len(baseline) > self.policy.baseline_size
+                or len(runs) > self.policy.persistence_required
+                or row["run_count"] < 0
+                or row["samples"] < len(baseline)
+                or row["direction"] not in (-1, 0, 1)
+                or len(baseline_ids) != len(baseline) * len(definition.market_ids)
+            ):
+                raise ValueError("invalid temporal relationship checkpoint")
+            at = datetime.fromisoformat(row["last_at"]) if row["last_at"] else None
+            if at is not None:
+                _aware(at)
+            evidence = (
+                RelationshipEvidence.model_validate(row["last_evidence"]) if row["last_evidence"] else None
+            )
+            if evidence and evidence.relationship_id != definition.id:
+                raise ValueError("checkpoint evidence identity mismatch")
+            restored[definition.id] = _State(
+                definition=definition,
+                baseline=baseline,
+                baseline_ids=baseline_ids,
+                run_ids=runs,
+                run_count=row["run_count"],
+                direction=row["direction"],
+                last_at=at,
+                last_pair=tuple(row["last_pair"]) if row["last_pair"] else None,
+                last_evidence=evidence,
+                samples=row["samples"],
+            )
+        self._states, self.graph = restored, graph
 
     def observe(
         self,

@@ -198,6 +198,7 @@ class PaperWorkflow:
         now: datetime,
         fee_model: FeeModel | None,
         quantity: float = 10,
+        tier: Literal["standard", "high", "exceptional"] = "standard",
     ) -> WorkflowResult:
         """Qualify evidence → estimate → opportunity → risk → paper submission.
 
@@ -232,6 +233,7 @@ class PaperWorkflow:
                 self.model_id,
                 model.model_dump_json() if model else None,
                 quantity,
+                tier,
                 fee_terms,
                 tuple(r.model_dump_json() for r in self.relationships),
                 tuple(sorted(self.settlement_reviews.items())),
@@ -251,6 +253,11 @@ class PaperWorkflow:
             if fee_model is None or fee_terms == "invalid":
                 return self._finish(
                     key, market_id, book, now, "suppressed", ("unknown_or_invalid_fee_schedule",)
+                )
+            scoped_token = self.relationship_tokens.get(market.market_id)
+            if scoped_token is not None and scoped_token != book.token_id:
+                return self._finish(
+                    key, market_id, book, now, "suppressed", ("target_outcome_outside_reviewed_scope",)
                 )
             if market.available_at > now or book.available_at > now:
                 return self._finish(key, market_id, book, now, "suppressed", ("future_input",))
@@ -350,7 +357,9 @@ class PaperWorkflow:
                     evidence=tuple(evidence),
                 )
             self.store.append(estimate)
-            opportunity = self.ranker.rank(market, book, estimate, qualified, model, now, quantity, fee_model)
+            opportunity = self.ranker.rank(
+                market, book, estimate, qualified, model, now, quantity, fee_model, tier=tier
+            )
             if opportunity is None:
                 return self._finish(
                     key,
