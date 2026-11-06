@@ -105,6 +105,10 @@ def test_frequent_status_calls_do_not_create_fake_growth_window(tmp_path):
         now[0] = NOW + timedelta(seconds=10)
         assert store.status()["growth_bytes_per_second"] > 0
         assert len(store._samples) == 2
+        measured_rate = store.status()["growth_bytes_per_second"]
+        store.append(record(1))
+        now[0] += timedelta(milliseconds=1)
+        assert store.status()["growth_bytes_per_second"] == measured_rate
     finally:
         store.close()
 

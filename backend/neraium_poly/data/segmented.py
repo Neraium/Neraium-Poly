@@ -111,6 +111,7 @@ class ManagedEventStore:
             if self.catalog.execute("PRAGMA quick_check").fetchall()[0][0] != "ok":
                 raise ValueError("corrupt archive catalogue")
             self._recover()
+            _sync_dir(self.directory)
             self._usage_at = None
             self._measure()
             self._samples.append((self.clock(), self._usage))
@@ -515,8 +516,8 @@ class ManagedEventStore:
             usage = self._measure()
             if sample_due:
                 self._samples.append((now, self._usage))
-            elapsed = (now - self._samples[0][0]).total_seconds() if self._samples else 0
-            delta = usage - self._samples[0][1] if self._samples else 0
+            elapsed = (self._samples[-1][0] - self._samples[0][0]).total_seconds() if self._samples else 0
+            delta = self._samples[-1][1] - self._samples[0][1] if self._samples else 0
             rate = delta / elapsed if elapsed >= 10 and delta >= 0 else None
             free = shutil.disk_usage(self.directory).free
             remaining = max(0, self.budget_bytes - usage)
