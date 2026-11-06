@@ -194,7 +194,7 @@ def score_sports_prediction(prediction, result, *, market_expected_payout=None):
     ):
         raise ValueError("valid contemporaneous market expected-payout baseline required")
     return {
-        "actual": actual, "multiclass_brier": sum((p - int(k == actual)) ** 2 for k, p in probabilities.items()),
+        "actual": actual, "probabilities": dict(probabilities), "multiclass_brier": sum((p - int(k == actual)) ** 2 for k, p in probabilities.items()),
         "log_loss": -log(max(1e-12, probabilities[actual])),
         "unconditional_win_brier": (probabilities["win"] - int(actual == "win")) ** 2,
         "market_win_brier": None, "market_multiclass_brier": None,
@@ -205,6 +205,32 @@ def score_sports_prediction(prediction, result, *, market_expected_payout=None):
         "expected_payout_mse_is_not_multiclass_forecast_skill": True,
         "profitability": None, "execution_adjusted_return": None,
     }
+
+
+def _ternary_reliability(rows):
+    if not rows:
+        return {"count": 0, "class_reliability": {}, "mean_class_ece": None}
+    reliability, eces = {}, []
+    for outcome in ("win", "tie", "loss"):
+        bins = []
+        for i in range(10):
+            subset = [r for r in rows if min(9, int(r["probabilities"][outcome] * 10)) == i]
+            if subset:
+                bins.append({"lower": i / 10, "upper": (i + 1) / 10, "count": len(subset),
+                             "forecast_mean": mean(r["probabilities"][outcome] for r in subset),
+                             "outcome_mean": mean(r["actual"] == outcome for r in subset)})
+        reliability[outcome] = bins
+        eces.append(sum(b["count"] * abs(b["forecast_mean"] - b["outcome_mean"]) for b in bins) / len(rows))
+    return {"count": len(rows), "class_reliability": reliability, "mean_class_ece": mean(eces)}
+
+
+def _ternary_summary(rows):
+    return {"count": len(rows), "multiclass_brier": mean(r["multiclass_brier"] for r in rows) if rows else None,
+            "log_loss": mean(r["log_loss"] for r in rows) if rows else None,
+            "expected_payout_mse": mean(r["expected_payout_mse"] for r in rows) if rows else None,
+            "market_expected_payout_mse": mean(r["market_expected_payout_mse"] for r in rows) if rows else None,
+            "market_multiclass_brier": None, "market_win_brier": None,
+            "calibration": _ternary_reliability(rows)}
 
 
 def evaluate_sports_forecasts(
@@ -291,15 +317,27 @@ def evaluate_sports_forecasts(
             rejections["repeated_or_correlated_sports_event"] += 1
             continue
         seen_events.update((event_key, group_key))
-        models[identity].append(scores)
+        models[identity].append({**scores, "category": mapping.league,
+                                 "horizon_seconds": (mapping.event_start - prediction.cutoff).total_seconds()})
     reports = []
     for identity, rows in sorted(models.items()):
         enough = len(rows) >= min_events
         delta = mean(r["expected_payout_mse"] - r["market_expected_payout_mse"] for r in rows)
         radius = sqrt(2 * log(40) / len(rows)) if enough else None
+        category_scores = {category: _ternary_summary([r for r in rows if r["category"] == category])
+                           for category in sorted({r["category"] for r in rows})}
+        horizon_scores = {}
+        for name, lo, hi in (("under_24h", 0, 86400), ("1_to_7_days", 86400, 604800),
+                             ("over_7_days", 604800, float("inf"))):
+            subset = [r for r in rows if lo <= r["horizon_seconds"] < hi]
+            if subset:
+                horizon_scores[name] = _ternary_summary(subset)
         reports.append({
             "model_version": identity[0], "model_sha256": identity[1], "feature_version": identity[2],
-            "independent_event_groups": len(rows), "multiclass_brier": mean(r["multiclass_brier"] for r in rows)
+            "independent_event_groups": len(rows),
+            "calibration": _ternary_reliability(rows if enough else []),
+            "category_descriptive_scores": category_scores, "horizon_descriptive_scores": horizon_scores,
+            "multiclass_brier": mean(r["multiclass_brier"] for r in rows)
             if enough else None, "log_loss": mean(r["log_loss"] for r in rows) if enough else None,
             "market_multiclass_brier": None, "market_win_brier": None,
             "expected_payout_mse": mean(r["expected_payout_mse"] for r in rows) if enough else None,

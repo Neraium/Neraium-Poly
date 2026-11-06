@@ -150,3 +150,28 @@ def test_ternary_market_baseline_is_original_book_and_tie_unresolved():
     result["sports_result"] = final.model_copy(update={"home_score": 17}).model_dump(mode="json")
     report = evaluate_sports_forecasts([record], [result], result_validator=lambda _: True)
     assert report["rejections"]["fractional_or_conflicting_exchange_settlement_unresolved"] == 1
+
+
+def test_ternary_calibration_and_horizon_summaries_require_reviewed_sample():
+    import copy
+
+    record, result, _, _ = ternary_pair()
+    forecasts, results = [], []
+    for i in range(20):
+        f, o = copy.deepcopy(record), copy.deepcopy(result)
+        f.update(id=f"f-{i}", independence_reviewed=True, dependency_group=f"g-{i}")
+        f["prediction"]["game_id"] = f"game-{i}"
+        f["mapping"]["game_id"] = f"game-{i}"
+        o["forecast_id"] = f["id"]
+        o["sports_result"]["game_id"] = f"game-{i}"
+        forecasts.append(f)
+        results.append(o)
+    report = evaluate_sports_forecasts(forecasts, results, result_validator=lambda _: True,
+                                       independence_validator=lambda _: True)
+    model = report["models"][0]
+    assert model["calibration"]["count"] == 20
+    assert set(model["calibration"]["class_reliability"]) == {"win", "tie", "loss"}
+    assert model["category_descriptive_scores"]["NFL"]["count"] == 20
+    assert model["horizon_descriptive_scores"]["1_to_7_days"]["count"] == 20
+    assert model["market_multiclass_brier"] is None
+    assert model["forecast_skill_vs_market"] is None
