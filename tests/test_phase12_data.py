@@ -199,3 +199,18 @@ def test_weather_acquisition_preserves_source_receipt_and_null_probability(tmp_p
     assert datetime.fromisoformat(r["received_at"]).tzinfo is not None
     with pytest.raises(ValueError, match="new external"):
         acquire_weather_context(tmp_path / "weather")
+
+
+def test_duplicate_proposition_identity_rejected_even_with_rebound_file_hash(controlled):
+    source, q, out = controlled
+    module.build_dataset(source, q, out, chain_dir="controlled")
+    file = out / "events.jsonl"
+    row = json.loads(file.read_text().splitlines()[0])
+    duplicate = {**row, "id": "controlled-duplicate-id"}
+    file.write_text(json.dumps(row) + "\n" + json.dumps(duplicate) + "\n")
+    manifest = json.loads((out / "manifest.json").read_text())
+    manifest["files"]["events.jsonl"] = hashlib.sha256(file.read_bytes()).hexdigest()
+    manifest["dataset_sha256"] = module.digest(manifest["files"])
+    (out / "manifest.json").write_text(json.dumps(manifest))
+    with pytest.raises(ValueError, match="duplicate event proposition"):
+        module.load_dataset(out)

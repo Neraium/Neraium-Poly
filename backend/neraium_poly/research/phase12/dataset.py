@@ -314,6 +314,11 @@ def load_dataset(directory):
             raise ValueError("event dataset record cardinality/identity invalid")
         result[name] = records
     keys = {(e.event_id, e.market_id) for e in result["events"]}
+    if len(keys) != len(result["events"]):
+        raise ValueError("duplicate event proposition identity")
+    outcome_keys = {(r.event_id, r.market_id, r.token_id) for r in result["outcomes"]}
+    if len(outcome_keys) != len(result["outcomes"]):
+        raise ValueError("duplicate verified outcome identity")
     evidence_ids = {e.id for e in result["evidence"]}
     evidence_by_id = {e.id: e for e in result["evidence"]}
     events_by_key = {(e.event_id, e.market_id): e for e in result["events"]}
@@ -332,10 +337,13 @@ def load_dataset(directory):
         if (row.event_id, row.market_id) not in keys or digest(row.verification) != row.proof_sha256:
             raise ValueError("outcome proof binding mismatch")
         event = events_by_key[(row.event_id, row.market_id)]
+        payouts = row.verification.get("payouts")
+        if not isinstance(payouts, list) or len(payouts) != len(event.token_ids):
+            raise ValueError("outcome payout mapping unavailable")
         if (
             row.token_id not in event.token_ids
             or row.resolution_rules_sha256 != hashlib.sha256(event.resolution_rules.encode()).hexdigest()
-            or row.verification.get("payouts", [])[event.token_ids.index(row.token_id)] != row.payout
+            or payouts[event.token_ids.index(row.token_id)] != row.payout
         ):
             raise ValueError("outcome token/rules/payout mismatch")
     return result
