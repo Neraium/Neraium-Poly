@@ -237,3 +237,84 @@ def test_unregistered_strategy_and_oversized_universe_reject():
     right, _ = frame(0, token="t2", market="m2")
     with pytest.raises(ValueError):
         engine.evaluate_frame(left.model_copy(update={"markets": left.markets + right.markets}), now)
+
+
+def test_adaptive_results_are_idempotent_cost_adjusted_and_not_training_labels():
+    from neraium_poly.experimental.evaluation import AdaptiveResearchTracker
+
+    tracker = AdaptiveResearchTracker()
+    assert tracker.record("short_horizon", "exit-1", -1.0, 0.1, START, ["observed-entry", "observed-exit"])
+    assert not tracker.record(
+        "short_horizon", "exit-1", -1.0, 0.1, START, ["observed-entry", "observed-exit"]
+    )
+    with pytest.raises(ValueError):
+        tracker.record("short_horizon", "exit-1", 1.0, 0.1, START, ["observed-entry", "observed-exit"])
+    summary = tracker.summary()
+    assert summary["rankings"][0]["net_realized_pnl"] == -1
+    assert summary["rankings"][0]["fees"] == 0.1
+    assert summary["baseline"]["simulated_pnl"] == 0
+    assert summary["independent_evidence"] is False and summary["automatic_certified_promotion"] is False
+    restored = AdaptiveResearchTracker()
+    restored.restore(tracker.checkpoint())
+    assert restored.summary() == summary
+
+
+def test_losing_streak_and_loss_limit_suspend_without_chasing_or_promotion():
+    from neraium_poly.experimental.evaluation import AdaptiveResearchTracker
+
+    tracker = AdaptiveResearchTracker()
+    for i in range(5):
+        tracker.record("short_horizon", f"exit-{i}", -5.0, 0.1, START, [f"actual-quote-{i}"])
+    state = tracker.summary()["rankings"][0]
+    assert state["suspended"]
+    assert "strategy_loss_limit" in state["reasons"] and "losing_streak_suspension" in state["reasons"]
+    assert state["candidate_for_formal_research"] is False and state["certification_eligible"] is False
+
+
+def test_promising_simulated_track_record_only_requests_research_never_certification():
+    from neraium_poly.experimental.evaluation import AdaptiveResearchTracker
+
+    tracker = AdaptiveResearchTracker()
+    for i in range(20):
+        tracker.record("short_horizon", f"exit-{i}", 0.1, 0.01, START, [f"actual-quote-{i}"])
+    state = tracker.summary()["rankings"][0]
+    assert state["candidate_for_formal_research"] is True
+    assert state["certification_eligible"] is False and state["validation_status"] == "unvalidated"
+
+
+def test_adaptive_drawdown_suspension_and_corrupt_checkpoints_reject():
+    from neraium_poly.experimental.evaluation import AdaptiveResearchTracker
+
+    tracker = AdaptiveResearchTracker()
+    tracker.record("short_horizon", "gain", 50.0, 0.1, START, ["actual-quote-gain"])
+    tracker.record("short_horizon", "loss", -50.0, 0.1, START, ["actual-quote-loss"])
+    assert "strategy_drawdown_limit" in tracker.summary()["rankings"][0]["reasons"]
+    bad = tracker.checkpoint()
+    bad["states"]["short_horizon"]["fees"] = -1
+    with pytest.raises(ValueError):
+        AdaptiveResearchTracker().restore(bad)
+    with pytest.raises(ValueError):
+        tracker.record("s", "bad", 1.0, 0.1, START, [])
+
+
+def test_readonly_archive_diagnostic_scores_quotes_without_inventing_execution(tmp_path):
+    import sqlite3
+
+    from neraium_poly.data import EventStore
+    from neraium_poly.experimental.evaluation import _archive_worker
+
+    path = tmp_path / "controlled-test-quotes.sqlite"
+    store = EventStore(path)
+    for i in range(100):
+        f, _ = frame(i)
+        store.append(f.books[0])
+    store.close()
+    readonly = sqlite3.connect(f"file:{path}?mode=ro", uri=True)
+    high_water = readonly.execute("select max(rowid) from events").fetchone()[0]
+    readonly.close()
+    result = _archive_worker((str(path), high_water, 100, 60))
+    assert result["raw_records_checked"] == 100
+    assert result["scored_monetary_forecasts"] > 0
+    assert result["future_bid_mae"] == 0 and result["unchanged_current_bid_baseline_mae"] == 0
+    assert result["execution_pnl"] is None and result["simulated_fills"] is None
+    assert result["certification_status"] == "blocked"

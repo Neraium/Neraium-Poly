@@ -131,20 +131,24 @@ class ExperimentalStrategyEngine:
         return reasons
 
     def _remember(self, token, book):
-        history = self.history.setdefault(token, deque(maxlen=self.history_size))
-        if history and book.timestamp <= history[-1].at:
-            return
-        if history and (book.timestamp - history[-1].at).total_seconds() > 120:
-            history.clear()
-        history.append(
+        self._remember_point(
+            token,
             QuotePoint(
                 book.id,
                 book.timestamp.isoformat(),
                 book.available_at.isoformat(),
                 book.bids[0].price,
                 book.asks[0].price,
-            )
+            ),
         )
+
+    def _remember_point(self, token, point):
+        history = self.history.setdefault(token, deque(maxlen=self.history_size))
+        if history and point.at <= history[-1].at:
+            return
+        if history and (point.at - history[-1].at).total_seconds() > 120:
+            history.clear()
+        history.append(point)
 
     def _horizon(self, token, now):
         rows = list(self.history.get(token, ()))

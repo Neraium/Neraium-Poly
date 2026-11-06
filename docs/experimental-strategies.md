@@ -78,3 +78,45 @@ cannot promote themselves to certified operation. The no-trade cash baseline
 remains $500 with zero trading P/L; comparing against it is not a market-model
 certification result. Missing actual fees, exits or point-in-time metadata yield
 null execution results in historical diagnostics rather than invented fills.
+
+## Actual bounded archive diagnostic, 2026-11-06
+
+Two independent subprocesses processed the same frozen readonly live archive
+window (high-water row163083, SHA256
+`66cfb71577cad274aa1d0e5831271b9a67a0a66ec54f860b6615c5dcfc7945fb`). Each
+verified and reconstructed24,000 actual observation records. The window contained
+380 tokens; the four densest tokens supplied280 observations. This is a bounded,
+nonrepresentative convenience sample, not an independent-event validation set.
+
+| Horizon | Scored monetary forecasts | Model future-bid MAE | Unchanged-current-bid baseline MAE |
+|---|---:|---:|---:|
+|60seconds|96|0.0014947917|0.0006354167|
+|120seconds|79|0.0011518987|0.0008987342|
+
+The measured model was **worse than the unchanged-bid baseline** in this sample.
+No profitable strategy, calibrated terminal forecast, historical fill or
+execution return follows. Orders/fills/P&L are null because point-in-time fees,
+rules/dependencies and a complete executable path are not bound to this sample.
+Bad records were excluded rather than repaired:1,051 stale books,1,463 missing
+liquidity and179 wide spreads. Adjacent observations and token pairs are not
+counted as independent evidence. No model was certified or promoted.
+
+The final run used actual worker PIDs2954569 and2954572 with overlapping7.89-second
+work intervals and approximately7.73CPU-seconds each. Numerical thread counts
+were1 per worker. A prior run used two other overlapping workers and produced
+identical scores/hash before a minimal-memory optimization. Actual process/timing
+records are retained in the workstream evidence and raw report. Reproduce:
+
+```sh
+OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 \
+  uv run python -m neraium_poly.experimental.evaluation \
+  --archive data/paper-live/events.sqlite \
+  --output data/phase9-strategies/reproduced.json \
+  --max-rows 24000 --high-water-rowid 163083
+```
+
+This command creates two spawned CPU workers, keeps the archive readonly, checks
+its raw/baseline/content hashes and records actual overlap and process IDs. It
+preserves source/receipt timestamps and holds only verified numeric top quotes
+for model diagnostics; it never manufactures historical depth or writes the
+certified account. Sample size and byte/free-disk budgets are bounded.
