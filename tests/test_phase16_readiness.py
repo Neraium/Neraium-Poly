@@ -135,7 +135,9 @@ def test_readiness_unknown_and_stale_data_never_means_ready_or_profitable():
                "span_seconds": 600, "max_gap_seconds": 5}
     r = build_readiness(history, execution={"estimated_net_edge": -.01}, now=START)
     assert "current_qualified_quote_stale" in r["insufficient_evidence"]
-    assert "estimated_edge_below_unchanged_0_03_threshold" in r["market_conditions"]
+    assert r["estimated_executable_edge"] is None
+    assert "execution_history_context_binding_required" in r["insufficient_evidence"]
+    assert r["market_conditions"] == []
     assert not r["mark_labels_are_independent_outcome_events"]
 
 
@@ -180,7 +182,7 @@ def test_subthreshold_edge_is_not_mislabeled_as_missing_history_or_implementatio
                "max_gap_seconds": 5, "per_token": [token]}
     calibration = {"training_events": 100, "heldout_events": 100, "cohort_sufficient": True,
                    "metrics": {"fixture": True}, "calibration_status": "controlled_fixture"}
-    r = build_readiness(history, execution={"estimated_net_edge": .02}, calibration=calibration, now=START)
+    r = build_readiness(history, execution={"estimated_net_edge": .02, "token_id": "controlled-token", "market_id": "controlled-market", "event_id": "controlled-parent", "execution_checks_pass": True, "source_at": START.isoformat(), "available_at": START.isoformat()}, calibration=calibration, now=START)
     assert r["status"] == "cost_threshold_not_met"
     assert r["insufficient_evidence"] == r["implementation_defects"] == []
     assert not r["experimental_admission_authority"] and not r["certification_authority"]
@@ -201,10 +203,40 @@ def test_matured_mark_readiness_is_distinct_from_terminal_probability_calibratio
              "execution_evidence_complete": True}
     history = {"current_observations": 40, "current_matured_labels": 20, "span_seconds": 300,
                "max_gap_seconds": 5, "per_token": [token]}
-    result = build_readiness(history, execution={"estimated_net_edge_per_share": .04}, now=START)
+    result = build_readiness(history, execution={"estimated_net_edge_per_share": .04, "token_id": "controlled-token", "market_id": "controlled-market", "event_id": "controlled-parent", "execution_checks_pass": True, "source_at": START.isoformat(), "available_at": START.isoformat()}, now=START)
     assert result["status"] == "insufficient_evidence"
     assert result["mark_research_readiness"]["status"] == "research_prerequisites_observed"
     assert not result["mark_research_readiness"]["outcome_probability_calibration_applicable"]
     assert not result["mark_research_readiness"]["formal_certification_and_order_authority"]
     history["per_token"][0]["observations"] = 40.5
     assert build_readiness(history, now=START)["eligible_mark_tokens"] == []
+
+
+def test_executable_edge_cannot_borrow_another_tokens_mature_history():
+    token = {"token_id": "controlled-token", "market_id": "controlled-market", "event_id": "controlled-parent",
+             "observations": 40, "matured_labels": 20, "span_seconds": 300, "max_gap_seconds": 5,
+             "latest_source_at": START.isoformat(), "latest_available_at": START.isoformat(),
+             "execution_evidence_complete": True}
+    history = {"current_observations": 40, "current_matured_labels": 20, "span_seconds": 300,
+               "max_gap_seconds": 5, "per_token": [token]}
+    execution = {"estimated_net_edge_per_share": .04, "token_id": "different-token",
+                 "market_id": "controlled-market", "event_id": "controlled-parent", "execution_checks_pass": True, "source_at": START.isoformat(), "available_at": START.isoformat()}
+    result = build_readiness(history, execution=execution, now=START)
+    assert result["mark_research_readiness"]["status"] == "implementation_defect"
+    assert "execution_history_context_mismatch" in result["implementation_defects"]
+    assert result["estimated_executable_edge"] is None
+
+
+def test_unbound_or_stale_execution_projection_is_withheld_even_with_fresh_history():
+    token = {"token_id": "controlled-token", "market_id": "controlled-market", "event_id": "controlled-parent",
+             "observations": 40, "matured_labels": 20, "span_seconds": 300, "max_gap_seconds": 5,
+             "latest_source_at": START.isoformat(), "latest_available_at": START.isoformat(),
+             "execution_evidence_complete": True}
+    history = {"current_observations": 40, "current_matured_labels": 20, "span_seconds": 300,
+               "max_gap_seconds": 5, "per_token": [token]}
+    execution = {"estimated_net_edge_per_share": .04, "token_id": "controlled-token", "market_id": "controlled-market",
+                 "event_id": "controlled-parent", "execution_checks_pass": False,
+                 "source_at": START.isoformat(), "available_at": START.isoformat()}
+    assert build_readiness(history, execution=execution, now=START)['estimated_executable_edge'] is None
+    execution.update(execution_checks_pass=True, source_at=(START-timedelta(seconds=16)).isoformat())
+    assert build_readiness(history, execution=execution, now=START)['estimated_executable_edge'] is None

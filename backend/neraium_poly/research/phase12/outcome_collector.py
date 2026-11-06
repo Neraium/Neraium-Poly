@@ -71,7 +71,7 @@ class _ArchivedNative(OperationalPolymarketAdapter):
         self.received_bytes = 0
 
     async def _get(self, base, path, params=None):
-        if base not in (GAMMA, CLOB, DATA) or len(self.responses) >= 3:
+        if base not in (GAMMA, CLOB, DATA) or len(self.responses) >= 4:
             raise ValueError("bounded native resolution sources only")
         await self.sleep(self.min_interval)
         async with self.client.stream("GET", base + path, params=params) as response:
@@ -98,6 +98,8 @@ class _ArchivedNative(OperationalPolymarketAdapter):
             )
             response.raise_for_status()
             parsed = json.loads(raw)
+            if not isinstance(parsed, dict):
+                raise TypeError("native resolution object required")
             if base == GAMMA and (
                 parsed.get("version") not in (None, "v1", "legacy")
                 or parsed.get("negRisk") not in (None, False)
@@ -146,6 +148,8 @@ class _ReplayNative(OperationalPolymarketAdapter):
         if at.tzinfo is None or at > self.native.available_at:
             raise ValueError("native response availability mismatch")
         parsed = json.loads(raw)
+        if not isinstance(parsed, dict):
+            raise TypeError("native replay resolution object required")
         if base == GAMMA and (
             parsed.get("version") not in (None, "v1", "legacy") or parsed.get("negRisk") not in (None, False)
         ):

@@ -21,7 +21,7 @@ from pydantic import Field
 from neraium_poly.contracts import MarketRelationship, MarketSnapshot, Record
 from neraium_poly.strategy import ProtocolFeeModel
 
-from .polymarket import CLOB, DATA, GAMMA, PolymarketAdapter, normalize_market, stable_id, timestamp
+from .polymarket import CLOB, DATA, GAMMA, PolymarketAdapter, _array, normalize_market, stable_id, timestamp
 
 
 @dataclass(frozen=True)
@@ -147,6 +147,46 @@ class OperationalPolymarketAdapter(PolymarketAdapter):
             self.operational_errors = self.operational_errors[-100:]
             return None
 
+    async def _settlement_market(self, market):
+        raw = await self._get(GAMMA, f"/markets/{market.market_id}")
+        if not isinstance(raw, dict) or str(raw.get("id")) != market.market_id:
+            raise ValueError("settlement detail identity mismatch")
+        if raw.get("version") not in (None, "v1", "legacy") or raw.get("negRisk") not in (None, False):
+            raise ValueError("unsupported settlement detail variant")
+        events = raw.get("events", [])
+        if not isinstance(events, list) or any(not isinstance(e, dict) for e in events):
+            raise ValueError("malformed settlement parent identities")
+        parents = {str(e["id"]) for e in events if e.get("id")}
+        if raw.get("eventId"):
+            parents.add(str(raw["eventId"]))
+        if parents:
+            if parents != {market.event_id}:
+                raise ValueError("contradictory settlement parent identities")
+            return raw
+        # Detail responses can omit parent IDs. Resolve membership using an
+        # additional official response; the prior forecast alone cannot supply it.
+        parent = await self._get(GAMMA, f"/events/{market.event_id}")
+        if (not isinstance(parent, dict) or str(parent.get("id")) != market.event_id
+            or not isinstance(parent.get("markets"), list) or len(parent["markets"]) > 1000):
+            raise ValueError("unverified official settlement parent")
+        children = [m for m in parent["markets"] if isinstance(m, dict) and str(m.get("id")) == market.market_id]
+        if len(children) != 1:
+            raise ValueError("ambiguous official settlement membership")
+        child = children[0]
+        for field in ("conditionId", "question", "description", "resolutionSource"):
+            if not raw.get(field) or child.get(field) != raw[field]:
+                raise ValueError("official parent/detail settlement semantics differ")
+        for field in ("clobTokenIds", "outcomes"):
+            if _array(raw.get(field)) != _array(child.get(field)):
+                raise ValueError("official parent/detail token ordering differs")
+        if (raw.get("endDate") is None) != (child.get("endDate") is None):
+            raise ValueError("official parent/detail settlement window differs")
+        if raw.get("endDate") and timestamp(raw["endDate"]) != timestamp(child["endDate"]):
+            raise ValueError("official parent/detail settlement window differs")
+        if child.get("version") not in (None, "v1", "legacy") or child.get("negRisk") not in (None, False):
+            raise ValueError("unsupported parent settlement variant")
+        return {**raw, "eventId": str(parent["id"])}
+
     async def settlement(self, market: MarketSnapshot) -> SettlementObservation | None:
         """Only final, undisputed, identity/rule-matched binary payouts qualify.
 
@@ -155,7 +195,7 @@ class OperationalPolymarketAdapter(PolymarketAdapter):
         before a paper ledger settlement is authorized.
         """
         try:
-            raw = await self._get(GAMMA, f"/markets/{market.market_id}")
+            raw = await self._settlement_market(market)
             records = normalize_market(raw, self.clock())
             matching = [r for r in records if r.token_id == market.token_id]
             if len(matching) != 1:
@@ -165,6 +205,8 @@ class OperationalPolymarketAdapter(PolymarketAdapter):
                 current.market_id != market.market_id
                 or current.event_id != market.event_id
                 or current.outcome != market.outcome
+                or current.question != market.question
+                or current.end_time != market.end_time
                 or not current.resolution_rules
                 or not current.resolution_source
                 or current.resolution_rules != market.resolution_rules

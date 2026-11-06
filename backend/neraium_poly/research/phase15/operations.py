@@ -15,7 +15,12 @@ def experimental_research(runtime):
     stop = runtime.account.risk.snapshot(now=runtime.clock())["kill_switch"]
     return {
         "domains": event.get("domains", {"status": "unavailable"}),
-        "relationships": runtime.phase15_relationships.summary() if runtime.phase15_relationships else {"status": "disabled"},
+        "phase16_execution": runtime.phase16_execution_status(),
+        "phase16": runtime.phase16.summary() if runtime.phase16 else {
+            "status": "unavailable" if runtime.phase16_error else "disabled",
+            "last_error": runtime.phase16_error, "trading_authority": False},
+        "relationships": runtime.phase16.relationships.summary() if runtime.phase16 else (
+            runtime.phase15_relationships.summary() if runtime.phase15_relationships else {"status": "disabled"}),
         "historical_qualification": event.get("historical_qualification", runtime._qualification()),
         "readiness_snapshot": {
             "generated_at": runtime.clock().isoformat(), "scope": "capability prerequisites, not model certification",

@@ -612,7 +612,12 @@ def _render_readiness(certified, experimental, width, height, errors):
     line(f"Stop {_flag(experimental.get('kill_switch', experimental.get('suspended')))}", 0, "yellow")
     line("CERTIFIED PAPER", 0, "bold green")
     line(f"{'Last ' if certified and not cf else ''}{_number(certified.get('cash'), True)} Sim P/L {_number(certified.get('simulated_pnl'), True)}", 0)
-    mark_status = reason(mark.get("status", "unavailable")) if current else "stale / unavailable"
+    execution_context = _mapping(qualification.get("execution_context"))
+    bound_current = (execution_context.get("bound") is True
+                     and _p16_recent(execution_context.get("source_at"), now)
+                     and _p16_recent(execution_context.get("available_at"), now))
+    mark_current = current and (mark.get("status") != "research_prerequisites_observed" or bound_current)
+    mark_status = reason(mark.get("status", "unavailable")) if mark_current else "stale / unavailable"
     line(f"Mark research: {mark_status}", 1, "yellow")
     train, held = calibration.get("training_events"), calibration.get("heldout_events")
     line(f"{'Terminal' if study_fresh else 'Last terminal'} train/held {_number(train)}/{_number(held)}", 1)
@@ -636,7 +641,7 @@ def _render_readiness(certified, experimental, width, height, errors):
     all_quotes_current = isinstance(tokens, list) and bool(tokens) and all(
         isinstance(row, dict) and _p16_recent(row.get("latest_source_at"), now)
         and _p16_recent(row.get("latest_available_at"), now) for row in tokens)
-    edge_text = f"{edge:+.4f}/share" if current and all_quotes_current and type(edge) in (float, int) and math.isfinite(edge) else "unavailable"
+    edge_text = f"{edge:+.4f}/share" if current and all_quotes_current and bound_current and type(edge) in (float, int) and math.isfinite(edge) else "unavailable"
     line(f"Est edge (research) {edge_text}", 2)
     metrics = _mapping(calibration.get("metrics"))
     sufficient = type(train) is int and train >= 100 and type(held) is int and held >= 100
@@ -644,6 +649,8 @@ def _render_readiness(certified, experimental, width, height, errors):
     brier_text = f"{brier:.5f}" if study_fresh and sufficient and type(brier) in (float, int) and math.isfinite(brier) and brier >= 0 else "insufficient evidence"
     line(f"Terminal Brier {brier_text}", 2)
     line(f"Orders {_number(experimental.get('orders_submitted'))} Fills {_number(experimental.get('fills'))} Pos {_number(experimental.get('open_positions'))}", 2)
+    execution_stage = _mapping(_mapping(experimental.get("operations_research")).get("phase16_execution"))
+    line(f"Depth checks veto {_number(execution_stage.get('committed_vetoes'))} pass {_number(execution_stage.get('committed_check_passes'))}", 3)
     relationship = _mapping(study.get("relationships"))
     line(f"Relationship {_number(relationship.get('evaluations', _mapping(relationship.get('engine')).get('evaluations')))} evaluations", 3)
     line(f"Certified gate {reason(cs.get('trading_status', 'unavailable'))}", 2, "yellow")

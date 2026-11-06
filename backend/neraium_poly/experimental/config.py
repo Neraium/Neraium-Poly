@@ -26,6 +26,8 @@ class ExperimentalConfig(BaseModel):
     event_model_report_path: Path | None = Path("data/phase12-results/latest.json")
     event_research_enabled: bool = True
     sports_research_enabled: bool = True
+    phase16_research_enabled: bool = False
+    phase16_execution_veto_enabled: bool = False
     phase15_relationship_research_enabled: bool = False
     domain_research_enabled: bool = False
     event_dataset_path: Path | None = Path("data/phase12/dataset-v3")

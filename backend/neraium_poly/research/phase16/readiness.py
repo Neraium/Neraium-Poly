@@ -105,6 +105,28 @@ def build_readiness(history_summary, *, execution=None, calibration=None, now):
     if edge is not None and (type(edge) not in (int, float) or not isfinite(edge)):
         defects.append("invalid_executable_edge_metric")
         edge = None
+    execution_bound = False
+    if edge is not None:
+        binding = [t for t in token_rows if isinstance(t, dict) and t.get("token_id") == execution.get("token_id")]
+        if not all(execution.get(k) for k in ("token_id", "market_id", "event_id")):
+            missing.append("execution_history_context_binding_required")
+        elif len(binding) != 1 or any(binding[0].get(k) != execution.get(k) for k in ("market_id", "event_id")):
+            defects.append("execution_history_context_mismatch")
+        elif execution["token_id"] not in qualified_tokens:
+            missing.append("execution_token_history_not_mature")
+        source_age, source_error = _freshness(execution.get("source_at"), now)
+        receipt_age, receipt_error = _freshness(execution.get("available_at"), now)
+        quote_current = (source_error is None and receipt_error is None
+                         and 0 <= receipt_age <= source_age <= 15)
+        if not quote_current:
+            missing.append("execution_source_and_receipt_freshness_required")
+        if execution.get("execution_checks_pass") is not True:
+            missing.append("verified_execution_checks_required")
+        execution_bound = (len(binding) == 1 and execution.get("token_id") in qualified_tokens
+            and all(binding[0].get(k) == execution.get(k) for k in ("market_id", "event_id"))
+            and execution.get("execution_checks_pass") is True and quote_current)
+        if not execution_bound:
+            edge = None
     if edge is None:
         missing.append("depth_and_cost_adjusted_edge_unavailable")
     elif edge < .03:
@@ -159,6 +181,8 @@ def build_readiness(history_summary, *, execution=None, calibration=None, now):
                         "required_training_events": 100, "required_heldout_events": 100,
                         "metrics": calibration.get("metrics"), "blockers": calibration.get("blockers", [])},
         "estimated_executable_edge": edge,
+        "execution_context": {"bound": execution_bound, **{key: execution.get(key) for key in (
+            "token_id", "market_id", "event_id", "source_at", "available_at", "evaluated_at")}},
         "edge_semantics": "conditional USD per outcome share after modeled costs; no validated trading advantage",
         "minimum_net_edge": .03, "research_only": True,
         "experimental_admission_authority": False, "certification_authority": False,

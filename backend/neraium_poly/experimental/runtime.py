@@ -138,6 +138,17 @@ class ExperimentalRuntime:
                 from neraium_poly.research.phase15.continuous import ContinuousRelationships
 
                 self.phase15_relationships = ContinuousRelationships(self.events)
+            self.last_phase16_checks = []
+            self.phase16 = None
+            self.phase16_error = None
+            if config.phase16_research_enabled:
+                from neraium_poly.research.phase16.continuous import ContinuousQualification
+
+                try:
+                    self.phase16 = ContinuousQualification(self.events)
+                except Exception as error:  # Unavailable research has no order authority.
+                    self.phase16_error = f"{type(error).__name__}:{str(error)[:160]}"
+                    log.exception("phase16_recovery_withheld")
             self.feed = feed or SharedFeedClient(config.source_url)
             self.fee_adapter = fee_adapter or AuditedFeeAdapter(
                 self.events, self._budget_ok, client=httpx.AsyncClient(timeout=5, follow_redirects=False)
@@ -325,6 +336,22 @@ class ExperimentalRuntime:
                 if self.archive.record(book):
                     self.totals["observations"] += 1
             signals = self.engine.evaluate_frame(selected, now)
+            checks = []
+            if self.config.phase16_execution_veto_enabled:
+                from neraium_poly.research.phase16.admission import execution_veto
+
+                signals, checks = execution_veto(signals, selected, now=now,
+                                                 target_notional=self.config.position_notional, model_code_sha256=self.model_hash)
+                self.last_phase16_checks = [r.model_dump(mode="json") for r in checks][-8:]
+                for check in checks:
+                    self.events.append(check)  # Durable evidence precedes any paper order.
+            if self.phase16 is not None:
+                try:
+                    self.phase16.observe(selected.model_dump(mode="json"), now=now, signals=signals)
+                    self.phase16_error = None
+                except Exception as error:  # noqa: BLE001 - withhold the research component on failure
+                    self.phase16_error = f"{type(error).__name__}:{str(error)[:160]}"
+                    log.warning("phase16_study_withheld:%s", type(error).__name__)
             self.trace.record_engine(
                 selected, signals, self.engine.status(), now, details=getattr(self.engine, "last_trace", None)
             )
@@ -449,7 +476,11 @@ class ExperimentalRuntime:
                 signal_count=len(signals),
                 eligible_count=qualified,
                 rejection_counts=dict(rejected),
-                decision_trace=self._trace_cycle_summary(),
+                decision_trace={**self._trace_cycle_summary(),
+                    "qualification_scope": "legacy strategy gate before depth veto; includes duplicate evaluations",
+                    "emitted_execution_checks": {"checked": len(checks),
+                        "vetoed": sum(c.vetoed for c in checks),
+                        "passed_check_not_risk_approved": sum(not c.vetoed for c in checks)}},
                 signal_digest=hashlib.sha256(
                     "".join(s.model_dump_json() for s in signals).encode()
                 ).hexdigest(),
@@ -675,6 +706,21 @@ class ExperimentalRuntime:
                 "archive": self._archive_status(), "experimental_totals": dict(self.totals),
                 "scope": "archive health and current simulated capital; research histories remain in /api/state"}
 
+    def phase16_execution_status(self):
+        vetoes = passes = None
+        error = None
+        try:
+            vetoes = self.events.count(kind="ExecutionVeto")
+            passes = self.events.count(kind="ExecutionPass")
+        except (AttributeError, OSError, RuntimeError) as exc:
+            error = type(exc).__name__
+        return {"enabled": self.config.phase16_execution_veto_enabled,
+                "committed_vetoes": vetoes,
+                "committed_check_passes": passes, "counter_error": error,
+                "scope": "Lifetime committed emitted-signal checks after signature dedup; pass is not risk approval",
+                "legacy_trace_qualification_scope": "Original strategy gate before optional depth veto, including duplicate evaluations",
+                "latest_cycle_checks": self.last_phase16_checks}
+
     def operations_state(self):
         from neraium_poly.research.phase15.operations import add_capacity, experimental_research
 
@@ -731,7 +777,9 @@ class ExperimentalRuntime:
                 latest_activity=list(self.activity),
                 last_cycle=self.last_cycle,
                 strategy_engine=self.engine.status(),
-                decision_trace=self.trace.status(),
+                decision_trace={**self.trace.status(),
+                    "qualified_opportunities_scope": "legacy strategy gate before optional execution veto; includes duplicate evaluations",
+                    "execution_veto": self.phase16_execution_status()},
                 data_source=self.config.source_url,
                 certification_authority=False,
                 historical_qualification=self._qualification(),

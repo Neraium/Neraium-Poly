@@ -20,6 +20,7 @@ def sample():
         "qualification": {"mark_research_readiness": {"status": "insufficient_evidence",
                 "remaining_requirements": ["depth_history_required"]}, "eligible_mark_tokens": [],
                 "estimated_executable_edge": -.005,
+                "execution_context": {"bound": True, "token_id": "controlled-token", "source_at": now, "available_at": now},
                 "calibration": {"training_events": 0, "heldout_events": 0, "metrics": None}},
         "relationships": {"engine": {"evaluations": 14}}}
     return c, e
@@ -107,3 +108,13 @@ def test_readiness_uses_compact_operations_endpoints_and_sanitizes_errors(monkey
     c, e = sample()
     text = render(c, e, height=40, errors=("controlled\x1b[2Jfailure",))
     assert "controlledfailure" in text and "\x1b" not in text
+
+
+def test_fresh_other_token_does_not_make_bound_execution_quote_current():
+    c, e = sample()
+    q = e['operations_research']['phase16']['qualification']
+    q['mark_research_readiness']['status'] = 'research_prerequisites_observed'
+    q['execution_context']['source_at'] = (datetime.now(UTC)-timedelta(seconds=16)).isoformat()
+    text = render(c, e)
+    assert 'Mark research: stale / unavailable' in text
+    assert 'Est edge (research) unavailable' in text
