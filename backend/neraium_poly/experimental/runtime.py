@@ -95,6 +95,23 @@ class ExperimentalRuntime:
                 ],
             },
         )
+        self.event_intelligence = None
+        if config.event_research_enabled:
+            from neraium_poly.research.phase12.runtime import EventResearchRuntime
+
+            try:
+                self.event_intelligence = EventResearchRuntime(
+                    config.data_dir / "event-intelligence",
+                    clock=self.clock,
+                    dataset_path=config.event_dataset_path,
+                    state=self.ledger.get("event_intelligence", {}),
+                    interval=config.event_forecast_interval,
+                    max_forecasts=config.event_forecasts_per_cycle,
+                    max_bytes=config.event_ledger_mb * 1024 * 1024,
+                )
+            except Exception as error:
+                self.event_research_initialization_error = f"{type(error).__name__}:{str(error)[:160]}"
+                log.exception("event_research_startup_withheld")
         self.feed = feed or SharedFeedClient(config.source_url)
         self.fee_adapter = fee_adapter or AuditedFeeAdapter(
             self.events, self._budget_ok, client=httpx.AsyncClient(timeout=5, follow_redirects=False)
@@ -125,6 +142,12 @@ class ExperimentalRuntime:
         )
 
     def _save(self):
+        if self.event_intelligence is not None:
+            try:
+                self.ledger.put("event_intelligence", self.event_intelligence.checkpoint())
+            except Exception as error:
+                self.event_intelligence.last_error = f"event_checkpoint_failed:{type(error).__name__}"
+                log.exception("event_checkpoint_withheld")
         self.ledger.put(
             "decision_trace", {"checkpoint": self.trace.checkpoint(), "cursors": self.trace_cursors}
         )
@@ -321,6 +344,12 @@ class ExperimentalRuntime:
                         "source": book.source,
                     }
             self._trace_execution()
+            if self.event_intelligence is not None:
+                try:
+                    self.event_intelligence.on_frame(selected, self.clock())
+                except Exception as error:
+                    self.event_intelligence.last_error = f"{type(error).__name__}:{str(error)[:160]}"
+                    log.exception("event_research_withheld")
             self.totals["cycles"] += 1
             self.totals["signals"] += len(signals)
             self.totals["qualified_opportunities"] += qualified
@@ -474,6 +503,18 @@ class ExperimentalRuntime:
                 log.exception("experimental_fee_refresh_withheld")
             await asyncio.sleep(2)
 
+    async def _event_resolution_loop(self, should_exit):
+        next_check = self.clock()
+        while not self.stopping and not should_exit():
+            if self.event_intelligence is not None and self.clock() >= next_check:
+                try:
+                    await self.event_intelligence.resolve_pending()
+                except Exception as error:
+                    self.event_intelligence.resolution_status["last_error"] = type(error).__name__
+                    log.exception("event_resolution_withheld")
+                next_check = self.clock() + timedelta(seconds=300)
+            await asyncio.sleep(2)
+
     async def run(self, should_exit=lambda: False):
         async def cycles():
             while not self.stopping and not should_exit():
@@ -485,7 +526,7 @@ class ExperimentalRuntime:
                     self._cancel_and_checkpoint(self.clock())
                 await asyncio.sleep(self.config.poll_seconds)
 
-        await asyncio.gather(cycles(), self._fees_loop(should_exit))
+        await asyncio.gather(cycles(), self._fees_loop(should_exit), self._event_resolution_loop(should_exit))
 
     def health(self):
         now = self.clock()
@@ -516,6 +557,33 @@ class ExperimentalRuntime:
             return report
         except (ValueError, OSError):
             return {"status": "unknown", "reason": "unreadable qualification report"}
+
+    def _event_summary(self):
+        if self.event_intelligence is None:
+            return {
+                "status": "unavailable"
+                if hasattr(self, "event_research_initialization_error")
+                else "disabled",
+                "research_status": "event research unavailable or disabled",
+                "last_error": getattr(self, "event_research_initialization_error", None),
+                "certification_authority": False,
+                "independent_models_enabled": 0,
+            }
+        try:
+            return {
+                **self.event_intelligence.summary(),
+                "model_research": load_summary(self.config.event_model_report_path)
+                if self.config.event_model_report_path
+                else {"status": "unavailable"},
+            }
+        except Exception as error:  # noqa: BLE001 - unavailable research never affects trading authority
+            return {
+                "status": "unavailable",
+                "research_status": "unavailable",
+                "last_error": type(error).__name__,
+                "certification_authority": False,
+                "independent_models_enabled": 0,
+            }
 
     def state(self):
         with self._lock:
@@ -563,6 +631,7 @@ class ExperimentalRuntime:
                 data_source=self.config.source_url,
                 certification_authority=False,
                 historical_qualification=self._qualification(),
+                event_intelligence=self._event_summary(),
                 research=load_summary(self.config.research_report_path)
                 if self.config.research_report_path
                 else {"status": "unavailable", "reason": "Research report not configured"},
@@ -574,6 +643,8 @@ class ExperimentalRuntime:
         self._cancel_and_checkpoint(self.clock())
         await self.feed.close()
         await self.fee_adapter.close()
+        if self.event_intelligence is not None:
+            self.event_intelligence.close()
         self.events.close()
         self.account.close()
 

@@ -23,6 +23,12 @@ class ExperimentalConfig(BaseModel):
     certified_directory: Path = Path("data/paper-live")
     qualification_report_path: Path | None = Path("data/phase9qualification/qualified-v2/report.json")
     research_report_path: Path | None = Path("data/phase11-results/latest.json")
+    event_model_report_path: Path | None = Path("data/phase12-results/latest.json")
+    event_research_enabled: bool = True
+    event_dataset_path: Path | None = Path("data/phase12/dataset-v3")
+    event_forecast_interval: float = Field(default=300, ge=60, le=86400)
+    event_forecasts_per_cycle: int = Field(default=6, ge=1, le=20)
+    event_ledger_mb: int = Field(default=64, ge=1, le=128)
     source_url: str = "http://127.0.0.1:18742/api/market-frame"
     host: str = "127.0.0.1"
     port: int = Field(default=18743, ge=1024, le=65535)

@@ -44,6 +44,7 @@ class EventForecast(Record):
     token_id: str
     dependency_group: str
     independence_reviewed: bool = False
+    category: str = "Unknown"
     kind: Literal["market_baseline", "historical_frequency", "independent_model"]
     probability: float = Field(ge=0, le=1)
     market_probability: float = Field(ge=0, le=1)

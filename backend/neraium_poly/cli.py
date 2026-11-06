@@ -21,6 +21,7 @@ def main():
             "monitor",
             "research-qualify",
             "research-experiment",
+            "event-research",
             "research-watch",
             "strategy-validate",
             "strategy-package",
@@ -57,7 +58,7 @@ def main():
     parser.add_argument("--width", type=int)
     parser.add_argument("--no-color", action="store_true")
     parser.add_argument(
-        "--view", choices=("summary", "strategies", "rejections", "research"), default="summary"
+        "--view", choices=("summary", "strategies", "rejections", "research", "events"), default="summary"
     )
     parser.add_argument("--scope", choices=("cycle", "epoch"), default="cycle")
     parser.add_argument("--refresh", type=float, default=3)
@@ -82,6 +83,12 @@ def main():
             view=args.view,
             scope=args.scope,
         )
+    elif args.command == "event-research":
+        from neraium_poly.research.phase12.framework import run_event_research
+
+        if not args.dataset or not args.output:
+            parser.error("event-research requires frozen --dataset and new --output")
+        print(json.dumps(run_event_research(args.dataset, args.output, workers=args.workers), indent=2))
     elif args.command == "research-experiment":
         from neraium_poly.research.phase11.framework import run_experiment
 
