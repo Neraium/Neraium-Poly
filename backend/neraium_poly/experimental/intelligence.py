@@ -3,6 +3,7 @@
 from datetime import datetime
 
 from neraium_poly.contracts import MarketRelationship, MarketSnapshot, OrderBookSnapshot
+from neraium_poly.data import assess_book
 from neraium_poly.data.operational import build_statistical_relationships
 from neraium_poly.intelligence import EvidenceContext, RelationshipEngine, RelationshipPolicy
 
@@ -19,20 +20,34 @@ class ExperimentalRelationshipIntelligence:
     def observe(self, markets: dict[str, MarketSnapshot], books: dict[str, OrderBookSnapshot], now: datetime):
         # Only explicit YES contracts support this descriptive same-event prior.
         # Named binary outcomes are not renamed YES, and correlation is no payoff identity.
+        # Metadata defines bounded pair membership only. A transient missing
+        # quote must not delete an already observed temporal baseline.
+        eligible = [
+            market
+            for token, market in markets.items()
+            if token == market.token_id
+            and market.timestamp <= now
+            and market.available_at <= now
+            and market.status == "active"
+            and market.resolution_rules
+            and market.resolution_source
+            and (market.end_time is None or market.end_time > now)
+        ]
+        generated, selected = build_statistical_relationships(
+            eligible, now, max_pairs=self.engine.policy.max_relationships
+        )
         observations = {}
-        selected = {}
         self.dependency_groups = {}
-        for token, market in markets.items():
+        for market in eligible:
             self.dependency_groups.setdefault(market.event_id, []).append(market.market_id)
+            token = market.token_id
+            if selected.get(market.market_id) != token:
+                continue
             book = books.get(token)
-            if book is None or not book.bids or not book.asks or market.outcome.casefold() != "yes":
+            if not assess_book(book, now, max_spread=0.05, expected_token=token).healthy:
                 continue
             if (book.market_id, book.token_id, book.exchange) != (market.market_id, token, market.exchange):
                 continue
-            if market.market_id in selected and selected[market.market_id] != token:
-                observations.pop(market.market_id, None)
-                continue
-            selected[market.market_id] = token
             observations[market.market_id] = market.model_copy(
                 update={
                     "id": book.id,
@@ -42,15 +57,17 @@ class ExperimentalRelationshipIntelligence:
                     "probability": (book.bids[0].price + book.asks[0].price) / 2,
                 }
             )
-        generated, _ = build_statistical_relationships(
-            tuple(observations.values()), now, max_pairs=self.engine.policy.max_relationships
-        )
         active = {r.id for r in generated}
         self.engine.retain(active)
         self.definitions = {k: r for k, r in self.definitions.items() if k in active}
         self.latest = []
         for definition in generated:
             relationship = self.definitions.setdefault(definition.id, definition)
+            # No metadata probability, cached finding, or partial pair can be
+            # emitted as a new observation. On return the temporal engine still
+            # enforces its existing 120-second persistence-gap reset.
+            if any(mid not in observations for mid in relationship.market_ids):
+                continue
             paired = [observations[mid] for mid in relationship.market_ids]
             pair_books = [books[selected[m.market_id]] for m in paired]
             context = EvidenceContext(
