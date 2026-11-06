@@ -327,3 +327,32 @@ def test_failed_seal_catalog_commit_does_not_create_two_active_segments(tmp_path
         assert not recovered.append(sample(2))
     finally:
         recovered.close()
+
+
+def test_active_payload_corruption_cannot_gain_an_immutable_seal(tmp_path):
+    path = tmp_path / "events.sqlite"
+    make_legacy(path, [])
+    store = managed(path, compress=False)
+    try:
+        store.append(sample(1))
+        active = store.segment_dir / store.active_name
+        store.active.close()
+        store.active = None
+        # Fixture-only coherent corruption after closing the writer, before sealing.
+        db = sqlite3.connect(active)
+        try:
+            db.execute("DROP TRIGGER events_no_update")
+            db.execute(
+                "UPDATE events SET payload=replace(payload,'Controlled','CORRUPTED') WHERE id=?",
+                (sample(1).id,),
+            )
+            db.commit()
+        finally:
+            db.close()
+        store.active = EventStore(active)
+        with pytest.raises(ValueError, match="corrupt archive payload digest"):
+            store._seal_active()
+        assert not active.with_suffix(".sqlite.manifest.json").exists()
+        assert not active.with_suffix(".sqlite.gz").exists()
+    finally:
+        store.close()
