@@ -57,6 +57,7 @@ class ExperimentalStrategyEngine:
         self.counts, self.rejections = Counter(), Counter()
         self.intelligence = ExperimentalRelationshipIntelligence()
         self.latest_signals = []
+        self.last_trace = {}
 
     @property
     def policy(self):
@@ -215,9 +216,23 @@ class ExperimentalStrategyEngine:
                 healthy[token] = book
         findings = self.intelligence.observe(markets, healthy, now)
         results = []
+        self.last_trace = {
+            strategy: {
+                "markets_considered": 0,
+                "valid_observations": 0,
+                "candidate_signals": 0,
+                "rejected_signals": 0,
+                "qualified_opportunities": 0,
+                "emitted_signals": 0,
+                "duplicate_signals": 0,
+                "reasons": {},
+            }
+            for strategy in self.enabled
+        }
         for token, market in sorted(markets.items()):
             book = books.get(token)
             common = self._data_reasons(frame, market, book, now)
+            valid_observation = not common
             fee, fee_reason = self._fee(frame.fees.get(token), now)
             if fee_reason:
                 common.append(fee_reason)
@@ -247,6 +262,21 @@ class ExperimentalStrategyEngine:
                             reasons.append("excessive_model_uncertainty")
                         if book and book.asks and fee is not None:
                             edge = horizon["lower"] * (1 - fee) - book.asks[0].price * (1 + fee) - 0.02
+                            diagnostics.update(
+                                {
+                                    "entry_ask": book.asks[0].price,
+                                    "current_bid": book.bids[0].price,
+                                    "spread": book.asks[0].price - book.bids[0].price,
+                                    "forecast_gross_edge": horizon["forecast"] - book.asks[0].price,
+                                    "uncertainty_haircut": horizon["forecast"] - horizon["lower"],
+                                    "conservative_pre_cost_edge": horizon["lower"] - book.asks[0].price,
+                                    "entry_fee_bound": fee * book.asks[0].price,
+                                    "exit_fee_bound": fee * horizon["lower"],
+                                    "roundtrip_slippage_bound": 0.02,
+                                    "minimum_net_edge": 0.03,
+                                    "cost_model": "global_notional_bound_matches_broker",
+                                }
+                            )
                             values["estimated_net_edge"] = edge
                             if edge < 0.03:
                                 reasons.append("conservative_roundtrip_edge_insufficient")
@@ -280,6 +310,25 @@ class ExperimentalStrategyEngine:
                     reasons.append("independent_predecision_context_and_response_model_required")
                 else:
                     reasons.append("independent_context_verified_labels_and_calibration_required")
+                prerequisite_reasons = [
+                    r
+                    for r in reasons
+                    if r not in {"conservative_roundtrip_edge_insufficient", "excessive_model_uncertainty"}
+                ]
+                candidate = bool(values.get("estimated_net_edge") is not None and not prerequisite_reasons)
+                diagnostics["data_gate_passed"] = int(valid_observation)
+                diagnostics["valuation_ready"] = int(bool(values))
+                diagnostics["evidence_gate_passed"] = int(not prerequisite_reasons)
+                diagnostics["candidate_before_costs"] = int(candidate)
+                diagnostics["qualified_before_risk"] = int(not reasons)
+                trace = self.last_trace[strategy]
+                trace["markets_considered"] += 1
+                trace["valid_observations"] += int(valid_observation)
+                trace["candidate_signals"] += int(candidate)
+                trace["rejected_signals"] += int(bool(reasons))
+                trace["qualified_opportunities"] += int(not reasons)
+                for reason in set(reasons):
+                    trace["reasons"][reason] = trace["reasons"].get(reason, 0) + 1
                 signature = sha256(
                     json.dumps(
                         [book.id if book else frame.id, sorted(set(reasons)), values, list(evidence_ids)],
@@ -288,7 +337,9 @@ class ExperimentalStrategyEngine:
                 ).hexdigest()
                 seen_key = strategy + ":" + token
                 if self.seen.get(seen_key) == signature:
+                    trace["duplicate_signals"] += 1
                     continue
+                trace["emitted_signals"] += 1
                 self.seen[seen_key] = signature
                 self.sequence += 1
                 signal = ExperimentalSignal(
@@ -371,6 +422,8 @@ class ExperimentalStrategyEngine:
             "validation_status": "unvalidated",
             "certified_approval_authority": False,
             "signal_counts": dict(self.counts),
+            "signal_counts_scope": "Cumulative newly emitted signatures; unchanged evaluations excluded",
+            "latest_cycle": self.last_trace,
             "rejection_counts": dict(self.rejections),
             "history_tokens": len(self.history),
             "history_observations": sum(map(len, self.history.values())),
