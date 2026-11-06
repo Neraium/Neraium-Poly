@@ -195,3 +195,25 @@ async def test_background_resolution_requires_verifier_and_never_changes_capital
         assert s["cash"] == 500 and s["simulated_pnl"] == 0 and not s["positions"] and not s["orders"]
     finally:
         await r.close()
+
+
+def test_failed_event_checkpoint_restore_releases_child_owner_without_gc(tmp_path, moment):
+    import gc
+
+    from neraium_poly.research.phase12.runtime import EventResearchRuntime
+
+    was_enabled = gc.isenabled()
+    gc.disable()
+    try:
+        with pytest.raises(ValueError, match="checkpoint"):
+            EventResearchRuntime(
+                tmp_path / "event",
+                clock=lambda: moment,
+                state={"relationships": {"schema_version": "unsupported"}},
+            )
+        fresh = EventResearchRuntime(tmp_path / "event", clock=lambda: moment)
+        assert fresh.ledger.verify()["records"] == 0
+        fresh.close()
+    finally:
+        if was_enabled:
+            gc.enable()

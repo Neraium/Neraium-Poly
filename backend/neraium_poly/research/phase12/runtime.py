@@ -50,30 +50,33 @@ class EventResearchRuntime:
             max_records=20000,
             max_bytes=max_bytes,
         )
-        self.relationships = EventRelationshipEngine()
-        state = state or {}
-        anchored = state.get("ledger_head")
-        if anchored:
-            actual = self.ledger.verify()
-            prefix = self.ledger.db.execute(
-                "SELECT chain FROM journal WHERE seq=?", (anchored["records"],)
-            ).fetchone()
-            if actual["records"] < anchored["records"] or (
-                anchored["records"] and (prefix is None or prefix[0] != anchored["head_sha256"])
-            ):
-                self.ledger.close()
-                raise ValueError("rolled back or replaced forecast ledger")
-        self.last_at = state.get("last_at")
-        self.last_by_market = state.get("last_by_market", {})
-        self.rejections = Counter(state.get("rejections", {}))
-        self.totals = state.get("totals", {"cycles": 0, "market_baselines": 0, "proposal_evaluations": 0})
-        self.resolution_attempts = state.get("resolution_attempts", {})
-        self.resolution_status = state.get("resolution_status", {"attempts": 0, "verified": 0})
-        self.last_error = None
-        self.qualification = {"status": "unavailable", "reason": "Canonical dataset not loaded"}
-        if state.get("relationships"):
-            self.relationships.restore(state["relationships"])
-        self.relationship_status = state.get("relationship_status", {})
+        try:
+            self.relationships = EventRelationshipEngine()
+            state = state or {}
+            anchored = state.get("ledger_head")
+            if anchored:
+                actual = self.ledger.verify()
+                prefix = self.ledger.db.execute(
+                    "SELECT chain FROM journal WHERE seq=?", (anchored["records"],)
+                ).fetchone()
+                if actual["records"] < anchored["records"] or (
+                    anchored["records"] and (prefix is None or prefix[0] != anchored["head_sha256"])
+                ):
+                    raise ValueError("rolled back or replaced forecast ledger")
+            self.last_at = state.get("last_at")
+            self.last_by_market = state.get("last_by_market", {})
+            self.rejections = Counter(state.get("rejections", {}))
+            self.totals = state.get("totals", {"cycles": 0, "market_baselines": 0, "proposal_evaluations": 0})
+            self.resolution_attempts = state.get("resolution_attempts", {})
+            self.resolution_status = state.get("resolution_status", {"attempts": 0, "verified": 0})
+            self.last_error = None
+            self.qualification = {"status": "unavailable", "reason": "Canonical dataset not loaded"}
+            if state.get("relationships"):
+                self.relationships.restore(state["relationships"])
+            self.relationship_status = state.get("relationship_status", {})
+        except BaseException:
+            self.ledger.close()
+            raise
 
     def _verified_outcome(self, outcome):
         known = self.approved_outcomes.get(outcome.id)
