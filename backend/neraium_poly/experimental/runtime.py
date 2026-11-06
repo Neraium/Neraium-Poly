@@ -1,0 +1,365 @@
+"""Separate experimental process: public observations in, isolated paper capital out."""
+
+import asyncio
+import hashlib
+import json
+import logging
+import shutil
+from collections import Counter, deque
+from datetime import UTC, datetime, timedelta
+from threading import RLock
+
+import httpx
+from pydantic import Field
+
+from neraium_poly.contracts import Record
+from neraium_poly.data import EventStore, assess_book
+from neraium_poly.experimental.config import ExperimentalConfig
+from neraium_poly.experimental.contracts import ExperimentalSignal, SharedMarketFrame
+from neraium_poly.experimental.feed import SharedFeedClient
+from neraium_poly.experimental.fees import AuditedFeeAdapter
+from neraium_poly.experimental.strategies import ExperimentalStrategyEngine
+from neraium_poly.research.archive import QuoteArchive
+from neraium_poly.settings import Settings
+
+log = logging.getLogger(__name__)
+
+
+class ExperimentalCycle(Record):
+    account_id: str = "experimental-paper"
+    source_frame_id: str
+    observed_book_ids: tuple[str, ...]
+    signal_count: int = Field(ge=0)
+    eligible_count: int = Field(ge=0)
+    rejection_counts: dict[str, int]
+    signal_digest: str
+    representative_rejections: tuple[ExperimentalSignal, ...] = ()
+    note: str = "Non-executable setup rejections aggregated; all eligible signals, risk decisions and trades retained individually"
+
+
+class ExperimentalRuntime:
+    def __init__(self, config: ExperimentalConfig, *, account=None, feed=None, clock=None, fee_adapter=None):
+        Settings.from_env()
+        self.config = config
+        self.clock = clock or (lambda: datetime.now(UTC))
+        self._lock = RLock()
+        if account is None:
+            from neraium_poly.experimental.account import ExperimentalAccount
+
+            account = ExperimentalAccount(
+                config.data_dir,
+                config.certified_directory,
+                limits=config.risk_limits,
+                enabled_strategies=config.enabled_strategies,
+            )
+        self.account = account
+        self.ledger = account.ledger
+        self.events = EventStore(config.data_dir / "events.sqlite")
+        self.archive = QuoteArchive(self.events, self.ledger.get("quote_archive", {}))
+        self.engine = ExperimentalStrategyEngine(
+            enabled=config.enabled_strategies, max_tokens=config.max_tokens
+        )
+        checkpoint = self.ledger.get("strategy_engine")
+        if checkpoint:
+            self.engine.restore(checkpoint)
+        self.feed = feed or SharedFeedClient(config.source_url)
+        self.fee_adapter = fee_adapter or AuditedFeeAdapter(
+            self.events, self._budget_ok, client=httpx.AsyncClient(timeout=5, follow_redirects=False)
+        )
+        self.fees = self.ledger.get("observed_fees", {})
+        self.fee_attempts = {}
+        self.totals = self.ledger.get(
+            "experimental_totals",
+            {"cycles": 0, "signals": 0, "qualified_opportunities": 0, "observations": 0},
+        )
+        self.rejections = Counter(self.ledger.get("experimental_rejections", {}))
+        self.activity = deque(self.ledger.get("experimental_activity", []), maxlen=15)
+        self.selected = self.ledger.get("selected_tokens", [])
+        self.last_frame = None
+        self.last_cycle = None
+        self.last_success = None
+        self.last_error = None
+        self.fee_error = None
+        self.stopping = False
+        self.started = self.clock()
+
+    def _budget_ok(self):
+        size = sum(p.stat().st_size for p in self.config.data_dir.glob("*.sqlite*") if p.is_file())
+        return (
+            size < self.config.max_archive_mb * 1024 * 1024
+            and shutil.disk_usage(self.config.data_dir).free >= self.config.min_free_disk_mb * 1024 * 1024
+        )
+
+    def _save(self):
+        self.ledger.put("strategy_engine", self.engine.checkpoint())
+        self.ledger.put("quote_archive", self.archive.state)
+        self.ledger.put("observed_fees", self.fees)
+        self.ledger.put("experimental_totals", self.totals)
+        self.ledger.put("experimental_rejections", dict(self.rejections))
+        self.ledger.put("experimental_activity", list(self.activity))
+        self.ledger.put("selected_tokens", self.selected)
+
+    @property
+    def suspended(self):
+        return self.account.snapshot(now=self.clock())["kill_switch"]
+
+    def stop(self):
+        self.account.stop(now=self.clock())
+        self.activity.append(f"{self.clock().isoformat()} experimental emergency stop activated")
+        self._save()
+
+    def run_scenario(self):
+        raise ValueError("Synthetic scenarios are unavailable in experimental real-data operation")
+
+    def _cancel_pending(self, now):
+        for report in self.account.broker.history():
+            if report.status in {"open", "partial"}:
+                self.account.cancel(report.client_order_id, now=now)
+
+    def _select(self, frame, now):
+        markets = {m.token_id: m for m in frame.markets}
+        books = {b.token_id: b for b in frame.books}
+        # Stable volume-priority membership avoids selecting by future returns.
+        valid = [
+            m.token_id
+            for m in frame.markets
+            if m.status == "active"
+            and m.resolution_rules
+            and m.resolution_source
+            and (m.end_time is None or m.end_time > now + timedelta(seconds=120))
+        ]
+        self.selected = [t for t in self.selected if t in valid][: self.config.max_tokens]
+        for token in valid:
+            if len(self.selected) >= self.config.max_tokens:
+                break
+            if (
+                token not in self.selected
+                and token in books
+                and assess_book(books[token], now, max_spread=0.05).healthy
+            ):
+                self.selected.append(token)
+        selected = set(self.selected)
+        return SharedMarketFrame(
+            id=frame.id,
+            timestamp=frame.timestamp,
+            available_at=frame.available_at,
+            source=frame.source,
+            producer_health=frame.producer_health,
+            markets=tuple(markets[t] for t in self.selected),
+            books=tuple(b for b in frame.books if b.token_id in selected),
+            fees={**frame.fees, **self.fees},
+            relationships=frame.relationships,
+            evidence=frame.evidence,
+            connectivity=frame.connectivity,
+        )
+
+    async def cycle(self):
+        Settings.from_env()
+        now = self.clock()
+        if not self._budget_ok():
+            self.last_error = "experimental_storage_budget_exhausted"
+            self.account.stop(now=now)
+            self._cancel_pending(now)
+            return
+        frame = await self.feed.read()
+        now = self.clock()
+        self.last_frame = frame
+        selected = self._select(frame, now)
+        books = {b.token_id: b for b in frame.books}
+        markets = {m.token_id: m for m in selected.markets}
+        with self._lock:
+            for book in selected.books:
+                if not self._budget_ok():
+                    raise ValueError("experimental_storage_budget_exhausted")
+                if self.archive.record(book):
+                    self.totals["observations"] += 1
+            signals = self.engine.evaluate_frame(selected, now)
+            self.account.advance(books, now=now, fees={**frame.fees, **self.fees})
+            rejected = Counter()
+            examples = {}
+            qualified = 0
+            for signal in signals:
+                if signal.eligible:
+                    qualified += 1
+                    self.events.append(signal)
+                    market = markets.get(signal.token_id)
+                    book = books.get(signal.token_id)
+                    if market is None or book is None:
+                        rejected["current_book_unavailable"] += 1
+                        continue
+                    # Fixed standard sizing respects observed exchange minimum lots.
+                    target = min(
+                        self.config.risk_limits.standard_max,
+                        max(self.config.position_notional, market.min_order_size * book.asks[0].price),
+                    )
+                    result = self.account.submit(
+                        signal,
+                        market,
+                        book,
+                        now=self.clock(),
+                        target_notional=target,
+                        fee_schedule=selected.fees.get(signal.token_id),
+                    )
+                    reasons = result.get("reasons", [])
+                    rejected.update(reasons if result.get("status") != "submitted" else [])
+                    self.activity.append(
+                        f"{now.isoformat()} {signal.strategy_id}: {result.get('status', 'unknown')} {';'.join(reasons)[:100]}"
+                    )
+                else:
+                    rejected.update(signal.reasons)
+                    examples.setdefault(signal.strategy_id, signal)
+            self.account.mark(books, now=self.clock())
+            self.totals["cycles"] += 1
+            self.totals["signals"] += len(signals)
+            self.totals["qualified_opportunities"] += qualified
+            self.rejections.update(rejected)
+            cycle = ExperimentalCycle(
+                timestamp=now,
+                available_at=now,
+                source="experimental-real-market-coordinator/v1",
+                source_frame_id=frame.id,
+                observed_book_ids=tuple(b.id for b in selected.books),
+                signal_count=len(signals),
+                eligible_count=qualified,
+                rejection_counts=dict(rejected),
+                signal_digest=hashlib.sha256(
+                    "".join(s.model_dump_json() for s in signals).encode()
+                ).hexdigest(),
+                representative_rejections=tuple(examples.values()),
+            )
+            self.events.append(cycle)
+            self.last_cycle = cycle.model_dump(mode="json")
+            self.last_success = self.clock()
+            self.last_error = None
+            self._save()
+        log.info(
+            "experimental_cycle %s",
+            json.dumps(
+                {
+                    "cycles": self.totals["cycles"],
+                    "source_markets": len({m.market_id for m in frame.markets}),
+                    "selected_tokens": len(self.selected),
+                    "signals": len(signals),
+                    "eligible": qualified,
+                    "rejections": dict(rejected),
+                }
+            ),
+        )
+
+    async def _fees_loop(self, should_exit):
+        while not self.stopping and not should_exit():
+            try:
+                if self.last_frame and self._budget_ok():
+                    now = self.clock()
+                    # Exit fees get priority; no assumed zero fee for a held position.
+                    held = [p["token_id"] for p in self.account.snapshot(now=now)["positions"]]
+                    tokens = list(dict.fromkeys(held + self.selected))
+                    pending = []
+                    for token in tokens:
+                        raw = self.fees.get(token)
+                        at = datetime.fromisoformat(raw["observed_at"]) if raw else None
+                        attempted = self.fee_attempts.get(token)
+                        if (
+                            at is None or (now - at).total_seconds() > self.config.fee_ttl_seconds * 0.8
+                        ) and (attempted is None or (now - attempted).total_seconds() > 30):
+                            pending.append(token)
+
+                    async def acquire(token):
+                        self.fee_attempts[token] = self.clock()
+                        result = await self.fee_adapter.observed_fee(token)
+                        if result:
+                            self.fees[token] = result
+
+                    await asyncio.gather(*(acquire(t) for t in pending[: self.config.fee_batch]))
+                    keep = set(tokens)
+                    self.fees = {t: v for t, v in self.fees.items() if t in keep}
+                    self.fee_attempts = {t: v for t, v in self.fee_attempts.items() if t in keep}
+                    self.fee_error = None
+            except Exception as error:
+                self.fee_error = type(error).__name__
+                log.exception("experimental_fee_refresh_withheld")
+            await asyncio.sleep(2)
+
+    async def run(self, should_exit=lambda: False):
+        async def cycles():
+            while not self.stopping and not should_exit():
+                try:
+                    await self.cycle()
+                except Exception as error:
+                    self.last_error = f"cycle_failed:{type(error).__name__}"
+                    log.exception("experimental_cycle_withheld")
+                    self._cancel_pending(self.clock())
+                await asyncio.sleep(self.config.poll_seconds)
+
+        await asyncio.gather(cycles(), self._fees_loop(should_exit))
+
+    def health(self):
+        now = self.clock()
+        age = (now - self.last_success).total_seconds() if self.last_success else None
+        return {
+            "status": "ok"
+            if age is not None and age < max(30, self.config.poll_seconds * 3) and self.last_error is None
+            else "degraded",
+            "account_id": "experimental-paper",
+            "validation_status": "unvalidated",
+            "paper_trading": True,
+            "live_trading_enabled": False,
+            "last_ingestion_at": self.last_success.isoformat() if self.last_success else None,
+            "last_ingestion_age_seconds": age,
+            "last_error": self.last_error,
+            "fee_error": self.fee_error,
+            "timestamp": now.isoformat(),
+        }
+
+    def state(self):
+        with self._lock:
+            now = self.clock()
+            state = self.account.snapshot(now=now)
+            frame = self.last_frame
+            books = frame.books if frame else ()
+            state.update(
+                generated_at=now.isoformat(),
+                suspended=state["kill_switch"],
+                service=self.health(),
+                source_markets=len({m.market_id for m in frame.markets}) if frame else None,
+                source_tokens=len(frame.markets) if frame else None,
+                experimental_markets=len({m.market_id for m in frame.markets if m.token_id in self.selected})
+                if frame
+                else None,
+                fresh_books=sum(assess_book(b, now).healthy for b in books),
+                selected_tokens=len(self.selected),
+                qualified_opportunities=self.totals["qualified_opportunities"],
+                experimental_totals=dict(self.totals),
+                rejection_reasons=dict(self.rejections),
+                latest_activity=list(self.activity),
+                last_cycle=self.last_cycle,
+                strategy_engine=self.engine.status(),
+                data_source=self.config.source_url,
+                certification_authority=False,
+            )
+            return state
+
+    async def close(self):
+        self.stopping = True
+        self._cancel_pending(self.clock())
+        self._save()
+        await self.feed.close()
+        await self.fee_adapter.close()
+        self.events.close()
+        self.account.close()
+
+
+async def serve_experimental(config):
+    import uvicorn
+
+    from neraium_poly.ops.api import create_app
+
+    logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s %(message)s")
+    logging.getLogger("httpx").setLevel(logging.WARNING)
+    runtime = ExperimentalRuntime(config)
+    app = create_app(runtime=runtime, local_port=config.port)
+    server = uvicorn.Server(uvicorn.Config(app, host=config.host, port=config.port, log_level="warning"))
+    try:
+        await asyncio.gather(server.serve(), runtime.run(lambda: server.should_exit))
+    finally:
+        await runtime.close()

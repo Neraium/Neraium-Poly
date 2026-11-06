@@ -733,6 +733,11 @@ class LivePaperRuntime:
             result.append(json.loads(payload))
         return result
 
+    def market_frame(self):
+        from neraium_poly.experimental.feed import market_frame
+
+        return market_frame(self).model_dump(mode="json")
+
     def health(self):
         now = self.clock()
         age = (now - self.last_success).total_seconds() if self.last_success else None

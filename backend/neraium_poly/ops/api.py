@@ -56,6 +56,12 @@ def create_app(runtime=None, frontend_path: Path | None = None, local_port: int 
             "timestamp": datetime.now(UTC).isoformat(),
         }
 
+    @app.get("/api/market-frame")
+    def public_market_frame():
+        if not hasattr(runtime, "market_frame"):
+            raise HTTPException(404, "Actual public market frame unavailable in this mode")
+        return runtime.market_frame()
+
     @app.get("/api/state")
     def state():
         with lock:
