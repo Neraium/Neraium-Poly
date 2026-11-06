@@ -551,10 +551,15 @@ def _render_research(certified, experimental, width, height, errors, scope):
             "white",
         )
     )
+    stale_marks = (
+        bool(experimental.get("stale_mark_tokens"))
+        or experimental.get("pnl_valuation") == "stale_last_observed_marks"
+    )
+    pnl_label = "P/L(last)" if stale_marks else "P/L"
     lines.append(("EXPERIMENTAL PAPER TRADING", "bold yellow"))
     lines.append(
         (
-            f"{_number(experimental.get('cash') if exp else None, True)} P/L {_number(experimental.get('simulated_pnl') if exp else None, True)} Stop {_flag(experimental.get('suspended') if exp else None)}",
+            f"{_number(experimental.get('cash') if exp else None, True)} {pnl_label} {_number(experimental.get('simulated_pnl') if exp else None, True)} Stop {_flag(experimental.get('suspended') if exp else None)}",
             "yellow",
         )
     )
@@ -597,9 +602,8 @@ def _render_research(certified, experimental, width, height, errors, scope):
     first = rows[0] if rows else {}
     baseline = None if unavailable else report.get("baseline_comparison", first.get("baseline_comparison"))
     lines.append((f"Base {_research_text(baseline)}", "dim"))
-    lines.append(
-        (f"Cal {_research_text(report.get('calibration_status', first.get('calibration_status')))}", "dim")
-    )
+    calibration = None if unavailable else report.get("calibration_status", first.get("calibration_status"))
+    lines.append((f"Cal {_research_text(calibration)}", "dim"))
     lines.append(
         (
             f"Evidence {_number(report.get('independent_training_events'))}/{_number(report.get('independent_heldout_events'))} need 100/100",
@@ -616,7 +620,7 @@ def _render_research(certified, experimental, width, height, errors, scope):
     except (ValueError, TypeError):
         edge_text = "unavailable"
     lines.append((f"Edge {edge_text}", "white"))
-    confidence = report.get("confidence", first.get("confidence"))
+    confidence = None if unavailable else report.get("confidence", first.get("confidence"))
     lines.append((f"Confidence {_research_text(confidence)}", "dim"))
     reasons = _trace_reasons(trace)
     if reasons:

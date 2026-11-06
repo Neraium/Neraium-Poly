@@ -567,3 +567,13 @@ def test_compact_research_counts_do_not_cap_real_higher_counts_at_99k():
     assert _compact_count(123456) == "123k"
     assert _compact_count(123456789) == "123M"
     assert _compact_count(None) == "—"
+
+
+def test_research_stale_report_withholds_confidence_and_labels_stale_marks():
+    c, e = sample()
+    e["stale_mark_tokens"] = ["controlled-token"]
+    e["research"] = {"status": "stale", "confidence": "high", "calibration_status": "validated"}
+    output = render_monitor(c, e, view="research", width=45).plain
+    assert "P/L(last)" in output
+    assert "Confidence unavailable" in output and "Cal unavailable" in output
+    assert "high" not in output and "Cal validated" not in output
