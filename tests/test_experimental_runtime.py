@@ -156,3 +156,33 @@ def test_storage_and_port_configuration_cannot_alias_certified_account(tmp_path)
         ExperimentalConfig(port=18742)
     with pytest.raises(ValueError):
         ExperimentalConfig(enabled_strategies=("unregistered",))
+
+
+async def test_relationship_evidence_and_definition_are_durable_before_admission(tmp_path, moment):
+    r, clock, feed = runtime(tmp_path, moment)
+    a = market(moment, "controlled-a").model_copy(update={"event_id": "controlled-shared-event"})
+    b = market(moment, "controlled-b").model_copy(update={"event_id": "controlled-shared-event"})
+
+    async def paired():
+        return SharedMarketFrame(
+            timestamp=clock(),
+            available_at=clock(),
+            source="neraium-poly/public-market-frame/v1",
+            producer_health={"status": "ok", "live_trading_enabled": False},
+            markets=(a, b),
+            books=(book(clock(), "controlled-a"), book(clock(), "controlled-b")),
+        )
+
+    feed.read = paired
+    try:
+        await r.cycle()
+        assert len(r.events.replay(kind="RelationshipEvidence")) == 1
+        assert len(r.events.replay(kind="ExperimentalRelationshipDefinition")) == 1
+        assert r.last_cycle["relationship_evidence_ids"]
+        clock.now += timedelta(seconds=1)
+        await r.cycle()
+        assert len(r.events.replay(kind="ExperimentalRelationshipDefinition")) == 1
+        assert len(r.events.replay(kind="RelationshipEvidence")) == 2
+        assert not r.state()["orders"]
+    finally:
+        await r.close()

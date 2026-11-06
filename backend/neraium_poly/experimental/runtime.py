@@ -26,6 +26,11 @@ from neraium_poly.settings import Settings
 log = logging.getLogger(__name__)
 
 
+class ExperimentalRelationshipDefinition(Record):
+    relationship_id: str
+    definition: dict
+
+
 class ExperimentalCycle(Record):
     account_id: str = "experimental-paper"
     source_frame_id: str
@@ -33,6 +38,8 @@ class ExperimentalCycle(Record):
     market_record_ids: tuple[str, ...] = ()
     fee_evidence_ids: tuple[str, ...] = ()
     strategy_code_sha256: str = ""
+    relationship_definition_ids: tuple[str, ...] = ()
+    relationship_evidence_ids: tuple[str, ...] = ()
     signal_count: int = Field(ge=0)
     eligible_count: int = Field(ge=0)
     rejection_counts: dict[str, int]
@@ -193,6 +200,36 @@ class ExperimentalRuntime:
                 if self.archive.record(book):
                     self.totals["observations"] += 1
             signals = self.engine.evaluate_frame(selected, now)
+            definition_ids = []
+            for relationship in self.engine.intelligence.definitions.values():
+                definition = relationship.model_dump(mode="json")
+                rid = hashlib.sha256(relationship.model_dump_json().encode()).hexdigest()
+                existing = self.events.connection.execute(
+                    "SELECT kind,payload,digest FROM events WHERE id=?", (rid,)
+                ).fetchone()
+                if existing is None:
+                    self.events.append(
+                        ExperimentalRelationshipDefinition(
+                            id=rid,
+                            timestamp=now,
+                            available_at=now,
+                            source="experimental-derived-relationship/v1",
+                            relationship_id=relationship.id,
+                            definition=definition,
+                        )
+                    )
+                else:
+                    kind, payload, digest = existing
+                    if (
+                        kind != "ExperimentalRelationshipDefinition"
+                        or hashlib.sha256(payload.encode()).hexdigest() != digest
+                        or ExperimentalRelationshipDefinition.model_validate_json(payload).definition
+                        != definition
+                    ):
+                        raise ValueError("corrupt experimental relationship definition")
+                definition_ids.append(rid)
+            for evidence in self.engine.intelligence.latest:
+                self.events.append(evidence)
             self.account.advance(books, now=now, fees=selected.fees)
             rejected = Counter()
             examples = {}
@@ -267,6 +304,8 @@ class ExperimentalRuntime:
                     )
                 ),
                 strategy_code_sha256=self.model_hash,
+                relationship_definition_ids=tuple(definition_ids),
+                relationship_evidence_ids=tuple(e.id for e in self.engine.intelligence.latest),
                 signal_count=len(signals),
                 eligible_count=qualified,
                 rejection_counts=dict(rejected),
@@ -394,6 +433,8 @@ class ExperimentalRuntime:
                 if stale_marks
                 else "fresh_observed_bid_marks_or_cash",
                 strategy_code_sha256=self.model_hash,
+                relationship_definition_ids=tuple(definition_ids),
+                relationship_evidence_ids=tuple(e.id for e in self.engine.intelligence.latest),
                 generated_at=now.isoformat(),
                 suspended=state["kill_switch"],
                 service=self.health(),
