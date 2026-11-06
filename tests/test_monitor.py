@@ -290,7 +290,7 @@ async def test_state_read_budget_is_applied_during_streaming(monkeypatch):
 def test_relationship_evaluations_come_from_observed_engine_status():
     certified, experimental = sample()
     experimental["strategy_engine"] = {"intelligence": {"evaluations": 7}}
-    assert "Relationships 1 ExpEval 7" in at_size(38, 24, certified, experimental)
+    assert "Relations 1 Evidence/cycle 7" in at_size(38, 24, certified, experimental)
 
 
 def test_latest_observed_cycle_is_visible_even_without_trades():
@@ -302,3 +302,158 @@ def test_latest_observed_cycle_is_visible_even_without_trades():
         }
     )
     assert "Last 02:42:00Z 312 eval 0 opp" in output
+
+
+def trace_sample():
+    """Controlled presentation counters, never evidence of genuine trades."""
+    from neraium_poly.experimental.trace_contracts import STAGES
+
+    certified, experimental = sample()
+    names = [row["strategy_id"] for row in experimental["strategies"]]
+
+    def rows(considered):
+        return {
+            name: {
+                **dict.fromkeys(STAGES, 0),
+                "markets_considered": considered,
+                "valid_observations": considered - 1,
+                "rejected_signals": considered,
+                "reasons": {
+                    "conservative_roundtrip_edge_insufficient": {
+                        "count": considered,
+                        "category": "MARKET CONDITION",
+                        "samples": [],
+                    }
+                },
+            }
+            for name in names
+        }
+
+    experimental["decision_trace"] = {
+        "epoch_started_at": "2026-11-06T00:00:00Z",
+        "last_evaluation_at": "2026-11-06T03:45:00Z",
+        "phase10_epoch": {"strategies": rows(128)},
+        "latest_cycle": {"strategies": rows(12)},
+    }
+    experimental.update(experimental_fresh_books=14, selected_tokens=64)
+    return certified, experimental
+
+
+def page(c, e, *, view="summary", scope="cycle", width=34, height=24):
+    return render_monitor(c, e, view=view, scope=scope, width=width, height=height).plain
+
+
+def test_phase10_scopes_show_latest_vs_persisted_without_combining():
+    c, e = trace_sample()
+    cycle, epoch = page(c, e), page(c, e, scope="epoch")
+    assert "Considered 72 Valid 66" in cycle
+    assert "Considered 768 Valid 762" in epoch
+    assert "03:45:00Z" in cycle and "00:00:00Z" in epoch
+    assert "net edge below floor" in cycle
+    assert "Signals 0 Qualified 0" in cycle
+
+
+def test_strategy_page_keeps_all_six_rows_and_safety_in_phone_view():
+    from rich.cells import cell_len
+
+    c, e = trace_sample()
+    for width in (34, 38, 45, 80):
+        for view in ("summary", "strategies", "rejections"):
+            output = page(c, e, view=view, width=width)
+            assert len(output.splitlines()) <= 24
+            assert max(map(cell_len, output.splitlines())) <= width
+            for label in (
+                "REAL MARKET DATA",
+                "EXPERIMENTAL PAPER TRADING",
+                "CERTIFIED PAPER TRADING",
+                "LIVE FINANCIAL TRADING DISABLED",
+            ):
+                assert label in output
+        strategies = page(c, e, view="strategies", width=width)
+        for name in ("Short-ho", "Event-dr", "Spread", "Relation", "Forecast", "Cross-ma"):
+            assert name in strategies
+        assert "Risk 0 Attempts 0" in strategies
+        assert "Expired 0 Cancel 0" in strategies
+
+
+def test_rejection_page_is_explicitly_nonexclusive_and_evidence_scoped():
+    c, e = trace_sample()
+    assert "nonexclusive counts" in page(c, e, view="rejections")
+    assert "72 net edge below floor" in page(c, e, view="rejections")
+    assert "768 net edge below floor" in page(c, e, view="rejections", scope="epoch")
+
+
+def test_legacy_trace_absence_and_missing_fields_are_never_invented():
+    c, e = sample()
+    legacy = page(c, e, view="strategies")
+    assert "Legacy counters; trace unavailable" in legacy
+    assert "Valid — Risk — Attempts —" in legacy
+    e["decision_trace"] = {"latest_cycle": {"strategies": {"short_horizon": {}}}}
+    output = page(c, e)
+    assert "Considered — Valid —" in output and "Qualified —" in output
+    assert "No rejection evidence" in output
+
+
+def test_fresh_percentage_uses_known_matching_source_and_experimental_denominators():
+    c, e = trace_sample()
+    output = page(c, e, view="strategies")
+    assert "284/400 71%" in output
+    assert "14/64 22%" in output
+    c["operation"]["current_books"] = None
+    assert "284/—" in page(c, e, view="strategies")
+    assert "284/— 0%" not in page(c, e, view="strategies")
+
+
+def test_trace_scope_and_view_are_explicitly_validated():
+    import pytest
+
+    for kwargs in ({"scope": "all_time"}, {"view": "trade"}):
+        with pytest.raises(ValueError):
+            render_monitor(**kwargs)
+
+
+def test_initial_flat_trace_contract_remains_readable():
+    c, e = trace_sample()
+    trace = e["decision_trace"]
+    e["decision_trace"] = {
+        "epoch": trace["epoch_started_at"],
+        "totals": {"short_horizon": {"markets_considered": 52, "rejections": {"stale_book": 3}}},
+        "latest_cycle": {"short_horizon": {"markets_considered": 4, "rejections": {"stale_book": 2}}},
+    }
+    assert "Considered 4" in page(c, e)
+    assert "Rej 2 stale book" in page(c, e)
+    assert "Considered 52" in page(c, e, scope="epoch")
+
+
+def test_phone_counter_cells_bound_large_epoch_counts_and_sanitize_reasons():
+    c, e = trace_sample()
+    for row in e["decision_trace"]["phase10_epoch"]["strategies"].values():
+        row["markets_considered"] = 12345678
+        row["fills"] = 12345678
+    output = page(c, e, view="strategies", scope="epoch")
+    assert "12M" in output
+    assert "12,345,678" not in output
+
+
+def test_observed_unsafe_configuration_never_claims_live_disabled():
+    c, e = trace_sample()
+    e["service"]["live_trading_enabled"] = True
+    for view in ("summary", "strategies", "rejections"):
+        output = page(c, e, view=view)
+        assert "WARNING LIVE CONFIGURATION UNSAFE" in output
+        assert "LIVE FINANCIAL TRADING DISABLED" not in output
+
+
+def test_rejection_categories_are_supported_by_counts_not_invented():
+    c, e = trace_sample()
+    output = page(c, e, view="rejections")
+    assert "72 MARKET CONDITION" in output
+    assert "MISSING EVIDENCE" not in output
+
+
+def test_source_freshness_denominator_includes_temporarily_missing_subscribed_books():
+    c, e = trace_sample()
+    c["operation"]["current_books"] = 370
+    c["operation"]["connectivity"]["subscribed_tokens"] = 400
+    assert "284/400 71%" in page(c, e, view="strategies")
+    assert "284/370" not in page(c, e)
