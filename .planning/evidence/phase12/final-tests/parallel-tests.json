@@ -1,0 +1,64 @@
+{
+  "logical_cpus_detected": 32,
+  "actual_test_processes": 2,
+  "peak_observed_concurrent_processes": 2,
+  "numerical_threads_per_worker": 1,
+  "workers": [
+    {
+      "pid": 3056118,
+      "started_at": "2026-11-06T05:40:00.741072+00:00",
+      "output": ".planning/evidence/phase12/final-tests/backend-worker-1.txt",
+      "files": [
+        "tests/test_connectivity.py",
+        "tests/test_data.py",
+        "tests/test_execution_recovery.py",
+        "tests/test_experimental_feed.py",
+        "tests/test_experimental_runtime.py",
+        "tests/test_integration.py",
+        "tests/test_live_operation.py",
+        "tests/test_operational_data.py",
+        "tests/test_phase10_intelligence.py",
+        "tests/test_phase10_trace.py",
+        "tests/test_phase11_micro.py",
+        "tests/test_phase11_segments.py",
+        "tests/test_phase12_ledger.py",
+        "tests/test_phase12_outcome_collector.py",
+        "tests/test_phase8_runtime.py",
+        "tests/test_quote_archive.py",
+        "tests/test_research_history.py",
+        "tests/test_risk.py",
+        "tests/test_strategy.py"
+      ],
+      "exit_code": 0,
+      "completed_observed_at": "2026-11-06T05:40:39.390277+00:00"
+    },
+    {
+      "pid": 3056119,
+      "started_at": "2026-11-06T05:40:00.741531+00:00",
+      "output": ".planning/evidence/phase12/final-tests/backend-worker-2.txt",
+      "files": [
+        "tests/test_contracts.py",
+        "tests/test_execution.py",
+        "tests/test_experimental_account.py",
+        "tests/test_experimental_fees.py",
+        "tests/test_experimental_strategies.py",
+        "tests/test_intelligence.py",
+        "tests/test_monitor.py",
+        "tests/test_phase10_diagnostics.py",
+        "tests/test_phase10_runtime.py",
+        "tests/test_phase11_framework.py",
+        "tests/test_phase11_models.py",
+        "tests/test_phase12_data.py",
+        "tests/test_phase12_models.py",
+        "tests/test_phase12_runtime.py",
+        "tests/test_phase9_qualification.py",
+        "tests/test_real_validation.py",
+        "tests/test_research_strategies.py",
+        "tests/test_risk_provenance.py",
+        "tests/test_workflow.py"
+      ],
+      "exit_code": 0,
+      "completed_observed_at": "2026-11-06T05:40:39.390298+00:00"
+    }
+  ]
+}

@@ -1,0 +1,183 @@
+{
+  "observed_at": "2026-11-06T05:41:43.392875+00:00",
+  "journal_records": 18,
+  "chain_head": "7f994df5fa90feca96ae91ea860bd637c859b81b09a098910853eef063cfdd63",
+  "chain_verified_independently": true,
+  "forecasts": [
+    {
+      "id": "fc1b12b94416c0afbfbb2fbd2e0333918c093d953dfb8306319b51d6ea289752",
+      "event_id": "1313864",
+      "market_id": "6675981",
+      "token_id": "107157641296911498592890920947053829105931739511040760439170568486187692171415",
+      "timestamp": "2026-11-06T05:41:08.128088Z",
+      "evidence_cutoff": "2026-11-06T05:41:08.128088Z",
+      "kind": "market_baseline",
+      "probability": 0.705,
+      "market_probability": 0.705,
+      "model_version": "observed-midpoint-baseline-v1",
+      "model_sha256": "5b90bedd315c7ad69945bf71c32b08b7bed523dd904ce10b3d442d2368278637",
+      "dataset_sha256": "42e7efdf5c7d7a3e9cca2a918a4c23513655b9f06befcfab94d472651feaa984",
+      "resolution_rules_sha256": "1d0e3a84bc062f2a365e1333771268898cc543a4e7324e5630f1b35c597ffc64",
+      "dependency_group": "unreviewed-parent:1313864",
+      "question": "Counter-Strike: PARIVISION vs Natus Vincere (BO3) - IEM Beijing Playoffs",
+      "scheduled_close": "2026-11-06T12:30:00Z",
+      "source_timestamp": "2026-11-06T05:41:00.575000Z",
+      "receipt_timestamp": "2026-11-06T05:41:00.616287Z",
+      "best_bid": {
+        "price": 0.7,
+        "size": 81243.81
+      },
+      "best_ask": {
+        "price": 0.71,
+        "size": 67656.18
+      },
+      "outcome_label": "Natus Vincere"
+    },
+    {
+      "id": "e999bdb8ba8fd646a56e89215b4fe266103fb052a16b3ca41343b3d4f4c9f04d",
+      "event_id": "1290048",
+      "market_id": "6490622",
+      "token_id": "51813782413093870360945676787709991580104678576723849573329710990751482365913",
+      "timestamp": "2026-11-06T05:41:08.128088Z",
+      "evidence_cutoff": "2026-11-06T05:41:08.128088Z",
+      "kind": "market_baseline",
+      "probability": 0.992,
+      "market_probability": 0.992,
+      "model_version": "observed-midpoint-baseline-v1",
+      "model_sha256": "5b90bedd315c7ad69945bf71c32b08b7bed523dd904ce10b3d442d2368278637",
+      "dataset_sha256": "0b6fb7cf2b662c0991b05936b1ef369717bc2df6d357c94b1daf2462a501df99",
+      "resolution_rules_sha256": "3d709c047f82ff5a091ff481a2a2bac5e259136e4a3a405d56765c981a952fc9",
+      "dependency_group": "unreviewed-parent:1290048",
+      "question": "Will Al Nassr Saudi Club win on 2026-11-06?",
+      "scheduled_close": "2026-11-06T14:55:00Z",
+      "source_timestamp": "2026-11-06T05:40:53.578000Z",
+      "receipt_timestamp": "2026-11-06T05:40:53.620458Z",
+      "best_bid": {
+        "price": 0.989,
+        "size": 75.0
+      },
+      "best_ask": {
+        "price": 0.995,
+        "size": 47.28
+      },
+      "outcome_label": "No"
+    },
+    {
+      "id": "73893693da90fc112d3582e3dc27e59e3831d996e46d4c76b652a1c803939437",
+      "event_id": "1263843",
+      "market_id": "6288562",
+      "token_id": "111240058838551497825064769078360963506789149911276154586465194437754547021664",
+      "timestamp": "2026-11-06T05:41:08.128088Z",
+      "evidence_cutoff": "2026-11-06T05:41:08.128088Z",
+      "kind": "market_baseline",
+      "probability": 0.07400000000000001,
+      "market_probability": 0.07400000000000001,
+      "model_version": "observed-midpoint-baseline-v1",
+      "model_sha256": "5b90bedd315c7ad69945bf71c32b08b7bed523dd904ce10b3d442d2368278637",
+      "dataset_sha256": "4ca7679019c67f026b0271adec147f20bf0bd9081090449c2b05e37caf5934f6",
+      "resolution_rules_sha256": "8a1e3bfb81310ca7932d439885eadfebaec475061291b27e904bb0dad7e08de1",
+      "dependency_group": "unreviewed-parent:1263843",
+      "question": "Will Elon Musk post 260-279 tweets from October 30 to November 6, 2026?",
+      "scheduled_close": "2026-11-06T17:00:00Z",
+      "source_timestamp": "2026-11-06T05:41:02.717000Z",
+      "receipt_timestamp": "2026-11-06T05:41:02.758045Z",
+      "best_bid": {
+        "price": 0.069,
+        "size": 35.4
+      },
+      "best_ask": {
+        "price": 0.079,
+        "size": 224.81
+      },
+      "outcome_label": "Yes"
+    },
+    {
+      "id": "ac8a994971f6e49165403b7e6f71e1da6633aa6b8eafbe229a8800877433ee14",
+      "event_id": "1283785",
+      "market_id": "6423883",
+      "token_id": "40280543296373270507961766913927754246716574467376427763313103857071858137755",
+      "timestamp": "2026-11-06T05:41:08.128088Z",
+      "evidence_cutoff": "2026-11-06T05:41:08.128088Z",
+      "kind": "market_baseline",
+      "probability": 0.0025,
+      "market_probability": 0.0025,
+      "model_version": "observed-midpoint-baseline-v1",
+      "model_sha256": "5b90bedd315c7ad69945bf71c32b08b7bed523dd904ce10b3d442d2368278637",
+      "dataset_sha256": "aa9fa173e409e5e181a5088167cc9e7231d2dd8eaf07ff678046ed7faa922b5c",
+      "resolution_rules_sha256": "1c27bfa87e1c4896178339e781cc68a24f145471680748e7228d8eb84b533e39",
+      "dependency_group": "unreviewed-parent:1283785",
+      "question": "Will the price of Bitcoin be above $68,000 on November 6?",
+      "scheduled_close": "2026-11-06T17:00:00Z",
+      "source_timestamp": "2026-11-06T05:41:04.816000Z",
+      "receipt_timestamp": "2026-11-06T05:41:04.858029Z",
+      "best_bid": {
+        "price": 0.002,
+        "size": 878.23
+      },
+      "best_ask": {
+        "price": 0.003,
+        "size": 5.0
+      },
+      "outcome_label": "No"
+    },
+    {
+      "id": "b7f48477a8811c8041f0842c643cc3a02a777e67ec407b85ab90d722620549aa",
+      "event_id": "1283785",
+      "market_id": "6423884",
+      "token_id": "103480603771448938172180577782580783404893747704456386235837873850471517210674",
+      "timestamp": "2026-11-06T05:41:08.128088Z",
+      "evidence_cutoff": "2026-11-06T05:41:08.128088Z",
+      "kind": "market_baseline",
+      "probability": 0.988,
+      "market_probability": 0.988,
+      "model_version": "observed-midpoint-baseline-v1",
+      "model_sha256": "5b90bedd315c7ad69945bf71c32b08b7bed523dd904ce10b3d442d2368278637",
+      "dataset_sha256": "89610ee36f678717890061f77997e96f4137f235c97d2199f67d53b74bba5bd5",
+      "resolution_rules_sha256": "1c27bfa87e1c4896178339e781cc68a24f145471680748e7228d8eb84b533e39",
+      "dependency_group": "unreviewed-parent:1283785",
+      "question": "Will the price of Bitcoin be above $70,000 on November 6?",
+      "scheduled_close": "2026-11-06T17:00:00Z",
+      "source_timestamp": "2026-11-06T05:41:04.816000Z",
+      "receipt_timestamp": "2026-11-06T05:41:04.859795Z",
+      "best_bid": {
+        "price": 0.987,
+        "size": 1005.0
+      },
+      "best_ask": {
+        "price": 0.989,
+        "size": 5.0
+      },
+      "outcome_label": "Yes"
+    },
+    {
+      "id": "5d10872d8aaf6672f6403a51dc4b7c9c75af6dbdf4e7fbdad301db3bcc6cb20f",
+      "event_id": "1283785",
+      "market_id": "6423888",
+      "token_id": "108550100953399482438673325409852114530803575646844219769084974071274737267138",
+      "timestamp": "2026-11-06T05:41:08.128088Z",
+      "evidence_cutoff": "2026-11-06T05:41:08.128088Z",
+      "kind": "market_baseline",
+      "probability": 0.08499999999999999,
+      "market_probability": 0.08499999999999999,
+      "model_version": "observed-midpoint-baseline-v1",
+      "model_sha256": "5b90bedd315c7ad69945bf71c32b08b7bed523dd904ce10b3d442d2368278637",
+      "dataset_sha256": "b567ad7b192aa7f057683e1b9b004c0e5055687e6ed371d491b33147724e65f6",
+      "resolution_rules_sha256": "1c27bfa87e1c4896178339e781cc68a24f145471680748e7228d8eb84b533e39",
+      "dependency_group": "unreviewed-parent:1283785",
+      "question": "Will the price of Bitcoin be above $78,000 on November 6?",
+      "scheduled_close": "2026-11-06T17:00:00Z",
+      "source_timestamp": "2026-11-06T05:41:05.713000Z",
+      "receipt_timestamp": "2026-11-06T05:41:07.631089Z",
+      "best_bid": {
+        "price": 0.08,
+        "size": 3561.16
+      },
+      "best_ask": {
+        "price": 0.09,
+        "size": 603.0
+      },
+      "outcome_label": "Yes"
+    }
+  ],
+  "counting": "Market baseline records, not independent forecasts, orders or independent events"
+}

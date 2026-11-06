@@ -1,0 +1,43 @@
+{
+  "verified_source_head": "da63cac9ac96c10bba5b506da90f8c9c0e44aaf1",
+  "ci_run_id": 42169870103,
+  "ci_conclusion": "success",
+  "local_backend_tests": 569,
+  "ci_backend_tests": 569,
+  "local_browser_tests": 5,
+  "ruff": "passed",
+  "dashboard_build": "passed",
+  "runtime_dependency_audit": "no known vulnerabilities",
+  "frontend_dependency_audit": "0 vulnerabilities",
+  "forecast_journal_real_records_verified": 6,
+  "forecast_restart_preserved": true,
+  "operational_risk_account_execution_strategy_code_changed": false,
+  "live_execution_enabled": false,
+  "certification_thresholds_changed": false,
+  "independent_event_models_activated": 0,
+  "reviews": [
+    {
+      "subject": "f31c4de8b9e7d80f0b8ca36f8d218157503d2359",
+      "scope": "runtime/ledger integration and startup cleanup",
+      "verdict": "pass",
+      "focused_tests": 30
+    },
+    {
+      "subject": "3c87a1a",
+      "scope": "forward proof storage bounds and native/chain integration",
+      "verdict": "pass",
+      "focused_tests": 16
+    }
+  ],
+  "native_policy_review": {
+    "verdict": "allow",
+    "rules": [
+      "P-001",
+      "P-002",
+      "P-004",
+      "P-007"
+    ],
+    "scope": "verified non-force push and existing experimental paper restart",
+    "automatic_hook_trust_claimed": false
+  }
+}

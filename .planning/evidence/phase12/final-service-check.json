@@ -1,0 +1,90 @@
+{
+  "observed_at": "2026-11-06T05:52:04.331070+00:00",
+  "source_markets": 200,
+  "source_tokens": 400,
+  "fresh_source_books": 270,
+  "selected_fresh_books": 47,
+  "experimental_health": {
+    "status": "ok",
+    "account_id": "experimental-paper",
+    "validation_status": "unvalidated",
+    "paper_trading": true,
+    "live_trading_enabled": false,
+    "last_ingestion_at": "2026-11-06T05:52:02.443236+00:00",
+    "last_ingestion_age_seconds": 1.658277,
+    "last_error": null,
+    "fee_error": null,
+    "timestamp": "2026-11-06T05:52:04.101513+00:00"
+  },
+  "certified_health": {
+    "status": "ok",
+    "paper_trading": true,
+    "live_trading_enabled": false,
+    "mode": "live_market_paper",
+    "trading_status": "validation_blocked",
+    "last_ingestion_at": "2026-11-06T05:52:04.293421+00:00",
+    "last_ingestion_age_seconds": 0.000603,
+    "last_error": null,
+    "ledger_consistent": true,
+    "timestamp": "2026-11-06T05:52:04.294024+00:00"
+  },
+  "forecasts": {
+    "events_tracked": 11,
+    "forecasts": 18,
+    "forecasts_pending": 18,
+    "forecasts_resolved": 0,
+    "independent_model_forecasts": 0,
+    "independent_event_groups": 0,
+    "market_baseline_forecasts": 18,
+    "resolution_collection": {
+      "attempts": 0,
+      "verified": 0
+    },
+    "scores": {
+      "count": 0,
+      "brier": null,
+      "log_loss": null,
+      "market_brier": null,
+      "market_log_loss": null,
+      "ece": null,
+      "reliability": [],
+      "confidence_interval": null,
+      "reason": "No independently reviewed resolved event groups"
+    },
+    "baseline_scores": {
+      "count": 0,
+      "brier": null,
+      "log_loss": null,
+      "market_brier": null,
+      "market_log_loss": null,
+      "ece": null,
+      "reliability": [],
+      "confidence_interval": null,
+      "reason": "No independently reviewed resolved event groups"
+    },
+    "integrity": {
+      "records": 54,
+      "head_sha256": "3353a59285a75b927affcd5a5236faf1c20d7abdae2d6102d48a98764e10d407",
+      "integrity": "verified"
+    }
+  },
+  "experimental": {
+    "cash": 500.0,
+    "bankroll": 500.0,
+    "simulated_pnl": 0.0,
+    "fills": 0,
+    "orders_attempted": 0,
+    "orders_submitted": 0,
+    "positions": []
+  },
+  "certified": {
+    "cash": 500.0,
+    "bankroll": 500.0,
+    "simulated_pnl": 0.0,
+    "orders": [],
+    "positions": []
+  },
+  "trace_epoch": "2026-11-06T04:22:19.671107+00:00",
+  "collector_pid": "2981665",
+  "experimental_pid": "3057206"
+}

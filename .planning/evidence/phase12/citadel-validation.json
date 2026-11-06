@@ -1,0 +1,147 @@
+{
+  "items": [
+    {
+      "target": "phase:1",
+      "id": "contracts",
+      "type": "file_diff",
+      "required": true,
+      "evidence": "backend/neraium_poly/research/phase12/contracts.py",
+      "status": "passed",
+      "retries_remaining": 0,
+      "next_action": ""
+    },
+    {
+      "target": "phase:1",
+      "id": "baseline",
+      "type": "command_result",
+      "required": true,
+      "evidence": ".planning/evidence/phase12/baseline.json",
+      "status": "passed",
+      "retries_remaining": 0,
+      "next_action": ""
+    },
+    {
+      "target": "phase:2",
+      "id": "canonical",
+      "type": "file_diff",
+      "required": true,
+      "evidence": ".planning/evidence/phase12/canonical-manifest.json",
+      "status": "passed",
+      "retries_remaining": 0,
+      "next_action": ""
+    },
+    {
+      "target": "phase:2",
+      "id": "models",
+      "type": "command_result",
+      "required": true,
+      "evidence": ".planning/evidence/phase12/research-models.json",
+      "status": "passed",
+      "retries_remaining": 0,
+      "next_action": ""
+    },
+    {
+      "target": "phase:3",
+      "id": "replay",
+      "type": "command_result",
+      "required": true,
+      "evidence": ".planning/evidence/phase12/reproducibility.json",
+      "status": "passed",
+      "retries_remaining": 0,
+      "next_action": ""
+    },
+    {
+      "target": "phase:3",
+      "id": "forward",
+      "type": "command_result",
+      "required": true,
+      "evidence": ".planning/evidence/phase12/prospective-observed.json",
+      "status": "passed",
+      "retries_remaining": 0,
+      "next_action": ""
+    },
+    {
+      "target": "phase:3",
+      "id": "scheduled",
+      "type": "command_result",
+      "required": true,
+      "evidence": ".planning/evidence/phase12/scheduled-forward-cycle.json",
+      "status": "passed",
+      "retries_remaining": 0,
+      "next_action": ""
+    },
+    {
+      "target": "phase:4",
+      "id": "fulltests",
+      "type": "test_result",
+      "required": true,
+      "evidence": ".planning/evidence/phase12/final-tests/parallel-tests.json",
+      "status": "passed",
+      "retries_remaining": 0,
+      "next_action": ""
+    },
+    {
+      "target": "phase:4",
+      "id": "ci",
+      "type": "test_result",
+      "required": true,
+      "evidence": ".planning/evidence/phase12/ci.json",
+      "status": "passed",
+      "retries_remaining": 0,
+      "next_action": ""
+    },
+    {
+      "target": "phase:4",
+      "id": "restart",
+      "type": "command_result",
+      "required": true,
+      "evidence": ".planning/evidence/phase12/forecast-restart.json",
+      "status": "passed",
+      "retries_remaining": 0,
+      "next_action": ""
+    },
+    {
+      "target": "phase:4",
+      "id": "accounts",
+      "type": "command_result",
+      "required": true,
+      "evidence": ".planning/evidence/phase12/restart.json",
+      "status": "passed",
+      "retries_remaining": 0,
+      "next_action": ""
+    },
+    {
+      "target": "phase:4",
+      "id": "live",
+      "type": "command_result",
+      "required": true,
+      "evidence": ".planning/evidence/phase12/final-service-check.json",
+      "status": "passed",
+      "retries_remaining": 0,
+      "next_action": ""
+    },
+    {
+      "target": "phase:5",
+      "id": "report",
+      "type": "doc_update",
+      "required": true,
+      "evidence": "docs/phase12-readiness.md",
+      "status": "passed",
+      "retries_remaining": 0,
+      "next_action": ""
+    },
+    {
+      "target": "phase:5",
+      "id": "handoff",
+      "type": "doc_update",
+      "required": true,
+      "evidence": ".planning/handoffs/phase12.md",
+      "status": "passed",
+      "retries_remaining": 0,
+      "next_action": ""
+    }
+  ],
+  "failures": [],
+  "pass": true,
+  "missingDeclarations": false
+}

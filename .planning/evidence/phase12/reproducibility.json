@@ -1,0 +1,15 @@
+{
+  "final_source": "da63cac9ac96c10bba5b506da90f8c9c0e44aaf1",
+  "dataset_sha256": "9e20ac5ccaef7616c2f0047df789a696916ff0d4b3d7d3938334bb190f77353d",
+  "identical_outputs": true,
+  "output_sha256": {
+    "models.json": "2a75b563c8e4e899bbb06657631bb961d607e17bfb652a209445342dded22016",
+    "relationships.json": "8fc73ea51f12d728522ad8a24b77575ea563b5b8a673f966632b4bfbeba72a3f",
+    "categories.json": "03889ecd9966e348be652219ac7c16efff1e97b036f4a80515bebaecfd253fdd"
+  },
+  "runs": [
+    "data/phase12-results/run-v2",
+    "data/phase12-results/run-v2-replay"
+  ],
+  "scope": "Final-source quantitative files; generated time, model registry metadata and worker PIDs differ"
+}

@@ -1,0 +1,50 @@
+{
+  "observed_at": "2026-11-06T05:15:17.765224+00:00",
+  "head": "ed69cd65a6432c865d2fc5ff364a61e1c509f0c3",
+  "cpus": 32,
+  "free_disk_bytes": 25571762176,
+  "branch": "main",
+  "certified": {
+    "cash": 500.0,
+    "bankroll": 500.0,
+    "simulated_pnl": 0.0,
+    "positions": [],
+    "orders": [],
+    "health": {
+      "status": "ok",
+      "paper_trading": true,
+      "live_trading_enabled": false,
+      "mode": "live_market_paper",
+      "trading_status": "validation_blocked",
+      "last_ingestion_at": "2026-11-06T05:15:20.851752+00:00",
+      "last_ingestion_age_seconds": 0.001048,
+      "last_error": null,
+      "ledger_consistent": true,
+      "timestamp": "2026-11-06T05:15:20.852800+00:00"
+    }
+  },
+  "experimental": {
+    "cash": 500.0,
+    "bankroll": 500.0,
+    "simulated_pnl": 0.0,
+    "positions": [],
+    "orders": [],
+    "health": {
+      "status": "ok",
+      "account_id": "experimental-paper",
+      "validation_status": "unvalidated",
+      "paper_trading": true,
+      "live_trading_enabled": false,
+      "last_ingestion_at": "2026-11-06T05:15:21.373653+00:00",
+      "last_ingestion_age_seconds": 0.117307,
+      "last_error": null,
+      "fee_error": null,
+      "timestamp": "2026-11-06T05:15:21.490960+00:00"
+    }
+  },
+  "source_markets": 200,
+  "source_tokens": 400,
+  "fresh_source_books": 270,
+  "selected_tokens": 64,
+  "trace_epoch": "2026-11-06T04:22:19.671107+00:00"
+}

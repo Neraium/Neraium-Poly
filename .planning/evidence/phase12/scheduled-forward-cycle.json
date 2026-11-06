@@ -1,0 +1,86 @@
+{
+  "observed_at": "2026-11-06T05:48:59.861079+00:00",
+  "event_summary": {
+    "events_tracked": 8,
+    "forecasts": 12,
+    "forecasts_pending": 12,
+    "forecasts_resolved": 0,
+    "market_baseline_forecasts": 12,
+    "independent_model_forecasts": 0,
+    "totals": {
+      "cycles": 2,
+      "market_baselines": 12,
+      "proposal_evaluations": 12
+    },
+    "resolution_collection": {
+      "attempts": 0,
+      "verified": 0
+    }
+  },
+  "forecasts_after_initial_batch": [
+    {
+      "id": "6f8c5799af8a7dabd8e09d10197208664a2a1a669f3f2fa2e7e3df385d63a77b",
+      "event_id": "1283785",
+      "market_id": "6423885",
+      "token_id": "113888739003330413348261539134884858114090652439144846869649003571862177350188",
+      "kind": "market_baseline",
+      "timestamp": "2026-11-06T05:46:08.521133Z",
+      "probability": 0.965,
+      "market_probability": 0.965
+    },
+    {
+      "id": "37e3cee3b06a14b895878726cc4ef9e31f38122a7a04c4de3ef5d1a791bbc806",
+      "event_id": "1291725",
+      "market_id": "6501428",
+      "token_id": "26660158252778151728418762173367017636491922052161878826809972643916748786508",
+      "kind": "market_baseline",
+      "timestamp": "2026-11-06T05:46:08.521133Z",
+      "probability": 0.175,
+      "market_probability": 0.175
+    },
+    {
+      "id": "aea51f1c4403bc1f5153748303205630ebd18cc062f2b6b411a48e203fd9ca13",
+      "event_id": "1299077",
+      "market_id": "6563869",
+      "token_id": "15975575418418802381999697512653682302854700326112208629012806536256176912787",
+      "kind": "market_baseline",
+      "timestamp": "2026-11-06T05:46:08.521133Z",
+      "probability": 0.796,
+      "market_probability": 0.796
+    },
+    {
+      "id": "241e4b7971e0eb563f517a82f3df34567c2286c05027f6891e55f412c7c48902",
+      "event_id": "1299077",
+      "market_id": "6563871",
+      "token_id": "48877954735201752776510757916643767204506079536720087050972443082937342876420",
+      "kind": "market_baseline",
+      "timestamp": "2026-11-06T05:46:08.521133Z",
+      "probability": 0.924,
+      "market_probability": 0.924
+    },
+    {
+      "id": "1e022147fc9f5a7e911cbe2e3b13a6ed759e18cdf1bd5a2bfa55f42c772a9387",
+      "event_id": "848341",
+      "market_id": "3580932",
+      "token_id": "100205215067722297517595068937257697192973299370955287626157382353628199508318",
+      "kind": "market_baseline",
+      "timestamp": "2026-11-06T05:46:08.521133Z",
+      "probability": 0.6799999999999999,
+      "market_probability": 0.6799999999999999
+    },
+    {
+      "id": "ae6e9be5f2395e998937c774599bc858cf73dc37f79062830c6f57f717815abd",
+      "event_id": "991810",
+      "market_id": "4397022",
+      "token_id": "15907269680083135091620869613557617263613890890387514554477997501123964677519",
+      "kind": "market_baseline",
+      "timestamp": "2026-11-06T05:46:08.521133Z",
+      "probability": 0.535,
+      "market_probability": 0.535
+    }
+  ],
+  "cash": 500.0,
+  "simulated_pnl": 0.0,
+  "orders": 0,
+  "scope": "Actual bounded scheduled market-baseline records; no independent forecasts or trading outcomes"
+}

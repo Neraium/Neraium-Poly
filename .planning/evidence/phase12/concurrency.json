@@ -1,0 +1,159 @@
+{
+  "writing_subagents": 3,
+  "coordinator_agents": 1,
+  "analysis_workers_per_job": 2,
+  "analysis_worker_launches": 8,
+  "peak_analysis_tasks": 2,
+  "analysis_jobs": [
+    {
+      "requested": 2,
+      "actual_pids": [
+        3054433,
+        3054436
+      ],
+      "coordinator_pid": 3054418,
+      "resource_tracker_pid": 3054432,
+      "peak_concurrent_tasks": 2,
+      "tasks": [
+        {
+          "study": "models",
+          "pid": 3054433,
+          "started_at": "2026-11-06T05:35:03.845915+00:00",
+          "completed_at": "2026-11-06T05:35:04.021395+00:00",
+          "peak_rss_kib": 56584,
+          "numerical_threads": 1
+        },
+        {
+          "study": "relationships",
+          "pid": 3054436,
+          "started_at": "2026-11-06T05:35:03.846610+00:00",
+          "completed_at": "2026-11-06T05:35:04.036373+00:00",
+          "peak_rss_kib": 56708,
+          "numerical_threads": 1
+        },
+        {
+          "study": "categories",
+          "pid": 3054433,
+          "started_at": "2026-11-06T05:35:04.022403+00:00",
+          "completed_at": "2026-11-06T05:35:04.046146+00:00",
+          "peak_rss_kib": 58432,
+          "numerical_threads": 1
+        }
+      ]
+    },
+    {
+      "requested": 2,
+      "actual_pids": [
+        3054884,
+        3054887
+      ],
+      "coordinator_pid": 3054882,
+      "resource_tracker_pid": 3054883,
+      "peak_concurrent_tasks": 2,
+      "tasks": [
+        {
+          "study": "models",
+          "pid": 3054884,
+          "started_at": "2026-11-06T05:35:44.568674+00:00",
+          "completed_at": "2026-11-06T05:35:44.745400+00:00",
+          "peak_rss_kib": 56616,
+          "numerical_threads": 1
+        },
+        {
+          "study": "relationships",
+          "pid": 3054887,
+          "started_at": "2026-11-06T05:35:44.569493+00:00",
+          "completed_at": "2026-11-06T05:35:44.759753+00:00",
+          "peak_rss_kib": 56532,
+          "numerical_threads": 1
+        },
+        {
+          "study": "categories",
+          "pid": 3054884,
+          "started_at": "2026-11-06T05:35:44.746304+00:00",
+          "completed_at": "2026-11-06T05:35:44.769640+00:00",
+          "peak_rss_kib": 58464,
+          "numerical_threads": 1
+        }
+      ]
+    },
+    {
+      "requested": 2,
+      "actual_pids": [
+        3056132,
+        3056135
+      ],
+      "coordinator_pid": 3056130,
+      "resource_tracker_pid": 3056131,
+      "peak_concurrent_tasks": 2,
+      "tasks": [
+        {
+          "study": "models",
+          "pid": 3056132,
+          "started_at": "2026-11-06T05:40:01.972499+00:00",
+          "completed_at": "2026-11-06T05:40:02.147867+00:00",
+          "peak_rss_kib": 56640,
+          "numerical_threads": 1
+        },
+        {
+          "study": "relationships",
+          "pid": 3056135,
+          "started_at": "2026-11-06T05:40:01.973582+00:00",
+          "completed_at": "2026-11-06T05:40:02.163056+00:00",
+          "peak_rss_kib": 56720,
+          "numerical_threads": 1
+        },
+        {
+          "study": "categories",
+          "pid": 3056132,
+          "started_at": "2026-11-06T05:40:02.148756+00:00",
+          "completed_at": "2026-11-06T05:40:02.172450+00:00",
+          "peak_rss_kib": 58488,
+          "numerical_threads": 1
+        }
+      ]
+    },
+    {
+      "requested": 2,
+      "actual_pids": [
+        3056154,
+        3056157
+      ],
+      "coordinator_pid": 3056149,
+      "resource_tracker_pid": 3056153,
+      "peak_concurrent_tasks": 2,
+      "tasks": [
+        {
+          "study": "models",
+          "pid": 3056154,
+          "started_at": "2026-11-06T05:40:02.550112+00:00",
+          "completed_at": "2026-11-06T05:40:02.724940+00:00",
+          "peak_rss_kib": 56656,
+          "numerical_threads": 1
+        },
+        {
+          "study": "relationships",
+          "pid": 3056157,
+          "started_at": "2026-11-06T05:40:02.551263+00:00",
+          "completed_at": "2026-11-06T05:40:02.739160+00:00",
+          "peak_rss_kib": 56728,
+          "numerical_threads": 1
+        },
+        {
+          "study": "categories",
+          "pid": 3056154,
+          "started_at": "2026-11-06T05:40:02.725855+00:00",
+          "completed_at": "2026-11-06T05:40:02.749636+00:00",
+          "peak_rss_kib": 57912,
+          "numerical_threads": 1
+        }
+      ]
+    }
+  ],
+  "test_workers": [
+    3056118,
+    3056119
+  ],
+  "browser_workers": 1,
+  "scope": "Separate research validation jobs; no claim that all worker launches were simultaneous; controlled spawn tests add bounded helper processes"
+}
