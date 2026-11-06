@@ -36,4 +36,4 @@ An actual service restart changed the process ID while preserving $500 bankroll/
 - before-restart.json and after-restart.json: actual persistent restart check.
 - backend-tests-final.txt/backend-junit-final.xml, browser-tests.txt, frontend-build.txt, ruff.txt, python-audit.txt and npm-audit.json: executed verification.
 - Earlier first-real-cycle/service-first-state files are retained observations from before the discovery timing fix, not current readiness evidence.
-- Delivery/remote-CI outcome will be added to delivery.json. User authorization covers this paper-only startup, commits and push. No funded wallets, real orders, deposits, AWS changes or unrelated-service stops occurred.
+- Verified release817496a was pushed to main. GitHub Actions run42138216856 passed backend and dashboard; delivery.json records the remote result and final observed state. User authorization covers this paper-only startup, commits and push. No funded wallets, real orders, deposits, AWS changes or unrelated-service stops occurred.
