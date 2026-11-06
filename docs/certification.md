@@ -41,4 +41,4 @@ One upstream Starlette TestClient deprecation warning recommends httpx2. Tests p
 
 Live execution remains disabled and unimplemented. No funded wallets, transactions or production infrastructure changes occurred. Native Citadel hook trust was not established by this build; explicit checkpoints, policy review, isolated worktrees and verification evidence were used.
 
-Remote delivery status is recorded in `.planning/evidence/delivery.json` after push and CI inspection.
+Implementation and certification were pushed to `main` at `6fad59e`. [GitHub Actions certification](https://github.com/Neraium/Neraium-Poly/actions/runs/42133842212) passed both backend and dashboard jobs. Delivery evidence is recorded in `.planning/evidence/delivery.json`; the final documentation commit records this result.

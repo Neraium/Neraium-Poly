@@ -1,0 +1,18 @@
+{
+  "status": "delivered",
+  "application_head": "a2de88e6c10200a046bfebac5499b481f809160a",
+  "pushed_certification_head": "6fad59e79c9241d2eca182a6869726eb4db823fc",
+  "branch": "main",
+  "remote": "https://github.com/Neraium/Neraium-Poly",
+  "ci": {
+    "run_id": 42133842212,
+    "url": "https://github.com/Neraium/Neraium-Poly/actions/runs/42133842212",
+    "conclusion": "success",
+    "backend": "success",
+    "dashboard": "success"
+  },
+  "live_trading_enabled": false,
+  "paper_trading": true,
+  "deployment_performed": false,
+  "readiness": "initial local paper-research build; production and profitability unverified"
+}
