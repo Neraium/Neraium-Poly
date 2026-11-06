@@ -1,0 +1,264 @@
+{
+  "schema_version": "1.0",
+  "experiment_id": "phase11-segment-quality-v1",
+  "experiment_spec": {
+    "schema_version": "1.0",
+    "experiment_id": "phase11-segment-quality-v1",
+    "hypothesis": "Some current segments may offer better observed data quality for further research, without asserting advantage",
+    "dataset_sha256": "6cf156a9bef87616b18030beb7ff8079db6ab53288a2f36b353750aadfc87247",
+    "model_version": "official-event-tag-quality-map-v1",
+    "feature_definitions": {
+      "spread": "actual observed ask minus bid",
+      "depth": "sum displayed USD levels on each side",
+      "segment": "current official Gamma event tag mapping; descriptive only"
+    },
+    "target_definitions": {
+      "research_suitability": "fresh identity-matched public quote, active rules and minimum lot notional <=$5; no fee/forecast/risk approval implied"
+    },
+    "split_policy": "descriptive fixed snapshot; no training, validation or heldout performance claim",
+    "training_interval": null,
+    "validation_interval": null,
+    "heldout_interval": null,
+    "grouping": {
+      "unit": "outcome token",
+      "event_group": "reported event_id",
+      "independence_reviewed": false
+    },
+    "transaction_cost_assumptions": {
+      "trade_returns": null,
+      "depth_survival_and_queue_position": "unknown"
+    },
+    "failure_conditions": [
+      "missing/ambiguous official tags stay Unknown",
+      "stale/incomplete/mismatched books cannot support liquidity comparisons"
+    ],
+    "limitations": [
+      "single snapshot is not robustness across regimes",
+      "no historical settlement reliability or profitability estimate"
+    ],
+    "certification_authority": false,
+    "automatic_promotion": false
+  },
+  "confidence_intervals": null,
+  "confidence_interval_reason": "Descriptive snapshot, no independently sampled performance target",
+  "captured_at": "2026-11-06T04:41:00.317253+00:00",
+  "source_frame_id": "7d447e32f6a3284e8e94108ac095e29152eea4ce699459cafae656f20bbae045",
+  "source_frame_sha256": "6cf156a9bef87616b18030beb7ff8079db6ab53288a2f36b353750aadfc87247",
+  "category_enrichment_sha256": "5909799e8659954fc6fe0a0d298eb36885df42c2edfaa235c1bdf12453882171",
+  "market_count": 200,
+  "token_count": 400,
+  "category_policy": "Official event membership plus explicit tag mapping; unknown or ambiguous is not inferred from question text",
+  "segments": [
+    {
+      "segment": "Financial markets",
+      "markets": 34,
+      "events": 8,
+      "tokens": 68,
+      "fresh_executable_quotes": 40,
+      "rules_present": 68,
+      "metadata_eligible": 68,
+      "static_research_suitable_tokens": 40,
+      "median_spread": 0.0050000000000000044,
+      "median_displayed_bid_depth_usd": 28212.629800000002,
+      "median_displayed_ask_depth_usd": 282442.91202,
+      "horizons": {
+        "longer_or_unknown": 38,
+        "under_24h": 30
+      },
+      "historical_evidence_sufficient": null,
+      "resolution_reliability": null,
+      "market_volume_usd": null,
+      "cost_adjusted_advantage": null,
+      "priority_basis": "eligible fresh quotes with rules and minimum lot <=$5; not expected profit"
+    },
+    {
+      "segment": "Politics",
+      "markets": 80,
+      "events": 21,
+      "tokens": 160,
+      "fresh_executable_quotes": 136,
+      "rules_present": 36,
+      "metadata_eligible": 30,
+      "static_research_suitable_tokens": 24,
+      "median_spread": 0.0020000000000000018,
+      "median_displayed_bid_depth_usd": 49400.181880000004,
+      "median_displayed_ask_depth_usd": 443701.07412999996,
+      "horizons": {
+        "ended": 36,
+        "longer_or_unknown": 110,
+        "under_24h": 14
+      },
+      "historical_evidence_sufficient": null,
+      "resolution_reliability": null,
+      "market_volume_usd": null,
+      "cost_adjusted_advantage": null,
+      "priority_basis": "eligible fresh quotes with rules and minimum lot <=$5; not expected profit"
+    },
+    {
+      "segment": "Sports",
+      "markets": 35,
+      "events": 16,
+      "tokens": 70,
+      "fresh_executable_quotes": 32,
+      "rules_present": 66,
+      "metadata_eligible": 26,
+      "static_research_suitable_tokens": 16,
+      "median_spread": 0.010000000000000009,
+      "median_displayed_bid_depth_usd": 61293.41545,
+      "median_displayed_ask_depth_usd": 139819.79035000002,
+      "horizons": {
+        "ended": 40,
+        "longer_or_unknown": 20,
+        "under_24h": 10
+      },
+      "historical_evidence_sufficient": null,
+      "resolution_reliability": null,
+      "market_volume_usd": null,
+      "cost_adjusted_advantage": null,
+      "priority_basis": "eligible fresh quotes with rules and minimum lot <=$5; not expected profit"
+    },
+    {
+      "segment": "Unknown",
+      "markets": 45,
+      "events": 36,
+      "tokens": 90,
+      "fresh_executable_quotes": 68,
+      "rules_present": 32,
+      "metadata_eligible": 30,
+      "static_research_suitable_tokens": 16,
+      "median_spread": 0.010000000000000009,
+      "median_displayed_bid_depth_usd": 39263.1074,
+      "median_displayed_ask_depth_usd": 248678.06295,
+      "horizons": {
+        "longer_or_unknown": 80,
+        "under_24h": 6,
+        "ended": 4
+      },
+      "historical_evidence_sufficient": null,
+      "resolution_reliability": null,
+      "market_volume_usd": null,
+      "cost_adjusted_advantage": null,
+      "priority_basis": "eligible fresh quotes with rules and minimum lot <=$5; not expected profit"
+    },
+    {
+      "segment": "Economics",
+      "markets": 6,
+      "events": 2,
+      "tokens": 12,
+      "fresh_executable_quotes": 6,
+      "rules_present": 12,
+      "metadata_eligible": 12,
+      "static_research_suitable_tokens": 6,
+      "median_spread": 0.009999999999999953,
+      "median_displayed_bid_depth_usd": 260619.00825,
+      "median_displayed_ask_depth_usd": 2364433.23175,
+      "horizons": {
+        "longer_or_unknown": 12
+      },
+      "historical_evidence_sufficient": null,
+      "resolution_reliability": null,
+      "market_volume_usd": null,
+      "cost_adjusted_advantage": null,
+      "priority_basis": "eligible fresh quotes with rules and minimum lot <=$5; not expected profit"
+    }
+  ],
+  "qualification_thresholds_changed": false,
+  "certification_authority": false,
+  "automatic_promotion": false,
+  "limitations": [
+    "Current categories are descriptive enrichment, never backdated decision-time features",
+    "Displayed depth is not queue position, survival through latency, or actual fill evidence",
+    "Rules present does not verify settlement correctness or historical rule versions",
+    "No segment profitability, resolution reliability, or independent historical sufficiency is asserted",
+    "Normalized market snapshots contain no volume; event volume cannot be summed as market volume"
+  ],
+  "historical": {
+    "schema_version": "1.0",
+    "experiment_id": "phase11-historical-requalification-audit-v1",
+    "created_at": "2026-11-06T04:46:55.316016+00:00",
+    "dataset_sha256": "a4c2adfed62287a033a665a44ce33b4cbbfd05574bc46c4092b33277776f65f5",
+    "source_manifest_sha256": "69f709f46725d8afd9a21e16c451e3a37674779ba23770368db74140fa459d63",
+    "chain_proofs_sha256": "73a8d8b20618ee5a6bb66c90a57ec0347ee98d78e4375401ecb6c1da846fd12f",
+    "events": 250,
+    "official_verified_outcome_groups": 51,
+    "chain_corroborated_exact_settlement_groups": 47,
+    "certifiable_training_events": 0,
+    "certifiable_heldout_events": 0,
+    "required_training_events": 100,
+    "required_heldout_events": 100,
+    "chronological_split_status": "blocked: no independently qualified point-in-time training/heldout set",
+    "deficiency_counts": {
+      "historical_availability_not_certified": 250,
+      "independent_external_context_not_qualified": 250,
+      "historical_rule_version_not_verified": 250,
+      "official_source_outcome_not_verified": 199,
+      "independent_event_group_not_reviewed": 250,
+      "cross_event_dependency_review_required": 250,
+      "pre_resolution_price_history_missing": 200,
+      "exact_finalized_resolution_timing_not_corroborated": 203,
+      "predecision_availability_not_verified": 250,
+      "historical_executable_depth_not_qualified": 250
+    },
+    "acquisitions": [
+      {
+        "path": "/home/ubuntu/Neraium-Poly/data/phase10/chain-followup-v1",
+        "manifest_sha256": "ea534881270d1a5eae2394d22cf5918675a0819fbd209880076ead3a62b3cecd",
+        "responses": 4
+      },
+      {
+        "path": "/home/ubuntu/Neraium-Poly/data/phase10/chain-locators-v1",
+        "manifest_sha256": "4113b70c25cb117430e62eafe0dfa1e2aeeed9ad7e1c4c17228464e1999f1659",
+        "responses": 4
+      },
+      {
+        "path": "/home/ubuntu/Neraium-Poly/data/phase10/chain-prior-v1",
+        "manifest_sha256": "c8bf1ecf03a3a4329f95136cf14a05fead1f1121183258abf6c59725a187c0d3",
+        "responses": 6
+      },
+      {
+        "path": "data/phase11/chain-followup-v1",
+        "manifest_sha256": "8ea209dfae695e62c2339037a9be27fbb53cad8ed41a488b1639e430ac253c26",
+        "responses": 4
+      }
+    ],
+    "certification_status": "blocked",
+    "owner_approval_required": true,
+    "strategy_promotion_authority": false,
+    "certification_authority": false,
+    "automatic_promotion": false,
+    "limitations": [
+      "Qualification audit cannot promote datasets or strategies",
+      "No current source/label availability is backdated",
+      "Exact settlement is only one of multiple required evidence gates",
+      "Unreviewed grouping and price observations do not count as independent training events"
+    ]
+  },
+  "metadata_acquisition": {
+    "attempted_events": 50,
+    "successful_events": 50,
+    "response_bytes": 13923029,
+    "errors": []
+  },
+  "settlement_followup": {
+    "searched_conditions": [
+      "0x1da45a7998f1ac2fe77b27b3ac56a04a3fd841cb4f6cb7ae5b4f668c06128bc3",
+      "0x8d52cad3db15cd64e938a845253fa301f6fcb4b09c7b40a7e4ed918509fc8794",
+      "0x1324039996d7470ac9ff2067a5fc07c7f6bfcd37e16849a3b6b10f47ad35f50f",
+      "0xb41972009de6cc36ea176d9691fd607a6a097191ad80d26930ada32072a59c0a"
+    ],
+    "range": [
+      96819884,
+      96823206
+    ],
+    "requests": 4,
+    "response_bytes": 13276,
+    "proofs": 0
+  },
+  "artifacts": {
+    "data/phase11/segment-report-v1.json": "130919ef8cbda170622aeedec79aed81882ac328852b78145e8b65464609ae43",
+    "data/phase11/historical-report-v1.json": "9f5399c544912a16784f151d5f4c9dcdbf116d618f5af002765d4619ad0747a5",
+    "data/phase11/official-events-v1/manifest.json": "cb8d1fac9059a57c27ee11de6346131d2084fda7a66870375e835d989617cb86",
+    "data/phase11/chain-followup-v1/manifest.json": "8ea209dfae695e62c2339037a9be27fbb53cad8ed41a488b1639e430ac253c26",
+    "data/phase11/frame.json": "79abe0600e769962f89aed3aa154984ec725628648990a324661deb59c023c1a"
+  }
+}

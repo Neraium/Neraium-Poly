@@ -113,3 +113,15 @@ Rendering tests use explicitly controlled presentation fixtures. Sized Rich
 console captures verify widths/heights, not a physical iPhone or browser. Actual
 read-only service captures are kept separately under
 `.planning/evidence/phase10-monitor/`; they are observations at capture time.
+
+## Phase 11 research view
+
+`uv run neraium-poly monitor --view research --scope epoch` adds a separate
+UNVALIDATED research page. Its six strategy rows show evaluations, candidates and
+qualification rate from the selected actual decision-trace scope. The experimental
+and certified account identities and disabled-live footer remain visible. Baseline
+comparison, probability target/calibration, historical100/100 sufficiency,
+confidence, supported edge and leading rejection are distinct from account P/L.
+Missing or stale reports withhold numerical edge and old comparison values;
+unsupported metrics say unavailable. Category enrichment and research results
+never imply that a strategy is approved or profitable.

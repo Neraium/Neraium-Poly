@@ -104,8 +104,10 @@ def render_monitor(
     """
     width, height = max(30, min(int(width), 160)), max(12, min(int(height or 24), 100))
     certified, experimental = _mapping(certified), _mapping(experimental)
-    if view not in {"summary", "strategies", "rejections"} or scope not in {"cycle", "epoch"}:
+    if view not in {"summary", "strategies", "rejections", "research"} or scope not in {"cycle", "epoch"}:
         raise ValueError("monitor view or scope invalid")
+    if view == "research":
+        return _render_research(certified, experimental, width, height, errors, scope)
     if view != "summary":
         return _render_detail(certified, experimental, width, height, errors, view, scope)
     operation = _mapping(certified.get("operation"))
@@ -508,6 +510,129 @@ def _render_detail(certified, experimental, width, height, errors, view, scope):
     footer = [(_safety_footer(certified, experimental), "dim"), ("Ctrl-C exits monitor only", "dim")]
     rendered = Text()
     for index, (value, style) in enumerate(lines[: max(0, height - len(footer))] + footer):
+        if index:
+            rendered.append("\n")
+        row = Text(_clean(value), style=style, no_wrap=True, overflow="ellipsis")
+        row.truncate(width, overflow="ellipsis")
+        rendered.append_text(row)
+    return rendered
+
+
+def _research_text(value, default="unavailable"):
+    if value is None:
+        return default
+    if isinstance(value, dict):
+        return _clean(value.get("summary", value.get("status", default)))
+    return _clean(value)
+
+
+def _qualification_rate(value):
+    if value is None or isinstance(value, bool):
+        return "—"
+    try:
+        value = float(value)
+        return f"{value * 100:.1f}%" if math.isfinite(value) and 0 <= value <= 1 else "unknown"
+    except (ValueError, TypeError):
+        return "unknown"
+
+
+def _render_research(certified, experimental, width, height, errors, scope):
+    """Research is a separate, explicitly unvalidated observation, never P/L."""
+    operation = _mapping(certified.get("operation"))
+    live = certified.get("mode") == "live_market_paper"
+    exp = experimental.get("account_id") == "experimental-paper"
+    report = _mapping(experimental.get("research"))
+    status = _research_text(report.get("status"), "unavailable")
+    unavailable = not report or status in {"unavailable", "unknown", "invalid", "stale"}
+    lines = [("REAL MARKET DATA", "bold cyan")]
+    lines.append(
+        (
+            f"Markets {_number(_mapping(operation.get('scan')).get('discovered_markets') if live else None)} Fresh {_fresh(operation.get('fresh_books') if live else None, _source_tokens(operation, experimental) if live else None)}",
+            "white",
+        )
+    )
+    lines.append(("EXPERIMENTAL PAPER TRADING", "bold yellow"))
+    lines.append(
+        (
+            f"{_number(experimental.get('cash') if exp else None, True)} P/L {_number(experimental.get('simulated_pnl') if exp else None, True)} Stop {_flag(experimental.get('suspended') if exp else None)}",
+            "yellow",
+        )
+    )
+    lines.append(("CERTIFIED PAPER TRADING", "bold green"))
+    lines.append(
+        (
+            f"{_number(certified.get('cash') if live else None, True)} Gate {_clean(_mapping(operation.get('service')).get('trading_status', 'unknown'))}",
+            "white",
+        )
+    )
+    lines.append(("RESEARCH · UNVALIDATED", "bold"))
+    lines.append((f"{scope} {status} {_seen(report.get('generated_at'))}", "dim"))
+    rows = report.get("strategies", [])
+    rows = [r for r in rows if isinstance(r, dict)] if isinstance(rows, list) else []
+    rows = rows[:6]
+    trace = _trace_rows(experimental, scope)
+    if not rows and trace:
+        rows = [{"strategy_id": sid} for sid in list(trace)[:6]]
+    lines.append(("Strategy     Eval   Cand    Q%", "bold"))
+    for row in rows:
+        sid = row.get("strategy_id", "unknown")
+        counts = _mapping(trace.get(sid))
+        evaluations = counts.get("markets_considered", None if unavailable else row.get("evaluations"))
+        candidates = counts.get("candidate_signals", None if unavailable else row.get("candidate_signals"))
+        # Operational qualification uses the selected live counter scope. A
+        # report's exploratory qualification is never silently substituted.
+        rate = None if unavailable else row.get("qualification_rate")
+        if counts:
+            valid_count = _finite_count(evaluations)
+            qualified = _finite_count(counts.get("qualified_opportunities"))
+            rate = qualified / valid_count if valid_count > 0 and qualified >= 0 else None
+        lines.append(
+            (
+                f"{_short_name(sid)[:11]:11} {_compact_count(evaluations):>5} {_compact_count(candidates):>5} {_qualification_rate(rate):>6}",
+                "white",
+            )
+        )
+    if not rows:
+        lines.append(("No research artifact; metrics unknown", "yellow"))
+    first = rows[0] if rows else {}
+    baseline = None if unavailable else report.get("baseline_comparison", first.get("baseline_comparison"))
+    lines.append((f"Base {_research_text(baseline)}", "dim"))
+    lines.append(
+        (f"Cal {_research_text(report.get('calibration_status', first.get('calibration_status')))}", "dim")
+    )
+    lines.append(
+        (
+            f"Evidence {_number(report.get('independent_training_events'))}/{_number(report.get('independent_heldout_events'))} need 100/100",
+            "dim",
+        )
+    )
+    edge = next((r.get("estimated_net_edge") for r in rows if r.get("estimated_net_edge") is not None), None)
+    if unavailable:
+        edge = None
+    try:
+        edge_text = (
+            f"{float(edge):+.4f}/share" if edge is not None and math.isfinite(float(edge)) else "unavailable"
+        )
+    except (ValueError, TypeError):
+        edge_text = "unavailable"
+    lines.append((f"Edge {edge_text}", "white"))
+    confidence = report.get("confidence", first.get("confidence"))
+    lines.append((f"Confidence {_research_text(confidence)}", "dim"))
+    reasons = _trace_reasons(trace)
+    if reasons:
+        reason, count = reasons[0]
+        lines.append((f"Rej {_number(count)} {_reason_label(reason)}", "yellow"))
+    else:
+        lines.append((f"Block {_research_text(first.get('bottleneck'))}", "yellow"))
+    if unavailable:
+        lines.append(("Report unavailable/stale; no inference", "yellow"))
+    else:
+        lines.append(("No automatic strategy promotion", "dim"))
+    for error in errors:
+        lines.insert(7, (_clean(error), "yellow"))
+    footer = [(_safety_footer(certified, experimental), "dim"), ("Ctrl-C exits monitor only", "dim")]
+    rendered = Text()
+    for index, (value, style) in enumerate(lines[: max(0, height - 2)] + footer):
         if index:
             rendered.append("\n")
         row = Text(_clean(value), style=style, no_wrap=True, overflow="ellipsis")

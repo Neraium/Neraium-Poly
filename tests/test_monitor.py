@@ -457,3 +457,105 @@ def test_source_freshness_denominator_includes_temporarily_missing_subscribed_bo
     c["operation"]["connectivity"]["subscribed_tokens"] = 400
     assert "284/400 71%" in page(c, e, view="strategies")
     assert "284/370" not in page(c, e)
+
+
+def test_research_view_renders_all_six_strategies_without_fabricated_performance():
+    c, e = sample()
+    ids = [
+        "short_horizon",
+        "persistent_relationship",
+        "cross_market_consistency",
+        "liquidity_spread",
+        "event_driven",
+        "calibrated_forecast",
+    ]
+    e["research"] = {
+        "status": "exploratory",
+        "generated_at": "2026-11-06T04:00:00Z",
+        "independent_training_events": 0,
+        "independent_heldout_events": 0,
+        "baseline_comparison": "unchanged bid better",
+        "calibration_status": "terminal unavailable",
+        "confidence": "limited; correlated labels",
+        "strategies": [
+            {
+                "strategy_id": sid,
+                "evaluations": 42,
+                "candidate_signals": 3,
+                "qualification_rate": 0,
+                "estimated_net_edge": None,
+                "bottleneck": "missing independent evidence",
+            }
+            for sid in ids
+        ],
+    }
+    for width in [34, 38, 45, 80]:
+        output = render_monitor(c, e, width=width, height=24, view="research").plain
+        assert len(output.splitlines()) <= 24
+        assert max(map(len, output.splitlines())) <= width
+        assert all(
+            name in output
+            for name in ["Short-horiz", "Relationshi", "Cross-marke", "Spread", "Event-drive", "Forecast"]
+        )
+        assert "Evidence 0/0 need 100/100" in output
+        assert "Edge unavailable" in output and "Cal terminal unavailable" in output
+        assert "LIVE FINANCIAL TRADING DISABLED" in output
+        assert "RESEARCH · UNVALIDATED" in output
+        assert "Base unchanged bid better" in output
+
+
+def test_research_missing_report_does_not_show_invented_metrics_or_confidence():
+    output = render_monitor(view="research", width=38).plain
+    assert "No research artifact" in output
+    assert "Edge unavailable" in output and "Confidence unavailable" in output
+    assert "Evidence —/—" in output
+    assert "$500.00" not in output and "100.0%" not in output
+
+
+def test_research_view_qualification_uses_live_trace_scope_not_unsupported_report():
+    c, e = sample()
+    e["research"] = {
+        "status": "exploratory",
+        "strategies": [
+            {
+                "strategy_id": "short_horizon",
+                "evaluations": 999,
+                "candidate_signals": 999,
+                "qualification_rate": 1,
+            }
+        ],
+    }
+    e["decision_trace"] = {
+        "latest_cycle": {
+            "strategies": {
+                "short_horizon": {
+                    "markets_considered": 64,
+                    "candidate_signals": 4,
+                    "qualified_opportunities": 0,
+                }
+            }
+        }
+    }
+    output = render_monitor(c, e, view="research").plain
+    assert "0.0%" in output and "100.0%" not in output and "999" not in output
+
+
+def test_stale_research_does_not_republish_old_edge_as_current():
+    c, e = sample()
+    e["research"] = {
+        "status": "stale",
+        "baseline_comparison": "old positive result",
+        "strategies": [
+            {
+                "strategy_id": "short_horizon",
+                "evaluations": 999,
+                "candidate_signals": 999,
+                "qualification_rate": 1,
+                "estimated_net_edge": 0.99,
+            }
+        ],
+    }
+    output = render_monitor(c, e, view="research").plain
+    assert "Edge unavailable" in output and "old positive result" not in output
+    assert "999" not in output and "100.0%" not in output
+    assert "Report unavailable/stale" in output
