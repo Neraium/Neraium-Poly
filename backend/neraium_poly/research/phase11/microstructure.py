@@ -42,7 +42,11 @@ def causal_features(observations):
         window = history.setdefault(b.token_id, deque(maxlen=20))
         bid, ask = b.bids[0].price, b.asks[0].price
         top = (bid, ask)
-        if previous is None or top != (previous.bids[0].price, previous.asks[0].price):
+        if (
+            previous is None
+            or b.token_id not in persistence
+            or top != (previous.bids[0].price, previous.asks[0].price)
+        ):
             persistence[b.token_id] = b.available_at
         old_bids = [r[1] for r in window]
         changes = [right - left for left, right in pairwise(old_bids)]

@@ -73,7 +73,10 @@ def extract_dataset(database, output, *, limit=30000, high_water=None, min_free_
                 "kind": row["kind"],
                 "sha256": row["digest"],
             }
-            return json.loads(row["payload"])
+            data = json.loads(row["payload"])
+            if row["kind"] in {"BookDelta", "BookReceipt"}:
+                bindings[row["id"]]["observed_book_id"] = data["observed_book_id"]
+            return data
 
         metadata, fees, bases = {}, {}, {}
         for row in contexts:
@@ -210,20 +213,89 @@ def extract_dataset(database, output, *, limit=30000, high_water=None, min_free_
 
 
 def load_dataset(directory):
+    """Verify bounded artifact identity, provenance bindings and causal records."""
     path = Path(directory)
     manifest = json.loads((path / "manifest.json").read_text())
+    count = manifest.get("observations")
+    high_water = manifest.get("source_high_water")
+    if (
+        manifest.get("schema_version") != "1.0"
+        or type(count) is not int
+        or not 1 <= count <= 30000
+        or type(high_water) is not int
+        or high_water < 1
+        or manifest.get("certification_authority") is not False
+        or manifest.get("automatic_promotion") is not False
+    ):
+        raise ValueError("invalid research dataset manifest")
+    binding_file = path / "source-records.jsonl"
+    if binding_file.stat().st_size > 128 * 1024**2:
+        raise ValueError("source binding byte budget exceeded")
+    raw_bindings = binding_file.read_bytes()
+    if hashlib.sha256(raw_bindings).hexdigest() != manifest["source_record_bindings_sha256"]:
+        raise ValueError("source record binding identity mismatch")
+    bindings = {}
+    for line in raw_bindings.splitlines():
+        row = json.loads(line)
+        if (
+            row["id"] in bindings
+            or type(row["rowid"]) is not int
+            or not 1 <= row["rowid"] <= high_water
+            or row["kind"]
+            not in {
+                "OrderBookSnapshot",
+                "BookDelta",
+                "BookReceipt",
+                "MarketSnapshot",
+                "FeeObservation",
+                "PublicFeeResponse",
+            }
+            or len(row["sha256"]) != 64
+            or any(c not in "0123456789abcdef" for c in row["sha256"])
+        ):
+            raise ValueError("invalid source record binding")
+        bindings[row["id"]] = row
+    if not bindings or len(bindings) != manifest["source_records"] or len(bindings) > 400000:
+        raise ValueError("source binding count mismatch")
+    observed_bindings = {}
+    for row in bindings.values():
+        if "observed_book_id" in row:
+            if row["observed_book_id"] in observed_bindings:
+                raise ValueError("duplicate observed source binding")
+            observed_bindings[row["observed_book_id"]] = row
     file = path / "observations.jsonl"
-    if file.stat().st_size > MAX_BYTES:
-        raise ValueError("dataset byte budget exceeded")
+    if not 0 < file.stat().st_size <= MAX_BYTES or file.stat().st_size != manifest["observation_bytes"]:
+        raise ValueError("dataset byte budget or identity mismatch")
     digest = hashlib.sha256()
-    rows = []
+    rows, seen = [], set()
     with file.open("rb") as handle:
         for line in handle:
             digest.update(line)
-            rows.append(ResearchObservation.model_validate_json(line))
+            obs = ResearchObservation.model_validate_json(line)
+            b = obs.book
+            if b.id in seen or b.source not in OFFICIAL or b.exchange != "polymarket":
+                raise ValueError("duplicate or unsupported observed book")
+            seen.add(b.id)
+            alias = hashlib.sha256(("book-observation:" + b.id).encode()).hexdigest()
+            proof = bindings.get(b.id, observed_bindings.get(b.id, bindings.get(alias)))
+            if proof is None or proof["kind"] not in {"OrderBookSnapshot", "BookDelta", "BookReceipt"}:
+                raise ValueError("observed book source binding unavailable")
+            if obs.market is not None and (bindings.get(obs.market.id) or {}).get("kind") != "MarketSnapshot":
+                raise ValueError("market source binding unavailable")
+            if obs.fee is not None:
+                fid = obs.fee.get("evidence_id")
+                refs = obs.fee.get("raw_response_ids", [])
+                if (
+                    not fid
+                    or (bindings.get(fid) or {}).get("kind") != "FeeObservation"
+                    or len(refs) < 2
+                    or any((bindings.get(r) or {}).get("kind") != "PublicFeeResponse" for r in refs)
+                ):
+                    raise ValueError("fee source binding unavailable")
+            rows.append(obs)
             if len(rows) > 30000:
                 raise ValueError("dataset observation budget exceeded")
-    if digest.hexdigest() != manifest["dataset_sha256"] or len(rows) != manifest["observations"]:
+    if digest.hexdigest() != manifest["dataset_sha256"] or len(rows) != count:
         raise ValueError("dataset identity mismatch")
     if rows != sorted(rows, key=lambda r: (r.book.available_at, r.book.timestamp, r.book.id)):
         raise ValueError("dataset availability ordering violated")

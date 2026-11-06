@@ -195,3 +195,38 @@ def test_no_future_market_or_fee_accepted():
         ResearchObservation(book=quote(), market=metadata(1))
     with pytest.raises(ValueError, match="future fee"):
         ResearchObservation(book=quote(), fee={"observed_at": (NOW + timedelta(seconds=1)).isoformat()})
+
+
+def test_source_bindings_cannot_be_tampered_or_omitted(tmp_path):
+    store = EventStore(tmp_path / "source.sqlite")
+    store.append(quote())
+    store.close()
+    extract_dataset(tmp_path / "source.sqlite", tmp_path / "dataset", min_free_bytes=0)
+    p = tmp_path / "dataset/source-records.jsonl"
+    p.write_text(p.read_text().replace("OrderBookSnapshot", "MarketSnapshot"))
+    with pytest.raises(ValueError, match="binding identity mismatch"):
+        load_dataset(tmp_path / "dataset")
+
+
+def test_long_gap_same_top_quote_resets_history_and_persistence():
+    features, _ = causal_features([observation(0), observation(130)])
+    assert features[1]["prior_observations"] == 0
+    assert features[1]["quote_persistence_seconds"] == 0
+
+
+def test_loader_rejects_duplicate_id_even_if_observation_hash_rebound(tmp_path):
+    store = EventStore(tmp_path / "source.sqlite")
+    store.append(quote())
+    store.close()
+    extract_dataset(tmp_path / "source.sqlite", tmp_path / "dataset", min_free_bytes=0)
+    p = tmp_path / "dataset/observations.jsonl"
+    payload = p.read_bytes() * 2
+    p.write_bytes(payload)
+    m = tmp_path / "dataset/manifest.json"
+    manifest = json.loads(m.read_text())
+    manifest.update(
+        observations=2, observation_bytes=len(payload), dataset_sha256=hashlib.sha256(payload).hexdigest()
+    )
+    m.write_text(json.dumps(manifest))
+    with pytest.raises(ValueError, match="duplicate or unsupported"):
+        load_dataset(tmp_path / "dataset")
