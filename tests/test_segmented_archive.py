@@ -148,3 +148,40 @@ def test_adopted_legacy_rejects_a_new_uncheckpointed_writer(tmp_path):
             managed(path)
     finally:
         unsafe_writer.close()
+
+
+def test_manifest_anchor_rejects_writer_even_before_catalogue_seal(tmp_path):
+    import sqlite3
+
+    path = tmp_path / "events.sqlite"
+    store = managed(path)
+    store.append(record(0))
+    source, name = store._source(store.active_name), store.active_name
+    store.active.connection.execute("PRAGMA wal_checkpoint(TRUNCATE)")
+    store.active.close()
+    store.active = None
+    store._write_manifest(name, hashlib.sha256(source.read_bytes()).hexdigest(), source.stat().st_size, 1)
+    store.close()
+    writer = sqlite3.connect(source)
+    try:
+        writer.execute("PRAGMA user_version=33")
+        writer.commit()
+        with pytest.raises(ValueError, match="uncheckpointed writer"):
+            managed(path)
+    finally:
+        writer.close()
+
+
+def test_unregistered_published_copy_is_verified_during_recovery(tmp_path, monkeypatch):
+    path = tmp_path / "events.sqlite"
+    store = managed(path)
+    for i in range(15):
+        store.append(record(i))
+    monkeypatch.setattr(store, "_verify_compressed", lambda row: (_ for _ in ()).throw(OSError("CONTROLLED interruption")))
+    assert store.maintain()["health"] == "blocked"
+    copies = list(store.segment_dir.glob("*.gz"))
+    assert copies
+    store.close()
+    copies[0].write_bytes(b"CONTROLLED corruption")
+    with pytest.raises((ValueError, OSError)):
+        managed(path)

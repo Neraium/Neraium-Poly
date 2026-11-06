@@ -247,16 +247,17 @@ class ManagedEventStore:
             path = self._source(name)
             if not path.is_file() or path.is_symlink():
                 raise ValueError("missing archive source segment")
-            if row["status"] in {"sealed", "legacy"}:
+            manifest_path = Path(str(path) + ".manifest.json")
+            if row["status"] in {"sealed", "legacy"} or manifest_path.exists():
                 wal = Path(str(path) + "-wal")
                 if wal.exists() and wal.stat().st_size:
                     raise ValueError("immutable archive has an uncheckpointed writer")
+            if row["status"] in {"sealed", "legacy"}:
                 if path.stat().st_size != row["raw_size"] or _sha(path) != row["raw_sha"]:
                     raise ValueError("immutable archive source changed")
             elif row["status"] != "active":
                 raise ValueError("invalid archive segment state")
             total = self._index_segment(path, name)
-            manifest_path = Path(str(path) + ".manifest.json")
             if name != "legacy" and (row["status"] == "sealed" or manifest_path.exists()):
                 if not manifest_path.exists():
                     raise ValueError("sealed archive manifest missing")
@@ -266,8 +267,12 @@ class ManagedEventStore:
                 if row["status"] == "active":
                     with self.catalog:
                         self.catalog.execute("UPDATE segments SET status='sealed',raw_sha=?,raw_size=? WHERE name=?", (actual["raw_sha256"], actual["raw_bytes"], name))
+                    row = dict(self.catalog.execute("SELECT * FROM segments WHERE name=?", (name,)).fetchone())
             if row["gzip_sha"]:
                 self._verify_compressed(row)
+            elif row["status"] == "sealed" and Path(str(path) + ".gz").exists():
+                # A published copy can precede its catalogue metadata commit.
+                self._compress(row)
         orphan = self.catalog.execute("SELECT count(*) FROM records r LEFT JOIN segments s ON r.segment=s.name WHERE s.name IS NULL").fetchone()[0]
         if orphan:
             raise ValueError("catalogue references an unknown archive source")
