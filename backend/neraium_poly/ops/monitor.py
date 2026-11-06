@@ -539,6 +539,8 @@ def _render_events(certified, experimental, width, height, errors):
     live = certified.get("mode") == "live_market_paper"
     exp = experimental.get("account_id") == "experimental-paper"
     event = _mapping(experimental.get("event_intelligence"))
+    if isinstance(event.get("sports"), dict):
+        return _render_sports_events(certified, experimental, event, width, height, errors)
     ledger = _mapping(event.get("ledger", event))
     available = bool(ledger) and ledger.get("status") not in {"unavailable", "stale", "invalid"}
     scores = _mapping(ledger.get("scores")) if available else {}
@@ -642,6 +644,74 @@ def _render_events(certified, experimental, width, height, errors):
         rendered.append_text(row)
     return rendered
 
+
+
+def _render_sports_events(certified, experimental, event, width, height, errors):
+    """External forecasts, market comparators and paper capital stay distinct."""
+    sports = _mapping(event.get("sports"))
+    available = sports.get("status") not in {None, "unavailable", "invalid", "stale"}
+    operation = _mapping(certified.get("operation"))
+    scores = _mapping(event.get("scores")) if available else {}
+    source = _mapping(sports.get("source"))
+    rejection = sports.get("last_rejection") or sports.get("last_error")
+    reasons = _mapping(sports.get("rejections"))
+    if not rejection and reasons:
+        rejection = max(reasons, key=lambda k: _finite_count(reasons[k]))
+    history = _mapping(event.get("historical_qualification"))
+    resolution = _mapping(event.get("resolution_collection"))
+
+    def count(key):
+        return _number(event.get(key) if available else None)
+
+    def number(key):
+        return _number(sports.get(key) if available else None)
+
+    # Priority 0 preserves identities and account balances on tiny terminals.
+    rows = [
+        ("REAL MARKET DATA", "bold cyan", 0),
+        (f"Markets {_number(_mapping(operation.get('scan')).get('discovered_markets'))} WS {_flag(_mapping(operation.get('connectivity')).get('ws_connected'), 'up', 'down')}", "white", 2),
+        ("RESEARCH FORECAST", "bold yellow", 0),
+        (f"Upcoming {number('upcoming_eligible_events')} Map fail {number('mapping_failures')}", "white", 1),
+        (f"Independent {count('independent_model_forecasts')} Baseline {count('market_baseline_forecasts')}", "white", 0),
+        (f"Pending {count('forecasts_pending')} Resolved {count('forecasts_resolved')}", "white", 1),
+        (f"Independent groups {count('independent_event_groups')}", "dim", 2),
+        (f"Model {_research_text(sports.get('model_version'))}", "dim", 2),
+        (f"Source {_research_text(source.get('status', sports.get('source_status')))}", "dim", 1),
+        (f"Data as of {_seen(sports.get('last_refresh_at'))}", "dim", 3),
+        (f"Block {_reason_label(rejection or 'insufficient_independent_evidence')}", "yellow", 1),
+        (f"Brier {_event_metric(scores.get('brier'))} n={_number(scores.get('count'))}", "white", 2),
+        (f"Market Brier {_event_metric(scores.get('market_brier'))}", "dim", 2),
+        (f"Log loss {_event_metric(scores.get('log_loss'))}", "white", 3),
+        (f"Cal {_research_text(event.get('calibration_status'))}", "dim", 2),
+        (f"Settlement {_number(resolution.get('verified'))}/{_number(resolution.get('attempts'))}", "dim", 3),
+        (f"History {_number(history.get('chain_corroborated_exact_settlement_groups'))} Train/test {_number(history.get('qualified_training_events'))}/{_number(history.get('qualified_heldout_events'))}", "dim", 3),
+        (f"SII {_number(_mapping(sports.get('relationships')).get('persistent_findings'))} descriptive only", "dim", 3),
+        ("EXPERIMENTAL PAPER", "bold yellow", 0),
+        (f"{_number(experimental.get('cash'), True)} P/L {_number(experimental.get('simulated_pnl'), True)}", "white", 0),
+        (f"Orders {_number(_count(experimental.get('orders')))} Fills {_number(experimental.get('fills'))}", "white", 2),
+        ("Models research-only; admission blocked", "yellow", 0),
+        ("CERTIFIED PAPER", "bold green", 0),
+        (f"{_number(certified.get('cash'), True)} P/L {_number(certified.get('simulated_pnl'), True)}", "white", 0),
+        (f"Gate {_research_text(_mapping(operation.get('service')).get('trading_status'))}", "dim", 1),
+    ]
+    if errors:
+        rows[10] = ("API " + _clean(errors[0]), "yellow", 1)
+    keep = list(range(len(rows)))
+    for index in sorted(range(len(rows)), key=lambda i: (rows[i][2], -i), reverse=True):
+        if len(keep) <= height - 2:
+            break
+        keep.remove(index)
+    final = [(rows[i][0], rows[i][1]) for i in keep] + [
+        (_safety_footer(certified, experimental), "dim"), ("Ctrl-C exits monitor only", "dim")
+    ]
+    rendered = Text()
+    for index, (value, style) in enumerate(final):
+        if index:
+            rendered.append("\n")
+        row = Text(_clean(value), style=style, no_wrap=True, overflow="ellipsis")
+        row.truncate(width, overflow="ellipsis")
+        rendered.append_text(row)
+    return rendered
 
 def _research_text(value, default="unavailable"):
     if value is None:
