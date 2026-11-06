@@ -171,6 +171,12 @@ def render_monitor(certified=None, experimental=None, *, width=40, height=24, er
         line(f"Gate: {_clean(_mapping(operation.get('service')).get('trading_status', 'unknown'))}")
         coverage = _mapping(_mapping(certified.get("research")).get("coverage"))
         owner = _flag(_mapping(operation.get("validation")).get("active"), "active", "withheld")
+        qualification = _mapping(experimental.get("historical_qualification"))
+        if isinstance(qualification.get("chain_corroborated_exact_settlement_groups"), int):
+            line(
+                f"Chain settlements {qualification['chain_corroborated_exact_settlement_groups']}/{_number(qualification.get('events'))}",
+                priority=2,
+            )
         line(
             f"Train/test {_number(coverage.get('train_events'))}/{_number(coverage.get('heldout_events'))} Owner {owner}",
             priority=2,

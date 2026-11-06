@@ -1,0 +1,28 @@
+{
+  "data_dir": "data/experimental-paper",
+  "certified_directory": "data/paper-live",
+  "source_url": "http://127.0.0.1:18742/api/market-frame",
+  "host": "127.0.0.1",
+  "port": 18743,
+  "enabled_strategies": ["cross_market_consistency", "persistent_relationship", "liquidity_spread", "event_driven", "short_horizon", "calibrated_forecast"],
+  "max_tokens": 64,
+  "poll_seconds": 5,
+  "fee_batch": 8,
+  "fee_ttl_seconds": 300,
+  "max_archive_mb": 512,
+  "min_free_disk_mb": 8192,
+  "position_notional": 2,
+  "risk_limits": {
+    "bankroll": 500,
+    "aggregate_fraction": 0.2,
+    "market_fraction": 0.05,
+    "event_fraction": 0.1,
+    "correlation_fraction": 0.1,
+    "daily_loss_fraction": 0.05,
+    "drawdown_fraction": 0.1,
+    "max_book_age_seconds": 15,
+    "max_spread": 0.05,
+    "min_net_edge": 0.03,
+    "max_liquidity_participation": 0.25
+  }
+}

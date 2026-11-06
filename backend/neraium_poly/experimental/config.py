@@ -21,6 +21,7 @@ class ExperimentalConfig(BaseModel):
     model_config = ConfigDict(frozen=True, extra="forbid", allow_inf_nan=False)
     data_dir: Path = Path("data/experimental-paper")
     certified_directory: Path = Path("data/paper-live")
+    qualification_report_path: Path | None = Path("data/phase9qualification/qualified-v2/report.json")
     source_url: str = "http://127.0.0.1:18742/api/market-frame"
     host: str = "127.0.0.1"
     port: int = Field(default=18743, ge=1024, le=65535)

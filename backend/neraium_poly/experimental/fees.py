@@ -16,6 +16,7 @@ _refs = contextvars.ContextVar("fee_response_refs", default=None)
 class PublicFeeResponse(Record):
     url: str
     content_sha256: str
+    hash_basis: str = "canonical_json_payload_not_HTTP_bytes"
     payload: dict
 
 
@@ -94,3 +95,23 @@ class AuditedFeeAdapter(ConcurrentPublicAdapter):
             }
         finally:
             _refs.reset(context)
+
+
+def merge_fee_observations(*sources, now):
+    """Keep the highest valid observed cost bound; break ties by latest receipt.
+
+    A local cache must never hide a fresher, higher producer observation.
+    This is conservative cost selection, not an assertion that fees stay fixed.
+    """
+    from neraium_poly.experimental.account import verified_fee_rate
+
+    result = {}
+    for values in sources:
+        for token, raw in values.items():
+            rate = verified_fee_rate(raw, now)
+            if rate is None:
+                continue
+            prior = result.get(token)
+            if prior is None or (rate, raw["observed_at"]) > (float(prior["fee_rate"]), prior["observed_at"]):
+                result[token] = raw
+    return result

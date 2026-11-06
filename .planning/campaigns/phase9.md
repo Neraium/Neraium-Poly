@@ -25,9 +25,9 @@ ExperimentalPerformance cannot authorize certification. Never fake calibrated=Tr
 ## Phase End Conditions
 | Phase | Condition | Status | validator_retries_remaining |
 |---|---|---|---|
-|1 inspection/contracts|inspect current service/resources, freeze isolated contracts|in-progress|3|
-|2 parallel build|account/execution, strategies/SII, history qualification tests|pending|3|
-|3 integration|readonly feed, experimental persistent runtime and monitor|pending|3|
+|1 inspection/contracts|inspect current service/resources, freeze isolated contracts|passed|3|
+|2 parallel build|account/execution, strategies/SII, history qualification tests|passed|3|
+|3 integration|readonly feed, experimental persistent runtime and monitor|in-progress|3|
 |4 verification|isolation,risk,replay,recovery,terminal,browser,audits,real observation|pending|3|
 |5 delivery|verified commit/push,CI,accurate active-service/account report|pending|3|
 
@@ -35,7 +35,22 @@ ExperimentalPerformance cannot authorize certification. Never fake calibrated=Tr
 Pending actual artifacts; no missing evidence counts as passing.
 
 ## Continuation State
-Phase1; foundation contracts committed before launching three writing agents.
-Root will integrate via reviewed cherry-picks; all independent scopes disjoint.
-Need actual service/storage cap: preserve certified2GiBarchive and8GiBfree floor;
-experimental separate bounded budget, no duplicate exchangeWS collector.
+Root source main through6893d01 plus pending reviewed runtime/CLI/service/testchanges,
+/home/ubuntu/Neraium-Poly. Three concurrent writers(+root=4agents) used isolated
+account/strategies/history worktrees; historyworker then owned terminalmonitor in
+second wave. Actual2CPU subprocessworkers perhistory/backtest/test job with PIDs
+and overlap evidence; do not claimalljobsranatonce. Integrated historyea83240,
+strategies830c5cc/7da0ab3, account3413a38, monitor6893d01. Rootlatestfull regression
+409passed in2pytestprocesses(213+196);5browser/build/auditspassed. ExistingStarlette
+warning only. Major review fixes implemented: source+receiptpostlatency guards,
+fullfillbookaudit, conservativefee merge, stalemarklabel/admissionguard, immutable
+marketmetadata/sourcehash replay, synchronizedkillcheckpoint. No certweakening.
+Ready commit reviewedrootchanges and expose readonlyframe via scopedcertrestart;
+theninstallstartnewexperimentalunit18743 ownwritabledata/experimental-paper.
+Beforestartreverify flags/unit/resourcefloor/credentialscope and preserve500cert.
+Need actualserviceproof, experimentalmaturedmetrics/rejections, restartrecovery,
+OSreadonlymount verification,actualTermiuscapture;thenpushCIandfinalevidence.
+Historical47finalizedsettlementtimings nowcorroborated;0qualified100/100events.
+Actualtwohorizonmodelsworse than unchangedbidbaseline;executionPnLnullinbacktests.
+Rootrawdataqualification-v2/chain andstrategyreport copiedunderignoreddata/.
+No newserviceyet;noactualexperimentalordersclaimed. Preservepre-existinginspection.

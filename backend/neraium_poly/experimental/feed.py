@@ -20,14 +20,15 @@ def market_frame(runtime) -> SharedMarketFrame:
     with runtime._lock:
         books = tuple(runtime._current_books().values())
         markets = tuple(runtime.markets.values())
+        last_success = runtime.last_success
         now = runtime.clock()
-        age = (now - runtime.last_success).total_seconds() if runtime.last_success else None
+        age = (now - last_success).total_seconds() if last_success else None
         health = {
             "status": "ok"
             if age is not None and 0 <= age < 60 and runtime.last_error is None
             else "degraded",
             "last_error": runtime.last_error,
-            "last_ingestion_at": runtime.last_success.isoformat() if runtime.last_success else None,
+            "last_ingestion_at": last_success.isoformat() if last_success else None,
             "paper_trading": True,
             "live_trading_enabled": False,
         }

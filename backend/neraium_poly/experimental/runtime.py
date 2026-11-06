@@ -7,6 +7,7 @@ import logging
 import shutil
 from collections import Counter, deque
 from datetime import UTC, datetime, timedelta
+from pathlib import Path
 from threading import RLock
 
 import httpx
@@ -17,7 +18,7 @@ from neraium_poly.data import EventStore, assess_book
 from neraium_poly.experimental.config import ExperimentalConfig
 from neraium_poly.experimental.contracts import ExperimentalSignal, SharedMarketFrame
 from neraium_poly.experimental.feed import SharedFeedClient
-from neraium_poly.experimental.fees import AuditedFeeAdapter
+from neraium_poly.experimental.fees import AuditedFeeAdapter, merge_fee_observations
 from neraium_poly.experimental.strategies import ExperimentalStrategyEngine
 from neraium_poly.research.archive import QuoteArchive
 from neraium_poly.settings import Settings
@@ -29,6 +30,9 @@ class ExperimentalCycle(Record):
     account_id: str = "experimental-paper"
     source_frame_id: str
     observed_book_ids: tuple[str, ...]
+    market_record_ids: tuple[str, ...] = ()
+    fee_evidence_ids: tuple[str, ...] = ()
+    strategy_code_sha256: str = ""
     signal_count: int = Field(ge=0)
     eligible_count: int = Field(ge=0)
     rejection_counts: dict[str, int]
@@ -51,9 +55,18 @@ class ExperimentalRuntime:
                 config.certified_directory,
                 limits=config.risk_limits,
                 enabled_strategies=config.enabled_strategies,
+                clock=self.clock,
             )
         self.account = account
         self.ledger = account.ledger
+        model_files = ("strategies.py", "intelligence.py")
+        self.model_hash = hashlib.sha256(
+            b"".join(Path(__file__).with_name(name).read_bytes() for name in model_files)
+        ).hexdigest()
+        previous_hash = self.ledger.get("strategy_code_hash")
+        if previous_hash is not None and previous_hash != self.model_hash:
+            account.close()
+            raise ValueError("Experimental model code changed; explicit research baseline migration required")
         self.events = EventStore(config.data_dir / "events.sqlite")
         self.archive = QuoteArchive(self.events, self.ledger.get("quote_archive", {}))
         self.engine = ExperimentalStrategyEngine(
@@ -75,6 +88,7 @@ class ExperimentalRuntime:
         self.rejections = Counter(self.ledger.get("experimental_rejections", {}))
         self.activity = deque(self.ledger.get("experimental_activity", []), maxlen=15)
         self.selected = self.ledger.get("selected_tokens", [])
+        self.mark_sources = self.ledger.get("mark_sources", {})
         self.last_frame = None
         self.last_cycle = None
         self.last_success = None
@@ -91,6 +105,8 @@ class ExperimentalRuntime:
         )
 
     def _save(self):
+        self.ledger.put("strategy_code_hash", self.model_hash)
+        self.ledger.put("mark_sources", self.mark_sources)
         self.ledger.put("strategy_engine", self.engine.checkpoint())
         self.ledger.put("quote_archive", self.archive.state)
         self.ledger.put("observed_fees", self.fees)
@@ -104,9 +120,10 @@ class ExperimentalRuntime:
         return self.account.snapshot(now=self.clock())["kill_switch"]
 
     def stop(self):
-        self.account.stop(now=self.clock())
-        self.activity.append(f"{self.clock().isoformat()} experimental emergency stop activated")
-        self._save()
+        with self._lock:
+            self.account.stop(now=self.clock())
+            self.activity.append(f"{self.clock().isoformat()} experimental emergency stop activated")
+            self._save()
 
     def run_scenario(self):
         raise ValueError("Synthetic scenarios are unavailable in experimental real-data operation")
@@ -147,7 +164,7 @@ class ExperimentalRuntime:
             producer_health=frame.producer_health,
             markets=tuple(markets[t] for t in self.selected),
             books=tuple(b for b in frame.books if b.token_id in selected),
-            fees={**frame.fees, **self.fees},
+            fees=merge_fee_observations(frame.fees, self.fees, now=now),
             relationships=frame.relationships,
             evidence=frame.evidence,
             connectivity=frame.connectivity,
@@ -168,20 +185,35 @@ class ExperimentalRuntime:
         books = {b.token_id: b for b in frame.books}
         markets = {m.token_id: m for m in selected.markets}
         with self._lock:
+            for market in selected.markets:
+                self.events.append(market)
             for book in selected.books:
                 if not self._budget_ok():
                     raise ValueError("experimental_storage_budget_exhausted")
                 if self.archive.record(book):
                     self.totals["observations"] += 1
             signals = self.engine.evaluate_frame(selected, now)
-            self.account.advance(books, now=now, fees={**frame.fees, **self.fees})
+            self.account.advance(books, now=now, fees=selected.fees)
             rejected = Counter()
             examples = {}
             qualified = 0
+            held = self.account.snapshot(now=self.clock())["positions"]
+            stale_marks = [
+                p["token_id"]
+                for p in held
+                if p["token_id"] not in books
+                or not assess_book(books[p["token_id"]], self.clock(), max_spread=0.05).healthy
+            ]
             for signal in signals:
                 if signal.eligible:
                     qualified += 1
                     self.events.append(signal)
+                    if stale_marks:
+                        rejected["held_position_marks_stale"] += 1
+                        self.activity.append(
+                            f"{now.isoformat()} {signal.strategy_id}: entry withheld; held marks stale"
+                        )
+                        continue
                     market = markets.get(signal.token_id)
                     book = books.get(signal.token_id)
                     if market is None or book is None:
@@ -209,6 +241,15 @@ class ExperimentalRuntime:
                     rejected.update(signal.reasons)
                     examples.setdefault(signal.strategy_id, signal)
             self.account.mark(books, now=self.clock())
+            for position in self.account.snapshot(now=self.clock())["positions"]:
+                book = books.get(position["token_id"])
+                if book is not None and assess_book(book, self.clock(), max_spread=0.05).healthy:
+                    self.mark_sources[book.token_id] = {
+                        "book_id": book.id,
+                        "source_timestamp": book.timestamp.isoformat(),
+                        "available_at": book.available_at.isoformat(),
+                        "source": book.source,
+                    }
             self.totals["cycles"] += 1
             self.totals["signals"] += len(signals)
             self.totals["qualified_opportunities"] += qualified
@@ -219,6 +260,13 @@ class ExperimentalRuntime:
                 source="experimental-real-market-coordinator/v1",
                 source_frame_id=frame.id,
                 observed_book_ids=tuple(b.id for b in selected.books),
+                market_record_ids=tuple(m.id for m in selected.markets),
+                fee_evidence_ids=tuple(
+                    dict.fromkeys(
+                        raw["evidence_id"] for raw in selected.fees.values() if "evidence_id" in raw
+                    )
+                ),
+                strategy_code_sha256=self.model_hash,
                 signal_count=len(signals),
                 eligible_count=qualified,
                 rejection_counts=dict(rejected),
@@ -268,7 +316,8 @@ class ExperimentalRuntime:
                         self.fee_attempts[token] = self.clock()
                         result = await self.fee_adapter.observed_fee(token)
                         if result:
-                            self.fees[token] = result
+                            with self._lock:
+                                self.fees[token] = result
 
                     await asyncio.gather(*(acquire(t) for t in pending[: self.config.fee_batch]))
                     keep = set(tokens)
@@ -311,13 +360,40 @@ class ExperimentalRuntime:
             "timestamp": now.isoformat(),
         }
 
+    def _qualification(self):
+        path = self.config.qualification_report_path
+        if path is None or not path.is_file() or path.stat().st_size > 1024 * 1024:
+            return {"status": "unknown", "reason": "qualification report unavailable"}
+        try:
+            report = json.loads(path.read_text())
+            if report.get("strategy_promotion_authority") is not False:
+                return {"status": "unknown", "reason": "unexpected qualification authority"}
+            return report
+        except (ValueError, OSError):
+            return {"status": "unknown", "reason": "unreadable qualification report"}
+
     def state(self):
         with self._lock:
             now = self.clock()
             state = self.account.snapshot(now=now)
             frame = self.last_frame
             books = frame.books if frame else ()
+            current = {b.token_id: b for b in books}
+            stale_marks = [
+                p["token_id"]
+                for p in state["positions"]
+                if p["token_id"] not in current
+                or not assess_book(current[p["token_id"]], now, max_spread=0.05).healthy
+            ]
             state.update(
+                mark_sources={
+                    p["token_id"]: self.mark_sources.get(p["token_id"]) for p in state["positions"]
+                },
+                stale_mark_tokens=stale_marks,
+                pnl_valuation="stale_last_observed_marks"
+                if stale_marks
+                else "fresh_observed_bid_marks_or_cash",
+                strategy_code_sha256=self.model_hash,
                 generated_at=now.isoformat(),
                 suspended=state["kill_switch"],
                 service=self.health(),
@@ -336,6 +412,7 @@ class ExperimentalRuntime:
                 strategy_engine=self.engine.status(),
                 data_source=self.config.source_url,
                 certification_authority=False,
+                historical_qualification=self._qualification(),
             )
             return state
 

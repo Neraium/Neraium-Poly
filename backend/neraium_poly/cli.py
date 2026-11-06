@@ -16,6 +16,9 @@ def main():
             "scenario",
             "collect",
             "paper-live",
+            "experimental-paper",
+            "monitor",
+            "research-qualify",
             "strategy-validate",
             "strategy-package",
             "research-acquire",
@@ -46,9 +49,56 @@ def main():
     parser.add_argument("--max-history-requests", type=int, default=50)
     parser.add_argument("--event-first", action="store_true")
     parser.add_argument("--reason", default="operator revoked")
+    parser.add_argument("--once", action="store_true")
+    parser.add_argument("--width", type=int)
+    parser.add_argument("--no-color", action="store_true")
+    parser.add_argument("--refresh", type=float, default=3)
+    parser.add_argument("--certified-url", default="http://127.0.0.1:18742/api/state")
+    parser.add_argument("--experimental-url", default="http://127.0.0.1:18743/api/state")
+    parser.add_argument("--rpc-evidence-dir", type=Path)
+    parser.add_argument("--workers", type=int, default=2)
     args = parser.parse_args()
     Settings.from_env()
-    if args.command == "research-audit":
+    if args.command == "monitor":
+        from neraium_poly.ops.monitor import monitor
+
+        monitor(
+            once=args.once,
+            width=args.width,
+            refresh=args.refresh,
+            certified_url=args.certified_url,
+            experimental_url=args.experimental_url,
+            no_color=args.no_color,
+        )
+    elif args.command == "experimental-paper":
+        import asyncio
+
+        from neraium_poly.experimental.config import ExperimentalConfig
+        from neraium_poly.experimental.runtime import serve_experimental
+
+        config = (
+            ExperimentalConfig.model_validate_json(args.config.read_text())
+            if args.config
+            else ExperimentalConfig()
+        )
+        asyncio.run(serve_experimental(config))
+    elif args.command == "research-qualify":
+        from neraium_poly.research.qualification import qualify_history
+
+        if not args.output:
+            parser.error("research-qualify requires a new --output directory")
+        print(
+            json.dumps(
+                qualify_history(
+                    args.research_dir,
+                    args.output,
+                    rpc_evidence_dir=args.rpc_evidence_dir,
+                    workers=args.workers,
+                ),
+                indent=2,
+            )
+        )
+    elif args.command == "research-audit":
         from neraium_poly.research.public_archive import audit_public_archive
 
         result = audit_public_archive(args.research_dir)
