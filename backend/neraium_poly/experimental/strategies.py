@@ -260,7 +260,7 @@ class ExperimentalStrategyEngine:
                         }
                         if horizon["upper"] - horizon["lower"] > 0.35:
                             reasons.append("excessive_model_uncertainty")
-                        if book and book.asks and fee is not None:
+                        if book and book.bids and book.asks and fee is not None:
                             edge = horizon["lower"] * (1 - fee) - book.asks[0].price * (1 + fee) - 0.02
                             diagnostics.update(
                                 {
