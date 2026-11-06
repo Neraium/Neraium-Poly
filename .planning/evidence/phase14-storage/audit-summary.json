@@ -1,0 +1,347 @@
+{
+  "audit_timestamp": "2026-11-06T08:46:32.196924+00:00",
+  "host_instance_id": "i-0f7f235764cdca32b",
+  "aws_readonly_attachment_inventory_from_coordinator": {
+    "region": "us-east-1",
+    "availability_zone": "us-east-1f",
+    "attached_volume_ids": [
+      "vol-03c2fd4e26ccd63d3"
+    ],
+    "delete_on_termination": false,
+    "describe_volumes": "IAM AccessDenied; unattached/other-volume inventory unavailable",
+    "provisioning_or_cost_changes": false
+  },
+  "persistent_devices": "Only nvme0n1 500GiB root device and boot partitions mounted; no secondary persistent destination confirmed",
+  "tmpfs": "/dev/shm is RAM, not durable archive capacity",
+  "root_directory_allocated_bytes": {
+    "/home": 337544208384,
+    "/srv": 85886849024,
+    "/tmp": 64329121792,
+    "/var": 21373837312,
+    "/usr": 4806737920
+  },
+  "largest_files": [
+    {
+      "path": "/home/ubuntu/Neraium-1.0/research/benchmarks/metropt3-execution-v1-20260930/outputs/real_blind_fast_20260930T063931Z/neraium.frames.jsonl.gz",
+      "logical_bytes": 5999984145,
+      "allocated_bytes": 5999988736,
+      "mtime_epoch": 1790758802.5070357
+    },
+    {
+      "path": "/home/ubuntu/Neraium-1.0/benchmarks/conservatism-validation-20261006/compressed-storage/mounted/ec2-memory-upgrade-preparation-20261009T192515Z/dev-shm.tar",
+      "logical_bytes": 5633976320,
+      "allocated_bytes": 5633007616,
+      "mtime_epoch": 1791574049.0539997
+    },
+    {
+      "path": "/home/ubuntu/neraium-core-recovery-20261013-v1/run-002/runtime/scopes/450a04cc9ac2478b2cc049562e4d4e51/upload_terminal_result_043a3f0279ef442c8f2742452de2d8a9_3041cbb9510cd683f790af71.json",
+      "logical_bytes": 3007645325,
+      "allocated_bytes": 3007651840,
+      "mtime_epoch": 1791889448.8711052
+    },
+    {
+      "path": "/home/ubuntu/.local/share/neraium-citadel/worktrees/ffd3f83c3a874acc/intelligence-resume-verifier-20261013/.planning/wwtp6-product-validation-final/runtime-enabled/scopes/cb6a969bf14b23680c7d3f6eae17a351/upload_terminal_result_c502b24997f040f486ea95f2722dbad5_9e411554442ab92ebc4a58aa.json",
+      "logical_bytes": 3007643673,
+      "allocated_bytes": 3007651840,
+      "mtime_epoch": 1791881809.090283
+    },
+    {
+      "path": "/home/ubuntu/neraium-core-recovery-20261013-v1/run-002/runtime/scopes/450a04cc9ac2478b2cc049562e4d4e51/upload_result_043a3f0279ef442c8f2742452de2d8a9.json",
+      "logical_bytes": 2875833921,
+      "allocated_bytes": 2875838464,
+      "mtime_epoch": 1791889607.3735287
+    },
+    {
+      "path": "/home/ubuntu/.local/share/neraium-citadel/worktrees/ffd3f83c3a874acc/intelligence-resume-verifier-20261013/.planning/wwtp6-product-validation-final/runtime-enabled/scopes/cb6a969bf14b23680c7d3f6eae17a351/upload_result_c502b24997f040f486ea95f2722dbad5.json",
+      "logical_bytes": 2875833102,
+      "allocated_bytes": 2875838464,
+      "mtime_epoch": 1791881969.176791
+    },
+    {
+      "path": "/home/ubuntu/wwtp7-blind-validation-20261013/runtime/scopes/c4001cfb8b90568e90946a5d064d946c/upload_terminal_result_wwtp7-blind-main-bcaf9454-run-001_baa660cc6b86b48963509b70.json",
+      "logical_bytes": 2108527280,
+      "allocated_bytes": 2108534784,
+      "mtime_epoch": 1791903986.056341
+    },
+    {
+      "path": "/home/ubuntu/wwtp7-blind-validation-20261013/artifacts/UPLOAD_RESULT.json",
+      "logical_bytes": 2014044433,
+      "allocated_bytes": 2014052352,
+      "mtime_epoch": 1791904309.796218
+    },
+    {
+      "path": "/home/ubuntu/wwtp7-blind-validation-20261013/runtime/scopes/c4001cfb8b90568e90946a5d064d946c/upload_result_wwtp7-blind-main-bcaf9454-run-001.json",
+      "logical_bytes": 2014044432,
+      "allocated_bytes": 2014052352,
+      "mtime_epoch": 1791904093.9916337
+    },
+    {
+      "path": "/home/ubuntu/neraium-core-recovery-20261013-v1/run-002/runtime/runtime.db",
+      "logical_bytes": 2012733440,
+      "allocated_bytes": 2012733440,
+      "mtime_epoch": 1791890261.7512932
+    },
+    {
+      "path": "/home/ubuntu/.local/share/neraium-citadel/worktrees/ffd3f83c3a874acc/intelligence-resume-verifier-20261013/.planning/wwtp6-product-validation-final/runtime-enabled/runtime.db",
+      "logical_bytes": 2012725248,
+      "allocated_bytes": 2012725248,
+      "mtime_epoch": 1791884048.7003744
+    },
+    {
+      "path": "/home/ubuntu/Neraium-Poly/data/paper-live/events.sqlite",
+      "logical_bytes": 1990778880,
+      "allocated_bytes": 1990782976,
+      "mtime_epoch": 1793950358.6198123
+    },
+    {
+      "path": "/home/ubuntu/Neraium-1.0/benchmarks/current-performance-20261006/runtime-artifacts.tar.gz",
+      "logical_bytes": 1783706360,
+      "allocated_bytes": 1783713792,
+      "mtime_epoch": 1791263031.3436306
+    },
+    {
+      "path": "/srv/neraium-issue142-20261010-r2/native-pg/runtime/scopes/9f7c40b5bcff4e94da1f8692770222b6/upload_terminal_result_qualification-newhost-issue142-20261010-r2-native-pg-1_ecd052a8e130ba8caa61a418.json",
+      "logical_bytes": 1753356237,
+      "allocated_bytes": 1753362432,
+      "mtime_epoch": 1791599816.7081866
+    },
+    {
+      "path": "/srv/neraium-issue142-20261010-r3/native-pg/runtime/scopes/9f7c40b5bcff4e94da1f8692770222b6/upload_terminal_result_qualification-newhost-issue142-20261010-r3-native-pg-1_0ae6a46e1ae6f073d925db80.json",
+      "logical_bytes": 1753356233,
+      "allocated_bytes": 1753362432,
+      "mtime_epoch": 1791601917.043335
+    },
+    {
+      "path": "/srv/neraium-issue142-20261010-r2/native/runtime/scopes/9f7c40b5bcff4e94da1f8692770222b6/upload_terminal_result_qualification-newhost-issue142-20261010-r2-native-1_b07060ebd48f7ce6c764e680.json",
+      "logical_bytes": 1753351606,
+      "allocated_bytes": 1753358336,
+      "mtime_epoch": 1791597712.5590491
+    },
+    {
+      "path": "/srv/neraium-issue142-20261009/native-pg/runtime/scopes/9f7c40b5bcff4e94da1f8692770222b6/upload_terminal_result_qualification-newhost-issue142-20261009-native-pg-1_c895b9452ad28e9855442605.json",
+      "logical_bytes": 1753351599,
+      "allocated_bytes": 1753358336,
+      "mtime_epoch": 1791591328.6254532
+    },
+    {
+      "path": "/srv/neraium-issue142-20261010-r3/native/runtime/scopes/9f7c40b5bcff4e94da1f8692770222b6/upload_terminal_result_qualification-newhost-issue142-20261010-r3-native-1_9e41238531830f49f3560433.json",
+      "logical_bytes": 1753351582,
+      "allocated_bytes": 1753358336,
+      "mtime_epoch": 1791601925.4113555
+    },
+    {
+      "path": "/home/ubuntu/Neraium-2-integration/artifacts/m8-resolution-20261010/s3-full-fixture-cache-handoff/objects/47cbbdfeb748f599638414cbb2adfd7b37774b864844cf07060857f9a7f962e0",
+      "logical_bytes": 1753348625,
+      "allocated_bytes": 1753354240,
+      "mtime_epoch": 1791655831.8650117
+    },
+    {
+      "path": "/home/ubuntu/Neraium-2-integration/artifacts/m8-resolution-20261010/s3-full-fixture-qualified/objects/47cbbdfeb748f599638414cbb2adfd7b37774b864844cf07060857f9a7f962e0",
+      "logical_bytes": 1753348625,
+      "allocated_bytes": 1753354240,
+      "mtime_epoch": 1791651218.9361959
+    },
+    {
+      "path": "/home/ubuntu/Neraium-2-integration/artifacts/m8-resolution-20261010/s3-full-fixture-resource-fixed/objects/47cbbdfeb748f599638414cbb2adfd7b37774b864844cf07060857f9a7f962e0",
+      "logical_bytes": 1753348625,
+      "allocated_bytes": 1753354240,
+      "mtime_epoch": 1791653627.350367
+    },
+    {
+      "path": "/srv/neraium-issue142-20261010/native/runtime/scopes/9f7c40b5bcff4e94da1f8692770222b6/upload_terminal_result_qualification-newhost-issue142-20261010-native-1_95b472aa7627c8987220ce0e.json",
+      "logical_bytes": 1753346935,
+      "allocated_bytes": 1753354240,
+      "mtime_epoch": 1791594680.991641
+    },
+    {
+      "path": "/srv/neraium-issue142-20261009/native/runtime/scopes/9f7c40b5bcff4e94da1f8692770222b6/upload_terminal_result_qualification-newhost-issue142-20261009-native-1_e1a8f8bc932c9f51f0f03868.json",
+      "logical_bytes": 1753346915,
+      "allocated_bytes": 1753354240,
+      "mtime_epoch": 1791589270.2773478
+    },
+    {
+      "path": "/home/ubuntu/neraium-wwtp4-access-verification-20261012/runtime/scopes/9f7c40b5bcff4e94da1f8692770222b6/upload_terminal_result_wwtp4-fresh-09af257acabd43e78765d24fb611b225_3ba299e21dddd86b2082cc96.json",
+      "logical_bytes": 1753341130,
+      "allocated_bytes": 1753346048,
+      "mtime_epoch": 1791693172.3778906
+    },
+    {
+      "path": "/home/ubuntu/Neraium-1.0/artifacts/wwtp4-fresh-20261011T023754Z/runtime/scopes/9f7c40b5bcff4e94da1f8692770222b6/upload_terminal_result_wwtp4-fresh-09af257acabd43e78765d24fb611b225_3ba299e21dddd86b2082cc96.json",
+      "logical_bytes": 1753341130,
+      "allocated_bytes": 1753346048,
+      "mtime_epoch": 1791693172.3778906
+    },
+    {
+      "path": "/home/ubuntu/Neraium-1.0/artifacts/wwtp4-issue142-completion-20261011T014940Z/runtime/scopes/9f7c40b5bcff4e94da1f8692770222b6/upload_terminal_result_recovery-5fb1c64f-20261011t014940z_8bf2556f6333e6969ccca0c1.json",
+      "logical_bytes": 1753325407,
+      "allocated_bytes": 1753329664,
+      "mtime_epoch": 1791684226.9340205
+    },
+    {
+      "path": "/home/ubuntu/wwtp8-blind-validation-20261014-run002/runtime/scopes/74f5f64c393c9930d8ea615eaee5aa95/upload_terminal_result_wwtp8-blind-2be98eb8-run-002_34f60e9a3e5a3df015783f38.json",
+      "logical_bytes": 1726601636,
+      "allocated_bytes": 1726607360,
+      "mtime_epoch": 1791959895.7903984
+    },
+    {
+      "path": "/home/ubuntu/demo-domain-historical-20261104/.runtime/trivy-cache/db/trivy.db",
+      "logical_bytes": 1709584384,
+      "allocated_bytes": 1709588480,
+      "mtime_epoch": 1793798748.0
+    },
+    {
+      "path": "/home/ubuntu/demo-blind-pov-20261103/.runtime/demo-neraium/domain-local-images/trivy-cache/db/trivy.db",
+      "logical_bytes": 1690230784,
+      "allocated_bytes": 1690234880,
+      "mtime_epoch": 1793670018.0
+    },
+    {
+      "path": "/srv/neraium-issue142-20261010-r2/native-pg/runtime/scopes/9f7c40b5bcff4e94da1f8692770222b6/upload_result_qualification-newhost-issue142-20261010-r2-native-pg-1.json",
+      "logical_bytes": 1673895457,
+      "allocated_bytes": 1673900032,
+      "mtime_epoch": 1791600073.9338048
+    },
+    {
+      "path": "/srv/neraium-issue142-20261010-r3/native-pg/runtime/scopes/9f7c40b5bcff4e94da1f8692770222b6/upload_result_qualification-newhost-issue142-20261010-r3-native-pg-1.json",
+      "logical_bytes": 1673895451,
+      "allocated_bytes": 1673900032,
+      "mtime_epoch": 1791602173.4839716
+    },
+    {
+      "path": "/srv/neraium-issue142-20261010-r2/native/runtime/scopes/9f7c40b5bcff4e94da1f8692770222b6/upload_result_qualification-newhost-issue142-20261010-r2-native-1.json",
+      "logical_bytes": 1673890896,
+      "allocated_bytes": 1673895936,
+      "mtime_epoch": 1791597968.8096747
+    },
+    {
+      "path": "/srv/neraium-issue142-20261009/native-pg/runtime/scopes/9f7c40b5bcff4e94da1f8692770222b6/upload_result_qualification-newhost-issue142-20261009-native-pg-1.json",
+      "logical_bytes": 1673890889,
+      "allocated_bytes": 1673895936,
+      "mtime_epoch": 1791591583.2990587
+    },
+    {
+      "path": "/srv/neraium-issue142-20261010-r3/native/runtime/scopes/9f7c40b5bcff4e94da1f8692770222b6/upload_result_qualification-newhost-issue142-20261010-r3-native-1.json",
+      "logical_bytes": 1673890873,
+      "allocated_bytes": 1673895936,
+      "mtime_epoch": 1791602183.8209975
+    },
+    {
+      "path": "/srv/neraium-issue142-20261010/native/runtime/scopes/9f7c40b5bcff4e94da1f8692770222b6/upload_result_qualification-newhost-issue142-20261010-native-1.json",
+      "logical_bytes": 1673886297,
+      "allocated_bytes": 1673891840,
+      "mtime_epoch": 1791594936.5502717
+    }
+  ],
+  "protected_categories": {
+    "active_databases": [
+      "/var/lib/postgresql",
+      "/var/lib/docker/volumes",
+      "/var/lib/containerd",
+      "Neraium-Poly/data/paper-live/events.sqlite",
+      "Neraium-Poly/data/experimental-paper/*.sqlite"
+    ],
+    "historical_and_other_projects": [
+      "Neraium-1.0 research and benchmark evidence",
+      "/srv/neraium-* migration and issue142 certification trees",
+      "/tmp/ari-* and /tmp/neraium-cert-* trees",
+      "Other repositories and worktrees"
+    ],
+    "compressed_archives": [
+      {
+        "path": "/home/ubuntu/Neraium-1.0/research/benchmarks/metropt3-execution-v1-20260930/outputs/real_blind_fast_20260930T063931Z/neraium.frames.jsonl.gz",
+        "logical_bytes": 5999984145,
+        "allocated_bytes": 5999988736,
+        "mtime_epoch": 1790758802.5070357
+      },
+      {
+        "path": "/home/ubuntu/Neraium-1.0/benchmarks/conservatism-validation-20261006/compressed-storage/mounted/ec2-memory-upgrade-preparation-20261009T192515Z/dev-shm.tar",
+        "logical_bytes": 5633976320,
+        "allocated_bytes": 5633007616,
+        "mtime_epoch": 1791574049.0539997
+      },
+      {
+        "path": "/home/ubuntu/Neraium-1.0/benchmarks/current-performance-20261006/runtime-artifacts.tar.gz",
+        "logical_bytes": 1783706360,
+        "allocated_bytes": 1783713792,
+        "mtime_epoch": 1791263031.3436306
+      },
+      {
+        "path": "/home/ubuntu/Neraium-1.0/artifacts/chw1-post-analysis-validation-20261012/frozen-blind-artifacts.tar",
+        "logical_bytes": 1460674560,
+        "allocated_bytes": 1460678656,
+        "mtime_epoch": 1791770443.5484793
+      },
+      {
+        "path": "/home/ubuntu/LBNL_FDD_Data_Sets_Chiller_Plant_all_3.zip",
+        "logical_bytes": 1225308298,
+        "allocated_bytes": 1225314304,
+        "mtime_epoch": 1790147387.084176
+      },
+      {
+        "path": "/home/ubuntu/Neraium-1.0/benchmarks/conservatism-validation-20261006/raw/context-qualified-large_weakening-1.jsonl.gz",
+        "logical_bytes": 357757152,
+        "allocated_bytes": 357765120,
+        "mtime_epoch": 1791297249.0688791
+      },
+      {
+        "path": "/home/ubuntu/Neraium-1.0/benchmarks/conservatism-validation-20261006/raw/context-qualified-large_weakening-0.jsonl.gz",
+        "logical_bytes": 356036316,
+        "allocated_bytes": 356040704,
+        "mtime_epoch": 1791294811.1791258
+      },
+      {
+        "path": "/home/ubuntu/Neraium-1.0/benchmarks/conservatism-validation-20261006/raw/qualified-moderate-1.jsonl.gz",
+        "logical_bytes": 352348509,
+        "allocated_bytes": 352354304,
+        "mtime_epoch": 1791294603.4424887
+      },
+      {
+        "path": "/home/ubuntu/Neraium-1.0/benchmarks/conservatism-validation-20261006/raw/qualified-large_weakening-0.jsonl.gz",
+        "logical_bytes": 350928051,
+        "allocated_bytes": 350932992,
+        "mtime_epoch": 1791292794.407639
+      },
+      {
+        "path": "/home/ubuntu/Neraium-1.0/benchmarks/conservatism-validation-20261006/raw/qualified-large_weakening-1.jsonl.gz",
+        "logical_bytes": 299605862,
+        "allocated_bytes": 299610112,
+        "mtime_epoch": 1791296970.8113601
+      },
+      {
+        "path": "/home/ubuntu/Neraium-1.0/benchmarks/conservatism-validation-20261006/raw/qualified-moderate-0.jsonl.gz",
+        "logical_bytes": 298056025,
+        "allocated_bytes": 298061824,
+        "mtime_epoch": 1791294434.4787838
+      },
+      {
+        "path": "/home/ubuntu/Neraium-1.0/benchmarks/conservatism-validation-20261006/raw/qualified-slow-0.jsonl.gz",
+        "logical_bytes": 278880497,
+        "allocated_bytes": 278884352,
+        "mtime_epoch": 1791298566.5435956
+      }
+    ]
+  },
+  "cache_disposition": {
+    "uv": "Preserved. Most content shares hardlinks with installed packages; unshared file ceiling259756032B is not total cache size",
+    "playwright": "Preserved. All13 browser/cache revisions referenced by registered clients",
+    "docker": "Preserved images,volumes,containers and cache; private buildcache255.2MB only out of nominal1.932GB",
+    "inactive_poly_venvs": "Preserved because shared library inodes are mapped by active Poly processes or worktree source is dirty"
+  },
+  "cleanup_manifest": "cleanup-manifest.json",
+  "removed_paths": [
+    "/home/ubuntu/.npm/_cacache",
+    "/home/ubuntu/.cache/pip",
+    "/root/.cache/node-gyp",
+    "/home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/poly-dashboard/frontend/node_modules"
+  ],
+  "reclaimed_net_bytes": 452878336,
+  "after_free_bytes": 4313407488,
+  "safety_floor_bytes": 8589934592,
+  "target_bytes": 21474836480,
+  "safety_floor_restored": false,
+  "target_achieved": false,
+  "services_unchanged": true,
+  "accounts_unchanged": true,
+  "no_value_data_or_other_project_removed": true,
+  "valuable_data_migration": "Not proposed as executable: no verified approved persistent destination or capacity; no original data removed/compressed/relocated"
+}

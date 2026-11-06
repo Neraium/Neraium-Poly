@@ -1,0 +1,225 @@
+[
+  {
+    "path": "/home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/poly-dashboard/frontend/node_modules",
+    "symlink": false,
+    "active_process_reference_pids": [],
+    "ignored": true,
+    "allocated": 94687232,
+    "unshared_reclaimable_ceiling": 83255296,
+    "files": 2639,
+    "source_status_clean": true,
+    "source_status": "",
+    "lsof_exit_code": 1,
+    "lsof_lines": 0,
+    "lsof_pids": []
+  },
+  {
+    "path": "/home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/poly-phase11-micro/.venv",
+    "symlink": false,
+    "active_process_reference_pids": [],
+    "ignored": true,
+    "allocated": 75087872,
+    "unshared_reclaimable_ceiling": 7368704,
+    "files": 2734,
+    "source_status_clean": false,
+    "source_status": "?? .planning/handoffs/phase11-micro.md\n",
+    "lsof_exit_code": 1,
+    "lsof_lines": 9,
+    "lsof_pids": [
+      "2884107",
+      "2884136",
+      "2981665",
+      "3073639"
+    ]
+  },
+  {
+    "path": "/home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/poly-phase11-models/.venv",
+    "symlink": false,
+    "active_process_reference_pids": [],
+    "ignored": true,
+    "allocated": 77156352,
+    "unshared_reclaimable_ceiling": 9437184,
+    "files": 2879,
+    "source_status_clean": false,
+    "source_status": "?? .planning/evidence/phase11-models/\n?? .planning/handoffs/phase11-models.md\n",
+    "lsof_exit_code": 1,
+    "lsof_lines": 9,
+    "lsof_pids": [
+      "2884107",
+      "2884136",
+      "2981665",
+      "3073639"
+    ]
+  },
+  {
+    "path": "/home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/poly-phase11-segments/.venv",
+    "symlink": false,
+    "active_process_reference_pids": [],
+    "ignored": true,
+    "allocated": 250175488,
+    "unshared_reclaimable_ceiling": 9535488,
+    "files": 3635,
+    "source_status_clean": true,
+    "source_status": "",
+    "lsof_exit_code": 1,
+    "lsof_lines": 9,
+    "lsof_pids": [
+      "2884107",
+      "2884136",
+      "2981665",
+      "3073639"
+    ]
+  },
+  {
+    "path": "/home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/poly-phase12-data/.venv",
+    "symlink": false,
+    "active_process_reference_pids": [],
+    "ignored": true,
+    "allocated": 77176832,
+    "unshared_reclaimable_ceiling": 9457664,
+    "files": 2881,
+    "source_status_clean": true,
+    "source_status": "",
+    "lsof_exit_code": 1,
+    "lsof_lines": 9,
+    "lsof_pids": [
+      "2884107",
+      "2884136",
+      "2981665",
+      "3073639"
+    ]
+  },
+  {
+    "path": "/home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/poly-phase12-ledger/.venv",
+    "symlink": false,
+    "active_process_reference_pids": [],
+    "ignored": true,
+    "allocated": 77156352,
+    "unshared_reclaimable_ceiling": 9437184,
+    "files": 2879,
+    "source_status_clean": false,
+    "source_status": "?? .planning/evidence/phase12-ledger/\n?? .planning/handoffs/phase12-ledger.md\n",
+    "lsof_exit_code": 1,
+    "lsof_lines": 9,
+    "lsof_pids": [
+      "2884107",
+      "2884136",
+      "2981665",
+      "3073639"
+    ]
+  },
+  {
+    "path": "/home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/poly-phase12-models/.venv",
+    "symlink": false,
+    "active_process_reference_pids": [],
+    "ignored": true,
+    "allocated": 77156352,
+    "unshared_reclaimable_ceiling": 9437184,
+    "files": 2879,
+    "source_status_clean": true,
+    "source_status": "",
+    "lsof_exit_code": 1,
+    "lsof_lines": 9,
+    "lsof_pids": [
+      "2884107",
+      "2884136",
+      "2981665",
+      "3073639"
+    ]
+  },
+  {
+    "path": "/home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/poly-phase13-models/.venv",
+    "symlink": false,
+    "active_process_reference_pids": [],
+    "ignored": true,
+    "allocated": 75087872,
+    "unshared_reclaimable_ceiling": 7368704,
+    "files": 2734,
+    "source_status_clean": true,
+    "source_status": "",
+    "lsof_exit_code": 1,
+    "lsof_lines": 9,
+    "lsof_pids": [
+      "2884107",
+      "2884136",
+      "2981665",
+      "3073639"
+    ]
+  },
+  {
+    "path": "/home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/poly-phase13-operations/.venv",
+    "symlink": false,
+    "active_process_reference_pids": [],
+    "ignored": true,
+    "allocated": 75087872,
+    "unshared_reclaimable_ceiling": 7368704,
+    "files": 2734,
+    "source_status_clean": false,
+    "source_status": "?? .planning/handoffs/phase13-operations.md\n",
+    "lsof_exit_code": 1,
+    "lsof_lines": 9,
+    "lsof_pids": [
+      "2884107",
+      "2884136",
+      "2981665",
+      "3073639"
+    ]
+  },
+  {
+    "path": "/home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/poly-phase13-sources/.venv",
+    "symlink": false,
+    "active_process_reference_pids": [],
+    "ignored": true,
+    "allocated": 75763712,
+    "unshared_reclaimable_ceiling": 8044544,
+    "files": 2783,
+    "source_status_clean": true,
+    "source_status": "",
+    "lsof_exit_code": 1,
+    "lsof_lines": 9,
+    "lsof_pids": [
+      "2884107",
+      "2884136",
+      "2981665",
+      "3073639"
+    ]
+  },
+  {
+    "path": "/home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/poly-phase8-connectivity/.venv",
+    "symlink": false,
+    "active_process_reference_pids": [],
+    "ignored": true,
+    "allocated": 75608064,
+    "unshared_reclaimable_ceiling": 7888896,
+    "files": 2778,
+    "source_status_clean": false,
+    "source_status": "?? .planning/evidence/connectivity-handoff.md\n?? .planning/evidence/connectivity-ruff.txt\n?? .planning/evidence/connectivity-smoke-final.json\n?? .planning/evidence/connectivity-smoke.json\n?? .planning/evidence/connectivity-tests-full.txt\n?? .planning/evidence/connectivity-throughput-smoke.json\n",
+    "lsof_exit_code": 1,
+    "lsof_lines": 9,
+    "lsof_pids": [
+      "2884107",
+      "2884136",
+      "2981665",
+      "3073639"
+    ]
+  },
+  {
+    "path": "/home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/poly-phase8-history/.venv",
+    "symlink": false,
+    "active_process_reference_pids": [],
+    "ignored": true,
+    "allocated": 13860864,
+    "unshared_reclaimable_ceiling": 282624,
+    "files": 666,
+    "source_status_clean": false,
+    "source_status": "?? .planning/HISTORY-HANDOFF.md\n?? .planning/evidence/acquire_public_l2.py\n?? .planning/evidence/history-acquisition.json\n?? .planning/evidence/history-event-acquisition.json\n?? .planning/evidence/history-final-tests.txt\n?? .planning/evidence/history-full-tests.txt\n?? .planning/evidence/inspect_public_l2.py\n",
+    "lsof_exit_code": 1,
+    "lsof_lines": 9,
+    "lsof_pids": [
+      "2884107",
+      "2884136",
+      "2981665",
+      "3073639"
+    ]
+  }
+]

@@ -1,0 +1,187 @@
+{
+  "authorization": "User permits only conclusively disposable unused regenerable caches; coordinator approved these exact four paths",
+  "started_at": "2026-11-06T08:43:13.988381+00:00",
+  "before_free_bytes": 3860529152,
+  "before_services": {
+    "certified": {
+      "cash": 500.0,
+      "bankroll": 500.0,
+      "simulated_pnl": 0.0,
+      "orders": [],
+      "fills": null,
+      "positions": [],
+      "service": null
+    },
+    "experimental": {
+      "cash": 500.0,
+      "bankroll": 500.0,
+      "simulated_pnl": 0.0,
+      "orders": [],
+      "fills": 0,
+      "positions": [],
+      "service": {
+        "status": "degraded",
+        "account_id": "experimental-paper",
+        "validation_status": "unvalidated",
+        "paper_trading": true,
+        "live_trading_enabled": false,
+        "last_ingestion_at": "2026-11-06T06:49:26.473405+00:00",
+        "last_ingestion_age_seconds": 6827.585576,
+        "last_error": "experimental_storage_budget_exhausted",
+        "fee_error": null,
+        "timestamp": "2026-11-06T08:43:14.058981+00:00"
+      },
+      "event_counts": {
+        "ternary_research_forecasts": 2,
+        "ternary_pending": 2,
+        "ternary_resolved": 0
+      }
+    },
+    "neraium-poly-paper": {
+      "pid": 2981665,
+      "flags": [
+        "PAPER_TRADING=true",
+        "LIVE_TRADING_ENABLED=false"
+      ],
+      "active": "active"
+    },
+    "neraium-poly-experimental": {
+      "pid": 3073639,
+      "flags": [
+        "PAPER_TRADING=true",
+        "LIVE_TRADING_ENABLED=false"
+      ],
+      "active": "active"
+    },
+    "account_hashes": {
+      "paper-live/risk.sqlite/account": "e91ed95451a68ccffb0226b3f1698422d13f68c51bc386ac2c00ba9dca2755ac",
+      "paper-live/risk.sqlite/reservations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "paper-live/risk.sqlite/positions": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "paper-live/broker.sqlite/orders": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "experimental-paper/risk.sqlite/account": "7a721fcead6b486d4ebba5c7e2408c5f5e7d703071ca24d9e59c05d8eeb81782",
+      "experimental-paper/risk.sqlite/reservations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "experimental-paper/risk.sqlite/positions": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "experimental-paper/broker.sqlite/orders": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    }
+  },
+  "targets": [
+    {
+      "path": "/home/ubuntu/.npm/_cacache",
+      "regenerate": "npm ci (cache repopulates from public registry)",
+      "entries": 3710,
+      "logical_bytes": 274084351,
+      "allocated_file_bytes": 278339584,
+      "unshared_reclaimable_ceiling_bytes": 278339584,
+      "inventory_sha256": "f70812c36bbb539945d3cf76548a83cd1923eb300b32f97ed710e4a897f950c2",
+      "lsof_output_empty": true,
+      "process_references": [],
+      "removed": true,
+      "removed_at": "2026-11-06T08:43:15.130177+00:00"
+    },
+    {
+      "path": "/home/ubuntu/.cache/pip",
+      "regenerate": "python -m pip download/install pinned package requirements",
+      "entries": 580,
+      "logical_bytes": 0,
+      "allocated_file_bytes": 0,
+      "unshared_reclaimable_ceiling_bytes": 0,
+      "inventory_sha256": "8a545b1efb9fc4631305312b14a1154fd98c3e664b04d240a83b20272621c90e",
+      "lsof_output_empty": true,
+      "process_references": [],
+      "removed": true,
+      "removed_at": "2026-11-06T08:43:15.141651+00:00"
+    },
+    {
+      "path": "/root/.cache/node-gyp",
+      "regenerate": "node-gyp install --target=<required Node version>",
+      "entries": 3326,
+      "logical_bytes": 58897196,
+      "allocated_file_bytes": 65286144,
+      "unshared_reclaimable_ceiling_bytes": 65286144,
+      "inventory_sha256": "3d2aacdfbddfc0dcd5a3f725c0085ede2510da989e3bf51ca4bf2b8e44b2f01c",
+      "lsof_output_empty": true,
+      "process_references": [],
+      "removed": true,
+      "removed_at": "2026-11-06T08:43:15.174994+00:00"
+    },
+    {
+      "path": "/home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/poly-dashboard/frontend/node_modules",
+      "regenerate": "cd /home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/poly-dashboard/frontend && npm ci",
+      "entries": 2930,
+      "logical_bytes": 87039231,
+      "allocated_file_bytes": 94687232,
+      "unshared_reclaimable_ceiling_bytes": 83255296,
+      "inventory_sha256": "a62c6038ea725bf363c763edf12a32db5aa19912076e8f50631ad96783bb54ca",
+      "lsof_output_empty": true,
+      "process_references": [],
+      "removed": true,
+      "removed_at": "2026-11-06T08:43:15.212796+00:00"
+    }
+  ],
+  "after_free_bytes": 4313407488,
+  "observed_net_free_delta_bytes": 452878336,
+  "after_services": {
+    "certified": {
+      "cash": 500.0,
+      "bankroll": 500.0,
+      "simulated_pnl": 0.0,
+      "orders": [],
+      "fills": null,
+      "positions": [],
+      "service": null
+    },
+    "experimental": {
+      "cash": 500.0,
+      "bankroll": 500.0,
+      "simulated_pnl": 0.0,
+      "orders": [],
+      "fills": 0,
+      "positions": [],
+      "service": {
+        "status": "degraded",
+        "account_id": "experimental-paper",
+        "validation_status": "unvalidated",
+        "paper_trading": true,
+        "live_trading_enabled": false,
+        "last_ingestion_at": "2026-11-06T06:49:26.473405+00:00",
+        "last_ingestion_age_seconds": 6828.794524,
+        "last_error": "experimental_storage_budget_exhausted",
+        "fee_error": null,
+        "timestamp": "2026-11-06T08:43:15.267929+00:00"
+      },
+      "event_counts": {
+        "ternary_research_forecasts": 2,
+        "ternary_pending": 2,
+        "ternary_resolved": 0
+      }
+    },
+    "neraium-poly-paper": {
+      "pid": 2981665,
+      "flags": [
+        "PAPER_TRADING=true",
+        "LIVE_TRADING_ENABLED=false"
+      ],
+      "active": "active"
+    },
+    "neraium-poly-experimental": {
+      "pid": 3073639,
+      "flags": [
+        "PAPER_TRADING=true",
+        "LIVE_TRADING_ENABLED=false"
+      ],
+      "active": "active"
+    },
+    "account_hashes": {
+      "paper-live/risk.sqlite/account": "e91ed95451a68ccffb0226b3f1698422d13f68c51bc386ac2c00ba9dca2755ac",
+      "paper-live/risk.sqlite/reservations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "paper-live/risk.sqlite/positions": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "paper-live/broker.sqlite/orders": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "experimental-paper/risk.sqlite/account": "7a721fcead6b486d4ebba5c7e2408c5f5e7d703071ca24d9e59c05d8eeb81782",
+      "experimental-paper/risk.sqlite/reservations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "experimental-paper/risk.sqlite/positions": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "experimental-paper/broker.sqlite/orders": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    }
+  },
+  "finished_at": "2026-11-06T08:43:15.303798+00:00",
+  "accounts_unchanged": true
+}

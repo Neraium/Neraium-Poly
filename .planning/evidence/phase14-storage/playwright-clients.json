@@ -1,0 +1,1403 @@
+{
+  "client_links": [
+    {
+      "link": "70729e1f545420857f587c8982623e415507f87a",
+      "package": "/home/ubuntu/Neraium-ARI-Unified/frontend/node_modules/playwright-core",
+      "exists": true,
+      "browsers": [
+        {
+          "name": "chromium",
+          "revision": "1223",
+          "installByDefault": true,
+          "browserVersion": "148.0.7778.96",
+          "title": "Chrome for Testing"
+        },
+        {
+          "name": "chromium-headless-shell",
+          "revision": "1223",
+          "installByDefault": true,
+          "browserVersion": "148.0.7778.96",
+          "title": "Chrome Headless Shell"
+        },
+        {
+          "name": "chromium-tip-of-tree",
+          "revision": "1427",
+          "installByDefault": false,
+          "browserVersion": "149.0.7827.0",
+          "title": "Chrome Canary for Testing"
+        },
+        {
+          "name": "chromium-tip-of-tree-headless-shell",
+          "revision": "1427",
+          "installByDefault": false,
+          "browserVersion": "149.0.7827.0",
+          "title": "Chrome Canary Headless Shell"
+        },
+        {
+          "name": "firefox",
+          "revision": "1522",
+          "installByDefault": true,
+          "browserVersion": "150.0.2",
+          "title": "Firefox"
+        },
+        {
+          "name": "firefox-beta",
+          "revision": "1512",
+          "installByDefault": false,
+          "browserVersion": "151.0b5",
+          "title": "Firefox Beta"
+        },
+        {
+          "name": "webkit",
+          "revision": "2287",
+          "installByDefault": true,
+          "revisionOverrides": {
+            "mac14": "2251",
+            "mac14-arm64": "2251",
+            "debian11-x64": "2105",
+            "debian11-arm64": "2105",
+            "ubuntu20.04-x64": "2092",
+            "ubuntu20.04-arm64": "2092"
+          },
+          "browserVersion": "26.4",
+          "title": "WebKit"
+        },
+        {
+          "name": "ffmpeg",
+          "revision": "1011",
+          "installByDefault": true,
+          "revisionOverrides": {
+            "mac12": "1010",
+            "mac12-arm64": "1010"
+          }
+        },
+        {
+          "name": "winldd",
+          "revision": "1007",
+          "installByDefault": false
+        },
+        {
+          "name": "android",
+          "revision": "1001",
+          "installByDefault": false
+        }
+      ]
+    },
+    {
+      "link": "28a4d319b7e40667b4c835ade1a1632d9ec4d347",
+      "package": "/home/ubuntu/PPC-App/node_modules/.pnpm/playwright-core@1.62.1/node_modules/playwright-core",
+      "exists": true,
+      "browsers": [
+        {
+          "name": "chromium",
+          "revision": "1234",
+          "installByDefault": true,
+          "browserVersion": "151.0.7922.34",
+          "title": "Chrome for Testing"
+        },
+        {
+          "name": "chromium-headless-shell",
+          "revision": "1234",
+          "installByDefault": true,
+          "browserVersion": "151.0.7922.34",
+          "title": "Chrome Headless Shell"
+        },
+        {
+          "name": "chromium-tip-of-tree",
+          "revision": "1433",
+          "installByDefault": false,
+          "browserVersion": "151.0.7893.0",
+          "title": "Chrome Canary for Testing"
+        },
+        {
+          "name": "chromium-tip-of-tree-headless-shell",
+          "revision": "1433",
+          "installByDefault": false,
+          "browserVersion": "151.0.7893.0",
+          "title": "Chrome Canary Headless Shell"
+        },
+        {
+          "name": "firefox",
+          "revision": "1538",
+          "installByDefault": true,
+          "browserVersion": "153.0",
+          "title": "Firefox"
+        },
+        {
+          "name": "firefox-beta",
+          "revision": "1526",
+          "installByDefault": false,
+          "browserVersion": "152.0b1",
+          "title": "Firefox Beta"
+        },
+        {
+          "name": "webkit",
+          "revision": "2336",
+          "installByDefault": true,
+          "revisionOverrides": {
+            "mac14": "2251",
+            "mac14-arm64": "2251",
+            "ubuntu20.04-x64": "2092",
+            "ubuntu20.04-arm64": "2092"
+          },
+          "browserVersion": "26.5",
+          "title": "WebKit"
+        },
+        {
+          "name": "ffmpeg",
+          "revision": "1011",
+          "installByDefault": true
+        },
+        {
+          "name": "winldd",
+          "revision": "1007",
+          "installByDefault": false
+        },
+        {
+          "name": "android",
+          "revision": "1001",
+          "installByDefault": false
+        }
+      ]
+    },
+    {
+      "link": "edf0ada52b10c88d4f4b6d27f353fb0e5a5fe486",
+      "package": "/home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/poly-dashboard/frontend/node_modules/playwright-core",
+      "exists": true,
+      "browsers": [
+        {
+          "name": "chromium",
+          "revision": "1254",
+          "installByDefault": true,
+          "browserVersion": "158.0.8127.18",
+          "title": "Chrome for Testing"
+        },
+        {
+          "name": "chromium-headless-shell",
+          "revision": "1254",
+          "installByDefault": true,
+          "browserVersion": "158.0.8127.18",
+          "title": "Chrome Headless Shell"
+        },
+        {
+          "name": "firefox",
+          "revision": "1572",
+          "installByDefault": true,
+          "browserVersion": "159.0",
+          "title": "Firefox"
+        },
+        {
+          "name": "webkit",
+          "revision": "2388",
+          "installByDefault": true,
+          "revisionOverrides": {
+            "mac14": "2251",
+            "mac14-arm64": "2251"
+          },
+          "browserVersion": "27.2",
+          "title": "WebKit"
+        },
+        {
+          "name": "ffmpeg",
+          "revision": "1013",
+          "installByDefault": true
+        },
+        {
+          "name": "winldd",
+          "revision": "1007",
+          "installByDefault": false
+        },
+        {
+          "name": "android",
+          "revision": "1001",
+          "installByDefault": false
+        }
+      ]
+    },
+    {
+      "link": "3327ef8d7590d914cc692de03e90b1ec14c2ad12",
+      "package": "/home/ubuntu/neraium-physical-measurement-m1-20261012/frontend/node_modules/playwright-core",
+      "exists": true,
+      "browsers": [
+        {
+          "name": "chromium",
+          "revision": "1223",
+          "installByDefault": true,
+          "browserVersion": "148.0.7778.96",
+          "title": "Chrome for Testing"
+        },
+        {
+          "name": "chromium-headless-shell",
+          "revision": "1223",
+          "installByDefault": true,
+          "browserVersion": "148.0.7778.96",
+          "title": "Chrome Headless Shell"
+        },
+        {
+          "name": "chromium-tip-of-tree",
+          "revision": "1427",
+          "installByDefault": false,
+          "browserVersion": "149.0.7827.0",
+          "title": "Chrome Canary for Testing"
+        },
+        {
+          "name": "chromium-tip-of-tree-headless-shell",
+          "revision": "1427",
+          "installByDefault": false,
+          "browserVersion": "149.0.7827.0",
+          "title": "Chrome Canary Headless Shell"
+        },
+        {
+          "name": "firefox",
+          "revision": "1522",
+          "installByDefault": true,
+          "browserVersion": "150.0.2",
+          "title": "Firefox"
+        },
+        {
+          "name": "firefox-beta",
+          "revision": "1512",
+          "installByDefault": false,
+          "browserVersion": "151.0b5",
+          "title": "Firefox Beta"
+        },
+        {
+          "name": "webkit",
+          "revision": "2287",
+          "installByDefault": true,
+          "revisionOverrides": {
+            "mac14": "2251",
+            "mac14-arm64": "2251",
+            "debian11-x64": "2105",
+            "debian11-arm64": "2105",
+            "ubuntu20.04-x64": "2092",
+            "ubuntu20.04-arm64": "2092"
+          },
+          "browserVersion": "26.4",
+          "title": "WebKit"
+        },
+        {
+          "name": "ffmpeg",
+          "revision": "1011",
+          "installByDefault": true,
+          "revisionOverrides": {
+            "mac12": "1010",
+            "mac12-arm64": "1010"
+          }
+        },
+        {
+          "name": "winldd",
+          "revision": "1007",
+          "installByDefault": false
+        },
+        {
+          "name": "android",
+          "revision": "1001",
+          "installByDefault": false
+        }
+      ]
+    },
+    {
+      "link": "fca486b8ad27af7cfd8f2a600672ba401839fbd6",
+      "package": "/home/ubuntu/neraium-physical-deterioration-m2-20261012/frontend/node_modules/playwright-core",
+      "exists": true,
+      "browsers": [
+        {
+          "name": "chromium",
+          "revision": "1223",
+          "installByDefault": true,
+          "browserVersion": "148.0.7778.96",
+          "title": "Chrome for Testing"
+        },
+        {
+          "name": "chromium-headless-shell",
+          "revision": "1223",
+          "installByDefault": true,
+          "browserVersion": "148.0.7778.96",
+          "title": "Chrome Headless Shell"
+        },
+        {
+          "name": "chromium-tip-of-tree",
+          "revision": "1427",
+          "installByDefault": false,
+          "browserVersion": "149.0.7827.0",
+          "title": "Chrome Canary for Testing"
+        },
+        {
+          "name": "chromium-tip-of-tree-headless-shell",
+          "revision": "1427",
+          "installByDefault": false,
+          "browserVersion": "149.0.7827.0",
+          "title": "Chrome Canary Headless Shell"
+        },
+        {
+          "name": "firefox",
+          "revision": "1522",
+          "installByDefault": true,
+          "browserVersion": "150.0.2",
+          "title": "Firefox"
+        },
+        {
+          "name": "firefox-beta",
+          "revision": "1512",
+          "installByDefault": false,
+          "browserVersion": "151.0b5",
+          "title": "Firefox Beta"
+        },
+        {
+          "name": "webkit",
+          "revision": "2287",
+          "installByDefault": true,
+          "revisionOverrides": {
+            "mac14": "2251",
+            "mac14-arm64": "2251",
+            "debian11-x64": "2105",
+            "debian11-arm64": "2105",
+            "ubuntu20.04-x64": "2092",
+            "ubuntu20.04-arm64": "2092"
+          },
+          "browserVersion": "26.4",
+          "title": "WebKit"
+        },
+        {
+          "name": "ffmpeg",
+          "revision": "1011",
+          "installByDefault": true,
+          "revisionOverrides": {
+            "mac12": "1010",
+            "mac12-arm64": "1010"
+          }
+        },
+        {
+          "name": "winldd",
+          "revision": "1007",
+          "installByDefault": false
+        },
+        {
+          "name": "android",
+          "revision": "1001",
+          "installByDefault": false
+        }
+      ]
+    },
+    {
+      "link": "192119d7eedf746d47a15d88d8bc98ec6368fd76",
+      "package": "/home/ubuntu/Neraium-/Neraium-/node_modules/playwright-core",
+      "exists": true,
+      "browsers": [
+        {
+          "name": "chromium",
+          "revision": "1234",
+          "installByDefault": true,
+          "browserVersion": "151.0.7922.34",
+          "title": "Chrome for Testing"
+        },
+        {
+          "name": "chromium-headless-shell",
+          "revision": "1234",
+          "installByDefault": true,
+          "browserVersion": "151.0.7922.34",
+          "title": "Chrome Headless Shell"
+        },
+        {
+          "name": "chromium-tip-of-tree",
+          "revision": "1433",
+          "installByDefault": false,
+          "browserVersion": "151.0.7893.0",
+          "title": "Chrome Canary for Testing"
+        },
+        {
+          "name": "chromium-tip-of-tree-headless-shell",
+          "revision": "1433",
+          "installByDefault": false,
+          "browserVersion": "151.0.7893.0",
+          "title": "Chrome Canary Headless Shell"
+        },
+        {
+          "name": "firefox",
+          "revision": "1538",
+          "installByDefault": true,
+          "browserVersion": "153.0",
+          "title": "Firefox"
+        },
+        {
+          "name": "firefox-beta",
+          "revision": "1526",
+          "installByDefault": false,
+          "browserVersion": "152.0b1",
+          "title": "Firefox Beta"
+        },
+        {
+          "name": "webkit",
+          "revision": "2336",
+          "installByDefault": true,
+          "revisionOverrides": {
+            "mac14": "2251",
+            "mac14-arm64": "2251",
+            "ubuntu20.04-x64": "2092",
+            "ubuntu20.04-arm64": "2092"
+          },
+          "browserVersion": "26.5",
+          "title": "WebKit"
+        },
+        {
+          "name": "ffmpeg",
+          "revision": "1011",
+          "installByDefault": true
+        },
+        {
+          "name": "winldd",
+          "revision": "1007",
+          "installByDefault": false
+        },
+        {
+          "name": "android",
+          "revision": "1001",
+          "installByDefault": false
+        }
+      ]
+    },
+    {
+      "link": "ee0d3f741efb9d9998ac2765e059c6d13758abf2",
+      "package": "/home/ubuntu/.local/share/neraium-citadel/worktrees/67cbc710e2914bb7/pov-publication-20261105/frontend/node_modules/playwright-core",
+      "exists": true,
+      "browsers": [
+        {
+          "name": "chromium",
+          "revision": "1223",
+          "installByDefault": true,
+          "browserVersion": "148.0.7778.96",
+          "title": "Chrome for Testing"
+        },
+        {
+          "name": "chromium-headless-shell",
+          "revision": "1223",
+          "installByDefault": true,
+          "browserVersion": "148.0.7778.96",
+          "title": "Chrome Headless Shell"
+        },
+        {
+          "name": "chromium-tip-of-tree",
+          "revision": "1427",
+          "installByDefault": false,
+          "browserVersion": "149.0.7827.0",
+          "title": "Chrome Canary for Testing"
+        },
+        {
+          "name": "chromium-tip-of-tree-headless-shell",
+          "revision": "1427",
+          "installByDefault": false,
+          "browserVersion": "149.0.7827.0",
+          "title": "Chrome Canary Headless Shell"
+        },
+        {
+          "name": "firefox",
+          "revision": "1522",
+          "installByDefault": true,
+          "browserVersion": "150.0.2",
+          "title": "Firefox"
+        },
+        {
+          "name": "firefox-beta",
+          "revision": "1512",
+          "installByDefault": false,
+          "browserVersion": "151.0b5",
+          "title": "Firefox Beta"
+        },
+        {
+          "name": "webkit",
+          "revision": "2287",
+          "installByDefault": true,
+          "revisionOverrides": {
+            "mac14": "2251",
+            "mac14-arm64": "2251",
+            "debian11-x64": "2105",
+            "debian11-arm64": "2105",
+            "ubuntu20.04-x64": "2092",
+            "ubuntu20.04-arm64": "2092"
+          },
+          "browserVersion": "26.4",
+          "title": "WebKit"
+        },
+        {
+          "name": "ffmpeg",
+          "revision": "1011",
+          "installByDefault": true,
+          "revisionOverrides": {
+            "mac12": "1010",
+            "mac12-arm64": "1010"
+          }
+        },
+        {
+          "name": "winldd",
+          "revision": "1007",
+          "installByDefault": false
+        },
+        {
+          "name": "android",
+          "revision": "1001",
+          "installByDefault": false
+        }
+      ]
+    },
+    {
+      "link": "e4c5a8f5b40a157c9890685b626fae28da95faf9",
+      "package": "/home/ubuntu/Neraium-Styx/.venv/lib/python3.12/site-packages/playwright/driver/package",
+      "exists": true,
+      "browsers": [
+        {
+          "name": "chromium",
+          "revision": "1248",
+          "installByDefault": true,
+          "browserVersion": "156.0.8078.4",
+          "title": "Chrome for Testing"
+        },
+        {
+          "name": "chromium-headless-shell",
+          "revision": "1248",
+          "installByDefault": true,
+          "browserVersion": "156.0.8078.4",
+          "title": "Chrome Headless Shell"
+        },
+        {
+          "name": "firefox",
+          "revision": "1555",
+          "installByDefault": true,
+          "browserVersion": "157.0",
+          "title": "Firefox"
+        },
+        {
+          "name": "webkit",
+          "revision": "2370",
+          "installByDefault": true,
+          "revisionOverrides": {
+            "mac14": "2251",
+            "mac14-arm64": "2251"
+          },
+          "browserVersion": "27.2",
+          "title": "WebKit"
+        },
+        {
+          "name": "ffmpeg",
+          "revision": "1013",
+          "installByDefault": true
+        },
+        {
+          "name": "winldd",
+          "revision": "1007",
+          "installByDefault": false
+        },
+        {
+          "name": "android",
+          "revision": "1001",
+          "installByDefault": false
+        }
+      ]
+    },
+    {
+      "link": "3f9e17c912443b5ada1713cff8403c5a2214a64b",
+      "package": "/home/ubuntu/Neraium-2.0/frontend/node_modules/playwright-core",
+      "exists": true,
+      "browsers": [
+        {
+          "name": "chromium",
+          "revision": "1223",
+          "installByDefault": true,
+          "browserVersion": "148.0.7778.96",
+          "title": "Chrome for Testing"
+        },
+        {
+          "name": "chromium-headless-shell",
+          "revision": "1223",
+          "installByDefault": true,
+          "browserVersion": "148.0.7778.96",
+          "title": "Chrome Headless Shell"
+        },
+        {
+          "name": "chromium-tip-of-tree",
+          "revision": "1427",
+          "installByDefault": false,
+          "browserVersion": "149.0.7827.0",
+          "title": "Chrome Canary for Testing"
+        },
+        {
+          "name": "chromium-tip-of-tree-headless-shell",
+          "revision": "1427",
+          "installByDefault": false,
+          "browserVersion": "149.0.7827.0",
+          "title": "Chrome Canary Headless Shell"
+        },
+        {
+          "name": "firefox",
+          "revision": "1522",
+          "installByDefault": true,
+          "browserVersion": "150.0.2",
+          "title": "Firefox"
+        },
+        {
+          "name": "firefox-beta",
+          "revision": "1512",
+          "installByDefault": false,
+          "browserVersion": "151.0b5",
+          "title": "Firefox Beta"
+        },
+        {
+          "name": "webkit",
+          "revision": "2287",
+          "installByDefault": true,
+          "revisionOverrides": {
+            "mac14": "2251",
+            "mac14-arm64": "2251",
+            "debian11-x64": "2105",
+            "debian11-arm64": "2105",
+            "ubuntu20.04-x64": "2092",
+            "ubuntu20.04-arm64": "2092"
+          },
+          "browserVersion": "26.4",
+          "title": "WebKit"
+        },
+        {
+          "name": "ffmpeg",
+          "revision": "1011",
+          "installByDefault": true,
+          "revisionOverrides": {
+            "mac12": "1010",
+            "mac12-arm64": "1010"
+          }
+        },
+        {
+          "name": "winldd",
+          "revision": "1007",
+          "installByDefault": false
+        },
+        {
+          "name": "android",
+          "revision": "1001",
+          "installByDefault": false
+        }
+      ]
+    },
+    {
+      "link": "8fef44c916f965c227f676e45745b08f12487a6b",
+      "package": "/home/ubuntu/.local/share/neraium-citadel/worktrees/67cbc710e2914bb7/release-blockers-20261105/frontend/node_modules/playwright-core",
+      "exists": true,
+      "browsers": [
+        {
+          "name": "chromium",
+          "revision": "1223",
+          "installByDefault": true,
+          "browserVersion": "148.0.7778.96",
+          "title": "Chrome for Testing"
+        },
+        {
+          "name": "chromium-headless-shell",
+          "revision": "1223",
+          "installByDefault": true,
+          "browserVersion": "148.0.7778.96",
+          "title": "Chrome Headless Shell"
+        },
+        {
+          "name": "chromium-tip-of-tree",
+          "revision": "1427",
+          "installByDefault": false,
+          "browserVersion": "149.0.7827.0",
+          "title": "Chrome Canary for Testing"
+        },
+        {
+          "name": "chromium-tip-of-tree-headless-shell",
+          "revision": "1427",
+          "installByDefault": false,
+          "browserVersion": "149.0.7827.0",
+          "title": "Chrome Canary Headless Shell"
+        },
+        {
+          "name": "firefox",
+          "revision": "1522",
+          "installByDefault": true,
+          "browserVersion": "150.0.2",
+          "title": "Firefox"
+        },
+        {
+          "name": "firefox-beta",
+          "revision": "1512",
+          "installByDefault": false,
+          "browserVersion": "151.0b5",
+          "title": "Firefox Beta"
+        },
+        {
+          "name": "webkit",
+          "revision": "2287",
+          "installByDefault": true,
+          "revisionOverrides": {
+            "mac14": "2251",
+            "mac14-arm64": "2251",
+            "debian11-x64": "2105",
+            "debian11-arm64": "2105",
+            "ubuntu20.04-x64": "2092",
+            "ubuntu20.04-arm64": "2092"
+          },
+          "browserVersion": "26.4",
+          "title": "WebKit"
+        },
+        {
+          "name": "ffmpeg",
+          "revision": "1011",
+          "installByDefault": true,
+          "revisionOverrides": {
+            "mac12": "1010",
+            "mac12-arm64": "1010"
+          }
+        },
+        {
+          "name": "winldd",
+          "revision": "1007",
+          "installByDefault": false
+        },
+        {
+          "name": "android",
+          "revision": "1001",
+          "installByDefault": false
+        }
+      ]
+    },
+    {
+      "link": "4228b74e9c1aaeeb6766f5b9033463cbf47dd8d5",
+      "package": "/home/ubuntu/Neraium-1.0/frontend/node_modules/playwright-core",
+      "exists": true,
+      "browsers": [
+        {
+          "name": "chromium",
+          "revision": "1223",
+          "installByDefault": true,
+          "browserVersion": "148.0.7778.96",
+          "title": "Chrome for Testing"
+        },
+        {
+          "name": "chromium-headless-shell",
+          "revision": "1223",
+          "installByDefault": true,
+          "browserVersion": "148.0.7778.96",
+          "title": "Chrome Headless Shell"
+        },
+        {
+          "name": "chromium-tip-of-tree",
+          "revision": "1427",
+          "installByDefault": false,
+          "browserVersion": "149.0.7827.0",
+          "title": "Chrome Canary for Testing"
+        },
+        {
+          "name": "chromium-tip-of-tree-headless-shell",
+          "revision": "1427",
+          "installByDefault": false,
+          "browserVersion": "149.0.7827.0",
+          "title": "Chrome Canary Headless Shell"
+        },
+        {
+          "name": "firefox",
+          "revision": "1522",
+          "installByDefault": true,
+          "browserVersion": "150.0.2",
+          "title": "Firefox"
+        },
+        {
+          "name": "firefox-beta",
+          "revision": "1512",
+          "installByDefault": false,
+          "browserVersion": "151.0b5",
+          "title": "Firefox Beta"
+        },
+        {
+          "name": "webkit",
+          "revision": "2287",
+          "installByDefault": true,
+          "revisionOverrides": {
+            "mac14": "2251",
+            "mac14-arm64": "2251",
+            "debian11-x64": "2105",
+            "debian11-arm64": "2105",
+            "ubuntu20.04-x64": "2092",
+            "ubuntu20.04-arm64": "2092"
+          },
+          "browserVersion": "26.4",
+          "title": "WebKit"
+        },
+        {
+          "name": "ffmpeg",
+          "revision": "1011",
+          "installByDefault": true,
+          "revisionOverrides": {
+            "mac12": "1010",
+            "mac12-arm64": "1010"
+          }
+        },
+        {
+          "name": "winldd",
+          "revision": "1007",
+          "installByDefault": false
+        },
+        {
+          "name": "android",
+          "revision": "1001",
+          "installByDefault": false
+        }
+      ]
+    },
+    {
+      "link": "65bef20cfc307ed741410dea7e56aef904ae30ee",
+      "package": "/home/ubuntu/.local/share/neraium-citadel/worktrees/67cbc710e2914bb7/ari-stabilization-baseline-browser/frontend/node_modules/playwright-core",
+      "exists": true,
+      "browsers": [
+        {
+          "name": "chromium",
+          "revision": "1223",
+          "installByDefault": true,
+          "browserVersion": "148.0.7778.96",
+          "title": "Chrome for Testing"
+        },
+        {
+          "name": "chromium-headless-shell",
+          "revision": "1223",
+          "installByDefault": true,
+          "browserVersion": "148.0.7778.96",
+          "title": "Chrome Headless Shell"
+        },
+        {
+          "name": "chromium-tip-of-tree",
+          "revision": "1427",
+          "installByDefault": false,
+          "browserVersion": "149.0.7827.0",
+          "title": "Chrome Canary for Testing"
+        },
+        {
+          "name": "chromium-tip-of-tree-headless-shell",
+          "revision": "1427",
+          "installByDefault": false,
+          "browserVersion": "149.0.7827.0",
+          "title": "Chrome Canary Headless Shell"
+        },
+        {
+          "name": "firefox",
+          "revision": "1522",
+          "installByDefault": true,
+          "browserVersion": "150.0.2",
+          "title": "Firefox"
+        },
+        {
+          "name": "firefox-beta",
+          "revision": "1512",
+          "installByDefault": false,
+          "browserVersion": "151.0b5",
+          "title": "Firefox Beta"
+        },
+        {
+          "name": "webkit",
+          "revision": "2287",
+          "installByDefault": true,
+          "revisionOverrides": {
+            "mac14": "2251",
+            "mac14-arm64": "2251",
+            "debian11-x64": "2105",
+            "debian11-arm64": "2105",
+            "ubuntu20.04-x64": "2092",
+            "ubuntu20.04-arm64": "2092"
+          },
+          "browserVersion": "26.4",
+          "title": "WebKit"
+        },
+        {
+          "name": "ffmpeg",
+          "revision": "1011",
+          "installByDefault": true,
+          "revisionOverrides": {
+            "mac12": "1010",
+            "mac12-arm64": "1010"
+          }
+        },
+        {
+          "name": "winldd",
+          "revision": "1007",
+          "installByDefault": false
+        },
+        {
+          "name": "android",
+          "revision": "1001",
+          "installByDefault": false
+        }
+      ]
+    },
+    {
+      "link": "96dd6933a372137c99d48b4001db7c484b21d873",
+      "package": "/home/ubuntu/neraium-wwtp4-access-verification-20261012/frontend/node_modules/playwright-core",
+      "exists": true,
+      "browsers": [
+        {
+          "name": "chromium",
+          "revision": "1223",
+          "installByDefault": true,
+          "browserVersion": "148.0.7778.96",
+          "title": "Chrome for Testing"
+        },
+        {
+          "name": "chromium-headless-shell",
+          "revision": "1223",
+          "installByDefault": true,
+          "browserVersion": "148.0.7778.96",
+          "title": "Chrome Headless Shell"
+        },
+        {
+          "name": "chromium-tip-of-tree",
+          "revision": "1427",
+          "installByDefault": false,
+          "browserVersion": "149.0.7827.0",
+          "title": "Chrome Canary for Testing"
+        },
+        {
+          "name": "chromium-tip-of-tree-headless-shell",
+          "revision": "1427",
+          "installByDefault": false,
+          "browserVersion": "149.0.7827.0",
+          "title": "Chrome Canary Headless Shell"
+        },
+        {
+          "name": "firefox",
+          "revision": "1522",
+          "installByDefault": true,
+          "browserVersion": "150.0.2",
+          "title": "Firefox"
+        },
+        {
+          "name": "firefox-beta",
+          "revision": "1512",
+          "installByDefault": false,
+          "browserVersion": "151.0b5",
+          "title": "Firefox Beta"
+        },
+        {
+          "name": "webkit",
+          "revision": "2287",
+          "installByDefault": true,
+          "revisionOverrides": {
+            "mac14": "2251",
+            "mac14-arm64": "2251",
+            "debian11-x64": "2105",
+            "debian11-arm64": "2105",
+            "ubuntu20.04-x64": "2092",
+            "ubuntu20.04-arm64": "2092"
+          },
+          "browserVersion": "26.4",
+          "title": "WebKit"
+        },
+        {
+          "name": "ffmpeg",
+          "revision": "1011",
+          "installByDefault": true,
+          "revisionOverrides": {
+            "mac12": "1010",
+            "mac12-arm64": "1010"
+          }
+        },
+        {
+          "name": "winldd",
+          "revision": "1007",
+          "installByDefault": false
+        },
+        {
+          "name": "android",
+          "revision": "1001",
+          "installByDefault": false
+        }
+      ]
+    },
+    {
+      "link": "3de509bcf91bd3e566f48dd78b8b5e30b78b282a",
+      "package": "/home/ubuntu/.local/share/neraium-citadel/worktrees/67cbc710e2914bb7/engineering-evidence-engine-20261105/frontend/node_modules/playwright-core",
+      "exists": true,
+      "browsers": [
+        {
+          "name": "chromium",
+          "revision": "1223",
+          "installByDefault": true,
+          "browserVersion": "148.0.7778.96",
+          "title": "Chrome for Testing"
+        },
+        {
+          "name": "chromium-headless-shell",
+          "revision": "1223",
+          "installByDefault": true,
+          "browserVersion": "148.0.7778.96",
+          "title": "Chrome Headless Shell"
+        },
+        {
+          "name": "chromium-tip-of-tree",
+          "revision": "1427",
+          "installByDefault": false,
+          "browserVersion": "149.0.7827.0",
+          "title": "Chrome Canary for Testing"
+        },
+        {
+          "name": "chromium-tip-of-tree-headless-shell",
+          "revision": "1427",
+          "installByDefault": false,
+          "browserVersion": "149.0.7827.0",
+          "title": "Chrome Canary Headless Shell"
+        },
+        {
+          "name": "firefox",
+          "revision": "1522",
+          "installByDefault": true,
+          "browserVersion": "150.0.2",
+          "title": "Firefox"
+        },
+        {
+          "name": "firefox-beta",
+          "revision": "1512",
+          "installByDefault": false,
+          "browserVersion": "151.0b5",
+          "title": "Firefox Beta"
+        },
+        {
+          "name": "webkit",
+          "revision": "2287",
+          "installByDefault": true,
+          "revisionOverrides": {
+            "mac14": "2251",
+            "mac14-arm64": "2251",
+            "debian11-x64": "2105",
+            "debian11-arm64": "2105",
+            "ubuntu20.04-x64": "2092",
+            "ubuntu20.04-arm64": "2092"
+          },
+          "browserVersion": "26.4",
+          "title": "WebKit"
+        },
+        {
+          "name": "ffmpeg",
+          "revision": "1011",
+          "installByDefault": true,
+          "revisionOverrides": {
+            "mac12": "1010",
+            "mac12-arm64": "1010"
+          }
+        },
+        {
+          "name": "winldd",
+          "revision": "1007",
+          "installByDefault": false
+        },
+        {
+          "name": "android",
+          "revision": "1001",
+          "installByDefault": false
+        }
+      ]
+    },
+    {
+      "link": "2fbf27d8996556ed2af56396fbae6813cdbe5763",
+      "package": "/home/ubuntu/neraium-graduated-intelligence-20261012/frontend/node_modules/playwright-core",
+      "exists": true,
+      "browsers": [
+        {
+          "name": "chromium",
+          "revision": "1223",
+          "installByDefault": true,
+          "browserVersion": "148.0.7778.96",
+          "title": "Chrome for Testing"
+        },
+        {
+          "name": "chromium-headless-shell",
+          "revision": "1223",
+          "installByDefault": true,
+          "browserVersion": "148.0.7778.96",
+          "title": "Chrome Headless Shell"
+        },
+        {
+          "name": "chromium-tip-of-tree",
+          "revision": "1427",
+          "installByDefault": false,
+          "browserVersion": "149.0.7827.0",
+          "title": "Chrome Canary for Testing"
+        },
+        {
+          "name": "chromium-tip-of-tree-headless-shell",
+          "revision": "1427",
+          "installByDefault": false,
+          "browserVersion": "149.0.7827.0",
+          "title": "Chrome Canary Headless Shell"
+        },
+        {
+          "name": "firefox",
+          "revision": "1522",
+          "installByDefault": true,
+          "browserVersion": "150.0.2",
+          "title": "Firefox"
+        },
+        {
+          "name": "firefox-beta",
+          "revision": "1512",
+          "installByDefault": false,
+          "browserVersion": "151.0b5",
+          "title": "Firefox Beta"
+        },
+        {
+          "name": "webkit",
+          "revision": "2287",
+          "installByDefault": true,
+          "revisionOverrides": {
+            "mac14": "2251",
+            "mac14-arm64": "2251",
+            "debian11-x64": "2105",
+            "debian11-arm64": "2105",
+            "ubuntu20.04-x64": "2092",
+            "ubuntu20.04-arm64": "2092"
+          },
+          "browserVersion": "26.4",
+          "title": "WebKit"
+        },
+        {
+          "name": "ffmpeg",
+          "revision": "1011",
+          "installByDefault": true,
+          "revisionOverrides": {
+            "mac12": "1010",
+            "mac12-arm64": "1010"
+          }
+        },
+        {
+          "name": "winldd",
+          "revision": "1007",
+          "installByDefault": false
+        },
+        {
+          "name": "android",
+          "revision": "1001",
+          "installByDefault": false
+        }
+      ]
+    },
+    {
+      "link": "b4d0b192f202b5f2044470f6c08a5f59e9e5d4ba",
+      "package": "/home/ubuntu/.local/share/neraium-citadel/worktrees/67cbc710e2914bb7/integration-evidence-publication-20261105/frontend/node_modules/playwright-core",
+      "exists": true,
+      "browsers": [
+        {
+          "name": "chromium",
+          "revision": "1223",
+          "installByDefault": true,
+          "browserVersion": "148.0.7778.96",
+          "title": "Chrome for Testing"
+        },
+        {
+          "name": "chromium-headless-shell",
+          "revision": "1223",
+          "installByDefault": true,
+          "browserVersion": "148.0.7778.96",
+          "title": "Chrome Headless Shell"
+        },
+        {
+          "name": "chromium-tip-of-tree",
+          "revision": "1427",
+          "installByDefault": false,
+          "browserVersion": "149.0.7827.0",
+          "title": "Chrome Canary for Testing"
+        },
+        {
+          "name": "chromium-tip-of-tree-headless-shell",
+          "revision": "1427",
+          "installByDefault": false,
+          "browserVersion": "149.0.7827.0",
+          "title": "Chrome Canary Headless Shell"
+        },
+        {
+          "name": "firefox",
+          "revision": "1522",
+          "installByDefault": true,
+          "browserVersion": "150.0.2",
+          "title": "Firefox"
+        },
+        {
+          "name": "firefox-beta",
+          "revision": "1512",
+          "installByDefault": false,
+          "browserVersion": "151.0b5",
+          "title": "Firefox Beta"
+        },
+        {
+          "name": "webkit",
+          "revision": "2287",
+          "installByDefault": true,
+          "revisionOverrides": {
+            "mac14": "2251",
+            "mac14-arm64": "2251",
+            "debian11-x64": "2105",
+            "debian11-arm64": "2105",
+            "ubuntu20.04-x64": "2092",
+            "ubuntu20.04-arm64": "2092"
+          },
+          "browserVersion": "26.4",
+          "title": "WebKit"
+        },
+        {
+          "name": "ffmpeg",
+          "revision": "1011",
+          "installByDefault": true,
+          "revisionOverrides": {
+            "mac12": "1010",
+            "mac12-arm64": "1010"
+          }
+        },
+        {
+          "name": "winldd",
+          "revision": "1007",
+          "installByDefault": false
+        },
+        {
+          "name": "android",
+          "revision": "1001",
+          "installByDefault": false
+        }
+      ]
+    }
+  ],
+  "browser_directories": [
+    {
+      "directory": "/home/ubuntu/.cache/ms-playwright/chromium_headless_shell-1254",
+      "required_by_registered_clients": [
+        "/home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/poly-dashboard/frontend/node_modules/playwright-core"
+      ]
+    },
+    {
+      "directory": "/home/ubuntu/.cache/ms-playwright/webkit-2287",
+      "required_by_registered_clients": [
+        "/home/ubuntu/Neraium-ARI-Unified/frontend/node_modules/playwright-core",
+        "/home/ubuntu/neraium-physical-measurement-m1-20261012/frontend/node_modules/playwright-core",
+        "/home/ubuntu/neraium-physical-deterioration-m2-20261012/frontend/node_modules/playwright-core",
+        "/home/ubuntu/.local/share/neraium-citadel/worktrees/67cbc710e2914bb7/pov-publication-20261105/frontend/node_modules/playwright-core",
+        "/home/ubuntu/Neraium-2.0/frontend/node_modules/playwright-core",
+        "/home/ubuntu/.local/share/neraium-citadel/worktrees/67cbc710e2914bb7/release-blockers-20261105/frontend/node_modules/playwright-core",
+        "/home/ubuntu/Neraium-1.0/frontend/node_modules/playwright-core",
+        "/home/ubuntu/.local/share/neraium-citadel/worktrees/67cbc710e2914bb7/ari-stabilization-baseline-browser/frontend/node_modules/playwright-core",
+        "/home/ubuntu/neraium-wwtp4-access-verification-20261012/frontend/node_modules/playwright-core",
+        "/home/ubuntu/.local/share/neraium-citadel/worktrees/67cbc710e2914bb7/engineering-evidence-engine-20261105/frontend/node_modules/playwright-core",
+        "/home/ubuntu/neraium-graduated-intelligence-20261012/frontend/node_modules/playwright-core",
+        "/home/ubuntu/.local/share/neraium-citadel/worktrees/67cbc710e2914bb7/integration-evidence-publication-20261105/frontend/node_modules/playwright-core"
+      ]
+    },
+    {
+      "directory": "/home/ubuntu/.cache/ms-playwright/chromium-1254",
+      "required_by_registered_clients": [
+        "/home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/poly-dashboard/frontend/node_modules/playwright-core"
+      ]
+    },
+    {
+      "directory": "/home/ubuntu/.cache/ms-playwright/chromium_headless_shell-1223",
+      "required_by_registered_clients": [
+        "/home/ubuntu/Neraium-ARI-Unified/frontend/node_modules/playwright-core",
+        "/home/ubuntu/neraium-physical-measurement-m1-20261012/frontend/node_modules/playwright-core",
+        "/home/ubuntu/neraium-physical-deterioration-m2-20261012/frontend/node_modules/playwright-core",
+        "/home/ubuntu/.local/share/neraium-citadel/worktrees/67cbc710e2914bb7/pov-publication-20261105/frontend/node_modules/playwright-core",
+        "/home/ubuntu/Neraium-2.0/frontend/node_modules/playwright-core",
+        "/home/ubuntu/.local/share/neraium-citadel/worktrees/67cbc710e2914bb7/release-blockers-20261105/frontend/node_modules/playwright-core",
+        "/home/ubuntu/Neraium-1.0/frontend/node_modules/playwright-core",
+        "/home/ubuntu/.local/share/neraium-citadel/worktrees/67cbc710e2914bb7/ari-stabilization-baseline-browser/frontend/node_modules/playwright-core",
+        "/home/ubuntu/neraium-wwtp4-access-verification-20261012/frontend/node_modules/playwright-core",
+        "/home/ubuntu/.local/share/neraium-citadel/worktrees/67cbc710e2914bb7/engineering-evidence-engine-20261105/frontend/node_modules/playwright-core",
+        "/home/ubuntu/neraium-graduated-intelligence-20261012/frontend/node_modules/playwright-core",
+        "/home/ubuntu/.local/share/neraium-citadel/worktrees/67cbc710e2914bb7/integration-evidence-publication-20261105/frontend/node_modules/playwright-core"
+      ]
+    },
+    {
+      "directory": "/home/ubuntu/.cache/ms-playwright/webkit-2336",
+      "required_by_registered_clients": [
+        "/home/ubuntu/PPC-App/node_modules/.pnpm/playwright-core@1.62.1/node_modules/playwright-core",
+        "/home/ubuntu/Neraium-/Neraium-/node_modules/playwright-core"
+      ]
+    },
+    {
+      "directory": "/home/ubuntu/.cache/ms-playwright/chromium_headless_shell-1248",
+      "required_by_registered_clients": [
+        "/home/ubuntu/Neraium-Styx/.venv/lib/python3.12/site-packages/playwright/driver/package"
+      ]
+    },
+    {
+      "directory": "/home/ubuntu/.cache/ms-playwright/ffmpeg-1011",
+      "required_by_registered_clients": [
+        "/home/ubuntu/Neraium-ARI-Unified/frontend/node_modules/playwright-core",
+        "/home/ubuntu/PPC-App/node_modules/.pnpm/playwright-core@1.62.1/node_modules/playwright-core",
+        "/home/ubuntu/neraium-physical-measurement-m1-20261012/frontend/node_modules/playwright-core",
+        "/home/ubuntu/neraium-physical-deterioration-m2-20261012/frontend/node_modules/playwright-core",
+        "/home/ubuntu/Neraium-/Neraium-/node_modules/playwright-core",
+        "/home/ubuntu/.local/share/neraium-citadel/worktrees/67cbc710e2914bb7/pov-publication-20261105/frontend/node_modules/playwright-core",
+        "/home/ubuntu/Neraium-2.0/frontend/node_modules/playwright-core",
+        "/home/ubuntu/.local/share/neraium-citadel/worktrees/67cbc710e2914bb7/release-blockers-20261105/frontend/node_modules/playwright-core",
+        "/home/ubuntu/Neraium-1.0/frontend/node_modules/playwright-core",
+        "/home/ubuntu/.local/share/neraium-citadel/worktrees/67cbc710e2914bb7/ari-stabilization-baseline-browser/frontend/node_modules/playwright-core",
+        "/home/ubuntu/neraium-wwtp4-access-verification-20261012/frontend/node_modules/playwright-core",
+        "/home/ubuntu/.local/share/neraium-citadel/worktrees/67cbc710e2914bb7/engineering-evidence-engine-20261105/frontend/node_modules/playwright-core",
+        "/home/ubuntu/neraium-graduated-intelligence-20261012/frontend/node_modules/playwright-core",
+        "/home/ubuntu/.local/share/neraium-citadel/worktrees/67cbc710e2914bb7/integration-evidence-publication-20261105/frontend/node_modules/playwright-core"
+      ]
+    },
+    {
+      "directory": "/home/ubuntu/.cache/ms-playwright/firefox-1522",
+      "required_by_registered_clients": [
+        "/home/ubuntu/Neraium-ARI-Unified/frontend/node_modules/playwright-core",
+        "/home/ubuntu/neraium-physical-measurement-m1-20261012/frontend/node_modules/playwright-core",
+        "/home/ubuntu/neraium-physical-deterioration-m2-20261012/frontend/node_modules/playwright-core",
+        "/home/ubuntu/.local/share/neraium-citadel/worktrees/67cbc710e2914bb7/pov-publication-20261105/frontend/node_modules/playwright-core",
+        "/home/ubuntu/Neraium-2.0/frontend/node_modules/playwright-core",
+        "/home/ubuntu/.local/share/neraium-citadel/worktrees/67cbc710e2914bb7/release-blockers-20261105/frontend/node_modules/playwright-core",
+        "/home/ubuntu/Neraium-1.0/frontend/node_modules/playwright-core",
+        "/home/ubuntu/.local/share/neraium-citadel/worktrees/67cbc710e2914bb7/ari-stabilization-baseline-browser/frontend/node_modules/playwright-core",
+        "/home/ubuntu/neraium-wwtp4-access-verification-20261012/frontend/node_modules/playwright-core",
+        "/home/ubuntu/.local/share/neraium-citadel/worktrees/67cbc710e2914bb7/engineering-evidence-engine-20261105/frontend/node_modules/playwright-core",
+        "/home/ubuntu/neraium-graduated-intelligence-20261012/frontend/node_modules/playwright-core",
+        "/home/ubuntu/.local/share/neraium-citadel/worktrees/67cbc710e2914bb7/integration-evidence-publication-20261105/frontend/node_modules/playwright-core"
+      ]
+    },
+    {
+      "directory": "/home/ubuntu/.cache/ms-playwright/chromium-1223",
+      "required_by_registered_clients": [
+        "/home/ubuntu/Neraium-ARI-Unified/frontend/node_modules/playwright-core",
+        "/home/ubuntu/neraium-physical-measurement-m1-20261012/frontend/node_modules/playwright-core",
+        "/home/ubuntu/neraium-physical-deterioration-m2-20261012/frontend/node_modules/playwright-core",
+        "/home/ubuntu/.local/share/neraium-citadel/worktrees/67cbc710e2914bb7/pov-publication-20261105/frontend/node_modules/playwright-core",
+        "/home/ubuntu/Neraium-2.0/frontend/node_modules/playwright-core",
+        "/home/ubuntu/.local/share/neraium-citadel/worktrees/67cbc710e2914bb7/release-blockers-20261105/frontend/node_modules/playwright-core",
+        "/home/ubuntu/Neraium-1.0/frontend/node_modules/playwright-core",
+        "/home/ubuntu/.local/share/neraium-citadel/worktrees/67cbc710e2914bb7/ari-stabilization-baseline-browser/frontend/node_modules/playwright-core",
+        "/home/ubuntu/neraium-wwtp4-access-verification-20261012/frontend/node_modules/playwright-core",
+        "/home/ubuntu/.local/share/neraium-citadel/worktrees/67cbc710e2914bb7/engineering-evidence-engine-20261105/frontend/node_modules/playwright-core",
+        "/home/ubuntu/neraium-graduated-intelligence-20261012/frontend/node_modules/playwright-core",
+        "/home/ubuntu/.local/share/neraium-citadel/worktrees/67cbc710e2914bb7/integration-evidence-publication-20261105/frontend/node_modules/playwright-core"
+      ]
+    },
+    {
+      "directory": "/home/ubuntu/.cache/ms-playwright/chromium_headless_shell-1234",
+      "required_by_registered_clients": [
+        "/home/ubuntu/PPC-App/node_modules/.pnpm/playwright-core@1.62.1/node_modules/playwright-core",
+        "/home/ubuntu/Neraium-/Neraium-/node_modules/playwright-core"
+      ]
+    },
+    {
+      "directory": "/home/ubuntu/.cache/ms-playwright/ffmpeg-1013",
+      "required_by_registered_clients": [
+        "/home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/poly-dashboard/frontend/node_modules/playwright-core",
+        "/home/ubuntu/Neraium-Styx/.venv/lib/python3.12/site-packages/playwright/driver/package"
+      ]
+    },
+    {
+      "directory": "/home/ubuntu/.cache/ms-playwright/chromium-1234",
+      "required_by_registered_clients": [
+        "/home/ubuntu/PPC-App/node_modules/.pnpm/playwright-core@1.62.1/node_modules/playwright-core",
+        "/home/ubuntu/Neraium-/Neraium-/node_modules/playwright-core"
+      ]
+    },
+    {
+      "directory": "/home/ubuntu/.cache/ms-playwright/chromium-1248",
+      "required_by_registered_clients": [
+        "/home/ubuntu/Neraium-Styx/.venv/lib/python3.12/site-packages/playwright/driver/package"
+      ]
+    }
+  ]
+}
