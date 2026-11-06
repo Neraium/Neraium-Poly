@@ -63,8 +63,8 @@ def build_readiness(history_summary, *, execution=None, calibration=None, now):
                        for k in ("token_id", "market_id", "event_id"))
         if not identity:
             defects.append("incomplete_token_coverage_identity")
-        enough = (_number(token.get("observations")) and token["observations"] >= 40
-            and _number(token.get("matured_labels")) and token["matured_labels"] >= 20
+        enough = (type(token.get("observations")) is int and token["observations"] >= 40
+            and type(token.get("matured_labels")) is int and token["matured_labels"] >= 20
             and _number(token.get("span_seconds")) and token["span_seconds"] >= 60
             and _number(token.get("max_gap_seconds")) and token["max_gap_seconds"] <= 120)
         if (identity and enough and source_error is None and receipt_error is None and source_age <= 15
@@ -120,6 +120,7 @@ def build_readiness(history_summary, *, execution=None, calibration=None, now):
                 missing.append(reason)
     elif reasons:
         defects.append("malformed_execution_reasons")
+    mark_missing = sorted(set(missing))
     train, heldout = calibration.get("training_events"), calibration.get("heldout_events")
     if type(train) is not int or train < 100:
         missing.append("fewer_than_100_independent_training_events")
@@ -142,6 +143,14 @@ def build_readiness(history_summary, *, execution=None, calibration=None, now):
             "tokens_tracked", "valid_observations", "current_observations", "span_seconds", "max_gap_seconds",
             "matured_labels", "current_matured_labels", "unique_parent_events")},
         "history_rejections": _mapping(history.get("rejections")),
+        "mark_research_readiness": {
+            "status": "implementation_defect" if defects else "insufficient_evidence" if mark_missing
+                else "cost_threshold_not_met" if market_conditions else "research_prerequisites_observed",
+            "remaining_requirements": mark_missing,
+            "eligible_mark_tokens": qualified_tokens,
+            "outcome_probability_calibration_applicable": False,
+            "formal_certification_and_order_authority": False,
+        },
         "eligible_mark_tokens": qualified_tokens,
         "token_coverage_scope": "per-token>=40causal points,>=20retained matured marks, source/receipt<=15s, full execution evidence",
         "mark_labels_are_independent_outcome_events": False,

@@ -192,3 +192,19 @@ def test_cohort_byte_budget_and_json_shape_fail_closed():
         report([r], verify_raw=lambda _r: True)
     with pytest.raises(TypeError, match="canonical_json"):
         report([["not", "a", "record"]], verify_raw=lambda _r: True)
+
+
+def test_matured_mark_readiness_is_distinct_from_terminal_probability_calibration():
+    token = {"token_id": "controlled-token", "market_id": "controlled-market", "event_id": "controlled-parent",
+             "observations": 40, "matured_labels": 20, "span_seconds": 300, "max_gap_seconds": 5,
+             "latest_source_at": START.isoformat(), "latest_available_at": START.isoformat(),
+             "execution_evidence_complete": True}
+    history = {"current_observations": 40, "current_matured_labels": 20, "span_seconds": 300,
+               "max_gap_seconds": 5, "per_token": [token]}
+    result = build_readiness(history, execution={"estimated_net_edge_per_share": .04}, now=START)
+    assert result["status"] == "insufficient_evidence"
+    assert result["mark_research_readiness"]["status"] == "research_prerequisites_observed"
+    assert not result["mark_research_readiness"]["outcome_probability_calibration_applicable"]
+    assert not result["mark_research_readiness"]["formal_certification_and_order_authority"]
+    history["per_token"][0]["observations"] = 40.5
+    assert build_readiness(history, now=START)["eligible_mark_tokens"] == []

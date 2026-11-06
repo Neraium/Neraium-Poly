@@ -27,6 +27,11 @@ each cannot masquerade as a token with forty prior observations. Rendering time
 cannot make an older original source quote fresh. Observed parent groups and
 microstructure mark labels are never counted as independent resolved outcomes.
 
+The separate `mark_research_readiness` component reports mark-model prerequisites
+without imposing or claiming terminal probability calibration. Overall readiness
+still exposes missing independent calibration and formal certification evidence.
+A mature quote-mark model does not become an independent event-outcome forecaster.
+
 The current cost assessment is accepted under `estimated_net_edge_per_share` (and
 explicit compatibility aliases). It remains a conditional USD/share model estimate;
 nonfinite numbers are defects, missing estimates stay null, and a failed cost
