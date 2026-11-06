@@ -62,10 +62,17 @@ The earliest forecast per dependency group, kind and **model version + full mode
 hash + feature version** is used for descriptive scores. Repeated snapshots do
 not multiply independent events. Model-specific scores remain separate. Primary
 `scores` contain only reviewed independent-model groups; `baseline_scores` are
-separate reviewed market-baseline groups. Unknown independence produces null
+paired to the exact independent forecast's immutable market probability and
+cutoff whenever such forecasts exist. Earlier standalone baseline records are
+kept separately as `standalone_baseline_scores`; a different quote or token is
+never silently substituted. Without independent forecasts, `baseline_scores`
+contains standalone reviewed market-baseline groups. Unknown independence produces null
 primary scores. `uncalibrated_resolved_scores` are explicitly descriptive and may
 never be represented as certified model skill. Brier/log loss, reliability and
-ECE are available for eligible observations; confidence intervals stay null
+ECE are available for eligible observations. Category and horizon score groups
+use the same deduplicated primary rows; missing categories stay Unknown. Rolling
+calibration retains at most the latest 100 reviewed primary groups as a
+research-only summary. Confidence intervals stay null
 without sufficient independent support. None of these are trading P/L.
 
 ## Terminal view
@@ -91,7 +98,7 @@ and **CERTIFIED PAPER**, retaining all identities at narrow phone widths and
 showing unavailable/stale metrics explicitly. Physical Termius/iPhone rendering
 has not been observed. Tests use controlled inputs only.
 
-Verification in this workstream: nine controlled ledger tests plus 38 monitor
+Verification in this workstream: ten controlled ledger tests plus 38 monitor
 tests passed. They cover prospective timestamps, future/missing evidence, model
 review, false outcome flags, append-only storage, deduplication, grouping, causal
 scoring, unknown/expired rules, restart, tamper detection, ownership, storage limits

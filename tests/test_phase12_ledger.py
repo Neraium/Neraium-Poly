@@ -305,3 +305,68 @@ def test_model_copy_cannot_bypass_forecast_field_validation(tmp_path):
         ledger.record_forecast(f.model_copy(update={"certification_authority": True}))
     assert ledger.summary()["forecasts"] == 0
     ledger.close()
+
+
+def test_independent_forecast_baseline_uses_same_immutable_quote_cutoff(tmp_path):
+    clock = Clock()
+    ledger = EventForecastLedger(
+        tmp_path,
+        clock=clock,
+        outcome_validator=lambda o: True,
+        independence_validator=lambda f: True,
+        independent_forecast_validator=lambda f, e: True,
+    )
+    baseline, _ = evidence(ledger, clock)
+    ledger.record_forecast(baseline.model_copy(update={"independence_reviewed": True}))
+    clock.now += timedelta(seconds=1)
+    # Second actual controlled quote has a different market-implied probability.
+    b = book(clock(), bid=0.49, ask=0.5)
+    m = market(clock())
+    ids = []
+    for kind, payload in [
+        ("order_book", {"book": b.model_dump(mode="json")}),
+        ("resolution_rules", {"market": m.model_dump(mode="json")}),
+        ("external_context", {"controlled": 1}),
+    ]:
+        e = EventEvidence(
+            id="new-" + kind,
+            timestamp=clock(),
+            available_at=clock(),
+            source="https://external.test.invalid",
+            event_id=baseline.event_id,
+            market_id=baseline.market_id,
+            kind=kind,
+            payload=payload,
+            content_sha256=content_sha256(payload),
+            independent_of_market_price=kind == "external_context",
+        )
+        ledger.record_evidence(e)
+        ids.append(e.id)
+    f = baseline.model_copy(
+        update={
+            "id": "independent-later",
+            "timestamp": clock(),
+            "available_at": clock(),
+            "evidence_cutoff": clock(),
+            "kind": "independent_model",
+            "probability": 0.7,
+            "market_probability": 0.495,
+            "lower_probability": 0.6,
+            "upper_probability": 0.8,
+            "independence_reviewed": True,
+            "model_version": "controlled-model-v2",
+            "evidence_ids": tuple(ids),
+            "horizon_seconds": 3600,
+        }
+    )
+    ledger.record_forecast(f)
+    clock.now = NOW + timedelta(hours=2)
+    ledger.record_outcome(outcome(f, clock))
+    s = ledger.summary()
+    assert s["baseline_scores"]["brier"] == pytest.approx((0.495 - 1) ** 2)
+    assert s["standalone_baseline_scores"]["brier"] == pytest.approx((0.395 - 1) ** 2)
+    assert s["scores"]["market_brier"] == s["baseline_scores"]["brier"]
+    assert s["category_progress"]["Unknown"] == {"forecasts": 2, "pending": 0, "resolved": 2}
+    assert s["category_scores"]["Unknown"]["count"] == s["horizon_scores"]["under_24h"]["count"] == 1
+    assert s["rolling_calibration"]["count"] == 1
+    ledger.close()

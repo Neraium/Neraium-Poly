@@ -303,7 +303,7 @@ class EventForecastLedger:
             return tuple(f for f in self.forecasts() if (f.market_id, f.token_id) not in resolved)
 
     @staticmethod
-    def _metrics(rows):
+    def _metrics(rows, *, market_only=False):
         if not rows:
             return {
                 "count": 0,
@@ -318,26 +318,29 @@ class EventForecastLedger:
             }
         n = len(rows)
 
+        def probability(forecast):
+            return forecast.market_probability if market_only else forecast.probability
+
         def loss(prob, y):
             p = min(1 - 1e-12, max(1e-12, prob))
             return -(y * math.log(p) + (1 - y) * math.log(1 - p))
 
         bins = []
         for i in range(10):
-            group = [(f, o) for f, o in rows if min(9, int(f.probability * 10)) == i]
+            group = [(f, o) for f, o in rows if min(9, int(probability(f) * 10)) == i]
             if group:
                 bins.append(
                     {
                         "bin": i,
                         "count": len(group),
-                        "mean_probability": sum(f.probability for f, _ in group) / len(group),
+                        "mean_probability": sum(probability(f) for f, _ in group) / len(group),
                         "observed_rate": sum(o.payout for _, o in group) / len(group),
                     }
                 )
         return {
             "count": n,
-            "brier": sum((f.probability - o.payout) ** 2 for f, o in rows) / n,
-            "log_loss": sum(loss(f.probability, o.payout) for f, o in rows) / n,
+            "brier": sum((probability(f) - o.payout) ** 2 for f, o in rows) / n,
+            "log_loss": sum(loss(probability(f), o.payout) for f, o in rows) / n,
             "market_brier": sum((f.market_probability - o.payout) ** 2 for f, o in rows) / n,
             "market_log_loss": sum(loss(f.market_probability, o.payout) for f, o in rows) / n,
             "ece": sum(b["count"] * abs(b["mean_probability"] - b["observed_rate"]) for b in bins) / n,
@@ -393,6 +396,29 @@ class EventForecastLedger:
             for f, o in eligible:
                 model_key = canonical([f.model_version, f.model_sha256, f.feature_version])
                 by_model.setdefault(model_key, []).append((f, o))
+            category_progress = {}
+            pending_ids = {f.id for f in pending}
+            resolved_ids = {f.id for f, _ in resolved}
+            for f in forecasts:
+                category = getattr(f, "category", "Unknown")
+                row = category_progress.setdefault(category, {"forecasts": 0, "pending": 0, "resolved": 0})
+                row["forecasts"] += 1
+                row["pending"] += int(f.id in pending_ids)
+                row["resolved"] += int(f.id in resolved_ids)
+            category_rows, horizon_rows = {}, {}
+            for f, o in primary.values():
+                category_rows.setdefault(getattr(f, "category", "Unknown"), []).append((f, o))
+                horizon = (
+                    "unknown"
+                    if f.horizon_seconds is None
+                    else "under_24h"
+                    if f.horizon_seconds < 86400
+                    else "1_to_7d"
+                    if f.horizon_seconds <= 604800
+                    else "over_7d"
+                )
+                horizon_rows.setdefault(horizon, []).append((f, o))
+            primary_rows = sorted(primary.values(), key=lambda item: (item[0].timestamp, item[0].id))
             return {
                 "schema_version": "1.0",
                 "status": "prospective_research",
@@ -413,7 +439,17 @@ class EventForecastLedger:
                     )
                 ],
                 "scores": self._metrics(list(primary.values())),
-                "baseline_scores": self._metrics(list(baseline.values())),
+                "baseline_scores": self._metrics(primary_rows, market_only=True)
+                if primary_rows
+                else self._metrics(list(baseline.values())),
+                "baseline_pairing": "same independent forecast token and timestamp"
+                if primary_rows
+                else "standalone reviewed market-baseline forecasts",
+                "standalone_baseline_scores": self._metrics(list(baseline.values())),
+                "category_progress": category_progress,
+                "category_scores": {k: self._metrics(v) for k, v in category_rows.items()},
+                "horizon_scores": {k: self._metrics(v) for k, v in horizon_rows.items()},
+                "rolling_calibration": self._metrics(primary_rows[-100:]),
                 "model_scores": {k: self._metrics(v) for k, v in by_model.items()},
                 "uncalibrated_resolved_scores": self._metrics(list(grouped.values())),
                 "calibration_status": "insufficient independent evidence"
