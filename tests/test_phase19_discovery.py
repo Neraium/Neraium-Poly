@@ -147,3 +147,13 @@ async def test_response_size_and_input_limits_fail_closed(monkeypatch):
     for kw in ({"max_requests": 7}, {"max_candidates": 41}, {"max_requests": True}):
         with pytest.raises(ValueError):await run(valid_handler, **kw)
     with pytest.raises(ValueError):await discovery.discover_forecast_markets(now=NOW.replace(tzinfo=None))
+
+
+@pytest.mark.parametrize('timestamp',[None,False,'not-a-time','NaN',1234567890])
+async def test_missing_or_invalid_native_timestamp_cannot_become_receipt_time_freshness(timestamp):
+    def handler(request):
+        if request.method=='GET':return valid_handler(request)
+        values=[{**book(x['token_id']),'timestamp':timestamp} for x in json.loads(request.content)]
+        return httpx.Response(200,json=values)
+    r=await run(handler)
+    assert not r['books'] and all(not h['preflight_eligible'] for h in r['health_by_market'].values())

@@ -164,6 +164,16 @@ async def discover_forecast_markets(*, now, client=None, max_requests=3, max_can
                             duplicates.add(token);books.pop(token, None)
                             raise ValueError("duplicate_book_token")
                         seen.add(token);m = token_map[token]
+                        # The generic normalizer permits receipt-time fallback; a
+                        # qualification preflight must have the native epoch-ms time.
+                        native_time = raw.get("timestamp")
+                        if isinstance(native_time, bool) or not isinstance(native_time, (str, int, float)):
+                            raise ValueError("native_book_source_timestamp_required")
+                        source_ms = float(native_time)
+                        if not math.isfinite(source_ms) or not source_ms.is_integer() or source_ms < 10**12:
+                            raise ValueError("native_book_epoch_milliseconds_required")
+                        if source_ms > received.timestamp()*1000:
+                            raise ValueError("future_native_book_source_timestamp")
                         books[token] = normalize_book(raw, m.market_id, token, received)
                     except (KeyError, TypeError, ValueError, OverflowError) as error:
                         reasons[str(error)[:100]] += 1
