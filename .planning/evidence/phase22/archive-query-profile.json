@@ -1,0 +1,70 @@
+{
+  "at": "2026-11-07T20:31:43.769115+00:00",
+  "read_only": true,
+  "services": {
+    "paper-live": {
+      "records": 4082289,
+      "count_seconds": 0.039312453009188175,
+      "segment": "segment-00000603.sqlite",
+      "sampled_primary_key_lookups": 1000,
+      "lookup_total_seconds": 0.007480921456590295,
+      "lookup_max_seconds": 0.0008116529788821936,
+      "lookup_median_seconds": 6.492948159575462e-06,
+      "catalog_bytes": 2064437248,
+      "plan": [
+        [
+          3,
+          0,
+          0,
+          "SEARCH records USING INDEX sqlite_autoindex_records_1 (id=?)"
+        ]
+      ],
+      "http": [
+        {
+          "endpoint": "health",
+          "seconds": 0.018266412196680903,
+          "status": "ok",
+          "payload_bytes": 313
+        },
+        {
+          "endpoint": "operations-state",
+          "seconds": 0.2557150460779667,
+          "status": "ok",
+          "payload_bytes": 4086
+        }
+      ]
+    },
+    "experimental-paper": {
+      "records": 959885,
+      "count_seconds": 0.29527461202815175,
+      "segment": "segment-00000830.sqlite",
+      "sampled_primary_key_lookups": 855,
+      "lookup_total_seconds": 0.0074836574494838715,
+      "lookup_max_seconds": 0.000810008030384779,
+      "lookup_median_seconds": 6.341142579913139e-06,
+      "catalog_bytes": 474431488,
+      "plan": [
+        [
+          3,
+          0,
+          0,
+          "SEARCH records USING INDEX sqlite_autoindex_records_1 (id=?)"
+        ]
+      ],
+      "http": [
+        {
+          "endpoint": "health",
+          "seconds": 1.1602522819302976,
+          "status": "ok",
+          "payload_bytes": 308
+        },
+        {
+          "endpoint": "operations-state",
+          "seconds": 0.6053963240701705,
+          "status": "ok",
+          "payload_bytes": 44624
+        }
+      ]
+    }
+  }
+}

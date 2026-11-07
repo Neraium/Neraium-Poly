@@ -1,0 +1,77 @@
+{
+  "samples": [
+    {
+      "at": "2026-11-07T20:54:49.854098+00:00",
+      "endpoint": "health",
+      "seconds": 0.04455808596685529,
+      "bytes": 312,
+      "status": "ok",
+      "available_at": null
+    },
+    {
+      "at": "2026-11-07T20:54:49.898656+00:00",
+      "endpoint": "market-frame",
+      "seconds": 0.2339127801824361,
+      "bytes": 1809168,
+      "status": null,
+      "available_at": "2026-11-07T20:54:49.912305Z"
+    },
+    {
+      "at": "2026-11-07T20:54:50.132576+00:00",
+      "endpoint": "operations-state",
+      "seconds": 0.19229000597260892,
+      "bytes": 4657,
+      "status": "ok",
+      "available_at": "2026-11-07T20:54:50.307478+00:00"
+    },
+    {
+      "at": "2026-11-07T20:54:50.324871+00:00",
+      "endpoint": "health",
+      "seconds": 0.02053845301270485,
+      "bytes": 312,
+      "status": "ok",
+      "available_at": null
+    },
+    {
+      "at": "2026-11-07T20:54:50.345412+00:00",
+      "endpoint": "market-frame",
+      "seconds": 0.16838555503636599,
+      "bytes": 1809908,
+      "status": null,
+      "available_at": "2026-11-07T20:54:50.358735Z"
+    },
+    {
+      "at": "2026-11-07T20:54:50.513803+00:00",
+      "endpoint": "operations-state",
+      "seconds": 0.18754435190930963,
+      "bytes": 4659,
+      "status": "ok",
+      "available_at": "2026-11-07T20:54:50.624988+00:00"
+    },
+    {
+      "at": "2026-11-07T20:54:50.701353+00:00",
+      "endpoint": "health",
+      "seconds": 0.017598452977836132,
+      "bytes": 312,
+      "status": "ok",
+      "available_at": null
+    },
+    {
+      "at": "2026-11-07T20:54:50.718955+00:00",
+      "endpoint": "market-frame",
+      "seconds": 0.28346629720181227,
+      "bytes": 1805945,
+      "status": null,
+      "available_at": "2026-11-07T20:54:50.848201Z"
+    },
+    {
+      "at": "2026-11-07T20:54:51.002427+00:00",
+      "endpoint": "operations-state",
+      "seconds": 0.14493477600626647,
+      "bytes": 4659,
+      "status": "ok",
+      "available_at": "2026-11-07T20:54:51.034502+00:00"
+    }
+  ],
+  "scope": "nine post-recovery read-only requests; not load-tested tail-latency guarantee"
+}

@@ -1,0 +1,13 @@
+# Phase 22
+Status: complete
+Checkout /home/ubuntu/Neraium-Poly; main; base4256b96e69dd9837cbb90450dd3066a4b44d72b6. Trackedbaselineclean, GitHubmain synchronized; preserve unrelated EBS/recovery untracked evidence.
+Scope: demonstrated operations-status latency; authoritative pending-outcome audit; existing discovery/calibration/SII/capacity only. No newforecaster or risk/capital/stop/retention/AWS changes.
+Resources:32CPUs,235GiBavailable,460GiBfree,load~1. Peak3agents/2isolatednativeworktrees. Existing1/.5CPUservicequotas preserved; bounded numerical/testworkers.
+Claims: rootdata/segmented.py strict-vs-operational snapshot separation and runtimecalls; opsagent monitor/budgets+test; evidenceagent readonlynativeforecast/capacityaudit.
+Exit: measured before/after live API latency; focusedtimestamp/lock/corruption/floor/recovery tests; onefinalregression+CI; unchanged accounts/originals/budgets and boundedliveobservation; commit/push. Snapshot views mustnot grantadmission or disguiseoldmeasurementsascurrent.
+Baseline findings:24crypto+3NFL forecasts open/nohits/verifiedoutcomes asof20:31UTC;0/100train/heldout;noSIIchallenger. Book/healthfast,operations canblock>12s behindstoreRLock/strictstatuswalk/coldproof. Per-querySQLfast inROprofile; no integrity-check removal permitted.
+Checkpoint:baseHEAD+cleantrackedverified; advisoryworkspaceonly no stash/reset/hooktrust changes. Currentphase profile/design; nextimplementnonblocking honest archive-view while strictstatus/can_writeremainunchanged.
+
+ImplementationreviewALLOW: operations_status usesboundedseparatelylockedexactmeasurementcache withage/expired/unknown states, freshfreeprobe/livefaultoverlay; noSQL/treewalk/archiveRLock ondisplaypath. Strictstatus/can_write/verificationsunchanged. Runtime displayerrorscannotlatchfinancialarchive_fault; ops-onlyexecutioncountersuseexplicitNone/busy withoutwaiting. Initialstrictsamplepublishedafterfullrecover. Newcore7tests+presentation15;focused29passed. Finalfull/backend+browser/auditsrunningonce; CI/deployafterpassing. Genuineaudit24crypto+3NFL/0hits/0outcomes;unsupportedcalibration/SII unchanged.
+
+Final checkpoint: source 1c8332d987d4b833ec7dea8d48434bd6b14d4e8b pushed; CI run42412970444 passed. Both services restarted and 19/19 six-minute real observations healthy. Final report/evidence in .planning/handoffs/phase22.md. No risk, retention, stop or capital authorization changed. Remaining blockers: unresolved outcomes, unreviewed parent groups, no calibration or SII challenger; finite retain-all storage. Next action Phase23 as handoff. Final evidence commit follows this checkpoint.

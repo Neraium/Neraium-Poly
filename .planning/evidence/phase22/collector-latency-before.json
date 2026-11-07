@@ -1,0 +1,77 @@
+{
+  "samples": [
+    {
+      "at": "2026-11-07T20:30:54.124205+00:00",
+      "endpoint": "health",
+      "seconds": 1.0632696649990976,
+      "bytes": 313,
+      "status": "ok",
+      "available_at": null
+    },
+    {
+      "at": "2026-11-07T20:30:55.187478+00:00",
+      "endpoint": "market-frame",
+      "seconds": 0.29663585498929024,
+      "bytes": 1749594,
+      "status": null,
+      "available_at": "2026-11-07T20:30:55.199545Z"
+    },
+    {
+      "at": "2026-11-07T20:30:55.484120+00:00",
+      "endpoint": "operations-state",
+      "seconds": 3.497400536900386,
+      "bytes": 4084,
+      "status": "ok",
+      "available_at": "2026-11-07T20:30:55.530585+00:00"
+    },
+    {
+      "at": "2026-11-07T20:30:58.981528+00:00",
+      "endpoint": "health",
+      "seconds": 0.0019494991283863783,
+      "bytes": 313,
+      "status": "ok",
+      "available_at": null
+    },
+    {
+      "at": "2026-11-07T20:30:58.983479+00:00",
+      "endpoint": "market-frame",
+      "seconds": 0.25810552295297384,
+      "bytes": 1780350,
+      "status": null,
+      "available_at": "2026-11-07T20:30:58.984381Z"
+    },
+    {
+      "at": "2026-11-07T20:30:59.241592+00:00",
+      "endpoint": "operations-state",
+      "seconds": 0.172726719873026,
+      "bytes": 4084,
+      "status": "ok",
+      "available_at": "2026-11-07T20:30:59.284975+00:00"
+    },
+    {
+      "at": "2026-11-07T20:30:59.414328+00:00",
+      "endpoint": "health",
+      "seconds": 0.002177031012251973,
+      "bytes": 313,
+      "status": "ok",
+      "available_at": null
+    },
+    {
+      "at": "2026-11-07T20:30:59.416507+00:00",
+      "endpoint": "market-frame",
+      "seconds": 0.16044652881100774,
+      "bytes": 1783837,
+      "status": null,
+      "available_at": "2026-11-07T20:30:59.417414Z"
+    },
+    {
+      "at": "2026-11-07T20:30:59.576959+00:00",
+      "endpoint": "operations-state",
+      "seconds": 0.13545860582962632,
+      "bytes": 4083,
+      "status": "ok",
+      "available_at": "2026-11-07T20:30:59.604723+00:00"
+    }
+  ],
+  "scope": "nine post-recovery read-only requests; not load-tested tail-latency guarantee"
+}
