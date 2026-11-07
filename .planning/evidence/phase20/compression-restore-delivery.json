@@ -1,0 +1,23 @@
+{
+  "observed_at": "2026-11-07T18:56:13.595311+00:00",
+  "archives": {
+    "paper-live": {
+      "sealed_segment": "segment-00000575.sqlite",
+      "raw_sha256": "4b42e62d6f8112346896301c196eba8109e8ae3ef4046cfd0c131e4d0ef0f6bf",
+      "gzip_sha256": "d47e1f15ccd4eedf391951629c333500be38b97e024a1926d22553a539e2ff4b",
+      "restored_sha256": "4b42e62d6f8112346896301c196eba8109e8ae3ef4046cfd0c131e4d0ef0f6bf",
+      "restored_bytes": 12861440,
+      "original_preserved": true,
+      "after_index_migration": true
+    },
+    "experimental-paper": {
+      "sealed_segment": "segment-00000789.sqlite",
+      "raw_sha256": "0c6a4c2410d1dbeb4f3b3be399a5f19e7d36873f6d6238827bec3ee178736e51",
+      "gzip_sha256": "f06e40843b0d2d31a19de925972ce2c2301330b4f15c8f9f059d57f3ca44668f",
+      "restored_sha256": "0c6a4c2410d1dbeb4f3b3be399a5f19e7d36873f6d6238827bec3ee178736e51",
+      "restored_bytes": 4886528,
+      "original_preserved": true,
+      "after_index_migration": true
+    }
+  }
+}

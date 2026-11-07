@@ -1,0 +1,28 @@
+{
+  "paper-live": {
+    "segment": "segment-00000570.sqlite",
+    "plan": [
+      [
+        3,
+        0,
+        0,
+        "SCAN records"
+      ]
+    ],
+    "count": 5217,
+    "query_seconds": 0.41756507800891995
+  },
+  "experimental-paper": {
+    "segment": "segment-00000783.sqlite",
+    "plan": [
+      [
+        3,
+        0,
+        0,
+        "SCAN records"
+      ]
+    ],
+    "count": 996,
+    "query_seconds": 0.08963422104716301
+  }
+}

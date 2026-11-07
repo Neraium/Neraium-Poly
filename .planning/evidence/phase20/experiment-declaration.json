@@ -1,0 +1,54 @@
+[
+  {
+    "schema_version": "1.0",
+    "id": "3e2ae15b90f09a2c839aff5339daf2874e7c6505187a1e4a3a29716581ca473f",
+    "timestamp": "2026-11-07T18:31:45.706322Z",
+    "available_at": "2026-11-07T18:31:45.706322Z",
+    "source": "neraium-poly/controlled-sii-research/v20",
+    "parent_id": null,
+    "operation": "experiment_declaration",
+    "experiment": {
+      "schema_version": "phase20-paired-sii-v1",
+      "experiment_id": "phase20-sii-controlled-v1",
+      "declared_at": "2026-11-07T18:31:45.604201+00:00",
+      "heldout_start": "2026-11-07T18:31:45.604201+00:00",
+      "baseline_model_sha256": "e30ea55b0d9220e45339b298bd62f6292ab1a69747d70ec8e05af31631475cc1",
+      "challenger_model_sha256": null,
+      "challenger_feature_version": null,
+      "training_groups": [],
+      "execution_assumptions": {
+        "source": "same original native book for both arms",
+        "fees": "native evidence required; missing costs deny executable edge",
+        "slippage": "depth sweep plus existing conservative controls",
+        "account_authority": false,
+        "sii_critical_trading_path": false
+      },
+      "event_selection": "earliest_eligible_pair_per_reviewed_dependency_group",
+      "uncertainty_method": "paired_group_hoeffding_95_simultaneous_two_comparisons",
+      "outcome_target": "verified_binary_terminal_event",
+      "research_only": true,
+      "trading_authority": false,
+      "certification_authority": false,
+      "experimental_admission_authority": false,
+      "manifest_sha256": "f2c9a2b88272d3a6e1e0611e86c60b44ea7ea81287eb0cef0267ef46457bac42"
+    },
+    "result": {
+      "status": "awaiting_qualified_sii_challenger"
+    },
+    "checkpoint": {
+      "code_sha256": "71ada3199ec4cb3c0394bc9363fda9fab6a2bc237d7d480dabd161050ce32257",
+      "experiment_sha256": "0bd88d11c46e9492f4a845d706c70d1e06d9f7729f993bbfb3ec0af3064ce48f",
+      "declared_at": "2026-11-07T18:31:45.604201+00:00",
+      "last_at": "2026-11-07T18:31:45.706322+00:00",
+      "last_source_id": null,
+      "last_source_at": null,
+      "observations": 0,
+      "paired": 0,
+      "withheld": 0,
+      "rejections": {}
+    },
+    "checkpoint_sha256": "9e6d48cc5036aa8513bcd45dbb820db4da4318299691eb5a9d5ebccd3a858c4a",
+    "trading_authority": false,
+    "certification_authority": false
+  }
+]

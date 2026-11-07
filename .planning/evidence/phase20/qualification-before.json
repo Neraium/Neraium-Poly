@@ -1,0 +1,96 @@
+{
+  "schema_version": "phase20-forecast-evaluation-v1",
+  "evaluated_at": "2026-11-07T18:17:24.755770+00:00",
+  "input_sha256": "5bbe7aef51de90aa6337b3898ec3be3596ae92f280c758e00c92454be3499e0e",
+  "counts": {
+    "studies": 164,
+    "withheld_scans": 139,
+    "policy_transitions": 1,
+    "original_forecasts": 24,
+    "source_replayed_forecasts": 24,
+    "parent_events": 2,
+    "reviewed_parent_events": 0,
+    "verified_outcome_forecasts": 0,
+    "pending_forecasts": 24,
+    "recorded_outcome_matches": 0
+  },
+  "rejections": {
+    "reviewed_parent_dependency_group_required": 24,
+    "independently_verified_outcome_pending": 24
+  },
+  "scan_rejections": {
+    "causal_active_future_binary_event_required": 23382,
+    "current_event_executable_book_unavailable": 1104,
+    "explicit_candle_label_vs_close_time_review_required": 1026,
+    "unsupported_event_rule_template_or_domain": 54484,
+    "existing_pending_event_contract_forecast": 1407,
+    "event_quote_stale_after_external_retrieval": 2
+  },
+  "blockers": [
+    "no_independently_verified_terminal_outcomes_in_snapshot",
+    "fewer_than_100_independent_training_events",
+    "fewer_than_100_independent_heldout_events"
+  ],
+  "scan_rejection_scope": "supplied withheld scans only; multiple reasons per token; not independent opportunities",
+  "qualified_training_events": 0,
+  "qualified_heldout_events": 0,
+  "qualification_count_scope": "most-complete single homogeneous cohort; cohorts never pooled",
+  "cohort_sufficient": false,
+  "required_training_events": 100,
+  "required_heldout_events": 100,
+  "validation": {
+    "schema_version": "phase18-event-disjoint-v1",
+    "evaluated_at": "2026-11-07T18:17:24.755770+00:00",
+    "training_end": "2026-11-06T00:00:00+00:00",
+    "heldout_start": "2026-11-07T00:00:00+00:00",
+    "input_rows": 0,
+    "raw_replayed_rows": 0,
+    "cohorts": [],
+    "ambiguous_parent_ids": [],
+    "cross_split_groups": [],
+    "validation_only_rows": 0,
+    "training_labels_late": 0,
+    "rejections": {},
+    "required_training_events": 100,
+    "required_heldout_events": 100,
+    "metrics": null,
+    "score_scope": "per homogeneous verified model cohort only",
+    "certification_authority": false,
+    "trading_authority": false,
+    "limitations": [
+      "Independent features, independent source lineages and independent event groups are different requirements",
+      "No monetary mark or terminal quote can substitute for a verified settlement outcome",
+      "Multiple models sharing one parent do not create additional independent events"
+    ]
+  },
+  "calibration_rows": [],
+  "execution_economics": {
+    "estimated_net_edge": null,
+    "unprofitable_opportunities": null,
+    "reason": "forecast calibration alone cannot verify costs, executable edge or admission"
+  },
+  "snapshot_scope": "only supplied original studies; an outcome without its origin cannot qualify",
+  "research_only": true,
+  "trading_authority": false,
+  "certification_authority": false,
+  "experimental_admission_authority": false,
+  "archive_scope": {
+    "total_studies": 164,
+    "included_studies": 164,
+    "bounded_tail": false,
+    "native_outcome_records_replayed": 0
+  },
+  "outcome_replays": {},
+  "matured_forecasts": 0,
+  "pending_resolution_rule": "completed reference period AND exact native finalized settlement; no price labels",
+  "sii_comparison": {
+    "status": "unmeasured",
+    "brier_improvement": null,
+    "log_loss_improvement": null,
+    "after_cost_edge": null,
+    "sii_in_trading_path": false,
+    "reason": "frozen trained SII challenger, causal relationship evidence and verified event-disjoint outcomes required",
+    "latest_prospective_state": null,
+    "scope": "current research policy has no challenger; no retrospective SII probabilities synthesized"
+  }
+}

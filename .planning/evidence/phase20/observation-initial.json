@@ -1,0 +1,42 @@
+{
+  "started_at": "2026-11-07T18:31:55.454904+00:00",
+  "ended_at": "2026-11-07T18:37:55.455024+00:00",
+  "seconds": 372.01561289513484,
+  "samples": 19,
+  "healthy_samples": 14,
+  "safe_samples": 15,
+  "samples_sha256": "bf245b21a7bf12c89eaac4ae9a7bf4ef82d475a9247bf8f6637bd85e3fd923a1",
+  "unhealthy_samples": [
+    {
+      "at": "2026-11-07T18:34:55.455078+00:00",
+      "collector_error": "TimeoutError:timed out",
+      "experimental_error": null,
+      "experimental_ingestion_age": 1.456236
+    },
+    {
+      "at": "2026-11-07T18:35:35.455124+00:00",
+      "collector_error": null,
+      "experimental_error": "cycle_failed:ReadTimeout",
+      "experimental_ingestion_age": 17.753817
+    },
+    {
+      "at": "2026-11-07T18:37:15.455037+00:00",
+      "collector_error": "TimeoutError:timed out",
+      "experimental_error": null,
+      "experimental_ingestion_age": 4.597004
+    },
+    {
+      "at": "2026-11-07T18:37:35.454994+00:00",
+      "collector_error": "TimeoutError:timed out",
+      "experimental_error": null,
+      "experimental_ingestion_age": 2.647561
+    },
+    {
+      "at": "2026-11-07T18:37:55.455024+00:00",
+      "collector_error": "TimeoutError:timed out",
+      "experimental_error": null,
+      "experimental_ingestion_age": 0.505366
+    }
+  ],
+  "scope": "Before derived segment-index fix; retained without replacement"
+}

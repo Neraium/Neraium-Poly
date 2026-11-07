@@ -1,0 +1,22 @@
+{
+  "forecasts": 24,
+  "nominal_p_above_ask": 12,
+  "research_convergence_missing_proofs": {
+    "clear_verified_stop_state_required": 24,
+    "current_correlation_event_capital_headroom_required": 24,
+    "exact_resolution_rule_proof_required": 24,
+    "existing_explicit_strategy_and_execution_admission_required": 24,
+    "explicit_existing_risk_approval_required": 24,
+    "explicit_paper_only_context_required": 24,
+    "independent_dependency_review_required": 24,
+    "independently_replayed_calibration_and_model_required": 24,
+    "qualified_bounded_forecast_uncertainty_required": 24,
+    "support_event_relevance_unverified": 24,
+    "two_genuinely_independent_support_groups_required": 24,
+    "unchanged_bankroll_and20percent_exposure_policy_required": 24,
+    "verified_current_fee_required": 24
+  },
+  "scope": "13 independent missing-proof categories per research proposal,24 each; not 312trades or actual risk-engine rejections. assess_convergence deliberately receives no account/order authority. Stop-state proof missing does not mean the real account stop is latched.",
+  "risk_rejections_from_these_forecasts": 0,
+  "orders_admitted_from_these_forecasts": 0
+}

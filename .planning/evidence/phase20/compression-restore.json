@@ -1,0 +1,23 @@
+{
+  "at": "2026-11-07T18:37:27.128290+00:00",
+  "archives": {
+    "paper-live": {
+      "sealed_segment": "segment-00000569.sqlite",
+      "raw_sha256": "e6e41da6b26a96a3613e372571a07e43b542ea1e81122c012e14afb77b3d7aeb",
+      "gzip_sha256": "7d9260b314cc9e5184bd9cbaa55e0f55c9b12fe86f8d824b48e690d352673098",
+      "restored_sha256": "e6e41da6b26a96a3613e372571a07e43b542ea1e81122c012e14afb77b3d7aeb",
+      "restored_bytes": 13107200,
+      "lossless_restore_verified": true,
+      "original_preserved": true
+    },
+    "experimental-paper": {
+      "sealed_segment": "segment-00000783.sqlite",
+      "raw_sha256": "15f095a02072d390b81d35f281c5442619c6c0003f3a5c206150a9280707306b",
+      "gzip_sha256": "c9eb51ce082d02429ca906bfa0fba099d841c037c3969af7337053e491ce8c3b",
+      "restored_sha256": "15f095a02072d390b81d35f281c5442619c6c0003f3a5c206150a9280707306b",
+      "restored_bytes": 3715072,
+      "lossless_restore_verified": true,
+      "original_preserved": true
+    }
+  }
+}

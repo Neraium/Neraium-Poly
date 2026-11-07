@@ -1,0 +1,22 @@
+{
+  "observed_at": "2026-11-07T18:48:56.349924+00:00",
+  "original_immutable_files_preserved": 2682,
+  "journal_prefixes": {
+    "event-intelligence/forecasts.sqlite": {
+      "records": 2601,
+      "head_sha256": "2dc84df6a8b888cd2d4312704b364ea7a65cc33ec7ab9f80c21177c69199686c",
+      "preexisting_prefix_preserved": true
+    },
+    "event-intelligence/sports/prospective.sqlite": {
+      "records": 3,
+      "head_sha256": "0d416ac4030d28f10dbee961cd47efef776f4977b7aa881002e4d7294adb02fe",
+      "preexisting_prefix_preserved": true
+    },
+    "event-intelligence/domains/forecasts.sqlite": {
+      "records": 96,
+      "head_sha256": "9c0302ec7e7b81a23ddb75c18bfc400989bd2f5cb9e5d185e0958784a844a8b1",
+      "preexisting_prefix_preserved": true
+    }
+  },
+  "scope": "Post covering-index migration; every baseline immutable original and original forecast chain reverified"
+}

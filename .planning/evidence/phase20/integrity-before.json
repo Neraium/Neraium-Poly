@@ -1,0 +1,22 @@
+{
+  "observed_at": "2026-11-07T18:17:36.978553+00:00",
+  "immutable_sources_verified": 2682,
+  "journals": {
+    "event-intelligence/forecasts.sqlite": {
+      "records": 2559,
+      "head_sha256": "95df0cbde86318046db8516f00174b62c589284097e0cea57704979c507bb005",
+      "preexisting_prefix_preserved": true
+    },
+    "event-intelligence/sports/prospective.sqlite": {
+      "records": 3,
+      "head_sha256": "0d416ac4030d28f10dbee961cd47efef776f4977b7aa881002e4d7294adb02fe",
+      "preexisting_prefix_preserved": true
+    },
+    "event-intelligence/domains/forecasts.sqlite": {
+      "records": 95,
+      "head_sha256": "9f083884e82341b348f5d5eef4b40748502e86ac7e241a5c096993c5c326f22e",
+      "preexisting_prefix_preserved": true
+    }
+  },
+  "full_manifest_location": "data/phase20/integrity-before.json (preserved locally)"
+}

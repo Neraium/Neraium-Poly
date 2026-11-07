@@ -1,0 +1,109 @@
+{
+  "frame_id": "54c8c6d386226734f1197e677d7c56567d245eb7d7c163b82c59dff0a2627f51",
+  "available_at": "2026-11-07T18:53:09.068787Z",
+  "eligible_supported_native_books": 8,
+  "representatives": [
+    {
+      "id": "9d3feaec7f3febb06ab39335784aaa34133e3be3ec8a060ee3ce9a46a23af501",
+      "market_id": "6771238",
+      "token_id": "114173909108099935608892554722272394527057021818799979621293596130898255313295",
+      "timestamp": "2026-11-07T18:53:05.391000Z",
+      "available_at": "2026-11-07T18:53:07.631068Z",
+      "source": "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+      "bid": {
+        "price": 0.987,
+        "size": 5.16
+      },
+      "ask": {
+        "price": 0.999,
+        "size": 0.99
+      },
+      "source_age_seconds": 3.677787
+    },
+    {
+      "id": "448ee6489a205053886690bbda289562c461be620f0958976388c01181d01a18",
+      "market_id": "6771226",
+      "token_id": "60865654149321785342275094780999680765450484392947639731290192514169199696262",
+      "timestamp": "2026-11-07T18:53:05.389000Z",
+      "available_at": "2026-11-07T18:53:07.630639Z",
+      "source": "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+      "bid": {
+        "price": 0.86,
+        "size": 5.04
+      },
+      "ask": {
+        "price": 0.87,
+        "size": 421.0
+      },
+      "source_age_seconds": 3.679787
+    },
+    {
+      "id": "e92a99b7124151791adfd1b261ee2155df8aec371a49ee08ae6e81a041388ce4",
+      "market_id": "6771226",
+      "token_id": "48282547470122183214352419627011849277938843939298476736967657326729356084092",
+      "timestamp": "2026-11-07T18:53:05.389000Z",
+      "available_at": "2026-11-07T18:53:07.630639Z",
+      "source": "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+      "bid": {
+        "price": 0.13,
+        "size": 421.0
+      },
+      "ask": {
+        "price": 0.14,
+        "size": 5.04
+      },
+      "source_age_seconds": 3.679787
+    },
+    {
+      "id": "daebdbfe2a04828118f2e313f79f47b45cc6fc8e1e84534b7defca9f3aa53056",
+      "market_id": "6771238",
+      "token_id": "59903922586948989286916938853197522491853710929718422679367577611965912378038",
+      "timestamp": "2026-11-07T18:53:05.391000Z",
+      "available_at": "2026-11-07T18:53:07.631068Z",
+      "source": "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+      "bid": {
+        "price": 0.001,
+        "size": 0.99
+      },
+      "ask": {
+        "price": 0.013,
+        "size": 5.16
+      },
+      "source_age_seconds": 3.677787
+    },
+    {
+      "id": "6ab62da572eb47b4b028399c8f2f591e9b2520d39fa3dcd881ca8d4310a1e18e",
+      "market_id": "6771234",
+      "token_id": "97487416325281050046028117678910146347964648523156375766152667562647294070786",
+      "timestamp": "2026-11-07T18:53:05.388000Z",
+      "available_at": "2026-11-07T18:53:07.629358Z",
+      "source": "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+      "bid": {
+        "price": 0.984,
+        "size": 20.0
+      },
+      "ask": {
+        "price": 0.997,
+        "size": 10.13
+      },
+      "source_age_seconds": 3.680787
+    },
+    {
+      "id": "fc9de57bb6c92597b2229f077f57ee3d3c154e368a67e2b304f053d142bdf47d",
+      "market_id": "6771234",
+      "token_id": "11292851389906593584583023094905978736692561857367598708643029660889185572131",
+      "timestamp": "2026-11-07T18:53:05.388000Z",
+      "available_at": "2026-11-07T18:53:07.629358Z",
+      "source": "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+      "bid": {
+        "price": 0.003,
+        "size": 10.13
+      },
+      "ask": {
+        "price": 0.016,
+        "size": 20.0
+      },
+      "source_age_seconds": 3.680787
+    }
+  ]
+}

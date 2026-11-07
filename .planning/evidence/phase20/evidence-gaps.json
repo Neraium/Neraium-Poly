@@ -1,0 +1,144 @@
+{
+  "historical_qualification": {
+    "schema_version": "1.0",
+    "dataset_version": "event-outcome-canonical-v1",
+    "dataset_sha256": "9e20ac5ccaef7616c2f0047df789a696916ff0d4b3d7d3938334bb190f77353d",
+    "files": {
+      "events.jsonl": "da926cc53363c15f8926f7920c0f3e28c6da69e935b8f10c7d3d583af5190961",
+      "evidence.jsonl": "6bc0979352eed16d314232a67131e69b59540c9a564010f98c1cbc4d5fad0d54",
+      "outcomes.jsonl": "9f2798565260be0bc7ca2c12ad4ff7de830606426146f115799fd9d9af608650"
+    },
+    "qualification_funnel": {
+      "canonical_market_propositions": 250,
+      "parent_event_groups": 250,
+      "official_API_outcome_groups": 51,
+      "corroborated_finalized_outcome_groups": 47,
+      "historical_market_price_rows": 616,
+      "actual_historical_book_rows": 0,
+      "external_context_rows": 95,
+      "resolved_events_with_predecision_available_price": 0,
+      "reviewed_independent_events": 0,
+      "fully_qualified_training_events": 0,
+      "fully_qualified_heldout_events": 0,
+      "required_training_events": 100,
+      "required_heldout_events": 100
+    },
+    "source_bundle_sha256": "8a530b77ff5cb3cb0c93beda5d09760535d35e67c4ee999c7ee824946d272654",
+    "source_qualification_sha256": "a4c2adfed62287a033a665a44ce33b4cbbfd05574bc46c4092b33277776f65f5",
+    "source_proofs_sha256": "73a8d8b20618ee5a6bb66c90a57ec0347ee98d78e4375401ecb6c1da846fd12f",
+    "categories": {
+      "Up or Down": 148,
+      "Finance": 24,
+      "Tennis": 10,
+      "Sports": 41,
+      "Weather": 2,
+      "Politics": 1,
+      "Esports": 12,
+      "PPA": 1,
+      "Bitcoin": 1,
+      "Crypto": 7,
+      "Ethereum": 1,
+      "RUT": 1,
+      "NYA": 1
+    },
+    "source_path": "/home/ubuntu/Neraium-Poly/data/phase8-history-events",
+    "created_at": "2026-11-06T05:15:46.321420+00:00",
+    "missing_field_counts": {
+      "historical_rule_version": 250,
+      "predecision_availability": 250,
+      "historical_executable_depth": 250,
+      "reviewed_independent_group": 250,
+      "qualified_external_context": 250,
+      "corroborated_final_settlement": 203
+    },
+    "certification_authority": false,
+    "automatic_promotion": false,
+    "limitations": [
+      "Historical observations downloaded after resolution retain collected-now availability",
+      "Price history is not executable depth",
+      "Parent/asset grouping proposals do not establish event independence",
+      "No current rule text is asserted to be its historical version"
+    ],
+    "events": 250,
+    "chain_corroborated_exact_settlement_groups": 47,
+    "qualified_training_events": 0,
+    "qualified_heldout_events": 0
+  },
+  "existing_sii_relationships": {
+    "cycles": 4669,
+    "last_evaluation_at": "2026-11-07T18:11:47.758864+00:00",
+    "candidate_parent_pairs_cumulative": 6252,
+    "registered_statistical_candidates": 0,
+    "parent_event_groups": 0,
+    "current_qualified_market_tokens": 0,
+    "source_freshness_limit_seconds": 15,
+    "statuses_cumulative": {
+      "duplicate_pair_does_not_add_persistence": 6,
+      "insufficient_joint_variation_for_relationship_baseline": 5986,
+      "warming_up": 260
+    },
+    "source_rejections_cumulative": {
+      "missing_order_book": 495,
+      "registered_pair_missing_qualified_source_quotes": 2430,
+      "stale_or_future_source_quote": 2300
+    },
+    "engine": {
+      "registered_relationships": 0,
+      "evaluations": 6252,
+      "persistent_findings": 0,
+      "rejections": {
+        "duplicate_pair_does_not_add_persistence": 6,
+        "insufficient_joint_variation_for_relationship_baseline": 5986
+      },
+      "graph": [],
+      "causality_verified": false,
+      "forecast_improvement_verified": false,
+      "executable_opportunities": 0,
+      "certification_authority": false,
+      "trading_authority": false
+    },
+    "semantics": "order_book_midpoint_USD_per_outcome_share_not_independent_probability",
+    "cross_domain_reviewed_findings": 0,
+    "reviewed_logical_constraints": 0,
+    "research_only": true,
+    "trading_authority": false,
+    "certification_authority": false,
+    "counter_scope": "cumulative_since_instance_creation_or_checkpoint_restore",
+    "graph_version": 68,
+    "retirements_total": 34,
+    "retirements_retained": 32,
+    "selection": {
+      "max_pairs": 3,
+      "missing_seconds": 120,
+      "selection_observations": 3,
+      "selection_span_seconds": 60,
+      "observed_tokens": 7,
+      "policy": "existing stable pairs first; causal coverage then observed two-sided depth; one pair per parent"
+    },
+    "graph_rejections": {
+      "non_increasing_source_time": 48
+    },
+    "last_observation_at": "2026-11-07T18:11:47.758864+00:00",
+    "retirement_storage": "bounded memory cache; caller must archive all study checkpoints",
+    "logical_constraints_verified": 0,
+    "predictive_advantage_verified": false
+  },
+  "sports_preserved": {
+    "monitored_markets": 19,
+    "fresh_markets": 6,
+    "structurally_supported_markets": 0,
+    "independent_forecasts": 3,
+    "pending": 3,
+    "resolved": 0,
+    "model_versions": [
+      {
+        "model_version": "sports-independent-baselines-v1/frequency",
+        "model_sha256": "886b8b4054711106a7bccfc086f461d33e8984a05cef16db2e94db665c197654",
+        "feature_version": "causal-external-publisher-results-v1"
+      }
+    ],
+    "capability": "legacy NFL ternary research preserved; no trading authority",
+    "forecast_scope": "Read-only Phase13 ternary journal; no duplicated records"
+  },
+  "scope": "Baseline existing service state; P20 does not treat descriptive persistence as model improvement"
+}

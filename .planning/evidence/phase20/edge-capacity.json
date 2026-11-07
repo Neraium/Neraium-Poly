@@ -1,0 +1,54 @@
+{
+  "observed_at": "2026-11-07T18:13:05.086644+00:00",
+  "forecast_records": 24,
+  "unreviewed_parent_events": 2,
+  "uncalibrated_point_probability_above_recorded_ask": 12,
+  "qualified_opportunities": 0,
+  "interval_uncertainty": "[0,1] for all; lower bound cannot establish positive conservative EV",
+  "capacity_scenarios": [
+    {
+      "hypothetical_bankroll": 500,
+      "min_observed_principal": 0.999,
+      "median_observed_principal": 50.0,
+      "max_observed_principal": 50.0,
+      "samples": 24,
+      "edge_supported_capacity": null
+    },
+    {
+      "hypothetical_bankroll": 1000,
+      "min_observed_principal": 0.999,
+      "median_observed_principal": 100.0,
+      "max_observed_principal": 100.0,
+      "samples": 24,
+      "edge_supported_capacity": null
+    },
+    {
+      "hypothetical_bankroll": 10000,
+      "min_observed_principal": 0.999,
+      "median_observed_principal": 297.89052350000003,
+      "max_observed_principal": 1000.0,
+      "samples": 24,
+      "edge_supported_capacity": null
+    },
+    {
+      "hypothetical_bankroll": 100000,
+      "min_observed_principal": 0.999,
+      "median_observed_principal": 297.89052350000003,
+      "max_observed_principal": 2767.6785,
+      "samples": 24,
+      "edge_supported_capacity": null
+    },
+    {
+      "hypothetical_bankroll": 1000000,
+      "min_observed_principal": 0.999,
+      "median_observed_principal": 297.89052350000003,
+      "max_observed_principal": 2767.6785,
+      "samples": 24,
+      "edge_supported_capacity": null
+    }
+  ],
+  "scope": "Per-original contemporaneous native book,10% displayed participation; not aggregate deployable capital. Repeated parent/contracts cannot be summed; costs and latency survival unverified. No new accounts, orders or positions.",
+  "net_pnl": null,
+  "net_return": null,
+  "aggregate_deployable_capital": null
+}

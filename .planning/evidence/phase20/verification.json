@@ -1,0 +1,22 @@
+{
+  "source_commit": "17aba1c61036d6587ce6b1ed2e000bea06c0e05e",
+  "at": "2026-11-07T18:24:03.094279+00:00",
+  "backend": "1332 passed, 1 warning in132.78s",
+  "browser": "5 passed in2.6s",
+  "frontend_build": "passed",
+  "ruff": "passed",
+  "python_dependency_audit": "No known vulnerabilities",
+  "npm_audit": "0 vulnerabilities",
+  "peak_agents_including_coordinator": 3,
+  "isolated_writing_worktrees": 2,
+  "local_final_pytest_processes": 1,
+  "concurrent_shell_jobs_final_verification": 4,
+  "services_cpu_quotas_unchanged": [
+    "collector1CPU",
+    "experimental0.5CPU"
+  ],
+  "final_executable_source": "ead418f8f00703a5bae07d07b293be3fdc619c88",
+  "final_ci_backend": "1333 passed,1warning in51.29s",
+  "post_observation_archive_regressions": "31passed",
+  "reason_for_additional_tests": "new derived-index defect repair discovered during live observation"
+}

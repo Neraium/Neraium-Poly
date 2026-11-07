@@ -1,0 +1,32 @@
+{
+  "paper-live": {
+    "segment": "segment-00000570.sqlite",
+    "count": 5217,
+    "plan": [
+      [
+        3,
+        0,
+        0,
+        "SEARCH records USING COVERING INDEX records_segment (segment=?)"
+      ]
+    ],
+    "query_seconds": 0.0002569248899817467,
+    "speedup_observed": 1625.2418286082989,
+    "catalog_bytes": 1978314752
+  },
+  "experimental-paper": {
+    "segment": "segment-00000783.sqlite",
+    "count": 996,
+    "plan": [
+      [
+        3,
+        0,
+        0,
+        "SEARCH records USING COVERING INDEX records_segment (segment=?)"
+      ]
+    ],
+    "query_seconds": 4.0380051359534264e-05,
+    "speedup_observed": 2219.7649093875953,
+    "catalog_bytes": 452911104
+  }
+}

@@ -153,3 +153,5 @@ that have native two-sided books. Event forecasting remains research-only; calib
 independent event review and certified approval requirements are unchanged.
 See [actual results and blockers](docs/phase19-readiness.md). The read-only
 `forecast-qualification` command requires explicit predeclared training/held-out cutoffs.
+
+Phase 20: [forecast validation, controlled SII research and operational evidence](docs/phase20-readiness.md).
