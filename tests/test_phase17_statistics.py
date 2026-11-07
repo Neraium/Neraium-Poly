@@ -205,3 +205,12 @@ def test_observation_after_training_boundary_cannot_backdate_label_availability(
     result = evaluate([r])
     assert result["samples"]["training"] == 0
     assert result["rejections"]["purged_boundary_or_crossing_label"] == 1
+
+
+def test_parent_episode_extends_until_late_label_knowledge_not_just_receipt():
+    first = row(1, 100, event="shared")
+    first["label_observed_at"] = at(220)
+    second = row(2, 180, event="shared")
+    result = evaluate([first, second])
+    assert result["samples"]["training"] == 1
+    assert result["rejections"]["overlapping_parent_episode"] == 1

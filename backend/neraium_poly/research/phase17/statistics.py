@@ -180,7 +180,7 @@ def evaluate_experiments(rows, *, training_end, validation_end, cutoff, verify_r
             rejections["purged_boundary_or_crossing_label"] += 1
             continue
         groups[group].append(row)
-        watermark[row["event_id"]] = max(row["_target"], row["_available"])
+        watermark[row["event_id"]] = max(row["_target"], row["_known"])
     fit_parents = {r["event_id"] for group in ("training", "validation") for r in groups[group]}
     strict = [r for r in groups["temporal_heldout"] if r["event_id"] not in fit_parents]
     held_parents = {r["event_id"] for r in groups["temporal_heldout"]}
