@@ -1,0 +1,52 @@
+{
+  "baseline": "4a144a3",
+  "config_changes": {
+    "paper-live.example.json": {
+      "diverse_discovery_enabled": {
+        "before": null,
+        "after": true
+      },
+      "collection_concurrency": {
+        "before": 4,
+        "after": 2
+      },
+      "max_markets": {
+        "before": 200,
+        "after": 400
+      },
+      "max_pages": {
+        "before": 4,
+        "after": 6
+      },
+      "max_subscription_tokens": {
+        "before": 800,
+        "after": 1000
+      }
+    },
+    "experimental-paper.example.json": {
+      "phase23_research_enabled": {
+        "before": null,
+        "after": true
+      }
+    }
+  },
+  "unchanged_source": {
+    "backend/neraium_poly/research/phase18/continuous.py": "936be98ee608b1c5ae4a43d6c9ae424170e1b67ed1cf26d49ed1c38002ba86b5",
+    "backend/neraium_poly/research/phase18/forecasting.py": "b657a20a3cbeca0b4496a276d3ed8ab604522c0358f1562194281afbcfe7f988",
+    "backend/neraium_poly/research/phase18/sources.py": "230bd519e26b17fcf730f0e0a4bae5e4ba2801fbe9b7ddbbfba9774d97001142",
+    "backend/neraium_poly/research/phase18/convergence.py": "ebe2a2ab21f51f74dc7ad646fb0d2788d6adde8abf34b9e56e2a5ce280795e4f",
+    "backend/neraium_poly/research/phase18/capacity.py": "13e1ebec0fca15b206162c618ae8eba5827b5c3ac4d87f41611fe74235ee1054",
+    "backend/neraium_poly/research/phase18/validation.py": "82911c1da899c93415382156c28580bef9b761062c5e1fbe673a2f6684e54d34",
+    "backend/neraium_poly/experimental/strategies.py": "7b0be0e16745a0ce281ae2bc02db6b0a35b70d31fb824cd52357d93e1cbf90e0",
+    "backend/neraium_poly/experimental/account.py": "06e29f52c917dada1faeb735f239158b4cbe303e11ba543752fa8fb16220b83e",
+    "backend/neraium_poly/research/phase16/admission.py": "f544cf9f030c221697d5cac007bf80e06c60eda4648805c97209178bc2608b3c"
+  },
+  "paper_trading": true,
+  "live_trading_enabled": false,
+  "archive_budget_GiB": {
+    "collector": 200,
+    "experimental": 100,
+    "filesystem_reserve": 100
+  },
+  "retention_deletion": false
+}

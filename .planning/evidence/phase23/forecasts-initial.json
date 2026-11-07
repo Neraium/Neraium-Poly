@@ -1,0 +1,263 @@
+{
+  "at": "2026-11-07T22:02:15.794549+00:00",
+  "source": "existing append-only production managed archive, not isolated experiment or fixtures",
+  "source_replayed_forecasts": 10,
+  "models": {
+    "gaussian-first-passage-v23.1": 3,
+    "empirical-ohlc-block-bootstrap-v23.1": 3,
+    "nfl-davidson-team-strength-v23.1": 2,
+    "nfl-ternary-frequency-v23.1": 2
+  },
+  "domains": {
+    "crypto": 6,
+    "sports": 4
+  },
+  "native_parent_ids": [
+    "1217410",
+    "1217424",
+    "1329687",
+    "1329694"
+  ],
+  "forecast_rows": [
+    {
+      "id": "7af31a3d7ac5aa9333dd07e895295ef0a04e61258ce8c42f170fb9d9c792f72f",
+      "domain": "crypto",
+      "model_id": "gaussian-first-passage-v23.1",
+      "event_id": "1329687",
+      "market_id": "6771152",
+      "token_id": "36197221766530673822099000531957265986750812026717256101411969625964805042546",
+      "timestamp": "2026-11-07T22:01:10.761926+00:00",
+      "evidence_cutoff": "2026-11-07T22:01:10.679070+00:00",
+      "event_end_time": "2026-11-08T05:00:00+00:00",
+      "probability": 0.005140630468881006,
+      "probability_semantics": "binary_event_probability",
+      "expected_payout": null,
+      "market_probability": 0.11499999999999999,
+      "market_expected_payout": null,
+      "rules_sha256": "638df5f387291ab1afa41edc265695e1b5264a48080a7d0aca10418a60621201",
+      "book_sha256": "0ac882be606327cede598268ead9e026becb69ea31613ec142d4a5cfeeda8c47",
+      "dataset_sha256": "100704884cea6e09ef4e0536b7868f200bda3eb2176ca4b77fcd836785eaf068",
+      "training_observations": 721,
+      "source_lineages": [
+        "binance:BTCUSDT"
+      ]
+    },
+    {
+      "id": "02f142a6e4c574a16fb38a28d69493b17f71e13514118eaeaebe86a93cc119c3",
+      "domain": "crypto",
+      "model_id": "empirical-ohlc-block-bootstrap-v23.1",
+      "event_id": "1329687",
+      "market_id": "6771152",
+      "token_id": "36197221766530673822099000531957265986750812026717256101411969625964805042546",
+      "timestamp": "2026-11-07T22:01:10.761926+00:00",
+      "evidence_cutoff": "2026-11-07T22:01:10.679070+00:00",
+      "event_end_time": "2026-11-08T05:00:00+00:00",
+      "probability": 0.01171875,
+      "probability_semantics": "binary_event_probability",
+      "expected_payout": null,
+      "market_probability": 0.11499999999999999,
+      "market_expected_payout": null,
+      "rules_sha256": "638df5f387291ab1afa41edc265695e1b5264a48080a7d0aca10418a60621201",
+      "book_sha256": "0ac882be606327cede598268ead9e026becb69ea31613ec142d4a5cfeeda8c47",
+      "dataset_sha256": "100704884cea6e09ef4e0536b7868f200bda3eb2176ca4b77fcd836785eaf068",
+      "training_observations": 721,
+      "source_lineages": [
+        "binance:BTCUSDT"
+      ]
+    },
+    {
+      "id": "fe4ddc98e6d8354da63e5b9da70bd8ecf5fc4dc4a3e79e414e97b6ccd59cccf7",
+      "domain": "crypto",
+      "model_id": "gaussian-first-passage-v23.1",
+      "event_id": "1329687",
+      "market_id": "6771162",
+      "token_id": "81711637521368124357705573880335008095271104197610062718374510279540883949501",
+      "timestamp": "2026-11-07T22:01:10.767190+00:00",
+      "evidence_cutoff": "2026-11-07T22:01:10.762197+00:00",
+      "event_end_time": "2026-11-08T05:00:00+00:00",
+      "probability": 7.643124000879053e-11,
+      "probability_semantics": "binary_event_probability",
+      "expected_payout": null,
+      "market_probability": 0.026000000000000002,
+      "market_expected_payout": null,
+      "rules_sha256": "638df5f387291ab1afa41edc265695e1b5264a48080a7d0aca10418a60621201",
+      "book_sha256": "526f0fdc770fdf6f1ae99b0c4835966cb485aeeb23ceb75eab0ca4c6beec506d",
+      "dataset_sha256": "100704884cea6e09ef4e0536b7868f200bda3eb2176ca4b77fcd836785eaf068",
+      "training_observations": 721,
+      "source_lineages": [
+        "binance:BTCUSDT"
+      ]
+    },
+    {
+      "id": "0a0b7b345fe1ac7f6cc02f57deef4b460c42108baaaec4d1a44476686b8da041",
+      "domain": "crypto",
+      "model_id": "empirical-ohlc-block-bootstrap-v23.1",
+      "event_id": "1329687",
+      "market_id": "6771162",
+      "token_id": "81711637521368124357705573880335008095271104197610062718374510279540883949501",
+      "timestamp": "2026-11-07T22:01:10.767190+00:00",
+      "evidence_cutoff": "2026-11-07T22:01:10.762197+00:00",
+      "event_end_time": "2026-11-08T05:00:00+00:00",
+      "probability": 0.0,
+      "probability_semantics": "binary_event_probability",
+      "expected_payout": null,
+      "market_probability": 0.026000000000000002,
+      "market_expected_payout": null,
+      "rules_sha256": "638df5f387291ab1afa41edc265695e1b5264a48080a7d0aca10418a60621201",
+      "book_sha256": "526f0fdc770fdf6f1ae99b0c4835966cb485aeeb23ceb75eab0ca4c6beec506d",
+      "dataset_sha256": "100704884cea6e09ef4e0536b7868f200bda3eb2176ca4b77fcd836785eaf068",
+      "training_observations": 721,
+      "source_lineages": [
+        "binance:BTCUSDT"
+      ]
+    },
+    {
+      "id": "f41bfbe6a81385d04fa5bc13cf8f1ec0225ca856b132fec926d9f8bf90459d8d",
+      "domain": "crypto",
+      "model_id": "gaussian-first-passage-v23.1",
+      "event_id": "1329694",
+      "market_id": "6771226",
+      "token_id": "48282547470122183214352419627011849277938843939298476736967657326729356084092",
+      "timestamp": "2026-11-07T22:01:10.858574+00:00",
+      "evidence_cutoff": "2026-11-07T22:01:10.767481+00:00",
+      "event_end_time": "2026-11-08T05:00:00+00:00",
+      "probability": 0.013361108143182036,
+      "probability_semantics": "binary_event_probability",
+      "expected_payout": null,
+      "market_probability": 0.14,
+      "market_expected_payout": null,
+      "rules_sha256": "7f6910dd41ab8ce7cdf36a171f1ae383ceb28ab5d50097feda93300f967309d9",
+      "book_sha256": "c869c9f19f69e3f955cfa594cbab1037b5b8bcf4c984fa7ab572c76e7ba9d563",
+      "dataset_sha256": "fd73b76af81dbe9ddc3b5f923a7ca4e965f03fced5c6beb27e309fdf17dd0430",
+      "training_observations": 721,
+      "source_lineages": [
+        "binance:ETHUSDT"
+      ]
+    },
+    {
+      "id": "531d2afdf2e9eab47e4d2eb2c03303905d845b772c8038b917071e39efe341ac",
+      "domain": "crypto",
+      "model_id": "empirical-ohlc-block-bootstrap-v23.1",
+      "event_id": "1329694",
+      "market_id": "6771226",
+      "token_id": "48282547470122183214352419627011849277938843939298476736967657326729356084092",
+      "timestamp": "2026-11-07T22:01:10.858574+00:00",
+      "evidence_cutoff": "2026-11-07T22:01:10.767481+00:00",
+      "event_end_time": "2026-11-08T05:00:00+00:00",
+      "probability": 0.03515625,
+      "probability_semantics": "binary_event_probability",
+      "expected_payout": null,
+      "market_probability": 0.14,
+      "market_expected_payout": null,
+      "rules_sha256": "7f6910dd41ab8ce7cdf36a171f1ae383ceb28ab5d50097feda93300f967309d9",
+      "book_sha256": "c869c9f19f69e3f955cfa594cbab1037b5b8bcf4c984fa7ab572c76e7ba9d563",
+      "dataset_sha256": "fd73b76af81dbe9ddc3b5f923a7ca4e965f03fced5c6beb27e309fdf17dd0430",
+      "training_observations": 721,
+      "source_lineages": [
+        "binance:ETHUSDT"
+      ]
+    },
+    {
+      "id": "35e3d00f55cdd4514a5d4f5e8676af14e15a0c5fb33052139456504e86cc0d03",
+      "domain": "sports",
+      "model_id": "nfl-davidson-team-strength-v23.1",
+      "event_id": "1217410",
+      "market_id": "5920615",
+      "token_id": "71477801931810152629236327833600899137285592896436321316377016623987471186508",
+      "timestamp": "2026-11-07T22:01:11.100552+00:00",
+      "evidence_cutoff": "2026-11-07T22:01:10.973130+00:00",
+      "event_end_time": "2026-11-08T14:30:00+00:00",
+      "probability": 0.49882983446876006,
+      "probability_semantics": "outcome_distribution",
+      "expected_payout": 0.5010820814228152,
+      "market_probability": null,
+      "market_expected_payout": 0.615,
+      "rules_sha256": "7a4d8d6033ac7b641cb2daede05c740e5b8e1f115cd4b7fd91ce27beaff2bc06",
+      "book_sha256": "e41a9f70416a304c89fc83cb72de20ed95e16f7d69305446a015b2cf42cc6094",
+      "dataset_sha256": "f21b587f0be56527fcc989e6cfb7aaecfa9376bfb401b8ff96da5c0013e6e0d6",
+      "training_observations": 554,
+      "source_lineages": [
+        "nflverse:games.csv"
+      ]
+    },
+    {
+      "id": "e5f9e19433c0f9cc0df0c0bc5732130f05c09f9a1b2791dde95ce243eb2176ae",
+      "domain": "sports",
+      "model_id": "nfl-ternary-frequency-v23.1",
+      "event_id": "1217410",
+      "market_id": "5920615",
+      "token_id": "71477801931810152629236327833600899137285592896436321316377016623987471186508",
+      "timestamp": "2026-11-07T22:01:11.100552+00:00",
+      "evidence_cutoff": "2026-11-07T22:01:10.973130+00:00",
+      "event_end_time": "2026-11-08T14:30:00+00:00",
+      "probability": 0.5345238095238095,
+      "probability_semantics": "outcome_distribution",
+      "expected_payout": 0.548611111111111,
+      "market_probability": null,
+      "market_expected_payout": 0.615,
+      "rules_sha256": "7a4d8d6033ac7b641cb2daede05c740e5b8e1f115cd4b7fd91ce27beaff2bc06",
+      "book_sha256": "e41a9f70416a304c89fc83cb72de20ed95e16f7d69305446a015b2cf42cc6094",
+      "dataset_sha256": "f21b587f0be56527fcc989e6cfb7aaecfa9376bfb401b8ff96da5c0013e6e0d6",
+      "training_observations": 554,
+      "source_lineages": [
+        "nflverse:games.csv"
+      ]
+    },
+    {
+      "id": "20b6664de26e7f6193a4f58436658b1c32cbfc00a23d62c6463807ea4fb1d9ff",
+      "domain": "sports",
+      "model_id": "nfl-davidson-team-strength-v23.1",
+      "event_id": "1217424",
+      "market_id": "5920637",
+      "token_id": "9026347656725652188657151828080650152818525279370267441646300484684940179692",
+      "timestamp": "2026-11-07T22:01:11.175161+00:00",
+      "evidence_cutoff": "2026-11-07T22:01:11.100749+00:00",
+      "event_end_time": "2026-11-08T21:05:00+00:00",
+      "probability": 0.5061160494933743,
+      "probability_semantics": "outcome_distribution",
+      "expected_payout": 0.5083679848765101,
+      "market_probability": null,
+      "market_expected_payout": 0.695,
+      "rules_sha256": "5f3e733db318535be36557acb300efde893d5609c78fa893909ff12782db15d6",
+      "book_sha256": "ca2b785f3f05a9a93b53b2205c0eb430baf3259b17070f7d74c087a320ab197e",
+      "dataset_sha256": "f21b587f0be56527fcc989e6cfb7aaecfa9376bfb401b8ff96da5c0013e6e0d6",
+      "training_observations": 554,
+      "source_lineages": [
+        "nflverse:games.csv"
+      ]
+    },
+    {
+      "id": "56c1d12946ca26dc5e0ce80b3a93cf3bd03de5be734e6921aef3aee9e19ee976",
+      "domain": "sports",
+      "model_id": "nfl-ternary-frequency-v23.1",
+      "event_id": "1217424",
+      "market_id": "5920637",
+      "token_id": "9026347656725652188657151828080650152818525279370267441646300484684940179692",
+      "timestamp": "2026-11-07T22:01:11.175161+00:00",
+      "evidence_cutoff": "2026-11-07T22:01:11.100749+00:00",
+      "event_end_time": "2026-11-08T21:05:00+00:00",
+      "probability": 0.5192307692307692,
+      "probability_semantics": "outcome_distribution",
+      "expected_payout": 0.5322199730094467,
+      "market_probability": null,
+      "market_expected_payout": 0.695,
+      "rules_sha256": "5f3e733db318535be36557acb300efde893d5609c78fa893909ff12782db15d6",
+      "book_sha256": "ca2b785f3f05a9a93b53b2205c0eb430baf3259b17070f7d74c087a320ab197e",
+      "dataset_sha256": "f21b587f0be56527fcc989e6cfb7aaecfa9376bfb401b8ff96da5c0013e6e0d6",
+      "training_observations": 554,
+      "source_lineages": [
+        "nflverse:games.csv"
+      ]
+    }
+  ],
+  "leaderboard_counts": {
+    "historical_exploratory_studies": 0,
+    "prospective_forecasts": 10,
+    "pending_forecasts": 10,
+    "native_parent_events": 4,
+    "independent_verified_groups": 0,
+    "certified_execution_authorized_challengers": 0
+  },
+  "leaderboard_rejections": {},
+  "scoring_scope": "no new trade authority; unreviewed groups excluded; ternary NFL probabilities never compared to expected payout as binaryprobability"
+}

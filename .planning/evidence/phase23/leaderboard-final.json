@@ -1,0 +1,143 @@
+{
+  "schema_version": "phase23-research-competition-v1",
+  "evaluated_at": "2026-11-07T22:21:27.646946+00:00",
+  "leaderboard": [
+    {
+      "model_version": "empirical-ohlc-block-bootstrap-v23.1",
+      "prospective_forecasts": 3,
+      "pending_forecasts": 3,
+      "unreviewed_parent_events": 2,
+      "independent_verified_events": 0,
+      "category": "prospective_unresolved",
+      "metrics": null,
+      "score_semantics": "binary_event_probability",
+      "calibration_status": "insufficient_independent_events",
+      "statistically_supported_brier_improvement": false,
+      "profitability_rank": null,
+      "net_hypothetical_executable_edge": null,
+      "simulated_realized_pnl": null,
+      "drawdown": null,
+      "source_lineages": [
+        "Binance public market data:BTCUSDT:1794027600000:1794088859999",
+        "Binance public market data:ETHUSDT:1794027600000:1794088859999"
+      ],
+      "research_only": true,
+      "trading_authority": false,
+      "certification_authority": false,
+      "experimental_admission_authority": false
+    },
+    {
+      "model_version": "gaussian-first-passage-v23.1",
+      "prospective_forecasts": 3,
+      "pending_forecasts": 3,
+      "unreviewed_parent_events": 2,
+      "independent_verified_events": 0,
+      "category": "prospective_unresolved",
+      "metrics": null,
+      "score_semantics": "binary_event_probability",
+      "calibration_status": "insufficient_independent_events",
+      "statistically_supported_brier_improvement": false,
+      "profitability_rank": null,
+      "net_hypothetical_executable_edge": null,
+      "simulated_realized_pnl": null,
+      "drawdown": null,
+      "source_lineages": [
+        "Binance public market data:BTCUSDT:1794027600000:1794088859999",
+        "Binance public market data:ETHUSDT:1794027600000:1794088859999"
+      ],
+      "research_only": true,
+      "trading_authority": false,
+      "certification_authority": false,
+      "experimental_admission_authority": false
+    },
+    {
+      "model_version": "nfl-davidson-team-strength-v23.1",
+      "prospective_forecasts": 6,
+      "pending_forecasts": 6,
+      "unreviewed_parent_events": 6,
+      "independent_verified_events": 0,
+      "category": "prospective_unresolved",
+      "metrics": null,
+      "score_semantics": "ternary_outcome_distribution_requires_comparable_market_baseline",
+      "calibration_status": "insufficient_independent_events",
+      "statistically_supported_brier_improvement": false,
+      "profitability_rank": null,
+      "net_hypothetical_executable_edge": null,
+      "simulated_realized_pnl": null,
+      "drawdown": null,
+      "source_lineages": [
+        "nflverse:games.csv"
+      ],
+      "research_only": true,
+      "trading_authority": false,
+      "certification_authority": false,
+      "experimental_admission_authority": false
+    },
+    {
+      "model_version": "nfl-ternary-frequency-v23.1",
+      "prospective_forecasts": 6,
+      "pending_forecasts": 6,
+      "unreviewed_parent_events": 6,
+      "independent_verified_events": 0,
+      "category": "prospective_unresolved",
+      "metrics": null,
+      "score_semantics": "ternary_outcome_distribution_requires_comparable_market_baseline",
+      "calibration_status": "insufficient_independent_events",
+      "statistically_supported_brier_improvement": false,
+      "profitability_rank": null,
+      "net_hypothetical_executable_edge": null,
+      "simulated_realized_pnl": null,
+      "drawdown": null,
+      "source_lineages": [
+        "nflverse:games.csv"
+      ],
+      "research_only": true,
+      "trading_authority": false,
+      "certification_authority": false,
+      "experimental_admission_authority": false
+    }
+  ],
+  "counts": {
+    "historical_exploratory_studies": 0,
+    "prospective_forecasts": 18,
+    "pending_forecasts": 18,
+    "native_parent_events": 8,
+    "independent_verified_groups": 0,
+    "certified_execution_authorized_challengers": 0
+  },
+  "rejections": {},
+  "shared_lineage_models": [
+    {
+      "left": "empirical-ohlc-block-bootstrap-v23.1",
+      "right": "gaussian-first-passage-v23.1",
+      "shared_source_lineages": [
+        "Binance public market data:BTCUSDT:1794027600000:1794088859999",
+        "Binance public market data:ETHUSDT:1794027600000:1794088859999"
+      ],
+      "independent_confirmations": false
+    },
+    {
+      "left": "nfl-davidson-team-strength-v23.1",
+      "right": "nfl-ternary-frequency-v23.1",
+      "shared_source_lineages": [
+        "nflverse:games.csv"
+      ],
+      "independent_confirmations": false
+    }
+  ],
+  "sii_incremental_value": null,
+  "ensemble_status": "withheld_until_independent_chronological_calibration",
+  "ranking_scope": "Verified paired forecast scores only; pending models never ranked by profitability",
+  "certified_requirements": {
+    "training_independent_events": 100,
+    "heldout_independent_events": 100
+  },
+  "research_only": true,
+  "trading_authority": false,
+  "certification_authority": false,
+  "experimental_admission_authority": false,
+  "individual_verified_forecast_scores": [],
+  "individual_scores_scope": "descriptive verified forecasts; not independent events or statistical superiority",
+  "outcome_replay_errors": [],
+  "source_scope": "latest256 studies/outcomes plus immutable retained enrollments; not all-time performance"
+}

@@ -1,0 +1,34 @@
+{
+  "source_commit": "221c64759f8c29843bcd2a1f3e4ed1c3af549955",
+  "backend": {
+    "passed": 1459,
+    "warnings": 1,
+    "seconds": 144.02,
+    "evidence": "data/phase23/backend.xml"
+  },
+  "browser_tests": 5,
+  "frontend_build": "passed",
+  "ruff": "passed",
+  "pip_audit": "no known vulnerabilities",
+  "npm_audit": "zero vulnerabilities",
+  "parallelism": {
+    "peak_agents_including_coordinator": 4,
+    "isolated_writing_worktrees": 3,
+    "source_acquisition_workers": 2,
+    "local_test_processes": 1,
+    "independent_final_verification_jobs": 3,
+    "numerical_cpu_workers": 1,
+    "provider_io_workers": 2
+  },
+  "ci_run": 42416918665,
+  "review": "two independent read-only integration ALLOW reviews; no financial authority granted",
+  "final_ci_run": 42419564059,
+  "final_ci_conclusion": "success",
+  "focused_repairs": {
+    "real_live_ledger": 11,
+    "typed_frame_and_checkpoint": 2,
+    "archive_publisher_and_existing_safety": 9,
+    "causal_early_outcomes": 8
+  },
+  "full_local_suite_repeated": false
+}

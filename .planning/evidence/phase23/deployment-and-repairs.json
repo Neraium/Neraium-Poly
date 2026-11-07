@@ -1,0 +1,44 @@
+{
+  "initial_source": "6567b6581cf4d584170fc984dd8b6f42c9a578bc",
+  "findings": [
+    {
+      "defect": "mapping assignment used instead of LiveLedger.put",
+      "repair": "855d24d",
+      "regression": "real LiveLedger persistence and restart"
+    },
+    {
+      "defect": "typed SharedMarketFrame passed to dict-only relationship projection",
+      "repair": "5181081",
+      "regression": "actual SharedMarketFrame contract and checkpoint recovery"
+    },
+    {
+      "defect": "archive measurement publication delayed by discovery refresh; old measurements correctly flagged stale",
+      "repair": "569d7aa",
+      "regression": "independent strict publisher and cancellation drains active reader"
+    },
+    {
+      "defect": "early native barrier YES could remain unscorable after complete reference window",
+      "repair": "221c647",
+      "regression": "postforecast closed hit before native settlement; no early NO or postsettlement hit accepted"
+    }
+  ],
+  "first_postfix_soak": {
+    "samples": 19,
+    "healthy": 12,
+    "scope": "stale capacity samples never reclassified healthy"
+  },
+  "collector_followup": {
+    "samples": 19,
+    "collector_healthy": 19,
+    "combined_healthy": 13,
+    "scope": "combined count includes planned final experimental restart"
+  },
+  "postfinal": {
+    "samples": 7,
+    "healthy": 7,
+    "seconds": 121.28963447012939
+  },
+  "original_observations": "data/phase23/observation*/; preserved, not replaced",
+  "no_stop_reset": true,
+  "no_original_deletion": true
+}
