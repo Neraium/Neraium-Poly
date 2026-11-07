@@ -1,0 +1,21 @@
+{
+  "observed_at": "2026-11-07T21:29:08.291221+00:00",
+  "source_frame_id": "dc62e7041d13951d60288b8cd2bdcc157b5bdb77a4bb868c164fb616ecdc7e01",
+  "source_frame_sha256": "0ba13738b96f1300c080265a78ac20550666d483efca2896f3804c59f8840d77",
+  "native_market_rows": 424,
+  "native_book_rows": 380,
+  "healthy_microstructure_observations": 164,
+  "same_contract_binary_consistency_observations": 21,
+  "persistent_sii_findings": 0,
+  "rejections": {
+    "native_active_causal_identity_required": 156,
+    "missing_liquidity": 14,
+    "stale_book": 56,
+    "prior10_and_current3_distinct_observations_required": 164,
+    "exact_binary_rule_identity_required": 31
+  },
+  "historical_frames_used": 0,
+  "source_projection_sha256": "110ecc2b18cd7892e435878dbdd76d0ad4edf75bca80ca79fa23da1ccaa58548",
+  "independent_forecasts_created": 0,
+  "trading_authority": false
+}
