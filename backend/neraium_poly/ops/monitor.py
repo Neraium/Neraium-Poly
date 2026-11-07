@@ -683,6 +683,23 @@ def _render_readiness(certified, experimental, width, height, errors):
     return output
 
 
+def _archive_sample(archive):
+    """Only operational cache samples have their own independent freshness clock."""
+    if archive.get("snapshot_only") is not True:
+        return ""
+    try:
+        measured = datetime.fromisoformat(archive["measurement_at"])
+        age = (datetime.now(UTC)-measured).total_seconds()
+        if measured.tzinfo is None or age < 0 or not math.isfinite(age):
+            raise ValueError("invalid archive measurement time")
+    except (KeyError, TypeError, ValueError):
+        return "sample unavailable"
+    if archive.get("measurement_status") == "unavailable":
+        return "sample unavailable"
+    prefix = "STALE sample" if archive.get("measurement_status") != "cached" or age > 60 else "sample"
+    return f"{prefix} {age:.0f}s"
+
+
 def _render_operations(certified, experimental, width, height, errors):
     """Small read-only snapshots; stale sources never masquerade as live counts."""
     now = datetime.now(UTC)
@@ -728,7 +745,12 @@ def _render_operations(certified, experimental, width, height, errors):
         line(f"Readiness {_clean(text)}", 2, "yellow")
     for label, account, fresh in (("Col", certified, c_fresh), ("Exp", experimental, e_fresh)):
         archive, capacity = _mapping(account.get("archive")), _mapping(account.get("capacity"))
-        line(f"{label} {_ops_bytes(archive.get('usage_bytes'))}/{_ops_bytes(archive.get('budget_bytes'))} {'last' if not fresh else _clean(capacity.get('status', archive.get('health', 'unknown')))}", 1)
+        sample = _archive_sample(archive)
+        if sample:
+            line(f"{label} {sample} {_ops_bytes(archive.get('usage_bytes'))}/{_ops_bytes(archive.get('budget_bytes'))}", 1,
+                 "yellow" if "STALE" in sample or "unavailable" in sample else "white")
+        else:
+            line(f"{label} {_ops_bytes(archive.get('usage_bytes'))}/{_ops_bytes(archive.get('budget_bytes'))} {'last' if not fresh else _clean(capacity.get('status', archive.get('health', 'unknown')))}", 1)
         horizon = capacity.get("seconds_to_capacity", archive.get("seconds_to_exhaustion"))
         line(f"{label} +{_ops_bytes(archive.get('growth_bytes_per_second'))}/s full {_ops_horizon(horizon)}", 2, "dim")
         tiers = _mapping(archive.get("tier_usage_bytes"))
@@ -808,9 +830,10 @@ def _render_archives(certified, experimental, width, height, errors):
     for label, account in [("COLLECTOR ARCHIVE", certified), ("EXPERIMENTAL ARCHIVE", experimental)]:
         archive = _mapping(account.get("archive"))
         rate = archive.get("growth_bytes_per_second")
+        sample = _archive_sample(archive)
         lines.extend([
             (label, "bold yellow", 0),
-            (f"{size(archive.get('usage_bytes'))} / {size(archive.get('budget_bytes'))}", "white", 0),
+            (f"{sample+' ' if sample else ''}{size(archive.get('usage_bytes'))} / {size(archive.get('budget_bytes'))}", "white", 0),
             (f"State {_clean(archive.get('health', 'unavailable'))}", "yellow", 1),
             (f"Segments {_number(archive.get('segments'))} Sealed {_number(archive.get('sealed_segments'))} Gzip {_number(archive.get('compressed_segments'))}", "white", 2),
             (f"Growth {size(rate)}/s Full in {horizon(archive.get('seconds_to_exhaustion'))}", "dim", 2),
@@ -1399,7 +1422,8 @@ def _render_event_edge(certified, experimental, width, height, errors):
         rows.append((f"{label} E{_number(row.get('evaluated'))} Q{_number(row.get('qualified'))} R{_number(row.get('rejected'))}",'white',1))
     for label,value in [('Col',certified),('Exp',experimental)]:
         archive=_mapping(value.get('archive'))
-        rows.append((f"{label} {_ops_bytes(archive.get('usage_bytes'))}/{_ops_bytes(archive.get('budget_bytes'))}",'dim',2))
+        sample = _archive_sample(archive)
+        rows.append((f"{label} {sample+' ' if sample else ''}{_ops_bytes(archive.get('usage_bytes'))}/{_ops_bytes(archive.get('budget_bytes'))}",'dim',2))
     rows.append((f"Last {_seen(r.get('last_evaluation_at'))}",'dim',2))
     if latest.get('model_version'):rows.append((_clean(latest['model_version']),'dim',3))
     if errors:rows.append(('API '+_clean(errors[0]),'yellow',1))

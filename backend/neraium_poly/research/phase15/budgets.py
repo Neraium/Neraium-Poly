@@ -24,13 +24,17 @@ def capacity_status(archive, *, service, now, generated_at=None, allocations=Non
     usage, budget, free, floor = (archive.get(k) for k in
                                   ("usage_bytes", "budget_bytes", "free_bytes", "global_floor_bytes"))
     unavailable = not all(_number(v) for v in (usage, budget, free, floor)) or not budget
-    stale = False
-    if generated_at is not None:
+    snapshot = archive.get("snapshot_only") is True
+    observation_at = archive.get("measurement_at") if snapshot else generated_at
+    stale = snapshot and archive.get("measurement_status") != "cached"
+    if observation_at is not None:
         try:
-            at = datetime.fromisoformat(generated_at) if isinstance(generated_at, str) else generated_at
-            stale = at.tzinfo is None or not 0 <= (now - at).total_seconds() <= 60
+            at = datetime.fromisoformat(observation_at) if isinstance(observation_at, str) else observation_at
+            stale = stale or at.tzinfo is None or not 0 <= (now - at).total_seconds() <= 60
         except (ValueError, TypeError, AttributeError):
             stale = True
+    elif snapshot:
+        stale = True
     alerts = []
     if stale:
         alerts.append("stale_capacity_observation")
@@ -50,7 +54,7 @@ def capacity_status(archive, *, service, now, generated_at=None, allocations=Non
             blocked = True
     rate = archive.get("growth_bytes_per_second")
     horizon = None
-    if not unavailable and _number(rate) and rate > 0:
+    if not unavailable and not (snapshot and stale) and _number(rate) and rate > 0:
         horizon = min(max(0, budget - usage), max(0, free - max(floor, 8 * GIB))) / rate
         if horizon < 48 * 3600:
             alerts.append("capacity_horizon_below_48_hours")
@@ -72,6 +76,10 @@ def capacity_status(archive, *, service, now, generated_at=None, allocations=Non
             alerts.append(f"{name}_soft_allocation_saturated")
     return {
         "schema_version": "1.0", "observed_at": now.astimezone(UTC).isoformat(),
+        "archive_measurement_at": observation_at.isoformat() if isinstance(observation_at, datetime) else observation_at,
+        "archive_measurement_is_cached": snapshot,
+        "free_space_measured_at": archive.get("free_space_measured_at") if snapshot else None,
+        "admission_authority": False,
         "service": service, "status": "blocked" if blocked else "warning" if alerts else "ok",
         "backpressure": blocked, "alerts": alerts, "seconds_to_capacity": horizon,
         "tier_allocations_bytes": allocations, "tier_allocations_are_soft": True,
