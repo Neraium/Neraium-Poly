@@ -17,12 +17,12 @@ def add_capacity(state, *, service, now):
     return state
 
 
-def experimental_research(runtime):
+def experimental_research(runtime, *, for_operations=False):
     event = runtime._event_summary()
     stop = runtime.account.risk.snapshot(now=runtime.clock())["kill_switch"]
     return {
         "domains": event.get("domains", {"status": "unavailable"}),
-        "phase16_execution": runtime.phase16_execution_status(),
+        "phase16_execution": runtime.phase16_execution_status(for_operations=True) if for_operations else runtime.phase16_execution_status(),
         "phase21": ({**runtime.phase21.summary(), "runtime_error": runtime.phase21_error}
                     if getattr(runtime, "phase21", None) else {"status": "unavailable" if getattr(runtime, "phase21_error", None) else "disabled",
                         "last_error": getattr(runtime, "phase21_error", None), "trading_authority": False}),

@@ -239,15 +239,20 @@ class ExperimentalRuntime:
             and shutil.disk_usage(self.config.data_dir).free >= self.config.min_free_disk_mb * 1024 * 1024
         )
 
-    def _archive_status(self):
+    def _archive_status(self, *, for_operations=False):
         if not self.config.archive_management_enabled:
             return {"managed": False, "health": "legacy_budget", "budget_bytes": self.config.max_archive_mb * 1024**2,
                     "retention_policy": "append_only_no_rotation"}
         try:
-            status = self.events.status()
+            status = self.events.operations_status() if for_operations else self.events.status()
         except Exception as error:  # noqa: BLE001 - keep account state visible when archive health fails
-            self.archive_fault = f"archive_status:{type(error).__name__}:{str(error)[:160]}"
-            status = {"managed": True}
+            if for_operations:
+                status = {"managed": True, "health": "unknown", "snapshot_only": True,
+                    "admission_authority": False, "measurement_status": "unavailable", "measurement_at": None,
+                    "last_error": f"archive_display:{type(error).__name__}:{str(error)[:160]}"}
+            else:
+                self.archive_fault = f"archive_status:{type(error).__name__}:{str(error)[:160]}"
+                status = {"managed": True}
         if self.archive_fault:
             status.update(health="blocked", last_error=self.archive_fault)
         return status
@@ -787,17 +792,26 @@ class ExperimentalRuntime:
                 "bankroll": capital["equity"], "kill_switch": capital["kill_switch"],
                 "simulated_pnl": capital["equity"] - self.config.risk_limits.bankroll,
                 "generated_at": self.clock().isoformat(), "service": self.health(),
-                "archive": self._archive_status(), "experimental_totals": dict(self.totals),
+                "archive": self._archive_status(for_operations=True), "experimental_totals": dict(self.totals),
                 "scope": "archive health and current simulated capital; research histories remain in /api/state"}
 
-    def phase16_execution_status(self):
+    def phase16_execution_status(self, *, for_operations=False):
         vetoes = passes = None
         error = None
+        counter_lock = None
         try:
+            if for_operations:
+                candidate = getattr(self.events, "_lock", None)
+                if candidate is None or not candidate.acquire(blocking=False):
+                    raise RuntimeError("archive_counter_measurement_busy")
+                counter_lock = candidate
             vetoes = self.events.count(kind="ExecutionVeto")
             passes = self.events.count(kind="ExecutionPass")
         except (AttributeError, OSError, RuntimeError) as exc:
-            error = type(exc).__name__
+            error = str(exc) if for_operations else type(exc).__name__
+        finally:
+            if counter_lock is not None:
+                counter_lock.release()
         return {"enabled": self.config.phase16_execution_veto_enabled,
                 "committed_vetoes": vetoes,
                 "committed_check_passes": passes, "counter_error": error,
@@ -809,7 +823,7 @@ class ExperimentalRuntime:
         from neraium_poly.research.phase15.operations import add_capacity, experimental_research
 
         state = add_capacity(self.archive_state(), service="experimental", now=self.clock())
-        state["operations_research"] = experimental_research(self)
+        state["operations_research"] = experimental_research(self, for_operations=True)
         with self.account.risk._lock:
             state["open_positions"] = self.account.risk.db.execute("SELECT count(*) FROM positions").fetchone()[0]
             state["fills"] = self.account.risk.db.execute(

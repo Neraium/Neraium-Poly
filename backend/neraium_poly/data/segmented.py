@@ -17,6 +17,7 @@ import sqlite3
 import stat
 from collections import deque
 from contextlib import ExitStack, contextmanager
+from copy import deepcopy
 from datetime import UTC, datetime
 from pathlib import Path
 from threading import RLock
@@ -91,6 +92,8 @@ class ManagedEventStore:
         self.min_free_bytes, self.compress = min_free_bytes, compress
         self.clock = clock or (lambda: datetime.now(UTC))
         self._lock = RLock()
+        self._snapshot_lock = RLock()
+        self._status_snapshot = None
         self.active = self.catalog = self._owner = None
         self.active_name = None
         self._dirty = False
@@ -152,8 +155,9 @@ class ManagedEventStore:
             self._recover()
             _sync_dir(self.directory)
             self._usage_at = None
-            self._measure()
-            self._samples.append((self.clock(), self._usage))
+            # Publish the first exact sample only after complete recovery. HTTP
+            # readers never bootstrap measurements or block on archive work.
+            self.status()
         except BaseException:
             self.close()
             raise
@@ -669,7 +673,7 @@ class ManagedEventStore:
                      "cold_proofs_present": sum(Path(str(self._source(r["name"])) + ".cold-proof.json").is_file() for r in sealed),
                      "derived_cache_bytes": cache_bytes, "derived_cache_budget_bytes": 64 * 1024**2,
                      "counts_scope": "current catalog and filesystem; proof presence is not integrity verification"}
-            return {"managed": True, "usage_bytes": usage, "usage_is_conservative_estimate": bool(self._pending), "budget_bytes": self.budget_bytes,
+            result = {"managed": True, "usage_bytes": usage, "usage_is_conservative_estimate": bool(self._pending), "budget_bytes": self.budget_bytes,
                     "active_bytes": active_bytes, "segment_bytes": self.segment_bytes,
                     "segments": sum(r["status"] != "legacy" for r in rows),
                     "sealed_segments": sum(r["status"] == "sealed" for r in rows),
@@ -689,6 +693,52 @@ class ManagedEventStore:
                     "warnings": ["sealed_original_absent_verified_cold_recovery"] if missing else [],
                     "cold_only_names_sample": missing[:10],
                     "health": "blocked" if error else "ok", "last_error": error}
+            result.update(measurement_at=now.isoformat(), measurement_completed_at=self.clock().isoformat(),
+                          measurement_scope="strict archive measurement window; admission uses strict checks")
+            with self._snapshot_lock:
+                self._status_snapshot = deepcopy(result)
+            return result
+
+    def operations_status(self, *, max_age_seconds=60):
+        """Non-authoritative display only; never take the archive lock or scan SQL/files.
+
+        Full measurements are still produced by maintain()/status(). Historical
+        usage has explicit timestamps/age even when recent; free space is freshly
+        probed. Missing, old, future-dated, faulted and closed states deny a healthy
+        display. can_write(), strict status() and every verification stay unchanged.
+        """
+        if type(max_age_seconds) not in (int, float) or not 1 <= max_age_seconds <= 60:
+            raise ValueError("bounded operational measurement age required")
+        now = self.clock()
+        with self._snapshot_lock:
+            result = deepcopy(self._status_snapshot)
+        if result is None:
+            result = {"managed": True, "usage_bytes": None, "budget_bytes": self.budget_bytes,
+                "global_floor_bytes": self.min_free_bytes, "health": "unknown", "last_error": None,
+                "measurement_at": None, "measurement_completed_at": None}
+        at = datetime.fromisoformat(result['measurement_at']) if result['measurement_at'] else None
+        age = (now-at).total_seconds() if at else None
+        stale = age is None or not 0 <= age <= max_age_seconds
+        result.update(measurement_age_seconds=age,
+            measurement_status="unavailable" if at is None else "stale" if stale else "cached",
+            snapshot_only=True, admission_authority=False, usage_is_historical=True,
+            measurement_max_age_seconds=max_age_seconds, free_space_measured_at=now.isoformat())
+        if stale:
+            result.update(health="unknown" if at is None else "stale",
+                          last_error="archive_measurement_unavailable" if at is None else "archive_measurement_stale")
+        try:
+            result['free_bytes'] = shutil.disk_usage(self.directory).free
+            if result['free_bytes'] < self.min_free_bytes:
+                result.update(health="blocked", last_error="archive_global_free_floor_reached")
+        except OSError:
+            result.update(free_bytes=None, health="unknown", last_error="archive_free_space_probe_unavailable")
+        fault = self._last_error
+        if fault or self.catalog is None:
+            result.update(health="blocked", last_error=fault or "archive_closed")
+        # Recompute projections only from the labeled measurement plus fresh free
+        # space. No old exhaustion horizon is represented as a new verification.
+        result['seconds_to_exhaustion'] = None
+        return result
 
     def close(self):
         if self.active is not None:
