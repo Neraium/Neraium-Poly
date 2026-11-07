@@ -20,9 +20,24 @@ def add_capacity(state, *, service, now):
 def experimental_research(runtime, *, for_operations=False):
     event = runtime._event_summary()
     stop = runtime.account.risk.snapshot(now=runtime.clock())["kill_switch"]
+    challenger = None
+    if getattr(runtime, "phase23", None):
+        challenger = runtime.phase23.status()
+        outcome = runtime.phase23_outcomes.status() if runtime.phase23_outcomes else {}
+        challenger["outcome_verification"] = outcome
+        challenger["pending_forecasts"] = max(0, challenger["forecasts"]-outcome.get("verified_forecasts", 0))
+        challenger["verified_forecast_outcomes"] = outcome.get("verified_forecasts", 0)
+        challenger["resolved_events_scope"] = "reviewed independent events; individual verified forecast outcomes are separate"
+        for model_id, count in outcome.get("verified_by_model", {}).items():
+            if model_id in challenger.get("models", {}):
+                challenger["models"][model_id]["resolved"] = count
+        challenger["competition"] = runtime.phase23_competition.status() if runtime.phase23_competition else None
+        challenger["runtime_error"] = runtime.phase23_error
     return {
         "domains": event.get("domains", {"status": "unavailable"}),
         "phase16_execution": runtime.phase16_execution_status(for_operations=True) if for_operations else runtime.phase16_execution_status(),
+        "phase23": challenger if challenger is not None else {"status": "unavailable" if getattr(runtime, "phase23_error", None) else "disabled",
+                        "last_error": getattr(runtime, "phase23_error", None), "trading_authority": False},
         "phase21": ({**runtime.phase21.summary(), "runtime_error": runtime.phase21_error}
                     if getattr(runtime, "phase21", None) else {"status": "unavailable" if getattr(runtime, "phase21_error", None) else "disabled",
                         "last_error": getattr(runtime, "phase21_error", None), "trading_authority": False}),

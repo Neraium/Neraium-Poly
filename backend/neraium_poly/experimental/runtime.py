@@ -198,6 +198,23 @@ class ExperimentalRuntime:
                 except Exception as error:
                     self.phase21_error = f"{type(error).__name__}:{str(error)[:160]}"
                     log.exception("phase21_outcome_recovery_withheld")
+            self.phase23 = None
+            self.phase23_competition = None
+            self.phase23_outcomes = None
+            self.phase23_error = None
+            if config.phase23_research_enabled:
+                from neraium_poly.research.phase23.continuous import ChallengerResearch
+                from neraium_poly.research.phase23.operations import ContinuousCompetition
+                from neraium_poly.research.phase23.outcomes import ChallengerOutcomes
+
+                try:
+                    self.phase23 = ChallengerResearch(self.events, clock=self.clock, can_write=self._budget_ok)
+                    self.phase23_competition = ContinuousCompetition(self.events, clock=self.clock, can_write=self._budget_ok, evidence_root=config.data_dir/"phase23-resolution-evidence")
+                    self.phase23_outcomes = ChallengerOutcomes(self.events, config.data_dir/"phase23-resolution-evidence", clock=self.clock, can_write=self._budget_ok)
+                except Exception as error:
+                    self.phase23 = self.phase23_competition = self.phase23_outcomes = None
+                    self.phase23_error = f"{type(error).__name__}:{str(error)[:160]}"
+                    log.exception("phase23_research_recovery_withheld")
             self.feed = feed or SharedFeedClient(config.source_url)
             self.fee_adapter = fee_adapter or AuditedFeeAdapter(
                 self.events, self._budget_ok, client=httpx.AsyncClient(timeout=5, follow_redirects=False)
@@ -713,6 +730,15 @@ class ExperimentalRuntime:
                     except Exception as error:
                         self.phase18_error = f"{type(error).__name__}:{str(error)[:160]}"
                         log.exception("phase18_event_research_withheld")
+                if self.phase23 is not None and self.last_frame is not None and self._budget_ok():
+                    try:
+                        await self.phase23.step(self.last_frame)
+                        await self.phase23_outcomes.step()
+                        await asyncio.to_thread(self.phase23_competition.step, self.last_frame)
+                        self.phase23_error = None
+                    except Exception as error:
+                        self.phase23_error = f"{type(error).__name__}:{str(error)[:160]}"
+                        log.exception("phase23_research_withheld")
                 await asyncio.sleep(10)
 
         async def cycles():

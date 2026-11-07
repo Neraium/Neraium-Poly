@@ -2,9 +2,9 @@
   "data_dir": "data/paper-live",
   "host": "127.0.0.1",
   "port": 18742,
-  "max_markets": 200,
+  "max_markets": 400,
   "page_size": 100,
-  "max_pages": 4,
+  "max_pages": 6,
   "books_per_cycle": 100,
   "cycle_interval_seconds": 10.0,
   "discovery_interval_seconds": 300.0,
@@ -15,9 +15,9 @@
   "coverage_enabled": true,
   "websocket_enabled": true,
   "rotate_liquid_universe": false,
-  "collection_concurrency": 4,
+  "collection_concurrency": 2,
   "request_rate": 8.0,
-  "max_subscription_tokens": 800,
+  "max_subscription_tokens": 1000,
   "stream_queue_size": 512,
   "research_bundle_path": "data/phase8-history-events",
   "research_report_path": "data/paper-live/research/report.json",
@@ -62,5 +62,6 @@
   "archive_cold_verification_enabled": true,
   "forecast_discovery_enabled": true,
   "forecast_priority_market_limit": 12,
-  "forecast_protected_directory": "data/experimental-paper"
+  "forecast_protected_directory": "data/experimental-paper",
+  "diverse_discovery_enabled": true
 }

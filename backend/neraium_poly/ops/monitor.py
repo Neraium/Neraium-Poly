@@ -105,11 +105,13 @@ def render_monitor(
     """
     width, height = max(30, min(int(width), 160)), max(12, min(int(height or 24), 100))
     certified, experimental = _mapping(certified), _mapping(experimental)
-    if view not in {"summary", "strategies", "rejections", "research", "events", "domains", "archives", "operations", "readiness", "edge"} or scope not in {
+    if view not in {"summary", "strategies", "rejections", "research", "events", "domains", "archives", "operations", "readiness", "edge", "challengers"} or scope not in {
         "cycle",
         "epoch",
     }:
         raise ValueError("monitor view or scope invalid")
+    if view == "challengers":
+        return _render_challengers(certified, experimental, width, height, errors)
     if view == "edge":
         event = _mapping(_mapping(experimental.get("operations_research")).get("phase18"))
         if event and event.get("status") != "disabled":
@@ -1276,7 +1278,7 @@ def monitor(
 ):
     loopback_url(certified_url)
     loopback_url(experimental_url)
-    if view in {"operations", "readiness", "edge"}:
+    if view in {"operations", "readiness", "edge", "challengers"}:
         def operations_url(value):
             parsed = urlsplit(value)
             return urlunsplit((parsed.scheme, parsed.netloc, "/api/operations-state", "", ""))
@@ -1439,3 +1441,37 @@ def _render_event_edge(certified, experimental, width, height, errors):
         if i:rendered.append('\n')
         line=Text(_clean(value),style=style,no_wrap=True,overflow='ellipsis');line.truncate(width,overflow='ellipsis');rendered.append_text(line)
     return rendered
+
+
+def _render_challengers(certified, experimental, width, height, errors):
+    from datetime import UTC, datetime
+
+    now = datetime.now(UTC)
+    research = _mapping(_mapping(experimental.get("operations_research")).get("phase23"))
+    current = (research.get("status") == "research_only" and not research.get("runtime_error")
+               and _ops_fresh(experimental.get("generated_at"), now)
+               and _p16_recent(research.get("last_evaluation_at"), now, seconds=360))
+    rows = [("RESEARCH MODEL COMPETITION", "bold cyan"),
+            ("NO TRADING AUTHORITY", "yellow")]
+    if current:
+        rows.append((f"Forecasts {_number(research.get('forecasts'))} Pending {_number(research.get('pending_forecasts'))}", "white"))
+        rows.append((f"Parents {_number(research.get('unreviewed_parent_events'))} unreviewed", "white"))
+        for name, model in _mapping(research.get("models")).items():
+            row = _mapping(model)
+            rows.append((f"{_clean(name)} F{_number(row.get('forecasts'))} V{_number(row.get('resolved'))}", "white"))
+        rows.append(("Scores: insufficient evidence", "yellow"))
+    else:
+        rows.append(("Research unavailable / stale", "yellow"))
+    rows.append((f"Exp {_number(experimental.get('bankroll'), money=True)} Cert {_number(certified.get('cash'), money=True)}", "white"))
+    rows.append(("LIVE TRADING DISABLED" if all(_mapping(s.get('service', s.get('operation', {}).get('service', {}))).get('live_trading_enabled') is False
+                 for s in [experimental, certified]) else "LIVE CONFIG UNVERIFIED", "dim"))
+    if errors:
+        rows.insert(2, ("API "+_clean(errors[0]), "yellow"))
+    text = Text()
+    for index, (label, style) in enumerate(rows[:height]):
+        if index:
+            text.append("\n")
+        line = Text(label, style=style, no_wrap=True, overflow="ellipsis")
+        line.truncate(width, overflow="ellipsis")
+        text.append_text(line)
+    return text

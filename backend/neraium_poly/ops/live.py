@@ -244,7 +244,7 @@ class LivePaperRuntime:
         if not batch.markets:
             raise ValueError("No valid real market metadata returned")
         diverse_discovery = {"status": "unavailable"}
-        if self.coverage:
+        if self.coverage and self.config.diverse_discovery_enabled:
             from neraium_poly.research.phase23.discovery import augment_diverse
 
             batch, diverse_discovery = await augment_diverse(self, batch)
@@ -344,7 +344,7 @@ class LivePaperRuntime:
                 "outcomes": len(batch.markets),
                 "bounded": batch.truncated,
                 "next_offset": batch.next_offset,
-                "selection_order": "volume24hr_desc+bounded_forecast_priority" if self.config.forecast_discovery_enabled else "volume24hr_desc" if self.coverage else "active_market_id_pages",
+                "selection_order": "domain_parent_quality+protected_forecast_priority" if diverse_discovery.get("status") == "research_collection_only" else "volume24hr_desc+bounded_forecast_priority" if self.config.forecast_discovery_enabled else "volume24hr_desc" if self.coverage else "active_market_id_pages",
                 "forecast_discovery": forecast_discovery,
                 "diverse_discovery": diverse_discovery,
                 "errors": list(batch.errors),

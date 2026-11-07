@@ -33,6 +33,7 @@ def main():
             "research-audit",
             "forecast-qualification",
             "forecast-evaluate",
+            "challenger-report",
             "strategy-approve",
             "strategy-status",
             "strategy-revoke",
@@ -62,7 +63,7 @@ def main():
     parser.add_argument("--width", type=int)
     parser.add_argument("--no-color", action="store_true")
     parser.add_argument(
-        "--view", choices=("summary", "strategies", "rejections", "research", "events", "domains", "archives", "operations", "readiness", "edge"), default="summary"
+        "--view", choices=("summary", "strategies", "rejections", "research", "events", "domains", "archives", "operations", "readiness", "edge", "challengers"), default="summary"
     )
     parser.add_argument("--scope", choices=("cycle", "epoch"), default="cycle")
     parser.add_argument("--refresh", type=float, default=3)
@@ -178,6 +179,19 @@ def main():
                 indent=2,
             )
         )
+    elif args.command == "challenger-report":
+        from datetime import UTC, datetime
+
+        from neraium_poly.research.phase17.provenance import ReadonlyArchive
+        from neraium_poly.research.phase23.operations import competition_report
+
+        with ReadonlyArchive(args.data_dir, max_query_bytes=128*1024**2) as archive:
+            report = competition_report(archive, as_of=datetime.now(UTC), evidence_root=args.data_dir/"phase23-resolution-evidence")
+        if args.output:
+            with args.output.open("x") as handle:
+                json.dump(report, handle, indent=2)
+                handle.write("\n")
+        print(json.dumps(report, indent=2))
     elif args.command == "forecast-evaluate":
         from datetime import datetime
 
