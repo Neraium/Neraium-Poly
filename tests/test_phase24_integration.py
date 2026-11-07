@@ -166,3 +166,27 @@ def test_phone_registry_view_preserves_accounts_safety_and_stale_warning():
   assert 'LIVE TRADING DISABLED' in text and max(map(len,text.splitlines()))<=width
  stale={**domain,'last_evaluation_at':'2020-01-01T00:00:00Z'}
  assert 'unavailable / stale' in _render_domain_challengers(cert,exp,{},stale,38,24,()).plain
+
+
+@pytest.mark.parametrize('replay_valid',[True,False])
+async def test_outcome_adapter_verified_boolean_requires_replay_before_normalizing_status(tmp_path,monkeypatch,replay_valid):
+ from neraium_poly.research.phase24 import outcomes
+ store=EventStore(tmp_path/'controlled.sqlite');_m,_b,e,f,frame=inputs();clock=[NOW];calls=[]
+ try:
+  r=DomainResearch(store,clock=lambda:clock[0],adapters={'weather':adapter(e,f)});await r.step(frame)
+  clock[0]+=timedelta(days=2)
+  async def acquire(forecast,**kw):return {'verified':True,'forecast_id':forecast['id']}
+  def replay_result(result,study,forecast,**kw):
+   calls.append(forecast['id'])
+   return {**{k:forecast[k] for k in ['event_id','market_id','token_id','rules_sha256']},'forecast_id':forecast['id'],
+           'verified':replay_valid,'resolved_at':(NOW+timedelta(days=1,hours=1)).isoformat(),'available_at':clock[0].isoformat()}
+  module=SimpleNamespace(verify_outcome=acquire,replay=lambda *a,**kw:{'verified':True},replay_outcome=replay_result)
+  monkeypatch.setattr(outcomes.importlib,'import_module',lambda name:module)
+  scheduler=DomainOutcomes(store,tmp_path/'proofs',clock=lambda:clock[0]);await scheduler.step()
+  result=store.latest('DomainOutcomeStudy',1)[0]['result']
+  assert bool(scheduler.state['verified'])==replay_valid
+  assert result['status']==('verified' if replay_valid else 'withheld') and len(calls)==1
+  recovered=DomainOutcomes(store,tmp_path/'proofs',clock=lambda:clock[0]);assert recovered.state==scheduler.state
+  report=combined_report(store,as_of=clock[0],evidence_root=tmp_path/'proofs')
+  assert report['counts']['individually_verified_forecasts']==int(replay_valid)
+ finally:store.close()

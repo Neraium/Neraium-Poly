@@ -44,7 +44,10 @@ def replay_domain_outcome(row,study,f,*,evidence_root,as_of):
     replay=module.replay(f,evidence,as_of=as_of)
     if not isinstance(replay,dict) or replay.get('verified') is not True:raise ValueError('original domain model/source replay failed')
     proof=module.replay_outcome(row['result'],study,f,evidence_root=Path(evidence_root)/adapter,as_of=as_of)
-    if not at(study['available_at'])<at(proof['resolved_at']):raise ValueError('durable forecast must precede actual resolution')
+    if (not isinstance(proof,dict) or proof.get('verified') is not True or proof.get('forecast_id')!=f['id']
+        or any(proof.get(k)!=f[k] for k in ('event_id','market_id','token_id','rules_sha256'))
+        or not at(study['available_at'])<at(proof['resolved_at'])<=at(proof['available_at'])<=at(as_of)):
+        raise ValueError('independently replayed exact prospective outcome required')
     return proof
 
 
@@ -100,9 +103,11 @@ class DomainOutcomes:
                     result=await mod.verify_outcome(f,directory=self.directory/p['adapter'],clock=self.clock)
                     if result.get('forecast_id',fid)!=fid:raise ValueError('outcome forecast identifier mismatch')
                     result['forecast_id']=fid
-                    if result.get('status')=='verified':
+                    if result.get('status')=='verified' or result.get('verified') is True:
                         probe={'adapter':p['adapter'],'original_study_sha256':digest(study),'forecast_id':fid,'result':result}
                         await asyncio.to_thread(replay_domain_outcome,probe,study,f,evidence_root=self.directory,as_of=at(self.clock()))
+                        result['status']='verified' # only independently replayed proofs become scheduler labels
+                    else:result.setdefault('status','withheld')
             except Exception as error: # noqa: BLE001 - failed verification cannot create an outcome
                 result={'status':'withheld','forecast_id':fid,'reason':f'{type(error).__name__}:{str(error)[:160]}'}
             s['checks']+=1;s['checked'][fid]=at(self.clock()).isoformat()
