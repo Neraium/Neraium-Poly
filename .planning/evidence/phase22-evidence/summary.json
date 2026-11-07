@@ -1,0 +1,117 @@
+{
+  "observed_at": "2026-11-07T20:31:32.400072+00:00",
+  "crypto_forecasts": 24,
+  "sports_forecasts": 3,
+  "crypto_parent_ids": [
+    "1329687",
+    "1329694"
+  ],
+  "crypto_completed_windows": 0,
+  "reference_conditions_met": 0,
+  "verified_outcomes": 0,
+  "sports_games_started": 0,
+  "sports_outcomes": 0,
+  "crypto_period_ends": [
+    "2026-11-08T05:00:00+00:00"
+  ],
+  "sports_game_starts": [
+    {
+      "game_id": "2026_09_DET_MIA",
+      "at": "2026-11-08T18:00:00+00:00"
+    },
+    {
+      "game_id": "2026_09_BUF_MIN",
+      "at": "2026-11-10T01:15:00+00:00"
+    },
+    {
+      "game_id": "2026_09_CIN_ATL",
+      "at": "2026-11-08T14:30:00+00:00"
+    }
+  ],
+  "source_facts": [
+    {
+      "symbol": "BTCUSDT",
+      "study_id": "e2879e912e054d208701fd68b65e2dc008c9bf5672c09ecda1cf3ccb294bbb0c",
+      "study_available_at": "2026-11-07T20:28:51.733273Z",
+      "source_timestamp": "2026-11-07T20:27:59.999000Z",
+      "source_available_at": "2026-11-07T20:28:51.287316Z",
+      "evidence_sha256": "16b70ea48206ee3eb6d0c26d299171f698d602331e11c2ae43258eb53addfe0b",
+      "reference_minutes": 928,
+      "observed_daily_low": 75600.82,
+      "age_seconds_at_audit": 161.112756
+    },
+    {
+      "symbol": "ETHUSDT",
+      "study_id": "6f5125a1074d608baa247082a61c3d7e7b15ad069c8af82106c0816e1c88a817",
+      "study_available_at": "2026-11-07T20:23:42.732250Z",
+      "source_timestamp": "2026-11-07T20:22:59.999000Z",
+      "source_available_at": "2026-11-07T20:23:42.465825Z",
+      "evidence_sha256": "47181407e79334e92fb3396ec6208673ca51503fba274bdd32dda2609444cd8e",
+      "reference_minutes": 923,
+      "observed_daily_low": 2229.92,
+      "age_seconds_at_audit": 469.934247
+    }
+  ],
+  "qualified_train_heldout": [
+    0,
+    0
+  ],
+  "calibration": null,
+  "sii_incremental_value": null,
+  "capacity": [
+    {
+      "hypothetical_capital": 500,
+      "books": 4,
+      "minimum": 50.0,
+      "median": 50.0,
+      "maximum": 50.0,
+      "edge_qualified_capacity": null
+    },
+    {
+      "hypothetical_capital": 1000,
+      "books": 4,
+      "minimum": 100.0,
+      "median": 100.0,
+      "maximum": 100.0,
+      "edge_qualified_capacity": null
+    },
+    {
+      "hypothetical_capital": 10000,
+      "books": 4,
+      "minimum": 262.106836,
+      "median": 1000.0,
+      "maximum": 1000.0,
+      "edge_qualified_capacity": null
+    },
+    {
+      "hypothetical_capital": 100000,
+      "books": 4,
+      "minimum": 262.106836,
+      "median": 4915.629781,
+      "maximum": 5711.953228999999,
+      "edge_qualified_capacity": null
+    },
+    {
+      "hypothetical_capital": 1000000,
+      "books": 4,
+      "minimum": 262.106836,
+      "median": 4915.629781,
+      "maximum": 5711.953228999999,
+      "edge_qualified_capacity": null
+    }
+  ],
+  "priority_ready_markets": 2,
+  "priority_ready_parent_ids": [
+    "1329687",
+    "1329694"
+  ],
+  "native_book_scenarios": 4,
+  "market_count": 212,
+  "domain_distribution": {
+    "crypto": 13,
+    "esports": 14,
+    "other": 159,
+    "sports": 24,
+    "economics": 2
+  }
+}

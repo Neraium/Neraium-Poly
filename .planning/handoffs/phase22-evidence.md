@@ -1,0 +1,7 @@
+# Phase 22 read-only evidence handoff
+Worktree poly-p22-evidence-20261107; source baseline4256b96. No application changes, production writers, service/config/risk changes, outcome records or forecasts created.
+Native audit20:31:32UTC:24crypto forecasts/2unreviewedparents and3NFLforecasts/models/source/journal replayed. Latest existing native sourceBTC20:27:59.999 low75600.82,ETH20:22:59.999 low2229.92;0hits/0completedwindows/0verifiedlabels. Crypto windows endNov8 05UTC;NFLstartsNov8 14:30/18:00UTC andNov10 01:15UTC. No gamesstarted. Currentreferenceconditions alone cannotsettle and nonejustify nativeproofacquisitionyet.
+No calibrated/event-disjoint resolvedcohort andnoqualifiedSIIchallenger;metricsNULL,100/100gatesunchanged.
+Currentactualframe212markets:2priority-ready markets/2unreviewedcrypto parentIDs;4healthybookscenarios. Fivecapitalmedians50/100/1000/4915.63/4915.63;maximum5711.95displayedprincipal. This is10%participationliquidity-only,notprofitableEV/executableinstitutionalcapacity;correlatedtokenscannotbesummed.
+Evidence .planning/evidence/phase22-evidence/{summary.json,forecast-audit.json,capacity.json,audit.py}. Fullrawframe retainedin samefolder (untracked, referencedbySHA in capacity.json). Auditusedexisting readonly archive and native service references; no duplicate externalgame/candlefetch needed. Do not label prior source facts as instantaneouscurrentprices: timestamps/agesexplicit.
+Rootmaycopycompactevidence or cherry-pickthisevidence-onlycommit; no unittestneededbecauseapplicationuntouched. RootownsfinalCI/deployment/integration.
