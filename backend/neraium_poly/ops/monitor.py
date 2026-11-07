@@ -111,6 +111,9 @@ def render_monitor(
     }:
         raise ValueError("monitor view or scope invalid")
     if view == "edge":
+        event = _mapping(_mapping(experimental.get("operations_research")).get("phase18"))
+        if event and event.get("status") != "disabled":
+            return _render_event_edge(certified, experimental, width, height, errors)
         return _render_edge(certified, experimental, width, height, errors)
     if view == "readiness":
         return _render_readiness(certified, experimental, width, height, errors)
@@ -711,6 +714,10 @@ def _render_operations(certified, experimental, width, height, errors):
         else:
             line(f"Gate {_clean(c_service.get('trading_status', 'unavailable'))}" + (" · stale" if not fresh else ""), 1, "yellow")
     research = _mapping(experimental.get("operations_research")) or _mapping(certified.get("operations_research"))
+    events = _mapping(research.get("phase18"))
+    if events:
+        line(f"Event forecasts {_number(events.get('independent_research_forecasts'))} (research)", 2)
+        line(f"Event train/held {_number(events.get('qualified_training_events'))}/{_number(events.get('qualified_heldout_events'))}", 2)
     readiness = _mapping(research.get("readiness_snapshot"))
     readiness_fresh = _ops_fresh(readiness.get("generated_at"), now)
     assessment = readiness.get("assessment")
@@ -1350,4 +1357,53 @@ def _render_edge(certified, experimental, width, height, errors):
         row = Text(_clean(value), style=style, no_wrap=True, overflow="ellipsis")
         row.truncate(width, overflow="ellipsis")
         rendered.append_text(row)
+    return rendered
+
+
+def _render_event_edge(certified, experimental, width, height, errors):
+    """Event outcomes take priority over legacy mark-prediction comparisons."""
+    now=datetime.now(UTC);op=_mapping(certified.get('operation'));cs=_mapping(op.get('service'))
+    es=_mapping(experimental.get('service'));con=_mapping(op.get('connectivity'))
+    r=_mapping(_mapping(experimental.get('operations_research')).get('phase18'))
+    fresh=(_ops_fresh(experimental.get('generated_at'),now) and es.get('status')=='ok'
+        and r.get('status')=='research_only' and _p16_recent(r.get('last_evaluation_at'),now,seconds=360)
+        and not r.get('runtime_error') and not r.get('last_error'))
+    live=(_ops_fresh(certified.get('generated_at'),now) and cs.get('status')=='ok'
+        and con.get('ws_connected') is True and _p16_recent(con.get('last_message_at'),now))
+    latest=_mapping(r.get('latest'));approaches=_mapping(r.get('approaches'));domains=_mapping(r.get('forecasts_by_domain'))
+    rows=[('EVENT PROBABILITY RESEARCH','bold cyan',1),
+        ('REAL MARKET DATA' if live else 'SOURCE STALE / UNAVAILABLE','cyan' if live else 'yellow',0),
+        ('EXPERIMENTAL PAPER','bold yellow',0),
+        (f"Equity {_number(experimental.get('bankroll',experimental.get('cash')),True)} P/L {_number(experimental.get('simulated_pnl'),True)}",'white',0),
+        (f"Stop {_flag(experimental.get('kill_switch'))}",'yellow',0),
+        ('CERTIFIED PAPER','bold green',0),
+        (f"Equity {_number(certified.get('bankroll',certified.get('cash')),True)}",'white',0),
+        ('Event source current' if fresh else 'Event source stale / unavailable','cyan' if fresh else 'yellow',1),
+        (f"Crypto {_number(domains.get('crypto'))} Pending {_number(r.get('pending_forecasts'))}",'white',1),
+        ('Weather/econ qualified inputs required','yellow',2),
+        (f"Resolved {_number(r.get('durable_outcome_records'))} (proof required)",'white',2),
+        (f"Train/held {_number(r.get('qualified_training_events'))}/{_number(r.get('qualified_heldout_events'))} needs100/100",'white',1),
+        ('Uncalibrated; uncertainty [0,1]','yellow',1),
+        ('Net edge unavailable / no admission','yellow',1),
+        ('Research models NO order authority','yellow',0)]
+    for name,label in [('high_throughput','Throughput'),('high_conviction','Conviction')]:
+        row=_mapping(approaches.get(name))
+        rows.append((f"{label} E{_number(row.get('evaluated'))} Q{_number(row.get('qualified'))} R{_number(row.get('rejected'))}",'white',1))
+    for label,value in [('Col',certified),('Exp',experimental)]:
+        archive=_mapping(value.get('archive'))
+        rows.append((f"{label} {_ops_bytes(archive.get('usage_bytes'))}/{_ops_bytes(archive.get('budget_bytes'))}",'dim',2))
+    rows.append((f"Last {_seen(r.get('last_evaluation_at'))}",'dim',2))
+    if latest.get('model_version'):rows.append((_clean(latest['model_version']),'dim',3))
+    if errors:rows.append(('API '+_clean(errors[0]),'yellow',1))
+    keep=list(range(len(rows)))
+    for i in sorted(keep,key=lambda j:(rows[j][2],j),reverse=True):
+        if len(keep)<=height-1:break
+        if rows[i][2]:keep.remove(i)
+    unsafe=any(s.get('live_trading_enabled') is True or s.get('paper_trading') is False for s in (cs,es))
+    verified=all(s.get('live_trading_enabled') is False and s.get('paper_trading') is True for s in (cs,es))
+    safety='WARNING LIVE CONFIG UNSAFE' if unsafe else 'LIVE TRADING DISABLED' if verified else 'LIVE CONFIG UNVERIFIED'
+    rendered=Text()
+    for i,(value,style) in enumerate([(rows[j][0],rows[j][1]) for j in keep]+[(safety,'dim')]):
+        if i:rendered.append('\n')
+        line=Text(_clean(value),style=style,no_wrap=True,overflow='ellipsis');line.truncate(width,overflow='ellipsis');rendered.append_text(line)
     return rendered

@@ -17,7 +17,7 @@
   "fee_batch": 8,
   "fee_ttl_seconds": 300,
   "max_archive_mb": 512,
-  "min_free_disk_mb": 8192,
+  "min_free_disk_mb": 102400,
   "position_notional": 2,
   "risk_limits": {
     "bankroll": 500,
@@ -34,13 +34,14 @@
   },
   "domain_research_enabled": true,
   "archive_management_enabled": true,
-  "archive_budget_mb": 16384,
+  "archive_budget_mb": 102400,
   "archive_segment_mb": 8,
-  "archive_reserve_disk_mb": 65536,
+  "archive_reserve_disk_mb": 102400,
   "archive_compression_enabled": true,
   "archive_cold_verification_enabled": true,
   "phase15_relationship_research_enabled": false,
   "phase16_research_enabled": true,
   "phase17_research_enabled": true,
-  "phase16_execution_veto_enabled": true
+  "phase16_execution_veto_enabled": true,
+  "phase18_event_research_enabled": true
 }

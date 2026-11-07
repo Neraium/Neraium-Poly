@@ -21,7 +21,7 @@ class LivePaperConfig(BaseModel):
     max_archive_mb: int = Field(default=512, ge=1, le=4096)
     min_free_disk_mb: int = Field(default=2048, ge=100)
     archive_management_enabled: bool = False
-    archive_budget_mb: int = Field(default=65536, ge=64, le=131072)
+    archive_budget_mb: int = Field(default=65536, ge=64, le=262144)
     archive_segment_mb: int = Field(default=16, ge=1, le=1024)
     archive_reserve_disk_mb: int = Field(default=65536, ge=8192)
     archive_compression_enabled: bool = True

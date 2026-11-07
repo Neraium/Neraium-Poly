@@ -8,6 +8,7 @@ from datetime import UTC, datetime
 from urllib.parse import urlsplit
 
 import httpx
+
 from neraium_poly.research.phase14.contracts import DomainContract, DomainEvidence
 from neraium_poly.research.phase14.finance import ORIGIN, digest
 

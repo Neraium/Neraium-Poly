@@ -159,6 +159,16 @@ class ExperimentalRuntime:
                 except Exception as error:  # Research cannot grant trading authority.
                     self.phase17_error = f"{type(error).__name__}:{str(error)[:160]}"
                     log.exception("phase17_recovery_withheld")
+            self.phase18 = None
+            self.phase18_error = None
+            if config.phase18_event_research_enabled:
+                from neraium_poly.research.phase18.continuous import IndependentEventResearch
+
+                try:
+                    self.phase18 = IndependentEventResearch(self.events, clock=self.clock, can_write=self._budget_ok)
+                except Exception as error:
+                    self.phase18_error = f"{type(error).__name__}:{str(error)[:160]}"
+                    log.exception("phase18_recovery_withheld")
             self.feed = feed or SharedFeedClient(config.source_url)
             self.fee_adapter = fee_adapter or AuditedFeeAdapter(
                 self.events, self._budget_ok, client=httpx.AsyncClient(timeout=5, follow_redirects=False)
@@ -643,6 +653,18 @@ class ExperimentalRuntime:
             await asyncio.sleep(2)
 
     async def run(self, should_exit=lambda: False):
+        async def independent_events():
+            while not self.stopping and not should_exit():
+                if self.phase18 is not None and self.last_frame is not None and self._budget_ok():
+                    try:
+                        await self.phase18.step(self.last_frame)
+                        await self.phase18.resolve_pending(self.config.data_dir / "phase18-resolution-evidence")
+                        self.phase18_error = None
+                    except Exception as error:
+                        self.phase18_error = f"{type(error).__name__}:{str(error)[:160]}"
+                        log.exception("phase18_event_research_withheld")
+                await asyncio.sleep(10)
+
         async def cycles():
             while not self.stopping and not should_exit():
                 try:
@@ -653,7 +675,7 @@ class ExperimentalRuntime:
                     self._cancel_and_checkpoint(self.clock())
                 await asyncio.sleep(self.config.poll_seconds)
 
-        await asyncio.gather(cycles(), self._fees_loop(should_exit), self._event_resolution_loop(should_exit))
+        await asyncio.gather(cycles(), self._fees_loop(should_exit), self._event_resolution_loop(should_exit), independent_events())
 
     def health(self):
         last_success = self.last_success

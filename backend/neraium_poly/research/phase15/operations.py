@@ -5,8 +5,15 @@ from neraium_poly.research.phase15.readiness import STRATEGIES
 
 
 def add_capacity(state, *, service, now):
+    budget = state.get("archive", {}).get("budget_bytes")
+    allocations = None
+    if (service == "collector" and budget == 200*1024**3
+        or service == "experimental" and budget == 100*1024**3):
+        from neraium_poly.research.phase18.operations import tier_allocations
+
+        allocations = tier_allocations(service)
     state["capacity"] = capacity_status(state.get("archive", {}), service=service,
-                                        now=now, generated_at=state.get("generated_at"))
+                                        now=now, generated_at=state.get("generated_at"), allocations=allocations)
     return state
 
 
@@ -16,6 +23,9 @@ def experimental_research(runtime):
     return {
         "domains": event.get("domains", {"status": "unavailable"}),
         "phase16_execution": runtime.phase16_execution_status(),
+        "phase18": ({**runtime.phase18.summary(), "runtime_error": runtime.phase18_error}
+                    if runtime.phase18 else {"status": "unavailable" if runtime.phase18_error else "disabled",
+                        "last_error": runtime.phase18_error, "trading_authority": False}),
         "phase17": ({**runtime.phase17.summary(), "runtime_error": runtime.phase17_error}
                     if runtime.phase17 else {"status": "unavailable" if runtime.phase17_error else "disabled",
                         "last_error": runtime.phase17_error, "trading_authority": False}),

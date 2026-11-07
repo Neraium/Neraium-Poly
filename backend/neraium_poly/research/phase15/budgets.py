@@ -17,7 +17,7 @@ def _number(value):
             and math.isfinite(value) and value >= 0)
 
 
-def capacity_status(archive, *, service, now, generated_at=None):
+def capacity_status(archive, *, service, now, generated_at=None, allocations=None):
     """Soft tier/horizon warnings, independent hard budget/free-space backpressure."""
     if service not in ALLOCATIONS or now.tzinfo is None:
         raise ValueError("known service and aware capacity cutoff required")
@@ -58,7 +58,10 @@ def capacity_status(archive, *, service, now, generated_at=None):
             alerts.append("capacity_horizon_below_7_days")
     else:
         alerts.append("growth_horizon_insufficient_evidence")
-    allocations = ALLOCATIONS[service]
+    allocations = ALLOCATIONS[service] if allocations is None else allocations
+    if (not isinstance(allocations, dict) or set(allocations) != set(ALLOCATIONS[service])
+        or not all(_number(v) for v in allocations.values())):
+        raise ValueError("known finite soft tier allocations required")
     expected_budget = sum(allocations.values())
     if budget != expected_budget:
         alerts.append("tier_allocation_requires_budget_review")

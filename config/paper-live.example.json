@@ -9,7 +9,7 @@
   "cycle_interval_seconds": 10.0,
   "discovery_interval_seconds": 300.0,
   "max_archive_mb": 2048,
-  "min_free_disk_mb": 8192,
+  "min_free_disk_mb": 102400,
   "max_relationships": 200,
   "max_book_age_seconds": 15.0,
   "coverage_enabled": true,
@@ -55,9 +55,9 @@
     "kelly_fraction": 0.1
   },
   "archive_management_enabled": true,
-  "archive_budget_mb": 65536,
+  "archive_budget_mb": 204800,
   "archive_segment_mb": 16,
-  "archive_reserve_disk_mb": 65536,
+  "archive_reserve_disk_mb": 102400,
   "archive_compression_enabled": true,
   "archive_cold_verification_enabled": true
 }
