@@ -1,0 +1,39 @@
+{
+  "provider": "NFL.com official scoreboard",
+  "url": "https://www.nfl.com/scores/2026/week-9",
+  "captured_at": "2026-11-07T22:41:48.549988+00:00",
+  "availability_basis": "actual isolated response capture; no inferred historical publication timestamp",
+  "raw_bytes": 2292130,
+  "raw_sha256": "14020ab8206ec098454b7bd455027b269bb85bc2312f0c89aa9ecafd4e02422d",
+  "raw_local_path": "data/phase24-outcomes/nfl.raw",
+  "source_results": [
+    {
+      "status": "final",
+      "official_game_id": "ab380826-4feb-11f1-abca-2c54536568a9",
+      "event_start": "2026-11-06T01:15:00+00:00",
+      "home_id": "BAL",
+      "away_id": "JAX",
+      "home_score": 10,
+      "away_score": 33,
+      "actual": "win",
+      "expected_contract_payout": 1.0,
+      "includes_overtime": true,
+      "observed_final_at": "2026-11-07T22:41:48.549988+00:00",
+      "completion_timestamp": null,
+      "completion_time_bound": [
+        "2026-11-06T01:15:00+00:00",
+        "2026-11-07T22:41:48.549988+00:00"
+      ],
+      "provider": "NFL.com official scoreboard",
+      "official_league_source": true
+    },
+    {
+      "status": "pending",
+      "official_game_id": "ab380bc7-4feb-11f1-abca-2c54536568a9",
+      "event_start": "2026-11-08T14:30:00+00:00"
+    }
+  ],
+  "prospective_forecasts_scored": 0,
+  "scope": "legitimate source parsing evidence only; completed JAX/BAL is not an earlier forecast result; original upcoming CIN/ATL remains pending",
+  "trading_authority": false
+}
