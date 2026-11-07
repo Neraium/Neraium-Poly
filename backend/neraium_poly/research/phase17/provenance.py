@@ -139,6 +139,43 @@ class ReadonlyArchive:
         except (KeyError, ValueError, TypeError, sqlite3.Error):
             return False
 
+    def verify_chain(self, studies):
+        """Authenticate a bounded chronological contiguous study window.
+
+        The first record's external parent is allowed because a bounded window
+        need not begin at archive genesis. All subsequent parent links must match
+        the preceding supplied study, and both event/availability times increase.
+        This verifies coverage between endpoints, not an unseen external prefix.
+        """
+        if not isinstance(studies, (list, tuple)) or not 1 <= len(studies) <= 1000:
+            return False
+        previous, seen, used = None, set(), 0
+        try:
+            for study in studies:
+                if not isinstance(study, dict):
+                    return False
+                used += len(json.dumps(study, sort_keys=True, separators=(",", ":"),
+                                       allow_nan=False).encode())
+                if used > min(self.max_query_bytes, 64 * 1024**2) or not self.verify_study(study):
+                    return False
+                identity, parent = study["id"], study.get("parent_id")
+                if identity in seen or parent == identity:
+                    return False
+                if parent is not None and (not isinstance(parent, str) or not 1 <= len(parent) <= 512):
+                    return False
+                available, event = _time(study["available_at"]), _time(study["timestamp"])
+                if event > available:
+                    return False
+                if previous is not None and (parent != previous["id"]
+                    or available <= _time(previous["available_at"])
+                    or event <= _time(previous["timestamp"])):
+                    return False
+                seen.add(identity)
+                previous = study
+            return True
+        except (KeyError, ValueError, TypeError, sqlite3.Error):
+            return False
+
     def verify_point(self, point, study):
         """Recompute Phase16 point from authenticated raw market/book/fee context."""
         if not self.verify_study(study):

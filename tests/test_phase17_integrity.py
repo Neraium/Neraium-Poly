@@ -175,3 +175,30 @@ def test_changed_manifest_is_detected_without_any_retirement(tmp_path):
             reader.verify_segment(name)
         assert (tmp_path/'events-segments'/name).exists()
     finally:store.close()
+
+
+
+def test_authenticated_chain_requires_contiguous_order_without_lost_or_duplicate_studies(tmp_path):
+    store=managed(tmp_path);study=ContinuousQualification(store);rows=[]
+    try:
+        for i in range(5):
+            f,at=frame(i);study.observe(f,now=at);rows.append(store.latest('QualificationStudy',1)[0])
+        with ReadonlyArchive(tmp_path) as reader:
+            assert reader.verify_chain(rows)
+            assert reader.verify_chain(rows[2:])  # First boundary's external parent is permitted.
+            assert reader.verify_chain(rows[:1])
+            assert not reader.verify_chain([])
+            assert not reader.verify_chain(list(reversed(rows)))
+            assert not reader.verify_chain([rows[0],rows[2],rows[3]])
+            assert not reader.verify_chain([rows[0],rows[1],rows[1],rows[2]])
+            changed=deepcopy(rows);changed[2]['parent_id']=rows[0]['id']
+            assert not reader.verify_chain(changed)
+            changed=deepcopy(rows);changed[2]['timestamp']=rows[1]['timestamp']
+            assert not reader.verify_chain(changed)
+            changed=deepcopy(rows);changed[2]['available_at']=rows[1]['available_at']
+            assert not reader.verify_chain(changed)
+            assert not reader.verify_chain([None])
+            assert not reader.verify_chain(rows*201)  # 1005 exceeds row limit before I/O.
+        with ReadonlyArchive(tmp_path,max_payload_bytes=1024,max_query_bytes=2048) as small:
+            assert not small.verify_chain(rows)  # Byte budget includes source frame/checkpoint.
+    finally:store.close()
