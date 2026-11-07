@@ -93,7 +93,10 @@ def select_priority_pool(base, previous, discovery, *, now, limit, max_tokens, p
         if m.market_id in pool and m.token_id not in {x.token_id for x in pool[m.market_id]}:
             raise PriorityIdentityError("retained_priority_token_binding_changed")
     books={b['token_id']:b for b in discovery['books']}
-    for raw in discovery['markets']:
+    from neraium_poly.research.phase21.discovery import prioritize_raw_candidates
+
+    ordered_candidates, _priority_report = prioritize_raw_candidates(discovery['markets'], discovery['books'], now=now)
+    for raw in ordered_candidates:
         records=normalize_market(raw,now);market_id=str(raw['id'])
         if market_id in pool:
             prior={m.token_id:m for m in pool[market_id]}
