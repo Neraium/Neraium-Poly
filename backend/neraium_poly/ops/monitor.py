@@ -105,11 +105,13 @@ def render_monitor(
     """
     width, height = max(30, min(int(width), 160)), max(12, min(int(height or 24), 100))
     certified, experimental = _mapping(certified), _mapping(experimental)
-    if view not in {"summary", "strategies", "rejections", "research", "events", "domains", "archives", "operations", "readiness"} or scope not in {
+    if view not in {"summary", "strategies", "rejections", "research", "events", "domains", "archives", "operations", "readiness", "edge"} or scope not in {
         "cycle",
         "epoch",
     }:
         raise ValueError("monitor view or scope invalid")
+    if view == "edge":
+        return _render_edge(certified, experimental, width, height, errors)
     if view == "readiness":
         return _render_readiness(certified, experimental, width, height, errors)
     if view == "operations":
@@ -1244,7 +1246,7 @@ def monitor(
 ):
     loopback_url(certified_url)
     loopback_url(experimental_url)
-    if view in {"operations", "readiness"}:
+    if view in {"operations", "readiness", "edge"}:
         def operations_url(value):
             parsed = urlsplit(value)
             return urlunsplit((parsed.scheme, parsed.netloc, "/api/operations-state", "", ""))
@@ -1292,3 +1294,58 @@ def monitor(
         asyncio.run(run())
     except KeyboardInterrupt:
         console.print("Monitor stopped; paper services continue.", style="dim")
+
+
+def _render_edge(certified, experimental, width, height, errors):
+    """Small empirical research viewport; counter and uncertainty scopes stay explicit."""
+    now = datetime.now(UTC)
+    op = _mapping(certified.get("operation"))
+    con = _mapping(op.get("connectivity"))
+    report = _mapping(_mapping(experimental.get("operations_research")).get("phase17"))
+    current = (_ops_fresh(experimental.get("generated_at"), now)
+        and _p16_recent(report.get("last_evaluation_at"), now, seconds=90)
+        and report.get("status") == "research_only" and not report.get("runtime_error"))
+    live = (_ops_fresh(certified.get("generated_at"), now) and con.get("ws_connected") is True
+        and _p16_recent(con.get("last_message_at"), now) and certified.get("mode") == "live_market_paper")
+    rows = [("EMPIRICAL EDGE RESEARCH", "bold cyan", 1),
+        ("REAL MARKET DATA" if live else "SOURCE STALE / UNAVAILABLE", "cyan" if live else "yellow", 0),
+        ("EXPERIMENTAL PAPER", "bold yellow", 0),
+        (f"{_number(experimental.get('cash'), True)} P/L {_number(experimental.get('simulated_pnl'), True)}", "white", 0),
+        (f"Stop {_flag(experimental.get('kill_switch'))}", "yellow", 0),
+        ("CERTIFIED PAPER", "bold green", 0),
+        (f"{_number(certified.get('cash'), True)} Gate {_clean(_mapping(op.get('service')).get('trading_status', 'unknown'))}", "white", 0),
+        ("Research prospective" if current else "Research stale / warming / unavailable", "cyan" if current else "yellow", 1),
+        (f"Forecast points {_number(report.get('forecast_points'))} Pending {_number(report.get('pending_points'))}", "white", 1),
+        (f"Matured marks {_number(report.get('matured_points'))}", "white", 1),
+        (f"Parent groups {_number(report.get('unreviewed_parent_groups'))} (unreviewed)", "white", 1),
+        ("CI / calibration insufficient evidence", "yellow", 0),
+        ("Research models have NO order authority", "yellow", 0)]
+    models = _mapping(report.get("models"))
+    for name, model in list(models.items())[:4]:
+        model = _mapping(model)
+        score = model.get("mae") if current else None
+        value = f"{score:.5f}" if type(score) in (float, int) and math.isfinite(score) else "unavailable"
+        rows.append((f"{_clean(name)} MAE {value}", "white", 2))
+    rows.extend([(f"Last {_seen(report.get('last_evaluation_at'))}", "dim", 2),
+                 ("Marks are not event outcomes or P/L", "yellow", 1)])
+    if errors:
+        rows.append(("API " + _clean(errors[0]), "yellow", 1))
+    keep = list(range(len(rows)))
+    for i in sorted(range(len(rows)), key=lambda j: (rows[j][2], j), reverse=True):
+        if len(keep) <= height-1:
+            break
+        if rows[i][2]:
+            keep.remove(i)
+    rendered = Text()
+    services = (_mapping(op.get("service")), _mapping(experimental.get("service")))
+    unsafe = any(s.get("live_trading_enabled") is True or s.get("paper_trading") is False for s in services)
+    verified = all(s.get("live_trading_enabled") is False and s.get("paper_trading") is True for s in services)
+    safety = "WARNING LIVE CONFIG UNSAFE" if unsafe else "LIVE TRADING DISABLED" if verified else "LIVE CONFIG UNVERIFIED"
+    chosen = [(rows[i][0], rows[i][1]) for i in keep] + [(safety, "dim")]
+    for i, (value, style) in enumerate(chosen):
+        if i:
+            rendered.append("\n")
+        row = Text(_clean(value), style=style, no_wrap=True, overflow="ellipsis")
+        row.truncate(width, overflow="ellipsis")
+        rendered.append_text(row)
+    return rendered

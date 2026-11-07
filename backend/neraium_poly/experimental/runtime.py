@@ -149,6 +149,16 @@ class ExperimentalRuntime:
                 except Exception as error:  # Unavailable research has no order authority.
                     self.phase16_error = f"{type(error).__name__}:{str(error)[:160]}"
                     log.exception("phase16_recovery_withheld")
+            self.phase17 = None
+            self.phase17_error = None
+            if config.phase17_research_enabled and self.phase16 is not None:
+                from neraium_poly.research.phase17.continuous import EmpiricalResearch
+
+                try:
+                    self.phase17 = EmpiricalResearch(self.events, activation_at=self.clock())
+                except Exception as error:  # Research cannot grant trading authority.
+                    self.phase17_error = f"{type(error).__name__}:{str(error)[:160]}"
+                    log.exception("phase17_recovery_withheld")
             self.feed = feed or SharedFeedClient(config.source_url)
             self.fee_adapter = fee_adapter or AuditedFeeAdapter(
                 self.events, self._budget_ok, client=httpx.AsyncClient(timeout=5, follow_redirects=False)
@@ -352,6 +362,13 @@ class ExperimentalRuntime:
                 except Exception as error:  # noqa: BLE001 - withhold the research component on failure
                     self.phase16_error = f"{type(error).__name__}:{str(error)[:160]}"
                     log.warning("phase16_study_withheld:%s", type(error).__name__)
+            if self.phase17 is not None and self.phase16 is not None:
+                try:
+                    self.phase17.observe(self.phase16, now=self.clock())
+                    self.phase17_error = None
+                except Exception as error:  # noqa: BLE001 - research has no admission authority
+                    self.phase17_error = f"{type(error).__name__}:{str(error)[:160]}"
+                    log.warning("phase17_research_withheld:%s", type(error).__name__)
             self.trace.record_engine(
                 selected, signals, self.engine.status(), now, details=getattr(self.engine, "last_trace", None)
             )
