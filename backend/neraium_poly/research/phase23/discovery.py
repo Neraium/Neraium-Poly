@@ -311,7 +311,7 @@ async def augment_diverse(coordinator, batch):
         timestamp=clock(), available_at=clock(), source='neraium-poly/discovery-intelligence/v23', provenance=provenance,
         classifications=[c['classification'] for c in candidates.values() if c['classification']], report=report)
     coordinator.events.append(study)
-    coordinator.ledger['phase23_discovery'] = {'tags': tags, 'latest_study_id': study.id}
+    coordinator.ledger.put('phase23_discovery', {'tags': tags, 'latest_study_id': study.id})
     base_ids = {m.market_id for m in batch.markets}
     return replace(batch, markets=selected, scanned_count=batch.scanned_count+len(set(candidates)-base_ids),
         errors=batch.errors+tuple('phase23:'+k+':'+str(v) for k,v in errors.items())), report

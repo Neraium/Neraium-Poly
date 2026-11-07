@@ -84,7 +84,9 @@ class Adapter:
 
 
 def coordinator(mode='normal'):
-    return SimpleNamespace(adapter=Adapter(mode),clock=lambda:NOW,ledger={},books={},events=SimpleNamespace(append=lambda x:None),
+    state={}
+    ledger=SimpleNamespace(get=state.get,put=state.__setitem__)
+    return SimpleNamespace(adapter=Adapter(mode),clock=lambda:NOW,ledger=ledger,books={},events=SimpleNamespace(append=lambda x:None),
         config=SimpleNamespace(max_markets=5,max_subscription_tokens=12,forecast_priority_market_limit=1,forecast_discovery_enabled=True))
 
 
@@ -154,3 +156,28 @@ def test_future_daily_rule_support_does_not_create_future_features_or_forecast()
     markets,report=select([candidate]);row=report['markets'][0]
     assert row['future_daily_rule_adapter'] and not row['exact_rule_model_supported']
     assert not row['forecast_qualified'] and all(m.available_at==NOW for m in markets)
+
+
+@pytest.mark.asyncio
+async def test_discovery_persists_taxonomy_using_real_live_ledger_and_recovers(tmp_path):
+    from neraium_poly.ops.live_ledger import LiveLedger
+
+    c=coordinator()
+    ledger=LiveLedger(tmp_path/'controlled-service')
+    c.ledger=ledger
+    b=DiscoveryBatch(normalize_market(raw('base'),NOW),1,True,(),0)
+    try:
+        selected,report=await augment_diverse(c,b)
+        assert selected.markets and report['status']=='research_collection_only'
+        persisted=ledger.get('phase23_discovery')
+        assert persisted['tags'] and persisted['latest_study_id']
+    finally:
+        ledger.close()
+    recovered=LiveLedger(tmp_path/'controlled-service')
+    try:
+        assert recovered.get('phase23_discovery')==persisted
+        c.ledger=recovered;c.adapter.calls=[]
+        await augment_diverse(c,b)
+        assert '/tags/slug/weather' not in [x[0] for x in c.adapter.calls]
+    finally:
+        recovered.close()
