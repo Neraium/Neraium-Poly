@@ -103,3 +103,35 @@ def test_expired_missing_labels_never_receive_fabricated_scores(tmp_path):
         assert research.summary()['expired_points']>0
         assert research.summary()['matured_points']==0
     finally:store.close()
+
+
+async def test_integrated_runtime_restart_preserves_stop_accounts_and_original_source_guard(tmp_path,now):
+    from neraium_poly.experimental.config import ExperimentalConfig
+    from neraium_poly.experimental.runtime import ExperimentalRuntime
+    from neraium_poly.experimental.migration import strategy_code_hash
+    from test_experimental_runtime import Clock,Feed,Fees
+    from test_experimental_account import fee
+    clock=Clock(now)
+    class PublicFixtureFeed(Feed):
+        async def read(self):
+            f=await super().read()
+            return f.model_copy(update={'markets':tuple(m.model_copy(update={'source':'https://gamma-api.polymarket.com'}) for m in f.markets),
+                'books':tuple(b.model_copy(update={'source':'https://clob.polymarket.com'}) for b in f.books)})
+    certified=tmp_path/'certified';certified.mkdir();sentinel=certified/'evidence';sentinel.write_bytes(b'CONTROLLED certified unchanged')
+    config=ExperimentalConfig(data_dir=tmp_path/'experimental',certified_directory=certified,event_research_enabled=False,
+        phase16_research_enabled=True,phase17_research_enabled=True,fee_batch=0)
+    original_hash=strategy_code_hash();runtime=ExperimentalRuntime(config,feed=PublicFixtureFeed(clock),clock=clock,fee_adapter=Fees())
+    try:
+        runtime.fees[runtime.feed.market.token_id]=fee(now)
+        await runtime.cycle()
+        assert runtime.phase17.summary()['updates']==1 and runtime.phase17_error is None
+        assert runtime.operations_state()['operations_research']['phase17']['trading_authority'] is False
+        runtime.account.stop(now=clock(),reason='CONTROLLED stop preserved across restart')
+        saved=deepcopy(runtime.phase17.state)
+    finally:await runtime.close()
+    runtime=ExperimentalRuntime(config,feed=PublicFixtureFeed(clock),clock=clock,fee_adapter=Fees())
+    try:
+        assert runtime.phase17.state==saved and runtime.model_hash==original_hash
+        state=runtime.account.snapshot(now=clock());assert state['cash']==500 and state['kill_switch'] is True
+        assert state['orders_submitted']==0 and sentinel.read_bytes()==b'CONTROLLED certified unchanged'
+    finally:await runtime.close()

@@ -1304,7 +1304,8 @@ def _render_edge(certified, experimental, width, height, errors):
     report = _mapping(_mapping(experimental.get("operations_research")).get("phase17"))
     current = (_ops_fresh(experimental.get("generated_at"), now)
         and _p16_recent(report.get("last_evaluation_at"), now, seconds=90)
-        and report.get("status") == "research_only" and not report.get("runtime_error"))
+        and report.get("status") == "research_only" and not report.get("runtime_error")
+        and not report.get("last_error"))
     live = (_ops_fresh(certified.get("generated_at"), now) and con.get("ws_connected") is True
         and _p16_recent(con.get("last_message_at"), now) and certified.get("mode") == "live_market_paper")
     rows = [("EMPIRICAL EDGE RESEARCH", "bold cyan", 1),

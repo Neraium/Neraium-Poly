@@ -32,3 +32,10 @@ def test_stale_research_never_displays_supported_current_accuracy():
         'last_evaluation_at':(datetime.now(UTC)-timedelta(minutes=5)).isoformat(),'models':{'bad':{'mae':.0001}}}
     s=text(c,e);assert '0.00010' not in s and 'bad MAE unavailable' in s
     s=text();assert '$500.00' not in s and 'LIVE CONFIG UNVERIFIED' in s
+
+
+def test_recent_render_does_not_hide_source_error():
+    c,e=sample();e['operations_research']['phase17']={'status':'research_only',
+        'last_evaluation_at':datetime.now(UTC).isoformat(),'last_error':'committed_source_study_stale',
+        'models':{'bad':{'mae':.0001}}}
+    s=text(c,e);assert '0.00010' not in s and 'bad MAE unavailable' in s
