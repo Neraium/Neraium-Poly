@@ -31,6 +31,7 @@ def main():
             "research-evaluate",
             "research-cycle",
             "research-audit",
+            "forecast-qualification",
             "strategy-approve",
             "strategy-status",
             "strategy-revoke",
@@ -69,6 +70,8 @@ def main():
     parser.add_argument("--rpc-evidence-dir", type=Path)
     parser.add_argument("--research-output", type=Path, default=Path("data/phase11-results"))
     parser.add_argument("--max-observations", type=int, default=20000)
+    parser.add_argument("--training-end")
+    parser.add_argument("--heldout-start")
     parser.add_argument("--workers", type=int, default=2)
     args = parser.parse_args()
     Settings.from_env()
@@ -174,6 +177,31 @@ def main():
                 indent=2,
             )
         )
+    elif args.command == "forecast-qualification":
+        from datetime import UTC, datetime
+
+        from neraium_poly.research.phase17.provenance import ReadonlyArchive
+        from neraium_poly.research.phase19.qualification import qualification_readiness, replay_event_forecast
+
+        if not args.training_end or not args.heldout_start:
+            parser.error("forecast-qualification requires predeclared --training-end and --heldout-start")
+        if not 1 <= args.max_observations <= 20000:
+            parser.error("bounded forecast observation count required")
+        limit = min(args.max_observations, 1000)
+        with ReadonlyArchive(args.data_dir.absolute(), max_query_bytes=128*1024**2) as archive:
+            rows = archive.latest("EventProbabilityStudy", limit=limit)
+            total = archive._catalog_rows("SELECT count(*) AS n FROM records WHERE kind=?", ("EventProbabilityStudy",))[0]["n"]
+        result = qualification_readiness(rows, as_of=datetime.now(UTC),
+            training_end=datetime.fromisoformat(args.training_end), heldout_start=datetime.fromisoformat(args.heldout_start),
+            verify_forecast=replay_event_forecast)
+        result["archive_scope"] = {"total_studies": total, "included_studies": len(rows), "bounded_tail": total > limit,
+            "default_verifiers": "Original native-input/model replay only; no independent outcome/group/frozen calibration approval supplied"}
+        encoded = json.dumps(result, indent=2)+"\n"
+        if args.output:
+            args.output.parent.mkdir(parents=True, exist_ok=True)
+            with args.output.open("x") as destination:
+                destination.write(encoded)
+        print(encoded)
     elif args.command == "research-audit":
         from neraium_poly.research.public_archive import audit_public_archive
 

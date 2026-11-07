@@ -26,6 +26,9 @@ class LivePaperConfig(BaseModel):
     archive_reserve_disk_mb: int = Field(default=65536, ge=8192)
     archive_compression_enabled: bool = True
     archive_cold_verification_enabled: bool = False
+    forecast_discovery_enabled: bool = False
+    forecast_priority_market_limit: int = Field(default=12, ge=1, le=20)
+    forecast_protected_directory: Path = Path("data/experimental-paper")
     max_relationships: int = Field(default=200, ge=1, le=1000)
     max_book_age_seconds: float = Field(default=15, gt=0, le=60)
     coverage_enabled: bool = True
@@ -58,6 +61,8 @@ class LivePaperConfig(BaseModel):
             raise ValueError("simulated settlement requires separately reviewed token rule hashes and actor")
         if self.coverage_enabled and self.max_markets * 2 > self.max_subscription_tokens:
             raise ValueError("subscription cap must cover configured binary market universe")
+        if self.forecast_discovery_enabled and self.max_subscription_tokens < 2*(self.max_markets+self.forecast_priority_market_limit):
+            raise ValueError("subscription cap must cover additive forecast priority budget")
         if self.host != "127.0.0.1":
             raise ValueError("operational API must bind loopback")
         if self.position_tier not in ("standard", "high", "exceptional"):

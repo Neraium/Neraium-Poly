@@ -300,3 +300,25 @@ def qualification_readiness(studies, *, as_of, training_end, heldout_start,
         "snapshot_scope": "only supplied original studies; an outcome without its origin cannot qualify",
         "research_only": True, "trading_authority": False, "certification_authority": False,
         "experimental_admission_authority": False}
+
+
+def replay_event_forecast(study):
+    """Recompute the unchanged independent model from original native evidence.
+
+    This proves numerical/model provenance, not provider independence, calibration,
+    a frozen training artifact, verified outcomes or trading authority. The rolling
+    diffusion model supplies no independently reviewed training cutoff; keep it
+    absent rather than inventing a historical freeze time.
+    """
+    try:
+        from neraium_poly.research.phase18.forecasting import forecast_event
+
+        forecast, _market, _book, evidence = _original(study)
+        contract = DomainContract.model_validate(study['contract'])
+        replayed = forecast_event(contract, tuple(evidence), cutoff=forecast.evidence_cutoff)
+        if digest(replayed) != digest(study['model_result']):
+            return {'verified': False, 'reason': 'native_input_model_replay_mismatch'}
+        return {'verified': True, 'model_training_cutoff': None,
+                'scope': 'exact independent model/native-input replay; calibration/freeze/outcome review still required'}
+    except (KeyError, TypeError, ValueError, OverflowError):
+        return {'verified': False, 'reason': 'independent_forecast_replay_unavailable'}

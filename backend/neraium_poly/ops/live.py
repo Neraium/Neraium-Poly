@@ -1,6 +1,7 @@
 """Persistent real-market coordinator; absence of validated research withholds orders.
 
-All exchange traffic is public GET. No synthetic runtime is imported or executed.
+Exchange traffic is unauthenticated public metadata/book reads, never order routes.
+No synthetic runtime is imported or executed.
 """
 
 from __future__ import annotations
@@ -237,6 +238,35 @@ class LivePaperRuntime:
         )
         if not batch.markets:
             raise ValueError("No valid real market metadata returned")
+        forecast_discovery = {"status": "disabled"}
+        if self.config.forecast_discovery_enabled:
+            from neraium_poly.research.phase19.collection import (
+                PriorityIdentityError,
+                assert_same_contract,
+                augment_discovery,
+            )
+
+            try:
+                batch, forecast_discovery = await augment_discovery(self, batch)
+            except PriorityIdentityError:
+                raise
+            except Exception as error:
+                forecast_discovery = {"status": "withheld", "reason": type(error).__name__+":"+str(error)[:120]}
+                # Previously admitted priorities may carry paper exposure. Keep
+                # their metadata when public discovery is unavailable.
+                retained = {m.token_id:m for m in batch.markets}
+                for values in self.ledger.get("forecast_priority_pool", {}).values():
+                    for value in values:
+                        m = MarketSnapshot.model_validate(value)
+                        if m.token_id in retained:assert_same_contract(m,retained[m.token_id])
+                        if any(x.market_id==m.market_id and x.token_id not in {p["token_id"] for p in values} for x in retained.values()):
+                            raise PriorityIdentityError("fallback_priority_token_binding_changed") from error
+                        retained.setdefault(m.token_id,m)
+                if len(retained)>self.config.max_subscription_tokens:
+                    raise ValueError("retained research exposure exceeds subscription budget") from error
+                from dataclasses import replace
+
+                batch = replace(batch, markets=tuple(retained.values()))
         approved_metadata = []
         if self.activation:
             from neraium_poly.data.polymarket import GAMMA, normalize_market
@@ -304,7 +334,8 @@ class LivePaperRuntime:
                 "outcomes": len(batch.markets),
                 "bounded": batch.truncated,
                 "next_offset": batch.next_offset,
-                "selection_order": "volume24hr_desc" if self.coverage else "active_market_id_pages",
+                "selection_order": "volume24hr_desc+bounded_forecast_priority" if self.config.forecast_discovery_enabled else "volume24hr_desc" if self.coverage else "active_market_id_pages",
+                "forecast_discovery": forecast_discovery,
                 "errors": list(batch.errors),
                 "at": now.isoformat(),
             }

@@ -59,5 +59,8 @@
   "archive_segment_mb": 16,
   "archive_reserve_disk_mb": 102400,
   "archive_compression_enabled": true,
-  "archive_cold_verification_enabled": true
+  "archive_cold_verification_enabled": true,
+  "forecast_discovery_enabled": true,
+  "forecast_priority_market_limit": 12,
+  "forecast_protected_directory": "data/experimental-paper"
 }
