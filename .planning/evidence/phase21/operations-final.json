@@ -1,0 +1,272 @@
+{
+  "observed_at": "2026-11-07T20:14:40.923859+00:00",
+  "duration_seconds": 368.37215478601865,
+  "samples": 19,
+  "full_snapshot_healthy_samples": 14,
+  "experimental_healthy_samples": 19,
+  "collector_status_timeouts": 5,
+  "native_book_feed": "fresh public source continues; archive operations latency remains unresolved",
+  "market_count": 212,
+  "fresh_books": 270,
+  "collector": {
+    "status": "ok",
+    "paper_trading": true,
+    "live_trading_enabled": false,
+    "mode": "live_market_paper",
+    "trading_status": "validation_blocked",
+    "last_ingestion_at": "2026-11-07T20:14:49.290941+00:00",
+    "last_ingestion_age_seconds": 0.000677,
+    "last_error": null,
+    "ledger_consistent": true,
+    "timestamp": "2026-11-07T20:14:49.291618+00:00"
+  },
+  "experimental": {
+    "status": "ok",
+    "account_id": "experimental-paper",
+    "validation_status": "unvalidated",
+    "paper_trading": true,
+    "live_trading_enabled": false,
+    "last_ingestion_at": "2026-11-07T20:14:38.331943+00:00",
+    "last_ingestion_age_seconds": 2.594617,
+    "last_error": null,
+    "fee_error": null,
+    "timestamp": "2026-11-07T20:14:40.926560+00:00"
+  },
+  "sii": {
+    "status": "research_only",
+    "declared_at": "2026-11-07T18:31:45.604201+00:00",
+    "last_evaluation_at": "2026-11-07T18:31:45.706322+00:00",
+    "experiment_sha256": "0bd88d11c46e9492f4a845d706c70d1e06d9f7729f993bbfb3ec0af3064ce48f",
+    "observations": 0,
+    "paired": 0,
+    "withheld": 0,
+    "rejections": {},
+    "sii_challenger": "unavailable; frozen trained model and qualified relationship evidence required",
+    "brier_improvement": null,
+    "log_loss_improvement": null,
+    "after_cost_edge": null,
+    "sii_in_trading_path": false,
+    "last_error": null,
+    "counter_scope": "new prospective forecasts since declaration; no historical backfill",
+    "trading_authority": false,
+    "certification_authority": false,
+    "runtime_error": null
+  },
+  "early_outcomes": {
+    "code_sha256": "20054f53c3186b5282bf0f1975f4ee9df1b21a6792919e33608ecfed31a53372",
+    "last_at": "2026-11-07T20:13:27.429653+00:00",
+    "last_attempt_at": "2026-11-07T20:13:26.132127+00:00",
+    "last_symbol": "ETHUSDT",
+    "source_checks": 2,
+    "conditions_considered": 24,
+    "eligible_conditions": 0,
+    "native_attempts": 0,
+    "verified": 0,
+    "verified_ids": {},
+    "native_checked_at": {},
+    "rejections": {},
+    "status": "research_only",
+    "last_error": null,
+    "counter_scope": "durable source checks and native attempts; conditions are not independent events",
+    "trading_authority": false,
+    "certification_authority": false,
+    "runtime_error": null
+  },
+  "accounts": {
+    "paper-live": {
+      "cash": 500.0,
+      "realized_pnl": 0.0,
+      "emergency_stop": false,
+      "limits": {
+        "bankroll": 500.0,
+        "aggregate_fraction": 0.2,
+        "market_fraction": 0.05,
+        "event_fraction": 0.1,
+        "correlation_fraction": 0.1,
+        "daily_loss_fraction": 0.05,
+        "drawdown_fraction": 0.1,
+        "max_book_age_seconds": 15.0,
+        "max_market_age_seconds": 3600.0,
+        "max_estimate_age_seconds": 300.0,
+        "max_evidence_age_seconds": 3600.0,
+        "max_spread": 0.05,
+        "min_net_edge": 0.03,
+        "max_liquidity_participation": 0.25,
+        "approval_ttl_seconds": 10.0,
+        "standard_min": 2.0,
+        "standard_max": 5.0,
+        "high_min": 5.0,
+        "high_max": 15.0,
+        "exceptional_min": 15.0,
+        "exceptional_max": 25.0,
+        "kelly_fraction": 0.1
+      },
+      "positions": 0
+    },
+    "experimental-paper": {
+      "cash": 496.11522059829053,
+      "realized_pnl": -3.8847794017094013,
+      "emergency_stop": false,
+      "limits": {
+        "bankroll": 500.0,
+        "aggregate_fraction": 0.2,
+        "market_fraction": 0.05,
+        "event_fraction": 0.1,
+        "correlation_fraction": 0.1,
+        "daily_loss_fraction": 0.05,
+        "drawdown_fraction": 0.1,
+        "max_book_age_seconds": 15.0,
+        "max_market_age_seconds": 3600.0,
+        "max_estimate_age_seconds": 300.0,
+        "max_evidence_age_seconds": 3600.0,
+        "max_spread": 0.05,
+        "min_net_edge": 0.03,
+        "max_liquidity_participation": 0.25,
+        "approval_ttl_seconds": 10.0,
+        "standard_min": 2.0,
+        "standard_max": 5.0,
+        "high_min": 5.0,
+        "high_max": 15.0,
+        "exceptional_min": 15.0,
+        "exceptional_max": 25.0,
+        "kelly_fraction": 0.1
+      },
+      "positions": 0
+    }
+  },
+  "storage": {
+    "collector": {
+      "usage_bytes": 16160917515,
+      "budget_bytes": 214748364800,
+      "free_bytes": 493654196224,
+      "global_floor_bytes": 107374182400,
+      "health": "ok",
+      "sealed_segments": 598,
+      "compressed_segments": 598,
+      "cold_verification": {
+        "enabled": true,
+        "minimum_scan_interval_seconds": 60,
+        "last_scan_at": "2026-11-07T20:14:21.803755+00:00",
+        "last_success_at": "2026-11-07T20:12:52.224545+00:00",
+        "last_segment": "segment-00000598.sqlite",
+        "last_error": null,
+        "scope": "process-local progress; immutable proof presence is reported separately"
+      },
+      "measured_retained_growth_bytes_per_second": 64922.67585722444,
+      "conditional_days_to_budget": 35.403128332426895,
+      "rotation_delta": 1,
+      "compression_delta": 1,
+      "growth_scope": "single six-minute net growth, not a multi-day forecast guarantee"
+    },
+    "experimental": {
+      "usage_bytes": 6643106389,
+      "budget_bytes": 107374182400,
+      "free_bytes": 493655859200,
+      "global_floor_bytes": 107374182400,
+      "health": "ok",
+      "sealed_segments": 823,
+      "compressed_segments": 823,
+      "cold_verification": {
+        "enabled": true,
+        "minimum_scan_interval_seconds": 60,
+        "last_scan_at": "2026-11-07T20:14:01.755019+00:00",
+        "last_success_at": "2026-11-07T20:14:01.755019+00:00",
+        "last_segment": "segment-00000823.sqlite",
+        "last_error": null,
+        "scope": "process-local progress; immutable proof presence is reported separately"
+      },
+      "measured_retained_growth_bytes_per_second": 56637.31834486602,
+      "conditional_days_to_budget": 20.58481879762554,
+      "rotation_delta": 3,
+      "compression_delta": 3,
+      "growth_scope": "single six-minute net growth, not a multi-day forecast guarantee"
+    }
+  },
+  "new_orders": 0,
+  "new_fill_events": 0,
+  "new_realized_pnl": 0.0,
+  "samples_sha256": "32731eb4898514fd124133b64da23e380589d8afd15ab1d0b445c1a4540673b1",
+  "snapshot_scope": "bounded six-minute observation; unavailable source status samples remain unavailable, never counted healthy",
+  "unavailable_samples": [
+    {
+      "at": "2026-11-07T20:09:40.923798+00:00",
+      "collector_error": "TimeoutError:timed out",
+      "experimental_service": {
+        "account_id": "experimental-paper",
+        "fee_error": null,
+        "last_error": null,
+        "last_ingestion_age_seconds": 1.270181,
+        "last_ingestion_at": "2026-11-07T20:09:39.655936+00:00",
+        "live_trading_enabled": false,
+        "paper_trading": true,
+        "status": "ok",
+        "timestamp": "2026-11-07T20:09:40.926117+00:00",
+        "validation_status": "unvalidated"
+      }
+    },
+    {
+      "at": "2026-11-07T20:10:00.923800+00:00",
+      "collector_error": "TimeoutError:timed out",
+      "experimental_service": {
+        "account_id": "experimental-paper",
+        "fee_error": null,
+        "last_error": null,
+        "last_ingestion_age_seconds": 0.785774,
+        "last_ingestion_at": "2026-11-07T20:10:01.666606+00:00",
+        "live_trading_enabled": false,
+        "paper_trading": true,
+        "status": "ok",
+        "timestamp": "2026-11-07T20:10:02.452380+00:00",
+        "validation_status": "unvalidated"
+      }
+    },
+    {
+      "at": "2026-11-07T20:10:40.923846+00:00",
+      "collector_error": "TimeoutError:timed out",
+      "experimental_service": {
+        "account_id": "experimental-paper",
+        "fee_error": null,
+        "last_error": null,
+        "last_ingestion_age_seconds": 3.763048,
+        "last_ingestion_at": "2026-11-07T20:10:37.163264+00:00",
+        "live_trading_enabled": false,
+        "paper_trading": true,
+        "status": "ok",
+        "timestamp": "2026-11-07T20:10:40.926312+00:00",
+        "validation_status": "unvalidated"
+      }
+    },
+    {
+      "at": "2026-11-07T20:11:00.923807+00:00",
+      "collector_error": "TimeoutError:timed out",
+      "experimental_service": {
+        "account_id": "experimental-paper",
+        "fee_error": null,
+        "last_error": null,
+        "last_ingestion_age_seconds": 2.563588,
+        "last_ingestion_at": "2026-11-07T20:10:58.362608+00:00",
+        "live_trading_enabled": false,
+        "paper_trading": true,
+        "status": "ok",
+        "timestamp": "2026-11-07T20:11:00.926196+00:00",
+        "validation_status": "unvalidated"
+      }
+    },
+    {
+      "at": "2026-11-07T20:11:20.923800+00:00",
+      "collector_error": "TimeoutError:timed out",
+      "experimental_service": {
+        "account_id": "experimental-paper",
+        "fee_error": null,
+        "last_error": null,
+        "last_ingestion_age_seconds": 1.667616,
+        "last_ingestion_at": "2026-11-07T20:11:19.258626+00:00",
+        "live_trading_enabled": false,
+        "paper_trading": true,
+        "status": "ok",
+        "timestamp": "2026-11-07T20:11:20.926242+00:00",
+        "validation_status": "unvalidated"
+      }
+    }
+  ]
+}

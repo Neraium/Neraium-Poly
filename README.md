@@ -155,3 +155,5 @@ See [actual results and blockers](docs/phase19-readiness.md). The read-only
 `forecast-qualification` command requires explicit predeclared training/held-out cutoffs.
 
 Phase 20: [forecast validation, controlled SII research and operational evidence](docs/phase20-readiness.md).
+
+Phase 21: [verified-outcome readiness, causal calibration and latency evidence](docs/phase21-readiness.md).

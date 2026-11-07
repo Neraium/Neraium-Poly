@@ -1,0 +1,49 @@
+{
+  "at": "2026-11-07T20:16:16.440466Z",
+  "independent_evidence_or_edge_qualified": false,
+  "priority_ready_markets": 3,
+  "unreviewed_parent_events": 2,
+  "scenarios": [
+    {
+      "hypothetical_capital": 500,
+      "book_samples": 6,
+      "minimum": 50.0,
+      "median": 50.0,
+      "maximum": 50.0,
+      "verified_net_edge_capacity": null
+    },
+    {
+      "hypothetical_capital": 1000,
+      "book_samples": 6,
+      "minimum": 100.0,
+      "median": 100.0,
+      "maximum": 100.0,
+      "verified_net_edge_capacity": null
+    },
+    {
+      "hypothetical_capital": 10000,
+      "book_samples": 6,
+      "minimum": 1000.0,
+      "median": 1000.0,
+      "maximum": 1000.0,
+      "verified_net_edge_capacity": null
+    },
+    {
+      "hypothetical_capital": 100000,
+      "book_samples": 6,
+      "minimum": 1355.8853000000001,
+      "median": 2726.1873350000005,
+      "maximum": 5678.070207999999,
+      "verified_net_edge_capacity": null
+    },
+    {
+      "hypothetical_capital": 1000000,
+      "book_samples": 6,
+      "minimum": 1355.8853000000001,
+      "median": 2726.1873350000005,
+      "maximum": 5678.070207999999,
+      "verified_net_edge_capacity": null
+    }
+  ],
+  "scope": "10% displayed depth participation; per-book hypothetical principal only, no proportional returns or additive related-event capacity"
+}

@@ -1,0 +1,18 @@
+{
+  "source": "9dc521ed4e3029400d23da00a34652b99aeb8c77",
+  "local_full_pass": "1381passed,1clock-dependentfixturefailed; no productionassertionsweakened",
+  "fixture_correction": "explicit corrupted-fixturemtime;11storage tests passed after correction",
+  "browser": "5passed;buildpassed",
+  "ruff": "passed",
+  "python_npm_dependency_audits": "passed",
+  "workers": {
+    "agents_peak_including_root": 4,
+    "isolated_worktrees": 3,
+    "local_full_pytest_processes": 1,
+    "final_concurrent_shell_checks": 4,
+    "numerical_threads": 1
+  },
+  "live_financial_trading": false,
+  "final_ci_backend": "1382passed,1warning in53.56s",
+  "final_ci_dashboard": "5browser/build/auditspassed"
+}
