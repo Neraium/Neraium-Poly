@@ -154,3 +154,27 @@ async def test_append_failure_does_not_advance_in_memory_forecast_keys(tmp_path)
     store=FailingStore();clock=Clock();r=ChallengerResearch(store,clock=clock,collector=collect)
     with pytest.raises(OSError,match='disk full'):await r.step(frame(clock))
     assert r.state['enrolled'] and r.state['forecasts']==0 and not r.state['seen']
+
+
+async def test_rejected_current_groups_cannot_starve_new_future_parent(tmp_path):
+    from neraium_poly.research.phase18.forecasting import daily_low_rules
+    clock=Clock();f=frame(clock)
+    f['markets'][0]=market(75000).model_dump(mode='json') # Already hit; must reject.
+    eth=deepcopy(f['markets'][0]);eth.update(id='eth-observation',market_id='eth-market',event_id='eth-parent',token_id='eth-token',question='Will Ethereum dip to $75,000 on November 6?',resolution_rules=daily_low_rules('Ethereum'),resolution_source='https://www.binance.com/en/trade/ETH_USDT')
+    future=deepcopy(f['markets'][0]);future.update(id='future-observation',market_id='future-market',event_id='future-parent',token_id='future-token',question='Will Bitcoin dip to $74,800 on November 7?',end_time='2026-11-08T05:00:00Z')
+    for m in [eth,future]:
+        b=deepcopy(f['books'][0]);b.update(market_id=m['market_id'],token_id=m['token_id']);f['markets'].append(m);f['books'].append(b)
+    calls=[]
+    async def source(c,*,now):
+        calls.append((c.parameters['symbol'],c.parameters['period_start_utc']))
+        return (artifact(now),) # ETH intentionally fails exact symbol binding.
+    store=EventStore(tmp_path/'fixture.sqlite')
+    try:
+        r=ChallengerResearch(store,clock=clock,collector=source)
+        await r.step(f);assert r.status()['forecasts']==0
+        clock.now+=timedelta(minutes=6)
+        for b in f['books']:b['timestamp']=b['available_at']=clock().isoformat()
+        f['available_at']=clock().isoformat();await r.step(f)
+        assert ('BTCUSDT','2026-11-07T05:00:00+00:00') in calls
+        assert r.status()['forecasts']==2 and r.status()['unreviewed_parent_events']==1
+    finally:store.close()

@@ -65,7 +65,7 @@ class ChallengerResearch:
         self.enrollment_id = digest(['phase23-prospective-research', self.definitions, self.code_sha256])
         self.state = {'version':'phase23-challengers-v1','enrollment_id':self.enrollment_id,'code_sha256':self.code_sha256,
             'enrolled':False,'last_at':None,'last_attempt_at':None,'scans':0,'forecasts':0,
-            'parents':[],'seen':[],'rejections':{},'models':{d['model_id']:{'forecasts':0,'resolved':0,'brier':None,'log_loss':None} for d in self.definitions},'latest':[]}
+            'parents':[],'seen':[],'source_group_attempts':{},'rejections':{},'models':{d['model_id']:{'forecasts':0,'resolved':0,'brier':None,'log_loss':None} for d in self.definitions},'latest':[]}
         rows = store.latest('ChallengerStudy', limit=2)
         if rows:
             row = max((ChallengerStudy.model_validate(r) for r in rows), key=lambda r: unpack_checkpoint(r.checkpoint)['scans']); saved = unpack_checkpoint(row.checkpoint)
@@ -138,7 +138,10 @@ class ChallengerResearch:
                     reasons['existing_prospective_model_contract_horizon']+=1;continue
                 groups[(c.parameters['symbol'],c.parameters['period_start_utc'])].append((m,b,c,keys,bucket))
             # Distinct parent windows before additional thresholds; no future labels.
-            chosen = sorted(groups, key=lambda key:(at(key[1]),key))[:2]
+            chosen = sorted(groups, key=lambda key:(state['source_group_attempts'].get('|'.join(key),0),at(key[1]),key))[:2]
+            for key in chosen:
+                group_id='|'.join(key)
+                state['source_group_attempts'][group_id]=state['source_group_attempts'].get(group_id,0)+1
             async def acquire(key):
                 try:return key,await self.collector(groups[key][0][2],now=now),None
                 except Exception as error:  # noqa: BLE001 - acquisition failure withholds research only
