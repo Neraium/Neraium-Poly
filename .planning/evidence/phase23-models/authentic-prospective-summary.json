@@ -1,0 +1,373 @@
+{
+  "at": "2026-11-07T21:27:51.250095+00:00",
+  "scope": "Genuine prospective research in isolated worker archive; not production paper performance or certified forecasts",
+  "status": {
+    "status": "research_only",
+    "enrollment_id": "b9a01b2f5dcc46553dbb3658d6635a6e288f5ea73e998e6a05f9f54b8cac2883",
+    "enrollment": [
+      {
+        "model_id": "gaussian-first-passage-v23.1",
+        "model_version": "gaussian-first-passage-v23.1",
+        "model_sha256": "03327bf8b5ee88ab4f72dbe0bc4a7cb0061d9517c4e657d4661b038e27d7bee7",
+        "feature_version": "causal-closed-minute-return-and-intrabar-low-v1",
+        "hypothesis": "Gaussian zero-log-drift first passage, integrating uncertain future-day starting price",
+        "failure_conditions": "Constant volatility, continuous first passage and no jumps; uncalibrated tails",
+        "input_requirements": [
+          "exact Binance daily-low rule",
+          "720 causal minute returns",
+          "complete elapsed event window",
+          "fresh observed executable book"
+        ],
+        "performance_criteria": [
+          "event-disjoint verified-outcome Brier/log-loss versus contemporaneous market",
+          "calibration and uncertainty before any edge claim"
+        ],
+        "risk_assumptions": "Research only; [0,1] model uncertainty; no automatic admission, sizing or orders",
+        "source_independence": "Both challengers share Binance data and are NOT independent corroboration",
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "model_id": "empirical-ohlc-block-bootstrap-v23.1",
+        "model_version": "empirical-ohlc-block-bootstrap-v23.1",
+        "model_sha256": "1aae861913d43ec42fa1ead1d90839d35abea30bf921d4dbe848cc9c8f259472",
+        "feature_version": "causal-closed-minute-return-and-intrabar-low-v1",
+        "hypothesis": "Stationary moving-block resampling of authentic joint close returns and intrabar lows",
+        "failure_conditions": "Past blocks represent future regimes; finite-path tails and bootstrap stationarity can fail",
+        "input_requirements": [
+          "exact Binance daily-low rule",
+          "720 causal minute returns",
+          "complete elapsed event window",
+          "fresh observed executable book"
+        ],
+        "performance_criteria": [
+          "event-disjoint verified-outcome Brier/log-loss versus contemporaneous market",
+          "calibration and uncertainty before any edge claim"
+        ],
+        "risk_assumptions": "Research only; [0,1] model uncertainty; no automatic admission, sizing or orders",
+        "source_independence": "Both challengers share Binance data and are NOT independent corroboration",
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "model_id": "nfl-davidson-team-strength-v23.1",
+        "model_version": "nfl-davidson-team-strength-v23.1",
+        "model_sha256": "64664ca7989c2518e099c7cd0e6acbf26cd75cf218b199533c064795c4ceb0a8",
+        "feature_version": "causal-independent-NFL-results-davidson-or-frequency-v1",
+        "hypothesis": "Online Davidson team-strength with explicit tie likelihood",
+        "input_requirements": [
+          "verified nflverse raw snapshot",
+          "exact NFL moneyline mapping with half-payoff ties",
+          "50 causal league results and10perparticipant"
+        ],
+        "performance_criteria": [
+          "ternary verified-outcome scoring",
+          "expected-payout baseline comparison separated from win probability"
+        ],
+        "risk_assumptions": "Uncalibrated research only, uncertainty[0,1], no orders",
+        "failure_conditions": [
+          "roster drift",
+          "unmodeled lineup and injuries",
+          "tie-rate instability"
+        ],
+        "source_independence": "Both NFL models share nflverse and are not independent corroboration",
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "model_id": "nfl-ternary-frequency-v23.1",
+        "model_version": "nfl-ternary-frequency-v23.1",
+        "model_sha256": "cbd08b3074b9a5c01b6c4f44a2d2f45e6bcd2e6a94038e92a6bc70f47ac100ea",
+        "feature_version": "causal-independent-NFL-results-davidson-or-frequency-v1",
+        "hypothesis": "Existing causal ternary participant frequency baseline",
+        "input_requirements": [
+          "verified nflverse raw snapshot",
+          "exact NFL moneyline mapping with half-payoff ties",
+          "50 causal league results and10perparticipant"
+        ],
+        "performance_criteria": [
+          "ternary verified-outcome scoring",
+          "expected-payout baseline comparison separated from win probability"
+        ],
+        "risk_assumptions": "Uncalibrated research only, uncertainty[0,1], no orders",
+        "failure_conditions": [
+          "roster drift",
+          "unmodeled lineup and injuries",
+          "tie-rate instability"
+        ],
+        "source_independence": "Both NFL models share nflverse and are not independent corroboration",
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      }
+    ],
+    "last_evaluation_at": "2026-11-07T21:27:51.210667+00:00",
+    "scans": 1,
+    "forecasts": 8,
+    "pending_forecasts": 8,
+    "unreviewed_parent_events": 3,
+    "models": {
+      "gaussian-first-passage-v23.1": {
+        "forecasts": 3,
+        "resolved": 0,
+        "brier": null,
+        "log_loss": null
+      },
+      "empirical-ohlc-block-bootstrap-v23.1": {
+        "forecasts": 3,
+        "resolved": 0,
+        "brier": null,
+        "log_loss": null
+      },
+      "nfl-davidson-team-strength-v23.1": {
+        "forecasts": 1,
+        "resolved": 0,
+        "brier": null,
+        "log_loss": null
+      },
+      "nfl-ternary-frequency-v23.1": {
+        "forecasts": 1,
+        "resolved": 0,
+        "brier": null,
+        "log_loss": null
+      }
+    },
+    "latest": [
+      {
+        "id": "7816e9c17d007a615de7205b20a006bc92bb9d26dd3a9afa4955b10defae153c",
+        "model_id": "gaussian-first-passage-v23.1",
+        "event_id": "1329687",
+        "market_id": "6771152",
+        "probability": 0.02543050847609461,
+        "market_probability": 0.165,
+        "timestamp": "2026-11-07T21:27:51.046917+00:00",
+        "calibration_status": "unvalidated_research"
+      },
+      {
+        "id": "d43bf3a25481cd40bf060f88bdc40a9eba349a97ad6b020559a6a3a72186bd40",
+        "model_id": "empirical-ohlc-block-bootstrap-v23.1",
+        "event_id": "1329687",
+        "market_id": "6771152",
+        "probability": 0.13671875,
+        "market_probability": 0.165,
+        "timestamp": "2026-11-07T21:27:51.046917+00:00",
+        "calibration_status": "unvalidated_research"
+      },
+      {
+        "id": "1005a2f204483d687d0de47bb29d2ed143fac773d8a7596e9a99853267c3b366",
+        "model_id": "gaussian-first-passage-v23.1",
+        "event_id": "1329687",
+        "market_id": "6771162",
+        "probability": 9.589466045978653e-09,
+        "market_probability": 0.031,
+        "timestamp": "2026-11-07T21:27:51.053013+00:00",
+        "calibration_status": "unvalidated_research"
+      },
+      {
+        "id": "ad723eb4d1b8e89182b62a6aeaa359b997504fad1ee9c536d2fa456070ae4b09",
+        "model_id": "empirical-ohlc-block-bootstrap-v23.1",
+        "event_id": "1329687",
+        "market_id": "6771162",
+        "probability": 0.0,
+        "market_probability": 0.031,
+        "timestamp": "2026-11-07T21:27:51.053013+00:00",
+        "calibration_status": "unvalidated_research"
+      },
+      {
+        "id": "ec25a04a071748079e6a8e80aeb7dfc8a47f3b9e62634dbd99787c8892377995",
+        "model_id": "gaussian-first-passage-v23.1",
+        "event_id": "1329694",
+        "market_id": "6771226",
+        "probability": 0.049023491727630035,
+        "market_probability": 0.25,
+        "timestamp": "2026-11-07T21:27:51.099791+00:00",
+        "calibration_status": "unvalidated_research"
+      },
+      {
+        "id": "c0fbeb6b8db677849bee1256e176c9df478058df4a1cf184020d2e40d90b97fc",
+        "model_id": "empirical-ohlc-block-bootstrap-v23.1",
+        "event_id": "1329694",
+        "market_id": "6771226",
+        "probability": 0.13671875,
+        "market_probability": 0.25,
+        "timestamp": "2026-11-07T21:27:51.099791+00:00",
+        "calibration_status": "unvalidated_research"
+      },
+      {
+        "id": "a08cab9a204ac75d0249bcc85064597dbf9303c80ad1def6b3ce6497ed7553c8",
+        "model_id": "nfl-davidson-team-strength-v23.1",
+        "event_id": "1217410",
+        "market_id": "5920615",
+        "probability": 0.49882983446876006,
+        "market_probability": null,
+        "timestamp": "2026-11-07T21:27:51.210485+00:00",
+        "calibration_status": "unvalidated_research"
+      },
+      {
+        "id": "fe57b2e6a50bd74cfa55e67725ede0cce3d98713a2386a0b4937b595d10d3cdf",
+        "model_id": "nfl-ternary-frequency-v23.1",
+        "event_id": "1217410",
+        "market_id": "5920615",
+        "probability": 0.5345238095238095,
+        "market_probability": null,
+        "timestamp": "2026-11-07T21:27:51.210485+00:00",
+        "calibration_status": "unvalidated_research"
+      }
+    ],
+    "rejections": {
+      "two_sided_depth_below_standard_notional": 3,
+      "stale_book": 6,
+      "missing_liquidity": 4,
+      "causal_active_future_binary_event_required": 30,
+      "unsupported_event_rule_template_or_domain": 95
+    },
+    "resolved_events": 0,
+    "qualified_training_events": 0,
+    "qualified_heldout_events": 0,
+    "calibration_status": "independently_verified_event_disjoint_outcomes_required",
+    "source_groups_per_cycle": 2,
+    "source_parallelism": 2,
+    "interval_seconds": 300,
+    "dedup_scope": "immutable model/parent/contract/token/horizon; same parents are not independent samples",
+    "last_error": null,
+    "research_only": true,
+    "trading_authority": false,
+    "certification_authority": false,
+    "live_trading_enabled": false
+  },
+  "forecasts": [
+    {
+      "id": "7816e9c17d007a615de7205b20a006bc92bb9d26dd3a9afa4955b10defae153c",
+      "event_id": "1329687",
+      "market_id": "6771152",
+      "model_id": "gaussian-first-passage-v23.1",
+      "domain": "crypto",
+      "probability": 0.02543050847609461,
+      "market_probability": 0.165,
+      "timestamp": "2026-11-07T21:27:51.046917+00:00",
+      "evidence_cutoff": "2026-11-07T21:27:50.999801+00:00",
+      "training_observations": 721,
+      "source_lineages": [
+        "binance:BTCUSDT"
+      ],
+      "book_id": "439d2f3e97f2be41bcb193341caafa11f5a4b81664d3bc72906508b77f303c23"
+    },
+    {
+      "id": "d43bf3a25481cd40bf060f88bdc40a9eba349a97ad6b020559a6a3a72186bd40",
+      "event_id": "1329687",
+      "market_id": "6771152",
+      "model_id": "empirical-ohlc-block-bootstrap-v23.1",
+      "domain": "crypto",
+      "probability": 0.13671875,
+      "market_probability": 0.165,
+      "timestamp": "2026-11-07T21:27:51.046917+00:00",
+      "evidence_cutoff": "2026-11-07T21:27:50.999801+00:00",
+      "training_observations": 721,
+      "source_lineages": [
+        "binance:BTCUSDT"
+      ],
+      "book_id": "439d2f3e97f2be41bcb193341caafa11f5a4b81664d3bc72906508b77f303c23"
+    },
+    {
+      "id": "1005a2f204483d687d0de47bb29d2ed143fac773d8a7596e9a99853267c3b366",
+      "event_id": "1329687",
+      "market_id": "6771162",
+      "model_id": "gaussian-first-passage-v23.1",
+      "domain": "crypto",
+      "probability": 9.589466045978653e-09,
+      "market_probability": 0.031,
+      "timestamp": "2026-11-07T21:27:51.053013+00:00",
+      "evidence_cutoff": "2026-11-07T21:27:51.047154+00:00",
+      "training_observations": 721,
+      "source_lineages": [
+        "binance:BTCUSDT"
+      ],
+      "book_id": "0c01099fa983e5d55eb94762a43407e165b84ec41faf2361f4b7c8d20136e916"
+    },
+    {
+      "id": "ad723eb4d1b8e89182b62a6aeaa359b997504fad1ee9c536d2fa456070ae4b09",
+      "event_id": "1329687",
+      "market_id": "6771162",
+      "model_id": "empirical-ohlc-block-bootstrap-v23.1",
+      "domain": "crypto",
+      "probability": 0.0,
+      "market_probability": 0.031,
+      "timestamp": "2026-11-07T21:27:51.053013+00:00",
+      "evidence_cutoff": "2026-11-07T21:27:51.047154+00:00",
+      "training_observations": 721,
+      "source_lineages": [
+        "binance:BTCUSDT"
+      ],
+      "book_id": "0c01099fa983e5d55eb94762a43407e165b84ec41faf2361f4b7c8d20136e916"
+    },
+    {
+      "id": "ec25a04a071748079e6a8e80aeb7dfc8a47f3b9e62634dbd99787c8892377995",
+      "event_id": "1329694",
+      "market_id": "6771226",
+      "model_id": "gaussian-first-passage-v23.1",
+      "domain": "crypto",
+      "probability": 0.049023491727630035,
+      "market_probability": 0.25,
+      "timestamp": "2026-11-07T21:27:51.099791+00:00",
+      "evidence_cutoff": "2026-11-07T21:27:51.053328+00:00",
+      "training_observations": 721,
+      "source_lineages": [
+        "binance:ETHUSDT"
+      ],
+      "book_id": "ab4a3c52bbd7d8681a1259cc08aeecc664ed2e11bd64a99abbcd91645cf72928"
+    },
+    {
+      "id": "c0fbeb6b8db677849bee1256e176c9df478058df4a1cf184020d2e40d90b97fc",
+      "event_id": "1329694",
+      "market_id": "6771226",
+      "model_id": "empirical-ohlc-block-bootstrap-v23.1",
+      "domain": "crypto",
+      "probability": 0.13671875,
+      "market_probability": 0.25,
+      "timestamp": "2026-11-07T21:27:51.099791+00:00",
+      "evidence_cutoff": "2026-11-07T21:27:51.053328+00:00",
+      "training_observations": 721,
+      "source_lineages": [
+        "binance:ETHUSDT"
+      ],
+      "book_id": "ab4a3c52bbd7d8681a1259cc08aeecc664ed2e11bd64a99abbcd91645cf72928"
+    },
+    {
+      "id": "a08cab9a204ac75d0249bcc85064597dbf9303c80ad1def6b3ce6497ed7553c8",
+      "event_id": "1217410",
+      "market_id": "5920615",
+      "model_id": "nfl-davidson-team-strength-v23.1",
+      "domain": "sports",
+      "probability": 0.49882983446876006,
+      "market_probability": null,
+      "timestamp": "2026-11-07T21:27:51.210485+00:00",
+      "evidence_cutoff": "2026-11-07T21:27:51.164227+00:00",
+      "training_observations": 554,
+      "source_lineages": [
+        "nflverse:games.csv"
+      ],
+      "book_id": "3aab5c79a359ed9814296660fe7e408ead2fbd74f7e475f80ef0780913d6ff17"
+    },
+    {
+      "id": "fe57b2e6a50bd74cfa55e67725ede0cce3d98713a2386a0b4937b595d10d3cdf",
+      "event_id": "1217410",
+      "market_id": "5920615",
+      "model_id": "nfl-ternary-frequency-v23.1",
+      "domain": "sports",
+      "probability": 0.5345238095238095,
+      "market_probability": null,
+      "timestamp": "2026-11-07T21:27:51.210485+00:00",
+      "evidence_cutoff": "2026-11-07T21:27:51.164227+00:00",
+      "training_observations": 554,
+      "source_lineages": [
+        "nflverse:games.csv"
+      ],
+      "book_id": "3aab5c79a359ed9814296660fe7e408ead2fbd74f7e475f80ef0780913d6ff17"
+    }
+  ],
+  "full_records_sha256": "38db6a9b36f065997bbd3be4c895cb2ff7f53eb8fb28edd407887be4843a7b47",
+  "source_records_path": "data/phase23/authentic-records.json"
+}
