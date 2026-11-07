@@ -1,0 +1,22 @@
+{
+  "paper-live": {
+    "source": "closed legacy immutable native archive; read-only source and catalogue handles",
+    "rows": 5000,
+    "row_identity_sha256": "8b602e7281a810dd1f9ac0e8557ada2a37f09790cbb4a3fcccd4f9c25c68ce1e",
+    "seconds": {
+      "forced_each1000": 0.13878951803781092,
+      "bounded_cache": 0.11002164497040212
+    },
+    "scope": "single bounded replay sample with new safe scanner in both arms; cache effect only, not complete startup benchmark"
+  },
+  "experimental-paper": {
+    "source": "closed legacy immutable native archive; read-only source and catalogue handles",
+    "rows": 5000,
+    "row_identity_sha256": "c1b6c5a20674adc08018ad7bdf959925a1c258be67a5910d87cb7ab75f26b88e",
+    "seconds": {
+      "forced_each1000": 0.23058475786820054,
+      "bounded_cache": 0.0926623500417918
+    },
+    "scope": "single bounded replay sample with new safe scanner in both arms; cache effect only, not complete startup benchmark"
+  }
+}

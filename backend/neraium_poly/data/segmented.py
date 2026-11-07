@@ -14,6 +14,7 @@ import os
 import re
 import shutil
 import sqlite3
+import stat
 from collections import deque
 from contextlib import ExitStack, contextmanager
 from datetime import UTC, datetime
@@ -46,6 +47,34 @@ def _readonly(path):
     if path.is_symlink() or not path.is_file():
         raise ValueError("archive source missing or symlinked")
     return sqlite3.connect(f"file:{path.resolve()}?mode=ro", uri=True, timeout=10)
+
+
+def _tree_size(directory):
+    """One metadata lookup per entry, never follow a swapped directory symlink."""
+    def visit(fd):
+        total = 0
+        with os.scandir(fd) as entries:
+            for entry in entries:
+                try:
+                    metadata = entry.stat(follow_symlinks=False)
+                    if stat.S_ISLNK(metadata.st_mode):
+                        raise ValueError("symlink inside managed service archive")
+                    if stat.S_ISDIR(metadata.st_mode):
+                        nested = os.open(entry.name, os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW, dir_fd=fd)
+                        try:
+                            total += visit(nested)
+                        finally:
+                            os.close(nested)
+                    elif stat.S_ISREG(metadata.st_mode):
+                        total += metadata.st_size
+                except FileNotFoundError:  # SQLite/cache sidecars may disappear concurrently.
+                    continue
+        return total
+    fd = os.open(directory, os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW)
+    try:
+        return visit(fd)
+    finally:
+        os.close(fd)
 
 
 class ManagedEventStore:
@@ -132,16 +161,7 @@ class ManagedEventStore:
     def _measure(self):
         now = self.clock()
         if self._usage_at is None or (now - self._usage_at).total_seconds() >= 1:
-            total = 0
-            for p in self.directory.rglob("*"):
-                if p.is_symlink():
-                    raise ValueError("symlink inside managed service archive")
-                if p.is_file():
-                    try:
-                        total += p.stat().st_size
-                    except FileNotFoundError:  # SQLite may checkpoint its own sidecars.
-                        continue
-            self._usage, self._pending, self._usage_at = total, 0, now
+            self._usage, self._pending, self._usage_at = _tree_size(self.directory), 0, now
         return self._usage + self._pending
 
     def _check_budget(self, extra=0, *, refresh=False):
@@ -255,15 +275,21 @@ class ManagedEventStore:
             with self.catalog:
                 for row in source.execute("SELECT id,kind,available_at,event_time,payload,digest FROM events"):
                     if total % 1000 == 0:
-                        self._check_budget(512 * 1024, refresh=True)
-                    self._catalog_record(row, name)
+                        # Pure verification allocates no new source/catalogue rows.
+                        # Retain the existing <=1s tree accounting and fresh global
+                        # floor check instead of rescanning thousands of paths for
+                        # every1000already-indexed records. Any orphan insertion
+                        # invalidates accounting before the next batch/write.
+                        self._check_budget(512 * 1024)
+                    if self._catalog_record(row, name):
+                        self._usage_at = None
                     total += 1
                     if total % 1000 == 0:
                         self.catalog.commit()
                 indexed = self.catalog.execute("SELECT count(*) FROM records WHERE segment=?", (name,)).fetchone()[0]
                 if indexed != total:
                     raise ValueError("catalogue references missing archive records")
-                self.catalog.execute("UPDATE segments SET records=? WHERE name=?", (total, name))
+                self.catalog.execute("UPDATE segments SET records=? WHERE name=? AND records<>?", (total, name, total))
         finally:
             source.close()
         return total

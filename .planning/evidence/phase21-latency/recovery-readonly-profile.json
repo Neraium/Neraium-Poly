@@ -1,0 +1,18 @@
+{
+  "paper-live": {
+    "records": 4000655,
+    "segments": 590,
+    "minimum_forced_tree_walks": 4346,
+    "sample_rows": 1000,
+    "sample_seconds": 0.0846670400351286,
+    "profile": "         161637 function calls (161626 primitive calls) in 0.083 seconds\n\n   Ordered by: cumulative time\n   List reduced from 116 to 9 due to restriction <9>\n\n   ncalls  tottime  percall  cumtime  percall filename:lineno(function)\n        1    0.000    0.000    0.058    0.058 /home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/poly-p21-latency-20261107/backend/neraium_poly/data/segmented.py:147(_check_budget)\n        1    0.004    0.004    0.058    0.058 /home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/poly-p21-latency-20261107/backend/neraium_poly/data/segmented.py:132(_measure)\n     3571    0.001    0.000    0.027    0.000 /usr/lib/python3.12/pathlib.py:1099(rglob)\n     3571    0.001    0.000    0.026    0.000 /usr/lib/python3.12/pathlib.py:233(_select_from)\n     1000    0.003    0.000    0.026    0.000 /home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/poly-p21-latency-20261107/backend/neraium_poly/data/segmented.py:228(_catalog_record)\n     3575    0.005    0.000    0.022    0.000 /usr/lib/python3.12/pathlib.py:199(_select_from)\n    10707    0.002    0.000    0.021    0.000 /usr/lib/python3.12/pathlib.py:837(stat)\n    10707    0.015    0.000    0.019    0.000 {built-in method posix.stat}\n     3578    0.005    0.000    0.016    0.000 /usr/lib/python3.12/pathlib.py:1067(_make_child_relpath)\n\n\n"
+  },
+  "experimental-paper": {
+    "records": 938158,
+    "segments": 809,
+    "minimum_forced_tree_walks": 1202,
+    "sample_rows": 853,
+    "sample_seconds": 0.16340431198477745,
+    "profile": "         302678 function calls in 0.162 seconds\n\n   Ordered by: cumulative time\n   List reduced from 69 to 9 due to restriction <9>\n\n   ncalls  tottime  percall  cumtime  percall filename:lineno(function)\n        1    0.000    0.000    0.118    0.118 /home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/poly-p21-latency-20261107/backend/neraium_poly/data/segmented.py:147(_check_budget)\n        1    0.007    0.007    0.118    0.118 /home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/poly-p21-latency-20261107/backend/neraium_poly/data/segmented.py:132(_measure)\n     6542    0.001    0.000    0.064    0.000 /usr/lib/python3.12/pathlib.py:1099(rglob)\n     6542    0.002    0.000    0.063    0.000 /usr/lib/python3.12/pathlib.py:233(_select_from)\n     7279    0.010    0.000    0.044    0.000 /usr/lib/python3.12/pathlib.py:199(_select_from)\n      853    0.003    0.000    0.043    0.000 /home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/poly-p21-latency-20261107/backend/neraium_poly/data/segmented.py:228(_catalog_record)\n    18887    0.004    0.000    0.037    0.000 /usr/lib/python3.12/pathlib.py:837(stat)\n     8015    0.010    0.000    0.036    0.000 /usr/lib/python3.12/pathlib.py:1067(_make_child_relpath)\n    18887    0.027    0.000    0.034    0.000 {built-in method posix.stat}\n\n\n"
+  }
+}
