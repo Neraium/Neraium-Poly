@@ -23,6 +23,9 @@ def experimental_research(runtime):
     return {
         "domains": event.get("domains", {"status": "unavailable"}),
         "phase16_execution": runtime.phase16_execution_status(),
+        "phase20": ({**runtime.phase20.summary(), "runtime_error": runtime.phase20_error}
+                    if getattr(runtime, "phase20", None) else {"status": "unavailable" if getattr(runtime, "phase20_error", None) else "disabled",
+                        "last_error": getattr(runtime, "phase20_error", None), "trading_authority": False}),
         "phase18": ({**runtime.phase18.summary(), "runtime_error": runtime.phase18_error}
                     if runtime.phase18 else {"status": "unavailable" if runtime.phase18_error else "disabled",
                         "last_error": runtime.phase18_error, "trading_authority": False}),

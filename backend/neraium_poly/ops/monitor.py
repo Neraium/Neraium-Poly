@@ -1386,6 +1386,14 @@ def _render_event_edge(certified, experimental, width, height, errors):
         ('Uncalibrated; uncertainty [0,1]','yellow',1),
         ('Net edge unavailable / no admission','yellow',1),
         ('Research models NO order authority','yellow',0)]
+    paired = _mapping(_mapping(experimental.get("operations_research")).get("phase20"))
+    if paired and paired.get("status") != "disabled":
+        pair_current = fresh and not paired.get("runtime_error") and not paired.get("last_error")
+        rows.extend([
+            (f"SII A/B pairs {_number(paired.get('paired'))} withheld {_number(paired.get('withheld'))}", "white", 1),
+            ("SII challenger unavailable" if pair_current else "SII A/B state unavailable / stale", "yellow", 1),
+            ("SII improvement unmeasured; no authority", "yellow", 1),
+        ])
     for name,label in [('high_throughput','Throughput'),('high_conviction','Conviction')]:
         row=_mapping(approaches.get(name))
         rows.append((f"{label} E{_number(row.get('evaluated'))} Q{_number(row.get('qualified'))} R{_number(row.get('rejected'))}",'white',1))

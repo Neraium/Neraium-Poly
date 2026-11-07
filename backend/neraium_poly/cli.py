@@ -32,6 +32,7 @@ def main():
             "research-cycle",
             "research-audit",
             "forecast-qualification",
+            "forecast-evaluate",
             "strategy-approve",
             "strategy-status",
             "strategy-revoke",
@@ -177,6 +178,21 @@ def main():
                 indent=2,
             )
         )
+    elif args.command == "forecast-evaluate":
+        from datetime import datetime
+
+        from neraium_poly.research.phase20.report import evaluate_archive
+
+        if not args.training_end or not args.heldout_start:
+            parser.error("forecast-evaluate requires predeclared --training-end and --heldout-start")
+        result = evaluate_archive(args.data_dir, training_end=datetime.fromisoformat(args.training_end),
+            heldout_start=datetime.fromisoformat(args.heldout_start), limit=min(args.max_observations, 1000))
+        encoded = json.dumps(result, indent=2)+"\n"
+        if args.output:
+            args.output.parent.mkdir(parents=True, exist_ok=True)
+            with args.output.open("x") as destination:
+                destination.write(encoded)
+        print(encoded)
     elif args.command == "forecast-qualification":
         from datetime import UTC, datetime
 

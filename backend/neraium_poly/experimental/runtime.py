@@ -169,6 +169,22 @@ class ExperimentalRuntime:
                 except Exception as error:
                     self.phase18_error = f"{type(error).__name__}:{str(error)[:160]}"
                     log.exception("phase18_recovery_withheld")
+            self.phase20 = None
+            self.phase20_error = None
+            if config.phase20_ab_research_enabled:
+                from neraium_poly.research.phase20.continuous import ProspectiveABResearch
+
+                try:
+                    if self.phase18 is None:
+                        raise ValueError("existing independent research pipeline required")
+                    hashes = {f["model_sha256"] for f in self.phase18.state["pending"].values()}
+                    if len(hashes) > 1:
+                        raise ValueError("one native replayable baseline model identity required")
+                    self.phase20 = ProspectiveABResearch(self.events, baseline_model_sha256=hashes.pop() if hashes else None,
+                        clock=self.clock, can_write=self._budget_ok)
+                except Exception as error:
+                    self.phase20_error = f"{type(error).__name__}:{str(error)[:160]}"
+                    log.exception("phase20_recovery_withheld")
             self.feed = feed or SharedFeedClient(config.source_url)
             self.fee_adapter = fee_adapter or AuditedFeeAdapter(
                 self.events, self._budget_ok, client=httpx.AsyncClient(timeout=5, follow_redirects=False)
@@ -657,9 +673,18 @@ class ExperimentalRuntime:
             while not self.stopping and not should_exit():
                 if self.phase18 is not None and self.last_frame is not None and self._budget_ok():
                     try:
-                        await self.phase18.step(self.last_frame)
-                        await self.phase18.resolve_pending(self.config.data_dir / "phase18-resolution-evidence")
+                        committed = await self.phase18.step(self.last_frame)
                         self.phase18_error = None
+                        if committed and self.phase20 is not None:
+                            try:
+                                originals = self.events.latest("EventProbabilityStudy", limit=1)
+                                if originals:
+                                    self.phase20.observe(originals[0])
+                                self.phase20_error = None
+                            except Exception as error:
+                                self.phase20_error = f"{type(error).__name__}:{str(error)[:160]}"
+                                log.exception("phase20_pairing_withheld")
+                        await self.phase18.resolve_pending(self.config.data_dir / "phase18-resolution-evidence")
                     except Exception as error:
                         self.phase18_error = f"{type(error).__name__}:{str(error)[:160]}"
                         log.exception("phase18_event_research_withheld")
