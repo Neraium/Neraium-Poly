@@ -213,10 +213,33 @@ def qualification_readiness(studies, *, as_of, training_end, heldout_start,
         if len(payouts) > 1:
             labels.pop(fid, None)
             rejected["conflicting_recorded_outcome_claims"] += 1
-    rows, reviewed_parents = [], set()
-    for fid, (study, forecast, market, book, evidence) in sorted(originals.items()):
+    # Freeze group coverage BEFORE looking at which labels happened to arrive.
+    # Otherwise an unresolved earliest forecast or training event can disappear,
+    # allowing outcome-dependent selection or a falsely event-disjoint holdout.
+    reviews, earliest, coverage = {}, {}, defaultdict(set)
+    parent_groups, unresolved_groups = defaultdict(set), set()
+    for fid, (study, forecast, _market, _book, _evidence) in sorted(
+            originals.items(), key=lambda item: (item[1][1].timestamp, item[0])):
         reviewed = _review(verify_forecast, study)
         group = _review(review_group, study)
+        reviews[fid] = reviewed, group
+        if (not isinstance(reviewed, dict) or reviewed.get("verified") is not True
+            or not isinstance(group, dict) or group.get("reviewed") is not True
+            or not isinstance(group.get("dependency_group"), str)
+            or not 1 <= len(group["dependency_group"]) <= 256):
+            continue
+        dependency = group["dependency_group"]
+        cohort = (forecast.domain, forecast.contract_type, forecast.model_version,
+                  forecast.model_sha256, forecast.feature_version, dependency)
+        earliest.setdefault(cohort, fid)
+        partition = "train" if forecast.timestamp <= training_end else "validation" if forecast.timestamp < heldout_start else "heldout"
+        coverage[dependency].add(partition)
+        parent_groups[forecast.event_id].add(dependency)
+        if fid not in labels:
+            unresolved_groups.add(dependency)
+    rows, reviewed_parents = [], set()
+    for fid, (study, forecast, market, book, evidence) in sorted(originals.items()):
+        reviewed, group = reviews[fid]
         raw_verified = isinstance(reviewed, dict) and reviewed.get("verified") is True
         group_verified = (isinstance(group, dict) and group.get("reviewed") is True
             and isinstance(group.get("dependency_group"), str) and 1 <= len(group["dependency_group"]) <= 256)
@@ -231,6 +254,21 @@ def qualification_readiness(studies, *, as_of, training_end, heldout_start,
         if fid not in labels:
             rejected["independently_verified_outcome_pending"] += 1
         if not raw_verified or not group_verified or fid not in labels:
+            continue
+        dependency = group["dependency_group"]
+        cohort = (forecast.domain, forecast.contract_type, forecast.model_version,
+                  forecast.model_sha256, forecast.feature_version, dependency)
+        if len(parent_groups[forecast.event_id]) != 1:
+            rejected["same_parent_has_inconsistent_dependency_groups"] += 1
+            continue
+        if earliest[cohort] not in labels:
+            rejected["earliest_prospective_group_forecast_outcome_pending"] += 1
+            continue
+        # Existing fully labeled overlap is handled by the unchanged validator;
+        # retain unresolved split exposure too, which has no fabricated row/label.
+        if ("heldout" in coverage[dependency] and len(coverage[dependency]) > 1
+            and dependency in unresolved_groups):
+            rejected["unresolved_event_group_seen_before_heldout"] += 1
             continue
         try:
             trained = _at(reviewed["model_training_cutoff"])
@@ -292,6 +330,7 @@ def qualification_readiness(studies, *, as_of, training_end, heldout_start,
         "qualified_training_events": calibration.get("training_events", 0),
         "qualified_heldout_events": calibration.get("heldout_events", 0),
         "qualification_count_scope": "most-complete single homogeneous cohort; cohorts never pooled",
+        "selection_policy": "earliest source-replayed forecast per model/reviewed dependency group, selected before labels",
         "cohort_sufficient": any(c["calibration"]["cohort_sufficient"] for c in cohorts),
         "required_training_events": 100, "required_heldout_events": 100,
         "validation": validation, "calibration_rows": rows,

@@ -8,7 +8,7 @@ from neraium_poly.research.phase19.qualification import (
     qualification_readiness,
     replay_event_forecast,
 )
-from neraium_poly.research.phase20.outcomes import replay_crypto_outcome
+from neraium_poly.research.phase21.outcomes import replay_crypto_outcome
 
 
 def evaluate_archive(directory, *, training_end, heldout_start, as_of=None, limit=1000):
@@ -19,8 +19,10 @@ def evaluate_archive(directory, *, training_end, heldout_start, as_of=None, limi
     with ReadonlyArchive(directory, max_query_bytes=128*1024**2) as archive:
         rows = archive.latest('EventProbabilityStudy', limit)
         pairs = archive.latest('PairedForecastStudy', min(limit, 128))
+        early = archive.latest('EventResolutionStudy', min(limit, 128))
         total = archive._catalog_rows('SELECT count(*) AS n FROM records WHERE kind=?',
                                      ('EventProbabilityStudy',))[0]['n']
+    rows += [r for r in early if r.get('operation') == 'outcome_check']
     originals = {r['forecast']['id']: r for r in rows
                  if r.get('operation') == 'forecast_scan' and r.get('forecast')}
     outcome_replays = {}
@@ -36,17 +38,25 @@ def evaluate_archive(directory, *, training_end, heldout_start, as_of=None, limi
         verify_outcome=lambda row, _original: outcome_replays.get(row['id'], {}).get('verified') is True)
     report['schema_version'] = 'phase20-forecast-evaluation-v1'
     report['archive_scope'] = {'total_studies': total, 'included_studies': len(rows),
-        'bounded_tail': total > limit, 'native_outcome_records_replayed': len(outcome_replays)}
+        'bounded_tail': total > limit, 'native_outcome_records_replayed': len(outcome_replays),
+        'count_scope': 'total_studies is P18 only; included_studies also includes additive early native-check attempts',
+        'early_native_attempt_records_included': sum(r.get('operation') == 'outcome_check' for r in early)}
     report['outcome_replays'] = outcome_replays
-    matured = 0
+    report['early_reference_checks'] = len(early)
+    report['outcome_rule'] = 'Exact immediate-YES final-minute hit permits a native check; every label still requires finalized settlement proof'
+    completed = set()
     for study in originals.values():
         try:
             _forecast, market, _book, _evidence = _original(study)
-            matured += market.end_time <= as_of
+            if market.end_time <= as_of:
+                completed.add(_forecast.id)
         except (KeyError, TypeError, ValueError):
             pass  # qualification_readiness already preserves the structured rejection
-    report['matured_forecasts'] = matured
-    report['pending_resolution_rule'] = 'completed reference period AND exact native finalized settlement; no price labels'
+    verified = {v['forecast_id'] for v in outcome_replays.values() if v.get('verified') is True}
+    report['completed_reference_windows'] = len(completed)
+    report['matured_forecasts'] = len(completed | verified)
+    report['maturity_count_scope'] = 'completed reference windows or independently verified early terminal labels; reference hits alone never counted as finalized'
+    report['pending_resolution_rule'] = 'completed-minute YES condition OR completed no-hit reference day, PLUS exact native finality; no price labels'
     report['sii_comparison'] = {'status': 'unmeasured', 'brier_improvement': None,
         'log_loss_improvement': None, 'after_cost_edge': None, 'sii_in_trading_path': False,
         'reason': 'frozen trained SII challenger, causal relationship evidence and verified event-disjoint outcomes required',

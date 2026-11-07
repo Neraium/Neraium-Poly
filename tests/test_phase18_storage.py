@@ -122,6 +122,8 @@ def test_partial_compression_bad_restore_proof_and_open_wal_fail_closed(tmp_path
     rows=archive(tmp_path);raw=tmp_path/'events-segments'/rows[0]['name'];original=raw.read_bytes()
     monkeypatch.setattr(retention,'process_references',complete_scan)
     gz=Path(str(raw)+'.gz');gz.write_bytes(b'CONTROLLED partial compression')
+    # Keep the corrupted fixture old enough to exercise integrity, independent of host clock.
+    os.utime(gz, (START.timestamp(), START.timestamp()))
     r=retention_plan(tmp_path,now=START+timedelta(days=2),mode='audit')
     bad=next(x for x in r['segments'] if x['segment']==raw.name);assert not bad['review_prerequisites_met']
     assert any('audit_withheld:' in x for x in bad['reasons']) and raw.read_bytes()==original

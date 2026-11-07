@@ -185,6 +185,19 @@ class ExperimentalRuntime:
                 except Exception as error:
                     self.phase20_error = f"{type(error).__name__}:{str(error)[:160]}"
                     log.exception("phase20_recovery_withheld")
+            self.phase21 = None
+            self.phase21_error = None
+            if config.phase21_early_outcomes_enabled:
+                from neraium_poly.research.phase21.continuous import EarlyOutcomeResearch
+
+                try:
+                    if self.phase18 is None:
+                        raise ValueError("existing independent forecast pipeline required")
+                    self.phase21 = EarlyOutcomeResearch(self.events, config.data_dir/"phase18-resolution-evidence",
+                        clock=self.clock, can_write=self._budget_ok)
+                except Exception as error:
+                    self.phase21_error = f"{type(error).__name__}:{str(error)[:160]}"
+                    log.exception("phase21_outcome_recovery_withheld")
             self.feed = feed or SharedFeedClient(config.source_url)
             self.fee_adapter = fee_adapter or AuditedFeeAdapter(
                 self.events, self._budget_ok, client=httpx.AsyncClient(timeout=5, follow_redirects=False)
@@ -685,6 +698,13 @@ class ExperimentalRuntime:
                                 self.phase20_error = f"{type(error).__name__}:{str(error)[:160]}"
                                 log.exception("phase20_pairing_withheld")
                         await self.phase18.resolve_pending(self.config.data_dir / "phase18-resolution-evidence")
+                        if self.phase21 is not None:
+                            try:
+                                await self.phase21.step(self.phase18.state["pending"])
+                                self.phase21_error = None
+                            except Exception as error:
+                                self.phase21_error = f"{type(error).__name__}:{str(error)[:160]}"
+                                log.exception("phase21_early_outcome_withheld")
                     except Exception as error:
                         self.phase18_error = f"{type(error).__name__}:{str(error)[:160]}"
                         log.exception("phase18_event_research_withheld")

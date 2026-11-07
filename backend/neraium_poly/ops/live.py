@@ -672,9 +672,22 @@ class LivePaperRuntime:
         now = self.clock()
         if self.config.archive_management_enabled:
             try:
-                self.events.maintain()
+                worker = asyncio.create_task(asyncio.to_thread(self.events.maintain))
+                self._archive_maintenance_task = worker
+                try:
+                    await asyncio.shield(worker)
+                except asyncio.CancelledError:
+                    # A cancelled await must not leave SQLite maintenance alive
+                    # while serve_live's finally closes its owner connections.
+                    await asyncio.gather(worker, return_exceptions=True)
+                    raise
+                finally:
+                    if worker.done():
+                        self._archive_maintenance_task = None
             except Exception as error:  # noqa: BLE001 - use the same stream stop as other storage faults
                 self.archive_fault = f"archive_maintenance:{type(error).__name__}:{str(error)[:160]}"
+        if self.stopping:
+            return
         if not self._budget_ok():
             self.last_error = self._archive_status().get("last_error") if self.config.archive_management_enabled else "archive_or_disk_budget_exhausted"
             if self.coverage:
@@ -981,6 +994,9 @@ class LivePaperRuntime:
 
     async def close(self):
         self.stopping = True
+        maintenance = getattr(self, "_archive_maintenance_task", None)
+        if maintenance is not None:
+            await asyncio.gather(maintenance, return_exceptions=True)
         with self._lock:
             self._save()
         if self.coverage:

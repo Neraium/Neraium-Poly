@@ -42,6 +42,7 @@ class ForecastDiscoveryStudy(Record):
     base_markets: int
     resulting_markets: int
     request_count: int
+    research_priority: dict = Field(default_factory=dict)
     trading_authority: bool = False
 
 
@@ -137,16 +138,21 @@ async def augment_discovery(runtime, batch):
     now=runtime.clock();selected,pool,reasons=select_priority_pool(batch,previous,discovery,now=now,
         limit=runtime.config.forecast_priority_market_limit,max_tokens=runtime.config.max_subscription_tokens,
         protected=protected,protection_status=status)
+    from neraium_poly.research.phase21.discovery import prioritize_raw_candidates
+
+    _, priority_report = prioritize_raw_candidates(discovery['markets'], discovery['books'], now=now)
     if not runtime._budget_ok():raise ValueError('forecast_discovery_archive_unavailable')
-    payload={'source_discovery':discovery,'selected':sorted(pool),'base_id':sorted({m.market_id for m in batch.markets})}
+    payload={'source_discovery':discovery,'selected':sorted(pool),'base_id':sorted({m.market_id for m in batch.markets}), 'research_priority':priority_report}
     identity=hashlib.sha256(json.dumps(payload,sort_keys=True,allow_nan=False).encode()).hexdigest()
     row=ForecastDiscoveryStudy(id=identity,timestamp=now,available_at=now,source='phase19-public-forecast-discovery',
         provenance=discovery['provenance'],candidate_market_ids=tuple(str(m['id']) for m in discovery['markets']),
         selected_market_ids=tuple(pool),native_books=discovery['books'],health_by_market=discovery['health_by_market'],
         rejections=dict(Counter(discovery['rejections'])+Counter(reasons)),protection_status=status,protected_market_ids=tuple(sorted(protected)),
-        base_markets=len({m.market_id for m in batch.markets}),resulting_markets=len({m.market_id for m in selected.markets}),request_count=discovery['requests_used'])
+        base_markets=len({m.market_id for m in batch.markets}),resulting_markets=len({m.market_id for m in selected.markets}),request_count=discovery['requests_used'], research_priority=priority_report)
     runtime.events.append(row)
     runtime.ledger.put('forecast_priority_pool',{k:[m.model_dump(mode='json') for m in values] for k,values in pool.items()})
     return selected,{'study_id':row.id,'compatible_candidates':len(discovery['markets']),
         'priority_markets':len(pool),'requests':discovery['requests_used'],'rejections':row.rejections,
+        'priority_ready_markets':priority_report['priority_ready_markets'],
+        'priority_ready_parent_events':priority_report['priority_ready_parent_events'],
         'protection':status,'scope':'bounded additive independent-research coverage; no order authorization'}
