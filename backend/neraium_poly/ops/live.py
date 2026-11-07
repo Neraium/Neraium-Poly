@@ -96,6 +96,8 @@ class LivePaperRuntime:
             self.quote_archive = QuoteArchive(self.events, self.ledger.get("quote_archive", {}))
             self.stream_notifications = 0
             self.stream_generation = 0
+            self._stream_identity = None
+            self._stream_task = None
             self.last_research = None
             self.engine = RelationshipEngine(
                 RelationshipPolicy(
@@ -309,9 +311,17 @@ class LivePaperRuntime:
             self.last_discovery = now
             self._save()
         if self.coverage and self.config.websocket_enabled:
-            await self.coverage.stop_stream()
-            self.stream_generation += 1
-            self.coverage.start_stream(list(self.markets.values()), self._stream_observed)
+            stream_identity = frozenset((m.exchange, m.market_id, m.token_id) for m in self.markets.values())
+            if (self._stream_identity != stream_identity or self._stream_task is None
+                or self._stream_task.done()):
+                await self.coverage.stop_stream()
+                self.stream_generation += 1
+                self._stream_task = self.coverage.start_stream(list(self.markets.values()), self._stream_observed)
+                self._stream_identity = stream_identity
+            else:
+                # Metadata refresh is not a subscription change. Preserve valid native
+                # baselines and in-flight recovery; restart only a changed/failed stream.
+                self.coverage.set_markets(list(self.markets.values()))
 
     def _stream_observed(self, book):
         # Native updates are sampled from authoritative feed.latest in cycle().
