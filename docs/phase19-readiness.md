@@ -15,7 +15,7 @@ Verified source: `53c75e4`; latest operational check: 2026-11-07T07:42:43.891689
 ## Genuine evidence
 
 3 genuine prospective crypto research forecasts were recorded and replayed exactly as of 2026-11-07T07:45:56.651770+00:00.
-They share one unreviewed Bitcoin parent event; neither is a calibrated or execution-authorized forecast.
+They share one unreviewed Bitcoin parent event; none is a calibrated or execution-authorized forecast.
 
 | Market | Forecast timestamp UTC | Research probability | Recorded executable bid / ask |
 |---|---|---:|---|
@@ -24,7 +24,7 @@ They share one unreviewed Bitcoin parent event; neither is a calibrated or execu
 | 6771168 | 2026-11-07T07:44:30.777617Z | 0.00000119 | 0.003 / 0.004 |
 
 Every forecast retains native book depth, source/availability times, full external evidence,
-rule/model/dataset hashes, uncertainty and append-only recovery state. Both forecasts precede
+rule/model/dataset hashes, uncertainty and append-only recovery state. All recorded forecasts precede
 their November 8 closing time. Model uncertainty remains [0,1]; no forecasting superiority,
 Brier/log-loss advantage or profitable edge is established. Existing NFL research is preserved.
 Weather/economic and other models remain withheld where evidence or contract semantics are insufficient.
@@ -54,7 +54,7 @@ scenarios sweep actual participating depth; larger capital cannot scale profits 
 These are instantaneous displayed-liquidity stress bounds using 10% participation, not authorized
 order sizes or edge-supported capacity. Existing $5/$15/$25 single-order maxima remain unchanged.
 Fees, latency survival, queue priority and future exits need qualification; net EV and performance
-remain unavailable. Both recorded YES point estimates were below their executable asks before costs.
+remain unavailable. All recorded YES point estimates were below their executable asks before costs.
 
 ## Operations and verification
 
