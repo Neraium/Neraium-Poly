@@ -104,6 +104,7 @@ class ManagedEventStore:
                   event_time TEXT NOT NULL,digest TEXT NOT NULL,segment TEXT NOT NULL,
                   qualified INTEGER NOT NULL);
                 CREATE INDEX IF NOT EXISTS records_kind_time ON records(kind,available_at,id);
+                CREATE INDEX IF NOT EXISTS records_segment ON records(segment);
                 CREATE TABLE IF NOT EXISTS archive_meta(key TEXT PRIMARY KEY,value TEXT NOT NULL);
                 CREATE TRIGGER IF NOT EXISTS records_no_update BEFORE UPDATE ON records
                   BEGIN SELECT RAISE(ABORT,'append only archive index'); END;
