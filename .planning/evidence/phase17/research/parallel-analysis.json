@@ -1,0 +1,23 @@
+{
+  "actual_process_workers": 2,
+  "jobs": [
+    {
+      "job": "experiment",
+      "pid": 3219254,
+      "started_at": "2026-11-07T00:13:54.875870+00:00",
+      "completed_at": "2026-11-07T00:14:23.232498+00:00",
+      "cpu_seconds": 28.329282624,
+      "max_rss_kib": 161800
+    },
+    {
+      "job": "storage_analysis",
+      "pid": 3219257,
+      "started_at": "2026-11-07T00:13:54.875817+00:00",
+      "completed_at": "2026-11-07T00:13:55.202374+00:00",
+      "cpu_seconds": 0.03491918200000001,
+      "max_rss_kib": 25572
+    }
+  ],
+  "actual_overlap": true,
+  "numerical_threads_per_worker": 1
+}

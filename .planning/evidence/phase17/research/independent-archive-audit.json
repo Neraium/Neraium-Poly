@@ -1,0 +1,222 @@
+{
+  "observed_at": "2026-11-07T00:02:23.606095+00:00",
+  "authentic_studies_checked": 8,
+  "authentic_points_independently_recomputed": 50,
+  "immutable_segment_proof": {
+    "segment": "segment-00000212.sqlite",
+    "raw_sha256": "90bbfa7f17ba0d48fbb61a6faee57bf38b334e61cdbdb8251e84f1a7eb06e54e",
+    "raw_bytes": 4263936,
+    "gzip_roundtrip_verified": true,
+    "original_retirement_authorized": false,
+    "gzip_sha256": "cdc2ad3fe0a9cd1134e1142c41d4b848c77cb2034353d2a63831c0646e4896b5"
+  },
+  "seconds": 2.467345640063286,
+  "storage": {
+    "collector": {
+      "schema_version": "phase17-capacity-v1",
+      "observed_at": "2026-11-07T00:02:25.348141+00:00",
+      "status": "warning",
+      "backpressure": false,
+      "alerts": [
+        "capacity_below7days"
+      ],
+      "sample_errors": [],
+      "samples": 2,
+      "window_seconds": 408.690198,
+      "usage_bytes": 8147251332,
+      "budget_bytes": 68719476736,
+      "free_bytes": 510902751232,
+      "global_floor_bytes": 68719476736,
+      "proposed_bytes": 0,
+      "headroom_bytes": 60572225404,
+      "net_retained_growth_bytes_per_second": 110867.09498229757,
+      "forecast_growth_bytes_per_second": 110867.09498229757,
+      "seconds_to_capacity": 546349.8923072867,
+      "representative24h": false,
+      "tier_classes": {
+        "active": {
+          "usage_bytes": 15089216,
+          "retention_class": "ACTIVE: open databases/WAL; append only; never compress or move",
+          "original_removal_authorized": false
+        },
+        "warm": {
+          "usage_bytes": 2430337024,
+          "retention_class": "WARM: immutable original segments; retain originals",
+          "original_removal_authorized": false
+        },
+        "cold": {
+          "usage_bytes": 640092590,
+          "retention_class": "COLD: verified additional compressed representations; originals retained",
+          "original_removal_authorized": false
+        },
+        "protected": {
+          "usage_bytes": 2017935360,
+          "retention_class": "PROTECTED: account/forecast/audit and legacy evidence; preserve",
+          "original_removal_authorized": false
+        },
+        "catalog_state": {
+          "usage_bytes": 2973085078,
+          "retention_class": "PROTECTED: append-only source identity/catalog and restart state",
+          "original_removal_authorized": false
+        },
+        "derived_cache": {
+          "usage_bytes": 64419447,
+          "retention_class": "DERIVED: existing verified cold cache; reproducible only with retained source proof",
+          "original_removal_authorized": false
+        },
+        "segment_metadata": {
+          "usage_bytes": 6292617,
+          "retention_class": "PROTECTED: manifests/hash/provenance; preserve",
+          "original_removal_authorized": false
+        }
+      },
+      "missing_growth_is_not_zero": true,
+      "indefinite_operation_proven": false,
+      "budget_increase_authorized": false,
+      "retention_change_authorized": false,
+      "original_removal_authorized": false,
+      "limitations": [
+        "Net allocation includes WAL/cache/rotation changes; measure24h and7days",
+        "Compression adds verified copies; originals retained means no reclaimed bytes",
+        "Append-only catalogs grow even if a future original-retirement batch is approved"
+      ],
+      "retention_proposal": {
+        "schema_version": "phase17-retention-proposal-v1",
+        "usage_bytes": 8147251332,
+        "budget_bytes": 68719476736,
+        "retention_classes": {
+          "active": "ACTIVE: open databases/WAL; append only; never compress or move",
+          "warm": "WARM: immutable original segments; retain originals",
+          "cold": "COLD: verified additional compressed representations; originals retained",
+          "protected": "PROTECTED: account/forecast/audit and legacy evidence; preserve",
+          "catalog_state": "PROTECTED: append-only source identity/catalog and restart state",
+          "derived_cache": "DERIVED: existing verified cold cache; reproducible only with retained source proof",
+          "segment_metadata": "PROTECTED: manifests/hash/provenance; preserve"
+        },
+        "verified_additional_cold_bytes": 0,
+        "derived_cache_bytes": 64419447,
+        "derived_cache_regeneration_proof_available": false,
+        "cache_note": "Existing cache is bounded64MiB; eviction requires its documented source/inode checks",
+        "original_retirement_prerequisites": [
+          "exact batch/path/hash manifest",
+          "lossless verified cold copy",
+          "successful independent recovery",
+          "no active inode/process reference",
+          "approved retention class",
+          "separate explicit owner authorization"
+        ],
+        "current_policy": "retain_original",
+        "policy_changed": false,
+        "removal_authorized": false,
+        "budget_increase_authorized": false,
+        "spending_authorized": false,
+        "recommendation": "Preserve originals; bound new derived research/checkpoints; measure growth before owner-reviewed capacity decision"
+      }
+    },
+    "experimental": {
+      "schema_version": "phase17-capacity-v1",
+      "observed_at": "2026-11-07T00:02:25.498583+00:00",
+      "status": "warning",
+      "backpressure": false,
+      "alerts": [
+        "capacity_below7days"
+      ],
+      "sample_errors": [],
+      "samples": 2,
+      "window_seconds": 409.818348,
+      "usage_bytes": 2645595022,
+      "budget_bytes": 17179869184,
+      "free_bytes": 510902743040,
+      "global_floor_bytes": 68719476736,
+      "proposed_bytes": 0,
+      "headroom_bytes": 14534274162,
+      "net_retained_growth_bytes_per_second": 64544.15750072761,
+      "forecast_growth_bytes_per_second": 64544.15750072761,
+      "seconds_to_capacity": 225183.42054176095,
+      "representative24h": false,
+      "tier_classes": {
+        "active": {
+          "usage_bytes": 6954536,
+          "retention_class": "ACTIVE: open databases/WAL; append only; never compress or move",
+          "original_removal_authorized": false
+        },
+        "warm": {
+          "usage_bytes": 961662976,
+          "retention_class": "WARM: immutable original segments; retain originals",
+          "original_removal_authorized": false
+        },
+        "cold": {
+          "usage_bytes": 320678602,
+          "retention_class": "COLD: verified additional compressed representations; originals retained",
+          "original_removal_authorized": false
+        },
+        "protected": {
+          "usage_bytes": 517521408,
+          "retention_class": "PROTECTED: account/forecast/audit and legacy evidence; preserve",
+          "original_removal_authorized": false
+        },
+        "catalog_state": {
+          "usage_bytes": 765902195,
+          "retention_class": "PROTECTED: append-only source identity/catalog and restart state",
+          "original_removal_authorized": false
+        },
+        "derived_cache": {
+          "usage_bytes": 65766026,
+          "retention_class": "DERIVED: existing verified cold cache; reproducible only with retained source proof",
+          "original_removal_authorized": false
+        },
+        "segment_metadata": {
+          "usage_bytes": 7109279,
+          "retention_class": "PROTECTED: manifests/hash/provenance; preserve",
+          "original_removal_authorized": false
+        }
+      },
+      "missing_growth_is_not_zero": true,
+      "indefinite_operation_proven": false,
+      "budget_increase_authorized": false,
+      "retention_change_authorized": false,
+      "original_removal_authorized": false,
+      "limitations": [
+        "Net allocation includes WAL/cache/rotation changes; measure24h and7days",
+        "Compression adds verified copies; originals retained means no reclaimed bytes",
+        "Append-only catalogs grow even if a future original-retirement batch is approved"
+      ],
+      "retention_proposal": {
+        "schema_version": "phase17-retention-proposal-v1",
+        "usage_bytes": 2645595022,
+        "budget_bytes": 17179869184,
+        "retention_classes": {
+          "active": "ACTIVE: open databases/WAL; append only; never compress or move",
+          "warm": "WARM: immutable original segments; retain originals",
+          "cold": "COLD: verified additional compressed representations; originals retained",
+          "protected": "PROTECTED: account/forecast/audit and legacy evidence; preserve",
+          "catalog_state": "PROTECTED: append-only source identity/catalog and restart state",
+          "derived_cache": "DERIVED: existing verified cold cache; reproducible only with retained source proof",
+          "segment_metadata": "PROTECTED: manifests/hash/provenance; preserve"
+        },
+        "verified_additional_cold_bytes": 0,
+        "derived_cache_bytes": 65766026,
+        "derived_cache_regeneration_proof_available": false,
+        "cache_note": "Existing cache is bounded64MiB; eviction requires its documented source/inode checks",
+        "original_retirement_prerequisites": [
+          "exact batch/path/hash manifest",
+          "lossless verified cold copy",
+          "successful independent recovery",
+          "no active inode/process reference",
+          "approved retention class",
+          "separate explicit owner authorization"
+        ],
+        "current_policy": "retain_original",
+        "policy_changed": false,
+        "removal_authorized": false,
+        "budget_increase_authorized": false,
+        "spending_authorized": false,
+        "recommendation": "Preserve originals; bound new derived research/checkpoints; measure growth before owner-reviewed capacity decision"
+      }
+    }
+  },
+  "source_database_handles": "native read-only/query_only; no owner classes or extraction",
+  "service_or_original_mutations": false,
+  "independent_resolved_outcomes": 0,
+  "independent_source_truth_claimed": false
+}

@@ -1,0 +1,3098 @@
+{
+  "collector": {
+    "current": {
+      "mode": "live_market_paper",
+      "generated_at": "2026-11-07T00:13:54.908906+00:00",
+      "cash": 500.0,
+      "bankroll": 500.0,
+      "simulated_pnl": 0.0,
+      "suspended": false,
+      "archive": {
+        "managed": true,
+        "usage_bytes": 8221798297,
+        "usage_is_conservative_estimate": false,
+        "budget_bytes": 68719476736,
+        "active_bytes": 13393448,
+        "segment_bytes": 16777216,
+        "segments": 193,
+        "sealed_segments": 192,
+        "compressed_segments": 192,
+        "legacy_records": 838222,
+        "records": 1874001,
+        "free_bytes": 508361383936,
+        "growth_bytes_per_second": 106572.84246389216,
+        "remaining_bytes": 60497678439,
+        "seconds_to_exhaustion": 567665.0546268122,
+        "global_floor_bytes": 68719476736,
+        "retention_policy": "retain_all_originals_and_verified_copies",
+        "archive_tiers": {
+          "active_segments": 1,
+          "sealed_originals_present": 192,
+          "cold_only_segments": 0,
+          "cold_only_verified_this_process": 0,
+          "cold_proofs_present": 148,
+          "derived_cache_bytes": 64370295,
+          "derived_cache_budget_bytes": 67108864,
+          "counts_scope": "current catalog and filesystem; proof presence is not integrity verification"
+        },
+        "tier_usage_bytes": {
+          "active": 13393448,
+          "warm": 2482274304,
+          "cold": 653901464,
+          "protected": 2017935360,
+          "derived_cache": 64370295,
+          "segment_metadata": 6430412,
+          "catalog_state": 2983493014
+        },
+        "cold_verification": {
+          "enabled": true,
+          "minimum_scan_interval_seconds": 60,
+          "last_scan_at": "2026-11-07T00:13:41.484058+00:00",
+          "last_success_at": "2026-11-07T00:13:41.484058+00:00",
+          "last_segment": "segment-00000148.sqlite",
+          "last_error": null,
+          "scope": "process-local progress; immutable proof presence is reported separately"
+        },
+        "warnings": [],
+        "cold_only_names_sample": [],
+        "health": "ok",
+        "last_error": null
+      },
+      "operation": {
+        "cycles": 2179,
+        "scan": {
+          "markets_scanned": 200,
+          "discovered_markets": 200,
+          "outcomes": 400,
+          "bounded": true,
+          "next_offset": 200,
+          "selection_order": "volume24hr_desc",
+          "errors": [],
+          "at": "2026-11-07T00:09:07.559649+00:00"
+        },
+        "service": {
+          "status": "ok",
+          "paper_trading": true,
+          "live_trading_enabled": false,
+          "mode": "live_market_paper",
+          "trading_status": "validation_blocked",
+          "last_ingestion_at": "2026-11-07T00:13:55.029226+00:00",
+          "last_ingestion_age_seconds": 0.002389,
+          "last_error": null,
+          "ledger_consistent": true,
+          "timestamp": "2026-11-07T00:13:55.031615+00:00"
+        },
+        "connectivity": {
+          "messages": 6396631,
+          "native_book_frames": 93674,
+          "native_delta_frames": 6281682,
+          "native_books_delivered": 11283805,
+          "rest_books": 74121,
+          "reconnects": 7,
+          "gaps": 1074863,
+          "out_of_order": 298462,
+          "queue_overflows": 0,
+          "invalid_frames": 0,
+          "callbacks_failed": 0,
+          "invalidations": 1074983,
+          "resnapshot_failures": 0,
+          "gap_missing_baseline": 1043118,
+          "gap_source_time": 21459,
+          "gap_top_integrity": 8048,
+          "gap_invalid_delta": 2103,
+          "stale_recovery_baselines": 2635,
+          "ws_connected": true,
+          "subscribed_tokens": 400,
+          "cached_books": 376,
+          "resolved_tokens_withheld": 0,
+          "gap_tokens_withheld": 24,
+          "fresh_books": 278,
+          "queue_depth": 0,
+          "resnapshot_pending": 46,
+          "connection_generation": 89,
+          "last_message_at": "2026-11-07T00:13:55.029967+00:00",
+          "last_gap_at": "2026-11-07T00:13:54.360800+00:00",
+          "http_requests": 74654,
+          "http_rate_limits": 0,
+          "http_peak_inflight": 4,
+          "rate_requests_per_second": 8.0
+        }
+      },
+      "scope": "archive health and current simulated capital; full event history remains in /api/state",
+      "capacity": {
+        "schema_version": "1.0",
+        "observed_at": "2026-11-07T00:13:55.032660+00:00",
+        "service": "collector",
+        "status": "warning",
+        "backpressure": false,
+        "alerts": [
+          "capacity_horizon_below_7_days"
+        ],
+        "seconds_to_capacity": 567665.0546268122,
+        "tier_allocations_bytes": {
+          "active": 536870912,
+          "warm": 17179869184,
+          "cold": 34359738368,
+          "catalog_state": 8053063680,
+          "protected": 8589934592
+        },
+        "tier_allocations_are_soft": true,
+        "budget_increase_authorized": false,
+        "retirement_authorized": false,
+        "forecast_scope": "measured net retained bytes; variable workload and shared filesystem"
+      }
+    },
+    "capacity": {
+      "schema_version": "phase17-capacity-v1",
+      "observed_at": "2026-11-07T00:13:55.034044+00:00",
+      "status": "warning",
+      "backpressure": false,
+      "alerts": [
+        "capacity_below7days"
+      ],
+      "sample_errors": [],
+      "samples": 3,
+      "window_seconds": 12018.947225,
+      "usage_bytes": 8221798297,
+      "budget_bytes": 68719476736,
+      "free_bytes": 508361383936,
+      "global_floor_bytes": 68719476736,
+      "proposed_bytes": 0,
+      "headroom_bytes": 60497678439,
+      "net_retained_growth_bytes_per_second": 113495.26355874319,
+      "forecast_growth_bytes_per_second": 113495.26355874319,
+      "seconds_to_capacity": 533041.4375194384,
+      "span_at_least24h": false,
+      "representative24h": false,
+      "tier_classes": {
+        "active": {
+          "usage_bytes": 13393448,
+          "retention_class": "ACTIVE: open databases/WAL; append only; never compress or move",
+          "original_removal_authorized": false
+        },
+        "warm": {
+          "usage_bytes": 2482274304,
+          "retention_class": "WARM: immutable original segments; retain originals",
+          "original_removal_authorized": false
+        },
+        "cold": {
+          "usage_bytes": 653901464,
+          "retention_class": "COLD: verified additional compressed representations; originals retained",
+          "original_removal_authorized": false
+        },
+        "protected": {
+          "usage_bytes": 2017935360,
+          "retention_class": "PROTECTED: account/forecast/audit and legacy evidence; preserve",
+          "original_removal_authorized": false
+        },
+        "catalog_state": {
+          "usage_bytes": 2983493014,
+          "retention_class": "PROTECTED: append-only source identity/catalog and restart state",
+          "original_removal_authorized": false
+        },
+        "derived_cache": {
+          "usage_bytes": 64370295,
+          "retention_class": "DERIVED: existing verified cold cache; reproducible only with retained source proof",
+          "original_removal_authorized": false
+        },
+        "segment_metadata": {
+          "usage_bytes": 6430412,
+          "retention_class": "PROTECTED: manifests/hash/provenance; preserve",
+          "original_removal_authorized": false
+        }
+      },
+      "missing_growth_is_not_zero": true,
+      "indefinite_operation_proven": false,
+      "budget_increase_authorized": false,
+      "retention_change_authorized": false,
+      "original_removal_authorized": false,
+      "limitations": [
+        "Net allocation includes WAL/cache/rotation changes; measure24h and7days",
+        "Compression adds verified copies; originals retained means no reclaimed bytes",
+        "Append-only catalogs grow even if a future original-retirement batch is approved"
+      ]
+    },
+    "samples": [
+      {
+        "at": "2026-11-06T20:53:35.961681+00:00",
+        "usage_bytes": 6857704714,
+        "tier_usage_bytes": {
+          "active": 6422128,
+          "warm": 1603534848,
+          "cold": 420788374,
+          "protected": 2017935360,
+          "derived_cache": 12603723,
+          "segment_metadata": 4091779,
+          "catalog_state": 2792328502
+        }
+      },
+      {
+        "at": "2026-11-06T23:55:34.956540+00:00",
+        "usage_bytes": 8101941037,
+        "tier_usage_bytes": {
+          "active": 9989696,
+          "warm": 2404478976,
+          "cold": 633254965,
+          "protected": 2017935360,
+          "derived_cache": 63620727,
+          "segment_metadata": 6224043,
+          "catalog_state": 2966437270
+        }
+      },
+      {
+        "at": "2026-11-07T00:13:54.908906+00:00",
+        "usage_bytes": 8221798297,
+        "tier_usage_bytes": {
+          "active": 13393448,
+          "warm": 2482274304,
+          "cold": 653901464,
+          "protected": 2017935360,
+          "derived_cache": 64370295,
+          "segment_metadata": 6430412,
+          "catalog_state": 2983493014
+        }
+      }
+    ]
+  },
+  "experimental": {
+    "current": {
+      "account_id": "experimental-paper",
+      "cash": 498.73125,
+      "bankroll": 498.73125,
+      "kill_switch": false,
+      "simulated_pnl": -1.2687500000000114,
+      "generated_at": "2026-11-07T00:13:55.035576+00:00",
+      "service": {
+        "status": "ok",
+        "account_id": "experimental-paper",
+        "validation_status": "unvalidated",
+        "paper_trading": true,
+        "live_trading_enabled": false,
+        "last_ingestion_at": "2026-11-07T00:13:53.001279+00:00",
+        "last_ingestion_age_seconds": 2.034301,
+        "last_error": null,
+        "fee_error": null,
+        "timestamp": "2026-11-07T00:13:55.035580+00:00"
+      },
+      "archive": {
+        "managed": true,
+        "usage_bytes": 2685388876,
+        "usage_is_conservative_estimate": false,
+        "budget_bytes": 17179869184,
+        "active_bytes": 1771416,
+        "segment_bytes": 8388608,
+        "segments": 220,
+        "sealed_segments": 219,
+        "compressed_segments": 219,
+        "legacy_records": 164111,
+        "records": 436665,
+        "free_bytes": 508361375744,
+        "growth_bytes_per_second": 58000.7831109609,
+        "remaining_bytes": 14494480308,
+        "seconds_to_exhaustion": 249901.45874876739,
+        "global_floor_bytes": 68719476736,
+        "retention_policy": "retain_all_originals_and_verified_copies",
+        "archive_tiers": {
+          "active_segments": 1,
+          "sealed_originals_present": 219,
+          "cold_only_segments": 0,
+          "cold_only_verified_this_process": 0,
+          "cold_proofs_present": 189,
+          "derived_cache_bytes": 66044554,
+          "derived_cache_budget_bytes": 67108864,
+          "counts_scope": "current catalog and filesystem; proof presence is not integrity verification"
+        },
+        "tier_usage_bytes": {
+          "active": 1771416,
+          "warm": 991621120,
+          "cold": 331267700,
+          "protected": 517521408,
+          "derived_cache": 66044554,
+          "segment_metadata": 7347324,
+          "catalog_state": 769815354
+        },
+        "cold_verification": {
+          "enabled": true,
+          "minimum_scan_interval_seconds": 60,
+          "last_scan_at": "2026-11-07T00:12:58.174188+00:00",
+          "last_success_at": "2026-11-07T00:12:58.174188+00:00",
+          "last_segment": "segment-00000189.sqlite",
+          "last_error": null,
+          "scope": "process-local progress; immutable proof presence is reported separately"
+        },
+        "warnings": [],
+        "cold_only_names_sample": [],
+        "health": "ok",
+        "last_error": null
+      },
+      "experimental_totals": {
+        "cycles": 7454,
+        "observations": 313348,
+        "qualified_opportunities": 16,
+        "signals": 2135195
+      },
+      "scope": "archive health and current simulated capital; research histories remain in /api/state",
+      "capacity": {
+        "schema_version": "1.0",
+        "observed_at": "2026-11-07T00:13:55.066841+00:00",
+        "service": "experimental",
+        "status": "warning",
+        "backpressure": false,
+        "alerts": [
+          "capacity_horizon_below_7_days"
+        ],
+        "seconds_to_capacity": 249901.45874876739,
+        "tier_allocations_bytes": {
+          "active": 268435456,
+          "warm": 4294967296,
+          "cold": 6442450944,
+          "catalog_state": 4026531840,
+          "protected": 2147483648
+        },
+        "tier_allocations_are_soft": true,
+        "budget_increase_authorized": false,
+        "retirement_authorized": false,
+        "forecast_scope": "measured net retained bytes; variable workload and shared filesystem"
+      },
+      "operations_research": {
+        "domains": {
+          "schema_version": "1.0",
+          "status": "research_only",
+          "market_source_status": "fresh_public_frame",
+          "last_frame_at": "2026-11-07T00:13:52.095887+00:00",
+          "last_error": null,
+          "markets_monitored": 200,
+          "domains": {
+            "weather": {
+              "monitored_markets": 1,
+              "fresh_markets": 0,
+              "structurally_supported_markets": 0,
+              "independent_forecasts": 0,
+              "pending": 0,
+              "resolved": 0,
+              "model_versions": [],
+              "capability": "observations implemented; qualified predictive distribution unavailable"
+            },
+            "crypto": {
+              "monitored_markets": 14,
+              "fresh_markets": 5,
+              "structurally_supported_markets": 2,
+              "independent_forecasts": 0,
+              "pending": 0,
+              "resolved": 0,
+              "model_versions": [],
+              "capability": "closed-candle evidence implemented; terminal time convention requires review"
+            },
+            "finance": {
+              "monitored_markets": 3,
+              "fresh_markets": 2,
+              "structurally_supported_markets": 0,
+              "independent_forecasts": 0,
+              "pending": 0,
+              "resolved": 0,
+              "model_versions": [],
+              "capability": "exact reference/settlement interpretation required; no general price model"
+            },
+            "economics": {
+              "monitored_markets": 6,
+              "fresh_markets": 5,
+              "structurally_supported_markets": 0,
+              "independent_forecasts": 0,
+              "pending": 0,
+              "resolved": 0,
+              "model_versions": [],
+              "capability": "official calendar context implemented; vintage/model evidence insufficient"
+            },
+            "politics": {
+              "monitored_markets": 0,
+              "fresh_markets": 0,
+              "structurally_supported_markets": 0,
+              "independent_forecasts": 0,
+              "pending": 0,
+              "resolved": 0,
+              "model_versions": [],
+              "capability": "evidence/interpretation contracts only; human review required"
+            },
+            "sports": {
+              "monitored_markets": 32,
+              "fresh_markets": 25,
+              "structurally_supported_markets": 0,
+              "independent_forecasts": 2,
+              "pending": 2,
+              "resolved": 0,
+              "model_versions": [
+                {
+                  "model_version": "sports-independent-baselines-v1/frequency",
+                  "model_sha256": "886b8b4054711106a7bccfc086f461d33e8984a05cef16db2e94db665c197654",
+                  "feature_version": "causal-external-publisher-results-v1"
+                }
+              ],
+              "capability": "legacy NFL ternary research preserved; no trading authority",
+              "forecast_scope": "Read-only Phase13 ternary journal; no duplicated records"
+            },
+            "esports": {
+              "monitored_markets": 14,
+              "fresh_markets": 10,
+              "structurally_supported_markets": 0,
+              "independent_forecasts": 0,
+              "pending": 0,
+              "resolved": 0,
+              "model_versions": [],
+              "capability": "evidence/interpretation contracts only; human review required"
+            },
+            "technology": {
+              "monitored_markets": 0,
+              "fresh_markets": 0,
+              "structurally_supported_markets": 0,
+              "independent_forecasts": 0,
+              "pending": 0,
+              "resolved": 0,
+              "model_versions": [],
+              "capability": "evidence/interpretation contracts only; human review required"
+            },
+            "science": {
+              "monitored_markets": 0,
+              "fresh_markets": 0,
+              "structurally_supported_markets": 0,
+              "independent_forecasts": 0,
+              "pending": 0,
+              "resolved": 0,
+              "model_versions": [],
+              "capability": "evidence/interpretation contracts only; human review required"
+            },
+            "geopolitics": {
+              "monitored_markets": 14,
+              "fresh_markets": 14,
+              "structurally_supported_markets": 0,
+              "independent_forecasts": 0,
+              "pending": 0,
+              "resolved": 0,
+              "model_versions": [],
+              "capability": "evidence/interpretation contracts only; human review required"
+            },
+            "entertainment": {
+              "monitored_markets": 1,
+              "fresh_markets": 1,
+              "structurally_supported_markets": 0,
+              "independent_forecasts": 0,
+              "pending": 0,
+              "resolved": 0,
+              "model_versions": [],
+              "capability": "evidence/interpretation contracts only; human review required"
+            },
+            "other": {
+              "monitored_markets": 115,
+              "fresh_markets": 83,
+              "structurally_supported_markets": 0,
+              "independent_forecasts": 0,
+              "pending": 0,
+              "resolved": 0,
+              "model_versions": [],
+              "capability": "evidence/interpretation contracts only; human review required"
+            }
+          },
+          "discovered_markets": 200,
+          "discovery": {
+            "observed_at": "2026-11-07T00:06:52.548640+00:00",
+            "status": "metadata_research_only",
+            "requests": 16,
+            "response_bytes": 5251354,
+            "request_rate_cap": 2,
+            "candidate_markets": 776,
+            "selected_markets": 200,
+            "candidate_categories": {
+              "esports": 60,
+              "politics": 99,
+              "weather": 15,
+              "crypto": 33,
+              "finance": 12,
+              "other": 25,
+              "economics": 18,
+              "sports": 477,
+              "technology": 1,
+              "geopolitics": 15,
+              "entertainment": 21
+            },
+            "selected_categories": {
+              "weather": 15,
+              "crypto": 24,
+              "finance": 12,
+              "economics": 18,
+              "politics": 24,
+              "sports": 24,
+              "esports": 23,
+              "technology": 1,
+              "geopolitics": 15,
+              "entertainment": 21,
+              "other": 23
+            },
+            "categories_queried": [
+              "weather",
+              "crypto",
+              "finance",
+              "economics",
+              "politics",
+              "sports",
+              "esports",
+              "technology",
+              "science",
+              "geopolitics",
+              "entertainment"
+            ],
+            "actual_tag_ids": {
+              "sports": "1",
+              "politics": "2",
+              "crypto": "21",
+              "technology": "22",
+              "entertainment": "53",
+              "esports": "64",
+              "science": "74",
+              "weather": "84",
+              "finance": "120",
+              "economics": "100328",
+              "geopolitics": "100265"
+            },
+            "errors": [],
+            "universe_complete": false,
+            "selection": "bounded tag-aware category round robin, liquidity priority within category",
+            "executable_markets_verified": 0,
+            "independent_forecasts": 0,
+            "raw_evidence_persistence": "bounded response objects in memory; caller must persist before forecast qualification",
+            "subscription_expansion_authority": false,
+            "trading_authority": false
+          },
+          "source_reports": {
+            "crypto": {
+              "status": "durably_ingested_research_evidence",
+              "retrieved_at": "2026-11-07T00:06:53.571032+00:00",
+              "evidence_ids": [
+                "d3a5f9a63ae62cde015b6eb707110712b07bc0c8129c5a3fc3f757cd51bef974"
+              ]
+            },
+            "economics": {
+              "status": "durably_ingested_research_evidence",
+              "retrieved_at": "2026-11-07T00:06:52.629541+00:00",
+              "evidence_ids": [
+                "581fb54a6f7d6b7c06dbd3880e7d8341744a343944e81318cb4600eefc7ea6c8"
+              ]
+            }
+          },
+          "model_registry": {
+            "crypto": {
+              "model_version": "binance-terminal-logdiffusion-research-v1",
+              "feature_version": "closed-contiguous-1m-logreturns-v1",
+              "supported_contract_types": [
+                "binance_minute_terminal_close_above"
+              ],
+              "input_requirements": [
+                "exact reviewed candle-time convention",
+                "720+ completed causal contiguous reference candles",
+                "held-out calibration missing"
+              ],
+              "authorization": "research_only",
+              "trading_authority": false
+            },
+            "weather": {
+              "model_version": "weather-observation-research-v1",
+              "feature_version": "exact-metAR-station-variable-window-v1",
+              "supported_contract_types": [
+                "metar_daily_high_celsius_bin"
+              ],
+              "input_requirements": [
+                "exact station/units/local observation window",
+                "qualified calibrated predictive distribution unavailable"
+              ],
+              "authorization": "research_only",
+              "trading_authority": false
+            },
+            "economics": {
+              "model_version": "official-economic-context-only-v1",
+              "feature_version": "release-vintage-qualification-v1",
+              "supported_contract_types": [
+                "fomc_target_upper_bound_change"
+              ],
+              "input_requirements": [
+                "exact first-release vintage",
+                "verified publication availability",
+                "qualified probability model unavailable"
+              ],
+              "authorization": "research_only",
+              "trading_authority": false
+            }
+          },
+          "totals": {
+            "cycles": 8541,
+            "source_attempts": 28,
+            "source_successes": 28,
+            "forecasts": 0
+          },
+          "rejections": {
+            "explicit_candle_label_vs_close_time_review_required": 15684,
+            "fresh_healthy_public_frame_required_for_domain_forecasts": 3662,
+            "qualified_release_vintages_and_independent_calibrated_model_required": 52886,
+            "unsupported_domain_model_contract": 106658
+          },
+          "ledger": {
+            "integrity": {
+              "records": 28,
+              "head_sha256": "9fcbdc64cdf7b4b9712603588d1405bbdbbb703ec1589addf99607db46fb6579",
+              "integrity": "verified"
+            },
+            "domains": {},
+            "forecasts": 0,
+            "outcomes": 0,
+            "stored_outcomes_requiring_review": 0,
+            "evidence_records": 28,
+            "independent_reviewed_event_groups": 0,
+            "brier": null,
+            "log_loss": null,
+            "calibration": null,
+            "market_skill_comparison": null,
+            "reason": "No reviewed independent resolved domain cohort",
+            "trading_authority": false,
+            "certification_authority": false
+          },
+          "book_metrics": {
+            "6501428": {
+              "fresh_tokens": 2,
+              "spread": 0.0010000000000000009,
+              "bid_depth_shares": 160506.9,
+              "ask_depth_shares": 969510.54
+            },
+            "559706": {
+              "fresh_tokens": 2,
+              "spread": 0.0009999999999999992,
+              "bid_depth_shares": 1150994.27,
+              "ask_depth_shares": 460772.09
+            },
+            "3215008": {
+              "fresh_tokens": 2,
+              "spread": 0.010000000000000009,
+              "bid_depth_shares": 1439463.37,
+              "ask_depth_shares": 2562911.27
+            },
+            "6501432": {
+              "fresh_tokens": 2,
+              "spread": 0.009999999999999898,
+              "bid_depth_shares": 405156.29,
+              "ask_depth_shares": 48527.05
+            },
+            "562015": {
+              "fresh_tokens": 2,
+              "spread": 0.002,
+              "bid_depth_shares": 94556.13,
+              "ask_depth_shares": 11751182.14
+            },
+            "6501431": {
+              "fresh_tokens": 2,
+              "spread": 0.010000000000000009,
+              "bid_depth_shares": 405599.08999999997,
+              "ask_depth_shares": 29213.87
+            },
+            "6667467": {
+              "fresh_tokens": 2,
+              "spread": 0.030000000000000002,
+              "bid_depth_shares": 19944.940000000002,
+              "ask_depth_shares": 464845.91
+            },
+            "561976": {
+              "fresh_tokens": 2,
+              "spread": 0.001,
+              "bid_depth_shares": 103759.0,
+              "ask_depth_shares": 15163552.22
+            },
+            "6428605": {
+              "fresh_tokens": 2,
+              "spread": 0.010000000000000009,
+              "bid_depth_shares": 749934.11,
+              "ask_depth_shares": 730310.27
+            },
+            "6367378": {
+              "fresh_tokens": 2,
+              "spread": 0.026000000000000023,
+              "bid_depth_shares": 149310.4,
+              "ask_depth_shares": 146110.17
+            },
+            "6667466": {
+              "fresh_tokens": 2,
+              "spread": 0.02400000000000002,
+              "bid_depth_shares": 136131.02,
+              "ask_depth_shares": 63674.42
+            },
+            "2772194": {
+              "fresh_tokens": 2,
+              "spread": 0.001,
+              "bid_depth_shares": 55183.7,
+              "ask_depth_shares": 22349727.95
+            },
+            "6428583": {
+              "fresh_tokens": 2,
+              "spread": 0.010000000000000009,
+              "bid_depth_shares": 259663.25,
+              "ask_depth_shares": 602483.8
+            },
+            "6740332": {
+              "fresh_tokens": 2,
+              "spread": 0.030000000000000027,
+              "bid_depth_shares": 282388.74,
+              "ask_depth_shares": 242841.85
+            },
+            "6428596": {
+              "fresh_tokens": 2,
+              "spread": 0.010000000000000009,
+              "bid_depth_shares": 736363.41,
+              "ask_depth_shares": 618884.17
+            },
+            "559699": {
+              "fresh_tokens": 2,
+              "spread": 0.001,
+              "bid_depth_shares": 1402443.0,
+              "ask_depth_shares": 15072922.65
+            },
+            "3580932": {
+              "fresh_tokens": 2,
+              "spread": 0.009999999999999898,
+              "bid_depth_shares": 501608.70999999996,
+              "ask_depth_shares": 953823.9400000001
+            },
+            "665374": {
+              "fresh_tokens": 2,
+              "spread": 0.009999999999999995,
+              "bid_depth_shares": 2392644.1,
+              "ask_depth_shares": 725438.24
+            },
+            "634976": {
+              "fresh_tokens": 2,
+              "spread": 0.0010000000000000009,
+              "bid_depth_shares": 434384.74,
+              "ask_depth_shares": 101307.99
+            },
+            "3215007": {
+              "fresh_tokens": 2,
+              "spread": 0.010000000000000009,
+              "bid_depth_shares": 2516068.22,
+              "ask_depth_shares": 2703246.64
+            },
+            "682705": {
+              "fresh_tokens": 2,
+              "spread": 0.0069999999999999785,
+              "bid_depth_shares": 352032.18,
+              "ask_depth_shares": 1584906.82
+            },
+            "561229": {
+              "fresh_tokens": 2,
+              "spread": 0.0010000000000000009,
+              "bid_depth_shares": 2155891.83,
+              "ask_depth_shares": 17514698.12
+            },
+            "6667468": {
+              "fresh_tokens": 2,
+              "spread": 0.02,
+              "bid_depth_shares": 7006.139999999999,
+              "ask_depth_shares": 890020.97
+            },
+            "6428601": {
+              "fresh_tokens": 2,
+              "spread": 0.010000000000000009,
+              "bid_depth_shares": 951418.62,
+              "ask_depth_shares": 625983.74
+            },
+            "1811265": {
+              "fresh_tokens": 2,
+              "spread": 0.010000000000000009,
+              "bid_depth_shares": 753929.55,
+              "ask_depth_shares": 233290.51
+            },
+            "6273597": {
+              "fresh_tokens": 2,
+              "spread": 0.010000000000000009,
+              "bid_depth_shares": 130821.7,
+              "ask_depth_shares": 130582.05
+            },
+            "1193094": {
+              "fresh_tokens": 2,
+              "spread": 0.010000000000000009,
+              "bid_depth_shares": 249796.75,
+              "ask_depth_shares": 352793.25
+            },
+            "3580933": {
+              "fresh_tokens": 2,
+              "spread": 0.0020000000000000018,
+              "bid_depth_shares": 873573.96,
+              "ask_depth_shares": 630942.42
+            },
+            "634974": {
+              "fresh_tokens": 2,
+              "spread": 0.002,
+              "bid_depth_shares": 78234.23,
+              "ask_depth_shares": 425297.16
+            },
+            "561261": {
+              "fresh_tokens": 2,
+              "spread": 0.0010000000000000009,
+              "bid_depth_shares": 2608391.21,
+              "ask_depth_shares": 9624431.26
+            },
+            "5339986": {
+              "fresh_tokens": 2,
+              "spread": 0.020000000000000018,
+              "bid_depth_shares": 253688.43,
+              "ask_depth_shares": 723844.1
+            },
+            "3399468": {
+              "fresh_tokens": 2,
+              "spread": 0.009999999999999953,
+              "bid_depth_shares": 373809.15,
+              "ask_depth_shares": 582231.17
+            },
+            "6428602": {
+              "fresh_tokens": 2,
+              "spread": 0.010000000000000009,
+              "bid_depth_shares": 709853.5,
+              "ask_depth_shares": 577895.61
+            },
+            "682708": {
+              "fresh_tokens": 2,
+              "spread": 0.0040000000000000036,
+              "bid_depth_shares": 418383.62,
+              "ask_depth_shares": 788375.54
+            },
+            "5504968": {
+              "fresh_tokens": 2,
+              "spread": 0.010000000000000009,
+              "bid_depth_shares": 373399.99,
+              "ask_depth_shares": 509199.61
+            },
+            "3215005": {
+              "fresh_tokens": 2,
+              "spread": 0.0009999999999999992,
+              "bid_depth_shares": 7635836.18,
+              "ask_depth_shares": 21702677.599999998
+            },
+            "6501429": {
+              "fresh_tokens": 2,
+              "spread": 0.010000000000000009,
+              "bid_depth_shares": 186730.76,
+              "ask_depth_shares": 395833.9
+            },
+            "1193093": {
+              "fresh_tokens": 2,
+              "spread": 0.010000000000000009,
+              "bid_depth_shares": 295097.08,
+              "ask_depth_shares": 208069.23
+            },
+            "6367375": {
+              "fresh_tokens": 2,
+              "spread": 0.0030000000000000027,
+              "bid_depth_shares": 244634.46,
+              "ask_depth_shares": 102166.95000000001
+            },
+            "4397037": {
+              "fresh_tokens": 2,
+              "spread": 0.003,
+              "bid_depth_shares": 3400.2,
+              "ask_depth_shares": 101110.76
+            },
+            "4397025": {
+              "fresh_tokens": 2,
+              "spread": 0.010000000000000009,
+              "bid_depth_shares": 77198.61,
+              "ask_depth_shares": 136030.45
+            },
+            "6731310": {
+              "fresh_tokens": 2,
+              "spread": 0.010000000000000009,
+              "bid_depth_shares": 403328.1,
+              "ask_depth_shares": 405185.88
+            },
+            "631017": {
+              "fresh_tokens": 2,
+              "spread": 0.0010000000000000009,
+              "bid_depth_shares": 223994.75,
+              "ask_depth_shares": 141938.11
+            },
+            "5211896": {
+              "fresh_tokens": 2,
+              "spread": 0.010000000000000009,
+              "bid_depth_shares": 155996.15,
+              "ask_depth_shares": 286659.86
+            },
+            "679060": {
+              "fresh_tokens": 2,
+              "spread": 0.0010000000000000009,
+              "bid_depth_shares": 2620898.5,
+              "ask_depth_shares": 562985.8
+            },
+            "682710": {
+              "fresh_tokens": 2,
+              "spread": 0.01100000000000001,
+              "bid_depth_shares": 304686.24,
+              "ask_depth_shares": 271674.47
+            },
+            "5504958": {
+              "fresh_tokens": 2,
+              "spread": 0.010000000000000009,
+              "bid_depth_shares": 114708.02,
+              "ask_depth_shares": 154260.3
+            },
+            "561974": {
+              "fresh_tokens": 2,
+              "spread": 0.0010000000000000009,
+              "bid_depth_shares": 2105150.25,
+              "ask_depth_shares": 17437767.82
+            },
+            "561238": {
+              "fresh_tokens": 2,
+              "spread": 0.001,
+              "bid_depth_shares": 975596.7,
+              "ask_depth_shares": 553609.92
+            },
+            "6507419": {
+              "fresh_tokens": 2,
+              "spread": 0.010000000000000009,
+              "bid_depth_shares": 1557900.02,
+              "ask_depth_shares": 21849.19
+            },
+            "4906128": {
+              "fresh_tokens": 2,
+              "spread": 0.009999999999999981,
+              "bid_depth_shares": 923724.28,
+              "ask_depth_shares": 232137.31
+            },
+            "6367374": {
+              "fresh_tokens": 2,
+              "spread": 0.0030000000000000027,
+              "bid_depth_shares": 93128.41,
+              "ask_depth_shares": 12966.66
+            },
+            "6748245": {
+              "fresh_tokens": 2,
+              "spread": 0.030000000000000027,
+              "bid_depth_shares": 210516.51,
+              "ask_depth_shares": 224290.4
+            },
+            "561245": {
+              "fresh_tokens": 2,
+              "spread": 0.001,
+              "bid_depth_shares": 161871.74,
+              "ask_depth_shares": 615045.75
+            },
+            "3399451": {
+              "fresh_tokens": 2,
+              "spread": 0.0040000000000000036,
+              "bid_depth_shares": 7139919.4799999995,
+              "ask_depth_shares": 391460.88
+            },
+            "561980": {
+              "fresh_tokens": 2,
+              "spread": 0.0009999999999999992,
+              "bid_depth_shares": 842690.3099999999,
+              "ask_depth_shares": 14479977.58
+            },
+            "6269686": {
+              "fresh_tokens": 2,
+              "spread": 0.010000000000000009,
+              "bid_depth_shares": 529179.87,
+              "ask_depth_shares": 467017.09
+            },
+            "6175916": {
+              "fresh_tokens": 1,
+              "spread": 0.003,
+              "bid_depth_shares": 54044.53,
+              "ask_depth_shares": 286999.26
+            },
+            "6171537": {
+              "fresh_tokens": 2,
+              "spread": 0.010000000000000009,
+              "bid_depth_shares": 74894.81,
+              "ask_depth_shares": 135656.87
+            },
+            "6428592": {
+              "fresh_tokens": 2,
+              "spread": 0.010000000000000009,
+              "bid_depth_shares": 627032.04,
+              "ask_depth_shares": 267344.77
+            },
+            "3215006": {
+              "fresh_tokens": 2,
+              "spread": 0.001,
+              "bid_depth_shares": 6324937.04,
+              "ask_depth_shares": 21711340.63
+            },
+            "2772166": {
+              "fresh_tokens": 2,
+              "spread": 0.010000000000000009,
+              "bid_depth_shares": 1320228.41,
+              "ask_depth_shares": 2528084.23
+            },
+            "6282802": {
+              "fresh_tokens": 2,
+              "spread": 0.009999999999999995,
+              "bid_depth_shares": 312025.97,
+              "ask_depth_shares": 281796.73
+            },
+            "6188833": {
+              "fresh_tokens": 2,
+              "spread": 0.010000000000000009,
+              "bid_depth_shares": 186870.03,
+              "ask_depth_shares": 72431.83
+            },
+            "2772171": {
+              "fresh_tokens": 2,
+              "spread": 0.000999999999999994,
+              "bid_depth_shares": 1464673.68,
+              "ask_depth_shares": 2722937.33
+            },
+            "6179543": {
+              "fresh_tokens": 2,
+              "spread": 0.010000000000000009,
+              "bid_depth_shares": 78544.84,
+              "ask_depth_shares": 340793.75
+            },
+            "561982": {
+              "fresh_tokens": 2,
+              "spread": 0.001,
+              "bid_depth_shares": 349558.24,
+              "ask_depth_shares": 12752029.549999999
+            },
+            "2413330": {
+              "fresh_tokens": 2,
+              "spread": 0.008000000000000007,
+              "bid_depth_shares": 282554.46,
+              "ask_depth_shares": 182901.29
+            },
+            "6740284": {
+              "fresh_tokens": 1,
+              "spread": 0.04999999999999999,
+              "bid_depth_shares": 177054.69,
+              "ask_depth_shares": 297002.85
+            },
+            "6428600": {
+              "fresh_tokens": 2,
+              "spread": 0.010000000000000009,
+              "bid_depth_shares": 331738.26,
+              "ask_depth_shares": 654803.12
+            },
+            "6149966": {
+              "fresh_tokens": 2,
+              "spread": 0.009999999999999898,
+              "bid_depth_shares": 431759.23,
+              "ask_depth_shares": 73641.81999999999
+            },
+            "4397022": {
+              "fresh_tokens": 2,
+              "spread": 0.010000000000000009,
+              "bid_depth_shares": 310512.44,
+              "ask_depth_shares": 527859.28
+            },
+            "6667469": {
+              "fresh_tokens": 2,
+              "spread": 0.030000000000000002,
+              "bid_depth_shares": 3306.87,
+              "ask_depth_shares": 448614.84
+            },
+            "6501426": {
+              "fresh_tokens": 2,
+              "spread": 0.010000000000000009,
+              "bid_depth_shares": 533213.1,
+              "ask_depth_shares": 749550.23
+            },
+            "6739669": {
+              "fresh_tokens": 2,
+              "spread": 0.010000000000000002,
+              "bid_depth_shares": 27471.11,
+              "ask_depth_shares": 452220.18
+            },
+            "6281141": {
+              "fresh_tokens": 2,
+              "spread": 0.03,
+              "bid_depth_shares": 213040.04,
+              "ask_depth_shares": 213914.56
+            },
+            "678416": {
+              "fresh_tokens": 2,
+              "spread": 0.006000000000000005,
+              "bid_depth_shares": 107026.9,
+              "ask_depth_shares": 11219586.809999999
+            },
+            "2176270": {
+              "fresh_tokens": 2,
+              "spread": 0.010000000000000009,
+              "bid_depth_shares": 546730.61,
+              "ask_depth_shares": 3175245.94
+            },
+            "6367373": {
+              "fresh_tokens": 2,
+              "spread": 0.0030000000000000027,
+              "bid_depth_shares": 80778.55,
+              "ask_depth_shares": 10507.98
+            },
+            "4397033": {
+              "fresh_tokens": 2,
+              "spread": 0.0050000000000000044,
+              "bid_depth_shares": 25121.09,
+              "ask_depth_shares": 112978.96
+            },
+            "6667465": {
+              "fresh_tokens": 2,
+              "spread": 0.0040000000000000036,
+              "bid_depth_shares": 83678.81999999999,
+              "ask_depth_shares": 8181.29
+            },
+            "666861": {
+              "fresh_tokens": 2,
+              "spread": 0.0020000000000000018,
+              "bid_depth_shares": 1603136.17,
+              "ask_depth_shares": 678732.19
+            },
+            "6172030": {
+              "fresh_tokens": 2,
+              "spread": 0.009999999999999898,
+              "bid_depth_shares": 106889.66,
+              "ask_depth_shares": 380555.12
+            },
+            "1193096": {
+              "fresh_tokens": 2,
+              "spread": 0.002999999999999999,
+              "bid_depth_shares": 117446.48000000001,
+              "ask_depth_shares": 227022.29
+            },
+            "679022": {
+              "fresh_tokens": 2,
+              "spread": 0.0010000000000000009,
+              "bid_depth_shares": 3280118.11,
+              "ask_depth_shares": 14640023.139999999
+            },
+            "6667470": {
+              "fresh_tokens": 2,
+              "spread": 0.027999999999999997,
+              "bid_depth_shares": 90.0,
+              "ask_depth_shares": 739020.8099999999
+            },
+            "6738685": {
+              "fresh_tokens": 2,
+              "spread": 0.019999999999999962,
+              "bid_depth_shares": 221150.65,
+              "ask_depth_shares": 278696.46
+            },
+            "6740295": {
+              "fresh_tokens": 2,
+              "spread": 0.020000000000000018,
+              "bid_depth_shares": 248516.13999999998,
+              "ask_depth_shares": 271040.51
+            },
+            "559705": {
+              "fresh_tokens": 2,
+              "spread": 0.001,
+              "bid_depth_shares": 60150.0,
+              "ask_depth_shares": 14213834.610000001
+            },
+            "6428604": {
+              "fresh_tokens": 2,
+              "spread": 0.010000000000000009,
+              "bid_depth_shares": 556877.33,
+              "ask_depth_shares": 662544.64
+            },
+            "6701981": {
+              "fresh_tokens": 2,
+              "spread": 0.010000000000000009,
+              "bid_depth_shares": 125414.17,
+              "ask_depth_shares": 644630.36
+            },
+            "4319439": {
+              "fresh_tokens": 2,
+              "spread": 0.019999999999999907,
+              "bid_depth_shares": 170603.69,
+              "ask_depth_shares": 67594.76
+            },
+            "4397050": {
+              "fresh_tokens": 2,
+              "spread": 0.0050000000000000044,
+              "bid_depth_shares": 88778.25,
+              "ask_depth_shares": 122609.56999999999
+            },
+            "6731357": {
+              "fresh_tokens": 2,
+              "spread": 0.010000000000000009,
+              "bid_depth_shares": 332858.9,
+              "ask_depth_shares": 356050.06
+            },
+            "6734351": {
+              "fresh_tokens": 2,
+              "spread": 0.010000000000000009,
+              "bid_depth_shares": 371222.41000000003,
+              "ask_depth_shares": 321135.02999999997
+            },
+            "561280": {
+              "fresh_tokens": 2,
+              "spread": 0.006,
+              "bid_depth_shares": 770377.81,
+              "ask_depth_shares": 6825127.38
+            },
+            "6563867": {
+              "fresh_tokens": 2,
+              "spread": 0.013000000000000012,
+              "bid_depth_shares": 42503.59,
+              "ask_depth_shares": 337513.86
+            },
+            "6731313": {
+              "fresh_tokens": 2,
+              "spread": 0.010000000000000009,
+              "bid_depth_shares": 397371.56,
+              "ask_depth_shares": 346003.17
+            },
+            "3128886": {
+              "fresh_tokens": 2,
+              "spread": 0.0020000000000000018,
+              "bid_depth_shares": 15801314.63,
+              "ask_depth_shares": 359994.10000000003
+            },
+            "2772169": {
+              "fresh_tokens": 2,
+              "spread": 0.009999999999999995,
+              "bid_depth_shares": 317838.44,
+              "ask_depth_shares": 2678188.31
+            },
+            "682706": {
+              "fresh_tokens": 2,
+              "spread": 0.0010000000000000009,
+              "bid_depth_shares": 144658.19,
+              "ask_depth_shares": 662374.47
+            },
+            "666659": {
+              "fresh_tokens": 2,
+              "spread": 0.010000000000000009,
+              "bid_depth_shares": 1028210.5599999999,
+              "ask_depth_shares": 284416.38
+            },
+            "560317": {
+              "fresh_tokens": 2,
+              "spread": 0.0019999999999999983,
+              "bid_depth_shares": 17868919.169999998,
+              "ask_depth_shares": 1340357.74
+            },
+            "3128768": {
+              "fresh_tokens": 2,
+              "spread": 0.020000000000000018,
+              "bid_depth_shares": 665420.21,
+              "ask_depth_shares": 200428.87
+            },
+            "561262": {
+              "fresh_tokens": 2,
+              "spread": 0.0009999999999999974,
+              "bid_depth_shares": 720699.78,
+              "ask_depth_shares": 9507453.34
+            },
+            "6736750": {
+              "fresh_tokens": 2,
+              "spread": 0.010000000000000009,
+              "bid_depth_shares": 330428.42,
+              "ask_depth_shares": 283457.36
+            },
+            "679030": {
+              "fresh_tokens": 2,
+              "spread": 0.010000000000000009,
+              "bid_depth_shares": 4377966.66,
+              "ask_depth_shares": 3555452.3499999996
+            },
+            "4620900": {
+              "fresh_tokens": 2,
+              "spread": 0.010000000000000009,
+              "bid_depth_shares": 1318083.4400000002,
+              "ask_depth_shares": 150718.82
+            },
+            "682724": {
+              "fresh_tokens": 2,
+              "spread": 0.001,
+              "bid_depth_shares": 39105.29,
+              "ask_depth_shares": 250468.41
+            },
+            "6731332": {
+              "fresh_tokens": 2,
+              "spread": 0.010000000000000009,
+              "bid_depth_shares": 438586.86,
+              "ask_depth_shares": 496661.97000000003
+            },
+            "561236": {
+              "fresh_tokens": 2,
+              "spread": 0.001,
+              "bid_depth_shares": 601880.94,
+              "ask_depth_shares": 456422.23
+            },
+            "567688": {
+              "fresh_tokens": 2,
+              "spread": 0.030000000000000027,
+              "bid_depth_shares": 1206240.66,
+              "ask_depth_shares": 248957.8
+            },
+            "5880782": {
+              "fresh_tokens": 2,
+              "spread": 0.018000000000000002,
+              "bid_depth_shares": 881005.9199999999,
+              "ask_depth_shares": 279690.94
+            },
+            "4487264": {
+              "fresh_tokens": 2,
+              "spread": 0.041000000000000036,
+              "bid_depth_shares": 92772.51,
+              "ask_depth_shares": 35639.8
+            },
+            "679034": {
+              "fresh_tokens": 2,
+              "spread": 0.0009999999999999974,
+              "bid_depth_shares": 454444.1,
+              "ask_depth_shares": 21616965.07
+            },
+            "6738677": {
+              "fresh_tokens": 2,
+              "spread": 0.020000000000000018,
+              "bid_depth_shares": 300429.18,
+              "ask_depth_shares": 149148.5
+            },
+            "562004": {
+              "fresh_tokens": 2,
+              "spread": 0.001,
+              "bid_depth_shares": 188841.74,
+              "ask_depth_shares": 16349457.629999999
+            },
+            "561234": {
+              "fresh_tokens": 2,
+              "spread": 0.0010000000000000009,
+              "bid_depth_shares": 2270265.25,
+              "ask_depth_shares": 15538513.36
+            },
+            "5190565": {
+              "fresh_tokens": 2,
+              "spread": 0.010000000000000009,
+              "bid_depth_shares": 444860.65,
+              "ask_depth_shares": 197399.93
+            },
+            "6740286": {
+              "fresh_tokens": 2,
+              "spread": 0.020000000000000018,
+              "bid_depth_shares": 295879.55,
+              "ask_depth_shares": 146511.32
+            },
+            "3902370": {
+              "fresh_tokens": 2,
+              "spread": 0.010000000000000009,
+              "bid_depth_shares": 164549.27,
+              "ask_depth_shares": 467092.41
+            },
+            "5087226": {
+              "fresh_tokens": 2,
+              "spread": 0.010000000000000009,
+              "bid_depth_shares": 553486.88,
+              "ask_depth_shares": 254102.09
+            },
+            "666661": {
+              "fresh_tokens": 2,
+              "spread": 0.006999999999999992,
+              "bid_depth_shares": 407155.14,
+              "ask_depth_shares": 194063.09
+            },
+            "5325719": {
+              "fresh_tokens": 2,
+              "spread": 0.020000000000000018,
+              "bid_depth_shares": 423925.44,
+              "ask_depth_shares": 207671.42
+            },
+            "5191216": {
+              "fresh_tokens": 2,
+              "spread": 0.03999999999999998,
+              "bid_depth_shares": 385519.1,
+              "ask_depth_shares": 227761.2
+            },
+            "559703": {
+              "fresh_tokens": 2,
+              "spread": 0.001,
+              "bid_depth_shares": 589605.61,
+              "ask_depth_shares": 12710470.05
+            },
+            "6367369": {
+              "fresh_tokens": 2,
+              "spread": 0.020000000000000018,
+              "bid_depth_shares": 311832.3,
+              "ask_depth_shares": 530419.33
+            },
+            "561979": {
+              "fresh_tokens": 2,
+              "spread": 0.0020000000000000018,
+              "bid_depth_shares": 908468.04,
+              "ask_depth_shares": 12974480.65
+            },
+            "2412748": {
+              "fresh_tokens": 2,
+              "spread": 0.006999999999999992,
+              "bid_depth_shares": 113783.33,
+              "ask_depth_shares": 3538601.5
+            },
+            "2772172": {
+              "fresh_tokens": 2,
+              "spread": 0.0009999999999999992,
+              "bid_depth_shares": 1493281.81,
+              "ask_depth_shares": 21447594.57
+            },
+            "6440141": {
+              "fresh_tokens": 2,
+              "spread": 0.009999999999999898,
+              "bid_depth_shares": 745450.76,
+              "ask_depth_shares": 311541.39
+            },
+            "1321564": {
+              "fresh_tokens": 2,
+              "spread": 0.000999999999999987,
+              "bid_depth_shares": 2690119.96,
+              "ask_depth_shares": 6384377.92
+            },
+            "666660": {
+              "fresh_tokens": 2,
+              "spread": 0.009999999999999981,
+              "bid_depth_shares": 599462.8400000001,
+              "ask_depth_shares": 341677.68
+            },
+            "6740388": {
+              "fresh_tokens": 2,
+              "spread": 0.019999999999999962,
+              "bid_depth_shares": 215621.75,
+              "ask_depth_shares": 248589.84
+            },
+            "6175461": {
+              "fresh_tokens": 2,
+              "spread": 0.005000000000000001,
+              "bid_depth_shares": 53545.47,
+              "ask_depth_shares": 264339.82
+            },
+            "6438436": {
+              "fresh_tokens": 2,
+              "spread": 0.020000000000000018,
+              "bid_depth_shares": 296320.89,
+              "ask_depth_shares": 11260.68
+            },
+            "6739561": {
+              "fresh_tokens": 2,
+              "spread": 0.0020000000000000018,
+              "bid_depth_shares": 7125.09,
+              "ask_depth_shares": 81032.66
+            },
+            "6475112": {
+              "fresh_tokens": 2,
+              "spread": 0.0020000000000000018,
+              "bid_depth_shares": 334034.08,
+              "ask_depth_shares": 36475.89
+            },
+            "559695": {
+              "fresh_tokens": 2,
+              "spread": 0.0010000000000000009,
+              "bid_depth_shares": 850316.45,
+              "ask_depth_shares": 13397321.65
+            },
+            "6269685": {
+              "fresh_tokens": 2,
+              "spread": 0.030000000000000027,
+              "bid_depth_shares": 417918.5,
+              "ask_depth_shares": 306357.86
+            },
+            "2412747": {
+              "fresh_tokens": 2,
+              "spread": 0.010000000000000009,
+              "bid_depth_shares": 13080.89,
+              "ask_depth_shares": 430147.93
+            },
+            "561279": {
+              "fresh_tokens": 2,
+              "spread": 0.0010000000000000009,
+              "bid_depth_shares": 728141.95,
+              "ask_depth_shares": 6932084.72
+            },
+            "679058": {
+              "fresh_tokens": 2,
+              "spread": 0.001,
+              "bid_depth_shares": 40964.79,
+              "ask_depth_shares": 227034.03
+            },
+            "6719498": {
+              "fresh_tokens": 2,
+              "spread": 0.010000000000000009,
+              "bid_depth_shares": 269897.51,
+              "ask_depth_shares": 238334.36000000002
+            },
+            "6587956": {
+              "fresh_tokens": 2,
+              "spread": 0.0010000000000000009,
+              "bid_depth_shares": 51791.02,
+              "ask_depth_shares": 26173.44
+            }
+          },
+          "relationships": {
+            "registered_relationships": 0,
+            "evaluations": 0,
+            "persistent_findings": 0,
+            "rejections": {},
+            "graph": [],
+            "causality_verified": false,
+            "forecast_improvement_verified": false,
+            "executable_opportunities": 0,
+            "certification_authority": false,
+            "trading_authority": false
+          },
+          "experimental_opportunities": 0,
+          "event_order_attempts": 0,
+          "outcome_collection": {
+            "checks": 0,
+            "verified": 0
+          },
+          "trading_authority": false,
+          "certification_authority": false,
+          "scores": {
+            "brier": null,
+            "log_loss": null,
+            "confidence_interval": null,
+            "reason": "No reviewed independent resolved domain cohort"
+          },
+          "counter_scope": "market counts current cached/fresh frame; totals/rejections cumulative; forecasts durable journal"
+        },
+        "phase16_execution": {
+          "enabled": true,
+          "committed_vetoes": 0,
+          "committed_check_passes": 11,
+          "counter_error": null,
+          "scope": "Lifetime committed emitted-signal checks after signature dedup; pass is not risk approval",
+          "legacy_trace_qualification_scope": "Original strategy gate before optional depth veto, including duplicate evaluations",
+          "latest_cycle_checks": []
+        },
+        "phase16": {
+          "status": "research_only",
+          "last_study_at": "2026-11-07T00:13:44.805319+00:00",
+          "history": {
+            "schema_version": "phase16-causal-history-v1",
+            "observed_at": "2026-11-07T00:13:44.805319+00:00",
+            "last_observation_at": "2026-11-07T00:13:44.805319+00:00",
+            "cycles": 187,
+            "tokens_tracked": 7,
+            "valid_observations": 1135,
+            "current_observations": 590,
+            "span_seconds": 1584.821,
+            "max_gap_seconds": 111.03,
+            "matured_labels": 1010,
+            "current_matured_labels": 512,
+            "unique_parent_events": 3,
+            "independent_outcome_events": 0,
+            "continuity_resets": 0,
+            "per_token": [
+              {
+                "token_id": "101996110023306359267215939819928021406998500989415641847320025626005179879667",
+                "market_id": "4397025",
+                "event_id": "991810",
+                "observations": 96,
+                "matured_labels": 72,
+                "span_seconds": 1584.821,
+                "max_gap_seconds": 57.405,
+                "latest_source_at": "2026-11-07T00:13:42.816000+00:00",
+                "latest_available_at": "2026-11-07T00:13:43.063902+00:00",
+                "execution_evidence_complete": true,
+                "missing_fields": []
+              },
+              {
+                "token_id": "104236736263775307891497202874191911203963566711959725788584750440530976742193",
+                "market_id": "3215005",
+                "event_id": "770450",
+                "observations": 40,
+                "matured_labels": 24,
+                "span_seconds": 1099.767,
+                "max_gap_seconds": 111.03,
+                "latest_source_at": "2026-11-07T00:13:43.625000+00:00",
+                "latest_available_at": "2026-11-07T00:13:43.958263+00:00",
+                "execution_evidence_complete": true,
+                "missing_fields": []
+              },
+              {
+                "token_id": "111662129652828266889360374468657435151479595863413519836161861837506140152890",
+                "market_id": "3215008",
+                "event_id": "770450",
+                "observations": 96,
+                "matured_labels": 91,
+                "span_seconds": 1350.691,
+                "max_gap_seconds": 26.999,
+                "latest_source_at": "2026-11-07T00:13:43.781000+00:00",
+                "latest_available_at": "2026-11-07T00:13:44.122560+00:00",
+                "execution_evidence_complete": true,
+                "missing_fields": []
+              },
+              {
+                "token_id": "15907269680083135091620869613557617263613890890387514554477997501123964677519",
+                "market_id": "4397022",
+                "event_id": "991810",
+                "observations": 96,
+                "matured_labels": 80,
+                "span_seconds": 1468.083,
+                "max_gap_seconds": 59.512,
+                "latest_source_at": "2026-11-07T00:13:43.083000+00:00",
+                "latest_available_at": "2026-11-07T00:13:43.391512+00:00",
+                "execution_evidence_complete": true,
+                "missing_fields": []
+              },
+              {
+                "token_id": "55764212211467781322980371912612507865974994976253196346176314491480419639168",
+                "market_id": "679018",
+                "event_id": "79987",
+                "observations": 96,
+                "matured_labels": 82,
+                "span_seconds": 1429.896,
+                "max_gap_seconds": 40.77,
+                "latest_source_at": "2026-11-07T00:13:20.186000+00:00",
+                "latest_available_at": "2026-11-07T00:13:20.229796+00:00",
+                "execution_evidence_complete": true,
+                "missing_fields": []
+              },
+              {
+                "token_id": "56360910151195441905859355697297471571491885496299657191480344412119595418796",
+                "market_id": "4397025",
+                "event_id": "991810",
+                "observations": 70,
+                "matured_labels": 62,
+                "span_seconds": 1177.616,
+                "max_gap_seconds": 57.405,
+                "latest_source_at": "2026-11-07T00:13:42.816000+00:00",
+                "latest_available_at": "2026-11-07T00:13:43.063902+00:00",
+                "execution_evidence_complete": true,
+                "missing_fields": []
+              },
+              {
+                "token_id": "88550326946437280548248031502775629664259630024343210447063397951616199975032",
+                "market_id": "679030",
+                "event_id": "79987",
+                "observations": 96,
+                "matured_labels": 91,
+                "span_seconds": 1355.126,
+                "max_gap_seconds": 26.067,
+                "latest_source_at": "2026-11-07T00:13:43.304000+00:00",
+                "latest_available_at": "2026-11-07T00:13:43.643057+00:00",
+                "execution_evidence_complete": true,
+                "missing_fields": []
+              }
+            ],
+            "rejections": {
+              "stale_book": 291,
+              "missing_book": 59,
+              "horizon_label_missed_not_interpolated": 77,
+              "duplicate_quote_does_not_add_history": 8,
+              "history_capacity_waiting_for_inactive_retirement": 3
+            },
+            "missingness": {},
+            "counter_scope": "cumulative since construction or verified checkpoint restore; bounded retained rows separate",
+            "research_only": true,
+            "trading_authority": false,
+            "certification_authority": false
+          },
+          "relationships": {
+            "cycles": 187,
+            "last_evaluation_at": "2026-11-07T00:13:44.805319+00:00",
+            "candidate_parent_pairs_cumulative": 341,
+            "registered_statistical_candidates": 3,
+            "parent_event_groups": 3,
+            "current_qualified_market_tokens": 4,
+            "source_freshness_limit_seconds": 15,
+            "statuses_cumulative": {
+              "warming_up": 45,
+              "insufficient_joint_variation_for_relationship_baseline": 296
+            },
+            "source_rejections_cumulative": {
+              "stale_or_future_source_quote": 159,
+              "registered_pair_missing_qualified_source_quotes": 192,
+              "missing_order_book": 32
+            },
+            "engine": {
+              "registered_relationships": 3,
+              "evaluations": 341,
+              "persistent_findings": 0,
+              "rejections": {
+                "insufficient_joint_variation_for_relationship_baseline": 296
+              },
+              "graph": [
+                {
+                  "id": "07a07e99807d8bd49e9916ecae8e330c83a3e055901b645ae7de96057a5e3d6d",
+                  "left": "55764212211467781322980371912612507865974994976253196346176314491480419639168",
+                  "right": "88550326946437280548248031502775629664259630024343210447063397951616199975032",
+                  "domains": [
+                    "other",
+                    "other"
+                  ],
+                  "claim_type": "statistical_relationship",
+                  "definition_sha256": "26403d4f0e194d8a28c308145334f475adbd1597fd76b1e599f27b9317b39b63"
+                },
+                {
+                  "id": "a1f22af2b338233a367c0e7f1d04a8ade29890dc9011be3e24451f97c970248e",
+                  "left": "15907269680083135091620869613557617263613890890387514554477997501123964677519",
+                  "right": "56360910151195441905859355697297471571491885496299657191480344412119595418796",
+                  "domains": [
+                    "esports",
+                    "esports"
+                  ],
+                  "claim_type": "statistical_relationship",
+                  "definition_sha256": "54f29dfd20241a538a68f5035be84758f1ab1cb5c2b79bdeb3b520ac44d7403a"
+                },
+                {
+                  "id": "f0813aa90a114eb93efe9b8058901ab87a213719d52d4f2b005c97f221b44aa1",
+                  "left": "111662129652828266889360374468657435151479595863413519836161861837506140152890",
+                  "right": "35090254409399344650860070211816464534198960801264823587796928404808383727584",
+                  "domains": [
+                    "economics",
+                    "economics"
+                  ],
+                  "claim_type": "statistical_relationship",
+                  "definition_sha256": "de7d5893802be345000877717ca4dfcc1c4ecd6f5efc0cf93d0a40811874d094"
+                }
+              ],
+              "causality_verified": false,
+              "forecast_improvement_verified": false,
+              "executable_opportunities": 0,
+              "certification_authority": false,
+              "trading_authority": false
+            },
+            "semantics": "order_book_midpoint_USD_per_outcome_share_not_independent_probability",
+            "cross_domain_reviewed_findings": 0,
+            "reviewed_logical_constraints": 0,
+            "research_only": true,
+            "trading_authority": false,
+            "certification_authority": false,
+            "counter_scope": "cumulative_since_instance_creation_or_checkpoint_restore",
+            "graph_version": 7,
+            "retirements_total": 2,
+            "retirements_retained": 2,
+            "selection": {
+              "max_pairs": 3,
+              "missing_seconds": 120,
+              "selection_observations": 3,
+              "selection_span_seconds": 60,
+              "observed_tokens": 6,
+              "policy": "existing stable pairs first; causal coverage then observed two-sided depth; one pair per parent"
+            },
+            "graph_rejections": {},
+            "last_observation_at": "2026-11-07T00:13:44.805319+00:00",
+            "retirement_storage": "bounded memory cache; caller must archive all study checkpoints",
+            "logical_constraints_verified": 0,
+            "predictive_advantage_verified": false
+          },
+          "execution_checks": [
+            {
+              "schema_version": "phase16-executable-depth-v1",
+              "evaluated_at": "2026-11-07T00:13:44.805319+00:00",
+              "research_only": true,
+              "trading_authority": false,
+              "certification_authority": false,
+              "policy": {
+                "source_max_age_seconds": 15,
+                "market_max_age_seconds": 3600,
+                "fee_max_age_seconds": 300,
+                "max_spread": 0.05,
+                "participation": 0.25,
+                "slippage_per_share_per_leg": 0.01,
+                "minimum_net_edge_per_share": 0.03,
+                "standard_min_notional": 2,
+                "standard_max_notional": 5
+              },
+              "execution_checks_pass": true,
+              "cost_adjusted_edge_pass": false,
+              "estimated_net_edge_per_share": -0.09300000000000007,
+              "reasons": [
+                "depth_cost_adjusted_edge_insufficient"
+              ],
+              "execution_reasons": [],
+              "valuation_reasons": [
+                "depth_cost_adjusted_edge_insufficient"
+              ],
+              "future_exit_liquidity_verified": false,
+              "settlement_rule_review_verified": false,
+              "probability_semantics": "future_executable_bid_mark_USD_per_share_not_terminal_probability",
+              "market_id": "4397022",
+              "token_id": "15907269680083135091620869613557617263613890890387514554477997501123964677519",
+              "event_id": "991810",
+              "book_id": "0fb99fe5a27a8a9e83ad33ddd3dec69a0cb204a58e1559af6c00f5205864642c",
+              "source": "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+              "source_at": "2026-11-07T00:13:43.083000+00:00",
+              "available_at": "2026-11-07T00:13:43.391512+00:00",
+              "source_age_seconds": 1.722319,
+              "book_sha256": "a57d3d66bfb3da6d358fd7eb09c4a714d224967948e7bec46e636b55758a84dd",
+              "market_sha256": "e8ca2a3a8f3e5a2ee73c6ff4d28a3693c1f0bb28fff2cf58030ffc8b1799bb50",
+              "resolution_rules_sha256": "8fc8e5fb6cae19590bbdd0f002496a91b8be414b57dfc5511c912c4feab80c70",
+              "fee_rate": 0.05,
+              "fee_evidence_id": "6ef58299-3c5e-4e46-b51d-2719274bf35b",
+              "raw_fee_response_ids": [
+                "7d308dc0535c769e739754f09c7da826e9dd962b0be18941541b2ec14cf597d7",
+                "36e4f0f216595bfe3f1c5044c1d93f9c7ff70040ba907d05c69745ce002f2a93"
+              ],
+              "target_notional": 2,
+              "quantity_shares": 5.0,
+              "current_best_bid": 0.53,
+              "current_best_ask": 0.54,
+              "spread": 0.010000000000000009,
+              "broker_limit_price": 0.54,
+              "broker_limit_capacity_shares": 4704.6575,
+              "broker_limit_notional": 2.7,
+              "broker_fee_inclusive_reservation": 2.8350000000000004,
+              "hypothetical_sweep_entry": {
+                "requested_shares": 5.0,
+                "depth_supported_shares": 5.0,
+                "unavailable_shares": 0.0,
+                "complete": true,
+                "vwap": 0.54,
+                "notional": 2.7,
+                "levels_used": [
+                  {
+                    "price": 0.54,
+                    "gross_observed_size": 18818.63,
+                    "modeled_shares": 5.0
+                  }
+                ],
+                "participation": 0.25,
+                "semantics": "observed_fractional_depth_quote_not_a_simulated_fill"
+              },
+              "current_exit_depth_proxy": {
+                "requested_shares": 5.0,
+                "depth_supported_shares": 5.0,
+                "unavailable_shares": 0.0,
+                "complete": true,
+                "vwap": 0.53,
+                "notional": 2.6500000000000004,
+                "levels_used": [
+                  {
+                    "price": 0.53,
+                    "gross_observed_size": 54777.97,
+                    "modeled_shares": 5.0
+                  }
+                ],
+                "participation": 0.25,
+                "semantics": "observed_fractional_depth_quote_not_a_simulated_fill"
+              },
+              "current_exit_is_not_future_liquidity": true,
+              "forecast_lower_bid": 0.52,
+              "depth_adjusted_lower_exit_bid": 0.52,
+              "entry_impact_per_share": 0.0,
+              "exit_impact_proxy_per_share": 0.0,
+              "entry_fee_per_share": 0.027000000000000003,
+              "exit_fee_per_share": 0.026000000000000002,
+              "roundtrip_slippage_per_share": 0.02,
+              "status": "withheld",
+              "assumptions": [
+                "existing broker submits best-ask limit; deeper asks cannot authorize that order",
+                "25% per-level fractional depth and $.01/share per-leg slippage",
+                "current bid curvature is a future-exit proxy, not verified future liquidity",
+                "resolution metadata presence is not independent settlement-rule review",
+                "no reservation, latency fill, queue position or order is created by this assessment"
+              ]
+            },
+            {
+              "schema_version": "phase16-executable-depth-v1",
+              "evaluated_at": "2026-11-07T00:13:44.805319+00:00",
+              "research_only": true,
+              "trading_authority": false,
+              "certification_authority": false,
+              "policy": {
+                "source_max_age_seconds": 15,
+                "market_max_age_seconds": 3600,
+                "fee_max_age_seconds": 300,
+                "max_spread": 0.05,
+                "participation": 0.25,
+                "slippage_per_share_per_leg": 0.01,
+                "minimum_net_edge_per_share": 0.03,
+                "standard_min_notional": 2,
+                "standard_max_notional": 5
+              },
+              "execution_checks_pass": false,
+              "cost_adjusted_edge_pass": false,
+              "estimated_net_edge_per_share": -0.06672000000000015,
+              "reasons": [
+                "depth_cost_adjusted_edge_insufficient",
+                "stale_book"
+              ],
+              "execution_reasons": [
+                "stale_book"
+              ],
+              "valuation_reasons": [
+                "depth_cost_adjusted_edge_insufficient"
+              ],
+              "future_exit_liquidity_verified": false,
+              "settlement_rule_review_verified": false,
+              "probability_semantics": "future_executable_bid_mark_USD_per_share_not_terminal_probability",
+              "market_id": "679018",
+              "token_id": "55764212211467781322980371912612507865974994976253196346176314491480419639168",
+              "event_id": "79987",
+              "book_id": "bf398ddc388af6e1ea822efed7d5b42109de61a0ba2002aef9f2696ff8ac4852",
+              "source": "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+              "source_at": "2026-11-07T00:13:28.778000+00:00",
+              "available_at": "2026-11-07T00:13:32.832831+00:00",
+              "source_age_seconds": 16.027319,
+              "book_sha256": "a3896f7b8c63ea0451082c60484faeabe0544cd1ca3b056e88914225010e697b",
+              "market_sha256": "a4cad414e59a433c26001535128a598bc981fa686263e713fa8df47e56f1929c",
+              "resolution_rules_sha256": "dee7db4ccb37acb3221169f92c04d65bf0e57aeef252370c8028be32049b0565",
+              "fee_rate": 0.04,
+              "fee_evidence_id": "9f3762f0-082a-40ef-8137-f42e17907d09",
+              "raw_fee_response_ids": [
+                "9295194d55e8fdb5d1e9f9c3bcbf88d9a749836bd75ce7d45e2c34166615351c",
+                "a1857a1eed39f259e88bce6547edabf3309b63500e197bb046a4901cfa18e27c"
+              ],
+              "target_notional": 2,
+              "quantity_shares": 5.0,
+              "current_best_bid": 0.451,
+              "current_best_ask": 0.452,
+              "spread": 0.0010000000000000009,
+              "broker_limit_price": 0.452,
+              "broker_limit_capacity_shares": 2247.1475,
+              "broker_limit_notional": 2.2600000000000002,
+              "broker_fee_inclusive_reservation": 2.3504000000000005,
+              "hypothetical_sweep_entry": {
+                "requested_shares": 5.0,
+                "depth_supported_shares": 5.0,
+                "unavailable_shares": 0.0,
+                "complete": true,
+                "vwap": 0.45200000000000007,
+                "notional": 2.2600000000000002,
+                "levels_used": [
+                  {
+                    "price": 0.452,
+                    "gross_observed_size": 8988.59,
+                    "modeled_shares": 5.0
+                  }
+                ],
+                "participation": 0.25,
+                "semantics": "observed_fractional_depth_quote_not_a_simulated_fill"
+              },
+              "current_exit_depth_proxy": {
+                "requested_shares": 5.0,
+                "depth_supported_shares": 5.0,
+                "unavailable_shares": 0.0,
+                "complete": true,
+                "vwap": 0.45099999999999996,
+                "notional": 2.255,
+                "levels_used": [
+                  {
+                    "price": 0.451,
+                    "gross_observed_size": 4975.46,
+                    "modeled_shares": 5.0
+                  }
+                ],
+                "participation": 0.25,
+                "semantics": "observed_fractional_depth_quote_not_a_simulated_fill"
+              },
+              "current_exit_is_not_future_liquidity": true,
+              "forecast_lower_bid": 0.441,
+              "depth_adjusted_lower_exit_bid": 0.44099999999999995,
+              "entry_impact_per_share": 5.551115123125783e-17,
+              "exit_impact_proxy_per_share": 5.551115123125783e-17,
+              "entry_fee_per_share": 0.018080000000000002,
+              "exit_fee_per_share": 0.01764,
+              "roundtrip_slippage_per_share": 0.02,
+              "status": "withheld",
+              "assumptions": [
+                "existing broker submits best-ask limit; deeper asks cannot authorize that order",
+                "25% per-level fractional depth and $.01/share per-leg slippage",
+                "current bid curvature is a future-exit proxy, not verified future liquidity",
+                "resolution metadata presence is not independent settlement-rule review",
+                "no reservation, latency fill, queue position or order is created by this assessment"
+              ]
+            },
+            {
+              "schema_version": "phase16-executable-depth-v1",
+              "evaluated_at": "2026-11-07T00:13:44.805319+00:00",
+              "research_only": true,
+              "trading_authority": false,
+              "certification_authority": false,
+              "policy": {
+                "source_max_age_seconds": 15,
+                "market_max_age_seconds": 3600,
+                "fee_max_age_seconds": 300,
+                "max_spread": 0.05,
+                "participation": 0.25,
+                "slippage_per_share_per_leg": 0.01,
+                "minimum_net_edge_per_share": 0.03,
+                "standard_min_notional": 2,
+                "standard_max_notional": 5
+              },
+              "execution_checks_pass": true,
+              "cost_adjusted_edge_pass": false,
+              "estimated_net_edge_per_share": -0.12965000000000013,
+              "reasons": [
+                "depth_cost_adjusted_edge_insufficient"
+              ],
+              "execution_reasons": [],
+              "valuation_reasons": [
+                "depth_cost_adjusted_edge_insufficient"
+              ],
+              "future_exit_liquidity_verified": false,
+              "settlement_rule_review_verified": false,
+              "probability_semantics": "future_executable_bid_mark_USD_per_share_not_terminal_probability",
+              "market_id": "3215005",
+              "token_id": "104236736263775307891497202874191911203963566711959725788584750440530976742193",
+              "event_id": "770450",
+              "book_id": "a876caa111682b2c7c06b17cf2312ab7b6568b581114c9060d80f7b05887ac40",
+              "source": "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+              "source_at": "2026-11-07T00:13:43.625000+00:00",
+              "available_at": "2026-11-07T00:13:43.958263+00:00",
+              "source_age_seconds": 1.180319,
+              "book_sha256": "51baf2233ea3d4a19b43d368d88b723ca41ae78e670a70baf5f93bd589f095d7",
+              "market_sha256": "d352fa98574d67974e34815e5951e74209aab60259dd169ab21204720b561544",
+              "resolution_rules_sha256": "fdb210318474078daa855d747ed941b2113f64d186318fe4a0e4776c7737e4e6",
+              "fee_rate": 0.05,
+              "fee_evidence_id": "f969fc38-252d-41fc-8651-6f36c15309e4",
+              "raw_fee_response_ids": [
+                "f913422f999f93ab6f083d1dddbade0835240103574b912d65722a18df645069",
+                "2bcf0103c8ae7508eb0465c840ad202e5eddcdf8d246fb0ab68974836a1c2c12"
+              ],
+              "target_notional": 2,
+              "quantity_shares": 5.0,
+              "current_best_bid": 0.991,
+              "current_best_ask": 0.992,
+              "spread": 0.0010000000000000009,
+              "broker_limit_price": 0.992,
+              "broker_limit_capacity_shares": 48.5325,
+              "broker_limit_notional": 4.96,
+              "broker_fee_inclusive_reservation": 5.208,
+              "hypothetical_sweep_entry": {
+                "requested_shares": 5.0,
+                "depth_supported_shares": 5.0,
+                "unavailable_shares": 0.0,
+                "complete": true,
+                "vwap": 0.992,
+                "notional": 4.96,
+                "levels_used": [
+                  {
+                    "price": 0.992,
+                    "gross_observed_size": 194.13,
+                    "modeled_shares": 5.0
+                  }
+                ],
+                "participation": 0.25,
+                "semantics": "observed_fractional_depth_quote_not_a_simulated_fill"
+              },
+              "current_exit_depth_proxy": {
+                "requested_shares": 5.0,
+                "depth_supported_shares": 5.0,
+                "unavailable_shares": 0.0,
+                "complete": true,
+                "vwap": 0.991,
+                "notional": 4.955,
+                "levels_used": [
+                  {
+                    "price": 0.991,
+                    "gross_observed_size": 464.0,
+                    "modeled_shares": 5.0
+                  }
+                ],
+                "participation": 0.25,
+                "semantics": "observed_fractional_depth_quote_not_a_simulated_fill"
+              },
+              "current_exit_is_not_future_liquidity": true,
+              "forecast_lower_bid": 0.981,
+              "depth_adjusted_lower_exit_bid": 0.981,
+              "entry_impact_per_share": 0.0,
+              "exit_impact_proxy_per_share": 0.0,
+              "entry_fee_per_share": 0.049600000000000005,
+              "exit_fee_per_share": 0.04905,
+              "roundtrip_slippage_per_share": 0.02,
+              "status": "withheld",
+              "assumptions": [
+                "existing broker submits best-ask limit; deeper asks cannot authorize that order",
+                "25% per-level fractional depth and $.01/share per-leg slippage",
+                "current bid curvature is a future-exit proxy, not verified future liquidity",
+                "resolution metadata presence is not independent settlement-rule review",
+                "no reservation, latency fill, queue position or order is created by this assessment"
+              ]
+            },
+            {
+              "schema_version": "phase16-executable-depth-v1",
+              "evaluated_at": "2026-11-07T00:13:44.805319+00:00",
+              "research_only": true,
+              "trading_authority": false,
+              "certification_authority": false,
+              "policy": {
+                "source_max_age_seconds": 15,
+                "market_max_age_seconds": 3600,
+                "fee_max_age_seconds": 300,
+                "max_spread": 0.05,
+                "participation": 0.25,
+                "slippage_per_share_per_leg": 0.01,
+                "minimum_net_edge_per_share": 0.03,
+                "standard_min_notional": 2,
+                "standard_max_notional": 5
+              },
+              "execution_checks_pass": true,
+              "cost_adjusted_edge_pass": false,
+              "estimated_net_edge_per_share": -0.04960000000000003,
+              "reasons": [
+                "depth_cost_adjusted_edge_insufficient"
+              ],
+              "execution_reasons": [],
+              "valuation_reasons": [
+                "depth_cost_adjusted_edge_insufficient"
+              ],
+              "future_exit_liquidity_verified": false,
+              "settlement_rule_review_verified": false,
+              "probability_semantics": "future_executable_bid_mark_USD_per_share_not_terminal_probability",
+              "market_id": "679030",
+              "token_id": "88550326946437280548248031502775629664259630024343210447063397951616199975032",
+              "event_id": "79987",
+              "book_id": "ba32bb54edac26a0864211a6e68ca727c31439bb2108f5e2b989c4ef6cd02df6",
+              "source": "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+              "source_at": "2026-11-07T00:13:43.304000+00:00",
+              "available_at": "2026-11-07T00:13:43.643057+00:00",
+              "source_age_seconds": 1.501319,
+              "book_sha256": "b8775b4048d2fc3a234779ae4d3c8dd1ad3a5d46672f036ea2ebac1944a78569",
+              "market_sha256": "950c5ecdb8cb0afb6bbd4c3c6b074ecd852d3a5cb1884ff0784a813fa10b95f8",
+              "resolution_rules_sha256": "dee7db4ccb37acb3221169f92c04d65bf0e57aeef252370c8028be32049b0565",
+              "fee_rate": 0.04,
+              "fee_evidence_id": "475ff6d6-4bd7-4a0a-9858-105a5ca1d1bc",
+              "raw_fee_response_ids": [
+                "028f15e1ffe029c70fc8c2f957689c9afff0ebc3a175fe241608a772a5466982",
+                "a4a2040f68de1ebc970a66841de186d2f356c4eba99cad63bfae2bce0194f13b"
+              ],
+              "target_notional": 2,
+              "quantity_shares": 15.384615384615383,
+              "current_best_bid": 0.12,
+              "current_best_ask": 0.13,
+              "spread": 0.010000000000000009,
+              "broker_limit_price": 0.13,
+              "broker_limit_capacity_shares": 15510.3475,
+              "broker_limit_notional": 2.0,
+              "broker_fee_inclusive_reservation": 2.08,
+              "hypothetical_sweep_entry": {
+                "requested_shares": 15.384615384615383,
+                "depth_supported_shares": 15.384615384615383,
+                "unavailable_shares": 0.0,
+                "complete": true,
+                "vwap": 0.13,
+                "notional": 2.0,
+                "levels_used": [
+                  {
+                    "price": 0.13,
+                    "gross_observed_size": 62041.39,
+                    "modeled_shares": 15.384615384615383
+                  }
+                ],
+                "participation": 0.25,
+                "semantics": "observed_fractional_depth_quote_not_a_simulated_fill"
+              },
+              "current_exit_depth_proxy": {
+                "requested_shares": 15.384615384615383,
+                "depth_supported_shares": 15.384615384615383,
+                "unavailable_shares": 0.0,
+                "complete": true,
+                "vwap": 0.11999999999999998,
+                "notional": 1.8461538461538458,
+                "levels_used": [
+                  {
+                    "price": 0.12,
+                    "gross_observed_size": 28139.0,
+                    "modeled_shares": 15.384615384615383
+                  }
+                ],
+                "participation": 0.25,
+                "semantics": "observed_fractional_depth_quote_not_a_simulated_fill"
+              },
+              "current_exit_is_not_future_liquidity": true,
+              "forecast_lower_bid": 0.11,
+              "depth_adjusted_lower_exit_bid": 0.10999999999999999,
+              "entry_impact_per_share": 0.0,
+              "exit_impact_proxy_per_share": 1.3877787807814457e-17,
+              "entry_fee_per_share": 0.005200000000000001,
+              "exit_fee_per_share": 0.004399999999999999,
+              "roundtrip_slippage_per_share": 0.02,
+              "status": "withheld",
+              "assumptions": [
+                "existing broker submits best-ask limit; deeper asks cannot authorize that order",
+                "25% per-level fractional depth and $.01/share per-leg slippage",
+                "current bid curvature is a future-exit proxy, not verified future liquidity",
+                "resolution metadata presence is not independent settlement-rule review",
+                "no reservation, latency fill, queue position or order is created by this assessment"
+              ]
+            },
+            {
+              "schema_version": "phase16-executable-depth-v1",
+              "evaluated_at": "2026-11-07T00:13:44.805319+00:00",
+              "research_only": true,
+              "trading_authority": false,
+              "certification_authority": false,
+              "policy": {
+                "source_max_age_seconds": 15,
+                "market_max_age_seconds": 3600,
+                "fee_max_age_seconds": 300,
+                "max_spread": 0.05,
+                "participation": 0.25,
+                "slippage_per_share_per_leg": 0.01,
+                "minimum_net_edge_per_share": 0.03,
+                "standard_min_notional": 2,
+                "standard_max_notional": 5
+              },
+              "execution_checks_pass": true,
+              "cost_adjusted_edge_pass": false,
+              "estimated_net_edge_per_share": -0.1160000000000002,
+              "reasons": [
+                "depth_cost_adjusted_edge_insufficient"
+              ],
+              "execution_reasons": [],
+              "valuation_reasons": [
+                "depth_cost_adjusted_edge_insufficient"
+              ],
+              "future_exit_liquidity_verified": false,
+              "settlement_rule_review_verified": false,
+              "probability_semantics": "future_executable_bid_mark_USD_per_share_not_terminal_probability",
+              "market_id": "3215008",
+              "token_id": "111662129652828266889360374468657435151479595863413519836161861837506140152890",
+              "event_id": "770450",
+              "book_id": "50492afc6548e341e4b4a2d89b5efdf27174c4dbf90c6fbe939439a90e28013e",
+              "source": "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+              "source_at": "2026-11-07T00:13:43.781000+00:00",
+              "available_at": "2026-11-07T00:13:44.122560+00:00",
+              "source_age_seconds": 1.024319,
+              "book_sha256": "e9157f17be091f8cc393f766b5ee123b2386650019d36a45ac881c8c20c9a78a",
+              "market_sha256": "885c2651ceca3ea62dd7fa59f66b48b35cf43e19c59b7ba1fb0eedf8acbc0217",
+              "resolution_rules_sha256": "fdb210318474078daa855d747ed941b2113f64d186318fe4a0e4776c7737e4e6",
+              "fee_rate": 0.05,
+              "fee_evidence_id": "a9d54361-3a31-4372-88b4-c56bdd737107",
+              "raw_fee_response_ids": [
+                "9947e35db0d062d82873c27cbeefdc78c0251cf6e4c4682b1f946e36085377f4",
+                "4eb0cb58f36fed77aa83c537497001ce5e87fc9052f4bacb0657d22f3a70e0cd"
+              ],
+              "target_notional": 2,
+              "quantity_shares": 5.0,
+              "current_best_bid": 0.76,
+              "current_best_ask": 0.77,
+              "spread": 0.010000000000000009,
+              "broker_limit_price": 0.77,
+              "broker_limit_capacity_shares": 43188.615,
+              "broker_limit_notional": 3.85,
+              "broker_fee_inclusive_reservation": 4.0425,
+              "hypothetical_sweep_entry": {
+                "requested_shares": 5.0,
+                "depth_supported_shares": 5.0,
+                "unavailable_shares": 0.0,
+                "complete": true,
+                "vwap": 0.77,
+                "notional": 3.85,
+                "levels_used": [
+                  {
+                    "price": 0.77,
+                    "gross_observed_size": 172754.46,
+                    "modeled_shares": 5.0
+                  }
+                ],
+                "participation": 0.25,
+                "semantics": "observed_fractional_depth_quote_not_a_simulated_fill"
+              },
+              "current_exit_depth_proxy": {
+                "requested_shares": 5.0,
+                "depth_supported_shares": 5.0,
+                "unavailable_shares": 0.0,
+                "complete": true,
+                "vwap": 0.76,
+                "notional": 3.8,
+                "levels_used": [
+                  {
+                    "price": 0.76,
+                    "gross_observed_size": 10350.02,
+                    "modeled_shares": 5.0
+                  }
+                ],
+                "participation": 0.25,
+                "semantics": "observed_fractional_depth_quote_not_a_simulated_fill"
+              },
+              "current_exit_is_not_future_liquidity": true,
+              "forecast_lower_bid": 0.75,
+              "depth_adjusted_lower_exit_bid": 0.75,
+              "entry_impact_per_share": 0.0,
+              "exit_impact_proxy_per_share": 0.0,
+              "entry_fee_per_share": 0.038500000000000006,
+              "exit_fee_per_share": 0.037500000000000006,
+              "roundtrip_slippage_per_share": 0.02,
+              "status": "withheld",
+              "assumptions": [
+                "existing broker submits best-ask limit; deeper asks cannot authorize that order",
+                "25% per-level fractional depth and $.01/share per-leg slippage",
+                "current bid curvature is a future-exit proxy, not verified future liquidity",
+                "resolution metadata presence is not independent settlement-rule review",
+                "no reservation, latency fill, queue position or order is created by this assessment"
+              ]
+            },
+            {
+              "schema_version": "phase16-executable-depth-v1",
+              "evaluated_at": "2026-11-07T00:13:44.805319+00:00",
+              "research_only": true,
+              "trading_authority": false,
+              "certification_authority": false,
+              "policy": {
+                "source_max_age_seconds": 15,
+                "market_max_age_seconds": 3600,
+                "fee_max_age_seconds": 300,
+                "max_spread": 0.05,
+                "participation": 0.25,
+                "slippage_per_share_per_leg": 0.01,
+                "minimum_net_edge_per_share": 0.03,
+                "standard_min_notional": 2,
+                "standard_max_notional": 5
+              },
+              "execution_checks_pass": true,
+              "cost_adjusted_edge_pass": false,
+              "estimated_net_edge_per_share": -0.1180000000000002,
+              "reasons": [
+                "depth_cost_adjusted_edge_insufficient"
+              ],
+              "execution_reasons": [],
+              "valuation_reasons": [
+                "depth_cost_adjusted_edge_insufficient"
+              ],
+              "future_exit_liquidity_verified": false,
+              "settlement_rule_review_verified": false,
+              "probability_semantics": "future_executable_bid_mark_USD_per_share_not_terminal_probability",
+              "market_id": "4397025",
+              "token_id": "101996110023306359267215939819928021406998500989415641847320025626005179879667",
+              "event_id": "991810",
+              "book_id": "e89e197c975fe1752e607cc479addfc22912177e570d37d5df92d9927b12e6c6",
+              "source": "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+              "source_at": "2026-11-07T00:13:42.816000+00:00",
+              "available_at": "2026-11-07T00:13:43.063902+00:00",
+              "source_age_seconds": 1.989319,
+              "book_sha256": "d17a5b3f4d992c334021a43a59942098218b69fe04f4c2f73ec6e7508a39966a",
+              "market_sha256": "aac86f0501a2884b9cc0bd8c88fd955368de0b8c14229811ebf5f4afb99d81fe",
+              "resolution_rules_sha256": "8fc8e5fb6cae19590bbdd0f002496a91b8be414b57dfc5511c912c4feab80c70",
+              "fee_rate": 0.05,
+              "fee_evidence_id": "17b7cfbb-a7a0-4bd2-895f-50d96a529962",
+              "raw_fee_response_ids": [
+                "ac83dc6c862c63de58a875f927c0cc0600fd7c81a144a6a21e8861445140b236",
+                "0d5357bf2d710da83e36f263cc2ee8d0e21dec9d04dfe1bdee8d565706d98bc5"
+              ],
+              "target_notional": 2,
+              "quantity_shares": 5.0,
+              "current_best_bid": 0.78,
+              "current_best_ask": 0.79,
+              "spread": 0.010000000000000009,
+              "broker_limit_price": 0.79,
+              "broker_limit_capacity_shares": 33.9,
+              "broker_limit_notional": 3.95,
+              "broker_fee_inclusive_reservation": 4.1475,
+              "hypothetical_sweep_entry": {
+                "requested_shares": 5.0,
+                "depth_supported_shares": 5.0,
+                "unavailable_shares": 0.0,
+                "complete": true,
+                "vwap": 0.79,
+                "notional": 3.95,
+                "levels_used": [
+                  {
+                    "price": 0.79,
+                    "gross_observed_size": 135.6,
+                    "modeled_shares": 5.0
+                  }
+                ],
+                "participation": 0.25,
+                "semantics": "observed_fractional_depth_quote_not_a_simulated_fill"
+              },
+              "current_exit_depth_proxy": {
+                "requested_shares": 5.0,
+                "depth_supported_shares": 5.0,
+                "unavailable_shares": 0.0,
+                "complete": true,
+                "vwap": 0.78,
+                "notional": 3.9000000000000004,
+                "levels_used": [
+                  {
+                    "price": 0.78,
+                    "gross_observed_size": 102.53,
+                    "modeled_shares": 5.0
+                  }
+                ],
+                "participation": 0.25,
+                "semantics": "observed_fractional_depth_quote_not_a_simulated_fill"
+              },
+              "current_exit_is_not_future_liquidity": true,
+              "forecast_lower_bid": 0.77,
+              "depth_adjusted_lower_exit_bid": 0.77,
+              "entry_impact_per_share": 0.0,
+              "exit_impact_proxy_per_share": 0.0,
+              "entry_fee_per_share": 0.03950000000000001,
+              "exit_fee_per_share": 0.038500000000000006,
+              "roundtrip_slippage_per_share": 0.02,
+              "status": "withheld",
+              "assumptions": [
+                "existing broker submits best-ask limit; deeper asks cannot authorize that order",
+                "25% per-level fractional depth and $.01/share per-leg slippage",
+                "current bid curvature is a future-exit proxy, not verified future liquidity",
+                "resolution metadata presence is not independent settlement-rule review",
+                "no reservation, latency fill, queue position or order is created by this assessment"
+              ]
+            },
+            {
+              "schema_version": "phase16-executable-depth-v1",
+              "evaluated_at": "2026-11-07T00:13:44.805319+00:00",
+              "research_only": true,
+              "trading_authority": false,
+              "certification_authority": false,
+              "policy": {
+                "source_max_age_seconds": 15,
+                "market_max_age_seconds": 3600,
+                "fee_max_age_seconds": 300,
+                "max_spread": 0.05,
+                "participation": 0.25,
+                "slippage_per_share_per_leg": 0.01,
+                "minimum_net_edge_per_share": 0.03,
+                "standard_min_notional": 2,
+                "standard_max_notional": 5
+              },
+              "execution_checks_pass": true,
+              "cost_adjusted_edge_pass": false,
+              "estimated_net_edge_per_share": -0.06100000000000001,
+              "reasons": [
+                "depth_cost_adjusted_edge_insufficient"
+              ],
+              "execution_reasons": [],
+              "valuation_reasons": [
+                "depth_cost_adjusted_edge_insufficient"
+              ],
+              "future_exit_liquidity_verified": false,
+              "settlement_rule_review_verified": false,
+              "probability_semantics": "future_executable_bid_mark_USD_per_share_not_terminal_probability",
+              "market_id": "4397025",
+              "token_id": "56360910151195441905859355697297471571491885496299657191480344412119595418796",
+              "event_id": "991810",
+              "book_id": "5a4df3d4661f020d08f2c0a0197f6dfe6a19214f38bb4112004973d5f4497cd7",
+              "source": "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+              "source_at": "2026-11-07T00:13:42.816000+00:00",
+              "available_at": "2026-11-07T00:13:43.063902+00:00",
+              "source_age_seconds": 1.989319,
+              "book_sha256": "f932ddce672edb4987a5089ba31ffc98079a95657d003efeabc521b25f88c5d4",
+              "market_sha256": "3bf08b333817f9e1592f7a5b13d75c81f294640fb7be929a19b793cefff01eee",
+              "resolution_rules_sha256": "8fc8e5fb6cae19590bbdd0f002496a91b8be414b57dfc5511c912c4feab80c70",
+              "fee_rate": 0.05,
+              "fee_evidence_id": "753b0942-98f8-49fe-9608-1843102b5bd9",
+              "raw_fee_response_ids": [
+                "b08ac35fe3f7ee56a24bd7b83fbcf3a7c58d06e886d72d4f0b5178a853448aa0",
+                "0d5357bf2d710da83e36f263cc2ee8d0e21dec9d04dfe1bdee8d565706d98bc5"
+              ],
+              "target_notional": 2,
+              "quantity_shares": 9.090909090909092,
+              "current_best_bid": 0.21,
+              "current_best_ask": 0.22,
+              "spread": 0.010000000000000009,
+              "broker_limit_price": 0.22,
+              "broker_limit_capacity_shares": 25.6325,
+              "broker_limit_notional": 2.0,
+              "broker_fee_inclusive_reservation": 2.1,
+              "hypothetical_sweep_entry": {
+                "requested_shares": 9.090909090909092,
+                "depth_supported_shares": 9.090909090909092,
+                "unavailable_shares": 0.0,
+                "complete": true,
+                "vwap": 0.21999999999999997,
+                "notional": 2.0,
+                "levels_used": [
+                  {
+                    "price": 0.22,
+                    "gross_observed_size": 102.53,
+                    "modeled_shares": 9.090909090909092
+                  }
+                ],
+                "participation": 0.25,
+                "semantics": "observed_fractional_depth_quote_not_a_simulated_fill"
+              },
+              "current_exit_depth_proxy": {
+                "requested_shares": 9.090909090909092,
+                "depth_supported_shares": 9.090909090909092,
+                "unavailable_shares": 0.0,
+                "complete": true,
+                "vwap": 0.21,
+                "notional": 1.9090909090909092,
+                "levels_used": [
+                  {
+                    "price": 0.21,
+                    "gross_observed_size": 135.6,
+                    "modeled_shares": 9.090909090909092
+                  }
+                ],
+                "participation": 0.25,
+                "semantics": "observed_fractional_depth_quote_not_a_simulated_fill"
+              },
+              "current_exit_is_not_future_liquidity": true,
+              "forecast_lower_bid": 0.19999999999999998,
+              "depth_adjusted_lower_exit_bid": 0.19999999999999998,
+              "entry_impact_per_share": 0.0,
+              "exit_impact_proxy_per_share": 0.0,
+              "entry_fee_per_share": 0.011,
+              "exit_fee_per_share": 0.01,
+              "roundtrip_slippage_per_share": 0.02,
+              "status": "withheld",
+              "assumptions": [
+                "existing broker submits best-ask limit; deeper asks cannot authorize that order",
+                "25% per-level fractional depth and $.01/share per-leg slippage",
+                "current bid curvature is a future-exit proxy, not verified future liquidity",
+                "resolution metadata presence is not independent settlement-rule review",
+                "no reservation, latency fill, queue position or order is created by this assessment"
+              ]
+            },
+            {
+              "schema_version": "phase16-executable-depth-v1",
+              "evaluated_at": "2026-11-07T00:13:44.805319+00:00",
+              "research_only": true,
+              "trading_authority": false,
+              "certification_authority": false,
+              "policy": {
+                "source_max_age_seconds": 15,
+                "market_max_age_seconds": 3600,
+                "fee_max_age_seconds": 300,
+                "max_spread": 0.05,
+                "participation": 0.25,
+                "slippage_per_share_per_leg": 0.01,
+                "minimum_net_edge_per_share": 0.03,
+                "standard_min_notional": 2,
+                "standard_max_notional": 5
+              },
+              "execution_checks_pass": false,
+              "cost_adjusted_edge_pass": false,
+              "estimated_net_edge_per_share": -0.0263,
+              "reasons": [
+                "depth_cost_adjusted_edge_insufficient",
+                "stale_book"
+              ],
+              "execution_reasons": [
+                "stale_book"
+              ],
+              "valuation_reasons": [
+                "depth_cost_adjusted_edge_insufficient"
+              ],
+              "future_exit_liquidity_verified": false,
+              "settlement_rule_review_verified": false,
+              "probability_semantics": "future_executable_bid_mark_USD_per_share_not_terminal_probability",
+              "market_id": "3215009",
+              "token_id": "35090254409399344650860070211816464534198960801264823587796928404808383727584",
+              "event_id": "770450",
+              "book_id": "75399c1aed60c52c3d5bce0b255c2399a0b8a9bb5b9588b1facfe8b15e620ddc",
+              "source": "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+              "source_at": "2026-11-07T00:13:29.321000+00:00",
+              "available_at": "2026-11-07T00:13:33.229464+00:00",
+              "source_age_seconds": 15.484319,
+              "book_sha256": "65d3375357c9ecd0028713ef7c09381fac44cf329ad141b48f52e16d123d0386",
+              "market_sha256": "cd2005f75fcd60923841adc4bbaa44742182f28ee9b3039749e0e9dd4be34ba6",
+              "resolution_rules_sha256": "fdb210318474078daa855d747ed941b2113f64d186318fe4a0e4776c7737e4e6",
+              "fee_rate": 0.05,
+              "fee_evidence_id": "2d929879-f4ed-4be2-89ae-09f7389ffb62",
+              "raw_fee_response_ids": [
+                "7b4dc23c1b1a842c9a7155567591ff86957885b67e740851f1f8d6db6bc792dc",
+                "19265f501e5301e3cd29d3a7ef079a3d8290956828c794408e5700ab277a1473"
+              ],
+              "target_notional": 2,
+              "quantity_shares": 333.3333333333333,
+              "current_best_bid": 0.005,
+              "current_best_ask": 0.006,
+              "spread": 0.001,
+              "broker_limit_price": 0.006,
+              "broker_limit_capacity_shares": 12493.9175,
+              "broker_limit_notional": 2.0,
+              "broker_fee_inclusive_reservation": 2.1,
+              "hypothetical_sweep_entry": {
+                "requested_shares": 333.3333333333333,
+                "depth_supported_shares": 333.3333333333333,
+                "unavailable_shares": 0.0,
+                "complete": true,
+                "vwap": 0.006,
+                "notional": 2.0,
+                "levels_used": [
+                  {
+                    "price": 0.006,
+                    "gross_observed_size": 49975.67,
+                    "modeled_shares": 333.3333333333333
+                  }
+                ],
+                "participation": 0.25,
+                "semantics": "observed_fractional_depth_quote_not_a_simulated_fill"
+              },
+              "current_exit_depth_proxy": {
+                "requested_shares": 333.3333333333333,
+                "depth_supported_shares": 333.3333333333333,
+                "unavailable_shares": 0.0,
+                "complete": true,
+                "vwap": 0.005,
+                "notional": 1.6666666666666665,
+                "levels_used": [
+                  {
+                    "price": 0.005,
+                    "gross_observed_size": 251301.4,
+                    "modeled_shares": 333.3333333333333
+                  }
+                ],
+                "participation": 0.25,
+                "semantics": "observed_fractional_depth_quote_not_a_simulated_fill"
+              },
+              "current_exit_is_not_future_liquidity": true,
+              "forecast_lower_bid": 0.0,
+              "depth_adjusted_lower_exit_bid": 0.0,
+              "entry_impact_per_share": 0.0,
+              "exit_impact_proxy_per_share": 0.0,
+              "entry_fee_per_share": 0.00030000000000000003,
+              "exit_fee_per_share": 0.0,
+              "roundtrip_slippage_per_share": 0.02,
+              "status": "withheld",
+              "assumptions": [
+                "existing broker submits best-ask limit; deeper asks cannot authorize that order",
+                "25% per-level fractional depth and $.01/share per-leg slippage",
+                "current bid curvature is a future-exit proxy, not verified future liquidity",
+                "resolution metadata presence is not independent settlement-rule review",
+                "no reservation, latency fill, queue position or order is created by this assessment"
+              ]
+            }
+          ],
+          "qualification": {
+            "schema_version": "phase16-readiness-v1",
+            "observed_at": "2026-11-07T00:13:44.805319+00:00",
+            "status": "insufficient_evidence",
+            "insufficient_evidence": [
+              "fewer_than_100_independent_heldout_events",
+              "fewer_than_100_independent_training_events",
+              "independent_terminal_calibration_unavailable"
+            ],
+            "implementation_defects": [],
+            "market_conditions": [
+              "depth_cost_adjusted_edge_insufficient",
+              "estimated_edge_below_unchanged_0_03_threshold"
+            ],
+            "freshness": {
+              "last_observation_at": "2026-11-07T00:13:43.781000+00:00",
+              "source_age_seconds": 1.024319,
+              "fresh_limit_seconds": 15
+            },
+            "historical_coverage": {
+              "tokens_tracked": 7,
+              "valid_observations": 1135,
+              "current_observations": 590,
+              "span_seconds": 1584.821,
+              "max_gap_seconds": 111.03,
+              "matured_labels": 1010,
+              "current_matured_labels": 512,
+              "unique_parent_events": 3
+            },
+            "history_rejections": {
+              "stale_book": 291,
+              "missing_book": 59,
+              "horizon_label_missed_not_interpolated": 77,
+              "duplicate_quote_does_not_add_history": 8,
+              "history_capacity_waiting_for_inactive_retirement": 3
+            },
+            "mark_research_readiness": {
+              "status": "cost_threshold_not_met",
+              "remaining_requirements": [],
+              "eligible_mark_tokens": [
+                "101996110023306359267215939819928021406998500989415641847320025626005179879667",
+                "104236736263775307891497202874191911203963566711959725788584750440530976742193",
+                "111662129652828266889360374468657435151479595863413519836161861837506140152890",
+                "15907269680083135091620869613557617263613890890387514554477997501123964677519",
+                "56360910151195441905859355697297471571491885496299657191480344412119595418796",
+                "88550326946437280548248031502775629664259630024343210447063397951616199975032"
+              ],
+              "outcome_probability_calibration_applicable": false,
+              "formal_certification_and_order_authority": false
+            },
+            "eligible_mark_tokens": [
+              "101996110023306359267215939819928021406998500989415641847320025626005179879667",
+              "104236736263775307891497202874191911203963566711959725788584750440530976742193",
+              "111662129652828266889360374468657435151479595863413519836161861837506140152890",
+              "15907269680083135091620869613557617263613890890387514554477997501123964677519",
+              "56360910151195441905859355697297471571491885496299657191480344412119595418796",
+              "88550326946437280548248031502775629664259630024343210447063397951616199975032"
+            ],
+            "token_coverage_scope": "per-token>=40causal points,>=20retained matured marks, source/receipt<=15s, full execution evidence",
+            "mark_labels_are_independent_outcome_events": false,
+            "calibration": {
+              "status": "unavailable",
+              "training_events": null,
+              "heldout_events": null,
+              "required_training_events": 100,
+              "required_heldout_events": 100,
+              "metrics": null,
+              "blockers": []
+            },
+            "estimated_executable_edge": -0.04960000000000003,
+            "execution_context": {
+              "bound": true,
+              "token_id": "88550326946437280548248031502775629664259630024343210447063397951616199975032",
+              "market_id": "679030",
+              "event_id": "79987",
+              "source_at": "2026-11-07T00:13:43.304000+00:00",
+              "available_at": "2026-11-07T00:13:43.643057+00:00",
+              "evaluated_at": "2026-11-07T00:13:44.805319+00:00"
+            },
+            "edge_semantics": "conditional USD per outcome share after modeled costs; no validated trading advantage",
+            "minimum_net_edge": 0.03,
+            "research_only": true,
+            "experimental_admission_authority": false,
+            "certification_authority": false,
+            "model_promotion_authority": false
+          },
+          "storage": {
+            "hourly_measurements_retained": 1,
+            "first_measurement_at": "2026-11-06T23:31:17.699504+00:00",
+            "scope": "service tree before study commit; includes archive copies/state/cache"
+          },
+          "models": {
+            "history": "phase16-causal-history-v1",
+            "graph": "phase16-relationship-history-v1",
+            "challenger": "offline frozen-training bid-mark research; no operational authority"
+          },
+          "model_code_sha256": "995434e8f1d5f040a88159b395b08f60d2f17575dca2d711ecc2868d970d9bb1",
+          "interval_seconds": 10,
+          "full_checkpoint_interval_seconds": 300,
+          "checkpoint_encoding": "bounded lossless canonical JSON gzip; existing archive retains original records",
+          "last_error": null,
+          "trading_authority": false,
+          "certification_authority": false
+        },
+        "relationships": {
+          "cycles": 187,
+          "last_evaluation_at": "2026-11-07T00:13:44.805319+00:00",
+          "candidate_parent_pairs_cumulative": 341,
+          "registered_statistical_candidates": 3,
+          "parent_event_groups": 3,
+          "current_qualified_market_tokens": 4,
+          "source_freshness_limit_seconds": 15,
+          "statuses_cumulative": {
+            "warming_up": 45,
+            "insufficient_joint_variation_for_relationship_baseline": 296
+          },
+          "source_rejections_cumulative": {
+            "stale_or_future_source_quote": 159,
+            "registered_pair_missing_qualified_source_quotes": 192,
+            "missing_order_book": 32
+          },
+          "engine": {
+            "registered_relationships": 3,
+            "evaluations": 341,
+            "persistent_findings": 0,
+            "rejections": {
+              "insufficient_joint_variation_for_relationship_baseline": 296
+            },
+            "graph": [
+              {
+                "id": "07a07e99807d8bd49e9916ecae8e330c83a3e055901b645ae7de96057a5e3d6d",
+                "left": "55764212211467781322980371912612507865974994976253196346176314491480419639168",
+                "right": "88550326946437280548248031502775629664259630024343210447063397951616199975032",
+                "domains": [
+                  "other",
+                  "other"
+                ],
+                "claim_type": "statistical_relationship",
+                "definition_sha256": "26403d4f0e194d8a28c308145334f475adbd1597fd76b1e599f27b9317b39b63"
+              },
+              {
+                "id": "a1f22af2b338233a367c0e7f1d04a8ade29890dc9011be3e24451f97c970248e",
+                "left": "15907269680083135091620869613557617263613890890387514554477997501123964677519",
+                "right": "56360910151195441905859355697297471571491885496299657191480344412119595418796",
+                "domains": [
+                  "esports",
+                  "esports"
+                ],
+                "claim_type": "statistical_relationship",
+                "definition_sha256": "54f29dfd20241a538a68f5035be84758f1ab1cb5c2b79bdeb3b520ac44d7403a"
+              },
+              {
+                "id": "f0813aa90a114eb93efe9b8058901ab87a213719d52d4f2b005c97f221b44aa1",
+                "left": "111662129652828266889360374468657435151479595863413519836161861837506140152890",
+                "right": "35090254409399344650860070211816464534198960801264823587796928404808383727584",
+                "domains": [
+                  "economics",
+                  "economics"
+                ],
+                "claim_type": "statistical_relationship",
+                "definition_sha256": "de7d5893802be345000877717ca4dfcc1c4ecd6f5efc0cf93d0a40811874d094"
+              }
+            ],
+            "causality_verified": false,
+            "forecast_improvement_verified": false,
+            "executable_opportunities": 0,
+            "certification_authority": false,
+            "trading_authority": false
+          },
+          "semantics": "order_book_midpoint_USD_per_outcome_share_not_independent_probability",
+          "cross_domain_reviewed_findings": 0,
+          "reviewed_logical_constraints": 0,
+          "research_only": true,
+          "trading_authority": false,
+          "certification_authority": false,
+          "counter_scope": "cumulative_since_instance_creation_or_checkpoint_restore",
+          "graph_version": 7,
+          "retirements_total": 2,
+          "retirements_retained": 2,
+          "selection": {
+            "max_pairs": 3,
+            "missing_seconds": 120,
+            "selection_observations": 3,
+            "selection_span_seconds": 60,
+            "observed_tokens": 6,
+            "policy": "existing stable pairs first; causal coverage then observed two-sided depth; one pair per parent"
+          },
+          "graph_rejections": {},
+          "last_observation_at": "2026-11-07T00:13:44.805319+00:00",
+          "retirement_storage": "bounded memory cache; caller must archive all study checkpoints",
+          "logical_constraints_verified": 0,
+          "predictive_advantage_verified": false
+        },
+        "historical_qualification": {
+          "schema_version": "1.0",
+          "dataset_version": "event-outcome-canonical-v1",
+          "dataset_sha256": "9e20ac5ccaef7616c2f0047df789a696916ff0d4b3d7d3938334bb190f77353d",
+          "files": {
+            "events.jsonl": "da926cc53363c15f8926f7920c0f3e28c6da69e935b8f10c7d3d583af5190961",
+            "evidence.jsonl": "6bc0979352eed16d314232a67131e69b59540c9a564010f98c1cbc4d5fad0d54",
+            "outcomes.jsonl": "9f2798565260be0bc7ca2c12ad4ff7de830606426146f115799fd9d9af608650"
+          },
+          "qualification_funnel": {
+            "canonical_market_propositions": 250,
+            "parent_event_groups": 250,
+            "official_API_outcome_groups": 51,
+            "corroborated_finalized_outcome_groups": 47,
+            "historical_market_price_rows": 616,
+            "actual_historical_book_rows": 0,
+            "external_context_rows": 95,
+            "resolved_events_with_predecision_available_price": 0,
+            "reviewed_independent_events": 0,
+            "fully_qualified_training_events": 0,
+            "fully_qualified_heldout_events": 0,
+            "required_training_events": 100,
+            "required_heldout_events": 100
+          },
+          "source_bundle_sha256": "8a530b77ff5cb3cb0c93beda5d09760535d35e67c4ee999c7ee824946d272654",
+          "source_qualification_sha256": "a4c2adfed62287a033a665a44ce33b4cbbfd05574bc46c4092b33277776f65f5",
+          "source_proofs_sha256": "73a8d8b20618ee5a6bb66c90a57ec0347ee98d78e4375401ecb6c1da846fd12f",
+          "categories": {
+            "Up or Down": 148,
+            "Finance": 24,
+            "Tennis": 10,
+            "Sports": 41,
+            "Weather": 2,
+            "Politics": 1,
+            "Esports": 12,
+            "PPA": 1,
+            "Bitcoin": 1,
+            "Crypto": 7,
+            "Ethereum": 1,
+            "RUT": 1,
+            "NYA": 1
+          },
+          "source_path": "/home/ubuntu/Neraium-Poly/data/phase8-history-events",
+          "created_at": "2026-11-06T05:15:46.321420+00:00",
+          "missing_field_counts": {
+            "historical_rule_version": 250,
+            "predecision_availability": 250,
+            "historical_executable_depth": 250,
+            "reviewed_independent_group": 250,
+            "qualified_external_context": 250,
+            "corroborated_final_settlement": 203
+          },
+          "certification_authority": false,
+          "automatic_promotion": false,
+          "limitations": [
+            "Historical observations downloaded after resolution retain collected-now availability",
+            "Price history is not executable depth",
+            "Parent/asset grouping proposals do not establish event independence",
+            "No current rule text is asserted to be its historical version"
+          ],
+          "events": 250,
+          "chain_corroborated_exact_settlement_groups": 47,
+          "qualified_training_events": 0,
+          "qualified_heldout_events": 0
+        },
+        "readiness_snapshot": {
+          "generated_at": "2026-11-07T00:13:55.193650+00:00",
+          "scope": "capability prerequisites, not model certification",
+          "strategies": [
+            {
+              "strategy_id": "cross_market_consistency",
+              "order_admission_supported": false,
+              "missing_prerequisites": [
+                "independently reviewed exhaustive payoff scope",
+                "multi-leg execution and hedge support"
+              ],
+              "forecast_calibration": null,
+              "estimated_net_edge": null,
+              "emergency_stop": false
+            },
+            {
+              "strategy_id": "persistent_relationship",
+              "order_admission_supported": true,
+              "missing_prerequisites": [
+                "persistent qualified relationship evidence",
+                "causal bid history and matured errors",
+                "positive conservative cost-adjusted edge"
+              ],
+              "forecast_calibration": null,
+              "estimated_net_edge": null,
+              "emergency_stop": false
+            },
+            {
+              "strategy_id": "liquidity_spread",
+              "order_admission_supported": false,
+              "missing_prerequisites": [
+                "validated queue/adverse-selection model",
+                "two-sided inventory execution support"
+              ],
+              "forecast_calibration": null,
+              "estimated_net_edge": null,
+              "emergency_stop": false
+            },
+            {
+              "strategy_id": "event_driven",
+              "order_admission_supported": false,
+              "missing_prerequisites": [
+                "independent predecision event context",
+                "qualified response model"
+              ],
+              "forecast_calibration": null,
+              "estimated_net_edge": null,
+              "emergency_stop": false
+            },
+            {
+              "strategy_id": "short_horizon",
+              "order_admission_supported": true,
+              "missing_prerequisites": [
+                "forty causal prior bid observations",
+                "twenty matured historical mark errors",
+                "positive conservative cost-adjusted edge"
+              ],
+              "forecast_calibration": null,
+              "estimated_net_edge": null,
+              "emergency_stop": false
+            },
+            {
+              "strategy_id": "calibrated_forecast",
+              "order_admission_supported": false,
+              "missing_prerequisites": [
+                "independent context",
+                "verified event labels",
+                "held-out probability calibration"
+              ],
+              "forecast_calibration": null,
+              "estimated_net_edge": null,
+              "emergency_stop": false
+            }
+          ],
+          "assessment": {
+            "reset_authorized": false,
+            "owner_approval_required": true,
+            "current_blocker": "qualified_signal_required"
+          }
+        },
+        "certification_authority": false,
+        "trading_authority": false
+      },
+      "open_positions": 0,
+      "fills": 2,
+      "orders_submitted": 1
+    },
+    "capacity": {
+      "schema_version": "phase17-capacity-v1",
+      "observed_at": "2026-11-07T00:13:55.199830+00:00",
+      "status": "warning",
+      "backpressure": false,
+      "alerts": [
+        "capacity_below7days"
+      ],
+      "sample_errors": [],
+      "samples": 3,
+      "window_seconds": 12019.074365,
+      "usage_bytes": 2685388876,
+      "budget_bytes": 17179869184,
+      "free_bytes": 508361375744,
+      "global_floor_bytes": 68719476736,
+      "proposed_bytes": 0,
+      "headroom_bytes": 14494480308,
+      "net_retained_growth_bytes_per_second": 55704.335098354306,
+      "forecast_growth_bytes_per_second": 55704.335098354306,
+      "seconds_to_capacity": 260203.81147010974,
+      "span_at_least24h": false,
+      "representative24h": false,
+      "tier_classes": {
+        "active": {
+          "usage_bytes": 1771416,
+          "retention_class": "ACTIVE: open databases/WAL; append only; never compress or move",
+          "original_removal_authorized": false
+        },
+        "warm": {
+          "usage_bytes": 991621120,
+          "retention_class": "WARM: immutable original segments; retain originals",
+          "original_removal_authorized": false
+        },
+        "cold": {
+          "usage_bytes": 331267700,
+          "retention_class": "COLD: verified additional compressed representations; originals retained",
+          "original_removal_authorized": false
+        },
+        "protected": {
+          "usage_bytes": 517521408,
+          "retention_class": "PROTECTED: account/forecast/audit and legacy evidence; preserve",
+          "original_removal_authorized": false
+        },
+        "catalog_state": {
+          "usage_bytes": 769815354,
+          "retention_class": "PROTECTED: append-only source identity/catalog and restart state",
+          "original_removal_authorized": false
+        },
+        "derived_cache": {
+          "usage_bytes": 66044554,
+          "retention_class": "DERIVED: existing verified cold cache; reproducible only with retained source proof",
+          "original_removal_authorized": false
+        },
+        "segment_metadata": {
+          "usage_bytes": 7347324,
+          "retention_class": "PROTECTED: manifests/hash/provenance; preserve",
+          "original_removal_authorized": false
+        }
+      },
+      "missing_growth_is_not_zero": true,
+      "indefinite_operation_proven": false,
+      "budget_increase_authorized": false,
+      "retention_change_authorized": false,
+      "original_removal_authorized": false,
+      "limitations": [
+        "Net allocation includes WAL/cache/rotation changes; measure24h and7days",
+        "Compression adds verified copies; originals retained means no reclaimed bytes",
+        "Append-only catalogs grow even if a future original-retirement batch is approved"
+      ]
+    },
+    "samples": [
+      {
+        "at": "2026-11-06T20:53:35.961211+00:00",
+        "usage_bytes": 2015874330,
+        "tier_usage_bytes": {
+          "active": 6065656,
+          "warm": 582373376,
+          "cold": 194546279,
+          "protected": 517521408,
+          "derived_cache": 5013843,
+          "segment_metadata": 4322598,
+          "catalog_state": 706031170
+        }
+      },
+      {
+        "at": "2026-11-06T23:55:35.531892+00:00",
+        "usage_bytes": 2619143642,
+        "tier_usage_bytes": {
+          "active": 469496,
+          "warm": 948416512,
+          "cold": 316188879,
+          "protected": 517521408,
+          "derived_cache": 65544842,
+          "segment_metadata": 7006430,
+          "catalog_state": 763996075
+        }
+      },
+      {
+        "at": "2026-11-07T00:13:55.035576+00:00",
+        "usage_bytes": 2685388876,
+        "tier_usage_bytes": {
+          "active": 1771416,
+          "warm": 991621120,
+          "cold": 331267700,
+          "protected": 517521408,
+          "derived_cache": 66044554,
+          "segment_metadata": 7347324,
+          "catalog_state": 769815354
+        }
+      }
+    ]
+  }
+}

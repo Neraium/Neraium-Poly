@@ -26,6 +26,8 @@ Phase 15 adds [verified cold recovery, bounded capacity alerts and continuous re
 
 Phase 16 adds [causal qualification history and depth-aware execution checks](docs/phase16-architecture.md). The [readiness report](docs/phase16-readiness.md) records negative research findings and one losing, risk-approved experimental paper round trip. Certification remains blocked. Use `uv run neraium-poly monitor --view readiness` for current evidence and cost readiness.
 
+Phase 17 adds [prospective fixed-candidate research and parent-aware empirical evaluation](docs/phase17-architecture.md). The [readiness report](docs/phase17-readiness.md) documents no supported advantage, preserved paper capital histories, and remaining independent-evidence and storage blockers. Use `uv run neraium-poly monitor --view edge` for research progress; these models have no order authority.
+
 ## Isolated experimental research and SSH monitor
 
 ```sh

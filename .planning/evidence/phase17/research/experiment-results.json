@@ -1,0 +1,464 @@
+{
+  "brier": null,
+  "certification_authority": false,
+  "certification_heldout_events": 0,
+  "certification_training_events": 0,
+  "comparisons": {
+    "depthimbalance": {
+      "research_drift": {
+        "automatic_suspension": false,
+        "status": "no_relative_deterioration_observed"
+      },
+      "strict_event_disjoint_heldout": {
+        "baseline_mae": null,
+        "forecast_accuracy_inference": null,
+        "mae": null,
+        "mean_error": null,
+        "modeled_execution": null,
+        "net_value_inference": null,
+        "paired_mae_improvement": null,
+        "parent_groups": 0,
+        "rmse": null,
+        "samples": 0
+      },
+      "temporal_heldout": {
+        "baseline_mae": 0.0,
+        "forecast_accuracy_inference": null,
+        "mae": 0.004833995616715467,
+        "mean_error": -0.0012743472176633824,
+        "modeled_execution": {
+          "mean_gross_per_share": null,
+          "mean_net_per_share": null,
+          "mean_projected_edge": null,
+          "net_variability": null,
+          "observed_roundtrip_examples": 14,
+          "policy": "frozen predicted net>=0.03 USD/share; no threshold optimization",
+          "selected_examples": 0,
+          "selected_parent_groups": 0,
+          "semantics": "hypothetical quote mark, not actual fill, account P/L or portfolio simulation",
+          "sequential_unit_share_drawdown": null,
+          "unconditional_mean_net_per_share": -0.08867928571428575
+        },
+        "net_value_inference": null,
+        "paired_mae_improvement": -0.004833995616715467,
+        "parent_groups": 3,
+        "rmse": 0.0055600553461459925,
+        "samples": 20
+      },
+      "training": {
+        "baseline_mae": 0.0003254716981132073,
+        "forecast_accuracy_inference": null,
+        "mae": 0.005330894867151882,
+        "mean_error": 0.0004813360090637355,
+        "modeled_execution": {
+          "mean_gross_per_share": null,
+          "mean_net_per_share": null,
+          "mean_projected_edge": null,
+          "net_variability": null,
+          "observed_roundtrip_examples": 43,
+          "policy": "frozen predicted net>=0.03 USD/share; no threshold optimization",
+          "selected_examples": 0,
+          "selected_parent_groups": 0,
+          "semantics": "hypothetical quote mark, not actual fill, account P/L or portfolio simulation",
+          "sequential_unit_share_drawdown": null,
+          "unconditional_mean_net_per_share": -0.09334813953488377
+        },
+        "net_value_inference": null,
+        "paired_mae_improvement": -0.005005423169038674,
+        "parent_groups": 3,
+        "rmse": 0.006397266187467398,
+        "samples": 53
+      },
+      "validation": {
+        "baseline_mae": 0.0,
+        "forecast_accuracy_inference": null,
+        "mae": 0.0068321961384183215,
+        "mean_error": 0.002783807357633445,
+        "modeled_execution": {
+          "mean_gross_per_share": null,
+          "mean_net_per_share": null,
+          "mean_projected_edge": null,
+          "net_variability": null,
+          "observed_roundtrip_examples": 4,
+          "policy": "frozen predicted net>=0.03 USD/share; no threshold optimization",
+          "selected_examples": 0,
+          "selected_parent_groups": 0,
+          "semantics": "hypothetical quote mark, not actual fill, account P/L or portfolio simulation",
+          "sequential_unit_share_drawdown": null,
+          "unconditional_mean_net_per_share": -0.11225000000000003
+        },
+        "net_value_inference": null,
+        "paired_mae_improvement": -0.0068321961384183215,
+        "parent_groups": 3,
+        "rmse": 0.006995325752599628,
+        "samples": 6
+      }
+    },
+    "momentum20": {
+      "research_drift": {
+        "automatic_suspension": false,
+        "status": "no_relative_deterioration_observed"
+      },
+      "strict_event_disjoint_heldout": {
+        "baseline_mae": null,
+        "forecast_accuracy_inference": null,
+        "mae": null,
+        "mean_error": null,
+        "modeled_execution": null,
+        "net_value_inference": null,
+        "paired_mae_improvement": null,
+        "parent_groups": 0,
+        "rmse": null,
+        "samples": 0
+      },
+      "temporal_heldout": {
+        "baseline_mae": 0.0,
+        "forecast_accuracy_inference": null,
+        "mae": 0.0,
+        "mean_error": 0.0,
+        "modeled_execution": {
+          "mean_gross_per_share": null,
+          "mean_net_per_share": null,
+          "mean_projected_edge": null,
+          "net_variability": null,
+          "observed_roundtrip_examples": 14,
+          "policy": "frozen predicted net>=0.03 USD/share; no threshold optimization",
+          "selected_examples": 0,
+          "selected_parent_groups": 0,
+          "semantics": "hypothetical quote mark, not actual fill, account P/L or portfolio simulation",
+          "sequential_unit_share_drawdown": null,
+          "unconditional_mean_net_per_share": -0.08867928571428575
+        },
+        "net_value_inference": null,
+        "paired_mae_improvement": 0.0,
+        "parent_groups": 3,
+        "rmse": 0.0,
+        "samples": 20
+      },
+      "training": {
+        "baseline_mae": 0.0003254716981132073,
+        "forecast_accuracy_inference": null,
+        "mae": 0.0004764150943396231,
+        "mean_error": 0.00017452830188679366,
+        "modeled_execution": {
+          "mean_gross_per_share": null,
+          "mean_net_per_share": null,
+          "mean_projected_edge": null,
+          "net_variability": null,
+          "observed_roundtrip_examples": 43,
+          "policy": "frozen predicted net>=0.03 USD/share; no threshold optimization",
+          "selected_examples": 0,
+          "selected_parent_groups": 0,
+          "semantics": "hypothetical quote mark, not actual fill, account P/L or portfolio simulation",
+          "sequential_unit_share_drawdown": null,
+          "unconditional_mean_net_per_share": -0.09334813953488377
+        },
+        "net_value_inference": null,
+        "paired_mae_improvement": -0.00015094339622641575,
+        "parent_groups": 3,
+        "rmse": 0.001812235667127085,
+        "samples": 53
+      },
+      "validation": {
+        "baseline_mae": 0.0,
+        "forecast_accuracy_inference": null,
+        "mae": 0.0,
+        "mean_error": 0.0,
+        "modeled_execution": {
+          "mean_gross_per_share": null,
+          "mean_net_per_share": null,
+          "mean_projected_edge": null,
+          "net_variability": null,
+          "observed_roundtrip_examples": 4,
+          "policy": "frozen predicted net>=0.03 USD/share; no threshold optimization",
+          "selected_examples": 0,
+          "selected_parent_groups": 0,
+          "semantics": "hypothetical quote mark, not actual fill, account P/L or portfolio simulation",
+          "sequential_unit_share_drawdown": null,
+          "unconditional_mean_net_per_share": -0.11225000000000003
+        },
+        "net_value_inference": null,
+        "paired_mae_improvement": 0.0,
+        "parent_groups": 3,
+        "rmse": 0.0,
+        "samples": 6
+      }
+    },
+    "reversion20": {
+      "research_drift": {
+        "automatic_suspension": false,
+        "status": "no_relative_deterioration_observed"
+      },
+      "strict_event_disjoint_heldout": {
+        "baseline_mae": null,
+        "forecast_accuracy_inference": null,
+        "mae": null,
+        "mean_error": null,
+        "modeled_execution": null,
+        "net_value_inference": null,
+        "paired_mae_improvement": null,
+        "parent_groups": 0,
+        "rmse": null,
+        "samples": 0
+      },
+      "temporal_heldout": {
+        "baseline_mae": 0.0,
+        "forecast_accuracy_inference": null,
+        "mae": 0.0,
+        "mean_error": 0.0,
+        "modeled_execution": {
+          "mean_gross_per_share": null,
+          "mean_net_per_share": null,
+          "mean_projected_edge": null,
+          "net_variability": null,
+          "observed_roundtrip_examples": 14,
+          "policy": "frozen predicted net>=0.03 USD/share; no threshold optimization",
+          "selected_examples": 0,
+          "selected_parent_groups": 0,
+          "semantics": "hypothetical quote mark, not actual fill, account P/L or portfolio simulation",
+          "sequential_unit_share_drawdown": null,
+          "unconditional_mean_net_per_share": -0.08867928571428575
+        },
+        "net_value_inference": null,
+        "paired_mae_improvement": 0.0,
+        "parent_groups": 3,
+        "rmse": 0.0,
+        "samples": 20
+      },
+      "training": {
+        "baseline_mae": 0.0003254716981132073,
+        "forecast_accuracy_inference": null,
+        "mae": 0.00043867924528302033,
+        "mean_error": 0.00040094339622641546,
+        "modeled_execution": {
+          "mean_gross_per_share": null,
+          "mean_net_per_share": null,
+          "mean_projected_edge": null,
+          "net_variability": null,
+          "observed_roundtrip_examples": 43,
+          "policy": "frozen predicted net>=0.03 USD/share; no threshold optimization",
+          "selected_examples": 0,
+          "selected_parent_groups": 0,
+          "semantics": "hypothetical quote mark, not actual fill, account P/L or portfolio simulation",
+          "sequential_unit_share_drawdown": null,
+          "unconditional_mean_net_per_share": -0.09334813953488377
+        },
+        "net_value_inference": null,
+        "paired_mae_improvement": -0.00011320754716981299,
+        "parent_groups": 3,
+        "rmse": 0.0017701001997008925,
+        "samples": 53
+      },
+      "validation": {
+        "baseline_mae": 0.0,
+        "forecast_accuracy_inference": null,
+        "mae": 0.0,
+        "mean_error": 0.0,
+        "modeled_execution": {
+          "mean_gross_per_share": null,
+          "mean_net_per_share": null,
+          "mean_projected_edge": null,
+          "net_variability": null,
+          "observed_roundtrip_examples": 4,
+          "policy": "frozen predicted net>=0.03 USD/share; no threshold optimization",
+          "selected_examples": 0,
+          "selected_parent_groups": 0,
+          "semantics": "hypothetical quote mark, not actual fill, account P/L or portfolio simulation",
+          "sequential_unit_share_drawdown": null,
+          "unconditional_mean_net_per_share": -0.11225000000000003
+        },
+        "net_value_inference": null,
+        "paired_mae_improvement": 0.0,
+        "parent_groups": 3,
+        "rmse": 0.0,
+        "samples": 6
+      }
+    },
+    "unchanged": {
+      "research_drift": {
+        "automatic_suspension": false,
+        "status": "no_relative_deterioration_observed"
+      },
+      "strict_event_disjoint_heldout": {
+        "baseline_mae": null,
+        "forecast_accuracy_inference": null,
+        "mae": null,
+        "mean_error": null,
+        "modeled_execution": null,
+        "net_value_inference": null,
+        "paired_mae_improvement": null,
+        "parent_groups": 0,
+        "rmse": null,
+        "samples": 0
+      },
+      "temporal_heldout": {
+        "baseline_mae": 0.0,
+        "forecast_accuracy_inference": null,
+        "mae": 0.0,
+        "mean_error": 0.0,
+        "modeled_execution": {
+          "mean_gross_per_share": null,
+          "mean_net_per_share": null,
+          "mean_projected_edge": null,
+          "net_variability": null,
+          "observed_roundtrip_examples": 14,
+          "policy": "frozen predicted net>=0.03 USD/share; no threshold optimization",
+          "selected_examples": 0,
+          "selected_parent_groups": 0,
+          "semantics": "hypothetical quote mark, not actual fill, account P/L or portfolio simulation",
+          "sequential_unit_share_drawdown": null,
+          "unconditional_mean_net_per_share": -0.08867928571428575
+        },
+        "net_value_inference": null,
+        "paired_mae_improvement": 0.0,
+        "parent_groups": 3,
+        "rmse": 0.0,
+        "samples": 20
+      },
+      "training": {
+        "baseline_mae": 0.0003254716981132073,
+        "forecast_accuracy_inference": null,
+        "mae": 0.0003254716981132073,
+        "mean_error": 0.00028773584905660455,
+        "modeled_execution": {
+          "mean_gross_per_share": null,
+          "mean_net_per_share": null,
+          "mean_projected_edge": null,
+          "net_variability": null,
+          "observed_roundtrip_examples": 43,
+          "policy": "frozen predicted net>=0.03 USD/share; no threshold optimization",
+          "selected_examples": 0,
+          "selected_parent_groups": 0,
+          "semantics": "hypothetical quote mark, not actual fill, account P/L or portfolio simulation",
+          "sequential_unit_share_drawdown": null,
+          "unconditional_mean_net_per_share": -0.09334813953488377
+        },
+        "net_value_inference": null,
+        "paired_mae_improvement": 0.0,
+        "parent_groups": 3,
+        "rmse": 0.001625634854217049,
+        "samples": 53
+      },
+      "validation": {
+        "baseline_mae": 0.0,
+        "forecast_accuracy_inference": null,
+        "mae": 0.0,
+        "mean_error": 0.0,
+        "modeled_execution": {
+          "mean_gross_per_share": null,
+          "mean_net_per_share": null,
+          "mean_projected_edge": null,
+          "net_variability": null,
+          "observed_roundtrip_examples": 4,
+          "policy": "frozen predicted net>=0.03 USD/share; no threshold optimization",
+          "selected_examples": 0,
+          "selected_parent_groups": 0,
+          "semantics": "hypothetical quote mark, not actual fill, account P/L or portfolio simulation",
+          "sequential_unit_share_drawdown": null,
+          "unconditional_mean_net_per_share": -0.11225000000000003
+        },
+        "net_value_inference": null,
+        "paired_mae_improvement": 0.0,
+        "parent_groups": 3,
+        "rmse": 0.0,
+        "samples": 6
+      }
+    }
+  },
+  "data_provenance": {
+    "accepted_points": 1094,
+    "capture_manifest_sha256": "53c1a5ec710a4103f3ef32d65a4aef410325ceecf376ab3131d6c28ae05c76c1",
+    "created_prospectively": false,
+    "first_target_choice": "entireorderednative source-study window replayedthrough unchangedPhase16CausalHistory; endpointsindependentlyrecomputed",
+    "forecasts": 887,
+    "hypotheses_preregistered_before_future_holdout": true,
+    "matured_pairs": 972,
+    "native_fee_observations_verified": 89,
+    "protocol_sha256": "1459119cf6edcf29bf35c9ad681e65c52735acda584eebb8ef34d5e98beb8270",
+    "raw_source_verified_rows": 816,
+    "studies": 181
+  },
+  "dataset_sha256": "1d2c38226ac1b245646952f5b1559a7b3e16e577b232e103d81cd8f022d90a88",
+  "economics_rejections": {
+    "exit_source_not_in_post_latency_60_to90_second_window": 3
+  },
+  "independent_terminal_outcomes": 0,
+  "inference_minimum_reviewed_groups": 20,
+  "inference_status": "insufficient_independent_evidence",
+  "input_rows": 816,
+  "limitations": [
+    "Reconstructed forecasts unless separately committed prospectively",
+    "Temporal quote episodes are not independent events; strict holdout removes fit parents",
+    "Shared feature windows induce dependence; inference resamples reviewed parent clusters",
+    "Selected quote mark arithmetic is not actual fills, account P/L or portfolio execution",
+    "No score, CI, p value or hypothesis automatically grants strategy authority"
+  ],
+  "log_loss": null,
+  "model_promotion_authority": false,
+  "model_version": "phase17-fixed-bid-mark-family-v1",
+  "multiple_testing": {
+    "alpha": 0.05,
+    "evaluated_hypotheses": 0,
+    "method": "Holm",
+    "planned_hypotheses": 8
+  },
+  "overlapping_parent_groups": 3,
+  "probability_calibration_status": "not_applicable_to_monetary_bid_marks",
+  "rejections": {
+    "overlapping_parent_episode": 628,
+    "purged_boundary_or_crossing_label": 109
+  },
+  "research_only": true,
+  "reviewed_independent_groups": 0,
+  "samples": {
+    "temporal_heldout": 20,
+    "training": 53,
+    "validation": 6
+  },
+  "schema_version": "phase17-purged-mark-experiment-v1",
+  "sensitivity": {
+    "(0, 0)": {
+      "matched_marks": 813,
+      "mean_net_per_share": -0.009374846248462512,
+      "positive_marks": 0,
+      "semantics": "descriptive matched quote arithmetic; fee/slipzero is sensitivity only, not admission"
+    },
+    "(1, 0.01)": {
+      "matched_marks": 813,
+      "mean_net_per_share": -0.07654199569495698,
+      "positive_marks": 0,
+      "semantics": "descriptive matched quote arithmetic; fee/slipzero is sensitivity only, not admission"
+    },
+    "(1.5, 0.02)": {
+      "matched_marks": 813,
+      "mean_net_per_share": -0.12012557041820422,
+      "positive_marks": 0,
+      "semantics": "descriptive matched quote arithmetic; fee/slipzero is sensitivity only, not admission"
+    },
+    "(2, 0.03)": {
+      "matched_marks": 813,
+      "mean_net_per_share": -0.16370914514145146,
+      "positive_marks": 0,
+      "semantics": "descriptive matched quote arithmetic; fee/slipzero is sensitivity only, not admission"
+    }
+  },
+  "split": {
+    "cutoff": "2026-11-07T00:12:32.313223+00:00",
+    "parent_episode_seconds": 60,
+    "purge_seconds": 90,
+    "training_end": "2026-11-06T23:57:32.313223+00:00",
+    "validation_end": "2026-11-07T00:02:32.313223+00:00"
+  },
+  "strict_event_disjoint_heldout_samples": 0,
+  "strict_heldout_parent_groups": 0,
+  "temporal_heldout_parent_groups": 3,
+  "trading_authority": false,
+  "training_or_validation_parent_groups": 3,
+  "verified_unique_rows": 816,
+  "worker": {
+    "cpu_seconds": 28.097867998,
+    "elapsed_seconds": 28.125195228960365,
+    "max_rss_kib": 148948,
+    "pid": 3219254
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "source_commit": "362d58f",
+  "created_at": "2026-11-07T00:31:24.278046+00:00",
+  "artifacts": [
+    {
+      "path": "data/phase17/protocol.json",
+      "bytes": 1417,
+      "sha256": "1459119cf6edcf29bf35c9ad681e65c52735acda584eebb8ef34d5e98beb8270"
+    },
+    {
+      "path": "data/phase17/capture/manifest.json",
+      "bytes": 78278,
+      "sha256": "53c1a5ec710a4103f3ef32d65a4aef410325ceecf376ab3131d6c28ae05c76c1"
+    },
+    {
+      "path": "data/phase17/experiment/rows.json",
+      "bytes": 5900290,
+      "sha256": "8ea593abe3f10e4ee72542bf82bb891f02ee7190c21363b9cabbb9ed376b2a12"
+    },
+    {
+      "path": "data/phase17/experiment/results.json",
+      "bytes": 17427,
+      "sha256": "00f8ae9346d5b1b968aeab1127553852bd68d26767c19aa7aa4fb21aaf7416a2"
+    },
+    {
+      "path": "data/phase17/experiment/microstructure.json",
+      "bytes": 348080,
+      "sha256": "9f8bdfc18df5d0dbe8e953b54446ea61e50a7f3bcceabb06fb824103d73b4f1f"
+    },
+    {
+      "path": "data/phase17/experiment.py",
+      "bytes": 8608,
+      "sha256": "0aa8e66fab38c471ff70631efeaf1e678d2a97b8e9db0ef111578579e7ce62c8"
+    },
+    {
+      "path": "data/phase17/capture.py",
+      "bytes": 2489,
+      "sha256": "cf3b0f3a1dffef536c55ff2f817ead751a1d0276f7f62db648a5d2afb7a9bb6a"
+    },
+    {
+      "path": "data/phase17/storage-analysis.json",
+      "bytes": 127783,
+      "sha256": "90f38a8db3be875d6d34f7cb72d98751511000556e95a6061801be60a56ba7dd"
+    },
+    {
+      "path": "data/phase17/coverage-v2.json",
+      "bytes": 128026,
+      "sha256": "f14bdaebe0e336546c9042a1173fbb06724af7fa718e267ccf0e209e5526ff36"
+    },
+    {
+      "path": "data/phase17/coverage-v2-frame.json",
+      "bytes": 1893032,
+      "sha256": "ea3bdb2613471e4503162641670c22939aa937623d5d7aea2b894d19f2cafe32"
+    },
+    {
+      "path": "data/phase17/strategy-native-analysis.json",
+      "bytes": 396912,
+      "sha256": "bc1b21b37cd2d22886d9f3dd09d88cfcad829110cb074089c9eba954705d0c41"
+    },
+    {
+      "path": "data/phase17/parallel-analysis.json",
+      "bytes": 603,
+      "sha256": "96e9e4768c6504e9b8400c766fdd0c9ee0c94ae1ba49664b51c64ee8516ca47b"
+    },
+    {
+      "path": "data/phase17/recovery-final.json",
+      "bytes": 165700,
+      "sha256": "099a2d12d867938e8362675885e133abd041ad8f0be27a2ac7d2f2006d8fb95c"
+    },
+    {
+      "path": "data/phase17/soak/observations.jsonl",
+      "bytes": 2566595,
+      "sha256": "db58732a37430b1da167a469d72e5f4ff88d703265decf4877e6f53fa19f91b8"
+    }
+  ],
+  "originals_retained": true,
+  "fixture_results_counted_as_authentic": false
+}

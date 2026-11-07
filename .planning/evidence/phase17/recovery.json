@@ -1,0 +1,4322 @@
+{
+  "observed_at": "2026-11-07T00:27:17.286311+00:00",
+  "read_only": true,
+  "phase16_studies": 64,
+  "phase16_checkpoint_sha256": "43b56f9427bab15803748ac5db3a619a90efd1b6e6b9d890ad1e023c0a458bd9",
+  "phase17_checkpoint_sha256": "0266233f4cb009fb568e7d421846f2e2450dbd78f4849a86a124e01504e9031e",
+  "phase17_update_id": "406acfd900717affb68e1e5556413233d03faa1d93b845981bed231de7a02c75",
+  "phase17_state": {
+    "activation_at": "2026-11-07T00:16:51.043217+00:00",
+    "code_sha256": "59b6d7bf1985970968dc1c84d7bebf302c6a414eab138227f091000bca6ca474",
+    "expired": 2,
+    "forecast_points": 88,
+    "last_at": "2026-11-07T00:27:02.577074+00:00",
+    "last_study_id": "2cfe0c0b8aeeaf4f25080130112d4c3602016ded59359dc4cd27c200f938f9f9",
+    "matured_points": 75,
+    "models": {
+      "depthimbalance": {
+        "absolute_error_sum": 0.37537845544826015,
+        "baseline_absolute_error_sum": 0.0,
+        "cost_observations": 75,
+        "net_mark_sum_per_share": -5.8834800000000005,
+        "scored": 75
+      },
+      "momentum20": {
+        "absolute_error_sum": 0.0,
+        "baseline_absolute_error_sum": 0.0,
+        "cost_observations": 75,
+        "net_mark_sum_per_share": -5.8834800000000005,
+        "scored": 75
+      },
+      "reversion20": {
+        "absolute_error_sum": 0.0,
+        "baseline_absolute_error_sum": 0.0,
+        "cost_observations": 75,
+        "net_mark_sum_per_share": -5.8834800000000005,
+        "scored": 75
+      },
+      "unchanged": {
+        "absolute_error_sum": 0.0,
+        "baseline_absolute_error_sum": 0.0,
+        "cost_observations": 75,
+        "net_mark_sum_per_share": -5.8834800000000005,
+        "scored": 75
+      }
+    },
+    "parent_groups": [
+      "991810",
+      "79987",
+      "770450"
+    ],
+    "pending": {
+      "1ca449def54a08e4edd2bf40016a2926e31d9f591d9b066f21452f16afcfda3f": {
+        "baseline": 0.45099999999999996,
+        "certification_authority": false,
+        "created_at": "2026-11-07T00:26:27.860753+00:00",
+        "decision": {
+          "ask": 0.452,
+          "ask_depth_shares": 18254.29,
+          "ask_vwap": 0.45200000000000007,
+          "asks": [
+            {
+              "price": 0.452,
+              "size": 9517.23
+            },
+            {
+              "price": 0.453,
+              "size": 8711.92
+            },
+            {
+              "price": 0.454,
+              "size": 25.14
+            }
+          ],
+          "available_at": "2026-11-07T00:26:17.445143+00:00",
+          "bid": 0.451,
+          "bid_depth_shares": 13442.0,
+          "bid_vwap": 0.45099999999999996,
+          "bids": [
+            {
+              "price": 0.451,
+              "size": 4959.24
+            },
+            {
+              "price": 0.45,
+              "size": 8225.0
+            },
+            {
+              "price": 0.449,
+              "size": 257.76
+            }
+          ],
+          "book_id": "20198ef768403748bd8c713e138b4912fe2ec1968a6e4eebf5b944627e2054ca",
+          "book_sha256": "0707cd456df0fd2700b0cb4894e94a91b98e56bef616c281fbec2b036c110144",
+          "depth_scope": "top3_observed",
+          "event_id": "79987",
+          "execution_evidence_complete": true,
+          "fee_evidence_sha256": "e6b48fac2954c4b6b8a6bac12018e3e68d39100e635ea406e853d6c9f3d5b92c",
+          "fee_observation": {
+            "evidence_id": "3938c839-0a7d-440e-9b0e-36ae4994c43f",
+            "fee_rate": 0.04,
+            "observed_at": "2026-11-07T00:25:02.421380+00:00",
+            "raw_response_ids": [
+              "9295194d55e8fdb5d1e9f9c3bcbf88d9a749836bd75ce7d45e2c34166615351c",
+              "a1857a1eed39f259e88bce6547edabf3309b63500e197bb046a4901cfa18e27c"
+            ],
+            "reference": "/markets-by-token/55764212211467781322980371912612507865974994976253196346176314491480419639168",
+            "source": "https://clob.polymarket.com"
+          },
+          "fee_observation_valid": true,
+          "fee_rate": 0.04,
+          "id": "1ca449def54a08e4edd2bf40016a2926e31d9f591d9b066f21452f16afcfda3f",
+          "imbalance": -0.15182502431672604,
+          "market_id": "679018",
+          "metadata_sha256": "7acb4cb1be071fc5cd345308520a05afc735ed3fdb18631d3c159be33fd27729",
+          "min_order_size": 5.0,
+          "missing_fields": [],
+          "observed_at": "2026-11-07T00:26:20.537415+00:00",
+          "participation": 0.25,
+          "quantity": 5.0,
+          "research_only": true,
+          "rules_sha256": "bc4fb558804c601c3ecddc5f23e43e4c800d84fd45e3a56b2026ed88a2b8b818",
+          "source": "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+          "source_at": "2026-11-07T00:26:17.400000+00:00",
+          "source_frame_id": "6e0718bd34bd3f8451a14506cb12b4e90e972fdd87abd72d9c6683cc53711d9f",
+          "spread": 0.0010000000000000009,
+          "tick_size": 0.001,
+          "timestamp": "2026-11-07T00:26:17.400000+00:00",
+          "token_id": "55764212211467781322980371912612507865974994976253196346176314491480419639168",
+          "trading_authority": false
+        },
+        "decision_at": "2026-11-07T00:26:20.537415+00:00",
+        "event_id": "79987",
+        "feature_cutoff": "2026-11-07T00:26:20.537415+00:00",
+        "feature_point_ids": [
+          "d24c3ee86b72a72d280f99f2c9adaa96753740291ae0f594fd43b7c9d5a8caa1",
+          "8abbdb6bbfda395836f54c60d768201d6ad7caf2ca7b74af81db3f55c0f2584c",
+          "b0b8feda0d4c22bda1367c1b3f987f9f1dafc731828b6037a4dd43611f521f0f",
+          "b9fbe2f49c900cf5b16f9b779090c12f0bb65ba261fa1dcc87f1c59637a7dfb2",
+          "9c0504e736fe5ec41d07c8e0ba8e0f2d4d9420abda4edd509c36f182be00b2fd",
+          "ed99e9f8585a975a4bb6eada643e7bec31771eba59bb322232d61625d0e22561",
+          "7e8ac9cb4bfe52f951653930609450d63e42ed03ef29c313400fdd5ce409e150",
+          "a3271795ba94644a7d94eefb8a7d15c49c7d7aa4e711ebbd9ee6f18f070aefb7",
+          "33108c8ea607c62d89c89aa512d97d93ba793e11ff398052f97ee125346bf659",
+          "0f5b6f3f229f92345dba99e62245627c7a8b2c4af301ebbfc209e306d54cf84a",
+          "32c6ba11ca2e03b125073b9d639147e9a45d72fbe692060e3d7bda676d2f78b2",
+          "052e9d9878b3854b8dca43d3c527cc41bb5c5e48978d7b96cf4a48cede1f7983",
+          "e20f28ba403ac72535f37aeebde1caa3d28c02d1e2edc7eb5bff7d54b3d4a331",
+          "495231e873fde16aaf3d1b22edb8774f848b8307e56f02da18e487f407cd7601",
+          "24d7b220004b10a538985ca046c9f12d6d4e5f3ed300b3aaa34fae882282a26d",
+          "ec836df2bc8dd0f627a1daf85d9698aa896d6a279a0a63daf58949d8dbd18ed9",
+          "72babfd313b0b01d24443dcebab8fb139e04c02b6848bf2b39ff8dbe8d7c05e5",
+          "9a35940d9c61a76bd7c3fd6be2224308ea37c185e9c9c0670aff4a84d70dc090",
+          "51a972e21eceda5c53cabd3d788b58bde255bf1196b803465d4df90a5c6d4f6c",
+          "06d3a1e4fc6564ea7763410aabbfd92613e41403f05c71e80f5d9dfe65d76694"
+        ],
+        "feature_version": "prior20-causal-depth-bids-current-imbalance-v1",
+        "forecast_lead_seconds": 52.676662,
+        "forecasts": {
+          "depthimbalance": 0.4494817497568327,
+          "momentum20": 0.45099999999999996,
+          "reversion20": 0.45099999999999996,
+          "unchanged": 0.45099999999999996
+        },
+        "latest_prior_source_at": "2026-11-07T00:25:59.882000+00:00",
+        "market_id": "679018",
+        "model_version": "phase17-fixed-bid-mark-family-v1",
+        "point_id": "1ca449def54a08e4edd2bf40016a2926e31d9f591d9b066f21452f16afcfda3f",
+        "provenance": {
+          "decision_point_sha256": "5b0ca0daa6bc28dac422553c90bfee658f32d5ca5f6a9d244811007557f9fcc6",
+          "feature_points_sha256": "6660b6dfabb7ae8cd8a5cf0d876183e5edd0d16352b63998bbd8d87e921fb2e2",
+          "rules_sha256": "bc4fb558804c601c3ecddc5f23e43e4c800d84fd45e3a56b2026ed88a2b8b818",
+          "source_verification": "caller_raw_replay_required"
+        },
+        "reconstructed": true,
+        "research_only": true,
+        "semantics": "research monetary bid marks, not event probabilities",
+        "source_study_id": "23bdf4a6d40b8256e435a98916c58674801f07f09d4311ff434b4476c1e29dd4",
+        "target_at": "2026-11-07T00:27:20.537415+00:00",
+        "token_id": "55764212211467781322980371912612507865974994976253196346176314491480419639168",
+        "trading_authority": false,
+        "uncertainty": {
+          "interval": null,
+          "status": "uncalibrated_monetary_mark_hypotheses"
+        }
+      },
+      "3d7b8ebb196654830b66889f50ad0c7005286985e3e3020282591ac52932a88a": {
+        "baseline": 0.12,
+        "certification_authority": false,
+        "created_at": "2026-11-07T00:26:27.860753+00:00",
+        "decision": {
+          "ask": 0.13,
+          "ask_depth_shares": 231772.94,
+          "ask_vwap": 0.13,
+          "asks": [
+            {
+              "price": 0.13,
+              "size": 61046.86
+            },
+            {
+              "price": 0.14,
+              "size": 109782.13
+            },
+            {
+              "price": 0.15,
+              "size": 60943.95
+            }
+          ],
+          "available_at": "2026-11-07T00:26:19.962087+00:00",
+          "bid": 0.12,
+          "bid_depth_shares": 3940093.46,
+          "bid_vwap": 0.12,
+          "bids": [
+            {
+              "price": 0.12,
+              "size": 27997.34
+            },
+            {
+              "price": 0.11,
+              "size": 454443.09
+            },
+            {
+              "price": 0.1,
+              "size": 3457653.03
+            }
+          ],
+          "book_id": "901f24711f45f6b98fcc87b5cb428bba19f520bed8b167aeb7bd5477d682d15e",
+          "book_sha256": "7e601001cc36033465a621ffaffc690ee8bb1263b75ef2f2c7ba48f7cd9c6118",
+          "depth_scope": "top3_observed",
+          "event_id": "79987",
+          "execution_evidence_complete": true,
+          "fee_evidence_sha256": "a5d242f23d56c33823e480a3960e8edabc98d15576c680075205f65dde7cfd13",
+          "fee_observation": {
+            "evidence_id": "0b95431d-42e9-40de-88cf-9a9cf8d445f5",
+            "fee_rate": 0.04,
+            "observed_at": "2026-11-07T00:25:34.007284+00:00",
+            "raw_response_ids": [
+              "028f15e1ffe029c70fc8c2f957689c9afff0ebc3a175fe241608a772a5466982",
+              "a4a2040f68de1ebc970a66841de186d2f356c4eba99cad63bfae2bce0194f13b"
+            ],
+            "reference": "/markets-by-token/88550326946437280548248031502775629664259630024343210447063397951616199975032",
+            "source": "https://clob.polymarket.com"
+          },
+          "fee_observation_valid": true,
+          "fee_rate": 0.04,
+          "id": "3d7b8ebb196654830b66889f50ad0c7005286985e3e3020282591ac52932a88a",
+          "imbalance": 0.8888876499017323,
+          "market_id": "679030",
+          "metadata_sha256": "36cc4b1a013b76c1c2581db903cd9648a36fe2419a7ca96a4dff980ad34df00b",
+          "min_order_size": 5.0,
+          "missing_fields": [],
+          "observed_at": "2026-11-07T00:26:20.537415+00:00",
+          "participation": 0.25,
+          "quantity": 5.0,
+          "research_only": true,
+          "rules_sha256": "fc33023f3e1ab43919c838a9be9c33769540ded007eb7557ce38362ea58353a0",
+          "source": "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+          "source_at": "2026-11-07T00:26:19.918000+00:00",
+          "source_frame_id": "6e0718bd34bd3f8451a14506cb12b4e90e972fdd87abd72d9c6683cc53711d9f",
+          "spread": 0.010000000000000009,
+          "tick_size": 0.01,
+          "timestamp": "2026-11-07T00:26:19.918000+00:00",
+          "token_id": "88550326946437280548248031502775629664259630024343210447063397951616199975032",
+          "trading_authority": false
+        },
+        "decision_at": "2026-11-07T00:26:20.537415+00:00",
+        "event_id": "79987",
+        "feature_cutoff": "2026-11-07T00:26:20.537415+00:00",
+        "feature_point_ids": [
+          "7926972b2820f8ae98b02a3e775131d3b96f05ab0ce0ac4a3fb87e34b0d1b503",
+          "d8d0e2a3cb828830e15c570ead6392d68c548bb656ce832127a1b768c006e6c2",
+          "166a9627dd53f5b210dcf7e4f5b6dcf13c2400402fd27e9e63462c8d4b57fa6f",
+          "06ddf2c1696e0f07e1dc6bda4a0338fabf41ce1fb4c50dec849a5e7ecc9499ce",
+          "2a30fe6c9278f980717c2eb579bf5c7cd887a01bb407f0c07f9aada6fae61503",
+          "1e0322cc15f636548f14801555b2c0bd4c9c1b6fec593e5b0cd1b2dbe7a1fc61",
+          "aa175be6301cf0b1627ad12c7460990ca4e51aaaf5115d9a5351a391652062b4",
+          "c2230e56ceb55e3bf6721f8c94d9105145bc0350dcae55e293a7f268606f660e",
+          "d3f701910d1dbcd338e69c0c8a780c4127fdcc98de760fe2fac56ec35aab7588",
+          "5194baa62e79eb2b7fc23f5fa4e97d54c235388bd7c2e4ddb15e651fe9764c21",
+          "f7230685125afee9aa2f2877ae0051d79d4c1dbb72ab821e773ec7cf41e853f0",
+          "54aaeedca83f9b3f1f691dafb6f6f60f6acd190da33f342f9fc1151d15e7b4a1",
+          "29bdb5e45567c9996fa476ca81dd5e39f946d2ed81774fdfa46978c909ebcea9",
+          "aadd45b354f8f5eec120f0a9a689b3d826cb56b1c3749a161c4e054709f8cdf0",
+          "33c09173ee4d741f6a6180208080afc85f5fbccfb4aa6eaf8966ed603004afc0",
+          "24b50c734db6da019931984b679d63a25eb1420b6fc04e1e387a369978f7a242",
+          "54b4dae730887f5f00b38c5b3a568d6bca9bf4e3ba942b7a5e2cf41e78a14946",
+          "b398efaca7c93b7aacabe13dc379b8a7c039474d15216a5f2b090fa3e0cec7e6",
+          "bd24a4fb5aa5d384a0d805bad92e397f029d06d589c82da69618762ad1b1f350",
+          "95e9d6a7aebecdb0bda5521f6ee933da8a69813b8e0b05e47cb9ede861471cde"
+        ],
+        "feature_version": "prior20-causal-depth-bids-current-imbalance-v1",
+        "forecast_lead_seconds": 52.676662,
+        "forecasts": {
+          "depthimbalance": 0.1288888764990173,
+          "momentum20": 0.12,
+          "reversion20": 0.12,
+          "unchanged": 0.12
+        },
+        "latest_prior_source_at": "2026-11-07T00:25:59.989000+00:00",
+        "market_id": "679030",
+        "model_version": "phase17-fixed-bid-mark-family-v1",
+        "point_id": "3d7b8ebb196654830b66889f50ad0c7005286985e3e3020282591ac52932a88a",
+        "provenance": {
+          "decision_point_sha256": "af596d9011efb85020ffd485f293debf4c66c75a11710dd4a5551fa4faee2031",
+          "feature_points_sha256": "e21584eee6adc08ad97af5fe11254ec235ed162fa9a52b347c3ec3cd792ac06a",
+          "rules_sha256": "fc33023f3e1ab43919c838a9be9c33769540ded007eb7557ce38362ea58353a0",
+          "source_verification": "caller_raw_replay_required"
+        },
+        "reconstructed": true,
+        "research_only": true,
+        "semantics": "research monetary bid marks, not event probabilities",
+        "source_study_id": "23bdf4a6d40b8256e435a98916c58674801f07f09d4311ff434b4476c1e29dd4",
+        "target_at": "2026-11-07T00:27:20.537415+00:00",
+        "token_id": "88550326946437280548248031502775629664259630024343210447063397951616199975032",
+        "trading_authority": false,
+        "uncertainty": {
+          "interval": null,
+          "status": "uncalibrated_monetary_mark_hypotheses"
+        }
+      },
+      "4d85a69252be2f3a2acf2abe29d87c868a8e5c73e1585e9f3aebbb6ae56c7f39": {
+        "baseline": 0.76,
+        "certification_authority": false,
+        "created_at": "2026-11-07T00:26:27.860753+00:00",
+        "decision": {
+          "ask": 0.77,
+          "ask_depth_shares": 947265.05,
+          "ask_vwap": 0.77,
+          "asks": [
+            {
+              "price": 0.77,
+              "size": 173073.99
+            },
+            {
+              "price": 0.78,
+              "size": 245969.69
+            },
+            {
+              "price": 0.79,
+              "size": 528221.37
+            }
+          ],
+          "available_at": "2026-11-07T00:26:15.069389+00:00",
+          "bid": 0.76,
+          "bid_depth_shares": 216997.51,
+          "bid_vwap": 0.76,
+          "bids": [
+            {
+              "price": 0.76,
+              "size": 10590.02
+            },
+            {
+              "price": 0.75,
+              "size": 16847.79
+            },
+            {
+              "price": 0.74,
+              "size": 189559.7
+            }
+          ],
+          "book_id": "1d2a8c022c8b6462a24036fded5144de725ee44f391576ea9255ca71b73fac3b",
+          "book_sha256": "057e814e7d98e586a1e837f900f2f2accf578e88f01e4e70f21ffcfda33ebf3f",
+          "depth_scope": "top3_observed",
+          "event_id": "770450",
+          "execution_evidence_complete": true,
+          "fee_evidence_sha256": "eb3d02f255b8208c6c2307c5421fe33b48fdcda1de4a192c7ee6f698bf6abed5",
+          "fee_observation": {
+            "evidence_id": "aa43a764-ea18-4855-b929-535775247f11",
+            "fee_rate": 0.05,
+            "observed_at": "2026-11-07T00:25:27.872215+00:00",
+            "raw_response_ids": [
+              "9947e35db0d062d82873c27cbeefdc78c0251cf6e4c4682b1f946e36085377f4",
+              "4eb0cb58f36fed77aa83c537497001ce5e87fc9052f4bacb0657d22f3a70e0cd"
+            ],
+            "reference": "/markets-by-token/111662129652828266889360374468657435151479595863413519836161861837506140152890",
+            "source": "https://clob.polymarket.com"
+          },
+          "fee_observation_valid": true,
+          "fee_rate": 0.05,
+          "id": "4d85a69252be2f3a2acf2abe29d87c868a8e5c73e1585e9f3aebbb6ae56c7f39",
+          "imbalance": -0.6272361279057191,
+          "market_id": "3215008",
+          "metadata_sha256": "6dbac38b73bdc3cb8a9c058bdb68670a32fa4cfb58d943c1bb745f9f00db9e94",
+          "min_order_size": 5.0,
+          "missing_fields": [],
+          "observed_at": "2026-11-07T00:26:20.537415+00:00",
+          "participation": 0.25,
+          "quantity": 5.0,
+          "research_only": true,
+          "rules_sha256": "6a8219314139bfb3d68e34ce0ff318ef8852d90499d78b5c6892f97588e1dd6a",
+          "source": "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+          "source_at": "2026-11-07T00:26:15.029000+00:00",
+          "source_frame_id": "6e0718bd34bd3f8451a14506cb12b4e90e972fdd87abd72d9c6683cc53711d9f",
+          "spread": 0.010000000000000009,
+          "tick_size": 0.01,
+          "timestamp": "2026-11-07T00:26:15.029000+00:00",
+          "token_id": "111662129652828266889360374468657435151479595863413519836161861837506140152890",
+          "trading_authority": false
+        },
+        "decision_at": "2026-11-07T00:26:20.537415+00:00",
+        "event_id": "770450",
+        "feature_cutoff": "2026-11-07T00:26:20.537415+00:00",
+        "feature_point_ids": [
+          "14e297890fa91e7c9ceba69f5c132851fa60b438a513768969221b139f39de08",
+          "9d99e575f1da651f0667590b1c6375fe5416466b33ebf290e688ef4dde25b640",
+          "d74eedf581d95a356d4e7a987cd1893c67b25b635485d8cee1f36242143ead29",
+          "a4fbe4fd913521fbf0253805db6b9cc5f85ff28a45aaa9cca467ac437ba60171",
+          "3eb642955ab80d38fd61901ef8b3a01b1ce7a00c6237a38a239f7e035f9001b0",
+          "157a9b00c8c1c04a6fd0935814b17b200e99fe9144296b8a8d2956234eb4f00c",
+          "2dd609b16816e6f31de095286581dc1ffd2a22ecd0cacd125fb1147502f8e4ef",
+          "81025c4b51c82be10e400b253cf706c1ce8043ccf4dbd2326ffdda5c491a1f4d",
+          "ce31474a3cf236652c6ecf8fdb46a1f76ba60bf10f30b193cced1a6748d1d5e6",
+          "29b3ffd8a21cd3a1f180e52c4485820cb78a7a6dfc14ffa2edc0c78659d6d496",
+          "cb02e4fc4f8a15649ff5524bf604f4f5c3573931f21f186bbf7e42c36d87cf30",
+          "fb8fba8c3c04f7b4c5c3ca245439c5f1683bb7600dfc80ace92f8ac12192e81c",
+          "4b809305f29ce351739427c9cb5d4e30bf1d6f466bae87f5a8885b340308f10b",
+          "2b162cc2dba491af84222bbfb3dd1e965b0a0d0d3244702443c0377ad5b5a753",
+          "8460420b6d48fb0d18f6ba83adb046da9945ede6652ca964eda1a87ecb10f165",
+          "a610a54f329e8a70e0ce40bb1ea4b9b1f171ff5d12a07bf3b8c565959af87c36",
+          "54da7f461679bd6b82b3ff4c9a49aa817501a14d66566e5f0b3762be5791a5df",
+          "9b4d8ef939a45b46d11c154f7d4715293ad6e0d0eaef9652f55ce24d7740e2d1",
+          "b48b72101561001b027dd0cf810ced3b3cf7fbafd55a87af6a19d9f281905536",
+          "2c9fc6f7fa7c637779a56e8d125ddf089b190e8989da8e09a3236a1cdd57a5ff"
+        ],
+        "feature_version": "prior20-causal-depth-bids-current-imbalance-v1",
+        "forecast_lead_seconds": 52.676662,
+        "forecasts": {
+          "depthimbalance": 0.7537276387209428,
+          "momentum20": 0.76,
+          "reversion20": 0.76,
+          "unchanged": 0.76
+        },
+        "latest_prior_source_at": "2026-11-07T00:25:57.727000+00:00",
+        "market_id": "3215008",
+        "model_version": "phase17-fixed-bid-mark-family-v1",
+        "point_id": "4d85a69252be2f3a2acf2abe29d87c868a8e5c73e1585e9f3aebbb6ae56c7f39",
+        "provenance": {
+          "decision_point_sha256": "7bbb128c3a87a218a0a502f4ab48f97e34afbb1ee38c2f9f3fad88f154e9c194",
+          "feature_points_sha256": "a3f63112624d95f89c25bbc110c3508e0431371ad8f99dcf3b7eb247fc76e1da",
+          "rules_sha256": "6a8219314139bfb3d68e34ce0ff318ef8852d90499d78b5c6892f97588e1dd6a",
+          "source_verification": "caller_raw_replay_required"
+        },
+        "reconstructed": true,
+        "research_only": true,
+        "semantics": "research monetary bid marks, not event probabilities",
+        "source_study_id": "23bdf4a6d40b8256e435a98916c58674801f07f09d4311ff434b4476c1e29dd4",
+        "target_at": "2026-11-07T00:27:20.537415+00:00",
+        "token_id": "111662129652828266889360374468657435151479595863413519836161861837506140152890",
+        "trading_authority": false,
+        "uncertainty": {
+          "interval": null,
+          "status": "uncalibrated_monetary_mark_hypotheses"
+        }
+      },
+      "51a972e21eceda5c53cabd3d788b58bde255bf1196b803465d4df90a5c6d4f6c": {
+        "baseline": 0.45099999999999996,
+        "certification_authority": false,
+        "created_at": "2026-11-07T00:25:55.140583+00:00",
+        "decision": {
+          "ask": 0.452,
+          "ask_depth_shares": 18254.29,
+          "ask_vwap": 0.45200000000000007,
+          "asks": [
+            {
+              "price": 0.452,
+              "size": 9517.23
+            },
+            {
+              "price": 0.453,
+              "size": 8711.92
+            },
+            {
+              "price": 0.454,
+              "size": 25.14
+            }
+          ],
+          "available_at": "2026-11-07T00:25:52.510691+00:00",
+          "bid": 0.451,
+          "bid_depth_shares": 13442.0,
+          "bid_vwap": 0.45099999999999996,
+          "bids": [
+            {
+              "price": 0.451,
+              "size": 4959.24
+            },
+            {
+              "price": 0.45,
+              "size": 8225.0
+            },
+            {
+              "price": 0.449,
+              "size": 257.76
+            }
+          ],
+          "book_id": "0532ead5da561624dd29b4e5510825dfb2df1dc6a210724201eba97bb4775067",
+          "book_sha256": "c766a4e59d0f4aae6af93df160b1de985c360f8dc673c939960995fc897a4dce",
+          "depth_scope": "top3_observed",
+          "event_id": "79987",
+          "execution_evidence_complete": true,
+          "fee_evidence_sha256": "e6b48fac2954c4b6b8a6bac12018e3e68d39100e635ea406e853d6c9f3d5b92c",
+          "fee_observation": {
+            "evidence_id": "3938c839-0a7d-440e-9b0e-36ae4994c43f",
+            "fee_rate": 0.04,
+            "observed_at": "2026-11-07T00:25:02.421380+00:00",
+            "raw_response_ids": [
+              "9295194d55e8fdb5d1e9f9c3bcbf88d9a749836bd75ce7d45e2c34166615351c",
+              "a1857a1eed39f259e88bce6547edabf3309b63500e197bb046a4901cfa18e27c"
+            ],
+            "reference": "/markets-by-token/55764212211467781322980371912612507865974994976253196346176314491480419639168",
+            "source": "https://clob.polymarket.com"
+          },
+          "fee_observation_valid": true,
+          "fee_rate": 0.04,
+          "id": "51a972e21eceda5c53cabd3d788b58bde255bf1196b803465d4df90a5c6d4f6c",
+          "imbalance": -0.15182502431672604,
+          "market_id": "679018",
+          "metadata_sha256": "7acb4cb1be071fc5cd345308520a05afc735ed3fdb18631d3c159be33fd27729",
+          "min_order_size": 5.0,
+          "missing_fields": [],
+          "observed_at": "2026-11-07T00:25:53.847136+00:00",
+          "participation": 0.25,
+          "quantity": 5.0,
+          "research_only": true,
+          "rules_sha256": "bc4fb558804c601c3ecddc5f23e43e4c800d84fd45e3a56b2026ed88a2b8b818",
+          "source": "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+          "source_at": "2026-11-07T00:25:52.298000+00:00",
+          "source_frame_id": "2876339c32a559c97f167bc636a82e7f89b5395f2020bfe2b5ac24224dfc9b27",
+          "spread": 0.0010000000000000009,
+          "tick_size": 0.001,
+          "timestamp": "2026-11-07T00:25:52.298000+00:00",
+          "token_id": "55764212211467781322980371912612507865974994976253196346176314491480419639168",
+          "trading_authority": false
+        },
+        "decision_at": "2026-11-07T00:25:53.847136+00:00",
+        "event_id": "79987",
+        "feature_cutoff": "2026-11-07T00:25:53.847136+00:00",
+        "feature_point_ids": [
+          "1cd72257e6ce081888197a74fda2dbbad30e2e1a277e62d90b7971bb047e8c9c",
+          "623779eef0190126ba42d6b9afa8359770c12c9c88ecdc568c3cca14db5fdb5f",
+          "d24c3ee86b72a72d280f99f2c9adaa96753740291ae0f594fd43b7c9d5a8caa1",
+          "8abbdb6bbfda395836f54c60d768201d6ad7caf2ca7b74af81db3f55c0f2584c",
+          "b0b8feda0d4c22bda1367c1b3f987f9f1dafc731828b6037a4dd43611f521f0f",
+          "b9fbe2f49c900cf5b16f9b779090c12f0bb65ba261fa1dcc87f1c59637a7dfb2",
+          "9c0504e736fe5ec41d07c8e0ba8e0f2d4d9420abda4edd509c36f182be00b2fd",
+          "ed99e9f8585a975a4bb6eada643e7bec31771eba59bb322232d61625d0e22561",
+          "7e8ac9cb4bfe52f951653930609450d63e42ed03ef29c313400fdd5ce409e150",
+          "a3271795ba94644a7d94eefb8a7d15c49c7d7aa4e711ebbd9ee6f18f070aefb7",
+          "33108c8ea607c62d89c89aa512d97d93ba793e11ff398052f97ee125346bf659",
+          "0f5b6f3f229f92345dba99e62245627c7a8b2c4af301ebbfc209e306d54cf84a",
+          "32c6ba11ca2e03b125073b9d639147e9a45d72fbe692060e3d7bda676d2f78b2",
+          "052e9d9878b3854b8dca43d3c527cc41bb5c5e48978d7b96cf4a48cede1f7983",
+          "e20f28ba403ac72535f37aeebde1caa3d28c02d1e2edc7eb5bff7d54b3d4a331",
+          "495231e873fde16aaf3d1b22edb8774f848b8307e56f02da18e487f407cd7601",
+          "24d7b220004b10a538985ca046c9f12d6d4e5f3ed300b3aaa34fae882282a26d",
+          "ec836df2bc8dd0f627a1daf85d9698aa896d6a279a0a63daf58949d8dbd18ed9",
+          "72babfd313b0b01d24443dcebab8fb139e04c02b6848bf2b39ff8dbe8d7c05e5",
+          "9a35940d9c61a76bd7c3fd6be2224308ea37c185e9c9c0670aff4a84d70dc090"
+        ],
+        "feature_version": "prior20-causal-depth-bids-current-imbalance-v1",
+        "forecast_lead_seconds": 58.706553,
+        "forecasts": {
+          "depthimbalance": 0.4494817497568327,
+          "momentum20": 0.45099999999999996,
+          "reversion20": 0.45099999999999996,
+          "unchanged": 0.45099999999999996
+        },
+        "latest_prior_source_at": "2026-11-07T00:25:29.542000+00:00",
+        "market_id": "679018",
+        "model_version": "phase17-fixed-bid-mark-family-v1",
+        "point_id": "51a972e21eceda5c53cabd3d788b58bde255bf1196b803465d4df90a5c6d4f6c",
+        "provenance": {
+          "decision_point_sha256": "6653193669f3ee4a2f8bd7b5e3209d112ae7c88302b3d90781f489a61e96edbf",
+          "feature_points_sha256": "f36e67d5067aba7a8544fe49a03ea3a79549a8a8cdeb1e0d9dba0da76f2aaa19",
+          "rules_sha256": "bc4fb558804c601c3ecddc5f23e43e4c800d84fd45e3a56b2026ed88a2b8b818",
+          "source_verification": "caller_raw_replay_required"
+        },
+        "reconstructed": true,
+        "research_only": true,
+        "semantics": "research monetary bid marks, not event probabilities",
+        "source_study_id": "f699f607402a621011c5b2361b8bdca41ce7ed0127596a46a0d3a2fb56ceb54c",
+        "target_at": "2026-11-07T00:26:53.847136+00:00",
+        "token_id": "55764212211467781322980371912612507865974994976253196346176314491480419639168",
+        "trading_authority": false,
+        "uncertainty": {
+          "interval": null,
+          "status": "uncalibrated_monetary_mark_hypotheses"
+        }
+      },
+      "582e30877146bce3ee38b7d07b539220503723df92ea8078c5c61adec7722f85": {
+        "baseline": 0.53,
+        "certification_authority": false,
+        "created_at": "2026-11-07T00:25:55.140583+00:00",
+        "decision": {
+          "ask": 0.54,
+          "ask_depth_shares": 480210.0,
+          "ask_vwap": 0.54,
+          "asks": [
+            {
+              "price": 0.54,
+              "size": 18630.77
+            },
+            {
+              "price": 0.55,
+              "size": 42659.65
+            },
+            {
+              "price": 0.56,
+              "size": 418919.58
+            }
+          ],
+          "available_at": "2026-11-07T00:25:52.581832+00:00",
+          "bid": 0.53,
+          "bid_depth_shares": 295762.77999999997,
+          "bid_vwap": 0.53,
+          "bids": [
+            {
+              "price": 0.53,
+              "size": 54777.97
+            },
+            {
+              "price": 0.52,
+              "size": 37983.6
+            },
+            {
+              "price": 0.51,
+              "size": 203001.21
+            }
+          ],
+          "book_id": "77afeafc83584c80803c9a94c7851ac50845a2b3646b613b167c5c330a4e52f5",
+          "book_sha256": "93ca3dd2070fc1c45197e30661029faf6998d6e2c47588465a6488d833dc68cf",
+          "depth_scope": "top3_observed",
+          "event_id": "991810",
+          "execution_evidence_complete": true,
+          "fee_evidence_sha256": "92f85bb3a0613e8acc981cdcde014c60bba20916edf6f43e54145bb5ad5bbcb8",
+          "fee_observation": {
+            "evidence_id": "3e21e8f3-b27a-4008-82a6-c54b222e0af1",
+            "fee_rate": 0.05,
+            "observed_at": "2026-11-07T00:22:12.116581+00:00",
+            "raw_response_ids": [
+              "7d308dc0535c769e739754f09c7da826e9dd962b0be18941541b2ec14cf597d7",
+              "36e4f0f216595bfe3f1c5044c1d93f9c7ff70040ba907d05c69745ce002f2a93"
+            ],
+            "reference": "/markets-by-token/15907269680083135091620869613557617263613890890387514554477997501123964677519",
+            "source": "https://clob.polymarket.com"
+          },
+          "fee_observation_valid": true,
+          "fee_rate": 0.05,
+          "id": "582e30877146bce3ee38b7d07b539220503723df92ea8078c5c61adec7722f85",
+          "imbalance": -0.23769805430546162,
+          "market_id": "4397022",
+          "metadata_sha256": "47d593e537c0b9cb3b92d66a232cacd0b1cbadfba0184f91c307f6510233345a",
+          "min_order_size": 5.0,
+          "missing_fields": [],
+          "observed_at": "2026-11-07T00:25:53.847136+00:00",
+          "participation": 0.25,
+          "quantity": 5.0,
+          "research_only": true,
+          "rules_sha256": "a952258a08447962ffeb76a459f861b9c0f0abcc4f9cd79f4be52fafc7df705a",
+          "source": "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+          "source_at": "2026-11-07T00:25:52.415000+00:00",
+          "source_frame_id": "2876339c32a559c97f167bc636a82e7f89b5395f2020bfe2b5ac24224dfc9b27",
+          "spread": 0.010000000000000009,
+          "tick_size": 0.01,
+          "timestamp": "2026-11-07T00:25:52.415000+00:00",
+          "token_id": "15907269680083135091620869613557617263613890890387514554477997501123964677519",
+          "trading_authority": false
+        },
+        "decision_at": "2026-11-07T00:25:53.847136+00:00",
+        "event_id": "991810",
+        "feature_cutoff": "2026-11-07T00:25:53.847136+00:00",
+        "feature_point_ids": [
+          "16c5c135277aed88be2bf19756c206208041ed09532d2089f80b53a9fea6071a",
+          "b068637c3a484579ebc7cc06321a0b2ac5b504404d62a9b51d5daacdf00c6f82",
+          "a97863a22046f4beddd5101a4e1cce7a53493794e6b4cdbae5e921513316aded",
+          "8d553d668e3fdc1084a504c74d05c1c4c3a89152f7938035f5f16d2797459d34",
+          "75b6cfcb6cbf05a41eee73276518d527b21fff82ebff37087e0b2a1b117d334d",
+          "37459598c9e997521134c311c23648da3219a06966be4bf42760aa8a2860405d",
+          "4dafc2955ec0935fd5002feca24c26f4625255215dad88736e151334f493397a",
+          "fb07e8f14347b6a32642d13df6c98f19370ec85205ee25f5aee438b9f40da886",
+          "e899dc8983626f364a0e28ae1f778c2df65cf336927961e38ffa3b823b8a1206",
+          "d564a5c6d3e2edbdb7ea832eea73c634922303075d5ae40baf67f3b0c5c5f11b",
+          "ba00249db9141728b790f638e604fd77360b6e4afe1418113a3d0aba6f85ca82",
+          "8488aee961bba77c9d69518158046d75bc1c03a78aa909edab83699492fbe283",
+          "b63bd151b92eaeefef8df4f90249a31c1ab67423b40049aa1b9e6f19f1cbfa32",
+          "1ef60efcdf022db10baf956bdd3ad054a86e3f31edd5a325966570e30964521a",
+          "0822193f4436a437ec346511dbe93aacde31f6228a33f82841384a1e24c4e5cd",
+          "7ccd52ab52d2912160f7c62efca33847ad5369f0de215639c66385ae0ee38b62",
+          "5ca1e8589eb48464d46d9beaa9738de242ceb5a88eded024663d61fdb3a7288f",
+          "dae4aeb600a5531e1e5de4994fb4c555dabfc6841cfe0eee937e8d926fbbbcb6",
+          "7053db2608d7d022ade43e0d1619fb6837715fcc88147250fc9879cdbd177e4f",
+          "a052a553797b5cee12a970a1897a6e0d8cf3cb8cac75d3f8aeb4a9dd1d66711e"
+        ],
+        "feature_version": "prior20-causal-depth-bids-current-imbalance-v1",
+        "forecast_lead_seconds": 58.706553,
+        "forecasts": {
+          "depthimbalance": 0.5276230194569455,
+          "momentum20": 0.53,
+          "reversion20": 0.53,
+          "unchanged": 0.53
+        },
+        "latest_prior_source_at": "2026-11-07T00:25:30.873000+00:00",
+        "market_id": "4397022",
+        "model_version": "phase17-fixed-bid-mark-family-v1",
+        "point_id": "582e30877146bce3ee38b7d07b539220503723df92ea8078c5c61adec7722f85",
+        "provenance": {
+          "decision_point_sha256": "19954ca6e74d2c0743c9c12a115a827ab2dd1b0b3650198f56bb65d17ed3b5d0",
+          "feature_points_sha256": "61424060df3002ef350f5ecfe6dd829b2aa66d3a89f4411469aba81d938c420c",
+          "rules_sha256": "a952258a08447962ffeb76a459f861b9c0f0abcc4f9cd79f4be52fafc7df705a",
+          "source_verification": "caller_raw_replay_required"
+        },
+        "reconstructed": true,
+        "research_only": true,
+        "semantics": "research monetary bid marks, not event probabilities",
+        "source_study_id": "f699f607402a621011c5b2361b8bdca41ce7ed0127596a46a0d3a2fb56ceb54c",
+        "target_at": "2026-11-07T00:26:53.847136+00:00",
+        "token_id": "15907269680083135091620869613557617263613890890387514554477997501123964677519",
+        "trading_authority": false,
+        "uncertainty": {
+          "interval": null,
+          "status": "uncalibrated_monetary_mark_hypotheses"
+        }
+      },
+      "723486d123540bd872d70143ece58799b5610392127890f3fe4c0bd9dfeb6eef": {
+        "baseline": 0.45099999999999996,
+        "certification_authority": false,
+        "created_at": "2026-11-07T00:27:02.577074+00:00",
+        "decision": {
+          "ask": 0.452,
+          "ask_depth_shares": 18254.29,
+          "ask_vwap": 0.45200000000000007,
+          "asks": [
+            {
+              "price": 0.452,
+              "size": 9517.23
+            },
+            {
+              "price": 0.453,
+              "size": 8711.92
+            },
+            {
+              "price": 0.454,
+              "size": 25.14
+            }
+          ],
+          "available_at": "2026-11-07T00:26:52.694923+00:00",
+          "bid": 0.451,
+          "bid_depth_shares": 13442.0,
+          "bid_vwap": 0.45099999999999996,
+          "bids": [
+            {
+              "price": 0.451,
+              "size": 4959.24
+            },
+            {
+              "price": 0.45,
+              "size": 8225.0
+            },
+            {
+              "price": 0.449,
+              "size": 257.76
+            }
+          ],
+          "book_id": "3f29b2bca142ad31d2f326b4cc93f3334d17a13e185ba5d91113651005e97b47",
+          "book_sha256": "3edf612e4c4b6a5b87f352a73bf82125e5b240469a379b25dc9604f0fce91ea2",
+          "depth_scope": "top3_observed",
+          "event_id": "79987",
+          "execution_evidence_complete": true,
+          "fee_evidence_sha256": "e6b48fac2954c4b6b8a6bac12018e3e68d39100e635ea406e853d6c9f3d5b92c",
+          "fee_observation": {
+            "evidence_id": "3938c839-0a7d-440e-9b0e-36ae4994c43f",
+            "fee_rate": 0.04,
+            "observed_at": "2026-11-07T00:25:02.421380+00:00",
+            "raw_response_ids": [
+              "9295194d55e8fdb5d1e9f9c3bcbf88d9a749836bd75ce7d45e2c34166615351c",
+              "a1857a1eed39f259e88bce6547edabf3309b63500e197bb046a4901cfa18e27c"
+            ],
+            "reference": "/markets-by-token/55764212211467781322980371912612507865974994976253196346176314491480419639168",
+            "source": "https://clob.polymarket.com"
+          },
+          "fee_observation_valid": true,
+          "fee_rate": 0.04,
+          "id": "723486d123540bd872d70143ece58799b5610392127890f3fe4c0bd9dfeb6eef",
+          "imbalance": -0.15182502431672604,
+          "market_id": "679018",
+          "metadata_sha256": "7acb4cb1be071fc5cd345308520a05afc735ed3fdb18631d3c159be33fd27729",
+          "min_order_size": 5.0,
+          "missing_fields": [],
+          "observed_at": "2026-11-07T00:27:01.568719+00:00",
+          "participation": 0.25,
+          "quantity": 5.0,
+          "research_only": true,
+          "rules_sha256": "bc4fb558804c601c3ecddc5f23e43e4c800d84fd45e3a56b2026ed88a2b8b818",
+          "source": "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+          "source_at": "2026-11-07T00:26:52.625000+00:00",
+          "source_frame_id": "1a345add304c11b8cd24e9bbf49295f4ce50a0c8b2e0bdfee76363d33ab4eebd",
+          "spread": 0.0010000000000000009,
+          "tick_size": 0.001,
+          "timestamp": "2026-11-07T00:26:52.625000+00:00",
+          "token_id": "55764212211467781322980371912612507865974994976253196346176314491480419639168",
+          "trading_authority": false
+        },
+        "decision_at": "2026-11-07T00:27:01.568719+00:00",
+        "event_id": "79987",
+        "feature_cutoff": "2026-11-07T00:27:01.568719+00:00",
+        "feature_point_ids": [
+          "b9fbe2f49c900cf5b16f9b779090c12f0bb65ba261fa1dcc87f1c59637a7dfb2",
+          "9c0504e736fe5ec41d07c8e0ba8e0f2d4d9420abda4edd509c36f182be00b2fd",
+          "ed99e9f8585a975a4bb6eada643e7bec31771eba59bb322232d61625d0e22561",
+          "7e8ac9cb4bfe52f951653930609450d63e42ed03ef29c313400fdd5ce409e150",
+          "a3271795ba94644a7d94eefb8a7d15c49c7d7aa4e711ebbd9ee6f18f070aefb7",
+          "33108c8ea607c62d89c89aa512d97d93ba793e11ff398052f97ee125346bf659",
+          "0f5b6f3f229f92345dba99e62245627c7a8b2c4af301ebbfc209e306d54cf84a",
+          "32c6ba11ca2e03b125073b9d639147e9a45d72fbe692060e3d7bda676d2f78b2",
+          "052e9d9878b3854b8dca43d3c527cc41bb5c5e48978d7b96cf4a48cede1f7983",
+          "e20f28ba403ac72535f37aeebde1caa3d28c02d1e2edc7eb5bff7d54b3d4a331",
+          "495231e873fde16aaf3d1b22edb8774f848b8307e56f02da18e487f407cd7601",
+          "24d7b220004b10a538985ca046c9f12d6d4e5f3ed300b3aaa34fae882282a26d",
+          "ec836df2bc8dd0f627a1daf85d9698aa896d6a279a0a63daf58949d8dbd18ed9",
+          "72babfd313b0b01d24443dcebab8fb139e04c02b6848bf2b39ff8dbe8d7c05e5",
+          "9a35940d9c61a76bd7c3fd6be2224308ea37c185e9c9c0670aff4a84d70dc090",
+          "51a972e21eceda5c53cabd3d788b58bde255bf1196b803465d4df90a5c6d4f6c",
+          "06d3a1e4fc6564ea7763410aabbfd92613e41403f05c71e80f5d9dfe65d76694",
+          "1ca449def54a08e4edd2bf40016a2926e31d9f591d9b066f21452f16afcfda3f",
+          "56ff4c4b4a6dcc76a9283e7770a0187b31ccb65f4c1f6b90c0e5f54ade8bef6f",
+          "631776b2ea434d14bfe8b36e6937d5afd1e1cf135df65e2567faceac2bdd22b5"
+        ],
+        "feature_version": "prior20-causal-depth-bids-current-imbalance-v1",
+        "forecast_lead_seconds": 58.991645,
+        "forecasts": {
+          "depthimbalance": 0.4494817497568327,
+          "momentum20": 0.45099999999999996,
+          "reversion20": 0.45099999999999996,
+          "unchanged": 0.45099999999999996
+        },
+        "latest_prior_source_at": "2026-11-07T00:26:38.507000+00:00",
+        "market_id": "679018",
+        "model_version": "phase17-fixed-bid-mark-family-v1",
+        "point_id": "723486d123540bd872d70143ece58799b5610392127890f3fe4c0bd9dfeb6eef",
+        "provenance": {
+          "decision_point_sha256": "ceff69d0a0ec97e565aee10e8234f0568133336560480bf9470bacf2f2e16568",
+          "feature_points_sha256": "f31225b91b274ed745235baba5cab66a0bc45119aa82405095f16a21a478913f",
+          "rules_sha256": "bc4fb558804c601c3ecddc5f23e43e4c800d84fd45e3a56b2026ed88a2b8b818",
+          "source_verification": "caller_raw_replay_required"
+        },
+        "reconstructed": true,
+        "research_only": true,
+        "semantics": "research monetary bid marks, not event probabilities",
+        "source_study_id": "2cfe0c0b8aeeaf4f25080130112d4c3602016ded59359dc4cd27c200f938f9f9",
+        "target_at": "2026-11-07T00:28:01.568719+00:00",
+        "token_id": "55764212211467781322980371912612507865974994976253196346176314491480419639168",
+        "trading_authority": false,
+        "uncertainty": {
+          "interval": null,
+          "status": "uncalibrated_monetary_mark_hypotheses"
+        }
+      },
+      "b71f5f1f55e82d78453789d5f0e9c246b176186ce60ed0828b3f1e416959faf5": {
+        "baseline": 0.991,
+        "certification_authority": false,
+        "created_at": "2026-11-07T00:27:02.577074+00:00",
+        "decision": {
+          "ask": 0.992,
+          "ask_depth_shares": 21121.12,
+          "ask_vwap": 0.992,
+          "asks": [
+            {
+              "price": 0.992,
+              "size": 194.13
+            },
+            {
+              "price": 0.993,
+              "size": 906.99
+            },
+            {
+              "price": 0.994,
+              "size": 20020.0
+            }
+          ],
+          "available_at": "2026-11-07T00:26:53.844470+00:00",
+          "bid": 0.991,
+          "bid_depth_shares": 13366.0,
+          "bid_vwap": 0.991,
+          "bids": [
+            {
+              "price": 0.991,
+              "size": 589.0
+            },
+            {
+              "price": 0.99,
+              "size": 5555.0
+            },
+            {
+              "price": 0.989,
+              "size": 7222.0
+            }
+          ],
+          "book_id": "2ad9126700db5e4f8d038ea5cc829634189171551c484537e965fb08574b9523",
+          "book_sha256": "82acf3ae062b07aa3a2aad2caaaa090021e4d57d60f25dae1cf1b78a3f285a10",
+          "depth_scope": "top3_observed",
+          "event_id": "770450",
+          "execution_evidence_complete": true,
+          "fee_evidence_sha256": "f6c3344d8e2a98573c5a4e6929b05f5532462676aedb15663068aa109906f55e",
+          "fee_observation": {
+            "evidence_id": "0e575be5-325f-4269-95f3-0905cb28da5a",
+            "fee_rate": 0.05,
+            "observed_at": "2026-11-07T00:25:32.492986+00:00",
+            "raw_response_ids": [
+              "f913422f999f93ab6f083d1dddbade0835240103574b912d65722a18df645069",
+              "2bcf0103c8ae7508eb0465c840ad202e5eddcdf8d246fb0ab68974836a1c2c12"
+            ],
+            "reference": "/markets-by-token/104236736263775307891497202874191911203963566711959725788584750440530976742193",
+            "source": "https://clob.polymarket.com"
+          },
+          "fee_observation_valid": true,
+          "fee_rate": 0.05,
+          "id": "b71f5f1f55e82d78453789d5f0e9c246b176186ce60ed0828b3f1e416959faf5",
+          "imbalance": -0.22487003843753842,
+          "market_id": "3215005",
+          "metadata_sha256": "08b2529ae422ed172b646ce84603f9f86ff5394975bdf980fc75d2066e0f81bd",
+          "min_order_size": 5.0,
+          "missing_fields": [],
+          "observed_at": "2026-11-07T00:27:01.568719+00:00",
+          "participation": 0.25,
+          "quantity": 5.0,
+          "research_only": true,
+          "rules_sha256": "7dabadbb379a1c7e5ed46f01743aef51c68eddc17c2dc19f926ea050a74a2760",
+          "source": "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+          "source_at": "2026-11-07T00:26:53.625000+00:00",
+          "source_frame_id": "1a345add304c11b8cd24e9bbf49295f4ce50a0c8b2e0bdfee76363d33ab4eebd",
+          "spread": 0.0010000000000000009,
+          "tick_size": 0.001,
+          "timestamp": "2026-11-07T00:26:53.625000+00:00",
+          "token_id": "104236736263775307891497202874191911203963566711959725788584750440530976742193",
+          "trading_authority": false
+        },
+        "decision_at": "2026-11-07T00:27:01.568719+00:00",
+        "event_id": "770450",
+        "feature_cutoff": "2026-11-07T00:27:01.568719+00:00",
+        "feature_point_ids": [
+          "44ebc1c5c502b9999ca776d2f1b373af68597045c6d29b889245343f43a66200",
+          "dbf733ac1dd45863379fa3762cd5d3fb668815857d3671d27ee799426ba380bc",
+          "4f0a69adb18384bc7daa1bc19ed7a9cc36dc27ee6e5c3b3a691d84f0788c8305",
+          "63ae0469bf3c816c365b270276c51105cdb8622c5b0ab4b260dbd61dcd3b2f01",
+          "5d3285a271737663e20afe5524a449796c7ef16896510062e3847cd693c2fa8d",
+          "5389b2b9355da5852d50e3123cbee4a2b8ca08f8be8800e12b89f5276f2f0fde",
+          "e6a17367e88b489c74461dc0f8aacafe30b60c095e1f78e076197e7a14d1bdf0",
+          "5d1fd73e6b97dbb946ac1151acf07f2205d35b4e544aff0aace3bdabf740f1a6",
+          "8b69c79b006c3a8e124e5fd0fcd5af2c0475f13ca68d5a44d66cdc592e8ac19b",
+          "68a2d385257f4659c5c2cd1c071e24becb2cde2ef63081dc37b7e4446c79f0c7",
+          "8c38c77e68587e3badbb2ce3159fefe33064044d13543bd2fca0fc4b3a396c6d",
+          "030b90a9f2a985c5b996a21191ff23bbeb6eead09bcebe9085fc510bb33b08bc",
+          "26d60c45a600633c6090f9a2831f1ca762bcd61f6f21ce988b9949c372f77ba0",
+          "576c12dd980300fed433a797b6c6acdeec21b9f63c04a9985d2c004037939db0",
+          "d3ca4d4e1ab3c02815d12093d3c07748dd704221a35a173635442ca1fe6236ca",
+          "bc869b565c1c9666cfe3e2a7d9d9fca17a441f652515a9f1cc7abc508eee59f5",
+          "d58358b435f599b92521ae99d75cdc863214019456417c3b5080fa65c08dd1ae",
+          "d8f1c35089e25f9d2ca726ff630e6914164a73b3ff976d9dafde393918c6e198",
+          "eda1cd01afa9adf71c7f981e1711bc2c6ed0a2c4119609b1998bdad4cebbfc36",
+          "36f6fe41b84926ec28d3603729c6344e6e99bcc2fc368e68904bf8a9397249a6"
+        ],
+        "feature_version": "prior20-causal-depth-bids-current-imbalance-v1",
+        "forecast_lead_seconds": 58.991645,
+        "forecasts": {
+          "depthimbalance": 0.9887512996156246,
+          "momentum20": 0.991,
+          "reversion20": 0.991,
+          "unchanged": 0.991
+        },
+        "latest_prior_source_at": "2026-11-07T00:26:43.616000+00:00",
+        "market_id": "3215005",
+        "model_version": "phase17-fixed-bid-mark-family-v1",
+        "point_id": "b71f5f1f55e82d78453789d5f0e9c246b176186ce60ed0828b3f1e416959faf5",
+        "provenance": {
+          "decision_point_sha256": "81965571ccd5b35021f507bd7af1c7daddd3095755ba94ba5c846b7293d88b64",
+          "feature_points_sha256": "6df7beebd20251d0f7e10487d76bdb874435fe701ab19932787e437ed5550266",
+          "rules_sha256": "7dabadbb379a1c7e5ed46f01743aef51c68eddc17c2dc19f926ea050a74a2760",
+          "source_verification": "caller_raw_replay_required"
+        },
+        "reconstructed": true,
+        "research_only": true,
+        "semantics": "research monetary bid marks, not event probabilities",
+        "source_study_id": "2cfe0c0b8aeeaf4f25080130112d4c3602016ded59359dc4cd27c200f938f9f9",
+        "target_at": "2026-11-07T00:28:01.568719+00:00",
+        "token_id": "104236736263775307891497202874191911203963566711959725788584750440530976742193",
+        "trading_authority": false,
+        "uncertainty": {
+          "interval": null,
+          "status": "uncalibrated_monetary_mark_hypotheses"
+        }
+      },
+      "bc869b565c1c9666cfe3e2a7d9d9fca17a441f652515a9f1cc7abc508eee59f5": {
+        "baseline": 0.991,
+        "certification_authority": false,
+        "created_at": "2026-11-07T00:25:55.140583+00:00",
+        "decision": {
+          "ask": 0.992,
+          "ask_depth_shares": 21121.12,
+          "ask_vwap": 0.992,
+          "asks": [
+            {
+              "price": 0.992,
+              "size": 194.13
+            },
+            {
+              "price": 0.993,
+              "size": 906.99
+            },
+            {
+              "price": 0.994,
+              "size": 20020.0
+            }
+          ],
+          "available_at": "2026-11-07T00:25:53.435253+00:00",
+          "bid": 0.991,
+          "bid_depth_shares": 13366.0,
+          "bid_vwap": 0.991,
+          "bids": [
+            {
+              "price": 0.991,
+              "size": 589.0
+            },
+            {
+              "price": 0.99,
+              "size": 5555.0
+            },
+            {
+              "price": 0.989,
+              "size": 7222.0
+            }
+          ],
+          "book_id": "e45731af6d70ad43bab19c71193fb56336b4fda5f2f49708382e7b9af92c8e04",
+          "book_sha256": "94be06587439c09949f823299913b354ef2ce515fc02a29070901cefa8720cb6",
+          "depth_scope": "top3_observed",
+          "event_id": "770450",
+          "execution_evidence_complete": true,
+          "fee_evidence_sha256": "f6c3344d8e2a98573c5a4e6929b05f5532462676aedb15663068aa109906f55e",
+          "fee_observation": {
+            "evidence_id": "0e575be5-325f-4269-95f3-0905cb28da5a",
+            "fee_rate": 0.05,
+            "observed_at": "2026-11-07T00:25:32.492986+00:00",
+            "raw_response_ids": [
+              "f913422f999f93ab6f083d1dddbade0835240103574b912d65722a18df645069",
+              "2bcf0103c8ae7508eb0465c840ad202e5eddcdf8d246fb0ab68974836a1c2c12"
+            ],
+            "reference": "/markets-by-token/104236736263775307891497202874191911203963566711959725788584750440530976742193",
+            "source": "https://clob.polymarket.com"
+          },
+          "fee_observation_valid": true,
+          "fee_rate": 0.05,
+          "id": "bc869b565c1c9666cfe3e2a7d9d9fca17a441f652515a9f1cc7abc508eee59f5",
+          "imbalance": -0.22487003843753842,
+          "market_id": "3215005",
+          "metadata_sha256": "08b2529ae422ed172b646ce84603f9f86ff5394975bdf980fc75d2066e0f81bd",
+          "min_order_size": 5.0,
+          "missing_fields": [],
+          "observed_at": "2026-11-07T00:25:53.847136+00:00",
+          "participation": 0.25,
+          "quantity": 5.0,
+          "research_only": true,
+          "rules_sha256": "7dabadbb379a1c7e5ed46f01743aef51c68eddc17c2dc19f926ea050a74a2760",
+          "source": "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+          "source_at": "2026-11-07T00:25:53.364000+00:00",
+          "source_frame_id": "2876339c32a559c97f167bc636a82e7f89b5395f2020bfe2b5ac24224dfc9b27",
+          "spread": 0.0010000000000000009,
+          "tick_size": 0.001,
+          "timestamp": "2026-11-07T00:25:53.364000+00:00",
+          "token_id": "104236736263775307891497202874191911203963566711959725788584750440530976742193",
+          "trading_authority": false
+        },
+        "decision_at": "2026-11-07T00:25:53.847136+00:00",
+        "event_id": "770450",
+        "feature_cutoff": "2026-11-07T00:25:53.847136+00:00",
+        "feature_point_ids": [
+          "f15ca518f125afd9c62f7e84f78debdef780e882e749abc2b89188577e4fa479",
+          "92ca515aaba6422274ba3004365df6dcd77640ecf47536d4e81661e40f5cdb1b",
+          "a9dd4bb1262917f127c6528049705c0c479aab46c73e28b41d1eaa99774b69d3",
+          "888334a726a3a262df848a0bf7c708c16dd48ced707397b5552fe0a8c6519268",
+          "30926f37a0522d26537408a72bb9511d01ccce29e8963b68511122e8862c1404",
+          "44ebc1c5c502b9999ca776d2f1b373af68597045c6d29b889245343f43a66200",
+          "dbf733ac1dd45863379fa3762cd5d3fb668815857d3671d27ee799426ba380bc",
+          "4f0a69adb18384bc7daa1bc19ed7a9cc36dc27ee6e5c3b3a691d84f0788c8305",
+          "63ae0469bf3c816c365b270276c51105cdb8622c5b0ab4b260dbd61dcd3b2f01",
+          "5d3285a271737663e20afe5524a449796c7ef16896510062e3847cd693c2fa8d",
+          "5389b2b9355da5852d50e3123cbee4a2b8ca08f8be8800e12b89f5276f2f0fde",
+          "e6a17367e88b489c74461dc0f8aacafe30b60c095e1f78e076197e7a14d1bdf0",
+          "5d1fd73e6b97dbb946ac1151acf07f2205d35b4e544aff0aace3bdabf740f1a6",
+          "8b69c79b006c3a8e124e5fd0fcd5af2c0475f13ca68d5a44d66cdc592e8ac19b",
+          "68a2d385257f4659c5c2cd1c071e24becb2cde2ef63081dc37b7e4446c79f0c7",
+          "8c38c77e68587e3badbb2ce3159fefe33064044d13543bd2fca0fc4b3a396c6d",
+          "030b90a9f2a985c5b996a21191ff23bbeb6eead09bcebe9085fc510bb33b08bc",
+          "26d60c45a600633c6090f9a2831f1ca762bcd61f6f21ce988b9949c372f77ba0",
+          "576c12dd980300fed433a797b6c6acdeec21b9f63c04a9985d2c004037939db0",
+          "d3ca4d4e1ab3c02815d12093d3c07748dd704221a35a173635442ca1fe6236ca"
+        ],
+        "feature_version": "prior20-causal-depth-bids-current-imbalance-v1",
+        "forecast_lead_seconds": 58.706553,
+        "forecasts": {
+          "depthimbalance": 0.9887512996156246,
+          "momentum20": 0.991,
+          "reversion20": 0.991,
+          "unchanged": 0.991
+        },
+        "latest_prior_source_at": "2026-11-07T00:25:33.619000+00:00",
+        "market_id": "3215005",
+        "model_version": "phase17-fixed-bid-mark-family-v1",
+        "point_id": "bc869b565c1c9666cfe3e2a7d9d9fca17a441f652515a9f1cc7abc508eee59f5",
+        "provenance": {
+          "decision_point_sha256": "78de789b988ae729c595de4a74e34501c48f7d59e586c676ae44c15a80a2720d",
+          "feature_points_sha256": "10a593f5980ebca3523a200eb61065fcfa682bd6f427172aab0a0f0e44c7780c",
+          "rules_sha256": "7dabadbb379a1c7e5ed46f01743aef51c68eddc17c2dc19f926ea050a74a2760",
+          "source_verification": "caller_raw_replay_required"
+        },
+        "reconstructed": true,
+        "research_only": true,
+        "semantics": "research monetary bid marks, not event probabilities",
+        "source_study_id": "f699f607402a621011c5b2361b8bdca41ce7ed0127596a46a0d3a2fb56ceb54c",
+        "target_at": "2026-11-07T00:26:53.847136+00:00",
+        "token_id": "104236736263775307891497202874191911203963566711959725788584750440530976742193",
+        "trading_authority": false,
+        "uncertainty": {
+          "interval": null,
+          "status": "uncalibrated_monetary_mark_hypotheses"
+        }
+      },
+      "be7e5ef51687e3bd5cda4e921d9b8b828f1ba73e56113679e73c0a1691020aec": {
+        "baseline": 0.12,
+        "certification_authority": false,
+        "created_at": "2026-11-07T00:27:02.577074+00:00",
+        "decision": {
+          "ask": 0.13,
+          "ask_depth_shares": 229610.87,
+          "ask_vwap": 0.13,
+          "asks": [
+            {
+              "price": 0.13,
+              "size": 58884.79
+            },
+            {
+              "price": 0.14,
+              "size": 109782.13
+            },
+            {
+              "price": 0.15,
+              "size": 60943.95
+            }
+          ],
+          "available_at": "2026-11-07T00:26:57.098693+00:00",
+          "bid": 0.12,
+          "bid_depth_shares": 3940093.46,
+          "bid_vwap": 0.12,
+          "bids": [
+            {
+              "price": 0.12,
+              "size": 27997.34
+            },
+            {
+              "price": 0.11,
+              "size": 454443.09
+            },
+            {
+              "price": 0.1,
+              "size": 3457653.03
+            }
+          ],
+          "book_id": "608c2fd15a607b7e9dbd0f4f47cc59975c20db94cc625829884197ab32a415ed",
+          "book_sha256": "027160ec99d01bbd16f76024c40d2f3db966a501b544121337f633f1906902ea",
+          "depth_scope": "top3_observed",
+          "event_id": "79987",
+          "execution_evidence_complete": true,
+          "fee_evidence_sha256": "a5d242f23d56c33823e480a3960e8edabc98d15576c680075205f65dde7cfd13",
+          "fee_observation": {
+            "evidence_id": "0b95431d-42e9-40de-88cf-9a9cf8d445f5",
+            "fee_rate": 0.04,
+            "observed_at": "2026-11-07T00:25:34.007284+00:00",
+            "raw_response_ids": [
+              "028f15e1ffe029c70fc8c2f957689c9afff0ebc3a175fe241608a772a5466982",
+              "a4a2040f68de1ebc970a66841de186d2f356c4eba99cad63bfae2bce0194f13b"
+            ],
+            "reference": "/markets-by-token/88550326946437280548248031502775629664259630024343210447063397951616199975032",
+            "source": "https://clob.polymarket.com"
+          },
+          "fee_observation_valid": true,
+          "fee_rate": 0.04,
+          "id": "be7e5ef51687e3bd5cda4e921d9b8b828f1ba73e56113679e73c0a1691020aec",
+          "imbalance": 0.8898670736205413,
+          "market_id": "679030",
+          "metadata_sha256": "36cc4b1a013b76c1c2581db903cd9648a36fe2419a7ca96a4dff980ad34df00b",
+          "min_order_size": 5.0,
+          "missing_fields": [],
+          "observed_at": "2026-11-07T00:27:01.568719+00:00",
+          "participation": 0.25,
+          "quantity": 5.0,
+          "research_only": true,
+          "rules_sha256": "fc33023f3e1ab43919c838a9be9c33769540ded007eb7557ce38362ea58353a0",
+          "source": "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+          "source_at": "2026-11-07T00:26:57.043000+00:00",
+          "source_frame_id": "1a345add304c11b8cd24e9bbf49295f4ce50a0c8b2e0bdfee76363d33ab4eebd",
+          "spread": 0.010000000000000009,
+          "tick_size": 0.01,
+          "timestamp": "2026-11-07T00:26:57.043000+00:00",
+          "token_id": "88550326946437280548248031502775629664259630024343210447063397951616199975032",
+          "trading_authority": false
+        },
+        "decision_at": "2026-11-07T00:27:01.568719+00:00",
+        "event_id": "79987",
+        "feature_cutoff": "2026-11-07T00:27:01.568719+00:00",
+        "feature_point_ids": [
+          "06ddf2c1696e0f07e1dc6bda4a0338fabf41ce1fb4c50dec849a5e7ecc9499ce",
+          "2a30fe6c9278f980717c2eb579bf5c7cd887a01bb407f0c07f9aada6fae61503",
+          "1e0322cc15f636548f14801555b2c0bd4c9c1b6fec593e5b0cd1b2dbe7a1fc61",
+          "aa175be6301cf0b1627ad12c7460990ca4e51aaaf5115d9a5351a391652062b4",
+          "c2230e56ceb55e3bf6721f8c94d9105145bc0350dcae55e293a7f268606f660e",
+          "d3f701910d1dbcd338e69c0c8a780c4127fdcc98de760fe2fac56ec35aab7588",
+          "5194baa62e79eb2b7fc23f5fa4e97d54c235388bd7c2e4ddb15e651fe9764c21",
+          "f7230685125afee9aa2f2877ae0051d79d4c1dbb72ab821e773ec7cf41e853f0",
+          "54aaeedca83f9b3f1f691dafb6f6f60f6acd190da33f342f9fc1151d15e7b4a1",
+          "29bdb5e45567c9996fa476ca81dd5e39f946d2ed81774fdfa46978c909ebcea9",
+          "aadd45b354f8f5eec120f0a9a689b3d826cb56b1c3749a161c4e054709f8cdf0",
+          "33c09173ee4d741f6a6180208080afc85f5fbccfb4aa6eaf8966ed603004afc0",
+          "24b50c734db6da019931984b679d63a25eb1420b6fc04e1e387a369978f7a242",
+          "54b4dae730887f5f00b38c5b3a568d6bca9bf4e3ba942b7a5e2cf41e78a14946",
+          "b398efaca7c93b7aacabe13dc379b8a7c039474d15216a5f2b090fa3e0cec7e6",
+          "bd24a4fb5aa5d384a0d805bad92e397f029d06d589c82da69618762ad1b1f350",
+          "95e9d6a7aebecdb0bda5521f6ee933da8a69813b8e0b05e47cb9ede861471cde",
+          "3d7b8ebb196654830b66889f50ad0c7005286985e3e3020282591ac52932a88a",
+          "1a2b9979eab3438770b95fd550000cc06b59bf4e2e585f85806580d43eb70219",
+          "41f82b0cf03a3da13d7d45d6a61ffa9b966fc2fb40942016c37144d2417a6a32"
+        ],
+        "feature_version": "prior20-causal-depth-bids-current-imbalance-v1",
+        "forecast_lead_seconds": 58.991645,
+        "forecasts": {
+          "depthimbalance": 0.12889867073620542,
+          "momentum20": 0.12,
+          "reversion20": 0.12,
+          "unchanged": 0.12
+        },
+        "latest_prior_source_at": "2026-11-07T00:26:46.451000+00:00",
+        "market_id": "679030",
+        "model_version": "phase17-fixed-bid-mark-family-v1",
+        "point_id": "be7e5ef51687e3bd5cda4e921d9b8b828f1ba73e56113679e73c0a1691020aec",
+        "provenance": {
+          "decision_point_sha256": "5bc507fe8b4565aa620aafcb3760251effbad944d19096b9ac1db4ced5a1cf78",
+          "feature_points_sha256": "f3728c596517808665e81eabb525345c725ddaa7bc601387143cb7beb5493741",
+          "rules_sha256": "fc33023f3e1ab43919c838a9be9c33769540ded007eb7557ce38362ea58353a0",
+          "source_verification": "caller_raw_replay_required"
+        },
+        "reconstructed": true,
+        "research_only": true,
+        "semantics": "research monetary bid marks, not event probabilities",
+        "source_study_id": "2cfe0c0b8aeeaf4f25080130112d4c3602016ded59359dc4cd27c200f938f9f9",
+        "target_at": "2026-11-07T00:28:01.568719+00:00",
+        "token_id": "88550326946437280548248031502775629664259630024343210447063397951616199975032",
+        "trading_authority": false,
+        "uncertainty": {
+          "interval": null,
+          "status": "uncalibrated_monetary_mark_hypotheses"
+        }
+      },
+      "d8f1c35089e25f9d2ca726ff630e6914164a73b3ff976d9dafde393918c6e198": {
+        "baseline": 0.991,
+        "certification_authority": false,
+        "created_at": "2026-11-07T00:26:27.860753+00:00",
+        "decision": {
+          "ask": 0.992,
+          "ask_depth_shares": 21121.12,
+          "ask_vwap": 0.992,
+          "asks": [
+            {
+              "price": 0.992,
+              "size": 194.13
+            },
+            {
+              "price": 0.993,
+              "size": 906.99
+            },
+            {
+              "price": 0.994,
+              "size": 20020.0
+            }
+          ],
+          "available_at": "2026-11-07T00:26:13.661923+00:00",
+          "bid": 0.991,
+          "bid_depth_shares": 13366.0,
+          "bid_vwap": 0.991,
+          "bids": [
+            {
+              "price": 0.991,
+              "size": 589.0
+            },
+            {
+              "price": 0.99,
+              "size": 5555.0
+            },
+            {
+              "price": 0.989,
+              "size": 7222.0
+            }
+          ],
+          "book_id": "ccd19d83f03572b86a6c3ef3b27c6edeaaa45f12ad22e6f03d5ab08e8688514f",
+          "book_sha256": "e7e261030d714526be6f7edb02aabc17f7548285064ba4e7ce5f7c57bea9b526",
+          "depth_scope": "top3_observed",
+          "event_id": "770450",
+          "execution_evidence_complete": true,
+          "fee_evidence_sha256": "f6c3344d8e2a98573c5a4e6929b05f5532462676aedb15663068aa109906f55e",
+          "fee_observation": {
+            "evidence_id": "0e575be5-325f-4269-95f3-0905cb28da5a",
+            "fee_rate": 0.05,
+            "observed_at": "2026-11-07T00:25:32.492986+00:00",
+            "raw_response_ids": [
+              "f913422f999f93ab6f083d1dddbade0835240103574b912d65722a18df645069",
+              "2bcf0103c8ae7508eb0465c840ad202e5eddcdf8d246fb0ab68974836a1c2c12"
+            ],
+            "reference": "/markets-by-token/104236736263775307891497202874191911203963566711959725788584750440530976742193",
+            "source": "https://clob.polymarket.com"
+          },
+          "fee_observation_valid": true,
+          "fee_rate": 0.05,
+          "id": "d8f1c35089e25f9d2ca726ff630e6914164a73b3ff976d9dafde393918c6e198",
+          "imbalance": -0.22487003843753842,
+          "market_id": "3215005",
+          "metadata_sha256": "08b2529ae422ed172b646ce84603f9f86ff5394975bdf980fc75d2066e0f81bd",
+          "min_order_size": 5.0,
+          "missing_fields": [],
+          "observed_at": "2026-11-07T00:26:20.537415+00:00",
+          "participation": 0.25,
+          "quantity": 5.0,
+          "research_only": true,
+          "rules_sha256": "7dabadbb379a1c7e5ed46f01743aef51c68eddc17c2dc19f926ea050a74a2760",
+          "source": "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+          "source_at": "2026-11-07T00:26:13.619000+00:00",
+          "source_frame_id": "6e0718bd34bd3f8451a14506cb12b4e90e972fdd87abd72d9c6683cc53711d9f",
+          "spread": 0.0010000000000000009,
+          "tick_size": 0.001,
+          "timestamp": "2026-11-07T00:26:13.619000+00:00",
+          "token_id": "104236736263775307891497202874191911203963566711959725788584750440530976742193",
+          "trading_authority": false
+        },
+        "decision_at": "2026-11-07T00:26:20.537415+00:00",
+        "event_id": "770450",
+        "feature_cutoff": "2026-11-07T00:26:20.537415+00:00",
+        "feature_point_ids": [
+          "a9dd4bb1262917f127c6528049705c0c479aab46c73e28b41d1eaa99774b69d3",
+          "888334a726a3a262df848a0bf7c708c16dd48ced707397b5552fe0a8c6519268",
+          "30926f37a0522d26537408a72bb9511d01ccce29e8963b68511122e8862c1404",
+          "44ebc1c5c502b9999ca776d2f1b373af68597045c6d29b889245343f43a66200",
+          "dbf733ac1dd45863379fa3762cd5d3fb668815857d3671d27ee799426ba380bc",
+          "4f0a69adb18384bc7daa1bc19ed7a9cc36dc27ee6e5c3b3a691d84f0788c8305",
+          "63ae0469bf3c816c365b270276c51105cdb8622c5b0ab4b260dbd61dcd3b2f01",
+          "5d3285a271737663e20afe5524a449796c7ef16896510062e3847cd693c2fa8d",
+          "5389b2b9355da5852d50e3123cbee4a2b8ca08f8be8800e12b89f5276f2f0fde",
+          "e6a17367e88b489c74461dc0f8aacafe30b60c095e1f78e076197e7a14d1bdf0",
+          "5d1fd73e6b97dbb946ac1151acf07f2205d35b4e544aff0aace3bdabf740f1a6",
+          "8b69c79b006c3a8e124e5fd0fcd5af2c0475f13ca68d5a44d66cdc592e8ac19b",
+          "68a2d385257f4659c5c2cd1c071e24becb2cde2ef63081dc37b7e4446c79f0c7",
+          "8c38c77e68587e3badbb2ce3159fefe33064044d13543bd2fca0fc4b3a396c6d",
+          "030b90a9f2a985c5b996a21191ff23bbeb6eead09bcebe9085fc510bb33b08bc",
+          "26d60c45a600633c6090f9a2831f1ca762bcd61f6f21ce988b9949c372f77ba0",
+          "576c12dd980300fed433a797b6c6acdeec21b9f63c04a9985d2c004037939db0",
+          "d3ca4d4e1ab3c02815d12093d3c07748dd704221a35a173635442ca1fe6236ca",
+          "bc869b565c1c9666cfe3e2a7d9d9fca17a441f652515a9f1cc7abc508eee59f5",
+          "d58358b435f599b92521ae99d75cdc863214019456417c3b5080fa65c08dd1ae"
+        ],
+        "feature_version": "prior20-causal-depth-bids-current-imbalance-v1",
+        "forecast_lead_seconds": 52.676662,
+        "forecasts": {
+          "depthimbalance": 0.9887512996156246,
+          "momentum20": 0.991,
+          "reversion20": 0.991,
+          "unchanged": 0.991
+        },
+        "latest_prior_source_at": "2026-11-07T00:25:53.647000+00:00",
+        "market_id": "3215005",
+        "model_version": "phase17-fixed-bid-mark-family-v1",
+        "point_id": "d8f1c35089e25f9d2ca726ff630e6914164a73b3ff976d9dafde393918c6e198",
+        "provenance": {
+          "decision_point_sha256": "35fca5a6b2bb6e94543bd7fcb25789a1a0fc6178756150f4dcd4395b54208b89",
+          "feature_points_sha256": "93baabd4f3197c399c92905232384040bd7a108c74a670b5980c91a0476381f6",
+          "rules_sha256": "7dabadbb379a1c7e5ed46f01743aef51c68eddc17c2dc19f926ea050a74a2760",
+          "source_verification": "caller_raw_replay_required"
+        },
+        "reconstructed": true,
+        "research_only": true,
+        "semantics": "research monetary bid marks, not event probabilities",
+        "source_study_id": "23bdf4a6d40b8256e435a98916c58674801f07f09d4311ff434b4476c1e29dd4",
+        "target_at": "2026-11-07T00:27:20.537415+00:00",
+        "token_id": "104236736263775307891497202874191911203963566711959725788584750440530976742193",
+        "trading_authority": false,
+        "uncertainty": {
+          "interval": null,
+          "status": "uncalibrated_monetary_mark_hypotheses"
+        }
+      },
+      "e357d5aedcf1cdf1fb4f84345c96985fe3bfb1eebb9b4bc36403370eecacbc1b": {
+        "baseline": 0.76,
+        "certification_authority": false,
+        "created_at": "2026-11-07T00:27:02.577074+00:00",
+        "decision": {
+          "ask": 0.77,
+          "ask_depth_shares": 947265.05,
+          "ask_vwap": 0.77,
+          "asks": [
+            {
+              "price": 0.77,
+              "size": 173073.99
+            },
+            {
+              "price": 0.78,
+              "size": 245969.69
+            },
+            {
+              "price": 0.79,
+              "size": 528221.37
+            }
+          ],
+          "available_at": "2026-11-07T00:26:55.828844+00:00",
+          "bid": 0.76,
+          "bid_depth_shares": 216997.51,
+          "bid_vwap": 0.76,
+          "bids": [
+            {
+              "price": 0.76,
+              "size": 10590.02
+            },
+            {
+              "price": 0.75,
+              "size": 16847.79
+            },
+            {
+              "price": 0.74,
+              "size": 189559.7
+            }
+          ],
+          "book_id": "c1619785338faf0e31fe92665d9514eb85c85a2d52589ecf1b47ca424b0aeb1c",
+          "book_sha256": "334c23a0819d792ac5baa15c52215fd77e80bf807a453e19c9e957fc9ede388a",
+          "depth_scope": "top3_observed",
+          "event_id": "770450",
+          "execution_evidence_complete": true,
+          "fee_evidence_sha256": "eb3d02f255b8208c6c2307c5421fe33b48fdcda1de4a192c7ee6f698bf6abed5",
+          "fee_observation": {
+            "evidence_id": "aa43a764-ea18-4855-b929-535775247f11",
+            "fee_rate": 0.05,
+            "observed_at": "2026-11-07T00:25:27.872215+00:00",
+            "raw_response_ids": [
+              "9947e35db0d062d82873c27cbeefdc78c0251cf6e4c4682b1f946e36085377f4",
+              "4eb0cb58f36fed77aa83c537497001ce5e87fc9052f4bacb0657d22f3a70e0cd"
+            ],
+            "reference": "/markets-by-token/111662129652828266889360374468657435151479595863413519836161861837506140152890",
+            "source": "https://clob.polymarket.com"
+          },
+          "fee_observation_valid": true,
+          "fee_rate": 0.05,
+          "id": "e357d5aedcf1cdf1fb4f84345c96985fe3bfb1eebb9b4bc36403370eecacbc1b",
+          "imbalance": -0.6272361279057191,
+          "market_id": "3215008",
+          "metadata_sha256": "6dbac38b73bdc3cb8a9c058bdb68670a32fa4cfb58d943c1bb745f9f00db9e94",
+          "min_order_size": 5.0,
+          "missing_fields": [],
+          "observed_at": "2026-11-07T00:27:01.568719+00:00",
+          "participation": 0.25,
+          "quantity": 5.0,
+          "research_only": true,
+          "rules_sha256": "6a8219314139bfb3d68e34ce0ff318ef8852d90499d78b5c6892f97588e1dd6a",
+          "source": "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+          "source_at": "2026-11-07T00:26:55.750000+00:00",
+          "source_frame_id": "1a345add304c11b8cd24e9bbf49295f4ce50a0c8b2e0bdfee76363d33ab4eebd",
+          "spread": 0.010000000000000009,
+          "tick_size": 0.01,
+          "timestamp": "2026-11-07T00:26:55.750000+00:00",
+          "token_id": "111662129652828266889360374468657435151479595863413519836161861837506140152890",
+          "trading_authority": false
+        },
+        "decision_at": "2026-11-07T00:27:01.568719+00:00",
+        "event_id": "770450",
+        "feature_cutoff": "2026-11-07T00:27:01.568719+00:00",
+        "feature_point_ids": [
+          "a4fbe4fd913521fbf0253805db6b9cc5f85ff28a45aaa9cca467ac437ba60171",
+          "3eb642955ab80d38fd61901ef8b3a01b1ce7a00c6237a38a239f7e035f9001b0",
+          "157a9b00c8c1c04a6fd0935814b17b200e99fe9144296b8a8d2956234eb4f00c",
+          "2dd609b16816e6f31de095286581dc1ffd2a22ecd0cacd125fb1147502f8e4ef",
+          "81025c4b51c82be10e400b253cf706c1ce8043ccf4dbd2326ffdda5c491a1f4d",
+          "ce31474a3cf236652c6ecf8fdb46a1f76ba60bf10f30b193cced1a6748d1d5e6",
+          "29b3ffd8a21cd3a1f180e52c4485820cb78a7a6dfc14ffa2edc0c78659d6d496",
+          "cb02e4fc4f8a15649ff5524bf604f4f5c3573931f21f186bbf7e42c36d87cf30",
+          "fb8fba8c3c04f7b4c5c3ca245439c5f1683bb7600dfc80ace92f8ac12192e81c",
+          "4b809305f29ce351739427c9cb5d4e30bf1d6f466bae87f5a8885b340308f10b",
+          "2b162cc2dba491af84222bbfb3dd1e965b0a0d0d3244702443c0377ad5b5a753",
+          "8460420b6d48fb0d18f6ba83adb046da9945ede6652ca964eda1a87ecb10f165",
+          "a610a54f329e8a70e0ce40bb1ea4b9b1f171ff5d12a07bf3b8c565959af87c36",
+          "54da7f461679bd6b82b3ff4c9a49aa817501a14d66566e5f0b3762be5791a5df",
+          "9b4d8ef939a45b46d11c154f7d4715293ad6e0d0eaef9652f55ce24d7740e2d1",
+          "b48b72101561001b027dd0cf810ced3b3cf7fbafd55a87af6a19d9f281905536",
+          "2c9fc6f7fa7c637779a56e8d125ddf089b190e8989da8e09a3236a1cdd57a5ff",
+          "4d85a69252be2f3a2acf2abe29d87c868a8e5c73e1585e9f3aebbb6ae56c7f39",
+          "957e58ebb596cb3a3e4bba00f9e97c10e05f27f77004dcf75bfd3c095ac7c6ec",
+          "30c519035948f2e3b8d91ca9cc4871b0a9c8c41808bcd16a9dad02ee89e072df"
+        ],
+        "feature_version": "prior20-causal-depth-bids-current-imbalance-v1",
+        "forecast_lead_seconds": 58.991645,
+        "forecasts": {
+          "depthimbalance": 0.7537276387209428,
+          "momentum20": 0.76,
+          "reversion20": 0.76,
+          "unchanged": 0.76
+        },
+        "latest_prior_source_at": "2026-11-07T00:26:46.612000+00:00",
+        "market_id": "3215008",
+        "model_version": "phase17-fixed-bid-mark-family-v1",
+        "point_id": "e357d5aedcf1cdf1fb4f84345c96985fe3bfb1eebb9b4bc36403370eecacbc1b",
+        "provenance": {
+          "decision_point_sha256": "6087a0b023913230f51da5fa63acf85ea8ae3c62f42cc8e24464bbc5fde80d4f",
+          "feature_points_sha256": "8ddd36c9ee5806428fa3c1b21085fef907790c591b1d1a9cc169dc738deab5c5",
+          "rules_sha256": "6a8219314139bfb3d68e34ce0ff318ef8852d90499d78b5c6892f97588e1dd6a",
+          "source_verification": "caller_raw_replay_required"
+        },
+        "reconstructed": true,
+        "research_only": true,
+        "semantics": "research monetary bid marks, not event probabilities",
+        "source_study_id": "2cfe0c0b8aeeaf4f25080130112d4c3602016ded59359dc4cd27c200f938f9f9",
+        "target_at": "2026-11-07T00:28:01.568719+00:00",
+        "token_id": "111662129652828266889360374468657435151479595863413519836161861837506140152890",
+        "trading_authority": false,
+        "uncertainty": {
+          "interval": null,
+          "status": "uncalibrated_monetary_mark_hypotheses"
+        }
+      }
+    },
+    "recent": [
+      {
+        "event_id": "991810",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.0024559055112958195,
+            "actual_bid_mark": 0.53,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.5275440944887042
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.53,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.53
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.53,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.53
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.53,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.53
+          }
+        }
+      },
+      {
+        "event_id": "79987",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.008905930024973835,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12890593002497383
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          }
+        }
+      },
+      {
+        "event_id": "770450",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.005944824584282249,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.7540551754157178
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.76
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.76
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.76
+          }
+        }
+      },
+      {
+        "event_id": "79987",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.0014014158536027055,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.44959858414639725
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.45099999999999996
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.45099999999999996
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.45099999999999996
+          }
+        }
+      },
+      {
+        "event_id": "770450",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.0022932578083074695,
+            "actual_bid_mark": 0.991,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.9887067421916925
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.991,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.991
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.991,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.991
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.991,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.991
+          }
+        }
+      },
+      {
+        "event_id": "79987",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.008900780863504765,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12890078086350476
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          }
+        }
+      },
+      {
+        "event_id": "770450",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.005945080416474013,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.754054919583526
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.76
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.76
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.76
+          }
+        }
+      },
+      {
+        "event_id": "79987",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.0014133735240597911,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.44958662647594017
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.45099999999999996
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.45099999999999996
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.45099999999999996
+          }
+        }
+      },
+      {
+        "event_id": "991810",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.007528357614206449,
+            "actual_bid_mark": 0.78,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.7875283576142065
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.78,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.78
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.78,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.78
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.78,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.78
+          }
+        }
+      },
+      {
+        "event_id": "991810",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.007528357614206477,
+            "actual_bid_mark": 0.21000000000000002,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.20247164238579354
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.21000000000000002,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.21000000000000002
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.21000000000000002,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.21000000000000002
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.21000000000000002,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.21000000000000002
+          }
+        }
+      },
+      {
+        "event_id": "79987",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.008900780863504765,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12890078086350476
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          }
+        }
+      },
+      {
+        "event_id": "770450",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.00628474262551082,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.7537152573744892
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.76
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.76
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.76
+          }
+        }
+      },
+      {
+        "event_id": "79987",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.0014133735240597911,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.44958662647594017
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.45099999999999996
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.45099999999999996
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.45099999999999996
+          }
+        }
+      },
+      {
+        "event_id": "770450",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.0022487003843754128,
+            "actual_bid_mark": 0.991,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.9887512996156246
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.991,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.991
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.991,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.991
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.991,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.991
+          }
+        }
+      },
+      {
+        "event_id": "991810",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.0024619647110788456,
+            "actual_bid_mark": 0.53,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.5275380352889212
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.53,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.53
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.53,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.53
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.53,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.53
+          }
+        }
+      },
+      {
+        "event_id": "770450",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.00628474262551082,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.7537152573744892
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.76
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.76
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.76
+          }
+        }
+      },
+      {
+        "event_id": "79987",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.0014133735240597911,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.44958662647594017
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.45099999999999996
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.45099999999999996
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.45099999999999996
+          }
+        }
+      },
+      {
+        "event_id": "991810",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.0024607865527747075,
+            "actual_bid_mark": 0.53,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.5275392134472253
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.53,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.53
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.53,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.53
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.53,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.53
+          }
+        }
+      },
+      {
+        "event_id": "79987",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.008900780863504765,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12890078086350476
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          }
+        }
+      },
+      {
+        "event_id": "770450",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.0022487003843754128,
+            "actual_bid_mark": 0.991,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.9887512996156246
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.991,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.991
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.991,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.991
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.991,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.991
+          }
+        }
+      },
+      {
+        "event_id": "79987",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.008904775118231706,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.1289047751182317
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          }
+        }
+      },
+      {
+        "event_id": "770450",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.006283894028868087,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.7537161059711319
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.76
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.76
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.76
+          }
+        }
+      },
+      {
+        "event_id": "770450",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.006283894028868087,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.7537161059711319
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.76
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.76
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.76
+          }
+        }
+      },
+      {
+        "event_id": "79987",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.0014125037065532142,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.44958749629344674
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.45099999999999996
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.45099999999999996
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.45099999999999996
+          }
+        }
+      },
+      {
+        "event_id": "770450",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.0022487003843754128,
+            "actual_bid_mark": 0.991,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.9887512996156246
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.991,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.991
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.991,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.991
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.991,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.991
+          }
+        }
+      },
+      {
+        "event_id": "79987",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.008904775118231706,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.1289047751182317
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          }
+        }
+      },
+      {
+        "event_id": "770450",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.006349609761294617,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.7536503902387054
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.76
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.76
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.76
+          }
+        }
+      },
+      {
+        "event_id": "79987",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.0013398004443417877,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.44966019955565817
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.45099999999999996
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.45099999999999996
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.45099999999999996
+          }
+        }
+      },
+      {
+        "event_id": "991810",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.0024607865527747075,
+            "actual_bid_mark": 0.53,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.5275392134472253
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.53,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.53
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.53,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.53
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.53,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.53
+          }
+        }
+      },
+      {
+        "event_id": "79987",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.008902242676296274,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12890224267629627
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          }
+        }
+      },
+      {
+        "event_id": "770450",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.006409918225198985,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.753590081774801
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.76
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.76
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.76
+          }
+        }
+      },
+      {
+        "event_id": "79987",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.0013398004443417877,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.44966019955565817
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.45099999999999996
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.45099999999999996
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.45099999999999996
+          }
+        }
+      },
+      {
+        "event_id": "770450",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.0022487003843754128,
+            "actual_bid_mark": 0.991,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.9887512996156246
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.991,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.991
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.991,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.991
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.991,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.991
+          }
+        }
+      },
+      {
+        "event_id": "991810",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.007724948369033813,
+            "actual_bid_mark": 0.78,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.7877249483690338
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.78,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.78
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.78,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.78
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.78,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.78
+          }
+        }
+      },
+      {
+        "event_id": "991810",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.007724948369033813,
+            "actual_bid_mark": 0.21000000000000002,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.2022750516309662
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.21000000000000002,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.21000000000000002
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.21000000000000002,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.21000000000000002
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.21000000000000002,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.21000000000000002
+          }
+        }
+      },
+      {
+        "event_id": "79987",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.008902242676296274,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12890224267629627
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          }
+        }
+      },
+      {
+        "event_id": "770450",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.006409918225198985,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.753590081774801
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.76
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.76
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.76
+          }
+        }
+      },
+      {
+        "event_id": "79987",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.0014125037065532142,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.44958749629344674
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.45099999999999996
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.45099999999999996
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.45099999999999996
+          }
+        }
+      },
+      {
+        "event_id": "991810",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.002394859301424579,
+            "actual_bid_mark": 0.53,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.5276051406985754
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.53,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.53
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.53,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.53
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.53,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.53
+          }
+        }
+      },
+      {
+        "event_id": "991810",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.002394859301424579,
+            "actual_bid_mark": 0.53,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.5276051406985754
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.53,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.53
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.53,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.53
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.53,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.53
+          }
+        }
+      },
+      {
+        "event_id": "79987",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.008902242676296274,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12890224267629627
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          }
+        }
+      },
+      {
+        "event_id": "770450",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.006411151785024605,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.7535888482149754
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.76
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.76
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.76
+          }
+        }
+      },
+      {
+        "event_id": "79987",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.0014125037065532142,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.44958749629344674
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.45099999999999996
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.45099999999999996
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.45099999999999996
+          }
+        }
+      },
+      {
+        "event_id": "770450",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.0022487003843754128,
+            "actual_bid_mark": 0.991,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.9887512996156246
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.991,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.991
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.991,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.991
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.991,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.991
+          }
+        }
+      },
+      {
+        "event_id": "79987",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.008902242676296274,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12890224267629627
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          }
+        }
+      },
+      {
+        "event_id": "79987",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.0014118925268325477,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.4495881074731674
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.45099999999999996
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.45099999999999996
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.45099999999999996
+          }
+        }
+      },
+      {
+        "event_id": "770450",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.0022487003843754128,
+            "actual_bid_mark": 0.991,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.9887512996156246
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.991,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.991
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.991,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.991
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.991,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.991
+          }
+        }
+      },
+      {
+        "event_id": "770450",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.006411151785024605,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.7535888482149754
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.76
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.76
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.76
+          }
+        }
+      },
+      {
+        "event_id": "79987",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.008901062001958615,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.1289010620019586
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          }
+        }
+      },
+      {
+        "event_id": "770450",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.0064125370752260435,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.753587462924774
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.76
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.76
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.76
+          }
+        }
+      },
+      {
+        "event_id": "79987",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.0014027644750540524,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.4495972355249459
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.45099999999999996
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.45099999999999996
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.45099999999999996
+          }
+        }
+      },
+      {
+        "event_id": "770450",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.0022487003843754128,
+            "actual_bid_mark": 0.991,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.9887512996156246
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.991,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.991
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.991,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.991
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.991,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.991
+          }
+        }
+      },
+      {
+        "event_id": "991810",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.0023912472660638784,
+            "actual_bid_mark": 0.53,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.5276087527339361
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.53,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.53
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.53,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.53
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.53,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.53
+          }
+        }
+      },
+      {
+        "event_id": "79987",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.008901062001958615,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.1289010620019586
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          }
+        }
+      },
+      {
+        "event_id": "770450",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.0022487003843754128,
+            "actual_bid_mark": 0.991,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.9887512996156246
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.991,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.991
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.991,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.991
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.991,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.991
+          }
+        }
+      },
+      {
+        "event_id": "79987",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.0014027644750540524,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.4495972355249459
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.45099999999999996
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.45099999999999996
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.45099999999999996
+          }
+        }
+      },
+      {
+        "event_id": "79987",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.008902415393911234,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12890241539391123
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          }
+        }
+      },
+      {
+        "event_id": "79987",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.008902415393911234,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12890241539391123
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          }
+        }
+      },
+      {
+        "event_id": "770450",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.006411151785024605,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.7535888482149754
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.76
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.76
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.76
+          }
+        }
+      },
+      {
+        "event_id": "79987",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.0014027644750540524,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.4495972355249459
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.45099999999999996
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.45099999999999996
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.45099999999999996
+          }
+        }
+      },
+      {
+        "event_id": "770450",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.0022487003843754128,
+            "actual_bid_mark": 0.991,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.9887512996156246
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.991,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.991
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.991,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.991
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.991,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.991
+          }
+        }
+      },
+      {
+        "event_id": "991810",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.002456680904872943,
+            "actual_bid_mark": 0.53,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.5275433190951271
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.53,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.53
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.53,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.53
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.53,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.53
+          }
+        }
+      },
+      {
+        "event_id": "79987",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.00890189357458293,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12890189357458293
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          }
+        }
+      },
+      {
+        "event_id": "770450",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.006413922599316169,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.7535860774006838
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.76
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.76
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.76
+          }
+        }
+      },
+      {
+        "event_id": "770450",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.0022487003843754128,
+            "actual_bid_mark": 0.991,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.9887512996156246
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.991,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.991
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.991,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.991
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.991,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.991
+          }
+        }
+      },
+      {
+        "event_id": "79987",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.008900855015495368,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12890085501549536
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          }
+        }
+      },
+      {
+        "event_id": "79987",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.008902035649446416,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.1289020356494464
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          }
+        }
+      },
+      {
+        "event_id": "770450",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.006349297144353283,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.7536507028556467
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.76
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.76
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.76
+          }
+        }
+      },
+      {
+        "event_id": "79987",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.0014027644750540524,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.4495972355249459
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.45099999999999996
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.45099999999999996
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.45099999999999996,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.45099999999999996
+          }
+        }
+      },
+      {
+        "event_id": "770450",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.0022487003843754128,
+            "actual_bid_mark": 0.991,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.9887512996156246
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.991,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.991
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.991,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.991
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.991,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.991
+          }
+        }
+      },
+      {
+        "event_id": "79987",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.008902035649446416,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.1289020356494464
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          }
+        }
+      },
+      {
+        "event_id": "770450",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.006349297144353283,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.7536507028556467
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.76
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.76
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.76
+          }
+        }
+      },
+      {
+        "event_id": "991810",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.0024292187174852486,
+            "actual_bid_mark": 0.53,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.5275707812825148
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.53,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.53
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.53,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.53
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.53,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.53
+          }
+        }
+      },
+      {
+        "event_id": "79987",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.008888876499017317,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.1288888764990173
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.12,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.12
+          }
+        }
+      },
+      {
+        "event_id": "770450",
+        "models": {
+          "depthimbalance": {
+            "absolute_error": 0.006270395188579192,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.7537296048114208
+          },
+          "momentum20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.76
+          },
+          "reversion20": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.76
+          },
+          "unchanged": {
+            "absolute_error": 0.0,
+            "actual_bid_mark": 0.76,
+            "baseline_absolute_error": 0.0,
+            "forecast": 0.76
+          }
+        }
+      }
+    ],
+    "scored": [
+      "2844bfa315029bd41906f49a490f5bd8c79ddca5250232b75800af6493ef69ac",
+      "b8fd2bffb6d5e9a613d81396aa14264990e858ccfb164fe9858a6650c39a4726",
+      "b1cdf79999cdb058c5df07babd8ce1fd6cac416ff73d4602407d0e97a71ec9d5",
+      "e8e55f42211a02bbf312b3bb198e9e77fce20bd2411252c3ae9dbdb240f1f5a0",
+      "59cbf7aab6e259efb9059cccfe5f9ce54e6ab2301660f45dbc8e50bdefee1416",
+      "6b97176777aa6a4972fd228b09701c0e2b82c9c1723d132a9bd1b5485de71a81",
+      "d586e15812aa5e1eb0f907ef84688c5e2a1c0aca71a91d7b2ba5f52d56cc4563",
+      "e3cc83b3ff30ec315dca993f36e2637ac6f5059c4b37e7038fcefdb56630c4a3",
+      "853642e3e4154144861d15b4916cd3f6fb3791abc392a847e3c05113f7beae35",
+      "627d45b5ec9d2f0c90696f1474c6a037290e08cb4b8b09dab2fdca092e9f4cc3",
+      "93e8f4ca8ee2a39253cefe9f6fb1d07baae7831acb784db66d8deb35c412d34d",
+      "b8fd7754900189a09eb597113eefe46abc767ca1dd19b5b23e341f3a80603069",
+      "f291ccbab12c6d214f6d14425e880e24b73f369d9ce06d674a146d7c921f3f90",
+      "8ca852fdeceace0f1ceb6aa0a82aef45e3279b39c1c3ff047e65e13bb8b76931",
+      "42a0cee5051dfd6d7a335521ea2be4bdae5dac156e476909f29d479ed27c726a",
+      "c30b2a673021ce6e4d2e7db1b15f758bba6207af4716422c1969e9ce4c2fc401",
+      "aeb1216a706282596646377845a9fcd90b3c232946f5065cb527fd0ad1528b07",
+      "c1dc681f91f03e2958d126dcf6479a5410ce0f2386a5f6a1943c0acd96d2df11",
+      "2387113eeb0dcea589500e86955f7c23d54015ae8d9b27bc7a6ec5d65a01a487",
+      "eedb43ee2b94e4338c11d42d7f488ce20f4a79eebb4cf902da4c5807052f9fdf",
+      "1df111fc2708c1e181158046846f08f4c8c41267b2a8a992c3f6503d7e1cb904",
+      "42b29d754a85ba35fa646e2006b04d50c657eef06a17dd2db194b4457f6eab6b",
+      "13410dae5fd5fe16599b8ed89a0e106bc83e6756ac67366963733358d4386934",
+      "7463a1a60bd04b5bc2cdaf68ffa08d6158a4916a6492984f8825458255863d0c",
+      "61e2e46b5750b0f958457f8dd9397c597505e2f0f6e2a0cdcd92c73bb5fc2ea0",
+      "ee67ea1cc0ba73a1eb09cef46f9568d8789d9a9d17bdd7320689b27d1770ea71",
+      "90151bf602db1633bde1834045c0e61b16f6754287365aca0ddfdcfe34e5506d",
+      "1a3ecdbaea9ba23ba99979c692865e9439434b7f66c56a1d040f3b6b48d54ce8",
+      "7c81294f527d21ce0212f107fd09fd5c683c781cc8e55a7f24e6c251a48455a1",
+      "5b4b38c9d20b0fa3e6589ccd1b8649d3c865d98888b1bb51676dd02c4832ccf4",
+      "e604ec18d57bb6a066b1d4470241f3b81e83d08b3bce59b2dc9f9c98c1aad3c5",
+      "7cbfa422662006f439fe9161ca80782771d18a374218163541eb7d1afa4090f1",
+      "bb315880d5cbdd72ccfc4579bc6e7baa34f2f65ae67108a381b829bf0e19685d",
+      "f74530a1b06ad5d08d1924f29bba957b42ae7dae3614902fa2c5617551d8794f",
+      "876a0bc04b46e5a9fd4da46d907688336052b8b49983785fe414382dbc051133",
+      "47d8c4ba1fbb0fa571b241cffb38437052111746a8ea7b6528ce762bf62e229b",
+      "8daa31ab10904d675b678ec39e7be0f481a9cc1b6f1a8a1144baec4fb6a9859e",
+      "4f893fe4f5b6a4f255211af5364a1641b63493114c06a4981486ecf7e553c748",
+      "f1f386be5c3832edf592b83b0ad05e7c65111be451ad1e8921188de38a9adec4",
+      "73e4728bf3612749e2a2ecd32400fea723fa9f8f54814871f29cc455f701c454",
+      "1bd5c93650dd61e1660fd1cfd9b421bd1b9b287348d455cbcdfd701dde44e109",
+      "da93765e5dcb676ac0372f0ecda44512af2317d33ae06fd9e16ff3ab87a70f35",
+      "f525ee54c0f781fd14b737ba67e7e62835531090266afc461cffe9c281f5d8b7",
+      "add806d72b5c4834bba53407b55d3dd318d9804c47bcc4fee24951c6157f6987",
+      "13ca11ec24a2865107b7287c1ec8bf7d09a03aa10498242a17e114b0b58f9fda",
+      "280ceeb7281dfb275b7b9944322b91bcbecaa238a3b7e1097458d8149f8d47bd",
+      "6ca007abc405b8f7e240ae92035aaca15afda5bbef4cf60c59bd2474a5956498",
+      "b403cbe6d82e82ac7b0b9c7e5ae4c5547e00344cc04bed66a3d222e675f62178",
+      "17942bcdec11aed267f9b3bc28f7e9efa21c2e742dc30bc2de495a6e1a4941b3",
+      "0686513f777b8eabb8660050a035bcb41454a81309c2e80aa954469e5d6951cc",
+      "472d4bf7dc7695273f9a4e32d5f3341694eadaf1ba7d1738747d53a89ee8ffa5",
+      "3b18f18298455927c01994d19306a64245e01e2d3d12d7296b53dbfb8838b485",
+      "1ed720a485840b008b7d075714ffdeeac00abd7eb2031ce8c1b858f70c891627",
+      "b3ddbbc75f82e2ad01eead2f89465ec8e632787b8c9ace186fff559df19336ff",
+      "2d5f11d749aab54715eda40c3a6536999d289f87df2b3a658dc8b612643296d8",
+      "3dff21a0b6795fffacaed83d616bc05834e66207a1e456bbc6cb788fd80771d1",
+      "1b2e16bd3f7386c23048a968d72723107ee80a9f5f0829c04f1e9ecd121ca734",
+      "d0edbc2795f3b7e13235a8cea6afbb97e89ec821a5d276bcf9c5b012775b0ef4",
+      "fadd6b8502fbdd2328a3845ace65001480bf383ba76cbac5fa2d000813941548",
+      "8c3f070ecdb7700b00375fa0790782666fdac83ccecbdacbb2e1ed08d947a076",
+      "fe0bb944e55341801aebd5846357aec5d24de635dcf1492851f9b49a2493257a",
+      "3d5e90784c0062ed899864d621f75789a6bc7a9122dd2f02526c979a8b7e4674",
+      "85e341c42e3251ca899449d84231c7e4e56a3683d7b5d0576f6d764eadd3acc1",
+      "aa10e1b3aeb02ae9e706ad5b5bff73e1e391f6d2aa71c17a59cac2e74d4e8f26",
+      "de03b6e9b60da585aa7cd691568a05e96d2f1531d6d84cc58b023eb29298f22e",
+      "8ef0c66ca6a8c54a32685224abead2b1ad66de011c6d8100539892849b200d78",
+      "6927a881655b8f4abf57ac8b8bac04adbe707d73204d51c2a4b66817e63e712f",
+      "99b568ae19e28acc755936da84f595de7e292057decfe71bf72f380120c467a5",
+      "4ec8c25e31c98b6fce320bfba79d4780206f4f6d670093d5d19a75d0b99e88f0",
+      "63e4b6b1fc8390e0e8e684a3cea5d67af1386a73c6388ccfc3674b87b3a5ac4d",
+      "982432ba0b524d6d1ebafd80a47598bc980996c093927ed4db568313320f8609",
+      "918dc26ad59179941626c0854a863f942fa8a3083cef7b4ef0fd4566ac2cdc6c",
+      "9cdb5783dcaed7248981026ba161fa0f80375a3c754bee1ea84f318b7b1a83ed",
+      "5ded2a5e2c81814431a5a1471325f7723ced5f04001c60a274c580888dfacde5",
+      "52f94187865faf8d4d4fb1d35909b1304c659d588672715526e12be8cae6ae02"
+    ],
+    "seen_forecasts": [
+      "ce53cbd834600ebd5698c94791648ed4353c2423c7ba23a6241f0bc04f1c47ec",
+      "7dd205f36677bc71bf924739ebc23acf68cf59ddfdf14989e401b9b1bd8be4dc",
+      "393883cbe07b8606c2209950005942e4a500aee1f297c4952ad51c3d62e8fbbd",
+      "2e2a38177ce714b5f246f7938701a6989a993543ea8ffc99170d5ba65961f725",
+      "31cf644e7e976d8207a1a256a6cf95d735c3e9b54113152a1bd1432f4f4cb1af",
+      "19130bace07b35971654f71c4e57cbc1ca0285f2f6eeeb007f7afe93a1a524d0",
+      "ad2d41723561ecbfe8c36ab6850cf5eb7d1588399d15fd26789f127df55a2c23",
+      "aceb905beb3d5f32d60ae3df967f4bb1abaf64695484a04c709eff553580c50e",
+      "8b378f772c08cad491452248eb727cabcc8e6fa563cd07a231e17fb79e5a8a3b",
+      "ecd8ed929d22c69f89fd019d7ad9cb45bc642eebf446716cf1a6de5c8df3319f",
+      "e9ebadbab69c9e768214efe4ea33dff0292a4d1d6b1ba37f79cfda9c584281b8",
+      "4c8787f914f7a9de75e9d7f664fa20d888a0a6d72444a5c580cab17403a75837",
+      "7e9bac406e3515b7375fc4117ba72d04d986a4dae3a8c11385ca45516defedf8",
+      "d20b38e152817152013280cceb00e322fa52131c42a34e4c69982974154a7370",
+      "aa877a59b9d764c18df4b823ae322299af16d1da5f7e8b7accafad22b31feac1",
+      "5c1cf6c6b5cde064666cd25234e18ba106228b8e518cc352891c8247897f6f8e",
+      "83cbbdebffd8feec4aec0682f63490a5951272f26f51b9f9298c0c79436a3b31",
+      "204995586885830419327a97ad1253885954eac96d2d87d72bda324a1d07c3d6",
+      "8876278894d66d0bf1161cdb92a036dd71fc88c7c55175e0c5dba9a8c8c1f431",
+      "af092bade199fe0ba323d606aa9e582f53691411be03d577b98e691b7ffe2423",
+      "2bce8949daac1151590103fa359f7dffdbc7835ab0397e834791324c5fe84a6c",
+      "509814f4635551af97b3b94279a4f7dec4f6cd7f9e07b0723476670fd5f2caec",
+      "680571a568f06229727787f52ebcf643d9f3f6fc1361195c135840362a30cadc",
+      "3cedb4304f3cb11d1b97b166726fc661a86aa61587487ecdceba2b6e0bb0bad5",
+      "2bd33156d129de6e640463d720dbc3ebe40d25b0c7538abe0f2b22cb51e00cbb",
+      "dde44cc52c44b2f35aeccdfb20ac48fe20ea368f71637bc2d74d77956bca3241",
+      "958679529910d2aed8fd437382e9d363136a3d1c7c41710f973b2166aa82de09",
+      "11fc9689b750b70f16e8ca687f8fa4f85f3a1bc9aa77f7325e5f4560891d9a45",
+      "a2013d26569e632813e5303c940e39eb604b24a29485af3ffa4b8ebf06c9f3c8",
+      "6641ebb955e7d04e67ba66571159860ab4005b802516d6884fde8888fb2dda8c",
+      "6f570af4f3cda39ecbb3f167d6620f971bb25168e8f7564b3ae2c417fb889520",
+      "545a033f0168e2b6a9612bfa58002c31bd4c0bd51072e64a176e48000f5ebbff",
+      "625466a9b52c93d064f122a9edecd08fa7ed6df75bd8059c2e2e93decd5ae4c3",
+      "16c5c135277aed88be2bf19756c206208041ed09532d2089f80b53a9fea6071a",
+      "e30e14a3ea2da78017ee312df725ed7ef127f7566201dab782d776a067c1a756",
+      "b4441e779282b01edc59ddec93e0226daffd220d5aa9a5372f6528a906a7eafb",
+      "0b4f9209732f08af89b37b610aa5905b54e7edfb3671a9ab0426f5354f5b0c6b",
+      "7d65a11116467c2cfae89abf52786c63085327be2cef707da6c7c503ac935167",
+      "b068637c3a484579ebc7cc06321a0b2ac5b504404d62a9b51d5daacdf00c6f82",
+      "80ebd629e2cba1bcb91a1938c4b33099c3dc9cefc4454c73777dae419310c6f7",
+      "be2cc797b49091a8e5269edd9d8530c22e81a0455650de8e95fa3666df422633",
+      "f15ca518f125afd9c62f7e84f78debdef780e882e749abc2b89188577e4fa479",
+      "f15f2212fd418f0ef0aa676f3a3ca6fc63c33793ff7285f48b1ceb4d9e4eea30",
+      "75b6cfcb6cbf05a41eee73276518d527b21fff82ebff37087e0b2a1b117d334d",
+      "1cd72257e6ce081888197a74fda2dbbad30e2e1a277e62d90b7971bb047e8c9c",
+      "21125eef8d36258b1feb87efacdbbd0dc5526007cb732671fdcaaf95dfb19ee6",
+      "a9dd4bb1262917f127c6528049705c0c479aab46c73e28b41d1eaa99774b69d3",
+      "14e297890fa91e7c9ceba69f5c132851fa60b438a513768969221b139f39de08",
+      "d24c3ee86b72a72d280f99f2c9adaa96753740291ae0f594fd43b7c9d5a8caa1",
+      "7926972b2820f8ae98b02a3e775131d3b96f05ab0ce0ac4a3fb87e34b0d1b503",
+      "44ebc1c5c502b9999ca776d2f1b373af68597045c6d29b889245343f43a66200",
+      "a4fbe4fd913521fbf0253805db6b9cc5f85ff28a45aaa9cca467ac437ba60171",
+      "e899dc8983626f364a0e28ae1f778c2df65cf336927961e38ffa3b823b8a1206",
+      "b9fbe2f49c900cf5b16f9b779090c12f0bb65ba261fa1dcc87f1c59637a7dfb2",
+      "06ddf2c1696e0f07e1dc6bda4a0338fabf41ce1fb4c50dec849a5e7ecc9499ce",
+      "4f0a69adb18384bc7daa1bc19ed7a9cc36dc27ee6e5c3b3a691d84f0788c8305",
+      "ed99e9f8585a975a4bb6eada643e7bec31771eba59bb322232d61625d0e22561",
+      "1e0322cc15f636548f14801555b2c0bd4c9c1b6fec593e5b0cd1b2dbe7a1fc61",
+      "c2230e56ceb55e3bf6721f8c94d9105145bc0350dcae55e293a7f268606f660e",
+      "5389b2b9355da5852d50e3123cbee4a2b8ca08f8be8800e12b89f5276f2f0fde",
+      "ce31474a3cf236652c6ecf8fdb46a1f76ba60bf10f30b193cced1a6748d1d5e6",
+      "33108c8ea607c62d89c89aa512d97d93ba793e11ff398052f97ee125346bf659",
+      "d3f701910d1dbcd338e69c0c8a780c4127fdcc98de760fe2fac56ec35aab7588",
+      "5d1fd73e6b97dbb946ac1151acf07f2205d35b4e544aff0aace3bdabf740f1a6",
+      "cb02e4fc4f8a15649ff5524bf604f4f5c3573931f21f186bbf7e42c36d87cf30",
+      "1ef60efcdf022db10baf956bdd3ad054a86e3f31edd5a325966570e30964521a",
+      "f7230685125afee9aa2f2877ae0051d79d4c1dbb72ab821e773ec7cf41e853f0",
+      "29bdb5e45567c9996fa476ca81dd5e39f946d2ed81774fdfa46978c909ebcea9",
+      "8c38c77e68587e3badbb2ce3159fefe33064044d13543bd2fca0fc4b3a396c6d",
+      "2b162cc2dba491af84222bbfb3dd1e965b0a0d0d3244702443c0377ad5b5a753",
+      "495231e873fde16aaf3d1b22edb8774f848b8307e56f02da18e487f407cd7601",
+      "aadd45b354f8f5eec120f0a9a689b3d826cb56b1c3749a161c4e054709f8cdf0",
+      "a610a54f329e8a70e0ce40bb1ea4b9b1f171ff5d12a07bf3b8c565959af87c36",
+      "dae4aeb600a5531e1e5de4994fb4c555dabfc6841cfe0eee937e8d926fbbbcb6",
+      "24b50c734db6da019931984b679d63a25eb1420b6fc04e1e387a369978f7a242",
+      "bc869b565c1c9666cfe3e2a7d9d9fca17a441f652515a9f1cc7abc508eee59f5",
+      "b48b72101561001b027dd0cf810ced3b3cf7fbafd55a87af6a19d9f281905536",
+      "582e30877146bce3ee38b7d07b539220503723df92ea8078c5c61adec7722f85",
+      "51a972e21eceda5c53cabd3d788b58bde255bf1196b803465d4df90a5c6d4f6c",
+      "bd24a4fb5aa5d384a0d805bad92e397f029d06d589c82da69618762ad1b1f350",
+      "d8f1c35089e25f9d2ca726ff630e6914164a73b3ff976d9dafde393918c6e198",
+      "4d85a69252be2f3a2acf2abe29d87c868a8e5c73e1585e9f3aebbb6ae56c7f39",
+      "1ca449def54a08e4edd2bf40016a2926e31d9f591d9b066f21452f16afcfda3f",
+      "3d7b8ebb196654830b66889f50ad0c7005286985e3e3020282591ac52932a88a",
+      "b71f5f1f55e82d78453789d5f0e9c246b176186ce60ed0828b3f1e416959faf5",
+      "e357d5aedcf1cdf1fb4f84345c96985fe3bfb1eebb9b4bc36403370eecacbc1b",
+      "723486d123540bd872d70143ece58799b5610392127890f3fe4c0bd9dfeb6eef",
+      "be7e5ef51687e3bd5cda4e921d9b8b828f1ba73e56113679e73c0a1691020aec"
+    ],
+    "storage_samples": [
+      {
+        "at": "2026-11-07T00:16:53.601195+00:00",
+        "budget_bytes": 17179869184,
+        "free_bytes": 508033613824,
+        "global_floor_bytes": 68719476736,
+        "tier_usage_bytes": {
+          "active": 164616,
+          "catalog_state": 770237242,
+          "cold": 331267700,
+          "derived_cache": 66040458,
+          "protected": 517521408,
+          "segment_metadata": 7382254,
+          "warm": 995815424
+        },
+        "usage_bytes": 2688429102
+      },
+      {
+        "at": "2026-11-07T00:17:28.793051+00:00",
+        "budget_bytes": 17179869184,
+        "free_bytes": 508018003968,
+        "global_floor_bytes": 68719476736,
+        "tier_usage_bytes": {
+          "active": 5885432,
+          "catalog_state": 770346213,
+          "cold": 332578233,
+          "derived_cache": 66040458,
+          "protected": 517521408,
+          "segment_metadata": 7382254,
+          "warm": 995815424
+        },
+        "usage_bytes": 2695569422
+      },
+      {
+        "at": "2026-11-07T00:18:03.944824+00:00",
+        "budget_bytes": 17179869184,
+        "free_bytes": 508013211648,
+        "global_floor_bytes": 68719476736,
+        "tier_usage_bytes": {
+          "active": 6970872,
+          "catalog_state": 770501861,
+          "cold": 332578233,
+          "derived_cache": 66155146,
+          "protected": 517521408,
+          "segment_metadata": 7382900,
+          "warm": 995815424
+        },
+        "usage_bytes": 2696925844
+      },
+      {
+        "at": "2026-11-07T00:18:37.579933+00:00",
+        "budget_bytes": 17179869184,
+        "free_bytes": 508009529344,
+        "global_floor_bytes": 68719476736,
+        "tier_usage_bytes": {
+          "active": 556016,
+          "catalog_state": 770669797,
+          "cold": 332578233,
+          "derived_cache": 66155146,
+          "protected": 517521408,
+          "segment_metadata": 7415891,
+          "warm": 1000755200
+        },
+        "usage_bytes": 2695651691
+      },
+      {
+        "at": "2026-11-07T00:19:11.552927+00:00",
+        "budget_bytes": 17179869184,
+        "free_bytes": 507998867456,
+        "global_floor_bytes": 68719476736,
+        "tier_usage_bytes": {
+          "active": 5320184,
+          "catalog_state": 770739429,
+          "cold": 334541862,
+          "derived_cache": 66253450,
+          "protected": 517521408,
+          "segment_metadata": 7416537,
+          "warm": 1000755200
+        },
+        "usage_bytes": 2702548070
+      },
+      {
+        "at": "2026-11-07T00:19:43.135110+00:00",
+        "budget_bytes": 17179869184,
+        "free_bytes": 507992526848,
+        "global_floor_bytes": 68719476736,
+        "tier_usage_bytes": {
+          "active": 6364664,
+          "catalog_state": 770915557,
+          "cold": 334541862,
+          "derived_cache": 66253450,
+          "protected": 517521408,
+          "segment_metadata": 7416537,
+          "warm": 1000755200
+        },
+        "usage_bytes": 2703768678
+      },
+      {
+        "at": "2026-11-07T00:20:16.263841+00:00",
+        "budget_bytes": 17179869184,
+        "free_bytes": 507985674240,
+        "global_floor_bytes": 68719476736,
+        "tier_usage_bytes": {
+          "active": 7441960,
+          "catalog_state": 771091685,
+          "cold": 334541862,
+          "derived_cache": 66290314,
+          "protected": 517521408,
+          "segment_metadata": 7417183,
+          "warm": 1000755200
+        },
+        "usage_bytes": 2705059612
+      },
+      {
+        "at": "2026-11-07T00:20:50.290629+00:00",
+        "budget_bytes": 17179869184,
+        "free_bytes": 507977662464,
+        "global_floor_bytes": 68719476736,
+        "tier_usage_bytes": {
+          "active": 5320184,
+          "catalog_state": 771169509,
+          "cold": 335939419,
+          "derived_cache": 66290314,
+          "protected": 517521408,
+          "segment_metadata": 7450174,
+          "warm": 1005158400
+        },
+        "usage_bytes": 2708849408
+      },
+      {
+        "at": "2026-11-07T00:21:23.880900+00:00",
+        "budget_bytes": 17179869184,
+        "free_bytes": 507971067904,
+        "global_floor_bytes": 68719476736,
+        "tier_usage_bytes": {
+          "active": 6434296,
+          "catalog_state": 771341541,
+          "cold": 335939419,
+          "derived_cache": 66585226,
+          "protected": 517521408,
+          "segment_metadata": 7450820,
+          "warm": 1005158400
+        },
+        "usage_bytes": 2710431110
+      },
+      {
+        "at": "2026-11-07T00:21:57.371495+00:00",
+        "budget_bytes": 17179869184,
+        "free_bytes": 507966107648,
+        "global_floor_bytes": 68719476736,
+        "tier_usage_bytes": {
+          "active": 7507448,
+          "catalog_state": 771681246,
+          "cold": 335939419,
+          "derived_cache": 66585226,
+          "protected": 517521408,
+          "segment_metadata": 7450820,
+          "warm": 1005158400
+        },
+        "usage_bytes": 2711843967
+      },
+      {
+        "at": "2026-11-07T00:22:32.148103+00:00",
+        "budget_bytes": 17179869184,
+        "free_bytes": 507958677504,
+        "global_floor_bytes": 68719476736,
+        "tier_usage_bytes": {
+          "active": 5815776,
+          "catalog_state": 771772528,
+          "cold": 337412625,
+          "derived_cache": 66200202,
+          "protected": 517521408,
+          "segment_metadata": 7484457,
+          "warm": 1009655808
+        },
+        "usage_bytes": 2715862804
+      },
+      {
+        "at": "2026-11-07T00:23:05.272225+00:00",
+        "budget_bytes": 17179869184,
+        "free_bytes": 507953455104,
+        "global_floor_bytes": 68719476736,
+        "tier_usage_bytes": {
+          "active": 7052864,
+          "catalog_state": 771928176,
+          "cold": 337412625,
+          "derived_cache": 65720970,
+          "protected": 517521408,
+          "segment_metadata": 7485101,
+          "warm": 1009655808
+        },
+        "usage_bytes": 2716776952
+      },
+      {
+        "at": "2026-11-07T00:23:40.560314+00:00",
+        "budget_bytes": 17179869184,
+        "free_bytes": 507944673280,
+        "global_floor_bytes": 68719476736,
+        "tier_usage_bytes": {
+          "active": 8138304,
+          "catalog_state": 772014192,
+          "cold": 337412625,
+          "derived_cache": 65720970,
+          "protected": 517521408,
+          "segment_metadata": 7485101,
+          "warm": 1009655808
+        },
+        "usage_bytes": 2717948408
+      },
+      {
+        "at": "2026-11-07T00:24:13.804979+00:00",
+        "budget_bytes": 17179869184,
+        "free_bytes": 507940859904,
+        "global_floor_bytes": 68719476736,
+        "tier_usage_bytes": {
+          "active": 2344096,
+          "catalog_state": 772178032,
+          "cold": 339420133,
+          "derived_cache": 65438346,
+          "protected": 517521408,
+          "segment_metadata": 7518736,
+          "warm": 1014743040
+        },
+        "usage_bytes": 2719163791
+      },
+      {
+        "at": "2026-11-07T00:24:47.173790+00:00",
+        "budget_bytes": 17179869184,
+        "free_bytes": 507931795456,
+        "global_floor_bytes": 68719476736,
+        "tier_usage_bytes": {
+          "active": 6221352,
+          "catalog_state": 772366448,
+          "cold": 339420133,
+          "derived_cache": 65438346,
+          "protected": 517521408,
+          "segment_metadata": 7518736,
+          "warm": 1014743040
+        },
+        "usage_bytes": 2723229463
+      },
+      {
+        "at": "2026-11-07T00:25:19.851854+00:00",
+        "budget_bytes": 17179869184,
+        "free_bytes": 507927187456,
+        "global_floor_bytes": 68719476736,
+        "tier_usage_bytes": {
+          "active": 7302696,
+          "catalog_state": 772538480,
+          "cold": 339420133,
+          "derived_cache": 64811658,
+          "protected": 517521408,
+          "segment_metadata": 7519380,
+          "warm": 1014743040
+        },
+        "usage_bytes": 2723856795
+      },
+      {
+        "at": "2026-11-07T00:25:55.140583+00:00",
+        "budget_bytes": 17179869184,
+        "free_bytes": 507919634432,
+        "global_floor_bytes": 68719476736,
+        "tier_usage_bytes": {
+          "active": 3641896,
+          "catalog_state": 772718704,
+          "cold": 340770612,
+          "derived_cache": 64811658,
+          "protected": 517521408,
+          "segment_metadata": 7552371,
+          "warm": 1018970112
+        },
+        "usage_bytes": 2725986761
+      },
+      {
+        "at": "2026-11-07T00:26:27.860753+00:00",
+        "budget_bytes": 17179869184,
+        "free_bytes": 507912699904,
+        "global_floor_bytes": 68719476736,
+        "tier_usage_bytes": {
+          "active": 6368784,
+          "catalog_state": 772800624,
+          "cold": 340770612,
+          "derived_cache": 64373386,
+          "protected": 517521408,
+          "segment_metadata": 7553015,
+          "warm": 1018970112
+        },
+        "usage_bytes": 2728357941
+      },
+      {
+        "at": "2026-11-07T00:27:02.577074+00:00",
+        "budget_bytes": 17179869184,
+        "free_bytes": 507905847296,
+        "global_floor_bytes": 68719476736,
+        "tier_usage_bytes": {
+          "active": 7413264,
+          "catalog_state": 773129211,
+          "cold": 340770612,
+          "derived_cache": 64373386,
+          "protected": 517521408,
+          "segment_metadata": 7553015,
+          "warm": 1018970112
+        },
+        "usage_bytes": 2729731008
+      }
+    ],
+    "unexecutable_marks": 0,
+    "updates": 19,
+    "version": "phase17-prospective-marks-v1"
+  },
+  "phase17_summary": {
+    "status": "research_only",
+    "activation_at": "2026-11-07T00:16:51.043217+00:00",
+    "last_evaluation_at": "2026-11-07T00:27:02.577074+00:00",
+    "last_source_study_id": "2cfe0c0b8aeeaf4f25080130112d4c3602016ded59359dc4cd27c200f938f9f9",
+    "updates": 19,
+    "forecast_points": 88,
+    "matured_points": 75,
+    "pending_points": 11,
+    "expired_points": 2,
+    "unexecutable_marks": 0,
+    "unreviewed_parent_groups": 3,
+    "reviewed_independent_events": 0,
+    "models": {
+      "depthimbalance": {
+        "scored_marks": 75,
+        "mae": 0.0050050460726434685,
+        "unchanged_bid_mae": 0.0,
+        "mean_observed_net_mark_per_share": -0.07844640000000001,
+        "brier": null,
+        "log_loss": null,
+        "confidence_interval": null,
+        "calibration_status": "not applicable to monetary marks",
+        "drift": "research underperforms unchanged bid"
+      },
+      "momentum20": {
+        "scored_marks": 75,
+        "mae": 0.0,
+        "unchanged_bid_mae": 0.0,
+        "mean_observed_net_mark_per_share": -0.07844640000000001,
+        "brier": null,
+        "log_loss": null,
+        "confidence_interval": null,
+        "calibration_status": "not applicable to monetary marks",
+        "drift": "no independently supported improvement"
+      },
+      "reversion20": {
+        "scored_marks": 75,
+        "mae": 0.0,
+        "unchanged_bid_mae": 0.0,
+        "mean_observed_net_mark_per_share": -0.07844640000000001,
+        "brier": null,
+        "log_loss": null,
+        "confidence_interval": null,
+        "calibration_status": "not applicable to monetary marks",
+        "drift": "no independently supported improvement"
+      },
+      "unchanged": {
+        "scored_marks": 75,
+        "mae": 0.0,
+        "unchanged_bid_mae": 0.0,
+        "mean_observed_net_mark_per_share": -0.07844640000000001,
+        "brier": null,
+        "log_loss": null,
+        "confidence_interval": null,
+        "calibration_status": "not applicable to monetary marks",
+        "drift": "no independently supported improvement"
+      }
+    },
+    "code_sha256": "59b6d7bf1985970968dc1c84d7bebf302c6a414eab138227f091000bca6ca474",
+    "storage": {
+      "schema_version": "phase17-capacity-v1",
+      "observed_at": "2026-11-07T00:27:21.606056+00:00",
+      "status": "warning",
+      "backpressure": false,
+      "alerts": [
+        "capacity_below7days"
+      ],
+      "sample_errors": [],
+      "samples": 19,
+      "window_seconds": 608.975879,
+      "usage_bytes": 2729731008,
+      "budget_bytes": 17179869184,
+      "free_bytes": 507905847296,
+      "global_floor_bytes": 68719476736,
+      "proposed_bytes": 0,
+      "headroom_bytes": 14450138176,
+      "net_retained_growth_bytes_per_second": 67821.90793471478,
+      "forecast_growth_bytes_per_second": 67821.90793471478,
+      "seconds_to_capacity": 213060.03643999033,
+      "span_at_least24h": false,
+      "representative24h": false,
+      "tier_classes": {
+        "active": {
+          "usage_bytes": 7413264,
+          "retention_class": "ACTIVE: open databases/WAL; append only; never compress or move",
+          "original_removal_authorized": false
+        },
+        "warm": {
+          "usage_bytes": 1018970112,
+          "retention_class": "WARM: immutable original segments; retain originals",
+          "original_removal_authorized": false
+        },
+        "cold": {
+          "usage_bytes": 340770612,
+          "retention_class": "COLD: verified additional compressed representations; originals retained",
+          "original_removal_authorized": false
+        },
+        "protected": {
+          "usage_bytes": 517521408,
+          "retention_class": "PROTECTED: account/forecast/audit and legacy evidence; preserve",
+          "original_removal_authorized": false
+        },
+        "catalog_state": {
+          "usage_bytes": 773129211,
+          "retention_class": "PROTECTED: append-only source identity/catalog and restart state",
+          "original_removal_authorized": false
+        },
+        "derived_cache": {
+          "usage_bytes": 64373386,
+          "retention_class": "DERIVED: existing verified cold cache; reproducible only with retained source proof",
+          "original_removal_authorized": false
+        },
+        "segment_metadata": {
+          "usage_bytes": 7553015,
+          "retention_class": "PROTECTED: manifests/hash/provenance; preserve",
+          "original_removal_authorized": false
+        }
+      },
+      "missing_growth_is_not_zero": true,
+      "indefinite_operation_proven": false,
+      "budget_increase_authorized": false,
+      "retention_change_authorized": false,
+      "original_removal_authorized": false,
+      "limitations": [
+        "Net allocation includes WAL/cache/rotation changes; measure24h and7days",
+        "Compression adds verified copies; originals retained means no reclaimed bytes",
+        "Append-only catalogs grow even if a future original-retirement batch is approved"
+      ]
+    },
+    "counter_scope": "cumulative since persisted research activation; drift uses last128 matched marks; no account P/L inputs",
+    "uncertainty_status": "insufficient reviewed independent groups; inferential scores unavailable",
+    "last_error": null,
+    "trading_authority": false,
+    "certification_authority": false,
+    "account_pnl": null,
+    "threshold_change_authority": false
+  },
+  "exact_recovery": true,
+  "seconds": 4.319819357944652,
+  "source_mode": "ReadonlyArchive; no live store owner, account mutation or service restart"
+}

@@ -1,0 +1,26 @@
+{
+  "at": "2026-11-06T23:55:37.011723+00:00",
+  "cpu": "32\n",
+  "memory": "               total        used        free      shared  buff/cache   available\nMem:     265985810432 11760877568  1921232896   517181440 255086964736 254224932864\nSwap:              0           0           0\n",
+  "filesystem": "Filesystem         1B-blocks         Used    Available Use% Mounted on\n/dev/root      1038993555456 527910387712 511066390528  51% /\n",
+  "processes": [
+    "    PID COMMAND         %CPU   RSS",
+    "3185204 neraium-poly    56.3 256876",
+    "3197775 neraium-poly    12.1 263964",
+    "3199431 python3          3.3 28624",
+    "1642914 python           1.2 1690456",
+    "2946873 codex            0.9 734292",
+    "2884107 neraium-poly     0.8 53796",
+    " 357881 opencode         0.5 259164",
+    "2883128 codex            0.4 249120",
+    "3188361 codex            0.3 200328",
+    "1650891 python           0.1 519772",
+    "   1349 dockerd          0.1 334912",
+    "2884136 neraium-poly     0.0 62620",
+    "   1003 containerd       0.0 69620",
+    "1640625 esbuild          0.0 28180",
+    "3188326 sshd             0.0  8624",
+    "2130733 tailscaled       0.0 41248",
+    "2947458 codex-code-mode  0.0 31192"
+  ]
+}

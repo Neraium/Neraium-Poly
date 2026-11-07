@@ -1,0 +1,1641 @@
+{
+  "protocol_sha256": "1459119cf6edcf29bf35c9ad681e65c52735acda584eebb8ef34d5e98beb8270",
+  "started_at": "2026-11-06T23:57:55.976261+00:00",
+  "updated_at": "2026-11-07T00:12:32.314528+00:00",
+  "records": [
+    {
+      "id": "194ecd237276b240f2af0abe93c5a34bb8ba97150d9b78d6d03d14861155de7b",
+      "kind": "QualificationStudy",
+      "path": "194ecd237276b240f2af0abe93c5a34bb8ba97150d9b78d6d03d14861155de7b.json",
+      "sha256": "eee6497ad058db3459f2ed1874aa2825d93121d881cd405f7e94e742fe6d666e",
+      "available_at": "2026-11-06T23:31:17.699504+00:00",
+      "source_segment": "segment-00000196.sqlite",
+      "bytes": 113107
+    },
+    {
+      "id": "f297c45338c2c0c5b07465dcd75b37422796e24cfba9b91046e51749dabad2c1",
+      "kind": "QualificationStudy",
+      "path": "f297c45338c2c0c5b07465dcd75b37422796e24cfba9b91046e51749dabad2c1.json",
+      "sha256": "6af32c72806ac0df3abaef63fd136364af818b84ce87cf4d12b920747e9bfeb3",
+      "available_at": "2026-11-06T23:31:30.009604+00:00",
+      "source_segment": "segment-00000196.sqlite",
+      "bytes": 96656
+    },
+    {
+      "id": "d3511bbace33cad2b75931f5a57f0510cfcc4978deeb1c03e0918202c7f95e89",
+      "kind": "QualificationStudy",
+      "path": "d3511bbace33cad2b75931f5a57f0510cfcc4978deeb1c03e0918202c7f95e89.json",
+      "sha256": "0856244234eee1c82a84a7bfa08009cb41893cb5309b1f41875b80df94639a13",
+      "available_at": "2026-11-06T23:31:41.992158+00:00",
+      "source_segment": "segment-00000196.sqlite",
+      "bytes": 92854
+    },
+    {
+      "id": "e1b002ef41ec663e1ccbc0995260bb8026098edf374d2cc14d0db7deba36750c",
+      "kind": "QualificationStudy",
+      "path": "e1b002ef41ec663e1ccbc0995260bb8026098edf374d2cc14d0db7deba36750c.json",
+      "sha256": "e2c3b6951b4ae0db6f6b6f25b6cac02379508af0fa30e3431656bfb22ed9bc06",
+      "available_at": "2026-11-06T23:31:54.010756+00:00",
+      "source_segment": "segment-00000196.sqlite",
+      "bytes": 92856
+    },
+    {
+      "id": "56001ff8403e519064d610b7f7fb9f566fd3bd5b474f5668859e90d702c7a7a8",
+      "kind": "QualificationStudy",
+      "path": "56001ff8403e519064d610b7f7fb9f566fd3bd5b474f5668859e90d702c7a7a8.json",
+      "sha256": "0cdae582b305dee03e91920790e35c05b762a12e49657a641ee1acd7e522f5d3",
+      "available_at": "2026-11-06T23:32:06.411031+00:00",
+      "source_segment": "segment-00000197.sqlite",
+      "bytes": 80056
+    },
+    {
+      "id": "1dda7afc328cd517b1135ae638dff2cb8a41b5fbeae9e1aa151773cd3f2bf72e",
+      "kind": "QualificationStudy",
+      "path": "1dda7afc328cd517b1135ae638dff2cb8a41b5fbeae9e1aa151773cd3f2bf72e.json",
+      "sha256": "59a5ef80f04ee544ddd7f96d4eea1883898a5a717eb93830f4050565ce60fcaf",
+      "available_at": "2026-11-06T23:32:19.298138+00:00",
+      "source_segment": "segment-00000197.sqlite",
+      "bytes": 91307
+    },
+    {
+      "id": "3ba67e35f83be768fab90352a7620c22b648b5f1527c034faadb8b74a03f839c",
+      "kind": "QualificationStudy",
+      "path": "3ba67e35f83be768fab90352a7620c22b648b5f1527c034faadb8b74a03f839c.json",
+      "sha256": "9c080c92d44e1416c22e222a80cbdd05aadae13566ffdc2d5a2205444ef7e171",
+      "available_at": "2026-11-06T23:32:31.514706+00:00",
+      "source_segment": "segment-00000197.sqlite",
+      "bytes": 91435
+    },
+    {
+      "id": "0dcd094e4c64abce258403e71d829510b6ad5ce31f6f8a1e004f150e217e5edd",
+      "kind": "QualificationStudy",
+      "path": "0dcd094e4c64abce258403e71d829510b6ad5ce31f6f8a1e004f150e217e5edd.json",
+      "sha256": "6f9043dab7a97f2f71fb800059d6a47ed35d3965dfbd87006ca0c1c3414cdecb",
+      "available_at": "2026-11-06T23:32:43.526237+00:00",
+      "source_segment": "segment-00000197.sqlite",
+      "bytes": 89351
+    },
+    {
+      "id": "d23b03bb73d6688822f557ac1daa4b733b9146890eab51207c427e14ba7a3973",
+      "kind": "QualificationStudy",
+      "path": "d23b03bb73d6688822f557ac1daa4b733b9146890eab51207c427e14ba7a3973.json",
+      "sha256": "eb95061d92ae48ff2bdba257620ae3f8515c6d7dfb3ee5a7632ec1a5ca75ad0b",
+      "available_at": "2026-11-06T23:32:57.219641+00:00",
+      "source_segment": "segment-00000197.sqlite",
+      "bytes": 93566
+    },
+    {
+      "id": "01e7e9d08b8c4cc25b1b56b2a16d69acaf257b7935cbaf29a362ce6461f6a31a",
+      "kind": "QualificationStudy",
+      "path": "01e7e9d08b8c4cc25b1b56b2a16d69acaf257b7935cbaf29a362ce6461f6a31a.json",
+      "sha256": "8499288810651cc043282589278f4846b2024250b5289d22e44bac59794d17a4",
+      "available_at": "2026-11-06T23:33:09.429794+00:00",
+      "source_segment": "segment-00000197.sqlite",
+      "bytes": 96529
+    },
+    {
+      "id": "0ae56f09c3dd25a7ec8da8a5c6af0a987590300f59893372f8629080b8743188",
+      "kind": "QualificationStudy",
+      "path": "0ae56f09c3dd25a7ec8da8a5c6af0a987590300f59893372f8629080b8743188.json",
+      "sha256": "56fa3c573bd4106a186315ed212dce62193108efae78280e2d75e9600ed93d86",
+      "available_at": "2026-11-06T23:33:21.938240+00:00",
+      "source_segment": "segment-00000197.sqlite",
+      "bytes": 86455
+    },
+    {
+      "id": "cde9116c3afbc75176203ce7a99d61f9fd4902073733febb97c780f3c2bccabb",
+      "kind": "QualificationStudy",
+      "path": "cde9116c3afbc75176203ce7a99d61f9fd4902073733febb97c780f3c2bccabb.json",
+      "sha256": "811a138bc8b7c41cfb455d97f4edf91cf5113966d60eb94b714730168de8e182",
+      "available_at": "2026-11-06T23:33:34.015005+00:00",
+      "source_segment": "segment-00000198.sqlite",
+      "bytes": 86332
+    },
+    {
+      "id": "8286782f5eec945abad152c1cd0105971a9fefcbda407c48ea5d3668bb3dd503",
+      "kind": "QualificationStudy",
+      "path": "8286782f5eec945abad152c1cd0105971a9fefcbda407c48ea5d3668bb3dd503.json",
+      "sha256": "6e2615571879846f99d8ae59c148b5d77bc58e1fc550b35cb29f3018138eafb2",
+      "available_at": "2026-11-06T23:33:48.838332+00:00",
+      "source_segment": "segment-00000198.sqlite",
+      "bytes": 88450
+    },
+    {
+      "id": "ab0c681de932b09f2a87c04848d154115e72193b793f3cadb9bdae53be020421",
+      "kind": "QualificationStudy",
+      "path": "ab0c681de932b09f2a87c04848d154115e72193b793f3cadb9bdae53be020421.json",
+      "sha256": "e29969f2976c11d00356b0309dcb9f4adf046484494cdbb0172fd46f8805a228",
+      "available_at": "2026-11-06T23:34:01.217869+00:00",
+      "source_segment": "segment-00000198.sqlite",
+      "bytes": 90633
+    },
+    {
+      "id": "a81a014e304a9d17cb8a4bdc8f1070862fa5b6d95586a9ff2a7c407c8114ecfa",
+      "kind": "QualificationStudy",
+      "path": "a81a014e304a9d17cb8a4bdc8f1070862fa5b6d95586a9ff2a7c407c8114ecfa.json",
+      "sha256": "d87c0bc1cb0508e91cdf6114decb3ccc89a2ba3abe7b3d0b34b11acc4a9dd4a0",
+      "available_at": "2026-11-06T23:34:15.833205+00:00",
+      "source_segment": "segment-00000198.sqlite",
+      "bytes": 88272
+    },
+    {
+      "id": "2a34799f5082e583935affc8f7b4d2e941a1faac5d6da097099bcaae1a4851ce",
+      "kind": "QualificationStudy",
+      "path": "2a34799f5082e583935affc8f7b4d2e941a1faac5d6da097099bcaae1a4851ce.json",
+      "sha256": "bcff19e42d2f658bd8abcf69a78454c72c8919a65dbcc54d3698f1b04ff8b2cb",
+      "available_at": "2026-11-06T23:34:28.415597+00:00",
+      "source_segment": "segment-00000198.sqlite",
+      "bytes": 92757
+    },
+    {
+      "id": "25c9b23bf5e4973aaec5184242da6cf23ad68e350e35627bd4666bdd094ac1f3",
+      "kind": "QualificationStudy",
+      "path": "25c9b23bf5e4973aaec5184242da6cf23ad68e350e35627bd4666bdd094ac1f3.json",
+      "sha256": "056c67c3fdd2b16c17f62273328dcdcbfb85fc3a81e6c903c320be071e392d43",
+      "available_at": "2026-11-06T23:34:43.028512+00:00",
+      "source_segment": "segment-00000198.sqlite",
+      "bytes": 86997
+    },
+    {
+      "id": "c521ad17b15b4a0e5ba78ffa3a0ce0403ff2d4e8e65c239cba0c412e73a1a4fd",
+      "kind": "QualificationStudy",
+      "path": "c521ad17b15b4a0e5ba78ffa3a0ce0403ff2d4e8e65c239cba0c412e73a1a4fd.json",
+      "sha256": "5a22e566d85136d7387d35852c0a997a67cddb7c4b9cf2b2687223d4a858510b",
+      "available_at": "2026-11-06T23:34:55.340435+00:00",
+      "source_segment": "segment-00000198.sqlite",
+      "bytes": 90728
+    },
+    {
+      "id": "9c6b9a2ff5a71315af89190161b78c33eaa36cf761a61df2870395f2845d9f22",
+      "kind": "QualificationStudy",
+      "path": "9c6b9a2ff5a71315af89190161b78c33eaa36cf761a61df2870395f2845d9f22.json",
+      "sha256": "83cd75edf57824295d59d5d0a11a62163abcd1d28ee97d4fe4fd27f0da4ceefe",
+      "available_at": "2026-11-06T23:35:09.529423+00:00",
+      "source_segment": "segment-00000198.sqlite",
+      "bytes": 80836
+    },
+    {
+      "id": "cdbf88a6cb92f48d80e5fccf33c132e120079bbc9e9522bf2b39dc7585b4f6e9",
+      "kind": "QualificationStudy",
+      "path": "cdbf88a6cb92f48d80e5fccf33c132e120079bbc9e9522bf2b39dc7585b4f6e9.json",
+      "sha256": "780b4eb94ddf6c51b7fd6eaa03553b3b421f46c7c1f83be09bfc20267fe1761e",
+      "available_at": "2026-11-06T23:35:21.992146+00:00",
+      "source_segment": "segment-00000198.sqlite",
+      "bytes": 92609
+    },
+    {
+      "id": "74cf21531ee9b09d71ed6b4b78293a9de3c7d05ff3f21bf5ad3eb163e5ca4d0f",
+      "kind": "QualificationStudy",
+      "path": "74cf21531ee9b09d71ed6b4b78293a9de3c7d05ff3f21bf5ad3eb163e5ca4d0f.json",
+      "sha256": "4b526814b3bbcc673de5154216ba394e0ef7a24e1aec27d7e89962756acb5baa",
+      "available_at": "2026-11-06T23:35:38.227160+00:00",
+      "source_segment": "segment-00000199.sqlite",
+      "bytes": 92845
+    },
+    {
+      "id": "338de295b28f05ba0bdf97677ff49b24002daf57ec75452f2f53d72c5a8753bc",
+      "kind": "QualificationStudy",
+      "path": "338de295b28f05ba0bdf97677ff49b24002daf57ec75452f2f53d72c5a8753bc.json",
+      "sha256": "44db0e9b83d9e8d21f9d39e697011d8c8414b7efdbe664d3a6d17262beee87e2",
+      "available_at": "2026-11-06T23:35:51.489814+00:00",
+      "source_segment": "segment-00000199.sqlite",
+      "bytes": 88941
+    },
+    {
+      "id": "0888644d367acf1f4054401cda798aade22776b8ac2b126c93a16209ed58310b",
+      "kind": "QualificationStudy",
+      "path": "0888644d367acf1f4054401cda798aade22776b8ac2b126c93a16209ed58310b.json",
+      "sha256": "3e30463afe777ca646eefa9a90b882ba19c15896ae5be621debf03e603055f23",
+      "available_at": "2026-11-06T23:36:05.932108+00:00",
+      "source_segment": "segment-00000199.sqlite",
+      "bytes": 90606
+    },
+    {
+      "id": "9bb7f13828676fd4f102fc90e96f31c7c722f7179643369efa7f9ae80cb0fc0a",
+      "kind": "QualificationStudy",
+      "path": "9bb7f13828676fd4f102fc90e96f31c7c722f7179643369efa7f9ae80cb0fc0a.json",
+      "sha256": "68d9c218d27b2aaeefff8fb06d72e9d3522779b3ced9269e38f38c8e24b1b294",
+      "available_at": "2026-11-06T23:36:18.436518+00:00",
+      "source_segment": "segment-00000199.sqlite",
+      "bytes": 286455
+    },
+    {
+      "id": "8cc10938f0b8119ecb10750ab4b95576052e743a15ca75e2fc3ed8308756a4f2",
+      "kind": "QualificationStudy",
+      "path": "8cc10938f0b8119ecb10750ab4b95576052e743a15ca75e2fc3ed8308756a4f2.json",
+      "sha256": "24537f89c2bea19ccead00737e67390713a724ebb402381264c17858b076a31e",
+      "available_at": "2026-11-06T23:36:33.432873+00:00",
+      "source_segment": "segment-00000199.sqlite",
+      "bytes": 78485
+    },
+    {
+      "id": "30170a309b3bf100961dc3756b4b8cba5b82cf4204c2e473eab2f6cc594d5011",
+      "kind": "QualificationStudy",
+      "path": "30170a309b3bf100961dc3756b4b8cba5b82cf4204c2e473eab2f6cc594d5011.json",
+      "sha256": "11514d2069a890b5274774679c87f6a56dc59089d126d7a915cecb6db3c4bd35",
+      "available_at": "2026-11-06T23:36:45.825358+00:00",
+      "source_segment": "segment-00000199.sqlite",
+      "bytes": 91090
+    },
+    {
+      "id": "33a8a1417927780582693d38274414f831a4c8d340aa4f4a2098e7a53de9342f",
+      "kind": "QualificationStudy",
+      "path": "33a8a1417927780582693d38274414f831a4c8d340aa4f4a2098e7a53de9342f.json",
+      "sha256": "7d1ebc6c8820e463a0866a6f14505e6b0ac87a9136db38c09a17974bedb39488",
+      "available_at": "2026-11-06T23:37:00.235579+00:00",
+      "source_segment": "segment-00000199.sqlite",
+      "bytes": 80635
+    },
+    {
+      "id": "031fd0da46ca4a3fc2f5f9e6c1233a042e2ca862c7596639c7972a1af28ff34d",
+      "kind": "QualificationStudy",
+      "path": "031fd0da46ca4a3fc2f5f9e6c1233a042e2ca862c7596639c7972a1af28ff34d.json",
+      "sha256": "f01172384dc8ec4283cb8a41fd904894a85bc10286f4ace345c656bdba96f626",
+      "available_at": "2026-11-06T23:37:12.732502+00:00",
+      "source_segment": "segment-00000199.sqlite",
+      "bytes": 94902
+    },
+    {
+      "id": "063095589c28b083955f179884f510bb46203beb88316b2a0368dc488756c7ec",
+      "kind": "QualificationStudy",
+      "path": "063095589c28b083955f179884f510bb46203beb88316b2a0368dc488756c7ec.json",
+      "sha256": "2717ed045fe3747baee1d412d849212905a4fce8649eddd7bc7c20f92f316d52",
+      "available_at": "2026-11-06T23:37:27.305813+00:00",
+      "source_segment": "segment-00000199.sqlite",
+      "bytes": 88193
+    },
+    {
+      "id": "6cfc5e5fad9d9ae018a2f9436e1748ca4e138ea7d64ff4c46223ddd131805acb",
+      "kind": "QualificationStudy",
+      "path": "6cfc5e5fad9d9ae018a2f9436e1748ca4e138ea7d64ff4c46223ddd131805acb.json",
+      "sha256": "5d05e7356a96c31ef38c5dbdffef11ddf133d94b784a13b0bf8dc6b05115c7dc",
+      "available_at": "2026-11-06T23:37:40.691104+00:00",
+      "source_segment": "segment-00000200.sqlite",
+      "bytes": 92878
+    },
+    {
+      "id": "4d9e5d661d1df4950d3af8b42ad8e51c7024631fafa0e9b8ef6c447a4585e13f",
+      "kind": "QualificationStudy",
+      "path": "4d9e5d661d1df4950d3af8b42ad8e51c7024631fafa0e9b8ef6c447a4585e13f.json",
+      "sha256": "7f39985aeea1de69b323624a2b5e08693fac1a8363384949dfd874d49ac52914",
+      "available_at": "2026-11-06T23:37:53.892688+00:00",
+      "source_segment": "segment-00000200.sqlite",
+      "bytes": 92383
+    },
+    {
+      "id": "70ba45801f94e1afc3b56df6f6c32d037353805120f127f80fed823e70bdab0b",
+      "kind": "QualificationStudy",
+      "path": "70ba45801f94e1afc3b56df6f6c32d037353805120f127f80fed823e70bdab0b.json",
+      "sha256": "c8f522f900b88366cdb7a449a83fe1a8b2317e89de720a1d3484399784205f62",
+      "available_at": "2026-11-06T23:38:06.531948+00:00",
+      "source_segment": "segment-00000200.sqlite",
+      "bytes": 94921
+    },
+    {
+      "id": "9207d25e1fd3de7f3a356c7bf0c37c77660ec0f2bcf35bf4aa1ac9bd2af044c2",
+      "kind": "QualificationStudy",
+      "path": "9207d25e1fd3de7f3a356c7bf0c37c77660ec0f2bcf35bf4aa1ac9bd2af044c2.json",
+      "sha256": "43b9473e9671f7f25181b53e793786703e0069b103d91fd89d3576346cf3a67d",
+      "available_at": "2026-11-06T23:38:19.339159+00:00",
+      "source_segment": "segment-00000200.sqlite",
+      "bytes": 92484
+    },
+    {
+      "id": "1b8353fbc8ebc5c62f834c000e677414a12d5e719df2cd9d4231b534d649a37b",
+      "kind": "QualificationStudy",
+      "path": "1b8353fbc8ebc5c62f834c000e677414a12d5e719df2cd9d4231b534d649a37b.json",
+      "sha256": "c0e0823aa1d4e10306e1d274a9acc728b79707227a7eda63cebd35058cb670da",
+      "available_at": "2026-11-06T23:38:31.700839+00:00",
+      "source_segment": "segment-00000200.sqlite",
+      "bytes": 98567
+    },
+    {
+      "id": "308ea58fc11ebc975803d3b99039a9f1fe476db2f7dc6138095d1311f4622ec4",
+      "kind": "QualificationStudy",
+      "path": "308ea58fc11ebc975803d3b99039a9f1fe476db2f7dc6138095d1311f4622ec4.json",
+      "sha256": "dde341eeed3a1ebc3f9778c1421de2a94d050e0657de5e377e339ec90eda29d8",
+      "available_at": "2026-11-06T23:38:44.412313+00:00",
+      "source_segment": "segment-00000200.sqlite",
+      "bytes": 94578
+    },
+    {
+      "id": "7b88da7a3d7a9eaddffd42c22e1fa9274d42604b1666e7c1faefd3837f4d86bb",
+      "kind": "QualificationStudy",
+      "path": "7b88da7a3d7a9eaddffd42c22e1fa9274d42604b1666e7c1faefd3837f4d86bb.json",
+      "sha256": "346214bdf0f59cb1ba81b1110c4f224ec77c59560366204041f1dec6d5c191ea",
+      "available_at": "2026-11-06T23:38:57.537006+00:00",
+      "source_segment": "segment-00000200.sqlite",
+      "bytes": 96886
+    },
+    {
+      "id": "6ee804e02134f7509d4e948877499c7ae7153d4175f0d1c43686899324d84226",
+      "kind": "QualificationStudy",
+      "path": "6ee804e02134f7509d4e948877499c7ae7153d4175f0d1c43686899324d84226.json",
+      "sha256": "89ad81fdea0784ffca8af980060a35cfa3b6782a75f2110cc61446f6f2d41e96",
+      "available_at": "2026-11-06T23:39:10.241435+00:00",
+      "source_segment": "segment-00000201.sqlite",
+      "bytes": 91201
+    },
+    {
+      "id": "98d410be3c3b1b8819e865b200c24b7db60017b870e8c3d251653a4c6cbfda13",
+      "kind": "QualificationStudy",
+      "path": "98d410be3c3b1b8819e865b200c24b7db60017b870e8c3d251653a4c6cbfda13.json",
+      "sha256": "a73364d8146f49cb86f3992e9b3667315bc2346262bdcac414079ad3756d4ad7",
+      "available_at": "2026-11-06T23:39:25.737540+00:00",
+      "source_segment": "segment-00000201.sqlite",
+      "bytes": 88666
+    },
+    {
+      "id": "a594ed2b1cf276936cc785059d069be98acfad60d989da43290d09296445ebd6",
+      "kind": "QualificationStudy",
+      "path": "a594ed2b1cf276936cc785059d069be98acfad60d989da43290d09296445ebd6.json",
+      "sha256": "e6eaecebb10cc1d1484ce788a25b87992651cad93868b5bacedf520578dbe10b",
+      "available_at": "2026-11-06T23:39:38.701060+00:00",
+      "source_segment": "segment-00000201.sqlite",
+      "bytes": 94777
+    },
+    {
+      "id": "99aefa67186a220c0359813cfce72a9a39c4d9f65144843c09e68961901f1a8e",
+      "kind": "QualificationStudy",
+      "path": "99aefa67186a220c0359813cfce72a9a39c4d9f65144843c09e68961901f1a8e.json",
+      "sha256": "52d6ff19aaa82316cfa64056c181d346db3c49a92ca2d6bd5037055d3065b50a",
+      "available_at": "2026-11-06T23:39:52.515783+00:00",
+      "source_segment": "segment-00000201.sqlite",
+      "bytes": 90068
+    },
+    {
+      "id": "843afb6b6618b9f0698d436d1bcf8d28ea52e10f0360b90b1f711e07a08f0319",
+      "kind": "QualificationStudy",
+      "path": "843afb6b6618b9f0698d436d1bcf8d28ea52e10f0360b90b1f711e07a08f0319.json",
+      "sha256": "18ad4ad4e9b6966fd7374f6000b818cc8ab3c1b73d36a712a135bc46ece5acba",
+      "available_at": "2026-11-06T23:40:05.122462+00:00",
+      "source_segment": "segment-00000201.sqlite",
+      "bytes": 95785
+    },
+    {
+      "id": "3ada475d6fd26d5af0433ee9a5f468901bff8633fdb034721a88f02eddcc2e90",
+      "kind": "QualificationStudy",
+      "path": "3ada475d6fd26d5af0433ee9a5f468901bff8633fdb034721a88f02eddcc2e90.json",
+      "sha256": "34d738a795dde2a802661b20fdb71aa89dda31357acdc8bccd9601fac2712389",
+      "available_at": "2026-11-06T23:40:19.327290+00:00",
+      "source_segment": "segment-00000201.sqlite",
+      "bytes": 88431
+    },
+    {
+      "id": "1ae4bc1027094652ac4844fc32958e712ec41443dcb2bbc96b268a4327039351",
+      "kind": "QualificationStudy",
+      "path": "1ae4bc1027094652ac4844fc32958e712ec41443dcb2bbc96b268a4327039351.json",
+      "sha256": "448f5c0495b3019a5c7ba9b7fcfca6d4f8812d5dc6f1e01b4c7f50b1c1cb553d",
+      "available_at": "2026-11-06T23:40:31.806022+00:00",
+      "source_segment": "segment-00000201.sqlite",
+      "bytes": 81657
+    },
+    {
+      "id": "b558d9b561543a7b1b3afabdfccd5969ea45f2b0503736b712a2c513f82170e6",
+      "kind": "QualificationStudy",
+      "path": "b558d9b561543a7b1b3afabdfccd5969ea45f2b0503736b712a2c513f82170e6.json",
+      "sha256": "788437c55908bf8e214385d3a58b4f21954691dd9d68a5c07588b8092862f110",
+      "available_at": "2026-11-06T23:40:46.132138+00:00",
+      "source_segment": "segment-00000201.sqlite",
+      "bytes": 97784
+    },
+    {
+      "id": "281217561836876f923d31c11c08ce7f4258496549decc1c0c305f8fc4c02b0d",
+      "kind": "QualificationStudy",
+      "path": "281217561836876f923d31c11c08ce7f4258496549decc1c0c305f8fc4c02b0d.json",
+      "sha256": "7a49c0f661068a26562bcf974eed5f0de36433a80163dc29c53d596dc2528e8c",
+      "available_at": "2026-11-06T23:40:58.612604+00:00",
+      "source_segment": "segment-00000201.sqlite",
+      "bytes": 93735
+    },
+    {
+      "id": "13d3bef4b2c176a1406e5caafba1c87728d9689af3b634bda9c1090678b4f7dd",
+      "kind": "QualificationStudy",
+      "path": "13d3bef4b2c176a1406e5caafba1c87728d9689af3b634bda9c1090678b4f7dd.json",
+      "sha256": "608d01889dab8a6a81f108909d4215db20c94686230e7c2e5c69477803d4f1bc",
+      "available_at": "2026-11-06T23:41:12.030807+00:00",
+      "source_segment": "segment-00000202.sqlite",
+      "bytes": 95852
+    },
+    {
+      "id": "ef60f2bafe99f64630abc20c99bdd4fd79cf40a7d60bf7349ba4cdf88e1eb1dc",
+      "kind": "QualificationStudy",
+      "path": "ef60f2bafe99f64630abc20c99bdd4fd79cf40a7d60bf7349ba4cdf88e1eb1dc.json",
+      "sha256": "b8eada9515772825cfdcde4493a61862fad71e8907c8d3704da636799897fd38",
+      "available_at": "2026-11-06T23:41:25.430670+00:00",
+      "source_segment": "segment-00000202.sqlite",
+      "bytes": 482206
+    },
+    {
+      "id": "fa32918c23d5dc0ad2bc4d32876b168a45d1b6b0e8f1f2e8f8d1b53f75f35c6a",
+      "kind": "QualificationStudy",
+      "path": "fa32918c23d5dc0ad2bc4d32876b168a45d1b6b0e8f1f2e8f8d1b53f75f35c6a.json",
+      "sha256": "be9e926708de473fc47f1903c0bb14ca6c5734abd20bdf8ae0562b0190fba25e",
+      "available_at": "2026-11-06T23:41:39.828293+00:00",
+      "source_segment": "segment-00000202.sqlite",
+      "bytes": 96117
+    },
+    {
+      "id": "e83f9c22e4c958b92e3f488080ab027c95126f8806319d565cb5be8a8dc51bf1",
+      "kind": "QualificationStudy",
+      "path": "e83f9c22e4c958b92e3f488080ab027c95126f8806319d565cb5be8a8dc51bf1.json",
+      "sha256": "b3c41198b3d62b69a01b16380de7954e4d129522d9f9b0080cba2dfc7276d470",
+      "available_at": "2026-11-06T23:41:53.019129+00:00",
+      "source_segment": "segment-00000202.sqlite",
+      "bytes": 90386
+    },
+    {
+      "id": "9e38fcb8de1c6ef688ea53ac23a1f40d3275b7e8de66a9d79fb7ece4803b9d90",
+      "kind": "QualificationStudy",
+      "path": "9e38fcb8de1c6ef688ea53ac23a1f40d3275b7e8de66a9d79fb7ece4803b9d90.json",
+      "sha256": "a4e97e466b251c9010a1d848685065e32a6f43702eba6360ab6db0596340e81c",
+      "available_at": "2026-11-06T23:42:06.692572+00:00",
+      "source_segment": "segment-00000202.sqlite",
+      "bytes": 98096
+    },
+    {
+      "id": "3db61bcc71ed0b9dd8c51db4a4b8681adee4bcac4e6047a849a3dc84737ed7eb",
+      "kind": "QualificationStudy",
+      "path": "3db61bcc71ed0b9dd8c51db4a4b8681adee4bcac4e6047a849a3dc84737ed7eb.json",
+      "sha256": "55ccc16c5c8c06415a980f3268b4c07b277182d696c23a4cf299402ec9a3b858",
+      "available_at": "2026-11-06T23:42:19.199062+00:00",
+      "source_segment": "segment-00000202.sqlite",
+      "bytes": 91708
+    },
+    {
+      "id": "c466d30469a8248a4d7c935ee5cdc6e4fd1c1db5cea112a1f5fffafcd138110c",
+      "kind": "QualificationStudy",
+      "path": "c466d30469a8248a4d7c935ee5cdc6e4fd1c1db5cea112a1f5fffafcd138110c.json",
+      "sha256": "ea3c79850106120bc2309a3d9969f1b3360b2a730ee1416878f9a5ffbb17266a",
+      "available_at": "2026-11-06T23:42:34.390644+00:00",
+      "source_segment": "segment-00000202.sqlite",
+      "bytes": 90172
+    },
+    {
+      "id": "16259f661d02cfa561e290034ba393f787015997a9cd2136cc68bbbf5b43b865",
+      "kind": "QualificationStudy",
+      "path": "16259f661d02cfa561e290034ba393f787015997a9cd2136cc68bbbf5b43b865.json",
+      "sha256": "22e05078b7bee930168281a431495d5cd6e7aa681c17757cd719fcd2634808ca",
+      "available_at": "2026-11-06T23:42:47.232403+00:00",
+      "source_segment": "segment-00000202.sqlite",
+      "bytes": 88323
+    },
+    {
+      "id": "ce1dbbfe60e8a8896c959cd536481cacc93e08f28171b22741d2591c5af9bf8b",
+      "kind": "QualificationStudy",
+      "path": "ce1dbbfe60e8a8896c959cd536481cacc93e08f28171b22741d2591c5af9bf8b.json",
+      "sha256": "3eb0c258eba50a0e52b13eab03f398d522a99350c5f1b8a6b068043f9440a6f8",
+      "available_at": "2026-11-06T23:43:02.915577+00:00",
+      "source_segment": "segment-00000203.sqlite",
+      "bytes": 91859
+    },
+    {
+      "id": "46322c90f6cdd60b7a229fd57f39af5958619bf493f36e7914554e478976eb17",
+      "kind": "QualificationStudy",
+      "path": "46322c90f6cdd60b7a229fd57f39af5958619bf493f36e7914554e478976eb17.json",
+      "sha256": "ed83e950854883c48919b264df5b3680e2f52e3710bcc78363d2aa4cb49d2ab4",
+      "available_at": "2026-11-06T23:43:15.410869+00:00",
+      "source_segment": "segment-00000203.sqlite",
+      "bytes": 98232
+    },
+    {
+      "id": "8adfdf217eb60bfb389c224c1c5ec198b04ba42d8c925e00280919b32f0b87d9",
+      "kind": "QualificationStudy",
+      "path": "8adfdf217eb60bfb389c224c1c5ec198b04ba42d8c925e00280919b32f0b87d9.json",
+      "sha256": "96f4adc4cf3857861fb9d532b1f7bb4082d065c80afe3d9e48e32d7d0d1aa61f",
+      "available_at": "2026-11-06T23:43:25.427370+00:00",
+      "source_segment": "segment-00000203.sqlite",
+      "bytes": 89908
+    },
+    {
+      "id": "c7ee493f8ac5cd3d7efb47fb1cc665e18016027b5cde637a60f3deb7f4dc6c68",
+      "kind": "QualificationStudy",
+      "path": "c7ee493f8ac5cd3d7efb47fb1cc665e18016027b5cde637a60f3deb7f4dc6c68.json",
+      "sha256": "b07a8a0d5f1450223b2b6d8bf893e82a562c8daac79a254f2d2c2b02bde974e5",
+      "available_at": "2026-11-06T23:43:38.224529+00:00",
+      "source_segment": "segment-00000203.sqlite",
+      "bytes": 97652
+    },
+    {
+      "id": "2d94246733485f41ab84f5eada5d7a3256d288535c87a42e05f3771b73854794",
+      "kind": "QualificationStudy",
+      "path": "2d94246733485f41ab84f5eada5d7a3256d288535c87a42e05f3771b73854794.json",
+      "sha256": "a288f9ab1f26d25943bb99bbc4d50f466c74e134447cd96e5bfb7f04eb3e4cb9",
+      "available_at": "2026-11-06T23:43:52.030957+00:00",
+      "source_segment": "segment-00000203.sqlite",
+      "bytes": 97775
+    },
+    {
+      "id": "7023b51a971494e53f2f5e235162ac4b341d90afebe6b1ec9c452c252ffe88b5",
+      "kind": "QualificationStudy",
+      "path": "7023b51a971494e53f2f5e235162ac4b341d90afebe6b1ec9c452c252ffe88b5.json",
+      "sha256": "ead224ecd64dff28c5a6005036374ddec6725fe7d80ba3c65033aa0942de5b2d",
+      "available_at": "2026-11-06T23:44:04.728971+00:00",
+      "source_segment": "segment-00000203.sqlite",
+      "bytes": 92144
+    },
+    {
+      "id": "42771e845100e63539cb44f13ff20df78f1e0ab2885fb9b049c4f2bb22ce1e28",
+      "kind": "QualificationStudy",
+      "path": "42771e845100e63539cb44f13ff20df78f1e0ab2885fb9b049c4f2bb22ce1e28.json",
+      "sha256": "cfe1b4e523cb40d4f90aa44a33c22bde3b5707fccf66520d34979eba13b14626",
+      "available_at": "2026-11-06T23:44:20.036178+00:00",
+      "source_segment": "segment-00000203.sqlite",
+      "bytes": 93720
+    },
+    {
+      "id": "c7e2ce2a2216efd73b1ac1efed60c40f22f6081a16dd5b2111dcee66253598f3",
+      "kind": "QualificationStudy",
+      "path": "c7e2ce2a2216efd73b1ac1efed60c40f22f6081a16dd5b2111dcee66253598f3.json",
+      "sha256": "00ec30c2a428a01d3c99eef3cedaad89e91ce6cb7d5dc02d0573c93bf786abcb",
+      "available_at": "2026-11-06T23:44:32.741331+00:00",
+      "source_segment": "segment-00000203.sqlite",
+      "bytes": 91287
+    },
+    {
+      "id": "d29ab9c8ad7faecd113808a3957ebaaea5399e3f7336e8233656268e11269414",
+      "kind": "QualificationStudy",
+      "path": "d29ab9c8ad7faecd113808a3957ebaaea5399e3f7336e8233656268e11269414.json",
+      "sha256": "b258c53fdeaaffc0e9d9525dc9ef662243f688fdd6d1751da1ee59be2a841be2",
+      "available_at": "2026-11-06T23:44:46.634927+00:00",
+      "source_segment": "segment-00000204.sqlite",
+      "bytes": 93571
+    },
+    {
+      "id": "0d11d34910ba5bfb33ce104a8e5bbcd399370bd56f0db66dc139c68e087b6ff8",
+      "kind": "QualificationStudy",
+      "path": "0d11d34910ba5bfb33ce104a8e5bbcd399370bd56f0db66dc139c68e087b6ff8.json",
+      "sha256": "3e9c3221618c4fc2c4db20b722684857921e79578cf20dfe71983cb4dc0decd6",
+      "available_at": "2026-11-06T23:44:59.830045+00:00",
+      "source_segment": "segment-00000204.sqlite",
+      "bytes": 95641
+    },
+    {
+      "id": "1ae9f38c0fac3bc23b65f11359d5f1dc2e54d4c7502ab59ebf035f138121a7d3",
+      "kind": "QualificationStudy",
+      "path": "1ae9f38c0fac3bc23b65f11359d5f1dc2e54d4c7502ab59ebf035f138121a7d3.json",
+      "sha256": "63dc866d4f92f16a07b202b7553ef8fea8df09e0d3450c89f1fb20943c193925",
+      "available_at": "2026-11-06T23:45:15.397838+00:00",
+      "source_segment": "segment-00000204.sqlite",
+      "bytes": 89276
+    },
+    {
+      "id": "1deaabcba78103a8a5fa4046012335efe9fc4b1bcf72a90c3eb7942df58e2d1d",
+      "kind": "QualificationStudy",
+      "path": "1deaabcba78103a8a5fa4046012335efe9fc4b1bcf72a90c3eb7942df58e2d1d.json",
+      "sha256": "17ffb909de6d476829740a41eafc98ffeab9032f84a46b3c4ee7437bb8fac1a7",
+      "available_at": "2026-11-06T23:45:28.045002+00:00",
+      "source_segment": "segment-00000204.sqlite",
+      "bytes": 98284
+    },
+    {
+      "id": "c5c06bd3ad93406df3b15d9e5907a0bc84063ea2e7ba10252c7dd2b085a82338",
+      "kind": "QualificationStudy",
+      "path": "c5c06bd3ad93406df3b15d9e5907a0bc84063ea2e7ba10252c7dd2b085a82338.json",
+      "sha256": "7820afa9537c327e179b94635d1f69303b8af23e703d40ef0e61ddce175262f6",
+      "available_at": "2026-11-06T23:45:42.920760+00:00",
+      "source_segment": "segment-00000204.sqlite",
+      "bytes": 96535
+    },
+    {
+      "id": "5891f10833110a066320b5810e57dda9cd4b88fd849bdab1abb9f54a6b6f9760",
+      "kind": "QualificationStudy",
+      "path": "5891f10833110a066320b5810e57dda9cd4b88fd849bdab1abb9f54a6b6f9760.json",
+      "sha256": "af22e1f3b50ca100350ae23a8dc19b02f7019d3782bf4246a58648a50dc41117",
+      "available_at": "2026-11-06T23:45:56.109368+00:00",
+      "source_segment": "segment-00000204.sqlite",
+      "bytes": 87858
+    },
+    {
+      "id": "cc841a668a6b5218956bf1a0a1aed000e2959e76b5f3b71395d3e974f441be02",
+      "kind": "QualificationStudy",
+      "path": "cc841a668a6b5218956bf1a0a1aed000e2959e76b5f3b71395d3e974f441be02.json",
+      "sha256": "dcc6874ea29b0b38cd1611d1dbf9f3d222d25e269459e61c61341544e19ad63f",
+      "available_at": "2026-11-06T23:46:10.318092+00:00",
+      "source_segment": "segment-00000204.sqlite",
+      "bytes": 94062
+    },
+    {
+      "id": "4ee3c70c37e9263908d815a971eab850c2201ec3c3ea2ea4b42979d8f5b9890a",
+      "kind": "QualificationStudy",
+      "path": "4ee3c70c37e9263908d815a971eab850c2201ec3c3ea2ea4b42979d8f5b9890a.json",
+      "sha256": "120c07c61ddb1d44851a90331a91b809f2b5b4a00455c987b7c3e690a3eb8aaf",
+      "available_at": "2026-11-06T23:46:23.010572+00:00",
+      "source_segment": "segment-00000204.sqlite",
+      "bytes": 78394
+    },
+    {
+      "id": "a8e590f9526a4c49a5e8dd253d28a0d25d4cd5e69b48b428fe6bb5235fcf7870",
+      "kind": "QualificationStudy",
+      "path": "a8e590f9526a4c49a5e8dd253d28a0d25d4cd5e69b48b428fe6bb5235fcf7870.json",
+      "sha256": "518e69666c1f4366136834a5fdb9b72bea7a4c13247537aafa4bf27908b7b2f1",
+      "available_at": "2026-11-06T23:46:36.631150+00:00",
+      "source_segment": "segment-00000205.sqlite",
+      "bytes": 665731
+    },
+    {
+      "id": "3f0e523799c366846d739d5452240d1db8f2ef71c585ae7720512b6cf2cb1948",
+      "kind": "QualificationStudy",
+      "path": "3f0e523799c366846d739d5452240d1db8f2ef71c585ae7720512b6cf2cb1948.json",
+      "sha256": "dc3664c62171f1e43de7125a283b24b7b6e0466513db8009eda6b49fa39c4319",
+      "available_at": "2026-11-06T23:46:52.199150+00:00",
+      "source_segment": "segment-00000205.sqlite",
+      "bytes": 96249
+    },
+    {
+      "id": "b87d366e98555587a04db8af047db5763ad4191f3edacece743cad9563d5491c",
+      "kind": "QualificationStudy",
+      "path": "b87d366e98555587a04db8af047db5763ad4191f3edacece743cad9563d5491c.json",
+      "sha256": "307a7e2ad4f7261726218de4482de89c07dc42d7ed2e0d1b7f1cb63f76eb9101",
+      "available_at": "2026-11-06T23:47:05.240975+00:00",
+      "source_segment": "segment-00000205.sqlite",
+      "bytes": 95921
+    },
+    {
+      "id": "38666d55cae102cef7314b83b8f60cc0d5fa040f4b084b85024c79ba85056ff5",
+      "kind": "QualificationStudy",
+      "path": "38666d55cae102cef7314b83b8f60cc0d5fa040f4b084b85024c79ba85056ff5.json",
+      "sha256": "a282cf36dbd2971b62609510926d27ed696d1938ec5cfb0ae1bbcbf424ac031b",
+      "available_at": "2026-11-06T23:47:19.526718+00:00",
+      "source_segment": "segment-00000205.sqlite",
+      "bytes": 96108
+    },
+    {
+      "id": "94b2cf390a17b245c0f24d52ef9dfdec9ecb14a17f6a6ff9b5d3a61e5a59cac7",
+      "kind": "QualificationStudy",
+      "path": "94b2cf390a17b245c0f24d52ef9dfdec9ecb14a17f6a6ff9b5d3a61e5a59cac7.json",
+      "sha256": "82c27885704f528718e0b59cba4a0fc957052f99359f78de2e8753f7836691e2",
+      "available_at": "2026-11-06T23:47:32.401965+00:00",
+      "source_segment": "segment-00000205.sqlite",
+      "bytes": 89718
+    },
+    {
+      "id": "bbb602fed231adae94839a1040ed2adb1b11759a7c4c3970f048ff6eecfce775",
+      "kind": "QualificationStudy",
+      "path": "bbb602fed231adae94839a1040ed2adb1b11759a7c4c3970f048ff6eecfce775.json",
+      "sha256": "02ace05ecfe0e9451caed4b071587cd96ef0fd39ad322c8e1e84a1fd0cca4c7e",
+      "available_at": "2026-11-06T23:47:46.206779+00:00",
+      "source_segment": "segment-00000205.sqlite",
+      "bytes": 94164
+    },
+    {
+      "id": "1b4921a7db512ed54dd51e2b5417782f93f56081e60644b5c24a729d42b62a0d",
+      "kind": "QualificationStudy",
+      "path": "1b4921a7db512ed54dd51e2b5417782f93f56081e60644b5c24a729d42b62a0d.json",
+      "sha256": "3d0e0704db8d6c91ee3c17a1f32c3510e36a0323085ca47db6935a5ae6c8d78b",
+      "available_at": "2026-11-06T23:47:59.422237+00:00",
+      "source_segment": "segment-00000205.sqlite",
+      "bytes": 86821
+    },
+    {
+      "id": "738702b2c572f7644fea71834e2d61a3ac42836ec7df6de9f9cb3e56622373e8",
+      "kind": "QualificationStudy",
+      "path": "738702b2c572f7644fea71834e2d61a3ac42836ec7df6de9f9cb3e56622373e8.json",
+      "sha256": "9f7ef5dc3c719ae523265696d068c7c408f57b9149a173e4354c263224671363",
+      "available_at": "2026-11-06T23:48:09.426869+00:00",
+      "source_segment": "segment-00000205.sqlite",
+      "bytes": 84663
+    },
+    {
+      "id": "855a5f81bf1e0a65042754b1408a7f24446372c8ad77c233f8eeb9200b910029",
+      "kind": "QualificationStudy",
+      "path": "855a5f81bf1e0a65042754b1408a7f24446372c8ad77c233f8eeb9200b910029.json",
+      "sha256": "9bb298d1d8e71245637ea63e2899367dfc06ee296a1223f0570c9b0defdb20ea",
+      "available_at": "2026-11-06T23:48:22.533906+00:00",
+      "source_segment": "segment-00000206.sqlite",
+      "bytes": 92203
+    },
+    {
+      "id": "04a14ba2150226bfca77a9ce1e061932cea9a162d665c1282be787d678a7384e",
+      "kind": "QualificationStudy",
+      "path": "04a14ba2150226bfca77a9ce1e061932cea9a162d665c1282be787d678a7384e.json",
+      "sha256": "8f73089ef686fc40d3064a6ba1c3c1aa4fe195bc972064a17213f82f543b8d3c",
+      "available_at": "2026-11-06T23:48:40.136569+00:00",
+      "source_segment": "segment-00000206.sqlite",
+      "bytes": 90203
+    },
+    {
+      "id": "3702c20f52f23f2c9247ab21c52aa4b9d8cf2e763d3ff3ef69f789026f79e1f1",
+      "kind": "QualificationStudy",
+      "path": "3702c20f52f23f2c9247ab21c52aa4b9d8cf2e763d3ff3ef69f789026f79e1f1.json",
+      "sha256": "14cfcdf3b3c90034a9bebb9b4fb7041878784d8bc2a3ae82e7996d10c3eab4f9",
+      "available_at": "2026-11-06T23:48:53.239632+00:00",
+      "source_segment": "segment-00000206.sqlite",
+      "bytes": 92483
+    },
+    {
+      "id": "3846716a2386af776af42a1be376d6fe7e1baf3b1bf44eca7c627b10a7282b54",
+      "kind": "QualificationStudy",
+      "path": "3846716a2386af776af42a1be376d6fe7e1baf3b1bf44eca7c627b10a7282b54.json",
+      "sha256": "71869fdc9cfb5d9bc4cabd4f8318150e75bf1be833c66afe0402ce43d27ba197",
+      "available_at": "2026-11-06T23:49:07.528946+00:00",
+      "source_segment": "segment-00000206.sqlite",
+      "bytes": 83268
+    },
+    {
+      "id": "0462de2a6a11c7645314c37802c6bd4530c510af21693f7c9752773832859e66",
+      "kind": "QualificationStudy",
+      "path": "0462de2a6a11c7645314c37802c6bd4530c510af21693f7c9752773832859e66.json",
+      "sha256": "5d512ff136d7d54e0781ec3a626b408ece2069da072412f8c2b91541ce531ae0",
+      "available_at": "2026-11-06T23:49:20.512707+00:00",
+      "source_segment": "segment-00000206.sqlite",
+      "bytes": 98012
+    },
+    {
+      "id": "19b236be93ad2191819aa89bd72db49752e3238043b3c02c3182932acf466e60",
+      "kind": "QualificationStudy",
+      "path": "19b236be93ad2191819aa89bd72db49752e3238043b3c02c3182932acf466e60.json",
+      "sha256": "54e20dfb55c9224116b61e5c10d4fde844e7d2748998161e7b9d2b7c6f59306d",
+      "available_at": "2026-11-06T23:49:34.228676+00:00",
+      "source_segment": "segment-00000206.sqlite",
+      "bytes": 92270
+    },
+    {
+      "id": "a0102be1093a838023c40c0f10bba5c39253b4b8656b6c0091737744813dab58",
+      "kind": "QualificationStudy",
+      "path": "a0102be1093a838023c40c0f10bba5c39253b4b8656b6c0091737744813dab58.json",
+      "sha256": "ecf5e305558ac35a8c6f9a29c92ac7f2d7d7164931dcbb7dc64aaaac7ae96386",
+      "available_at": "2026-11-06T23:49:46.926781+00:00",
+      "source_segment": "segment-00000206.sqlite",
+      "bytes": 95708
+    },
+    {
+      "id": "99055fcbe69eb57e6ec551a6b97d4c3a18d465aba8ab202a6a2e50f4ea1f6c80",
+      "kind": "QualificationStudy",
+      "path": "99055fcbe69eb57e6ec551a6b97d4c3a18d465aba8ab202a6a2e50f4ea1f6c80.json",
+      "sha256": "9c8c585e29ecf05b8dff0848f564b1c0a01e2720054007b7eeca2cdbe59c4982",
+      "available_at": "2026-11-06T23:50:01.821056+00:00",
+      "source_segment": "segment-00000206.sqlite",
+      "bytes": 91444
+    },
+    {
+      "id": "a6f237056694bbbfa6e7653feef04a23b3a015d179724ed75a6cbf1b26d4164b",
+      "kind": "QualificationStudy",
+      "path": "a6f237056694bbbfa6e7653feef04a23b3a015d179724ed75a6cbf1b26d4164b.json",
+      "sha256": "af6ee508f176c450ae8ae3af10e9a71dc1362fb01d55fc5ed690c6e737331ae7",
+      "available_at": "2026-11-06T23:50:15.529292+00:00",
+      "source_segment": "segment-00000207.sqlite",
+      "bytes": 99885
+    },
+    {
+      "id": "74775e4cc64b01eca85a2e45893b14a0df71d20a6ece8f2b54e8d28cb81793cf",
+      "kind": "QualificationStudy",
+      "path": "74775e4cc64b01eca85a2e45893b14a0df71d20a6ece8f2b54e8d28cb81793cf.json",
+      "sha256": "98afc5cb13c0f6c0bd596720d88e05c3370ef15d1dfdd56ef661eb262562942f",
+      "available_at": "2026-11-06T23:50:28.751503+00:00",
+      "source_segment": "segment-00000207.sqlite",
+      "bytes": 93485
+    },
+    {
+      "id": "4c6b51fa3f4e694882a92b75edbc528e696d7e337fed5dfaf40cf7720eccd299",
+      "kind": "QualificationStudy",
+      "path": "4c6b51fa3f4e694882a92b75edbc528e696d7e337fed5dfaf40cf7720eccd299.json",
+      "sha256": "cc9e67e826285e78ea11d80ed24eda65445c1916f0dcff5eaa46c2074b0e43a8",
+      "available_at": "2026-11-06T23:50:41.737744+00:00",
+      "source_segment": "segment-00000207.sqlite",
+      "bytes": 92273
+    },
+    {
+      "id": "be5d205cbd9071d9ee89765cf648a7e044072d1ccc636b86cb3c6c55ce41c659",
+      "kind": "QualificationStudy",
+      "path": "be5d205cbd9071d9ee89765cf648a7e044072d1ccc636b86cb3c6c55ce41c659.json",
+      "sha256": "f19035ce01a5648dd70041f3a1baa2b0cb1f0117ef77360072af33efe44c7be2",
+      "available_at": "2026-11-06T23:50:58.581954+00:00",
+      "source_segment": "segment-00000207.sqlite",
+      "bytes": 90226
+    },
+    {
+      "id": "7cf07a58682601b4bceaaa486db7be132a8183b87fd9fd198f52eb04d6f7694c",
+      "kind": "QualificationStudy",
+      "path": "7cf07a58682601b4bceaaa486db7be132a8183b87fd9fd198f52eb04d6f7694c.json",
+      "sha256": "79ba056e56e1610312ec1df41a1735892f4318fbd1dcf2f59b073e1c081a1e39",
+      "available_at": "2026-11-06T23:51:11.874009+00:00",
+      "source_segment": "segment-00000207.sqlite",
+      "bytes": 93915
+    },
+    {
+      "id": "7bbe2ea985985f23c28a96d46eddec0729f72b652d99816befc2441248158aa0",
+      "kind": "QualificationStudy",
+      "path": "7bbe2ea985985f23c28a96d46eddec0729f72b652d99816befc2441248158aa0.json",
+      "sha256": "7bcfbcffeefc487dcec584dd282120dcf118f2ffb55e5b0ce0e38803e6874f48",
+      "available_at": "2026-11-06T23:51:26.881537+00:00",
+      "source_segment": "segment-00000207.sqlite",
+      "bytes": 89914
+    },
+    {
+      "id": "4c65dd577f53c2d9d46adb3ce15246be393308225bbfb23998762235bd52e6b2",
+      "kind": "QualificationStudy",
+      "path": "4c65dd577f53c2d9d46adb3ce15246be393308225bbfb23998762235bd52e6b2.json",
+      "sha256": "26dd47664dc68df0eb61b61b777d8f9398374aa70e694327db220cf8b252a108",
+      "available_at": "2026-11-06T23:51:39.883219+00:00",
+      "source_segment": "segment-00000208.sqlite",
+      "bytes": 866364
+    },
+    {
+      "id": "7e3a76f478241a04df64eb585e95ca9f1b186f12006bad1a2f9a958458680aef",
+      "kind": "QualificationStudy",
+      "path": "7e3a76f478241a04df64eb585e95ca9f1b186f12006bad1a2f9a958458680aef.json",
+      "sha256": "c2306f78327ec79c995f150fb95e2a4d89cb994b5c172fac5e4eb08afecac6e9",
+      "available_at": "2026-11-06T23:51:58.528963+00:00",
+      "source_segment": "segment-00000208.sqlite",
+      "bytes": 96306
+    },
+    {
+      "id": "df619ba777bb49988763054983db8359be2d343bdff111e0f7608337eb8c85e2",
+      "kind": "QualificationStudy",
+      "path": "df619ba777bb49988763054983db8359be2d343bdff111e0f7608337eb8c85e2.json",
+      "sha256": "776cd0d53a00fe4f19e87b595a06625171823bb967bc1a6b5d1633baad3913c3",
+      "available_at": "2026-11-06T23:52:12.019753+00:00",
+      "source_segment": "segment-00000208.sqlite",
+      "bytes": 96361
+    },
+    {
+      "id": "94d1e922f5bbd1ab0832a2e2a016cc3257597a4e81e08f4b776fe81fed3da632",
+      "kind": "QualificationStudy",
+      "path": "94d1e922f5bbd1ab0832a2e2a016cc3257597a4e81e08f4b776fe81fed3da632.json",
+      "sha256": "79a13a10a16fe96e524306f5c33995b42e2e23e5dd77264d16e2b8722aefc906",
+      "available_at": "2026-11-06T23:52:25.037030+00:00",
+      "source_segment": "segment-00000208.sqlite",
+      "bytes": 90120
+    },
+    {
+      "id": "d8b0c0d6bf3016fc6355a4891a2ba418c5b606451343edf59e566767effedf87",
+      "kind": "QualificationStudy",
+      "path": "d8b0c0d6bf3016fc6355a4891a2ba418c5b606451343edf59e566767effedf87.json",
+      "sha256": "cb99ac12ea936f96a3b607ee3f226d4aafc0161a3b3434267b9d47507ac4d9f8",
+      "available_at": "2026-11-06T23:52:37.835655+00:00",
+      "source_segment": "segment-00000208.sqlite",
+      "bytes": 94074
+    },
+    {
+      "id": "cd6f2f0ba40c74332161a27319cb39de2e269cd03447ecbbf77a32c59c4d41ad",
+      "kind": "QualificationStudy",
+      "path": "cd6f2f0ba40c74332161a27319cb39de2e269cd03447ecbbf77a32c59c4d41ad.json",
+      "sha256": "9dfbd171a6b06c71d2473dd5169306a223af47b3cf22af6f87481edcdfb10253",
+      "available_at": "2026-11-06T23:52:52.987540+00:00",
+      "source_segment": "segment-00000208.sqlite",
+      "bytes": 91753
+    },
+    {
+      "id": "549b99a2d5f40824ffae921855769b6c65df1437c990c8d5ca54aba758a0d4d7",
+      "kind": "QualificationStudy",
+      "path": "549b99a2d5f40824ffae921855769b6c65df1437c990c8d5ca54aba758a0d4d7.json",
+      "sha256": "a832841b5c6c21b7179b0ee4ea8fd08f5414653226ce2e87dde27b5939da022c",
+      "available_at": "2026-11-06T23:53:06.071181+00:00",
+      "source_segment": "segment-00000208.sqlite",
+      "bytes": 94152
+    },
+    {
+      "id": "c6707b03539de478931ea2e7d14d9700ad31fb2132547738e1be9f4c26f6cbba",
+      "kind": "QualificationStudy",
+      "path": "c6707b03539de478931ea2e7d14d9700ad31fb2132547738e1be9f4c26f6cbba.json",
+      "sha256": "db395e3ccf3adcf5cc1f24880ac3c1411d4c4113e4af8523fa2d5216da73443e",
+      "available_at": "2026-11-06T23:53:19.721692+00:00",
+      "source_segment": "segment-00000208.sqlite",
+      "bytes": 89674
+    },
+    {
+      "id": "562d20eb381be20755dbaa9eba0666dddda8a9a2badad4c9c66b96e6a2af042c",
+      "kind": "QualificationStudy",
+      "path": "562d20eb381be20755dbaa9eba0666dddda8a9a2badad4c9c66b96e6a2af042c.json",
+      "sha256": "a83f22b7c0daab8e6a9fe9426e67382d7ebf01a8768adcbba4f647c274d61b94",
+      "available_at": "2026-11-06T23:53:32.768894+00:00",
+      "source_segment": "segment-00000209.sqlite",
+      "bytes": 93894
+    },
+    {
+      "id": "8b9e580997254b1e16293a949320efdb8c823c8d91d89ba0d2cd7c90603539bb",
+      "kind": "QualificationStudy",
+      "path": "8b9e580997254b1e16293a949320efdb8c823c8d91d89ba0d2cd7c90603539bb.json",
+      "sha256": "a5cc33e60161dc0ca6e9df71b2bd350ce3b304a44f456f54b1c144a607d77ce9",
+      "available_at": "2026-11-06T23:53:52.913920+00:00",
+      "source_segment": "segment-00000209.sqlite",
+      "bytes": 89780
+    },
+    {
+      "id": "708200e08f888cfb9a5c758bdb791568138da363cb245196d61e2fd39457d7ea",
+      "kind": "QualificationStudy",
+      "path": "708200e08f888cfb9a5c758bdb791568138da363cb245196d61e2fd39457d7ea.json",
+      "sha256": "77976e3dd37615c4098406056f141220ad4988b3cace0070370a6c33280c5dbd",
+      "available_at": "2026-11-06T23:54:05.769844+00:00",
+      "source_segment": "segment-00000209.sqlite",
+      "bytes": 90135
+    },
+    {
+      "id": "3dbcb7646acc94ef3ae66f96816929bdf8a2c83e9f51fc43786588dbe962935a",
+      "kind": "QualificationStudy",
+      "path": "3dbcb7646acc94ef3ae66f96816929bdf8a2c83e9f51fc43786588dbe962935a.json",
+      "sha256": "8e484f97894775c7f914e0b70e6b6d191df8cf8afb6d7770f5b0b7ba722af79a",
+      "available_at": "2026-11-06T23:54:20.826392+00:00",
+      "source_segment": "segment-00000209.sqlite",
+      "bytes": 89746
+    },
+    {
+      "id": "0d59f44889bd60bc0b9009a261793357f11d4d7c37d4db005fb36066be0e5226",
+      "kind": "QualificationStudy",
+      "path": "0d59f44889bd60bc0b9009a261793357f11d4d7c37d4db005fb36066be0e5226.json",
+      "sha256": "03a63049446e6b04d3a5477ff96c19947ed5f4ab6bba1a195eac11db3f37f091",
+      "available_at": "2026-11-06T23:54:33.729208+00:00",
+      "source_segment": "segment-00000209.sqlite",
+      "bytes": 89714
+    },
+    {
+      "id": "d1401f2192f6167d2994b81cd168f7427b61529dde8209a51eb21f956a3af5f1",
+      "kind": "QualificationStudy",
+      "path": "d1401f2192f6167d2994b81cd168f7427b61529dde8209a51eb21f956a3af5f1.json",
+      "sha256": "74d46f2c77ea7791555eb7dfcbd3ee26c5bc1291338aa4d86fb4b4d551a468f4",
+      "available_at": "2026-11-06T23:54:48.129147+00:00",
+      "source_segment": "segment-00000209.sqlite",
+      "bytes": 87302
+    },
+    {
+      "id": "ecbac46e629b075ccafb0b46ba37c341fd69cd0aaf4650c9d384af380c0c32a9",
+      "kind": "QualificationStudy",
+      "path": "ecbac46e629b075ccafb0b46ba37c341fd69cd0aaf4650c9d384af380c0c32a9.json",
+      "sha256": "5cefce9b3c97c8699c417f66b06e36c14bccaa195ded43b95762f0aad62aefea",
+      "available_at": "2026-11-06T23:55:01.041797+00:00",
+      "source_segment": "segment-00000209.sqlite",
+      "bytes": 87437
+    },
+    {
+      "id": "b01a051d5b476bb621dac51cb816a0f00bda79c12699d1453d0e78582256d89f",
+      "kind": "QualificationStudy",
+      "path": "b01a051d5b476bb621dac51cb816a0f00bda79c12699d1453d0e78582256d89f.json",
+      "sha256": "854fff7ae19c1028435145e9f1e9ebcbab40cfa9293e66276aecf6b34b384079",
+      "available_at": "2026-11-06T23:55:15.294708+00:00",
+      "source_segment": "segment-00000209.sqlite",
+      "bytes": 78587
+    },
+    {
+      "id": "92395ba96ba7e68aa765cc2fd78fc68b58c35e959b1478e915fd7f429686d309",
+      "kind": "QualificationStudy",
+      "path": "92395ba96ba7e68aa765cc2fd78fc68b58c35e959b1478e915fd7f429686d309.json",
+      "sha256": "19126d511e00805cd4ba3d3811fc464ff1c0ae57e9fb5e44847872bdc06a04f9",
+      "available_at": "2026-11-06T23:55:28.474223+00:00",
+      "source_segment": "segment-00000210.sqlite",
+      "bytes": 97224
+    },
+    {
+      "id": "5902792da312e1e277ba2afe523e5868400672f37aec25adfe7434bf3f466ef3",
+      "kind": "QualificationStudy",
+      "path": "5902792da312e1e277ba2afe523e5868400672f37aec25adfe7434bf3f466ef3.json",
+      "sha256": "26c2facc21b619f894237590976336068677bd53e59cad5ff4adf476ff2759d3",
+      "available_at": "2026-11-06T23:55:43.332291+00:00",
+      "source_segment": "segment-00000210.sqlite",
+      "bytes": 90942
+    },
+    {
+      "id": "4e69e7140d7bfc7333b3e8eeccda087e5273a86606a8814904aad5c120fb2f7a",
+      "kind": "QualificationStudy",
+      "path": "4e69e7140d7bfc7333b3e8eeccda087e5273a86606a8814904aad5c120fb2f7a.json",
+      "sha256": "17e1609180bf97f166e7eeefbac73866afab3360d3f3a02a09444e9e21409bd8",
+      "available_at": "2026-11-06T23:55:56.433168+00:00",
+      "source_segment": "segment-00000210.sqlite",
+      "bytes": 91371
+    },
+    {
+      "id": "d9e2f26dd0e1f056dc2507005add8bc2000f50953bb2024222fe62c6505092bd",
+      "kind": "QualificationStudy",
+      "path": "d9e2f26dd0e1f056dc2507005add8bc2000f50953bb2024222fe62c6505092bd.json",
+      "sha256": "584fcc28467dc8b75a6167ec9f8f27fdd5d886f6eaad4e8c4bb198d579e7445d",
+      "available_at": "2026-11-06T23:56:10.031552+00:00",
+      "source_segment": "segment-00000210.sqlite",
+      "bytes": 86554
+    },
+    {
+      "id": "8ceb7d4f0a45b1ac224fb248565af4ef0a4862078c11ade16995f167d1c15bf2",
+      "kind": "QualificationStudy",
+      "path": "8ceb7d4f0a45b1ac224fb248565af4ef0a4862078c11ade16995f167d1c15bf2.json",
+      "sha256": "26c81f4d1ab2847a46c812d02852aa3025a2c24579ea933f29336edd4db5725a",
+      "available_at": "2026-11-06T23:56:23.316797+00:00",
+      "source_segment": "segment-00000210.sqlite",
+      "bytes": 89470
+    },
+    {
+      "id": "4265dd6f9cf0266f61e3e823b1cdc451628204cc3650a160cb9a77a1e4c941e2",
+      "kind": "QualificationStudy",
+      "path": "4265dd6f9cf0266f61e3e823b1cdc451628204cc3650a160cb9a77a1e4c941e2.json",
+      "sha256": "131cadc7af82a911e419c7b6c7cc69d427f9fbd6d22285ed8adf74d6e206dc48",
+      "available_at": "2026-11-06T23:56:37.133127+00:00",
+      "source_segment": "segment-00000210.sqlite",
+      "bytes": 93475
+    },
+    {
+      "id": "857a8fbe0b6e972a0b2ab675b10d0de40d76d40960ea69491568968a81ea679a",
+      "kind": "QualificationStudy",
+      "path": "857a8fbe0b6e972a0b2ab675b10d0de40d76d40960ea69491568968a81ea679a.json",
+      "sha256": "e5d2553effd64c9c45f1b36ade1c8d794af056e7dfcae7d8375643bff79f0e64",
+      "available_at": "2026-11-06T23:56:50.129613+00:00",
+      "source_segment": "segment-00000210.sqlite",
+      "bytes": 873986
+    },
+    {
+      "id": "fd685d09bb22670336012028d5f5b8492a34743123a067d5131ddea4d9117605",
+      "kind": "QualificationStudy",
+      "path": "fd685d09bb22670336012028d5f5b8492a34743123a067d5131ddea4d9117605.json",
+      "sha256": "3381d481bc5b2958530432b81b51c16fd9496b557a08781c569a53daecde6262",
+      "available_at": "2026-11-06T23:57:06.422244+00:00",
+      "source_segment": "segment-00000210.sqlite",
+      "bytes": 75969
+    },
+    {
+      "id": "a56157c25c5104c0a1dd0f1ac0fc5dea0b916fdd7741986b2c31a87652241ff5",
+      "kind": "QualificationStudy",
+      "path": "a56157c25c5104c0a1dd0f1ac0fc5dea0b916fdd7741986b2c31a87652241ff5.json",
+      "sha256": "b0c8c22632a70177032379137e11fbe342e306b7e499aafe38dabc58c12a30b8",
+      "available_at": "2026-11-06T23:57:19.231876+00:00",
+      "source_segment": "segment-00000210.sqlite",
+      "bytes": 83663
+    },
+    {
+      "id": "4b503eacff255cacc89e2be8292bc2c9585f2d635f15e0173d220524abe31c8b",
+      "kind": "QualificationStudy",
+      "path": "4b503eacff255cacc89e2be8292bc2c9585f2d635f15e0173d220524abe31c8b.json",
+      "sha256": "1461de8307df8697bd1e621f36b812e0dff23d8134fb117edf69869ddbac92fe",
+      "available_at": "2026-11-06T23:57:33.332931+00:00",
+      "source_segment": "segment-00000211.sqlite",
+      "bytes": 80135
+    },
+    {
+      "id": "6f0c153499e4b186f406d7a2e101645abb2beb18d76cbacc60db2679f34f7543",
+      "kind": "QualificationStudy",
+      "path": "6f0c153499e4b186f406d7a2e101645abb2beb18d76cbacc60db2679f34f7543.json",
+      "sha256": "243695eeccab731645611444a8e53d76174c10fef5cfc8eebe1360d7f701c123",
+      "available_at": "2026-11-06T23:57:46.125790+00:00",
+      "source_segment": "segment-00000211.sqlite",
+      "bytes": 79236
+    },
+    {
+      "id": "2acf1ef401891a6bc82a5ca87904ba811251f54032b9e7a4cf4e5af1962e6c5d",
+      "kind": "QualificationStudy",
+      "path": "2acf1ef401891a6bc82a5ca87904ba811251f54032b9e7a4cf4e5af1962e6c5d.json",
+      "sha256": "5c84fee51d6540efd37783c37df48eafcf08c653b348095da3e6776d99b69896",
+      "available_at": "2026-11-06T23:58:00.823215+00:00",
+      "source_segment": "segment-00000211.sqlite",
+      "bytes": 88129
+    },
+    {
+      "id": "1e59578211fde6452e3904e5219353fe232976dba1430f72e287c0a873e9daff",
+      "kind": "QualificationStudy",
+      "path": "1e59578211fde6452e3904e5219353fe232976dba1430f72e287c0a873e9daff.json",
+      "sha256": "035faf25b246668cca0665bfeac636e1aafa283182ff7872d166a59c4ee99548",
+      "available_at": "2026-11-06T23:58:13.639078+00:00",
+      "source_segment": "segment-00000211.sqlite",
+      "bytes": 88519
+    },
+    {
+      "id": "9cdd442b4a8fe90c0fb1e06c22316d218c8ff52c53831bdcf5015717411407a2",
+      "kind": "QualificationStudy",
+      "path": "9cdd442b4a8fe90c0fb1e06c22316d218c8ff52c53831bdcf5015717411407a2.json",
+      "sha256": "e1424486977a0e30579094d13ced6d353eb8cfa447a0b08f4a6dc78eabba0319",
+      "available_at": "2026-11-06T23:58:27.868848+00:00",
+      "source_segment": "segment-00000211.sqlite",
+      "bytes": 94160
+    },
+    {
+      "id": "59bb2c15a140f97d9d1ab8f94c9b7daec977b64c23c2a39323dabccf0884012c",
+      "kind": "QualificationStudy",
+      "path": "59bb2c15a140f97d9d1ab8f94c9b7daec977b64c23c2a39323dabccf0884012c.json",
+      "sha256": "3ff822645f07c857f831c11d566a0aa01ec4080cd161a1773d335a4e901be1d4",
+      "available_at": "2026-11-06T23:58:46.101616+00:00",
+      "source_segment": "segment-00000211.sqlite",
+      "bytes": 96248
+    },
+    {
+      "id": "9107aabd24156b58266182a5179e1c9ef59e31a3ebcaac344a4e6f53c97204fa",
+      "kind": "QualificationStudy",
+      "path": "9107aabd24156b58266182a5179e1c9ef59e31a3ebcaac344a4e6f53c97204fa.json",
+      "sha256": "707fd1dd1827696f479c1efbfb831b7ccfca17712c38bcef27f34588a31acc8d",
+      "available_at": "2026-11-06T23:58:59.047516+00:00",
+      "source_segment": "segment-00000211.sqlite",
+      "bytes": 92265
+    },
+    {
+      "id": "553401c00746cb95c8c906332c392864f8c1c3f77c4df623b91628e292361db3",
+      "kind": "QualificationStudy",
+      "path": "553401c00746cb95c8c906332c392864f8c1c3f77c4df623b91628e292361db3.json",
+      "sha256": "fab868c57f68fa022623ca1f315e81d116ccda071a5836fe4b19a4ce8817b89c",
+      "available_at": "2026-11-06T23:59:12.017246+00:00",
+      "source_segment": "segment-00000212.sqlite",
+      "bytes": 88525
+    },
+    {
+      "id": "c523769118be403109f207cf8ca17a9525912e2377b89d08b9a1d759e904f589",
+      "kind": "QualificationStudy",
+      "path": "c523769118be403109f207cf8ca17a9525912e2377b89d08b9a1d759e904f589.json",
+      "sha256": "d6d01773d1746da166c5524debef1a99415eb636749bf0b6d034f7433ed287e5",
+      "available_at": "2026-11-06T23:59:25.733705+00:00",
+      "source_segment": "segment-00000212.sqlite",
+      "bytes": 88092
+    },
+    {
+      "id": "36bff4412a8d904273486c03e4d744ecc6aff0195139dcca30e66fbdc37f6561",
+      "kind": "QualificationStudy",
+      "path": "36bff4412a8d904273486c03e4d744ecc6aff0195139dcca30e66fbdc37f6561.json",
+      "sha256": "f9e8e0e63fb6565f604542e22e9897afa6524e97aa1a1648cc61ba7630ff3e8a",
+      "available_at": "2026-11-06T23:59:39.225679+00:00",
+      "source_segment": "segment-00000212.sqlite",
+      "bytes": 89956
+    },
+    {
+      "id": "9b9171a4b5702b52151a09b80e6974416ff1025af93081368c62cf8d560fee79",
+      "kind": "QualificationStudy",
+      "path": "9b9171a4b5702b52151a09b80e6974416ff1025af93081368c62cf8d560fee79.json",
+      "sha256": "125ac8d4822081a36a37adb3bc691aa92eb06e52849530c29b57099abd587510",
+      "available_at": "2026-11-06T23:59:52.636085+00:00",
+      "source_segment": "segment-00000212.sqlite",
+      "bytes": 81118
+    },
+    {
+      "id": "751607bf594e6f486f74379ed849963d32b2813c27eacc7c84f5bf10ba2959ec",
+      "kind": "QualificationStudy",
+      "path": "751607bf594e6f486f74379ed849963d32b2813c27eacc7c84f5bf10ba2959ec.json",
+      "sha256": "5592cf01f73641805c6f5cd915b98f10249e604da391bcfc62ff57401643b1cd",
+      "available_at": "2026-11-07T00:00:05.301163+00:00",
+      "source_segment": "segment-00000212.sqlite",
+      "bytes": 85297
+    },
+    {
+      "id": "309724196f2bb60adc5d36202e45bb195ef0404c9bbd3868a54f845f6bdcf8d3",
+      "kind": "QualificationStudy",
+      "path": "309724196f2bb60adc5d36202e45bb195ef0404c9bbd3868a54f845f6bdcf8d3.json",
+      "sha256": "ba9bc458970e22663ee27fb0b272b4e62ead40a520da8bc3526c720bc2d21d8d",
+      "available_at": "2026-11-07T00:00:20.007116+00:00",
+      "source_segment": "segment-00000212.sqlite",
+      "bytes": 86740
+    },
+    {
+      "id": "94d75e256443180446d849539d6f3598798061d43cc3860f02373b28f0117b82",
+      "kind": "QualificationStudy",
+      "path": "94d75e256443180446d849539d6f3598798061d43cc3860f02373b28f0117b82.json",
+      "sha256": "b39cdaff2c8f9115817e213f0270f83132986247e282ae60fe2ad103f3b4eee1",
+      "available_at": "2026-11-07T00:00:33.406578+00:00",
+      "source_segment": "segment-00000212.sqlite",
+      "bytes": 92046
+    },
+    {
+      "id": "04ddd3e1930513e46619b815de17ab7d8150279469d1525467aed784ba2fe86f",
+      "kind": "QualificationStudy",
+      "path": "04ddd3e1930513e46619b815de17ab7d8150279469d1525467aed784ba2fe86f.json",
+      "sha256": "368cd64526b00563abebc182d733baad568ce27fd12f872e58c2b475ace4437b",
+      "available_at": "2026-11-07T00:00:46.585656+00:00",
+      "source_segment": "segment-00000212.sqlite",
+      "bytes": 92016
+    },
+    {
+      "id": "460fea7f50fa417d4d124b20b615a41d3427411ee6b837690b11b1ff438e2f4c",
+      "kind": "QualificationStudy",
+      "path": "460fea7f50fa417d4d124b20b615a41d3427411ee6b837690b11b1ff438e2f4c.json",
+      "sha256": "bec57ffa444b1b1f89d1ef1d4ec65d1fe9073a08e750f0e82a27896649d75a5a",
+      "available_at": "2026-11-07T00:00:59.637573+00:00",
+      "source_segment": "segment-00000212.sqlite",
+      "bytes": 87960
+    },
+    {
+      "id": "d124739ff997526a4fa5bae642b0a629114c71d507dacd137697e29e015161f2",
+      "kind": "QualificationStudy",
+      "path": "d124739ff997526a4fa5bae642b0a629114c71d507dacd137697e29e015161f2.json",
+      "sha256": "8063e33efbcaf62035cd45d6e6bb1ddb58cb46d0a5bf9de7b442de6ea1534b68",
+      "available_at": "2026-11-07T00:01:13.879371+00:00",
+      "source_segment": "segment-00000213.sqlite",
+      "bytes": 79438
+    },
+    {
+      "id": "8bf0c4a5af1af8ce90d6746f39b756729152e07d7831ad294fcde2c4b464b3e0",
+      "kind": "QualificationStudy",
+      "path": "8bf0c4a5af1af8ce90d6746f39b756729152e07d7831ad294fcde2c4b464b3e0.json",
+      "sha256": "3d326f3726ffd4b5701e4e63bcea96621743546b6a15618c0a284d8e7313f615",
+      "available_at": "2026-11-07T00:01:26.308719+00:00",
+      "source_segment": "segment-00000213.sqlite",
+      "bytes": 83873
+    },
+    {
+      "id": "67f1041fe923debaa86a06805d6294ff5cfc02199ec1df19235156c3b8921bb9",
+      "kind": "QualificationStudy",
+      "path": "67f1041fe923debaa86a06805d6294ff5cfc02199ec1df19235156c3b8921bb9.json",
+      "sha256": "83cdfa16108d506ea742c5c5b469853fa645081fdea59569d0de1b67e196a7da",
+      "available_at": "2026-11-07T00:01:39.439506+00:00",
+      "source_segment": "segment-00000213.sqlite",
+      "bytes": 84560
+    },
+    {
+      "id": "daa774c38773609b5cac0d019d16536339b00bce4bc30fd7877b2b8d528fdbe4",
+      "kind": "QualificationStudy",
+      "path": "daa774c38773609b5cac0d019d16536339b00bce4bc30fd7877b2b8d528fdbe4.json",
+      "sha256": "76820e7e7cb95042a1251bdb2d78d5c4b7ce7235c47ea99d35914930d2d4bd5b",
+      "available_at": "2026-11-07T00:01:52.322371+00:00",
+      "source_segment": "segment-00000213.sqlite",
+      "bytes": 880011
+    },
+    {
+      "id": "a017caf17ddeb98011f7d76b9f4a568cc44860a5fd30314d9fa3dcbe554ee24a",
+      "kind": "QualificationStudy",
+      "path": "a017caf17ddeb98011f7d76b9f4a568cc44860a5fd30314d9fa3dcbe554ee24a.json",
+      "sha256": "8547910bd61505c4abfa89504b02f144b2e6bd996963be8a0326f85e150ca8f8",
+      "available_at": "2026-11-07T00:02:05.828966+00:00",
+      "source_segment": "segment-00000213.sqlite",
+      "bytes": 95504
+    },
+    {
+      "id": "85f689b837c917f3f44fb08176484a49ac5ff805da0fd816faa18c6bd0d38335",
+      "kind": "QualificationStudy",
+      "path": "85f689b837c917f3f44fb08176484a49ac5ff805da0fd816faa18c6bd0d38335.json",
+      "sha256": "1314bf3256934d0bda6c302354bcb4544458fbe6f129bf0100c95ea266792ceb",
+      "available_at": "2026-11-07T00:02:22.091520+00:00",
+      "source_segment": "segment-00000213.sqlite",
+      "bytes": 93298
+    },
+    {
+      "id": "5e1799dc0bed780d11e76a8b29604cc9a7b367565cb0782cb2f54e96bae25054",
+      "kind": "QualificationStudy",
+      "path": "5e1799dc0bed780d11e76a8b29604cc9a7b367565cb0782cb2f54e96bae25054.json",
+      "sha256": "7ca2378985b4a0f38bacdef445347703dc2bdc1a2e2d5f478c0c2b7abc60f657",
+      "available_at": "2026-11-07T00:02:35.400219+00:00",
+      "source_segment": "segment-00000213.sqlite",
+      "bytes": 97563
+    },
+    {
+      "id": "e9baa301491447c5fa8354c3727a1f14479e69bbc006dda298bc567f8f4ec0f7",
+      "kind": "QualificationStudy",
+      "path": "e9baa301491447c5fa8354c3727a1f14479e69bbc006dda298bc567f8f4ec0f7.json",
+      "sha256": "69447e4ef295629128d724e7ddd413ec311a9b5508ba971cd98ad01c23631050",
+      "available_at": "2026-11-07T00:02:50.933086+00:00",
+      "source_segment": "segment-00000213.sqlite",
+      "bytes": 92070
+    },
+    {
+      "id": "c11323def8d185146deef83250ffa0aba871880944d083233c080f1253c1eb4e",
+      "kind": "QualificationStudy",
+      "path": "c11323def8d185146deef83250ffa0aba871880944d083233c080f1253c1eb4e.json",
+      "sha256": "36ca96187c8fbb8f9f0b432914a9b0065b7f431aca6af28486b9584226d81ee6",
+      "available_at": "2026-11-07T00:03:04.218769+00:00",
+      "source_segment": "segment-00000214.sqlite",
+      "bytes": 90014
+    },
+    {
+      "id": "353958c972611c67a7716dcb98ed66c43e969dd97f60238d52c9501d7dc36b37",
+      "kind": "QualificationStudy",
+      "path": "353958c972611c67a7716dcb98ed66c43e969dd97f60238d52c9501d7dc36b37.json",
+      "sha256": "60c3758238b8e0c7557e65f62814401cc4d936606692fcda73502dfc86da71a5",
+      "available_at": "2026-11-07T00:03:18.306373+00:00",
+      "source_segment": "segment-00000214.sqlite",
+      "bytes": 88283
+    },
+    {
+      "id": "1734eee4609e31801e5241600841cf2364134137154b1af889a4ce037f481d00",
+      "kind": "QualificationStudy",
+      "path": "1734eee4609e31801e5241600841cf2364134137154b1af889a4ce037f481d00.json",
+      "sha256": "6429294b53bea698abdf8acd4cd00f9518b477f5edfd0aaa98f1fcb5ae1a4820",
+      "available_at": "2026-11-07T00:03:31.490983+00:00",
+      "source_segment": "segment-00000214.sqlite",
+      "bytes": 91948
+    },
+    {
+      "id": "cd98548d78bd893095c30f0323dce5b1932f001e57b28099340261725eae98d1",
+      "kind": "QualificationStudy",
+      "path": "cd98548d78bd893095c30f0323dce5b1932f001e57b28099340261725eae98d1.json",
+      "sha256": "846838f2f3bcc2874db74973cc1ca622c2bb0e2cdb2a2bce9704e91e9b181a58",
+      "available_at": "2026-11-07T00:03:45.026461+00:00",
+      "source_segment": "segment-00000214.sqlite",
+      "bytes": 85574
+    },
+    {
+      "id": "a3dd4e70ff341a62ff7223abe5cb624a3227d42142fa015e4e4ab8ffaaec7913",
+      "kind": "QualificationStudy",
+      "path": "a3dd4e70ff341a62ff7223abe5cb624a3227d42142fa015e4e4ab8ffaaec7913.json",
+      "sha256": "cb6ebf7d64040aa8402ff3849da55f58b4f9ff82332a738c5b67d5fec9f4ab87",
+      "available_at": "2026-11-07T00:03:58.156611+00:00",
+      "source_segment": "segment-00000214.sqlite",
+      "bytes": 87054
+    },
+    {
+      "id": "4fbfb290a8c32794855ce49df50fb239ce666e99eaab4953f47f09cd5190c7da",
+      "kind": "QualificationStudy",
+      "path": "4fbfb290a8c32794855ce49df50fb239ce666e99eaab4953f47f09cd5190c7da.json",
+      "sha256": "cfadecaf6e0df6da1dff5d2a9c104c6b97b18062a7658ca8ef1eda4aa151d4a9",
+      "available_at": "2026-11-07T00:04:15.260271+00:00",
+      "source_segment": "segment-00000214.sqlite",
+      "bytes": 93453
+    },
+    {
+      "id": "81326454421a532ddb4d45151bd7ce333d805db9c9a0c0e35cc30d6da8acc13b",
+      "kind": "QualificationStudy",
+      "path": "81326454421a532ddb4d45151bd7ce333d805db9c9a0c0e35cc30d6da8acc13b.json",
+      "sha256": "718dff6cbb60717c18c56d5926aa81c09d30bd541b62d4186971b36f2a509b26",
+      "available_at": "2026-11-07T00:04:28.430554+00:00",
+      "source_segment": "segment-00000214.sqlite",
+      "bytes": 90166
+    },
+    {
+      "id": "17a3d2606ded689277d1900e2caca3aba5b25e80adcde1cfa221a745bbde1dba",
+      "kind": "QualificationStudy",
+      "path": "17a3d2606ded689277d1900e2caca3aba5b25e80adcde1cfa221a745bbde1dba.json",
+      "sha256": "5cec037354d127771683f326a5fd9944969bf96adc0123b78f68ed90155d55bf",
+      "available_at": "2026-11-07T00:04:41.712536+00:00",
+      "source_segment": "segment-00000214.sqlite",
+      "bytes": 86168
+    },
+    {
+      "id": "e905c5c263ffeaf85fc9ed95187b730c059b1ec6d70ea31cc693682b9554af44",
+      "kind": "QualificationStudy",
+      "path": "e905c5c263ffeaf85fc9ed95187b730c059b1ec6d70ea31cc693682b9554af44.json",
+      "sha256": "c9035fe4356138a18a49981d2835ec38c3220de370f8daa832de39cbe3c79877",
+      "available_at": "2026-11-07T00:04:54.633934+00:00",
+      "source_segment": "segment-00000215.sqlite",
+      "bytes": 89834
+    },
+    {
+      "id": "5c1ec206adec206d91f26b0b7b9a9d220a50a21cb3f1aceb4c4407aece9431b7",
+      "kind": "QualificationStudy",
+      "path": "5c1ec206adec206d91f26b0b7b9a9d220a50a21cb3f1aceb4c4407aece9431b7.json",
+      "sha256": "e77977d45796ecc3fe5c3de63c3d361b3df53bb271240e75e09f921973e080c9",
+      "available_at": "2026-11-07T00:05:16.630877+00:00",
+      "source_segment": "segment-00000215.sqlite",
+      "bytes": 87926
+    },
+    {
+      "id": "8a979f1ff742c4e14eb4d15dbba1700c25b11af49d0fc5834fdb9814fc5132c6",
+      "kind": "QualificationStudy",
+      "path": "8a979f1ff742c4e14eb4d15dbba1700c25b11af49d0fc5834fdb9814fc5132c6.json",
+      "sha256": "8204243b2d69b11f086744b499610229c9243ee5e73fb9c83fef83cea7529cfe",
+      "available_at": "2026-11-07T00:05:29.924812+00:00",
+      "source_segment": "segment-00000215.sqlite",
+      "bytes": 92063
+    },
+    {
+      "id": "9b2e8041a9f19e98700d1bbfa0ed2e76211624e282edb3b5664892c34e897237",
+      "kind": "QualificationStudy",
+      "path": "9b2e8041a9f19e98700d1bbfa0ed2e76211624e282edb3b5664892c34e897237.json",
+      "sha256": "6fe9f7a80d7f62d95848caa16239160d45332bd17ad5812fd73d002363299792",
+      "available_at": "2026-11-07T00:05:46.635953+00:00",
+      "source_segment": "segment-00000215.sqlite",
+      "bytes": 88031
+    },
+    {
+      "id": "fed6941852f425ee2f297cc4aa0c384a9e32e0a64b8ab6c1fb9fdc5a0d8c923c",
+      "kind": "QualificationStudy",
+      "path": "fed6941852f425ee2f297cc4aa0c384a9e32e0a64b8ab6c1fb9fdc5a0d8c923c.json",
+      "sha256": "110c1010c8cd99dd99b552737344e2dcc869eb38da137964e4207bcd8fa8cb54",
+      "available_at": "2026-11-07T00:05:59.635760+00:00",
+      "source_segment": "segment-00000215.sqlite",
+      "bytes": 96290
+    },
+    {
+      "id": "39782df594470f9b0522c4e25616468f3e064354a9a63e1134bc8e60d93ac3e9",
+      "kind": "QualificationStudy",
+      "path": "39782df594470f9b0522c4e25616468f3e064354a9a63e1134bc8e60d93ac3e9.json",
+      "sha256": "44105d5cd02211f1c1c88ce46400259a41a3851df8582bcb6728c9f8ff7f01dd",
+      "available_at": "2026-11-07T00:06:13.927182+00:00",
+      "source_segment": "segment-00000215.sqlite",
+      "bytes": 90243
+    },
+    {
+      "id": "1647973633252b56183bcd01ee4530ab0f90c7258c2a2df22d2df1bf3c82232f",
+      "kind": "QualificationStudy",
+      "path": "1647973633252b56183bcd01ee4530ab0f90c7258c2a2df22d2df1bf3c82232f.json",
+      "sha256": "7534a439861afa825d9b468c3e560f7d42b422e3e2c37a5494715a57a3c3ebc0",
+      "available_at": "2026-11-07T00:06:26.926023+00:00",
+      "source_segment": "segment-00000215.sqlite",
+      "bytes": 92127
+    },
+    {
+      "id": "b4016824458a055863a20382df16d950d5cd4de421e2e27dcc9a1c338e82e978",
+      "kind": "QualificationStudy",
+      "path": "b4016824458a055863a20382df16d950d5cd4de421e2e27dcc9a1c338e82e978.json",
+      "sha256": "fdd2f1198650ee8a52476354e4d68d73df5e152b371fdd983fc00d5dfcf1b9f8",
+      "available_at": "2026-11-07T00:06:40.368893+00:00",
+      "source_segment": "segment-00000215.sqlite",
+      "bytes": 83738
+    },
+    {
+      "id": "13ce185373492c3e780c2b7599d6c3676ad96729342987b6814683bc011d8263",
+      "kind": "QualificationStudy",
+      "path": "13ce185373492c3e780c2b7599d6c3676ad96729342987b6814683bc011d8263.json",
+      "sha256": "50e641716c27e09ce7140224787a97aa1d0b4088c806f6862c378c59b629187b",
+      "available_at": "2026-11-07T00:06:53.817586+00:00",
+      "source_segment": "segment-00000216.sqlite",
+      "bytes": 909186
+    },
+    {
+      "id": "f8c932c7966ba780aa13aad3f718cf6371fb81813e6109e5a9b25598a6c94f53",
+      "kind": "QualificationStudy",
+      "path": "f8c932c7966ba780aa13aad3f718cf6371fb81813e6109e5a9b25598a6c94f53.json",
+      "sha256": "3b3c35f0c54263aaf4581bb1870ae6d3eddadf6781b1db52972cc1c8eb22d039",
+      "available_at": "2026-11-07T00:07:07.936905+00:00",
+      "source_segment": "segment-00000216.sqlite",
+      "bytes": 91725
+    },
+    {
+      "id": "8ddb002200a220c3eaccca70298958bbf7324c3de8f15172cd72d74468f30675",
+      "kind": "QualificationStudy",
+      "path": "8ddb002200a220c3eaccca70298958bbf7324c3de8f15172cd72d74468f30675.json",
+      "sha256": "fb41b019053dbd6024efd90e88c607d8280605c339446d4ea72b24d5197cee7a",
+      "available_at": "2026-11-07T00:07:21.228289+00:00",
+      "source_segment": "segment-00000216.sqlite",
+      "bytes": 93405
+    },
+    {
+      "id": "06a356093e74e55419d7a58b9aa00bf5736b14df6ed60eafe35ae3a1d3f73d19",
+      "kind": "QualificationStudy",
+      "path": "06a356093e74e55419d7a58b9aa00bf5736b14df6ed60eafe35ae3a1d3f73d19.json",
+      "sha256": "b45002ab64aa2217bc38120a47b3adae6ea85bdc9481149c19b88a875d786a82",
+      "available_at": "2026-11-07T00:07:34.561164+00:00",
+      "source_segment": "segment-00000216.sqlite",
+      "bytes": 85808
+    },
+    {
+      "id": "09ad0af8cc5d2271646ccb77fd0e49815210be6adde62674a057c8f46aedc61d",
+      "kind": "QualificationStudy",
+      "path": "09ad0af8cc5d2271646ccb77fd0e49815210be6adde62674a057c8f46aedc61d.json",
+      "sha256": "1ce3afd0e86477b45c66a7e859ca95ee4388cbeb99643ec59a3ec8c1a6ac6e31",
+      "available_at": "2026-11-07T00:07:47.914198+00:00",
+      "source_segment": "segment-00000216.sqlite",
+      "bytes": 93464
+    },
+    {
+      "id": "654a6f27aafe46463c49f9ba27e09acc59099e37025488305bc7a452755acb0b",
+      "kind": "QualificationStudy",
+      "path": "654a6f27aafe46463c49f9ba27e09acc59099e37025488305bc7a452755acb0b.json",
+      "sha256": "8846f054dd917877558d61d5e22dabc49908401246772b0450918104939b3857",
+      "available_at": "2026-11-07T00:08:01.720789+00:00",
+      "source_segment": "segment-00000216.sqlite",
+      "bytes": 82515
+    },
+    {
+      "id": "4d9ffb4e077ade874675c18e09b1b70d11f6474bd349eb1e33d51b9cfd9633c2",
+      "kind": "QualificationStudy",
+      "path": "4d9ffb4e077ade874675c18e09b1b70d11f6474bd349eb1e33d51b9cfd9633c2.json",
+      "sha256": "d28da019b9df85c601f11d7f175cb36ffa98fe3b899f7fa1f605c59808a6e17f",
+      "available_at": "2026-11-07T00:08:14.736023+00:00",
+      "source_segment": "segment-00000216.sqlite",
+      "bytes": 97587
+    },
+    {
+      "id": "d42e30857d118125e1dae8d38e3ec61ec8dc2261f3b7ccac28617e15d7d1bee2",
+      "kind": "QualificationStudy",
+      "path": "d42e30857d118125e1dae8d38e3ec61ec8dc2261f3b7ccac28617e15d7d1bee2.json",
+      "sha256": "a4084d8b4d9472cb438b040a1924ed257ebbd86efc43c96f5c107d60871bca6a",
+      "available_at": "2026-11-07T00:08:29.304395+00:00",
+      "source_segment": "segment-00000216.sqlite",
+      "bytes": 95515
+    },
+    {
+      "id": "915ffbab275ea7cace5637d945ca84a37e786001f62048478fae252b37c202fe",
+      "kind": "QualificationStudy",
+      "path": "915ffbab275ea7cace5637d945ca84a37e786001f62048478fae252b37c202fe.json",
+      "sha256": "1cd3e9324556bdd8af40733bc59b522e2494e62f6f299df8b29e953df1c8db75",
+      "available_at": "2026-11-07T00:08:42.266281+00:00",
+      "source_segment": "segment-00000216.sqlite",
+      "bytes": 93358
+    },
+    {
+      "id": "ce3d08e8df5b8ad8241ca14052e4a53d1f2e018e66c89475f64a254dbc3fb190",
+      "kind": "QualificationStudy",
+      "path": "ce3d08e8df5b8ad8241ca14052e4a53d1f2e018e66c89475f64a254dbc3fb190.json",
+      "sha256": "5ecf2a39248545c7145c8d1384564c398c59bd8b4102ad8a8145fc802e9b140e",
+      "available_at": "2026-11-07T00:08:57.130236+00:00",
+      "source_segment": "segment-00000217.sqlite",
+      "bytes": 84536
+    },
+    {
+      "id": "e605230f1710baeac0f2ccba87f24b1c090501404d55ec3ce3be94e11689dff3",
+      "kind": "QualificationStudy",
+      "path": "e605230f1710baeac0f2ccba87f24b1c090501404d55ec3ce3be94e11689dff3.json",
+      "sha256": "8441de9ea38ac82f26b0eab78648101d39a54cb9822e22d11ae783d539638e1c",
+      "available_at": "2026-11-07T00:09:10.267235+00:00",
+      "source_segment": "segment-00000217.sqlite",
+      "bytes": 88915
+    },
+    {
+      "id": "5b72c5f660515aaaaacb019749344ea827463dbcef664b47e5eaceca522c1674",
+      "kind": "QualificationStudy",
+      "path": "5b72c5f660515aaaaacb019749344ea827463dbcef664b47e5eaceca522c1674.json",
+      "sha256": "24798985108e4e452957d184836ee341ba90bd0283eb94fe18d0ae2c75454779",
+      "available_at": "2026-11-07T00:09:27.100874+00:00",
+      "source_segment": "segment-00000217.sqlite",
+      "bytes": 82757
+    },
+    {
+      "id": "9bf5425689392a5f2f64f4009c3082ca4539575beaf9d791a379a6cc2908ed22",
+      "kind": "QualificationStudy",
+      "path": "9bf5425689392a5f2f64f4009c3082ca4539575beaf9d791a379a6cc2908ed22.json",
+      "sha256": "a6183456bd77247e3c65fa9e9676e9031f2145b104d74c5a47243d4e8df969a2",
+      "available_at": "2026-11-07T00:09:40.246419+00:00",
+      "source_segment": "segment-00000217.sqlite",
+      "bytes": 94148
+    },
+    {
+      "id": "2dc7a55d3c6817a035b7481d5f7190b7b656fe9b370f4c68df2e8181250d16a2",
+      "kind": "QualificationStudy",
+      "path": "2dc7a55d3c6817a035b7481d5f7190b7b656fe9b370f4c68df2e8181250d16a2.json",
+      "sha256": "92af4eddd537b4bac708ee8c37aa7a332112dc3628cb113e3a4d04e67ca8de69",
+      "available_at": "2026-11-07T00:09:54.236867+00:00",
+      "source_segment": "segment-00000217.sqlite",
+      "bytes": 88511
+    },
+    {
+      "id": "397423f9ed97c3697a2eaa28d1c36fc6c4ff5a6661a4723e87857ef185dab540",
+      "kind": "QualificationStudy",
+      "path": "397423f9ed97c3697a2eaa28d1c36fc6c4ff5a6661a4723e87857ef185dab540.json",
+      "sha256": "a63cd11112bdab6c574f1dd3692b2833a8b1a578aabe3fd73f79135223c1a57e",
+      "available_at": "2026-11-07T00:10:07.269461+00:00",
+      "source_segment": "segment-00000217.sqlite",
+      "bytes": 87722
+    },
+    {
+      "id": "7025de8686868e9ce78cecb97e5b3de8c40054564e4404992dafc78162450162",
+      "kind": "QualificationStudy",
+      "path": "7025de8686868e9ce78cecb97e5b3de8c40054564e4404992dafc78162450162.json",
+      "sha256": "2444b3949b0af3ebf10553e9456c4e2d625933f620646397146a35e51e95d010",
+      "available_at": "2026-11-07T00:10:21.009066+00:00",
+      "source_segment": "segment-00000217.sqlite",
+      "bytes": 85584
+    },
+    {
+      "id": "05563151e48581b4e791c3c7ce321316d0dbe704eb0c389cea6681d6c68a3969",
+      "kind": "QualificationStudy",
+      "path": "05563151e48581b4e791c3c7ce321316d0dbe704eb0c389cea6681d6c68a3969.json",
+      "sha256": "e8f31c0608daaf5d716aba762a653e0fb5dca24593d468872895b240848e706f",
+      "available_at": "2026-11-07T00:10:33.941585+00:00",
+      "source_segment": "segment-00000218.sqlite",
+      "bytes": 85650
+    },
+    {
+      "id": "20034642075f692fa2c8d5971ac3416c3db63284aa5c7999a64556324b414331",
+      "kind": "QualificationStudy",
+      "path": "20034642075f692fa2c8d5971ac3416c3db63284aa5c7999a64556324b414331.json",
+      "sha256": "0f2e99f6be9ee7213031760bc5181be55390d4488deccb6b992ac098ae56be37",
+      "available_at": "2026-11-07T00:10:48.236565+00:00",
+      "source_segment": "segment-00000218.sqlite",
+      "bytes": 81889
+    },
+    {
+      "id": "571222e18fd99097b2b9182d0fc1c7b1adc86f974203f55e2b9021275a09c433",
+      "kind": "QualificationStudy",
+      "path": "571222e18fd99097b2b9182d0fc1c7b1adc86f974203f55e2b9021275a09c433.json",
+      "sha256": "a3f80f349c7a1770a18fd9f88be6130b053802ebbb962f8724640c6c28c5b56a",
+      "available_at": "2026-11-07T00:11:02.022009+00:00",
+      "source_segment": "segment-00000218.sqlite",
+      "bytes": 94113
+    },
+    {
+      "id": "f6a47f54219805e143529b7bbb452d31b19471c533a10e9fead3e641ecc458ef",
+      "kind": "QualificationStudy",
+      "path": "f6a47f54219805e143529b7bbb452d31b19471c533a10e9fead3e641ecc458ef.json",
+      "sha256": "8d66a35f4d4cf3887678a308a78d0a454764c13331df7e6208a8e5e4602c515f",
+      "available_at": "2026-11-07T00:11:15.438627+00:00",
+      "source_segment": "segment-00000218.sqlite",
+      "bytes": 92517
+    },
+    {
+      "id": "53a764ffdae019b1143f1013b54f9d961c21c1171056b7d573a469dd1442fe44",
+      "kind": "QualificationStudy",
+      "path": "53a764ffdae019b1143f1013b54f9d961c21c1171056b7d573a469dd1442fe44.json",
+      "sha256": "8fc3bea50d2fc911f6629e2ed805dc92d078d88c84c04508853e7d007baa8dfa",
+      "available_at": "2026-11-07T00:11:28.438905+00:00",
+      "source_segment": "segment-00000218.sqlite",
+      "bytes": 94326
+    },
+    {
+      "id": "7d58a54e37c3f59b3104e764383efc7a5895ff20b46ebc67f83b9be9ddccc63a",
+      "kind": "QualificationStudy",
+      "path": "7d58a54e37c3f59b3104e764383efc7a5895ff20b46ebc67f83b9be9ddccc63a.json",
+      "sha256": "70cfdd81b9aee6087b340d7eb0850b3f6976fede779fa31aff2c0e6c1c385a90",
+      "available_at": "2026-11-07T00:11:43.111769+00:00",
+      "source_segment": "segment-00000218.sqlite",
+      "bytes": 92072
+    },
+    {
+      "id": "cdaac9cc372fd5d9d93e4b7da09f4904193b1f428606eedec835588193b9c64a",
+      "kind": "QualificationStudy",
+      "path": "cdaac9cc372fd5d9d93e4b7da09f4904193b1f428606eedec835588193b9c64a.json",
+      "sha256": "d331532f7a0d3b395e077b093c7dff4fae68a960ee6ddbe50472db926461c72b",
+      "available_at": "2026-11-07T00:11:56.513825+00:00",
+      "source_segment": "segment-00000219.sqlite",
+      "bytes": 901971
+    },
+    {
+      "id": "ba1fbd8bd0000ced17499c44764cdee7a58b012f42deee019c2e329eb16fc964",
+      "kind": "QualificationStudy",
+      "path": "ba1fbd8bd0000ced17499c44764cdee7a58b012f42deee019c2e329eb16fc964.json",
+      "sha256": "7cea9d515fdf0e3d6571f04f093a94d17820896aa599fbdf337db98115d96bd7",
+      "available_at": "2026-11-07T00:12:11.690129+00:00",
+      "source_segment": "segment-00000219.sqlite",
+      "bytes": 83878
+    },
+    {
+      "id": "2a2f70edac471e90758e6a241385dc3ef90c85e61824ad836dd0b49139004ee3",
+      "kind": "QualificationStudy",
+      "path": "2a2f70edac471e90758e6a241385dc3ef90c85e61824ad836dd0b49139004ee3.json",
+      "sha256": "7e17a962b39419afe823907489c7b8760da4dba06c753b85e0fc6c1d3ee18e45",
+      "available_at": "2026-11-07T00:12:25.115088+00:00",
+      "source_segment": "segment-00000219.sqlite",
+      "bytes": 96451
+    }
+  ],
+  "bytes": 21557788,
+  "native_catalog_and_payload_hashes_verified": true,
+  "source": "original live Phase16QualificationStudy, not fixtures/replay/current substituted quotes",
+  "max_bytes": 67108864,
+  "completed": true
+}
