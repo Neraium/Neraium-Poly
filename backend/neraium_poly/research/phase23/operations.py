@@ -94,6 +94,7 @@ class ContinuousCompetition:
             self.state = state
 
     def step(self, frame):
+        frame = frame.model_dump(mode="json") if hasattr(frame, "model_dump") else frame
         now = self.clock()
         if now.tzinfo is None:
             raise ValueError("aware competition cutoff required")

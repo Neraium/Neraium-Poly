@@ -159,3 +159,21 @@ def test_new_challenger_rejects_corrupt_or_unavailable_evidence(tmp_path,monkeyp
     else:row['outcome']['settled_at']=f['timestamp']
     row['original_study_sha256']=digest(study)
     with pytest.raises(ValueError):module.verify_outcome(row,study,f,evidence_root=tmp_path,as_of=now)
+
+
+def test_competition_accepts_actual_shared_frame_contract_and_recovers(tmp_path):
+    from neraium_poly.experimental.contracts import SharedMarketFrame
+    from neraium_poly.research.phase23.operations import ContinuousCompetition
+
+    store=EventStore(tmp_path/'controlled.sqlite')
+    try:
+        frame=SharedMarketFrame(id='controlled-shared-frame',timestamp=NOW,available_at=NOW,
+            source='controlled public observation fixture',producer_health={'status':'ok'})
+        runtime=ContinuousCompetition(store,clock=lambda:NOW)
+        assert runtime.step(frame)
+        assert runtime.status()['cycles']==1 and runtime.status()['history_frames']==1
+        assert store.latest('CompetitionStudy',1)[0]['source_frame_id']==frame.id
+        recovered=ContinuousCompetition(store,clock=lambda:NOW)
+        assert recovered.state==runtime.state and not recovered.step(frame)
+    finally:
+        store.close()
