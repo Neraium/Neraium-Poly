@@ -39,3 +39,10 @@ def test_recent_render_does_not_hide_source_error():
         'last_evaluation_at':datetime.now(UTC).isoformat(),'last_error':'committed_source_study_stale',
         'models':{'bad':{'mae':.0001}}}
     s=text(c,e);assert '0.00010' not in s and 'bad MAE unavailable' in s
+
+
+def test_recent_metrics_cannot_hide_degraded_experimental_feed():
+    c,e=sample();e['service']={**e['service'],'status':'degraded'}
+    e['operations_research']['phase17']={'status':'research_only',
+        'last_evaluation_at':datetime.now(UTC).isoformat(),'models':{'bad':{'mae':.0001}}}
+    s=text(c,e);assert '0.00010' not in s and 'bad MAE unavailable' in s
