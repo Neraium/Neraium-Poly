@@ -1448,6 +1448,9 @@ def _render_challengers(certified, experimental, width, height, errors):
 
     now = datetime.now(UTC)
     research = _mapping(_mapping(experimental.get("operations_research")).get("phase23"))
+    domain = _mapping(_mapping(experimental.get("operations_research")).get("phase24"))
+    if domain.get("status") != "disabled" and domain:
+        return _render_domain_challengers(certified, experimental, research, domain, width, height, errors)
     current = (research.get("status") == "research_only" and not research.get("runtime_error")
                and _ops_fresh(experimental.get("generated_at"), now)
                and _p16_recent(research.get("last_evaluation_at"), now, seconds=360))
@@ -1474,4 +1477,40 @@ def _render_challengers(certified, experimental, width, height, errors):
         line = Text(label, style=style, no_wrap=True, overflow="ellipsis")
         line.truncate(width, overflow="ellipsis")
         text.append_text(line)
+    return text
+
+
+def _render_domain_challengers(certified, experimental, legacy, domain, width, height, errors):
+    from datetime import UTC, datetime
+
+    now = datetime.now(UTC)
+    fresh = (domain.get("status") == "research_only" and not domain.get("runtime_error")
+             and _ops_fresh(experimental.get("generated_at"), now)
+             and _p16_recent(domain.get("last_evaluation_at"), now, seconds=360))
+    rows = [("RESEARCH MODEL REGISTRIES", "bold cyan"), ("NO TRADING AUTHORITY", "yellow")]
+    if fresh:
+        rows += [(f"P23 {_number(legacy.get('forecasts'))} P24 {_number(domain.get('forecasts'))} forecasts", "white"),
+                 ("Registry totals; legacy separate", "dim"),
+                 (f"P24 parents {_number(domain.get('native_parents'))} unreviewed", "white")]
+        models = [("24", name, _mapping(row)) for name, row in _mapping(domain.get("models")).items()]
+        models += [("23", name, _mapping(row)) for name, row in _mapping(legacy.get("models")).items()]
+        models.sort(key=lambda x: (not bool(x[2].get('forecasts')), x[0] != '24', x[1]))
+        maximum = max(0, height-len(rows)-5)
+        for phase, name, row in models[:maximum]:
+            rows.append((f"{phase} F{_number(row.get('forecasts'))} V{_number(row.get('resolved'))} {_clean(name)}", "white"))
+        if len(models)>maximum:
+            rows.append((f"+{len(models)-maximum} models: domain-leaderboard", "dim"))
+    else:
+        rows.append(("Domain research unavailable / stale", "yellow"))
+    rows += [("Scores: unvalidated / incomparable", "yellow"),
+             (f"Exp {_number(experimental.get('bankroll'), money=True)} Cert {_number(certified.get('cash'), money=True)}", "white")]
+    services = [_mapping(experimental.get('service')), _mapping(_mapping(certified.get('operation')).get('service'))]
+    safe = all(s.get('paper_trading') is True and s.get('live_trading_enabled') is False for s in services)
+    rows.append(("LIVE TRADING DISABLED" if safe else "LIVE CONFIG UNVERIFIED", "dim"))
+    if errors:
+        rows.insert(2,("API "+_clean(errors[0]),"yellow"))
+    text=Text()
+    for index,(label,style) in enumerate(rows[:height]):
+        if index:text.append("\n")
+        line=Text(label,style=style,no_wrap=True,overflow="ellipsis");line.truncate(width,overflow="ellipsis");text.append_text(line)
     return text

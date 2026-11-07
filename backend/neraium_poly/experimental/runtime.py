@@ -215,6 +215,22 @@ class ExperimentalRuntime:
                     self.phase23 = self.phase23_competition = self.phase23_outcomes = None
                     self.phase23_error = f"{type(error).__name__}:{str(error)[:160]}"
                     log.exception("phase23_research_recovery_withheld")
+            self._research_source_lock = asyncio.Lock()
+            self.phase24 = self.phase24_outcomes = None
+            self.phase24_report = None
+            self.phase24_error = None
+            if config.phase24_research_enabled:
+                from neraium_poly.research.phase24.continuous import DomainResearch
+                from neraium_poly.research.phase24.outcomes import DomainOutcomes
+
+                try:
+                    self.phase24 = DomainResearch(self.events, clock=self.clock, can_write=self._budget_ok)
+                    self.phase24_outcomes = DomainOutcomes(self.events, config.data_dir/"phase24-resolution-evidence",
+                        clock=self.clock, can_write=self._budget_ok)
+                except Exception as error:
+                    self.phase24 = self.phase24_outcomes = None
+                    self.phase24_error = f"{type(error).__name__}:{str(error)[:160]}"
+                    log.exception("phase24_recovery_withheld")
             self.feed = feed or SharedFeedClient(config.source_url)
             self.fee_adapter = fee_adapter or AuditedFeeAdapter(
                 self.events, self._budget_ok, client=httpx.AsyncClient(timeout=5, follow_redirects=False)
@@ -703,42 +719,85 @@ class ExperimentalRuntime:
                 next_check = self.clock() + timedelta(seconds=300)
             await asyncio.sleep(2)
 
+    async def _domain_research_loop(self, should_exit):
+        from neraium_poly.research.phase24.operations import combined_report
+
+        async def one_cycle():
+            async with self._research_source_lock:
+                await self.phase24.step(self.last_frame)
+                await self.phase24_outcomes.step()
+            worker = asyncio.create_task(asyncio.to_thread(combined_report, self.events, as_of=self.clock(),
+                evidence_root=self.config.data_dir/"phase24-resolution-evidence"))
+            try:
+                self.phase24_report = await asyncio.shield(worker)
+            except asyncio.CancelledError:
+                await asyncio.gather(worker, return_exceptions=True)
+                raise
+            self.phase24_error = None
+
+        while not self.stopping and not should_exit():
+            job = None
+            try:
+                if self.phase24 is not None and self.last_frame is not None:
+                    job = asyncio.create_task(one_cycle())
+                    while not job.done() and not self.stopping and not should_exit():
+                        await asyncio.wait({job}, timeout=1)
+                    if self.stopping or should_exit():
+                        job.cancel()
+                    await job
+            except asyncio.CancelledError:
+                if self.stopping or should_exit():
+                    return
+                raise
+            except Exception as error:
+                self.phase24_error = f"{type(error).__name__}:{str(error)[:160]}"
+                log.exception("phase24_domain_research_withheld")
+            finally:
+                if job is not None and not job.done():
+                    job.cancel()
+                    await asyncio.gather(job, return_exceptions=True)
+            for _ in range(30):
+                if self.stopping or should_exit():
+                    break
+                await asyncio.sleep(1)
+
     async def run(self, should_exit=lambda: False):
         async def independent_events():
             while not self.stopping and not should_exit():
-                if self.phase18 is not None and self.last_frame is not None and self._budget_ok():
-                    try:
-                        committed = await self.phase18.step(self.last_frame)
-                        self.phase18_error = None
-                        if committed and self.phase20 is not None:
-                            try:
-                                originals = self.events.latest("EventProbabilityStudy", limit=1)
-                                if originals:
-                                    self.phase20.observe(originals[0])
-                                self.phase20_error = None
-                            except Exception as error:
-                                self.phase20_error = f"{type(error).__name__}:{str(error)[:160]}"
-                                log.exception("phase20_pairing_withheld")
-                        await self.phase18.resolve_pending(self.config.data_dir / "phase18-resolution-evidence")
-                        if self.phase21 is not None:
-                            try:
-                                await self.phase21.step(self.phase18.state["pending"])
-                                self.phase21_error = None
-                            except Exception as error:
-                                self.phase21_error = f"{type(error).__name__}:{str(error)[:160]}"
-                                log.exception("phase21_early_outcome_withheld")
-                    except Exception as error:
-                        self.phase18_error = f"{type(error).__name__}:{str(error)[:160]}"
-                        log.exception("phase18_event_research_withheld")
-                if self.phase23 is not None and self.last_frame is not None and self._budget_ok():
-                    try:
-                        await self.phase23.step(self.last_frame)
-                        await self.phase23_outcomes.step()
-                        await asyncio.to_thread(self.phase23_competition.step, self.last_frame)
-                        self.phase23_error = None
-                    except Exception as error:
-                        self.phase23_error = f"{type(error).__name__}:{str(error)[:160]}"
-                        log.exception("phase23_research_withheld")
+                async with self._research_source_lock:
+                    if self.phase18 is not None and self.last_frame is not None and self._budget_ok():
+                        try:
+                            committed = await self.phase18.step(self.last_frame)
+                            self.phase18_error = None
+                            if committed and self.phase20 is not None:
+                                try:
+                                    originals = self.events.latest("EventProbabilityStudy", limit=1)
+                                    if originals:
+                                        self.phase20.observe(originals[0])
+                                    self.phase20_error = None
+                                except Exception as error:
+                                    self.phase20_error = f"{type(error).__name__}:{str(error)[:160]}"
+                                    log.exception("phase20_pairing_withheld")
+                            await self.phase18.resolve_pending(self.config.data_dir / "phase18-resolution-evidence")
+                            if self.phase21 is not None:
+                                try:
+                                    await self.phase21.step(self.phase18.state["pending"])
+                                    self.phase21_error = None
+                                except Exception as error:
+                                    self.phase21_error = f"{type(error).__name__}:{str(error)[:160]}"
+                                    log.exception("phase21_early_outcome_withheld")
+                        except Exception as error:
+                            self.phase18_error = f"{type(error).__name__}:{str(error)[:160]}"
+                            log.exception("phase18_event_research_withheld")
+                    if self.phase23 is not None and self.last_frame is not None and self._budget_ok():
+                        try:
+                            await self.phase23.step(self.last_frame)
+                            await self.phase23_outcomes.step()
+                            await asyncio.to_thread(self.phase23_competition.step, self.last_frame)
+                            self.phase23_error = None
+                        except Exception as error:
+                            self.phase23_error = f"{type(error).__name__}:{str(error)[:160]}"
+                            log.exception("phase23_research_withheld")
                 await asyncio.sleep(10)
 
         async def cycles():
@@ -751,7 +810,7 @@ class ExperimentalRuntime:
                     self._cancel_and_checkpoint(self.clock())
                 await asyncio.sleep(self.config.poll_seconds)
 
-        await asyncio.gather(cycles(), self._fees_loop(should_exit), self._event_resolution_loop(should_exit), independent_events())
+        await asyncio.gather(cycles(), self._fees_loop(should_exit), self._event_resolution_loop(should_exit), independent_events(), self._domain_research_loop(should_exit))
 
     def health(self):
         last_success = self.last_success

@@ -34,6 +34,8 @@ def main():
             "forecast-qualification",
             "forecast-evaluate",
             "challenger-report",
+            "forecast-reconcile",
+            "domain-leaderboard",
             "strategy-approve",
             "strategy-status",
             "strategy-revoke",
@@ -179,6 +181,25 @@ def main():
                 indent=2,
             )
         )
+    elif args.command in {"forecast-reconcile", "domain-leaderboard"}:
+        from datetime import UTC, datetime
+
+        now = datetime.now(UTC)
+        if args.command == "forecast-reconcile":
+            from neraium_poly.research.phase24.reconciliation import reconcile
+
+            report = reconcile(args.data_dir, as_of=now)
+        else:
+            from neraium_poly.research.phase17.provenance import ReadonlyArchive
+            from neraium_poly.research.phase24.operations import combined_report
+
+            with ReadonlyArchive(args.data_dir, max_query_bytes=128*1024**2) as archive:
+                report = combined_report(archive, as_of=now, evidence_root=args.data_dir/"phase24-resolution-evidence")
+        if args.output:
+            with args.output.open("x") as handle:
+                json.dump(report, handle, indent=2)
+                handle.write("\n")
+        print(json.dumps(report, indent=2))
     elif args.command == "challenger-report":
         from datetime import UTC, datetime
 

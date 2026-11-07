@@ -33,7 +33,22 @@ def experimental_research(runtime, *, for_operations=False):
                 challenger["models"][model_id]["resolved"] = count
         challenger["competition"] = runtime.phase23_competition.status() if runtime.phase23_competition else None
         challenger["runtime_error"] = runtime.phase23_error
+    domain = None
+    if getattr(runtime, "phase24", None):
+        domain = runtime.phase24.status()
+        outcomes = runtime.phase24_outcomes.status()
+        domain["outcome_verification"] = outcomes
+        resolved = 0
+        for model_id, count in outcomes.get("verified_by_model", {}).items():
+            if model_id in domain["models"]:
+                domain["models"][model_id]["resolved"] = count
+                resolved += count
+        domain["pending_forecasts"] = max(0, domain["forecasts"]-resolved)
+        domain["leaderboard"] = runtime.phase24_report
+        domain["runtime_error"] = runtime.phase24_error
     return {
+        "phase24": domain if domain is not None else {"status": "unavailable" if getattr(runtime, "phase24_error", None) else "disabled",
+                        "runtime_error": getattr(runtime, "phase24_error", None), "trading_authority": False},
         "domains": event.get("domains", {"status": "unavailable"}),
         "phase16_execution": runtime.phase16_execution_status(for_operations=True) if for_operations else runtime.phase16_execution_status(),
         "phase23": challenger if challenger is not None else {"status": "unavailable" if getattr(runtime, "phase23_error", None) else "disabled",
