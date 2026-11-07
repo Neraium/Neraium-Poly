@@ -1,0 +1,1900 @@
+{
+  "schema_version": "phase25-competition-v1",
+  "as_of": "2026-11-07T23:58:00.912960+00:00",
+  "event_review": {
+    "schema_version": "phase25-source-event-review-v1",
+    "as_of": "2026-11-07T23:58:00.912960+00:00",
+    "reviews": [
+      {
+        "forecast_id": "02f142a6e4c574a16fb38a28d69493b17f71e13514118eaeaebe86a93cc119c3",
+        "model_id": "empirical-ohlc-block-bootstrap-v23.1",
+        "native_parent_id": "1329687",
+        "canonical_group_id": "88e590d715d114ccc0f53f52c4d791494cf945ed5a45a204b9912c4c63a7c964",
+        "descriptor": {
+          "domain": "crypto",
+          "resolution_reference": "https://www.binance.com/en/trade/BTC_USDT",
+          "symbol": "BTCUSDT",
+          "starts_at": "2026-11-07T05:00:00+00:00",
+          "ends_at": "2026-11-08T05:00:00+00:00"
+        },
+        "dependency_tags": [
+          "crypto-symbol:BTCUSDT",
+          "crypto-UTC-day:2026-11-07"
+        ],
+        "evidence_lineages": [
+          "binance:BTCUSDT"
+        ],
+        "original_study_id": "e6b03a2feaa2c562066788ff6120a50e032bfb8552f79d9d43a982d29202ab6d",
+        "original_study_sha256": "71c3b7e5b92c6a427ed916e3eed86a54b71ee24c1027b35d212500e4187ba290",
+        "original_forecast_sha256": "314711bbab239ad60a5cd30fd46c376a0d429a8a0b86a2de842e55755321315d",
+        "source_model_replay_verified": true,
+        "review_policy": "phase25-source-event-review-v1",
+        "review_status": "source_event_identity_reviewed",
+        "statistical_independence_established": false,
+        "certified_group_id": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "forecast_id": "0a0b7b345fe1ac7f6cc02f57deef4b460c42108baaaec4d1a44476686b8da041",
+        "model_id": "empirical-ohlc-block-bootstrap-v23.1",
+        "native_parent_id": "1329687",
+        "canonical_group_id": "88e590d715d114ccc0f53f52c4d791494cf945ed5a45a204b9912c4c63a7c964",
+        "descriptor": {
+          "domain": "crypto",
+          "resolution_reference": "https://www.binance.com/en/trade/BTC_USDT",
+          "symbol": "BTCUSDT",
+          "starts_at": "2026-11-07T05:00:00+00:00",
+          "ends_at": "2026-11-08T05:00:00+00:00"
+        },
+        "dependency_tags": [
+          "crypto-symbol:BTCUSDT",
+          "crypto-UTC-day:2026-11-07"
+        ],
+        "evidence_lineages": [
+          "binance:BTCUSDT"
+        ],
+        "original_study_id": "e6b03a2feaa2c562066788ff6120a50e032bfb8552f79d9d43a982d29202ab6d",
+        "original_study_sha256": "71c3b7e5b92c6a427ed916e3eed86a54b71ee24c1027b35d212500e4187ba290",
+        "original_forecast_sha256": "5c1c9837599f981e7adc06b3935f02f87e9eb67056d75b19d63ceec4b4f0ce0c",
+        "source_model_replay_verified": true,
+        "review_policy": "phase25-source-event-review-v1",
+        "review_status": "source_event_identity_reviewed",
+        "statistical_independence_established": false,
+        "certified_group_id": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "forecast_id": "150da3be94e737bf14bacf3a2c2f43191a2c2efa121633cc581a806ad26033a5",
+        "model_id": "nba-team-frequency-v24.1",
+        "native_parent_id": "1284242",
+        "canonical_group_id": "8369102586154c3b8f0ed14b6afd2afb8fd4e2b604aaddbf862456e2f14c6325",
+        "descriptor": {
+          "domain": "sports",
+          "resolution_reference": "https://www.nba.com/",
+          "league": "NBA",
+          "participants": [
+            "Thunder",
+            "Wizards"
+          ],
+          "starts_at": "2026-11-08T01:00:00+00:00",
+          "source_game_id": "401909941",
+          "source_id_namespace": "ESPN:NBA:daily-scoreboards:NBA"
+        },
+        "dependency_tags": [
+          "team:NBA:Thunder",
+          "team:NBA:Wizards"
+        ],
+        "evidence_lineages": [
+          "ESPN:NBA:daily-scoreboards"
+        ],
+        "original_study_id": "000000000024:0be421c3183b63c320e0bd6622715554604b522a76e614b90a30019b49e7f981",
+        "original_study_sha256": "1c2123b5eb9a2d3c267be2e6ef10bec488d59745adeada97dbf7c6aece1d7850",
+        "original_forecast_sha256": "5df6d286f9a5a0f3cc069a1b92afe834b064ab26dfe9f5559ffa03cf0db54d7e",
+        "source_model_replay_verified": true,
+        "review_policy": "phase25-source-event-review-v1",
+        "review_status": "source_event_identity_reviewed",
+        "statistical_independence_established": false,
+        "certified_group_id": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "forecast_id": "20b6664de26e7f6193a4f58436658b1c32cbfc00a23d62c6463807ea4fb1d9ff",
+        "model_id": "nfl-davidson-team-strength-v23.1",
+        "native_parent_id": "1217424",
+        "canonical_group_id": "8fa2bb6c615a2e26181480a21fe00dead7712c1014f76619bcf073ea7423c771",
+        "descriptor": {
+          "domain": "sports",
+          "resolution_reference": "https://www.nfl.com/scores",
+          "league": "NFL",
+          "participants": [
+            "HOU",
+            "LAC"
+          ],
+          "starts_at": "2026-11-08T21:05:00+00:00",
+          "source_game_id": "2026_09_HOU_LAC",
+          "source_id_namespace": "nflverse/nflverse-data:NFL"
+        },
+        "dependency_tags": [
+          "team:NFL:HOU",
+          "team:NFL:LAC"
+        ],
+        "evidence_lineages": [
+          "nflverse:games.csv"
+        ],
+        "original_study_id": "e6b03a2feaa2c562066788ff6120a50e032bfb8552f79d9d43a982d29202ab6d",
+        "original_study_sha256": "71c3b7e5b92c6a427ed916e3eed86a54b71ee24c1027b35d212500e4187ba290",
+        "original_forecast_sha256": "13841b7bd4b9e9faceedbfc8bd0356bb593f17d176b8518f295b901c6db5e7d1",
+        "source_model_replay_verified": true,
+        "review_policy": "phase25-source-event-review-v1",
+        "review_status": "source_event_identity_reviewed",
+        "statistical_independence_established": false,
+        "certified_group_id": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "forecast_id": "35e3d00f55cdd4514a5d4f5e8676af14e15a0c5fb33052139456504e86cc0d03",
+        "model_id": "nfl-davidson-team-strength-v23.1",
+        "native_parent_id": "1217410",
+        "canonical_group_id": "040b0e5e7480d11a7505f1185c478787a49efdee34facdb27d02e07a7c3f0ec2",
+        "descriptor": {
+          "domain": "sports",
+          "resolution_reference": "https://www.nfl.com/scores",
+          "league": "NFL",
+          "participants": [
+            "ATL",
+            "CIN"
+          ],
+          "starts_at": "2026-11-08T14:30:00+00:00",
+          "source_game_id": "2026_09_CIN_ATL",
+          "source_id_namespace": "nflverse/nflverse-data:NFL"
+        },
+        "dependency_tags": [
+          "team:NFL:ATL",
+          "team:NFL:CIN"
+        ],
+        "evidence_lineages": [
+          "nflverse:games.csv"
+        ],
+        "original_study_id": "e6b03a2feaa2c562066788ff6120a50e032bfb8552f79d9d43a982d29202ab6d",
+        "original_study_sha256": "71c3b7e5b92c6a427ed916e3eed86a54b71ee24c1027b35d212500e4187ba290",
+        "original_forecast_sha256": "8f4bffecf7933134368aed79d5e882beb6fa8193114fc07e46687bae339cb496",
+        "source_model_replay_verified": true,
+        "review_policy": "phase25-source-event-review-v1",
+        "review_status": "source_event_identity_reviewed",
+        "statistical_independence_established": false,
+        "certified_group_id": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "forecast_id": "467c5c49e29a942e0b52119be3a153cb1ac48a2da5d7e4a75cdbe4f70fdb8411",
+        "model_id": "nfl-davidson-team-strength-v23.1",
+        "native_parent_id": "1217413",
+        "canonical_group_id": "80b5583676e4acfc9b3640ac781f7ce9f5a4d18002f86a856baa3b94ae0a198f",
+        "descriptor": {
+          "domain": "sports",
+          "resolution_reference": "https://www.nfl.com/scores",
+          "league": "NFL",
+          "participants": [
+            "DAL",
+            "IND"
+          ],
+          "starts_at": "2026-11-08T18:00:00+00:00",
+          "source_game_id": "2026_09_DAL_IND",
+          "source_id_namespace": "nflverse/nflverse-data:NFL"
+        },
+        "dependency_tags": [
+          "team:NFL:DAL",
+          "team:NFL:IND"
+        ],
+        "evidence_lineages": [
+          "nflverse:games.csv"
+        ],
+        "original_study_id": "6c9e793336909baad519f3b1b32bcc5ca27f982f6e82ad618c8cb07779ec34b0",
+        "original_study_sha256": "65308e9d7ddbe86c524f9fbc4b2e23c59ed89d67c61178955bbc7acaac5b611a",
+        "original_forecast_sha256": "4ae3154a88449e048602db1fbb3182767b6be35273f97a4e5d27823aa02c1228",
+        "source_model_replay_verified": true,
+        "review_policy": "phase25-source-event-review-v1",
+        "review_status": "source_event_identity_reviewed",
+        "statistical_independence_established": false,
+        "certified_group_id": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "forecast_id": "4aa60ff4a719008fe5b3495364e5c6d2cd6e72b8a14e248377d91190afc46dcd",
+        "model_id": "nba-causal-elo-v24.1",
+        "native_parent_id": "1284244",
+        "canonical_group_id": "d3dd659c616200a27e990d54c0b3ac7b9f9e70289667a251c8bcedba11e91a6c",
+        "descriptor": {
+          "domain": "sports",
+          "resolution_reference": "https://www.nba.com/",
+          "league": "NBA",
+          "participants": [
+            "Rockets",
+            "Suns"
+          ],
+          "starts_at": "2026-11-08T02:00:00+00:00",
+          "source_game_id": "401909943",
+          "source_id_namespace": "ESPN:NBA:daily-scoreboards:NBA"
+        },
+        "dependency_tags": [
+          "team:NBA:Rockets",
+          "team:NBA:Suns"
+        ],
+        "evidence_lineages": [
+          "ESPN:NBA:daily-scoreboards"
+        ],
+        "original_study_id": "000000000014:de5f49e013183a586763ea4bff94ad9aba927e5ae46dafefa1c21fe2ef02fd8f",
+        "original_study_sha256": "ca8397fe6ff2afe916b947c59eb341825a7cddc00fe7f64a991d88337035a5fe",
+        "original_forecast_sha256": "7cc2343ab993c386abd9c51bc0f40272e9ee97c732c5525f5cb64aa7bf8ee646",
+        "source_model_replay_verified": true,
+        "review_policy": "phase25-source-event-review-v1",
+        "review_status": "source_event_identity_reviewed",
+        "statistical_independence_established": false,
+        "certified_group_id": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "forecast_id": "519b01a53051dbfb27496477b4c67b1deebc0f8115ffabcf3bf0dd74623a7de0",
+        "model_id": "nba-causal-elo-v24.1",
+        "native_parent_id": "1284242",
+        "canonical_group_id": "8369102586154c3b8f0ed14b6afd2afb8fd4e2b604aaddbf862456e2f14c6325",
+        "descriptor": {
+          "domain": "sports",
+          "resolution_reference": "https://www.nba.com/",
+          "league": "NBA",
+          "participants": [
+            "Thunder",
+            "Wizards"
+          ],
+          "starts_at": "2026-11-08T01:00:00+00:00",
+          "source_game_id": "401909941",
+          "source_id_namespace": "ESPN:NBA:daily-scoreboards:NBA"
+        },
+        "dependency_tags": [
+          "team:NBA:Thunder",
+          "team:NBA:Wizards"
+        ],
+        "evidence_lineages": [
+          "ESPN:NBA:daily-scoreboards"
+        ],
+        "original_study_id": "000000000024:0be421c3183b63c320e0bd6622715554604b522a76e614b90a30019b49e7f981",
+        "original_study_sha256": "1c2123b5eb9a2d3c267be2e6ef10bec488d59745adeada97dbf7c6aece1d7850",
+        "original_forecast_sha256": "1726878a2a0759cad0d8334859a2b6c665bd3b634cdc376d72cd4a27ce2fd576",
+        "source_model_replay_verified": true,
+        "review_policy": "phase25-source-event-review-v1",
+        "review_status": "source_event_identity_reviewed",
+        "statistical_independence_established": false,
+        "certified_group_id": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "forecast_id": "52306f6369cc6b264136d14150651daeec6004b2192c3f5e90bf56bc72a64745",
+        "model_id": "nba-causal-elo-v24.1",
+        "native_parent_id": "1284240",
+        "canonical_group_id": "e2d28a38ebcaa4225029beb3f6f9b4c85a4f1ce75b484b14ac4107ed07b725ff",
+        "descriptor": {
+          "domain": "sports",
+          "resolution_reference": "https://www.nba.com/",
+          "league": "NBA",
+          "participants": [
+            "Hawks",
+            "Nets"
+          ],
+          "starts_at": "2026-11-08T00:30:00+00:00",
+          "source_game_id": "401909939",
+          "source_id_namespace": "ESPN:NBA:daily-scoreboards:NBA"
+        },
+        "dependency_tags": [
+          "team:NBA:Hawks",
+          "team:NBA:Nets"
+        ],
+        "evidence_lineages": [
+          "ESPN:NBA:daily-scoreboards"
+        ],
+        "original_study_id": "000000000020:7961039b9b762854d9d6ed4697fc04797f45d07df594a77db8bf678af17c0a05",
+        "original_study_sha256": "2a74ecc67d82b7ebdbad867eb9afa9635c06a4c0b123eaec406368ece70cf710",
+        "original_forecast_sha256": "79ea695098792d72ff90bc7b11d23562cf0bff56b3c2c8b477515f13f045d826",
+        "source_model_replay_verified": true,
+        "review_policy": "phase25-source-event-review-v1",
+        "review_status": "source_event_identity_reviewed",
+        "statistical_independence_established": false,
+        "certified_group_id": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "forecast_id": "531d2afdf2e9eab47e4d2eb2c03303905d845b772c8038b917071e39efe341ac",
+        "model_id": "empirical-ohlc-block-bootstrap-v23.1",
+        "native_parent_id": "1329694",
+        "canonical_group_id": "55551b5c402247836b091564c4b7b944e6a23947328d31aba4eeba933d31bee8",
+        "descriptor": {
+          "domain": "crypto",
+          "resolution_reference": "https://www.binance.com/en/trade/ETH_USDT",
+          "symbol": "ETHUSDT",
+          "starts_at": "2026-11-07T05:00:00+00:00",
+          "ends_at": "2026-11-08T05:00:00+00:00"
+        },
+        "dependency_tags": [
+          "crypto-symbol:ETHUSDT",
+          "crypto-UTC-day:2026-11-07"
+        ],
+        "evidence_lineages": [
+          "binance:ETHUSDT"
+        ],
+        "original_study_id": "e6b03a2feaa2c562066788ff6120a50e032bfb8552f79d9d43a982d29202ab6d",
+        "original_study_sha256": "71c3b7e5b92c6a427ed916e3eed86a54b71ee24c1027b35d212500e4187ba290",
+        "original_forecast_sha256": "cb681d7ea8a422b951ea78a8b87f2ceafea7ef08fb545d07990dc1ff581cbe6f",
+        "source_model_replay_verified": true,
+        "review_policy": "phase25-source-event-review-v1",
+        "review_status": "source_event_identity_reviewed",
+        "statistical_independence_established": false,
+        "certified_group_id": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "forecast_id": "56c1d12946ca26dc5e0ce80b3a93cf3bd03de5be734e6921aef3aee9e19ee976",
+        "model_id": "nfl-ternary-frequency-v23.1",
+        "native_parent_id": "1217424",
+        "canonical_group_id": "8fa2bb6c615a2e26181480a21fe00dead7712c1014f76619bcf073ea7423c771",
+        "descriptor": {
+          "domain": "sports",
+          "resolution_reference": "https://www.nfl.com/scores",
+          "league": "NFL",
+          "participants": [
+            "HOU",
+            "LAC"
+          ],
+          "starts_at": "2026-11-08T21:05:00+00:00",
+          "source_game_id": "2026_09_HOU_LAC",
+          "source_id_namespace": "nflverse/nflverse-data:NFL"
+        },
+        "dependency_tags": [
+          "team:NFL:HOU",
+          "team:NFL:LAC"
+        ],
+        "evidence_lineages": [
+          "nflverse:games.csv"
+        ],
+        "original_study_id": "e6b03a2feaa2c562066788ff6120a50e032bfb8552f79d9d43a982d29202ab6d",
+        "original_study_sha256": "71c3b7e5b92c6a427ed916e3eed86a54b71ee24c1027b35d212500e4187ba290",
+        "original_forecast_sha256": "615d831b4dad282488001d7d7418d283e4d9cd0430d88e2c9f26bdd64bbb8040",
+        "source_model_replay_verified": true,
+        "review_policy": "phase25-source-event-review-v1",
+        "review_status": "source_event_identity_reviewed",
+        "statistical_independence_established": false,
+        "certified_group_id": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "forecast_id": "5706f728a9caa514561d503dd37802f514fda9a3ba54c5befdaca93e25b857d8",
+        "model_id": "metar-diurnal-analog-v24.1",
+        "native_parent_id": "1323624",
+        "canonical_group_id": "c639e6e839f753fd98bbe7cd05e8d16c3813f33c6d7f1e8e0262524f7916a070",
+        "descriptor": {
+          "domain": "weather",
+          "resolution_reference": "https://aviationweather.gov/api/data/metar?ids=ZSQD&format=raw&date=2026-11-08T19:00:00Z&hours=30",
+          "station": "ZSQD",
+          "day": "2026-11-08",
+          "variable": "daily_high_temperature",
+          "starts_at": "2026-11-07T16:00:00+00:00",
+          "ends_at": "2026-11-08T16:00:00+00:00"
+        },
+        "dependency_tags": [
+          "weather-station:ZSQD",
+          "weather-UTC-day:2026-11-07"
+        ],
+        "evidence_lineages": [
+          "NOAA/AWC:ZSQD"
+        ],
+        "original_study_id": "000000000018:15045ca72d8583d6c6807aa3d4107d63cb87c79f7c8d3ce233689bad5b930f89",
+        "original_study_sha256": "36158b76e6cdce1e74507c1d9aea436b53bf3bfc6f83a4f7dc54b88ef57d2f1f",
+        "original_forecast_sha256": "4562c9fb45f554a1fbb375fa662fb13834ab2671ed09f85fb4fa0f9aedf46ba7",
+        "source_model_replay_verified": true,
+        "review_policy": "phase25-source-event-review-v1",
+        "review_status": "source_event_identity_reviewed",
+        "statistical_independence_established": false,
+        "certified_group_id": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "forecast_id": "595cf818cb4b51bec70858de3abc1674b8a96691a939c973bc09044f366d54e6",
+        "model_id": "metar-diurnal-analog-v24.1",
+        "native_parent_id": "1323602",
+        "canonical_group_id": "07f4d91b1784909231b0a526c7a607d9cbcf87080fd4cbdeceb912df6bf0a5fe",
+        "descriptor": {
+          "domain": "weather",
+          "resolution_reference": "https://aviationweather.gov/api/data/metar?ids=ZUCK&format=raw&date=2026-11-08T19:00:00Z&hours=30",
+          "station": "ZUCK",
+          "day": "2026-11-08",
+          "variable": "daily_high_temperature",
+          "starts_at": "2026-11-07T16:00:00+00:00",
+          "ends_at": "2026-11-08T16:00:00+00:00"
+        },
+        "dependency_tags": [
+          "weather-station:ZUCK",
+          "weather-UTC-day:2026-11-07"
+        ],
+        "evidence_lineages": [
+          "NOAA/AWC:ZUCK"
+        ],
+        "original_study_id": "000000000015:369aeee780fe525bff4103c8c7adfbe8cf9c08c4d70b92f3afd2a40c3a5080a1",
+        "original_study_sha256": "1e1c42f14cbcfa703e6454da73758a80d51200eada44cc76fb106c6c83cf0e95",
+        "original_forecast_sha256": "5f0e861f49585f590fc519651035cbadf5ea34638851db29dcd06881e341594e",
+        "source_model_replay_verified": true,
+        "review_policy": "phase25-source-event-review-v1",
+        "review_status": "source_event_identity_reviewed",
+        "statistical_independence_established": false,
+        "certified_group_id": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "forecast_id": "59a35c6a3e3991200a58a63e72985fa26c6417a32ba795547af4a3c49a252010",
+        "model_id": "nba-team-frequency-v24.1",
+        "native_parent_id": "1284243",
+        "canonical_group_id": "35d6fbd9dbf207be929932c458801dc4ae2a7e51f50f2126ac408b39c2020838",
+        "descriptor": {
+          "domain": "sports",
+          "resolution_reference": "https://www.nba.com/",
+          "league": "NBA",
+          "participants": [
+            "Magic",
+            "Warriors"
+          ],
+          "starts_at": "2026-11-08T01:30:00+00:00",
+          "source_game_id": "401909942",
+          "source_id_namespace": "ESPN:NBA:daily-scoreboards:NBA"
+        },
+        "dependency_tags": [
+          "team:NBA:Magic",
+          "team:NBA:Warriors"
+        ],
+        "evidence_lineages": [
+          "ESPN:NBA:daily-scoreboards"
+        ],
+        "original_study_id": "000000000021:602f25754810d3b1ed404c1f815f4aa267791298feb712297df2c5af1f9220ae",
+        "original_study_sha256": "5045f82552e4c63e4824681787287c793ce2698448bef4ac9f041458aedabd37",
+        "original_forecast_sha256": "d54b3a320fbdb1772ef9f4d989be19731dc8e0959d5e6d40cb420205bae152ef",
+        "source_model_replay_verified": true,
+        "review_policy": "phase25-source-event-review-v1",
+        "review_status": "source_event_identity_reviewed",
+        "statistical_independence_established": false,
+        "certified_group_id": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "forecast_id": "60565e2eefb6c260a9c769a75059569c3e251081d302794c9a2ac92fe8234545",
+        "model_id": "nfl-ternary-frequency-v23.1",
+        "native_parent_id": "1217413",
+        "canonical_group_id": "80b5583676e4acfc9b3640ac781f7ce9f5a4d18002f86a856baa3b94ae0a198f",
+        "descriptor": {
+          "domain": "sports",
+          "resolution_reference": "https://www.nfl.com/scores",
+          "league": "NFL",
+          "participants": [
+            "DAL",
+            "IND"
+          ],
+          "starts_at": "2026-11-08T18:00:00+00:00",
+          "source_game_id": "2026_09_DAL_IND",
+          "source_id_namespace": "nflverse/nflverse-data:NFL"
+        },
+        "dependency_tags": [
+          "team:NFL:DAL",
+          "team:NFL:IND"
+        ],
+        "evidence_lineages": [
+          "nflverse:games.csv"
+        ],
+        "original_study_id": "6c9e793336909baad519f3b1b32bcc5ca27f982f6e82ad618c8cb07779ec34b0",
+        "original_study_sha256": "65308e9d7ddbe86c524f9fbc4b2e23c59ed89d67c61178955bbc7acaac5b611a",
+        "original_forecast_sha256": "0cd051252926ef30d823a3902b3f4eef1797347db774084d1689de835268b4ef",
+        "source_model_replay_verified": true,
+        "review_policy": "phase25-source-event-review-v1",
+        "review_status": "source_event_identity_reviewed",
+        "statistical_independence_established": false,
+        "certified_group_id": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "forecast_id": "61197ec13abe715c58818c60408a6adb87179c16989e28ef71d357663e682259",
+        "model_id": "nfl-ternary-frequency-v23.1",
+        "native_parent_id": "1217411",
+        "canonical_group_id": "3812845b8ae7dc14672c9364a84171f0eddc1093c67f9efa21b0cf3dc0da0443",
+        "descriptor": {
+          "domain": "sports",
+          "resolution_reference": "https://www.nfl.com/scores",
+          "league": "NFL",
+          "participants": [
+            "CAR",
+            "DEN"
+          ],
+          "starts_at": "2026-11-08T18:00:00+00:00",
+          "source_game_id": "2026_09_DEN_CAR",
+          "source_id_namespace": "nflverse/nflverse-data:NFL"
+        },
+        "dependency_tags": [
+          "team:NFL:CAR",
+          "team:NFL:DEN"
+        ],
+        "evidence_lineages": [
+          "nflverse:games.csv"
+        ],
+        "original_study_id": "6c9e793336909baad519f3b1b32bcc5ca27f982f6e82ad618c8cb07779ec34b0",
+        "original_study_sha256": "65308e9d7ddbe86c524f9fbc4b2e23c59ed89d67c61178955bbc7acaac5b611a",
+        "original_forecast_sha256": "8030224ce785e7ae11e9c792068c4c10b45779d958c15c10ca552bdecf8021ae",
+        "source_model_replay_verified": true,
+        "review_policy": "phase25-source-event-review-v1",
+        "review_status": "source_event_identity_reviewed",
+        "statistical_independence_established": false,
+        "certified_group_id": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "forecast_id": "7af31a3d7ac5aa9333dd07e895295ef0a04e61258ce8c42f170fb9d9c792f72f",
+        "model_id": "gaussian-first-passage-v23.1",
+        "native_parent_id": "1329687",
+        "canonical_group_id": "88e590d715d114ccc0f53f52c4d791494cf945ed5a45a204b9912c4c63a7c964",
+        "descriptor": {
+          "domain": "crypto",
+          "resolution_reference": "https://www.binance.com/en/trade/BTC_USDT",
+          "symbol": "BTCUSDT",
+          "starts_at": "2026-11-07T05:00:00+00:00",
+          "ends_at": "2026-11-08T05:00:00+00:00"
+        },
+        "dependency_tags": [
+          "crypto-symbol:BTCUSDT",
+          "crypto-UTC-day:2026-11-07"
+        ],
+        "evidence_lineages": [
+          "binance:BTCUSDT"
+        ],
+        "original_study_id": "e6b03a2feaa2c562066788ff6120a50e032bfb8552f79d9d43a982d29202ab6d",
+        "original_study_sha256": "71c3b7e5b92c6a427ed916e3eed86a54b71ee24c1027b35d212500e4187ba290",
+        "original_forecast_sha256": "55f4fea99fe8f4c76879885f811aac1c3f3832273e0edb8380723338fb8fb7b8",
+        "source_model_replay_verified": true,
+        "review_policy": "phase25-source-event-review-v1",
+        "review_status": "source_event_identity_reviewed",
+        "statistical_independence_established": false,
+        "certified_group_id": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "forecast_id": "8792b2ed37af142f0c80a1b1a1e3f9e32cc925ef0db20f25b6e459c35b18d6a0",
+        "model_id": "nba-causal-elo-v24.1",
+        "native_parent_id": "1284245",
+        "canonical_group_id": "b0e138beb52eb95d2f188283a9cf0107cab0965524c9544814828a47e04a18fc",
+        "descriptor": {
+          "domain": "sports",
+          "resolution_reference": "https://www.nba.com/",
+          "league": "NBA",
+          "participants": [
+            "Spurs",
+            "Trail Blazers"
+          ],
+          "starts_at": "2026-11-08T03:00:00+00:00",
+          "source_game_id": "401909944",
+          "source_id_namespace": "ESPN:NBA:daily-scoreboards:NBA"
+        },
+        "dependency_tags": [
+          "team:NBA:Spurs",
+          "team:NBA:Trail Blazers"
+        ],
+        "evidence_lineages": [
+          "ESPN:NBA:daily-scoreboards"
+        ],
+        "original_study_id": "000000000013:370537dae3e07827d754b0e2162319efd982b04ee6c81253d457fb256c41f091",
+        "original_study_sha256": "5fcf9c4da1c3f07ef46ae19ced6d8e59d92f35a4ff52c2bfed7fb6e84c6b2c2a",
+        "original_forecast_sha256": "80bb76cdd2e25dffe7e8d506875c9288c0c9c9415fe0df965bdd3e4a319b22c2",
+        "source_model_replay_verified": true,
+        "review_policy": "phase25-source-event-review-v1",
+        "review_status": "source_event_identity_reviewed",
+        "statistical_independence_established": false,
+        "certified_group_id": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "forecast_id": "a00081ac7060afde2ca26ae103a9232ef2c4c1f12f3086fc5b9ffa8620219b64",
+        "model_id": "nfl-davidson-team-strength-v23.1",
+        "native_parent_id": "1217411",
+        "canonical_group_id": "3812845b8ae7dc14672c9364a84171f0eddc1093c67f9efa21b0cf3dc0da0443",
+        "descriptor": {
+          "domain": "sports",
+          "resolution_reference": "https://www.nfl.com/scores",
+          "league": "NFL",
+          "participants": [
+            "CAR",
+            "DEN"
+          ],
+          "starts_at": "2026-11-08T18:00:00+00:00",
+          "source_game_id": "2026_09_DEN_CAR",
+          "source_id_namespace": "nflverse/nflverse-data:NFL"
+        },
+        "dependency_tags": [
+          "team:NFL:CAR",
+          "team:NFL:DEN"
+        ],
+        "evidence_lineages": [
+          "nflverse:games.csv"
+        ],
+        "original_study_id": "6c9e793336909baad519f3b1b32bcc5ca27f982f6e82ad618c8cb07779ec34b0",
+        "original_study_sha256": "65308e9d7ddbe86c524f9fbc4b2e23c59ed89d67c61178955bbc7acaac5b611a",
+        "original_forecast_sha256": "c3f0a4d880aedeeea4e8252b04b7182933e368707fdb8c64c67d6b6861ceb9af",
+        "source_model_replay_verified": true,
+        "review_policy": "phase25-source-event-review-v1",
+        "review_status": "source_event_identity_reviewed",
+        "statistical_independence_established": false,
+        "certified_group_id": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "forecast_id": "a332449a68aecd94d3618b0ba46d1c3fa964aca61d8d79e2f99eb90683cc5e90",
+        "model_id": "nfl-ternary-frequency-v23.1",
+        "native_parent_id": "1217415",
+        "canonical_group_id": "09ef4f838dbce8fa2a0b84b2b13a7e460b4dfbf9406781748fc0756a568566af",
+        "descriptor": {
+          "domain": "sports",
+          "resolution_reference": "https://www.nfl.com/scores",
+          "league": "NFL",
+          "participants": [
+            "KC",
+            "NYJ"
+          ],
+          "starts_at": "2026-11-08T18:00:00+00:00",
+          "source_game_id": "2026_09_NYJ_KC",
+          "source_id_namespace": "nflverse/nflverse-data:NFL"
+        },
+        "dependency_tags": [
+          "team:NFL:KC",
+          "team:NFL:NYJ"
+        ],
+        "evidence_lineages": [
+          "nflverse:games.csv"
+        ],
+        "original_study_id": "b21c44b7d541de09932ef4683cf2f09382a04e0dee431e973dd98f8352293520",
+        "original_study_sha256": "a3441cd7735a0e1c2a8d157bdf9ae056dda5a18e26e921daca61beef15bc39b5",
+        "original_forecast_sha256": "7c9533428d91e01b8c34f1a2237d2d692b8a0d8b74d6b8d2b731bf57f905de87",
+        "source_model_replay_verified": true,
+        "review_policy": "phase25-source-event-review-v1",
+        "review_status": "source_event_identity_reviewed",
+        "statistical_independence_established": false,
+        "certified_group_id": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "forecast_id": "a708d409a817b55a3415d7e2b8a90001c8525a7ae26ddf04d4fea7341a5f9292",
+        "model_id": "nba-team-frequency-v24.1",
+        "native_parent_id": "1284244",
+        "canonical_group_id": "d3dd659c616200a27e990d54c0b3ac7b9f9e70289667a251c8bcedba11e91a6c",
+        "descriptor": {
+          "domain": "sports",
+          "resolution_reference": "https://www.nba.com/",
+          "league": "NBA",
+          "participants": [
+            "Rockets",
+            "Suns"
+          ],
+          "starts_at": "2026-11-08T02:00:00+00:00",
+          "source_game_id": "401909943",
+          "source_id_namespace": "ESPN:NBA:daily-scoreboards:NBA"
+        },
+        "dependency_tags": [
+          "team:NBA:Rockets",
+          "team:NBA:Suns"
+        ],
+        "evidence_lineages": [
+          "ESPN:NBA:daily-scoreboards"
+        ],
+        "original_study_id": "000000000014:de5f49e013183a586763ea4bff94ad9aba927e5ae46dafefa1c21fe2ef02fd8f",
+        "original_study_sha256": "ca8397fe6ff2afe916b947c59eb341825a7cddc00fe7f64a991d88337035a5fe",
+        "original_forecast_sha256": "e15a7877515aec929de3f8c99a7889c8e3d03cb752dc61b756b1b0e4dfb3fdbf",
+        "source_model_replay_verified": true,
+        "review_policy": "phase25-source-event-review-v1",
+        "review_status": "source_event_identity_reviewed",
+        "statistical_independence_established": false,
+        "certified_group_id": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "forecast_id": "bd292c2c1382a9c3bcd33acf912c975416fd3e76fb90efdb2dad591d017f462e",
+        "model_id": "nfl-davidson-team-strength-v23.1",
+        "native_parent_id": "1217415",
+        "canonical_group_id": "09ef4f838dbce8fa2a0b84b2b13a7e460b4dfbf9406781748fc0756a568566af",
+        "descriptor": {
+          "domain": "sports",
+          "resolution_reference": "https://www.nfl.com/scores",
+          "league": "NFL",
+          "participants": [
+            "KC",
+            "NYJ"
+          ],
+          "starts_at": "2026-11-08T18:00:00+00:00",
+          "source_game_id": "2026_09_NYJ_KC",
+          "source_id_namespace": "nflverse/nflverse-data:NFL"
+        },
+        "dependency_tags": [
+          "team:NFL:KC",
+          "team:NFL:NYJ"
+        ],
+        "evidence_lineages": [
+          "nflverse:games.csv"
+        ],
+        "original_study_id": "b21c44b7d541de09932ef4683cf2f09382a04e0dee431e973dd98f8352293520",
+        "original_study_sha256": "a3441cd7735a0e1c2a8d157bdf9ae056dda5a18e26e921daca61beef15bc39b5",
+        "original_forecast_sha256": "22fe3cb9343cce7ea0e02b716376dde159be0617dc73898f7439ff773a641f83",
+        "source_model_replay_verified": true,
+        "review_policy": "phase25-source-event-review-v1",
+        "review_status": "source_event_identity_reviewed",
+        "statistical_independence_established": false,
+        "certified_group_id": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "forecast_id": "c0cee1cccc91a4464f38711b4df8171bfe6b2c21f22ceaa2a2b36c72be69f37c",
+        "model_id": "nba-team-frequency-v24.1",
+        "native_parent_id": "1284240",
+        "canonical_group_id": "e2d28a38ebcaa4225029beb3f6f9b4c85a4f1ce75b484b14ac4107ed07b725ff",
+        "descriptor": {
+          "domain": "sports",
+          "resolution_reference": "https://www.nba.com/",
+          "league": "NBA",
+          "participants": [
+            "Hawks",
+            "Nets"
+          ],
+          "starts_at": "2026-11-08T00:30:00+00:00",
+          "source_game_id": "401909939",
+          "source_id_namespace": "ESPN:NBA:daily-scoreboards:NBA"
+        },
+        "dependency_tags": [
+          "team:NBA:Hawks",
+          "team:NBA:Nets"
+        ],
+        "evidence_lineages": [
+          "ESPN:NBA:daily-scoreboards"
+        ],
+        "original_study_id": "000000000020:7961039b9b762854d9d6ed4697fc04797f45d07df594a77db8bf678af17c0a05",
+        "original_study_sha256": "2a74ecc67d82b7ebdbad867eb9afa9635c06a4c0b123eaec406368ece70cf710",
+        "original_forecast_sha256": "baa8c1239d13e3444e964ffd9b9bf1ad094d72e4325314cf2284293a63957173",
+        "source_model_replay_verified": true,
+        "review_policy": "phase25-source-event-review-v1",
+        "review_status": "source_event_identity_reviewed",
+        "statistical_independence_established": false,
+        "certified_group_id": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "forecast_id": "c4cbfe396edc4b1d28b9328a4324c6042156bb90bd06512f9e4e90427bece4b4",
+        "model_id": "nba-team-frequency-v24.1",
+        "native_parent_id": "1284245",
+        "canonical_group_id": "b0e138beb52eb95d2f188283a9cf0107cab0965524c9544814828a47e04a18fc",
+        "descriptor": {
+          "domain": "sports",
+          "resolution_reference": "https://www.nba.com/",
+          "league": "NBA",
+          "participants": [
+            "Spurs",
+            "Trail Blazers"
+          ],
+          "starts_at": "2026-11-08T03:00:00+00:00",
+          "source_game_id": "401909944",
+          "source_id_namespace": "ESPN:NBA:daily-scoreboards:NBA"
+        },
+        "dependency_tags": [
+          "team:NBA:Spurs",
+          "team:NBA:Trail Blazers"
+        ],
+        "evidence_lineages": [
+          "ESPN:NBA:daily-scoreboards"
+        ],
+        "original_study_id": "000000000013:370537dae3e07827d754b0e2162319efd982b04ee6c81253d457fb256c41f091",
+        "original_study_sha256": "5fcf9c4da1c3f07ef46ae19ced6d8e59d92f35a4ff52c2bfed7fb6e84c6b2c2a",
+        "original_forecast_sha256": "4cf9991aa77e123d42d5e4378f5b505986049643e0f7073f19af839e11ed1cd9",
+        "source_model_replay_verified": true,
+        "review_policy": "phase25-source-event-review-v1",
+        "review_status": "source_event_identity_reviewed",
+        "statistical_independence_established": false,
+        "certified_group_id": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "forecast_id": "e1eaf48c65154f5d4cb1551ac8d28c76e6bb62265ea46c7ff9f335c763433b45",
+        "model_id": "nfl-ternary-frequency-v23.1",
+        "native_parent_id": "1217426",
+        "canonical_group_id": "9f7da292f5f8ae4726e4be4712db78bfd6a10a986016af4145d01b05f31f4ff0",
+        "descriptor": {
+          "domain": "sports",
+          "resolution_reference": "https://www.nfl.com/scores",
+          "league": "NFL",
+          "participants": [
+            "LV",
+            "SF"
+          ],
+          "starts_at": "2026-11-08T21:05:00+00:00",
+          "source_game_id": "2026_09_LV_SF",
+          "source_id_namespace": "nflverse/nflverse-data:NFL"
+        },
+        "dependency_tags": [
+          "team:NFL:LV",
+          "team:NFL:SF"
+        ],
+        "evidence_lineages": [
+          "nflverse:games.csv"
+        ],
+        "original_study_id": "6c9e793336909baad519f3b1b32bcc5ca27f982f6e82ad618c8cb07779ec34b0",
+        "original_study_sha256": "65308e9d7ddbe86c524f9fbc4b2e23c59ed89d67c61178955bbc7acaac5b611a",
+        "original_forecast_sha256": "d46ac0c4d07053eb744791a4fd38d0247eb4efa049a683ef1147670e339da0a9",
+        "source_model_replay_verified": true,
+        "review_policy": "phase25-source-event-review-v1",
+        "review_status": "source_event_identity_reviewed",
+        "statistical_independence_established": false,
+        "certified_group_id": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "forecast_id": "e564a5e724b8e330cf169a99b32431ab59b7fa8c0decd70d940f6417ef6a2653",
+        "model_id": "metar-recent-climatology-v24.1",
+        "native_parent_id": "1323624",
+        "canonical_group_id": "c639e6e839f753fd98bbe7cd05e8d16c3813f33c6d7f1e8e0262524f7916a070",
+        "descriptor": {
+          "domain": "weather",
+          "resolution_reference": "https://aviationweather.gov/api/data/metar?ids=ZSQD&format=raw&date=2026-11-08T19:00:00Z&hours=30",
+          "station": "ZSQD",
+          "day": "2026-11-08",
+          "variable": "daily_high_temperature",
+          "starts_at": "2026-11-07T16:00:00+00:00",
+          "ends_at": "2026-11-08T16:00:00+00:00"
+        },
+        "dependency_tags": [
+          "weather-station:ZSQD",
+          "weather-UTC-day:2026-11-07"
+        ],
+        "evidence_lineages": [
+          "NOAA/AWC:ZSQD"
+        ],
+        "original_study_id": "000000000018:15045ca72d8583d6c6807aa3d4107d63cb87c79f7c8d3ce233689bad5b930f89",
+        "original_study_sha256": "36158b76e6cdce1e74507c1d9aea436b53bf3bfc6f83a4f7dc54b88ef57d2f1f",
+        "original_forecast_sha256": "d0640ef6ecf06c45645b8700379f899a495862ce4872c10011e93cab62f79430",
+        "source_model_replay_verified": true,
+        "review_policy": "phase25-source-event-review-v1",
+        "review_status": "source_event_identity_reviewed",
+        "statistical_independence_established": false,
+        "certified_group_id": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "forecast_id": "e5f9e19433c0f9cc0df0c0bc5732130f05c09f9a1b2791dde95ce243eb2176ae",
+        "model_id": "nfl-ternary-frequency-v23.1",
+        "native_parent_id": "1217410",
+        "canonical_group_id": "040b0e5e7480d11a7505f1185c478787a49efdee34facdb27d02e07a7c3f0ec2",
+        "descriptor": {
+          "domain": "sports",
+          "resolution_reference": "https://www.nfl.com/scores",
+          "league": "NFL",
+          "participants": [
+            "ATL",
+            "CIN"
+          ],
+          "starts_at": "2026-11-08T14:30:00+00:00",
+          "source_game_id": "2026_09_CIN_ATL",
+          "source_id_namespace": "nflverse/nflverse-data:NFL"
+        },
+        "dependency_tags": [
+          "team:NFL:ATL",
+          "team:NFL:CIN"
+        ],
+        "evidence_lineages": [
+          "nflverse:games.csv"
+        ],
+        "original_study_id": "e6b03a2feaa2c562066788ff6120a50e032bfb8552f79d9d43a982d29202ab6d",
+        "original_study_sha256": "71c3b7e5b92c6a427ed916e3eed86a54b71ee24c1027b35d212500e4187ba290",
+        "original_forecast_sha256": "01c5a96319225069e9f84fbc5b8e863f1f6108ac576d61c0be504b8440c8e8d0",
+        "source_model_replay_verified": true,
+        "review_policy": "phase25-source-event-review-v1",
+        "review_status": "source_event_identity_reviewed",
+        "statistical_independence_established": false,
+        "certified_group_id": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "forecast_id": "ed04ab0f36cd9a06873f5cfaac6bd5aee03918e22eac9f21438bedeaeb44e85b",
+        "model_id": "nfl-davidson-team-strength-v23.1",
+        "native_parent_id": "1217426",
+        "canonical_group_id": "9f7da292f5f8ae4726e4be4712db78bfd6a10a986016af4145d01b05f31f4ff0",
+        "descriptor": {
+          "domain": "sports",
+          "resolution_reference": "https://www.nfl.com/scores",
+          "league": "NFL",
+          "participants": [
+            "LV",
+            "SF"
+          ],
+          "starts_at": "2026-11-08T21:05:00+00:00",
+          "source_game_id": "2026_09_LV_SF",
+          "source_id_namespace": "nflverse/nflverse-data:NFL"
+        },
+        "dependency_tags": [
+          "team:NFL:LV",
+          "team:NFL:SF"
+        ],
+        "evidence_lineages": [
+          "nflverse:games.csv"
+        ],
+        "original_study_id": "6c9e793336909baad519f3b1b32bcc5ca27f982f6e82ad618c8cb07779ec34b0",
+        "original_study_sha256": "65308e9d7ddbe86c524f9fbc4b2e23c59ed89d67c61178955bbc7acaac5b611a",
+        "original_forecast_sha256": "19e47c47f56e432c41237cc065b34854af54357c3cc31a82f8bcff76e0864a84",
+        "source_model_replay_verified": true,
+        "review_policy": "phase25-source-event-review-v1",
+        "review_status": "source_event_identity_reviewed",
+        "statistical_independence_established": false,
+        "certified_group_id": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "forecast_id": "f130aa0b068f36e66c6805d47736a2c8eaea5153a2157f17b3ed10e59ddb284f",
+        "model_id": "nba-causal-elo-v24.1",
+        "native_parent_id": "1284243",
+        "canonical_group_id": "35d6fbd9dbf207be929932c458801dc4ae2a7e51f50f2126ac408b39c2020838",
+        "descriptor": {
+          "domain": "sports",
+          "resolution_reference": "https://www.nba.com/",
+          "league": "NBA",
+          "participants": [
+            "Magic",
+            "Warriors"
+          ],
+          "starts_at": "2026-11-08T01:30:00+00:00",
+          "source_game_id": "401909942",
+          "source_id_namespace": "ESPN:NBA:daily-scoreboards:NBA"
+        },
+        "dependency_tags": [
+          "team:NBA:Magic",
+          "team:NBA:Warriors"
+        ],
+        "evidence_lineages": [
+          "ESPN:NBA:daily-scoreboards"
+        ],
+        "original_study_id": "000000000021:602f25754810d3b1ed404c1f815f4aa267791298feb712297df2c5af1f9220ae",
+        "original_study_sha256": "5045f82552e4c63e4824681787287c793ce2698448bef4ac9f041458aedabd37",
+        "original_forecast_sha256": "abdc5dfee58495cb4c9dee4414803cc90d824b4134626ffcb6f5855590b1c36b",
+        "source_model_replay_verified": true,
+        "review_policy": "phase25-source-event-review-v1",
+        "review_status": "source_event_identity_reviewed",
+        "statistical_independence_established": false,
+        "certified_group_id": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "forecast_id": "f1662a8afa4c01a45880382b97c672be0cb253fb1dc99ddf28dcd7abde5201f3",
+        "model_id": "metar-recent-climatology-v24.1",
+        "native_parent_id": "1323602",
+        "canonical_group_id": "07f4d91b1784909231b0a526c7a607d9cbcf87080fd4cbdeceb912df6bf0a5fe",
+        "descriptor": {
+          "domain": "weather",
+          "resolution_reference": "https://aviationweather.gov/api/data/metar?ids=ZUCK&format=raw&date=2026-11-08T19:00:00Z&hours=30",
+          "station": "ZUCK",
+          "day": "2026-11-08",
+          "variable": "daily_high_temperature",
+          "starts_at": "2026-11-07T16:00:00+00:00",
+          "ends_at": "2026-11-08T16:00:00+00:00"
+        },
+        "dependency_tags": [
+          "weather-station:ZUCK",
+          "weather-UTC-day:2026-11-07"
+        ],
+        "evidence_lineages": [
+          "NOAA/AWC:ZUCK"
+        ],
+        "original_study_id": "000000000015:369aeee780fe525bff4103c8c7adfbe8cf9c08c4d70b92f3afd2a40c3a5080a1",
+        "original_study_sha256": "1e1c42f14cbcfa703e6454da73758a80d51200eada44cc76fb106c6c83cf0e95",
+        "original_forecast_sha256": "012fac89869ad085ed3dd4ecd90b7ccf88fdab79c4625ae3189e8be9d7f26bcd",
+        "source_model_replay_verified": true,
+        "review_policy": "phase25-source-event-review-v1",
+        "review_status": "source_event_identity_reviewed",
+        "statistical_independence_established": false,
+        "certified_group_id": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "forecast_id": "f41bfbe6a81385d04fa5bc13cf8f1ec0225ca856b132fec926d9f8bf90459d8d",
+        "model_id": "gaussian-first-passage-v23.1",
+        "native_parent_id": "1329694",
+        "canonical_group_id": "55551b5c402247836b091564c4b7b944e6a23947328d31aba4eeba933d31bee8",
+        "descriptor": {
+          "domain": "crypto",
+          "resolution_reference": "https://www.binance.com/en/trade/ETH_USDT",
+          "symbol": "ETHUSDT",
+          "starts_at": "2026-11-07T05:00:00+00:00",
+          "ends_at": "2026-11-08T05:00:00+00:00"
+        },
+        "dependency_tags": [
+          "crypto-symbol:ETHUSDT",
+          "crypto-UTC-day:2026-11-07"
+        ],
+        "evidence_lineages": [
+          "binance:ETHUSDT"
+        ],
+        "original_study_id": "e6b03a2feaa2c562066788ff6120a50e032bfb8552f79d9d43a982d29202ab6d",
+        "original_study_sha256": "71c3b7e5b92c6a427ed916e3eed86a54b71ee24c1027b35d212500e4187ba290",
+        "original_forecast_sha256": "2aedc5d6e923cdb4218c120b6916df556002338a6e729d80f5c92c6df0f3205a",
+        "source_model_replay_verified": true,
+        "review_policy": "phase25-source-event-review-v1",
+        "review_status": "source_event_identity_reviewed",
+        "statistical_independence_established": false,
+        "certified_group_id": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "forecast_id": "fe4ddc98e6d8354da63e5b9da70bd8ecf5fc4dc4a3e79e414e97b6ccd59cccf7",
+        "model_id": "gaussian-first-passage-v23.1",
+        "native_parent_id": "1329687",
+        "canonical_group_id": "88e590d715d114ccc0f53f52c4d791494cf945ed5a45a204b9912c4c63a7c964",
+        "descriptor": {
+          "domain": "crypto",
+          "resolution_reference": "https://www.binance.com/en/trade/BTC_USDT",
+          "symbol": "BTCUSDT",
+          "starts_at": "2026-11-07T05:00:00+00:00",
+          "ends_at": "2026-11-08T05:00:00+00:00"
+        },
+        "dependency_tags": [
+          "crypto-symbol:BTCUSDT",
+          "crypto-UTC-day:2026-11-07"
+        ],
+        "evidence_lineages": [
+          "binance:BTCUSDT"
+        ],
+        "original_study_id": "e6b03a2feaa2c562066788ff6120a50e032bfb8552f79d9d43a982d29202ab6d",
+        "original_study_sha256": "71c3b7e5b92c6a427ed916e3eed86a54b71ee24c1027b35d212500e4187ba290",
+        "original_forecast_sha256": "884581f5799f74e0ce8990044a564df61dd3d0bb33d196c57ff1a78df38c91b2",
+        "source_model_replay_verified": true,
+        "review_policy": "phase25-source-event-review-v1",
+        "review_status": "source_event_identity_reviewed",
+        "statistical_independence_established": false,
+        "certified_group_id": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      }
+    ],
+    "counts": {
+      "forecasts_examined": 32,
+      "source_identity_reviewed_forecasts": 32,
+      "native_parent_ids": 15,
+      "reviewed_canonical_groups": 15,
+      "conservative_dependency_clusters": 13,
+      "statistically_independent_events": 0,
+      "certification_independent_events": 0
+    },
+    "groups": [
+      {
+        "canonical_group_id": "040b0e5e7480d11a7505f1185c478787a49efdee34facdb27d02e07a7c3f0ec2",
+        "forecasts": 2,
+        "native_parent_ids": [
+          "1217410"
+        ],
+        "models": [
+          "nfl-davidson-team-strength-v23.1",
+          "nfl-ternary-frequency-v23.1"
+        ]
+      },
+      {
+        "canonical_group_id": "07f4d91b1784909231b0a526c7a607d9cbcf87080fd4cbdeceb912df6bf0a5fe",
+        "forecasts": 2,
+        "native_parent_ids": [
+          "1323602"
+        ],
+        "models": [
+          "metar-diurnal-analog-v24.1",
+          "metar-recent-climatology-v24.1"
+        ]
+      },
+      {
+        "canonical_group_id": "09ef4f838dbce8fa2a0b84b2b13a7e460b4dfbf9406781748fc0756a568566af",
+        "forecasts": 2,
+        "native_parent_ids": [
+          "1217415"
+        ],
+        "models": [
+          "nfl-davidson-team-strength-v23.1",
+          "nfl-ternary-frequency-v23.1"
+        ]
+      },
+      {
+        "canonical_group_id": "35d6fbd9dbf207be929932c458801dc4ae2a7e51f50f2126ac408b39c2020838",
+        "forecasts": 2,
+        "native_parent_ids": [
+          "1284243"
+        ],
+        "models": [
+          "nba-causal-elo-v24.1",
+          "nba-team-frequency-v24.1"
+        ]
+      },
+      {
+        "canonical_group_id": "3812845b8ae7dc14672c9364a84171f0eddc1093c67f9efa21b0cf3dc0da0443",
+        "forecasts": 2,
+        "native_parent_ids": [
+          "1217411"
+        ],
+        "models": [
+          "nfl-davidson-team-strength-v23.1",
+          "nfl-ternary-frequency-v23.1"
+        ]
+      },
+      {
+        "canonical_group_id": "55551b5c402247836b091564c4b7b944e6a23947328d31aba4eeba933d31bee8",
+        "forecasts": 2,
+        "native_parent_ids": [
+          "1329694"
+        ],
+        "models": [
+          "empirical-ohlc-block-bootstrap-v23.1",
+          "gaussian-first-passage-v23.1"
+        ]
+      },
+      {
+        "canonical_group_id": "80b5583676e4acfc9b3640ac781f7ce9f5a4d18002f86a856baa3b94ae0a198f",
+        "forecasts": 2,
+        "native_parent_ids": [
+          "1217413"
+        ],
+        "models": [
+          "nfl-davidson-team-strength-v23.1",
+          "nfl-ternary-frequency-v23.1"
+        ]
+      },
+      {
+        "canonical_group_id": "8369102586154c3b8f0ed14b6afd2afb8fd4e2b604aaddbf862456e2f14c6325",
+        "forecasts": 2,
+        "native_parent_ids": [
+          "1284242"
+        ],
+        "models": [
+          "nba-causal-elo-v24.1",
+          "nba-team-frequency-v24.1"
+        ]
+      },
+      {
+        "canonical_group_id": "88e590d715d114ccc0f53f52c4d791494cf945ed5a45a204b9912c4c63a7c964",
+        "forecasts": 4,
+        "native_parent_ids": [
+          "1329687"
+        ],
+        "models": [
+          "empirical-ohlc-block-bootstrap-v23.1",
+          "gaussian-first-passage-v23.1"
+        ]
+      },
+      {
+        "canonical_group_id": "8fa2bb6c615a2e26181480a21fe00dead7712c1014f76619bcf073ea7423c771",
+        "forecasts": 2,
+        "native_parent_ids": [
+          "1217424"
+        ],
+        "models": [
+          "nfl-davidson-team-strength-v23.1",
+          "nfl-ternary-frequency-v23.1"
+        ]
+      },
+      {
+        "canonical_group_id": "9f7da292f5f8ae4726e4be4712db78bfd6a10a986016af4145d01b05f31f4ff0",
+        "forecasts": 2,
+        "native_parent_ids": [
+          "1217426"
+        ],
+        "models": [
+          "nfl-davidson-team-strength-v23.1",
+          "nfl-ternary-frequency-v23.1"
+        ]
+      },
+      {
+        "canonical_group_id": "b0e138beb52eb95d2f188283a9cf0107cab0965524c9544814828a47e04a18fc",
+        "forecasts": 2,
+        "native_parent_ids": [
+          "1284245"
+        ],
+        "models": [
+          "nba-causal-elo-v24.1",
+          "nba-team-frequency-v24.1"
+        ]
+      },
+      {
+        "canonical_group_id": "c639e6e839f753fd98bbe7cd05e8d16c3813f33c6d7f1e8e0262524f7916a070",
+        "forecasts": 2,
+        "native_parent_ids": [
+          "1323624"
+        ],
+        "models": [
+          "metar-diurnal-analog-v24.1",
+          "metar-recent-climatology-v24.1"
+        ]
+      },
+      {
+        "canonical_group_id": "d3dd659c616200a27e990d54c0b3ac7b9f9e70289667a251c8bcedba11e91a6c",
+        "forecasts": 2,
+        "native_parent_ids": [
+          "1284244"
+        ],
+        "models": [
+          "nba-causal-elo-v24.1",
+          "nba-team-frequency-v24.1"
+        ]
+      },
+      {
+        "canonical_group_id": "e2d28a38ebcaa4225029beb3f6f9b4c85a4f1ce75b484b14ac4107ed07b725ff",
+        "forecasts": 2,
+        "native_parent_ids": [
+          "1284240"
+        ],
+        "models": [
+          "nba-causal-elo-v24.1",
+          "nba-team-frequency-v24.1"
+        ]
+      }
+    ],
+    "dependency_clusters": [
+      [
+        "040b0e5e7480d11a7505f1185c478787a49efdee34facdb27d02e07a7c3f0ec2"
+      ],
+      [
+        "07f4d91b1784909231b0a526c7a607d9cbcf87080fd4cbdeceb912df6bf0a5fe",
+        "c639e6e839f753fd98bbe7cd05e8d16c3813f33c6d7f1e8e0262524f7916a070"
+      ],
+      [
+        "09ef4f838dbce8fa2a0b84b2b13a7e460b4dfbf9406781748fc0756a568566af"
+      ],
+      [
+        "35d6fbd9dbf207be929932c458801dc4ae2a7e51f50f2126ac408b39c2020838"
+      ],
+      [
+        "3812845b8ae7dc14672c9364a84171f0eddc1093c67f9efa21b0cf3dc0da0443"
+      ],
+      [
+        "55551b5c402247836b091564c4b7b944e6a23947328d31aba4eeba933d31bee8",
+        "88e590d715d114ccc0f53f52c4d791494cf945ed5a45a204b9912c4c63a7c964"
+      ],
+      [
+        "80b5583676e4acfc9b3640ac781f7ce9f5a4d18002f86a856baa3b94ae0a198f"
+      ],
+      [
+        "8369102586154c3b8f0ed14b6afd2afb8fd4e2b604aaddbf862456e2f14c6325"
+      ],
+      [
+        "8fa2bb6c615a2e26181480a21fe00dead7712c1014f76619bcf073ea7423c771"
+      ],
+      [
+        "9f7da292f5f8ae4726e4be4712db78bfd6a10a986016af4145d01b05f31f4ff0"
+      ],
+      [
+        "b0e138beb52eb95d2f188283a9cf0107cab0965524c9544814828a47e04a18fc"
+      ],
+      [
+        "d3dd659c616200a27e990d54c0b3ac7b9f9e70289667a251c8bcedba11e91a6c"
+      ],
+      [
+        "e2d28a38ebcaa4225029beb3f6f9b4c85a4f1ce75b484b14ac4107ed07b725ff"
+      ]
+    ],
+    "shared_evidence_lineages": [
+      {
+        "lineage": "ESPN:NBA:daily-scoreboards",
+        "canonical_groups": [
+          "35d6fbd9dbf207be929932c458801dc4ae2a7e51f50f2126ac408b39c2020838",
+          "8369102586154c3b8f0ed14b6afd2afb8fd4e2b604aaddbf862456e2f14c6325",
+          "b0e138beb52eb95d2f188283a9cf0107cab0965524c9544814828a47e04a18fc",
+          "d3dd659c616200a27e990d54c0b3ac7b9f9e70289667a251c8bcedba11e91a6c",
+          "e2d28a38ebcaa4225029beb3f6f9b4c85a4f1ce75b484b14ac4107ed07b725ff"
+        ]
+      },
+      {
+        "lineage": "nflverse:games.csv",
+        "canonical_groups": [
+          "040b0e5e7480d11a7505f1185c478787a49efdee34facdb27d02e07a7c3f0ec2",
+          "09ef4f838dbce8fa2a0b84b2b13a7e460b4dfbf9406781748fc0756a568566af",
+          "3812845b8ae7dc14672c9364a84171f0eddc1093c67f9efa21b0cf3dc0da0443",
+          "80b5583676e4acfc9b3640ac781f7ce9f5a4d18002f86a856baa3b94ae0a198f",
+          "8fa2bb6c615a2e26181480a21fe00dead7712c1014f76619bcf073ea7423c771",
+          "9f7da292f5f8ae4726e4be4712db78bfd6a10a986016af4145d01b05f31f4ff0"
+        ]
+      }
+    ],
+    "rejections": {},
+    "certification_requirements": {
+      "training": 100,
+      "heldout": 100
+    },
+    "limitations": [
+      "Canonical events are identity-reviewed, not certified statistically independent samples",
+      "Shared teams/stations/assets/release series and contemporaneous regimes remain dependent",
+      "A shared publisher or model input is not independent supporting confirmation"
+    ],
+    "research_only": true,
+    "trading_authority": false,
+    "certification_authority": false
+  },
+  "same_cohort_disagreements": [
+    {
+      "cohort_id": "15305de59ee105bb4b7b140bdf0c5546b85d26faa0f00af1c43e34e87affae65",
+      "canonical_group_id": "07f4d91b1784909231b0a526c7a607d9cbcf87080fd4cbdeceb912df6bf0a5fe",
+      "forecast_ids": [
+        "595cf818cb4b51bec70858de3abc1674b8a96691a939c973bc09044f366d54e6",
+        "f1662a8afa4c01a45880382b97c672be0cb253fb1dc99ddf28dcd7abde5201f3"
+      ],
+      "model_ids": [
+        "metar-diurnal-analog-v24.1",
+        "metar-recent-climatology-v24.1"
+      ],
+      "probability_range": 0.03448275862068966,
+      "declared_source_lineages": [
+        "NOAA/AWC:ZUCK"
+      ],
+      "independent_confirmation_count": null,
+      "ensemble_probability": null,
+      "ensemble_weights": null,
+      "scope": "same prospective target/time/cutoff/native book; disagreement is not skill"
+    },
+    {
+      "cohort_id": "166e08af244e5192f91839ba526d568c0f7f1139c0ba3e738e303dda5ee51207",
+      "canonical_group_id": "d3dd659c616200a27e990d54c0b3ac7b9f9e70289667a251c8bcedba11e91a6c",
+      "forecast_ids": [
+        "4aa60ff4a719008fe5b3495364e5c6d2cd6e72b8a14e248377d91190afc46dcd",
+        "a708d409a817b55a3415d7e2b8a90001c8525a7ae26ddf04d4fea7341a5f9292"
+      ],
+      "model_ids": [
+        "nba-causal-elo-v24.1",
+        "nba-team-frequency-v24.1"
+      ],
+      "probability_range": 0.20100963478162515,
+      "declared_source_lineages": [
+        "ESPN:NBA:daily-scoreboards"
+      ],
+      "independent_confirmation_count": null,
+      "ensemble_probability": null,
+      "ensemble_weights": null,
+      "scope": "same prospective target/time/cutoff/native book; disagreement is not skill"
+    },
+    {
+      "cohort_id": "2a0db1e6f04bc34cb5f0db2943b35ee86d6f1b9312a4ae41d66fa56a9483292a",
+      "canonical_group_id": "8fa2bb6c615a2e26181480a21fe00dead7712c1014f76619bcf073ea7423c771",
+      "forecast_ids": [
+        "20b6664de26e7f6193a4f58436658b1c32cbfc00a23d62c6463807ea4fb1d9ff",
+        "56c1d12946ca26dc5e0ce80b3a93cf3bd03de5be734e6921aef3aee9e19ee976"
+      ],
+      "model_ids": [
+        "nfl-davidson-team-strength-v23.1",
+        "nfl-ternary-frequency-v23.1"
+      ],
+      "probability_range": 0.013114719737394864,
+      "declared_source_lineages": [
+        "nflverse:games.csv"
+      ],
+      "independent_confirmation_count": null,
+      "ensemble_probability": null,
+      "ensemble_weights": null,
+      "scope": "same prospective target/time/cutoff/native book; disagreement is not skill"
+    },
+    {
+      "cohort_id": "538d75d66a8c28e802b5a9d8a848c55cc0a06943b1577c60c4b7248e81c92be1",
+      "canonical_group_id": "88e590d715d114ccc0f53f52c4d791494cf945ed5a45a204b9912c4c63a7c964",
+      "forecast_ids": [
+        "0a0b7b345fe1ac7f6cc02f57deef4b460c42108baaaec4d1a44476686b8da041",
+        "fe4ddc98e6d8354da63e5b9da70bd8ecf5fc4dc4a3e79e414e97b6ccd59cccf7"
+      ],
+      "model_ids": [
+        "empirical-ohlc-block-bootstrap-v23.1",
+        "gaussian-first-passage-v23.1"
+      ],
+      "probability_range": 7.643124000879053e-11,
+      "declared_source_lineages": [
+        "binance:BTCUSDT"
+      ],
+      "independent_confirmation_count": null,
+      "ensemble_probability": null,
+      "ensemble_weights": null,
+      "scope": "same prospective target/time/cutoff/native book; disagreement is not skill"
+    },
+    {
+      "cohort_id": "64fa39f7228cb3b7b5a26c55c74ca9283b66db3549220dd58d4a53bdfe698b41",
+      "canonical_group_id": "3812845b8ae7dc14672c9364a84171f0eddc1093c67f9efa21b0cf3dc0da0443",
+      "forecast_ids": [
+        "61197ec13abe715c58818c60408a6adb87179c16989e28ef71d357663e682259",
+        "a00081ac7060afde2ca26ae103a9232ef2c4c1f12f3086fc5b9ffa8620219b64"
+      ],
+      "model_ids": [
+        "nfl-davidson-team-strength-v23.1",
+        "nfl-ternary-frequency-v23.1"
+      ],
+      "probability_range": 0.018508184643521886,
+      "declared_source_lineages": [
+        "nflverse:games.csv"
+      ],
+      "independent_confirmation_count": null,
+      "ensemble_probability": null,
+      "ensemble_weights": null,
+      "scope": "same prospective target/time/cutoff/native book; disagreement is not skill"
+    },
+    {
+      "cohort_id": "65e2ba8fb37f71bf88577824cda1c97d632466f7726c4f0acfb6295115a5c607",
+      "canonical_group_id": "55551b5c402247836b091564c4b7b944e6a23947328d31aba4eeba933d31bee8",
+      "forecast_ids": [
+        "531d2afdf2e9eab47e4d2eb2c03303905d845b772c8038b917071e39efe341ac",
+        "f41bfbe6a81385d04fa5bc13cf8f1ec0225ca856b132fec926d9f8bf90459d8d"
+      ],
+      "model_ids": [
+        "empirical-ohlc-block-bootstrap-v23.1",
+        "gaussian-first-passage-v23.1"
+      ],
+      "probability_range": 0.021795141856817964,
+      "declared_source_lineages": [
+        "binance:ETHUSDT"
+      ],
+      "independent_confirmation_count": null,
+      "ensemble_probability": null,
+      "ensemble_weights": null,
+      "scope": "same prospective target/time/cutoff/native book; disagreement is not skill"
+    },
+    {
+      "cohort_id": "68f400d8a699d7e5e9899304804ad97786bc86331b99dea769bb71359b90ae7b",
+      "canonical_group_id": "9f7da292f5f8ae4726e4be4712db78bfd6a10a986016af4145d01b05f31f4ff0",
+      "forecast_ids": [
+        "e1eaf48c65154f5d4cb1551ac8d28c76e6bb62265ea46c7ff9f335c763433b45",
+        "ed04ab0f36cd9a06873f5cfaac6bd5aee03918e22eac9f21438bedeaeb44e85b"
+      ],
+      "model_ids": [
+        "nfl-davidson-team-strength-v23.1",
+        "nfl-ternary-frequency-v23.1"
+      ],
+      "probability_range": 0.07914255777865592,
+      "declared_source_lineages": [
+        "nflverse:games.csv"
+      ],
+      "independent_confirmation_count": null,
+      "ensemble_probability": null,
+      "ensemble_weights": null,
+      "scope": "same prospective target/time/cutoff/native book; disagreement is not skill"
+    },
+    {
+      "cohort_id": "7712ac2719197b410e0a654ea9b2a482ea95977ee398bc728d2c1dee1275bed4",
+      "canonical_group_id": "b0e138beb52eb95d2f188283a9cf0107cab0965524c9544814828a47e04a18fc",
+      "forecast_ids": [
+        "8792b2ed37af142f0c80a1b1a1e3f9e32cc925ef0db20f25b6e459c35b18d6a0",
+        "c4cbfe396edc4b1d28b9328a4324c6042156bb90bd06512f9e4e90427bece4b4"
+      ],
+      "model_ids": [
+        "nba-causal-elo-v24.1",
+        "nba-team-frequency-v24.1"
+      ],
+      "probability_range": 0.018597955173147773,
+      "declared_source_lineages": [
+        "ESPN:NBA:daily-scoreboards"
+      ],
+      "independent_confirmation_count": null,
+      "ensemble_probability": null,
+      "ensemble_weights": null,
+      "scope": "same prospective target/time/cutoff/native book; disagreement is not skill"
+    },
+    {
+      "cohort_id": "92d043390ee1b9beab25dd4c59550f304508755707ce5da1515f5e12b7058ee9",
+      "canonical_group_id": "c639e6e839f753fd98bbe7cd05e8d16c3813f33c6d7f1e8e0262524f7916a070",
+      "forecast_ids": [
+        "5706f728a9caa514561d503dd37802f514fda9a3ba54c5befdaca93e25b857d8",
+        "e564a5e724b8e330cf169a99b32431ab59b7fa8c0decd70d940f6417ef6a2653"
+      ],
+      "model_ids": [
+        "metar-diurnal-analog-v24.1",
+        "metar-recent-climatology-v24.1"
+      ],
+      "probability_range": 0.034482758620689724,
+      "declared_source_lineages": [
+        "NOAA/AWC:ZSQD"
+      ],
+      "independent_confirmation_count": null,
+      "ensemble_probability": null,
+      "ensemble_weights": null,
+      "scope": "same prospective target/time/cutoff/native book; disagreement is not skill"
+    },
+    {
+      "cohort_id": "a15400660c5daa175eabe1bd9695b52149acc9c54fa222153324176e098aa858",
+      "canonical_group_id": "e2d28a38ebcaa4225029beb3f6f9b4c85a4f1ce75b484b14ac4107ed07b725ff",
+      "forecast_ids": [
+        "52306f6369cc6b264136d14150651daeec6004b2192c3f5e90bf56bc72a64745",
+        "c0cee1cccc91a4464f38711b4df8171bfe6b2c21f22ceaa2a2b36c72be69f37c"
+      ],
+      "model_ids": [
+        "nba-causal-elo-v24.1",
+        "nba-team-frequency-v24.1"
+      ],
+      "probability_range": 0.14926337803918677,
+      "declared_source_lineages": [
+        "ESPN:NBA:daily-scoreboards"
+      ],
+      "independent_confirmation_count": null,
+      "ensemble_probability": null,
+      "ensemble_weights": null,
+      "scope": "same prospective target/time/cutoff/native book; disagreement is not skill"
+    },
+    {
+      "cohort_id": "b126ce32c57c270b0f7c1139e9dcf089a83a18f4587886767b3c532aa26b9fa2",
+      "canonical_group_id": "040b0e5e7480d11a7505f1185c478787a49efdee34facdb27d02e07a7c3f0ec2",
+      "forecast_ids": [
+        "35e3d00f55cdd4514a5d4f5e8676af14e15a0c5fb33052139456504e86cc0d03",
+        "e5f9e19433c0f9cc0df0c0bc5732130f05c09f9a1b2791dde95ce243eb2176ae"
+      ],
+      "model_ids": [
+        "nfl-davidson-team-strength-v23.1",
+        "nfl-ternary-frequency-v23.1"
+      ],
+      "probability_range": 0.035693975055049454,
+      "declared_source_lineages": [
+        "nflverse:games.csv"
+      ],
+      "independent_confirmation_count": null,
+      "ensemble_probability": null,
+      "ensemble_weights": null,
+      "scope": "same prospective target/time/cutoff/native book; disagreement is not skill"
+    },
+    {
+      "cohort_id": "c59700cc42892e610fffd751a56d1a54e0e914fb0db94a2b744635b834daa1ab",
+      "canonical_group_id": "09ef4f838dbce8fa2a0b84b2b13a7e460b4dfbf9406781748fc0756a568566af",
+      "forecast_ids": [
+        "a332449a68aecd94d3618b0ba46d1c3fa964aca61d8d79e2f99eb90683cc5e90",
+        "bd292c2c1382a9c3bcd33acf912c975416fd3e76fb90efdb2dad591d017f462e"
+      ],
+      "model_ids": [
+        "nfl-davidson-team-strength-v23.1",
+        "nfl-ternary-frequency-v23.1"
+      ],
+      "probability_range": 0.05903219886814909,
+      "declared_source_lineages": [
+        "nflverse:games.csv"
+      ],
+      "independent_confirmation_count": null,
+      "ensemble_probability": null,
+      "ensemble_weights": null,
+      "scope": "same prospective target/time/cutoff/native book; disagreement is not skill"
+    },
+    {
+      "cohort_id": "c948ccfee081fe213f5767558b353f73ff8e3e242ddf741f990d197f5d126a84",
+      "canonical_group_id": "88e590d715d114ccc0f53f52c4d791494cf945ed5a45a204b9912c4c63a7c964",
+      "forecast_ids": [
+        "02f142a6e4c574a16fb38a28d69493b17f71e13514118eaeaebe86a93cc119c3",
+        "7af31a3d7ac5aa9333dd07e895295ef0a04e61258ce8c42f170fb9d9c792f72f"
+      ],
+      "model_ids": [
+        "empirical-ohlc-block-bootstrap-v23.1",
+        "gaussian-first-passage-v23.1"
+      ],
+      "probability_range": 0.006578119531118994,
+      "declared_source_lineages": [
+        "binance:BTCUSDT"
+      ],
+      "independent_confirmation_count": null,
+      "ensemble_probability": null,
+      "ensemble_weights": null,
+      "scope": "same prospective target/time/cutoff/native book; disagreement is not skill"
+    },
+    {
+      "cohort_id": "f6e80293dfe35d865e94ecc321df54ef17a0d0f863c31004b5b2c02c7ee80b1c",
+      "canonical_group_id": "8369102586154c3b8f0ed14b6afd2afb8fd4e2b604aaddbf862456e2f14c6325",
+      "forecast_ids": [
+        "150da3be94e737bf14bacf3a2c2f43191a2c2efa121633cc581a806ad26033a5",
+        "519b01a53051dbfb27496477b4c67b1deebc0f8115ffabcf3bf0dd74623a7de0"
+      ],
+      "model_ids": [
+        "nba-causal-elo-v24.1",
+        "nba-team-frequency-v24.1"
+      ],
+      "probability_range": 0.14400915024182126,
+      "declared_source_lineages": [
+        "ESPN:NBA:daily-scoreboards"
+      ],
+      "independent_confirmation_count": null,
+      "ensemble_probability": null,
+      "ensemble_weights": null,
+      "scope": "same prospective target/time/cutoff/native book; disagreement is not skill"
+    },
+    {
+      "cohort_id": "fb630598ce42ed6a8fee4806f391fbc6a6ebcfb54cc34dcf7620624627a2d2f6",
+      "canonical_group_id": "35d6fbd9dbf207be929932c458801dc4ae2a7e51f50f2126ac408b39c2020838",
+      "forecast_ids": [
+        "59a35c6a3e3991200a58a63e72985fa26c6417a32ba795547af4a3c49a252010",
+        "f130aa0b068f36e66c6805d47736a2c8eaea5153a2157f17b3ed10e59ddb284f"
+      ],
+      "model_ids": [
+        "nba-causal-elo-v24.1",
+        "nba-team-frequency-v24.1"
+      ],
+      "probability_range": 0.16423704208740597,
+      "declared_source_lineages": [
+        "ESPN:NBA:daily-scoreboards"
+      ],
+      "independent_confirmation_count": null,
+      "ensemble_probability": null,
+      "ensemble_weights": null,
+      "scope": "same prospective target/time/cutoff/native book; disagreement is not skill"
+    },
+    {
+      "cohort_id": "ffb6fe309a366d2efa5314eebb13f8fce6f5e6d94118713586392d65af0cb6eb",
+      "canonical_group_id": "80b5583676e4acfc9b3640ac781f7ce9f5a4d18002f86a856baa3b94ae0a198f",
+      "forecast_ids": [
+        "467c5c49e29a942e0b52119be3a153cb1ac48a2da5d7e4a75cdbe4f70fdb8411",
+        "60565e2eefb6c260a9c769a75059569c3e251081d302794c9a2ac92fe8234545"
+      ],
+      "model_ids": [
+        "nfl-davidson-team-strength-v23.1",
+        "nfl-ternary-frequency-v23.1"
+      ],
+      "probability_range": 0.02097443291521317,
+      "declared_source_lineages": [
+        "nflverse:games.csv"
+      ],
+      "independent_confirmation_count": null,
+      "ensemble_probability": null,
+      "ensemble_weights": null,
+      "scope": "same prospective target/time/cutoff/native book; disagreement is not skill"
+    }
+  ],
+  "performance": {
+    "schema_version": "phase24-verified-evaluation-v1",
+    "as_of": "2026-11-07T23:58:00.912960+00:00",
+    "leaderboard": [
+      {
+        "model_id": "empirical-ohlc-block-bootstrap-v23.1",
+        "forecasts": 3,
+        "verified_forecast_outcomes": 0,
+        "native_parent_ids": 2,
+        "pending_forecasts": 3,
+        "descriptive_verified_scores": [],
+        "calibration": null,
+        "independent_event_count": 0,
+        "metrics": null,
+        "confidence_intervals": null,
+        "profitability_rank": null,
+        "net_executable_edge": null,
+        "simulated_pnl": null,
+        "reason": "reviewed event-disjoint cohorts and homogeneous chronological splits required",
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false,
+        "experimental_admission_authority": false
+      },
+      {
+        "model_id": "gaussian-first-passage-v23.1",
+        "forecasts": 3,
+        "verified_forecast_outcomes": 0,
+        "native_parent_ids": 2,
+        "pending_forecasts": 3,
+        "descriptive_verified_scores": [],
+        "calibration": null,
+        "independent_event_count": 0,
+        "metrics": null,
+        "confidence_intervals": null,
+        "profitability_rank": null,
+        "net_executable_edge": null,
+        "simulated_pnl": null,
+        "reason": "reviewed event-disjoint cohorts and homogeneous chronological splits required",
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false,
+        "experimental_admission_authority": false
+      },
+      {
+        "model_id": "metar-diurnal-analog-v24.1",
+        "forecasts": 2,
+        "verified_forecast_outcomes": 0,
+        "native_parent_ids": 2,
+        "pending_forecasts": 2,
+        "descriptive_verified_scores": [],
+        "calibration": null,
+        "independent_event_count": 0,
+        "metrics": null,
+        "confidence_intervals": null,
+        "profitability_rank": null,
+        "net_executable_edge": null,
+        "simulated_pnl": null,
+        "reason": "reviewed event-disjoint cohorts and homogeneous chronological splits required",
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false,
+        "experimental_admission_authority": false
+      },
+      {
+        "model_id": "metar-recent-climatology-v24.1",
+        "forecasts": 2,
+        "verified_forecast_outcomes": 0,
+        "native_parent_ids": 2,
+        "pending_forecasts": 2,
+        "descriptive_verified_scores": [],
+        "calibration": null,
+        "independent_event_count": 0,
+        "metrics": null,
+        "confidence_intervals": null,
+        "profitability_rank": null,
+        "net_executable_edge": null,
+        "simulated_pnl": null,
+        "reason": "reviewed event-disjoint cohorts and homogeneous chronological splits required",
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false,
+        "experimental_admission_authority": false
+      },
+      {
+        "model_id": "nba-causal-elo-v24.1",
+        "forecasts": 5,
+        "verified_forecast_outcomes": 0,
+        "native_parent_ids": 5,
+        "pending_forecasts": 5,
+        "descriptive_verified_scores": [],
+        "calibration": null,
+        "independent_event_count": 0,
+        "metrics": null,
+        "confidence_intervals": null,
+        "profitability_rank": null,
+        "net_executable_edge": null,
+        "simulated_pnl": null,
+        "reason": "reviewed event-disjoint cohorts and homogeneous chronological splits required",
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false,
+        "experimental_admission_authority": false
+      },
+      {
+        "model_id": "nba-team-frequency-v24.1",
+        "forecasts": 5,
+        "verified_forecast_outcomes": 0,
+        "native_parent_ids": 5,
+        "pending_forecasts": 5,
+        "descriptive_verified_scores": [],
+        "calibration": null,
+        "independent_event_count": 0,
+        "metrics": null,
+        "confidence_intervals": null,
+        "profitability_rank": null,
+        "net_executable_edge": null,
+        "simulated_pnl": null,
+        "reason": "reviewed event-disjoint cohorts and homogeneous chronological splits required",
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false,
+        "experimental_admission_authority": false
+      },
+      {
+        "model_id": "nfl-davidson-team-strength-v23.1",
+        "forecasts": 6,
+        "verified_forecast_outcomes": 0,
+        "native_parent_ids": 6,
+        "pending_forecasts": 6,
+        "descriptive_verified_scores": [],
+        "calibration": null,
+        "independent_event_count": 0,
+        "metrics": null,
+        "confidence_intervals": null,
+        "profitability_rank": null,
+        "net_executable_edge": null,
+        "simulated_pnl": null,
+        "reason": "reviewed event-disjoint cohorts and homogeneous chronological splits required",
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false,
+        "experimental_admission_authority": false
+      },
+      {
+        "model_id": "nfl-ternary-frequency-v23.1",
+        "forecasts": 6,
+        "verified_forecast_outcomes": 0,
+        "native_parent_ids": 6,
+        "pending_forecasts": 6,
+        "descriptive_verified_scores": [],
+        "calibration": null,
+        "independent_event_count": 0,
+        "metrics": null,
+        "confidence_intervals": null,
+        "profitability_rank": null,
+        "net_executable_edge": null,
+        "simulated_pnl": null,
+        "reason": "reviewed event-disjoint cohorts and homogeneous chronological splits required",
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false,
+        "experimental_admission_authority": false
+      }
+    ],
+    "rejections": {},
+    "counts": {
+      "forecasts": 32,
+      "individually_verified_forecasts": 0,
+      "pending_forecasts": 32,
+      "reviewed_independent_groups": 0
+    },
+    "sii_incremental_value": null,
+    "ensemble_weights": null,
+    "certification_requirements": {
+      "training_independent_events": 100,
+      "heldout_independent_events": 100
+    },
+    "research_only": true,
+    "trading_authority": false,
+    "certification_authority": false,
+    "experimental_admission_authority": false
+  },
+  "rejections": {},
+  "sii": {
+    "candidate_exact_pairs": 0,
+    "qualified_pairs": 0,
+    "resolved_pairs": [],
+    "pair_rejections": {},
+    "incremental_predictive_value": null,
+    "after_cost_incremental_value": null,
+    "reason": "qualified causal features, independently verified paired outcomes and event-disjoint uncertainty required"
+  },
+  "ensemble": {
+    "weights": null,
+    "probabilities": null,
+    "reason": "no qualified chronological event-disjoint calibration cohort"
+  },
+  "ranking_policy": "unresolved and exploratory models never receive profitability ranks",
+  "research_only": true,
+  "trading_authority": false,
+  "certification_authority": false,
+  "scope": "bounded current read-only source view; not all-time global forecast totals, no new forecasts generated"
+}

@@ -1,0 +1,24 @@
+....................F..                                                  [100%]
+=================================== FAILURES ===================================
+____ test_conditional_forecast_only_yields_liquidity_not_edge_or_admission _____
+
+    def test_conditional_forecast_only_yields_liquidity_not_edge_or_admission():
+        _,f=fixture();r=executable_diagnostic(f,evaluated_at=NOW,forecast_verified=True)
+        assert r['status']=='withheld' and r['capacity']['status']=='liquidity_only_unqualified'
+        assert r['estimated_net_edge'] is None and not r['execution_authorized']
+>       assert all(row['lower_bound_net_ev_after_modeled_costs'] is None for row in r['capacity']['scenarios'])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_phase25_competition.py:143: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+.0 = <list_iterator object at 0x70d5c7e02230>
+
+>   assert all(row['lower_bound_net_ev_after_modeled_costs'] is None for row in r['capacity']['scenarios'])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   KeyError: 'lower_bound_net_ev_after_modeled_costs'
+
+tests/test_phase25_competition.py:143: KeyError
+=========================== short test summary info ============================
+FAILED tests/test_phase25_competition.py::test_conditional_forecast_only_yields_liquidity_not_edge_or_admission
+1 failed, 22 passed in 0.20s
