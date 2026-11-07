@@ -1,0 +1,55 @@
+{
+  "observed_at": "2026-11-07T07:35:29.834706+00:00",
+  "services": {
+    "neraium-poly-paper.service": {
+      "MainPID": "3261191",
+      "NRestarts": "0",
+      "ExecStart": "{ path=/home/ubuntu/Neraium-Poly/.venv/bin/neraium-poly ; argv[]=/home/ubuntu/Neraium-Poly/.venv/bin/neraium-poly paper-live --config /home/ubuntu/Neraium-Poly/config/paper-live.example.json ; ignore_errors=no ; start_time=[Sat 2026-11-07 07:24:23 UTC] ; stop_time=[n/a] ; pid=3261191 ; code=(null) ; status=0/0 }",
+      "MemoryCurrent": "553910272",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "1073741824",
+      "ActiveState": "active",
+      "SubState": "running",
+      "execution_environment": {
+        "PAPER_TRADING": "true",
+        "LIVE_TRADING_ENABLED": "false"
+      }
+    },
+    "neraium-poly-experimental.service": {
+      "MainPID": "3249072",
+      "NRestarts": "0",
+      "ExecStart": "{ path=/home/ubuntu/Neraium-Poly/.venv/bin/neraium-poly ; argv[]=/home/ubuntu/Neraium-Poly/.venv/bin/neraium-poly experimental-paper --config /home/ubuntu/Neraium-Poly/config/experimental-paper.example.json ; ignore_errors=no ; start_time=[Sat 2026-11-07 04:44:06 UTC] ; stop_time=[n/a] ; pid=3249072 ; code=(null) ; status=0/0 }",
+      "MemoryCurrent": "793702400",
+      "CPUQuotaPerSecUSec": "500ms",
+      "MemoryMax": "805306368",
+      "ActiveState": "active",
+      "SubState": "running",
+      "execution_environment": {
+        "PAPER_TRADING": "true",
+        "LIVE_TRADING_ENABLED": "false"
+      }
+    }
+  },
+  "configuration_changes": {
+    "paper-live.example.json": {
+      "forecast_discovery_enabled": [
+        null,
+        true
+      ],
+      "forecast_protected_directory": [
+        null,
+        "data/experimental-paper"
+      ],
+      "forecast_priority_market_limit": [
+        null,
+        12
+      ]
+    },
+    "experimental-paper.example.json": {}
+  },
+  "aws_resources_modified": false,
+  "original_deletion": false,
+  "stop_reset": false,
+  "new_accounts": false,
+  "safeguards": "Existing strategy registry, risk limits and certified approval unchanged; research policies have no account/order authority"
+}

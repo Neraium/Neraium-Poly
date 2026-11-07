@@ -1,0 +1,81 @@
+{
+  "schema_version": "phase19-qualification-readiness-v1",
+  "evaluated_at": "2026-11-07T07:41:04.001579+00:00",
+  "input_sha256": "acf0651659efc4806562785196b22a122e3ffebb539369ba615ab24726e318fb",
+  "counts": {
+    "studies": 39,
+    "withheld_scans": 36,
+    "policy_transitions": 1,
+    "original_forecasts": 2,
+    "source_replayed_forecasts": 2,
+    "parent_events": 1,
+    "reviewed_parent_events": 0,
+    "verified_outcome_forecasts": 0,
+    "pending_forecasts": 2,
+    "recorded_outcome_matches": 0
+  },
+  "rejections": {
+    "reviewed_parent_dependency_group_required": 2,
+    "independently_verified_outcome_pending": 2
+  },
+  "scan_rejections": {
+    "causal_active_future_binary_event_required": 5362,
+    "current_event_executable_book_unavailable": 44,
+    "explicit_candle_label_vs_close_time_review_required": 258,
+    "unsupported_event_rule_template_or_domain": 14080
+  },
+  "blockers": [
+    "no_independently_verified_terminal_outcomes_in_snapshot",
+    "fewer_than_100_independent_training_events",
+    "fewer_than_100_independent_heldout_events"
+  ],
+  "scan_rejection_scope": "supplied withheld scans only; multiple reasons per token; not independent opportunities",
+  "qualified_training_events": 0,
+  "qualified_heldout_events": 0,
+  "qualification_count_scope": "most-complete single homogeneous cohort; cohorts never pooled",
+  "cohort_sufficient": false,
+  "required_training_events": 100,
+  "required_heldout_events": 100,
+  "validation": {
+    "schema_version": "phase18-event-disjoint-v1",
+    "evaluated_at": "2026-11-07T07:41:04.001579+00:00",
+    "training_end": "2026-11-06T00:00:00+00:00",
+    "heldout_start": "2026-11-07T07:23:27.729365+00:00",
+    "input_rows": 0,
+    "raw_replayed_rows": 0,
+    "cohorts": [],
+    "ambiguous_parent_ids": [],
+    "cross_split_groups": [],
+    "validation_only_rows": 0,
+    "training_labels_late": 0,
+    "rejections": {},
+    "required_training_events": 100,
+    "required_heldout_events": 100,
+    "metrics": null,
+    "score_scope": "per homogeneous verified model cohort only",
+    "certification_authority": false,
+    "trading_authority": false,
+    "limitations": [
+      "Independent features, independent source lineages and independent event groups are different requirements",
+      "No monetary mark or terminal quote can substitute for a verified settlement outcome",
+      "Multiple models sharing one parent do not create additional independent events"
+    ]
+  },
+  "calibration_rows": [],
+  "execution_economics": {
+    "estimated_net_edge": null,
+    "unprofitable_opportunities": null,
+    "reason": "forecast calibration alone cannot verify costs, executable edge or admission"
+  },
+  "snapshot_scope": "only supplied original studies; an outcome without its origin cannot qualify",
+  "research_only": true,
+  "trading_authority": false,
+  "certification_authority": false,
+  "experimental_admission_authority": false,
+  "archive_scope": {
+    "total_studies": 39,
+    "included_studies": 39,
+    "bounded_tail": false,
+    "default_verifiers": "Original native-input/model replay only; no independent outcome/group/frozen calibration approval supplied"
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "request_started_at": "2026-11-07T07:42:31.398006+00:00",
+  "services": {
+    "collector": {
+      "service": {
+        "status": "ok",
+        "paper_trading": true,
+        "live_trading_enabled": false,
+        "mode": "live_market_paper",
+        "trading_status": "validation_blocked",
+        "last_ingestion_at": "2026-11-07T07:42:43.311531+00:00",
+        "last_ingestion_age_seconds": 0.087538,
+        "last_error": null,
+        "ledger_consistent": true,
+        "timestamp": "2026-11-07T07:42:43.399069+00:00"
+      },
+      "scan": {
+        "markets_scanned": 200,
+        "discovered_markets": 206,
+        "outcomes": 412,
+        "bounded": true,
+        "next_offset": 200,
+        "selection_order": "volume24hr_desc+bounded_forecast_priority",
+        "forecast_discovery": {
+          "study_id": "80af013a7d907a9c14adb89818363b431ff71cb17bc9a26ee560ef9fea72b39e",
+          "compatible_candidates": 15,
+          "priority_markets": 6,
+          "requests": 3,
+          "rejections": {
+            "unsupported_event_rule_template_or_domain": 14,
+            "market_not_explicitly_accepting_order_books": 1,
+            "no_fresh_two_sided_preflight_book": 10
+          },
+          "protection": "verified_read_only",
+          "scope": "bounded additive independent-research coverage; no order authorization"
+        },
+        "errors": [],
+        "at": "2026-11-07T07:38:33.239497+00:00"
+      },
+      "cash": 500.0,
+      "orders": null,
+      "fills": null,
+      "stop": null,
+      "archive": {
+        "health": "ok",
+        "usage_bytes": 11073557077,
+        "budget_bytes": 214748364800,
+        "global_floor_bytes": 107374182400
+      },
+      "fresh_books": 290,
+      "tokens": 412,
+      "websocket": true,
+      "forecast_counts": {
+        "scans": null,
+        "source_attempts": null,
+        "independent_research_forecasts": null,
+        "pending_forecasts": null,
+        "durable_outcome_records": null,
+        "last_evaluation_at": null
+      }
+    },
+    "experimental": {
+      "service": {
+        "status": "ok",
+        "account_id": "experimental-paper",
+        "validation_status": "unvalidated",
+        "paper_trading": true,
+        "live_trading_enabled": false,
+        "last_ingestion_at": "2026-11-07T07:42:42.150503+00:00",
+        "last_ingestion_age_seconds": 1.388137,
+        "last_error": null,
+        "fee_error": null,
+        "timestamp": "2026-11-07T07:42:43.538640+00:00"
+      },
+      "scan": null,
+      "cash": 497.3024428205128,
+      "orders": 8,
+      "fills": 6,
+      "stop": false,
+      "archive": {
+        "health": "ok",
+        "usage_bytes": 4243278826,
+        "budget_bytes": 107374182400,
+        "global_floor_bytes": 107374182400
+      },
+      "fresh_books": null,
+      "tokens": null,
+      "websocket": null,
+      "forecast_counts": {
+        "scans": 38,
+        "source_attempts": 2,
+        "independent_research_forecasts": 2,
+        "pending_forecasts": 2,
+        "durable_outcome_records": 0,
+        "last_evaluation_at": "2026-11-07T07:39:25.168782+00:00"
+      }
+    }
+  },
+  "received_at": "2026-11-07T07:42:43.891689+00:00",
+  "free_bytes": 502554718208,
+  "loadavg": [
+    0.96533203125,
+    0.953125,
+    0.98828125
+  ],
+  "service_resources": "MainPID=3261191\nMemoryCurrent=626331648\nCPUQuotaPerSecUSec=1s\nId=neraium-poly-paper.service\nActiveState=active\n\nMainPID=3249072\nMemoryCurrent=789610496\nCPUQuotaPerSecUSec=500ms\nId=neraium-poly-experimental.service\nActiveState=active\n"
+}

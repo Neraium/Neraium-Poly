@@ -1,0 +1,13 @@
+{
+  "registered_at": "2026-11-07T07:23:27.729365+00:00",
+  "training_end": "2026-11-06T00:00:00+00:00",
+  "heldout_start": "2026-11-07T07:23:27.729365+00:00",
+  "scope": "prospective Phase19 original event forecasts; terminal outcomes and reviewed groups required",
+  "model": "existing phase18-binance-daily-low-logdiffusion-v1; uncalibrated [0,1]",
+  "source_head": "53c75e47288a5f9c34063a4fc47dac66162b9369",
+  "required_training": 100,
+  "required_heldout": 100,
+  "automatic_promotion": false,
+  "training_artifact_cutoff": "not available; cannot grant frozen-calibration qualification",
+  "financial_settings_changed": false
+}

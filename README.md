@@ -145,3 +145,11 @@ See [Phase18 readiness](docs/phase18-readiness.md), [architecture](docs/phase18-
 [storage](docs/phase18-storage-and-reliability.md) and
 [retention proposal requiring separate approval](docs/phase18-retention-proposal.md).
 No positive forecasting or trading advantage has been established.
+
+### Phase 19
+
+Bounded current-day discovery now supplements the broad feed with exact-rule markets
+that have native two-sided books. Event forecasting remains research-only; calibration,
+independent event review and certified approval requirements are unchanged.
+See [actual results and blockers](docs/phase19-readiness.md). The read-only
+`forecast-qualification` command requires explicit predeclared training/held-out cutoffs.

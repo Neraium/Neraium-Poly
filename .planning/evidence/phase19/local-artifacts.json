@@ -1,0 +1,265 @@
+{
+  "files": {
+    "data/phase19/qualification-final-output.txt": {
+      "bytes": 3156,
+      "sha256": "42d55a7fc673cbfa6715657107cbfc171f109369b03bd39dc86ecd0cbfab8860"
+    },
+    "data/phase19/forecasts-after.txt": {
+      "bytes": 3458,
+      "sha256": "afc82c9a051dbda98b193814dfc27c35c59fa4b6969ca25165f5dc4fa1987b94"
+    },
+    "data/phase19/frontend-build.txt": {
+      "bytes": 409,
+      "sha256": "d7d266b4e89f05dc582a8dfa7f2178d4ced8b1f9b98db759447729ebe691065b"
+    },
+    "data/phase19/qualification-after.txt": {
+      "bytes": 3156,
+      "sha256": "57db4dc19d427dabac1a72c9d1aae39aa495bae0ac53bcf1eda24420ca99eaba"
+    },
+    "data/phase19/integrity-after.json": {
+      "bytes": 212779,
+      "sha256": "f002261d30dc185062e84eb34315f7aebe89916f3fa3e5bef318a9a600405cf5"
+    },
+    "data/phase19/ci-final-watch.txt": {
+      "bytes": 7236,
+      "sha256": "4209351b6864d6dc0560e28d2ef854ab04adba304572d55ef0522b8f1a9e3127"
+    },
+    "data/phase19/baseline.py": {
+      "bytes": 1271,
+      "sha256": "223b6dda2caceafc6e2bb190fbb3229d207723cbfb2e2ed96542fb3ad19b9417"
+    },
+    "data/phase19/ruff.txt": {
+      "bytes": 19,
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    "data/phase19/after_observation.py": {
+      "bytes": 1519,
+      "sha256": "21991f601c9b0dcc3037d62313df825fcae740b273413d53abe4921663642138"
+    },
+    "data/phase19/qualification-before-output.txt": {
+      "bytes": 3102,
+      "sha256": "194e85bb13bc73d78f24d7832d3fae3a57b916610490ecd32624efa14415d1ef"
+    },
+    "data/phase19/integrity-before.json": {
+      "bytes": 212731,
+      "sha256": "561d9738ad6f08d4e2c1cd331d417f5dfff16efa3c7eeaff0bc886d9b09ac6f7"
+    },
+    "data/phase19/live-priority-diagnostic.json": {
+      "bytes": 4474,
+      "sha256": "f38798ab15d5887ad3128be2a2c430747f1e6d7fa5c143fe4577578773c40ae9"
+    },
+    "data/phase19/ci-main-watch.txt": {
+      "bytes": 3652,
+      "sha256": "2e7d4370e5ee590ab7a739f99b76280b1c8c9a39b329d9501be40a420a559a5e"
+    },
+    "data/phase19/monitor-operations.txt": {
+      "bytes": 581,
+      "sha256": "449d9347e49c253b3cab26fb43a07664335d58c9f6a056141dd93822968212d7"
+    },
+    "data/phase19/qualification-before.json": {
+      "bytes": 3101,
+      "sha256": "cc5f34d95ffbdb33764f684c8c404eb378e1cfa9842dffab9e7e909fdfe2090c"
+    },
+    "data/phase19/integrity-after.txt": {
+      "bytes": 703,
+      "sha256": "9ec2c700f7890ba7471d7d1068ac508ae4daef8e40d896dfe273afe4594f5b93"
+    },
+    "data/phase19/experimental-baseline-operations-state.json": {
+      "bytes": 111005,
+      "sha256": "a3d9cb06b0d3734a4128ed709f4b31ff993bc7cc2eab85ec5270bf36b214ca49"
+    },
+    "data/phase19/ci-backend.log": {
+      "bytes": 56449,
+      "sha256": "b4511aff5658cec6a89056877a4ec4dd7833497d4b0a94653962118f8d93af0c"
+    },
+    "data/phase19/integrity.py": {
+      "bytes": 2635,
+      "sha256": "6c91f62e8d8224434472e6ca779b0faa6900cf5ef65f74a23b11391216a49953"
+    },
+    "data/phase19/recover_baseline.py": {
+      "bytes": 1968,
+      "sha256": "fb516c66110b24efc436180ea1c487cfde0692fbec868fb7382d3e9a493aa145"
+    },
+    "data/phase19/recovery-baseline.json": {
+      "bytes": 282438,
+      "sha256": "86b1e043771bf5ffcc61da75ad6b83fc1b50a0f32c9bf6d6720e310805e4942d"
+    },
+    "data/phase19/collector-baseline-operations-state.json": {
+      "bytes": 4496,
+      "sha256": "124c1e3c85c5cec1831ca37e5ee27c2fdce642a983fc5bfeb1c574a1c59a292a"
+    },
+    "data/phase19/experimental-baseline-state.json": {
+      "bytes": 482273,
+      "sha256": "be30a6e9aa2b5c64ccbe84d9f329e1f8da7ba884b23aa6d884f4af08ed4fba73"
+    },
+    "data/phase19/accounts-after.txt": {
+      "bytes": 1720,
+      "sha256": "8f7261609143f8fe77e17196d4d2796ffef215ca1aaebef8ed4e73ede792c6fc"
+    },
+    "data/phase19/ci-source.json": {
+      "bytes": 242,
+      "sha256": "2ed1321e1f5fdfeae0df4c019daf1dd0dd26423281d20d04531d2c47cb9e3807"
+    },
+    "data/phase19/ci-watch.txt": {
+      "bytes": 84,
+      "sha256": "2ccfdf8997c31a993e1d6bfbb8ab2bff52fd748d979c274afb37a625e9ea62d1"
+    },
+    "data/phase19/safety.py": {
+      "bytes": 1654,
+      "sha256": "0cc4e95775b0cbd9d5da3e78b763784cb37fcbaf0e4b106f5ba6794e4b60d251"
+    },
+    "data/phase19/after-observation-output.txt": {
+      "bytes": 1059,
+      "sha256": "f634888ddcf639f54d11fd0c8dbd5fd07966c6ddd2302dc30050710c9ce38c0f"
+    },
+    "data/phase19/recovery-before.txt": {
+      "bytes": 544,
+      "sha256": "a88b24ec98bbb000553198e6d5921a31999e876f53566d7fe102b4767a06d5cf"
+    },
+    "data/phase19/verify.py": {
+      "bytes": 1692,
+      "sha256": "75646d889ee2f7464bae00384b5c9fd8c034fa55b133666b30706b099f87ae22"
+    },
+    "data/phase19/ci-final-source.json": {
+      "bytes": 237,
+      "sha256": "304fca57bc506d78eafd572b75ce6aaffe4597a7068f17e5d04c692ae20bf047"
+    },
+    "data/phase19/accounts-before-summary.json": {
+      "bytes": 1720,
+      "sha256": "8f7261609143f8fe77e17196d4d2796ffef215ca1aaebef8ed4e73ede792c6fc"
+    },
+    "data/phase19/collector-final-state.json": {
+      "bytes": 1168163,
+      "sha256": "746bc50e5720bcc0b08920a1402266048b991f403e081cb4e10aa0e04fc69470"
+    },
+    "data/phase19/ci-main.json": {
+      "bytes": 242,
+      "sha256": "f8348b40f80e26a22c2cfefb2c05b2fffeb5b23d84dafaf2d0812834ea9cc698"
+    },
+    "data/phase19/monitor-edge.txt": {
+      "bytes": 536,
+      "sha256": "94a436e34acccea283a5b949c01689597b35c9323399e9f4af1be3254682ab5c"
+    },
+    "data/phase19/qualification-delivery-output.txt": {
+      "bytes": 3156,
+      "sha256": "c6efc2ade58523593a32b001c730eb51ada0108d7f60cd691d3d2a4bc667e55e"
+    },
+    "data/phase19/observation-output.txt": {
+      "bytes": 310,
+      "sha256": "9110799c5a82bd90b0f1088a1778fd68bd7e822768435d539d0b586bfd1e8480"
+    },
+    "data/phase19/qualification-final.json": {
+      "bytes": 3155,
+      "sha256": "e40b2ed6004ca3e9b77ec7674adbd732433c16909a44ba235c598f54b57bf985"
+    },
+    "data/phase19/experimental-final-state.json": {
+      "bytes": 539551,
+      "sha256": "7703854bebbc7c1f4bb7f6e07297e9620459f4cad411be5346fb10d0d1abb406"
+    },
+    "data/phase19/ci-runs.json": {
+      "bytes": 199,
+      "sha256": "43ca05ffe102a87afaad1281e9d5d2ea72fe51418b51a8d2dae077c282a60324"
+    },
+    "data/phase19/collector-baseline-state.json": {
+      "bytes": 1145288,
+      "sha256": "07f6d6f1501e84527a2e1f3c01d8a2e325347beedacf021314cdf934cabdc9b9"
+    },
+    "data/phase19/observe.py": {
+      "bytes": 3568,
+      "sha256": "7202f54756e9977ddcecb833b2d1f964f36f7bf7711b6aa3614e4ef5880ac8ff"
+    },
+    "data/phase19/backend-result.json": {
+      "bytes": 5254,
+      "sha256": "f3a12c21cbb764abccdd4f2c2e277f2f63f695535f1821f7b63c86de1f448079"
+    },
+    "data/phase19/integrity-before-summary.json": {
+      "bytes": 704,
+      "sha256": "3de5c1b010cbb0226047610e0eeae8a77ab17b9906f74d5cbd81ba89807743ad"
+    },
+    "data/phase19/accounts.py": {
+      "bytes": 1790,
+      "sha256": "9e456f76b76273017e87fea6fdbb241afacb611dc67af26b392ba32799b38b20"
+    },
+    "data/phase19/qualification-delivery.json": {
+      "bytes": 3155,
+      "sha256": "07634e106946b8c7a731121203475c0e06360b9d37fa560b20d89d69881fd1ee"
+    },
+    "data/phase19/baseline-frame.json": {
+      "bytes": 1947083,
+      "sha256": "81905deada1f0d89f2e3603cd0523fe56b0c2c9bd981352b0fa60ea5645a271e"
+    },
+    "data/phase19/recovery-after.json": {
+      "bytes": 262991,
+      "sha256": "a08245422d5765b0ba50f3e61464dcdc7954670fdff39f71ad315cf0d65aacaf"
+    },
+    "data/phase19/experimental-paper.example.json.before": {
+      "bytes": 1346,
+      "sha256": "2eb80e8415babcce3742a7ed0ef4d37d8065d33f3f8a4da092ebe78d6d170574"
+    },
+    "data/phase19/paper-live.example.json.before": {
+      "bytes": 1922,
+      "sha256": "93b6e6835cf8a08a815a425e30c412fb8b7dc9afb91ca1bc960819a38bf3c496"
+    },
+    "data/phase19/safety-after.txt": {
+      "bytes": 2135,
+      "sha256": "3475aafce0374b5f13c62e4d3b181126f0900647631a65e7d53b51da4fe5267e"
+    },
+    "data/phase19/baseline-output.txt": {
+      "bytes": 520,
+      "sha256": "8f4f13cb5da74f1c9c85dc51eaefab7e30058056b26ffff7b91081147a1a863d"
+    },
+    "data/phase19/audit_forecasts.py": {
+      "bytes": 2184,
+      "sha256": "3cb507a0becdc130fe298def723c809295762748bfc7c613988d11ee34df405f"
+    },
+    "data/phase19/forecasts-final.txt": {
+      "bytes": 3513,
+      "sha256": "e630c25d9ec63effc2f08bce49e2d83e01af03da9a55c633c5e1262b888bce64"
+    },
+    "data/phase19/legacy-recovery-after.txt": {
+      "bytes": 543,
+      "sha256": "51709300287b50ed82f0b48b9f542b2034df72e483d765e6737865c29ce002ae"
+    },
+    "data/phase19/qualification-after.json": {
+      "bytes": 3155,
+      "sha256": "c63be2868c5329a52a01be741a62dbf7e61ff205d181ca397db4de3af7ecb417"
+    },
+    "data/phase19/report.py": {
+      "bytes": 7893,
+      "sha256": "5e136b2c1ce2187a209e781f3d462ee8c085758f6d11e6e0122462ae17247663"
+    },
+    "data/phase19/forecasts-delivery.txt": {
+      "bytes": 3514,
+      "sha256": "af0eee1bf379cbc2790776b9c04595c87dbaa8a482c3d32c863419aaca8155ed"
+    },
+    "data/phase19/observation/progress.json": {
+      "bytes": 1326,
+      "sha256": "b725701420f26a072d942530a748615fc0413770ba9dab7038d6a016901823ad"
+    },
+    "data/phase19/observation/summary.json": {
+      "bytes": 249005,
+      "sha256": "22c227988a01854767e151c544a66aa217492b26fce281e78ff0a8fac8b737af"
+    },
+    "data/phase19/observation/samples.jsonl": {
+      "bytes": 1787382,
+      "sha256": "4e48df70ea30c5af6fe40fe1e3cdcbd0cf886cf666e2d4ab832d6d7096b8b361"
+    },
+    "data/phase19/observation/startup.json": {
+      "bytes": 11591,
+      "sha256": "1c829c2c6d873fae14c6b9273c2d15d8bca2e277e85ccda0c5bf17cc840ae475"
+    },
+    "data/phase19/agent-evidence/discovery-audit.json": {
+      "bytes": 286532,
+      "sha256": "5fcbc5bf11e99301fd11757bb0c1c082521cef76bd3725132ef9db2ea0c982a1"
+    },
+    "data/phase19/agent-evidence/qualification-live-snapshot.json": {
+      "bytes": 2861,
+      "sha256": "407c65ee0a21ba29a2bd3ce1bd33ed5e59b36a155d24314941ad4d20744b4bbb"
+    },
+    "data/phase19/agent-evidence/current-event-probe.json": {
+      "bytes": 145391,
+      "sha256": "aed20fc71ebbd069aa161dde1df29f3c90d8445a4463d77caecfd2ba82d27a70"
+    }
+  },
+  "scope": "Local public source captures, observation logs and derived reports; originals retained on host"
+}

@@ -1,0 +1,200 @@
+{
+  "observed_at": "2026-11-07T07:35:26.887145+00:00",
+  "accounts": {
+    "paper-live": {
+      "cash": 500.0,
+      "realized_pnl": 0.0,
+      "emergency_stop": false,
+      "limits": {
+        "bankroll": 500.0,
+        "aggregate_fraction": 0.2,
+        "market_fraction": 0.05,
+        "event_fraction": 0.1,
+        "correlation_fraction": 0.1,
+        "daily_loss_fraction": 0.05,
+        "drawdown_fraction": 0.1,
+        "max_book_age_seconds": 15.0,
+        "max_market_age_seconds": 3600.0,
+        "max_estimate_age_seconds": 300.0,
+        "max_evidence_age_seconds": 3600.0,
+        "max_spread": 0.05,
+        "min_net_edge": 0.03,
+        "max_liquidity_participation": 0.25,
+        "approval_ttl_seconds": 10.0,
+        "standard_min": 2.0,
+        "standard_max": 5.0,
+        "high_min": 5.0,
+        "high_max": 15.0,
+        "exceptional_min": 15.0,
+        "exceptional_max": 25.0,
+        "kelly_fraction": 0.1
+      },
+      "positions": 0
+    },
+    "experimental-paper": {
+      "cash": 497.3024428205128,
+      "realized_pnl": -2.697557179487179,
+      "emergency_stop": false,
+      "limits": {
+        "bankroll": 500.0,
+        "aggregate_fraction": 0.2,
+        "market_fraction": 0.05,
+        "event_fraction": 0.1,
+        "correlation_fraction": 0.1,
+        "daily_loss_fraction": 0.05,
+        "drawdown_fraction": 0.1,
+        "max_book_age_seconds": 15.0,
+        "max_market_age_seconds": 3600.0,
+        "max_estimate_age_seconds": 300.0,
+        "max_evidence_age_seconds": 3600.0,
+        "max_spread": 0.05,
+        "min_net_edge": 0.03,
+        "max_liquidity_participation": 0.25,
+        "approval_ttl_seconds": 10.0,
+        "standard_min": 2.0,
+        "standard_max": 5.0,
+        "high_min": 5.0,
+        "high_max": 15.0,
+        "exceptional_min": 15.0,
+        "exceptional_max": 25.0,
+        "kelly_fraction": 0.1
+      },
+      "positions": 0
+    }
+  },
+  "tables": {
+    "paper-live/risk.sqlite/account": {
+      "rows": 1,
+      "sha256": "e91ed95451a68ccffb0226b3f1698422d13f68c51bc386ac2c00ba9dca2755ac"
+    },
+    "paper-live/risk.sqlite/audit": {
+      "rows": 3104,
+      "sha256": "3abe5bbeb8232c7620c75d3b4f70ce45094ed9e4d0b3971164004b6033673a90"
+    },
+    "paper-live/risk.sqlite/daily": {
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "paper-live/risk.sqlite/positions": {
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "paper-live/risk.sqlite/reservations": {
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "paper-live/broker.sqlite/audit": {
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "paper-live/broker.sqlite/book_watermarks": {
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "paper-live/broker.sqlite/books": {
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "paper-live/broker.sqlite/liquidity": {
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "paper-live/broker.sqlite/orders": {
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "experimental-paper/risk.sqlite/account": {
+      "rows": 1,
+      "sha256": "c0f132c84999453168325e2b54a64c3d9106e68081658c7c8d4eba80495285c6"
+    },
+    "experimental-paper/risk.sqlite/audit": {
+      "rows": 22188,
+      "sha256": "bd28b7704e24c6f29f44e4d2da1c4417144f9f6dbd234933c2bb230ff057bc1e"
+    },
+    "experimental-paper/risk.sqlite/daily": {
+      "rows": 2,
+      "sha256": "c253aabd436546f6ee6e94a7ee93388e764cc87950d7089f2758351ff3618af3"
+    },
+    "experimental-paper/risk.sqlite/experimental_exit_books": {
+      "rows": 3,
+      "sha256": "ddf769d30562e038985c29e0602dd7b4115f8ec1ed5c2f5b69a7973643379fd0"
+    },
+    "experimental-paper/risk.sqlite/experimental_exit_depth": {
+      "rows": 4,
+      "sha256": "de681cdb07ebc00043e9a72229f936088839a3b032063e302caeedd6c0f68199"
+    },
+    "experimental-paper/risk.sqlite/experimental_exit_watermarks": {
+      "rows": 3,
+      "sha256": "cd36965075ac3ce9049863cdc6d90d25150d5cfd9247f72fcd863eb011b0a5e4"
+    },
+    "experimental-paper/risk.sqlite/experimental_exits": {
+      "rows": 3,
+      "sha256": "7ff93763799ccd5c11a4931ea9ef63fce8407595bfd6ca09db188ef4101f9319"
+    },
+    "experimental-paper/risk.sqlite/experimental_fee_evidence": {
+      "rows": 13,
+      "sha256": "bb9f2421543806025a2658e731d13ebacaf81ee40ce14cc328ca268be7e0c673"
+    },
+    "experimental-paper/risk.sqlite/experimental_inputs": {
+      "rows": 13,
+      "sha256": "fd23d36c5a47701cf2850226f2fd6cf87bf1218e93f71b97735ffae7dce439b5"
+    },
+    "experimental-paper/risk.sqlite/experimental_marks": {
+      "rows": 3,
+      "sha256": "192f29329b031a47218f9d89dab65fc1184016b97f2c61040f45dc6ae2b132fd"
+    },
+    "experimental-paper/risk.sqlite/experimental_observations": {
+      "rows": 40,
+      "sha256": "051c800789d31fdee757286c03a2ffeaa1826e85a47ed3a219414969e381f578"
+    },
+    "experimental-paper/risk.sqlite/experimental_registry": {
+      "rows": 6,
+      "sha256": "3fbec0946f70546a528ed22ee3320aff506a64dbb35207c4556d0610e1182ab5"
+    },
+    "experimental-paper/risk.sqlite/experimental_settlements": {
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "experimental-paper/risk.sqlite/experimental_signals": {
+      "rows": 31,
+      "sha256": "e6dae33c06819ea6ec573b570239f739152e7573750c087c989cd8d1667f2ea2"
+    },
+    "experimental-paper/risk.sqlite/experimental_strategy_peaks": {
+      "rows": 6,
+      "sha256": "349f44aefd920b56895e1c55a57a23c64efc99732d66413a8286f118cd7d4fff"
+    },
+    "experimental-paper/risk.sqlite/experimental_tokens": {
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "experimental-paper/risk.sqlite/positions": {
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "experimental-paper/risk.sqlite/reservations": {
+      "rows": 8,
+      "sha256": "8812bd67639d27ca6d3456ec6437b138e6eb99e48a772d8faabab83328c1e643"
+    },
+    "experimental-paper/broker.sqlite/audit": {
+      "rows": 19,
+      "sha256": "238dae44d72823d260f6591028c1b765857eda5b895467574a45a873ffd4a23d"
+    },
+    "experimental-paper/broker.sqlite/book_watermarks": {
+      "rows": 3,
+      "sha256": "54ea06f2d1ef1ffd4a9ec1210604f2be5aa0341f0d1ad146cb6240aa0f0ab447"
+    },
+    "experimental-paper/broker.sqlite/books": {
+      "rows": 4,
+      "sha256": "5bc4705ce93307ee624b07338e3a974aa4f29d97fe65f5fa672cb492efe62ac1"
+    },
+    "experimental-paper/broker.sqlite/liquidity": {
+      "rows": 150,
+      "sha256": "4f33d0ed8ab592044e15ddf57f1b438cf5c8cb9343c2c96f61e2c79b92139428"
+    },
+    "experimental-paper/broker.sqlite/orders": {
+      "rows": 8,
+      "sha256": "c26ee5079257fa528e434dbb962a4f9c9c757351cb16a1d25815feaf27646092"
+    }
+  },
+  "preexisting_table_prefixes_verified": true
+}
