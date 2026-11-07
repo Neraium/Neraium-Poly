@@ -1,0 +1,83 @@
+{
+  "at": "2026-11-07T23:55:26.052224+00:00",
+  "scope": "genuine isolated source/model integration, not production performance",
+  "source_records_sha256": "2f27bac696296544e31c8ab238f55c46093fd87383b3e91568d38a50c80a35c3",
+  "forecasts": [
+    {
+      "id": "0eac661bc968d60cd40e257783cb5b813110b46101d78efe781c56c15abd4826",
+      "model_id": "nhl-causal-elo-v25.1",
+      "domain": "sports",
+      "parent": "1171316",
+      "market_id": "5563968",
+      "timestamp": "2026-11-07T23:55:24.892185+00:00",
+      "book_timestamp": "2026-11-07T23:55:16.712000Z",
+      "probability": 0.3870748463234378,
+      "training_observations": 197,
+      "source_cutoff": "2026-11-07T23:55:24.803865+00:00",
+      "source_model_replay": true
+    },
+    {
+      "id": "5f00f96182eda84d3d92d00a8e0f7464c8cded1e0f47496e68f586adc13c70b6",
+      "model_id": "nhl-beta-frequency-v25.1",
+      "domain": "sports",
+      "parent": "1171316",
+      "market_id": "5563968",
+      "timestamp": "2026-11-07T23:55:24.892185+00:00",
+      "book_timestamp": "2026-11-07T23:55:16.712000Z",
+      "probability": 0.36401673640167365,
+      "training_observations": 197,
+      "source_cutoff": "2026-11-07T23:55:24.803865+00:00",
+      "source_model_replay": true
+    }
+  ],
+  "forecasts_count": 2,
+  "parents": 1,
+  "status": {
+    "status": "research_only",
+    "last_evaluation_at": "2026-11-07T23:55:25.843066+00:00",
+    "scans": 1,
+    "forecasts": 2,
+    "pending_forecasts": 2,
+    "native_parents": 1,
+    "models": {
+      "nhl-causal-elo-v25.1": {
+        "forecasts": 1,
+        "resolved": 0,
+        "brier": null,
+        "log_loss": null
+      },
+      "nhl-beta-frequency-v25.1": {
+        "forecasts": 1,
+        "resolved": 0,
+        "brier": null,
+        "log_loss": null
+      },
+      "metar-recency-kernel-v25.1": {
+        "forecasts": 0,
+        "resolved": 0,
+        "brier": null,
+        "log_loss": null
+      },
+      "metar-diurnal-gaussian-v25.1": {
+        "forecasts": 0,
+        "resolved": 0,
+        "brier": null,
+        "log_loss": null
+      }
+    },
+    "latest": [],
+    "rejections": {
+      "sports:exact_NHL_participants_and_outcome_required": 20,
+      "weather:causal_active_weather_market_required": 10,
+      "NHL_withheld:ValueError:fresh_native_NHL_two_sided_book_required": 1,
+      "fresh_native_two_sided_weather_book_required": 1
+    },
+    "enrollment_id": "dfe446451f91bad73d8b195f49c381af6928a04fbf189dd057fec9e06a607471",
+    "source_workers": 2,
+    "calibration_status": "unvalidated_research",
+    "certification_authority": false,
+    "trading_authority": false,
+    "selection_policy": "unseen parent/model/horizon before repeat thresholds; source liquidity and quote uncertainty select research targets, never independent model features",
+    "counter_scope": "durable domain registry only; native parents are not reviewed independent events"
+  }
+}
