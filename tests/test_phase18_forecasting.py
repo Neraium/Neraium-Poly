@@ -191,3 +191,21 @@ def test_december31_date_infers_previous_year_from_january1_end():
         'end_time':datetime(2027,1,1,5,tzinfo=UTC)})
     c=map_event_contract(m,now=now)
     assert c.compatible and c.parameters['period_start_utc']=='2026-12-31T05:00:00+00:00'
+
+
+async def test_historical_resolution_fetch_bounds_exact_closed_window_and_preserves_availability(monkeypatch):
+    from neraium_poly.research.phase18 import sources
+    end=datetime(2026,11,7,5,tzinfo=UTC);retrieval=end+timedelta(days=5)
+    monkeypatch.setattr(sources,'_now',lambda:retrieval)
+    e=artifact(end);c=map_event_contract(market(),now=CUTOFF);calls=[]
+    def handler(request):
+        calls.append(request);start=int(request.url.params['startTime'])
+        item=next(v for v in e.payload['responses'] if v['request']['startTime']==start)
+        return httpx.Response(200,content=item['raw_response_utf8'].encode())
+    async with httpx.AsyncClient(transport=httpx.MockTransport(handler)) as client:
+        evidence=await collect_event_evidence(c,now=retrieval,client=client,resolution_window=True)
+    assert len(calls)==2 and evidence[0].available_at==retrieval
+    rows=completed_minutes(evidence[0],cutoff=retrieval,symbol='BTCUSDT',require_fresh=False)
+    assert rows[-1]['close_ms']==int(end.timestamp()*1000)-1
+    with pytest.raises(ValueError):completed_minutes(evidence[0],cutoff=retrieval,symbol='BTCUSDT')
+    assert forecast_event(c,evidence,cutoff=retrieval)['probability'] is None

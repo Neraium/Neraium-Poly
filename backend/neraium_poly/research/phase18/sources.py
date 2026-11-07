@@ -47,7 +47,7 @@ async def _read(client, url, params=None):
         return bytes(body)
 
 
-async def collect_event_evidence(contract, *, now, client=None):
+async def collect_event_evidence(contract, *, now, client=None, resolution_window=False):
     """No keys/account endpoints or source fallback after access/rate rejection.
 
     ``now`` bounds requested event-time data, never backdates availability. Each
@@ -68,6 +68,13 @@ async def collect_event_evidence(contract, *, now, client=None):
             if symbol not in SYMBOLS:
                 raise ValueError("supported_exact_crypto_reference_required")
             end_ms = int(now.timestamp() // 60 * 60000)-1
+            if resolution_window:
+                if c.contract_type != "binance_daily_low_barrier":
+                    raise ValueError("exact_resolution_window_required")
+                period_end = int(at(c.parameters["period_end_utc"]).timestamp()*1000)
+                if period_end > end_ms+1:
+                    raise ValueError("event_not_closed_for_resolution")
+                end_ms = period_end-1
             if c.contract_type == "binance_daily_low_barrier":
                 window = int(at(c.parameters["period_start_utc"]).timestamp()*1000)
                 start_ms = min(window, end_ms+1-1000*60000)
@@ -102,6 +109,7 @@ async def collect_event_evidence(contract, *, now, client=None):
             available = _now()
             payload = {"kind": "binance_complete_closed_minutes", "symbol": symbol,
                 "requested_at": now.isoformat(), "start_ms": start_ms, "end_ms": end_ms,
+                "window_mode": "resolution" if resolution_window else "forecast",
                 "responses": responses, "availability_basis": "actual_retrieval_only"}
             evidence = DomainEvidence(id=digest(["phase18-binance", payload, available.isoformat()]),
                 timestamp=available, available_at=available, retrieved_at=available,
@@ -109,7 +117,7 @@ async def collect_event_evidence(contract, *, now, client=None):
                 domain="crypto", provider="Binance public market data", source_id=f"{symbol}:{start_ms}:{end_ms}",
                 content_sha256=digest(payload), payload=payload, independent_of_polymarket=True,
                 qualification="qualified_research", missingness=("independent_heldout_calibration", "historical_availability_vintages"))
-            completed_minutes(evidence, cutoff=available, symbol=symbol)
+            completed_minutes(evidence, cutoff=available, symbol=symbol, require_fresh=not resolution_window)
             return (evidence,)
         if c.domain == "weather":
             url = c.parameters.get("forecast_url", "")
@@ -139,7 +147,7 @@ async def collect_event_evidence(contract, *, now, client=None):
             await client.aclose()
 
 
-def completed_minutes(evidence, *, cutoff, symbol):
+def completed_minutes(evidence, *, cutoff, symbol, require_fresh=True):
     """Recheck native bytes, exact requests, pagination and source/availability time."""
     e = DomainEvidence.model_validate(evidence.model_dump() if isinstance(evidence, DomainEvidence) else evidence)
     cutoff = at(cutoff)
@@ -155,7 +163,9 @@ def completed_minutes(evidence, *, cutoff, symbol):
     start, end = payload.get("start_ms"), payload.get("end_ms")
     if (type(start) is not int or type(end) is not int or start % 60000 or end % 60000 != 59999
         or not 0 < end-start <= 2*86400*1000 or at(payload["requested_at"]) > e.retrieved_at
-        or end != int(at(payload["requested_at"]).timestamp() // 60 * 60000)-1):
+        or (payload.get("window_mode", "forecast") == "forecast" and end != int(at(payload["requested_at"]).timestamp() // 60 * 60000)-1)
+        or (payload.get("window_mode") == "resolution" and (require_fresh or end >= int(at(payload["requested_at"]).timestamp()*1000)))
+        or payload.get("window_mode", "forecast") not in {"forecast", "resolution"}):
         raise ValueError("crypto_requested_window_invalid")
     responses = payload.get("responses")
     if not isinstance(responses, list) or not 1 <= len(responses) <= 2:
@@ -189,6 +199,11 @@ def completed_minutes(evidence, *, cutoff, symbol):
             cursor = row[6]+1
     if cursor != end+1 or len(result) > 2880:
         raise ValueError("crypto_window_incomplete")
-    if not 0 < cutoff.timestamp()*1000-result[-1]["close_ms"] <= 120000:
+    if require_fresh and not 0 < cutoff.timestamp()*1000-result[-1]["close_ms"] <= 120000:
         raise ValueError("crypto_closed_reference_stale")
     return result
+
+
+async def collect_resolution_evidence(contract, *, now):
+    """Exact completed event window; availability remains current retrieval time."""
+    return await collect_event_evidence(contract, now=now, resolution_window=True)

@@ -119,3 +119,48 @@ async def test_unknown_settlement_proof_preserves_pending_without_price_inferenc
         assert saved['outcome'] is None and saved['operation']=='outcome_check'
         assert saved['model_result']['reasons']==['native_finalized_settlement_proof_unavailable']
     finally:store.close()
+
+
+async def test_final_capacity_exception_rolls_back_uncommitted_forecast(tmp_path):
+    store=EventStore(tmp_path/'controlled.sqlite');clock=Clock();calls=[]
+    def capacity():
+        calls.append(1)
+        if len(calls)>1:raise OSError('CONTROLLED storage inspection failed')
+        return True
+    try:
+        r=IndependentEventResearch(store,clock=clock,collector=collect,can_write=capacity);before=deepcopy(r.state)
+        assert not await r.step(frame(clock))
+        assert r.state==before and store.count()==0 and not r.state['pending']
+    finally:store.close()
+
+
+@pytest.mark.parametrize('mutation',['independence','evidence','book_market','book_source','future_evidence'])
+async def test_source_independence_identity_and_book_bindings_fail_closed(tmp_path,mutation):
+    from neraium_poly.research.phase18.forecasting import forecast_event
+    store=EventStore(tmp_path/'controlled.sqlite');clock=Clock();raw=frame(clock)
+    def forecast(c,e,*,cutoff):
+        result=forecast_event(c,e,cutoff=cutoff)
+        if mutation=='independence':result['independent_of_polymarket']=False
+        if mutation=='evidence':result['evidence_ids']=['CONTROLLED unrelated artifact']
+        return result
+    async def source(c,*,now):
+        e=artifact(now)
+        if mutation=='future_evidence':e=e.model_copy(update={'available_at':now+timedelta(seconds=1)})
+        return (e,)
+    if mutation=='book_market':raw['books'][0]['market_id']='CONTROLLED unrelated market'
+    if mutation=='book_source':raw['books'][0]['source']='CONTROLLED unsupported source'
+    try:
+        r=IndependentEventResearch(store,clock=clock,collector=source,forecaster=forecast)
+        await r.step(raw)
+        assert r.state['forecasts']==0 and not r.state['pending']
+    finally:store.close()
+
+
+async def test_pending_contract_not_repeated_on_next_source_cycle(tmp_path):
+    store=EventStore(tmp_path/'controlled.sqlite');clock=Clock()
+    try:
+        r=IndependentEventResearch(store,clock=clock,collector=collect);await r.step(frame(clock))
+        clock.now+=timedelta(minutes=6);await r.step(frame(clock))
+        assert r.state['forecasts']==1 and len(r.state['pending'])==1
+        assert r.state['rejections']['existing_pending_event_contract_forecast']==1
+    finally:store.close()

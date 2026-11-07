@@ -62,3 +62,10 @@ def test_domain_models_are_separated_and_repeated_forecasts_are_one_group():
 def test_byte_boundaries_and_awareness_reject():
     with pytest.raises(ValueError,match='bytes'):evaluate([{'huge':'x'*300000}])
     with pytest.raises(ValueError,match='aware'):event_disjoint_validation([],training_end=START.replace(tzinfo=None),heldout_start=BOUNDARY,cutoff=CUTOFF)
+
+
+def test_strict_heldout_rejects_models_retrained_inside_evaluation():
+    changed=row(2,'heldout');changed['model_training_cutoff']=(BOUNDARY+timedelta(days=1)).isoformat()
+    r=evaluate([changed],verify_row=lambda _r:True)
+    assert r['rejections']['heldout_model_not_frozen_before_evaluation']==1
+    assert not r['cohorts'] and r['metrics'] is None

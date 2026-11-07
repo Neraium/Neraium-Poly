@@ -72,6 +72,9 @@ def event_disjoint_validation(rows, *, training_end, heldout_start, cutoff, veri
                 training_labels_late += 1
                 rejected["training_outcome_unavailable_at_training_cutoff"] += 1
                 continue
+            if partition == "heldout" and _at(row["model_training_cutoff"]) >= heldout_start:
+                rejected["heldout_model_not_frozen_before_evaluation"] += 1
+                continue
             key = tuple(row[k] for k in ("domain", "model_version", "model_sha256", "feature_version", "contract_type"))
             if any(not isinstance(v, str) or not v for v in key):
                 raise ValueError("complete_model_identity_required")

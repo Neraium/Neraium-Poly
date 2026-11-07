@@ -20,7 +20,11 @@ from neraium_poly.research.phase16.checkpoints import pack_checkpoint, unpack_ch
 from neraium_poly.research.phase18.capacity import capacity_scenarios
 from neraium_poly.research.phase18.convergence import qualify_convergence
 from neraium_poly.research.phase18.forecasting import forecast_event, map_event_contract
-from neraium_poly.research.phase18.sources import collect_event_evidence, completed_minutes
+from neraium_poly.research.phase18.sources import (
+    collect_event_evidence,
+    collect_resolution_evidence,
+    completed_minutes,
+)
 
 
 class EventProbabilityStudy(Record):
@@ -97,13 +101,19 @@ class IndependentEventResearch:
         self.state = deepcopy(state)
 
     def _ready(self):
-        if not self.can_write():
+        try:
+            if not self.can_write():
+                return False
+            if hasattr(self.store, "status"):
+                a = self.store.status();reserve = 16*1024**2
+                keys = ("free_bytes", "global_floor_bytes", "usage_bytes", "budget_bytes")
+                if any(type(a.get(k)) not in (int, float) or not math.isfinite(a[k]) or a[k] < 0 for k in keys):
+                    return False
+                return (a.get("health") == "ok" and a["free_bytes"] >= a["global_floor_bytes"]+reserve
+                        and a["usage_bytes"]+reserve <= a["budget_bytes"])
+            return True
+        except Exception:  # noqa: BLE001 - failed capacity inspection must never leak volatile forecasts
             return False
-        if hasattr(self.store, "status"):
-            a = self.store.status();reserve = 16*1024**2
-            return (a.get("health") == "ok" and a.get("free_bytes", 0) >= a.get("global_floor_bytes", 0)+reserve
-                    and a.get("usage_bytes", 0)+reserve <= a.get("budget_bytes", 0))
-        return True
 
     def _reconcile(self):
         if self.pending_commit:
@@ -149,9 +159,14 @@ class IndependentEventResearch:
                 if not c.compatible or c.review_required:
                     reasons.update(c.reasons or ("domain_contract_not_supported",));continue
                 book = books.get(market.token_id)
-                if book is None or not assess_book(OrderBookSnapshot.model_validate(book), now,
-                    max_spread=.05, expected_token=market.token_id).healthy:
+                if (book is None or book.get("market_id") != market.market_id
+                    or book.get("exchange", "polymarket") != market.exchange
+                    or book.get("source") != "https://clob.polymarket.com"
+                    or not assess_book(OrderBookSnapshot.model_validate(book), now,
+                    max_spread=.05, expected_token=market.token_id).healthy):
                     reasons["current_event_executable_book_unavailable"]+=1;continue
+                if any(v["market_id"] == market.market_id and v["token_id"] == market.token_id for v in self.state["pending"].values()):
+                    reasons["existing_pending_event_contract_forecast"]+=1;continue
                 candidates.append((market.outcome.casefold() != "yes", c.domain, market.event_id, market.market_id, market, book, c))
             self.state["last_attempt_at"] = now.isoformat();self.state["scans"]+=1
             self.state["markets_considered"]+=len(raw["markets"])
@@ -168,6 +183,12 @@ class IndependentEventResearch:
                     self.state["source_successes"]+=1
                     f=None
                     if result.get("status")=="research_estimate" and result.get("probability") is not None:
+                        if (result.get("independent_of_polymarket") is not True
+                            or any(result.get(k) != getattr(c,k) for k in ("domain", "contract_type", "event_id", "market_id", "token_id", "rules_sha256", "probability_semantics"))
+                            or not evidence or tuple(result.get("evidence_ids", ())) != tuple(e.id for e in evidence)
+                            or any(not e.independent_of_polymarket or e.qualification != "qualified_research"
+                                or max(e.timestamp,e.available_at,e.retrieved_at)>after for e in evidence)):
+                            raise ValueError("independent_result_evidence_and_contract_binding_required")
                         b=OrderBookSnapshot.model_validate(book)
                         if not assess_book(b,after,max_spread=.05,expected_token=market.token_id).healthy:
                             raise ValueError("event_quote_stale_after_external_retrieval")
@@ -229,10 +250,13 @@ class IndependentEventResearch:
         async with self.lock:
             self._reconcile();now=_at(self.clock())
             if not self._ready() or self.state["last_outcome_check"] and (now-_at(self.state["last_outcome_check"])).total_seconds()<300:return False
-            for raw in self.state["pending"].values():
+            for raw in sorted(self.state["pending"].values(), key=lambda x:self.state.get("outcome_checked", {}).get(x["id"], "")):
                 f=DomainForecast.model_validate(raw);m=MarketSnapshot.model_validate(f.contemporaneous_market["market"])
                 if not m.end_time or m.end_time>now:continue
                 before=deepcopy(self.state);self.state["last_outcome_check"]=now.isoformat()
+                checked=self.state.setdefault("outcome_checked", {})
+                checked[f.id]=now.isoformat()
+                self.state["outcome_checked"]={k:v for k,v in checked.items() if k in self.state["pending"]}
                 reference=SettlementProofReference(id=f.id,event_id=f.event_id,market_id=f.market_id,token_id=f.token_id,
                     timestamp=f.timestamp,evidence_cutoff=f.evidence_cutoff,resolution_rules_sha256=f.rules_sha256,
                     original_record_sha256=digest(raw))
@@ -243,8 +267,8 @@ class IndependentEventResearch:
                     if outcome is None or not await asyncio.to_thread(verify_collected_outcome,outcome,m,reference,output.parent):
                         raise ValueError("native_finalized_settlement_proof_unavailable")
                     c=DomainContract.model_validate(f.contemporaneous_market["contract"])
-                    evidence=await self.collector(c,now=_at(self.clock()))
-                    rows=completed_minutes(evidence[0],cutoff=_at(self.clock()),symbol=c.parameters["symbol"])
+                    evidence=await collect_resolution_evidence(c,now=_at(self.clock()))
+                    rows=completed_minutes(evidence[0],cutoff=_at(self.clock()),symbol=c.parameters["symbol"],require_fresh=False)
                     start,end=map(_at,(c.parameters["period_start_utc"],c.parameters["period_end_utc"]))
                     window=[x for x in rows if int(start.timestamp()*1000)<=x["open_ms"]<int(end.timestamp()*1000)]
                     if (not window or window[0]["open_ms"]!=int(start.timestamp()*1000)
@@ -261,7 +285,7 @@ class IndependentEventResearch:
                                 "log_loss":-math.log(likelihood) if likelihood>0 else None,
                                 "log_loss_status":"finite" if likelihood>0 else "positive_infinity",
                                 "independent_event_reviewed":False,"headline_performance_supported":False}})
-                    self.state["outcomes"]+=1;self.state["outcome_ids"].append(outcome.id)
+                    self.state["outcomes"]+=1;self.state["outcome_ids"]=(self.state["outcome_ids"]+[outcome.id])[-1024:]
                     self.state["pending"].pop(f.id);self.verified_this_process.add(outcome.id)
                 except Exception as exc:  # noqa: BLE001 - preserve unresolved forecasts and all attempts
                     fields["model_result"]["reasons"]=[str(exc)[:160]]
