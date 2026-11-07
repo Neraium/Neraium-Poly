@@ -177,3 +177,50 @@ def test_competition_accepts_actual_shared_frame_contract_and_recovers(tmp_path)
         assert recovered.state==runtime.state and not recovered.step(frame)
     finally:
         store.close()
+
+
+async def test_archive_publisher_runs_while_real_coordinator_cycle_is_waiting():
+    import asyncio
+    import threading
+    from types import SimpleNamespace
+
+    from neraium_poly.ops.live import LivePaperRuntime
+
+    measured=threading.Event();release=asyncio.Event();finished=False
+    runtime=LivePaperRuntime.__new__(LivePaperRuntime)
+    runtime.stopping=False;runtime.config=SimpleNamespace(archive_management_enabled=True,cycle_interval_seconds=1)
+    runtime.events=SimpleNamespace(status=lambda:measured.set())
+    async def blocked_cycle():
+        await release.wait()
+    runtime.cycle=blocked_cycle
+    task=asyncio.create_task(runtime.run(lambda:finished))
+    try:
+        assert await asyncio.wait_for(asyncio.to_thread(measured.wait,2),3)
+        assert not task.done()
+        finished=True;release.set()
+        await asyncio.wait_for(task,3)
+    finally:
+        release.set();task.cancel();await asyncio.gather(task,return_exceptions=True)
+
+
+async def test_archive_publisher_shutdown_drains_worker_before_connection_close():
+    import asyncio
+    import threading
+    from types import SimpleNamespace
+
+    from neraium_poly.ops.live import LivePaperRuntime
+
+    entered=threading.Event();release=threading.Event();completed=threading.Event()
+    def measure():
+        entered.set();release.wait(3);completed.set()
+    runtime=LivePaperRuntime.__new__(LivePaperRuntime);runtime.stopping=False
+    runtime.events=SimpleNamespace(status=measure)
+    task=asyncio.create_task(runtime._archive_measurements(lambda:False))
+    try:
+        assert await asyncio.wait_for(asyncio.to_thread(entered.wait,2),3)
+        task.cancel();await asyncio.sleep(.02)
+        assert not task.done() and not completed.is_set()
+        release.set();await asyncio.gather(task,return_exceptions=True)
+        assert completed.is_set()
+    finally:
+        release.set();task.cancel();await asyncio.gather(task,return_exceptions=True)

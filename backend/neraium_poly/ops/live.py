@@ -814,17 +814,42 @@ class LivePaperRuntime:
         finally:
             self.working = False
 
-    async def run(self, should_stop=lambda: False):
+    async def _archive_measurements(self, should_stop):
+        """Publish strict measurements independently of slow public discovery.
+
+        Operations never perform filesystem/SQL scans. A failed publisher leaves
+        the prior sample explicitly stale; financial admission still checks the
+        actual archive synchronously. Shutdown drains an in-flight SQLite reader.
+        """
         while not self.stopping and not should_stop():
+            worker = asyncio.create_task(asyncio.to_thread(self.events.status))
             try:
-                await self.cycle()
-            except Exception as error:
-                self.last_error = "cycle_failed:" + type(error).__name__
-                log.exception("paper coordinator cycle withheld")
-            for _ in range(max(1, int(self.config.cycle_interval_seconds))):
-                if self.stopping or should_stop():
-                    break
-                await asyncio.sleep(1)
+                await asyncio.shield(worker)
+            except asyncio.CancelledError:
+                await asyncio.gather(worker, return_exceptions=True)
+                raise
+            except Exception:
+                log.exception("archive_measurement_unavailable")
+            await asyncio.sleep(30)
+
+    async def run(self, should_stop=lambda: False):
+        publisher = (asyncio.create_task(self._archive_measurements(should_stop))
+                     if self.config.archive_management_enabled else None)
+        try:
+            while not self.stopping and not should_stop():
+                try:
+                    await self.cycle()
+                except Exception as error:
+                    self.last_error = "cycle_failed:" + type(error).__name__
+                    log.exception("paper coordinator cycle withheld")
+                for _ in range(max(1, int(self.config.cycle_interval_seconds))):
+                    if self.stopping or should_stop():
+                        break
+                    await asyncio.sleep(1)
+        finally:
+            if publisher is not None:
+                publisher.cancel()
+                await asyncio.gather(publisher, return_exceptions=True)
 
     def _latest(self, kind, limit=100):
         return self.events.latest(kind, limit=limit)
