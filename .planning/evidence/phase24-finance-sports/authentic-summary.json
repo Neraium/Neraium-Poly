@@ -1,0 +1,32 @@
+{
+  "at": "2026-11-07T22:53:02.083072+00:00",
+  "forecast_records": 8,
+  "parent_ids": [
+    "1284240",
+    "1284241",
+    "1284242",
+    "1284243"
+  ],
+  "market_ids": [
+    "6428607",
+    "6428608",
+    "6428609",
+    "6428610"
+  ],
+  "provider": "ESPN publisher; official NBA host403, no bypass",
+  "NBA_games": 154,
+  "NBA_final_games": 132,
+  "source_sha256": "3ba6f75efb3bd56ed30118ad8befb0df007885b15bce285f15f2438c8aa27ec0",
+  "actual_evidence_available_at": "2026-11-07T22:50:22.652552+00:00",
+  "raw_forecasts_sha256": "5c1b5247ec02e6b4bdae7bc38c2622e49187a25c203a7dd0379cdb039b541c0d",
+  "research_only": true,
+  "trading_authority": false,
+  "finance_enrolled_models": 0,
+  "fred_observations": 2513,
+  "finance_blockers": [
+    "ObservedPythWTIrequiresminute/session/referencehistory",
+    "ObservedIPOsnoindependentprobabilitymodel",
+    "Yahoochart429: noaccessbypass orFREDsettlementsubstitute"
+  ],
+  "official_NBA_outcome_verification": "withheld_until_official_and_native_corroboration_available"
+}
