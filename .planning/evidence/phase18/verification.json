@@ -1,0 +1,144 @@
+{
+  "observed_at": "2026-11-07T05:01:59.566475+00:00",
+  "source_head": "bea5c235a94723f506c3c1a084d974828c305edd",
+  "backend_tests_passed": 1217,
+  "browser_tests_passed": 5,
+  "ruff": "passed",
+  "frontend_build": "passed",
+  "python_all_extras_dependency_audit": "no known vulnerabilities",
+  "npm_audit": "0vulnerabilities",
+  "source_ci_run": 42339622961,
+  "main_ci_run": 42339722981,
+  "both_ci_conclusions": "success",
+  "final_observation": {
+    "observed_at": "2026-11-07T04:56:45.453927+00:00",
+    "final_policy_sha256": "f0fdb631a024d752f9dbc9455c4b468e684c0b41f311b926ef4ed42775b7e9ba",
+    "samples": 31,
+    "fully_healthy_samples": 30,
+    "all_final_policy": true,
+    "all_service_archive_risk_safety_checks": true,
+    "uninterrupted_websocket_criterion_passed": false,
+    "interruptions": [
+      {
+        "sample": 17,
+        "observed_at": "2026-11-07T04:52:12.483347+00:00",
+        "ws_connected": false,
+        "fresh_books": 2,
+        "generation": 11,
+        "subscribed_tokens": 398,
+        "exception_reconnect_counter": 0,
+        "next_fully_healthy_at": "2026-11-07T04:52:32.483349+00:00",
+        "sampled_recovery_upper_bound_seconds": 20.000002
+      }
+    ],
+    "sampling_timestamp_basis": "client request-start; API/source response timestamps can be slightly later; never prediction cutoffs",
+    "minimum_fresh_books": 2,
+    "maximum_fresh_books": 289,
+    "window_delta": {
+      "scans": 2,
+      "source_attempts": 0,
+      "independent_research_forecasts": 0,
+      "durable_outcome_records": 0
+    },
+    "log_sha256": "ec80bc82a72b9842a1f29aac5ff8422829f93c6f146033209014745201f20115"
+  },
+  "history_preservation": {
+    "original_broker_tables_unchanged": {
+      "paper-live/broker.sqlite/audit": true,
+      "paper-live/broker.sqlite/book_watermarks": true,
+      "paper-live/broker.sqlite/books": true,
+      "paper-live/broker.sqlite/liquidity": true,
+      "paper-live/broker.sqlite/orders": true,
+      "experimental-paper/broker.sqlite/audit": true,
+      "experimental-paper/broker.sqlite/book_watermarks": true,
+      "experimental-paper/broker.sqlite/books": true,
+      "experimental-paper/broker.sqlite/liquidity": true,
+      "experimental-paper/broker.sqlite/orders": true
+    },
+    "all_unchanged": true,
+    "risk_limit_dictionaries_equal": true,
+    "original_balances_preserved": true
+  },
+  "postsoak_processes": {
+    "max_workers": 2,
+    "processes": [
+      {
+        "name": "account-final",
+        "pid": 3249994,
+        "start": "2026-11-07T04:56:40.134693+00:00",
+        "end": "2026-11-07T04:56:40.640734+00:00",
+        "exit_code": 0
+      },
+      {
+        "name": "original-integrity-final",
+        "pid": 3249996,
+        "start": "2026-11-07T04:56:40.135420+00:00",
+        "end": "2026-11-07T04:56:47.417461+00:00",
+        "exit_code": 0
+      },
+      {
+        "name": "legacy-recovery-final",
+        "pid": 3250003,
+        "start": "2026-11-07T04:56:40.640786+00:00",
+        "end": "2026-11-07T04:56:43.250085+00:00",
+        "exit_code": 0
+      },
+      {
+        "name": "new-recovery-final",
+        "pid": 3250011,
+        "start": "2026-11-07T04:56:43.250133+00:00",
+        "end": "2026-11-07T04:56:43.490842+00:00",
+        "exit_code": 0
+      },
+      {
+        "name": "transition-final",
+        "pid": 3250015,
+        "start": "2026-11-07T04:56:43.490883+00:00",
+        "end": "2026-11-07T04:56:43.711781+00:00",
+        "exit_code": 0
+      },
+      {
+        "name": "quotes-final",
+        "pid": 3250019,
+        "start": "2026-11-07T04:56:43.711822+00:00",
+        "end": "2026-11-07T04:56:44.135560+00:00",
+        "exit_code": 0
+      },
+      {
+        "name": "safety-final",
+        "pid": 3250023,
+        "start": "2026-11-07T04:56:44.135601+00:00",
+        "end": "2026-11-07T04:56:44.170433+00:00",
+        "exit_code": 0
+      },
+      {
+        "name": "retention-final",
+        "pid": 3250026,
+        "start": "2026-11-07T04:56:44.170491+00:00",
+        "end": "2026-11-07T04:56:44.483708+00:00",
+        "exit_code": 0
+      },
+      {
+        "name": "restoration-final",
+        "pid": 3250030,
+        "start": "2026-11-07T04:56:44.483750+00:00",
+        "end": "2026-11-07T04:56:45.366167+00:00",
+        "exit_code": 0
+      },
+      {
+        "name": "capacity-final",
+        "pid": 3250034,
+        "start": "2026-11-07T04:56:45.366209+00:00",
+        "end": "2026-11-07T04:56:45.413501+00:00",
+        "exit_code": 0
+      },
+      {
+        "name": "observation-analysis",
+        "pid": 3250038,
+        "start": "2026-11-07T04:56:45.413536+00:00",
+        "end": "2026-11-07T04:56:45.461641+00:00",
+        "exit_code": 0
+      }
+    ]
+  }
+}

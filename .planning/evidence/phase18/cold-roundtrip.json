@@ -1,0 +1,25 @@
+{
+  "observed_at": "2026-11-07T04:25:03.544914+00:00",
+  "services": {
+    "paper-live": [
+      {
+        "segment": "segment-00000277.sqlite",
+        "raw_sha256": "349fbed254da6d1e5bb4a7a453b9865aa88965436b0036d2326bd7afd6ede1b9",
+        "raw_bytes": 12849152,
+        "gzip_roundtrip_verified": true,
+        "original_retirement_authorized": false,
+        "gzip_sha256": "3d7d6dc0183071b64f16418796f60be8bae63a82413c899438afc55cc4795808"
+      }
+    ],
+    "experimental-paper": [
+      {
+        "segment": "segment-00000358.sqlite",
+        "raw_sha256": "822037b22b8c260a0f467aed564646cbaf8b9c5d7633e3c9f200db34cd03b7d2",
+        "raw_bytes": 4403200,
+        "gzip_roundtrip_verified": true,
+        "original_retirement_authorized": false,
+        "gzip_sha256": "e46234dbf269ecc397ab3ba0cc0160864a17ae3eea6fae2e1950134cbd334797"
+      }
+    ]
+  }
+}

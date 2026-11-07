@@ -1,0 +1,1150 @@
+{
+  "observed_at": "2026-11-07T04:48:33.350807+00:00",
+  "domains": {
+    "schema_version": "1.0",
+    "status": "research_only",
+    "market_source_status": "fresh_public_frame",
+    "last_frame_at": "2026-11-07T04:48:24.775307+00:00",
+    "last_error": null,
+    "markets_monitored": 200,
+    "domains": {
+      "weather": {
+        "monitored_markets": 0,
+        "fresh_markets": 0,
+        "structurally_supported_markets": 0,
+        "independent_forecasts": 0,
+        "pending": 0,
+        "resolved": 0,
+        "model_versions": [],
+        "capability": "observations implemented; qualified predictive distribution unavailable"
+      },
+      "crypto": {
+        "monitored_markets": 17,
+        "fresh_markets": 9,
+        "structurally_supported_markets": 3,
+        "independent_forecasts": 0,
+        "pending": 0,
+        "resolved": 0,
+        "model_versions": [],
+        "capability": "closed-candle evidence implemented; terminal time convention requires review"
+      },
+      "finance": {
+        "monitored_markets": 3,
+        "fresh_markets": 2,
+        "structurally_supported_markets": 0,
+        "independent_forecasts": 0,
+        "pending": 0,
+        "resolved": 0,
+        "model_versions": [],
+        "capability": "exact reference/settlement interpretation required; no general price model"
+      },
+      "economics": {
+        "monitored_markets": 6,
+        "fresh_markets": 2,
+        "structurally_supported_markets": 0,
+        "independent_forecasts": 0,
+        "pending": 0,
+        "resolved": 0,
+        "model_versions": [],
+        "capability": "official calendar context implemented; vintage/model evidence insufficient"
+      },
+      "politics": {
+        "monitored_markets": 1,
+        "fresh_markets": 0,
+        "structurally_supported_markets": 0,
+        "independent_forecasts": 0,
+        "pending": 0,
+        "resolved": 0,
+        "model_versions": [],
+        "capability": "evidence/interpretation contracts only; human review required"
+      },
+      "sports": {
+        "monitored_markets": 19,
+        "fresh_markets": 17,
+        "structurally_supported_markets": 0,
+        "independent_forecasts": 3,
+        "pending": 3,
+        "resolved": 0,
+        "model_versions": [
+          {
+            "model_version": "sports-independent-baselines-v1/frequency",
+            "model_sha256": "886b8b4054711106a7bccfc086f461d33e8984a05cef16db2e94db665c197654",
+            "feature_version": "causal-external-publisher-results-v1"
+          }
+        ],
+        "capability": "legacy NFL ternary research preserved; no trading authority",
+        "forecast_scope": "Read-only Phase13 ternary journal; no duplicated records"
+      },
+      "esports": {
+        "monitored_markets": 8,
+        "fresh_markets": 3,
+        "structurally_supported_markets": 0,
+        "independent_forecasts": 0,
+        "pending": 0,
+        "resolved": 0,
+        "model_versions": [],
+        "capability": "evidence/interpretation contracts only; human review required"
+      },
+      "technology": {
+        "monitored_markets": 0,
+        "fresh_markets": 0,
+        "structurally_supported_markets": 0,
+        "independent_forecasts": 0,
+        "pending": 0,
+        "resolved": 0,
+        "model_versions": [],
+        "capability": "evidence/interpretation contracts only; human review required"
+      },
+      "science": {
+        "monitored_markets": 0,
+        "fresh_markets": 0,
+        "structurally_supported_markets": 0,
+        "independent_forecasts": 0,
+        "pending": 0,
+        "resolved": 0,
+        "model_versions": [],
+        "capability": "evidence/interpretation contracts only; human review required"
+      },
+      "geopolitics": {
+        "monitored_markets": 13,
+        "fresh_markets": 10,
+        "structurally_supported_markets": 0,
+        "independent_forecasts": 0,
+        "pending": 0,
+        "resolved": 0,
+        "model_versions": [],
+        "capability": "evidence/interpretation contracts only; human review required"
+      },
+      "entertainment": {
+        "monitored_markets": 1,
+        "fresh_markets": 0,
+        "structurally_supported_markets": 0,
+        "independent_forecasts": 0,
+        "pending": 0,
+        "resolved": 0,
+        "model_versions": [],
+        "capability": "evidence/interpretation contracts only; human review required"
+      },
+      "other": {
+        "monitored_markets": 132,
+        "fresh_markets": 94,
+        "structurally_supported_markets": 0,
+        "independent_forecasts": 0,
+        "pending": 0,
+        "resolved": 0,
+        "model_versions": [],
+        "capability": "evidence/interpretation contracts only; human review required"
+      }
+    },
+    "discovered_markets": 200,
+    "discovery": {
+      "actual_tag_ids": {
+        "crypto": "21",
+        "economics": "100328",
+        "entertainment": "53",
+        "esports": "64",
+        "finance": "120",
+        "geopolitics": "100265",
+        "politics": "2",
+        "science": "74",
+        "sports": "1",
+        "technology": "22",
+        "weather": "84"
+      },
+      "candidate_categories": {
+        "crypto": 33,
+        "economics": 5,
+        "entertainment": 21,
+        "esports": 47,
+        "finance": 12,
+        "geopolitics": 13,
+        "other": 34,
+        "politics": 56,
+        "sports": 9,
+        "weather": 22
+      },
+      "candidate_markets": 252,
+      "categories_queried": [
+        "weather",
+        "crypto",
+        "finance",
+        "economics",
+        "politics",
+        "sports",
+        "esports",
+        "technology",
+        "science",
+        "geopolitics",
+        "entertainment"
+      ],
+      "errors": [],
+      "executable_markets_verified": 0,
+      "independent_forecasts": 0,
+      "observed_at": "2026-11-07T04:43:56.702175+00:00",
+      "raw_evidence_persistence": "bounded response objects in memory; caller must persist before forecast qualification",
+      "request_rate_cap": 2,
+      "requests": 16,
+      "response_bytes": 9757475,
+      "selected_categories": {
+        "crypto": 30,
+        "economics": 5,
+        "entertainment": 21,
+        "esports": 29,
+        "finance": 12,
+        "geopolitics": 13,
+        "other": 29,
+        "politics": 30,
+        "sports": 9,
+        "weather": 22
+      },
+      "selected_markets": 200,
+      "selection": "bounded tag-aware category round robin, liquidity priority within category",
+      "status": "metadata_research_only",
+      "subscription_expansion_authority": false,
+      "trading_authority": false,
+      "universe_complete": false
+    },
+    "source_reports": {
+      "crypto": {
+        "evidence_ids": [
+          "7ec19e633f5dd9d5952ba1fd7f70f17b9b11597beb186f3324ea92927c14084d"
+        ],
+        "retrieved_at": "2026-11-07T04:43:57.715880+00:00",
+        "status": "durably_ingested_research_evidence"
+      },
+      "economics": {
+        "evidence_ids": [
+          "e3d26329ff477385b781bf451a2f443535f2e64c98b471a4c3bcbc8d2b6ebc9f"
+        ],
+        "retrieved_at": "2026-11-07T04:43:56.752593+00:00",
+        "status": "durably_ingested_research_evidence"
+      }
+    },
+    "model_registry": {
+      "crypto": {
+        "model_version": "binance-terminal-logdiffusion-research-v1",
+        "feature_version": "closed-contiguous-1m-logreturns-v1",
+        "supported_contract_types": [
+          "binance_minute_terminal_close_above"
+        ],
+        "input_requirements": [
+          "exact reviewed candle-time convention",
+          "720+ completed causal contiguous reference candles",
+          "held-out calibration missing"
+        ],
+        "authorization": "research_only",
+        "trading_authority": false
+      },
+      "weather": {
+        "model_version": "weather-observation-research-v1",
+        "feature_version": "exact-metAR-station-variable-window-v1",
+        "supported_contract_types": [
+          "metar_daily_high_celsius_bin"
+        ],
+        "input_requirements": [
+          "exact station/units/local observation window",
+          "qualified calibrated predictive distribution unavailable"
+        ],
+        "authorization": "research_only",
+        "trading_authority": false
+      },
+      "economics": {
+        "model_version": "official-economic-context-only-v1",
+        "feature_version": "release-vintage-qualification-v1",
+        "supported_contract_types": [
+          "fomc_target_upper_bound_change"
+        ],
+        "input_requirements": [
+          "exact first-release vintage",
+          "verified publication availability",
+          "qualified probability model unavailable"
+        ],
+        "authorization": "research_only",
+        "trading_authority": false
+      }
+    },
+    "totals": {
+      "cycles": 10814,
+      "source_attempts": 45,
+      "source_successes": 45,
+      "forecasts": 0
+    },
+    "rejections": {
+      "explicit_candle_label_vs_close_time_review_required": 20922,
+      "fresh_healthy_public_frame_required_for_domain_forecasts": 3662,
+      "qualified_release_vintages_and_independent_calibrated_model_required": 76034,
+      "unsupported_domain_model_contract": 144478
+    },
+    "ledger": {
+      "integrity": {
+        "records": 45,
+        "head_sha256": "628da7fa6da9ae560656e96b17eaef061977519f85cb2d2b6d25638d0d7edce3",
+        "integrity": "verified"
+      },
+      "domains": {},
+      "forecasts": 0,
+      "outcomes": 0,
+      "stored_outcomes_requiring_review": 0,
+      "evidence_records": 45,
+      "independent_reviewed_event_groups": 0,
+      "brier": null,
+      "log_loss": null,
+      "calibration": null,
+      "market_skill_comparison": null,
+      "reason": "No reviewed independent resolved domain cohort",
+      "trading_authority": false,
+      "certification_authority": false
+    },
+    "book_metrics": {
+      "559706": {
+        "fresh_tokens": 2,
+        "spread": 0.0009999999999999992,
+        "bid_depth_shares": 1168951.81,
+        "ask_depth_shares": 527567.47
+      },
+      "6428605": {
+        "fresh_tokens": 2,
+        "spread": 0.0030000000000000027,
+        "bid_depth_shares": 699413.0,
+        "ask_depth_shares": 64308.86
+      },
+      "6428604": {
+        "fresh_tokens": 2,
+        "spread": 0.010000000000000009,
+        "bid_depth_shares": 593270.43,
+        "ask_depth_shares": 463777.91
+      },
+      "562015": {
+        "fresh_tokens": 2,
+        "spread": 0.001,
+        "bid_depth_shares": 79361.13,
+        "ask_depth_shares": 11758381.129999999
+      },
+      "3215008": {
+        "fresh_tokens": 2,
+        "spread": 0.010000000000000009,
+        "bid_depth_shares": 1441947.68,
+        "ask_depth_shares": 3548069.88
+      },
+      "6667466": {
+        "fresh_tokens": 2,
+        "spread": 0.007000000000000006,
+        "bid_depth_shares": 102222.0,
+        "ask_depth_shares": 76685.81
+      },
+      "561976": {
+        "fresh_tokens": 2,
+        "spread": 0.001,
+        "bid_depth_shares": 102894.0,
+        "ask_depth_shares": 15164069.99
+      },
+      "2772194": {
+        "fresh_tokens": 2,
+        "spread": 0.001,
+        "bid_depth_shares": 55183.7,
+        "ask_depth_shares": 22338806.18
+      },
+      "6731371": {
+        "fresh_tokens": 2,
+        "spread": 0.020000000000000018,
+        "bid_depth_shares": 356887.19,
+        "ask_depth_shares": 190247.57
+      },
+      "6745828": {
+        "fresh_tokens": 2,
+        "spread": 0.010000000000000009,
+        "bid_depth_shares": 177055.44,
+        "ask_depth_shares": 298208.09
+      },
+      "665374": {
+        "fresh_tokens": 2,
+        "spread": 0.009999999999999995,
+        "bid_depth_shares": 2416489.75,
+        "ask_depth_shares": 718062.86
+      },
+      "559699": {
+        "fresh_tokens": 2,
+        "spread": 0.001,
+        "bid_depth_shares": 1402429.14,
+        "ask_depth_shares": 15123352.26
+      },
+      "3580932": {
+        "fresh_tokens": 2,
+        "spread": 0.010000000000000009,
+        "bid_depth_shares": 514725.67,
+        "ask_depth_shares": 896425.27
+      },
+      "682705": {
+        "fresh_tokens": 2,
+        "spread": 0.0020000000000000018,
+        "bid_depth_shares": 433771.1,
+        "ask_depth_shares": 1593518.73
+      },
+      "634976": {
+        "fresh_tokens": 2,
+        "spread": 0.0010000000000000009,
+        "bid_depth_shares": 412858.21,
+        "ask_depth_shares": 199681.58
+      },
+      "561229": {
+        "fresh_tokens": 2,
+        "spread": 0.0050000000000000044,
+        "bid_depth_shares": 2313272.47,
+        "ask_depth_shares": 17312920.35
+      },
+      "1193094": {
+        "fresh_tokens": 2,
+        "spread": 0.009999999999999953,
+        "bid_depth_shares": 257285.75,
+        "ask_depth_shares": 376815.32
+      },
+      "561261": {
+        "fresh_tokens": 2,
+        "spread": 0.0010000000000000009,
+        "bid_depth_shares": 2688501.63,
+        "ask_depth_shares": 9686204.21
+      },
+      "1811265": {
+        "fresh_tokens": 2,
+        "spread": 0.010000000000000009,
+        "bid_depth_shares": 778183.9299999999,
+        "ask_depth_shares": 254715.25
+      },
+      "6269877": {
+        "fresh_tokens": 2,
+        "spread": 0.010000000000000009,
+        "bid_depth_shares": 270002.66,
+        "ask_depth_shares": 499077.07
+      },
+      "3580933": {
+        "fresh_tokens": 2,
+        "spread": 0.01100000000000001,
+        "bid_depth_shares": 919843.12,
+        "ask_depth_shares": 637936.61
+      },
+      "5339986": {
+        "fresh_tokens": 2,
+        "spread": 0.010000000000000009,
+        "bid_depth_shares": 202438.59,
+        "ask_depth_shares": 588053.69
+      },
+      "3399468": {
+        "fresh_tokens": 2,
+        "spread": 0.009999999999999953,
+        "bid_depth_shares": 308698.7,
+        "ask_depth_shares": 592157.97
+      },
+      "6269855": {
+        "fresh_tokens": 2,
+        "spread": 0.010000000000000009,
+        "bid_depth_shares": 584708.6,
+        "ask_depth_shares": 692791.35
+      },
+      "631018": {
+        "fresh_tokens": 2,
+        "spread": 0.001,
+        "bid_depth_shares": 35125.31,
+        "ask_depth_shares": 384227.52999999997
+      },
+      "4906128": {
+        "fresh_tokens": 2,
+        "spread": 0.010000000000000009,
+        "bid_depth_shares": 1688519.0999999999,
+        "ask_depth_shares": 211162.02
+      },
+      "6140106": {
+        "fresh_tokens": 2,
+        "spread": 0.0020000000000000018,
+        "bid_depth_shares": 423609.55,
+        "ask_depth_shares": 96093.97
+      },
+      "6367375": {
+        "fresh_tokens": 2,
+        "spread": 0.0040000000000000036,
+        "bid_depth_shares": 212283.86,
+        "ask_depth_shares": 65661.79999999999
+      },
+      "567621": {
+        "fresh_tokens": 2,
+        "spread": 0.0019999999999999983,
+        "bid_depth_shares": 3638847.47,
+        "ask_depth_shares": 863242.64
+      },
+      "682708": {
+        "fresh_tokens": 2,
+        "spread": 0.010000000000000009,
+        "bid_depth_shares": 425898.01,
+        "ask_depth_shares": 774311.97
+      },
+      "631017": {
+        "fresh_tokens": 2,
+        "spread": 0.0010000000000000009,
+        "bid_depth_shares": 270361.69,
+        "ask_depth_shares": 145773.18
+      },
+      "6269878": {
+        "fresh_tokens": 2,
+        "spread": 0.010000000000000009,
+        "bid_depth_shares": 158826.54,
+        "ask_depth_shares": 510823.47000000003
+      },
+      "6490622": {
+        "fresh_tokens": 2,
+        "spread": 0.006999999999999999,
+        "bid_depth_shares": 11750.94,
+        "ask_depth_shares": 89066.77
+      },
+      "679034": {
+        "fresh_tokens": 2,
+        "spread": 0.0010000000000000009,
+        "bid_depth_shares": 408803.65,
+        "ask_depth_shares": 21612322.05
+      },
+      "6733030": {
+        "fresh_tokens": 2,
+        "spread": 0.03700000000000003,
+        "bid_depth_shares": 345870.84,
+        "ask_depth_shares": 174935.29
+      },
+      "682710": {
+        "fresh_tokens": 2,
+        "spread": 0.028999999999999998,
+        "bid_depth_shares": 300711.77,
+        "ask_depth_shares": 274232.3
+      },
+      "561974": {
+        "fresh_tokens": 2,
+        "spread": 0.0010000000000000009,
+        "bid_depth_shares": 2056572.37,
+        "ask_depth_shares": 17508622.93
+      },
+      "6367374": {
+        "fresh_tokens": 2,
+        "spread": 0.0020000000000000018,
+        "bid_depth_shares": 65770.71,
+        "ask_depth_shares": 9705.61
+      },
+      "6507419": {
+        "fresh_tokens": 2,
+        "spread": 0.010000000000000009,
+        "bid_depth_shares": 1559425.78,
+        "ask_depth_shares": 27359.86
+      },
+      "561245": {
+        "fresh_tokens": 2,
+        "spread": 0.001,
+        "bid_depth_shares": 161871.74,
+        "ask_depth_shares": 614280.84
+      },
+      "679060": {
+        "fresh_tokens": 2,
+        "spread": 0.0030000000000000027,
+        "bid_depth_shares": 2655001.1,
+        "ask_depth_shares": 627889.23
+      },
+      "6171537": {
+        "fresh_tokens": 2,
+        "spread": 0.010000000000000009,
+        "bid_depth_shares": 73460.31,
+        "ask_depth_shares": 157896.66
+      },
+      "6179543": {
+        "fresh_tokens": 2,
+        "spread": 0.010000000000000009,
+        "bid_depth_shares": 117705.73,
+        "ask_depth_shares": 424137.09
+      },
+      "3399451": {
+        "fresh_tokens": 2,
+        "spread": 0.0030000000000000027,
+        "bid_depth_shares": 8362603.9,
+        "ask_depth_shares": 413164.49
+      },
+      "5211896": {
+        "fresh_tokens": 2,
+        "spread": 0.009999999999999981,
+        "bid_depth_shares": 251011.15,
+        "ask_depth_shares": 283817.32
+      },
+      "6175916": {
+        "fresh_tokens": 2,
+        "spread": 0.004,
+        "bid_depth_shares": 6287.22,
+        "ask_depth_shares": 450782.08999999997
+      },
+      "561980": {
+        "fresh_tokens": 2,
+        "spread": 0.0009999999999999992,
+        "bid_depth_shares": 842877.27,
+        "ask_depth_shares": 14482542.49
+      },
+      "2772166": {
+        "fresh_tokens": 2,
+        "spread": 0.010000000000000009,
+        "bid_depth_shares": 1320287.54,
+        "ask_depth_shares": 2530071.2199999997
+      },
+      "6731338": {
+        "fresh_tokens": 2,
+        "spread": 0.020000000000000018,
+        "bid_depth_shares": 356437.46,
+        "ask_depth_shares": 173312.5
+      },
+      "2772171": {
+        "fresh_tokens": 2,
+        "spread": 0.000999999999999994,
+        "bid_depth_shares": 1464773.68,
+        "ask_depth_shares": 2722811.7
+      },
+      "561982": {
+        "fresh_tokens": 2,
+        "spread": 0.001,
+        "bid_depth_shares": 349301.94999999995,
+        "ask_depth_shares": 12753820.65
+      },
+      "562016": {
+        "fresh_tokens": 2,
+        "spread": 0.014000000000000002,
+        "bid_depth_shares": 4522111.74,
+        "ask_depth_shares": 15905350.86
+      },
+      "6282802": {
+        "fresh_tokens": 2,
+        "spread": 0.009999999999999995,
+        "bid_depth_shares": 336529.82,
+        "ask_depth_shares": 285113.11
+      },
+      "6172030": {
+        "fresh_tokens": 2,
+        "spread": 0.009999999999999898,
+        "bid_depth_shares": 126783.37,
+        "ask_depth_shares": 443747.0
+      },
+      "663583": {
+        "fresh_tokens": 2,
+        "spread": 0.0010000000000000009,
+        "bid_depth_shares": 12241880.98,
+        "ask_depth_shares": 8343541.56
+      },
+      "2413330": {
+        "fresh_tokens": 2,
+        "spread": 0.01100000000000001,
+        "bid_depth_shares": 218632.98,
+        "ask_depth_shares": 196048.07
+      },
+      "6667465": {
+        "fresh_tokens": 2,
+        "spread": 0.0010000000000000009,
+        "bid_depth_shares": 68313.05,
+        "ask_depth_shares": 18152.37
+      },
+      "6733029": {
+        "fresh_tokens": 2,
+        "spread": 0.03,
+        "bid_depth_shares": 27988.52,
+        "ask_depth_shares": 350349.12
+      },
+      "6587954": {
+        "fresh_tokens": 2,
+        "spread": 0.008,
+        "bid_depth_shares": 7455.47,
+        "ask_depth_shares": 27042.28
+      },
+      "6269876": {
+        "fresh_tokens": 2,
+        "spread": 0.019999999999999962,
+        "bid_depth_shares": 268823.85,
+        "ask_depth_shares": 503024.97000000003
+      },
+      "6367373": {
+        "fresh_tokens": 2,
+        "spread": 0.0010000000000000009,
+        "bid_depth_shares": 62478.18,
+        "ask_depth_shares": 22089.71
+      },
+      "6731337": {
+        "fresh_tokens": 2,
+        "spread": 0.02999999999999997,
+        "bid_depth_shares": 170092.71,
+        "ask_depth_shares": 304430.31
+      },
+      "666659": {
+        "fresh_tokens": 2,
+        "spread": 0.010000000000000009,
+        "bid_depth_shares": 1082050.75,
+        "ask_depth_shares": 302447.0
+      },
+      "679022": {
+        "fresh_tokens": 2,
+        "spread": 0.0010000000000000009,
+        "bid_depth_shares": 3451155.04,
+        "ask_depth_shares": 14699729.309999999
+      },
+      "1193096": {
+        "fresh_tokens": 2,
+        "spread": 0.002999999999999999,
+        "bid_depth_shares": 117962.67000000001,
+        "ask_depth_shares": 226784.26
+      },
+      "6152459": {
+        "fresh_tokens": 2,
+        "spread": 0.010000000000000009,
+        "bid_depth_shares": 486010.26,
+        "ask_depth_shares": 506268.41
+      },
+      "4319439": {
+        "fresh_tokens": 2,
+        "spread": 0.030000000000000027,
+        "bid_depth_shares": 147259.18,
+        "ask_depth_shares": 59018.11
+      },
+      "3128886": {
+        "fresh_tokens": 2,
+        "spread": 0.010000000000000009,
+        "bid_depth_shares": 15809452.83,
+        "ask_depth_shares": 405773.08
+      },
+      "6699192": {
+        "fresh_tokens": 2,
+        "spread": 0.010000000000000009,
+        "bid_depth_shares": 3021.51,
+        "ask_depth_shares": 4175.28
+      },
+      "6171196": {
+        "fresh_tokens": 2,
+        "spread": 0.009999999999999953,
+        "bid_depth_shares": 448399.76,
+        "ask_depth_shares": 606072.69
+      },
+      "2772169": {
+        "fresh_tokens": 2,
+        "spread": 0.009999999999999995,
+        "bid_depth_shares": 317961.04,
+        "ask_depth_shares": 2679408.58
+      },
+      "4620900": {
+        "fresh_tokens": 2,
+        "spread": 0.010000000000000009,
+        "bid_depth_shares": 1282799.03,
+        "ask_depth_shares": 81778.88
+      },
+      "5190565": {
+        "fresh_tokens": 2,
+        "spread": 0.019999999999999962,
+        "bid_depth_shares": 382983.44,
+        "ask_depth_shares": 207693.15
+      },
+      "4487264": {
+        "fresh_tokens": 2,
+        "spread": 0.04799999999999993,
+        "bid_depth_shares": 85290.2,
+        "ask_depth_shares": 27496.68
+      },
+      "682706": {
+        "fresh_tokens": 2,
+        "spread": 0.0010000000000000009,
+        "bid_depth_shares": 154830.88999999998,
+        "ask_depth_shares": 673194.86
+      },
+      "561262": {
+        "fresh_tokens": 2,
+        "spread": 0.0009999999999999974,
+        "bid_depth_shares": 717219.78,
+        "ask_depth_shares": 9510771.27
+      },
+      "6200999": {
+        "fresh_tokens": 2,
+        "spread": 0.009999999999999981,
+        "bid_depth_shares": 94675.43000000001,
+        "ask_depth_shares": 228001.19
+      },
+      "6163400": {
+        "fresh_tokens": 2,
+        "spread": 0.010000000000000009,
+        "bid_depth_shares": 183876.67,
+        "ask_depth_shares": 330414.3
+      },
+      "5880782": {
+        "fresh_tokens": 2,
+        "spread": 0.011999999999999997,
+        "bid_depth_shares": 1005752.16,
+        "ask_depth_shares": 312597.37
+      },
+      "6276932": {
+        "fresh_tokens": 2,
+        "spread": 0.010000000000000009,
+        "bid_depth_shares": 96148.03,
+        "ask_depth_shares": 112085.02
+      },
+      "682724": {
+        "fresh_tokens": 2,
+        "spread": 0.001,
+        "bid_depth_shares": 39096.97,
+        "ask_depth_shares": 324293.98
+      },
+      "6281141": {
+        "fresh_tokens": 2,
+        "spread": 0.01999999999999999,
+        "bid_depth_shares": 120243.01,
+        "ask_depth_shares": 209181.96
+      },
+      "561236": {
+        "fresh_tokens": 2,
+        "spread": 0.001,
+        "bid_depth_shares": 601854.97,
+        "ask_depth_shares": 469645.0
+      },
+      "6759795": {
+        "fresh_tokens": 2,
+        "spread": 0.040000000000000036,
+        "bid_depth_shares": 246958.63,
+        "ask_depth_shares": 157178.9
+      },
+      "666861": {
+        "fresh_tokens": 2,
+        "spread": 0.0010000000000000009,
+        "bid_depth_shares": 1305986.13,
+        "ask_depth_shares": 690132.64
+      },
+      "560317": {
+        "fresh_tokens": 2,
+        "spread": 0.0009999999999999974,
+        "bid_depth_shares": 18153157.24,
+        "ask_depth_shares": 1353472.4
+      },
+      "679030": {
+        "fresh_tokens": 2,
+        "spread": 0.010000000000000009,
+        "bid_depth_shares": 4817111.03,
+        "ask_depth_shares": 3654627.82
+      },
+      "6731477": {
+        "fresh_tokens": 2,
+        "spread": 0.019999999999999962,
+        "bid_depth_shares": 264633.88,
+        "ask_depth_shares": 302410.24
+      },
+      "567688": {
+        "fresh_tokens": 2,
+        "spread": 0.030000000000000027,
+        "bid_depth_shares": 1205181.05,
+        "ask_depth_shares": 263137.63
+      },
+      "562004": {
+        "fresh_tokens": 2,
+        "spread": 0.001,
+        "bid_depth_shares": 188676.74,
+        "ask_depth_shares": 16351120.549999999
+      },
+      "5920615": {
+        "fresh_tokens": 2,
+        "spread": 0.010000000000000009,
+        "bid_depth_shares": 221948.44999999998,
+        "ask_depth_shares": 295956.55
+      },
+      "5087226": {
+        "fresh_tokens": 2,
+        "spread": 0.010000000000000009,
+        "bid_depth_shares": 591553.4,
+        "ask_depth_shares": 263793.51
+      },
+      "666661": {
+        "fresh_tokens": 2,
+        "spread": 0.0050000000000000044,
+        "bid_depth_shares": 406242.62,
+        "ask_depth_shares": 185306.73
+      },
+      "6731329": {
+        "fresh_tokens": 2,
+        "spread": 0.020000000000000018,
+        "bid_depth_shares": 360529.08,
+        "ask_depth_shares": 212479.68
+      },
+      "691340": {
+        "fresh_tokens": 2,
+        "spread": 0.0010000000000000009,
+        "bid_depth_shares": 3034256.51,
+        "ask_depth_shares": 1826150.95
+      },
+      "6157724": {
+        "fresh_tokens": 2,
+        "spread": 0.010000000000000009,
+        "bid_depth_shares": 400217.93,
+        "ask_depth_shares": 438406.63
+      },
+      "559703": {
+        "fresh_tokens": 2,
+        "spread": 0.001,
+        "bid_depth_shares": 586608.61,
+        "ask_depth_shares": 12781294.76
+      },
+      "6731317": {
+        "fresh_tokens": 2,
+        "spread": 0.02999999999999997,
+        "bid_depth_shares": 139069.57,
+        "ask_depth_shares": 299348.57
+      },
+      "679026": {
+        "fresh_tokens": 2,
+        "spread": 0.001,
+        "bid_depth_shares": 371504.74,
+        "ask_depth_shares": 12412812.63
+      },
+      "6587956": {
+        "fresh_tokens": 2,
+        "spread": 0.0010000000000000009,
+        "bid_depth_shares": 36767.16,
+        "ask_depth_shares": 29398.489999999998
+      },
+      "6749862": {
+        "fresh_tokens": 2,
+        "spread": 0.010000000000000009,
+        "bid_depth_shares": 148964.84,
+        "ask_depth_shares": 152044.41
+      },
+      "5325719": {
+        "fresh_tokens": 2,
+        "spread": 0.030000000000000027,
+        "bid_depth_shares": 425358.02,
+        "ask_depth_shares": 206114.11
+      },
+      "6507425": {
+        "fresh_tokens": 2,
+        "spread": 0.017,
+        "bid_depth_shares": 79186.6,
+        "ask_depth_shares": 354736.44
+      },
+      "3902370": {
+        "fresh_tokens": 2,
+        "spread": 0.020000000000000018,
+        "bid_depth_shares": 136498.54,
+        "ask_depth_shares": 581114.53
+      },
+      "679018": {
+        "fresh_tokens": 2,
+        "spread": 0.0010000000000000009,
+        "bid_depth_shares": 3417019.73,
+        "ask_depth_shares": 23994482.48
+      },
+      "1321561": {
+        "fresh_tokens": 2,
+        "spread": 0.010000000000000009,
+        "bid_depth_shares": 654277.34,
+        "ask_depth_shares": 335245.9
+      },
+      "6731319": {
+        "fresh_tokens": 2,
+        "spread": 0.019999999999999907,
+        "bid_depth_shares": 361674.60000000003,
+        "ask_depth_shares": 81682.49
+      },
+      "679029": {
+        "fresh_tokens": 2,
+        "spread": 0.0010000000000000009,
+        "bid_depth_shares": 261260.57,
+        "ask_depth_shares": 21558657.830000002
+      },
+      "2772172": {
+        "fresh_tokens": 2,
+        "spread": 0.0009999999999999992,
+        "bid_depth_shares": 1493281.81,
+        "ask_depth_shares": 21441547.029999997
+      },
+      "4397022": {
+        "fresh_tokens": 2,
+        "spread": 0.010000000000000009,
+        "bid_depth_shares": 987612.38,
+        "ask_depth_shares": 764862.86
+      },
+      "6367369": {
+        "fresh_tokens": 2,
+        "spread": 0.020000000000000018,
+        "bid_depth_shares": 237085.95,
+        "ask_depth_shares": 563625.21
+      },
+      "6475120": {
+        "fresh_tokens": 2,
+        "spread": 0.001,
+        "bid_depth_shares": 10214.49,
+        "ask_depth_shares": 335947.56
+      },
+      "6563869": {
+        "fresh_tokens": 2,
+        "spread": 0.004,
+        "bid_depth_shares": 65294.08,
+        "ask_depth_shares": 341371.13
+      },
+      "561234": {
+        "fresh_tokens": 2,
+        "spread": 0.0010000000000000009,
+        "bid_depth_shares": 2387566.18,
+        "ask_depth_shares": 15565033.26
+      },
+      "559664": {
+        "fresh_tokens": 2,
+        "spread": 0.0010000000000000009,
+        "bid_depth_shares": 2161644.91,
+        "ask_depth_shares": 11414746.93
+      },
+      "2757891": {
+        "fresh_tokens": 2,
+        "spread": 0.009000000000000001,
+        "bid_depth_shares": 112833.76,
+        "ask_depth_shares": 226152.5
+      },
+      "6731508": {
+        "fresh_tokens": 2,
+        "spread": 0.020000000000000018,
+        "bid_depth_shares": 149583.57,
+        "ask_depth_shares": 329038.79
+      },
+      "6563871": {
+        "fresh_tokens": 2,
+        "spread": 0.0009999999999999992,
+        "bid_depth_shares": 30997.15,
+        "ask_depth_shares": 340439.04
+      },
+      "6731396": {
+        "fresh_tokens": 2,
+        "spread": 0.05,
+        "bid_depth_shares": 7239.47,
+        "ask_depth_shares": 335307.36
+      },
+      "6475112": {
+        "fresh_tokens": 2,
+        "spread": 0.0040000000000000036,
+        "bid_depth_shares": 331491.88,
+        "ask_depth_shares": 33458.020000000004
+      },
+      "559661": {
+        "fresh_tokens": 2,
+        "spread": 0.0010000000000000009,
+        "bid_depth_shares": 2129535.2800000003,
+        "ask_depth_shares": 16777190.309999999
+      },
+      "6722561": {
+        "fresh_tokens": 2,
+        "spread": 0.008,
+        "bid_depth_shares": 67721.64,
+        "ask_depth_shares": 327796.62
+      },
+      "559695": {
+        "fresh_tokens": 2,
+        "spread": 0.0010000000000000009,
+        "bid_depth_shares": 864231.33,
+        "ask_depth_shares": 13456815.92
+      },
+      "6272531": {
+        "fresh_tokens": 2,
+        "spread": 0.010000000000000009,
+        "bid_depth_shares": 175572.5,
+        "ask_depth_shares": 131396.02
+      },
+      "1357400": {
+        "fresh_tokens": 2,
+        "spread": 0.001,
+        "bid_depth_shares": 1044619.99,
+        "ask_depth_shares": 13580765.8
+      },
+      "2695686": {
+        "fresh_tokens": 2,
+        "spread": 0.010000000000000009,
+        "bid_depth_shares": 273262.88,
+        "ask_depth_shares": 672523.0800000001
+      },
+      "6719498": {
+        "fresh_tokens": 2,
+        "spread": 0.019999999999999907,
+        "bid_depth_shares": 324004.92,
+        "ask_depth_shares": 267386.06
+      },
+      "2412744": {
+        "fresh_tokens": 2,
+        "spread": 0.014999999999999986,
+        "bid_depth_shares": 35585.96,
+        "ask_depth_shares": 3551049.1300000004
+      },
+      "561279": {
+        "fresh_tokens": 2,
+        "spread": 0.0010000000000000009,
+        "bid_depth_shares": 728191.95,
+        "ask_depth_shares": 6935925.92
+      },
+      "6367372": {
+        "fresh_tokens": 2,
+        "spread": 0.020000000000000018,
+        "bid_depth_shares": 249811.13,
+        "ask_depth_shares": 517223.16
+      },
+      "679028": {
+        "fresh_tokens": 2,
+        "spread": 0.0010000000000000009,
+        "bid_depth_shares": 470235.13,
+        "ask_depth_shares": 21986819.16
+      },
+      "561985": {
+        "fresh_tokens": 2,
+        "spread": 0.0020000000000000018,
+        "bid_depth_shares": 855862.97,
+        "ask_depth_shares": 14812344.74
+      },
+      "648383": {
+        "fresh_tokens": 2,
+        "spread": 0.009000000000000001,
+        "bid_depth_shares": 17367.71,
+        "ask_depth_shares": 218968.23
+      },
+      "1193103": {
+        "fresh_tokens": 2,
+        "spread": 0.003,
+        "bid_depth_shares": 182.4,
+        "ask_depth_shares": 215138.31
+      },
+      "6731558": {
+        "fresh_tokens": 2,
+        "spread": 0.01999999999999999,
+        "bid_depth_shares": 50770.27,
+        "ask_depth_shares": 77393.58
+      },
+      "2116494": {
+        "fresh_tokens": 2,
+        "spread": 0.030000000000000027,
+        "bid_depth_shares": 311344.16000000003,
+        "ask_depth_shares": 301361.5
+      },
+      "6475115": {
+        "fresh_tokens": 2,
+        "spread": 0.01899999999999996,
+        "bid_depth_shares": 304251.63,
+        "ask_depth_shares": 341047.38
+      }
+    },
+    "relationships": {
+      "registered_relationships": 0,
+      "evaluations": 0,
+      "persistent_findings": 0,
+      "rejections": {},
+      "graph": [],
+      "causality_verified": false,
+      "forecast_improvement_verified": false,
+      "executable_opportunities": 0,
+      "certification_authority": false,
+      "trading_authority": false
+    },
+    "experimental_opportunities": 0,
+    "event_order_attempts": 0,
+    "outcome_collection": {
+      "checks": 0,
+      "verified": 0
+    },
+    "trading_authority": false,
+    "certification_authority": false,
+    "scores": {
+      "brier": null,
+      "log_loss": null,
+      "confidence_interval": null,
+      "reason": "No reviewed independent resolved domain cohort"
+    },
+    "counter_scope": "market counts current cached/fresh frame; totals/rejections cumulative; forecasts durable journal"
+  }
+}

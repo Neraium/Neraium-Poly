@@ -1,0 +1,71 @@
+{
+  "checkpoint_exact": true,
+  "forecasts_replayed": 0,
+  "summary": {
+    "status": "research_only",
+    "last_evaluation_at": "2026-11-07T04:28:50.148035+00:00",
+    "scans": 1,
+    "source_attempts": 0,
+    "source_successes": 0,
+    "independent_research_forecasts": 0,
+    "forecasts_by_domain": {},
+    "unreviewed_parent_events": 0,
+    "pending_forecasts": 0,
+    "durable_outcome_records": 0,
+    "outcomes_reverified_this_process": 0,
+    "qualified_training_events": 0,
+    "qualified_heldout_events": 0,
+    "certification_requirements": {
+      "training": 100,
+      "heldout": 100
+    },
+    "calibration_status": "insufficient independent verified events",
+    "brier": null,
+    "log_loss": null,
+    "approaches": {
+      "high_conviction": {
+        "capital_turnover": null,
+        "drawdown": null,
+        "evaluated": 0,
+        "fills": 0,
+        "net_pnl": null,
+        "net_return": null,
+        "orders": 0,
+        "qualified": 0,
+        "rejected": 0,
+        "risk_adjusted_performance": null
+      },
+      "high_throughput": {
+        "capital_turnover": null,
+        "drawdown": null,
+        "evaluated": 0,
+        "fills": 0,
+        "net_pnl": null,
+        "net_return": null,
+        "orders": 0,
+        "qualified": 0,
+        "rejected": 0,
+        "risk_adjusted_performance": null
+      }
+    },
+    "latest": {},
+    "rejections": {
+      "causal_active_future_binary_event_required": 150,
+      "current_event_executable_book_unavailable": 6,
+      "explicit_candle_label_vs_close_time_review_required": 6,
+      "unsupported_event_rule_template_or_domain": 388
+    },
+    "domain_support": {
+      "crypto": "exact daily-low conditional uncalibrated research",
+      "weather": "calibrated station/window predictive evidence required",
+      "economics": "verified first-release vintages and outcome model required",
+      "sports": "existing NFL prospective journal preserved"
+    },
+    "last_error": null,
+    "model_code_sha256": "82fee06bc8085b9af7ba9fe119377b4e040216906ab1a396c65b58b526746ce5",
+    "counter_scope": "durable research scans/forecasts; repeated parent forecasts are not independent events",
+    "trading_authority": false,
+    "certification_authority": false,
+    "live_trading_enabled": false
+  }
+}

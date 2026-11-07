@@ -1,0 +1,75 @@
+{
+  "observed_at": "2026-11-07T04:56:43.455692+00:00",
+  "read_only": true,
+  "checkpoint_exact": true,
+  "checkpoint_sha256": "1c2ae8e28a1bcf33cb843923c9fde889bab9368dea5cf11875278d1231b8d120",
+  "records_sampled": 6,
+  "forecasts_replayed": [],
+  "summary": {
+    "status": "research_only",
+    "last_evaluation_at": "2026-11-07T04:51:46.072339+00:00",
+    "scans": 5,
+    "source_attempts": 0,
+    "source_successes": 0,
+    "independent_research_forecasts": 0,
+    "forecasts_by_domain": {},
+    "unreviewed_parent_events": 0,
+    "pending_forecasts": 0,
+    "durable_outcome_records": 0,
+    "outcomes_reverified_this_process": 0,
+    "qualified_training_events": 0,
+    "qualified_heldout_events": 0,
+    "certification_requirements": {
+      "training": 100,
+      "heldout": 100
+    },
+    "calibration_status": "insufficient independent verified events",
+    "brier": null,
+    "log_loss": null,
+    "approaches": {
+      "high_conviction": {
+        "capital_turnover": null,
+        "drawdown": null,
+        "evaluated": 0,
+        "fills": 0,
+        "net_pnl": null,
+        "net_return": null,
+        "orders": 0,
+        "qualified": 0,
+        "rejected": 0,
+        "risk_adjusted_performance": null
+      },
+      "high_throughput": {
+        "capital_turnover": null,
+        "drawdown": null,
+        "evaluated": 0,
+        "fills": 0,
+        "net_pnl": null,
+        "net_return": null,
+        "orders": 0,
+        "qualified": 0,
+        "rejected": 0,
+        "risk_adjusted_performance": null
+      }
+    },
+    "latest": {},
+    "rejections": {
+      "causal_active_future_binary_event_required": 752,
+      "current_event_executable_book_unavailable": 30,
+      "explicit_candle_label_vs_close_time_review_required": 30,
+      "unsupported_event_rule_template_or_domain": 1940
+    },
+    "domain_support": {
+      "crypto": "exact daily-low conditional uncalibrated research",
+      "weather": "calibrated station/window predictive evidence required",
+      "economics": "verified first-release vintages and outcome model required",
+      "sports": "existing NFL prospective journal preserved"
+    },
+    "last_error": null,
+    "model_code_sha256": "f0fdb631a024d752f9dbc9455c4b468e684c0b41f311b926ef4ed42775b7e9ba",
+    "counter_scope": "durable research scans/forecasts; repeated parent forecasts are not independent events",
+    "trading_authority": false,
+    "certification_authority": false,
+    "live_trading_enabled": false
+  }
+}

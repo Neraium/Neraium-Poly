@@ -1,0 +1,32 @@
+{
+  "observed_at": "2026-11-07T04:56:45.453927+00:00",
+  "final_policy_sha256": "f0fdb631a024d752f9dbc9455c4b468e684c0b41f311b926ef4ed42775b7e9ba",
+  "samples": 31,
+  "fully_healthy_samples": 30,
+  "all_final_policy": true,
+  "all_service_archive_risk_safety_checks": true,
+  "uninterrupted_websocket_criterion_passed": false,
+  "interruptions": [
+    {
+      "sample": 17,
+      "observed_at": "2026-11-07T04:52:12.483347+00:00",
+      "ws_connected": false,
+      "fresh_books": 2,
+      "generation": 11,
+      "subscribed_tokens": 398,
+      "exception_reconnect_counter": 0,
+      "next_fully_healthy_at": "2026-11-07T04:52:32.483349+00:00",
+      "sampled_recovery_upper_bound_seconds": 20.000002
+    }
+  ],
+  "sampling_timestamp_basis": "client request-start; API/source response timestamps can be slightly later; never prediction cutoffs",
+  "minimum_fresh_books": 2,
+  "maximum_fresh_books": 289,
+  "window_delta": {
+    "scans": 2,
+    "source_attempts": 0,
+    "independent_research_forecasts": 0,
+    "durable_outcome_records": 0
+  },
+  "log_sha256": "ec80bc82a72b9842a1f29aac5ff8422829f93c6f146033209014745201f20115"
+}

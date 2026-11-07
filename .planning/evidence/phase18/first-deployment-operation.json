@@ -1,0 +1,464 @@
+{
+  "observed_at": "2026-11-07T04:38:55.558191+00:00",
+  "soak": {
+    "started_at": "2026-11-07T04:28:55.558101+00:00",
+    "ended_at": "2026-11-07T04:38:55.558191+00:00",
+    "samples": 31,
+    "healthy_samples": 31,
+    "seconds": 600.6934836090077,
+    "all_healthy": true,
+    "observations_sha256": "9d48e5d832e8f2c8b3d73241475ee1710116438917b2e2ca25a148ac030641bf"
+  },
+  "services": {
+    "collector": {
+      "service": {
+        "status": "ok",
+        "paper_trading": true,
+        "live_trading_enabled": false,
+        "mode": "live_market_paper",
+        "trading_status": "validation_blocked",
+        "last_ingestion_at": "2026-11-07T04:38:55.688813+00:00",
+        "last_ingestion_age_seconds": 0.004233,
+        "last_error": null,
+        "ledger_consistent": true,
+        "timestamp": "2026-11-07T04:38:55.693046+00:00"
+      },
+      "connectivity": {
+        "messages": 370498,
+        "native_book_frames": 3878,
+        "native_delta_frames": 366381,
+        "native_books_delivered": 664726,
+        "rest_books": 4615,
+        "reconnects": 0,
+        "gaps": 63129,
+        "out_of_order": 8881,
+        "queue_overflows": 0,
+        "invalid_frames": 0,
+        "callbacks_failed": 0,
+        "invalidations": 63137,
+        "resnapshot_failures": 0,
+        "gap_missing_baseline": 61297,
+        "gap_source_time": 1444,
+        "gap_top_integrity": 298,
+        "gap_invalid_delta": 66,
+        "stale_recovery_baselines": 44,
+        "ws_connected": true,
+        "subscribed_tokens": 400,
+        "cached_books": 400,
+        "resolved_tokens_withheld": 0,
+        "gap_tokens_withheld": 0,
+        "fresh_books": 278,
+        "queue_depth": 0,
+        "resnapshot_pending": 0,
+        "connection_generation": 5,
+        "last_message_at": "2026-11-07T04:38:55.688058+00:00",
+        "last_gap_at": "2026-11-07T04:38:54.474887+00:00",
+        "http_requests": 4627,
+        "http_rate_limits": 0,
+        "http_peak_inflight": 4,
+        "rate_requests_per_second": 8.0
+      },
+      "archive": {
+        "managed": true,
+        "usage_bytes": 9949323820,
+        "usage_is_conservative_estimate": false,
+        "budget_bytes": 214748364800,
+        "active_bytes": 8625752,
+        "segment_bytes": 16777216,
+        "segments": 283,
+        "sealed_segments": 282,
+        "compressed_segments": 282,
+        "legacy_records": 838222,
+        "records": 2376716,
+        "free_bytes": 504861048832,
+        "growth_bytes_per_second": 106111.30664434838,
+        "remaining_bytes": 204799040980,
+        "seconds_to_exhaustion": 1930039.761610153,
+        "global_floor_bytes": 107374182400,
+        "retention_policy": "retain_all_originals_and_verified_copies",
+        "archive_tiers": {
+          "active_segments": 1,
+          "sealed_originals_present": 282,
+          "cold_only_segments": 0,
+          "cold_only_verified_this_process": 0,
+          "cold_proofs_present": 282,
+          "derived_cache_bytes": 64128631,
+          "derived_cache_budget_bytes": 67108864,
+          "counts_scope": "current catalog and filesystem; proof presence is not integrity verification"
+        },
+        "tier_usage_bytes": {
+          "active": 8625752,
+          "warm": 3649495040,
+          "cold": 962895551,
+          "protected": 2017935360,
+          "derived_cache": 64128631,
+          "segment_metadata": 9486480,
+          "catalog_state": 3236757006
+        },
+        "cold_verification": {
+          "enabled": true,
+          "minimum_scan_interval_seconds": 60,
+          "last_scan_at": "2026-11-07T04:38:30.620312+00:00",
+          "last_success_at": "2026-11-07T04:38:30.620312+00:00",
+          "last_segment": "segment-00000282.sqlite",
+          "last_error": null,
+          "scope": "process-local progress; immutable proof presence is reported separately"
+        },
+        "warnings": [],
+        "cold_only_names_sample": [],
+        "health": "ok",
+        "last_error": null
+      },
+      "usage_delta_bytes": 66670031,
+      "net_growth_bytes_per_second": 111116.70166582808,
+      "conditional_days_to_budget_at_soak_rate": 21.332160107941835,
+      "rotations": 4,
+      "new_compressed_segments": 4,
+      "new_archive_records": 19368
+    },
+    "experimental": {
+      "service": {
+        "status": "ok",
+        "account_id": "experimental-paper",
+        "validation_status": "unvalidated",
+        "paper_trading": true,
+        "live_trading_enabled": false,
+        "last_ingestion_at": "2026-11-07T04:38:50.467629+00:00",
+        "last_ingestion_age_seconds": 5.092732,
+        "last_error": null,
+        "fee_error": null,
+        "timestamp": "2026-11-07T04:38:55.560361+00:00"
+      },
+      "connectivity": null,
+      "archive": {
+        "managed": true,
+        "usage_bytes": 3623459171,
+        "usage_is_conservative_estimate": false,
+        "budget_bytes": 107374182400,
+        "active_bytes": 1087496,
+        "segment_bytes": 8388608,
+        "segments": 365,
+        "sealed_segments": 364,
+        "compressed_segments": 363,
+        "legacy_records": 164111,
+        "records": 563437,
+        "free_bytes": 504861048832,
+        "growth_bytes_per_second": 44808.636754553445,
+        "remaining_bytes": 103750723229,
+        "seconds_to_exhaustion": 2315417.9806297473,
+        "global_floor_bytes": 107374182400,
+        "retention_policy": "retain_all_originals_and_verified_copies",
+        "archive_tiers": {
+          "active_segments": 1,
+          "sealed_originals_present": 364,
+          "cold_only_segments": 0,
+          "cold_only_verified_this_process": 0,
+          "cold_proofs_present": 363,
+          "derived_cache_bytes": 63033994,
+          "derived_cache_budget_bytes": 67108864,
+          "counts_scope": "current catalog and filesystem; proof presence is not integrity verification"
+        },
+        "tier_usage_bytes": {
+          "active": 1087496,
+          "warm": 1625403392,
+          "cold": 558972078,
+          "protected": 517521408,
+          "derived_cache": 63033994,
+          "segment_metadata": 12243106,
+          "catalog_state": 845197697
+        },
+        "cold_verification": {
+          "enabled": true,
+          "minimum_scan_interval_seconds": 60,
+          "last_scan_at": "2026-11-07T04:38:00.567723+00:00",
+          "last_success_at": "2026-11-07T04:36:54.989033+00:00",
+          "last_segment": "segment-00000363.sqlite",
+          "last_error": null,
+          "scope": "process-local progress; immutable proof presence is reported separately"
+        },
+        "warnings": [],
+        "cold_only_names_sample": [],
+        "health": "ok",
+        "last_error": null
+      },
+      "usage_delta_bytes": 30052354,
+      "net_growth_bytes_per_second": 50087.249153579294,
+      "conditional_days_to_budget_at_soak_rate": 23.97453595842749,
+      "rotations": 5,
+      "new_compressed_segments": 4,
+      "new_archive_records": 4677
+    }
+  },
+  "accounts": {
+    "collector": {
+      "before": {
+        "cash": 500.0,
+        "equity": null,
+        "initial_bankroll": 500.0,
+        "realized_pnl": 0,
+        "simulated_pnl": 0.0,
+        "reserved": 0,
+        "exposure": 0,
+        "orders_attempted": null,
+        "orders_submitted": null,
+        "fills": null,
+        "qualified_opportunities": null,
+        "kill_switch": null
+      },
+      "after": {
+        "cash": 500.0,
+        "equity": null,
+        "initial_bankroll": 500.0,
+        "realized_pnl": 0,
+        "simulated_pnl": 0.0,
+        "reserved": 0,
+        "exposure": 0,
+        "orders_attempted": null,
+        "orders_submitted": null,
+        "fills": null,
+        "qualified_opportunities": null,
+        "kill_switch": null
+      },
+      "open_positions": 0,
+      "orders_attempted_delta": 0,
+      "orders_submitted_delta": 0,
+      "fill_events_delta": 0,
+      "qualified_opportunities_delta": 0
+    },
+    "experimental": {
+      "before": {
+        "cash": 497.3024428205128,
+        "equity": 497.3024428205128,
+        "initial_bankroll": 500.0,
+        "realized_pnl": -2.697557179487179,
+        "simulated_pnl": -2.6975571794872053,
+        "reserved": 0.0,
+        "exposure": 0.0,
+        "orders_attempted": 13,
+        "orders_submitted": 8,
+        "fills": 6,
+        "qualified_opportunities": 31,
+        "kill_switch": false
+      },
+      "after": {
+        "cash": 497.3024428205128,
+        "equity": 497.3024428205128,
+        "initial_bankroll": 500.0,
+        "realized_pnl": -2.697557179487179,
+        "simulated_pnl": -2.6975571794872053,
+        "reserved": 0.0,
+        "exposure": 0.0,
+        "orders_attempted": 13,
+        "orders_submitted": 8,
+        "fills": 6,
+        "qualified_opportunities": 31,
+        "kill_switch": false
+      },
+      "open_positions": 0,
+      "orders_attempted_delta": 0,
+      "orders_submitted_delta": 0,
+      "fill_events_delta": 0,
+      "qualified_opportunities_delta": 0
+    }
+  },
+  "phase18": {
+    "status": "research_only",
+    "last_evaluation_at": "2026-11-07T04:33:58.359914+00:00",
+    "scans": 2,
+    "source_attempts": 0,
+    "source_successes": 0,
+    "independent_research_forecasts": 0,
+    "forecasts_by_domain": {},
+    "unreviewed_parent_events": 0,
+    "pending_forecasts": 0,
+    "durable_outcome_records": 0,
+    "outcomes_reverified_this_process": 0,
+    "qualified_training_events": 0,
+    "qualified_heldout_events": 0,
+    "certification_requirements": {
+      "training": 100,
+      "heldout": 100
+    },
+    "calibration_status": "insufficient independent verified events",
+    "brier": null,
+    "log_loss": null,
+    "approaches": {
+      "high_throughput": {
+        "evaluated": 0,
+        "qualified": 0,
+        "rejected": 0,
+        "orders": 0,
+        "fills": 0,
+        "net_pnl": null,
+        "net_return": null,
+        "drawdown": null,
+        "capital_turnover": null,
+        "risk_adjusted_performance": null
+      },
+      "high_conviction": {
+        "evaluated": 0,
+        "qualified": 0,
+        "rejected": 0,
+        "orders": 0,
+        "fills": 0,
+        "net_pnl": null,
+        "net_return": null,
+        "drawdown": null,
+        "capital_turnover": null,
+        "risk_adjusted_performance": null
+      }
+    },
+    "latest": {},
+    "rejections": {
+      "unsupported_event_rule_template_or_domain": 776,
+      "causal_active_future_binary_event_required": 300,
+      "current_event_executable_book_unavailable": 12,
+      "explicit_candle_label_vs_close_time_review_required": 12
+    },
+    "domain_support": {
+      "crypto": "exact daily-low conditional uncalibrated research",
+      "weather": "calibrated station/window predictive evidence required",
+      "economics": "verified first-release vintages and outcome model required",
+      "sports": "existing NFL prospective journal preserved"
+    },
+    "last_error": null,
+    "model_code_sha256": "82fee06bc8085b9af7ba9fe119377b4e040216906ab1a396c65b58b526746ce5",
+    "counter_scope": "durable research scans/forecasts; repeated parent forecasts are not independent events",
+    "trading_authority": false,
+    "certification_authority": false,
+    "live_trading_enabled": false,
+    "runtime_error": null
+  },
+  "historical_qualification": {
+    "certifiable_heldout_events": 0,
+    "certifiable_training_events": 0,
+    "certification_status": "blocked",
+    "chain_corroborated_exact_settlement_groups": 47,
+    "cpu_worker_processes": 2,
+    "created_at": "2026-11-06T02:14:10.837537+00:00",
+    "events": 250,
+    "historical_depth_qualified_events": 0,
+    "limitations": [
+      "Block event-time does not backdate historical availability",
+      "Source/API labels remain distinct from independently linked finalized CTF proof",
+      "Publisher L2 rows remain separate and not execution-certified",
+      "Asset/window and parent-event deduplication do not prove independence",
+      "No current metadata rule text is asserted to be its historical version"
+    ],
+    "manifest_sha256": "f2385debd22d365447c3254a9b4fa5dcab1450c3c60a790a35b7eec42881832a",
+    "official_verified_outcome_groups": 51,
+    "owner_approval_required": true,
+    "point_in_time_qualified_events": 0,
+    "required_heldout_events": 100,
+    "required_training_events": 100,
+    "reviewed_independent_events": 0,
+    "schema_version": "1.0",
+    "strategy_promotion_authority": false,
+    "worker_overlap_observed": true
+  },
+  "safety": {
+    "observed_at": "2026-11-07T04:28:38.503824+00:00",
+    "services": {
+      "neraium-poly-paper.service": {
+        "MainPID": "3247137",
+        "NRestarts": "0",
+        "ExecStart": "{ path=/home/ubuntu/Neraium-Poly/.venv/bin/neraium-poly ; argv[]=/home/ubuntu/Neraium-Poly/.venv/bin/neraium-poly paper-live --config /home/ubuntu/Neraium-Poly/config/paper-live.example.json ; ignore_errors=no ; start_time=[Sat 2026-11-07 04:23:10 UTC] ; stop_time=[n/a] ; pid=3247137 ; code=(null) ; status=0/0 }",
+        "MemoryCurrent": "478511104",
+        "CPUQuotaPerSecUSec": "1s",
+        "MemoryMax": "1073741824",
+        "ActiveState": "active",
+        "SubState": "running",
+        "execution_environment": {
+          "PAPER_TRADING": "true",
+          "LIVE_TRADING_ENABLED": "false"
+        }
+      },
+      "neraium-poly-experimental.service": {
+        "MainPID": "3247400",
+        "NRestarts": "0",
+        "ExecStart": "{ path=/home/ubuntu/Neraium-Poly/.venv/bin/neraium-poly ; argv[]=/home/ubuntu/Neraium-Poly/.venv/bin/neraium-poly experimental-paper --config /home/ubuntu/Neraium-Poly/config/experimental-paper.example.json ; ignore_errors=no ; start_time=[Sat 2026-11-07 04:26:16 UTC] ; stop_time=[n/a] ; pid=3247400 ; code=(null) ; status=0/0 }",
+        "MemoryCurrent": "241315840",
+        "CPUQuotaPerSecUSec": "500ms",
+        "MemoryMax": "805306368",
+        "ActiveState": "active",
+        "SubState": "running",
+        "execution_environment": {
+          "PAPER_TRADING": "true",
+          "LIVE_TRADING_ENABLED": "false"
+        }
+      }
+    },
+    "configuration_changes": {
+      "paper-live.example.json": {
+        "min_free_disk_mb": [
+          8192,
+          102400
+        ],
+        "archive_budget_mb": [
+          65536,
+          204800
+        ],
+        "archive_reserve_disk_mb": [
+          65536,
+          102400
+        ]
+      },
+      "experimental-paper.example.json": {
+        "phase18_event_research_enabled": [
+          null,
+          true
+        ],
+        "archive_reserve_disk_mb": [
+          65536,
+          102400
+        ],
+        "min_free_disk_mb": [
+          8192,
+          102400
+        ],
+        "archive_budget_mb": [
+          16384,
+          102400
+        ]
+      }
+    },
+    "aws_resources_modified": false,
+    "original_deletion": false,
+    "stop_reset": false,
+    "new_accounts": false,
+    "safeguards": "Existing strategy registry, risk limits and certified approval unchanged; research policies have no account/order authority"
+  },
+  "legacy_experimental_totals": {
+    "cycles": 9666,
+    "observations": 404639,
+    "qualified_opportunities": 31,
+    "signals": 2784419
+  },
+  "legacy_rejection_reasons": {
+    "conservative_roundtrip_edge_insufficient": 685986,
+    "excessive_model_uncertainty": 9372,
+    "independent_context_verified_labels_and_calibration_required": 463363,
+    "independent_predecision_context_and_response_model_required": 463363,
+    "independently_reviewed_exhaustive_payoff_scope_required": 463363,
+    "insufficient_causal_bid_history": 96465,
+    "insufficient_matured_horizon_forecast_errors": 16348,
+    "kill_switch": 5,
+    "large_spread": 504,
+    "missing_book": 159258,
+    "missing_liquidity": 117882,
+    "multi_leg_execution_and_hedging_not_supported": 463363,
+    "out_of_order_book": 378,
+    "persistent_contextual_relationship_evidence_required": 431891,
+    "phase16_best_ask_limit_participation_insufficient": 4,
+    "stale_book": 317034,
+    "token_position_or_order_already_owned": 18,
+    "two_sided_inventory_execution_not_supported": 463363,
+    "unknown_fee_schedule": 232400,
+    "validated_queue_and_adverse_selection_model_required": 463363
+  },
+  "free_bytes": 504856670208,
+  "filesystem_bytes": 1038993555456,
+  "operating_source_head": "d08a82579accbbf9fc38820ee1ba39917d225f9f",
+  "source_head": "d08a82579accbbf9fc38820ee1ba39917d225f9f",
+  "services_systemd": "MainPID=3247137\nNRestarts=0\nMemoryCurrent=642093056\nCPUUsageNSec=566951529000\nCPUQuotaPerSecUSec=1s\nId=neraium-poly-paper.service\nActiveState=active\nSubState=running\n\nMainPID=3247400\nNRestarts=0\nMemoryCurrent=349261824\nCPUUsageNSec=159520300000\nCPUQuotaPerSecUSec=500ms\nId=neraium-poly-experimental.service\nActiveState=active\nSubState=running\n"
+}

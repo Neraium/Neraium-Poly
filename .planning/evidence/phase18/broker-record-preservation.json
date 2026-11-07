@@ -1,0 +1,17 @@
+{
+  "original_broker_tables_unchanged": {
+    "paper-live/broker.sqlite/audit": true,
+    "paper-live/broker.sqlite/book_watermarks": true,
+    "paper-live/broker.sqlite/books": true,
+    "paper-live/broker.sqlite/liquidity": true,
+    "paper-live/broker.sqlite/orders": true,
+    "experimental-paper/broker.sqlite/audit": true,
+    "experimental-paper/broker.sqlite/book_watermarks": true,
+    "experimental-paper/broker.sqlite/books": true,
+    "experimental-paper/broker.sqlite/liquidity": true,
+    "experimental-paper/broker.sqlite/orders": true
+  },
+  "all_unchanged": true,
+  "risk_limit_dictionaries_equal": true,
+  "original_balances_preserved": true
+}

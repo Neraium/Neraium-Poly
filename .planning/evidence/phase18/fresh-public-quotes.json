@@ -1,0 +1,141 @@
+{
+  "observed_at": "2026-11-07T04:56:44.093081+00:00",
+  "source_frame_id": "f59052eaf1964e2094a4e955674d03137b7fd9f04e20355829960610faf9ca07",
+  "frame_sha256": "01c8ca9bddf33ae49ee7bcc961a71e8b3a8328a7700b53b49701744a7d21132c",
+  "producer_health": {
+    "status": "ok",
+    "last_error": null,
+    "books_withheld_at_export": 0,
+    "last_ingestion_at": "2026-11-07T04:56:43.905894+00:00",
+    "paper_trading": true,
+    "live_trading_enabled": false
+  },
+  "real_public_quotes_not_opportunities": [
+    {
+      "market_id": "6367372",
+      "event_id": "711714",
+      "token_id": "82395534073554697085531091019678623970047726661471473421916657798311582685598",
+      "question": "Israel x Iran ceasefire continues through November 22?",
+      "outcome": "Yes",
+      "book_id": "805c01758824bbe7c46ade301ce279653c1bf6cfa9536b96740e81d230c18b0f",
+      "source": "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+      "source_at": "2026-11-07T04:56:41.503000+00:00",
+      "available_at": "2026-11-07T04:56:41.549792+00:00",
+      "age_seconds": 2.590081,
+      "bids": [
+        {
+          "price": 0.66,
+          "size": 155.84
+        },
+        {
+          "price": 0.65,
+          "size": 1996.58
+        },
+        {
+          "price": 0.64,
+          "size": 1674.63
+        }
+      ],
+      "asks": [
+        {
+          "price": 0.68,
+          "size": 175.0
+        },
+        {
+          "price": 0.69,
+          "size": 5730.78
+        },
+        {
+          "price": 0.7,
+          "size": 6418.22
+        }
+      ],
+      "actual_order": false,
+      "fill": false
+    },
+    {
+      "market_id": "691340",
+      "event_id": "85299",
+      "token_id": "95143949049440805515065120245245136072200903084986833252741074455111459269340",
+      "question": "AI bubble burst in 2026?",
+      "outcome": "Yes",
+      "book_id": "ad127a79ceeb46b497c962fc9548af73524286ba7c32e1058d5e121e772d7efe",
+      "source": "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+      "source_at": "2026-11-07T04:56:33.644000+00:00",
+      "available_at": "2026-11-07T04:56:33.687659+00:00",
+      "age_seconds": 10.449081,
+      "bids": [
+        {
+          "price": 0.077,
+          "size": 967.49
+        },
+        {
+          "price": 0.076,
+          "size": 15348.3
+        },
+        {
+          "price": 0.075,
+          "size": 400.0
+        }
+      ],
+      "asks": [
+        {
+          "price": 0.078,
+          "size": 9805.17
+        },
+        {
+          "price": 0.079,
+          "size": 6896.79
+        },
+        {
+          "price": 0.08,
+          "size": 2899.99
+        }
+      ],
+      "actual_order": false,
+      "fill": false
+    },
+    {
+      "market_id": "561980",
+      "event_id": "31875",
+      "token_id": "30919109558246209971545892228598482722881502507049010402392877610451001659386",
+      "question": "Will Nikki Haley win the 2028 Republican presidential nomination?",
+      "outcome": "Yes",
+      "book_id": "f8affd729f08d90d41a8dd4499c04c82135a15e944b739f1d0c0b103453a0bde",
+      "source": "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+      "source_at": "2026-11-07T04:56:43.405000+00:00",
+      "available_at": "2026-11-07T04:56:43.448327+00:00",
+      "age_seconds": 0.688081,
+      "bids": [
+        {
+          "price": 0.008,
+          "size": 11645.6
+        },
+        {
+          "price": 0.007,
+          "size": 66000.0
+        },
+        {
+          "price": 0.006,
+          "size": 24919.15
+        }
+      ],
+      "asks": [
+        {
+          "price": 0.009,
+          "size": 29893.95
+        },
+        {
+          "price": 0.01,
+          "size": 363287.68
+        },
+        {
+          "price": 0.011,
+          "size": 605.38
+        }
+      ],
+      "actual_order": false,
+      "fill": false
+    }
+  ]
+}

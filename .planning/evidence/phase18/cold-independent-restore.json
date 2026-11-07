@@ -1,0 +1,41 @@
+{
+  "observed_at": "2026-11-07T04:56:44.668916+00:00",
+  "services": {
+    "paper-live": {
+      "schema_version": "phase15-cold-proof-v1",
+      "segment": "segment-00000288.sqlite",
+      "raw_sha256": "5c425b22f31cb8c6da2fa6cf7497a08b69e6b5431e9cb3f965c87e8c2a604b3a",
+      "raw_bytes": 12754944,
+      "gzip_sha256": "18d994dcbcedd77f4f2ee8bd141c27101688b718d62ead0983da73c51ed82c7c",
+      "gzip_bytes": 3312891,
+      "manifest_sha256": "9f946d1f9e75e284277970ee24e0e2b304f71f5f4c71a237264e37fff378d13d",
+      "records": 5716,
+      "catalog_records_sha256": "9b14122b8029721683284203c5b87c135236fd74ecf680136f2bf657cbabfa26",
+      "catalog_match_count": 5716,
+      "sqlite_quick_check": "ok",
+      "recovery_tested": true,
+      "raw_present": true,
+      "original_modified": false,
+      "approval_required": true,
+      "removal_authorized": false
+    },
+    "experimental-paper": {
+      "schema_version": "phase15-cold-proof-v1",
+      "segment": "segment-00000371.sqlite",
+      "raw_sha256": "c9f0e75246711b5500df8b5c92862359a169394fe809649fcdd55497bf939a25",
+      "raw_bytes": 4960256,
+      "gzip_sha256": "a615a3a06306e6ebd4362a1f7405c3baceec3003f617789e9cf29abe13a1c997",
+      "gzip_bytes": 1961082,
+      "manifest_sha256": "70185f6afa5ae4528e2550a13a7481817f7b439828b2a13e1ec6197808699975",
+      "records": 898,
+      "catalog_records_sha256": "541220eb75f32dd766e9e8cf1b55d23dfe88404f7626cf0eaad4ab39bd85be51",
+      "catalog_match_count": 898,
+      "sqlite_quick_check": "ok",
+      "recovery_tested": true,
+      "raw_present": true,
+      "original_modified": false,
+      "approval_required": true,
+      "removal_authorized": false
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "observed_at": "2026-11-07T04:44:59.424985+00:00",
+  "new_expected_policy_sha256": "f0fdb631a024d752f9dbc9455c4b468e684c0b41f311b926ef4ed42775b7e9ba",
+  "domain_implementation_sha256": "05088dc7cbcd67321b2cc8a7a29d59bf2fab7a3d9826d28506a0d6cdef3c5fea",
+  "historical_record_prefixes": [
+    {
+      "id": "1a28df263409262df735819a202fe4bb0034349a1752c0516827ce2a544c4502",
+      "digest": "a420f37723d0f5490131bdf6eed6f2c4cc9bceca6b7e3210044e51957f94b203",
+      "operation": "forecast_scan",
+      "code_sha256": "82fee06bc8085b9af7ba9fe119377b4e040216906ab1a396c65b58b526746ce5"
+    },
+    {
+      "id": "7bc332679c2d087a8cd1c31473b7aef6b363566e78786859bed4e19e03221570",
+      "digest": "b738781ebfe37f4e69ca12399965f51e18ccc73ec7666396f3da57d9ee74411b",
+      "operation": "forecast_scan",
+      "code_sha256": "82fee06bc8085b9af7ba9fe119377b4e040216906ab1a396c65b58b526746ce5"
+    },
+    {
+      "id": "f50a1ba4cc292a8613af6efa1650ea04b6d0059bd2e639f64f246969f0431b99",
+      "digest": "fcaec5ac1f0a6aeb3781f8dabed7b9e8b83531a7a8ff379cf5598fc9e8cea1b8",
+      "operation": "forecast_scan",
+      "code_sha256": "82fee06bc8085b9af7ba9fe119377b4e040216906ab1a396c65b58b526746ce5"
+    }
+  ]
+}

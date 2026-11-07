@@ -1,7 +1,7 @@
 # Phase 18 independent event forecasting
 
 This module uses external asset data rather than Polymarket prices as predictive
-features. New models are research-only. Existing Phase14 adapters, model versions,
+features. New models are research-only. Existing Phase 14 adapters, model versions,
 forecast journals, NFL capability and production strategy registration are unchanged.
 
 ## Implemented crypto capability
@@ -19,10 +19,10 @@ No review flag or one-minute convention was silently changed to create a forecas
 
 `collect_event_evidence(contract, now=..., client=...)` performs at most two public
 Binance market-data GETs. It collects enough closed one-minute data to cover the
-entire elapsed settlement window and at least720recent log returns. Pagination,
+entire elapsed settlement window and at least720 recent log returns. Pagination,
 minute continuity, OHLC, pair identity, hashes, source URLs and request bounds are
 rechecked. Forming/duplicate/gapped/stale candles fail closed. Requests have a
-512KiB response bound and2MiB total bound. There are no keys, account endpoints,
+512 KiB response bound and2 MiB total bound. There are no keys, account endpoints,
 trade methods, alternate providers, or fallback after geographic/rate/access denial.
 
 Each response records its **actual retrieval timestamp**, independent of the caller's
@@ -35,7 +35,7 @@ must advance their cutoff after awaiting collection.
 rules and every derived parameter. It withholds a forecast when any completed candle
 already satisfies the barrier; it does not call a known past trigger a new forecast
 or verified settlement. The supported research model estimates lower-barrier first
-passage under zero-log-drift Brownian diffusion, using720prior completed log returns.
+passage under zero-log-drift Brownian diffusion, using720 prior completed log returns.
 Its horizon starts at the **last observed candle close**, not forecast creation time,
 so the unknown current minute is included. Source age and reference time are explicit.
 
@@ -50,8 +50,8 @@ recorded. Selected YES/NO outcomes are complementary, not independent events.
 
 ## Authentic acquisition evidence
 
-On2026-11-07T04:00:57UTC, two public requests returned233,447bytes and1,380completed
-settlement-window candles, including721prices for720return features. Actual market
+On2026-11-07T04:00:57 UTC, two public requests returned233,447 bytes and1,380 completed
+settlement-window candles, including721 prices for720 return features. Actual market
 6739563 ($72,000),6739562 ($73,000),6739561 ($74,000), all parent1323373, mapped to the
 exact Bitcoin daily-low template. Six YES/NO token estimates were computed from the
 same external evidence and one parent event—not six independent validation events.
@@ -59,7 +59,7 @@ Reference last completed price was75,893.66. YES model tails were extremely smal
 NO complements near one. All retained uncalibrated[0,1]uncertainty and no trading
 or certification authority. Ambiguous noon-close market6475112 stayed withheld.
 
-A fresh04:05:08UTC audit also succeeded. Original captures and code hashes are
+A fresh04:05:08 UTC audit also succeeded. Original captures and code hashes are
 preserved under the worktree's ignored `data/phase18-events/`; subsequent replays
 are labeled replays, not retroactively timestamped prospective forecasts. The root
 coordinator owns append-only production record admission and current source audits.
@@ -70,8 +70,8 @@ No paper account, order, fill, settlement or model approval was modified by this
 The source collector supports bounded official NWS gridpoint forecast context and
 allowlisted Federal Reserve/BLS/BEA calendar context. These records are explicitly
 unqualified for numerical event probabilities. An independent provider-access probe
-at04:05:07UTC fetched actual NWS points and forecast responses (3,917/13,044bytes)
-and the official FOMC calendar (166,350bytes), preserving raw hashes and retrieval times.
+at04:05:07 UTC fetched actual NWS points and forecast responses (3,917/13,044 bytes)
+and the official FOMC calendar (166,350 bytes), preserving raw hashes and retrieval times.
 These are **provider-access probes**, with no market ID and no forecast sample count.
 
 A deterministic NWS temperature forecast is not a calibrated probability. Exact

@@ -1,0 +1,26 @@
+{
+  "schema_version": "phase18-event-disjoint-v1",
+  "evaluated_at": "2026-11-07T04:27:45.885754+00:00",
+  "training_end": "2026-11-05T04:27:45.885754+00:00",
+  "heldout_start": "2026-11-06T04:27:45.885754+00:00",
+  "input_rows": 0,
+  "raw_replayed_rows": 0,
+  "cohorts": [],
+  "ambiguous_parent_ids": [],
+  "cross_split_groups": [],
+  "validation_only_rows": 0,
+  "training_labels_late": 0,
+  "rejections": {},
+  "required_training_events": 100,
+  "required_heldout_events": 100,
+  "metrics": null,
+  "score_scope": "per homogeneous verified model cohort only",
+  "certification_authority": false,
+  "trading_authority": false,
+  "limitations": [
+    "Independent features, independent source lineages and independent event groups are different requirements",
+    "No monetary mark or terminal quote can substitute for a verified settlement outcome",
+    "Multiple models sharing one parent do not create additional independent events"
+  ],
+  "input_scope": "No independently verified resolved Phase18 outcomes available; no fixture samples included"
+}

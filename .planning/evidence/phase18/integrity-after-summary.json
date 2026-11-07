@@ -1,0 +1,21 @@
+{
+  "phase": "after",
+  "immutable_files": 1230,
+  "journals": {
+    "event-intelligence/forecasts.sqlite": {
+      "records": 1365,
+      "head_sha256": "bfb310a3d5526c10f68cff58ff8817202c77072399be64d091eef5eb0942b48a",
+      "preexisting_prefix_preserved": true
+    },
+    "event-intelligence/sports/prospective.sqlite": {
+      "records": 3,
+      "head_sha256": "0d416ac4030d28f10dbee961cd47efef776f4977b7aa881002e4d7294adb02fe",
+      "preexisting_prefix_preserved": true
+    },
+    "event-intelligence/domains/forecasts.sqlite": {
+      "records": 43,
+      "head_sha256": "bd85f4bd656808273deebaf7f8cdb92fbffef452597dcbc375efb9bce0e50ada",
+      "preexisting_prefix_preserved": true
+    }
+  }
+}

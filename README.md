@@ -124,3 +124,24 @@ See [Phase 13 readiness and actual observations](docs/phase13-readiness.md),
 [architecture](docs/phase13-architecture.md) and
 [source inventory](docs/phase13-sources.md). Historical certification and explicit
 owner approval remain required; live financial trading remains disabled.
+
+### Independent event and capacity research (Phase18)
+
+Phase18 adds exact-rule independent crypto event-probability research, parent-disjoint
+validation, default-deny evidence convergence and nonlinear liquidity-capacity scenarios.
+Models remain uncalibrated research with no order authority. Actual managed archive budgets
+are200GiBcollector/100GiBexperimental with a protected100GiBfilesystem reserve; originals
+remain retained pending separate exact retention approval.
+
+```bash
+uv run neraium-poly monitor --view operations
+uv run neraium-poly monitor --view edge
+```
+
+See [Phase18 readiness](docs/phase18-readiness.md), [architecture](docs/phase18-architecture.md),
+[research findings](docs/phase18-research-findings.md),
+[event-disjoint validation](docs/phase18-event-validation.md),
+[capacity research](docs/phase18-high-conviction-and-capacity.md),
+[storage](docs/phase18-storage-and-reliability.md) and
+[retention proposal requiring separate approval](docs/phase18-retention-proposal.md).
+No positive forecasting or trading advantage has been established.

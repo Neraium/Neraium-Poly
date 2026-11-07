@@ -1,0 +1,42 @@
+{
+  "observed_at": "2026-11-07T04:05:07.262765+00:00",
+  "not_independent_forecast_samples": true,
+  "results": [
+    {
+      "provider_probe": "nws-points",
+      "url": "https://api.weather.gov/points/40.7789,-73.9692",
+      "requested_at": "2026-11-07T04:05:07.133286+00:00",
+      "retrieved_at": "2026-11-07T04:05:07.181170+00:00",
+      "bytes": 3917,
+      "raw_sha256": "256d95b210e3860192b40007275c4966e8dbe1ab81d36eb159125dba7eebee9a",
+      "raw_path": "nws-points.raw",
+      "market_id": null,
+      "forecast_probability": null,
+      "use": "availability/context only; not qualified market probability evidence"
+    },
+    {
+      "provider_probe": "nws-forecast",
+      "url": "https://api.weather.gov/gridpoints/OKX/34,45/forecast",
+      "requested_at": "2026-11-07T04:05:07.181327+00:00",
+      "retrieved_at": "2026-11-07T04:05:07.196196+00:00",
+      "bytes": 13044,
+      "raw_sha256": "612dbf71c5f8698689467cee9ce4ff1664a923bf19ca8e5ea7ac7c94a88cc5d9",
+      "raw_path": "nws-forecast.raw",
+      "market_id": null,
+      "forecast_probability": null,
+      "use": "availability/context only; not qualified market probability evidence"
+    },
+    {
+      "provider_probe": "official-fomc-calendar",
+      "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+      "requested_at": "2026-11-07T04:05:07.196292+00:00",
+      "retrieved_at": "2026-11-07T04:05:07.262377+00:00",
+      "bytes": 166350,
+      "raw_sha256": "eb9505eff5eb5f7a3e9ccf4beefec620b2a96db493a4442d35a367f44ef18c12",
+      "raw_path": "official-fomc-calendar.raw",
+      "market_id": null,
+      "forecast_probability": null,
+      "use": "availability/context only; not qualified market probability evidence"
+    }
+  ]
+}

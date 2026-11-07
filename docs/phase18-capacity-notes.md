@@ -1,4 +1,4 @@
-# Phase18 evidence convergence and capital-capacity research
+# Phase 18 evidence convergence and capital-capacity research
 
 These modules are pure research assessments. They never create an account, place an
 order, alter a stop, change an operational risk limit or certify a strategy.
@@ -41,8 +41,8 @@ Two policy proposals are recorded, including rejected decisions on malformed inp
 
 |Research approach|Initial target|Policy edge floor|Maximum interval width|
 |---|---:|---:|---:|
-|High-throughput|$2standard|.03/share|.35|
-|High-conviction|$5high tier|.05/share|.15|
+|High-throughput|$2 standard|.03/share|.35|
+|High-conviction|$5 high tier|.05/share|.15|
 
 These new comparison policies are research definitions, not modifications to production
 strategies. Minimum lots may increase principal only within existing standard$2–$5
@@ -62,7 +62,7 @@ can be calculated. Empty or absent evidence cannot become independent confirmati
 `capacity_scenarios(opportunity,book,*,bankrolls=(500,1000,10000,100000,1000000))`
 requires the exact quoted book ID/hash/market/token from the convergence assessment.
 Missing, stale, crossed, incomplete or untrusted books withhold all scenarios.
-Duplicate levels and books beyond1000levels per side reject rather than double-count.
+Duplicate levels and books beyond1000 levels per side reject rather than double-count.
 
 With no fully qualified event forecast, the output is `liquidity_only_unqualified`:
 actual observed depth can be described but expected value, profitability, returns,
@@ -76,7 +76,7 @@ marginal edge falls below.03. Existing approved single-order maxima stay$5/$15/$
 for every hypothetical capital, and no scenario is an authorized order. Capacity
 beyond the observed book, queue priority, post-latency entry survival and future exit
 liquidity remain unverified. Current bid support is reported separately. Minimum lots
-and minimum$2principal prevent presenting tiny unavailable sizes as qualifying value.
+and minimum$2 principal prevent presenting tiny unavailable sizes as qualifying value.
 
 An optional `already_committed_shares` crowds the same quoted liquidity rather than
 creating a second independent pool for each research approach. Capital lockup uses a
@@ -96,4 +96,4 @@ profit assumption or additional simulated trading account was introduced.
 
 The integration coordinator retains the actual snapshot/hash evidence and reports
 current balances and source health independently. These new policies cannot bypass
-existing admission, certified100/100event requirements or separate owner approval.
+existing admission, certified 100/100 event requirements or separate owner approval.

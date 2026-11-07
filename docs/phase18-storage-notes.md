@@ -16,7 +16,7 @@ roots fail. Inputs are integer bytes, not booleans, infinities or unknown values
 
 Current service bytes are already deducted from filesystem available capacity.
 The maximum incremental consumption is therefore `sum(max(0,target-current))`,
-not the full300GiB charged a second time. The proof reserves at least100GiB,
+not the full300 GiB charged a second time. The proof reserves at least100 GiB,
 stricter existing floors, temporary rotation/restoration capacity and explicit
 headroom for unrelated workload growth. Other projects' current consumption is
 already included in the filesystem free measurement. Their future growth can
@@ -30,39 +30,39 @@ symlinks/nested filesystems/unsupported entries or excess inventory size fail.
 Concurrent changes require a final remeasurement and the larger owner-reported
 or independently measured usage should be used.
 
-At2026-11-07T03:59:42UTC the independent proof admitted exact200GiBcollector and
-100GiBexperimental targets with100GiBfree reserve,4GiBtemporary headroom and
-64GiBadditional shared-growth reserve:
+At2026-11-07T03:59:42 UTC the independent proof admitted exact200 GiBcollector and
+100 GiBexperimental targets with100 GiBfree reserve,4 GiB temporary headroom and
+64 GiB additional shared-growth reserve:
 
-* Filesystem capacity1,038,993,555,456bytes; available505,356,926,976bytes.
+* Filesystem capacity1,038,993,555,456 bytes; available505,356,926,976 bytes.
 * Current combined service bytes13,219,543,946.
-* Maximum incremental service growth308,903,003,254bytes.
-* Free at both caps196,453,923,722bytes.
-* Free after temporary/shared-growth headrooms123,439,479,690bytes (114.96GiB).
-* Margin above protected100GiBfloor16,065,297,290bytes (14.96GiB).
+* Maximum incremental service growth308,903,003,254 bytes.
+* Free at both caps196,453,923,722 bytes.
+* Free after temporary/shared-growth headrooms123,439,479,690 bytes (114.96 GiB).
+* Margin above protected100 GiB floor16,065,297,290 bytes (14.96 GiB).
 
-No300GiBpreallocation or AWS/EBS operation occurred. These are admission calculations,
+No300 GiBpreallocation or AWS/EBS operation occurred. These are admission calculations,
 not a guarantee against arbitrary unrelated future consumption. The all-file
 managed-store guard already charges temporary rotations and preserves a global floor.
 Actual configuration changes, restart and post-change proof belong to integration.
 
 ## Read-only filesystem audit
 
-Bounded low-priority `du -x` metadata scans measured approximately347.07GB under
-/home/ubuntu,1.23GB under/var and67.56GB under/tmp. Some directories were inaccessible;
+Bounded low-priority `du -x` metadata scans measured approximately347.07 GB under
+/home/ubuntu,1.23 GB under/var and67.56 GB under/tmp. Some directories were inaccessible;
 these totals are explicitly partial, not complete allocations. Filesystem available
 capacity independently accounts for those inaccessible files.
 
-Largest visible directories included Neraium-1.0(89.91GB), .local(41.99GB),
-WWTP10-Generator(32.63GB), Neraium-Poly(15.90GB), Neraium-2-integration(15.03GB),
-WWTP8blind-validation(14.52GB) and core-recovery(14.18GB). /tmp includes ARI and other
+Largest visible directories included Neraium-1.0(89.91 GB), .local(41.99 GB),
+WWTP10-Generator(32.63 GB), Neraium-Poly(15.90 GB), Neraium-2-integration(15.03 GB),
+WWTP8 blind-validation(14.52 GB) and core-recovery(14.18 GB). /tmp includes ARI and other
 certification/test outputs. None was inspected for secret contents, removed,
 relocated or treated as disposable. Audit scripts/results remain in this worktree's
 `data/phase18-storage` for coordinator preservation.
 
 ## Exact proposed retention policy
 
-`proposed_policy(minimum_warm_seconds=86400)` produces a proposal with at least24hours
+`proposed_policy(minimum_warm_seconds=86400)` produces a proposal with at least24 hours
 of warm retention and irreversible actions disabled. Protected classes include
 active databases/WAL, legacy evidence, account records, forecast journals, settlements,
 provenance, catalogs and audit trails. Only redundant sealed managed segment originals
@@ -93,10 +93,10 @@ proof, manifest, database or retention setting is written by this module.
 
 ## Authentic restoration and current eligibility
 
-A read-only real audit inventoried272collector and349experimental catalog rows.
-No originals qualified under the proposed24hour interval. Independent restored-byte
-verification succeeded for immutable collector segment00000270.sqlite(12,746,752bytes)
-and experimental segment00000347.sqlite(4,505,600bytes), with matching raw/gzip SHA,
+A read-only real audit inventoried272 collector and349 experimental catalog rows.
+No originals qualified under the proposed24 hour interval. Independent restored-byte
+verification succeeded for immutable collector segment00000270.sqlite(12,746,752 bytes)
+and experimental segment00000347.sqlite(4,505,600 bytes), with matching raw/gzip SHA,
 manifest/count and SQLite checks. These proofs do not authorize deletion.
 
 Larger budgets substantially extend headroom but retain-all-originals still grows

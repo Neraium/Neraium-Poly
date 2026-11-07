@@ -1,0 +1,63 @@
+{
+  "schema_version": "phase18-shared-capacity-v1",
+  "approved": true,
+  "status": "admissible",
+  "reasons": [],
+  "service_roots": {
+    "collector": {
+      "path": "/home/ubuntu/Neraium-Poly/data/paper-live",
+      "device": 66305,
+      "inode": 5284604,
+      "current_usage_bytes": 9939098302,
+      "target_budget_bytes": 214748364800
+    },
+    "experimental": {
+      "path": "/home/ubuntu/Neraium-Poly/data/experimental-paper",
+      "device": 66305,
+      "inode": 5549473,
+      "current_usage_bytes": 3622845348,
+      "target_budget_bytes": 107374182400
+    }
+  },
+  "filesystem_capacity_bytes": 1038993555456,
+  "filesystem_available_bytes": 504874205184,
+  "protected_free_reserve_bytes": 107374182400,
+  "current_combined_service_bytes": 13561943650,
+  "target_combined_service_bytes": 322122547200,
+  "incremental_maximum_service_growth_bytes": 308560603550,
+  "projected_free_at_service_caps_bytes": 196313601634,
+  "temporary_headroom_bytes": 8589934592,
+  "shared_growth_reserve_bytes": 68719476736,
+  "projected_free_after_all_headrooms_bytes": 119004190306,
+  "headroom_above_protected_floor_bytes": 11630007906,
+  "nonservice_and_filesystem_overhead_used_bytes": 520557406622,
+  "accounting_scope": "all service-root logical file bytes; existing shared use already in available-space observation",
+  "other_workload_warning": "Future unrelated growth can invalidate this snapshot; live global floor must remain enforced",
+  "preallocation_performed": false,
+  "configuration_changed": false,
+  "infrastructure_change_authority": false,
+  "deletion_authority": false,
+  "observed_at": "2026-11-07T04:37:27.931845+00:00",
+  "measurement": {
+    "collector": {
+      "path": "/home/ubuntu/Neraium-Poly/data/paper-live",
+      "filesystem_device": 66305,
+      "entries": 1729,
+      "current_usage_bytes": 9939098302,
+      "allocated_path_bytes": 9942355968,
+      "includes_active_warm_cold_temporary_manifest_and_hidden": true,
+      "hardlink_pathnames_charged_conservatively": true,
+      "snapshot_warning": "Concurrent writes require final remeasurement before configuration"
+    },
+    "experimental": {
+      "path": "/home/ubuntu/Neraium-Poly/data/experimental-paper",
+      "filesystem_device": 66305,
+      "entries": 3278,
+      "current_usage_bytes": 3622845348,
+      "allocated_path_bytes": 3627851776,
+      "includes_active_warm_cold_temporary_manifest_and_hidden": true,
+      "hardlink_pathnames_charged_conservatively": true,
+      "snapshot_warning": "Concurrent writes require final remeasurement before configuration"
+    }
+  }
+}

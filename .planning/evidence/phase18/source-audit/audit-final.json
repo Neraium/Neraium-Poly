@@ -1,0 +1,462 @@
+{
+  "observed_at": "2026-11-07T04:05:08.926030+00:00",
+  "authentic_public_sources_only": true,
+  "results": [
+    {
+      "market_id": "6739563",
+      "token_id": "72471266580450939084407891651651993427613884892723382709230274102813084566170",
+      "cutoff": "2026-11-07T04:05:08.894591+00:00",
+      "forecast": {
+        "status": "research_estimate",
+        "domain": "crypto",
+        "contract_type": "binance_daily_low_barrier",
+        "event_id": "1323373",
+        "market_id": "6739563",
+        "token_id": "72471266580450939084407891651651993427613884892723382709230274102813084566170",
+        "probability_semantics": "binary_event_probability",
+        "probability": 5.424892833796414e-71,
+        "lower_probability": 0.0,
+        "upper_probability": 1.0,
+        "reasons": [],
+        "model_version": "phase18-binance-daily-low-logdiffusion-v1",
+        "model_sha256": "f68df424bbe15ca72da71a677ea413774044a665d2343531ea85b9679a237d00",
+        "feature_version": "complete-rule-window-and-prior720-closed-returns-v1",
+        "dataset_sha256": "6c445f26c0ba6039abee5824291f9d4493c33d3b07ee685553cd0304e159f2a0",
+        "evidence_ids": [
+          "4b02d252adf3a99c7d5f0af8f54d432686be987928ac28f848d27db4ff75a013"
+        ],
+        "rules_sha256": "638df5f387291ab1afa41edc265695e1b5264a48080a7d0aca10418a60621201",
+        "evidence_cutoff": "2026-11-07T04:05:08.894591+00:00",
+        "independent_of_polymarket": true,
+        "training_observations": 721,
+        "training_returns": 720,
+        "elapsed_window_candles": 1385,
+        "reference_price": 75910.01,
+        "reference_timestamp": "2026-11-07T04:04:59.999000+00:00",
+        "reference_age_seconds": 8.895591020584106,
+        "measured_sigma_per_sqrt_minute": 0.00040026633659359846,
+        "forecast_horizon_seconds": 3291.105409,
+        "calibration_status": "unvalidated_research",
+        "brier": null,
+        "log_loss": null,
+        "uncertainty": {
+          "lower_probability": 0.0,
+          "upper_probability": 1.0,
+          "type": "uncalibrated_model_assumptions_not_a_coverage_interval",
+          "missing": [
+            "independent_event_calibration",
+            "jumps",
+            "volatility_regime_change",
+            "discrete_source_validation"
+          ]
+        },
+        "limitations": [
+          "Continuous first-passage approximation of a final-minute-Low event",
+          "Past return volatility is not a calibrated future distribution",
+          "Extreme tails/complements may round to0or1; this is not empirical certainty",
+          "No Polymarket prices are predictive features; market baseline comparison is external",
+          "No demonstrated forecasting superiority, independent sample sufficiency or trading edge"
+        ],
+        "cost_adjusted_trading_edge": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      }
+    },
+    {
+      "market_id": "6739563",
+      "token_id": "18918462766438929389996599229747366285962689134969664197723592763582010709133",
+      "cutoff": "2026-11-07T04:05:08.899981+00:00",
+      "forecast": {
+        "status": "research_estimate",
+        "domain": "crypto",
+        "contract_type": "binance_daily_low_barrier",
+        "event_id": "1323373",
+        "market_id": "6739563",
+        "token_id": "18918462766438929389996599229747366285962689134969664197723592763582010709133",
+        "probability_semantics": "binary_event_probability",
+        "probability": 1.0,
+        "lower_probability": 0.0,
+        "upper_probability": 1.0,
+        "reasons": [],
+        "model_version": "phase18-binance-daily-low-logdiffusion-v1",
+        "model_sha256": "f68df424bbe15ca72da71a677ea413774044a665d2343531ea85b9679a237d00",
+        "feature_version": "complete-rule-window-and-prior720-closed-returns-v1",
+        "dataset_sha256": "6c445f26c0ba6039abee5824291f9d4493c33d3b07ee685553cd0304e159f2a0",
+        "evidence_ids": [
+          "4b02d252adf3a99c7d5f0af8f54d432686be987928ac28f848d27db4ff75a013"
+        ],
+        "rules_sha256": "638df5f387291ab1afa41edc265695e1b5264a48080a7d0aca10418a60621201",
+        "evidence_cutoff": "2026-11-07T04:05:08.899981+00:00",
+        "independent_of_polymarket": true,
+        "training_observations": 721,
+        "training_returns": 720,
+        "elapsed_window_candles": 1385,
+        "reference_price": 75910.01,
+        "reference_timestamp": "2026-11-07T04:04:59.999000+00:00",
+        "reference_age_seconds": 8.900980949401855,
+        "measured_sigma_per_sqrt_minute": 0.00040026633659359846,
+        "forecast_horizon_seconds": 3291.100019,
+        "calibration_status": "unvalidated_research",
+        "brier": null,
+        "log_loss": null,
+        "uncertainty": {
+          "lower_probability": 0.0,
+          "upper_probability": 1.0,
+          "type": "uncalibrated_model_assumptions_not_a_coverage_interval",
+          "missing": [
+            "independent_event_calibration",
+            "jumps",
+            "volatility_regime_change",
+            "discrete_source_validation"
+          ]
+        },
+        "limitations": [
+          "Continuous first-passage approximation of a final-minute-Low event",
+          "Past return volatility is not a calibrated future distribution",
+          "Extreme tails/complements may round to0or1; this is not empirical certainty",
+          "No Polymarket prices are predictive features; market baseline comparison is external",
+          "No demonstrated forecasting superiority, independent sample sufficiency or trading edge"
+        ],
+        "cost_adjusted_trading_edge": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      }
+    },
+    {
+      "market_id": "6739561",
+      "token_id": "47990276708526137782859106452735790343019902128683866558120305222967256277992",
+      "cutoff": "2026-11-07T04:05:08.905179+00:00",
+      "forecast": {
+        "status": "research_estimate",
+        "domain": "crypto",
+        "contract_type": "binance_daily_low_barrier",
+        "event_id": "1323373",
+        "market_id": "6739561",
+        "token_id": "47990276708526137782859106452735790343019902128683866558120305222967256277992",
+        "probability_semantics": "binary_event_probability",
+        "probability": 9.102828868304948e-18,
+        "lower_probability": 0.0,
+        "upper_probability": 1.0,
+        "reasons": [],
+        "model_version": "phase18-binance-daily-low-logdiffusion-v1",
+        "model_sha256": "f68df424bbe15ca72da71a677ea413774044a665d2343531ea85b9679a237d00",
+        "feature_version": "complete-rule-window-and-prior720-closed-returns-v1",
+        "dataset_sha256": "6c445f26c0ba6039abee5824291f9d4493c33d3b07ee685553cd0304e159f2a0",
+        "evidence_ids": [
+          "4b02d252adf3a99c7d5f0af8f54d432686be987928ac28f848d27db4ff75a013"
+        ],
+        "rules_sha256": "638df5f387291ab1afa41edc265695e1b5264a48080a7d0aca10418a60621201",
+        "evidence_cutoff": "2026-11-07T04:05:08.905179+00:00",
+        "independent_of_polymarket": true,
+        "training_observations": 721,
+        "training_returns": 720,
+        "elapsed_window_candles": 1385,
+        "reference_price": 75910.01,
+        "reference_timestamp": "2026-11-07T04:04:59.999000+00:00",
+        "reference_age_seconds": 8.906178951263428,
+        "measured_sigma_per_sqrt_minute": 0.00040026633659359846,
+        "forecast_horizon_seconds": 3291.094821,
+        "calibration_status": "unvalidated_research",
+        "brier": null,
+        "log_loss": null,
+        "uncertainty": {
+          "lower_probability": 0.0,
+          "upper_probability": 1.0,
+          "type": "uncalibrated_model_assumptions_not_a_coverage_interval",
+          "missing": [
+            "independent_event_calibration",
+            "jumps",
+            "volatility_regime_change",
+            "discrete_source_validation"
+          ]
+        },
+        "limitations": [
+          "Continuous first-passage approximation of a final-minute-Low event",
+          "Past return volatility is not a calibrated future distribution",
+          "Extreme tails/complements may round to0or1; this is not empirical certainty",
+          "No Polymarket prices are predictive features; market baseline comparison is external",
+          "No demonstrated forecasting superiority, independent sample sufficiency or trading edge"
+        ],
+        "cost_adjusted_trading_edge": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      }
+    },
+    {
+      "market_id": "6739561",
+      "token_id": "111065046196763724078041364861198498854399878600964033272969181090337610911402",
+      "cutoff": "2026-11-07T04:05:08.910338+00:00",
+      "forecast": {
+        "status": "research_estimate",
+        "domain": "crypto",
+        "contract_type": "binance_daily_low_barrier",
+        "event_id": "1323373",
+        "market_id": "6739561",
+        "token_id": "111065046196763724078041364861198498854399878600964033272969181090337610911402",
+        "probability_semantics": "binary_event_probability",
+        "probability": 1.0,
+        "lower_probability": 0.0,
+        "upper_probability": 1.0,
+        "reasons": [],
+        "model_version": "phase18-binance-daily-low-logdiffusion-v1",
+        "model_sha256": "f68df424bbe15ca72da71a677ea413774044a665d2343531ea85b9679a237d00",
+        "feature_version": "complete-rule-window-and-prior720-closed-returns-v1",
+        "dataset_sha256": "6c445f26c0ba6039abee5824291f9d4493c33d3b07ee685553cd0304e159f2a0",
+        "evidence_ids": [
+          "4b02d252adf3a99c7d5f0af8f54d432686be987928ac28f848d27db4ff75a013"
+        ],
+        "rules_sha256": "638df5f387291ab1afa41edc265695e1b5264a48080a7d0aca10418a60621201",
+        "evidence_cutoff": "2026-11-07T04:05:08.910338+00:00",
+        "independent_of_polymarket": true,
+        "training_observations": 721,
+        "training_returns": 720,
+        "elapsed_window_candles": 1385,
+        "reference_price": 75910.01,
+        "reference_timestamp": "2026-11-07T04:04:59.999000+00:00",
+        "reference_age_seconds": 8.911337852478027,
+        "measured_sigma_per_sqrt_minute": 0.00040026633659359846,
+        "forecast_horizon_seconds": 3291.089662,
+        "calibration_status": "unvalidated_research",
+        "brier": null,
+        "log_loss": null,
+        "uncertainty": {
+          "lower_probability": 0.0,
+          "upper_probability": 1.0,
+          "type": "uncalibrated_model_assumptions_not_a_coverage_interval",
+          "missing": [
+            "independent_event_calibration",
+            "jumps",
+            "volatility_regime_change",
+            "discrete_source_validation"
+          ]
+        },
+        "limitations": [
+          "Continuous first-passage approximation of a final-minute-Low event",
+          "Past return volatility is not a calibrated future distribution",
+          "Extreme tails/complements may round to0or1; this is not empirical certainty",
+          "No Polymarket prices are predictive features; market baseline comparison is external",
+          "No demonstrated forecasting superiority, independent sample sufficiency or trading edge"
+        ],
+        "cost_adjusted_trading_edge": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      }
+    },
+    {
+      "market_id": "6475112",
+      "token_id": "101087548233682935284423449176009699887849161706813202666009707759362365675496",
+      "mapping": {
+        "schema_version": "1.0",
+        "id": "919c4b2eeafc44584d08767d61eee9d5733aed40898c7269aca1277f32ef53eb",
+        "timestamp": "2026-11-07T04:05:07.739972Z",
+        "available_at": "2026-11-07T04:05:07.739972Z",
+        "source": "neraium-poly/financial-contract/v1",
+        "domain": "crypto",
+        "event_id": "1289174",
+        "market_id": "6475112",
+        "token_id": "101087548233682935284423449176009699887849161706813202666009707759362365675496",
+        "contract_type": "binance_minute_terminal_close_above",
+        "probability_semantics": "binary_event_probability",
+        "rules_sha256": "1c27bfa87e1c4896178339e781cc68a24f145471680748e7228d8eb84b533e39",
+        "parameters": {
+          "asset": "BTC",
+          "symbol": "BTCUSDT",
+          "quote_currency": "USDT",
+          "price_definition": "final_close",
+          "threshold": 74000.0,
+          "operator": ">",
+          "selected_outcome": "Yes",
+          "timezone": "America/New_York",
+          "resolution_boundary": "2026-11-07T17:00:00+00:00",
+          "candidate_candle_open": "2026-11-07T16:59:00+00:00",
+          "candidate_candle_close": "2026-11-07T16:59:59.999000+00:00",
+          "candle_convention": "unreviewed_minute_ending_boundary",
+          "reference_source": "https://www.binance.com/en/trade/BTC_USDT"
+        },
+        "compatible": true,
+        "review_required": true,
+        "reasons": [
+          "explicit_candle_label_vs_close_time_review_required"
+        ]
+      },
+      "forecast": {
+        "status": "withheld",
+        "reasons": [
+          "explicit_candle_label_vs_close_time_review_required"
+        ]
+      }
+    },
+    {
+      "market_id": "6475112",
+      "token_id": "45534882276329684444623787858420954129116353505121988345037508158872978107215",
+      "mapping": {
+        "schema_version": "1.0",
+        "id": "1e3b44d0f338ce733898c7402d5456aebabbbecdfd4ff81215da52d1a3717462",
+        "timestamp": "2026-11-07T04:05:07.739972Z",
+        "available_at": "2026-11-07T04:05:07.739972Z",
+        "source": "neraium-poly/financial-contract/v1",
+        "domain": "crypto",
+        "event_id": "1289174",
+        "market_id": "6475112",
+        "token_id": "45534882276329684444623787858420954129116353505121988345037508158872978107215",
+        "contract_type": "binance_minute_terminal_close_above",
+        "probability_semantics": "binary_event_probability",
+        "rules_sha256": "1c27bfa87e1c4896178339e781cc68a24f145471680748e7228d8eb84b533e39",
+        "parameters": {
+          "asset": "BTC",
+          "symbol": "BTCUSDT",
+          "quote_currency": "USDT",
+          "price_definition": "final_close",
+          "threshold": 74000.0,
+          "operator": ">",
+          "selected_outcome": "No",
+          "timezone": "America/New_York",
+          "resolution_boundary": "2026-11-07T17:00:00+00:00",
+          "candidate_candle_open": "2026-11-07T16:59:00+00:00",
+          "candidate_candle_close": "2026-11-07T16:59:59.999000+00:00",
+          "candle_convention": "unreviewed_minute_ending_boundary",
+          "reference_source": "https://www.binance.com/en/trade/BTC_USDT"
+        },
+        "compatible": true,
+        "review_required": true,
+        "reasons": [
+          "explicit_candle_label_vs_close_time_review_required"
+        ]
+      },
+      "forecast": {
+        "status": "withheld",
+        "reasons": [
+          "explicit_candle_label_vs_close_time_review_required"
+        ]
+      }
+    },
+    {
+      "market_id": "6739562",
+      "token_id": "46866518070797016187440870373494200613664416879248418439384859926070680612859",
+      "cutoff": "2026-11-07T04:05:08.915849+00:00",
+      "forecast": {
+        "status": "research_estimate",
+        "domain": "crypto",
+        "contract_type": "binance_daily_low_barrier",
+        "event_id": "1323373",
+        "market_id": "6739562",
+        "token_id": "46866518070797016187440870373494200613664416879248418439384859926070680612859",
+        "probability_semantics": "binary_event_probability",
+        "probability": 1.3380287765490222e-39,
+        "lower_probability": 0.0,
+        "upper_probability": 1.0,
+        "reasons": [],
+        "model_version": "phase18-binance-daily-low-logdiffusion-v1",
+        "model_sha256": "f68df424bbe15ca72da71a677ea413774044a665d2343531ea85b9679a237d00",
+        "feature_version": "complete-rule-window-and-prior720-closed-returns-v1",
+        "dataset_sha256": "6c445f26c0ba6039abee5824291f9d4493c33d3b07ee685553cd0304e159f2a0",
+        "evidence_ids": [
+          "4b02d252adf3a99c7d5f0af8f54d432686be987928ac28f848d27db4ff75a013"
+        ],
+        "rules_sha256": "638df5f387291ab1afa41edc265695e1b5264a48080a7d0aca10418a60621201",
+        "evidence_cutoff": "2026-11-07T04:05:08.915849+00:00",
+        "independent_of_polymarket": true,
+        "training_observations": 721,
+        "training_returns": 720,
+        "elapsed_window_candles": 1385,
+        "reference_price": 75910.01,
+        "reference_timestamp": "2026-11-07T04:04:59.999000+00:00",
+        "reference_age_seconds": 8.91684889793396,
+        "measured_sigma_per_sqrt_minute": 0.00040026633659359846,
+        "forecast_horizon_seconds": 3291.084151,
+        "calibration_status": "unvalidated_research",
+        "brier": null,
+        "log_loss": null,
+        "uncertainty": {
+          "lower_probability": 0.0,
+          "upper_probability": 1.0,
+          "type": "uncalibrated_model_assumptions_not_a_coverage_interval",
+          "missing": [
+            "independent_event_calibration",
+            "jumps",
+            "volatility_regime_change",
+            "discrete_source_validation"
+          ]
+        },
+        "limitations": [
+          "Continuous first-passage approximation of a final-minute-Low event",
+          "Past return volatility is not a calibrated future distribution",
+          "Extreme tails/complements may round to0or1; this is not empirical certainty",
+          "No Polymarket prices are predictive features; market baseline comparison is external",
+          "No demonstrated forecasting superiority, independent sample sufficiency or trading edge"
+        ],
+        "cost_adjusted_trading_edge": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      }
+    },
+    {
+      "market_id": "6739562",
+      "token_id": "44484132617748768743088290899909868086534600712330926842546895746238929963890",
+      "cutoff": "2026-11-07T04:05:08.920959+00:00",
+      "forecast": {
+        "status": "research_estimate",
+        "domain": "crypto",
+        "contract_type": "binance_daily_low_barrier",
+        "event_id": "1323373",
+        "market_id": "6739562",
+        "token_id": "44484132617748768743088290899909868086534600712330926842546895746238929963890",
+        "probability_semantics": "binary_event_probability",
+        "probability": 1.0,
+        "lower_probability": 0.0,
+        "upper_probability": 1.0,
+        "reasons": [],
+        "model_version": "phase18-binance-daily-low-logdiffusion-v1",
+        "model_sha256": "f68df424bbe15ca72da71a677ea413774044a665d2343531ea85b9679a237d00",
+        "feature_version": "complete-rule-window-and-prior720-closed-returns-v1",
+        "dataset_sha256": "6c445f26c0ba6039abee5824291f9d4493c33d3b07ee685553cd0304e159f2a0",
+        "evidence_ids": [
+          "4b02d252adf3a99c7d5f0af8f54d432686be987928ac28f848d27db4ff75a013"
+        ],
+        "rules_sha256": "638df5f387291ab1afa41edc265695e1b5264a48080a7d0aca10418a60621201",
+        "evidence_cutoff": "2026-11-07T04:05:08.920959+00:00",
+        "independent_of_polymarket": true,
+        "training_observations": 721,
+        "training_returns": 720,
+        "elapsed_window_candles": 1385,
+        "reference_price": 75910.01,
+        "reference_timestamp": "2026-11-07T04:04:59.999000+00:00",
+        "reference_age_seconds": 8.921958923339844,
+        "measured_sigma_per_sqrt_minute": 0.00040026633659359846,
+        "forecast_horizon_seconds": 3291.079041,
+        "calibration_status": "unvalidated_research",
+        "brier": null,
+        "log_loss": null,
+        "uncertainty": {
+          "lower_probability": 0.0,
+          "upper_probability": 1.0,
+          "type": "uncalibrated_model_assumptions_not_a_coverage_interval",
+          "missing": [
+            "independent_event_calibration",
+            "jumps",
+            "volatility_regime_change",
+            "discrete_source_validation"
+          ]
+        },
+        "limitations": [
+          "Continuous first-passage approximation of a final-minute-Low event",
+          "Past return volatility is not a calibrated future distribution",
+          "Extreme tails/complements may round to0or1; this is not empirical certainty",
+          "No Polymarket prices are predictive features; market baseline comparison is external",
+          "No demonstrated forecasting superiority, independent sample sufficiency or trading edge"
+        ],
+        "cost_adjusted_trading_edge": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      }
+    }
+  ],
+  "no_account_order_mutation": true,
+  "source_qualified": true
+}

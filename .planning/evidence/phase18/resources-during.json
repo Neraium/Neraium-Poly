@@ -1,0 +1,36 @@
+{
+  "at": "2026-11-07T04:32:25.041835+00:00",
+  "logical_cpus": 32,
+  "loadavg": [
+    0.7236328125,
+    0.98291015625,
+    1.0712890625
+  ],
+  "memory": "               total        used        free      shared  buff/cache   available\nMem:     265985810432 12524597248  1850462208   709939200 254586646528 253461213184\nSwap:              0           0           0\n",
+  "filesystem": "Filesystem         1B-blocks         Used    Available Use% Mounted on\n/dev/root      1038993555456 534046756864 504930021376  52% /\n",
+  "top_processes_names_only": [
+    "    PID COMMAND         %CPU   RSS",
+    "3247890 python3          100 12716",
+    "3247137 neraium-poly    67.0 252420",
+    "3247400 neraium-poly    27.6 265756",
+    "1642914 python           1.2 1690456",
+    "3240199 codex            1.1 199248",
+    "2946873 codex            0.8 848408",
+    "2884107 neraium-poly     0.8 54076",
+    " 357881 opencode         0.5 257732",
+    "3240609 codex            0.4 183492",
+    "2883128 codex            0.3 254400",
+    "1650891 python           0.1 519772",
+    "   1349 dockerd          0.1 334912",
+    "2884136 neraium-poly     0.0 62620"
+  ],
+  "service_resources": "MainPID=3247137\nMemoryCurrent=561123328\nCPUUsageNSec=371964647000\nCPUQuotaPerSecUSec=1s\nId=neraium-poly-paper.service\n\nMainPID=3247400\nMemoryCurrent=327766016\nCPUUsageNSec=101916795000\nCPUQuotaPerSecUSec=500ms\nId=neraium-poly-experimental.service\n",
+  "actual_parallelism": {
+    "agents_peak": 4,
+    "isolated_writing_worktrees": 3,
+    "pytest_worker_processes": 2,
+    "pytest_numerical_threads_each": 1,
+    "playwright_workers": 1,
+    "live_api_sampler_threads": 2
+  }
+}

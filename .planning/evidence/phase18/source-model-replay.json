@@ -1,0 +1,155 @@
+{
+  "replayed_at": "2026-11-07T04:33:20.471677+00:00",
+  "source_head": "d08a82579accbbf9fc38820ee1ba39917d225f9f",
+  "original_audit_at": "2026-11-07T04:05:08.926030+00:00",
+  "original_audit_sha256": "f53257c3a75dc363967f4959114af12effe318a8631e9951f71e901babbfc2c5",
+  "replay_only_not_new_prospective_forecasts": true,
+  "live_ledger_records_written": 0,
+  "orders_written": 0,
+  "results": [
+    {
+      "market_id": "6739563",
+      "event_id": "1323373",
+      "token_id": "72471266580450939084407891651651993427613884892723382709230274102813084566170",
+      "original_evidence_cutoff": "2026-11-07T04:05:08.894591+00:00",
+      "status": "research_estimate",
+      "probability": 5.424892833796414e-71,
+      "model_version": "phase18-binance-daily-low-logdiffusion-v1",
+      "model_sha256": "e30ea55b0d9220e45339b298bd62f6292ab1a69747d70ec8e05af31631475cc1",
+      "dataset_sha256": "6c445f26c0ba6039abee5824291f9d4493c33d3b07ee685553cd0304e159f2a0",
+      "uncertainty": {
+        "lower_probability": 0.0,
+        "upper_probability": 1.0,
+        "type": "uncalibrated_model_assumptions_not_a_coverage_interval",
+        "missing": [
+          "independent_event_calibration",
+          "jumps",
+          "volatility_regime_change",
+          "discrete_source_validation"
+        ]
+      },
+      "reasons": [],
+      "exact_numeric_replay": true
+    },
+    {
+      "market_id": "6739563",
+      "event_id": "1323373",
+      "token_id": "18918462766438929389996599229747366285962689134969664197723592763582010709133",
+      "original_evidence_cutoff": "2026-11-07T04:05:08.899981+00:00",
+      "status": "research_estimate",
+      "probability": 1.0,
+      "model_version": "phase18-binance-daily-low-logdiffusion-v1",
+      "model_sha256": "e30ea55b0d9220e45339b298bd62f6292ab1a69747d70ec8e05af31631475cc1",
+      "dataset_sha256": "6c445f26c0ba6039abee5824291f9d4493c33d3b07ee685553cd0304e159f2a0",
+      "uncertainty": {
+        "lower_probability": 0.0,
+        "upper_probability": 1.0,
+        "type": "uncalibrated_model_assumptions_not_a_coverage_interval",
+        "missing": [
+          "independent_event_calibration",
+          "jumps",
+          "volatility_regime_change",
+          "discrete_source_validation"
+        ]
+      },
+      "reasons": [],
+      "exact_numeric_replay": true
+    },
+    {
+      "market_id": "6739561",
+      "event_id": "1323373",
+      "token_id": "47990276708526137782859106452735790343019902128683866558120305222967256277992",
+      "original_evidence_cutoff": "2026-11-07T04:05:08.905179+00:00",
+      "status": "research_estimate",
+      "probability": 9.102828868304948e-18,
+      "model_version": "phase18-binance-daily-low-logdiffusion-v1",
+      "model_sha256": "e30ea55b0d9220e45339b298bd62f6292ab1a69747d70ec8e05af31631475cc1",
+      "dataset_sha256": "6c445f26c0ba6039abee5824291f9d4493c33d3b07ee685553cd0304e159f2a0",
+      "uncertainty": {
+        "lower_probability": 0.0,
+        "upper_probability": 1.0,
+        "type": "uncalibrated_model_assumptions_not_a_coverage_interval",
+        "missing": [
+          "independent_event_calibration",
+          "jumps",
+          "volatility_regime_change",
+          "discrete_source_validation"
+        ]
+      },
+      "reasons": [],
+      "exact_numeric_replay": true
+    },
+    {
+      "market_id": "6739561",
+      "event_id": "1323373",
+      "token_id": "111065046196763724078041364861198498854399878600964033272969181090337610911402",
+      "original_evidence_cutoff": "2026-11-07T04:05:08.910338+00:00",
+      "status": "research_estimate",
+      "probability": 1.0,
+      "model_version": "phase18-binance-daily-low-logdiffusion-v1",
+      "model_sha256": "e30ea55b0d9220e45339b298bd62f6292ab1a69747d70ec8e05af31631475cc1",
+      "dataset_sha256": "6c445f26c0ba6039abee5824291f9d4493c33d3b07ee685553cd0304e159f2a0",
+      "uncertainty": {
+        "lower_probability": 0.0,
+        "upper_probability": 1.0,
+        "type": "uncalibrated_model_assumptions_not_a_coverage_interval",
+        "missing": [
+          "independent_event_calibration",
+          "jumps",
+          "volatility_regime_change",
+          "discrete_source_validation"
+        ]
+      },
+      "reasons": [],
+      "exact_numeric_replay": true
+    },
+    {
+      "market_id": "6739562",
+      "event_id": "1323373",
+      "token_id": "46866518070797016187440870373494200613664416879248418439384859926070680612859",
+      "original_evidence_cutoff": "2026-11-07T04:05:08.915849+00:00",
+      "status": "research_estimate",
+      "probability": 1.3380287765490222e-39,
+      "model_version": "phase18-binance-daily-low-logdiffusion-v1",
+      "model_sha256": "e30ea55b0d9220e45339b298bd62f6292ab1a69747d70ec8e05af31631475cc1",
+      "dataset_sha256": "6c445f26c0ba6039abee5824291f9d4493c33d3b07ee685553cd0304e159f2a0",
+      "uncertainty": {
+        "lower_probability": 0.0,
+        "upper_probability": 1.0,
+        "type": "uncalibrated_model_assumptions_not_a_coverage_interval",
+        "missing": [
+          "independent_event_calibration",
+          "jumps",
+          "volatility_regime_change",
+          "discrete_source_validation"
+        ]
+      },
+      "reasons": [],
+      "exact_numeric_replay": true
+    },
+    {
+      "market_id": "6739562",
+      "event_id": "1323373",
+      "token_id": "44484132617748768743088290899909868086534600712330926842546895746238929963890",
+      "original_evidence_cutoff": "2026-11-07T04:05:08.920959+00:00",
+      "status": "research_estimate",
+      "probability": 1.0,
+      "model_version": "phase18-binance-daily-low-logdiffusion-v1",
+      "model_sha256": "e30ea55b0d9220e45339b298bd62f6292ab1a69747d70ec8e05af31631475cc1",
+      "dataset_sha256": "6c445f26c0ba6039abee5824291f9d4493c33d3b07ee685553cd0304e159f2a0",
+      "uncertainty": {
+        "lower_probability": 0.0,
+        "upper_probability": 1.0,
+        "type": "uncalibrated_model_assumptions_not_a_coverage_interval",
+        "missing": [
+          "independent_event_calibration",
+          "jumps",
+          "volatility_regime_change",
+          "discrete_source_validation"
+        ]
+      },
+      "reasons": [],
+      "exact_numeric_replay": true
+    }
+  ]
+}

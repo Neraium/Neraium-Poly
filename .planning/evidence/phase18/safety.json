@@ -1,0 +1,72 @@
+{
+  "observed_at": "2026-11-07T04:56:44.157474+00:00",
+  "services": {
+    "neraium-poly-paper.service": {
+      "MainPID": "3247137",
+      "NRestarts": "0",
+      "ExecStart": "{ path=/home/ubuntu/Neraium-Poly/.venv/bin/neraium-poly ; argv[]=/home/ubuntu/Neraium-Poly/.venv/bin/neraium-poly paper-live --config /home/ubuntu/Neraium-Poly/config/paper-live.example.json ; ignore_errors=no ; start_time=[Sat 2026-11-07 04:23:10 UTC] ; stop_time=[n/a] ; pid=3247137 ; code=(null) ; status=0/0 }",
+      "MemoryCurrent": "751050752",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "1073741824",
+      "ActiveState": "active",
+      "SubState": "running",
+      "execution_environment": {
+        "PAPER_TRADING": "true",
+        "LIVE_TRADING_ENABLED": "false"
+      }
+    },
+    "neraium-poly-experimental.service": {
+      "MainPID": "3249072",
+      "NRestarts": "0",
+      "ExecStart": "{ path=/home/ubuntu/Neraium-Poly/.venv/bin/neraium-poly ; argv[]=/home/ubuntu/Neraium-Poly/.venv/bin/neraium-poly experimental-paper --config /home/ubuntu/Neraium-Poly/config/experimental-paper.example.json ; ignore_errors=no ; start_time=[Sat 2026-11-07 04:44:06 UTC] ; stop_time=[n/a] ; pid=3249072 ; code=(null) ; status=0/0 }",
+      "MemoryCurrent": "327806976",
+      "CPUQuotaPerSecUSec": "500ms",
+      "MemoryMax": "805306368",
+      "ActiveState": "active",
+      "SubState": "running",
+      "execution_environment": {
+        "PAPER_TRADING": "true",
+        "LIVE_TRADING_ENABLED": "false"
+      }
+    }
+  },
+  "configuration_changes": {
+    "paper-live.example.json": {
+      "archive_budget_mb": [
+        65536,
+        204800
+      ],
+      "min_free_disk_mb": [
+        8192,
+        102400
+      ],
+      "archive_reserve_disk_mb": [
+        65536,
+        102400
+      ]
+    },
+    "experimental-paper.example.json": {
+      "archive_reserve_disk_mb": [
+        65536,
+        102400
+      ],
+      "phase18_event_research_enabled": [
+        null,
+        true
+      ],
+      "archive_budget_mb": [
+        16384,
+        102400
+      ],
+      "min_free_disk_mb": [
+        8192,
+        102400
+      ]
+    }
+  },
+  "aws_resources_modified": false,
+  "original_deletion": false,
+  "stop_reset": false,
+  "new_accounts": false,
+  "safeguards": "Existing strategy registry, risk limits and certified approval unchanged; research policies have no account/order authority"
+}
