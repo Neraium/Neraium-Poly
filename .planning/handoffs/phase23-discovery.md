@@ -1,0 +1,15 @@
+# Phase 23 discovery
+
+Worktree: poly-p23-discovery-20261107; base cf612ef. Writes only ops/live.py, new phase23/discovery.py, assigned tests and evidence. No deployment/config/risk/account changes.
+
+Defect: live coverage selected global volume pages and dropped structured event taxonomy; existing DomainDiscovery was metadata-only. New coordinator hook precedes existing additive/protected forecast priorities. Actual provider tags resolve to actual IDs; returned event tags classify markets, never the requested category or ambiguous question keywords. Domain/parent round robin balances bounded per-query/per-event candidate quotas; causal native depth/spread, exact adapter support, settlement horizon and actual metadata liquidity order candidates. Missing evidence/performance stay null. No forecasting/trading authority.
+
+Final readonly source measurement 2026-11-07T21:32Z: 1,507 candidates, 400 selected markets/800 tokens, 118 parent IDs, 11 observed categories: crypto42/economics41/entertainment41/esports41/finance33/geopolitics16/other41/politics41/sports41/technology41/weather22. Science zero rather than invented. Actual NFL moneylines selected across six parent IDs via three schedule bands; generic near-term sports requests were dominated by unsupported leagues/props. Exact next-day BTC/ETH daily-event queries empty; no probabilities invented.
+
+Bounds: 28 logical enrichment GETs (plus ordinary four base pages for this probe), rate inherited from public shared adapter, at most24MiB canonical retained source per cycle, 2,000 total candidates,120/query,32/event. Compression only applies to newly created source evidence; deterministic gzip/base64 with raw canonical and compressed hashes, bounded independent restore and immediate JSON equivalence. Source19,660,446bytes ->2,571,456base64 bytes plus taxonomy/report; old raw probe files retained locally. Budget remains fail closed; large/invalid responses do not grant market eligibility.
+
+Recommended actual collector config for coordinator review: max_markets400, max_subscription_tokens1000, max_pages6, page_size100, collection_concurrency2, request_rate8, books_per_cycle100, discovery_interval300. No risk/budget/reserve changes. Verify actual frame size against existing8MiB consumer limit after expansion; do not raise blindly. New taxonomy is available in scan.diverse_discovery; MarketSnapshot schema is unchanged, so legacy normalized-only projections still lack original structured tags.
+
+Tests: final10 targeted pass; initial60 combined targeted/connectivity/classification pass before later compression/NFL refinements; Ruff and diff whitespace pass. Full integration tests belong to coordinator. Evidence under .planning/evidence/phase23-discovery; raw compressed proof artifact remains in this worktree's ignored data/phase23-discovery/live-study-v5.json with integrity manifest. No push from worker.
+
+Official API reference: https://docs.polymarket.com/market-data/discover-markets. Actual public endpoint responses verified tags, event filtering and source identities; request tags do not imply forecast support or independence.
