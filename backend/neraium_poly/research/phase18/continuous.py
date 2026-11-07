@@ -13,6 +13,7 @@ from pydantic import Field
 
 from neraium_poly.contracts import MarketSnapshot, OrderBookSnapshot, Record
 from neraium_poly.data import assess_book
+from neraium_poly.experimental.account import PUBLIC_BOOK_SOURCES
 from neraium_poly.research.phase12.contracts import SettlementProofReference
 from neraium_poly.research.phase14.contracts import DomainContract, DomainForecast
 from neraium_poly.research.phase14.relationships import digest
@@ -25,6 +26,11 @@ from neraium_poly.research.phase18.sources import (
     collect_resolution_evidence,
     completed_minutes,
 )
+
+# One reviewed research-consumer repair only. Probability/risk/admission modules must
+# remain byte-identical to d08a825; other policy versions still fail closed.
+LEGACY_CONSUMER_SHA256 = "82fee06bc8085b9af7ba9fe119377b4e040216906ab1a396c65b58b526746ce5"
+LEGACY_DOMAIN_IMPLEMENTATION_SHA256 = "05088dc7cbcd67321b2cc8a7a29d59bf2fab7a3d9826d28506a0d6cdef3c5fea"
 
 
 class EventProbabilityStudy(Record):
@@ -89,8 +95,27 @@ class IndependentEventResearch:
             if (digest(state) != row.checkpoint_sha256 or state.get("last_at") != row.available_at.isoformat()
                 or row.trading_authority or row.certification_authority):
                 raise ValueError("event research checkpoint integrity/time mismatch")
-            self._restore(state)
-            self.last_id = row.id
+            old_policy = state.get("code_sha256")
+            if old_policy == LEGACY_CONSUMER_SHA256 and old_policy != self.code_sha256:
+                unchanged = hashlib.sha256(b"".join(Path(__file__).with_name(n).read_bytes()
+                    for n in ("forecasting.py", "sources.py", "convergence.py", "capacity.py", "validation.py"))).hexdigest()
+                if unchanged != LEGACY_DOMAIN_IMPLEMENTATION_SHA256:
+                    raise ValueError("reviewed consumer transition cannot change probability or qualification implementation")
+                before = deepcopy(state)
+                state["code_sha256"] = self.code_sha256
+                self._restore(state)
+                self.last_id = row.id
+                if not self._ready():
+                    raise ValueError("reviewed consumer transition storage unavailable; no reset")
+                self._commit(before, now=_at(self.clock()), operation="policy_transition",
+                    model_result={"status": "reviewed_research_consumer_repair",
+                        "previous_policy_sha256": old_policy, "new_policy_sha256": self.code_sha256,
+                        "unchanged_domain_implementation_sha256": unchanged,
+                        "reason": "Accept existing approved public Polymarket WebSocket book provenance alongside REST",
+                        "financial_and_admission_settings_changed": False, "counters_or_history_reset": False})
+            else:
+                self._restore(state)
+                self.last_id = row.id
 
     def _restore(self, state):
         if state.get("version") != "phase18-independent-event-v1" or state.get("code_sha256") != self.code_sha256:
@@ -161,7 +186,7 @@ class IndependentEventResearch:
                 book = books.get(market.token_id)
                 if (book is None or book.get("market_id") != market.market_id
                     or book.get("exchange", "polymarket") != market.exchange
-                    or book.get("source") != "https://clob.polymarket.com"
+                    or book.get("source") not in PUBLIC_BOOK_SOURCES
                     or not assess_book(OrderBookSnapshot.model_validate(book), now,
                     max_spread=.05, expected_token=market.token_id).healthy):
                     reasons["current_event_executable_book_unavailable"]+=1;continue

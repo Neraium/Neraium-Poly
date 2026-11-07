@@ -164,3 +164,66 @@ async def test_pending_contract_not_repeated_on_next_source_cycle(tmp_path):
         assert r.state['forecasts']==1 and len(r.state['pending'])==1
         assert r.state['rejections']['existing_pending_event_contract_forecast']==1
     finally:store.close()
+
+
+async def test_official_websocket_books_can_support_research_without_order_authority(tmp_path):
+    store=EventStore(tmp_path/'controlled.sqlite');clock=Clock();raw=frame(clock)
+    raw['books'][0]['source']='wss://ws-subscriptions-clob.polymarket.com/ws/market'
+    try:
+        r=IndependentEventResearch(store,clock=clock,collector=collect)
+        assert await r.step(raw) and r.state['forecasts']==1
+        assert not r.summary()['trading_authority']
+        row=store.latest('EventProbabilityStudy',1)[0]
+        assert row['forecast']['contemporaneous_market']['book']['source']==raw['books'][0]['source']
+        assert all(v['qualified']==0 and v['orders']==0 for v in r.state['approaches'].values())
+    finally:store.close()
+
+
+def legacy_row(state,clock):
+    from neraium_poly.research.phase14.relationships import digest
+    from neraium_poly.research.phase16.checkpoints import pack_checkpoint
+    from neraium_poly.research.phase18.continuous import LEGACY_CONSUMER_SHA256, EventProbabilityStudy
+    legacy=deepcopy(state);legacy['code_sha256']=LEGACY_CONSUMER_SHA256
+    return EventProbabilityStudy(id='CONTROLLED legacy policy study',timestamp=clock(),available_at=clock(),
+        source='CONTROLLED checkpoint fixture',checkpoint=pack_checkpoint(legacy),checkpoint_sha256=digest(legacy))
+
+
+async def test_reviewed_policy_transition_preserves_counters_pending_and_original_row(tmp_path):
+    seed=EventStore(tmp_path/'seed.sqlite');store=EventStore(tmp_path/'controlled.sqlite');clock=Clock()
+    try:
+        source=IndependentEventResearch(seed,clock=clock,collector=collect);await source.step(frame(clock))
+        old=legacy_row(source.state,clock);store.append(old);clock.now+=timedelta(seconds=1)
+        r=IndependentEventResearch(store,clock=clock)
+        assert r.state['pending']==source.state['pending'] and r.state['forecasts']==1
+        assert r.state['scans']==source.state['scans'] and r.state['approaches']==source.state['approaches']
+        assert store.count()==2 and store.latest('EventProbabilityStudy',1)[0]['operation']=='policy_transition'
+        assert store.latest('EventProbabilityStudy',2)[1]==old.model_dump(mode='json')
+        recovered=IndependentEventResearch(store,clock=clock);assert recovered.state==r.state and store.count()==2
+    finally:seed.close();store.close()
+
+
+async def test_policy_transition_refuses_storage_or_unreviewed_model_change(tmp_path,monkeypatch):
+    import neraium_poly.research.phase18.continuous as module
+    store=EventStore(tmp_path/'controlled.sqlite');clock=Clock()
+    try:
+        state=IndependentEventResearch(store,clock=clock).state;state['last_at']=clock().isoformat()
+        store.append(legacy_row(state,clock));clock.now+=timedelta(seconds=1)
+        with pytest.raises(ValueError,match='storage unavailable'):IndependentEventResearch(store,clock=clock,can_write=lambda:False)
+        assert store.count()==1
+        monkeypatch.setattr(module,'LEGACY_DOMAIN_IMPLEMENTATION_SHA256','0'*64)
+        with pytest.raises(ValueError,match='cannot change'):IndependentEventResearch(store,clock=clock)
+        assert store.count()==1
+    finally:store.close()
+
+
+async def test_unknown_policy_never_gets_automatic_transition(tmp_path):
+    from neraium_poly.research.phase14.relationships import digest
+    from neraium_poly.research.phase16.checkpoints import pack_checkpoint
+    from neraium_poly.research.phase18.continuous import EventProbabilityStudy
+    store=EventStore(tmp_path/'controlled.sqlite');clock=Clock()
+    try:
+        state=IndependentEventResearch(store,clock=clock).state;state['last_at']=clock().isoformat();state['code_sha256']='0'*64
+        store.append(EventProbabilityStudy(id='CONTROLLED unknown',timestamp=clock(),available_at=clock(),source='CONTROLLED',checkpoint=pack_checkpoint(state),checkpoint_sha256=digest(state)))
+        with pytest.raises(ValueError,match='no silent research reset'):IndependentEventResearch(store,clock=clock)
+        assert store.count()==1
+    finally:store.close()
