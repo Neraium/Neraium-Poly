@@ -1,0 +1,160 @@
+{
+  "created_at": "2026-11-07T23:14:30.786120+00:00",
+  "isolated_study_id": "0a4f33af6c877ba47a4d61e6c8f379a1433276f02a67961e1ffab1a0e66207c9",
+  "raw_records_path": "data/phase24/authentic-records.json",
+  "raw_records_sha256": "a51df66f2c3613a16e128edee525c571cc79a1e91fb98529f710821fac034eea",
+  "prospective_forecasts": 6,
+  "independent_parent_events": 3,
+  "records": [
+    {
+      "id": "90cddfc8974b0799297124d0d2edcd2f229bd8279221b95b3112fcb1e2e6f3c9",
+      "model_id": "metar-diurnal-analog-v24.1",
+      "model_sha256": "46443a4844feab6a0740a9c6f60d8a4daad7c344c67850a5f18dd1885f7d608c",
+      "domain": "weather",
+      "event_id": "1323602",
+      "market_id": "6740825",
+      "token_id": "100429054464382097866097138746015543803508294805619807891313880055441225561267",
+      "timestamp": "2026-11-07T23:14:29.895537+00:00",
+      "source_cutoff": "2026-11-07T23:14:29.881069+00:00",
+      "probability": 0.05172413793103448,
+      "training_observations": 28,
+      "book_timestamp": "2026-11-07T23:14:26.568000Z",
+      "best_bid": {
+        "price": 0.468,
+        "size": 5.0
+      },
+      "best_ask": {
+        "price": 0.51,
+        "size": 16.8
+      },
+      "unconditional_contract_probability": false,
+      "calibration_status": "unvalidated_research"
+    },
+    {
+      "id": "b1fcf408fd3dc52571378df1a8c1f928cc67b4035c9176053455b89f9d9383fa",
+      "model_id": "metar-recent-climatology-v24.1",
+      "model_sha256": "7a696e590e023c5cea7111d3bc172adaa982eaf3792a91167f905bfdb59d91ff",
+      "domain": "weather",
+      "event_id": "1323602",
+      "market_id": "6740825",
+      "token_id": "100429054464382097866097138746015543803508294805619807891313880055441225561267",
+      "timestamp": "2026-11-07T23:14:29.895537+00:00",
+      "source_cutoff": "2026-11-07T23:14:29.881069+00:00",
+      "probability": 0.08620689655172414,
+      "training_observations": 28,
+      "book_timestamp": "2026-11-07T23:14:26.568000Z",
+      "best_bid": {
+        "price": 0.468,
+        "size": 5.0
+      },
+      "best_ask": {
+        "price": 0.51,
+        "size": 16.8
+      },
+      "unconditional_contract_probability": false,
+      "calibration_status": "unvalidated_research"
+    },
+    {
+      "id": "610e629731085f0cd26653ac75947478a42ca54ac9786a69ef12b103a16256b0",
+      "model_id": "metar-diurnal-analog-v24.1",
+      "model_sha256": "46443a4844feab6a0740a9c6f60d8a4daad7c344c67850a5f18dd1885f7d608c",
+      "domain": "weather",
+      "event_id": "1323624",
+      "market_id": "6741015",
+      "token_id": "33197949802633668731434580760318689747477113561912279626996418639915716500790",
+      "timestamp": "2026-11-07T23:14:30.392903+00:00",
+      "source_cutoff": "2026-11-07T23:14:30.381159+00:00",
+      "probability": 0.08620689655172414,
+      "training_observations": 28,
+      "book_timestamp": "2026-11-07T23:14:28.783000Z",
+      "best_bid": {
+        "price": 0.02,
+        "size": 5.14
+      },
+      "best_ask": {
+        "price": 0.062,
+        "size": 30.0
+      },
+      "unconditional_contract_probability": false,
+      "calibration_status": "unvalidated_research"
+    },
+    {
+      "id": "0a30d089e5c5e7fabbf3c112716c5faf0cec5385d583b3f6ef70b896c9933ee3",
+      "model_id": "metar-recent-climatology-v24.1",
+      "model_sha256": "7a696e590e023c5cea7111d3bc172adaa982eaf3792a91167f905bfdb59d91ff",
+      "domain": "weather",
+      "event_id": "1323624",
+      "market_id": "6741015",
+      "token_id": "33197949802633668731434580760318689747477113561912279626996418639915716500790",
+      "timestamp": "2026-11-07T23:14:30.392903+00:00",
+      "source_cutoff": "2026-11-07T23:14:30.381159+00:00",
+      "probability": 0.05172413793103448,
+      "training_observations": 28,
+      "book_timestamp": "2026-11-07T23:14:28.783000Z",
+      "best_bid": {
+        "price": 0.02,
+        "size": 5.14
+      },
+      "best_ask": {
+        "price": 0.062,
+        "size": 30.0
+      },
+      "unconditional_contract_probability": false,
+      "calibration_status": "unvalidated_research"
+    },
+    {
+      "id": "8964c2d8fc86aa5296ee4b4882cba0316b3d2022edf49be8d3c23266e8e3b9e8",
+      "model_id": "fomc-scheduled-policy-frequency-v24.1",
+      "model_sha256": "432c6cb5e5374492b8b89e1b1c51e854e2d5f559a8fb6e200dca3b99e7924bc9",
+      "domain": "economics",
+      "event_id": "770450",
+      "market_id": "3215007",
+      "token_id": "42865728742506860386768556888821101266630139112044622335353850919229585308601",
+      "timestamp": "2026-11-07T23:14:30.754839+00:00",
+      "source_cutoff": "2026-11-07T23:14:30.744956+00:00",
+      "probability": 0.640625,
+      "training_observations": 31,
+      "book_timestamp": "2026-11-07T23:14:30.466000Z",
+      "best_bid": {
+        "price": 0.21,
+        "size": 516454.79
+      },
+      "best_ask": {
+        "price": 0.22,
+        "size": 23752.38
+      },
+      "unconditional_contract_probability": false,
+      "calibration_status": "unvalidated_research"
+    },
+    {
+      "id": "0ef648823da84551d0e1577d482557c03cefa7e7f6f9919f2f2586593a16ac66",
+      "model_id": "fomc-recent-policy-shrinkage-v24.1",
+      "model_sha256": "9f507077a8aea26062d1b55fbcfffffe1f786cff69e536c6bb36417846565bbe",
+      "domain": "economics",
+      "event_id": "770450",
+      "market_id": "3215007",
+      "token_id": "42865728742506860386768556888821101266630139112044622335353850919229585308601",
+      "timestamp": "2026-11-07T23:14:30.754839+00:00",
+      "source_cutoff": "2026-11-07T23:14:30.744956+00:00",
+      "probability": 0.7135416666666666,
+      "training_observations": 31,
+      "book_timestamp": "2026-11-07T23:14:30.466000Z",
+      "best_bid": {
+        "price": 0.21,
+        "size": 516454.79
+      },
+      "best_ask": {
+        "price": 0.22,
+        "size": 23752.38
+      },
+      "unconditional_contract_probability": false,
+      "calibration_status": "unvalidated_research"
+    }
+  ],
+  "rejections": [],
+  "research_only": true,
+  "trading_authority": false,
+  "resolved_outcomes": 0,
+  "market_score_comparison": null,
+  "uncertainty": "full [0,1]; no claimed skill or executable edge"
+}
