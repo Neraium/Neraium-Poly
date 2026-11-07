@@ -1,0 +1,72 @@
+{
+  "request_started_at": "2026-11-07T05:04:15.499136+00:00",
+  "services": {
+    "collector": {
+      "service": {
+        "status": "ok",
+        "paper_trading": true,
+        "live_trading_enabled": false,
+        "mode": "live_market_paper",
+        "trading_status": "validation_blocked",
+        "last_ingestion_at": "2026-11-07T05:04:15.768764+00:00",
+        "last_ingestion_age_seconds": 0.000574,
+        "last_error": null,
+        "ledger_consistent": true,
+        "timestamp": "2026-11-07T05:04:15.769338+00:00"
+      },
+      "scan": {
+        "markets_scanned": 200,
+        "discovered_markets": 200,
+        "outcomes": 400,
+        "bounded": true,
+        "next_offset": 200,
+        "selection_order": "volume24hr_desc",
+        "errors": [],
+        "at": "2026-11-07T05:02:43.435020+00:00"
+      },
+      "cash": 500.0,
+      "equity": 500.0,
+      "orders_submitted": null,
+      "fills": null,
+      "stop": null,
+      "archive_health": "ok",
+      "usage_bytes": 10107213627,
+      "budget_bytes": 214748364800,
+      "floor_bytes": 107374182400,
+      "ws_connected": true,
+      "fresh_books": 286,
+      "subscribed_tokens": 400,
+      "last_message_at": "2026-11-07T05:04:15.768780+00:00"
+    },
+    "experimental": {
+      "service": {
+        "status": "ok",
+        "account_id": "experimental-paper",
+        "validation_status": "unvalidated",
+        "paper_trading": true,
+        "live_trading_enabled": false,
+        "last_ingestion_at": "2026-11-07T05:04:15.292960+00:00",
+        "last_ingestion_age_seconds": 0.484215,
+        "last_error": null,
+        "fee_error": null,
+        "timestamp": "2026-11-07T05:04:15.777175+00:00"
+      },
+      "scan": {},
+      "cash": 497.3024428205128,
+      "equity": 497.3024428205128,
+      "orders_submitted": 8,
+      "fills": 6,
+      "stop": false,
+      "archive_health": "ok",
+      "usage_bytes": 3705826289,
+      "budget_bytes": 107374182400,
+      "floor_bytes": 107374182400,
+      "ws_connected": null,
+      "fresh_books": null,
+      "subscribed_tokens": null,
+      "last_message_at": null
+    }
+  },
+  "response_completed_at": "2026-11-07T05:04:16.068855+00:00",
+  "free_bytes": 504551555072
+}

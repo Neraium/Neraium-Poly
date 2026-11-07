@@ -176,3 +176,7 @@ verify terminal labels, predeclare frozen calibration cohorts, build matched wea
 economic vintages, measure 24-hour storage growth, review an exact retention proposal, and improve
 verified incremental archive-index recovery. Research models remain research-only. Certified
 strategy requirements and separate owner approval remain unchanged.
+
+## Post-soak live check
+
+At 2026-11-07T05:04:16.068855+00:00, discovery reported 200 markets, 400 subscribed tokens and 286 fresh books. Both services and archives remained healthy, with unchanged account balances and order/fill counts. Free space was 469.90 GiB. This later rediscovery snapshot is distinct from the 199-market closing soak snapshot. Exact timestamps, budgets and flags are in `final-live-check.json`.
