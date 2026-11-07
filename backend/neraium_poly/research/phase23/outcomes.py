@@ -88,8 +88,8 @@ def verify_outcome(row, study, forecast, *, evidence_root, as_of):
     if not verify_collected_outcome(outcome,m,ref,Path(evidence_root)):
         raise ValueError('native settlement proof replay failed')
     start,end = map(at,(c.parameters['period_start_utc'],c.parameters['period_end_utc']))
-    if not at(forecast['timestamp']) < end <= outcome.settled_at <= record.available_at:
-        raise ValueError('completed exact window and native settlement time required')
+    if not at(forecast['timestamp']) < outcome.settled_at <= record.available_at or end > record.available_at:
+        raise ValueError('prospective native settlement and completed reference window required')
     if len(record.evidence)!=1:
         raise ValueError('one complete final reference required')
     ev=DomainEvidence.model_validate(record.evidence[0]);p=ev.payload;end_ms=int(end.timestamp()*1000)-1
@@ -102,7 +102,14 @@ def verify_outcome(row, study, forecast, *, evidence_root, as_of):
     if (not window or window[0]['open_ms']!=int(start.timestamp()*1000) or window[-1]['close_ms']!=end_ms
         or len(window)!=(end_ms+1-int(start.timestamp()*1000))//60000):
         raise ValueError('complete exact final settlement-day candles required')
-    yes=int(min(x['low'] for x in window)<=c.parameters['threshold'])
+    hits=[x for x in window if x['low']<=c.parameters['threshold']]
+    yes=int(bool(hits))
+    if yes:
+        first_hit=datetime.fromtimestamp(hits[0]['close_ms']/1000,UTC)
+        if not at(forecast['timestamp']) < first_hit <= outcome.settled_at:
+            raise ValueError('causal completed barrier hit before native settlement required')
+    elif outcome.settled_at < end:
+        raise ValueError('native no-barrier settlement requires completed exact day')
     payout=yes if c.parameters['selected_outcome']=='Yes' else 1-yes
     if outcome.payout!=payout:
         raise ValueError('native settlement and independent reference disagree')

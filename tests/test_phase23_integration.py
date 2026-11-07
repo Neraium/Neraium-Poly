@@ -117,12 +117,12 @@ def test_challenger_monitor_narrow_stale_and_safe_default():
     assert 'unavailable / stale' in stale and 'Forecasts 8' not in stale
 
 
-def outcome_records():
+def outcome_records(*,crossed=False):
     from neraium_poly.research.phase14.contracts import DomainEvidence
     from neraium_poly.research.phase23.models import forecast_models, map_challenger_contract
     from test_phase18_forecasting import CUTOFF
     from test_phase20_outcomes import records
-    old,label,now=records()
+    old,label,now=records(crossed=crossed)
     c=map_challenger_contract(old['market'],now=CUTOFF)
     result=forecast_models(c,(DomainEvidence.model_validate(old['evidence'][0]),),cutoff=CUTOFF)[0]
     b=old['book']
@@ -224,3 +224,32 @@ async def test_archive_publisher_shutdown_drains_worker_before_connection_close(
         assert completed.is_set()
     finally:
         release.set();task.cancel();await asyncio.gather(task,return_exceptions=True)
+
+
+def test_full_reference_can_verify_genuine_early_native_barrier_yes(tmp_path,monkeypatch):
+    import hashlib
+    import json
+    from datetime import datetime
+
+    import neraium_poly.research.phase23.outcomes as module
+    study,f,row,now=outcome_records(crossed=True)
+    ev=row['evidence'][0];response=ev['payload']['responses'][-1]
+    candles=json.loads(response['raw_response_utf8']);candles[-100][3]='74000'
+    raw=json.dumps(candles,separators=(',',':'))
+    response['raw_response_utf8']=raw;response['raw_response_sha256']=hashlib.sha256(raw.encode()).hexdigest()
+    ev['content_sha256']=digest(ev['payload'])
+    early=datetime.fromtimestamp(candles[-90][6]/1000,UTC)
+    row['outcome']['settled_at']=row['outcome']['timestamp']=early.isoformat()
+    monkeypatch.setattr(module,'verify_collected_outcome',lambda *a:True) # Controlled native-proof boundary.
+    score=module.verify_outcome(row,study,f,evidence_root=tmp_path,as_of=now)
+    assert score['verified'] and score['outcome']==1 and not score['trading_authority']
+
+
+def test_early_native_no_and_later_reference_hit_cannot_be_verified(tmp_path,monkeypatch):
+    import neraium_poly.research.phase23.outcomes as module
+    monkeypatch.setattr(module,'verify_collected_outcome',lambda *a:True)
+    for crossed in [False,True]:
+        study,f,row,now=outcome_records(crossed=crossed)
+        end=datetime.fromisoformat(f['event_end_time'])
+        row['outcome']['settled_at']=row['outcome']['timestamp']=(end-timedelta(minutes=10)).isoformat()
+        with pytest.raises(ValueError):module.verify_outcome(row,study,f,evidence_root=tmp_path,as_of=now)
