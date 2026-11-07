@@ -1,0 +1,176 @@
+{
+  "at": "2026-11-07T22:47:41.366923+00:00",
+  "services": {
+    "paper-live": {
+      "completed_segments": 668,
+      "compressed_pairs": 667,
+      "raw_bytes": 8397844480,
+      "gzip_bytes": 2212908865,
+      "gzip_ratio": 0.26350915050524965,
+      "duplicate_completed_raw_hash_groups": 0,
+      "retention_original_removal_authorized": false
+    },
+    "experimental-paper": {
+      "completed_segments": 903,
+      "compressed_pairs": 902,
+      "raw_bytes": 3932528640,
+      "gzip_bytes": 1438683369,
+      "gzip_ratio": 0.3658418032525759,
+      "duplicate_completed_raw_hash_groups": 0,
+      "retention_original_removal_authorized": false
+    }
+  },
+  "action": "read_only_no_deletion_no_transfer_no_AWS_mutation",
+  "official_price_list": {
+    "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonS3/current/us-east-1/index.json",
+    "published_at": "2026-11-04T17:44:45Z",
+    "matches": [
+      {
+        "sku": "EXB3YJ6YV5CRH4JN",
+        "usage": "TimedStorage-GDA-Staging",
+        "unit": "GB-Mo",
+        "usd": "0.0210000000",
+        "description": "$0.021 per GB-Month of storage used in GlacierStagingStorage"
+      }
+    ],
+    "pricing_page": "https://aws.amazon.com/s3/pricing/"
+  },
+  "official_deep_archive_prices": {
+    "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonS3GlacierDeepArchive/current/us-east-1/index.json",
+    "publication_date": "2026-09-11T12:45:07Z",
+    "rates": [
+      {
+        "usage": "Requests-GDA-Tier1",
+        "unit": "Requests",
+        "usd": "0.0000500000",
+        "description": "$0.05 per 1,000 Requests for Complete Multipart Upload for Replication Time Control (RTC) to Glacier Deep Archive in US East (N. Virginia)"
+      },
+      {
+        "usage": "Requests-GDA-Tier1",
+        "unit": "Requests",
+        "usd": "0.0000500000",
+        "description": "$0.05 per 1,000 PutObjectForRepl requests to Glacier Deep Archive in US East (N. Virginia)"
+      },
+      {
+        "usage": "Requests-GDA-Tier1",
+        "unit": "Requests",
+        "usd": "0.0000500000",
+        "description": "$0.05 per 1,000 CompleteMultipartUploadForRepl requests to Glacier Deep Archive in US East (N. Virginia)"
+      },
+      {
+        "usage": "Requests-GDA-Tier5",
+        "unit": "Requests",
+        "usd": "0.0000250000",
+        "description": "$0.025 per 1,000 Bulk requests to Glacier Deep Archive in US East (N. Virginia)"
+      },
+      {
+        "usage": "Requests-GDA-Tier1",
+        "unit": "Requests",
+        "usd": "0.0000500000",
+        "description": "$0.05 per 1,000 CopyObject requests to Glacier Deep Archive in US East (N. Virginia)"
+      },
+      {
+        "usage": "Requests-GDA-Tier3",
+        "unit": "Requests",
+        "usd": "0.0001000000",
+        "description": "$0.10 per 1,000 Standard requests to Glacier Deep Archive in US East (N. Virginia)"
+      },
+      {
+        "usage": "TimedStorage-GDA-ByteHrs",
+        "unit": "GB-Mo",
+        "usd": "0.0009900000",
+        "description": "$0.00099 per GB-Month for storage used in Glacier Deep Archive in US East (N. Virginia)"
+      },
+      {
+        "usage": "Requests-GDA-Tier1",
+        "unit": "Requests",
+        "usd": "0.0000050000",
+        "description": "$0.005 per 1,000 UploadPart requests in US East (N. Virginia)"
+      },
+      {
+        "usage": "Standard-Retrieval-Bytes",
+        "unit": "GB",
+        "usd": "0.0200000000",
+        "description": "$0.02 per GB Standard retrieval fee from Glacier Deep Archive in US East (N. Virginia)"
+      },
+      {
+        "usage": "Requests-GDA-Tier1",
+        "unit": "Requests",
+        "usd": "0.0000050000",
+        "description": "$0.005 per 1,000 InitiateMultipartUploadForRepl requests in US East (N. Virginia)"
+      },
+      {
+        "usage": "Requests-GDA-Tier1",
+        "unit": "Requests",
+        "usd": "0.0000500000",
+        "description": "$0.05 per 1,000 PostObject requests to Glacier Deep Archive in US East (N. Virginia)"
+      },
+      {
+        "usage": "Requests-GDA-Tier1",
+        "unit": "Requests",
+        "usd": "0.0000050000",
+        "description": "$0.005 per 1,000 InitiateMultipartUpload requests in US East (N. Virginia)"
+      },
+      {
+        "usage": "Requests-GDA-Tier1",
+        "unit": "Requests",
+        "usd": "0.0000500000",
+        "description": "$0.05 per 1,000 CompleteMultipartUpload requests to Glacier Deep Archive in US East (N. Virginia)"
+      },
+      {
+        "usage": "Requests-GDA-Tier1",
+        "unit": "Requests",
+        "usd": "0.0000500000",
+        "description": "$0.05 per 1,000 Requests for PUT for Replication Time Control (RTC) to Glacier Deep Archive in US East (N. Virginia)"
+      },
+      {
+        "usage": "Requests-Tier3",
+        "unit": "Requests",
+        "usd": "0.0000500000",
+        "description": "$0.05 per 1,000 Lifecycle requests to Glacier Deep Archive in US East (N. Virginia)"
+      },
+      {
+        "usage": "Requests-GDA-Tier1",
+        "unit": "Requests",
+        "usd": "0.0000050000",
+        "description": "$0.005 per 1,000 Requests for Initiate Multipart Upload for Replication Time Control (RTC) to Glacier Deep Archive in US East (N. Virginia)"
+      },
+      {
+        "usage": "Requests-GDA-Tier1",
+        "unit": "Requests",
+        "usd": "0.0000050000",
+        "description": "$0.005 per 1,000 CopyPart requests in US East (N. Virginia)"
+      },
+      {
+        "usage": "Bulk-Retrieval-Bytes",
+        "unit": "GB",
+        "usd": "0.0025000000",
+        "description": "$0.0025 per GB Bulk retrieval fee from Glacier Deep Archive in US East (N. Virginia)"
+      },
+      {
+        "usage": "EarlyDelete-GDA",
+        "unit": "GB-Mo",
+        "usd": "0.0009900000",
+        "description": "$0.00099 per GB-Month prorated for objects deleted before 180 days in Glacier Deep Archive in US East (N. Virginia)"
+      },
+      {
+        "usage": "Requests-GDA-Tier1",
+        "unit": "Requests",
+        "usd": "0.0000500000",
+        "description": "$0.05 per 1,000 PutObject requests to Glacier Deep Archive in US East (N. Virginia)"
+      },
+      {
+        "usage": "Requests-GDA-Tier1",
+        "unit": "Requests",
+        "usd": "0.0000050000",
+        "description": "$0.005 per 1,000 UploadPartForRepl requests in US East (N. Virginia)"
+      },
+      {
+        "usage": "Requests-GDA-Tier1",
+        "unit": "Requests",
+        "usd": "0.0000050000",
+        "description": "$0.005 per 1,000 Requests for Upload part for Replication Time Control (RTC) to Glacier Deep Archive in US East (N. Virginia)"
+      }
+    ]
+  }
+}

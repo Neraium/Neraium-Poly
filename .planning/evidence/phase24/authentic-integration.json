@@ -1,0 +1,247 @@
+{
+  "at": "2026-11-07T23:23:46.389930+00:00",
+  "scope": "isolated authentic integration exercise, not production forecasts",
+  "status": {
+    "status": "research_only",
+    "last_evaluation_at": "2026-11-07T23:23:45.935206+00:00",
+    "scans": 1,
+    "forecasts": 10,
+    "pending_forecasts": 10,
+    "native_parents": 5,
+    "models": {
+      "metar-diurnal-analog-v24.1": {
+        "forecasts": 2,
+        "resolved": 0,
+        "brier": null,
+        "log_loss": null
+      },
+      "metar-recent-climatology-v24.1": {
+        "forecasts": 2,
+        "resolved": 0,
+        "brier": null,
+        "log_loss": null
+      },
+      "cpi-yoy-increment-gaussian-v24.1": {
+        "forecasts": 0,
+        "resolved": 0,
+        "brier": null,
+        "log_loss": null
+      },
+      "cpi-yoy-ridge-ar1-v24.1": {
+        "forecasts": 0,
+        "resolved": 0,
+        "brier": null,
+        "log_loss": null
+      },
+      "fomc-scheduled-policy-frequency-v24.1": {
+        "forecasts": 1,
+        "resolved": 0,
+        "brier": null,
+        "log_loss": null
+      },
+      "fomc-recent-policy-shrinkage-v24.1": {
+        "forecasts": 1,
+        "resolved": 0,
+        "brier": null,
+        "log_loss": null
+      },
+      "nba-causal-elo-v24.1": {
+        "forecasts": 2,
+        "resolved": 0,
+        "brier": null,
+        "log_loss": null
+      },
+      "nba-team-frequency-v24.1": {
+        "forecasts": 2,
+        "resolved": 0,
+        "brier": null,
+        "log_loss": null
+      }
+    },
+    "latest": [
+      {
+        "id": "24b711f2bb7f75f90388421010e86061d132a72f8d48a54ef086d281c199c6be",
+        "domain": "sports",
+        "model_id": "nba-causal-elo-v24.1",
+        "event_id": "1284241",
+        "probability": 0.5307347752575184,
+        "timestamp": "2026-11-07T23:23:45.909120+00:00",
+        "target_conditioning": "official_completed_game"
+      },
+      {
+        "id": "274963660841f76dd359cb8bbb3cb320be0f50f9b4569f096d885873360962f3",
+        "domain": "sports",
+        "model_id": "nba-team-frequency-v24.1",
+        "event_id": "1284241",
+        "probability": 0.5530474040632053,
+        "timestamp": "2026-11-07T23:23:45.909120+00:00",
+        "target_conditioning": "official_completed_game"
+      }
+    ],
+    "rejections": {
+      "finance:audited_exact_financial_contract_and_reference_required": 740,
+      "economics:exact_CPI_U_firstrelease_contract_required": 598,
+      "economics:supported_FOMC_no_change_rule_required": 598,
+      "weather:unsupported_weather_question": 580,
+      "sports:causal_upcoming_NBA_market_required": 434,
+      "sports:exact_NBA_participants_and_outcome_required": 360,
+      "weather:causal_active_weather_market_required": 184,
+      "economics:causal_active_CPI_market_required": 184,
+      "economics:causal_active_FOMC_market_required": 184,
+      "finance:Pyth_futures_minute_history_roll_and_session_evidence_required": 42,
+      "finance:independent_IPO_event_probability_model_unavailable": 26,
+      "target_year_ago_CPI_index_unavailable_no_imputation": 1
+    },
+    "enrollment_id": "dbb56b57b867d0c13835380513d621a44a978c172c06901c85e54be79c8aed51",
+    "source_workers": 2,
+    "calibration_status": "unvalidated_research",
+    "certification_authority": false,
+    "trading_authority": false,
+    "selection_policy": "unseen parent/model/horizon before repeat thresholds; source liquidity and quote uncertainty select research targets, never independent model features",
+    "counter_scope": "durable domain registry only; native parents are not reviewed independent events"
+  },
+  "replays": [
+    {
+      "id": "24b711f2bb7f75f90388421010e86061d132a72f8d48a54ef086d281c199c6be",
+      "adapter": "sports",
+      "model": "nba-causal-elo-v24.1",
+      "parent": "1284241",
+      "market": "6428608",
+      "replay": {
+        "verified": true,
+        "research_only": true,
+        "trading_authority": false,
+        "forecast_id": "24b711f2bb7f75f90388421010e86061d132a72f8d48a54ef086d281c199c6be"
+      }
+    },
+    {
+      "id": "274963660841f76dd359cb8bbb3cb320be0f50f9b4569f096d885873360962f3",
+      "adapter": "sports",
+      "model": "nba-team-frequency-v24.1",
+      "parent": "1284241",
+      "market": "6428608",
+      "replay": {
+        "verified": true,
+        "research_only": true,
+        "trading_authority": false,
+        "forecast_id": "274963660841f76dd359cb8bbb3cb320be0f50f9b4569f096d885873360962f3"
+      }
+    },
+    {
+      "id": "1ef98f15243210310fac2045339a42a329ce341a93a56569c5d7d271a864deeb",
+      "adapter": "sports",
+      "model": "nba-causal-elo-v24.1",
+      "parent": "1284247",
+      "market": "6428614",
+      "replay": {
+        "verified": true,
+        "research_only": true,
+        "trading_authority": false,
+        "forecast_id": "1ef98f15243210310fac2045339a42a329ce341a93a56569c5d7d271a864deeb"
+      }
+    },
+    {
+      "id": "b3c56a57dba0f61aa2b9dc8a2de77a3d0faf7c8b72702bffb335fc96abf16a35",
+      "adapter": "sports",
+      "model": "nba-team-frequency-v24.1",
+      "parent": "1284247",
+      "market": "6428614",
+      "replay": {
+        "verified": true,
+        "research_only": true,
+        "trading_authority": false,
+        "forecast_id": "b3c56a57dba0f61aa2b9dc8a2de77a3d0faf7c8b72702bffb335fc96abf16a35"
+      }
+    },
+    {
+      "id": "ad0819c6c0605ad1352f66acb14009966d0d63a74a013124baec1f00e4be72d1",
+      "adapter": "economics",
+      "model": "fomc-scheduled-policy-frequency-v24.1",
+      "parent": "770450",
+      "market": "3215007",
+      "replay": {
+        "verified": true,
+        "forecast_id": "ad0819c6c0605ad1352f66acb14009966d0d63a74a013124baec1f00e4be72d1",
+        "research_only": true,
+        "trading_authority": false
+      }
+    },
+    {
+      "id": "719e2f5a63a67d806cef88e31eace55a25257666ac70d50a1a521defaeee1817",
+      "adapter": "economics",
+      "model": "fomc-recent-policy-shrinkage-v24.1",
+      "parent": "770450",
+      "market": "3215007",
+      "replay": {
+        "verified": true,
+        "forecast_id": "719e2f5a63a67d806cef88e31eace55a25257666ac70d50a1a521defaeee1817",
+        "research_only": true,
+        "trading_authority": false
+      }
+    },
+    {
+      "id": "c851b1cc70902702323ed1276f5f7a8c80ed3ecb09f3d3b8a487098846ac7caa",
+      "adapter": "weather",
+      "model": "metar-diurnal-analog-v24.1",
+      "parent": "1323624",
+      "market": "6741014",
+      "replay": {
+        "verified": true,
+        "forecast_id": "c851b1cc70902702323ed1276f5f7a8c80ed3ecb09f3d3b8a487098846ac7caa",
+        "research_only": true,
+        "trading_authority": false
+      }
+    },
+    {
+      "id": "a8a12c8ef401d65a01818f170b75e577c80271c5580a47147c15e5a74d30f5b8",
+      "adapter": "weather",
+      "model": "metar-recent-climatology-v24.1",
+      "parent": "1323624",
+      "market": "6741014",
+      "replay": {
+        "verified": true,
+        "forecast_id": "a8a12c8ef401d65a01818f170b75e577c80271c5580a47147c15e5a74d30f5b8",
+        "research_only": true,
+        "trading_authority": false
+      }
+    },
+    {
+      "id": "595cf818cb4b51bec70858de3abc1674b8a96691a939c973bc09044f366d54e6",
+      "adapter": "weather",
+      "model": "metar-diurnal-analog-v24.1",
+      "parent": "1323602",
+      "market": "6740825",
+      "replay": {
+        "verified": true,
+        "forecast_id": "595cf818cb4b51bec70858de3abc1674b8a96691a939c973bc09044f366d54e6",
+        "research_only": true,
+        "trading_authority": false
+      }
+    },
+    {
+      "id": "f1662a8afa4c01a45880382b97c672be0cb253fb1dc99ddf28dcd7abde5201f3",
+      "adapter": "weather",
+      "model": "metar-recent-climatology-v24.1",
+      "parent": "1323602",
+      "market": "6740825",
+      "replay": {
+        "verified": true,
+        "forecast_id": "f1662a8afa4c01a45880382b97c672be0cb253fb1dc99ddf28dcd7abde5201f3",
+        "research_only": true,
+        "trading_authority": false
+      }
+    }
+  ],
+  "outcomes": {
+    "status": "research_only",
+    "last_at": "2026-11-07T23:23:46.388013+00:00",
+    "pending_forecasts": 10,
+    "durable_verified_forecasts": 0,
+    "verified_by_model": {},
+    "checks": 0,
+    "last_reasons": {},
+    "independent_event_count": 0,
+    "certification_authority": false,
+    "trading_authority": false
+  }
+}

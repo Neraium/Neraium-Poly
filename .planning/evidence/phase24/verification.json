@@ -1,0 +1,15 @@
+{
+  "source_head": "f51ed378cf9192215b855ef0e5838e86807d385f",
+  "local_backend": {"passed": 1535, "seconds": 146.17, "runs": 1, "evidence": "data/phase24/backend-final.xml"},
+  "post_review_envelope_regressions": {"passed": 2, "evidence": "data/phase24/outcome-envelope-regression.txt", "reason": "demonstrated verified-boolean versus status envelope mismatch repaired before deployment"},
+  "dashboard_browser": {"passed": 5, "workers": 1},
+  "frontend_build": "passed", "ruff": "passed", "pip_audit": "no known vulnerabilities", "npm_audit": "zero vulnerabilities",
+  "scenario": "controlled fixture scenario passed; not genuine market performance",
+  "initial_source_ci": {"run_id": 42425303586, "source": "95a4cc15817b6056209bb290d1cec4c5e12c8772", "result": "success; superseded by demonstrated envelope fix"},
+  "final_source_ci": {"run_id": 42425436739, "result": "success"},
+  "integrated_main_ci": {"run_id": 42425595751, "result": "success", "note": "automatically triggered by main fast-forward of the identical verified source"},
+  "safety": "no strategy/risk/account/live adapter/frozen Phase18 or Phase23 source modifications; paper true/live false; no stop reset or automatic admission",
+  "parallelism": {"peak_agents_including_coordinator": 4, "isolated_writing_worktrees": 3, "independent_local_verification_job_groups": 3, "pytest_cpu_workers": 1, "frontend_browser_workers": 1, "numerical_model_workers": 1, "primary_adapter_jobs": 2, "nba_provider_inflight_requests": 2, "nba_request_starts_per_second": 1},
+  "worktrees": ["poly-p24-weather-econ-20261107", "poly-p24-finance-sports-20261107", "poly-p24-outcomes-20261107"],
+  "no_aws_mutation": true, "no_original_deletion_or_migration": true
+}
