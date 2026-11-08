@@ -1,0 +1,12 @@
+{
+  "scope": "controlled engineering tests only; authentic read-only source probe reported separately",
+  "unique_focused_cases_passed": 30,
+  "ruff": "passed",
+  "actual_probe": "authentic-current.json; 64 original forecasts at2026-11-08T04:30:25.004781Z, all outside frozen300s window; no qualifying economic edge, no order/fill",
+  "source_book_metadata_note": "current executable quote qualification is independent of forecast freshness; only fresh replayed hypotheses can display gross value disagreement",
+  "api": "build_findings(studies,frame,*,as_of,verified_forecast_ids=(),fee_quotes=None)",
+  "fee_quotes": "mapping forecast ID->{evidence:dict,verifier:callable}; never flags-only verification",
+  "output_max_bytes": 8388608,
+  "max_findings": 512,
+  "authority": false
+}
