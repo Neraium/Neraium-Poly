@@ -70,3 +70,14 @@ def test_header_parser_preserves_qualified_boolean_semantics(qualified,expected)
 def test_header_parser_rejects_original_metadata_mismatch(field,value):
     raw=json.loads(Record.model_dump_json(record()));raw[field]=value
     with pytest.raises(ValueError):_payload_metadata(json.dumps(raw),'CONTROLLED-exact',NOW.isoformat(),NOW.isoformat())
+
+
+def test_legacy_deep_json_remains_accepted_without_relaxing_syntax_or_metadata():
+    raw=json.loads(Record.model_dump_json(record()))
+    nested=0
+    for _ in range(250):nested=[nested]
+    raw['deep_original_evidence']=nested
+    payload=json.dumps(raw)
+    assert _payload_metadata(payload,'CONTROLLED-exact',NOW.isoformat(),NOW.isoformat())==-1
+    with pytest.raises(ValueError):_payload_metadata(payload[:-1]+'}', 'wrong',NOW.isoformat(),NOW.isoformat())
+    with pytest.raises(ValueError):_payload_metadata(payload[:-3], 'CONTROLLED-exact',NOW.isoformat(),NOW.isoformat())

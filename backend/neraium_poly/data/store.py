@@ -7,7 +7,7 @@ from datetime import datetime
 from pathlib import Path
 from threading import RLock
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictStr, ValidationError
 
 from neraium_poly.contracts import Record
 
@@ -23,7 +23,17 @@ class _EventMetadata(BaseModel):
 
 
 def _payload_metadata(payload, record_id, available_at, event_time):
-    value = _EventMetadata.model_validate_json(payload)
+    try:
+        value = _EventMetadata.model_validate_json(payload)
+    except ValidationError as error:
+        # Jiter's skip parser has a smaller nesting limit than the historical
+        # stdlib decoder. Rare deep legacy evidence must remain recoverable;
+        # only that explicit parser-limit case uses the former full decode.
+        if not any(item.get("type") == "json_invalid"
+                   and "recursion limit exceeded" in str(item.get("ctx", {}).get("error", ""))
+                   for item in error.errors(include_url=False)):
+            raise
+        value = _EventMetadata.model_validate(json.loads(payload))
     if (value.id != record_id
         or datetime.fromisoformat(value.timestamp) != datetime.fromisoformat(event_time)
         or datetime.fromisoformat(value.available_at) != datetime.fromisoformat(available_at)):
