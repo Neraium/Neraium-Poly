@@ -1,0 +1,16 @@
+{
+  "scope": "controlled engineering fixtures, not genuine outcomes",
+  "cases": 27,
+  "first_run": {
+    "passed": 17,
+    "failed": 10,
+    "cause": "fixture selected Canadiens while expected result assumed Maple Leafs; source behavior was correct"
+  },
+  "corrected_failed_cases": {
+    "passed": 10,
+    "deselected_previously_passing": 17
+  },
+  "ruff": "passed after removing unused imports",
+  "production_writes": false,
+  "actual_original_forecast_result": "pending; official_game_not_final"
+}

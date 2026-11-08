@@ -1,0 +1,19 @@
+{
+  "scope": "actual official source probe, not a forecast/settlement score",
+  "result": {
+    "status": "final",
+    "official_game_id": 2026020265,
+    "home_team_id": 15,
+    "away_team_id": 13,
+    "home_score": 4,
+    "away_score": 3,
+    "expected_payout": 1,
+    "scheduled_start": "2026-11-07T17:30:00+00:00",
+    "actual_start_lower": "2026-11-07T17:38:00+00:00",
+    "actual_start_upper": "2026-11-07T17:39:00+00:00",
+    "end_lower": "2026-11-07T20:12:00+00:00",
+    "end_upper": "2026-11-07T20:13:00+00:00",
+    "timing_precision": "official minute bounds, not invented exact completion timestamp",
+    "report_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020265.HTM"
+  }
+}

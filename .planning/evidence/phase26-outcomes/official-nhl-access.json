@@ -1,0 +1,23 @@
+[
+  {
+    "url": "https://api.nhle.com/stats/rest/en/game?start=0&limit=50&cayenneExp=season%3D20262027+and+gameDate%3D%272026-11-07%27",
+    "status": 200,
+    "sha256": "d9b03e7514f920dc2ce80045cf3004e7deffede33514043d8bd88a4a8f1bea00",
+    "bytes": 3015,
+    "retrieved_at": "2026-11-08T01:24:36.202436+00:00"
+  },
+  {
+    "url": "https://api.nhle.com/stats/rest/en/gameState?start=0&limit=20",
+    "status": 404,
+    "sha256": "93099a42edd45f07137e11f43cc29baec2762952a1bf2567380a45f56daf33f5",
+    "bytes": 385,
+    "retrieved_at": "2026-11-08T01:24:36.220340+00:00"
+  },
+  {
+    "url": "https://api.nhle.com/stats/rest/en/team?start=0&limit=100",
+    "status": 200,
+    "sha256": "d692a7b564603459d12462dd37de7347b6d52f8fce8d8004eb212742cc993337",
+    "bytes": 6664,
+    "retrieved_at": "2026-11-08T01:24:36.240207+00:00"
+  }
+]

@@ -1,0 +1,31 @@
+[
+  {
+    "url": "https://api.nhle.com/stats/rest/en/game?start=0&limit=2&cayenneExp=seasonId%3D20262027",
+    "status": 400,
+    "bytes": 48,
+    "sha256": "8ea66db1cf596b1ca11af39bfea8dbd0408dbaa7dbdf4b884d77bcbd539bb369",
+    "retrieved_at": "2026-11-08T01:24:05.073262+00:00",
+    "snippet": "{\"message\":\"Invalid path 'seasonId' for 'Game'\"}"
+  },
+  {
+    "url": "https://data.nba.net/prod/v2/20261107/scoreboard.json",
+    "error": "ConnectError:[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'data.nba.net'. (_ssl.c:1000)",
+    "retrieved_at": "2026-11-08T01:24:05.088668+00:00"
+  },
+  {
+    "url": "https://www.nba.com/games",
+    "status": 403,
+    "bytes": 370,
+    "sha256": "a69854d1353cbf1052704c997d7b9c97551b4c3b19ea4b66add6188eb7c514ea",
+    "retrieved_at": "2026-11-08T01:24:05.125670+00:00",
+    "snippet": "<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have perm"
+  },
+  {
+    "url": "https://www.nhl.com/scores/2026-11-07",
+    "status": 200,
+    "bytes": 81821,
+    "sha256": "19b9ec0478d2ac1cda3d6e21197db5b0b0e2e8e483ea2662f5b247f2183e6ef8",
+    "retrieved_at": "2026-11-08T01:24:05.140926+00:00",
+    "snippet": "<!DOCTYPE html><html class=\"-league-site\" lang=\"en\" dir=\"ltr\"><head><meta charset=\"utf-8\" /><meta na"
+  }
+]

@@ -1,0 +1,33 @@
+{
+  "at": "2026-11-08T01:34:50.652061+00:00",
+  "scope": "read-only real original forecast checked; isolated evidence directory, no production writes",
+  "forecast_id": "4944da6a9d9f3c61804801b151e71f64d0adac29f1515bdae21207f204265ad6",
+  "market_id": "5563968",
+  "parent": "1171316",
+  "forecast_at": "2026-11-08T00:18:34.928503+00:00",
+  "scheduled_start": "2026-11-08T01:00:00+00:00",
+  "result": {
+    "verified": false,
+    "status": "pending",
+    "reason": "official_game_not_final",
+    "official_evidence": [
+      {
+        "source_url": "https://api.nhle.com/stats/rest/en/game?start=0&limit=50&cayenneExp=season%3D20262027+and+gameDate%3D%272026-11-07%27",
+        "retrieved_at": "2026-11-08T01:34:50.630147+00:00",
+        "content_sha256": "7910212149777801f64659d2698d7cdb3a89a415055342779bf162a5ee63d855",
+        "bytes": 3015,
+        "raw_file": "7910212149777801f64659d2698d7cdb3a89a415055342779bf162a5ee63d855.json"
+      },
+      {
+        "source_url": "https://api.nhle.com/stats/rest/en/team?start=0&limit=100",
+        "retrieved_at": "2026-11-08T01:34:50.651373+00:00",
+        "content_sha256": "d692a7b564603459d12462dd37de7347b6d52f8fce8d8004eb212742cc993337",
+        "bytes": 6664,
+        "raw_file": "d692a7b564603459d12462dd37de7347b6d52f8fce8d8004eb212742cc993337.json"
+      }
+    ],
+    "research_only": true,
+    "trading_authority": false,
+    "certification_authority": false
+  }
+}
