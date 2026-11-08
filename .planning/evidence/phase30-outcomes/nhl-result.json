@@ -1,0 +1,60 @@
+{
+  "status": "official_event_verified",
+  "event_result_verified": true,
+  "verification_protocol": "official-event-target-v30",
+  "forecast_id": "6f5faa2b27a09d1bbcebe464e4643be8649ce0f078817993a97d06ea00256c1f",
+  "event_id": "1171316",
+  "market_id": "5563968",
+  "token_id": "42177884254228727906860122813537291965072833137970751542447292275873835186072",
+  "original_forecast_sha256": "1f08cac24b26d7235b70ade24f1876c2f4becedcd8cf960a35bb0c8700337eb2",
+  "rules_sha256": "cebf44fb0acfa88fc378a3f8f669632cb2281580daae03745551ed4875431bda",
+  "available_at": "2026-11-08T18:30:09.073702+00:00",
+  "official_result": {
+    "status": "final",
+    "official_game_id": 2026020273,
+    "home_team_id": 30,
+    "away_team_id": 14,
+    "home_score": 3,
+    "away_score": 4,
+    "expected_payout": 1,
+    "scheduled_start": "2026-11-08T01:00:00+00:00",
+    "actual_start_lower": "2026-11-08T01:09:00+00:00",
+    "actual_start_upper": "2026-11-08T01:10:00+00:00",
+    "end_lower": "2026-11-08T03:48:00+00:00",
+    "end_upper": "2026-11-08T03:49:00+00:00",
+    "timing_precision": "official minute bounds, not invented exact completion timestamp",
+    "report_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020273.HTM"
+  },
+  "official_evidence": [
+    {
+      "source_url": "https://api.nhle.com/stats/rest/en/game?start=0&limit=50&cayenneExp=season%3D20262027+and+gameDate%3D%272026-11-07%27",
+      "retrieved_at": "2026-11-08T18:30:08.850611+00:00",
+      "content_sha256": "cfb02009f9357b5e1b6087c9574467fd2a4848252e593c8b4f3b0b835228e663",
+      "bytes": 3015,
+      "raw_file": "cfb02009f9357b5e1b6087c9574467fd2a4848252e593c8b4f3b0b835228e663.json"
+    },
+    {
+      "source_url": "https://api.nhle.com/stats/rest/en/team?start=0&limit=100",
+      "retrieved_at": "2026-11-08T18:30:08.872215+00:00",
+      "content_sha256": "d692a7b564603459d12462dd37de7347b6d52f8fce8d8004eb212742cc993337",
+      "bytes": 6664,
+      "raw_file": "d692a7b564603459d12462dd37de7347b6d52f8fce8d8004eb212742cc993337.json"
+    },
+    {
+      "source_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020273.HTM",
+      "retrieved_at": "2026-11-08T18:30:09.064791+00:00",
+      "content_sha256": "ac49673d578677b442395cb184452b31838b74150ec71ab1312ed253b3f29763",
+      "bytes": 40352,
+      "raw_file": "ac49673d578677b442395cb184452b31838b74150ec71ab1312ed253b3f29763.html"
+    }
+  ],
+  "evidence_directory": "official-event-eed68f12fc86a35152b00ac8",
+  "event_group_id": "fe5d8873419b76e45211ab794a1821c81195ed08aa3b43e099b49ec917818c14",
+  "target": "winner_of_officially_completed_game_including_OT_SO",
+  "native_settlement_status": "not_verified_separate_existing_gate_required",
+  "research_only": true,
+  "trading_authority": false,
+  "certification_authority": false,
+  "native_payout_verified": false,
+  "market_baseline_comparable": false
+}

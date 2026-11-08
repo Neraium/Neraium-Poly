@@ -1,0 +1,42 @@
+{
+  "at": "2026-11-08T18:36:45.861964+00:00",
+  "source_commits": [
+    "93d85c8",
+    "c14da2f"
+  ],
+  "focused_and_original_native_regression_tests_passed": 45,
+  "ruff": "passed",
+  "authentic_forecasts_scored": 8,
+  "official_event_groups": 4,
+  "native_verified_settlements": 0,
+  "certified_qualifying_events": 0,
+  "market_comparison": "withheld: model target is completion-conditioned, Polymarketprice unconditional/native payout notverified",
+  "model_scores": {
+    "nhl-causal-elo-v25.1": {
+      "independent_official_game_groups": 4,
+      "brier_mean": 0.2706210128663171,
+      "log_loss_mean": 0.7352380445290575,
+      "neutral_brier": 0.25,
+      "sample_warning": "four games only; no superiority, calibration or profitable performance established"
+    },
+    "nhl-beta-frequency-v25.1": {
+      "independent_official_game_groups": 4,
+      "brier_mean": 0.28250294500464024,
+      "log_loss_mean": 0.758001627796643,
+      "neutral_brier": 0.25,
+      "sample_warning": "four games only; no superiority, calibration or profitable performance established"
+    }
+  },
+  "remaining_blocker": "official ABT report timezone convention not explicitly mapped; two forecasts withheld without guessing",
+  "native_protocol_research": {
+    "source": "https://docs.polymarket.com/resources/contracts",
+    "official_module_source": "https://github.com/Polymarket/polymarket-v2-external/blob/main/src/modules/abstract/BaseModule.sol",
+    "legacy_ctf": "0x4D97DCd97eC945f40cF65F87097ACe5EA0476045",
+    "binary_module_v2_proxy": "0x1000008dD9001B968442c1000017eaE6E0dA00Ba",
+    "v2_event": "ConditionResolved",
+    "existing_supported_event": "ConditionResolution",
+    "market_version_inference": false,
+    "limitation": "No particular forecast mapped to new module proof; new_version_q flag alone does not establish contract version. Old CTF zero-log probe does not establish permanent unverifiability."
+  },
+  "live_journal_or_accounts_modified": false
+}
