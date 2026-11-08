@@ -1,0 +1,132 @@
+[
+  {
+    "available_at": "2026-11-08T19:01:23.601363Z",
+    "cohort_id": "9f91c611a34879ed1fb4e0f755dc6cfbdf52d69ab65a2fe855b5ad11c6959fa2",
+    "forecast": {
+      "book_sha256": "4674d3866bb056b8ffe209795841ab19135561bf6cbf931c795ecc35aa591682",
+      "calibration_status": "unvalidated_research",
+      "domain": "sports",
+      "event_end_time": "2026-11-08T20:30:00+00:00",
+      "event_id": "1177623",
+      "evidence_cutoff": "2026-11-08T19:01:23.495994+00:00",
+      "feature_version": "nhl-final-results-home-away-v1",
+      "id": "cb774f7f4133721ab42ab8d88dd95a8e3914f9ca4fe6b011201ac4148326fec1",
+      "lower_probability": 0.0,
+      "market_baseline_comparable": false,
+      "market_expected_payout": 0.505,
+      "market_id": "5609560",
+      "market_probability": null,
+      "model_id": "nhl-causal-elo-v25.1",
+      "model_sha256": "d7ba48afc4f83aef0fe24d5022b3391581ffb5cf475154d4df13ee92f1bc1706",
+      "model_version": "nhl-causal-elo-v25.1",
+      "probability": 0.42012939463994214,
+      "probability_semantics": "binary_event_probability",
+      "rules_sha256": "da1e8a6d771ec8ed3132b818ce7a0f6d1702492387af243a0016d7667bd08c92",
+      "source_lineages": [
+        "ESPN:NHL:daily-scoreboards"
+      ],
+      "target_conditioning": "official_completed_game",
+      "timestamp": "2026-11-08T19:01:23.565915+00:00",
+      "token_id": "101415398625662300773903076205479904206017591538940633519853600239956927134884",
+      "upper_probability": 1.0
+    },
+    "forecast_id": "cb774f7f4133721ab42ab8d88dd95a8e3914f9ca4fe6b011201ac4148326fec1",
+    "forecast_sha256": "15aac17bef64a9d1ae0dd77884f481ed322eb6430d62c863aee1d9a4f80582c8",
+    "proof_sha256": "199cd4cae7dd782b42f16a9704d0fadd0454fbbab72f107d2968d5dafa014efd",
+    "rejection": null,
+    "replay_verified": true,
+    "review": {
+      "canonical_group_id": "cce8a27a5ce9142fc99b341e46327fbc66984d7491b21b4f0abb9a4b9526bf43",
+      "dependency_tags": [
+        "team:NHL:Golden Knights",
+        "team:NHL:Sabres"
+      ],
+      "descriptor": {
+        "domain": "sports",
+        "league": "NHL",
+        "participants": [
+          "Golden Knights",
+          "Sabres"
+        ],
+        "resolution_reference": "https://www.nhl.com/scores",
+        "source_game_id": "401892675",
+        "source_id_namespace": "ESPN:NHL:daily-scoreboards:NHL",
+        "starts_at": "2026-11-08T20:30:00+00:00"
+      },
+      "evidence_lineages": [
+        "ESPN:NHL:daily-scoreboards"
+      ]
+    },
+    "source_id": "000000000425:a64aa83b2f955b2542adbc5d228b726aa568c68988dd8940bd1e1eae34f284fc",
+    "source_kind": "ExpansionResearchStudy",
+    "source_payload_sha256": "a7dfd34b0a14bf32952f47b128b839e202d75ddf00bd019a9f479d840f3fd00b",
+    "source_rowid": 1430818,
+    "source_study_sha256": "d7be0c57b40ab2afe02dd3a27d179b7ad7a158b4f24bdc1fba5d55bc45ce5415",
+    "type": "forecast"
+  },
+  {
+    "available_at": "2026-11-08T19:01:23.601363Z",
+    "cohort_id": "9f91c611a34879ed1fb4e0f755dc6cfbdf52d69ab65a2fe855b5ad11c6959fa2",
+    "forecast": {
+      "book_sha256": "4674d3866bb056b8ffe209795841ab19135561bf6cbf931c795ecc35aa591682",
+      "calibration_status": "unvalidated_research",
+      "domain": "sports",
+      "event_end_time": "2026-11-08T20:30:00+00:00",
+      "event_id": "1177623",
+      "evidence_cutoff": "2026-11-08T19:01:23.495994+00:00",
+      "feature_version": "nhl-final-results-home-away-v1",
+      "id": "2a299949f6a6cc86d6ee808460b908847a888321f0083ba891b31c4b604e5c92",
+      "lower_probability": 0.0,
+      "market_baseline_comparable": false,
+      "market_expected_payout": 0.505,
+      "market_id": "5609560",
+      "market_probability": null,
+      "model_id": "nhl-beta-frequency-v25.1",
+      "model_sha256": "c8c477ec4f9eb72badde574dccef47dab4e88fcd147c0cfc47d5aa80787052bc",
+      "model_version": "nhl-beta-frequency-v25.1",
+      "probability": 0.39906103286384964,
+      "probability_semantics": "binary_event_probability",
+      "rules_sha256": "da1e8a6d771ec8ed3132b818ce7a0f6d1702492387af243a0016d7667bd08c92",
+      "source_lineages": [
+        "ESPN:NHL:daily-scoreboards"
+      ],
+      "target_conditioning": "official_completed_game",
+      "timestamp": "2026-11-08T19:01:23.565915+00:00",
+      "token_id": "101415398625662300773903076205479904206017591538940633519853600239956927134884",
+      "upper_probability": 1.0
+    },
+    "forecast_id": "2a299949f6a6cc86d6ee808460b908847a888321f0083ba891b31c4b604e5c92",
+    "forecast_sha256": "a7b10e7ce8bab64353f11d7a89bebc3c540820e9c423b1a808ea6ae8b3644fe7",
+    "proof_sha256": "73fb940bc897305d72e9b5610636de7fa19fc78fbc7dc5d3b3e125361dc78714",
+    "rejection": null,
+    "replay_verified": true,
+    "review": {
+      "canonical_group_id": "cce8a27a5ce9142fc99b341e46327fbc66984d7491b21b4f0abb9a4b9526bf43",
+      "dependency_tags": [
+        "team:NHL:Golden Knights",
+        "team:NHL:Sabres"
+      ],
+      "descriptor": {
+        "domain": "sports",
+        "league": "NHL",
+        "participants": [
+          "Golden Knights",
+          "Sabres"
+        ],
+        "resolution_reference": "https://www.nhl.com/scores",
+        "source_game_id": "401892675",
+        "source_id_namespace": "ESPN:NHL:daily-scoreboards:NHL",
+        "starts_at": "2026-11-08T20:30:00+00:00"
+      },
+      "evidence_lineages": [
+        "ESPN:NHL:daily-scoreboards"
+      ]
+    },
+    "source_id": "000000000425:a64aa83b2f955b2542adbc5d228b726aa568c68988dd8940bd1e1eae34f284fc",
+    "source_kind": "ExpansionResearchStudy",
+    "source_payload_sha256": "a7dfd34b0a14bf32952f47b128b839e202d75ddf00bd019a9f479d840f3fd00b",
+    "source_rowid": 1430818,
+    "source_study_sha256": "d7be0c57b40ab2afe02dd3a27d179b7ad7a158b4f24bdc1fba5d55bc45ce5415",
+    "type": "forecast"
+  }
+]

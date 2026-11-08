@@ -1,0 +1,75 @@
+{
+  "at": "2026-11-08T18:48:40.774339+00:00",
+  "source_commit": "02ddd15763b790ad8dc3df6e3f73cc3a3d738481",
+  "local_integrated_suite": {
+    "name": "pytest",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "tests": "1940",
+    "time": "159.986",
+    "timestamp": "2026-11-08T18:43:14.945346+00:00",
+    "hostname": "ip-172-31-67-49"
+  },
+  "post_review_focused_cases": 5,
+  "post_review_reason": "shield-and-drain cancelled scoring reads before owner SQLite shutdown; thin retained scoring fields and mark cached snapshots before replay",
+  "ruff": "passed",
+  "frontend_build": "passed",
+  "browser_tests_passed": 5,
+  "pip_audit": "no known vulnerabilities",
+  "npm_audit": "zero vulnerabilities",
+  "ci_run_id": 42511702457,
+  "ci_status": "running",
+  "parallelism": {
+    "peak_agents_including_coordinator": 4,
+    "isolated_writing_agents": 3,
+    "backend_workers": 1,
+    "browser_workers": 1,
+    "blas_threads_per_process": 1
+  },
+  "native_payout_and_certification": "unchanged and blocked; official completed EVENT labels separate",
+  "quotas_gib": {
+    "collector": 150,
+    "experimental": 150,
+    "free_floor": 100
+  },
+  "prior_phase29_ooms": {
+    "experimental": "2026-11-08T17:21:24Z",
+    "collector": "2026-11-08T17:33:12Z"
+  },
+  "safety": "no actual account/stop/risk/resource-limit/retention changes; real-money trading disabled",
+  "initial_ci": {
+    "id": 42511702457,
+    "conclusion": "success"
+  },
+  "corrective_ci": {
+    "run_id": 42512533511,
+    "conclusion": "failure",
+    "reason": "import order in new versioned weather discovery; fixed without changing logic; full Ruff then passed"
+  },
+  "correction_reason": "Live Phase25 existing checkpoint correctly rejected changed fingerprint from discovery dependency; isolated discovery namespace restored byte-identical forecasting dependency, with actual read-only checkpoint recovery and20 focused tests. No history reset.",
+  "corrective_focused_cases": 20,
+  "final_ci": {
+    "run_id": 42512990610,
+    "conclusion": "success",
+    "backend": "success",
+    "dashboard": "success",
+    "testsuite": {
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "tests": "1942",
+      "time": "62.578",
+      "timestamp": "2026-11-08T19:02:49.345645+00:00",
+      "hostname": "runnervm7aw5e"
+    },
+    "url": "https://github.com/Neraium/Neraium-Poly/actions/runs/42512990610"
+  },
+  "final_source_commit": "49e340a7dabdafd50e0786bbcf048c93c8d4eb5b",
+  "remaining_operational_limitations": [
+    "No long-run OOM elimination claim from bounded observation",
+    "One live terminal fetch timed out; other operations calls measured0.6-2.1seconds; intermittent latency unresolved",
+    "Fresh native weather books still block canonical weather forecasts; direct source probes are not canonical ledger entries"
+  ]
+}

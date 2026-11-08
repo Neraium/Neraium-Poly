@@ -1,0 +1,6 @@
+# Phase30
+Status delivered; no demonstrated tradingadvantage. Checkout/home/ubuntu/Neraium-Poly main source49e340a7dabdafd50e0786bbcf048c93c8d4eb5b pushed; finalCI42512990610 passed1942tests. Finalevidence-onlycommitfollows. Threeisolatedwritingagents+coordinator peak4. Readhandoffphase30.md beforecontinuing; originalunrelateduntrackedevidencepreserved.
+
+Live8uniqueofficialeventlabels4distinctNHLgames; no nativepayout/certifiedlabels. NeutralBrier.25 betterdescriptivelythanElo.270621/beta.282503, n4 insufficient, marketcomparisonNULL. Existingforecastcheckpointrestoredwithoutreset afterdiscoveryfingerprintregression; versionednewWeatherUniverse ownsdiscoverypolicy, phase25/discovery byteidenticalbaseline. Registry162,2newNHLcanonicalforecasts; weatherlivebookfreshnessstillblocked despite64realdiscoveredtokens6parents. No newpaper/shadowfills orrisk/stop/accountchanges.
+
+Archiveexactpayload/lowallocationfix validated; postPhase29OOMs17:21/17:33 real, no newOOMboundedpostdeploy butlongrununproven.150/150GiB+100floor; accounts496.11522/500 preserved. CIinitialpassed, correcteddiscoverylivefailureandimportordering thenfinal1942green; focused20recoveryregressions preservedguard. Nextnativeprotocolfinality, calibrationcohorts, timinglatency/longrunmemory; noAWS/deletion/modelpromotion. Evidenceoperational-results+verificationjson andhandoff.

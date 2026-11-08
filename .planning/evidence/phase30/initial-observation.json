@@ -1,0 +1,164 @@
+{
+  "readiness_attempts": [
+    {
+      "at": "2026-11-08T18:47:06.765765+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:47:11.773626+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:47:16.782296+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:47:21.789304+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:47:26.797186+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:47:31.805052+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:47:36.812768+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:47:41.820514+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:47:46.828330+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:47:51.836776+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:47:56.844524+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:48:01.852301+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:48:06.860136+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:48:11.867931+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:48:16.875816+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:48:21.883292+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:48:26.891085+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:48:31.898895+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:48:36.906709+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:48:41.914405+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:48:46.922098+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:48:51.929778+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:48:56.937465+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:49:01.945074+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:49:06.952775+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:49:11.960474+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:49:16.968275+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:49:21.975989+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:49:26.983907+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:49:31.992154+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:49:37.000414+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:49:42.007985+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:49:47.016709+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:49:52.025330+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:49:57.034023+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:50:02.041847+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:50:07.151912+00:00",
+      "status": "initial_recovery_pending"
+    },
+    {
+      "at": "2026-11-08T18:50:16.840070+00:00",
+      "status": "initial_recovery_pending"
+    },
+    {
+      "at": "2026-11-08T18:50:22.183083+00:00",
+      "status": "initial_recovery_pending"
+    }
+  ],
+  "observed_seconds": 61.460837,
+  "samples": 3,
+  "scope": "one bounded post-change observation, not proof of indefinite operation",
+  "services": "MainPID=3586731\nNRestarts=0\nCPUQuotaPerSecUSec=1s\nMemoryMax=1073741824\nActiveState=active\n\nMainPID=3586732\nNRestarts=0\nCPUQuotaPerSecUSec=1s\nMemoryMax=2147483648\nActiveState=active\n"
+}

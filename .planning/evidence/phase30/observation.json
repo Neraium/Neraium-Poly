@@ -1,0 +1,108 @@
+{
+  "readiness_attempts": [
+    {
+      "at": "2026-11-08T18:57:34.996588+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:57:40.005158+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:57:45.013591+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:57:50.021700+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:57:55.029739+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:58:00.037932+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:58:05.046732+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:58:10.054580+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:58:15.062690+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:58:20.071041+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:58:25.079350+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:58:30.087318+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:58:35.095375+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:58:40.103796+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:58:45.111851+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:58:50.119689+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:58:55.128087+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:59:00.136654+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:59:05.144593+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:59:10.152398+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:59:15.161028+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:59:20.165753+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:59:25.174114+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:59:30.183833+00:00",
+      "status": "ConnectError"
+    },
+    {
+      "at": "2026-11-08T18:59:35.191592+00:00",
+      "status": "ConnectError"
+    }
+  ],
+  "observed_seconds": 77.402123,
+  "samples": 3,
+  "scope": "one bounded post-change observation, not proof of indefinite operation",
+  "services": "MainPID=3586731\nNRestarts=0\nCPUQuotaPerSecUSec=1s\nMemoryMax=1073741824\nActiveState=active\n\nMainPID=3590525\nNRestarts=0\nCPUQuotaPerSecUSec=1s\nMemoryMax=2147483648\nActiveState=active\n"
+}
