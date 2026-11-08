@@ -105,3 +105,15 @@ async def test_prepare_subscribes_supported_nonfinancial_contract_without_relaxi
         assert [v.token_id for v in w.updated]==[m.token_id]
         assert c.status()['selection']['selected_domains']=={'sports':1}
     finally:store.close()
+
+
+def test_alignment_does_not_claim_authenticity_for_future_frame_or_duplicate_depth():
+    m=market();b=book(m);f=forecast(m);base=frame_for([m],[b])
+    with pytest.raises(ValueError,match='causal_alignment'):
+        classify_alignment([f],base.model_copy(update={'available_at':NOW+timedelta(seconds=1)}),as_of=NOW)
+    duplicates=b.model_copy(update={'asks':b.asks+b.asks})
+    report=classify_alignment([f],frame_for([m],[duplicates]),as_of=NOW)
+    assert not report['findings'][0]['current_executable_book_matched']
+    assert 'unique_native_depth_levels_required' in report['findings'][0]['reasons']
+    report=classify_alignment([f],frame_for([m.model_copy(update={'source':'fixture://unproven'})],[b]),as_of=NOW)
+    assert report['findings'][0]['category']=='IDENTITY_DEFECT'

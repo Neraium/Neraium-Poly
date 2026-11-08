@@ -64,7 +64,10 @@ def classify_alignment(forecasts, frame, *, as_of, subscribed_tokens=(), supplem
     """
     if len(forecasts)>128:raise ValueError('bounded_forecast_alignment_required')
     now=at(as_of);raw=frame.model_dump() if hasattr(frame,'model_dump') else frame
-    f=SharedMarketFrame.model_validate(raw);markets={m.token_id:m for m in f.markets};books={b.token_id:b for b in f.books}
+    f=SharedMarketFrame.model_validate(raw)
+    if not f.timestamp<=f.available_at<=now or not 0<=(now-f.available_at).total_seconds()<=15:
+        raise ValueError('current_causal_alignment_frame_required')
+    markets={m.token_id:m for m in f.markets};books={b.token_id:b for b in f.books}
     if len(markets)!=len(f.markets) or len(books)!=len(f.books):raise ValueError('unique_native_alignment_tokens_required')
     subscribed=set(subscribed_tokens);details=(supplemental_status or {}).get('token_diagnostics',{});rows=[];counts=Counter();categories=Counter()
     for forecast in forecasts:
@@ -77,8 +80,8 @@ def classify_alignment(forecasts, frame, *, as_of, subscribed_tokens=(), supplem
         expected_rules=forecast.get('rules_sha256',forecast.get('resolution_rules_sha256'))
         original=forecast.get('market',{});reference=forecast.get('resolution_source',original.get('resolution_source'))
         exact=bool(m and m.market_id==forecast.get('market_id') and m.event_id==forecast.get('event_id')
-            and m.token_id==token and m.exchange=='polymarket' and m.timestamp<=m.available_at<=now
-            and (not expected_rules or hashlib.sha256(m.resolution_rules.encode()).hexdigest()==expected_rules)
+            and m.token_id==token and m.exchange=='polymarket' and m.source=='https://gamma-api.polymarket.com' and m.timestamp<=m.available_at<=now
+            and isinstance(expected_rules,str) and hashlib.sha256(m.resolution_rules.encode()).hexdigest()==expected_rules
             and (reference is None or m.resolution_source==reference)
             and all(original.get(k) is None or original[k]==getattr(m,k) for k in ('outcome','question'))
             and (original.get('end_time') is None or at(original['end_time'])==m.end_time))
@@ -97,6 +100,8 @@ def classify_alignment(forecasts, frame, *, as_of, subscribed_tokens=(), supplem
             bad=list(quote.reasons)
             if not 0<=(now-b.available_at).total_seconds()<=15:bad.append('book_receipt_outside_15_seconds')
             if b.timestamp>b.available_at:bad.append('native_book_clock_order_invalid')
+            if len({x.price for x in b.asks})!=len(b.asks) or len({x.price for x in b.bids})!=len(b.bids):
+                bad.append('unique_native_depth_levels_required')
             reasons.extend(bad)
             if bad:category='MARKET_DATA_QUALITY';cause='native_book_not_current_or_executable'
             elif m.status!='active' or m.end_time is not None and m.end_time<=now:category='EVENT_LIFECYCLE';cause='native_market_not_open_for_entry'
