@@ -121,3 +121,16 @@ async def test_pending_call_queue_is_explicitly_bounded():
         release.set();await running
         assert worker.status()['pending_calls']==0 and not called
     finally:release.set();await worker.close()
+
+
+async def test_close_during_startup_cannot_publish_a_new_job(monkeypatch):
+    worker=ResearchWorker();entered=asyncio.Event();release=asyncio.Event();start=worker._start;called=[]
+    async def slow_start():await start();entered.set();await release.wait()
+    monkeypatch.setattr(worker,'_start',slow_start)
+    async def forbidden():called.append(True)
+    running=asyncio.create_task(worker.run(forbidden));await entered.wait()
+    close=asyncio.create_task(worker.close());await asyncio.sleep(.01)
+    release.set()
+    with pytest.raises(RuntimeError,match='closed'):await running
+    await close
+    assert not called and worker.status()['submitted']==0 and not worker.status()['worker_alive']

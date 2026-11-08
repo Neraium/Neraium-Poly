@@ -94,6 +94,7 @@ class ResearchWorker:
             async with self._gate:
                 if self._closing or self._closed:raise RuntimeError('research worker closed')
                 await self._start()
+                if self._closing or self._closed:raise RuntimeError('research worker closed')
                 concurrent=asyncio.run_coroutine_threadsafe(self._invoke(factory,args,kwargs),self._loop)
                 self._active=True;self._submitted+=1
                 try:
