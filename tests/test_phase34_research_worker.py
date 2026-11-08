@@ -104,3 +104,20 @@ async def test_shutdown_failure_propagates_after_thread_is_joined():
     with pytest.raises(RuntimeError,match='shutdown failed'):await worker.close()
     assert worker.status()['closed'] and not worker.status()['worker_alive']
     with pytest.raises(RuntimeError,match='shutdown failed'):await worker.close()
+
+
+async def test_pending_call_queue_is_explicitly_bounded():
+    worker=ResearchWorker();entered=threading.Event();release=threading.Event();called=[]
+    async def active():entered.set();assert release.wait(3)
+    async def queued():called.append(True)
+    running=asyncio.create_task(worker.run(active));await reached(entered)
+    waiting=[asyncio.create_task(worker.run(queued)) for _ in range(4)];await asyncio.sleep(.01)
+    try:
+        assert worker.status()['pending_calls']==worker.status()['maximum_pending_calls']==5
+        with pytest.raises(RuntimeError,match='backpressure'):await worker.run(queued)
+        assert not called
+        for task in waiting:task.cancel()
+        await asyncio.gather(*waiting,return_exceptions=True)
+        release.set();await running
+        assert worker.status()['pending_calls']==0 and not called
+    finally:release.set();await worker.close()

@@ -42,6 +42,8 @@ class ResearchWorker:
         self._closing=False
         self._closed=False
         self._active=False
+        self._pending=0
+        self._max_pending=5
         self._submitted=0
         self._completed=0
 
@@ -85,15 +87,21 @@ class ResearchWorker:
         if self._thread is not None and threading.get_ident()==self._thread.ident:
             raise RuntimeError('research worker cannot submit to itself')
         if not callable(factory):raise TypeError('research callable factory required')
-        async with self._gate:
-            if self._closing or self._closed:raise RuntimeError('research worker closed')
-            await self._start()
-            concurrent=asyncio.run_coroutine_threadsafe(self._invoke(factory,args,kwargs),self._loop)
-            self._active=True;self._submitted+=1
-            try:
-                return await _drain(asyncio.wrap_future(concurrent))
-            finally:
-                self._active=False;self._completed+=1
+        if self._pending >= self._max_pending:
+            raise RuntimeError('research worker pending-call backpressure')
+        self._pending+=1
+        try:
+            async with self._gate:
+                if self._closing or self._closed:raise RuntimeError('research worker closed')
+                await self._start()
+                concurrent=asyncio.run_coroutine_threadsafe(self._invoke(factory,args,kwargs),self._loop)
+                self._active=True;self._submitted+=1
+                try:
+                    return await _drain(asyncio.wrap_future(concurrent))
+                finally:
+                    self._active=False;self._completed+=1
+        finally:
+            self._pending-=1
 
     async def close(self):
         if self._thread is not None and threading.get_ident()==self._thread.ident:
@@ -113,7 +121,8 @@ class ResearchWorker:
             if self._shutdown_error is not None:raise RuntimeError('research worker shutdown failed') from self._shutdown_error
 
     def status(self):
-        return {'active_jobs':int(self._active),'maximum_submitted_jobs':1,'submitted':self._submitted,
+        return {'active_jobs':int(self._active),'maximum_submitted_jobs':1,'pending_calls':self._pending,
+            'maximum_pending_calls':self._max_pending,'submitted':self._submitted,
             'completed':self._completed,'closing':self._closing,'closed':self._closed,
             'worker_alive':self._thread.is_alive() if self._thread else False,
             'research_only':True,'trading_authority':False,'certification_authority':False}
