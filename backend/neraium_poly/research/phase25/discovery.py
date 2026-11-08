@@ -1,7 +1,6 @@
 """Bounded supplemental public discovery; no synthetic books or subscriptions."""
 import asyncio
 from datetime import timedelta
-from pathlib import Path
 
 from pydantic import Field
 
@@ -13,7 +12,6 @@ from neraium_poly.research.phase25.continuous import modules
 
 
 class ExpansionDiscoveryStudy(Record):
-    discovery_policy_sha256:str|None=None
     markets:list[dict]=Field(default_factory=list)
     rejections:dict=Field(default_factory=dict)
     research_only:bool=True
@@ -23,7 +21,6 @@ class ExpansionDiscoveryStudy(Record):
 class Universe:
     def __init__(self,store,*,clock,can_write):
         self.store,self.clock,self.can_write=store,clock,can_write;self.last=None;self.cached=[];self.rejections={};self.added=[]
-        self.policy_sha=digest([Path(__file__).read_text(),(Path(__file__).parent.parent/'phase30'/'coverage.py').read_text()])
     async def frame(self,frame):
         now=at(self.clock());raw=frame.model_dump(mode='json') if hasattr(frame,'model_dump') else dict(frame)
         if raw.get('producer_health',{}).get('status')!='ok':return frame
@@ -32,13 +29,9 @@ class Universe:
             values=[];rejected={};gate=asyncio.Semaphore(2)
             async def one(name,mod):
                 async with gate:
-                    discover=getattr(mod,'discover',None)
-                    if discover is None and name=='weather':
-                        from neraium_poly.research.phase30.coverage import discover_weather
-                        discover=discover_weather
-                    if discover is None:return []
+                    if not hasattr(mod,'discover'):return []
                     try:
-                        result=await discover(clock=self.clock)
+                        result=await mod.discover(clock=self.clock)
                         if not isinstance(result,(tuple,list)) or len(result)>100:raise ValueError('bounded actual discovery required')
                         return list(result)
                     except Exception as error: # noqa: BLE001 - missing sources do not create markets
@@ -52,7 +45,7 @@ class Universe:
                 if m.token_id in accepted and digest(accepted[m.token_id])!=digest(m.model_dump(mode='json')):raise ValueError('supplemental token conflict')
                 accepted[m.token_id]=m.model_dump(mode='json')
             row=ExpansionDiscoveryStudy(id=digest(['expansion-discovery',finished.isoformat(),accepted,rejected]),timestamp=finished,available_at=finished,
-                source='https://gamma-api.polymarket.com',markets=list(accepted.values()),rejections=rejected,discovery_policy_sha256=self.policy_sha)
+                source='https://gamma-api.polymarket.com',markets=list(accepted.values()),rejections=rejected)
             if not self.can_write():return frame
             self.store.append(row);self.cached=list(accepted.values());self.last=finished;self.rejections=rejected
         existing={m['token_id']:m for m in raw['markets']};extras=[]
@@ -69,4 +62,4 @@ class Universe:
     def status(self):
         return {'last_source_at':self.last.isoformat() if self.last else None,'discovered_market_ids':len({m['market_id'] for m in self.cached}),
                 'added_market_ids':len({m['market_id'] for m in self.added}),'added_outcome_tokens':len(self.added),
-                'discovery_policy_sha256':self.policy_sha,'source':'public Gamma metadata; books independently acquired from public CLOB','errors':dict(self.rejections)}
+                'source':'public Gamma metadata; books independently acquired from public CLOB','errors':dict(self.rejections)}

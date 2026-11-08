@@ -125,7 +125,7 @@ class OfficialEventScoring:
         self.store,self.index,self.directory,self.clock,self.can_write=store,index,Path(directory),clock,can_write
         self.verify,self.replay=verify,replay;self.next_check=None;self.attempts={};self.report=None;self.error=None;self.replay_state='pending'
         sources=Path(__file__).parent
-        policy={'version':'official-event-research-v30','code_sha256':digest([p.read_text() for p in sorted(sources.glob('*.py'))]+[(sources.parent/'phase26'/'outcomes.py').read_text()]),
+        policy={'version':'official-event-research-v30','code_sha256':digest([(sources/n).read_text() for n in ('scoring.py','outcomes.py')]+[(sources.parent/'phase26'/'outcomes.py').read_text()]),
             'target':'official completed NHL game, conditional on completion; not native token payout',
             'selection':'earliest timestamp then forecastID per official game/model; all losses retained',
             'cadence_seconds':300,'checks_per_cycle':16,'current_inventory_budget':2048,

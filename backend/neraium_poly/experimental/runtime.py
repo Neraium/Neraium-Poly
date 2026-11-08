@@ -238,7 +238,7 @@ class ExperimentalRuntime:
             self.phase25_report = self.phase25_error = None
             if config.phase25_research_enabled:
                 from neraium_poly.research.phase25.continuous import ExpansionOutcomes, ExpansionResearch
-                from neraium_poly.research.phase25.discovery import Universe
+                from neraium_poly.research.phase30.coverage import WeatherUniverse as Universe
 
                 try:
                     self.phase25 = ExpansionResearch(self.events, clock=self.clock, can_write=self._budget_ok)
