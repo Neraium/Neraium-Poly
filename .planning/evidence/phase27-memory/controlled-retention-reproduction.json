@@ -1,0 +1,14 @@
+{
+  "scope": "controlled engineering reproduction, not authentic observation/forecast/trade",
+  "old": {
+    "decoded_frame_retained_while_idle": true,
+    "queue_depth": 0,
+    "processing_charge_bytes": 0
+  },
+  "new": {
+    "decoded_frame_retained_while_idle": false,
+    "queue_depth": 0,
+    "processing_charge_bytes": 0
+  },
+  "original_baseline": "9619c40"
+}

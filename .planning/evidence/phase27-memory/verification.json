@@ -1,0 +1,18 @@
+{
+  "observed_at": "2026-11-08T04:31:09.466757+00:00",
+  "tests": "..................................................................       [100%]\n66 passed in 0.88s",
+  "ruff": "All checks passed!",
+  "limits": {
+    "queue_python_payload_bytes": 8388608,
+    "websocket_max_queue": 1,
+    "websocket_max_frame_bytes": 16777216,
+    "levels_per_book": 4096,
+    "cached_levels_total": 100000
+  },
+  "gates": "No clipping; oversized or uncertain continuity invalidates executable state; REST recovery must satisfy same level budgets and source watermarks",
+  "resource_configuration_changed": false,
+  "source_deployed": false,
+  "historical_data_changed": false,
+  "prior_oom_attribution": "unproven; repaired demonstrated idle-frame retention and reproducible count-only buffering hazard",
+  "scope": "queue charge excludes decoder/socket transients and model/HTTP allocations; not a guarantee of whole-process memory ceiling"
+}

@@ -10,6 +10,7 @@ import asyncio
 import inspect
 import json
 import math
+import sys
 from collections import defaultdict
 from collections.abc import Awaitable, Callable, Sequence
 from contextlib import suppress
@@ -31,6 +32,27 @@ from .stream import MARKET_WS
 
 class StreamGap(ConnectionError):
     """Unknown continuity is never silently converted to executable liquidity."""
+
+
+def _payload_bytes(value, limit):
+    """Conservative retained Python size; shared JSON leaves may be overcharged.
+
+    Stop once the budget fails rather than constructing another serialization or
+    recursively walking an arbitrarily deep JSON document. This is a queue
+    admission charge, not an estimate of total process RSS or decoder peak.
+    """
+    pending, total = [value], 0
+    while pending:
+        item = pending.pop()
+        total += sys.getsizeof(item)
+        if total > limit:
+            return total
+        if isinstance(item, dict):
+            for key, child in item.items():
+                pending.extend((key, child))
+        elif isinstance(item, (list, tuple)):
+            pending.extend(item)
+    return total
 
 
 class ConcurrentPublicAdapter(OperationalPolymarketAdapter):
@@ -110,6 +132,9 @@ class CoverageFeed:
         concurrency: int = 4,
         rate: float = 8,
         queue_size: int = 512,
+        queue_bytes: int = 8 * 1024**2,
+        max_book_levels: int = 4096,
+        max_cached_levels: int = 100_000,
         connector=connect,
         max_reconnects: int = 8,
         max_gap_seconds: float = 30,
@@ -119,6 +144,9 @@ class CoverageFeed:
             or not 1 <= queue_size <= 10000
             or max_reconnects < 0
             or max_gap_seconds <= 0
+            or type(queue_bytes) is not int or not 4096 <= queue_bytes <= 64 * 1024**2
+            or type(max_book_levels) is not int or not 2 <= max_book_levels <= 20_000
+            or type(max_cached_levels) is not int or not max_book_levels <= max_cached_levels <= 1_000_000
         ):
             raise ValueError("bounded coverage and recovery configuration required")
         self._original = adapter or OperationalPolymarketAdapter()
@@ -132,6 +160,9 @@ class CoverageFeed:
         )
         self.adapter.discovery_offset = getattr(self._original, "discovery_offset", 0)
         self.max_tokens, self.queue_size = max_tokens, queue_size
+        self.queue_bytes = queue_bytes
+        self.max_book_levels, self.max_cached_levels = max_book_levels, max_cached_levels
+        self._queued_bytes = 0
         self.connector, self.max_reconnects, self.max_gap_seconds = connector, max_reconnects, max_gap_seconds
         self.latest: dict[str, OrderBookSnapshot] = {}
         self._markets: dict[str, MarketSnapshot] = {}
@@ -156,6 +187,11 @@ class CoverageFeed:
                 "gaps",
                 "out_of_order",
                 "queue_overflows",
+                "queue_byte_overflows",
+                "queue_peak_bytes",
+                "largest_frame_bytes",
+                "oversized_frames",
+                "book_level_budget_rejections",
                 "invalid_frames",
                 "callbacks_failed",
                 "invalidations",
@@ -182,6 +218,14 @@ class CoverageFeed:
             "gap_tokens_withheld": sum(token not in self.latest for token in self._gap_watermarks),
             "fresh_books": sum(assess_book(b, now).healthy for b in self.latest.values()),
             "queue_depth": self._queue.qsize(),
+            "queue_retained_bytes": self._queued_bytes,
+            "queue_budget_bytes": self.queue_bytes,
+            "queue_byte_scope": "conservative Python payload charge including in-flight consumer; decoder/socket buffers separate",
+            "websocket_max_queue": 1,
+            "websocket_max_frame_bytes": 16 * 1024**2,
+            "cached_book_levels": sum(len(b.bids) + len(b.asks) for b in self.latest.values()),
+            "max_cached_book_levels": self.max_cached_levels,
+            "max_levels_per_book": self.max_book_levels,
             "resnapshot_pending": len(self._refresh_tasks),
             "connection_generation": self._generation,
             "last_message_at": self.last_message_at.isoformat() if self.last_message_at else None,
@@ -305,11 +349,21 @@ class CoverageFeed:
                     self._gap_watermarks[token] = boundary
 
     def _accept_baseline(self, book):
+        if not self._admit_levels(book.token_id, len(book.bids) + len(book.asks)):
+            return False
         boundary = self._gap_watermarks.get(book.token_id)
         if boundary is not None and book.timestamp < boundary:
             self._metrics["stale_recovery_baselines"] += 1
             return False
         self._gap_watermarks.pop(book.token_id, None)
+        return True
+
+    def _admit_levels(self, token, levels, *, watermark=None):
+        other = sum(len(b.bids) + len(b.asks) for key, b in self.latest.items() if key != token)
+        if levels > self.max_book_levels or other + levels > self.max_cached_levels:
+            self._metrics["book_level_budget_rejections"] += 1
+            self._invalidate([token], watermark=watermark)
+            return False
         return True
 
     async def execution_book(self, token: str):
@@ -381,6 +435,9 @@ class CoverageFeed:
             if token not in self._markets or token in self._resolved_tokens:
                 return []
             try:
+                sides = (payload.get("bids"), payload.get("asks"))
+                if all(isinstance(side, list) for side in sides) and not self._admit_levels(token, sum(map(len, sides))):
+                    return []
                 book = normalize_book(payload, self._markets[token].market_id, token, received)
                 if not self._accept_baseline(book):
                     return []
@@ -447,6 +504,14 @@ class CoverageFeed:
                             for p, v in sorted(values.items(), reverse=reverse)
                         )
 
+                    if not self._admit_levels(token, len(bids) + len(asks), watermark=min(at, received)):
+                        if background_recovery:
+                            self._schedule_resnapshot(token)
+                        else:
+                            refreshed = await self._resnapshot(token)
+                            if refreshed is not None:
+                                result.append(refreshed)
+                        continue
                     values = {
                         "timestamp": at,
                         "available_at": received,
@@ -522,24 +587,56 @@ class CoverageFeed:
                 if message == "PING":
                     await socket.send("PONG")
                 continue
-            events = json.loads(message)
-            for index, event in enumerate(events if isinstance(events, list) else [events]):
-                # A native initial full-book list can contain the whole universe.
-                # Yield to consumers before a second burst fills the bounded queue.
-                if index and index % 16 == 0:
-                    await asyncio.sleep(0)
-                try:
-                    self._queue.put_nowait(event)
-                except asyncio.QueueFull:
-                    self._metrics["queue_overflows"] += 1
+            try:
+                frame_bytes = len(message.encode("utf-8")) if isinstance(message, str) else len(message)
+                self._metrics["largest_frame_bytes"] = max(self._metrics["largest_frame_bytes"], frame_bytes)
+                if frame_bytes > 16 * 1024**2:
+                    self._metrics["oversized_frames"] += 1
                     self._invalidate()
-                    raise StreamGap("market queue overflow") from None
+                    raise StreamGap("market frame byte budget exceeded")
+                events = json.loads(message)
+                for index, event in enumerate(events if isinstance(events, list) else [events]):
+                    # A native initial full-book list can contain the whole universe.
+                    # Yield to consumers before a second burst fills the bounded queue.
+                    if index and index % 16 == 0:
+                        await asyncio.sleep(0)
+                    try:
+                        charge = _payload_bytes(event, self.queue_bytes - self._queued_bytes)
+                        if self._queued_bytes + charge > self.queue_bytes:
+                            self._metrics["queue_byte_overflows"] += 1
+                            self._invalidate()
+                            raise StreamGap("market queue byte budget exceeded")
+                        self._queue.put_nowait((event, charge))
+                        self._queued_bytes += charge
+                        self._metrics["queue_peak_bytes"] = max(self._metrics["queue_peak_bytes"], self._queued_bytes)
+                    except asyncio.QueueFull:
+                        self._metrics["queue_overflows"] += 1
+                        self._invalidate()
+                        raise StreamGap("market queue overflow") from None
+            finally:
+                # Neither an empty queue nor a completed callback should retain
+                # the whole previous decoded universe while waiting for IO.
+                message = events = event = None
             await asyncio.sleep(0)
 
     async def _consume(self, on_book):
         while True:
-            event = await self._queue.get()
+            queued = await self._queue.get()
+            charge = 0
             try:
+                if isinstance(queued, tuple):
+                    event, charge = queued
+                else:
+                    # Preserve deterministic/local raw-event injection. Native
+                    # transport always enters through charged _receive admission.
+                    event = queued
+                    candidate = _payload_bytes(event, self.queue_bytes - self._queued_bytes)
+                    if self._queued_bytes + candidate > self.queue_bytes:
+                        self._metrics["queue_byte_overflows"] += 1
+                        self._invalidate()
+                        raise StreamGap("market consumer byte budget exceeded")
+                    charge = candidate
+                    self._queued_bytes += charge
                 for book in await self.handle(event, background_recovery=True):
                     try:
                         value = on_book(book)
@@ -549,7 +646,15 @@ class CoverageFeed:
                         self._metrics["callbacks_failed"] += 1
                         raise StreamGap("market consumer failed") from error
             finally:
+                self._queued_bytes -= charge
                 self._queue.task_done()
+                queued = event = book = value = None
+
+    def _clear_queue(self):
+        while not self._queue.empty():
+            self._queue.get_nowait()
+            self._queue.task_done()
+        self._queued_bytes = 0
 
     async def run_stream(
         self,
@@ -566,9 +671,11 @@ class CoverageFeed:
             try:
                 self._generation += 1
                 self._invalidate(gap=False)
+                self._clear_queue()
                 self._queue = asyncio.Queue(maxsize=self.queue_size)
                 async with self.connector(
-                    MARKET_WS, open_timeout=15, close_timeout=5, ping_interval=None, max_size=16 * 1024 * 1024
+                    MARKET_WS, open_timeout=15, close_timeout=5, ping_interval=None,
+                    max_size=16 * 1024 * 1024, max_queue=1,
                 ) as socket:
                     await socket.send(json.dumps({"assets_ids": list(self._markets), "type": "market"}))
                     self.connected = True
@@ -596,6 +703,7 @@ class CoverageFeed:
                 for task in tasks:
                     with suppress(asyncio.CancelledError, Exception):
                         await task
+                self._clear_queue()
             await asyncio.sleep(min(30, 2 ** (attempt - 1)))
 
     def start_stream(self, markets, on_book):
@@ -613,6 +721,7 @@ class CoverageFeed:
                 await self._task
             self._task = None
         await self._cancel_refreshes()
+        self._clear_queue()
         self.connected = False
         self._invalidate(gap=False)
 
