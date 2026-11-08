@@ -1,4 +1,5 @@
 """Causal input scheduling and bounded sampling beside the unchanged model engine."""
+import asyncio
 import json
 from collections import Counter
 from datetime import timedelta
@@ -15,7 +16,9 @@ from neraium_poly.research.phase14.relationships import digest
 from neraium_poly.research.phase24.continuous import at
 from neraium_poly.research.phase25.continuous import modules
 from neraium_poly.research.phase26.books import SupplementalBooks
-from neraium_poly.research.phase29.alignment import select_supplemental_markets
+from neraium_poly.research.phase34.selection import (
+    select_weather_aware_supplemental_markets as select_supplemental_markets,
+)
 
 
 class ResearchInputPolicy(Record):
@@ -36,12 +39,14 @@ class ResearchInputObservation(Record):
 class Inputs:
     def __init__(self,store,*,clock,can_write,watcher=None):
         self.store,self.clock,self.can_write=store,clock,can_write
+        self._io_gate=asyncio.Lock();self._closing=False;self._close_task=None
         self.counts=Counter();self.last_sample={};self.last_global=None;self.last_preflight=None;self.rejections={}
-        policy={'version':'phase26-causal-inputs-v1','code_sha256':digest([Path(__file__).read_text(),Path(__file__).with_name('books.py').read_text(),(Path(__file__).parent.parent/'phase29'/'alignment.py').read_text()]),
+        policy={'version':'phase26-causal-inputs-v1','code_sha256':digest([Path(__file__).read_text(),Path(__file__).with_name('books.py').read_text(),(Path(__file__).parent.parent/'phase29'/'alignment.py').read_text(),(Path(__file__).parent.parent/'phase34'/'selection.py').read_text()]),
                 'native_book_max_age_seconds':15,'max_spread':.05,'model_interval_seconds':300,
                 'record_sampling':'qualified books at most one/token/60seconds and one/second globally; selected books also preserved in forecasts',
                 'sports_check_after_start_hours':1,'finality_checks_relaxed':False,'primary_collection_duplicated':False,'max_supplemental_tokens':32,
-                'supplemental_selection':'all supported adapter domains; bounded diverse parent-first; retained forecast priority',
+                'supplemental_selection':'all supported domains; bounded diverse parent-first; retained forecasts then weather same-parent central bins',
+                'synchronous_io':'one shielded worker at a time; stream lifecycle remains on original event loop',
                 'diagnostic_books':'raw authoritative cache available separately from executable snapshots'}
         identity=digest(['research-input-policy',policy]);existing=store.get(identity)
         if existing is None:
@@ -53,12 +58,33 @@ class Inputs:
         self.policy_id=identity
         self.watcher=watcher or SupplementalBooks(clock=clock,on_book=self.on_book)
 
+    async def _sync_job(self,function,*args,**kwargs):
+        # No queued executor jobs: one bounded synchronous operation owns this
+        # lane until completion, even when its awaiting callback is cancelled.
+        async with self._io_gate:
+            if self._closing:raise ValueError('research input coordinator closed')
+            worker=asyncio.create_task(asyncio.to_thread(function,*args,**kwargs));interrupted=False
+            while not worker.done():
+                try:await asyncio.shield(worker)
+                except asyncio.CancelledError:interrupted=True
+                except Exception:break  # noqa: BLE001 - propagate completed worker result after draining
+            if interrupted:
+                if not worker.cancelled():worker.exception()
+                raise asyncio.CancelledError
+            return worker.result()
+
     async def on_book(self,book):
+        if self._closing:return
+        return await self._sync_job(self._record_book,book)
+
+    def _record_book(self,book):
         self.counts['qualified_callbacks']+=1;now=at(self.clock())
         if (self.last_global and now-self.last_global<timedelta(seconds=1)
             or book.token_id in self.last_sample and now-self.last_sample[book.token_id]<timedelta(seconds=60)):
             self.counts['sampling_skips']+=1;return
         if not self.can_write():self.counts['archive_backpressure']+=1;return
+        if self._closing:return
+        now=at(self.clock())  # Budget I/O never makes an old quote fresh.
         raw=book.model_dump(mode='json')
         if len(str(raw).encode())>256*1024:self.counts['payload_budget_rejections']+=1;return
         if book.source not in PUBLIC_BOOK_SOURCES or not assess_book(book,now,max_spread=.05).healthy:
@@ -68,20 +94,28 @@ class Inputs:
         self.last_global=now;self.last_sample[book.token_id]=now
         self.last_sample=dict(list(self.last_sample.items())[-64:]);self.counts['archived_samples']+=1
 
-    async def prepare(self,frame,*,base_tokens,wait=False,forecast_tokens=()):
+    def _selection(self,frame,base_tokens,forecast_tokens):
         raw=frame.model_dump(mode='json') if hasattr(frame,'model_dump') else frame
         now=at(self.clock());adapters=modules()
         selected,selection=select_supplemental_markets(raw['markets'],base_tokens=base_tokens,
             adapters=adapters,as_of=now,maximum=getattr(self.watcher,'max_tokens',32),forecast_tokens=forecast_tokens)
+        return adapters,selected,selection
+
+    async def prepare(self,frame,*,base_tokens,wait=False,forecast_tokens=()):
+        adapters,selected,selection=await self._sync_job(self._selection,frame,base_tokens,forecast_tokens)
+        if self._closing:raise ValueError('research input coordinator closed')
         self.selection=selection
         await self.watcher.update(selected)
         if wait and selected:await self.watcher.wait_fresh(timeout=20)
-        return self.qualify(frame,adapters=adapters)
+        # Transport caches/tasks belong to the original event loop. Take one
+        # bounded snapshot there; only pure parsing/admission I/O goes off-loop.
+        supplemental=tuple(self.watcher.snapshot())
+        return await self._sync_job(self.qualify,frame,adapters=adapters,supplemental_books=supplemental)
 
-    def qualify(self,frame,*,adapters=None):
+    def qualify(self,frame,*,adapters=None,supplemental_books=None):
         raw=frame.model_dump(mode='json') if hasattr(frame,'model_dump') else dict(frame)
         now=at(self.clock());adapters=adapters or modules();books={b['token_id']:OrderBookSnapshot.model_validate(b) for b in raw['books']}
-        books.update({b.token_id:b for b in self.watcher.snapshot()})
+        books.update({b.token_id:b for b in (self.watcher.snapshot() if supplemental_books is None else supplemental_books)})
         markets=[];reasons=Counter();considered=0;kept=0
         for m in raw['markets']:
             supported=any(adapters[n].supports(m,cutoff=now).get('supported') for n in ('finance','economics'))
@@ -95,7 +129,7 @@ class Inputs:
         tokens={m['token_id'] for m in markets};accepted=[b.model_dump(mode='json') for t,b in books.items() if t in tokens]
         self.rejections=dict(reasons);self.last_preflight=now.isoformat();self.counts['preflights']+=1
         self.counts['supported_token_observations']+=considered;self.counts['qualified_token_observations']+=kept
-        if self.can_write():
+        if self.can_write() and not self._closing:
             self.store.append(ResearchInputObservation(id=digest(['input-preflight',raw['id'],now.isoformat(),considered,kept,reasons]),timestamp=now,available_at=now,
                 source='neraium-poly/research-inputs/v26',source_frame_id=raw['id'],counts={'considered':considered,'qualified':kept,'withheld':considered-kept},reasons=dict(reasons)))
         return SharedMarketFrame.model_validate({**raw,'id':digest([raw['id'],self.policy_id,now.isoformat(),accepted]),
@@ -104,4 +138,20 @@ class Inputs:
     def status(self):
         return {'watcher':self.watcher.status(),'counts':dict(self.counts),'last_preflight':self.last_preflight,'preflight_rejections':self.rejections,
                 'selection':getattr(self,'selection',None),'policy_id':self.policy_id,'counter_scope':'process-local sampling/transport; durable observation records retained','scope':'sampled supplementary books and filtered research inputs; native source times and original model gates unchanged','trading_authority':False}
-    async def close(self):await self.watcher.close()
+    async def _close(self):
+        try:await self.watcher.close()
+        finally:
+            async with self._io_gate:pass  # Drain even if transport close fails.
+
+    async def close(self):
+        self._closing=True
+        if self._close_task is None:self._close_task=asyncio.create_task(self._close())
+        interrupted=False
+        while not self._close_task.done():
+            try:await asyncio.shield(self._close_task)
+            except asyncio.CancelledError:interrupted=True
+            except Exception:break  # noqa: BLE001 - propagate completed close result after draining
+        if interrupted:
+            if not self._close_task.cancelled():self._close_task.exception()
+            raise asyncio.CancelledError
+        return self._close_task.result()
