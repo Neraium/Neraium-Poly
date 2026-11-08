@@ -1,0 +1,61 @@
+{
+  "at": "2026-11-08T02:02:26.509296+00:00",
+  "applied": false,
+  "approved_limits_gib": {
+    "collector": 200,
+    "experimental": 100
+  },
+  "filesystem_floor_gib": 100,
+  "temporary_headroom_gib": 8,
+  "shared_workload_growth_headroom_gib": 64,
+  "services": {
+    "collector": {
+      "usage_gib": 16.59789391886443,
+      "growth_bytes_per_second_conservative": 117911.10541191253,
+      "observed_interval_growth_bytes_per_second": 60152.97915132652,
+      "measurement_window_seconds": 895.065627,
+      "runtime_growth_bytes_per_second": 117911.10541191253,
+      "budget_gib": 200,
+      "conditional_runway_days": 19.330172743453264,
+      "measurement_at": "2026-11-08T02:02:19.971099+00:00"
+    },
+    "experimental": {
+      "usage_gib": 7.608945595100522,
+      "growth_bytes_per_second_conservative": 95775.19292798256,
+      "observed_interval_growth_bytes_per_second": 66300.20772767314,
+      "measurement_window_seconds": 895.065627,
+      "runtime_growth_bytes_per_second": 62937.985035263686,
+      "budget_gib": 100,
+      "conditional_runway_days": 11.988449423659327,
+      "measurement_at": "2026-11-08T02:02:22.981806+00:00"
+    }
+  },
+  "filesystem_capacity_gib": 967.6381530761719,
+  "filesystem_available_gib": 452.4339599609375,
+  "service_usage_gib": 24.20683951396495,
+  "other_shared_consumption_including_os_gib": 490.9973536012694,
+  "free_after_full_current_joint_allowance_gib": 176.64079947490245,
+  "maximum_joint_quota_under_protected_headrooms_gib": 304,
+  "approval_request": {
+    "collector_budget_gib": 170,
+    "experimental_budget_gib": 130,
+    "combined_budget_gib": 300,
+    "new_infrastructure_cost": 0,
+    "conditional_runways_days": {
+      "collector": 16.168239684478177,
+      "experimental": 15.881180002678539
+    },
+    "action": "exact owner approval required; not applied",
+    "policy": "retain all originals, no quota or retention change",
+    "rationale": "same 300GiB combined ceiling; balance conservative conditional runway against measured post-restart volatility, not an assertion restart burst persists"
+  },
+  "prior_phase25_proposal": {
+    "collector_gib": 120,
+    "experimental_gib": 180,
+    "conservative_runway_days": {
+      "collector": 10.898351252853038,
+      "experimental": 22.36906430104389
+    },
+    "status": "superseded recommendation only; not applied"
+  }
+}

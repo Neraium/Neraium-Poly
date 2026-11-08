@@ -1,0 +1,794 @@
+{
+  "scope": "two genuine prospective forecasts recorded by existing approved research loop during Phase26 before source deployment; one shared parent event, not two independent samples",
+  "observations": [
+    {
+      "original_record_id": "000000000047:f80c28b5bb9bb14a19f3f0bdc8145e1c92e9e22d6542ba75949829215ad6bebf",
+      "original_record_sha256": "92ed9216b81aa6e073345d63f7bcc0c8e12b85c73231c1136623ef14f2b27842",
+      "forecast": {
+        "model_id": "uk-gdp-jeffreys-frequency-v25.1",
+        "model_version": "uk-gdp-jeffreys-frequency-v25.1",
+        "model_sha256": "1031d902164834dd38d2472c15d76040c12ac9d2fc193a84d1ee44ab1bfaa054",
+        "feature_version": "observed-ONS-IHYQ-quarterly-growth-v1",
+        "domain": "economics",
+        "event_id": "844497",
+        "market_id": "3566407",
+        "token_id": "99152048788234224357734975456328610052461154108689630888376315692101778386164",
+        "probability": 0.7926829268292683,
+        "probability_semantics": "binary_event_probability",
+        "lower_probability": 0.0,
+        "upper_probability": 1.0,
+        "uncertainty": 1.0,
+        "training_observations": 40,
+        "last_source_period": "2026 Q2",
+        "dataset_sha256": "42a737ca61c93425192ab62f469d2fab64227907737de4d65a758e1161dc2d24",
+        "evidence_ids": [
+          "cbf8a2a83faeae20135a968954996b7ec6e6d206b3f7e8f3271be0503dd59488"
+        ],
+        "evidence_cutoff": "2026-11-08T01:34:08.565121+00:00",
+        "event_end_time": "2026-11-12T00:00:00+00:00",
+        "rules_sha256": "8ee46b65a3687a1e9fac0fc0ed614d05d17f1a86ef0d10218e4a5c4ad4fde2d6",
+        "contract": {
+          "kind": "uk_gdp_qoq_first_release",
+          "series_id": "IHYQ",
+          "target_period": "2026 Q3",
+          "quarter": 3,
+          "year": 2026,
+          "release_at": "2026-11-12T00:00:00+00:00",
+          "release_time_precision": "day_lower_bound_not_exact_publication_time",
+          "settlement_at": "2026-11-13T04:59:00+00:00",
+          "source_url": "https://www.ons.gov.uk/economy/grossdomesticproductgdp/bulletins/gdpfirstquarterlyestimateuk/previousreleases",
+          "source_series_url": "https://www.ons.gov.uk/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/data",
+          "selected_outcome": "No",
+          "tail": "between",
+          "lower": "0.6",
+          "upper": "0.7",
+          "market": {
+            "schema_version": "1.0",
+            "id": "2087a96bc08c39880fc8cb4c21a4af92fe8bf5600d663d55870c3e4591cc0f38",
+            "timestamp": "2026-11-08T01:27:21.928546Z",
+            "available_at": "2026-11-08T01:27:21.928546Z",
+            "source": "https://gamma-api.polymarket.com",
+            "exchange": "polymarket",
+            "market_id": "3566407",
+            "event_id": "844497",
+            "question": "Will UK GDP growth in Q3 2026 be between 0.6% and 0.7%?",
+            "token_id": "99152048788234224357734975456328610052461154108689630888376315692101778386164",
+            "outcome": "No",
+            "probability": 0.451,
+            "status": "active",
+            "resolution_rules": "This market will resolve according to the UK real gross domestic product (GDP) growth rate (% change) for Q3 of 2026 compared with the most recent quarter (quarter-on-previous-quarter) in the \"GDP first quarterly estimate, UK\" release for Q3 of 2026, scheduled for November 12, 2026.\n\nThe GDP release will be made available here: https://www.ons.gov.uk/economy/grossdomesticproductgdp/bulletins/gdpfirstquarterlyestimateuk/previousreleases\n\nIf no data for the specified quarter is released by the date the next quarter's data is scheduled to be released, this market will resolve based on data from the last available quarter.\n\nNote: data from the initial release of the referenced GDP report is what will be used to resolve this market. Data may be revised during the following quarter or as a part of the next estimate's publication, however any revisions to GDP report data made after the initial release will not be considered for this market's resolution.\n\nNote: the resolution source for this market reports GDP growth rates to only one decimal point (e.g. 1.8%). Thus, this is the level of precision that will be used when resolving the market.",
+            "resolution_source": "https://www.ons.gov.uk/economy/grossdomesticproductgdp/bulletins/gdpfirstquarterlyestimateuk/previousreleases",
+            "end_time": "2026-11-13T04:59:00Z",
+            "tick_size": 0.001,
+            "min_order_size": 5.0
+          },
+          "rules_sha256": "8ee46b65a3687a1e9fac0fc0ed614d05d17f1a86ef0d10218e4a5c4ad4fde2d6",
+          "conditioning": "scheduled firstrelease without fallback/correction; current-vintage historical feature distribution"
+        },
+        "source_lineages": [
+          "ONS:IHYQ:current-vintage"
+        ],
+        "calibration_status": "unvalidated_research",
+        "target_conditioning": "scheduled firstrelease without fallback/correction; current-vintage historical feature distribution",
+        "unconditional_contract_probability": false,
+        "market_probability": null,
+        "limitations": [
+          "Revised current-vintage history is a forecasting feature, never asserted as historical firstrelease labels",
+          "Scheduled release day is a conservative lower time bound, not independently verified release-hour calendar",
+          "No proven calibration, executable edge or regime robustness"
+        ],
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false,
+        "timestamp": "2026-11-08T01:34:08.567966+00:00",
+        "market": {
+          "schema_version": "1.0",
+          "id": "2087a96bc08c39880fc8cb4c21a4af92fe8bf5600d663d55870c3e4591cc0f38",
+          "timestamp": "2026-11-08T01:27:21.928546Z",
+          "available_at": "2026-11-08T01:27:21.928546Z",
+          "source": "https://gamma-api.polymarket.com",
+          "exchange": "polymarket",
+          "market_id": "3566407",
+          "event_id": "844497",
+          "question": "Will UK GDP growth in Q3 2026 be between 0.6% and 0.7%?",
+          "token_id": "99152048788234224357734975456328610052461154108689630888376315692101778386164",
+          "outcome": "No",
+          "probability": 0.451,
+          "status": "active",
+          "resolution_rules": "This market will resolve according to the UK real gross domestic product (GDP) growth rate (% change) for Q3 of 2026 compared with the most recent quarter (quarter-on-previous-quarter) in the \"GDP first quarterly estimate, UK\" release for Q3 of 2026, scheduled for November 12, 2026.\n\nThe GDP release will be made available here: https://www.ons.gov.uk/economy/grossdomesticproductgdp/bulletins/gdpfirstquarterlyestimateuk/previousreleases\n\nIf no data for the specified quarter is released by the date the next quarter's data is scheduled to be released, this market will resolve based on data from the last available quarter.\n\nNote: data from the initial release of the referenced GDP report is what will be used to resolve this market. Data may be revised during the following quarter or as a part of the next estimate's publication, however any revisions to GDP report data made after the initial release will not be considered for this market's resolution.\n\nNote: the resolution source for this market reports GDP growth rates to only one decimal point (e.g. 1.8%). Thus, this is the level of precision that will be used when resolving the market.",
+          "resolution_source": "https://www.ons.gov.uk/economy/grossdomesticproductgdp/bulletins/gdpfirstquarterlyestimateuk/previousreleases",
+          "end_time": "2026-11-13T04:59:00Z",
+          "tick_size": 0.001,
+          "min_order_size": 5.0
+        },
+        "book": {
+          "schema_version": "1.0",
+          "id": "5116ac76da4f74aa439010ed8b3bb41c73c7aa723dee5bd8a6457e08253881fe",
+          "timestamp": "2026-11-08T01:34:08.038000Z",
+          "available_at": "2026-11-08T01:34:08.564614Z",
+          "source": "https://clob.polymarket.com",
+          "exchange": "polymarket",
+          "market_id": "3566407",
+          "token_id": "99152048788234224357734975456328610052461154108689630888376315692101778386164",
+          "bids": [
+            {
+              "price": 0.435,
+              "size": 100.0
+            },
+            {
+              "price": 0.434,
+              "size": 83.0
+            },
+            {
+              "price": 0.432,
+              "size": 20.0
+            },
+            {
+              "price": 0.431,
+              "size": 20.0
+            },
+            {
+              "price": 0.429,
+              "size": 61.0
+            },
+            {
+              "price": 0.426,
+              "size": 30.52
+            },
+            {
+              "price": 0.399,
+              "size": 30.0
+            },
+            {
+              "price": 0.398,
+              "size": 35.0
+            },
+            {
+              "price": 0.397,
+              "size": 29.03
+            },
+            {
+              "price": 0.37,
+              "size": 95.0
+            },
+            {
+              "price": 0.369,
+              "size": 60.0
+            },
+            {
+              "price": 0.367,
+              "size": 12.8
+            },
+            {
+              "price": 0.352,
+              "size": 40.0
+            },
+            {
+              "price": 0.35,
+              "size": 66.75
+            },
+            {
+              "price": 0.204,
+              "size": 100.0
+            },
+            {
+              "price": 0.203,
+              "size": 50.0
+            },
+            {
+              "price": 0.102,
+              "size": 400.0
+            },
+            {
+              "price": 0.101,
+              "size": 40.0
+            },
+            {
+              "price": 0.043,
+              "size": 8.79
+            },
+            {
+              "price": 0.042,
+              "size": 9.0
+            },
+            {
+              "price": 0.041,
+              "size": 6.19
+            },
+            {
+              "price": 0.04,
+              "size": 505.0
+            },
+            {
+              "price": 0.03,
+              "size": 833.33
+            },
+            {
+              "price": 0.02,
+              "size": 1250.0
+            },
+            {
+              "price": 0.011,
+              "size": 9.97
+            },
+            {
+              "price": 0.01,
+              "size": 2755.0
+            },
+            {
+              "price": 0.008,
+              "size": 4062.5
+            },
+            {
+              "price": 0.007,
+              "size": 5000.0
+            },
+            {
+              "price": 0.006,
+              "size": 8333.33
+            },
+            {
+              "price": 0.005,
+              "size": 10540.0
+            },
+            {
+              "price": 0.004,
+              "size": 13757.22
+            },
+            {
+              "price": 0.003,
+              "size": 19599.99
+            },
+            {
+              "price": 0.002,
+              "size": 650.0
+            },
+            {
+              "price": 0.001,
+              "size": 1328.55
+            }
+          ],
+          "asks": [
+            {
+              "price": 0.467,
+              "size": 309.4
+            },
+            {
+              "price": 0.468,
+              "size": 215.0
+            },
+            {
+              "price": 0.47,
+              "size": 200.0
+            },
+            {
+              "price": 0.471,
+              "size": 76.81
+            },
+            {
+              "price": 0.479,
+              "size": 200.0
+            },
+            {
+              "price": 0.482,
+              "size": 193.48
+            },
+            {
+              "price": 0.664,
+              "size": 10.5
+            },
+            {
+              "price": 0.665,
+              "size": 20.5
+            },
+            {
+              "price": 0.9,
+              "size": 23.69
+            },
+            {
+              "price": 0.95,
+              "size": 5.0
+            },
+            {
+              "price": 0.952,
+              "size": 382.0
+            },
+            {
+              "price": 0.96,
+              "size": 750.0
+            },
+            {
+              "price": 0.97,
+              "size": 1250.0
+            },
+            {
+              "price": 0.98,
+              "size": 1875.0
+            },
+            {
+              "price": 0.989,
+              "size": 9.54
+            },
+            {
+              "price": 0.99,
+              "size": 4125.0
+            },
+            {
+              "price": 0.992,
+              "size": 6093.75
+            },
+            {
+              "price": 0.993,
+              "size": 7500.0
+            },
+            {
+              "price": 0.994,
+              "size": 12500.0
+            },
+            {
+              "price": 0.995,
+              "size": 16350.15
+            },
+            {
+              "price": 0.996,
+              "size": 20875.0
+            },
+            {
+              "price": 0.997,
+              "size": 29516.66
+            },
+            {
+              "price": 0.998,
+              "size": 1150.0
+            },
+            {
+              "price": 0.999,
+              "size": 2422.04
+            }
+          ],
+          "sequence": 0,
+          "complete": true
+        },
+        "book_id": "5116ac76da4f74aa439010ed8b3bb41c73c7aa723dee5bd8a6457e08253881fe",
+        "book_sha256": "9923cd4c2eb2f52e1788cd98c33a2580dc521dc67576ee2dafa4a34a868ed206",
+        "market_expected_payout": 0.451,
+        "evidence_lineages": [
+          "UK Office for National Statistics:IHYQ"
+        ],
+        "market_baseline_comparable": false,
+        "adapter": "economics",
+        "enrollment_id": "c0c8d63d6952dfb86b3edd3d0bd3df3dd987fccbb405b720c82d120090ff1f56",
+        "reviewed_dependency_group": null,
+        "independence_reviewed": false,
+        "horizon_bucket": "1-7d",
+        "id": "1869017d817ebc7a3d95d1b2d102b04d09a2ded3458298918ca4dbadae6ce61b"
+      },
+      "evidence": [
+        {
+          "schema_version": "1.0",
+          "id": "cbf8a2a83faeae20135a968954996b7ec6e6d206b3f7e8f3271be0503dd59488",
+          "timestamp": "2026-11-08T00:28:28.665749Z",
+          "available_at": "2026-11-08T00:28:28.665749Z",
+          "source": "https://www.ons.gov.uk/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/data",
+          "domain": "economics",
+          "provider": "UK Office for National Statistics",
+          "source_id": "IHYQ",
+          "retrieved_at": "2026-11-08T00:28:28.665749Z",
+          "source_timestamp": null,
+          "content_sha256": "42a737ca61c93425192ab62f469d2fab64227907737de4d65a758e1161dc2d24",
+          "payload": {
+            "request_url": "https://www.ons.gov.uk/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/data",
+            "raw_response_utf8": "{\"years\":[],\"quarters\":[{\"date\":\"1955 Q2\",\"value\":\"0.1\",\"label\":\"1955 Q2\",\"year\":\"1955\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1955 Q3\",\"value\":\"1.7\",\"label\":\"1955 Q3\",\"year\":\"1955\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1955 Q4\",\"value\":\"-0.6\",\"label\":\"1955 Q4\",\"year\":\"1955\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2024-11-15T00:00:00.000Z\"},{\"date\":\"1956 Q1\",\"value\":\"1.2\",\"label\":\"1956 Q1\",\"year\":\"1956\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1956 Q2\",\"value\":\"-0.1\",\"label\":\"1956 Q2\",\"year\":\"1956\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1956 Q3\",\"value\":\"-0.1\",\"label\":\"1956 Q3\",\"year\":\"1956\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2015-05-27T23:00:00.000Z\"},{\"date\":\"1956 Q4\",\"value\":\"0.6\",\"label\":\"1956 Q4\",\"year\":\"1956\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1957 Q1\",\"value\":\"1.8\",\"label\":\"1957 Q1\",\"year\":\"1957\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1957 Q2\",\"value\":\"0.0\",\"label\":\"1957 Q2\",\"year\":\"1957\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2016-08-25T23:00:00.000Z\"},{\"date\":\"1957 Q3\",\"value\":\"-0.6\",\"label\":\"1957 Q3\",\"year\":\"1957\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2015-05-27T23:00:00.000Z\"},{\"date\":\"1957 Q4\",\"value\":\"0.3\",\"label\":\"1957 Q4\",\"year\":\"1957\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1958 Q1\",\"value\":\"2.1\",\"label\":\"1958 Q1\",\"year\":\"1958\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1958 Q2\",\"value\":\"-2.5\",\"label\":\"1958 Q2\",\"year\":\"1958\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1958 Q3\",\"value\":\"2.2\",\"label\":\"1958 Q3\",\"year\":\"1958\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2015-05-27T23:00:00.000Z\"},{\"date\":\"1958 Q4\",\"value\":\"0.3\",\"label\":\"1958 Q4\",\"year\":\"1958\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1959 Q1\",\"value\":\"0.6\",\"label\":\"1959 Q1\",\"year\":\"1959\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"1959 Q2\",\"value\":\"1.6\",\"label\":\"1959 Q2\",\"year\":\"1959\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1959 Q3\",\"value\":\"2.1\",\"label\":\"1959 Q3\",\"year\":\"1959\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1959 Q4\",\"value\":\"2.5\",\"label\":\"1959 Q4\",\"year\":\"1959\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"1960 Q1\",\"value\":\"2.5\",\"label\":\"1960 Q1\",\"year\":\"1960\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2019-11-11T00:00:00.000Z\"},{\"date\":\"1960 Q2\",\"value\":\"-0.7\",\"label\":\"1960 Q2\",\"year\":\"1960\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1960 Q3\",\"value\":\"1.5\",\"label\":\"1960 Q3\",\"year\":\"1960\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2016-08-25T23:00:00.000Z\"},{\"date\":\"1960 Q4\",\"value\":\"0.5\",\"label\":\"1960 Q4\",\"year\":\"1960\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1961 Q1\",\"value\":\"1.7\",\"label\":\"1961 Q1\",\"year\":\"1961\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1961 Q2\",\"value\":\"0.4\",\"label\":\"1961 Q2\",\"year\":\"1961\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2015-05-27T23:00:00.000Z\"},{\"date\":\"1961 Q3\",\"value\":\"-0.5\",\"label\":\"1961 Q3\",\"year\":\"1961\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2015-05-27T23:00:00.000Z\"},{\"date\":\"1961 Q4\",\"value\":\"-0.2\",\"label\":\"1961 Q4\",\"year\":\"1961\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2015-05-27T23:00:00.000Z\"},{\"date\":\"1962 Q1\",\"value\":\"0.5\",\"label\":\"1962 Q1\",\"year\":\"1962\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1962 Q2\",\"value\":\"0.9\",\"label\":\"1962 Q2\",\"year\":\"1962\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2020-11-12T00:00:00.000Z\"},{\"date\":\"1962 Q3\",\"value\":\"0.6\",\"label\":\"1962 Q3\",\"year\":\"1962\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2015-05-27T23:00:00.000Z\"},{\"date\":\"1962 Q4\",\"value\":\"-0.4\",\"label\":\"1962 Q4\",\"year\":\"1962\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1963 Q1\",\"value\":\"0.5\",\"label\":\"1963 Q1\",\"year\":\"1963\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"1963 Q2\",\"value\":\"4.3\",\"label\":\"1963 Q2\",\"year\":\"1963\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1963 Q3\",\"value\":\"0.4\",\"label\":\"1963 Q3\",\"year\":\"1963\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1963 Q4\",\"value\":\"2.3\",\"label\":\"1963 Q4\",\"year\":\"1963\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1964 Q1\",\"value\":\"0.7\",\"label\":\"1964 Q1\",\"year\":\"1964\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"1964 Q2\",\"value\":\"1.9\",\"label\":\"1964 Q2\",\"year\":\"1964\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2021-11-11T00:00:00.000Z\"},{\"date\":\"1964 Q3\",\"value\":\"0.3\",\"label\":\"1964 Q3\",\"year\":\"1964\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1964 Q4\",\"value\":\"1.6\",\"label\":\"1964 Q4\",\"year\":\"1964\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1965 Q1\",\"value\":\"-0.3\",\"label\":\"1965 Q1\",\"year\":\"1965\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2015-05-27T23:00:00.000Z\"},{\"date\":\"1965 Q2\",\"value\":\"0.1\",\"label\":\"1965 Q2\",\"year\":\"1965\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2015-05-27T23:00:00.000Z\"},{\"date\":\"1965 Q3\",\"value\":\"0.8\",\"label\":\"1965 Q3\",\"year\":\"1965\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2015-05-27T23:00:00.000Z\"},{\"date\":\"1965 Q4\",\"value\":\"0.6\",\"label\":\"1965 Q4\",\"year\":\"1965\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1966 Q1\",\"value\":\"0.2\",\"label\":\"1966 Q1\",\"year\":\"1966\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2024-11-15T00:00:00.000Z\"},{\"date\":\"1966 Q2\",\"value\":\"0.6\",\"label\":\"1966 Q2\",\"year\":\"1966\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1966 Q3\",\"value\":\"0.3\",\"label\":\"1966 Q3\",\"year\":\"1966\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2016-08-25T23:00:00.000Z\"},{\"date\":\"1966 Q4\",\"value\":\"-0.4\",\"label\":\"1966 Q4\",\"year\":\"1966\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1967 Q1\",\"value\":\"1.3\",\"label\":\"1967 Q1\",\"year\":\"1967\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2020-11-12T00:00:00.000Z\"},{\"date\":\"1967 Q2\",\"value\":\"1.4\",\"label\":\"1967 Q2\",\"year\":\"1967\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2015-05-27T23:00:00.000Z\"},{\"date\":\"1967 Q3\",\"value\":\"0.4\",\"label\":\"1967 Q3\",\"year\":\"1967\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1967 Q4\",\"value\":\"0.5\",\"label\":\"1967 Q4\",\"year\":\"1967\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2015-05-27T23:00:00.000Z\"},{\"date\":\"1968 Q1\",\"value\":\"3.7\",\"label\":\"1968 Q1\",\"year\":\"1968\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1968 Q2\",\"value\":\"-0.4\",\"label\":\"1968 Q2\",\"year\":\"1968\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2015-05-27T23:00:00.000Z\"},{\"date\":\"1968 Q3\",\"value\":\"1.9\",\"label\":\"1968 Q3\",\"year\":\"1968\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1968 Q4\",\"value\":\"0.3\",\"label\":\"1968 Q4\",\"year\":\"1968\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1969 Q1\",\"value\":\"-0.2\",\"label\":\"1969 Q1\",\"year\":\"1969\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1969 Q2\",\"value\":\"0.7\",\"label\":\"1969 Q2\",\"year\":\"1969\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1969 Q3\",\"value\":\"0.6\",\"label\":\"1969 Q3\",\"year\":\"1969\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1969 Q4\",\"value\":\"0.5\",\"label\":\"1969 Q4\",\"year\":\"1969\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1970 Q1\",\"value\":\"-0.6\",\"label\":\"1970 Q1\",\"year\":\"1970\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1970 Q2\",\"value\":\"2.4\",\"label\":\"1970 Q2\",\"year\":\"1970\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1970 Q3\",\"value\":\"1.0\",\"label\":\"1970 Q3\",\"year\":\"1970\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2015-05-27T23:00:00.000Z\"},{\"date\":\"1970 Q4\",\"value\":\"0.9\",\"label\":\"1970 Q4\",\"year\":\"1970\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2015-05-27T23:00:00.000Z\"},{\"date\":\"1971 Q1\",\"value\":\"-0.5\",\"label\":\"1971 Q1\",\"year\":\"1971\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1971 Q2\",\"value\":\"1.8\",\"label\":\"1971 Q2\",\"year\":\"1971\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2015-05-27T23:00:00.000Z\"},{\"date\":\"1971 Q3\",\"value\":\"1.7\",\"label\":\"1971 Q3\",\"year\":\"1971\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1971 Q4\",\"value\":\"0.4\",\"label\":\"1971 Q4\",\"year\":\"1971\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2015-05-27T23:00:00.000Z\"},{\"date\":\"1972 Q1\",\"value\":\"0.2\",\"label\":\"1972 Q1\",\"year\":\"1972\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1972 Q2\",\"value\":\"2.6\",\"label\":\"1972 Q2\",\"year\":\"1972\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1972 Q3\",\"value\":\"0.3\",\"label\":\"1972 Q3\",\"year\":\"1972\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2016-08-25T23:00:00.000Z\"},{\"date\":\"1972 Q4\",\"value\":\"1.6\",\"label\":\"1972 Q4\",\"year\":\"1972\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2015-05-27T23:00:00.000Z\"},{\"date\":\"1973 Q1\",\"value\":\"4.9\",\"label\":\"1973 Q1\",\"year\":\"1973\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"1973 Q2\",\"value\":\"0.2\",\"label\":\"1973 Q2\",\"year\":\"1973\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"1973 Q3\",\"value\":\"-0.9\",\"label\":\"1973 Q3\",\"year\":\"1973\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1973 Q4\",\"value\":\"-0.4\",\"label\":\"1973 Q4\",\"year\":\"1973\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2015-05-27T23:00:00.000Z\"},{\"date\":\"1974 Q1\",\"value\":\"-2.8\",\"label\":\"1974 Q1\",\"year\":\"1974\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"1974 Q2\",\"value\":\"1.4\",\"label\":\"1974 Q2\",\"year\":\"1974\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1974 Q3\",\"value\":\"0.6\",\"label\":\"1974 Q3\",\"year\":\"1974\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2015-05-27T23:00:00.000Z\"},{\"date\":\"1974 Q4\",\"value\":\"-1.5\",\"label\":\"1974 Q4\",\"year\":\"1974\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2020-11-12T00:00:00.000Z\"},{\"date\":\"1975 Q1\",\"value\":\"0.0\",\"label\":\"1975 Q1\",\"year\":\"1975\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"1975 Q2\",\"value\":\"-1.6\",\"label\":\"1975 Q2\",\"year\":\"1975\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2016-08-25T23:00:00.000Z\"},{\"date\":\"1975 Q3\",\"value\":\"-0.3\",\"label\":\"1975 Q3\",\"year\":\"1975\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1975 Q4\",\"value\":\"1.1\",\"label\":\"1975 Q4\",\"year\":\"1975\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2016-08-25T23:00:00.000Z\"},{\"date\":\"1976 Q1\",\"value\":\"1.7\",\"label\":\"1976 Q1\",\"year\":\"1976\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2020-11-12T00:00:00.000Z\"},{\"date\":\"1976 Q2\",\"value\":\"-0.1\",\"label\":\"1976 Q2\",\"year\":\"1976\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2020-11-12T00:00:00.000Z\"},{\"date\":\"1976 Q3\",\"value\":\"1.2\",\"label\":\"1976 Q3\",\"year\":\"1976\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1976 Q4\",\"value\":\"2.1\",\"label\":\"1976 Q4\",\"year\":\"1976\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2016-08-25T23:00:00.000Z\"},{\"date\":\"1977 Q1\",\"value\":\"0.1\",\"label\":\"1977 Q1\",\"year\":\"1977\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1977 Q2\",\"value\":\"-0.7\",\"label\":\"1977 Q2\",\"year\":\"1977\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2016-08-25T23:00:00.000Z\"},{\"date\":\"1977 Q3\",\"value\":\"0.6\",\"label\":\"1977 Q3\",\"year\":\"1977\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1977 Q4\",\"value\":\"1.7\",\"label\":\"1977 Q4\",\"year\":\"1977\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2015-05-27T23:00:00.000Z\"},{\"date\":\"1978 Q1\",\"value\":\"0.9\",\"label\":\"1978 Q1\",\"year\":\"1978\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1978 Q2\",\"value\":\"1.1\",\"label\":\"1978 Q2\",\"year\":\"1978\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1978 Q3\",\"value\":\"1.4\",\"label\":\"1978 Q3\",\"year\":\"1978\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2017-11-23T00:00:00.000Z\"},{\"date\":\"1978 Q4\",\"value\":\"0.9\",\"label\":\"1978 Q4\",\"year\":\"1978\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2016-08-25T23:00:00.000Z\"},{\"date\":\"1979 Q1\",\"value\":\"-0.3\",\"label\":\"1979 Q1\",\"year\":\"1979\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1979 Q2\",\"value\":\"4.4\",\"label\":\"1979 Q2\",\"year\":\"1979\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2015-05-27T23:00:00.000Z\"},{\"date\":\"1979 Q3\",\"value\":\"-2.2\",\"label\":\"1979 Q3\",\"year\":\"1979\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2016-08-25T23:00:00.000Z\"},{\"date\":\"1979 Q4\",\"value\":\"1.0\",\"label\":\"1979 Q4\",\"year\":\"1979\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2020-11-12T00:00:00.000Z\"},{\"date\":\"1980 Q1\",\"value\":\"-1.0\",\"label\":\"1980 Q1\",\"year\":\"1980\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1980 Q2\",\"value\":\"-2.0\",\"label\":\"1980 Q2\",\"year\":\"1980\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2016-08-25T23:00:00.000Z\"},{\"date\":\"1980 Q3\",\"value\":\"-0.1\",\"label\":\"1980 Q3\",\"year\":\"1980\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2016-08-25T23:00:00.000Z\"},{\"date\":\"1980 Q4\",\"value\":\"-1.0\",\"label\":\"1980 Q4\",\"year\":\"1980\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1981 Q1\",\"value\":\"-0.1\",\"label\":\"1981 Q1\",\"year\":\"1981\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1981 Q2\",\"value\":\"0.3\",\"label\":\"1981 Q2\",\"year\":\"1981\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1981 Q3\",\"value\":\"1.2\",\"label\":\"1981 Q3\",\"year\":\"1981\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1981 Q4\",\"value\":\"0.1\",\"label\":\"1981 Q4\",\"year\":\"1981\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2015-05-27T23:00:00.000Z\"},{\"date\":\"1982 Q1\",\"value\":\"0.2\",\"label\":\"1982 Q1\",\"year\":\"1982\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1982 Q2\",\"value\":\"1.0\",\"label\":\"1982 Q2\",\"year\":\"1982\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1982 Q3\",\"value\":\"0.2\",\"label\":\"1982 Q3\",\"year\":\"1982\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2020-11-12T00:00:00.000Z\"},{\"date\":\"1982 Q4\",\"value\":\"0.7\",\"label\":\"1982 Q4\",\"year\":\"1982\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1983 Q1\",\"value\":\"2.0\",\"label\":\"1983 Q1\",\"year\":\"1983\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1983 Q2\",\"value\":\"0.7\",\"label\":\"1983 Q2\",\"year\":\"1983\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1983 Q3\",\"value\":\"1.2\",\"label\":\"1983 Q3\",\"year\":\"1983\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1983 Q4\",\"value\":\"0.8\",\"label\":\"1983 Q4\",\"year\":\"1983\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1984 Q1\",\"value\":\"0.9\",\"label\":\"1984 Q1\",\"year\":\"1984\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1984 Q2\",\"value\":\"-1.0\",\"label\":\"1984 Q2\",\"year\":\"1984\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"1984 Q3\",\"value\":\"0.7\",\"label\":\"1984 Q3\",\"year\":\"1984\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1984 Q4\",\"value\":\"1.8\",\"label\":\"1984 Q4\",\"year\":\"1984\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"1985 Q1\",\"value\":\"1.0\",\"label\":\"1985 Q1\",\"year\":\"1985\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1985 Q2\",\"value\":\"2.1\",\"label\":\"1985 Q2\",\"year\":\"1985\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1985 Q3\",\"value\":\"0.0\",\"label\":\"1985 Q3\",\"year\":\"1985\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1985 Q4\",\"value\":\"0.1\",\"label\":\"1985 Q4\",\"year\":\"1985\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"1986 Q1\",\"value\":\"1.0\",\"label\":\"1986 Q1\",\"year\":\"1986\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1986 Q2\",\"value\":\"0.9\",\"label\":\"1986 Q2\",\"year\":\"1986\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1986 Q3\",\"value\":\"0.6\",\"label\":\"1986 Q3\",\"year\":\"1986\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1986 Q4\",\"value\":\"1.9\",\"label\":\"1986 Q4\",\"year\":\"1986\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1987 Q1\",\"value\":\"0.7\",\"label\":\"1987 Q1\",\"year\":\"1987\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1987 Q2\",\"value\":\"1.5\",\"label\":\"1987 Q2\",\"year\":\"1987\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2019-11-11T00:00:00.000Z\"},{\"date\":\"1987 Q3\",\"value\":\"2.5\",\"label\":\"1987 Q3\",\"year\":\"1987\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1987 Q4\",\"value\":\"1.2\",\"label\":\"1987 Q4\",\"year\":\"1987\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1988 Q1\",\"value\":\"1.6\",\"label\":\"1988 Q1\",\"year\":\"1988\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1988 Q2\",\"value\":\"0.5\",\"label\":\"1988 Q2\",\"year\":\"1988\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1988 Q3\",\"value\":\"1.2\",\"label\":\"1988 Q3\",\"year\":\"1988\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1988 Q4\",\"value\":\"0.8\",\"label\":\"1988 Q4\",\"year\":\"1988\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2021-11-11T00:00:00.000Z\"},{\"date\":\"1989 Q1\",\"value\":\"0.5\",\"label\":\"1989 Q1\",\"year\":\"1989\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"1989 Q2\",\"value\":\"0.6\",\"label\":\"1989 Q2\",\"year\":\"1989\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1989 Q3\",\"value\":\"0.2\",\"label\":\"1989 Q3\",\"year\":\"1989\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1989 Q4\",\"value\":\"0.0\",\"label\":\"1989 Q4\",\"year\":\"1989\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1990 Q1\",\"value\":\"0.5\",\"label\":\"1990 Q1\",\"year\":\"1990\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1990 Q2\",\"value\":\"0.7\",\"label\":\"1990 Q2\",\"year\":\"1990\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1990 Q3\",\"value\":\"-1.1\",\"label\":\"1990 Q3\",\"year\":\"1990\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1990 Q4\",\"value\":\"-0.5\",\"label\":\"1990 Q4\",\"year\":\"1990\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1991 Q1\",\"value\":\"-0.5\",\"label\":\"1991 Q1\",\"year\":\"1991\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"1991 Q2\",\"value\":\"-0.1\",\"label\":\"1991 Q2\",\"year\":\"1991\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1991 Q3\",\"value\":\"-0.2\",\"label\":\"1991 Q3\",\"year\":\"1991\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1991 Q4\",\"value\":\"0.1\",\"label\":\"1991 Q4\",\"year\":\"1991\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1992 Q1\",\"value\":\"0.0\",\"label\":\"1992 Q1\",\"year\":\"1992\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2015-05-27T23:00:00.000Z\"},{\"date\":\"1992 Q2\",\"value\":\"-0.2\",\"label\":\"1992 Q2\",\"year\":\"1992\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1992 Q3\",\"value\":\"0.5\",\"label\":\"1992 Q3\",\"year\":\"1992\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1992 Q4\",\"value\":\"0.8\",\"label\":\"1992 Q4\",\"year\":\"1992\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1993 Q1\",\"value\":\"0.5\",\"label\":\"1993 Q1\",\"year\":\"1993\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1993 Q2\",\"value\":\"0.4\",\"label\":\"1993 Q2\",\"year\":\"1993\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"1993 Q3\",\"value\":\"0.9\",\"label\":\"1993 Q3\",\"year\":\"1993\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1993 Q4\",\"value\":\"0.7\",\"label\":\"1993 Q4\",\"year\":\"1993\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1994 Q1\",\"value\":\"1.0\",\"label\":\"1994 Q1\",\"year\":\"1994\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1994 Q2\",\"value\":\"0.9\",\"label\":\"1994 Q2\",\"year\":\"1994\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1994 Q3\",\"value\":\"1.0\",\"label\":\"1994 Q3\",\"year\":\"1994\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1994 Q4\",\"value\":\"0.4\",\"label\":\"1994 Q4\",\"year\":\"1994\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1995 Q1\",\"value\":\"0.5\",\"label\":\"1995 Q1\",\"year\":\"1995\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1995 Q2\",\"value\":\"0.2\",\"label\":\"1995 Q2\",\"year\":\"1995\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"1995 Q3\",\"value\":\"1.1\",\"label\":\"1995 Q3\",\"year\":\"1995\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1995 Q4\",\"value\":\"0.3\",\"label\":\"1995 Q4\",\"year\":\"1995\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1996 Q1\",\"value\":\"0.7\",\"label\":\"1996 Q1\",\"year\":\"1996\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1996 Q2\",\"value\":\"0.3\",\"label\":\"1996 Q2\",\"year\":\"1996\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1996 Q3\",\"value\":\"0.9\",\"label\":\"1996 Q3\",\"year\":\"1996\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1996 Q4\",\"value\":\"1.3\",\"label\":\"1996 Q4\",\"year\":\"1996\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1997 Q1\",\"value\":\"1.6\",\"label\":\"1997 Q1\",\"year\":\"1997\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1997 Q2\",\"value\":\"1.1\",\"label\":\"1997 Q2\",\"year\":\"1997\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"1997 Q3\",\"value\":\"0.9\",\"label\":\"1997 Q3\",\"year\":\"1997\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"1997 Q4\",\"value\":\"1.5\",\"label\":\"1997 Q4\",\"year\":\"1997\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"1998 Q1\",\"value\":\"0.7\",\"label\":\"1998 Q1\",\"year\":\"1998\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1998 Q2\",\"value\":\"0.6\",\"label\":\"1998 Q2\",\"year\":\"1998\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1998 Q3\",\"value\":\"0.2\",\"label\":\"1998 Q3\",\"year\":\"1998\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1998 Q4\",\"value\":\"0.7\",\"label\":\"1998 Q4\",\"year\":\"1998\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1999 Q1\",\"value\":\"0.7\",\"label\":\"1999 Q1\",\"year\":\"1999\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"1999 Q2\",\"value\":\"0.4\",\"label\":\"1999 Q2\",\"year\":\"1999\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1999 Q3\",\"value\":\"1.7\",\"label\":\"1999 Q3\",\"year\":\"1999\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1999 Q4\",\"value\":\"1.6\",\"label\":\"1999 Q4\",\"year\":\"1999\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2000 Q1\",\"value\":\"1.3\",\"label\":\"2000 Q1\",\"year\":\"2000\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2000 Q2\",\"value\":\"0.7\",\"label\":\"2000 Q2\",\"year\":\"2000\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"2000 Q3\",\"value\":\"0.6\",\"label\":\"2000 Q3\",\"year\":\"2000\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"2000 Q4\",\"value\":\"0.6\",\"label\":\"2000 Q4\",\"year\":\"2000\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"2001 Q1\",\"value\":\"0.8\",\"label\":\"2001 Q1\",\"year\":\"2001\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2001 Q2\",\"value\":\"0.4\",\"label\":\"2001 Q2\",\"year\":\"2001\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"2001 Q3\",\"value\":\"0.5\",\"label\":\"2001 Q3\",\"year\":\"2001\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2021-11-11T00:00:00.000Z\"},{\"date\":\"2001 Q4\",\"value\":\"0.3\",\"label\":\"2001 Q4\",\"year\":\"2001\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"2002 Q1\",\"value\":\"0.3\",\"label\":\"2002 Q1\",\"year\":\"2002\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"2002 Q2\",\"value\":\"0.5\",\"label\":\"2002 Q2\",\"year\":\"2002\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"2002 Q3\",\"value\":\"0.6\",\"label\":\"2002 Q3\",\"year\":\"2002\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2002 Q4\",\"value\":\"0.7\",\"label\":\"2002 Q4\",\"year\":\"2002\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2003 Q1\",\"value\":\"0.8\",\"label\":\"2003 Q1\",\"year\":\"2003\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2003 Q2\",\"value\":\"0.9\",\"label\":\"2003 Q2\",\"year\":\"2003\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"2003 Q3\",\"value\":\"1.0\",\"label\":\"2003 Q3\",\"year\":\"2003\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2003 Q4\",\"value\":\"0.8\",\"label\":\"2003 Q4\",\"year\":\"2003\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2021-11-11T00:00:00.000Z\"},{\"date\":\"2004 Q1\",\"value\":\"0.3\",\"label\":\"2004 Q1\",\"year\":\"2004\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2004 Q2\",\"value\":\"0.5\",\"label\":\"2004 Q2\",\"year\":\"2004\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2004 Q3\",\"value\":\"0.4\",\"label\":\"2004 Q3\",\"year\":\"2004\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"2004 Q4\",\"value\":\"0.5\",\"label\":\"2004 Q4\",\"year\":\"2004\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"2005 Q1\",\"value\":\"0.8\",\"label\":\"2005 Q1\",\"year\":\"2005\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2005 Q2\",\"value\":\"0.8\",\"label\":\"2005 Q2\",\"year\":\"2005\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"2005 Q3\",\"value\":\"0.9\",\"label\":\"2005 Q3\",\"year\":\"2005\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2005 Q4\",\"value\":\"1.0\",\"label\":\"2005 Q4\",\"year\":\"2005\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2006 Q1\",\"value\":\"0.4\",\"label\":\"2006 Q1\",\"year\":\"2006\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2006 Q2\",\"value\":\"0.3\",\"label\":\"2006 Q2\",\"year\":\"2006\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2006 Q3\",\"value\":\"0.2\",\"label\":\"2006 Q3\",\"year\":\"2006\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2006 Q4\",\"value\":\"0.4\",\"label\":\"2006 Q4\",\"year\":\"2006\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2007 Q1\",\"value\":\"1.1\",\"label\":\"2007 Q1\",\"year\":\"2007\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2007 Q2\",\"value\":\"0.9\",\"label\":\"2007 Q2\",\"year\":\"2007\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2007 Q3\",\"value\":\"0.9\",\"label\":\"2007 Q3\",\"year\":\"2007\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2007 Q4\",\"value\":\"0.8\",\"label\":\"2007 Q4\",\"year\":\"2007\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2008 Q1\",\"value\":\"0.4\",\"label\":\"2008 Q1\",\"year\":\"2008\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2008 Q2\",\"value\":\"-0.5\",\"label\":\"2008 Q2\",\"year\":\"2008\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2021-11-11T00:00:00.000Z\"},{\"date\":\"2008 Q3\",\"value\":\"-1.6\",\"label\":\"2008 Q3\",\"year\":\"2008\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2008 Q4\",\"value\":\"-2.1\",\"label\":\"2008 Q4\",\"year\":\"2008\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"2009 Q1\",\"value\":\"-2.0\",\"label\":\"2009 Q1\",\"year\":\"2009\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"2009 Q2\",\"value\":\"-0.3\",\"label\":\"2009 Q2\",\"year\":\"2009\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2021-11-11T00:00:00.000Z\"},{\"date\":\"2009 Q3\",\"value\":\"0.1\",\"label\":\"2009 Q3\",\"year\":\"2009\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2018-08-09T23:00:00.000Z\"},{\"date\":\"2009 Q4\",\"value\":\"0.3\",\"label\":\"2009 Q4\",\"year\":\"2009\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2017-11-23T00:00:00.000Z\"},{\"date\":\"2010 Q1\",\"value\":\"0.8\",\"label\":\"2010 Q1\",\"year\":\"2010\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2010 Q2\",\"value\":\"1.1\",\"label\":\"2010 Q2\",\"year\":\"2010\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2021-11-11T00:00:00.000Z\"},{\"date\":\"2010 Q3\",\"value\":\"0.6\",\"label\":\"2010 Q3\",\"year\":\"2010\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"2010 Q4\",\"value\":\"0.1\",\"label\":\"2010 Q4\",\"year\":\"2010\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2021-11-11T00:00:00.000Z\"},{\"date\":\"2011 Q1\",\"value\":\"0.2\",\"label\":\"2011 Q1\",\"year\":\"2011\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2011 Q2\",\"value\":\"0.0\",\"label\":\"2011 Q2\",\"year\":\"2011\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2011 Q3\",\"value\":\"0.2\",\"label\":\"2011 Q3\",\"year\":\"2011\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2011 Q4\",\"value\":\"0.1\",\"label\":\"2011 Q4\",\"year\":\"2011\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"2012 Q1\",\"value\":\"0.9\",\"label\":\"2012 Q1\",\"year\":\"2012\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"2012 Q2\",\"value\":\"-0.1\",\"label\":\"2012 Q2\",\"year\":\"2012\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2016-08-25T23:00:00.000Z\"},{\"date\":\"2012 Q3\",\"value\":\"1.0\",\"label\":\"2012 Q3\",\"year\":\"2012\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"2012 Q4\",\"value\":\"-0.1\",\"label\":\"2012 Q4\",\"year\":\"2012\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"2013 Q1\",\"value\":\"0.3\",\"label\":\"2013 Q1\",\"year\":\"2013\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"2013 Q2\",\"value\":\"0.7\",\"label\":\"2013 Q2\",\"year\":\"2013\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2021-11-11T00:00:00.000Z\"},{\"date\":\"2013 Q3\",\"value\":\"0.8\",\"label\":\"2013 Q3\",\"year\":\"2013\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"2013 Q4\",\"value\":\"0.7\",\"label\":\"2013 Q4\",\"year\":\"2013\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"2014 Q1\",\"value\":\"0.8\",\"label\":\"2014 Q1\",\"year\":\"2014\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"2014 Q2\",\"value\":\"0.9\",\"label\":\"2014 Q2\",\"year\":\"2014\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"2014 Q3\",\"value\":\"0.8\",\"label\":\"2014 Q3\",\"year\":\"2014\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"2014 Q4\",\"value\":\"0.7\",\"label\":\"2014 Q4\",\"year\":\"2014\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"2015 Q1\",\"value\":\"0.3\",\"label\":\"2015 Q1\",\"year\":\"2015\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"2015 Q2\",\"value\":\"0.5\",\"label\":\"2015 Q2\",\"year\":\"2015\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2015 Q3\",\"value\":\"0.4\",\"label\":\"2015 Q3\",\"year\":\"2015\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"2015 Q4\",\"value\":\"0.6\",\"label\":\"2015 Q4\",\"year\":\"2015\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"2016 Q1\",\"value\":\"0.5\",\"label\":\"2016 Q1\",\"year\":\"2016\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2016 Q2\",\"value\":\"0.7\",\"label\":\"2016 Q2\",\"year\":\"2016\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2016 Q3\",\"value\":\"0.4\",\"label\":\"2016 Q3\",\"year\":\"2016\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2021-11-11T00:00:00.000Z\"},{\"date\":\"2016 Q4\",\"value\":\"0.6\",\"label\":\"2016 Q4\",\"year\":\"2016\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"2017 Q1\",\"value\":\"1.0\",\"label\":\"2017 Q1\",\"year\":\"2017\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2017 Q2\",\"value\":\"0.9\",\"label\":\"2017 Q2\",\"year\":\"2017\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2017 Q3\",\"value\":\"0.7\",\"label\":\"2017 Q3\",\"year\":\"2017\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2017 Q4\",\"value\":\"0.8\",\"label\":\"2017 Q4\",\"year\":\"2017\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2018 Q1\",\"value\":\"0.1\",\"label\":\"2018 Q1\",\"year\":\"2018\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"2018 Q2\",\"value\":\"0.2\",\"label\":\"2018 Q2\",\"year\":\"2018\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"2018 Q3\",\"value\":\"0.3\",\"label\":\"2018 Q3\",\"year\":\"2018\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"2018 Q4\",\"value\":\"0.1\",\"label\":\"2018 Q4\",\"year\":\"2018\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"2019 Q1\",\"value\":\"0.5\",\"label\":\"2019 Q1\",\"year\":\"2019\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2019 Q2\",\"value\":\"0.2\",\"label\":\"2019 Q2\",\"year\":\"2019\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2019 Q3\",\"value\":\"0.6\",\"label\":\"2019 Q3\",\"year\":\"2019\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2019 Q4\",\"value\":\"0.0\",\"label\":\"2019 Q4\",\"year\":\"2019\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2021-02-12T00:00:00.000Z\"},{\"date\":\"2020 Q1\",\"value\":\"-2.7\",\"label\":\"2020 Q1\",\"year\":\"2020\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"2020 Q2\",\"value\":\"-19.9\",\"label\":\"2020 Q2\",\"year\":\"2020\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2020 Q3\",\"value\":\"17.0\",\"label\":\"2020 Q3\",\"year\":\"2020\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2020 Q4\",\"value\":\"1.4\",\"label\":\"2020 Q4\",\"year\":\"2020\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"2021 Q1\",\"value\":\"-1.1\",\"label\":\"2021 Q1\",\"year\":\"2021\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2021 Q2\",\"value\":\"7.0\",\"label\":\"2021 Q2\",\"year\":\"2021\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2021 Q3\",\"value\":\"1.7\",\"label\":\"2021 Q3\",\"year\":\"2021\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-02-10T00:00:00.000Z\"},{\"date\":\"2021 Q4\",\"value\":\"1.4\",\"label\":\"2021 Q4\",\"year\":\"2021\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2022 Q1\",\"value\":\"1.0\",\"label\":\"2022 Q1\",\"year\":\"2022\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2022 Q2\",\"value\":\"0.6\",\"label\":\"2022 Q2\",\"year\":\"2022\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2022 Q3\",\"value\":\"0.1\",\"label\":\"2022 Q3\",\"year\":\"2022\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2024-11-15T00:00:00.000Z\"},{\"date\":\"2022 Q4\",\"value\":\"0.3\",\"label\":\"2022 Q4\",\"year\":\"2022\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2024-11-15T00:00:00.000Z\"},{\"date\":\"2023 Q1\",\"value\":\"0.1\",\"label\":\"2023 Q1\",\"year\":\"2023\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2024-11-15T00:00:00.000Z\"},{\"date\":\"2023 Q2\",\"value\":\"0.0\",\"label\":\"2023 Q2\",\"year\":\"2023\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2024-02-15T00:00:00.000Z\"},{\"date\":\"2023 Q3\",\"value\":\"-0.2\",\"label\":\"2023 Q3\",\"year\":\"2023\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2023 Q4\",\"value\":\"-0.3\",\"label\":\"2023 Q4\",\"year\":\"2023\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2024 Q1\",\"value\":\"0.7\",\"label\":\"2024 Q1\",\"year\":\"2024\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2026-05-13T23:00:00.000Z\"},{\"date\":\"2024 Q2\",\"value\":\"0.6\",\"label\":\"2024 Q2\",\"year\":\"2024\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2024 Q3\",\"value\":\"0.2\",\"label\":\"2024 Q3\",\"year\":\"2024\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2024 Q4\",\"value\":\"0.4\",\"label\":\"2024 Q4\",\"year\":\"2024\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2026-05-13T23:00:00.000Z\"},{\"date\":\"2025 Q1\",\"value\":\"0.6\",\"label\":\"2025 Q1\",\"year\":\"2025\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2026-05-13T23:00:00.000Z\"},{\"date\":\"2025 Q2\",\"value\":\"0.2\",\"label\":\"2025 Q2\",\"year\":\"2025\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2026-08-12T23:00:00.000Z\"},{\"date\":\"2025 Q3\",\"value\":\"0.1\",\"label\":\"2025 Q3\",\"year\":\"2025\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2026-08-12T23:00:00.000Z\"},{\"date\":\"2025 Q4\",\"value\":\"0.1\",\"label\":\"2025 Q4\",\"year\":\"2025\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2026-08-12T23:00:00.000Z\"},{\"date\":\"2026 Q1\",\"value\":\"0.6\",\"label\":\"2026 Q1\",\"year\":\"2026\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2026-05-13T23:00:00.000Z\"},{\"date\":\"2026 Q2\",\"value\":\"0.4\",\"label\":\"2026 Q2\",\"year\":\"2026\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2026-08-12T23:00:00.000Z\"}],\"months\":[],\"sourceDatasets\":[],\"relatedDatasets\":[{\"uri\":\"/economy/grossdomesticproductgdp/datasets/secondestimateofgdp\"}],\"section\":{},\"notes\":[\"\"],\"relatedDocuments\":[{\"uri\":\"/economy/grossdomesticproductgdp/bulletins/gdpfirstquarterlyestimateuk/latest\"}],\"relatedData\":[{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ybez\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyp\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyr\"}],\"versions\":[{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v1\",\"updateDate\":\"2015-05-27T23:00:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v1\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v2\",\"updateDate\":\"2016-02-25T09:30:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v2\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v3\",\"updateDate\":\"2016-05-26T08:30:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v3\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v4\",\"updateDate\":\"2016-08-26T08:30:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v4\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v5\",\"updateDate\":\"2016-11-25T09:30:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v5\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v6\",\"updateDate\":\"2017-02-22T09:30:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v6\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v7\",\"updateDate\":\"2017-05-25T08:30:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v7\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v8\",\"updateDate\":\"2017-08-24T08:30:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v8\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v9\",\"updateDate\":\"2017-11-23T09:30:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v9\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v10\",\"updateDate\":\"2018-02-22T09:30:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v10\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v11\",\"updateDate\":\"2018-05-25T08:30:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v11\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v12\",\"updateDate\":\"2018-08-10T08:30:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v12\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v13\",\"updateDate\":\"2018-11-09T07:38:17.548Z\",\"correctionNotice\":\"\",\"label\":\"v13\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v14\",\"updateDate\":\"2019-02-11T09:30:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v14\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v15\",\"updateDate\":\"2019-05-10T08:30:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v15\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v15\",\"updateDate\":\"2019-05-10T08:30:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v15\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v16\",\"updateDate\":\"2019-05-10T08:59:07.447Z\",\"correctionNotice\":\"\",\"label\":\"v16\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v17\",\"updateDate\":\"2019-08-09T08:30:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v17\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v18\",\"updateDate\":\"2019-11-11T09:30:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v18\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v19\",\"updateDate\":\"2020-02-11T08:11:15.587Z\",\"correctionNotice\":\"\",\"label\":\"v19\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v20\",\"updateDate\":\"2020-05-13T08:30:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v20\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v21\",\"updateDate\":\"2020-08-12T05:39:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v21\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v22\",\"updateDate\":\"2020-11-12T07:00:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v22\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v23\",\"updateDate\":\"2021-02-12T07:00:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v23\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v24\",\"updateDate\":\"2021-05-12T06:00:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v24\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v25\",\"updateDate\":\"2021-08-12T06:00:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v25\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v26\",\"updateDate\":\"2021-11-11T07:00:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v26\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v27\",\"updateDate\":\"2022-02-11T07:00:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v27\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v28\",\"updateDate\":\"2022-05-12T06:00:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v28\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v29\",\"updateDate\":\"2022-08-12T06:00:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v29\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v30\",\"updateDate\":\"2022-11-11T07:00:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v30\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v31\",\"updateDate\":\"2023-02-10T07:00:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v31\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v32\",\"updateDate\":\"2023-05-11T12:33:30.901Z\",\"correctionNotice\":\"\",\"label\":\"v32\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v33\",\"updateDate\":\"2023-08-11T06:00:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v33\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v34\",\"updateDate\":\"2023-11-10T07:00:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v34\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v35\",\"updateDate\":\"2024-02-15T07:00:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v35\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v36\",\"updateDate\":\"2024-05-10T06:00:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v36\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v37\",\"updateDate\":\"2024-08-15T06:00:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v37\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v38\",\"updateDate\":\"2024-11-15T07:00:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v38\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v39\",\"updateDate\":\"2025-02-13T07:00:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v39\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v40\",\"updateDate\":\"2025-05-15T06:00:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v40\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v41\",\"updateDate\":\"2025-08-14T06:00:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v41\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v42\",\"updateDate\":\"2025-11-13T07:00:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v42\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v43\",\"updateDate\":\"2026-02-12T07:00:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v43\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v44\",\"updateDate\":\"2026-05-14T06:00:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v44\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v45\",\"updateDate\":\"2026-08-13T06:00:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v45\"}],\"type\":\"timeseries\",\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2\",\"description\":{\"title\":\"Gross Domestic Product: Quarter on Quarter growth: CVM SA %\",\"contact\":{\"email\":\"gdp@ons.gov.uk\",\"name\":\"Gross Domestic Product team\",\"telephone\":\" +44 1633 455284\"},\"releaseDate\":\"2026-08-12T23:00:00.000Z\",\"nextRelease\":\"30 September 2026\",\"datasetId\":\"PN2\",\"datasetUri\":\"/economy/grossdomesticproductgdp/datasets/secondestimateofgdp\",\"cdid\":\"IHYQ\",\"unit\":\"%\",\"preUnit\":\"\",\"source\":\"\",\"date\":\"2026 Q2\",\"number\":\"0.4\",\"keyNote\":\"Chained Volume Measures (CVM)\",\"sampleSize\":\"0\"}}",
+            "raw_response_sha256": "5e3c72422b54f8b7b5a1eda8b5bf6bb1a411f692fd9a57354a078b2d0d36ef80",
+            "series_id": "IHYQ",
+            "vintage_scope": "current observed snapshot only; historical firstrelease availability not established"
+          },
+          "availability_basis": "first_observed_retrieval",
+          "independent_of_polymarket": true,
+          "qualification": "qualified_research",
+          "missingness": [
+            "historical_firstrelease_vintages",
+            "calibration",
+            "execution_books"
+          ]
+        }
+      ]
+    },
+    {
+      "original_record_id": "000000000047:f80c28b5bb9bb14a19f3f0bdc8145e1c92e9e22d6542ba75949829215ad6bebf",
+      "original_record_sha256": "92ed9216b81aa6e073345d63f7bcc0c8e12b85c73231c1136623ef14f2b27842",
+      "forecast": {
+        "model_id": "uk-gdp-regularized-ar1-v25.1",
+        "model_version": "uk-gdp-regularized-ar1-v25.1",
+        "model_sha256": "f47b615703e833311de2bcec42a0941a23e49d747372cf4349c5ce71fa63bfc3",
+        "feature_version": "observed-ONS-IHYQ-quarterly-growth-v1",
+        "domain": "economics",
+        "event_id": "844497",
+        "market_id": "3566407",
+        "token_id": "99152048788234224357734975456328610052461154108689630888376315692101778386164",
+        "probability": 0.9809268469075689,
+        "probability_semantics": "binary_event_probability",
+        "lower_probability": 0.0,
+        "upper_probability": 1.0,
+        "uncertainty": 1.0,
+        "training_observations": 40,
+        "last_source_period": "2026 Q2",
+        "dataset_sha256": "42a737ca61c93425192ab62f469d2fab64227907737de4d65a758e1161dc2d24",
+        "evidence_ids": [
+          "cbf8a2a83faeae20135a968954996b7ec6e6d206b3f7e8f3271be0503dd59488"
+        ],
+        "evidence_cutoff": "2026-11-08T01:34:08.565121+00:00",
+        "event_end_time": "2026-11-12T00:00:00+00:00",
+        "rules_sha256": "8ee46b65a3687a1e9fac0fc0ed614d05d17f1a86ef0d10218e4a5c4ad4fde2d6",
+        "contract": {
+          "kind": "uk_gdp_qoq_first_release",
+          "series_id": "IHYQ",
+          "target_period": "2026 Q3",
+          "quarter": 3,
+          "year": 2026,
+          "release_at": "2026-11-12T00:00:00+00:00",
+          "release_time_precision": "day_lower_bound_not_exact_publication_time",
+          "settlement_at": "2026-11-13T04:59:00+00:00",
+          "source_url": "https://www.ons.gov.uk/economy/grossdomesticproductgdp/bulletins/gdpfirstquarterlyestimateuk/previousreleases",
+          "source_series_url": "https://www.ons.gov.uk/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/data",
+          "selected_outcome": "No",
+          "tail": "between",
+          "lower": "0.6",
+          "upper": "0.7",
+          "market": {
+            "schema_version": "1.0",
+            "id": "2087a96bc08c39880fc8cb4c21a4af92fe8bf5600d663d55870c3e4591cc0f38",
+            "timestamp": "2026-11-08T01:27:21.928546Z",
+            "available_at": "2026-11-08T01:27:21.928546Z",
+            "source": "https://gamma-api.polymarket.com",
+            "exchange": "polymarket",
+            "market_id": "3566407",
+            "event_id": "844497",
+            "question": "Will UK GDP growth in Q3 2026 be between 0.6% and 0.7%?",
+            "token_id": "99152048788234224357734975456328610052461154108689630888376315692101778386164",
+            "outcome": "No",
+            "probability": 0.451,
+            "status": "active",
+            "resolution_rules": "This market will resolve according to the UK real gross domestic product (GDP) growth rate (% change) for Q3 of 2026 compared with the most recent quarter (quarter-on-previous-quarter) in the \"GDP first quarterly estimate, UK\" release for Q3 of 2026, scheduled for November 12, 2026.\n\nThe GDP release will be made available here: https://www.ons.gov.uk/economy/grossdomesticproductgdp/bulletins/gdpfirstquarterlyestimateuk/previousreleases\n\nIf no data for the specified quarter is released by the date the next quarter's data is scheduled to be released, this market will resolve based on data from the last available quarter.\n\nNote: data from the initial release of the referenced GDP report is what will be used to resolve this market. Data may be revised during the following quarter or as a part of the next estimate's publication, however any revisions to GDP report data made after the initial release will not be considered for this market's resolution.\n\nNote: the resolution source for this market reports GDP growth rates to only one decimal point (e.g. 1.8%). Thus, this is the level of precision that will be used when resolving the market.",
+            "resolution_source": "https://www.ons.gov.uk/economy/grossdomesticproductgdp/bulletins/gdpfirstquarterlyestimateuk/previousreleases",
+            "end_time": "2026-11-13T04:59:00Z",
+            "tick_size": 0.001,
+            "min_order_size": 5.0
+          },
+          "rules_sha256": "8ee46b65a3687a1e9fac0fc0ed614d05d17f1a86ef0d10218e4a5c4ad4fde2d6",
+          "conditioning": "scheduled firstrelease without fallback/correction; current-vintage historical feature distribution"
+        },
+        "source_lineages": [
+          "ONS:IHYQ:current-vintage"
+        ],
+        "calibration_status": "unvalidated_research",
+        "target_conditioning": "scheduled firstrelease without fallback/correction; current-vintage historical feature distribution",
+        "unconditional_contract_probability": false,
+        "market_probability": null,
+        "limitations": [
+          "Revised current-vintage history is a forecasting feature, never asserted as historical firstrelease labels",
+          "Scheduled release day is a conservative lower time bound, not independently verified release-hour calendar",
+          "No proven calibration, executable edge or regime robustness"
+        ],
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false,
+        "timestamp": "2026-11-08T01:34:08.567966+00:00",
+        "market": {
+          "schema_version": "1.0",
+          "id": "2087a96bc08c39880fc8cb4c21a4af92fe8bf5600d663d55870c3e4591cc0f38",
+          "timestamp": "2026-11-08T01:27:21.928546Z",
+          "available_at": "2026-11-08T01:27:21.928546Z",
+          "source": "https://gamma-api.polymarket.com",
+          "exchange": "polymarket",
+          "market_id": "3566407",
+          "event_id": "844497",
+          "question": "Will UK GDP growth in Q3 2026 be between 0.6% and 0.7%?",
+          "token_id": "99152048788234224357734975456328610052461154108689630888376315692101778386164",
+          "outcome": "No",
+          "probability": 0.451,
+          "status": "active",
+          "resolution_rules": "This market will resolve according to the UK real gross domestic product (GDP) growth rate (% change) for Q3 of 2026 compared with the most recent quarter (quarter-on-previous-quarter) in the \"GDP first quarterly estimate, UK\" release for Q3 of 2026, scheduled for November 12, 2026.\n\nThe GDP release will be made available here: https://www.ons.gov.uk/economy/grossdomesticproductgdp/bulletins/gdpfirstquarterlyestimateuk/previousreleases\n\nIf no data for the specified quarter is released by the date the next quarter's data is scheduled to be released, this market will resolve based on data from the last available quarter.\n\nNote: data from the initial release of the referenced GDP report is what will be used to resolve this market. Data may be revised during the following quarter or as a part of the next estimate's publication, however any revisions to GDP report data made after the initial release will not be considered for this market's resolution.\n\nNote: the resolution source for this market reports GDP growth rates to only one decimal point (e.g. 1.8%). Thus, this is the level of precision that will be used when resolving the market.",
+          "resolution_source": "https://www.ons.gov.uk/economy/grossdomesticproductgdp/bulletins/gdpfirstquarterlyestimateuk/previousreleases",
+          "end_time": "2026-11-13T04:59:00Z",
+          "tick_size": 0.001,
+          "min_order_size": 5.0
+        },
+        "book": {
+          "schema_version": "1.0",
+          "id": "5116ac76da4f74aa439010ed8b3bb41c73c7aa723dee5bd8a6457e08253881fe",
+          "timestamp": "2026-11-08T01:34:08.038000Z",
+          "available_at": "2026-11-08T01:34:08.564614Z",
+          "source": "https://clob.polymarket.com",
+          "exchange": "polymarket",
+          "market_id": "3566407",
+          "token_id": "99152048788234224357734975456328610052461154108689630888376315692101778386164",
+          "bids": [
+            {
+              "price": 0.435,
+              "size": 100.0
+            },
+            {
+              "price": 0.434,
+              "size": 83.0
+            },
+            {
+              "price": 0.432,
+              "size": 20.0
+            },
+            {
+              "price": 0.431,
+              "size": 20.0
+            },
+            {
+              "price": 0.429,
+              "size": 61.0
+            },
+            {
+              "price": 0.426,
+              "size": 30.52
+            },
+            {
+              "price": 0.399,
+              "size": 30.0
+            },
+            {
+              "price": 0.398,
+              "size": 35.0
+            },
+            {
+              "price": 0.397,
+              "size": 29.03
+            },
+            {
+              "price": 0.37,
+              "size": 95.0
+            },
+            {
+              "price": 0.369,
+              "size": 60.0
+            },
+            {
+              "price": 0.367,
+              "size": 12.8
+            },
+            {
+              "price": 0.352,
+              "size": 40.0
+            },
+            {
+              "price": 0.35,
+              "size": 66.75
+            },
+            {
+              "price": 0.204,
+              "size": 100.0
+            },
+            {
+              "price": 0.203,
+              "size": 50.0
+            },
+            {
+              "price": 0.102,
+              "size": 400.0
+            },
+            {
+              "price": 0.101,
+              "size": 40.0
+            },
+            {
+              "price": 0.043,
+              "size": 8.79
+            },
+            {
+              "price": 0.042,
+              "size": 9.0
+            },
+            {
+              "price": 0.041,
+              "size": 6.19
+            },
+            {
+              "price": 0.04,
+              "size": 505.0
+            },
+            {
+              "price": 0.03,
+              "size": 833.33
+            },
+            {
+              "price": 0.02,
+              "size": 1250.0
+            },
+            {
+              "price": 0.011,
+              "size": 9.97
+            },
+            {
+              "price": 0.01,
+              "size": 2755.0
+            },
+            {
+              "price": 0.008,
+              "size": 4062.5
+            },
+            {
+              "price": 0.007,
+              "size": 5000.0
+            },
+            {
+              "price": 0.006,
+              "size": 8333.33
+            },
+            {
+              "price": 0.005,
+              "size": 10540.0
+            },
+            {
+              "price": 0.004,
+              "size": 13757.22
+            },
+            {
+              "price": 0.003,
+              "size": 19599.99
+            },
+            {
+              "price": 0.002,
+              "size": 650.0
+            },
+            {
+              "price": 0.001,
+              "size": 1328.55
+            }
+          ],
+          "asks": [
+            {
+              "price": 0.467,
+              "size": 309.4
+            },
+            {
+              "price": 0.468,
+              "size": 215.0
+            },
+            {
+              "price": 0.47,
+              "size": 200.0
+            },
+            {
+              "price": 0.471,
+              "size": 76.81
+            },
+            {
+              "price": 0.479,
+              "size": 200.0
+            },
+            {
+              "price": 0.482,
+              "size": 193.48
+            },
+            {
+              "price": 0.664,
+              "size": 10.5
+            },
+            {
+              "price": 0.665,
+              "size": 20.5
+            },
+            {
+              "price": 0.9,
+              "size": 23.69
+            },
+            {
+              "price": 0.95,
+              "size": 5.0
+            },
+            {
+              "price": 0.952,
+              "size": 382.0
+            },
+            {
+              "price": 0.96,
+              "size": 750.0
+            },
+            {
+              "price": 0.97,
+              "size": 1250.0
+            },
+            {
+              "price": 0.98,
+              "size": 1875.0
+            },
+            {
+              "price": 0.989,
+              "size": 9.54
+            },
+            {
+              "price": 0.99,
+              "size": 4125.0
+            },
+            {
+              "price": 0.992,
+              "size": 6093.75
+            },
+            {
+              "price": 0.993,
+              "size": 7500.0
+            },
+            {
+              "price": 0.994,
+              "size": 12500.0
+            },
+            {
+              "price": 0.995,
+              "size": 16350.15
+            },
+            {
+              "price": 0.996,
+              "size": 20875.0
+            },
+            {
+              "price": 0.997,
+              "size": 29516.66
+            },
+            {
+              "price": 0.998,
+              "size": 1150.0
+            },
+            {
+              "price": 0.999,
+              "size": 2422.04
+            }
+          ],
+          "sequence": 0,
+          "complete": true
+        },
+        "book_id": "5116ac76da4f74aa439010ed8b3bb41c73c7aa723dee5bd8a6457e08253881fe",
+        "book_sha256": "9923cd4c2eb2f52e1788cd98c33a2580dc521dc67576ee2dafa4a34a868ed206",
+        "market_expected_payout": 0.451,
+        "evidence_lineages": [
+          "UK Office for National Statistics:IHYQ"
+        ],
+        "market_baseline_comparable": false,
+        "adapter": "economics",
+        "enrollment_id": "c0c8d63d6952dfb86b3edd3d0bd3df3dd987fccbb405b720c82d120090ff1f56",
+        "reviewed_dependency_group": null,
+        "independence_reviewed": false,
+        "horizon_bucket": "1-7d",
+        "id": "5c593205b4b3d259b97a2ca71cff67c1bd5af08747862a2ddc3c18892ae7597e"
+      },
+      "evidence": [
+        {
+          "schema_version": "1.0",
+          "id": "cbf8a2a83faeae20135a968954996b7ec6e6d206b3f7e8f3271be0503dd59488",
+          "timestamp": "2026-11-08T00:28:28.665749Z",
+          "available_at": "2026-11-08T00:28:28.665749Z",
+          "source": "https://www.ons.gov.uk/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/data",
+          "domain": "economics",
+          "provider": "UK Office for National Statistics",
+          "source_id": "IHYQ",
+          "retrieved_at": "2026-11-08T00:28:28.665749Z",
+          "source_timestamp": null,
+          "content_sha256": "42a737ca61c93425192ab62f469d2fab64227907737de4d65a758e1161dc2d24",
+          "payload": {
+            "request_url": "https://www.ons.gov.uk/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/data",
+            "raw_response_utf8": "{\"years\":[],\"quarters\":[{\"date\":\"1955 Q2\",\"value\":\"0.1\",\"label\":\"1955 Q2\",\"year\":\"1955\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1955 Q3\",\"value\":\"1.7\",\"label\":\"1955 Q3\",\"year\":\"1955\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1955 Q4\",\"value\":\"-0.6\",\"label\":\"1955 Q4\",\"year\":\"1955\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2024-11-15T00:00:00.000Z\"},{\"date\":\"1956 Q1\",\"value\":\"1.2\",\"label\":\"1956 Q1\",\"year\":\"1956\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1956 Q2\",\"value\":\"-0.1\",\"label\":\"1956 Q2\",\"year\":\"1956\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1956 Q3\",\"value\":\"-0.1\",\"label\":\"1956 Q3\",\"year\":\"1956\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2015-05-27T23:00:00.000Z\"},{\"date\":\"1956 Q4\",\"value\":\"0.6\",\"label\":\"1956 Q4\",\"year\":\"1956\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1957 Q1\",\"value\":\"1.8\",\"label\":\"1957 Q1\",\"year\":\"1957\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1957 Q2\",\"value\":\"0.0\",\"label\":\"1957 Q2\",\"year\":\"1957\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2016-08-25T23:00:00.000Z\"},{\"date\":\"1957 Q3\",\"value\":\"-0.6\",\"label\":\"1957 Q3\",\"year\":\"1957\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2015-05-27T23:00:00.000Z\"},{\"date\":\"1957 Q4\",\"value\":\"0.3\",\"label\":\"1957 Q4\",\"year\":\"1957\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1958 Q1\",\"value\":\"2.1\",\"label\":\"1958 Q1\",\"year\":\"1958\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1958 Q2\",\"value\":\"-2.5\",\"label\":\"1958 Q2\",\"year\":\"1958\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1958 Q3\",\"value\":\"2.2\",\"label\":\"1958 Q3\",\"year\":\"1958\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2015-05-27T23:00:00.000Z\"},{\"date\":\"1958 Q4\",\"value\":\"0.3\",\"label\":\"1958 Q4\",\"year\":\"1958\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1959 Q1\",\"value\":\"0.6\",\"label\":\"1959 Q1\",\"year\":\"1959\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"1959 Q2\",\"value\":\"1.6\",\"label\":\"1959 Q2\",\"year\":\"1959\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1959 Q3\",\"value\":\"2.1\",\"label\":\"1959 Q3\",\"year\":\"1959\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1959 Q4\",\"value\":\"2.5\",\"label\":\"1959 Q4\",\"year\":\"1959\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"1960 Q1\",\"value\":\"2.5\",\"label\":\"1960 Q1\",\"year\":\"1960\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2019-11-11T00:00:00.000Z\"},{\"date\":\"1960 Q2\",\"value\":\"-0.7\",\"label\":\"1960 Q2\",\"year\":\"1960\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1960 Q3\",\"value\":\"1.5\",\"label\":\"1960 Q3\",\"year\":\"1960\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2016-08-25T23:00:00.000Z\"},{\"date\":\"1960 Q4\",\"value\":\"0.5\",\"label\":\"1960 Q4\",\"year\":\"1960\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1961 Q1\",\"value\":\"1.7\",\"label\":\"1961 Q1\",\"year\":\"1961\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1961 Q2\",\"value\":\"0.4\",\"label\":\"1961 Q2\",\"year\":\"1961\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2015-05-27T23:00:00.000Z\"},{\"date\":\"1961 Q3\",\"value\":\"-0.5\",\"label\":\"1961 Q3\",\"year\":\"1961\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2015-05-27T23:00:00.000Z\"},{\"date\":\"1961 Q4\",\"value\":\"-0.2\",\"label\":\"1961 Q4\",\"year\":\"1961\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2015-05-27T23:00:00.000Z\"},{\"date\":\"1962 Q1\",\"value\":\"0.5\",\"label\":\"1962 Q1\",\"year\":\"1962\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1962 Q2\",\"value\":\"0.9\",\"label\":\"1962 Q2\",\"year\":\"1962\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2020-11-12T00:00:00.000Z\"},{\"date\":\"1962 Q3\",\"value\":\"0.6\",\"label\":\"1962 Q3\",\"year\":\"1962\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2015-05-27T23:00:00.000Z\"},{\"date\":\"1962 Q4\",\"value\":\"-0.4\",\"label\":\"1962 Q4\",\"year\":\"1962\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1963 Q1\",\"value\":\"0.5\",\"label\":\"1963 Q1\",\"year\":\"1963\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"1963 Q2\",\"value\":\"4.3\",\"label\":\"1963 Q2\",\"year\":\"1963\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1963 Q3\",\"value\":\"0.4\",\"label\":\"1963 Q3\",\"year\":\"1963\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1963 Q4\",\"value\":\"2.3\",\"label\":\"1963 Q4\",\"year\":\"1963\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1964 Q1\",\"value\":\"0.7\",\"label\":\"1964 Q1\",\"year\":\"1964\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"1964 Q2\",\"value\":\"1.9\",\"label\":\"1964 Q2\",\"year\":\"1964\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2021-11-11T00:00:00.000Z\"},{\"date\":\"1964 Q3\",\"value\":\"0.3\",\"label\":\"1964 Q3\",\"year\":\"1964\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1964 Q4\",\"value\":\"1.6\",\"label\":\"1964 Q4\",\"year\":\"1964\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1965 Q1\",\"value\":\"-0.3\",\"label\":\"1965 Q1\",\"year\":\"1965\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2015-05-27T23:00:00.000Z\"},{\"date\":\"1965 Q2\",\"value\":\"0.1\",\"label\":\"1965 Q2\",\"year\":\"1965\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2015-05-27T23:00:00.000Z\"},{\"date\":\"1965 Q3\",\"value\":\"0.8\",\"label\":\"1965 Q3\",\"year\":\"1965\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2015-05-27T23:00:00.000Z\"},{\"date\":\"1965 Q4\",\"value\":\"0.6\",\"label\":\"1965 Q4\",\"year\":\"1965\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1966 Q1\",\"value\":\"0.2\",\"label\":\"1966 Q1\",\"year\":\"1966\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2024-11-15T00:00:00.000Z\"},{\"date\":\"1966 Q2\",\"value\":\"0.6\",\"label\":\"1966 Q2\",\"year\":\"1966\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1966 Q3\",\"value\":\"0.3\",\"label\":\"1966 Q3\",\"year\":\"1966\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2016-08-25T23:00:00.000Z\"},{\"date\":\"1966 Q4\",\"value\":\"-0.4\",\"label\":\"1966 Q4\",\"year\":\"1966\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1967 Q1\",\"value\":\"1.3\",\"label\":\"1967 Q1\",\"year\":\"1967\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2020-11-12T00:00:00.000Z\"},{\"date\":\"1967 Q2\",\"value\":\"1.4\",\"label\":\"1967 Q2\",\"year\":\"1967\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2015-05-27T23:00:00.000Z\"},{\"date\":\"1967 Q3\",\"value\":\"0.4\",\"label\":\"1967 Q3\",\"year\":\"1967\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1967 Q4\",\"value\":\"0.5\",\"label\":\"1967 Q4\",\"year\":\"1967\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2015-05-27T23:00:00.000Z\"},{\"date\":\"1968 Q1\",\"value\":\"3.7\",\"label\":\"1968 Q1\",\"year\":\"1968\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1968 Q2\",\"value\":\"-0.4\",\"label\":\"1968 Q2\",\"year\":\"1968\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2015-05-27T23:00:00.000Z\"},{\"date\":\"1968 Q3\",\"value\":\"1.9\",\"label\":\"1968 Q3\",\"year\":\"1968\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1968 Q4\",\"value\":\"0.3\",\"label\":\"1968 Q4\",\"year\":\"1968\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1969 Q1\",\"value\":\"-0.2\",\"label\":\"1969 Q1\",\"year\":\"1969\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1969 Q2\",\"value\":\"0.7\",\"label\":\"1969 Q2\",\"year\":\"1969\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1969 Q3\",\"value\":\"0.6\",\"label\":\"1969 Q3\",\"year\":\"1969\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1969 Q4\",\"value\":\"0.5\",\"label\":\"1969 Q4\",\"year\":\"1969\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1970 Q1\",\"value\":\"-0.6\",\"label\":\"1970 Q1\",\"year\":\"1970\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1970 Q2\",\"value\":\"2.4\",\"label\":\"1970 Q2\",\"year\":\"1970\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1970 Q3\",\"value\":\"1.0\",\"label\":\"1970 Q3\",\"year\":\"1970\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2015-05-27T23:00:00.000Z\"},{\"date\":\"1970 Q4\",\"value\":\"0.9\",\"label\":\"1970 Q4\",\"year\":\"1970\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2015-05-27T23:00:00.000Z\"},{\"date\":\"1971 Q1\",\"value\":\"-0.5\",\"label\":\"1971 Q1\",\"year\":\"1971\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1971 Q2\",\"value\":\"1.8\",\"label\":\"1971 Q2\",\"year\":\"1971\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2015-05-27T23:00:00.000Z\"},{\"date\":\"1971 Q3\",\"value\":\"1.7\",\"label\":\"1971 Q3\",\"year\":\"1971\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1971 Q4\",\"value\":\"0.4\",\"label\":\"1971 Q4\",\"year\":\"1971\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2015-05-27T23:00:00.000Z\"},{\"date\":\"1972 Q1\",\"value\":\"0.2\",\"label\":\"1972 Q1\",\"year\":\"1972\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1972 Q2\",\"value\":\"2.6\",\"label\":\"1972 Q2\",\"year\":\"1972\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1972 Q3\",\"value\":\"0.3\",\"label\":\"1972 Q3\",\"year\":\"1972\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2016-08-25T23:00:00.000Z\"},{\"date\":\"1972 Q4\",\"value\":\"1.6\",\"label\":\"1972 Q4\",\"year\":\"1972\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2015-05-27T23:00:00.000Z\"},{\"date\":\"1973 Q1\",\"value\":\"4.9\",\"label\":\"1973 Q1\",\"year\":\"1973\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"1973 Q2\",\"value\":\"0.2\",\"label\":\"1973 Q2\",\"year\":\"1973\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"1973 Q3\",\"value\":\"-0.9\",\"label\":\"1973 Q3\",\"year\":\"1973\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1973 Q4\",\"value\":\"-0.4\",\"label\":\"1973 Q4\",\"year\":\"1973\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2015-05-27T23:00:00.000Z\"},{\"date\":\"1974 Q1\",\"value\":\"-2.8\",\"label\":\"1974 Q1\",\"year\":\"1974\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"1974 Q2\",\"value\":\"1.4\",\"label\":\"1974 Q2\",\"year\":\"1974\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1974 Q3\",\"value\":\"0.6\",\"label\":\"1974 Q3\",\"year\":\"1974\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2015-05-27T23:00:00.000Z\"},{\"date\":\"1974 Q4\",\"value\":\"-1.5\",\"label\":\"1974 Q4\",\"year\":\"1974\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2020-11-12T00:00:00.000Z\"},{\"date\":\"1975 Q1\",\"value\":\"0.0\",\"label\":\"1975 Q1\",\"year\":\"1975\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"1975 Q2\",\"value\":\"-1.6\",\"label\":\"1975 Q2\",\"year\":\"1975\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2016-08-25T23:00:00.000Z\"},{\"date\":\"1975 Q3\",\"value\":\"-0.3\",\"label\":\"1975 Q3\",\"year\":\"1975\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1975 Q4\",\"value\":\"1.1\",\"label\":\"1975 Q4\",\"year\":\"1975\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2016-08-25T23:00:00.000Z\"},{\"date\":\"1976 Q1\",\"value\":\"1.7\",\"label\":\"1976 Q1\",\"year\":\"1976\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2020-11-12T00:00:00.000Z\"},{\"date\":\"1976 Q2\",\"value\":\"-0.1\",\"label\":\"1976 Q2\",\"year\":\"1976\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2020-11-12T00:00:00.000Z\"},{\"date\":\"1976 Q3\",\"value\":\"1.2\",\"label\":\"1976 Q3\",\"year\":\"1976\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1976 Q4\",\"value\":\"2.1\",\"label\":\"1976 Q4\",\"year\":\"1976\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2016-08-25T23:00:00.000Z\"},{\"date\":\"1977 Q1\",\"value\":\"0.1\",\"label\":\"1977 Q1\",\"year\":\"1977\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1977 Q2\",\"value\":\"-0.7\",\"label\":\"1977 Q2\",\"year\":\"1977\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2016-08-25T23:00:00.000Z\"},{\"date\":\"1977 Q3\",\"value\":\"0.6\",\"label\":\"1977 Q3\",\"year\":\"1977\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1977 Q4\",\"value\":\"1.7\",\"label\":\"1977 Q4\",\"year\":\"1977\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2015-05-27T23:00:00.000Z\"},{\"date\":\"1978 Q1\",\"value\":\"0.9\",\"label\":\"1978 Q1\",\"year\":\"1978\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1978 Q2\",\"value\":\"1.1\",\"label\":\"1978 Q2\",\"year\":\"1978\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1978 Q3\",\"value\":\"1.4\",\"label\":\"1978 Q3\",\"year\":\"1978\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2017-11-23T00:00:00.000Z\"},{\"date\":\"1978 Q4\",\"value\":\"0.9\",\"label\":\"1978 Q4\",\"year\":\"1978\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2016-08-25T23:00:00.000Z\"},{\"date\":\"1979 Q1\",\"value\":\"-0.3\",\"label\":\"1979 Q1\",\"year\":\"1979\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1979 Q2\",\"value\":\"4.4\",\"label\":\"1979 Q2\",\"year\":\"1979\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2015-05-27T23:00:00.000Z\"},{\"date\":\"1979 Q3\",\"value\":\"-2.2\",\"label\":\"1979 Q3\",\"year\":\"1979\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2016-08-25T23:00:00.000Z\"},{\"date\":\"1979 Q4\",\"value\":\"1.0\",\"label\":\"1979 Q4\",\"year\":\"1979\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2020-11-12T00:00:00.000Z\"},{\"date\":\"1980 Q1\",\"value\":\"-1.0\",\"label\":\"1980 Q1\",\"year\":\"1980\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1980 Q2\",\"value\":\"-2.0\",\"label\":\"1980 Q2\",\"year\":\"1980\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2016-08-25T23:00:00.000Z\"},{\"date\":\"1980 Q3\",\"value\":\"-0.1\",\"label\":\"1980 Q3\",\"year\":\"1980\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2016-08-25T23:00:00.000Z\"},{\"date\":\"1980 Q4\",\"value\":\"-1.0\",\"label\":\"1980 Q4\",\"year\":\"1980\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1981 Q1\",\"value\":\"-0.1\",\"label\":\"1981 Q1\",\"year\":\"1981\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1981 Q2\",\"value\":\"0.3\",\"label\":\"1981 Q2\",\"year\":\"1981\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1981 Q3\",\"value\":\"1.2\",\"label\":\"1981 Q3\",\"year\":\"1981\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1981 Q4\",\"value\":\"0.1\",\"label\":\"1981 Q4\",\"year\":\"1981\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2015-05-27T23:00:00.000Z\"},{\"date\":\"1982 Q1\",\"value\":\"0.2\",\"label\":\"1982 Q1\",\"year\":\"1982\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1982 Q2\",\"value\":\"1.0\",\"label\":\"1982 Q2\",\"year\":\"1982\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1982 Q3\",\"value\":\"0.2\",\"label\":\"1982 Q3\",\"year\":\"1982\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2020-11-12T00:00:00.000Z\"},{\"date\":\"1982 Q4\",\"value\":\"0.7\",\"label\":\"1982 Q4\",\"year\":\"1982\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1983 Q1\",\"value\":\"2.0\",\"label\":\"1983 Q1\",\"year\":\"1983\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1983 Q2\",\"value\":\"0.7\",\"label\":\"1983 Q2\",\"year\":\"1983\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1983 Q3\",\"value\":\"1.2\",\"label\":\"1983 Q3\",\"year\":\"1983\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1983 Q4\",\"value\":\"0.8\",\"label\":\"1983 Q4\",\"year\":\"1983\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1984 Q1\",\"value\":\"0.9\",\"label\":\"1984 Q1\",\"year\":\"1984\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1984 Q2\",\"value\":\"-1.0\",\"label\":\"1984 Q2\",\"year\":\"1984\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"1984 Q3\",\"value\":\"0.7\",\"label\":\"1984 Q3\",\"year\":\"1984\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1984 Q4\",\"value\":\"1.8\",\"label\":\"1984 Q4\",\"year\":\"1984\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"1985 Q1\",\"value\":\"1.0\",\"label\":\"1985 Q1\",\"year\":\"1985\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1985 Q2\",\"value\":\"2.1\",\"label\":\"1985 Q2\",\"year\":\"1985\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1985 Q3\",\"value\":\"0.0\",\"label\":\"1985 Q3\",\"year\":\"1985\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1985 Q4\",\"value\":\"0.1\",\"label\":\"1985 Q4\",\"year\":\"1985\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"1986 Q1\",\"value\":\"1.0\",\"label\":\"1986 Q1\",\"year\":\"1986\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1986 Q2\",\"value\":\"0.9\",\"label\":\"1986 Q2\",\"year\":\"1986\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1986 Q3\",\"value\":\"0.6\",\"label\":\"1986 Q3\",\"year\":\"1986\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1986 Q4\",\"value\":\"1.9\",\"label\":\"1986 Q4\",\"year\":\"1986\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1987 Q1\",\"value\":\"0.7\",\"label\":\"1987 Q1\",\"year\":\"1987\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1987 Q2\",\"value\":\"1.5\",\"label\":\"1987 Q2\",\"year\":\"1987\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2019-11-11T00:00:00.000Z\"},{\"date\":\"1987 Q3\",\"value\":\"2.5\",\"label\":\"1987 Q3\",\"year\":\"1987\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1987 Q4\",\"value\":\"1.2\",\"label\":\"1987 Q4\",\"year\":\"1987\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1988 Q1\",\"value\":\"1.6\",\"label\":\"1988 Q1\",\"year\":\"1988\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1988 Q2\",\"value\":\"0.5\",\"label\":\"1988 Q2\",\"year\":\"1988\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1988 Q3\",\"value\":\"1.2\",\"label\":\"1988 Q3\",\"year\":\"1988\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1988 Q4\",\"value\":\"0.8\",\"label\":\"1988 Q4\",\"year\":\"1988\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2021-11-11T00:00:00.000Z\"},{\"date\":\"1989 Q1\",\"value\":\"0.5\",\"label\":\"1989 Q1\",\"year\":\"1989\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"1989 Q2\",\"value\":\"0.6\",\"label\":\"1989 Q2\",\"year\":\"1989\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1989 Q3\",\"value\":\"0.2\",\"label\":\"1989 Q3\",\"year\":\"1989\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1989 Q4\",\"value\":\"0.0\",\"label\":\"1989 Q4\",\"year\":\"1989\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1990 Q1\",\"value\":\"0.5\",\"label\":\"1990 Q1\",\"year\":\"1990\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1990 Q2\",\"value\":\"0.7\",\"label\":\"1990 Q2\",\"year\":\"1990\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1990 Q3\",\"value\":\"-1.1\",\"label\":\"1990 Q3\",\"year\":\"1990\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1990 Q4\",\"value\":\"-0.5\",\"label\":\"1990 Q4\",\"year\":\"1990\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1991 Q1\",\"value\":\"-0.5\",\"label\":\"1991 Q1\",\"year\":\"1991\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"1991 Q2\",\"value\":\"-0.1\",\"label\":\"1991 Q2\",\"year\":\"1991\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1991 Q3\",\"value\":\"-0.2\",\"label\":\"1991 Q3\",\"year\":\"1991\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1991 Q4\",\"value\":\"0.1\",\"label\":\"1991 Q4\",\"year\":\"1991\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1992 Q1\",\"value\":\"0.0\",\"label\":\"1992 Q1\",\"year\":\"1992\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2015-05-27T23:00:00.000Z\"},{\"date\":\"1992 Q2\",\"value\":\"-0.2\",\"label\":\"1992 Q2\",\"year\":\"1992\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1992 Q3\",\"value\":\"0.5\",\"label\":\"1992 Q3\",\"year\":\"1992\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1992 Q4\",\"value\":\"0.8\",\"label\":\"1992 Q4\",\"year\":\"1992\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1993 Q1\",\"value\":\"0.5\",\"label\":\"1993 Q1\",\"year\":\"1993\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1993 Q2\",\"value\":\"0.4\",\"label\":\"1993 Q2\",\"year\":\"1993\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"1993 Q3\",\"value\":\"0.9\",\"label\":\"1993 Q3\",\"year\":\"1993\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1993 Q4\",\"value\":\"0.7\",\"label\":\"1993 Q4\",\"year\":\"1993\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1994 Q1\",\"value\":\"1.0\",\"label\":\"1994 Q1\",\"year\":\"1994\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1994 Q2\",\"value\":\"0.9\",\"label\":\"1994 Q2\",\"year\":\"1994\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1994 Q3\",\"value\":\"1.0\",\"label\":\"1994 Q3\",\"year\":\"1994\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1994 Q4\",\"value\":\"0.4\",\"label\":\"1994 Q4\",\"year\":\"1994\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1995 Q1\",\"value\":\"0.5\",\"label\":\"1995 Q1\",\"year\":\"1995\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1995 Q2\",\"value\":\"0.2\",\"label\":\"1995 Q2\",\"year\":\"1995\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"1995 Q3\",\"value\":\"1.1\",\"label\":\"1995 Q3\",\"year\":\"1995\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1995 Q4\",\"value\":\"0.3\",\"label\":\"1995 Q4\",\"year\":\"1995\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1996 Q1\",\"value\":\"0.7\",\"label\":\"1996 Q1\",\"year\":\"1996\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1996 Q2\",\"value\":\"0.3\",\"label\":\"1996 Q2\",\"year\":\"1996\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1996 Q3\",\"value\":\"0.9\",\"label\":\"1996 Q3\",\"year\":\"1996\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1996 Q4\",\"value\":\"1.3\",\"label\":\"1996 Q4\",\"year\":\"1996\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1997 Q1\",\"value\":\"1.6\",\"label\":\"1997 Q1\",\"year\":\"1997\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1997 Q2\",\"value\":\"1.1\",\"label\":\"1997 Q2\",\"year\":\"1997\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"1997 Q3\",\"value\":\"0.9\",\"label\":\"1997 Q3\",\"year\":\"1997\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"1997 Q4\",\"value\":\"1.5\",\"label\":\"1997 Q4\",\"year\":\"1997\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"1998 Q1\",\"value\":\"0.7\",\"label\":\"1998 Q1\",\"year\":\"1998\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1998 Q2\",\"value\":\"0.6\",\"label\":\"1998 Q2\",\"year\":\"1998\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1998 Q3\",\"value\":\"0.2\",\"label\":\"1998 Q3\",\"year\":\"1998\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1998 Q4\",\"value\":\"0.7\",\"label\":\"1998 Q4\",\"year\":\"1998\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"1999 Q1\",\"value\":\"0.7\",\"label\":\"1999 Q1\",\"year\":\"1999\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"1999 Q2\",\"value\":\"0.4\",\"label\":\"1999 Q2\",\"year\":\"1999\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1999 Q3\",\"value\":\"1.7\",\"label\":\"1999 Q3\",\"year\":\"1999\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"1999 Q4\",\"value\":\"1.6\",\"label\":\"1999 Q4\",\"year\":\"1999\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2000 Q1\",\"value\":\"1.3\",\"label\":\"2000 Q1\",\"year\":\"2000\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2000 Q2\",\"value\":\"0.7\",\"label\":\"2000 Q2\",\"year\":\"2000\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"2000 Q3\",\"value\":\"0.6\",\"label\":\"2000 Q3\",\"year\":\"2000\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"2000 Q4\",\"value\":\"0.6\",\"label\":\"2000 Q4\",\"year\":\"2000\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"2001 Q1\",\"value\":\"0.8\",\"label\":\"2001 Q1\",\"year\":\"2001\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2001 Q2\",\"value\":\"0.4\",\"label\":\"2001 Q2\",\"year\":\"2001\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"2001 Q3\",\"value\":\"0.5\",\"label\":\"2001 Q3\",\"year\":\"2001\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2021-11-11T00:00:00.000Z\"},{\"date\":\"2001 Q4\",\"value\":\"0.3\",\"label\":\"2001 Q4\",\"year\":\"2001\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"2002 Q1\",\"value\":\"0.3\",\"label\":\"2002 Q1\",\"year\":\"2002\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"2002 Q2\",\"value\":\"0.5\",\"label\":\"2002 Q2\",\"year\":\"2002\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"2002 Q3\",\"value\":\"0.6\",\"label\":\"2002 Q3\",\"year\":\"2002\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2002 Q4\",\"value\":\"0.7\",\"label\":\"2002 Q4\",\"year\":\"2002\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2003 Q1\",\"value\":\"0.8\",\"label\":\"2003 Q1\",\"year\":\"2003\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2003 Q2\",\"value\":\"0.9\",\"label\":\"2003 Q2\",\"year\":\"2003\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"2003 Q3\",\"value\":\"1.0\",\"label\":\"2003 Q3\",\"year\":\"2003\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2003 Q4\",\"value\":\"0.8\",\"label\":\"2003 Q4\",\"year\":\"2003\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2021-11-11T00:00:00.000Z\"},{\"date\":\"2004 Q1\",\"value\":\"0.3\",\"label\":\"2004 Q1\",\"year\":\"2004\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2004 Q2\",\"value\":\"0.5\",\"label\":\"2004 Q2\",\"year\":\"2004\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2004 Q3\",\"value\":\"0.4\",\"label\":\"2004 Q3\",\"year\":\"2004\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"2004 Q4\",\"value\":\"0.5\",\"label\":\"2004 Q4\",\"year\":\"2004\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"2005 Q1\",\"value\":\"0.8\",\"label\":\"2005 Q1\",\"year\":\"2005\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2005 Q2\",\"value\":\"0.8\",\"label\":\"2005 Q2\",\"year\":\"2005\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"2005 Q3\",\"value\":\"0.9\",\"label\":\"2005 Q3\",\"year\":\"2005\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2005 Q4\",\"value\":\"1.0\",\"label\":\"2005 Q4\",\"year\":\"2005\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2006 Q1\",\"value\":\"0.4\",\"label\":\"2006 Q1\",\"year\":\"2006\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2006 Q2\",\"value\":\"0.3\",\"label\":\"2006 Q2\",\"year\":\"2006\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2006 Q3\",\"value\":\"0.2\",\"label\":\"2006 Q3\",\"year\":\"2006\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2006 Q4\",\"value\":\"0.4\",\"label\":\"2006 Q4\",\"year\":\"2006\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2007 Q1\",\"value\":\"1.1\",\"label\":\"2007 Q1\",\"year\":\"2007\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2007 Q2\",\"value\":\"0.9\",\"label\":\"2007 Q2\",\"year\":\"2007\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2007 Q3\",\"value\":\"0.9\",\"label\":\"2007 Q3\",\"year\":\"2007\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2007 Q4\",\"value\":\"0.8\",\"label\":\"2007 Q4\",\"year\":\"2007\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2008 Q1\",\"value\":\"0.4\",\"label\":\"2008 Q1\",\"year\":\"2008\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2008 Q2\",\"value\":\"-0.5\",\"label\":\"2008 Q2\",\"year\":\"2008\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2021-11-11T00:00:00.000Z\"},{\"date\":\"2008 Q3\",\"value\":\"-1.6\",\"label\":\"2008 Q3\",\"year\":\"2008\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2008 Q4\",\"value\":\"-2.1\",\"label\":\"2008 Q4\",\"year\":\"2008\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"2009 Q1\",\"value\":\"-2.0\",\"label\":\"2009 Q1\",\"year\":\"2009\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"2009 Q2\",\"value\":\"-0.3\",\"label\":\"2009 Q2\",\"year\":\"2009\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2021-11-11T00:00:00.000Z\"},{\"date\":\"2009 Q3\",\"value\":\"0.1\",\"label\":\"2009 Q3\",\"year\":\"2009\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2018-08-09T23:00:00.000Z\"},{\"date\":\"2009 Q4\",\"value\":\"0.3\",\"label\":\"2009 Q4\",\"year\":\"2009\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2017-11-23T00:00:00.000Z\"},{\"date\":\"2010 Q1\",\"value\":\"0.8\",\"label\":\"2010 Q1\",\"year\":\"2010\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2010 Q2\",\"value\":\"1.1\",\"label\":\"2010 Q2\",\"year\":\"2010\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2021-11-11T00:00:00.000Z\"},{\"date\":\"2010 Q3\",\"value\":\"0.6\",\"label\":\"2010 Q3\",\"year\":\"2010\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"2010 Q4\",\"value\":\"0.1\",\"label\":\"2010 Q4\",\"year\":\"2010\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2021-11-11T00:00:00.000Z\"},{\"date\":\"2011 Q1\",\"value\":\"0.2\",\"label\":\"2011 Q1\",\"year\":\"2011\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2011 Q2\",\"value\":\"0.0\",\"label\":\"2011 Q2\",\"year\":\"2011\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2011 Q3\",\"value\":\"0.2\",\"label\":\"2011 Q3\",\"year\":\"2011\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2011 Q4\",\"value\":\"0.1\",\"label\":\"2011 Q4\",\"year\":\"2011\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"2012 Q1\",\"value\":\"0.9\",\"label\":\"2012 Q1\",\"year\":\"2012\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"2012 Q2\",\"value\":\"-0.1\",\"label\":\"2012 Q2\",\"year\":\"2012\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2016-08-25T23:00:00.000Z\"},{\"date\":\"2012 Q3\",\"value\":\"1.0\",\"label\":\"2012 Q3\",\"year\":\"2012\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"2012 Q4\",\"value\":\"-0.1\",\"label\":\"2012 Q4\",\"year\":\"2012\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"2013 Q1\",\"value\":\"0.3\",\"label\":\"2013 Q1\",\"year\":\"2013\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"2013 Q2\",\"value\":\"0.7\",\"label\":\"2013 Q2\",\"year\":\"2013\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2021-11-11T00:00:00.000Z\"},{\"date\":\"2013 Q3\",\"value\":\"0.8\",\"label\":\"2013 Q3\",\"year\":\"2013\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"2013 Q4\",\"value\":\"0.7\",\"label\":\"2013 Q4\",\"year\":\"2013\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"2014 Q1\",\"value\":\"0.8\",\"label\":\"2014 Q1\",\"year\":\"2014\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"2014 Q2\",\"value\":\"0.9\",\"label\":\"2014 Q2\",\"year\":\"2014\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"2014 Q3\",\"value\":\"0.8\",\"label\":\"2014 Q3\",\"year\":\"2014\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"2014 Q4\",\"value\":\"0.7\",\"label\":\"2014 Q4\",\"year\":\"2014\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"2015 Q1\",\"value\":\"0.3\",\"label\":\"2015 Q1\",\"year\":\"2015\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"2015 Q2\",\"value\":\"0.5\",\"label\":\"2015 Q2\",\"year\":\"2015\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2015 Q3\",\"value\":\"0.4\",\"label\":\"2015 Q3\",\"year\":\"2015\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"2015 Q4\",\"value\":\"0.6\",\"label\":\"2015 Q4\",\"year\":\"2015\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"2016 Q1\",\"value\":\"0.5\",\"label\":\"2016 Q1\",\"year\":\"2016\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2016 Q2\",\"value\":\"0.7\",\"label\":\"2016 Q2\",\"year\":\"2016\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2016 Q3\",\"value\":\"0.4\",\"label\":\"2016 Q3\",\"year\":\"2016\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2021-11-11T00:00:00.000Z\"},{\"date\":\"2016 Q4\",\"value\":\"0.6\",\"label\":\"2016 Q4\",\"year\":\"2016\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"2017 Q1\",\"value\":\"1.0\",\"label\":\"2017 Q1\",\"year\":\"2017\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2017 Q2\",\"value\":\"0.9\",\"label\":\"2017 Q2\",\"year\":\"2017\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2017 Q3\",\"value\":\"0.7\",\"label\":\"2017 Q3\",\"year\":\"2017\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2017 Q4\",\"value\":\"0.8\",\"label\":\"2017 Q4\",\"year\":\"2017\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2018 Q1\",\"value\":\"0.1\",\"label\":\"2018 Q1\",\"year\":\"2018\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2022-11-11T00:00:00.000Z\"},{\"date\":\"2018 Q2\",\"value\":\"0.2\",\"label\":\"2018 Q2\",\"year\":\"2018\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"2018 Q3\",\"value\":\"0.3\",\"label\":\"2018 Q3\",\"year\":\"2018\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"2018 Q4\",\"value\":\"0.1\",\"label\":\"2018 Q4\",\"year\":\"2018\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"2019 Q1\",\"value\":\"0.5\",\"label\":\"2019 Q1\",\"year\":\"2019\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2019 Q2\",\"value\":\"0.2\",\"label\":\"2019 Q2\",\"year\":\"2019\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2019 Q3\",\"value\":\"0.6\",\"label\":\"2019 Q3\",\"year\":\"2019\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2019 Q4\",\"value\":\"0.0\",\"label\":\"2019 Q4\",\"year\":\"2019\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2021-02-12T00:00:00.000Z\"},{\"date\":\"2020 Q1\",\"value\":\"-2.7\",\"label\":\"2020 Q1\",\"year\":\"2020\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"2020 Q2\",\"value\":\"-19.9\",\"label\":\"2020 Q2\",\"year\":\"2020\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2020 Q3\",\"value\":\"17.0\",\"label\":\"2020 Q3\",\"year\":\"2020\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2020 Q4\",\"value\":\"1.4\",\"label\":\"2020 Q4\",\"year\":\"2020\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-11-10T00:00:00.000Z\"},{\"date\":\"2021 Q1\",\"value\":\"-1.1\",\"label\":\"2021 Q1\",\"year\":\"2021\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2021 Q2\",\"value\":\"7.0\",\"label\":\"2021 Q2\",\"year\":\"2021\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2021 Q3\",\"value\":\"1.7\",\"label\":\"2021 Q3\",\"year\":\"2021\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2023-02-10T00:00:00.000Z\"},{\"date\":\"2021 Q4\",\"value\":\"1.4\",\"label\":\"2021 Q4\",\"year\":\"2021\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2022 Q1\",\"value\":\"1.0\",\"label\":\"2022 Q1\",\"year\":\"2022\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2022 Q2\",\"value\":\"0.6\",\"label\":\"2022 Q2\",\"year\":\"2022\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2022 Q3\",\"value\":\"0.1\",\"label\":\"2022 Q3\",\"year\":\"2022\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2024-11-15T00:00:00.000Z\"},{\"date\":\"2022 Q4\",\"value\":\"0.3\",\"label\":\"2022 Q4\",\"year\":\"2022\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2024-11-15T00:00:00.000Z\"},{\"date\":\"2023 Q1\",\"value\":\"0.1\",\"label\":\"2023 Q1\",\"year\":\"2023\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2024-11-15T00:00:00.000Z\"},{\"date\":\"2023 Q2\",\"value\":\"0.0\",\"label\":\"2023 Q2\",\"year\":\"2023\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2024-02-15T00:00:00.000Z\"},{\"date\":\"2023 Q3\",\"value\":\"-0.2\",\"label\":\"2023 Q3\",\"year\":\"2023\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2023 Q4\",\"value\":\"-0.3\",\"label\":\"2023 Q4\",\"year\":\"2023\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2024 Q1\",\"value\":\"0.7\",\"label\":\"2024 Q1\",\"year\":\"2024\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2026-05-13T23:00:00.000Z\"},{\"date\":\"2024 Q2\",\"value\":\"0.6\",\"label\":\"2024 Q2\",\"year\":\"2024\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2024 Q3\",\"value\":\"0.2\",\"label\":\"2024 Q3\",\"year\":\"2024\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2025-11-13T00:00:00.000Z\"},{\"date\":\"2024 Q4\",\"value\":\"0.4\",\"label\":\"2024 Q4\",\"year\":\"2024\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2026-05-13T23:00:00.000Z\"},{\"date\":\"2025 Q1\",\"value\":\"0.6\",\"label\":\"2025 Q1\",\"year\":\"2025\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2026-05-13T23:00:00.000Z\"},{\"date\":\"2025 Q2\",\"value\":\"0.2\",\"label\":\"2025 Q2\",\"year\":\"2025\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2026-08-12T23:00:00.000Z\"},{\"date\":\"2025 Q3\",\"value\":\"0.1\",\"label\":\"2025 Q3\",\"year\":\"2025\",\"month\":\"\",\"quarter\":\"Q3\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2026-08-12T23:00:00.000Z\"},{\"date\":\"2025 Q4\",\"value\":\"0.1\",\"label\":\"2025 Q4\",\"year\":\"2025\",\"month\":\"\",\"quarter\":\"Q4\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2026-08-12T23:00:00.000Z\"},{\"date\":\"2026 Q1\",\"value\":\"0.6\",\"label\":\"2026 Q1\",\"year\":\"2026\",\"month\":\"\",\"quarter\":\"Q1\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2026-05-13T23:00:00.000Z\"},{\"date\":\"2026 Q2\",\"value\":\"0.4\",\"label\":\"2026 Q2\",\"year\":\"2026\",\"month\":\"\",\"quarter\":\"Q2\",\"sourceDataset\":\"PN2\",\"updateDate\":\"2026-08-12T23:00:00.000Z\"}],\"months\":[],\"sourceDatasets\":[],\"relatedDatasets\":[{\"uri\":\"/economy/grossdomesticproductgdp/datasets/secondestimateofgdp\"}],\"section\":{},\"notes\":[\"\"],\"relatedDocuments\":[{\"uri\":\"/economy/grossdomesticproductgdp/bulletins/gdpfirstquarterlyestimateuk/latest\"}],\"relatedData\":[{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ybez\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyp\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyr\"}],\"versions\":[{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v1\",\"updateDate\":\"2015-05-27T23:00:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v1\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v2\",\"updateDate\":\"2016-02-25T09:30:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v2\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v3\",\"updateDate\":\"2016-05-26T08:30:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v3\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v4\",\"updateDate\":\"2016-08-26T08:30:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v4\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v5\",\"updateDate\":\"2016-11-25T09:30:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v5\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v6\",\"updateDate\":\"2017-02-22T09:30:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v6\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v7\",\"updateDate\":\"2017-05-25T08:30:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v7\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v8\",\"updateDate\":\"2017-08-24T08:30:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v8\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v9\",\"updateDate\":\"2017-11-23T09:30:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v9\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v10\",\"updateDate\":\"2018-02-22T09:30:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v10\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v11\",\"updateDate\":\"2018-05-25T08:30:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v11\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v12\",\"updateDate\":\"2018-08-10T08:30:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v12\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v13\",\"updateDate\":\"2018-11-09T07:38:17.548Z\",\"correctionNotice\":\"\",\"label\":\"v13\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v14\",\"updateDate\":\"2019-02-11T09:30:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v14\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v15\",\"updateDate\":\"2019-05-10T08:30:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v15\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v15\",\"updateDate\":\"2019-05-10T08:30:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v15\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v16\",\"updateDate\":\"2019-05-10T08:59:07.447Z\",\"correctionNotice\":\"\",\"label\":\"v16\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v17\",\"updateDate\":\"2019-08-09T08:30:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v17\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v18\",\"updateDate\":\"2019-11-11T09:30:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v18\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v19\",\"updateDate\":\"2020-02-11T08:11:15.587Z\",\"correctionNotice\":\"\",\"label\":\"v19\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v20\",\"updateDate\":\"2020-05-13T08:30:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v20\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v21\",\"updateDate\":\"2020-08-12T05:39:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v21\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v22\",\"updateDate\":\"2020-11-12T07:00:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v22\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v23\",\"updateDate\":\"2021-02-12T07:00:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v23\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v24\",\"updateDate\":\"2021-05-12T06:00:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v24\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v25\",\"updateDate\":\"2021-08-12T06:00:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v25\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v26\",\"updateDate\":\"2021-11-11T07:00:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v26\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v27\",\"updateDate\":\"2022-02-11T07:00:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v27\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v28\",\"updateDate\":\"2022-05-12T06:00:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v28\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v29\",\"updateDate\":\"2022-08-12T06:00:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v29\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v30\",\"updateDate\":\"2022-11-11T07:00:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v30\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v31\",\"updateDate\":\"2023-02-10T07:00:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v31\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v32\",\"updateDate\":\"2023-05-11T12:33:30.901Z\",\"correctionNotice\":\"\",\"label\":\"v32\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v33\",\"updateDate\":\"2023-08-11T06:00:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v33\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v34\",\"updateDate\":\"2023-11-10T07:00:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v34\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v35\",\"updateDate\":\"2024-02-15T07:00:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v35\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v36\",\"updateDate\":\"2024-05-10T06:00:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v36\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v37\",\"updateDate\":\"2024-08-15T06:00:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v37\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v38\",\"updateDate\":\"2024-11-15T07:00:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v38\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v39\",\"updateDate\":\"2025-02-13T07:00:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v39\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v40\",\"updateDate\":\"2025-05-15T06:00:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v40\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v41\",\"updateDate\":\"2025-08-14T06:00:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v41\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v42\",\"updateDate\":\"2025-11-13T07:00:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v42\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v43\",\"updateDate\":\"2026-02-12T07:00:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v43\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v44\",\"updateDate\":\"2026-05-14T06:00:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v44\"},{\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/previous/v45\",\"updateDate\":\"2026-08-13T06:00:00.000Z\",\"correctionNotice\":\"\",\"label\":\"v45\"}],\"type\":\"timeseries\",\"uri\":\"/economy/grossdomesticproductgdp/timeseries/ihyq/pn2\",\"description\":{\"title\":\"Gross Domestic Product: Quarter on Quarter growth: CVM SA %\",\"contact\":{\"email\":\"gdp@ons.gov.uk\",\"name\":\"Gross Domestic Product team\",\"telephone\":\" +44 1633 455284\"},\"releaseDate\":\"2026-08-12T23:00:00.000Z\",\"nextRelease\":\"30 September 2026\",\"datasetId\":\"PN2\",\"datasetUri\":\"/economy/grossdomesticproductgdp/datasets/secondestimateofgdp\",\"cdid\":\"IHYQ\",\"unit\":\"%\",\"preUnit\":\"\",\"source\":\"\",\"date\":\"2026 Q2\",\"number\":\"0.4\",\"keyNote\":\"Chained Volume Measures (CVM)\",\"sampleSize\":\"0\"}}",
+            "raw_response_sha256": "5e3c72422b54f8b7b5a1eda8b5bf6bb1a411f692fd9a57354a078b2d0d36ef80",
+            "series_id": "IHYQ",
+            "vintage_scope": "current observed snapshot only; historical firstrelease availability not established"
+          },
+          "availability_basis": "first_observed_retrieval",
+          "independent_of_polymarket": true,
+          "qualification": "qualified_research",
+          "missingness": [
+            "historical_firstrelease_vintages",
+            "calibration",
+            "execution_books"
+          ]
+        }
+      ]
+    }
+  ],
+  "independent_model_source_replay": true,
+  "trading_authority": false,
+  "certification_authority": false
+}

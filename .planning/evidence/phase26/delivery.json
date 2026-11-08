@@ -1,0 +1,72 @@
+{
+  "at": "2026-11-08T02:04:38.210390+00:00",
+  "source_commit": "b656b72185b3358c022d4aac36e0401cf3d7ab49",
+  "ci_run": 42436100019,
+  "ci_conclusion": "success",
+  "prospective_forecasts": {
+    "preserved_legacy": 41,
+    "indexed_challengers": 60,
+    "indexed_canonical_groups": 27,
+    "conservative_dependency_clusters": 24,
+    "new_during_phase26": 2,
+    "new_shared_parent": "844497",
+    "new_domain": "UK GDP",
+    "attribution": "recorded by existing continuous research before new source deployment; not attributed to new supplemental watcher",
+    "verified_outcomes": 0,
+    "qualified_training_events": 0,
+    "qualified_heldout_events": 0
+  },
+  "experimental_counter_delta": {
+    "cycles": 91,
+    "observations": 2919,
+    "qualified_opportunities": 0,
+    "signals": 26692
+  },
+  "new_orders": 0,
+  "new_fills": 0,
+  "open_positions": 0,
+  "experimental_equity": 496.11522059829053,
+  "experimental_cumulative_simulated_pnl": -3.8847794017094657,
+  "certified_equity": 500.0,
+  "sii_qualified_pairs": 0,
+  "sii_incremental_value": null,
+  "account_tables_unchanged_except_append_only_audits": true,
+  "original_audit_prefixes_verified": true,
+  "forecast_journals": {
+    "event-intelligence/forecasts.sqlite": {
+      "records": 3156,
+      "head_sha256": "e709a23bbb671b2c981a4559d1551c6171c0034ad6d21761f3bc656f7148f7c9",
+      "preexisting_prefix_preserved": true
+    },
+    "event-intelligence/sports/prospective.sqlite": {
+      "records": 15,
+      "head_sha256": "cc7f503a656441e18677b6fb68d21b09803b48382e226818c689aa5374c99cb0",
+      "preexisting_prefix_preserved": true
+    },
+    "event-intelligence/domains/forecasts.sqlite": {
+      "records": 117,
+      "head_sha256": "f141ebeebc80d0730ac7a7aa58bd9309fd71b01e8ccfcacf17405b705e38cdf5",
+      "preexisting_prefix_preserved": true
+    }
+  },
+  "archive_catalog_segments_verified": 1802,
+  "completed_compression_transitions_verified": [
+    "experimental-paper/segment-00001080.sqlite"
+  ],
+  "collector_recovery": {
+    "old_pid": 3322307,
+    "oom_at": "2026-11-08T01:56:44Z",
+    "memory_limit_gib": 1,
+    "automatic_restart": true,
+    "new_pid": 3357796,
+    "full_integrity_recovery_complete": true,
+    "memory_growth_cause": "unproven; event queues bounded by count not bytes remain a measured-profiling priority",
+    "resource_limits_changed": false
+  },
+  "experimental_manual_restart_pid": 3357608,
+  "experimental_resource_limits": "1CPU/2GiB unchanged",
+  "bounded_observation_after_recovery_seconds": 121,
+  "live_trading_enabled": false,
+  "quotas_changed": false,
+  "historical_originals_removed": false
+}
