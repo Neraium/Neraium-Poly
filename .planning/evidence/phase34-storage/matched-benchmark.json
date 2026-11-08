@@ -1,0 +1,89 @@
+{
+  "before": {
+    "retained_total_bytes": 6655464,
+    "active_total_including_wal_bytes": 6894344,
+    "files": {
+      "events-archive.sqlite": 36864,
+      "events-archive.lock": 0,
+      "events-segments/segment-00000002.sqlite.gz": 944580,
+      "events-segments/segment-00000003.sqlite.gz": 855461,
+      "events-segments/segment-00000001.sqlite-shm": 32768,
+      "events-segments/segment-00000001.sqlite.gz": 1025000,
+      "events-segments/segment-00000002.sqlite": 1232896,
+      "events-segments/segment-00000002.sqlite-wal": 0,
+      "events-segments/segment-00000002.sqlite-shm": 32768,
+      "events-segments/segment-00000003.sqlite-wal": 0,
+      "events-segments/segment-00000004.sqlite": 12288,
+      "events-segments/segment-00000003.sqlite": 1114112,
+      "events-segments/segment-00000001.sqlite": 1335296,
+      "events-segments/segment-00000001.sqlite.manifest.json": 221,
+      "events-segments/segment-00000003.sqlite-shm": 32768,
+      "events-segments/segment-00000001.sqlite-wal": 0,
+      "events-segments/segment-00000003.sqlite.manifest.json": 221,
+      "events-segments/segment-00000002.sqlite.manifest.json": 221
+    },
+    "wal_bytes_before_close": 214304,
+    "cpu_seconds": 0.615440827,
+    "restored_segments": 3
+  },
+  "after": {
+    "retained_total_bytes": 5917102,
+    "active_total_including_wal_bytes": 6193062,
+    "files": {
+      "events-archive.sqlite": 36864,
+      "events-archive.lock": 0,
+      "events-segments/segment-00000002.sqlite.gz": 890185,
+      "events-segments/segment-00000003.sqlite.gz": 820565,
+      "events-segments/segment-00000001.sqlite-shm": 32768,
+      "events-segments/segment-00000001.sqlite.gz": 1007,
+      "events-segments/segment-00000002.sqlite": 1183744,
+      "events-segments/segment-00000002.sqlite-wal": 0,
+      "events-segments/segment-00000004.sqlite.manifest.json": 220,
+      "events-segments/segment-00000002.sqlite-shm": 32768,
+      "events-segments/segment-00000003.sqlite-wal": 0,
+      "events-segments/segment-00000004.sqlite.gz": 743344,
+      "events-segments/segment-00000004.sqlite": 991232,
+      "events-segments/segment-00000003.sqlite": 1093632,
+      "events-segments/segment-00000001.sqlite": 12288,
+      "events-segments/segment-00000001.sqlite.manifest.json": 219,
+      "events-segments/segment-00000003.sqlite-shm": 32768,
+      "events-segments/segment-00000001.sqlite-wal": 0,
+      "events-segments/segment-00000004.sqlite-shm": 32768,
+      "events-segments/segment-00000005.sqlite": 12288,
+      "events-segments/segment-00000003.sqlite.manifest.json": 221,
+      "events-segments/segment-00000004.sqlite-wal": 0,
+      "events-segments/segment-00000002.sqlite.manifest.json": 221
+    },
+    "wal_bytes_before_close": 251384,
+    "cpu_seconds": 1.461716796,
+    "restored_segments": 4
+  },
+  "sources": [
+    {
+      "id": "5c76f994818325661a5abf399ba0351a2ab0d0b0d67d6c710b6afee4c09b09fc",
+      "segment": "segment-00002697.sqlite",
+      "payload_sha256": "b967ac0d066dbfaa53802fd4882b86e04b443967c5bbbac52f5b2ac2a88c9cb3",
+      "payload_bytes": 1323039
+    },
+    {
+      "id": "a9b4c16b71a829d574a1e41eaedb578b0410f65299dbed0948018370ee64cce9",
+      "segment": "segment-00002696.sqlite",
+      "payload_sha256": "cd31283f7cd61b13586f0c8f6af53fa308cbb654b0d85860aac004ab37a8ddc9",
+      "payload_bytes": 1219171
+    },
+    {
+      "id": "04ae008fa1951de4de67e7f8dafb949970493f067dd468c7e673706f9db2d38f",
+      "segment": "segment-00002695.sqlite",
+      "payload_sha256": "aac04faf6706dfee20ece2ac529954c91facee153c6b807a943e97e62ec41ff5",
+      "payload_bytes": 1103991
+    }
+  ],
+  "retained_reduction_fraction": 0.11094072479394379,
+  "scope": "three genuine immutable CompetitionStudy records, isolated copies including catalog, indexes, active DB, manifest and gzip; no production source changed",
+  "limitations": [
+    "Subset benchmark only; actual whole-service growth must be measured after integration.",
+    "No legacy rewrite, data deletion, quota change or migration.",
+    "Competition16frame logical histories are retained; larger reduction requires separate reviewed representation change.",
+    "gzip6 may cost more CPU than gzip1; caps unchanged."
+  ]
+}

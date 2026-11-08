@@ -26,6 +26,9 @@ from neraium_poly.data.store import EventStore, _payload_metadata
 
 NAME = re.compile(r"segment-[0-9]{8}\.sqlite\Z")
 CHUNK = 1024 * 1024
+# Future immutable copies only. Existing gzip bytes/hashes are never rewritten.
+COMPRESSION_LEVEL = 6
+COMPRESSION_PROFILE = "gzip-level6-streaming-verified-v34"
 
 
 def _sha(path):
@@ -497,7 +500,7 @@ class ManagedEventStore:
                     raise ValueError("symlinked pending archive copy")
                 temporary.unlink()
             with source.open("rb") as raw, temporary.open("xb") as output:
-                with gzip.GzipFile(fileobj=output, mode="wb", compresslevel=1, mtime=0) as compressed:
+                with gzip.GzipFile(fileobj=output, mode="wb", compresslevel=COMPRESSION_LEVEL, mtime=0) as compressed:
                     for chunk in iter(lambda: raw.read(CHUNK), b""):
                         self._check_budget(len(chunk) + 65536)
                         compressed.write(chunk)
@@ -707,6 +710,7 @@ class ManagedEventStore:
                      "counts_scope": "current catalog and filesystem; proof presence is not integrity verification"}
             result = {"managed": True, "usage_bytes": usage, "usage_is_conservative_estimate": bool(self._pending), "budget_bytes": self.budget_bytes,
                     "active_bytes": active_bytes, "segment_bytes": self.segment_bytes,
+                    "future_compression_profile": COMPRESSION_PROFILE,
                     "segments": sum(r["status"] != "legacy" for r in rows),
                     "sealed_segments": sum(r["status"] == "sealed" for r in rows),
                     "compressed_segments": sum(r["gzip_sha"] is not None for r in rows),

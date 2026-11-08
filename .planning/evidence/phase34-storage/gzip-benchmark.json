@@ -1,0 +1,59 @@
+[
+  {
+    "name": "segment-00002692.sqlite",
+    "raw_bytes": 2629632,
+    "current_gzip_bytes": 1131681,
+    "levels": {
+      "1": {
+        "gzip_bytes": 1131646,
+        "cpu_seconds": 0.033955966000000004
+      },
+      "6": {
+        "gzip_bytes": 1069604,
+        "cpu_seconds": 0.05011689700000001
+      },
+      "9": {
+        "gzip_bytes": 1066461,
+        "cpu_seconds": 0.06707573400000003
+      }
+    }
+  },
+  {
+    "name": "segment-00002691.sqlite",
+    "raw_bytes": 2412544,
+    "current_gzip_bytes": 1353684,
+    "levels": {
+      "1": {
+        "gzip_bytes": 1353649,
+        "cpu_seconds": 0.039436183999999985
+      },
+      "6": {
+        "gzip_bytes": 1284985,
+        "cpu_seconds": 0.058754678000000005
+      },
+      "9": {
+        "gzip_bytes": 1281585,
+        "cpu_seconds": 0.14712097600000001
+      }
+    }
+  },
+  {
+    "name": "segment-00002690.sqlite",
+    "raw_bytes": 4591616,
+    "current_gzip_bytes": 2793003,
+    "levels": {
+      "1": {
+        "gzip_bytes": 2792968,
+        "cpu_seconds": 0.08437164100000005
+      },
+      "6": {
+        "gzip_bytes": 2701318,
+        "cpu_seconds": 0.10988684700000007
+      },
+      "9": {
+        "gzip_bytes": 2699234,
+        "cpu_seconds": 0.12078760699999991
+      }
+    }
+  }
+]
