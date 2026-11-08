@@ -1,0 +1,35 @@
+{
+  "at": "2026-11-08T19:28:59.595694+00:00",
+  "samples": [
+    {
+      "path": "health",
+      "seconds": 0.018586202058941126,
+      "status": 200,
+      "bytes": 307
+    },
+    {
+      "path": "operations-state",
+      "seconds": 1.1517780600115657,
+      "status": 200,
+      "bytes": 1250365
+    },
+    {
+      "path": "market-frame",
+      "seconds": 0.3559115200769156,
+      "status": 404,
+      "bytes": 64
+    },
+    {
+      "path": "operations-state",
+      "seconds": 2.1045917810406536,
+      "status": 200,
+      "bytes": 1250334
+    },
+    {
+      "path": "operations-state",
+      "seconds": 3.1097825239412487,
+      "status": 200,
+      "bytes": 1250515
+    }
+  ]
+}

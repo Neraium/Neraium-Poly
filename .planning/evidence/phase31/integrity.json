@@ -1,0 +1,26 @@
+{
+  "scope": "complete journal chains and catalog preservation; physical hash restoration checked on one recent sealed segment per service, no redundant full archive rehash",
+  "catalog_segments_preserved": 3468,
+  "journals": {
+    "event-intelligence/forecasts.sqlite": {
+      "records": 4587,
+      "head_sha256": "2382f2b5ef1a3538188638c89ffd532ef87c62bd099455f4a3f490918551e4b1",
+      "preexisting_prefix_preserved": true
+    },
+    "event-intelligence/sports/prospective.sqlite": {
+      "records": 21,
+      "head_sha256": "f39795944e1f8f60ecc8f3994f1633fec98d57102889448add127a2d7b3ff157",
+      "preexisting_prefix_preserved": true
+    },
+    "event-intelligence/domains/forecasts.sqlite": {
+      "records": 185,
+      "head_sha256": "563503bbd416ecc827d34bc9568000c4d1afcb479c3be8122a5b037a26999a04",
+      "preexisting_prefix_preserved": true
+    }
+  },
+  "completed_compression_transitions_verified": [
+    "experimental-paper/segment-00002441.sqlite"
+  ],
+  "full_local_manifest_sha256": "aae08dcb8757ab507e14d66a6893cba10f9e9ebc4f1302539ece8613ae214f5b",
+  "local_evidence_path": "data/phase31/integrity-after.json"
+}

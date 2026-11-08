@@ -1,0 +1,236 @@
+{
+  "at": "2026-11-08T20:03:51.287361+00:00",
+  "source_commit": "64d52587969184e05215365d71bf6470c3c65a60",
+  "forecast_counts_by_domain": {
+    "crypto": 24,
+    "finance": 2,
+    "economics": 4,
+    "weather": 20,
+    "sports": 130,
+    "politics": 0,
+    "geopolitics": 0,
+    "technology": 0,
+    "science": 0,
+    "esports": 0,
+    "entertainment": 0,
+    "other": 0
+  },
+  "reviewed_groups_by_domain": {
+    "crypto": 4,
+    "finance": 1,
+    "economics": 2,
+    "weather": 8,
+    "sports": 35,
+    "politics": 0,
+    "geopolitics": 0,
+    "technology": 0,
+    "science": 0,
+    "esports": 0,
+    "entertainment": 0,
+    "other": 0
+  },
+  "metrics_as_of": "2026-11-08T20:03:00.703085+00:00",
+  "official_metrics": {
+    "as_of": "2026-11-08T20:02:52.665891+00:00",
+    "verified_forecast_labels": 8,
+    "event_groups_by_domain": {
+      "sports": 4
+    },
+    "certified_training_events": 0,
+    "certified_heldout_events": 0,
+    "collection_rejections": {
+      "official_event_adapter_unavailable_for_domain_or_league": 66,
+      "event_not_yet_mature": 94,
+      "ValueError:reviewed_official_report_timezone_required": 2,
+      "TypeError:official_archive_eligible_use_authorization_required": 8,
+      "official_game_not_final": 2
+    }
+  },
+  "models": [
+    {
+      "model_id": "nhl-beta-frequency-v25.1",
+      "event_disjoint_groups": 4,
+      "descriptive_brier": 0.28250294500464024,
+      "descriptive_log_loss": 0.758001627796643,
+      "neutral_brier": 0.25,
+      "market_baseline_comparison": null,
+      "superiority_established": false
+    },
+    {
+      "model_id": "nhl-causal-elo-v25.1",
+      "event_disjoint_groups": 4,
+      "descriptive_brier": 0.2706210128663171,
+      "descriptive_log_loss": 0.7352380445290576,
+      "neutral_brier": 0.25,
+      "market_baseline_comparison": null,
+      "superiority_established": false
+    }
+  ],
+  "economic_evaluation": {
+    "counts": {
+      "findings_evaluated": 120,
+      "qualified_research_findings": 0,
+      "modeled_positive_gross_scenarios": 0,
+      "execution_authorized": 0,
+      "reviewed_canonical_groups": 34,
+      "statistically_independent_resolved_events": 0
+    },
+    "pipeline_counts": {
+      "identity_validated": 80,
+      "book_matched": 42,
+      "book_executable": 36,
+      "economic_evaluation_completed": 22
+    },
+    "rejections": {
+      "forecast_outside_frozen_300_second_decision_window": 120,
+      "supported_contract_payout_semantics_required": 48,
+      "current_executable_book_missing": 78,
+      "current_exact_market_metadata_missing": 40,
+      "forecast_event_decision_horizon_ended": 26,
+      "current_book_receipt_outside_15_seconds": 4,
+      "stale_book": 6
+    },
+    "runtime_error": null,
+    "report_callback_error": null
+  },
+  "shadow": {
+    "status": "research_only",
+    "enrollment_id": "12f54431fc04fea4bd7adb8c111ab1efc1b1070f820a032852a4eaffe8e28c80",
+    "last_at": "2026-11-08T20:03:11.644702+00:00",
+    "capital_scope": "single hypothetical500USD shared pool, not certified/experimental account capital",
+    "hypothetical_cash": 500.0,
+    "capital_reserved": 0,
+    "positions": 0,
+    "position_quantity": 0,
+    "exposure": 0.0,
+    "capital_utilization": 0.0,
+    "orders_attempted": 0,
+    "pending_orders": 0,
+    "hypothetical_fills": 0,
+    "canceled": 0,
+    "expired": 0,
+    "realized_simulated_pnl": null,
+    "unrealized_simulated_pnl": null,
+    "drawdown": null,
+    "mark_status": "no_filled_positions",
+    "verified_settled_parent_events": 0,
+    "statistically_independent_events": null,
+    "settlements": 0,
+    "suspended": false,
+    "suspension_reason": null,
+    "strategies": {
+      "cross_market": {
+        "fills": 0,
+        "orders": 0,
+        "realized_pnl": null,
+        "settlements": 0,
+        "suspended": false,
+        "positions": 0,
+        "reserved": 0,
+        "exposure": 0
+      },
+      "ensemble": {
+        "fills": 0,
+        "orders": 0,
+        "realized_pnl": null,
+        "settlements": 0,
+        "suspended": false,
+        "positions": 0,
+        "reserved": 0,
+        "exposure": 0
+      },
+      "high_conviction": {
+        "fills": 0,
+        "orders": 0,
+        "realized_pnl": null,
+        "settlements": 0,
+        "suspended": false,
+        "positions": 0,
+        "reserved": 0,
+        "exposure": 0
+      },
+      "small_edge": {
+        "fills": 0,
+        "orders": 0,
+        "realized_pnl": null,
+        "settlements": 0,
+        "suspended": false,
+        "positions": 0,
+        "reserved": 0,
+        "exposure": 0
+      }
+    },
+    "rejections": {
+      "strategy_evidence_not_eligible": 191512
+    },
+    "runtime_error": null,
+    "research_only": true,
+    "trading_authority": false,
+    "certification_authority": false,
+    "actual_account_access": false
+  },
+  "accounts": {
+    "paper-live": {
+      "cash": 500.0,
+      "realized_pnl": 0.0,
+      "positions": 0,
+      "emergency_stop": false
+    },
+    "experimental-paper": {
+      "cash": 496.11522059829053,
+      "realized_pnl": -3.8847794017094013,
+      "positions": 0,
+      "emergency_stop": false
+    }
+  },
+  "storage": {
+    "collector": {
+      "usage_gib": 19.960944578051567,
+      "budget_gib": 150,
+      "sampler_growth_kib_s": 59.84573938493024,
+      "observed_60s_growth_kib_s": -30.604944523471005,
+      "conditional_budget_runway_days": 26.37100857824252,
+      "filesystem_free_gib": 399.234375,
+      "floor_gib": 100,
+      "health": "ok"
+    },
+    "experimental": {
+      "usage_gib": 14.572382440790534,
+      "budget_gib": 150,
+      "sampler_growth_kib_s": 128.4805141241608,
+      "observed_60s_growth_kib_s": 79.75828065955574,
+      "conditional_budget_runway_days": 12.792521143025125,
+      "filesystem_free_gib": 399.234375,
+      "floor_gib": 100,
+      "health": "ok"
+    }
+  },
+  "final_live_samples": [
+    {
+      "observed_at": "2026-11-08T20:03:13.220098+00:00",
+      "markets": 409,
+      "fresh_native_books_15s": 296,
+      "latest_source_timestamp": "2026-11-08T20:03:13Z"
+    },
+    {
+      "observed_at": "2026-11-08T20:03:28.439084+00:00",
+      "markets": 409,
+      "fresh_native_books_15s": 339,
+      "latest_source_timestamp": "2026-11-08T20:03:28Z"
+    }
+  ],
+  "scope": "bounded observations, not proof of indefinite operation or statistically supported profitability",
+  "phase_forecast_progress": {
+    "weather": {
+      "new_forecasts": 8,
+      "reviewed_parent_groups_represented": 4,
+      "new_reviewed_groups_not_previously_forecast": 4
+    },
+    "sports": {
+      "new_forecasts": 4,
+      "reviewed_parent_groups_represented": 2,
+      "new_reviewed_groups_not_previously_forecast": 0
+    }
+  },
+  "storage_scope": "conditional existing sampler growth; 60s deltas are noisy accounting/WAL/temporary transitions and must not imply evidence deletion or guaranteed runway"
+}

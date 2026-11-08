@@ -1,0 +1,32 @@
+{
+  "source_commit": "64d52587969184e05215365d71bf6470c3c65a60",
+  "backend_final": "1993 passed; full suite collected before two final review regressions added",
+  "post_review_focused": "27 passed including failed source replay and observer failure isolation",
+  "browser": "5 passed",
+  "build": "passed",
+  "ruff": "passed",
+  "python_dependency_audit": "no known vulnerabilities",
+  "npm_dependency_audit": "0 vulnerabilities",
+  "scenario": "passed",
+  "parallelism": {
+    "peak_agents_including_coordinator": 4,
+    "writing_agents": 3,
+    "isolated_native_worktrees": 3,
+    "final_validation_processes_concurrent": 3,
+    "pytest_workers": 1,
+    "playwright_workers": 1,
+    "service_limits_unchanged": true
+  },
+  "final_source_ci": {
+    "conclusion": "success",
+    "headSha": "64d52587969184e05215365d71bf6470c3c65a60",
+    "url": "https://github.com/Neraium/Neraium-Poly/actions/runs/42517875537"
+  },
+  "metadata_regression": "20 passed",
+  "decision_timestamp_regression": "20 passed",
+  "real_data_scorecard_replay": "233 native fresh executable tokens at recorded economic decision; no canonical append",
+  "final_live_verification": "15s source timestamps progressed, native fresh296\u2192339, API41\u201399ms; no new OOM/restarts",
+  "native_settlements_verified": 0,
+  "certified_training_events": 0,
+  "certified_heldout_events": 0
+}

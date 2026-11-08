@@ -1,0 +1,108 @@
+{
+  "at": "2026-11-08T19:54:11.194494+00:00",
+  "cutoff": "2026-11-08T19:22:30.119614+00:00",
+  "indexed_forecasts_by_domain": {
+    "crypto": 24,
+    "sports": 130,
+    "economics": 4,
+    "weather": 20,
+    "finance": 2
+  },
+  "new_during_phase_by_domain": {
+    "weather": 8,
+    "sports": 4
+  },
+  "reviewed_groups_by_domain": {
+    "economics": 2,
+    "crypto": 4,
+    "sports": 35,
+    "weather": 8,
+    "finance": 1
+  },
+  "new_forecasts": [
+    {
+      "id": "a788c9121260f3381dcb6d6a0a67ce24f84b619cb27a9ade673ff28292cc85fc",
+      "timestamp": "2026-11-08T19:23:04.044289+00:00",
+      "market_id": "6772991",
+      "domain": "weather",
+      "model_id": "metar-recency-kernel-v25.1"
+    },
+    {
+      "id": "737013a9fc472f0855063da5740cdc46c2c65de755456ed742866d179907718b",
+      "timestamp": "2026-11-08T19:23:04.044289+00:00",
+      "market_id": "6772991",
+      "domain": "weather",
+      "model_id": "metar-diurnal-gaussian-v25.1"
+    },
+    {
+      "id": "02c8351db15266ecf03ffc6f1a156cbaebb95c6b28bf3b9f4c616452c9619713",
+      "timestamp": "2026-11-08T19:32:45.096597+00:00",
+      "market_id": "5920641",
+      "domain": "sports",
+      "model_id": "nfl-davidson-team-strength-v23.1"
+    },
+    {
+      "id": "078cc58c00fd9a4e0b4e670f0b64ceb88e253fd6044ee39a9551d70258db7559",
+      "timestamp": "2026-11-08T19:32:45.096597+00:00",
+      "market_id": "5920641",
+      "domain": "sports",
+      "model_id": "nfl-ternary-frequency-v23.1"
+    },
+    {
+      "id": "4fedc6fc6366fc48d46259d31c5a14490a66dd367799e915fe620137efd13f8c",
+      "timestamp": "2026-11-08T19:32:45.127278+00:00",
+      "market_id": "5920642",
+      "domain": "sports",
+      "model_id": "nfl-davidson-team-strength-v23.1"
+    },
+    {
+      "id": "001d2d0f353cb2b33df511a5b91a9d906eb4f7fc7cf6aaf1e381590f99f25d4a",
+      "timestamp": "2026-11-08T19:32:45.127278+00:00",
+      "market_id": "5920642",
+      "domain": "sports",
+      "model_id": "nfl-ternary-frequency-v23.1"
+    },
+    {
+      "id": "e8d3bbea80a18bc5e09bc8a3a327b4a95aba246dbf26208ab55d9ef5bc8d1c76",
+      "timestamp": "2026-11-08T19:39:56.504512+00:00",
+      "market_id": "6837184",
+      "domain": "weather",
+      "model_id": "metar-recency-kernel-v25.1"
+    },
+    {
+      "id": "00a8d37ed131c8a7cba9973efe5d2c1b74d5005e38c56f87dcb8b84e58227398",
+      "timestamp": "2026-11-08T19:39:56.504512+00:00",
+      "market_id": "6837184",
+      "domain": "weather",
+      "model_id": "metar-diurnal-gaussian-v25.1"
+    },
+    {
+      "id": "69cb710b2c602ab88e5aafb587bf66ac9d3f26df0225a049bc3b7c7776b654d0",
+      "timestamp": "2026-11-08T19:51:02.353123+00:00",
+      "market_id": "6837346",
+      "domain": "weather",
+      "model_id": "metar-recency-kernel-v25.1"
+    },
+    {
+      "id": "87ba07f55c54bad82b4cda1e143988c3451aca391c253f9bca21262d550f73bf",
+      "timestamp": "2026-11-08T19:51:02.353123+00:00",
+      "market_id": "6837346",
+      "domain": "weather",
+      "model_id": "metar-diurnal-gaussian-v25.1"
+    },
+    {
+      "id": "da24e4e50e6645b0ea0baf6fbf1f2cc58148709f5bc9c1ff005b6881c0c57d2a",
+      "timestamp": "2026-11-08T19:51:02.455956+00:00",
+      "market_id": "6773113",
+      "domain": "weather",
+      "model_id": "metar-recency-kernel-v25.1"
+    },
+    {
+      "id": "44fc424e93c900b02e85b9aa26b49939f77a9f2107a2392553009acff2460922",
+      "timestamp": "2026-11-08T19:51:02.455956+00:00",
+      "market_id": "6773113",
+      "domain": "weather",
+      "model_id": "metar-diurnal-gaussian-v25.1"
+    }
+  ]
+}
