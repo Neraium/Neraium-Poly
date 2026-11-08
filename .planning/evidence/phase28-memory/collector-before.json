@@ -1,0 +1,136 @@
+{
+  "at": "2026-11-08T12:25:23.360248+00:00",
+  "ledger_payload_sizes": [
+    [
+      "markets",
+      1717264
+    ],
+    [
+      "prices",
+      1340660
+    ],
+    [
+      "quote_archive",
+      352546
+    ],
+    [
+      "scan",
+      339840
+    ],
+    [
+      "relationship_checkpoint",
+      323959
+    ],
+    [
+      "relationships",
+      94800
+    ],
+    [
+      "forecast_priority_pool",
+      35525
+    ],
+    [
+      "token_map",
+      29652
+    ],
+    [
+      "phase23_discovery",
+      646
+    ],
+    [
+      "workflow_relationship_checkpoint",
+      326
+    ],
+    [
+      "totals",
+      130
+    ],
+    [
+      "book_offset",
+      3
+    ],
+    [
+      "order_activations",
+      2
+    ]
+  ],
+  "status": {
+    "VmHWM": "426192 kB",
+    "VmRSS": "345376 kB",
+    "RssAnon": "325600 kB",
+    "RssFile": "19776 kB"
+  },
+  "cgroup_stat": {
+    "anon": 333414400,
+    "file": 648933376,
+    "kernel": 3334144,
+    "kernel_stack": 65536,
+    "pagetables": 811008,
+    "sec_pagetables": 0,
+    "percpu": 544,
+    "sock": 4096,
+    "vmalloc": 0,
+    "shmem": 0,
+    "zswap": 0,
+    "zswapped": 0,
+    "file_mapped": 176128,
+    "file_dirty": 12288,
+    "file_writeback": 0,
+    "swapcached": 0,
+    "anon_thp": 0,
+    "file_thp": 0,
+    "shmem_thp": 0,
+    "inactive_anon": 251084800,
+    "active_anon": 82329600,
+    "inactive_file": 648876032,
+    "active_file": 57344,
+    "unevictable": 0,
+    "slab_reclaimable": 2264048,
+    "slab_unreclaimable": 182048,
+    "slab": 2446096,
+    "workingset_refault_anon": 0,
+    "workingset_refault_file": 544072,
+    "workingset_activate_anon": 0,
+    "workingset_activate_file": 0,
+    "workingset_restore_anon": 0,
+    "workingset_restore_file": 389,
+    "workingset_nodereclaim": 0,
+    "pgdemote_kswapd": 0,
+    "pgdemote_direct": 0,
+    "pgdemote_khugepaged": 0,
+    "pgdemote_proactive": 0,
+    "pgpromote_success": 0,
+    "pgscan": 401733,
+    "pgsteal": 401708,
+    "pswpin": 0,
+    "pswpout": 0,
+    "pgscan_kswapd": 0,
+    "pgscan_direct": 401733,
+    "pgscan_khugepaged": 0,
+    "pgscan_proactive": 0,
+    "pgsteal_kswapd": 0,
+    "pgsteal_direct": 401708,
+    "pgsteal_khugepaged": 0,
+    "pgsteal_proactive": 0,
+    "pgfault": 3200841,
+    "pgmajfault": 0,
+    "pgrefill": 179519,
+    "pgactivate": 14,
+    "pgdeactivate": 0,
+    "pglazyfree": 0,
+    "pglazyfreed": 0,
+    "swpin_zero": 0,
+    "swpout_zero": 0,
+    "zswpin": 0,
+    "zswpout": 0,
+    "zswpwb": 0,
+    "thp_fault_alloc": 0,
+    "thp_collapse_alloc": 0,
+    "thp_swpout": 0,
+    "thp_swpout_fallback": 0,
+    "numa_pages_migrated": 0,
+    "numa_pte_updates": 0,
+    "numa_hint_faults": 0
+  },
+  "cgroup_events": "low 0\nhigh 0\nmax 6470\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+}

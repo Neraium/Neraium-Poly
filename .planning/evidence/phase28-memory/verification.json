@@ -1,0 +1,10 @@
+{
+  "focused_test_cases_passed": 14,
+  "ruff": "All checks passed",
+  "allocator_abi_source": "Installed GNU /usr/include/malloc.h lines99\u2013117, struct mallinfo2 ten size_t fields; guarded GNU libc symbol lookup",
+  "memory_remedies_executed": false,
+  "gc_collect_or_malloc_trim_called": false,
+  "service_or_resource_changes": false,
+  "old_oom_cause": "unresolved anonymous memory accumulation/transient; not mere file cache",
+  "instrumentation_causal_claim": false
+}
