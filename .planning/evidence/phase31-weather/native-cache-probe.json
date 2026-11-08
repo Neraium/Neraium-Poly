@@ -1,0 +1,385 @@
+[
+  {
+    "retrieved_at": "2026-11-08T19:28:28.045134+00:00",
+    "request_headers": {},
+    "response_headers": {
+      "date": "Sun, 08 Nov 2026 19:28:28 GMT",
+      "cf-cache-status": "DYNAMIC",
+      "server": "cloudflare"
+    },
+    "payload": {
+      "market": "0xceeb8843a59a8cf9a5e1d8f1ac0bcb3b3f2c155c4b6871638c3fdf491d56c05e",
+      "asset_id": "15743016772819404195694721549830522767502212591837660952497904201360535583380",
+      "timestamp": "1794166107298",
+      "hash": "a0f26c2cc382b24f0c381a42ced151cd2c52bee1",
+      "bids": [
+        {
+          "price": "0.001",
+          "size": "30010"
+        },
+        {
+          "price": "0.002",
+          "size": "1000"
+        },
+        {
+          "price": "0.003",
+          "size": "333"
+        },
+        {
+          "price": "0.005",
+          "size": "129"
+        },
+        {
+          "price": "0.006",
+          "size": "7631.59"
+        },
+        {
+          "price": "0.007",
+          "size": "40"
+        },
+        {
+          "price": "0.01",
+          "size": "6"
+        },
+        {
+          "price": "0.013",
+          "size": "120"
+        },
+        {
+          "price": "0.015",
+          "size": "228.64"
+        },
+        {
+          "price": "0.016",
+          "size": "214"
+        },
+        {
+          "price": "0.02",
+          "size": "50"
+        },
+        {
+          "price": "0.021",
+          "size": "50"
+        },
+        {
+          "price": "0.022",
+          "size": "264"
+        },
+        {
+          "price": "0.023",
+          "size": "130"
+        }
+      ],
+      "asks": [
+        {
+          "price": "0.999",
+          "size": "5016.8"
+        },
+        {
+          "price": "0.998",
+          "size": "61.71"
+        },
+        {
+          "price": "0.97",
+          "size": "100"
+        },
+        {
+          "price": "0.969",
+          "size": "21.08"
+        },
+        {
+          "price": "0.91",
+          "size": "5"
+        },
+        {
+          "price": "0.8",
+          "size": "100"
+        },
+        {
+          "price": "0.78",
+          "size": "500"
+        },
+        {
+          "price": "0.7",
+          "size": "46.67"
+        },
+        {
+          "price": "0.62",
+          "size": "13"
+        },
+        {
+          "price": "0.619",
+          "size": "1000"
+        },
+        {
+          "price": "0.49",
+          "size": "20"
+        },
+        {
+          "price": "0.489",
+          "size": "1000"
+        },
+        {
+          "price": "0.365",
+          "size": "1000"
+        },
+        {
+          "price": "0.261",
+          "size": "1000"
+        },
+        {
+          "price": "0.154",
+          "size": "2203"
+        },
+        {
+          "price": "0.091",
+          "size": "1000"
+        },
+        {
+          "price": "0.087",
+          "size": "1845"
+        },
+        {
+          "price": "0.063",
+          "size": "1601"
+        },
+        {
+          "price": "0.055",
+          "size": "3000"
+        },
+        {
+          "price": "0.038",
+          "size": "25"
+        },
+        {
+          "price": "0.035",
+          "size": "4970"
+        },
+        {
+          "price": "0.033",
+          "size": "488"
+        },
+        {
+          "price": "0.03",
+          "size": "2500"
+        },
+        {
+          "price": "0.029",
+          "size": "214"
+        },
+        {
+          "price": "0.028",
+          "size": "50"
+        },
+        {
+          "price": "0.027",
+          "size": "314"
+        },
+        {
+          "price": "0.026",
+          "size": "41.79"
+        }
+      ],
+      "min_order_size": "5",
+      "tick_size": "0.001",
+      "neg_risk": false,
+      "last_trade_price": "0.978"
+    },
+    "sha256": "75d4bf7ca84d909a2c102d2fbc77e87fa4b5acb71c910ba93faa8908b2b064a2",
+    "body_bytes": 1632,
+    "native_age_seconds": 0.747134
+  },
+  {
+    "retrieved_at": "2026-11-08T19:28:28.141666+00:00",
+    "request_headers": {
+      "Cache-Control": "no-cache",
+      "Pragma": "no-cache"
+    },
+    "response_headers": {
+      "date": "Sun, 08 Nov 2026 19:28:28 GMT",
+      "cf-cache-status": "DYNAMIC",
+      "server": "cloudflare"
+    },
+    "payload": {
+      "market": "0xceeb8843a59a8cf9a5e1d8f1ac0bcb3b3f2c155c4b6871638c3fdf491d56c05e",
+      "asset_id": "15743016772819404195694721549830522767502212591837660952497904201360535583380",
+      "timestamp": "1794166107298",
+      "hash": "a0f26c2cc382b24f0c381a42ced151cd2c52bee1",
+      "bids": [
+        {
+          "price": "0.001",
+          "size": "30010"
+        },
+        {
+          "price": "0.002",
+          "size": "1000"
+        },
+        {
+          "price": "0.003",
+          "size": "333"
+        },
+        {
+          "price": "0.005",
+          "size": "129"
+        },
+        {
+          "price": "0.006",
+          "size": "7631.59"
+        },
+        {
+          "price": "0.007",
+          "size": "40"
+        },
+        {
+          "price": "0.01",
+          "size": "6"
+        },
+        {
+          "price": "0.013",
+          "size": "120"
+        },
+        {
+          "price": "0.015",
+          "size": "228.64"
+        },
+        {
+          "price": "0.016",
+          "size": "214"
+        },
+        {
+          "price": "0.02",
+          "size": "50"
+        },
+        {
+          "price": "0.021",
+          "size": "50"
+        },
+        {
+          "price": "0.022",
+          "size": "264"
+        },
+        {
+          "price": "0.023",
+          "size": "130"
+        }
+      ],
+      "asks": [
+        {
+          "price": "0.999",
+          "size": "5016.8"
+        },
+        {
+          "price": "0.998",
+          "size": "61.71"
+        },
+        {
+          "price": "0.97",
+          "size": "100"
+        },
+        {
+          "price": "0.969",
+          "size": "21.08"
+        },
+        {
+          "price": "0.91",
+          "size": "5"
+        },
+        {
+          "price": "0.8",
+          "size": "100"
+        },
+        {
+          "price": "0.78",
+          "size": "500"
+        },
+        {
+          "price": "0.7",
+          "size": "46.67"
+        },
+        {
+          "price": "0.62",
+          "size": "13"
+        },
+        {
+          "price": "0.619",
+          "size": "1000"
+        },
+        {
+          "price": "0.49",
+          "size": "20"
+        },
+        {
+          "price": "0.489",
+          "size": "1000"
+        },
+        {
+          "price": "0.365",
+          "size": "1000"
+        },
+        {
+          "price": "0.261",
+          "size": "1000"
+        },
+        {
+          "price": "0.154",
+          "size": "2203"
+        },
+        {
+          "price": "0.091",
+          "size": "1000"
+        },
+        {
+          "price": "0.087",
+          "size": "1845"
+        },
+        {
+          "price": "0.063",
+          "size": "1601"
+        },
+        {
+          "price": "0.055",
+          "size": "3000"
+        },
+        {
+          "price": "0.038",
+          "size": "25"
+        },
+        {
+          "price": "0.035",
+          "size": "4970"
+        },
+        {
+          "price": "0.033",
+          "size": "488"
+        },
+        {
+          "price": "0.03",
+          "size": "2500"
+        },
+        {
+          "price": "0.029",
+          "size": "214"
+        },
+        {
+          "price": "0.028",
+          "size": "50"
+        },
+        {
+          "price": "0.027",
+          "size": "314"
+        },
+        {
+          "price": "0.026",
+          "size": "41.79"
+        }
+      ],
+      "min_order_size": "5",
+      "tick_size": "0.001",
+      "neg_risk": false,
+      "last_trade_price": "0.978"
+    },
+    "sha256": "75d4bf7ca84d909a2c102d2fbc77e87fa4b5acb71c910ba93faa8908b2b064a2",
+    "body_bytes": 1632,
+    "native_age_seconds": 0.843666
+  }
+]

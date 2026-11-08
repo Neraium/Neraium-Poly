@@ -1,0 +1,420 @@
+[
+  {
+    "id": "000000000437:8f169d6df8465eb857a4f2019edf9c4ab0ae95f1460e1b75af2bedb119aea01b",
+    "available_at": "2026-11-08T19:23:04.047566Z",
+    "op": "forecast_batch",
+    "rejections": {},
+    "observation": {
+      "adapter": "weather",
+      "market": {
+        "schema_version": "1.0",
+        "id": "22606872285f571f58922a63ede23f6fd0e31b64ca60ca1cb6195b24e621390b",
+        "timestamp": "2026-11-08T19:15:39.400500Z",
+        "available_at": "2026-11-08T19:15:39.400500Z",
+        "source": "https://gamma-api.polymarket.com",
+        "exchange": "polymarket",
+        "market_id": "6772991",
+        "event_id": "1330021",
+        "question": "Will the highest temperature in Chengdu be 16\u00b0C on November 9?",
+        "token_id": "33517236537751279764576613060226568848015904124539409726217939590559652836108",
+        "outcome": "Yes",
+        "probability": 0.0825,
+        "status": "active",
+        "resolution_rules": "This market will resolve to the temperature range that contains the highest temperature reported at Chengdu Shuangliu International Airport (ZUUU) on 9 Nov '26.\n\nThe qualifying value is the highest temperature reported in the hourly temperature remark of any routine (METAR) observation for Chengdu Shuangliu International Airport (ZUUU) on that date, in tenths of a degree Celsius as reported. A report whose line begins with SPECI is a special observation and does not count. Every other report is routine, including one issued off the nominal hour and one that carries no METAR or SPECI label.\n\nFor How to Read the METAR Report, see: https://polymarket-upload.s3.us-east-2.amazonaws.com/market_products/Weather/How+to+Read+the+METAR+Report.pdf\n\nThe hourly temperature remark is the group beginning with the letter T followed by exactly eight digits. After the T, one digit for sign (0 positive, 1 negative) and three for tenths of a degree Celsius give the temperature; the following four are the dew point and are not used. T01390133 is 13.9\u00b0C; T10171022 is \u22121.7\u00b0C.\n\nIf a routine observation does not carry the hourly temperature remark, the temperature group in the body of that observation governs for that observation, in whole degrees Celsius as reported. It appears as temperature and dew point separated by a slash, with M marking a negative value: 18/12 is 18\u00b0C; M11/M17 is \u221211\u00b0C. An observation that reports no temperature in either place is disregarded.\n\nEach market in this event states its range in whole degrees Celsius. The qualifying value is rounded to the nearest whole degree, with a value ending in exactly half rounded up to the next higher whole degree, and that whole Celsius value determines which range contains it. For example, 13.9\u00b0C counts as 14\u00b0C; 17.4\u00b0C counts as 17\u00b0C; 16.5\u00b0C counts as 17\u00b0C; \u22121.7\u00b0C counts as \u22122\u00b0C; \u22128.5\u00b0C counts as \u22128\u00b0C.\n\nAn observation counts if its time stamp, converted to the station's local time (including any daylight-saving shift in effect), falls on the observation date.\n\nThis market will resolve at the issuance of the first METAR observation for the station on the day following the observation date or by 11:59 PM ET on the day following the observation date, whichever comes first. Resolution is determined from the observations the resolution source shows for the observation date.\n\nIn the event that the Aviation Weather Center has published no routine observation reporting a temperature for the observation date by 11:59 PM ET on the day following the observation date, the Weather Underground Daily Observations table will be used as the resolution source. In the event that neither source has published data sufficient to determine a temperature for the observation date by 11:59 PM ET on the day following the observation date, this market will resolve to the lowest bracket.\n\nThe report the resolution source shows for a given observation time is the one that counts, whether or not it is marked as a correction (COR). Changes to observations within this market's timeframe will be considered until the first datapoint for the following date has been published, after which any alterations will not be considered. Where the first routine observation for the following date is published before that deadline, resolution is determined from a read taken after it. Where it is not, resolution is determined from a read taken at that deadline.\n\nIn the case that the Resolution Source publishes data, sufficient to settle a Market, that is clearly erroneous and the result of technical or operational error, or of unauthorized interference with the Resolution Source or its data, the Market may remain open for a period of up to seven (7) calendar days (ET) from the time of the original release, in anticipation of a correction by the Resolution Source. If the Resolution Source publishes a corrected value within that period, that value will be eligible for resolution. If no corrected value is published within that period, Polymarket will issue a Clarification to determine whether the originally published value may be eligible for resolution, or whether other action is required to preserve the orderly functioning of the Market.\n\nThe resolution source for this market will be the routine observations for Chengdu Shuangliu International Airport (ZUUU) published here:\nhttps://aviationweather.gov/api/data/metar?ids=ZUUU&format=raw&date=2026-11-09T19:00:00Z&hours=30",
+        "resolution_source": "https://aviationweather.gov/api/data/metar?ids=ZUUU&format=raw&date=2026-11-09T19:00:00Z&hours=30",
+        "end_time": "2026-11-09T12:00:00Z",
+        "tick_size": 0.001,
+        "min_order_size": 5.0
+      },
+      "input_book_id": "1e158ce03f8ae1e623567c4c9c9ff2457e92a4404e16058fe8635e4cdcdb5795",
+      "input_book_sha256": "9e2938bbc338fe806737ffe2a61233a4361775532c8d3f99dc5802505c1ea89d",
+      "reasons": {},
+      "accepted_forecast_ids": [
+        "a788c9121260f3381dcb6d6a0a67ce24f84b619cb27a9ade673ff28292cc85fc",
+        "737013a9fc472f0855063da5740cdc46c2c65de755456ed742866d179907718b"
+      ],
+      "priority_scope": "parent diversification, candidate retry and quote uncertainty/depth; not an independent probability feature"
+    },
+    "forecasts": [
+      {
+        "id": "a788c9121260f3381dcb6d6a0a67ce24f84b619cb27a9ade673ff28292cc85fc",
+        "model_id": "metar-recency-kernel-v25.1",
+        "timestamp": "2026-11-08T19:23:04.044289+00:00",
+        "probability": 0.15505976946125913,
+        "book_id": "1e158ce03f8ae1e623567c4c9c9ff2457e92a4404e16058fe8635e4cdcdb5795"
+      },
+      {
+        "id": "737013a9fc472f0855063da5740cdc46c2c65de755456ed742866d179907718b",
+        "model_id": "metar-diurnal-gaussian-v25.1",
+        "timestamp": "2026-11-08T19:23:04.044289+00:00",
+        "probability": 0.09946777778149646,
+        "book_id": "1e158ce03f8ae1e623567c4c9c9ff2457e92a4404e16058fe8635e4cdcdb5795"
+      }
+    ]
+  },
+  {
+    "id": "000000000436:6c5ae71ac7df67a3f1c886b46bce3afaba4bc7e8a7de40890693148ea59acf9b",
+    "available_at": "2026-11-08T19:22:57.414734Z",
+    "op": "scan",
+    "rejections": {
+      "fresh_native_two_sided_weather_book_required": 1
+    },
+    "observation": {
+      "adapter": "weather",
+      "market": {
+        "schema_version": "1.0",
+        "id": "77ea4cf1d16b06e85498c23cfbafc692ffd8f51aa42b0ec1e2e2a86dc3424333",
+        "timestamp": "2026-11-08T19:15:39.050086Z",
+        "available_at": "2026-11-08T19:15:39.050086Z",
+        "source": "https://gamma-api.polymarket.com",
+        "exchange": "polymarket",
+        "market_id": "6837183",
+        "event_id": "1338333",
+        "question": "Will the highest temperature in Chongqing be 13\u00b0C on November 10?",
+        "token_id": "50377409124301150928437823541986696397225103397498055525335347429769150604648",
+        "outcome": "Yes",
+        "probability": 0.1,
+        "status": "active",
+        "resolution_rules": "This market will resolve to the temperature range that contains the highest temperature reported at Chongqing Jiangbei International Airport (ZUCK) on 10 Nov '26.\n\nThe qualifying value is the highest temperature reported in the hourly temperature remark of any routine (METAR) observation for Chongqing Jiangbei International Airport (ZUCK) on that date, in tenths of a degree Celsius as reported. A report whose line begins with SPECI is a special observation and does not count. Every other report is routine, including one issued off the nominal hour and one that carries no METAR or SPECI label.\n\nFor How to Read the METAR Report, see: https://polymarket-upload.s3.us-east-2.amazonaws.com/market_products/Weather/How+to+Read+the+METAR+Report.pdf\n\nThe hourly temperature remark is the group beginning with the letter T followed by exactly eight digits. After the T, one digit for sign (0 positive, 1 negative) and three for tenths of a degree Celsius give the temperature; the following four are the dew point and are not used. T01390133 is 13.9\u00b0C; T10171022 is \u22121.7\u00b0C.\n\nIf a routine observation does not carry the hourly temperature remark, the temperature group in the body of that observation governs for that observation, in whole degrees Celsius as reported. It appears as temperature and dew point separated by a slash, with M marking a negative value: 18/12 is 18\u00b0C; M11/M17 is \u221211\u00b0C. An observation that reports no temperature in either place is disregarded.\n\nEach market in this event states its range in whole degrees Celsius. The qualifying value is rounded to the nearest whole degree, with a value ending in exactly half rounded up to the next higher whole degree, and that whole Celsius value determines which range contains it. For example, 13.9\u00b0C counts as 14\u00b0C; 17.4\u00b0C counts as 17\u00b0C; 16.5\u00b0C counts as 17\u00b0C; \u22121.7\u00b0C counts as \u22122\u00b0C; \u22128.5\u00b0C counts as \u22128\u00b0C.\n\nAn observation counts if its time stamp, converted to the station's local time (including any daylight-saving shift in effect), falls on the observation date.\n\nThis market will resolve at the issuance of the first METAR observation for the station on the day following the observation date or by 11:59 PM ET on the day following the observation date, whichever comes first. Resolution is determined from the observations the resolution source shows for the observation date.\n\nIn the event that the Aviation Weather Center has published no routine observation reporting a temperature for the observation date by 11:59 PM ET on the day following the observation date, the Weather Underground Daily Observations table will be used as the resolution source. In the event that neither source has published data sufficient to determine a temperature for the observation date by 11:59 PM ET on the day following the observation date, this market will resolve to the lowest bracket.\n\nThe report the resolution source shows for a given observation time is the one that counts, whether or not it is marked as a correction (COR). Changes to observations within this market's timeframe will be considered until the first datapoint for the following date has been published, after which any alterations will not be considered. Where the first routine observation for the following date is published before that deadline, resolution is determined from a read taken after it. Where it is not, resolution is determined from a read taken at that deadline.\n\nIn the case that the Resolution Source publishes data, sufficient to settle a Market, that is clearly erroneous and the result of technical or operational error, or of unauthorized interference with the Resolution Source or its data, the Market may remain open for a period of up to seven (7) calendar days (ET) from the time of the original release, in anticipation of a correction by the Resolution Source. If the Resolution Source publishes a corrected value within that period, that value will be eligible for resolution. If no corrected value is published within that period, Polymarket will issue a Clarification to determine whether the originally published value may be eligible for resolution, or whether other action is required to preserve the orderly functioning of the Market.\n\nThe resolution source for this market will be the routine observations for Chongqing Jiangbei International Airport (ZUCK) published here:\nhttps://aviationweather.gov/api/data/metar?ids=ZUCK&format=raw&date=2026-11-10T19:00:00Z&hours=30",
+        "resolution_source": "https://aviationweather.gov/api/data/metar?ids=ZUCK&format=raw&date=2026-11-10T19:00:00Z&hours=30",
+        "end_time": "2026-11-10T12:00:00Z",
+        "tick_size": 0.01,
+        "min_order_size": 5.0
+      },
+      "input_book_id": "f74566a837d6b70f69df06d83de11c2a66ccf1eed6c79a6d9c0c515d31b6ebf4",
+      "input_book_sha256": "5376c7d1b41c2da3fe74caf6d82a9dff97170d8efd14a4b56ac92a0c90736e0e",
+      "reasons": {
+        "fresh_native_two_sided_weather_book_required": 1
+      },
+      "accepted_forecast_ids": [],
+      "priority_scope": "parent diversification, candidate retry and quote uncertainty/depth; not an independent probability feature"
+    },
+    "forecasts": []
+  },
+  {
+    "id": "000000000434:b5e919c62a6612d31ef27ddc10c2f3096651cc4ca5a0448c9d456b9ab1dda5f8",
+    "available_at": "2026-11-08T19:17:11.502953Z",
+    "op": "scan",
+    "rejections": {
+      "fresh_native_two_sided_weather_book_required": 1
+    },
+    "observation": {
+      "adapter": "weather",
+      "market": {
+        "schema_version": "1.0",
+        "id": "41900a78dbfbd2f1d403a878009d5ee259e78f5333a1dbae2c01cb379f9ad610",
+        "timestamp": "2026-11-08T19:15:39.231203Z",
+        "available_at": "2026-11-08T19:15:39.231203Z",
+        "source": "https://gamma-api.polymarket.com",
+        "exchange": "polymarket",
+        "market_id": "6773114",
+        "event_id": "1330033",
+        "question": "Will the highest temperature in Qingdao be 9\u00b0C on November 9?",
+        "token_id": "111715288987521194289758993237660918214839564354518325412062487574902704893465",
+        "outcome": "No",
+        "probability": 0.78,
+        "status": "active",
+        "resolution_rules": "This market will resolve to the temperature range that contains the highest temperature reported at Qingdao Jiaodong International Airport (ZSQD) on 9 Nov '26.\n\nThe qualifying value is the highest temperature reported in the hourly temperature remark of any routine (METAR) observation for Qingdao Jiaodong International Airport (ZSQD) on that date, in tenths of a degree Celsius as reported. A report whose line begins with SPECI is a special observation and does not count. Every other report is routine, including one issued off the nominal hour and one that carries no METAR or SPECI label.\n\nFor How to Read the METAR Report, see: https://polymarket-upload.s3.us-east-2.amazonaws.com/market_products/Weather/How+to+Read+the+METAR+Report.pdf\n\nThe hourly temperature remark is the group beginning with the letter T followed by exactly eight digits. After the T, one digit for sign (0 positive, 1 negative) and three for tenths of a degree Celsius give the temperature; the following four are the dew point and are not used. T01390133 is 13.9\u00b0C; T10171022 is \u22121.7\u00b0C.\n\nIf a routine observation does not carry the hourly temperature remark, the temperature group in the body of that observation governs for that observation, in whole degrees Celsius as reported. It appears as temperature and dew point separated by a slash, with M marking a negative value: 18/12 is 18\u00b0C; M11/M17 is \u221211\u00b0C. An observation that reports no temperature in either place is disregarded.\n\nEach market in this event states its range in whole degrees Celsius. The qualifying value is rounded to the nearest whole degree, with a value ending in exactly half rounded up to the next higher whole degree, and that whole Celsius value determines which range contains it. For example, 13.9\u00b0C counts as 14\u00b0C; 17.4\u00b0C counts as 17\u00b0C; 16.5\u00b0C counts as 17\u00b0C; \u22121.7\u00b0C counts as \u22122\u00b0C; \u22128.5\u00b0C counts as \u22128\u00b0C.\n\nAn observation counts if its time stamp, converted to the station's local time (including any daylight-saving shift in effect), falls on the observation date.\n\nThis market will resolve at the issuance of the first METAR observation for the station on the day following the observation date or by 11:59 PM ET on the day following the observation date, whichever comes first. Resolution is determined from the observations the resolution source shows for the observation date.\n\nIn the event that the Aviation Weather Center has published no routine observation reporting a temperature for the observation date by 11:59 PM ET on the day following the observation date, the Weather Underground Daily Observations table will be used as the resolution source. In the event that neither source has published data sufficient to determine a temperature for the observation date by 11:59 PM ET on the day following the observation date, this market will resolve to the lowest bracket.\n\nThe report the resolution source shows for a given observation time is the one that counts, whether or not it is marked as a correction (COR). Changes to observations within this market's timeframe will be considered until the first datapoint for the following date has been published, after which any alterations will not be considered. Where the first routine observation for the following date is published before that deadline, resolution is determined from a read taken after it. Where it is not, resolution is determined from a read taken at that deadline.\n\nIn the case that the Resolution Source publishes data, sufficient to settle a Market, that is clearly erroneous and the result of technical or operational error, or of unauthorized interference with the Resolution Source or its data, the Market may remain open for a period of up to seven (7) calendar days (ET) from the time of the original release, in anticipation of a correction by the Resolution Source. If the Resolution Source publishes a corrected value within that period, that value will be eligible for resolution. If no corrected value is published within that period, Polymarket will issue a Clarification to determine whether the originally published value may be eligible for resolution, or whether other action is required to preserve the orderly functioning of the Market.\n\nThe resolution source for this market will be the routine observations for Qingdao Jiaodong International Airport (ZSQD) published here:\nhttps://aviationweather.gov/api/data/metar?ids=ZSQD&format=raw&date=2026-11-09T19:00:00Z&hours=30",
+        "resolution_source": "https://aviationweather.gov/api/data/metar?ids=ZSQD&format=raw&date=2026-11-09T19:00:00Z&hours=30",
+        "end_time": "2026-11-09T12:00:00Z",
+        "tick_size": 0.01,
+        "min_order_size": 5.0
+      },
+      "input_book_id": "45f716c7c172dd4173e67e3ebc274821e726a9225b3122acc508a488eb50e87e",
+      "input_book_sha256": "bbea9f2cf985fc5e9709090035e9ff326a7ba249b6cd64a79a11e9ed28e31095",
+      "reasons": {
+        "fresh_native_two_sided_weather_book_required": 1
+      },
+      "accepted_forecast_ids": [],
+      "priority_scope": "parent diversification, candidate retry and quote uncertainty/depth; not an independent probability feature"
+    },
+    "forecasts": []
+  },
+  {
+    "id": "000000000433:39a628dc3fc4f43ca6133b1768de0feba5b67ce9208d48c05c0f76857e54e31e",
+    "available_at": "2026-11-08T19:17:08.223155Z",
+    "op": "scan",
+    "rejections": {
+      "fresh_native_two_sided_weather_book_required": 1
+    },
+    "observation": {
+      "adapter": "weather",
+      "market": {
+        "schema_version": "1.0",
+        "id": "5611c1954535109805004c2f5d88fb755ad2e8580a2c484299f513a5d059648d",
+        "timestamp": "2026-11-08T19:15:39.231203Z",
+        "available_at": "2026-11-08T19:15:39.231203Z",
+        "source": "https://gamma-api.polymarket.com",
+        "exchange": "polymarket",
+        "market_id": "6837344",
+        "event_id": "1338355",
+        "question": "Will the highest temperature in Qingdao be 12\u00b0C on November 10?",
+        "token_id": "45676716667773472495034092337068913645995860003130303917466451417404357331788",
+        "outcome": "Yes",
+        "probability": 0.23,
+        "status": "active",
+        "resolution_rules": "This market will resolve to the temperature range that contains the highest temperature reported at Qingdao Jiaodong International Airport (ZSQD) on 10 Nov '26.\n\nThe qualifying value is the highest temperature reported in the hourly temperature remark of any routine (METAR) observation for Qingdao Jiaodong International Airport (ZSQD) on that date, in tenths of a degree Celsius as reported. A report whose line begins with SPECI is a special observation and does not count. Every other report is routine, including one issued off the nominal hour and one that carries no METAR or SPECI label.\n\nFor How to Read the METAR Report, see: https://polymarket-upload.s3.us-east-2.amazonaws.com/market_products/Weather/How+to+Read+the+METAR+Report.pdf\n\nThe hourly temperature remark is the group beginning with the letter T followed by exactly eight digits. After the T, one digit for sign (0 positive, 1 negative) and three for tenths of a degree Celsius give the temperature; the following four are the dew point and are not used. T01390133 is 13.9\u00b0C; T10171022 is \u22121.7\u00b0C.\n\nIf a routine observation does not carry the hourly temperature remark, the temperature group in the body of that observation governs for that observation, in whole degrees Celsius as reported. It appears as temperature and dew point separated by a slash, with M marking a negative value: 18/12 is 18\u00b0C; M11/M17 is \u221211\u00b0C. An observation that reports no temperature in either place is disregarded.\n\nEach market in this event states its range in whole degrees Celsius. The qualifying value is rounded to the nearest whole degree, with a value ending in exactly half rounded up to the next higher whole degree, and that whole Celsius value determines which range contains it. For example, 13.9\u00b0C counts as 14\u00b0C; 17.4\u00b0C counts as 17\u00b0C; 16.5\u00b0C counts as 17\u00b0C; \u22121.7\u00b0C counts as \u22122\u00b0C; \u22128.5\u00b0C counts as \u22128\u00b0C.\n\nAn observation counts if its time stamp, converted to the station's local time (including any daylight-saving shift in effect), falls on the observation date.\n\nThis market will resolve at the issuance of the first METAR observation for the station on the day following the observation date or by 11:59 PM ET on the day following the observation date, whichever comes first. Resolution is determined from the observations the resolution source shows for the observation date.\n\nIn the event that the Aviation Weather Center has published no routine observation reporting a temperature for the observation date by 11:59 PM ET on the day following the observation date, the Weather Underground Daily Observations table will be used as the resolution source. In the event that neither source has published data sufficient to determine a temperature for the observation date by 11:59 PM ET on the day following the observation date, this market will resolve to the lowest bracket.\n\nThe report the resolution source shows for a given observation time is the one that counts, whether or not it is marked as a correction (COR). Changes to observations within this market's timeframe will be considered until the first datapoint for the following date has been published, after which any alterations will not be considered. Where the first routine observation for the following date is published before that deadline, resolution is determined from a read taken after it. Where it is not, resolution is determined from a read taken at that deadline.\n\nIn the case that the Resolution Source publishes data, sufficient to settle a Market, that is clearly erroneous and the result of technical or operational error, or of unauthorized interference with the Resolution Source or its data, the Market may remain open for a period of up to seven (7) calendar days (ET) from the time of the original release, in anticipation of a correction by the Resolution Source. If the Resolution Source publishes a corrected value within that period, that value will be eligible for resolution. If no corrected value is published within that period, Polymarket will issue a Clarification to determine whether the originally published value may be eligible for resolution, or whether other action is required to preserve the orderly functioning of the Market.\n\nThe resolution source for this market will be the routine observations for Qingdao Jiaodong International Airport (ZSQD) published here:\nhttps://aviationweather.gov/api/data/metar?ids=ZSQD&format=raw&date=2026-11-10T19:00:00Z&hours=30",
+        "resolution_source": "https://aviationweather.gov/api/data/metar?ids=ZSQD&format=raw&date=2026-11-10T19:00:00Z&hours=30",
+        "end_time": "2026-11-10T12:00:00Z",
+        "tick_size": 0.01,
+        "min_order_size": 5.0
+      },
+      "input_book_id": "4bc7ed55fe5af302006dd36cab56aca2a2ad15694e543cbffd96ba48cceb7020",
+      "input_book_sha256": "39cd7d6f80d8527fe60b5e5f5ced6512713cbfc53c27ce8e040d6fc3d82c2249",
+      "reasons": {
+        "fresh_native_two_sided_weather_book_required": 1
+      },
+      "accepted_forecast_ids": [],
+      "priority_scope": "parent diversification, candidate retry and quote uncertainty/depth; not an independent probability feature"
+    },
+    "forecasts": []
+  },
+  {
+    "id": "000000000431:00e5d02377bf40e1a8f0740902c4d8158a354d5be47f5738e1a0ba0996d72df7",
+    "available_at": "2026-11-08T19:11:55.640900Z",
+    "op": "scan",
+    "rejections": {
+      "fresh_native_two_sided_weather_book_required": 1
+    },
+    "observation": {
+      "adapter": "weather",
+      "market": {
+        "schema_version": "1.0",
+        "id": "d8c5ba04a6edbaf0a59017b4d7c3f9ccfe8c2daa4eeeefb02e2168496a0e63a7",
+        "timestamp": "2026-11-08T19:00:31.478982Z",
+        "available_at": "2026-11-08T19:00:31.478982Z",
+        "source": "https://gamma-api.polymarket.com",
+        "exchange": "polymarket",
+        "market_id": "6837183",
+        "event_id": "1338333",
+        "question": "Will the highest temperature in Chongqing be 13\u00b0C on November 10?",
+        "token_id": "27095755880849410748960667584740548166465335716321451199475655984211995031384",
+        "outcome": "No",
+        "probability": 0.885,
+        "status": "active",
+        "resolution_rules": "This market will resolve to the temperature range that contains the highest temperature reported at Chongqing Jiangbei International Airport (ZUCK) on 10 Nov '26.\n\nThe qualifying value is the highest temperature reported in the hourly temperature remark of any routine (METAR) observation for Chongqing Jiangbei International Airport (ZUCK) on that date, in tenths of a degree Celsius as reported. A report whose line begins with SPECI is a special observation and does not count. Every other report is routine, including one issued off the nominal hour and one that carries no METAR or SPECI label.\n\nFor How to Read the METAR Report, see: https://polymarket-upload.s3.us-east-2.amazonaws.com/market_products/Weather/How+to+Read+the+METAR+Report.pdf\n\nThe hourly temperature remark is the group beginning with the letter T followed by exactly eight digits. After the T, one digit for sign (0 positive, 1 negative) and three for tenths of a degree Celsius give the temperature; the following four are the dew point and are not used. T01390133 is 13.9\u00b0C; T10171022 is \u22121.7\u00b0C.\n\nIf a routine observation does not carry the hourly temperature remark, the temperature group in the body of that observation governs for that observation, in whole degrees Celsius as reported. It appears as temperature and dew point separated by a slash, with M marking a negative value: 18/12 is 18\u00b0C; M11/M17 is \u221211\u00b0C. An observation that reports no temperature in either place is disregarded.\n\nEach market in this event states its range in whole degrees Celsius. The qualifying value is rounded to the nearest whole degree, with a value ending in exactly half rounded up to the next higher whole degree, and that whole Celsius value determines which range contains it. For example, 13.9\u00b0C counts as 14\u00b0C; 17.4\u00b0C counts as 17\u00b0C; 16.5\u00b0C counts as 17\u00b0C; \u22121.7\u00b0C counts as \u22122\u00b0C; \u22128.5\u00b0C counts as \u22128\u00b0C.\n\nAn observation counts if its time stamp, converted to the station's local time (including any daylight-saving shift in effect), falls on the observation date.\n\nThis market will resolve at the issuance of the first METAR observation for the station on the day following the observation date or by 11:59 PM ET on the day following the observation date, whichever comes first. Resolution is determined from the observations the resolution source shows for the observation date.\n\nIn the event that the Aviation Weather Center has published no routine observation reporting a temperature for the observation date by 11:59 PM ET on the day following the observation date, the Weather Underground Daily Observations table will be used as the resolution source. In the event that neither source has published data sufficient to determine a temperature for the observation date by 11:59 PM ET on the day following the observation date, this market will resolve to the lowest bracket.\n\nThe report the resolution source shows for a given observation time is the one that counts, whether or not it is marked as a correction (COR). Changes to observations within this market's timeframe will be considered until the first datapoint for the following date has been published, after which any alterations will not be considered. Where the first routine observation for the following date is published before that deadline, resolution is determined from a read taken after it. Where it is not, resolution is determined from a read taken at that deadline.\n\nIn the case that the Resolution Source publishes data, sufficient to settle a Market, that is clearly erroneous and the result of technical or operational error, or of unauthorized interference with the Resolution Source or its data, the Market may remain open for a period of up to seven (7) calendar days (ET) from the time of the original release, in anticipation of a correction by the Resolution Source. If the Resolution Source publishes a corrected value within that period, that value will be eligible for resolution. If no corrected value is published within that period, Polymarket will issue a Clarification to determine whether the originally published value may be eligible for resolution, or whether other action is required to preserve the orderly functioning of the Market.\n\nThe resolution source for this market will be the routine observations for Chongqing Jiangbei International Airport (ZUCK) published here:\nhttps://aviationweather.gov/api/data/metar?ids=ZUCK&format=raw&date=2026-11-10T19:00:00Z&hours=30",
+        "resolution_source": "https://aviationweather.gov/api/data/metar?ids=ZUCK&format=raw&date=2026-11-10T19:00:00Z&hours=30",
+        "end_time": "2026-11-10T12:00:00Z",
+        "tick_size": 0.01,
+        "min_order_size": 5.0
+      },
+      "input_book_id": "8eda596957e88e038be3d15771be997edefadef95cccc02ac51bccdfad9c6f65",
+      "input_book_sha256": "53d240505c7aac4ec3253c9149f06be7b23da35420cb7d9ab000a3d14e035849",
+      "reasons": {
+        "fresh_native_two_sided_weather_book_required": 1
+      },
+      "accepted_forecast_ids": [],
+      "priority_scope": "parent diversification, candidate retry and quote uncertainty/depth; not an independent probability feature"
+    },
+    "forecasts": []
+  },
+  {
+    "id": "000000000430:9630b8a3abb695da0ed79c2faf94ff5cc7e98a19d3ec6844330add8a349046f4",
+    "available_at": "2026-11-08T19:11:48.178565Z",
+    "op": "forecast_batch",
+    "rejections": {},
+    "observation": {
+      "adapter": "weather",
+      "market": {
+        "schema_version": "1.0",
+        "id": "8f977b6b7a1facceddbdf436cef7e8736583fbd271c804a6af18b28689e4ab22",
+        "timestamp": "2026-11-08T19:00:31.842197Z",
+        "available_at": "2026-11-08T19:00:31.842197Z",
+        "source": "https://gamma-api.polymarket.com",
+        "exchange": "polymarket",
+        "market_id": "6837216",
+        "event_id": "1338336",
+        "question": "Will the highest temperature in Chengdu be 15\u00b0C on November 10?",
+        "token_id": "26303814850015981383534082336063286061561533604630888780608583328680633508217",
+        "outcome": "Yes",
+        "probability": 0.07,
+        "status": "active",
+        "resolution_rules": "This market will resolve to the temperature range that contains the highest temperature reported at Chengdu Shuangliu International Airport (ZUUU) on 10 Nov '26.\n\nThe qualifying value is the highest temperature reported in the hourly temperature remark of any routine (METAR) observation for Chengdu Shuangliu International Airport (ZUUU) on that date, in tenths of a degree Celsius as reported. A report whose line begins with SPECI is a special observation and does not count. Every other report is routine, including one issued off the nominal hour and one that carries no METAR or SPECI label.\n\nFor How to Read the METAR Report, see: https://polymarket-upload.s3.us-east-2.amazonaws.com/market_products/Weather/How+to+Read+the+METAR+Report.pdf\n\nThe hourly temperature remark is the group beginning with the letter T followed by exactly eight digits. After the T, one digit for sign (0 positive, 1 negative) and three for tenths of a degree Celsius give the temperature; the following four are the dew point and are not used. T01390133 is 13.9\u00b0C; T10171022 is \u22121.7\u00b0C.\n\nIf a routine observation does not carry the hourly temperature remark, the temperature group in the body of that observation governs for that observation, in whole degrees Celsius as reported. It appears as temperature and dew point separated by a slash, with M marking a negative value: 18/12 is 18\u00b0C; M11/M17 is \u221211\u00b0C. An observation that reports no temperature in either place is disregarded.\n\nEach market in this event states its range in whole degrees Celsius. The qualifying value is rounded to the nearest whole degree, with a value ending in exactly half rounded up to the next higher whole degree, and that whole Celsius value determines which range contains it. For example, 13.9\u00b0C counts as 14\u00b0C; 17.4\u00b0C counts as 17\u00b0C; 16.5\u00b0C counts as 17\u00b0C; \u22121.7\u00b0C counts as \u22122\u00b0C; \u22128.5\u00b0C counts as \u22128\u00b0C.\n\nAn observation counts if its time stamp, converted to the station's local time (including any daylight-saving shift in effect), falls on the observation date.\n\nThis market will resolve at the issuance of the first METAR observation for the station on the day following the observation date or by 11:59 PM ET on the day following the observation date, whichever comes first. Resolution is determined from the observations the resolution source shows for the observation date.\n\nIn the event that the Aviation Weather Center has published no routine observation reporting a temperature for the observation date by 11:59 PM ET on the day following the observation date, the Weather Underground Daily Observations table will be used as the resolution source. In the event that neither source has published data sufficient to determine a temperature for the observation date by 11:59 PM ET on the day following the observation date, this market will resolve to the lowest bracket.\n\nThe report the resolution source shows for a given observation time is the one that counts, whether or not it is marked as a correction (COR). Changes to observations within this market's timeframe will be considered until the first datapoint for the following date has been published, after which any alterations will not be considered. Where the first routine observation for the following date is published before that deadline, resolution is determined from a read taken after it. Where it is not, resolution is determined from a read taken at that deadline.\n\nIn the case that the Resolution Source publishes data, sufficient to settle a Market, that is clearly erroneous and the result of technical or operational error, or of unauthorized interference with the Resolution Source or its data, the Market may remain open for a period of up to seven (7) calendar days (ET) from the time of the original release, in anticipation of a correction by the Resolution Source. If the Resolution Source publishes a corrected value within that period, that value will be eligible for resolution. If no corrected value is published within that period, Polymarket will issue a Clarification to determine whether the originally published value may be eligible for resolution, or whether other action is required to preserve the orderly functioning of the Market.\n\nThe resolution source for this market will be the routine observations for Chengdu Shuangliu International Airport (ZUUU) published here:\nhttps://aviationweather.gov/api/data/metar?ids=ZUUU&format=raw&date=2026-11-10T19:00:00Z&hours=30",
+        "resolution_source": "https://aviationweather.gov/api/data/metar?ids=ZUUU&format=raw&date=2026-11-10T19:00:00Z&hours=30",
+        "end_time": "2026-11-10T12:00:00Z",
+        "tick_size": 0.01,
+        "min_order_size": 5.0
+      },
+      "input_book_id": "29c11e63ac50ba659ac4ea800570b435f4397dc89af2927e2a0112c8fd75abf9",
+      "input_book_sha256": "f8372ae6a6acbd9d236d17a08e0ab240d2c33c5dd836d2bde89d3320e8cac54a",
+      "reasons": {},
+      "accepted_forecast_ids": [
+        "a21ecc760d9fd10ac6feb726ae3b635212cb10b79b632f1bc96c28aea36299d9",
+        "7c36e757063cce723543824da7fb449d2827b01d37c42530b6a278e670eb6b57"
+      ],
+      "priority_scope": "parent diversification, candidate retry and quote uncertainty/depth; not an independent probability feature"
+    },
+    "forecasts": [
+      {
+        "id": "a21ecc760d9fd10ac6feb726ae3b635212cb10b79b632f1bc96c28aea36299d9",
+        "model_id": "metar-recency-kernel-v25.1",
+        "timestamp": "2026-11-08T19:11:48.175929+00:00",
+        "probability": 0.020830990553258925,
+        "book_id": "29c11e63ac50ba659ac4ea800570b435f4397dc89af2927e2a0112c8fd75abf9"
+      },
+      {
+        "id": "7c36e757063cce723543824da7fb449d2827b01d37c42530b6a278e670eb6b57",
+        "model_id": "metar-diurnal-gaussian-v25.1",
+        "timestamp": "2026-11-08T19:11:48.175929+00:00",
+        "probability": 0.01288433292992236,
+        "book_id": "29c11e63ac50ba659ac4ea800570b435f4397dc89af2927e2a0112c8fd75abf9"
+      }
+    ]
+  },
+  {
+    "id": "000000000428:e52d42c6225f5a38839d7ba08e1801bfabc11bef460a29b3f7fa0e79a6518c02",
+    "available_at": "2026-11-08T19:06:44.129632Z",
+    "op": "scan",
+    "rejections": {
+      "source_unavailable_without_provider_detail": 1
+    },
+    "observation": {
+      "adapter": "weather",
+      "market": {
+        "schema_version": "1.0",
+        "id": "cff964c731b833d68bc12b16d6d8a2aa6ec0e46c6c751720b6aefccfc39e08c3",
+        "timestamp": "2026-11-08T19:00:31.478982Z",
+        "available_at": "2026-11-08T19:00:31.478982Z",
+        "source": "https://gamma-api.polymarket.com",
+        "exchange": "polymarket",
+        "market_id": "6772951",
+        "event_id": "1330011",
+        "question": "Will the highest temperature in Chongqing be 15\u00b0C on November 9?",
+        "token_id": "2837344778740768706611833632901205223551899115628035920885877581443772947047",
+        "outcome": "No",
+        "probability": 0.88,
+        "status": "active",
+        "resolution_rules": "This market will resolve to the temperature range that contains the highest temperature reported at Chongqing Jiangbei International Airport (ZUCK) on 9 Nov '26.\n\nThe qualifying value is the highest temperature reported in the hourly temperature remark of any routine (METAR) observation for Chongqing Jiangbei International Airport (ZUCK) on that date, in tenths of a degree Celsius as reported. A report whose line begins with SPECI is a special observation and does not count. Every other report is routine, including one issued off the nominal hour and one that carries no METAR or SPECI label.\n\nFor How to Read the METAR Report, see: https://polymarket-upload.s3.us-east-2.amazonaws.com/market_products/Weather/How+to+Read+the+METAR+Report.pdf\n\nThe hourly temperature remark is the group beginning with the letter T followed by exactly eight digits. After the T, one digit for sign (0 positive, 1 negative) and three for tenths of a degree Celsius give the temperature; the following four are the dew point and are not used. T01390133 is 13.9\u00b0C; T10171022 is \u22121.7\u00b0C.\n\nIf a routine observation does not carry the hourly temperature remark, the temperature group in the body of that observation governs for that observation, in whole degrees Celsius as reported. It appears as temperature and dew point separated by a slash, with M marking a negative value: 18/12 is 18\u00b0C; M11/M17 is \u221211\u00b0C. An observation that reports no temperature in either place is disregarded.\n\nEach market in this event states its range in whole degrees Celsius. The qualifying value is rounded to the nearest whole degree, with a value ending in exactly half rounded up to the next higher whole degree, and that whole Celsius value determines which range contains it. For example, 13.9\u00b0C counts as 14\u00b0C; 17.4\u00b0C counts as 17\u00b0C; 16.5\u00b0C counts as 17\u00b0C; \u22121.7\u00b0C counts as \u22122\u00b0C; \u22128.5\u00b0C counts as \u22128\u00b0C.\n\nAn observation counts if its time stamp, converted to the station's local time (including any daylight-saving shift in effect), falls on the observation date.\n\nThis market will resolve at the issuance of the first METAR observation for the station on the day following the observation date or by 11:59 PM ET on the day following the observation date, whichever comes first. Resolution is determined from the observations the resolution source shows for the observation date.\n\nIn the event that the Aviation Weather Center has published no routine observation reporting a temperature for the observation date by 11:59 PM ET on the day following the observation date, the Weather Underground Daily Observations table will be used as the resolution source. In the event that neither source has published data sufficient to determine a temperature for the observation date by 11:59 PM ET on the day following the observation date, this market will resolve to the lowest bracket.\n\nThe report the resolution source shows for a given observation time is the one that counts, whether or not it is marked as a correction (COR). Changes to observations within this market's timeframe will be considered until the first datapoint for the following date has been published, after which any alterations will not be considered. Where the first routine observation for the following date is published before that deadline, resolution is determined from a read taken after it. Where it is not, resolution is determined from a read taken at that deadline.\n\nIn the case that the Resolution Source publishes data, sufficient to settle a Market, that is clearly erroneous and the result of technical or operational error, or of unauthorized interference with the Resolution Source or its data, the Market may remain open for a period of up to seven (7) calendar days (ET) from the time of the original release, in anticipation of a correction by the Resolution Source. If the Resolution Source publishes a corrected value within that period, that value will be eligible for resolution. If no corrected value is published within that period, Polymarket will issue a Clarification to determine whether the originally published value may be eligible for resolution, or whether other action is required to preserve the orderly functioning of the Market.\n\nThe resolution source for this market will be the routine observations for Chongqing Jiangbei International Airport (ZUCK) published here:\nhttps://aviationweather.gov/api/data/metar?ids=ZUCK&format=raw&date=2026-11-09T19:00:00Z&hours=30",
+        "resolution_source": "https://aviationweather.gov/api/data/metar?ids=ZUCK&format=raw&date=2026-11-09T19:00:00Z&hours=30",
+        "end_time": "2026-11-09T12:00:00Z",
+        "tick_size": 0.01,
+        "min_order_size": 5.0
+      },
+      "input_book_id": "8e9d20d5ed35546182804e6a96616306611bf7a91f276da72d775ed8fac80a5a",
+      "input_book_sha256": "a8258f04d7ac1eff918af2e83e88d79d13e10611aa28932d09e7dbdb4614cbdc",
+      "reasons": {
+        "source_unavailable_without_provider_detail": 1
+      },
+      "accepted_forecast_ids": [],
+      "priority_scope": "parent diversification, candidate retry and quote uncertainty/depth; not an independent probability feature"
+    },
+    "forecasts": []
+  },
+  {
+    "id": "000000000427:259ff8fc8ed4c9361bdad554e5a4f652d37df28e7f5f73c774673ac63edc5b60",
+    "available_at": "2026-11-08T19:06:34.761204Z",
+    "op": "scan",
+    "rejections": {
+      "fresh_native_two_sided_weather_book_required": 1
+    },
+    "observation": {
+      "adapter": "weather",
+      "market": {
+        "schema_version": "1.0",
+        "id": "758e057fce664933fd622bc5b7cbc26df9076d2cd1b642deb52ce44e12b8ee0e",
+        "timestamp": "2026-11-08T19:00:31.680656Z",
+        "available_at": "2026-11-08T19:00:31.680656Z",
+        "source": "https://gamma-api.polymarket.com",
+        "exchange": "polymarket",
+        "market_id": "6837344",
+        "event_id": "1338355",
+        "question": "Will the highest temperature in Qingdao be 12\u00b0C on November 10?",
+        "token_id": "110884326944043030334663047929676428954405508003289013994360947071908001283354",
+        "outcome": "No",
+        "probability": 0.74,
+        "status": "active",
+        "resolution_rules": "This market will resolve to the temperature range that contains the highest temperature reported at Qingdao Jiaodong International Airport (ZSQD) on 10 Nov '26.\n\nThe qualifying value is the highest temperature reported in the hourly temperature remark of any routine (METAR) observation for Qingdao Jiaodong International Airport (ZSQD) on that date, in tenths of a degree Celsius as reported. A report whose line begins with SPECI is a special observation and does not count. Every other report is routine, including one issued off the nominal hour and one that carries no METAR or SPECI label.\n\nFor How to Read the METAR Report, see: https://polymarket-upload.s3.us-east-2.amazonaws.com/market_products/Weather/How+to+Read+the+METAR+Report.pdf\n\nThe hourly temperature remark is the group beginning with the letter T followed by exactly eight digits. After the T, one digit for sign (0 positive, 1 negative) and three for tenths of a degree Celsius give the temperature; the following four are the dew point and are not used. T01390133 is 13.9\u00b0C; T10171022 is \u22121.7\u00b0C.\n\nIf a routine observation does not carry the hourly temperature remark, the temperature group in the body of that observation governs for that observation, in whole degrees Celsius as reported. It appears as temperature and dew point separated by a slash, with M marking a negative value: 18/12 is 18\u00b0C; M11/M17 is \u221211\u00b0C. An observation that reports no temperature in either place is disregarded.\n\nEach market in this event states its range in whole degrees Celsius. The qualifying value is rounded to the nearest whole degree, with a value ending in exactly half rounded up to the next higher whole degree, and that whole Celsius value determines which range contains it. For example, 13.9\u00b0C counts as 14\u00b0C; 17.4\u00b0C counts as 17\u00b0C; 16.5\u00b0C counts as 17\u00b0C; \u22121.7\u00b0C counts as \u22122\u00b0C; \u22128.5\u00b0C counts as \u22128\u00b0C.\n\nAn observation counts if its time stamp, converted to the station's local time (including any daylight-saving shift in effect), falls on the observation date.\n\nThis market will resolve at the issuance of the first METAR observation for the station on the day following the observation date or by 11:59 PM ET on the day following the observation date, whichever comes first. Resolution is determined from the observations the resolution source shows for the observation date.\n\nIn the event that the Aviation Weather Center has published no routine observation reporting a temperature for the observation date by 11:59 PM ET on the day following the observation date, the Weather Underground Daily Observations table will be used as the resolution source. In the event that neither source has published data sufficient to determine a temperature for the observation date by 11:59 PM ET on the day following the observation date, this market will resolve to the lowest bracket.\n\nThe report the resolution source shows for a given observation time is the one that counts, whether or not it is marked as a correction (COR). Changes to observations within this market's timeframe will be considered until the first datapoint for the following date has been published, after which any alterations will not be considered. Where the first routine observation for the following date is published before that deadline, resolution is determined from a read taken after it. Where it is not, resolution is determined from a read taken at that deadline.\n\nIn the case that the Resolution Source publishes data, sufficient to settle a Market, that is clearly erroneous and the result of technical or operational error, or of unauthorized interference with the Resolution Source or its data, the Market may remain open for a period of up to seven (7) calendar days (ET) from the time of the original release, in anticipation of a correction by the Resolution Source. If the Resolution Source publishes a corrected value within that period, that value will be eligible for resolution. If no corrected value is published within that period, Polymarket will issue a Clarification to determine whether the originally published value may be eligible for resolution, or whether other action is required to preserve the orderly functioning of the Market.\n\nThe resolution source for this market will be the routine observations for Qingdao Jiaodong International Airport (ZSQD) published here:\nhttps://aviationweather.gov/api/data/metar?ids=ZSQD&format=raw&date=2026-11-10T19:00:00Z&hours=30",
+        "resolution_source": "https://aviationweather.gov/api/data/metar?ids=ZSQD&format=raw&date=2026-11-10T19:00:00Z&hours=30",
+        "end_time": "2026-11-10T12:00:00Z",
+        "tick_size": 0.01,
+        "min_order_size": 5.0
+      },
+      "input_book_id": "13310109db71b7a51bec6e415457729feb0ccfcc83ce39487f87a65389cddbba",
+      "input_book_sha256": "4a807be4a0c9a5eff09249db1fcce0115cc8a33b133ede5c4b8f5cdd86881d82",
+      "reasons": {
+        "fresh_native_two_sided_weather_book_required": 1
+      },
+      "accepted_forecast_ids": [],
+      "priority_scope": "parent diversification, candidate retry and quote uncertainty/depth; not an independent probability feature"
+    },
+    "forecasts": []
+  },
+  {
+    "id": "000000000424:9591fa62bd635e98a45a86f8ba8ca3d8afb14a98311c3b0c7d4d19ca632fa253",
+    "available_at": "2026-11-08T19:00:45.926971Z",
+    "op": "scan",
+    "rejections": {
+      "source_unavailable_without_provider_detail": 1
+    },
+    "observation": {
+      "adapter": "weather",
+      "market": {
+        "schema_version": "1.0",
+        "id": "5ae92d48a2763f94c0b2154d2c6b2aedcb712bbb4d1edf8d83a2a98dec4ab3e1",
+        "timestamp": "2026-11-08T19:00:31.842197Z",
+        "available_at": "2026-11-08T19:00:31.842197Z",
+        "source": "https://gamma-api.polymarket.com",
+        "exchange": "polymarket",
+        "market_id": "6772992",
+        "event_id": "1330021",
+        "question": "Will the highest temperature in Chengdu be 17\u00b0C on November 9?",
+        "token_id": "72138807575876410865411951359524462123126624025811138404039662307326113023113",
+        "outcome": "No",
+        "probability": 0.725,
+        "status": "active",
+        "resolution_rules": "This market will resolve to the temperature range that contains the highest temperature reported at Chengdu Shuangliu International Airport (ZUUU) on 9 Nov '26.\n\nThe qualifying value is the highest temperature reported in the hourly temperature remark of any routine (METAR) observation for Chengdu Shuangliu International Airport (ZUUU) on that date, in tenths of a degree Celsius as reported. A report whose line begins with SPECI is a special observation and does not count. Every other report is routine, including one issued off the nominal hour and one that carries no METAR or SPECI label.\n\nFor How to Read the METAR Report, see: https://polymarket-upload.s3.us-east-2.amazonaws.com/market_products/Weather/How+to+Read+the+METAR+Report.pdf\n\nThe hourly temperature remark is the group beginning with the letter T followed by exactly eight digits. After the T, one digit for sign (0 positive, 1 negative) and three for tenths of a degree Celsius give the temperature; the following four are the dew point and are not used. T01390133 is 13.9\u00b0C; T10171022 is \u22121.7\u00b0C.\n\nIf a routine observation does not carry the hourly temperature remark, the temperature group in the body of that observation governs for that observation, in whole degrees Celsius as reported. It appears as temperature and dew point separated by a slash, with M marking a negative value: 18/12 is 18\u00b0C; M11/M17 is \u221211\u00b0C. An observation that reports no temperature in either place is disregarded.\n\nEach market in this event states its range in whole degrees Celsius. The qualifying value is rounded to the nearest whole degree, with a value ending in exactly half rounded up to the next higher whole degree, and that whole Celsius value determines which range contains it. For example, 13.9\u00b0C counts as 14\u00b0C; 17.4\u00b0C counts as 17\u00b0C; 16.5\u00b0C counts as 17\u00b0C; \u22121.7\u00b0C counts as \u22122\u00b0C; \u22128.5\u00b0C counts as \u22128\u00b0C.\n\nAn observation counts if its time stamp, converted to the station's local time (including any daylight-saving shift in effect), falls on the observation date.\n\nThis market will resolve at the issuance of the first METAR observation for the station on the day following the observation date or by 11:59 PM ET on the day following the observation date, whichever comes first. Resolution is determined from the observations the resolution source shows for the observation date.\n\nIn the event that the Aviation Weather Center has published no routine observation reporting a temperature for the observation date by 11:59 PM ET on the day following the observation date, the Weather Underground Daily Observations table will be used as the resolution source. In the event that neither source has published data sufficient to determine a temperature for the observation date by 11:59 PM ET on the day following the observation date, this market will resolve to the lowest bracket.\n\nThe report the resolution source shows for a given observation time is the one that counts, whether or not it is marked as a correction (COR). Changes to observations within this market's timeframe will be considered until the first datapoint for the following date has been published, after which any alterations will not be considered. Where the first routine observation for the following date is published before that deadline, resolution is determined from a read taken after it. Where it is not, resolution is determined from a read taken at that deadline.\n\nIn the case that the Resolution Source publishes data, sufficient to settle a Market, that is clearly erroneous and the result of technical or operational error, or of unauthorized interference with the Resolution Source or its data, the Market may remain open for a period of up to seven (7) calendar days (ET) from the time of the original release, in anticipation of a correction by the Resolution Source. If the Resolution Source publishes a corrected value within that period, that value will be eligible for resolution. If no corrected value is published within that period, Polymarket will issue a Clarification to determine whether the originally published value may be eligible for resolution, or whether other action is required to preserve the orderly functioning of the Market.\n\nThe resolution source for this market will be the routine observations for Chengdu Shuangliu International Airport (ZUUU) published here:\nhttps://aviationweather.gov/api/data/metar?ids=ZUUU&format=raw&date=2026-11-09T19:00:00Z&hours=30",
+        "resolution_source": "https://aviationweather.gov/api/data/metar?ids=ZUUU&format=raw&date=2026-11-09T19:00:00Z&hours=30",
+        "end_time": "2026-11-09T12:00:00Z",
+        "tick_size": 0.01,
+        "min_order_size": 5.0
+      },
+      "input_book_id": "e14fed3a1b8fddab50275f416cda49f95486d72bad34fc59e21acb087eafc388",
+      "input_book_sha256": "a47f311448d02a048708f034fd9bfa7aee3fc7ab97f9969c1deaf18d4a79e93d",
+      "reasons": {
+        "source_unavailable_without_provider_detail": 1
+      },
+      "accepted_forecast_ids": [],
+      "priority_scope": "parent diversification, candidate retry and quote uncertainty/depth; not an independent probability feature"
+    },
+    "forecasts": []
+  },
+  {
+    "id": "000000000423:ecd16cd9aff7ae5f535053085525813de37dbbd8996eaffdaca5541f15d77736",
+    "available_at": "2026-11-08T19:00:33.901698Z",
+    "op": "scan",
+    "rejections": {
+      "fresh_native_two_sided_weather_book_required": 1
+    },
+    "observation": {
+      "adapter": "weather",
+      "market": {
+        "schema_version": "1.0",
+        "id": "3a33464186c40b83ae20f7e2fb35b0bda82aa9b9afd9f77aa4bb66145b1a3a6b",
+        "timestamp": "2026-11-08T19:00:31.680656Z",
+        "available_at": "2026-11-08T19:00:31.680656Z",
+        "source": "https://gamma-api.polymarket.com",
+        "exchange": "polymarket",
+        "market_id": "6773115",
+        "event_id": "1330033",
+        "question": "Will the highest temperature in Qingdao be 10\u00b0C on November 9?",
+        "token_id": "93201894110784165705464700021750213028306275027396641963160462292310311545236",
+        "outcome": "No",
+        "probability": 0.445,
+        "status": "active",
+        "resolution_rules": "This market will resolve to the temperature range that contains the highest temperature reported at Qingdao Jiaodong International Airport (ZSQD) on 9 Nov '26.\n\nThe qualifying value is the highest temperature reported in the hourly temperature remark of any routine (METAR) observation for Qingdao Jiaodong International Airport (ZSQD) on that date, in tenths of a degree Celsius as reported. A report whose line begins with SPECI is a special observation and does not count. Every other report is routine, including one issued off the nominal hour and one that carries no METAR or SPECI label.\n\nFor How to Read the METAR Report, see: https://polymarket-upload.s3.us-east-2.amazonaws.com/market_products/Weather/How+to+Read+the+METAR+Report.pdf\n\nThe hourly temperature remark is the group beginning with the letter T followed by exactly eight digits. After the T, one digit for sign (0 positive, 1 negative) and three for tenths of a degree Celsius give the temperature; the following four are the dew point and are not used. T01390133 is 13.9\u00b0C; T10171022 is \u22121.7\u00b0C.\n\nIf a routine observation does not carry the hourly temperature remark, the temperature group in the body of that observation governs for that observation, in whole degrees Celsius as reported. It appears as temperature and dew point separated by a slash, with M marking a negative value: 18/12 is 18\u00b0C; M11/M17 is \u221211\u00b0C. An observation that reports no temperature in either place is disregarded.\n\nEach market in this event states its range in whole degrees Celsius. The qualifying value is rounded to the nearest whole degree, with a value ending in exactly half rounded up to the next higher whole degree, and that whole Celsius value determines which range contains it. For example, 13.9\u00b0C counts as 14\u00b0C; 17.4\u00b0C counts as 17\u00b0C; 16.5\u00b0C counts as 17\u00b0C; \u22121.7\u00b0C counts as \u22122\u00b0C; \u22128.5\u00b0C counts as \u22128\u00b0C.\n\nAn observation counts if its time stamp, converted to the station's local time (including any daylight-saving shift in effect), falls on the observation date.\n\nThis market will resolve at the issuance of the first METAR observation for the station on the day following the observation date or by 11:59 PM ET on the day following the observation date, whichever comes first. Resolution is determined from the observations the resolution source shows for the observation date.\n\nIn the event that the Aviation Weather Center has published no routine observation reporting a temperature for the observation date by 11:59 PM ET on the day following the observation date, the Weather Underground Daily Observations table will be used as the resolution source. In the event that neither source has published data sufficient to determine a temperature for the observation date by 11:59 PM ET on the day following the observation date, this market will resolve to the lowest bracket.\n\nThe report the resolution source shows for a given observation time is the one that counts, whether or not it is marked as a correction (COR). Changes to observations within this market's timeframe will be considered until the first datapoint for the following date has been published, after which any alterations will not be considered. Where the first routine observation for the following date is published before that deadline, resolution is determined from a read taken after it. Where it is not, resolution is determined from a read taken at that deadline.\n\nIn the case that the Resolution Source publishes data, sufficient to settle a Market, that is clearly erroneous and the result of technical or operational error, or of unauthorized interference with the Resolution Source or its data, the Market may remain open for a period of up to seven (7) calendar days (ET) from the time of the original release, in anticipation of a correction by the Resolution Source. If the Resolution Source publishes a corrected value within that period, that value will be eligible for resolution. If no corrected value is published within that period, Polymarket will issue a Clarification to determine whether the originally published value may be eligible for resolution, or whether other action is required to preserve the orderly functioning of the Market.\n\nThe resolution source for this market will be the routine observations for Qingdao Jiaodong International Airport (ZSQD) published here:\nhttps://aviationweather.gov/api/data/metar?ids=ZSQD&format=raw&date=2026-11-09T19:00:00Z&hours=30",
+        "resolution_source": "https://aviationweather.gov/api/data/metar?ids=ZSQD&format=raw&date=2026-11-09T19:00:00Z&hours=30",
+        "end_time": "2026-11-09T12:00:00Z",
+        "tick_size": 0.01,
+        "min_order_size": 5.0
+      },
+      "input_book_id": "a38437a3092f2172c94dba9f8d39dc8845bb26afb3c90832c60248debdf2820d",
+      "input_book_sha256": "fcdaa212c085b88836563e347c671263f2e1b02698e0d454ebfd669065774bbc",
+      "reasons": {
+        "fresh_native_two_sided_weather_book_required": 1
+      },
+      "accepted_forecast_ids": [],
+      "priority_scope": "parent diversification, candidate retry and quote uncertainty/depth; not an independent probability feature"
+    },
+    "forecasts": []
+  }
+]
