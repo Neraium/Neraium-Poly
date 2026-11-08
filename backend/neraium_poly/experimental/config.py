@@ -53,7 +53,7 @@ class ExperimentalConfig(BaseModel):
     max_archive_mb: int = Field(default=512, ge=1, le=2048)
     min_free_disk_mb: int = Field(default=8192, ge=512)
     archive_management_enabled: bool = False
-    archive_budget_mb: int = Field(default=16384, ge=64, le=131072)
+    archive_budget_mb: int = Field(default=16384, ge=64, le=153600)
     archive_segment_mb: int = Field(default=8, ge=1, le=1024)
     archive_reserve_disk_mb: int = Field(default=65536, ge=8192)
     archive_compression_enabled: bool = True

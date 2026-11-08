@@ -1,0 +1,8 @@
+{
+  "focused_tests": ".........                                                                [100%]\n9 passed in 4.09s",
+  "ruff": "Found 1 error (1 fixed, 0 remaining).",
+  "only_config_change": "archive_budget_mb153600 in both actual ExecStart config files; reserve102400MiB unchanged",
+  "systemd_configuration": "Existing ExecStart already references these files; no environment quota overrides or unit changes needed",
+  "experimental_schema_max_mib": 153600,
+  "risk_stop_and_account_configuration_unchanged": true
+}
