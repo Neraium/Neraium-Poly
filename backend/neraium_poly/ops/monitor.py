@@ -1546,9 +1546,11 @@ def _render_findings(certified, experimental, width, height, errors):
         import math
         return f"{value:.3f}" if type(value) in (int, float) and math.isfinite(value) else "—"
 
+    scoring=_mapping(experimental.get("official_event_research"))
     rows = [("ECONOMIC FINDINGS", "bold cyan"), ("RESEARCH ONLY / NO TRADE AUTHORITY", "yellow")]
     if fresh:
         counts = _mapping(report.get("counts"))
+        rows.append((f"Official event labels {_number(scoring.get("verified_forecast_labels"))} Games {_number(scoring.get("distinct_official_games"))}", "white"))
         rows += [(f"Evaluated {_number(counts.get('findings_evaluated'))} Qualified {_number(counts.get('qualified_research_findings'))}", "white"),
                  (f"Reviewed groups {_number(counts.get('reviewed_canonical_groups'))}", "white")]
         if volume:

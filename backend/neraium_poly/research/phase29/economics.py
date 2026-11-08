@@ -32,7 +32,13 @@ def diagnostic(forecast, market, book, row, *, as_of, native_fee=None):
     if fee_evidence is not None:
         rate=result['native_fee']['rate']
         fee_amount=math.fsum(x['consumed_quantity']*rate*x['price']*(1-x['price']) for x in analysis['per_level'])
-    result.update(economic_evaluation_completed=True,hypothesis_sensitivity={
+    sensitivity=None
+    if fresh:
+        from neraium_poly.research.phase30.sensitivity import cost_sensitivity
+        lo,hi=forecast.get('lower_probability'),forecast.get('upper_probability')
+        valid=type(lo) in (int,float) and type(hi) in (int,float) and 0<=lo<=value<=hi<=1
+        sensitivity=cost_sensitivity(book,as_of=now,probability=value,lower=lo if valid else None,upper=hi if valid else None,native_fee=result['native_fee'])
+    result.update(economic_evaluation_completed=True,cost_sensitivity=sensitivity,hypothesis_sensitivity={
         'scope':'original_forecast_current_book_counterfactual' if not fresh else 'unvalidated_current_forecast_scenario',
         'original_forecast_timestamp':forecast['timestamp'],'evaluation_at':now.isoformat(),
         'forecast_reissued':False,'forecast_time_current':fresh,'forecast_admissible':False,

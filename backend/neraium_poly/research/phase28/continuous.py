@@ -70,6 +70,7 @@ class VolumeResearch:
         self.forecast_tokens=();self.error=None;self.report=None;self.last_bucket=None;self.totals={'evaluations':0,'finding_rows':0}
         root=Path(__file__).parent
         policy={'version':'phase28-streamed-volume-v1','implementation_sha256':digest([p.read_text() for p in sorted(root.glob('*.py'))]),
+            'event_research_code_sha256':digest([p.read_text() for p in sorted(root.with_name('phase30').glob('*.py'))]),
             'diagnostic_code_sha256':digest([p.read_text() for p in sorted(root.with_name('phase29').glob('*.py'))]),
             'publication_namespace_sha256':digest(str(getattr(store,'directory',getattr(store,'path','controlled')))),
             'cadence_seconds':60,'forecast_refresh_seconds':300,'forecast_count_scope':'300s window plus verified source SHA; source refreshes are not independent outcomes',

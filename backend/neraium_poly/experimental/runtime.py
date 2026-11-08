@@ -280,6 +280,7 @@ class ExperimentalRuntime:
                 except Exception as error:
                     self.phase27_error = f"{type(error).__name__}:{str(error)[:160]}"
                     log.exception("phase27_recovery_withheld")
+            self.official_event_scores = None
             self.phase28 = None
             self.phase28_error = None
             if config.phase28_economics_enabled:
@@ -290,6 +291,9 @@ class ExperimentalRuntime:
                         raise ValueError("volume research requires anchored source projection")
                     shadow = ShadowResearch(self.events, clock=self.clock, can_write=self._budget_ok)
                     self.phase28 = VolumeResearch(self.events,self.phase26_index,clock=self.clock,can_write=self._budget_ok,shadow=shadow)
+                    from neraium_poly.research.phase30.scoring import OfficialEventScoring
+                    self.official_event_scores = OfficialEventScoring(self.events,self.phase26_index,
+                        config.data_dir/"phase30-official-event-evidence",clock=self.clock,can_write=self._budget_ok)
                 except Exception as error:
                     self.phase28_error = f"{type(error).__name__}:{str(error)[:160]}"
                     log.exception("phase28_recovery_withheld")
@@ -912,6 +916,19 @@ class ExperimentalRuntime:
                 if self.stopping or should_exit():return
                 await asyncio.sleep(1)
 
+    async def _official_event_score_loop(self, should_exit):
+        while not self.stopping and not should_exit():
+            scoring=getattr(self,"official_event_scores",None)
+            if scoring is not None:
+                try:
+                    await scoring.step()
+                except (ValueError,TypeError,KeyError,OSError) as error:
+                    scoring.error=f"{type(error).__name__}:{str(error)[:160]}"
+                    log.exception("official_event_research_withheld")
+            for _ in range(5):
+                if self.stopping or should_exit():return
+                await asyncio.sleep(1)
+
     async def run(self, should_exit=lambda: False):
         async def independent_events():
             while not self.stopping and not should_exit():
@@ -961,7 +978,7 @@ class ExperimentalRuntime:
                     self._cancel_and_checkpoint(self.clock())
                 await asyncio.sleep(self.config.poll_seconds)
 
-        await asyncio.gather(cycles(), self._fees_loop(should_exit), self._event_resolution_loop(should_exit), independent_events(), self._domain_research_loop(should_exit), self._domain_research_loop(should_exit, "phase25"), self._volume_research_loop(should_exit), self._research_fee_loop(should_exit))
+        await asyncio.gather(cycles(), self._fees_loop(should_exit), self._event_resolution_loop(should_exit), independent_events(), self._domain_research_loop(should_exit), self._domain_research_loop(should_exit, "phase25"), self._volume_research_loop(should_exit), self._research_fee_loop(should_exit), self._official_event_score_loop(should_exit))
 
     def health(self):
         last_success = self.last_success
@@ -1060,6 +1077,7 @@ class ExperimentalRuntime:
 
         state = add_capacity(self.archive_state(), service="experimental", now=self.clock())
         state["operations_research"] = experimental_research(self, for_operations=True)
+        state["official_event_research"] = self.official_event_scores.status() if getattr(self,"official_event_scores",None) else {"status":"disabled"}
         state["research_costs"] = self.research_fees.status() if getattr(self,"research_fees",None) else None
         state["memory"] = self.memory_sampler.status() if getattr(self,"memory_sampler",None) else None
         with self.account.risk._lock:
