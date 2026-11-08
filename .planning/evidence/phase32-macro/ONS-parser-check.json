@@ -1,0 +1,18 @@
+{
+  "scope": "authentic historical official source parser compatibility, not a prospective forecast label or certified training event",
+  "source_url": "https://www.ons.gov.uk/economy/grossdomesticproductgdp/bulletins/gdpfirstquarterlyestimateuk/apriltojune2026",
+  "source_observed_no_later_than": "2026-11-08T20:39:50.591169+00:00",
+  "source_sha256": "79958dccd817f3e7f8a32a6edfa916eaa00d63d34f2fd3ed9f4b3424057853e6",
+  "bytes": 150009,
+  "parse": {
+    "outcome": 0,
+    "publication_at": "2026-08-12T23:00:00+00:00",
+    "publication_upper": "2026-08-13T23:00:00+00:00",
+    "timing_precision": "official London publication-day bounds; metadata is not an exact release hour",
+    "value": 0.4,
+    "event_group_id": "74ce3e9eaeee3d67cdb62e0b2b649d0ce78e5e7a60d2b6ab18653d3c2a5376c0",
+    "target": "initial_ONS_GDP_quarter_on_quarter"
+  },
+  "native_payout_verified": false,
+  "new_prospective_results": 0
+}

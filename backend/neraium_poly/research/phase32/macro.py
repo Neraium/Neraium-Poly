@@ -78,9 +78,16 @@ def _final(c,module,raw,refs,available):
         result=ons.parse_bulletin(c,raw[0],available_at=available)
         published=re.findall(r'"datePublished":\s*"([^"]+)"',raw[0].decode())
         publication=at(published[0]);day=at(result['publication_day_lower_bound'])
-        if not day<=publication<day+timedelta(days=1) or publication>available:raise ValueError('exact_ONS_publication_time_required')
-        return {'outcome':result['expected'],'publication_at':publication.isoformat(),'value':result['value'],
-                'event_group_id':digest(['official-ONS-first-release',c['series_id'],c['target_period']]),'target':'initial_ONS_GDP_quarter_on_quarter'}
+        # ONS datePublished can encode local midnight (previous UTC day in BST).
+        # It is not evidence of the actual release hour. Preserve day bounds.
+        zone=ZoneInfo('Europe/London');lower=datetime.combine(day.date(),datetime.min.time(),zone).astimezone(UTC)
+        upper=(datetime.combine(day.date(),datetime.min.time(),zone)+timedelta(days=1)).astimezone(UTC)
+        if publication.astimezone(zone).date()!=day.date() or available<upper:
+            raise ValueError('completed_exact_ONS_local_publication_day_required')
+        return {'outcome':result['expected'],'publication_at':lower.isoformat(),'publication_upper':upper.isoformat(),
+                'timing_precision':'official London publication-day bounds; metadata is not an exact release hour',
+                'value':result['value'],'event_group_id':digest(['official-ONS-first-release',c['series_id'],c['target_period']]),
+                'target':'initial_ONS_GDP_quarter_on_quarter'}
     if len(raw)!=3 or refs[-1]['source_url']!=_statement_url(c):raise ValueError('exact_FOMC_sources_required')
     evidence=[DomainEvidence.model_validate_json(r) for r in raw[:2]]
     if [e.source for e in evidence]!=[fed.FOMC_CALENDAR,fed.FRED_UPPER] or [r['source_url'] for r in refs[:2]]!=[fed.FOMC_CALENDAR,fed.FRED_UPPER]:raise ValueError('exact_FOMC_calendar_and_target_upper_required')
@@ -92,6 +99,8 @@ def _final(c,module,raw,refs,available):
     if not final['verified']:raise ValueError(final['reason'])
     if not at(final['publication_at'])<=at(refs[2]['retrieved_at'])<=available:raise ValueError('official_macro_publication_after_receipt')
     return {'outcome':final['expected'],'publication_at':at(final['publication_at']).isoformat(),
+            'publication_upper':(at(final['publication_at'])+timedelta(minutes=1)).isoformat(),
+            'timing_precision':'official statement scheduled-release minute bounds, not native settlement',
             'before_upper':final['before_upper'],'after_upper':final['after_upper'],
             'event_group_id':digest(['official-FederalReserve-scheduled-meeting',c['meeting_date']]),'target':'scheduled_target_upper_bound_no_change'}
 
@@ -161,6 +170,6 @@ def replay_macro_event(result,study,f,*,evidence_root,as_of):
     likelihood=p if y else 1-p
     return {'event_result_verified':True,'verification_protocol':PROTOCOL,'forecast_id':f['id'],'event_id':f['event_id'],
         'market_id':f['market_id'],'token_id':f['token_id'],'event_group_id':final['event_group_id'],'outcome':y,
-        'event_end_lower':final['publication_at'],'event_end_upper':final['publication_at'],'available_at':result['available_at'],
+        'event_end_lower':final['publication_at'],'event_end_upper':final['publication_upper'],'timing_precision':final['timing_precision'],'available_at':result['available_at'],
         'brier':(p-y)**2,'log_loss':-math.log(likelihood) if likelihood>0 else None,'market_brier':None,'market_log_loss':None,
         'official_evidence_sha256':digest(refs),'proof_sha256':digest(result),'score_scope':'conditional official macro result, not native payout or market superiority',**AUTHORITY}

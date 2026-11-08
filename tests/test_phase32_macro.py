@@ -43,7 +43,7 @@ async def test_official_GDP_is_scorable_without_native_payout(monkeypatch,tmp_pa
     r=await macro.verify_macro_event(f,directory=tmp_path,clock=lambda:LATER)
     assert r['event_result_verified'] and not r['native_payout_verified']
     proof=macro.replay_macro_event(r,s,f,evidence_root=tmp_path,as_of=LATER)
-    assert proof['outcome']==0 and proof['event_end_lower']=='2026-11-12T07:00:00+00:00'
+    assert proof['outcome']==0 and proof['event_end_lower']=='2026-11-12T00:00:00+00:00' and proof['event_end_upper']=='2026-11-13T00:00:00+00:00'
     assert proof['brier']==pytest.approx(f['probability']**2) and proof['market_brier'] is None
     assert not proof['trading_authority'] and not proof['certification_authority']
 
@@ -114,3 +114,16 @@ def test_future_index_inventory_preserves_unresolved_and_missing_review():
     r=macro.macro_outcome_inventory([{'type':'forecast','forecast':f,'forecast_sha256':'x','available_at':NOW.isoformat(),'review':None,'replay_verified':False}],as_of=NOW)
     assert r['counts']=={'SOURCE_PROVENANCE_MISSING':1} and r['official_events_verified'] is None and not r['outcome_verification_performed']
     assert not r['trading_authority']
+
+
+def test_ONS_BST_metadata_is_day_bound_not_fake_release_hour():
+    contract={'quarter':2,'year':2026,'release_at':'2026-08-13T00:00:00Z','tail':'negative','lower':None,'upper':'0',
+        'selected_outcome':'Yes','series_id':'IHYQ','target_period':'2026 Q2'}
+    raw=GDP.replace(b'2026-11-12T07:00:00Z',b'2026-08-12T23:00:00.000Z').replace(b'12 November 2026',b'13 August 2026').replace(b'Quarter 3',b'Quarter 2')
+    ref={'source_url':economics.bulletin_url(contract)}
+    result=macro._final(contract,economics,[raw],[ref],datetime(2026,8,15,tzinfo=UTC))
+    assert result['publication_at']=='2026-08-12T23:00:00+00:00'
+    assert result['publication_upper']=='2026-08-13T23:00:00+00:00'
+    assert 'not an exact release hour' in result['timing_precision']
+    with pytest.raises(ValueError,match='publication_day'):
+        macro._final(contract,economics,[raw],[ref],datetime(2026,8,13,12,tzinfo=UTC))
