@@ -73,6 +73,9 @@ def experimental_research(runtime, *, for_operations=False):
         "phase24": domain if domain is not None else {"status": "unavailable" if getattr(runtime, "phase24_error", None) else "disabled",
                         "runtime_error": getattr(runtime, "phase24_error", None), "trading_authority": False},
         "domains": event.get("domains", {"status": "unavailable"}),
+        "event_summary_verification": {k:event.get(k) for k in (
+            "summary_status","summary_verified_completed_at","summary_age_seconds","summary_max_age_seconds",
+            "summary_refresh_error","summary_scope")},
         "phase16_execution": runtime.phase16_execution_status(for_operations=True) if for_operations else runtime.phase16_execution_status(),
         "phase23": challenger if challenger is not None else {"status": "unavailable" if getattr(runtime, "phase23_error", None) else "disabled",
                         "last_error": getattr(runtime, "phase23_error", None), "trading_authority": False},

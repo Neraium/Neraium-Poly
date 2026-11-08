@@ -45,3 +45,18 @@ def test_fresh_cache_with_verification_failure_immediately_withholds_old_values(
     assert cache.snapshot()['summary_status']=='withheld' and 'counts' not in cache.snapshot()
     cache.refresh(lambda:{'counts':{'verified':8}})
     assert cache.snapshot()['summary_status']=='cached_verified_snapshot'
+
+
+def test_operations_preserves_verified_snapshot_age_and_never_freshens_it():
+    from types import SimpleNamespace
+
+    from neraium_poly.research.phase15.operations import experimental_research
+    cache=EventSummaryCache();cache.refresh(lambda:{"domains":{"forecasts":1}})
+    runtime=SimpleNamespace(account=SimpleNamespace(risk=SimpleNamespace(snapshot=lambda **k:{"kill_switch":True})),
+        clock=lambda:datetime.now(UTC),event_operations_summary=cache.snapshot,
+        phase18=None,phase18_error=None,phase17=None,phase17_error=None,phase16=None,phase16_error=None,
+        phase15_relationships=None,phase16_execution_status=lambda **k:{})
+    r=experimental_research(runtime,for_operations=True)
+    assert r["event_summary_verification"]["summary_status"]=="cached_verified_snapshot"
+    assert r["event_summary_verification"]["summary_age_seconds"]>=0
+    assert r["event_summary_verification"]["summary_verified_completed_at"]
