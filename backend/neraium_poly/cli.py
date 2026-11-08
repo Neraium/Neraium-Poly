@@ -37,6 +37,7 @@ def main():
             "forecast-reconcile",
             "domain-leaderboard",
             "findings",
+            "scorecard",
             "strategy-approve",
             "strategy-status",
             "strategy-revoke",
@@ -66,7 +67,7 @@ def main():
     parser.add_argument("--width", type=int)
     parser.add_argument("--no-color", action="store_true")
     parser.add_argument(
-        "--view", choices=("summary", "strategies", "rejections", "research", "events", "domains", "archives", "operations", "readiness", "edge", "challengers", "findings"), default="summary"
+        "--view", choices=("summary", "strategies", "rejections", "research", "events", "domains", "archives", "operations", "readiness", "edge", "challengers", "findings", "scorecard"), default="summary"
     )
     parser.add_argument("--scope", choices=("cycle", "epoch"), default="cycle")
     parser.add_argument("--refresh", type=float, default=3)
@@ -182,6 +183,20 @@ def main():
                 indent=2,
             )
         )
+    elif args.command == "scorecard":
+        from datetime import UTC, datetime
+
+        from neraium_poly.research.phase17.provenance import ReadonlyArchive
+        with ReadonlyArchive(args.data_dir) as archive:
+            rows=archive.latest("DomainScorecardStudy",limit=1)
+        report=rows[0]['report'] if rows else {'status':'pending','research_only':True,'trading_authority':False}
+        if rows:
+            age=(datetime.now(UTC)-datetime.fromisoformat(report['as_of'])).total_seconds()
+            report={**report,'observation_age_seconds':age,'status':'research_only' if 0<=age<=120 else 'historical_stale',
+                'quote_count_scope':'fresh at recorded evaluation timestamp; not live executable quotes'}
+        if args.output:
+            with args.output.open('x') as handle:json.dump(report,handle,indent=2)
+        print(json.dumps(report,indent=2))
     elif args.command == "findings":
         from datetime import UTC, datetime
 

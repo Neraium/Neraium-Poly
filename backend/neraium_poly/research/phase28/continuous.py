@@ -64,9 +64,9 @@ class ForecastStore:
 
 
 class VolumeResearch:
-    def __init__(self,store,index,*,clock,can_write,builder=None,combiner=None,shadow=None):
+    def __init__(self,store,index,*,clock,can_write,builder=None,combiner=None,shadow=None,on_report=None):
         self.store,self.index,self.clock,self.can_write=store,index,clock,can_write
-        self.builder,self.combiner,self.shadow=builder,combiner,shadow
+        self.builder,self.combiner,self.shadow=builder,combiner,shadow;self.on_report=on_report;self.report_callback_error=None
         self.forecast_tokens=();self.error=None;self.report=None;self.last_bucket=None;self.totals={'evaluations':0,'finding_rows':0}
         root=Path(__file__).parent
         policy={'version':'phase28-streamed-volume-v1','implementation_sha256':digest([p.read_text() for p in sorted(root.glob('*.py'))]),
@@ -201,7 +201,12 @@ class VolumeResearch:
         row=VolumeStudy(id=identity,timestamp=decision,available_at=at(self.clock()),source='neraium-poly/volume-research/v28',enrollment_id=self.enrollment_id,evaluation_bucket=bucket,source_anchor=anchor,decision_frame=packed,decision_frame_sha256=sha,report=report,totals=totals)
         self.store.append(row);self.last_bucket=bucket;self.totals=totals;self.report=self._summary(report,row.timestamp.isoformat(),identity);self.error=None
         if self.shadow is not None:self.shadow.step(report,frame)
+        if self.on_report is not None:
+            try:
+                self.on_report(row,frame,entries);self.report_callback_error=None
+            except Exception as error:  # noqa: BLE001 - optional research observer cannot invalidate a committed economic record
+                self.report_callback_error=f"{type(error).__name__}:{str(error)[:160]}"
         return True
 
     def status(self):
-        return {**(self.report or {'status':'pending'}),'runtime_error':self.error,'totals':dict(self.totals),'shadow':self.shadow.status() if self.shadow else {'status':'disabled'},'research_only':True,'trading_authority':False,'raw_study_cache_bytes':0,'counter_scope':'evaluation rows; parent-event independence reported separately'}
+        return {**(self.report or {'status':'pending'}),'runtime_error':self.error,'report_callback_error':self.report_callback_error,'totals':dict(self.totals),'shadow':self.shadow.status() if self.shadow else {'status':'disabled'},'research_only':True,'trading_authority':False,'raw_study_cache_bytes':0,'counter_scope':'evaluation rows; parent-event independence reported separately'}

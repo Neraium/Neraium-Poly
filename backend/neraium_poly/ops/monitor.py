@@ -105,11 +105,13 @@ def render_monitor(
     """
     width, height = max(30, min(int(width), 160)), max(12, min(int(height or 24), 100))
     certified, experimental = _mapping(certified), _mapping(experimental)
-    if view not in {"summary", "strategies", "rejections", "research", "events", "domains", "archives", "operations", "readiness", "edge", "challengers", "findings"} or scope not in {
+    if view not in {"summary", "strategies", "rejections", "research", "events", "domains", "archives", "operations", "readiness", "edge", "challengers", "findings", "scorecard"} or scope not in {
         "cycle",
         "epoch",
     }:
         raise ValueError("monitor view or scope invalid")
+    if view == "scorecard":
+        return _render_scorecard(experimental,width,height,errors)
     if view == "findings":
         return _render_findings(certified, experimental, width, height, errors)
     if view == "challengers":
@@ -1280,7 +1282,7 @@ def monitor(
 ):
     loopback_url(certified_url)
     loopback_url(experimental_url)
-    if view in {"operations", "readiness", "edge", "challengers", "findings"}:
+    if view in {"operations", "readiness", "edge", "challengers", "findings", "scorecard"}:
         def operations_url(value):
             parsed = urlsplit(value)
             return urlunsplit((parsed.scheme, parsed.netloc, "/api/operations-state", "", ""))
@@ -1581,4 +1583,23 @@ def _render_findings(certified, experimental, width, height, errors):
         line = Text(_clean(value), style=style, no_wrap=True, overflow="ellipsis")
         line.truncate(width, overflow="ellipsis")
         text.append_text(line)
+    return text
+
+
+def _render_scorecard(experimental,width,height,errors):
+    score=_mapping(experimental.get("domain_scorecard"));rows=["DOMAIN SCORECARD / RESEARCH ONLY"]
+    if score.get("status")!="research_only":rows.append("Scorecard pending / stale")
+    else:
+        rows.append("Forecasts / event labels / groups")
+        for name,value in _mapping(score.get("domains")).items():
+            row=_mapping(value)
+            rows.append(f"{name[:10]} {_number(row.get('prospective_forecasts'))} / {_number(row.get('official_event_forecast_scores'))} / {_number(row.get('official_event_groups'))}")
+        rows.append("No certified promotion / no proven edge")
+        rows.append("Book counts: historical at report time")
+        rows.append(f"As of {_seen(score.get('as_of'))}")
+    if errors:rows.append("API "+_clean(errors[0]))
+    text=Text()
+    for i,line in enumerate(rows[:height]):
+        if i:text.append("\n")
+        part=Text(_clean(line));part.truncate(width,overflow="ellipsis");text.append_text(part)
     return text

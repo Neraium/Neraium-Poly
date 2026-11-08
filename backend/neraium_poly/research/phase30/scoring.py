@@ -64,7 +64,7 @@ async def _thread(function,*args,**kwargs):
 
 def _scoring_forecast(f):
     # Raw source/model/book evidence stays in its original immutable journal.
-    return {k:f[k] for k in ('id','model_id','market_id','token_id','timestamp','event_end_time','probability')}
+    return {k:f[k] for k in ('id','model_id','market_id','token_id','timestamp','event_end_time','probability','domain','rules_sha256')}
 
 
 def evaluation(labels):
@@ -121,7 +121,7 @@ def evaluation(labels):
 
 
 class OfficialEventScoring:
-    def __init__(self,store,index,directory,*,clock,can_write,verify=None,replay=None):
+    def __init__(self,store,index,directory,*,clock,can_write,verify=None,replay=None,policy_extension=None):
         self.store,self.index,self.directory,self.clock,self.can_write=store,index,Path(directory),clock,can_write
         self.verify,self.replay=verify,replay;self.next_check=None;self.attempts={};self.report=None;self.error=None;self.replay_state='pending'
         sources=Path(__file__).parent
@@ -130,6 +130,7 @@ class OfficialEventScoring:
             'selection':'earliest timestamp then forecastID per official game/model; all losses retained',
             'cadence_seconds':300,'checks_per_cycle':16,'current_inventory_budget':2048,
             'market_comparison':'withheld for conditional/noncomparable forecasts','certification':'native payout gates remain unchanged; no promotion'}
+        if policy_extension is not None:policy['extension']=policy_extension
         self.enrollment_id=digest(['official-event-research-v30',policy])
         prior=store.get(self.enrollment_id)
         if prior is None:
@@ -138,6 +139,13 @@ class OfficialEventScoring:
         elif _body(prior).get('policy')!=policy:raise ValueError('official_event_enrollment_policy_binding_mismatch')
         rows=latest(store,'EventScoreSnapshot',limit=1)
         if rows and rows[0]['enrollment_id']==self.enrollment_id:self.report=rows[0]['report'];self.replay_state='cached_until_source_replay'
+
+    def supports(self,ref):
+        f=ref['forecast']
+        return f.get('domain')=='sports' and ref.get('review',{}).get('descriptor',{}).get('league')=='NHL'
+
+    def evaluate_labels(self,labels):
+        return evaluation(labels)
 
     async def step(self):
         now=at(self.clock())
@@ -168,8 +176,8 @@ class OfficialEventScoring:
                 except (ValueError,KeyError,TypeError,OSError,StopIteration) as e:reasons[str(e)[:160]]+=1
                 continue
             if at(f['event_end_time'])>now:reasons['event_not_yet_mature']+=1;continue
-            if f.get('domain')!='sports' or ref.get('review',{}).get('descriptor',{}).get('league')!='NHL':reasons['official_event_adapter_unavailable_for_domain_or_league']+=1;continue
-            if now<at(f['event_end_time'])+timedelta(hours=1):reasons['sports_start_is_not_verified_completion']+=1;continue
+            if not self.supports(ref):reasons['official_event_adapter_unavailable_for_domain_or_league']+=1;continue
+            if f.get('domain')=='sports' and now<at(f['event_end_time'])+timedelta(hours=1):reasons['sports_start_is_not_verified_completion']+=1;continue
             if f['id'] in self.attempts and now-self.attempts[f['id']]<timedelta(seconds=300):continue
             due.append((ref,identity))
         # Different native events first; repeat model labels never grow event n.
@@ -202,7 +210,7 @@ class OfficialEventScoring:
                 self.store.append(row);labels.append({'label_id':identity,'forecast':_scoring_forecast(original),'forecast_available_at':study['available_at'],'proof':proof})
             except (ValueError,KeyError,TypeError,OSError,StopIteration) as e:reasons[str(e)[:160]]+=1
         self.attempts={k:v for k,v in self.attempts.items() if k in refs}
-        completed=at(self.clock());report=evaluation(labels)
+        completed=at(self.clock());report=self.evaluate_labels(labels)
         report.update(as_of=completed.isoformat(),inventory_forecasts=len(refs),checks_this_cycle=checked,collection_rejections=dict(reasons),
             source_anchor_id=anchor['id'],next_check_seconds=300)
         if not self.can_write():raise ValueError('official_event_score_archive_backpressure')

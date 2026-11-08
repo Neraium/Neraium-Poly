@@ -18,7 +18,7 @@ def add_capacity(state, *, service, now):
 
 
 def experimental_research(runtime, *, for_operations=False):
-    event = runtime._event_summary()
+    event = runtime.event_operations_summary() if for_operations and hasattr(runtime,"event_operations_summary") else runtime._event_summary()
     stop = runtime.account.risk.snapshot(now=runtime.clock())["kill_switch"]
     challenger = None
     if getattr(runtime, "phase23", None):
@@ -93,7 +93,7 @@ def experimental_research(runtime, *, for_operations=False):
             "last_error": runtime.phase16_error, "trading_authority": False},
         "relationships": runtime.phase16.relationships.summary() if runtime.phase16 else (
             runtime.phase15_relationships.summary() if runtime.phase15_relationships else {"status": "disabled"}),
-        "historical_qualification": event.get("historical_qualification", runtime._qualification()),
+        "historical_qualification": (event["historical_qualification"] if "historical_qualification" in event else {"status":"pending_verified_background_summary"} if for_operations else runtime._qualification()),
         "readiness_snapshot": {
             "generated_at": runtime.clock().isoformat(), "scope": "capability prerequisites, not model certification",
             "strategies": [{"strategy_id": name, "order_admission_supported": row["supported"],

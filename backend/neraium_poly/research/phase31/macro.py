@@ -126,7 +126,7 @@ def macro_readiness(entries,*,as_of):
             if seen[identity]!=sha:conflicts.add(identity)
             continue
         seen[identity]=sha
-        review=row.get('review',{});descriptor=review.get('descriptor',{});reference=descriptor.get('resolution_reference')
+        review=row.get('review') or {};descriptor=review.get('descriptor') or {};reference=descriptor.get('resolution_reference')
         end=at(f['event_end_time']);created=at(f['timestamp']);available=at(row['available_at'])
         reasons=[]
         if row.get('replay_verified') is not True or not created<=available<=now:category='SOURCE_PROVENANCE_MISSING';reasons.append('original_model_source_replay_or_availability_required')

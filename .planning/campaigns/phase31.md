@@ -1,0 +1,4 @@
+# Phase31 checkpoint
+Status: integration verification running. Checkout /home/ubuntu/Neraium-Poly; branch phase31-multidomain; baseline f964315; latest integrated worker HEAD a091b18, root source uncommitted.
+Completed: three native isolated writing agents integrated; full suite started once; browser5/build/audits passed; focused root review regressions27 passed; Ruff clean. Full journal source summary sampled background, source-anchored domain scorecard and guarded macro/crypto qualification.
+Next: finish full regression; source commit/push+CI; experimental-only restart; bounded live/latency/preservation observation; final evidence/handoff commit. No live money, stop resets, AWS, deletion/migration, resource/quota/account/risk changes. Preserve all original journals and unrelated untracked evidence.

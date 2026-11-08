@@ -57,6 +57,8 @@ class ExperimentalRuntime:
         from neraium_poly.research.phase28.memory import MemorySampler
         self.memory_sampler = MemorySampler()
         self.config = config
+        from neraium_poly.research.phase31.operations import EventSummaryCache
+        self.event_summary_cache=EventSummaryCache(clock=clock)
         self.clock = clock or (lambda: datetime.now(UTC))
         self._lock = RLock()
         if account is None:
@@ -291,9 +293,15 @@ class ExperimentalRuntime:
                         raise ValueError("volume research requires anchored source projection")
                     shadow = ShadowResearch(self.events, clock=self.clock, can_write=self._budget_ok)
                     self.phase28 = VolumeResearch(self.events,self.phase26_index,clock=self.clock,can_write=self._budget_ok,shadow=shadow)
-                    from neraium_poly.research.phase30.scoring import OfficialEventScoring
-                    self.official_event_scores = OfficialEventScoring(self.events,self.phase26_index,
+                    from neraium_poly.research.phase31.scoring import MultiDomainEventScoring
+                    self.official_event_scores = MultiDomainEventScoring(self.events,self.phase26_index,
                         config.data_dir/"phase30-official-event-evidence",clock=self.clock,can_write=self._budget_ok)
+                    self.cpi_input_qualification={"status":"pending","forecast_probability":None,"trading_authority":False}
+                    from neraium_poly.research.phase31.scorecard import ScorecardPublisher
+                    self.domain_scorecard=ScorecardPublisher(self.events,clock=self.clock,can_write=self._budget_ok,
+                        official=lambda:self.official_event_scores.status(),macro=lambda:self.cpi_input_qualification,
+                        shadow=lambda:self.phase28.shadow.status())
+                    self.phase28.on_report=self.domain_scorecard.observe
                 except Exception as error:
                     self.phase28_error = f"{type(error).__name__}:{str(error)[:160]}"
                     log.exception("phase28_recovery_withheld")
@@ -929,6 +937,42 @@ class ExperimentalRuntime:
                 if self.stopping or should_exit():return
                 await asyncio.sleep(1)
 
+    def event_operations_summary(self):
+        cache=getattr(self,"event_summary_cache",None)
+        return cache.snapshot() if cache else {"status":"pending","summary_status":"withheld","certification_authority":False}
+
+    async def _event_summary_sampler(self,should_exit):
+        from neraium_poly.research.phase30.scoring import _thread
+        while not self.stopping and not should_exit():
+            try:
+                await _thread(self.event_summary_cache.refresh,self._event_summary)
+            except (ValueError,TypeError,KeyError,OSError) as error:
+                self.event_summary_cache.failed(error)
+            for _ in range(60):
+                if self.stopping or should_exit():return
+                await asyncio.sleep(1)
+
+    async def _cpi_input_probe_loop(self,should_exit):
+        from neraium_poly.research.phase31.macro import collect_cpi_availability, cpi_qualification
+        from neraium_poly.research.phase31.scorecard import CPIInputStudy
+        next_check=None
+        while not self.stopping and not should_exit():
+            if getattr(self,"domain_scorecard",None) is not None and (next_check is None or self.clock()>=next_check) and self._budget_ok():
+                try:
+                    bundle=await collect_cpi_availability(clock=self.clock)
+                    now=self.clock();target=now.replace(day=1)-timedelta(days=1)
+                    result=cpi_qualification(bundle,target_year=target.year,target_month=target.month,as_of=now)
+                    from neraium_poly.research.phase14.relationships import digest
+                    if self._budget_ok():
+                        self.events.append(CPIInputStudy(id=digest(['cpi-input-v31',bundle]),timestamp=now,available_at=now,source="neraium-poly/CPI-input/v31",bundle=bundle,qualification=result))
+                        self.cpi_input_qualification=result
+                except (ValueError,TypeError,KeyError,OSError,httpx.HTTPError) as error:
+                    self.cpi_input_qualification={"status":"unavailable","reason":type(error).__name__,"forecast_probability":None,"trading_authority":False}
+                next_check=self.clock()+timedelta(hours=5)
+            for _ in range(30):
+                if self.stopping or should_exit():return
+                await asyncio.sleep(1)
+
     async def run(self, should_exit=lambda: False):
         async def independent_events():
             while not self.stopping and not should_exit():
@@ -978,7 +1022,7 @@ class ExperimentalRuntime:
                     self._cancel_and_checkpoint(self.clock())
                 await asyncio.sleep(self.config.poll_seconds)
 
-        await asyncio.gather(cycles(), self._fees_loop(should_exit), self._event_resolution_loop(should_exit), independent_events(), self._domain_research_loop(should_exit), self._domain_research_loop(should_exit, "phase25"), self._volume_research_loop(should_exit), self._research_fee_loop(should_exit), self._official_event_score_loop(should_exit))
+        await asyncio.gather(cycles(), self._fees_loop(should_exit), self._event_resolution_loop(should_exit), independent_events(), self._domain_research_loop(should_exit), self._domain_research_loop(should_exit, "phase25"), self._volume_research_loop(should_exit), self._research_fee_loop(should_exit), self._official_event_score_loop(should_exit), self._event_summary_sampler(should_exit), self._cpi_input_probe_loop(should_exit))
 
     def health(self):
         last_success = self.last_success
@@ -1077,6 +1121,7 @@ class ExperimentalRuntime:
 
         state = add_capacity(self.archive_state(), service="experimental", now=self.clock())
         state["operations_research"] = experimental_research(self, for_operations=True)
+        state["domain_scorecard"] = self.domain_scorecard.status() if getattr(self,"domain_scorecard",None) else {"status":"disabled"}
         state["official_event_research"] = self.official_event_scores.status() if getattr(self,"official_event_scores",None) else {"status":"disabled"}
         state["research_costs"] = self.research_fees.status() if getattr(self,"research_fees",None) else None
         state["memory"] = self.memory_sampler.status() if getattr(self,"memory_sampler",None) else None
