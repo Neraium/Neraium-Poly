@@ -1,0 +1,813 @@
+{
+  "observed_at": "2026-11-08T21:12:43.002892+00:00",
+  "source_endpoint": "http://127.0.0.1:18742/api/market-frame",
+  "source_frame_id": "3e1bff53db0928335774f00f6de4a150c43a01371aea2675f351f33ed764c951",
+  "source_frame_sha256": "dfbfb8a6feca05fe7f49ff5c73180dd557da0aa11c18094d291494891d001790",
+  "markets_considered": 409,
+  "fresh_compatible_paired_books": 42,
+  "positive_conditional_gross_pairs": 0,
+  "evaluated_recorded_pairs": 24,
+  "verified_native_fee_pairs": 5,
+  "positive_formula_headroom_pairs": 0,
+  "current_observations_loaded": 75,
+  "rejections": {
+    "native_fee_observation_unavailable": 19
+  },
+  "pair_scan_rejections": {
+    "fresh_authentic_unique_complete_depth_required": 125,
+    "paired_current_book_missing": 61,
+    "exact_compatible_active_settlement_metadata_required": 114,
+    "exact_binary_yes_no_metadata_required": 67
+  },
+  "findings": [
+    {
+      "market_id": "1105740",
+      "event_id": "143443",
+      "token_ids": [
+        "85482789936744260311999371350699987044247644306653001528276695717482676507600",
+        "70138439134789940151293221562290156019511842004756860386379046881297155754497"
+      ],
+      "status": "fee_evidence_missing",
+      "condition_id": null,
+      "reason": "native_fee_observation_unavailable",
+      "gross_frontier": null,
+      "maximum_formula_headroom": null,
+      "capital_scenarios": null
+    },
+    {
+      "market_id": "1105742",
+      "event_id": "143443",
+      "token_ids": [
+        "38667196958602416137463628517439560119304765709104570192447644733106171420112",
+        "6638895201070039547671726076818069674458322142629985177641367819559425166288"
+      ],
+      "status": "fee_evidence_missing",
+      "condition_id": null,
+      "reason": "native_fee_observation_unavailable",
+      "gross_frontier": null,
+      "maximum_formula_headroom": null,
+      "capital_scenarios": null
+    },
+    {
+      "market_id": "1105744",
+      "event_id": "143443",
+      "token_ids": [
+        "37090128566507509913630589460372620352013766554886380785463533062224343545231",
+        "21527446005162722668702146847806837944786417986794925592709069062391666573103"
+      ],
+      "status": "fee_evidence_missing",
+      "condition_id": null,
+      "reason": "native_fee_observation_unavailable",
+      "gross_frontier": null,
+      "maximum_formula_headroom": null,
+      "capital_scenarios": null
+    },
+    {
+      "market_id": "1105748",
+      "event_id": "143443",
+      "token_ids": [
+        "86169745307861674090452043379261530418870357324952931974995649343490068237899",
+        "82473771797407453562844762291919931002221279802613383962464132028745296294953"
+      ],
+      "status": "fee_evidence_missing",
+      "condition_id": null,
+      "reason": "native_fee_observation_unavailable",
+      "gross_frontier": null,
+      "maximum_formula_headroom": null,
+      "capital_scenarios": null
+    },
+    {
+      "market_id": "1105749",
+      "event_id": "143443",
+      "token_ids": [
+        "42727638766042850249414793956193305049964960783968960523056590290643557215679",
+        "52729875612558691912225414396391898400398704573812194285409608089581613771941"
+      ],
+      "status": "fee_evidence_missing",
+      "condition_id": null,
+      "reason": "native_fee_observation_unavailable",
+      "gross_frontier": null,
+      "maximum_formula_headroom": null,
+      "capital_scenarios": null
+    },
+    {
+      "market_id": "1105750",
+      "event_id": "143443",
+      "token_ids": [
+        "104769838619091338531297529252838473576191240472079657441003392006780754738080",
+        "108782572173563047095456172508355020839174401654226217489075514363850290180565"
+      ],
+      "status": "conditional_verified_fee_formula",
+      "condition_id": "0x4197bf7e572f1dd731669d33d05532c6d3b8cba71fb83dc69d789110e39c41b4",
+      "reason": null,
+      "gross_frontier": {
+        "paired_quantity": 0.0,
+        "principal": 0.0,
+        "conditional_gross_profit": 0.0,
+        "formula_fee": 0.0,
+        "formula_fee_headroom": 0.0,
+        "conservative_expected_net_profit": null
+      },
+      "maximum_formula_headroom": {
+        "paired_quantity": 0.0,
+        "principal": 0.0,
+        "formula_fee": 0.0,
+        "formula_acquisition_capital": 0.0,
+        "conditional_gross_profit": 0.0,
+        "remaining_cost_budget_before_break_even": 0.0,
+        "native_minimum_quantity_met": false,
+        "conservative_expected_net_profit": null,
+        "return_on_capital": null,
+        "actual_fill": false
+      },
+      "capital_scenarios": [
+        {
+          "hypothetical_bankroll": 500,
+          "capital_ceiling": 100.0,
+          "paired_quantity": 0.0,
+          "principal": 0.0,
+          "formula_fee": 0.0,
+          "formula_acquisition_capital": 0.0,
+          "conditional_gross_profit": 0.0,
+          "remaining_cost_budget_before_break_even": 0.0,
+          "native_minimum_quantity_met": false,
+          "conservative_expected_net_profit": null,
+          "return_on_capital": null,
+          "actual_fill": false
+        },
+        {
+          "hypothetical_bankroll": 1000,
+          "capital_ceiling": 200.0,
+          "paired_quantity": 0.0,
+          "principal": 0.0,
+          "formula_fee": 0.0,
+          "formula_acquisition_capital": 0.0,
+          "conditional_gross_profit": 0.0,
+          "remaining_cost_budget_before_break_even": 0.0,
+          "native_minimum_quantity_met": false,
+          "conservative_expected_net_profit": null,
+          "return_on_capital": null,
+          "actual_fill": false
+        },
+        {
+          "hypothetical_bankroll": 10000,
+          "capital_ceiling": 2000.0,
+          "paired_quantity": 0.0,
+          "principal": 0.0,
+          "formula_fee": 0.0,
+          "formula_acquisition_capital": 0.0,
+          "conditional_gross_profit": 0.0,
+          "remaining_cost_budget_before_break_even": 0.0,
+          "native_minimum_quantity_met": false,
+          "conservative_expected_net_profit": null,
+          "return_on_capital": null,
+          "actual_fill": false
+        },
+        {
+          "hypothetical_bankroll": 100000,
+          "capital_ceiling": 20000.0,
+          "paired_quantity": 0.0,
+          "principal": 0.0,
+          "formula_fee": 0.0,
+          "formula_acquisition_capital": 0.0,
+          "conditional_gross_profit": 0.0,
+          "remaining_cost_budget_before_break_even": 0.0,
+          "native_minimum_quantity_met": false,
+          "conservative_expected_net_profit": null,
+          "return_on_capital": null,
+          "actual_fill": false
+        },
+        {
+          "hypothetical_bankroll": 1000000,
+          "capital_ceiling": 200000.0,
+          "paired_quantity": 0.0,
+          "principal": 0.0,
+          "formula_fee": 0.0,
+          "formula_acquisition_capital": 0.0,
+          "conditional_gross_profit": 0.0,
+          "remaining_cost_budget_before_break_even": 0.0,
+          "native_minimum_quantity_met": false,
+          "conservative_expected_net_profit": null,
+          "return_on_capital": null,
+          "actual_fill": false
+        }
+      ]
+    },
+    {
+      "market_id": "1105755",
+      "event_id": "143443",
+      "token_ids": [
+        "17704927682411404638982382980949594324217253655714867278953651574552110090318",
+        "13707761272063185033084273997321282553232999497653452620386294915179257041056"
+      ],
+      "status": "fee_evidence_missing",
+      "condition_id": null,
+      "reason": "native_fee_observation_unavailable",
+      "gross_frontier": null,
+      "maximum_formula_headroom": null,
+      "capital_scenarios": null
+    },
+    {
+      "market_id": "1357385",
+      "event_id": "202857",
+      "token_ids": [
+        "974996339434137274969205706934098681831948949675083560493538609289838899860",
+        "86427949314446016001743793858451012568674284615309776891307407664549152095607"
+      ],
+      "status": "fee_evidence_missing",
+      "condition_id": null,
+      "reason": "native_fee_observation_unavailable",
+      "gross_frontier": null,
+      "maximum_formula_headroom": null,
+      "capital_scenarios": null
+    },
+    {
+      "market_id": "2176270",
+      "event_id": "455875",
+      "token_ids": [
+        "83783489454659420807679723574840032660002326710045123865554753994450797728825",
+        "48727431314333088243693016929623363710488980152833544156961659445129455301311"
+      ],
+      "status": "fee_evidence_missing",
+      "condition_id": null,
+      "reason": "native_fee_observation_unavailable",
+      "gross_frontier": null,
+      "maximum_formula_headroom": null,
+      "capital_scenarios": null
+    },
+    {
+      "market_id": "2431413",
+      "event_id": "556382",
+      "token_ids": [
+        "43595531958558267934455886300539818619407063141211246186008687659488782680099",
+        "101106027123457230511923560603100933782439732335133293995646065340833826927163"
+      ],
+      "status": "fee_evidence_missing",
+      "condition_id": null,
+      "reason": "native_fee_observation_unavailable",
+      "gross_frontier": null,
+      "maximum_formula_headroom": null,
+      "capital_scenarios": null
+    },
+    {
+      "market_id": "2853074",
+      "event_id": "276527",
+      "token_ids": [
+        "43976511902268111041633866799555037330317427315454056847054364885183934986197",
+        "33460385394344753109351907923235209397225125746318923726067817676780036931403"
+      ],
+      "status": "fee_evidence_missing",
+      "condition_id": null,
+      "reason": "native_fee_observation_unavailable",
+      "gross_frontier": null,
+      "maximum_formula_headroom": null,
+      "capital_scenarios": null
+    },
+    {
+      "market_id": "3215006",
+      "event_id": "770450",
+      "token_ids": [
+        "77367448845023382525249480243608609306658725883285195065573683809293972009019",
+        "23677896678650147625251750117853328843601853501710889530409633595389256242910"
+      ],
+      "status": "fee_evidence_missing",
+      "condition_id": null,
+      "reason": "native_fee_observation_unavailable",
+      "gross_frontier": null,
+      "maximum_formula_headroom": null,
+      "capital_scenarios": null
+    },
+    {
+      "market_id": "3215007",
+      "event_id": "770450",
+      "token_ids": [
+        "42865728742506860386768556888821101266630139112044622335353850919229585308601",
+        "8077351031134730167836761678618167504307708651130165095377248922919635337796"
+      ],
+      "status": "conditional_verified_fee_formula",
+      "condition_id": "0x723822eb2b143cee54c0bd7c1efba322b21f0051984c266df8879c394f1011c0",
+      "reason": null,
+      "gross_frontier": {
+        "paired_quantity": 0.0,
+        "principal": 0.0,
+        "conditional_gross_profit": 0.0,
+        "formula_fee": 0.0,
+        "formula_fee_headroom": 0.0,
+        "conservative_expected_net_profit": null
+      },
+      "maximum_formula_headroom": {
+        "paired_quantity": 0.0,
+        "principal": 0.0,
+        "formula_fee": 0.0,
+        "formula_acquisition_capital": 0.0,
+        "conditional_gross_profit": 0.0,
+        "remaining_cost_budget_before_break_even": 0.0,
+        "native_minimum_quantity_met": false,
+        "conservative_expected_net_profit": null,
+        "return_on_capital": null,
+        "actual_fill": false
+      },
+      "capital_scenarios": [
+        {
+          "hypothetical_bankroll": 500,
+          "capital_ceiling": 100.0,
+          "paired_quantity": 0.0,
+          "principal": 0.0,
+          "formula_fee": 0.0,
+          "formula_acquisition_capital": 0.0,
+          "conditional_gross_profit": 0.0,
+          "remaining_cost_budget_before_break_even": 0.0,
+          "native_minimum_quantity_met": false,
+          "conservative_expected_net_profit": null,
+          "return_on_capital": null,
+          "actual_fill": false
+        },
+        {
+          "hypothetical_bankroll": 1000,
+          "capital_ceiling": 200.0,
+          "paired_quantity": 0.0,
+          "principal": 0.0,
+          "formula_fee": 0.0,
+          "formula_acquisition_capital": 0.0,
+          "conditional_gross_profit": 0.0,
+          "remaining_cost_budget_before_break_even": 0.0,
+          "native_minimum_quantity_met": false,
+          "conservative_expected_net_profit": null,
+          "return_on_capital": null,
+          "actual_fill": false
+        },
+        {
+          "hypothetical_bankroll": 10000,
+          "capital_ceiling": 2000.0,
+          "paired_quantity": 0.0,
+          "principal": 0.0,
+          "formula_fee": 0.0,
+          "formula_acquisition_capital": 0.0,
+          "conditional_gross_profit": 0.0,
+          "remaining_cost_budget_before_break_even": 0.0,
+          "native_minimum_quantity_met": false,
+          "conservative_expected_net_profit": null,
+          "return_on_capital": null,
+          "actual_fill": false
+        },
+        {
+          "hypothetical_bankroll": 100000,
+          "capital_ceiling": 20000.0,
+          "paired_quantity": 0.0,
+          "principal": 0.0,
+          "formula_fee": 0.0,
+          "formula_acquisition_capital": 0.0,
+          "conditional_gross_profit": 0.0,
+          "remaining_cost_budget_before_break_even": 0.0,
+          "native_minimum_quantity_met": false,
+          "conservative_expected_net_profit": null,
+          "return_on_capital": null,
+          "actual_fill": false
+        },
+        {
+          "hypothetical_bankroll": 1000000,
+          "capital_ceiling": 200000.0,
+          "paired_quantity": 0.0,
+          "principal": 0.0,
+          "formula_fee": 0.0,
+          "formula_acquisition_capital": 0.0,
+          "conditional_gross_profit": 0.0,
+          "remaining_cost_budget_before_break_even": 0.0,
+          "native_minimum_quantity_met": false,
+          "conservative_expected_net_profit": null,
+          "return_on_capital": null,
+          "actual_fill": false
+        }
+      ]
+    },
+    {
+      "market_id": "3215008",
+      "event_id": "770450",
+      "token_ids": [
+        "111662129652828266889360374468657435151479595863413519836161861837506140152890",
+        "94483965432909797688470702512207472940215538148754820061518518664128018848687"
+      ],
+      "status": "conditional_verified_fee_formula",
+      "condition_id": "0x8a4196617dcb703e49d9bb36d3847bf6a75fd364dbd19f8d408ac944bf1a03d8",
+      "reason": null,
+      "gross_frontier": {
+        "paired_quantity": 0.0,
+        "principal": 0.0,
+        "conditional_gross_profit": 0.0,
+        "formula_fee": 0.0,
+        "formula_fee_headroom": 0.0,
+        "conservative_expected_net_profit": null
+      },
+      "maximum_formula_headroom": {
+        "paired_quantity": 0.0,
+        "principal": 0.0,
+        "formula_fee": 0.0,
+        "formula_acquisition_capital": 0.0,
+        "conditional_gross_profit": 0.0,
+        "remaining_cost_budget_before_break_even": 0.0,
+        "native_minimum_quantity_met": false,
+        "conservative_expected_net_profit": null,
+        "return_on_capital": null,
+        "actual_fill": false
+      },
+      "capital_scenarios": [
+        {
+          "hypothetical_bankroll": 500,
+          "capital_ceiling": 100.0,
+          "paired_quantity": 0.0,
+          "principal": 0.0,
+          "formula_fee": 0.0,
+          "formula_acquisition_capital": 0.0,
+          "conditional_gross_profit": 0.0,
+          "remaining_cost_budget_before_break_even": 0.0,
+          "native_minimum_quantity_met": false,
+          "conservative_expected_net_profit": null,
+          "return_on_capital": null,
+          "actual_fill": false
+        },
+        {
+          "hypothetical_bankroll": 1000,
+          "capital_ceiling": 200.0,
+          "paired_quantity": 0.0,
+          "principal": 0.0,
+          "formula_fee": 0.0,
+          "formula_acquisition_capital": 0.0,
+          "conditional_gross_profit": 0.0,
+          "remaining_cost_budget_before_break_even": 0.0,
+          "native_minimum_quantity_met": false,
+          "conservative_expected_net_profit": null,
+          "return_on_capital": null,
+          "actual_fill": false
+        },
+        {
+          "hypothetical_bankroll": 10000,
+          "capital_ceiling": 2000.0,
+          "paired_quantity": 0.0,
+          "principal": 0.0,
+          "formula_fee": 0.0,
+          "formula_acquisition_capital": 0.0,
+          "conditional_gross_profit": 0.0,
+          "remaining_cost_budget_before_break_even": 0.0,
+          "native_minimum_quantity_met": false,
+          "conservative_expected_net_profit": null,
+          "return_on_capital": null,
+          "actual_fill": false
+        },
+        {
+          "hypothetical_bankroll": 100000,
+          "capital_ceiling": 20000.0,
+          "paired_quantity": 0.0,
+          "principal": 0.0,
+          "formula_fee": 0.0,
+          "formula_acquisition_capital": 0.0,
+          "conditional_gross_profit": 0.0,
+          "remaining_cost_budget_before_break_even": 0.0,
+          "native_minimum_quantity_met": false,
+          "conservative_expected_net_profit": null,
+          "return_on_capital": null,
+          "actual_fill": false
+        },
+        {
+          "hypothetical_bankroll": 1000000,
+          "capital_ceiling": 200000.0,
+          "paired_quantity": 0.0,
+          "principal": 0.0,
+          "formula_fee": 0.0,
+          "formula_acquisition_capital": 0.0,
+          "conditional_gross_profit": 0.0,
+          "remaining_cost_budget_before_break_even": 0.0,
+          "native_minimum_quantity_met": false,
+          "conservative_expected_net_profit": null,
+          "return_on_capital": null,
+          "actual_fill": false
+        }
+      ]
+    },
+    {
+      "market_id": "3215009",
+      "event_id": "770450",
+      "token_ids": [
+        "35090254409399344650860070211816464534198960801264823587796928404808383727584",
+        "17037715451587457598270390992151934195448806241696976473961259598235638233970"
+      ],
+      "status": "conditional_verified_fee_formula",
+      "condition_id": "0xa5f8a44504de30fa36fff2406b2b27b3d15476ed50448e4fc3ead4861d8a5e3e",
+      "reason": null,
+      "gross_frontier": {
+        "paired_quantity": 0.0,
+        "principal": 0.0,
+        "conditional_gross_profit": 0.0,
+        "formula_fee": 0.0,
+        "formula_fee_headroom": 0.0,
+        "conservative_expected_net_profit": null
+      },
+      "maximum_formula_headroom": {
+        "paired_quantity": 0.0,
+        "principal": 0.0,
+        "formula_fee": 0.0,
+        "formula_acquisition_capital": 0.0,
+        "conditional_gross_profit": 0.0,
+        "remaining_cost_budget_before_break_even": 0.0,
+        "native_minimum_quantity_met": false,
+        "conservative_expected_net_profit": null,
+        "return_on_capital": null,
+        "actual_fill": false
+      },
+      "capital_scenarios": [
+        {
+          "hypothetical_bankroll": 500,
+          "capital_ceiling": 100.0,
+          "paired_quantity": 0.0,
+          "principal": 0.0,
+          "formula_fee": 0.0,
+          "formula_acquisition_capital": 0.0,
+          "conditional_gross_profit": 0.0,
+          "remaining_cost_budget_before_break_even": 0.0,
+          "native_minimum_quantity_met": false,
+          "conservative_expected_net_profit": null,
+          "return_on_capital": null,
+          "actual_fill": false
+        },
+        {
+          "hypothetical_bankroll": 1000,
+          "capital_ceiling": 200.0,
+          "paired_quantity": 0.0,
+          "principal": 0.0,
+          "formula_fee": 0.0,
+          "formula_acquisition_capital": 0.0,
+          "conditional_gross_profit": 0.0,
+          "remaining_cost_budget_before_break_even": 0.0,
+          "native_minimum_quantity_met": false,
+          "conservative_expected_net_profit": null,
+          "return_on_capital": null,
+          "actual_fill": false
+        },
+        {
+          "hypothetical_bankroll": 10000,
+          "capital_ceiling": 2000.0,
+          "paired_quantity": 0.0,
+          "principal": 0.0,
+          "formula_fee": 0.0,
+          "formula_acquisition_capital": 0.0,
+          "conditional_gross_profit": 0.0,
+          "remaining_cost_budget_before_break_even": 0.0,
+          "native_minimum_quantity_met": false,
+          "conservative_expected_net_profit": null,
+          "return_on_capital": null,
+          "actual_fill": false
+        },
+        {
+          "hypothetical_bankroll": 100000,
+          "capital_ceiling": 20000.0,
+          "paired_quantity": 0.0,
+          "principal": 0.0,
+          "formula_fee": 0.0,
+          "formula_acquisition_capital": 0.0,
+          "conditional_gross_profit": 0.0,
+          "remaining_cost_budget_before_break_even": 0.0,
+          "native_minimum_quantity_met": false,
+          "conservative_expected_net_profit": null,
+          "return_on_capital": null,
+          "actual_fill": false
+        },
+        {
+          "hypothetical_bankroll": 1000000,
+          "capital_ceiling": 200000.0,
+          "paired_quantity": 0.0,
+          "principal": 0.0,
+          "formula_fee": 0.0,
+          "formula_acquisition_capital": 0.0,
+          "conditional_gross_profit": 0.0,
+          "remaining_cost_budget_before_break_even": 0.0,
+          "native_minimum_quantity_met": false,
+          "conservative_expected_net_profit": null,
+          "return_on_capital": null,
+          "actual_fill": false
+        }
+      ]
+    },
+    {
+      "market_id": "3215010",
+      "event_id": "770451",
+      "token_ids": [
+        "45053521911672808043600263178798111402897730682087979734684574823004307023433",
+        "54892629532396715672060844552184409083592827625930470370999146720346626910259"
+      ],
+      "status": "fee_evidence_missing",
+      "condition_id": null,
+      "reason": "native_fee_observation_unavailable",
+      "gross_frontier": null,
+      "maximum_formula_headroom": null,
+      "capital_scenarios": null
+    },
+    {
+      "market_id": "3215012",
+      "event_id": "770451",
+      "token_ids": [
+        "63563009510989471204377539732457086916124654411092982704760023438039220215330",
+        "36342864926284644003283595741257595655709757799681943153551982143131732331338"
+      ],
+      "status": "conditional_verified_fee_formula",
+      "condition_id": "0xf6e7c89ec4b5d3c887ed9b70dfbcac9392e287367783ce475d32e8c16ed9f61c",
+      "reason": null,
+      "gross_frontier": {
+        "paired_quantity": 0.0,
+        "principal": 0.0,
+        "conditional_gross_profit": 0.0,
+        "formula_fee": 0.0,
+        "formula_fee_headroom": 0.0,
+        "conservative_expected_net_profit": null
+      },
+      "maximum_formula_headroom": {
+        "paired_quantity": 0.0,
+        "principal": 0.0,
+        "formula_fee": 0.0,
+        "formula_acquisition_capital": 0.0,
+        "conditional_gross_profit": 0.0,
+        "remaining_cost_budget_before_break_even": 0.0,
+        "native_minimum_quantity_met": false,
+        "conservative_expected_net_profit": null,
+        "return_on_capital": null,
+        "actual_fill": false
+      },
+      "capital_scenarios": [
+        {
+          "hypothetical_bankroll": 500,
+          "capital_ceiling": 100.0,
+          "paired_quantity": 0.0,
+          "principal": 0.0,
+          "formula_fee": 0.0,
+          "formula_acquisition_capital": 0.0,
+          "conditional_gross_profit": 0.0,
+          "remaining_cost_budget_before_break_even": 0.0,
+          "native_minimum_quantity_met": false,
+          "conservative_expected_net_profit": null,
+          "return_on_capital": null,
+          "actual_fill": false
+        },
+        {
+          "hypothetical_bankroll": 1000,
+          "capital_ceiling": 200.0,
+          "paired_quantity": 0.0,
+          "principal": 0.0,
+          "formula_fee": 0.0,
+          "formula_acquisition_capital": 0.0,
+          "conditional_gross_profit": 0.0,
+          "remaining_cost_budget_before_break_even": 0.0,
+          "native_minimum_quantity_met": false,
+          "conservative_expected_net_profit": null,
+          "return_on_capital": null,
+          "actual_fill": false
+        },
+        {
+          "hypothetical_bankroll": 10000,
+          "capital_ceiling": 2000.0,
+          "paired_quantity": 0.0,
+          "principal": 0.0,
+          "formula_fee": 0.0,
+          "formula_acquisition_capital": 0.0,
+          "conditional_gross_profit": 0.0,
+          "remaining_cost_budget_before_break_even": 0.0,
+          "native_minimum_quantity_met": false,
+          "conservative_expected_net_profit": null,
+          "return_on_capital": null,
+          "actual_fill": false
+        },
+        {
+          "hypothetical_bankroll": 100000,
+          "capital_ceiling": 20000.0,
+          "paired_quantity": 0.0,
+          "principal": 0.0,
+          "formula_fee": 0.0,
+          "formula_acquisition_capital": 0.0,
+          "conditional_gross_profit": 0.0,
+          "remaining_cost_budget_before_break_even": 0.0,
+          "native_minimum_quantity_met": false,
+          "conservative_expected_net_profit": null,
+          "return_on_capital": null,
+          "actual_fill": false
+        },
+        {
+          "hypothetical_bankroll": 1000000,
+          "capital_ceiling": 200000.0,
+          "paired_quantity": 0.0,
+          "principal": 0.0,
+          "formula_fee": 0.0,
+          "formula_acquisition_capital": 0.0,
+          "conditional_gross_profit": 0.0,
+          "remaining_cost_budget_before_break_even": 0.0,
+          "native_minimum_quantity_met": false,
+          "conservative_expected_net_profit": null,
+          "return_on_capital": null,
+          "actual_fill": false
+        }
+      ]
+    },
+    {
+      "market_id": "3580932",
+      "event_id": "848341",
+      "token_ids": [
+        "100205215067722297517595068937257697192973299370955287626157382353628199508318",
+        "28042880819135054236705112210866715426402068267079731308218252509537644025901"
+      ],
+      "status": "fee_evidence_missing",
+      "condition_id": null,
+      "reason": "native_fee_observation_unavailable",
+      "gross_frontier": null,
+      "maximum_formula_headroom": null,
+      "capital_scenarios": null
+    },
+    {
+      "market_id": "3580994",
+      "event_id": "848347",
+      "token_ids": [
+        "10653154764049368814330930734869721770637734314871119236238317953965277406484",
+        "24923302813032565767436220683004205555639221271397007550923446576564168677855"
+      ],
+      "status": "fee_evidence_missing",
+      "condition_id": null,
+      "reason": "native_fee_observation_unavailable",
+      "gross_frontier": null,
+      "maximum_formula_headroom": null,
+      "capital_scenarios": null
+    },
+    {
+      "market_id": "4170752",
+      "event_id": "955999",
+      "token_ids": [
+        "44519917187614201324840344754587313130089468376066341616659963109992104660897",
+        "93224758975778995437432635475194584726397487088421435993429724655982309504086"
+      ],
+      "status": "fee_evidence_missing",
+      "condition_id": null,
+      "reason": "native_fee_observation_unavailable",
+      "gross_frontier": null,
+      "maximum_formula_headroom": null,
+      "capital_scenarios": null
+    },
+    {
+      "market_id": "4170753",
+      "event_id": "955999",
+      "token_ids": [
+        "9720646829681455297823220431941113273278912758358369078729260586520528831479",
+        "21445209190500759632700769776144041401555955331312127781018960601065111617199"
+      ],
+      "status": "fee_evidence_missing",
+      "condition_id": null,
+      "reason": "native_fee_observation_unavailable",
+      "gross_frontier": null,
+      "maximum_formula_headroom": null,
+      "capital_scenarios": null
+    },
+    {
+      "market_id": "4412200",
+      "event_id": "994461",
+      "token_ids": [
+        "34819265358532535745389081655110465366205614488485370986851183512281332080312",
+        "42274213845690772723790725807949730963070164957660604430887551499063365043259"
+      ],
+      "status": "fee_evidence_missing",
+      "condition_id": null,
+      "reason": "native_fee_observation_unavailable",
+      "gross_frontier": null,
+      "maximum_formula_headroom": null,
+      "capital_scenarios": null
+    },
+    {
+      "market_id": "4418522",
+      "event_id": "995361",
+      "token_ids": [
+        "30500546747312370672108002034406431538511288799914390408472695258565878727559",
+        "44825112363851172847030972963897959231819034701442317803808120944832501987949"
+      ],
+      "status": "fee_evidence_missing",
+      "condition_id": null,
+      "reason": "native_fee_observation_unavailable",
+      "gross_frontier": null,
+      "maximum_formula_headroom": null,
+      "capital_scenarios": null
+    },
+    {
+      "market_id": "616903",
+      "event_id": "51456",
+      "token_ids": [
+        "113379839734351069617987084078322474966003108854908079701423911002443710490196",
+        "48058805012599375970268777474956242772204241523361869981040579395242001094965"
+      ],
+      "status": "fee_evidence_missing",
+      "condition_id": null,
+      "reason": "native_fee_observation_unavailable",
+      "gross_frontier": null,
+      "maximum_formula_headroom": null,
+      "capital_scenarios": null
+    }
+  ],
+  "conservative_positive_net_opportunities": 0,
+  "realized_pnl": null,
+  "independent_forecasts_created": 0,
+  "scope": "actual current books and source-replayed official protocol fees where available; conditional pricing only, not verified payout, filled execution or all-in profitability",
+  "research_only": true,
+  "trading_authority": false,
+  "new_provider_requests": 0,
+  "all_in_costs_verified": false
+}
