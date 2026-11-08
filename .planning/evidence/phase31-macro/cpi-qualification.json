@@ -1,0 +1,32 @@
+{
+  "schema_version": "phase31-CPI-source-qualification-v1",
+  "target_year": 2026,
+  "target_month": 10,
+  "series_id": "CUUR0000SA0",
+  "denominator_period": "2025-10",
+  "denominator_value": null,
+  "denominator_available": false,
+  "source_structural_missingness": true,
+  "publication_policy_source_verified": false,
+  "target_annual_change_publication_supported": null,
+  "numerical_probability_supported": false,
+  "fallback_outcome_verified": false,
+  "outcome": null,
+  "status": "structural_source_blocker",
+  "reasons": [
+    "official_2025_lapse_data_not_collected_or_published",
+    "official_publication_policy_not_machine_verified"
+  ],
+  "evidence_sha256": "de6dfadd3cab980a697b171628bcf7c1a5d7624e9b39f972a922a3b10b841a56",
+  "available_at": "2026-11-08T19:29:42.846696+00:00",
+  "source_urls": [
+    "https://api.bls.gov/publicAPI/v1/timeseries/data/CUUR0000SA0",
+    "https://www.bls.gov/cpi/additional-resources/2025-federal-government-shutdown-impact-cpi-faq.htm"
+  ],
+  "scope": "current input/source-policy qualification, not a prospective probability, historical vintage or settlement",
+  "research_only": true,
+  "trading_authority": false,
+  "certification_authority": false,
+  "native_payout_verified": false,
+  "forecast_probability": null
+}

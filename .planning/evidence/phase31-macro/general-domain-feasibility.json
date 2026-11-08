@@ -1,0 +1,22 @@
+{
+  "as_of": "2026-11-08T19:31:55.855121+00:00",
+  "scope": "source/reference feasibility only; no enrolled numerical forecast",
+  "politics": {
+    "authority_candidate": "https://www.fec.gov/introduction-campaign-finance/election-results-and-voting-information/",
+    "official_process": "https://www.eac.gov/election-officials/election-results-canvass-and-certification",
+    "status": "exact jurisdiction/race/certification binding and prospective independent model unavailable; news calls not certified outcomes",
+    "probability": null
+  },
+  "technology_science": {
+    "authority_candidate": "https://www.nasa.gov/events/",
+    "status": "official schedules and mission results can support exact event evidence; schedule alone is not a calibrated probability and no reviewed current contract/model is enrolled",
+    "probability": null
+  },
+  "geopolitics": {
+    "status": "event-specific authoritative source and reviewed interpretation required; no general calibrated probability from prose",
+    "probability": null
+  },
+  "research_only": true,
+  "trading_authority": false,
+  "certification_authority": false
+}

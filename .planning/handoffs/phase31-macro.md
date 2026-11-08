@@ -1,0 +1,11 @@
+# Phase31 macro source qualification
+
+Only NEWphase31/macro.py/test_phase31_macro.py changed; frozenforecastmodels/checkpoints/risk/capital untouched.14focusedtests/Ruffpass.
+
+Actualinventory6forecasts/3canonicalevents, allfuture: SPX6747198 Nov9close, UKGDP3566407 Nov12firstrelease, FOMC3215007 Dec9decision. No matured label or new forecast manufactured. ExactWSJsource still403; FRED/SPY cannot substitute. OfficialONScalendar200 confirmsGDPQ3releaseNov12 07:00UTC; existingforecastboundary00UTC staysconservative/unchanged. Fedcalendar200 confirmsDec8-9, not yetoutcome.
+
+CriticalCPI finding: officialCUUR0000SA0 default/rangeGET/rangePOST allreturnOct2025value'-'/footnoteX2025appropriationslapse. Noqueryexpansioncanrestoreuncollecteddata. OfficialBLSFAQ saysOct2026annualchangeswillnotbepublishedwhereOct2025missing; directHTTPFAQ403, browserofficialsourceverifiedseparately. CodeONLYasserts machineverifieddenominatorabsence andleavesfuturepublication/fallbackoutcomeNULLwithoutreadableFAQbytes. Contractfallbackneedsreview; neverpredictaselectedresultfrommissingdata.
+
+APIs: macro_readiness(index_entries,as_of) source-awarefuture/maturedclassification; collect_cpi_availability(clock[,client]) boundedofficialAPI+optionalFAQfetch, preservesAPIevidencewhenFAQ403; cpi_qualification(bundle,target_year,target_month,as_of); qualify_cpi_market(market,bundle,as_of) usesfrozenexactCPIinterpretertoattachreviewholdonlytocorrectnativecontract. Allprobabilities/outcomesNULL/nativepayout/certFalse. Rootmayintegratesourcequalification intoitsunifiedscorecard; APIdoesnotgranttradingauthority.
+
+Politics/geopolitics/tech/science existinggeneralinterfaces correctlywithholdnumericforecasts; primaryFEC/EACcertificationandNASAeventpages arecandidateevidence, not models. Evidenceunderphase31-macrocontainsrawBLSinputs,readiness,officialcalendars,sourceerrorsandexplicitmanualpolicyprovenance. No services/livejournals/accounts modified.

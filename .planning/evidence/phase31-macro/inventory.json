@@ -1,0 +1,2784 @@
+{
+  "as_of": "2026-11-08T19:23:20.002023+00:00",
+  "anchor": {
+    "schema_version": "1.0",
+    "id": "projection:408a05a65688d129915e7a01e0408cae6ab8c4b0dd0eb6fa8628206848b3780f:3eaae8ef54aece1f319ff9b59186d607aa86ae7e39051279e158aadb716029dd",
+    "timestamp": "2026-11-08T19:23:17.342705Z",
+    "available_at": "2026-11-08T19:23:17.342705Z",
+    "source": "neraium-poly/research-projection/v26",
+    "index_id": "408a05a65688d129915e7a01e0408cae6ab8c4b0dd0eb6fa8628206848b3780f",
+    "policy_sha256": "f10f138dfde8a2a7ef877010ff5c142d516c63be6474180444af2564abcd9e89",
+    "cursor": 1438575,
+    "cursor_id": "000000000586:37e114257ef6acc5a4be85f60eeb8749c06bcfc9c56bd0b335222e1de51974cd",
+    "cursor_digest": "db149f32f51dabcb200be3b9cce08c68abc770a3c4950342efb8d1a9f31e1b9a",
+    "chain": "d2fd80c139cfc99d843d78401ec54dff50d2332928aaab3d7c61a0a4da83292c",
+    "entries": 1794,
+    "research_only": true,
+    "trading_authority": false,
+    "certification_authority": false
+  },
+  "forecasts": [
+    {
+      "metadata": {
+        "available_at": "2026-11-07T23:34:01.739760Z",
+        "cohort_id": "a48fcbb3851e408b62bfa50e8a7fecebe6bdbf93b0c4471d6272932e82c3a12c",
+        "forecast": {
+          "book_sha256": "7d535baab67aaa15bc87acb33f86bc3a6256bb1f3806e763207d38e2cd1e9db9",
+          "calibration_status": "unvalidated_research",
+          "conditioning": "ordinary scheduled FOMC statement; no exceptional delayed-statement fallback",
+          "domain": "economics",
+          "event_end_time": "2026-12-10T05:00:00+00:00",
+          "event_id": "770450",
+          "evidence_cutoff": "2026-11-07T23:34:01.709806+00:00",
+          "feature_version": "official-calendar-and-target-upper-before-after-meeting-v1",
+          "id": "03eccbcbaea7c3cfda2daacb51d4a9631483dbb3e04b751347e030c6c6f471bf",
+          "lower_probability": 0.0,
+          "market_baseline_comparable": false,
+          "market_expected_payout": 0.785,
+          "market_id": "3215007",
+          "market_probability": null,
+          "model_id": "fomc-scheduled-policy-frequency-v24.1",
+          "model_sha256": "432c6cb5e5374492b8b89e1b1c51e854e2d5f559a8fb6e200dca3b99e7924bc9",
+          "model_version": "fomc-scheduled-policy-frequency-v24.1",
+          "probability": 0.359375,
+          "probability_semantics": "binary_event_probability",
+          "rules_sha256": "fdb210318474078daa855d747ed941b2113f64d186318fe4a0e4776c7737e4e6",
+          "source_lineages": [
+            "FederalReserve:scheduled-FOMC",
+            "FRED:DFEDTARU"
+          ],
+          "timestamp": "2026-11-07T23:34:01.720376+00:00",
+          "token_id": "8077351031134730167836761678618167504307708651130165095377248922919635337796",
+          "unconditional_contract_probability": false,
+          "upper_probability": 1.0
+        },
+        "forecast_id": "03eccbcbaea7c3cfda2daacb51d4a9631483dbb3e04b751347e030c6c6f471bf",
+        "forecast_sha256": "5b8e7ffd730cd92c868c6dced56bdb427aafc71f50814717c6630e3dade2931b",
+        "proof_sha256": "547a1700d2948107c9910cce343a0b9af99c695b2cca13903fdf808de1ca6921",
+        "rejection": null,
+        "replay_verified": true,
+        "review": {
+          "canonical_group_id": "93f9747c9ba19291b881fa531672adad3880a8ccddbda247f31d9660f4f9b185",
+          "dependency_tags": [
+            "economic-series:FED:scheduled-FOMC"
+          ],
+          "descriptor": {
+            "domain": "economics",
+            "resolution_reference": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+            "series_id": "FED:scheduled-FOMC",
+            "target_period": "2026-12-09"
+          },
+          "evidence_lineages": [
+            "FRED:DFEDTARU",
+            "FederalReserve:scheduled-FOMC"
+          ]
+        },
+        "source_id": "000000000005:d103ad67e2009614d8d3089b786b47c5cc58c36dfbba33cdabef5a287837c6dd",
+        "source_kind": "DomainResearchStudy",
+        "source_payload_sha256": "cfec24e3331520f15dbb72b67e613c25ddaa4df2d09e8e99c53c4ba40c522e9b",
+        "source_rowid": 1025363,
+        "source_study_sha256": "cfe9a759bb65a23016020a731065a6d38e06103a8a3efe179038f3e61634bee4",
+        "type": "forecast"
+      },
+      "forecast": {
+        "model_id": "fomc-scheduled-policy-frequency-v24.1",
+        "model_version": "fomc-scheduled-policy-frequency-v24.1",
+        "model_sha256": "432c6cb5e5374492b8b89e1b1c51e854e2d5f559a8fb6e200dca3b99e7924bc9",
+        "feature_version": "official-calendar-and-target-upper-before-after-meeting-v1",
+        "hypothesis": "Jeffreys-smoothed historical distribution of regular-meeting policy changes",
+        "input_requirements": [
+          "exact FOMC meeting target-upper-bound rule",
+          "official calendar",
+          "at least16 completed regular meetings and observed target upper bounds"
+        ],
+        "performance_criteria": [
+          "native and official-statement-verified outcomes",
+          "event-disjoint calibration vs ordinary frequency baseline"
+        ],
+        "risk_assumptions": "Conditional uncalibrated research only; uncertainty[0,1]; no order authority",
+        "failure_conditions": [
+          "policy regime change",
+          "unscheduled interventions",
+          "calendar revisions",
+          "statement fallback"
+        ],
+        "source_independence": "Both models share official calendar/FRED target history, not independent corroboration",
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false,
+        "domain": "economics",
+        "event_id": "770450",
+        "market_id": "3215007",
+        "token_id": "8077351031134730167836761678618167504307708651130165095377248922919635337796",
+        "probability": 0.359375,
+        "probability_semantics": "binary_event_probability",
+        "lower_probability": 0.0,
+        "upper_probability": 1.0,
+        "uncertainty": {
+          "lower_probability": 0.0,
+          "upper_probability": 1.0,
+          "type": "uncalibrated_regime_uncertainty_not_sampling_confidence"
+        },
+        "evidence_cutoff": "2026-11-07T23:34:01.709806+00:00",
+        "event_end_time": "2026-12-10T05:00:00+00:00",
+        "rules_sha256": "fdb210318474078daa855d747ed941b2113f64d186318fe4a0e4776c7737e4e6",
+        "evidence_ids": [
+          "44fa99205a01e5c1d036e00f9b528aa34dfa715c012b08a44f5aac424394e764",
+          "2513a56e8ca788f2de42e4f42112350d4521639a06e60411294ffb1ed7aa19f8"
+        ],
+        "source_lineages": [
+          "FederalReserve:scheduled-FOMC",
+          "FRED:DFEDTARU"
+        ],
+        "contract": {
+          "kind": "fomc",
+          "meeting_date": "2026-12-09",
+          "meeting_start_date": "2026-12-08",
+          "event_end_time": "2026-12-10T05:00:00+00:00",
+          "target": "no_change_target_federal_funds_upper_bound",
+          "selected_outcome": "No",
+          "rules_sha256": "fdb210318474078daa855d747ed941b2113f64d186318fe4a0e4776c7737e4e6",
+          "market": {
+            "schema_version": "1.0",
+            "id": "c463f3c81fbd929d6aa384027df9f8ef96002e014177f998d7ccb7c08c2456c7",
+            "timestamp": "2026-11-07T23:30:02.655700Z",
+            "available_at": "2026-11-07T23:30:02.655700Z",
+            "source": "https://gamma-api.polymarket.com",
+            "exchange": "polymarket",
+            "market_id": "3215007",
+            "event_id": "770450",
+            "question": "Will there be no change in Fed interest rates after the December 2026 meeting?",
+            "token_id": "8077351031134730167836761678618167504307708651130165095377248922919635337796",
+            "outcome": "No",
+            "probability": 0.785,
+            "status": "active",
+            "resolution_rules": "The FED interest rates are defined in this market by the upper bound of the target federal funds range. The decisions on the target federal funds range are made by the Federal Open Market Committee (FOMC) meetings.\n\nThis market will resolve to the amount of basis points the upper bound of the target federal funds rate is changed by versus the level it was prior to the Federal Reserve's December 2026 meeting.\n\nIf the target federal funds rate is changed to a level not expressed in the displayed options, the change will be rounded up to the nearest 25 and will resolve to the relevant bracket. (e.g. if there's a cut/increase of 12.5 bps it will be considered to be 25 bps)\n\nThe resolution source for this market is the FOMC\u2019s statement after its meeting scheduled for December 8-9, 2026 according to the official calendar: https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm.\n\nThe level and change of the target federal funds rate is also published at the official website of the Federal Reserve at https://www.federalreserve.gov/monetarypolicy/openmarket.htm.\n\nThis market may resolve as soon as the FOMC\u2019s statement for their December meeting with relevant data is issued. If no statement is released by the end date of the next scheduled meeting, this market will resolve to the \"No change\" bracket.",
+            "resolution_source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+            "end_time": "2026-12-09T23:59:00Z",
+            "tick_size": 0.01,
+            "min_order_size": 5.0
+          },
+          "calendar_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+          "rate_source": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DFEDTARU&cosd=2023-01-01",
+          "rounding": "nonzero magnitude rounded up to25basispoints"
+        },
+        "dataset_sha256": "dab359d85cffebefc1a369aad70ac3454d40947eb6954994348144abc2cff400",
+        "training_observations": 31,
+        "historical_meeting_changes": [
+          {
+            "date": "2023-02-01",
+            "before_upper": "4.50",
+            "after_upper": "4.75",
+            "rounded_bps": 25
+          },
+          {
+            "date": "2023-03-22",
+            "before_upper": "4.75",
+            "after_upper": "5.00",
+            "rounded_bps": 25
+          },
+          {
+            "date": "2023-05-03",
+            "before_upper": "5.00",
+            "after_upper": "5.25",
+            "rounded_bps": 25
+          },
+          {
+            "date": "2023-06-14",
+            "before_upper": "5.25",
+            "after_upper": "5.25",
+            "rounded_bps": 0
+          },
+          {
+            "date": "2023-07-26",
+            "before_upper": "5.25",
+            "after_upper": "5.50",
+            "rounded_bps": 25
+          },
+          {
+            "date": "2023-09-20",
+            "before_upper": "5.50",
+            "after_upper": "5.50",
+            "rounded_bps": 0
+          },
+          {
+            "date": "2023-11-01",
+            "before_upper": "5.50",
+            "after_upper": "5.50",
+            "rounded_bps": 0
+          },
+          {
+            "date": "2023-12-13",
+            "before_upper": "5.50",
+            "after_upper": "5.50",
+            "rounded_bps": 0
+          },
+          {
+            "date": "2024-01-31",
+            "before_upper": "5.50",
+            "after_upper": "5.50",
+            "rounded_bps": 0
+          },
+          {
+            "date": "2024-03-20",
+            "before_upper": "5.50",
+            "after_upper": "5.50",
+            "rounded_bps": 0
+          },
+          {
+            "date": "2024-05-01",
+            "before_upper": "5.50",
+            "after_upper": "5.50",
+            "rounded_bps": 0
+          },
+          {
+            "date": "2024-06-12",
+            "before_upper": "5.50",
+            "after_upper": "5.50",
+            "rounded_bps": 0
+          },
+          {
+            "date": "2024-07-31",
+            "before_upper": "5.50",
+            "after_upper": "5.50",
+            "rounded_bps": 0
+          },
+          {
+            "date": "2024-09-18",
+            "before_upper": "5.50",
+            "after_upper": "5.00",
+            "rounded_bps": -50
+          },
+          {
+            "date": "2024-11-07",
+            "before_upper": "5.00",
+            "after_upper": "4.75",
+            "rounded_bps": -25
+          },
+          {
+            "date": "2024-12-18",
+            "before_upper": "4.75",
+            "after_upper": "4.50",
+            "rounded_bps": -25
+          },
+          {
+            "date": "2025-01-29",
+            "before_upper": "4.50",
+            "after_upper": "4.50",
+            "rounded_bps": 0
+          },
+          {
+            "date": "2025-03-19",
+            "before_upper": "4.50",
+            "after_upper": "4.50",
+            "rounded_bps": 0
+          },
+          {
+            "date": "2025-05-07",
+            "before_upper": "4.50",
+            "after_upper": "4.50",
+            "rounded_bps": 0
+          },
+          {
+            "date": "2025-06-18",
+            "before_upper": "4.50",
+            "after_upper": "4.50",
+            "rounded_bps": 0
+          },
+          {
+            "date": "2025-07-30",
+            "before_upper": "4.50",
+            "after_upper": "4.50",
+            "rounded_bps": 0
+          },
+          {
+            "date": "2025-09-17",
+            "before_upper": "4.50",
+            "after_upper": "4.25",
+            "rounded_bps": -25
+          },
+          {
+            "date": "2025-10-29",
+            "before_upper": "4.25",
+            "after_upper": "4.00",
+            "rounded_bps": -25
+          },
+          {
+            "date": "2025-12-10",
+            "before_upper": "4.00",
+            "after_upper": "3.75",
+            "rounded_bps": -25
+          },
+          {
+            "date": "2026-01-28",
+            "before_upper": "3.75",
+            "after_upper": "3.75",
+            "rounded_bps": 0
+          },
+          {
+            "date": "2026-03-18",
+            "before_upper": "3.75",
+            "after_upper": "3.75",
+            "rounded_bps": 0
+          },
+          {
+            "date": "2026-04-29",
+            "before_upper": "3.75",
+            "after_upper": "3.75",
+            "rounded_bps": 0
+          },
+          {
+            "date": "2026-06-17",
+            "before_upper": "3.75",
+            "after_upper": "3.75",
+            "rounded_bps": 0
+          },
+          {
+            "date": "2026-07-29",
+            "before_upper": "3.75",
+            "after_upper": "3.75",
+            "rounded_bps": 0
+          },
+          {
+            "date": "2026-09-16",
+            "before_upper": "3.75",
+            "after_upper": "4.00",
+            "rounded_bps": 25
+          },
+          {
+            "date": "2026-10-28",
+            "before_upper": "4.00",
+            "after_upper": "4.00",
+            "rounded_bps": 0
+          }
+        ],
+        "current_observed_upper": "4.00",
+        "independent_of_polymarket": true,
+        "calibration_status": "unvalidated_research",
+        "brier": null,
+        "log_loss": null,
+        "conditioning": "ordinary scheduled FOMC statement; no exceptional delayed-statement fallback",
+        "unconditional_contract_probability": false,
+        "market_comparison_status": "conditional_policy_probability_not_unconditional_token_payout",
+        "limitations": [
+          "Past policy-meeting frequency is a naive falsifiable baseline, not a forecast of current committee preferences",
+          "No macroeconomic covariates, consensus or market-implied rate inputs",
+          "Current authentic snapshots are not historical point-in-time vintages",
+          "Before/after daily rates approximate scheduled policy outcomes; final scoring requires official statement plus native proof"
+        ],
+        "timestamp": "2026-11-07T23:34:01.720376+00:00",
+        "market": {
+          "schema_version": "1.0",
+          "id": "c463f3c81fbd929d6aa384027df9f8ef96002e014177f998d7ccb7c08c2456c7",
+          "timestamp": "2026-11-07T23:30:02.655700Z",
+          "available_at": "2026-11-07T23:30:02.655700Z",
+          "source": "https://gamma-api.polymarket.com",
+          "exchange": "polymarket",
+          "market_id": "3215007",
+          "event_id": "770450",
+          "question": "Will there be no change in Fed interest rates after the December 2026 meeting?",
+          "token_id": "8077351031134730167836761678618167504307708651130165095377248922919635337796",
+          "outcome": "No",
+          "probability": 0.785,
+          "status": "active",
+          "resolution_rules": "The FED interest rates are defined in this market by the upper bound of the target federal funds range. The decisions on the target federal funds range are made by the Federal Open Market Committee (FOMC) meetings.\n\nThis market will resolve to the amount of basis points the upper bound of the target federal funds rate is changed by versus the level it was prior to the Federal Reserve's December 2026 meeting.\n\nIf the target federal funds rate is changed to a level not expressed in the displayed options, the change will be rounded up to the nearest 25 and will resolve to the relevant bracket. (e.g. if there's a cut/increase of 12.5 bps it will be considered to be 25 bps)\n\nThe resolution source for this market is the FOMC\u2019s statement after its meeting scheduled for December 8-9, 2026 according to the official calendar: https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm.\n\nThe level and change of the target federal funds rate is also published at the official website of the Federal Reserve at https://www.federalreserve.gov/monetarypolicy/openmarket.htm.\n\nThis market may resolve as soon as the FOMC\u2019s statement for their December meeting with relevant data is issued. If no statement is released by the end date of the next scheduled meeting, this market will resolve to the \"No change\" bracket.",
+          "resolution_source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+          "end_time": "2026-12-09T23:59:00Z",
+          "tick_size": 0.01,
+          "min_order_size": 5.0
+        },
+        "book": {
+          "schema_version": "1.0",
+          "id": "bd62ee77af5d2a9a8cd8981459c8979c7911e9338b7e7c0e0f9e3241dff6f86a",
+          "timestamp": "2026-11-07T23:33:50.704000Z",
+          "available_at": "2026-11-07T23:33:50.746006Z",
+          "source": "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+          "exchange": "polymarket",
+          "market_id": "3215007",
+          "token_id": "8077351031134730167836761678618167504307708651130165095377248922919635337796",
+          "bids": [
+            {
+              "price": 0.78,
+              "size": 24507.58
+            },
+            {
+              "price": 0.77,
+              "size": 223755.56
+            },
+            {
+              "price": 0.76,
+              "size": 156295.59
+            },
+            {
+              "price": 0.75,
+              "size": 20375.29
+            },
+            {
+              "price": 0.74,
+              "size": 7096.19
+            },
+            {
+              "price": 0.73,
+              "size": 15057.89
+            },
+            {
+              "price": 0.72,
+              "size": 15169.05
+            },
+            {
+              "price": 0.71,
+              "size": 16321.75
+            },
+            {
+              "price": 0.7,
+              "size": 5432.1
+            },
+            {
+              "price": 0.69,
+              "size": 5220.71
+            },
+            {
+              "price": 0.67,
+              "size": 5126.72
+            },
+            {
+              "price": 0.66,
+              "size": 400.0
+            },
+            {
+              "price": 0.65,
+              "size": 17.1
+            },
+            {
+              "price": 0.64,
+              "size": 5800.0
+            },
+            {
+              "price": 0.63,
+              "size": 712.4
+            },
+            {
+              "price": 0.61,
+              "size": 6000.0
+            },
+            {
+              "price": 0.6,
+              "size": 7590.12
+            },
+            {
+              "price": 0.58,
+              "size": 5590.0
+            },
+            {
+              "price": 0.57,
+              "size": 100.0
+            },
+            {
+              "price": 0.56,
+              "size": 2372.72
+            },
+            {
+              "price": 0.55,
+              "size": 5100.0
+            },
+            {
+              "price": 0.54,
+              "size": 826.37
+            },
+            {
+              "price": 0.53,
+              "size": 1018.86
+            },
+            {
+              "price": 0.52,
+              "size": 5355.0
+            },
+            {
+              "price": 0.51,
+              "size": 89.0
+            },
+            {
+              "price": 0.5,
+              "size": 269.99
+            },
+            {
+              "price": 0.49,
+              "size": 5000.0
+            },
+            {
+              "price": 0.46,
+              "size": 548.93
+            },
+            {
+              "price": 0.45,
+              "size": 10.0
+            },
+            {
+              "price": 0.42,
+              "size": 10.0
+            },
+            {
+              "price": 0.41,
+              "size": 1000.0
+            },
+            {
+              "price": 0.4,
+              "size": 999.16
+            },
+            {
+              "price": 0.39,
+              "size": 12.82
+            },
+            {
+              "price": 0.31,
+              "size": 1000.0
+            },
+            {
+              "price": 0.3,
+              "size": 2972.91
+            },
+            {
+              "price": 0.27,
+              "size": 5.0
+            },
+            {
+              "price": 0.18,
+              "size": 5.2
+            },
+            {
+              "price": 0.17,
+              "size": 588.0
+            },
+            {
+              "price": 0.16,
+              "size": 110.0
+            },
+            {
+              "price": 0.15,
+              "size": 500.0
+            },
+            {
+              "price": 0.1,
+              "size": 334.54
+            },
+            {
+              "price": 0.09,
+              "size": 894.04
+            },
+            {
+              "price": 0.08,
+              "size": 5.76
+            },
+            {
+              "price": 0.07,
+              "size": 10365.6
+            },
+            {
+              "price": 0.06,
+              "size": 2404.32
+            },
+            {
+              "price": 0.05,
+              "size": 3948.96
+            },
+            {
+              "price": 0.04,
+              "size": 33006.95
+            },
+            {
+              "price": 0.03,
+              "size": 15647.03
+            },
+            {
+              "price": 0.02,
+              "size": 90008.44
+            },
+            {
+              "price": 0.01,
+              "size": 2118088.29
+            }
+          ],
+          "asks": [
+            {
+              "price": 0.79,
+              "size": 521065.91
+            },
+            {
+              "price": 0.8,
+              "size": 468051.71
+            },
+            {
+              "price": 0.81,
+              "size": 1007892.54
+            },
+            {
+              "price": 0.82,
+              "size": 85310.58
+            },
+            {
+              "price": 0.83,
+              "size": 4222.9
+            },
+            {
+              "price": 0.84,
+              "size": 3982.76
+            },
+            {
+              "price": 0.85,
+              "size": 5270.97
+            },
+            {
+              "price": 0.86,
+              "size": 3200.0
+            },
+            {
+              "price": 0.88,
+              "size": 505.0
+            },
+            {
+              "price": 0.89,
+              "size": 500.0
+            },
+            {
+              "price": 0.9,
+              "size": 2343.0
+            },
+            {
+              "price": 0.91,
+              "size": 4000.0
+            },
+            {
+              "price": 0.92,
+              "size": 7119.39
+            },
+            {
+              "price": 0.93,
+              "size": 1377.34
+            },
+            {
+              "price": 0.94,
+              "size": 11335.9
+            },
+            {
+              "price": 0.95,
+              "size": 11792.71
+            },
+            {
+              "price": 0.96,
+              "size": 12165.27
+            },
+            {
+              "price": 0.97,
+              "size": 34561.66
+            },
+            {
+              "price": 0.98,
+              "size": 69090.12
+            },
+            {
+              "price": 0.99,
+              "size": 1225685.36
+            }
+          ],
+          "sequence": 0,
+          "complete": true
+        },
+        "book_id": "bd62ee77af5d2a9a8cd8981459c8979c7911e9338b7e7c0e0f9e3241dff6f86a",
+        "book_sha256": "7d535baab67aaa15bc87acb33f86bc3a6256bb1f3806e763207d38e2cd1e9db9",
+        "market_probability": null,
+        "market_expected_payout": 0.785,
+        "evidence_lineages": [
+          "Board of Governors of the Federal Reserve System:fomc-calendar",
+          "Federal Reserve Bank of St Louis:DFEDTARU"
+        ],
+        "market_baseline_comparable": false,
+        "adapter": "economics",
+        "enrollment_id": "dbb56b57b867d0c13835380513d621a44a978c172c06901c85e54be79c8aed51",
+        "reviewed_dependency_group": null,
+        "independence_reviewed": false,
+        "horizon_bucket": "over31d",
+        "id": "03eccbcbaea7c3cfda2daacb51d4a9631483dbb3e04b751347e030c6c6f471bf"
+      },
+      "study_id": "000000000005:d103ad67e2009614d8d3089b786b47c5cc58c36dfbba33cdabef5a287837c6dd",
+      "study_sha256": "cfe9a759bb65a23016020a731065a6d38e06103a8a3efe179038f3e61634bee4"
+    },
+    {
+      "metadata": {
+        "available_at": "2026-11-07T23:34:01.739760Z",
+        "cohort_id": "a48fcbb3851e408b62bfa50e8a7fecebe6bdbf93b0c4471d6272932e82c3a12c",
+        "forecast": {
+          "book_sha256": "7d535baab67aaa15bc87acb33f86bc3a6256bb1f3806e763207d38e2cd1e9db9",
+          "calibration_status": "unvalidated_research",
+          "conditioning": "ordinary scheduled FOMC statement; no exceptional delayed-statement fallback",
+          "domain": "economics",
+          "event_end_time": "2026-12-10T05:00:00+00:00",
+          "event_id": "770450",
+          "evidence_cutoff": "2026-11-07T23:34:01.709806+00:00",
+          "feature_version": "official-calendar-and-target-upper-before-after-meeting-v1",
+          "id": "337f3f1a622cac4a4038bc513642a3733147cb0186dbcdf86ca7bf9f1bcebe00",
+          "lower_probability": 0.0,
+          "market_baseline_comparable": false,
+          "market_expected_payout": 0.785,
+          "market_id": "3215007",
+          "market_probability": null,
+          "model_id": "fomc-recent-policy-shrinkage-v24.1",
+          "model_sha256": "9f507077a8aea26062d1b55fbcfffffe1f786cff69e536c6bb36417846565bbe",
+          "model_version": "fomc-recent-policy-shrinkage-v24.1",
+          "probability": 0.28645833333333337,
+          "probability_semantics": "binary_event_probability",
+          "rules_sha256": "fdb210318474078daa855d747ed941b2113f64d186318fe4a0e4776c7737e4e6",
+          "source_lineages": [
+            "FederalReserve:scheduled-FOMC",
+            "FRED:DFEDTARU"
+          ],
+          "timestamp": "2026-11-07T23:34:01.720376+00:00",
+          "token_id": "8077351031134730167836761678618167504307708651130165095377248922919635337796",
+          "unconditional_contract_probability": false,
+          "upper_probability": 1.0
+        },
+        "forecast_id": "337f3f1a622cac4a4038bc513642a3733147cb0186dbcdf86ca7bf9f1bcebe00",
+        "forecast_sha256": "9bb83157417041a468d93a22d8bdbfe374071af1efa29d4343b628f03d9702a7",
+        "proof_sha256": "2c01282922678b594d36cb4b649fecb34e27f04bc4a6aadea3265cdc952e5751",
+        "rejection": null,
+        "replay_verified": true,
+        "review": {
+          "canonical_group_id": "93f9747c9ba19291b881fa531672adad3880a8ccddbda247f31d9660f4f9b185",
+          "dependency_tags": [
+            "economic-series:FED:scheduled-FOMC"
+          ],
+          "descriptor": {
+            "domain": "economics",
+            "resolution_reference": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+            "series_id": "FED:scheduled-FOMC",
+            "target_period": "2026-12-09"
+          },
+          "evidence_lineages": [
+            "FRED:DFEDTARU",
+            "FederalReserve:scheduled-FOMC"
+          ]
+        },
+        "source_id": "000000000005:d103ad67e2009614d8d3089b786b47c5cc58c36dfbba33cdabef5a287837c6dd",
+        "source_kind": "DomainResearchStudy",
+        "source_payload_sha256": "cfec24e3331520f15dbb72b67e613c25ddaa4df2d09e8e99c53c4ba40c522e9b",
+        "source_rowid": 1025363,
+        "source_study_sha256": "cfe9a759bb65a23016020a731065a6d38e06103a8a3efe179038f3e61634bee4",
+        "type": "forecast"
+      },
+      "forecast": {
+        "model_id": "fomc-recent-policy-shrinkage-v24.1",
+        "model_version": "fomc-recent-policy-shrinkage-v24.1",
+        "model_sha256": "9f507077a8aea26062d1b55fbcfffffe1f786cff69e536c6bb36417846565bbe",
+        "feature_version": "official-calendar-and-target-upper-before-after-meeting-v1",
+        "hypothesis": "Recent8 regular-meeting distribution shrunk toward full historical distribution",
+        "input_requirements": [
+          "exact FOMC meeting target-upper-bound rule",
+          "official calendar",
+          "at least16 completed regular meetings and observed target upper bounds"
+        ],
+        "performance_criteria": [
+          "native and official-statement-verified outcomes",
+          "event-disjoint calibration vs ordinary frequency baseline"
+        ],
+        "risk_assumptions": "Conditional uncalibrated research only; uncertainty[0,1]; no order authority",
+        "failure_conditions": [
+          "policy regime change",
+          "unscheduled interventions",
+          "calendar revisions",
+          "statement fallback"
+        ],
+        "source_independence": "Both models share official calendar/FRED target history, not independent corroboration",
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false,
+        "domain": "economics",
+        "event_id": "770450",
+        "market_id": "3215007",
+        "token_id": "8077351031134730167836761678618167504307708651130165095377248922919635337796",
+        "probability": 0.28645833333333337,
+        "probability_semantics": "binary_event_probability",
+        "lower_probability": 0.0,
+        "upper_probability": 1.0,
+        "uncertainty": {
+          "lower_probability": 0.0,
+          "upper_probability": 1.0,
+          "type": "uncalibrated_regime_uncertainty_not_sampling_confidence"
+        },
+        "evidence_cutoff": "2026-11-07T23:34:01.709806+00:00",
+        "event_end_time": "2026-12-10T05:00:00+00:00",
+        "rules_sha256": "fdb210318474078daa855d747ed941b2113f64d186318fe4a0e4776c7737e4e6",
+        "evidence_ids": [
+          "44fa99205a01e5c1d036e00f9b528aa34dfa715c012b08a44f5aac424394e764",
+          "2513a56e8ca788f2de42e4f42112350d4521639a06e60411294ffb1ed7aa19f8"
+        ],
+        "source_lineages": [
+          "FederalReserve:scheduled-FOMC",
+          "FRED:DFEDTARU"
+        ],
+        "contract": {
+          "kind": "fomc",
+          "meeting_date": "2026-12-09",
+          "meeting_start_date": "2026-12-08",
+          "event_end_time": "2026-12-10T05:00:00+00:00",
+          "target": "no_change_target_federal_funds_upper_bound",
+          "selected_outcome": "No",
+          "rules_sha256": "fdb210318474078daa855d747ed941b2113f64d186318fe4a0e4776c7737e4e6",
+          "market": {
+            "schema_version": "1.0",
+            "id": "c463f3c81fbd929d6aa384027df9f8ef96002e014177f998d7ccb7c08c2456c7",
+            "timestamp": "2026-11-07T23:30:02.655700Z",
+            "available_at": "2026-11-07T23:30:02.655700Z",
+            "source": "https://gamma-api.polymarket.com",
+            "exchange": "polymarket",
+            "market_id": "3215007",
+            "event_id": "770450",
+            "question": "Will there be no change in Fed interest rates after the December 2026 meeting?",
+            "token_id": "8077351031134730167836761678618167504307708651130165095377248922919635337796",
+            "outcome": "No",
+            "probability": 0.785,
+            "status": "active",
+            "resolution_rules": "The FED interest rates are defined in this market by the upper bound of the target federal funds range. The decisions on the target federal funds range are made by the Federal Open Market Committee (FOMC) meetings.\n\nThis market will resolve to the amount of basis points the upper bound of the target federal funds rate is changed by versus the level it was prior to the Federal Reserve's December 2026 meeting.\n\nIf the target federal funds rate is changed to a level not expressed in the displayed options, the change will be rounded up to the nearest 25 and will resolve to the relevant bracket. (e.g. if there's a cut/increase of 12.5 bps it will be considered to be 25 bps)\n\nThe resolution source for this market is the FOMC\u2019s statement after its meeting scheduled for December 8-9, 2026 according to the official calendar: https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm.\n\nThe level and change of the target federal funds rate is also published at the official website of the Federal Reserve at https://www.federalreserve.gov/monetarypolicy/openmarket.htm.\n\nThis market may resolve as soon as the FOMC\u2019s statement for their December meeting with relevant data is issued. If no statement is released by the end date of the next scheduled meeting, this market will resolve to the \"No change\" bracket.",
+            "resolution_source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+            "end_time": "2026-12-09T23:59:00Z",
+            "tick_size": 0.01,
+            "min_order_size": 5.0
+          },
+          "calendar_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+          "rate_source": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DFEDTARU&cosd=2023-01-01",
+          "rounding": "nonzero magnitude rounded up to25basispoints"
+        },
+        "dataset_sha256": "dab359d85cffebefc1a369aad70ac3454d40947eb6954994348144abc2cff400",
+        "training_observations": 31,
+        "historical_meeting_changes": [
+          {
+            "date": "2023-02-01",
+            "before_upper": "4.50",
+            "after_upper": "4.75",
+            "rounded_bps": 25
+          },
+          {
+            "date": "2023-03-22",
+            "before_upper": "4.75",
+            "after_upper": "5.00",
+            "rounded_bps": 25
+          },
+          {
+            "date": "2023-05-03",
+            "before_upper": "5.00",
+            "after_upper": "5.25",
+            "rounded_bps": 25
+          },
+          {
+            "date": "2023-06-14",
+            "before_upper": "5.25",
+            "after_upper": "5.25",
+            "rounded_bps": 0
+          },
+          {
+            "date": "2023-07-26",
+            "before_upper": "5.25",
+            "after_upper": "5.50",
+            "rounded_bps": 25
+          },
+          {
+            "date": "2023-09-20",
+            "before_upper": "5.50",
+            "after_upper": "5.50",
+            "rounded_bps": 0
+          },
+          {
+            "date": "2023-11-01",
+            "before_upper": "5.50",
+            "after_upper": "5.50",
+            "rounded_bps": 0
+          },
+          {
+            "date": "2023-12-13",
+            "before_upper": "5.50",
+            "after_upper": "5.50",
+            "rounded_bps": 0
+          },
+          {
+            "date": "2024-01-31",
+            "before_upper": "5.50",
+            "after_upper": "5.50",
+            "rounded_bps": 0
+          },
+          {
+            "date": "2024-03-20",
+            "before_upper": "5.50",
+            "after_upper": "5.50",
+            "rounded_bps": 0
+          },
+          {
+            "date": "2024-05-01",
+            "before_upper": "5.50",
+            "after_upper": "5.50",
+            "rounded_bps": 0
+          },
+          {
+            "date": "2024-06-12",
+            "before_upper": "5.50",
+            "after_upper": "5.50",
+            "rounded_bps": 0
+          },
+          {
+            "date": "2024-07-31",
+            "before_upper": "5.50",
+            "after_upper": "5.50",
+            "rounded_bps": 0
+          },
+          {
+            "date": "2024-09-18",
+            "before_upper": "5.50",
+            "after_upper": "5.00",
+            "rounded_bps": -50
+          },
+          {
+            "date": "2024-11-07",
+            "before_upper": "5.00",
+            "after_upper": "4.75",
+            "rounded_bps": -25
+          },
+          {
+            "date": "2024-12-18",
+            "before_upper": "4.75",
+            "after_upper": "4.50",
+            "rounded_bps": -25
+          },
+          {
+            "date": "2025-01-29",
+            "before_upper": "4.50",
+            "after_upper": "4.50",
+            "rounded_bps": 0
+          },
+          {
+            "date": "2025-03-19",
+            "before_upper": "4.50",
+            "after_upper": "4.50",
+            "rounded_bps": 0
+          },
+          {
+            "date": "2025-05-07",
+            "before_upper": "4.50",
+            "after_upper": "4.50",
+            "rounded_bps": 0
+          },
+          {
+            "date": "2025-06-18",
+            "before_upper": "4.50",
+            "after_upper": "4.50",
+            "rounded_bps": 0
+          },
+          {
+            "date": "2025-07-30",
+            "before_upper": "4.50",
+            "after_upper": "4.50",
+            "rounded_bps": 0
+          },
+          {
+            "date": "2025-09-17",
+            "before_upper": "4.50",
+            "after_upper": "4.25",
+            "rounded_bps": -25
+          },
+          {
+            "date": "2025-10-29",
+            "before_upper": "4.25",
+            "after_upper": "4.00",
+            "rounded_bps": -25
+          },
+          {
+            "date": "2025-12-10",
+            "before_upper": "4.00",
+            "after_upper": "3.75",
+            "rounded_bps": -25
+          },
+          {
+            "date": "2026-01-28",
+            "before_upper": "3.75",
+            "after_upper": "3.75",
+            "rounded_bps": 0
+          },
+          {
+            "date": "2026-03-18",
+            "before_upper": "3.75",
+            "after_upper": "3.75",
+            "rounded_bps": 0
+          },
+          {
+            "date": "2026-04-29",
+            "before_upper": "3.75",
+            "after_upper": "3.75",
+            "rounded_bps": 0
+          },
+          {
+            "date": "2026-06-17",
+            "before_upper": "3.75",
+            "after_upper": "3.75",
+            "rounded_bps": 0
+          },
+          {
+            "date": "2026-07-29",
+            "before_upper": "3.75",
+            "after_upper": "3.75",
+            "rounded_bps": 0
+          },
+          {
+            "date": "2026-09-16",
+            "before_upper": "3.75",
+            "after_upper": "4.00",
+            "rounded_bps": 25
+          },
+          {
+            "date": "2026-10-28",
+            "before_upper": "4.00",
+            "after_upper": "4.00",
+            "rounded_bps": 0
+          }
+        ],
+        "current_observed_upper": "4.00",
+        "independent_of_polymarket": true,
+        "calibration_status": "unvalidated_research",
+        "brier": null,
+        "log_loss": null,
+        "conditioning": "ordinary scheduled FOMC statement; no exceptional delayed-statement fallback",
+        "unconditional_contract_probability": false,
+        "market_comparison_status": "conditional_policy_probability_not_unconditional_token_payout",
+        "limitations": [
+          "Past policy-meeting frequency is a naive falsifiable baseline, not a forecast of current committee preferences",
+          "No macroeconomic covariates, consensus or market-implied rate inputs",
+          "Current authentic snapshots are not historical point-in-time vintages",
+          "Before/after daily rates approximate scheduled policy outcomes; final scoring requires official statement plus native proof"
+        ],
+        "timestamp": "2026-11-07T23:34:01.720376+00:00",
+        "market": {
+          "schema_version": "1.0",
+          "id": "c463f3c81fbd929d6aa384027df9f8ef96002e014177f998d7ccb7c08c2456c7",
+          "timestamp": "2026-11-07T23:30:02.655700Z",
+          "available_at": "2026-11-07T23:30:02.655700Z",
+          "source": "https://gamma-api.polymarket.com",
+          "exchange": "polymarket",
+          "market_id": "3215007",
+          "event_id": "770450",
+          "question": "Will there be no change in Fed interest rates after the December 2026 meeting?",
+          "token_id": "8077351031134730167836761678618167504307708651130165095377248922919635337796",
+          "outcome": "No",
+          "probability": 0.785,
+          "status": "active",
+          "resolution_rules": "The FED interest rates are defined in this market by the upper bound of the target federal funds range. The decisions on the target federal funds range are made by the Federal Open Market Committee (FOMC) meetings.\n\nThis market will resolve to the amount of basis points the upper bound of the target federal funds rate is changed by versus the level it was prior to the Federal Reserve's December 2026 meeting.\n\nIf the target federal funds rate is changed to a level not expressed in the displayed options, the change will be rounded up to the nearest 25 and will resolve to the relevant bracket. (e.g. if there's a cut/increase of 12.5 bps it will be considered to be 25 bps)\n\nThe resolution source for this market is the FOMC\u2019s statement after its meeting scheduled for December 8-9, 2026 according to the official calendar: https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm.\n\nThe level and change of the target federal funds rate is also published at the official website of the Federal Reserve at https://www.federalreserve.gov/monetarypolicy/openmarket.htm.\n\nThis market may resolve as soon as the FOMC\u2019s statement for their December meeting with relevant data is issued. If no statement is released by the end date of the next scheduled meeting, this market will resolve to the \"No change\" bracket.",
+          "resolution_source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+          "end_time": "2026-12-09T23:59:00Z",
+          "tick_size": 0.01,
+          "min_order_size": 5.0
+        },
+        "book": {
+          "schema_version": "1.0",
+          "id": "bd62ee77af5d2a9a8cd8981459c8979c7911e9338b7e7c0e0f9e3241dff6f86a",
+          "timestamp": "2026-11-07T23:33:50.704000Z",
+          "available_at": "2026-11-07T23:33:50.746006Z",
+          "source": "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+          "exchange": "polymarket",
+          "market_id": "3215007",
+          "token_id": "8077351031134730167836761678618167504307708651130165095377248922919635337796",
+          "bids": [
+            {
+              "price": 0.78,
+              "size": 24507.58
+            },
+            {
+              "price": 0.77,
+              "size": 223755.56
+            },
+            {
+              "price": 0.76,
+              "size": 156295.59
+            },
+            {
+              "price": 0.75,
+              "size": 20375.29
+            },
+            {
+              "price": 0.74,
+              "size": 7096.19
+            },
+            {
+              "price": 0.73,
+              "size": 15057.89
+            },
+            {
+              "price": 0.72,
+              "size": 15169.05
+            },
+            {
+              "price": 0.71,
+              "size": 16321.75
+            },
+            {
+              "price": 0.7,
+              "size": 5432.1
+            },
+            {
+              "price": 0.69,
+              "size": 5220.71
+            },
+            {
+              "price": 0.67,
+              "size": 5126.72
+            },
+            {
+              "price": 0.66,
+              "size": 400.0
+            },
+            {
+              "price": 0.65,
+              "size": 17.1
+            },
+            {
+              "price": 0.64,
+              "size": 5800.0
+            },
+            {
+              "price": 0.63,
+              "size": 712.4
+            },
+            {
+              "price": 0.61,
+              "size": 6000.0
+            },
+            {
+              "price": 0.6,
+              "size": 7590.12
+            },
+            {
+              "price": 0.58,
+              "size": 5590.0
+            },
+            {
+              "price": 0.57,
+              "size": 100.0
+            },
+            {
+              "price": 0.56,
+              "size": 2372.72
+            },
+            {
+              "price": 0.55,
+              "size": 5100.0
+            },
+            {
+              "price": 0.54,
+              "size": 826.37
+            },
+            {
+              "price": 0.53,
+              "size": 1018.86
+            },
+            {
+              "price": 0.52,
+              "size": 5355.0
+            },
+            {
+              "price": 0.51,
+              "size": 89.0
+            },
+            {
+              "price": 0.5,
+              "size": 269.99
+            },
+            {
+              "price": 0.49,
+              "size": 5000.0
+            },
+            {
+              "price": 0.46,
+              "size": 548.93
+            },
+            {
+              "price": 0.45,
+              "size": 10.0
+            },
+            {
+              "price": 0.42,
+              "size": 10.0
+            },
+            {
+              "price": 0.41,
+              "size": 1000.0
+            },
+            {
+              "price": 0.4,
+              "size": 999.16
+            },
+            {
+              "price": 0.39,
+              "size": 12.82
+            },
+            {
+              "price": 0.31,
+              "size": 1000.0
+            },
+            {
+              "price": 0.3,
+              "size": 2972.91
+            },
+            {
+              "price": 0.27,
+              "size": 5.0
+            },
+            {
+              "price": 0.18,
+              "size": 5.2
+            },
+            {
+              "price": 0.17,
+              "size": 588.0
+            },
+            {
+              "price": 0.16,
+              "size": 110.0
+            },
+            {
+              "price": 0.15,
+              "size": 500.0
+            },
+            {
+              "price": 0.1,
+              "size": 334.54
+            },
+            {
+              "price": 0.09,
+              "size": 894.04
+            },
+            {
+              "price": 0.08,
+              "size": 5.76
+            },
+            {
+              "price": 0.07,
+              "size": 10365.6
+            },
+            {
+              "price": 0.06,
+              "size": 2404.32
+            },
+            {
+              "price": 0.05,
+              "size": 3948.96
+            },
+            {
+              "price": 0.04,
+              "size": 33006.95
+            },
+            {
+              "price": 0.03,
+              "size": 15647.03
+            },
+            {
+              "price": 0.02,
+              "size": 90008.44
+            },
+            {
+              "price": 0.01,
+              "size": 2118088.29
+            }
+          ],
+          "asks": [
+            {
+              "price": 0.79,
+              "size": 521065.91
+            },
+            {
+              "price": 0.8,
+              "size": 468051.71
+            },
+            {
+              "price": 0.81,
+              "size": 1007892.54
+            },
+            {
+              "price": 0.82,
+              "size": 85310.58
+            },
+            {
+              "price": 0.83,
+              "size": 4222.9
+            },
+            {
+              "price": 0.84,
+              "size": 3982.76
+            },
+            {
+              "price": 0.85,
+              "size": 5270.97
+            },
+            {
+              "price": 0.86,
+              "size": 3200.0
+            },
+            {
+              "price": 0.88,
+              "size": 505.0
+            },
+            {
+              "price": 0.89,
+              "size": 500.0
+            },
+            {
+              "price": 0.9,
+              "size": 2343.0
+            },
+            {
+              "price": 0.91,
+              "size": 4000.0
+            },
+            {
+              "price": 0.92,
+              "size": 7119.39
+            },
+            {
+              "price": 0.93,
+              "size": 1377.34
+            },
+            {
+              "price": 0.94,
+              "size": 11335.9
+            },
+            {
+              "price": 0.95,
+              "size": 11792.71
+            },
+            {
+              "price": 0.96,
+              "size": 12165.27
+            },
+            {
+              "price": 0.97,
+              "size": 34561.66
+            },
+            {
+              "price": 0.98,
+              "size": 69090.12
+            },
+            {
+              "price": 0.99,
+              "size": 1225685.36
+            }
+          ],
+          "sequence": 0,
+          "complete": true
+        },
+        "book_id": "bd62ee77af5d2a9a8cd8981459c8979c7911e9338b7e7c0e0f9e3241dff6f86a",
+        "book_sha256": "7d535baab67aaa15bc87acb33f86bc3a6256bb1f3806e763207d38e2cd1e9db9",
+        "market_probability": null,
+        "market_expected_payout": 0.785,
+        "evidence_lineages": [
+          "Board of Governors of the Federal Reserve System:fomc-calendar",
+          "Federal Reserve Bank of St Louis:DFEDTARU"
+        ],
+        "market_baseline_comparable": false,
+        "adapter": "economics",
+        "enrollment_id": "dbb56b57b867d0c13835380513d621a44a978c172c06901c85e54be79c8aed51",
+        "reviewed_dependency_group": null,
+        "independence_reviewed": false,
+        "horizon_bucket": "over31d",
+        "id": "337f3f1a622cac4a4038bc513642a3733147cb0186dbcdf86ca7bf9f1bcebe00"
+      },
+      "study_id": "000000000005:d103ad67e2009614d8d3089b786b47c5cc58c36dfbba33cdabef5a287837c6dd",
+      "study_sha256": "cfe9a759bb65a23016020a731065a6d38e06103a8a3efe179038f3e61634bee4"
+    },
+    {
+      "metadata": {
+        "available_at": "2026-11-08T00:45:07.607005Z",
+        "cohort_id": "64afa3b98e9e712edcbd9d883f18606cc5aa2d645e90226815ae84e24ee5e6b3",
+        "forecast": {
+          "book_sha256": "01db3502e5b6c932ca2c0b814383a2d16340380950da54c120fb4aefd1ee4049",
+          "calibration_status": "unvalidated_research",
+          "domain": "finance",
+          "event_end_time": "2026-11-09T21:00:00+00:00",
+          "event_id": "1324979",
+          "evidence_cutoff": "2026-11-08T00:45:07.588304+00:00",
+          "feature_version": "sp500-current-observed-cash-closes-v1",
+          "id": "4efabf715151a98029c13e0e56f7236a2cb1537504e3dce6ef5970365f93cbbe",
+          "lower_probability": 0.0,
+          "market_baseline_comparable": false,
+          "market_expected_payout": 0.5449999999999999,
+          "market_id": "6747198",
+          "market_probability": null,
+          "model_id": "spx-weekday-beta-direction-v25.1",
+          "model_sha256": "af337d9504ba57fe4fc56c406e57d27f9fc4ae29706a63db38237ecf68195ee2",
+          "model_version": "spx-weekday-beta-direction-v25.1",
+          "probability": 0.6033755274261603,
+          "probability_semantics": "binary_event_probability",
+          "rules_sha256": "ede860defc1dede7cfb1f23c9f1f8b810308e6650bd157ecd84ed04f7f0b1660",
+          "source_lineages": [
+            "FRED:SP500:cash-index"
+          ],
+          "target_conditioning": "ordinary completed strictly non-tied regular session; no halt/fallback or publisher discrepancy",
+          "timestamp": "2026-11-08T00:45:07.605878+00:00",
+          "token_id": "48590210093932277918192534757467877715987536553015361732850151516868508486077",
+          "unconditional_contract_probability": false,
+          "upper_probability": 1.0
+        },
+        "forecast_id": "4efabf715151a98029c13e0e56f7236a2cb1537504e3dce6ef5970365f93cbbe",
+        "forecast_sha256": "b3adeb7047477fab0b1181fb9c0fa38e30c06c934bd329babc24829050dce92a",
+        "proof_sha256": "3a58daa0fee4f911e759fa5c3d140fa089cbb18b0d423fdd4220b6911e21afed",
+        "rejection": null,
+        "replay_verified": true,
+        "review": {
+          "canonical_group_id": "51ac3d78a77df92f07e98b74922111c85c4da75713b8fdade9a97a8893813a14",
+          "dependency_tags": [
+            "financial-symbol:SPX",
+            "financial-UTC-day:2026-11-09"
+          ],
+          "descriptor": {
+            "domain": "finance",
+            "ends_at": "2026-11-09T21:00:00+00:00",
+            "reference_source": "https://www.wsj.com/market-data/stocks",
+            "resolution_reference": "https://www.wsj.com/market-data/stocks",
+            "starts_at": "2026-11-09T14:30:00+00:00",
+            "symbol": "SPX"
+          },
+          "evidence_lineages": [
+            "FRED:SP500:cash-index"
+          ]
+        },
+        "source_id": "000000000028:062f3f25321ed647c48efa90380174d678b091e1ef176ebbd12c964e7009757e",
+        "source_kind": "ExpansionResearchStudy",
+        "source_payload_sha256": "d424a10149e0939016cc2346170da3362164f91ae959453df09e5e5c883167bc",
+        "source_rowid": 1049541,
+        "source_study_sha256": "6058a435cc6f9bf7ae45a9c28baef0e29487345ed4433954e7418a664e7af45d",
+        "type": "forecast"
+      },
+      "forecast": {
+        "model_id": "spx-weekday-beta-direction-v25.1",
+        "model_version": "spx-weekday-beta-direction-v25.1",
+        "model_sha256": "af337d9504ba57fe4fc56c406e57d27f9fc4ae29706a63db38237ecf68195ee2",
+        "feature_version": "sp500-current-observed-cash-closes-v1",
+        "domain": "finance",
+        "event_id": "1324979",
+        "market_id": "6747198",
+        "token_id": "48590210093932277918192534757467877715987536553015361732850151516868508486077",
+        "probability": 0.6033755274261603,
+        "probability_semantics": "binary_event_probability",
+        "lower_probability": 0.0,
+        "upper_probability": 1.0,
+        "uncertainty": 1.0,
+        "training_observations": 235,
+        "last_source_observation": "2026-11-05T21:00:00+00:00",
+        "dataset_sha256": "d4e15ab006a74b6e54e48358253afe5656c1be2c6484431640e8ccbfdbba31f5",
+        "evidence_ids": [
+          "404637260dcc6c771a43c710de12f52b830cafd2f8e8eb90c81d2b90bedefbae"
+        ],
+        "evidence_cutoff": "2026-11-08T00:45:07.588304+00:00",
+        "event_end_time": "2026-11-09T21:00:00+00:00",
+        "rules_sha256": "ede860defc1dede7cfb1f23c9f1f8b810308e6650bd157ecd84ed04f7f0b1660",
+        "contract": {
+          "kind": "spx_daily_direction",
+          "symbol": "SPX",
+          "asset": "S&P 500 Index",
+          "reference_source": "https://www.wsj.com/market-data/stocks",
+          "source_url": "https://www.wsj.com/market-data/stocks",
+          "target_date": "2026-11-09",
+          "target_weekday": 0,
+          "period_start": "2026-11-09T14:30:00+00:00",
+          "period_end": "2026-11-09T21:00:00+00:00",
+          "settlement_at": "2026-11-09T21:00:00+00:00",
+          "selected_outcome": "Up",
+          "market": {
+            "schema_version": "1.0",
+            "id": "a3826bc127fd38062b15672a4c45ed02ceaa21a866aad5336598d7b7bfea6140",
+            "timestamp": "2026-11-08T00:41:03.510805Z",
+            "available_at": "2026-11-08T00:41:03.510805Z",
+            "source": "https://gamma-api.polymarket.com",
+            "exchange": "polymarket",
+            "market_id": "6747198",
+            "event_id": "1324979",
+            "question": "S&P 500 (SPX) Up or Down on November 9?",
+            "token_id": "48590210093932277918192534757467877715987536553015361732850151516868508486077",
+            "outcome": "Up",
+            "probability": 0.545,
+            "status": "active",
+            "resolution_rules": "This market will resolve to \"Up\" if the official S&P 500 Index closing price for S&P 500 (SPX) on Monday, November 9, 2026 is higher than the official S&P 500 Index closing price for SPX on the most recent prior trading day.\n\nThis market will resolve to \"Down\" if the official S&P 500 Index closing price for S&P 500 (SPX) on Monday, November 9, 2026 is lower than the official S&P 500 Index closing price for SPX on the most recent prior trading day.\n\nE.g., ordinarily, a market on Monday would refer to the previous Friday for its most recent closing price, unless that Friday were a market holiday, in which case it would refer to Thursday, or the next most recent trading day.\n\nIf the two specified closing prices are exactly equal, this market will resolve 50-50. Note that all figures will be rounded to the nearest cent using standard rounding.\n\nIf SPX does not trade at all during the regular session, the market will resolve 50-50.\n\nIf either of the relevant days are shortened (for example, due to a market holiday schedule), the official closing price published by S&P 500 Index for that shortened session will still be used for resolution.\n\nIf either of the relevant days have no official closing price (for example, due to a trading halt into the market close, system issue, delisting, or other disruption), the market will use the last valid on-exchange trade price of the regular session as the effective closing price.\n\nThe resolution source for this market is the Wall Street Journal, specifically the Close values published by the WSJ under \"Historical Prices\".\n\nUS: https://www.wsj.com/market-data/stocks\nEMEA: https://www.wsj.com/market-data/stocks/emea \nASIA: https://www.wsj.com/market-data/stocks/asia",
+            "resolution_source": "https://www.wsj.com/market-data/stocks",
+            "end_time": "2026-11-09T21:00:00Z",
+            "tick_size": 0.01,
+            "min_order_size": 5.0
+          },
+          "rules_sha256": "ede860defc1dede7cfb1f23c9f1f8b810308e6650bd157ecd84ed04f7f0b1660",
+          "conditioning": "ordinary completed strictly non-tied regular session; no halt/fallback or publisher discrepancy",
+          "calendar_status": "weekday provisional; exchange holiday validity unverified, conditional forecast only"
+        },
+        "source_lineages": [
+          "FRED:SP500:cash-index"
+        ],
+        "calibration_status": "unvalidated_research",
+        "target_conditioning": "ordinary completed strictly non-tied regular session; no halt/fallback or publisher discrepancy",
+        "unconditional_contract_probability": false,
+        "market_probability": null,
+        "limitations": [
+          "No verified historical WSJ prices, holidays, revised-vintage availability or independent held-out calibration",
+          "FRED is the exact cash-index asset but cannot by itself prove WSJ contract settlement",
+          "Models share one source and cannot count as independent confirmation"
+        ],
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false,
+        "timestamp": "2026-11-08T00:45:07.605878+00:00",
+        "market": {
+          "schema_version": "1.0",
+          "id": "a3826bc127fd38062b15672a4c45ed02ceaa21a866aad5336598d7b7bfea6140",
+          "timestamp": "2026-11-08T00:41:03.510805Z",
+          "available_at": "2026-11-08T00:41:03.510805Z",
+          "source": "https://gamma-api.polymarket.com",
+          "exchange": "polymarket",
+          "market_id": "6747198",
+          "event_id": "1324979",
+          "question": "S&P 500 (SPX) Up or Down on November 9?",
+          "token_id": "48590210093932277918192534757467877715987536553015361732850151516868508486077",
+          "outcome": "Up",
+          "probability": 0.545,
+          "status": "active",
+          "resolution_rules": "This market will resolve to \"Up\" if the official S&P 500 Index closing price for S&P 500 (SPX) on Monday, November 9, 2026 is higher than the official S&P 500 Index closing price for SPX on the most recent prior trading day.\n\nThis market will resolve to \"Down\" if the official S&P 500 Index closing price for S&P 500 (SPX) on Monday, November 9, 2026 is lower than the official S&P 500 Index closing price for SPX on the most recent prior trading day.\n\nE.g., ordinarily, a market on Monday would refer to the previous Friday for its most recent closing price, unless that Friday were a market holiday, in which case it would refer to Thursday, or the next most recent trading day.\n\nIf the two specified closing prices are exactly equal, this market will resolve 50-50. Note that all figures will be rounded to the nearest cent using standard rounding.\n\nIf SPX does not trade at all during the regular session, the market will resolve 50-50.\n\nIf either of the relevant days are shortened (for example, due to a market holiday schedule), the official closing price published by S&P 500 Index for that shortened session will still be used for resolution.\n\nIf either of the relevant days have no official closing price (for example, due to a trading halt into the market close, system issue, delisting, or other disruption), the market will use the last valid on-exchange trade price of the regular session as the effective closing price.\n\nThe resolution source for this market is the Wall Street Journal, specifically the Close values published by the WSJ under \"Historical Prices\".\n\nUS: https://www.wsj.com/market-data/stocks\nEMEA: https://www.wsj.com/market-data/stocks/emea \nASIA: https://www.wsj.com/market-data/stocks/asia",
+          "resolution_source": "https://www.wsj.com/market-data/stocks",
+          "end_time": "2026-11-09T21:00:00Z",
+          "tick_size": 0.01,
+          "min_order_size": 5.0
+        },
+        "book": {
+          "schema_version": "1.0",
+          "id": "57bbbb326b6a73b1c831f54e65d8ff7835fc16785e9f3e5d0c117bf27a128fc8",
+          "timestamp": "2026-11-08T00:44:57.397000Z",
+          "available_at": "2026-11-08T00:45:07.587882Z",
+          "source": "https://clob.polymarket.com",
+          "exchange": "polymarket",
+          "market_id": "6747198",
+          "token_id": "48590210093932277918192534757467877715987536553015361732850151516868508486077",
+          "bids": [
+            {
+              "price": 0.52,
+              "size": 22.85
+            },
+            {
+              "price": 0.5,
+              "size": 100.0
+            },
+            {
+              "price": 0.48,
+              "size": 100.0
+            },
+            {
+              "price": 0.47,
+              "size": 21.27
+            },
+            {
+              "price": 0.46,
+              "size": 100.0
+            },
+            {
+              "price": 0.43,
+              "size": 149.25
+            },
+            {
+              "price": 0.42,
+              "size": 160.0
+            },
+            {
+              "price": 0.38,
+              "size": 5.0
+            },
+            {
+              "price": 0.05,
+              "size": 5.0
+            },
+            {
+              "price": 0.02,
+              "size": 37.06
+            },
+            {
+              "price": 0.01,
+              "size": 566.87
+            }
+          ],
+          "asks": [
+            {
+              "price": 0.57,
+              "size": 223.54
+            },
+            {
+              "price": 0.6,
+              "size": 15.0
+            },
+            {
+              "price": 0.61,
+              "size": 97.5
+            },
+            {
+              "price": 0.62,
+              "size": 31.31
+            },
+            {
+              "price": 0.63,
+              "size": 135.05
+            },
+            {
+              "price": 0.94,
+              "size": 9.96
+            },
+            {
+              "price": 0.95,
+              "size": 20.0
+            },
+            {
+              "price": 0.96,
+              "size": 5.0
+            },
+            {
+              "price": 0.98,
+              "size": 27.27
+            },
+            {
+              "price": 0.99,
+              "size": 566.68
+            }
+          ],
+          "sequence": 0,
+          "complete": true
+        },
+        "book_id": "57bbbb326b6a73b1c831f54e65d8ff7835fc16785e9f3e5d0c117bf27a128fc8",
+        "book_sha256": "01db3502e5b6c932ca2c0b814383a2d16340380950da54c120fb4aefd1ee4049",
+        "market_expected_payout": 0.5449999999999999,
+        "evidence_lineages": [
+          "Federal Reserve Bank of St. Louis FRED:SP500"
+        ],
+        "market_baseline_comparable": false,
+        "adapter": "finance",
+        "enrollment_id": "c0c8d63d6952dfb86b3edd3d0bd3df3dd987fccbb405b720c82d120090ff1f56",
+        "reviewed_dependency_group": null,
+        "independence_reviewed": false,
+        "horizon_bucket": "1-7d",
+        "id": "4efabf715151a98029c13e0e56f7236a2cb1537504e3dce6ef5970365f93cbbe"
+      },
+      "study_id": "000000000028:062f3f25321ed647c48efa90380174d678b091e1ef176ebbd12c964e7009757e",
+      "study_sha256": "6058a435cc6f9bf7ae45a9c28baef0e29487345ed4433954e7418a664e7af45d"
+    },
+    {
+      "metadata": {
+        "available_at": "2026-11-08T00:45:07.607005Z",
+        "cohort_id": "64afa3b98e9e712edcbd9d883f18606cc5aa2d645e90226815ae84e24ee5e6b3",
+        "forecast": {
+          "book_sha256": "01db3502e5b6c932ca2c0b814383a2d16340380950da54c120fb4aefd1ee4049",
+          "calibration_status": "unvalidated_research",
+          "domain": "finance",
+          "event_end_time": "2026-11-09T21:00:00+00:00",
+          "event_id": "1324979",
+          "evidence_cutoff": "2026-11-08T00:45:07.588304+00:00",
+          "feature_version": "sp500-current-observed-cash-closes-v1",
+          "id": "3fee7d83f1f6e38ecdb2258c618acccdca0335f9a9d1b631d40ce8b827c0c481",
+          "lower_probability": 0.0,
+          "market_baseline_comparable": false,
+          "market_expected_payout": 0.5449999999999999,
+          "market_id": "6747198",
+          "market_probability": null,
+          "model_id": "spx-gaussian-logreturn-direction-v25.1",
+          "model_sha256": "eb87c826ea2801030105a57e7cea126e5333ff7c1d52ceaabbb015404870145a",
+          "model_version": "spx-gaussian-logreturn-direction-v25.1",
+          "probability": 0.5152451490710184,
+          "probability_semantics": "binary_event_probability",
+          "rules_sha256": "ede860defc1dede7cfb1f23c9f1f8b810308e6650bd157ecd84ed04f7f0b1660",
+          "source_lineages": [
+            "FRED:SP500:cash-index"
+          ],
+          "target_conditioning": "ordinary completed strictly non-tied regular session; no halt/fallback or publisher discrepancy",
+          "timestamp": "2026-11-08T00:45:07.605878+00:00",
+          "token_id": "48590210093932277918192534757467877715987536553015361732850151516868508486077",
+          "unconditional_contract_probability": false,
+          "upper_probability": 1.0
+        },
+        "forecast_id": "3fee7d83f1f6e38ecdb2258c618acccdca0335f9a9d1b631d40ce8b827c0c481",
+        "forecast_sha256": "3aa98541454ef4357ff5845a1c41e964b9079bc683f75844065f9869d25dd3f5",
+        "proof_sha256": "bfd4c65eaccf36f99ddfcb59650403e6d43db540f3f4e6f42162913912fdf0fe",
+        "rejection": null,
+        "replay_verified": true,
+        "review": {
+          "canonical_group_id": "51ac3d78a77df92f07e98b74922111c85c4da75713b8fdade9a97a8893813a14",
+          "dependency_tags": [
+            "financial-symbol:SPX",
+            "financial-UTC-day:2026-11-09"
+          ],
+          "descriptor": {
+            "domain": "finance",
+            "ends_at": "2026-11-09T21:00:00+00:00",
+            "reference_source": "https://www.wsj.com/market-data/stocks",
+            "resolution_reference": "https://www.wsj.com/market-data/stocks",
+            "starts_at": "2026-11-09T14:30:00+00:00",
+            "symbol": "SPX"
+          },
+          "evidence_lineages": [
+            "FRED:SP500:cash-index"
+          ]
+        },
+        "source_id": "000000000028:062f3f25321ed647c48efa90380174d678b091e1ef176ebbd12c964e7009757e",
+        "source_kind": "ExpansionResearchStudy",
+        "source_payload_sha256": "d424a10149e0939016cc2346170da3362164f91ae959453df09e5e5c883167bc",
+        "source_rowid": 1049541,
+        "source_study_sha256": "6058a435cc6f9bf7ae45a9c28baef0e29487345ed4433954e7418a664e7af45d",
+        "type": "forecast"
+      },
+      "forecast": {
+        "model_id": "spx-gaussian-logreturn-direction-v25.1",
+        "model_version": "spx-gaussian-logreturn-direction-v25.1",
+        "model_sha256": "eb87c826ea2801030105a57e7cea126e5333ff7c1d52ceaabbb015404870145a",
+        "feature_version": "sp500-current-observed-cash-closes-v1",
+        "domain": "finance",
+        "event_id": "1324979",
+        "market_id": "6747198",
+        "token_id": "48590210093932277918192534757467877715987536553015361732850151516868508486077",
+        "probability": 0.5152451490710184,
+        "probability_semantics": "binary_event_probability",
+        "lower_probability": 0.0,
+        "upper_probability": 1.0,
+        "uncertainty": 1.0,
+        "training_observations": 252,
+        "last_source_observation": "2026-11-05T21:00:00+00:00",
+        "dataset_sha256": "d4e15ab006a74b6e54e48358253afe5656c1be2c6484431640e8ccbfdbba31f5",
+        "evidence_ids": [
+          "404637260dcc6c771a43c710de12f52b830cafd2f8e8eb90c81d2b90bedefbae"
+        ],
+        "evidence_cutoff": "2026-11-08T00:45:07.588304+00:00",
+        "event_end_time": "2026-11-09T21:00:00+00:00",
+        "rules_sha256": "ede860defc1dede7cfb1f23c9f1f8b810308e6650bd157ecd84ed04f7f0b1660",
+        "contract": {
+          "kind": "spx_daily_direction",
+          "symbol": "SPX",
+          "asset": "S&P 500 Index",
+          "reference_source": "https://www.wsj.com/market-data/stocks",
+          "source_url": "https://www.wsj.com/market-data/stocks",
+          "target_date": "2026-11-09",
+          "target_weekday": 0,
+          "period_start": "2026-11-09T14:30:00+00:00",
+          "period_end": "2026-11-09T21:00:00+00:00",
+          "settlement_at": "2026-11-09T21:00:00+00:00",
+          "selected_outcome": "Up",
+          "market": {
+            "schema_version": "1.0",
+            "id": "a3826bc127fd38062b15672a4c45ed02ceaa21a866aad5336598d7b7bfea6140",
+            "timestamp": "2026-11-08T00:41:03.510805Z",
+            "available_at": "2026-11-08T00:41:03.510805Z",
+            "source": "https://gamma-api.polymarket.com",
+            "exchange": "polymarket",
+            "market_id": "6747198",
+            "event_id": "1324979",
+            "question": "S&P 500 (SPX) Up or Down on November 9?",
+            "token_id": "48590210093932277918192534757467877715987536553015361732850151516868508486077",
+            "outcome": "Up",
+            "probability": 0.545,
+            "status": "active",
+            "resolution_rules": "This market will resolve to \"Up\" if the official S&P 500 Index closing price for S&P 500 (SPX) on Monday, November 9, 2026 is higher than the official S&P 500 Index closing price for SPX on the most recent prior trading day.\n\nThis market will resolve to \"Down\" if the official S&P 500 Index closing price for S&P 500 (SPX) on Monday, November 9, 2026 is lower than the official S&P 500 Index closing price for SPX on the most recent prior trading day.\n\nE.g., ordinarily, a market on Monday would refer to the previous Friday for its most recent closing price, unless that Friday were a market holiday, in which case it would refer to Thursday, or the next most recent trading day.\n\nIf the two specified closing prices are exactly equal, this market will resolve 50-50. Note that all figures will be rounded to the nearest cent using standard rounding.\n\nIf SPX does not trade at all during the regular session, the market will resolve 50-50.\n\nIf either of the relevant days are shortened (for example, due to a market holiday schedule), the official closing price published by S&P 500 Index for that shortened session will still be used for resolution.\n\nIf either of the relevant days have no official closing price (for example, due to a trading halt into the market close, system issue, delisting, or other disruption), the market will use the last valid on-exchange trade price of the regular session as the effective closing price.\n\nThe resolution source for this market is the Wall Street Journal, specifically the Close values published by the WSJ under \"Historical Prices\".\n\nUS: https://www.wsj.com/market-data/stocks\nEMEA: https://www.wsj.com/market-data/stocks/emea \nASIA: https://www.wsj.com/market-data/stocks/asia",
+            "resolution_source": "https://www.wsj.com/market-data/stocks",
+            "end_time": "2026-11-09T21:00:00Z",
+            "tick_size": 0.01,
+            "min_order_size": 5.0
+          },
+          "rules_sha256": "ede860defc1dede7cfb1f23c9f1f8b810308e6650bd157ecd84ed04f7f0b1660",
+          "conditioning": "ordinary completed strictly non-tied regular session; no halt/fallback or publisher discrepancy",
+          "calendar_status": "weekday provisional; exchange holiday validity unverified, conditional forecast only"
+        },
+        "source_lineages": [
+          "FRED:SP500:cash-index"
+        ],
+        "calibration_status": "unvalidated_research",
+        "target_conditioning": "ordinary completed strictly non-tied regular session; no halt/fallback or publisher discrepancy",
+        "unconditional_contract_probability": false,
+        "market_probability": null,
+        "limitations": [
+          "No verified historical WSJ prices, holidays, revised-vintage availability or independent held-out calibration",
+          "FRED is the exact cash-index asset but cannot by itself prove WSJ contract settlement",
+          "Models share one source and cannot count as independent confirmation"
+        ],
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false,
+        "timestamp": "2026-11-08T00:45:07.605878+00:00",
+        "market": {
+          "schema_version": "1.0",
+          "id": "a3826bc127fd38062b15672a4c45ed02ceaa21a866aad5336598d7b7bfea6140",
+          "timestamp": "2026-11-08T00:41:03.510805Z",
+          "available_at": "2026-11-08T00:41:03.510805Z",
+          "source": "https://gamma-api.polymarket.com",
+          "exchange": "polymarket",
+          "market_id": "6747198",
+          "event_id": "1324979",
+          "question": "S&P 500 (SPX) Up or Down on November 9?",
+          "token_id": "48590210093932277918192534757467877715987536553015361732850151516868508486077",
+          "outcome": "Up",
+          "probability": 0.545,
+          "status": "active",
+          "resolution_rules": "This market will resolve to \"Up\" if the official S&P 500 Index closing price for S&P 500 (SPX) on Monday, November 9, 2026 is higher than the official S&P 500 Index closing price for SPX on the most recent prior trading day.\n\nThis market will resolve to \"Down\" if the official S&P 500 Index closing price for S&P 500 (SPX) on Monday, November 9, 2026 is lower than the official S&P 500 Index closing price for SPX on the most recent prior trading day.\n\nE.g., ordinarily, a market on Monday would refer to the previous Friday for its most recent closing price, unless that Friday were a market holiday, in which case it would refer to Thursday, or the next most recent trading day.\n\nIf the two specified closing prices are exactly equal, this market will resolve 50-50. Note that all figures will be rounded to the nearest cent using standard rounding.\n\nIf SPX does not trade at all during the regular session, the market will resolve 50-50.\n\nIf either of the relevant days are shortened (for example, due to a market holiday schedule), the official closing price published by S&P 500 Index for that shortened session will still be used for resolution.\n\nIf either of the relevant days have no official closing price (for example, due to a trading halt into the market close, system issue, delisting, or other disruption), the market will use the last valid on-exchange trade price of the regular session as the effective closing price.\n\nThe resolution source for this market is the Wall Street Journal, specifically the Close values published by the WSJ under \"Historical Prices\".\n\nUS: https://www.wsj.com/market-data/stocks\nEMEA: https://www.wsj.com/market-data/stocks/emea \nASIA: https://www.wsj.com/market-data/stocks/asia",
+          "resolution_source": "https://www.wsj.com/market-data/stocks",
+          "end_time": "2026-11-09T21:00:00Z",
+          "tick_size": 0.01,
+          "min_order_size": 5.0
+        },
+        "book": {
+          "schema_version": "1.0",
+          "id": "57bbbb326b6a73b1c831f54e65d8ff7835fc16785e9f3e5d0c117bf27a128fc8",
+          "timestamp": "2026-11-08T00:44:57.397000Z",
+          "available_at": "2026-11-08T00:45:07.587882Z",
+          "source": "https://clob.polymarket.com",
+          "exchange": "polymarket",
+          "market_id": "6747198",
+          "token_id": "48590210093932277918192534757467877715987536553015361732850151516868508486077",
+          "bids": [
+            {
+              "price": 0.52,
+              "size": 22.85
+            },
+            {
+              "price": 0.5,
+              "size": 100.0
+            },
+            {
+              "price": 0.48,
+              "size": 100.0
+            },
+            {
+              "price": 0.47,
+              "size": 21.27
+            },
+            {
+              "price": 0.46,
+              "size": 100.0
+            },
+            {
+              "price": 0.43,
+              "size": 149.25
+            },
+            {
+              "price": 0.42,
+              "size": 160.0
+            },
+            {
+              "price": 0.38,
+              "size": 5.0
+            },
+            {
+              "price": 0.05,
+              "size": 5.0
+            },
+            {
+              "price": 0.02,
+              "size": 37.06
+            },
+            {
+              "price": 0.01,
+              "size": 566.87
+            }
+          ],
+          "asks": [
+            {
+              "price": 0.57,
+              "size": 223.54
+            },
+            {
+              "price": 0.6,
+              "size": 15.0
+            },
+            {
+              "price": 0.61,
+              "size": 97.5
+            },
+            {
+              "price": 0.62,
+              "size": 31.31
+            },
+            {
+              "price": 0.63,
+              "size": 135.05
+            },
+            {
+              "price": 0.94,
+              "size": 9.96
+            },
+            {
+              "price": 0.95,
+              "size": 20.0
+            },
+            {
+              "price": 0.96,
+              "size": 5.0
+            },
+            {
+              "price": 0.98,
+              "size": 27.27
+            },
+            {
+              "price": 0.99,
+              "size": 566.68
+            }
+          ],
+          "sequence": 0,
+          "complete": true
+        },
+        "book_id": "57bbbb326b6a73b1c831f54e65d8ff7835fc16785e9f3e5d0c117bf27a128fc8",
+        "book_sha256": "01db3502e5b6c932ca2c0b814383a2d16340380950da54c120fb4aefd1ee4049",
+        "market_expected_payout": 0.5449999999999999,
+        "evidence_lineages": [
+          "Federal Reserve Bank of St. Louis FRED:SP500"
+        ],
+        "market_baseline_comparable": false,
+        "adapter": "finance",
+        "enrollment_id": "c0c8d63d6952dfb86b3edd3d0bd3df3dd987fccbb405b720c82d120090ff1f56",
+        "reviewed_dependency_group": null,
+        "independence_reviewed": false,
+        "horizon_bucket": "1-7d",
+        "id": "3fee7d83f1f6e38ecdb2258c618acccdca0335f9a9d1b631d40ce8b827c0c481"
+      },
+      "study_id": "000000000028:062f3f25321ed647c48efa90380174d678b091e1ef176ebbd12c964e7009757e",
+      "study_sha256": "6058a435cc6f9bf7ae45a9c28baef0e29487345ed4433954e7418a664e7af45d"
+    },
+    {
+      "metadata": {
+        "available_at": "2026-11-08T01:34:08.569240Z",
+        "cohort_id": "2d55e15f65d7752fa877021272bd631a347400eab46ba3f4ca53a5434c36d062",
+        "forecast": {
+          "book_sha256": "9923cd4c2eb2f52e1788cd98c33a2580dc521dc67576ee2dafa4a34a868ed206",
+          "calibration_status": "unvalidated_research",
+          "domain": "economics",
+          "event_end_time": "2026-11-12T00:00:00+00:00",
+          "event_id": "844497",
+          "evidence_cutoff": "2026-11-08T01:34:08.565121+00:00",
+          "feature_version": "observed-ONS-IHYQ-quarterly-growth-v1",
+          "id": "1869017d817ebc7a3d95d1b2d102b04d09a2ded3458298918ca4dbadae6ce61b",
+          "lower_probability": 0.0,
+          "market_baseline_comparable": false,
+          "market_expected_payout": 0.451,
+          "market_id": "3566407",
+          "market_probability": null,
+          "model_id": "uk-gdp-jeffreys-frequency-v25.1",
+          "model_sha256": "1031d902164834dd38d2472c15d76040c12ac9d2fc193a84d1ee44ab1bfaa054",
+          "model_version": "uk-gdp-jeffreys-frequency-v25.1",
+          "probability": 0.7926829268292683,
+          "probability_semantics": "binary_event_probability",
+          "rules_sha256": "8ee46b65a3687a1e9fac0fc0ed614d05d17f1a86ef0d10218e4a5c4ad4fde2d6",
+          "source_lineages": [
+            "ONS:IHYQ:current-vintage"
+          ],
+          "target_conditioning": "scheduled firstrelease without fallback/correction; current-vintage historical feature distribution",
+          "timestamp": "2026-11-08T01:34:08.567966+00:00",
+          "token_id": "99152048788234224357734975456328610052461154108689630888376315692101778386164",
+          "unconditional_contract_probability": false,
+          "upper_probability": 1.0
+        },
+        "forecast_id": "1869017d817ebc7a3d95d1b2d102b04d09a2ded3458298918ca4dbadae6ce61b",
+        "forecast_sha256": "3287faf94715b414d0e6d1feb55bb74a467d384e43b9bbb6cb9475ee060b278d",
+        "proof_sha256": "ef9225ede336d6786ac5f93af22656f0c1d41559291b8b8884b34669d9ce383b",
+        "rejection": null,
+        "replay_verified": true,
+        "review": {
+          "canonical_group_id": "549d254401b5c9edeec8406ced6982ca141c01169eeccb0a23c6b791276ca993",
+          "dependency_tags": [
+            "economic-series:IHYQ"
+          ],
+          "descriptor": {
+            "domain": "economics",
+            "resolution_reference": "https://www.ons.gov.uk/economy/grossdomesticproductgdp/bulletins/gdpfirstquarterlyestimateuk/previousreleases",
+            "series_id": "IHYQ",
+            "target_period": "2026 Q3"
+          },
+          "evidence_lineages": [
+            "ONS:IHYQ:current-vintage"
+          ]
+        },
+        "source_id": "000000000047:f80c28b5bb9bb14a19f3f0bdc8145e1c92e9e22d6542ba75949829215ad6bebf",
+        "source_kind": "ExpansionResearchStudy",
+        "source_payload_sha256": "92ed9216b81aa6e073345d63f7bcc0c8e12b85c73231c1136623ef14f2b27842",
+        "source_rowid": 1067568,
+        "source_study_sha256": "82f32798482852b7e4fdd49d6648110b5f2ab38e07081dddc735d20ed0bf96f5",
+        "type": "forecast"
+      },
+      "forecast": {
+        "model_id": "uk-gdp-jeffreys-frequency-v25.1",
+        "model_version": "uk-gdp-jeffreys-frequency-v25.1",
+        "model_sha256": "1031d902164834dd38d2472c15d76040c12ac9d2fc193a84d1ee44ab1bfaa054",
+        "feature_version": "observed-ONS-IHYQ-quarterly-growth-v1",
+        "domain": "economics",
+        "event_id": "844497",
+        "market_id": "3566407",
+        "token_id": "99152048788234224357734975456328610052461154108689630888376315692101778386164",
+        "probability": 0.7926829268292683,
+        "probability_semantics": "binary_event_probability",
+        "lower_probability": 0.0,
+        "upper_probability": 1.0,
+        "uncertainty": 1.0,
+        "training_observations": 40,
+        "last_source_period": "2026 Q2",
+        "dataset_sha256": "42a737ca61c93425192ab62f469d2fab64227907737de4d65a758e1161dc2d24",
+        "evidence_ids": [
+          "cbf8a2a83faeae20135a968954996b7ec6e6d206b3f7e8f3271be0503dd59488"
+        ],
+        "evidence_cutoff": "2026-11-08T01:34:08.565121+00:00",
+        "event_end_time": "2026-11-12T00:00:00+00:00",
+        "rules_sha256": "8ee46b65a3687a1e9fac0fc0ed614d05d17f1a86ef0d10218e4a5c4ad4fde2d6",
+        "contract": {
+          "kind": "uk_gdp_qoq_first_release",
+          "series_id": "IHYQ",
+          "target_period": "2026 Q3",
+          "quarter": 3,
+          "year": 2026,
+          "release_at": "2026-11-12T00:00:00+00:00",
+          "release_time_precision": "day_lower_bound_not_exact_publication_time",
+          "settlement_at": "2026-11-13T04:59:00+00:00",
+          "source_url": "https://www.ons.gov.uk/economy/grossdomesticproductgdp/bulletins/gdpfirstquarterlyestimateuk/previousreleases",
+          "source_series_url": "https://www.ons.gov.uk/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/data",
+          "selected_outcome": "No",
+          "tail": "between",
+          "lower": "0.6",
+          "upper": "0.7",
+          "market": {
+            "schema_version": "1.0",
+            "id": "2087a96bc08c39880fc8cb4c21a4af92fe8bf5600d663d55870c3e4591cc0f38",
+            "timestamp": "2026-11-08T01:27:21.928546Z",
+            "available_at": "2026-11-08T01:27:21.928546Z",
+            "source": "https://gamma-api.polymarket.com",
+            "exchange": "polymarket",
+            "market_id": "3566407",
+            "event_id": "844497",
+            "question": "Will UK GDP growth in Q3 2026 be between 0.6% and 0.7%?",
+            "token_id": "99152048788234224357734975456328610052461154108689630888376315692101778386164",
+            "outcome": "No",
+            "probability": 0.451,
+            "status": "active",
+            "resolution_rules": "This market will resolve according to the UK real gross domestic product (GDP) growth rate (% change) for Q3 of 2026 compared with the most recent quarter (quarter-on-previous-quarter) in the \"GDP first quarterly estimate, UK\" release for Q3 of 2026, scheduled for November 12, 2026.\n\nThe GDP release will be made available here: https://www.ons.gov.uk/economy/grossdomesticproductgdp/bulletins/gdpfirstquarterlyestimateuk/previousreleases\n\nIf no data for the specified quarter is released by the date the next quarter's data is scheduled to be released, this market will resolve based on data from the last available quarter.\n\nNote: data from the initial release of the referenced GDP report is what will be used to resolve this market. Data may be revised during the following quarter or as a part of the next estimate's publication, however any revisions to GDP report data made after the initial release will not be considered for this market's resolution.\n\nNote: the resolution source for this market reports GDP growth rates to only one decimal point (e.g. 1.8%). Thus, this is the level of precision that will be used when resolving the market.",
+            "resolution_source": "https://www.ons.gov.uk/economy/grossdomesticproductgdp/bulletins/gdpfirstquarterlyestimateuk/previousreleases",
+            "end_time": "2026-11-13T04:59:00Z",
+            "tick_size": 0.001,
+            "min_order_size": 5.0
+          },
+          "rules_sha256": "8ee46b65a3687a1e9fac0fc0ed614d05d17f1a86ef0d10218e4a5c4ad4fde2d6",
+          "conditioning": "scheduled firstrelease without fallback/correction; current-vintage historical feature distribution"
+        },
+        "source_lineages": [
+          "ONS:IHYQ:current-vintage"
+        ],
+        "calibration_status": "unvalidated_research",
+        "target_conditioning": "scheduled firstrelease without fallback/correction; current-vintage historical feature distribution",
+        "unconditional_contract_probability": false,
+        "market_probability": null,
+        "limitations": [
+          "Revised current-vintage history is a forecasting feature, never asserted as historical firstrelease labels",
+          "Scheduled release day is a conservative lower time bound, not independently verified release-hour calendar",
+          "No proven calibration, executable edge or regime robustness"
+        ],
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false,
+        "timestamp": "2026-11-08T01:34:08.567966+00:00",
+        "market": {
+          "schema_version": "1.0",
+          "id": "2087a96bc08c39880fc8cb4c21a4af92fe8bf5600d663d55870c3e4591cc0f38",
+          "timestamp": "2026-11-08T01:27:21.928546Z",
+          "available_at": "2026-11-08T01:27:21.928546Z",
+          "source": "https://gamma-api.polymarket.com",
+          "exchange": "polymarket",
+          "market_id": "3566407",
+          "event_id": "844497",
+          "question": "Will UK GDP growth in Q3 2026 be between 0.6% and 0.7%?",
+          "token_id": "99152048788234224357734975456328610052461154108689630888376315692101778386164",
+          "outcome": "No",
+          "probability": 0.451,
+          "status": "active",
+          "resolution_rules": "This market will resolve according to the UK real gross domestic product (GDP) growth rate (% change) for Q3 of 2026 compared with the most recent quarter (quarter-on-previous-quarter) in the \"GDP first quarterly estimate, UK\" release for Q3 of 2026, scheduled for November 12, 2026.\n\nThe GDP release will be made available here: https://www.ons.gov.uk/economy/grossdomesticproductgdp/bulletins/gdpfirstquarterlyestimateuk/previousreleases\n\nIf no data for the specified quarter is released by the date the next quarter's data is scheduled to be released, this market will resolve based on data from the last available quarter.\n\nNote: data from the initial release of the referenced GDP report is what will be used to resolve this market. Data may be revised during the following quarter or as a part of the next estimate's publication, however any revisions to GDP report data made after the initial release will not be considered for this market's resolution.\n\nNote: the resolution source for this market reports GDP growth rates to only one decimal point (e.g. 1.8%). Thus, this is the level of precision that will be used when resolving the market.",
+          "resolution_source": "https://www.ons.gov.uk/economy/grossdomesticproductgdp/bulletins/gdpfirstquarterlyestimateuk/previousreleases",
+          "end_time": "2026-11-13T04:59:00Z",
+          "tick_size": 0.001,
+          "min_order_size": 5.0
+        },
+        "book": {
+          "schema_version": "1.0",
+          "id": "5116ac76da4f74aa439010ed8b3bb41c73c7aa723dee5bd8a6457e08253881fe",
+          "timestamp": "2026-11-08T01:34:08.038000Z",
+          "available_at": "2026-11-08T01:34:08.564614Z",
+          "source": "https://clob.polymarket.com",
+          "exchange": "polymarket",
+          "market_id": "3566407",
+          "token_id": "99152048788234224357734975456328610052461154108689630888376315692101778386164",
+          "bids": [
+            {
+              "price": 0.435,
+              "size": 100.0
+            },
+            {
+              "price": 0.434,
+              "size": 83.0
+            },
+            {
+              "price": 0.432,
+              "size": 20.0
+            },
+            {
+              "price": 0.431,
+              "size": 20.0
+            },
+            {
+              "price": 0.429,
+              "size": 61.0
+            },
+            {
+              "price": 0.426,
+              "size": 30.52
+            },
+            {
+              "price": 0.399,
+              "size": 30.0
+            },
+            {
+              "price": 0.398,
+              "size": 35.0
+            },
+            {
+              "price": 0.397,
+              "size": 29.03
+            },
+            {
+              "price": 0.37,
+              "size": 95.0
+            },
+            {
+              "price": 0.369,
+              "size": 60.0
+            },
+            {
+              "price": 0.367,
+              "size": 12.8
+            },
+            {
+              "price": 0.352,
+              "size": 40.0
+            },
+            {
+              "price": 0.35,
+              "size": 66.75
+            },
+            {
+              "price": 0.204,
+              "size": 100.0
+            },
+            {
+              "price": 0.203,
+              "size": 50.0
+            },
+            {
+              "price": 0.102,
+              "size": 400.0
+            },
+            {
+              "price": 0.101,
+              "size": 40.0
+            },
+            {
+              "price": 0.043,
+              "size": 8.79
+            },
+            {
+              "price": 0.042,
+              "size": 9.0
+            },
+            {
+              "price": 0.041,
+              "size": 6.19
+            },
+            {
+              "price": 0.04,
+              "size": 505.0
+            },
+            {
+              "price": 0.03,
+              "size": 833.33
+            },
+            {
+              "price": 0.02,
+              "size": 1250.0
+            },
+            {
+              "price": 0.011,
+              "size": 9.97
+            },
+            {
+              "price": 0.01,
+              "size": 2755.0
+            },
+            {
+              "price": 0.008,
+              "size": 4062.5
+            },
+            {
+              "price": 0.007,
+              "size": 5000.0
+            },
+            {
+              "price": 0.006,
+              "size": 8333.33
+            },
+            {
+              "price": 0.005,
+              "size": 10540.0
+            },
+            {
+              "price": 0.004,
+              "size": 13757.22
+            },
+            {
+              "price": 0.003,
+              "size": 19599.99
+            },
+            {
+              "price": 0.002,
+              "size": 650.0
+            },
+            {
+              "price": 0.001,
+              "size": 1328.55
+            }
+          ],
+          "asks": [
+            {
+              "price": 0.467,
+              "size": 309.4
+            },
+            {
+              "price": 0.468,
+              "size": 215.0
+            },
+            {
+              "price": 0.47,
+              "size": 200.0
+            },
+            {
+              "price": 0.471,
+              "size": 76.81
+            },
+            {
+              "price": 0.479,
+              "size": 200.0
+            },
+            {
+              "price": 0.482,
+              "size": 193.48
+            },
+            {
+              "price": 0.664,
+              "size": 10.5
+            },
+            {
+              "price": 0.665,
+              "size": 20.5
+            },
+            {
+              "price": 0.9,
+              "size": 23.69
+            },
+            {
+              "price": 0.95,
+              "size": 5.0
+            },
+            {
+              "price": 0.952,
+              "size": 382.0
+            },
+            {
+              "price": 0.96,
+              "size": 750.0
+            },
+            {
+              "price": 0.97,
+              "size": 1250.0
+            },
+            {
+              "price": 0.98,
+              "size": 1875.0
+            },
+            {
+              "price": 0.989,
+              "size": 9.54
+            },
+            {
+              "price": 0.99,
+              "size": 4125.0
+            },
+            {
+              "price": 0.992,
+              "size": 6093.75
+            },
+            {
+              "price": 0.993,
+              "size": 7500.0
+            },
+            {
+              "price": 0.994,
+              "size": 12500.0
+            },
+            {
+              "price": 0.995,
+              "size": 16350.15
+            },
+            {
+              "price": 0.996,
+              "size": 20875.0
+            },
+            {
+              "price": 0.997,
+              "size": 29516.66
+            },
+            {
+              "price": 0.998,
+              "size": 1150.0
+            },
+            {
+              "price": 0.999,
+              "size": 2422.04
+            }
+          ],
+          "sequence": 0,
+          "complete": true
+        },
+        "book_id": "5116ac76da4f74aa439010ed8b3bb41c73c7aa723dee5bd8a6457e08253881fe",
+        "book_sha256": "9923cd4c2eb2f52e1788cd98c33a2580dc521dc67576ee2dafa4a34a868ed206",
+        "market_expected_payout": 0.451,
+        "evidence_lineages": [
+          "UK Office for National Statistics:IHYQ"
+        ],
+        "market_baseline_comparable": false,
+        "adapter": "economics",
+        "enrollment_id": "c0c8d63d6952dfb86b3edd3d0bd3df3dd987fccbb405b720c82d120090ff1f56",
+        "reviewed_dependency_group": null,
+        "independence_reviewed": false,
+        "horizon_bucket": "1-7d",
+        "id": "1869017d817ebc7a3d95d1b2d102b04d09a2ded3458298918ca4dbadae6ce61b"
+      },
+      "study_id": "000000000047:f80c28b5bb9bb14a19f3f0bdc8145e1c92e9e22d6542ba75949829215ad6bebf",
+      "study_sha256": "82f32798482852b7e4fdd49d6648110b5f2ab38e07081dddc735d20ed0bf96f5"
+    },
+    {
+      "metadata": {
+        "available_at": "2026-11-08T01:34:08.569240Z",
+        "cohort_id": "2d55e15f65d7752fa877021272bd631a347400eab46ba3f4ca53a5434c36d062",
+        "forecast": {
+          "book_sha256": "9923cd4c2eb2f52e1788cd98c33a2580dc521dc67576ee2dafa4a34a868ed206",
+          "calibration_status": "unvalidated_research",
+          "domain": "economics",
+          "event_end_time": "2026-11-12T00:00:00+00:00",
+          "event_id": "844497",
+          "evidence_cutoff": "2026-11-08T01:34:08.565121+00:00",
+          "feature_version": "observed-ONS-IHYQ-quarterly-growth-v1",
+          "id": "5c593205b4b3d259b97a2ca71cff67c1bd5af08747862a2ddc3c18892ae7597e",
+          "lower_probability": 0.0,
+          "market_baseline_comparable": false,
+          "market_expected_payout": 0.451,
+          "market_id": "3566407",
+          "market_probability": null,
+          "model_id": "uk-gdp-regularized-ar1-v25.1",
+          "model_sha256": "f47b615703e833311de2bcec42a0941a23e49d747372cf4349c5ce71fa63bfc3",
+          "model_version": "uk-gdp-regularized-ar1-v25.1",
+          "probability": 0.9809268469075689,
+          "probability_semantics": "binary_event_probability",
+          "rules_sha256": "8ee46b65a3687a1e9fac0fc0ed614d05d17f1a86ef0d10218e4a5c4ad4fde2d6",
+          "source_lineages": [
+            "ONS:IHYQ:current-vintage"
+          ],
+          "target_conditioning": "scheduled firstrelease without fallback/correction; current-vintage historical feature distribution",
+          "timestamp": "2026-11-08T01:34:08.567966+00:00",
+          "token_id": "99152048788234224357734975456328610052461154108689630888376315692101778386164",
+          "unconditional_contract_probability": false,
+          "upper_probability": 1.0
+        },
+        "forecast_id": "5c593205b4b3d259b97a2ca71cff67c1bd5af08747862a2ddc3c18892ae7597e",
+        "forecast_sha256": "de6c8cfd3ee31d20271655b34d8dc7722ced70681ebe2d3beb88e09cdd499a6d",
+        "proof_sha256": "6a945097de6068af787033feab7db16be5c5e117f2bbc579aeddf99ae568c4a5",
+        "rejection": null,
+        "replay_verified": true,
+        "review": {
+          "canonical_group_id": "549d254401b5c9edeec8406ced6982ca141c01169eeccb0a23c6b791276ca993",
+          "dependency_tags": [
+            "economic-series:IHYQ"
+          ],
+          "descriptor": {
+            "domain": "economics",
+            "resolution_reference": "https://www.ons.gov.uk/economy/grossdomesticproductgdp/bulletins/gdpfirstquarterlyestimateuk/previousreleases",
+            "series_id": "IHYQ",
+            "target_period": "2026 Q3"
+          },
+          "evidence_lineages": [
+            "ONS:IHYQ:current-vintage"
+          ]
+        },
+        "source_id": "000000000047:f80c28b5bb9bb14a19f3f0bdc8145e1c92e9e22d6542ba75949829215ad6bebf",
+        "source_kind": "ExpansionResearchStudy",
+        "source_payload_sha256": "92ed9216b81aa6e073345d63f7bcc0c8e12b85c73231c1136623ef14f2b27842",
+        "source_rowid": 1067568,
+        "source_study_sha256": "82f32798482852b7e4fdd49d6648110b5f2ab38e07081dddc735d20ed0bf96f5",
+        "type": "forecast"
+      },
+      "forecast": {
+        "model_id": "uk-gdp-regularized-ar1-v25.1",
+        "model_version": "uk-gdp-regularized-ar1-v25.1",
+        "model_sha256": "f47b615703e833311de2bcec42a0941a23e49d747372cf4349c5ce71fa63bfc3",
+        "feature_version": "observed-ONS-IHYQ-quarterly-growth-v1",
+        "domain": "economics",
+        "event_id": "844497",
+        "market_id": "3566407",
+        "token_id": "99152048788234224357734975456328610052461154108689630888376315692101778386164",
+        "probability": 0.9809268469075689,
+        "probability_semantics": "binary_event_probability",
+        "lower_probability": 0.0,
+        "upper_probability": 1.0,
+        "uncertainty": 1.0,
+        "training_observations": 40,
+        "last_source_period": "2026 Q2",
+        "dataset_sha256": "42a737ca61c93425192ab62f469d2fab64227907737de4d65a758e1161dc2d24",
+        "evidence_ids": [
+          "cbf8a2a83faeae20135a968954996b7ec6e6d206b3f7e8f3271be0503dd59488"
+        ],
+        "evidence_cutoff": "2026-11-08T01:34:08.565121+00:00",
+        "event_end_time": "2026-11-12T00:00:00+00:00",
+        "rules_sha256": "8ee46b65a3687a1e9fac0fc0ed614d05d17f1a86ef0d10218e4a5c4ad4fde2d6",
+        "contract": {
+          "kind": "uk_gdp_qoq_first_release",
+          "series_id": "IHYQ",
+          "target_period": "2026 Q3",
+          "quarter": 3,
+          "year": 2026,
+          "release_at": "2026-11-12T00:00:00+00:00",
+          "release_time_precision": "day_lower_bound_not_exact_publication_time",
+          "settlement_at": "2026-11-13T04:59:00+00:00",
+          "source_url": "https://www.ons.gov.uk/economy/grossdomesticproductgdp/bulletins/gdpfirstquarterlyestimateuk/previousreleases",
+          "source_series_url": "https://www.ons.gov.uk/economy/grossdomesticproductgdp/timeseries/ihyq/pn2/data",
+          "selected_outcome": "No",
+          "tail": "between",
+          "lower": "0.6",
+          "upper": "0.7",
+          "market": {
+            "schema_version": "1.0",
+            "id": "2087a96bc08c39880fc8cb4c21a4af92fe8bf5600d663d55870c3e4591cc0f38",
+            "timestamp": "2026-11-08T01:27:21.928546Z",
+            "available_at": "2026-11-08T01:27:21.928546Z",
+            "source": "https://gamma-api.polymarket.com",
+            "exchange": "polymarket",
+            "market_id": "3566407",
+            "event_id": "844497",
+            "question": "Will UK GDP growth in Q3 2026 be between 0.6% and 0.7%?",
+            "token_id": "99152048788234224357734975456328610052461154108689630888376315692101778386164",
+            "outcome": "No",
+            "probability": 0.451,
+            "status": "active",
+            "resolution_rules": "This market will resolve according to the UK real gross domestic product (GDP) growth rate (% change) for Q3 of 2026 compared with the most recent quarter (quarter-on-previous-quarter) in the \"GDP first quarterly estimate, UK\" release for Q3 of 2026, scheduled for November 12, 2026.\n\nThe GDP release will be made available here: https://www.ons.gov.uk/economy/grossdomesticproductgdp/bulletins/gdpfirstquarterlyestimateuk/previousreleases\n\nIf no data for the specified quarter is released by the date the next quarter's data is scheduled to be released, this market will resolve based on data from the last available quarter.\n\nNote: data from the initial release of the referenced GDP report is what will be used to resolve this market. Data may be revised during the following quarter or as a part of the next estimate's publication, however any revisions to GDP report data made after the initial release will not be considered for this market's resolution.\n\nNote: the resolution source for this market reports GDP growth rates to only one decimal point (e.g. 1.8%). Thus, this is the level of precision that will be used when resolving the market.",
+            "resolution_source": "https://www.ons.gov.uk/economy/grossdomesticproductgdp/bulletins/gdpfirstquarterlyestimateuk/previousreleases",
+            "end_time": "2026-11-13T04:59:00Z",
+            "tick_size": 0.001,
+            "min_order_size": 5.0
+          },
+          "rules_sha256": "8ee46b65a3687a1e9fac0fc0ed614d05d17f1a86ef0d10218e4a5c4ad4fde2d6",
+          "conditioning": "scheduled firstrelease without fallback/correction; current-vintage historical feature distribution"
+        },
+        "source_lineages": [
+          "ONS:IHYQ:current-vintage"
+        ],
+        "calibration_status": "unvalidated_research",
+        "target_conditioning": "scheduled firstrelease without fallback/correction; current-vintage historical feature distribution",
+        "unconditional_contract_probability": false,
+        "market_probability": null,
+        "limitations": [
+          "Revised current-vintage history is a forecasting feature, never asserted as historical firstrelease labels",
+          "Scheduled release day is a conservative lower time bound, not independently verified release-hour calendar",
+          "No proven calibration, executable edge or regime robustness"
+        ],
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false,
+        "timestamp": "2026-11-08T01:34:08.567966+00:00",
+        "market": {
+          "schema_version": "1.0",
+          "id": "2087a96bc08c39880fc8cb4c21a4af92fe8bf5600d663d55870c3e4591cc0f38",
+          "timestamp": "2026-11-08T01:27:21.928546Z",
+          "available_at": "2026-11-08T01:27:21.928546Z",
+          "source": "https://gamma-api.polymarket.com",
+          "exchange": "polymarket",
+          "market_id": "3566407",
+          "event_id": "844497",
+          "question": "Will UK GDP growth in Q3 2026 be between 0.6% and 0.7%?",
+          "token_id": "99152048788234224357734975456328610052461154108689630888376315692101778386164",
+          "outcome": "No",
+          "probability": 0.451,
+          "status": "active",
+          "resolution_rules": "This market will resolve according to the UK real gross domestic product (GDP) growth rate (% change) for Q3 of 2026 compared with the most recent quarter (quarter-on-previous-quarter) in the \"GDP first quarterly estimate, UK\" release for Q3 of 2026, scheduled for November 12, 2026.\n\nThe GDP release will be made available here: https://www.ons.gov.uk/economy/grossdomesticproductgdp/bulletins/gdpfirstquarterlyestimateuk/previousreleases\n\nIf no data for the specified quarter is released by the date the next quarter's data is scheduled to be released, this market will resolve based on data from the last available quarter.\n\nNote: data from the initial release of the referenced GDP report is what will be used to resolve this market. Data may be revised during the following quarter or as a part of the next estimate's publication, however any revisions to GDP report data made after the initial release will not be considered for this market's resolution.\n\nNote: the resolution source for this market reports GDP growth rates to only one decimal point (e.g. 1.8%). Thus, this is the level of precision that will be used when resolving the market.",
+          "resolution_source": "https://www.ons.gov.uk/economy/grossdomesticproductgdp/bulletins/gdpfirstquarterlyestimateuk/previousreleases",
+          "end_time": "2026-11-13T04:59:00Z",
+          "tick_size": 0.001,
+          "min_order_size": 5.0
+        },
+        "book": {
+          "schema_version": "1.0",
+          "id": "5116ac76da4f74aa439010ed8b3bb41c73c7aa723dee5bd8a6457e08253881fe",
+          "timestamp": "2026-11-08T01:34:08.038000Z",
+          "available_at": "2026-11-08T01:34:08.564614Z",
+          "source": "https://clob.polymarket.com",
+          "exchange": "polymarket",
+          "market_id": "3566407",
+          "token_id": "99152048788234224357734975456328610052461154108689630888376315692101778386164",
+          "bids": [
+            {
+              "price": 0.435,
+              "size": 100.0
+            },
+            {
+              "price": 0.434,
+              "size": 83.0
+            },
+            {
+              "price": 0.432,
+              "size": 20.0
+            },
+            {
+              "price": 0.431,
+              "size": 20.0
+            },
+            {
+              "price": 0.429,
+              "size": 61.0
+            },
+            {
+              "price": 0.426,
+              "size": 30.52
+            },
+            {
+              "price": 0.399,
+              "size": 30.0
+            },
+            {
+              "price": 0.398,
+              "size": 35.0
+            },
+            {
+              "price": 0.397,
+              "size": 29.03
+            },
+            {
+              "price": 0.37,
+              "size": 95.0
+            },
+            {
+              "price": 0.369,
+              "size": 60.0
+            },
+            {
+              "price": 0.367,
+              "size": 12.8
+            },
+            {
+              "price": 0.352,
+              "size": 40.0
+            },
+            {
+              "price": 0.35,
+              "size": 66.75
+            },
+            {
+              "price": 0.204,
+              "size": 100.0
+            },
+            {
+              "price": 0.203,
+              "size": 50.0
+            },
+            {
+              "price": 0.102,
+              "size": 400.0
+            },
+            {
+              "price": 0.101,
+              "size": 40.0
+            },
+            {
+              "price": 0.043,
+              "size": 8.79
+            },
+            {
+              "price": 0.042,
+              "size": 9.0
+            },
+            {
+              "price": 0.041,
+              "size": 6.19
+            },
+            {
+              "price": 0.04,
+              "size": 505.0
+            },
+            {
+              "price": 0.03,
+              "size": 833.33
+            },
+            {
+              "price": 0.02,
+              "size": 1250.0
+            },
+            {
+              "price": 0.011,
+              "size": 9.97
+            },
+            {
+              "price": 0.01,
+              "size": 2755.0
+            },
+            {
+              "price": 0.008,
+              "size": 4062.5
+            },
+            {
+              "price": 0.007,
+              "size": 5000.0
+            },
+            {
+              "price": 0.006,
+              "size": 8333.33
+            },
+            {
+              "price": 0.005,
+              "size": 10540.0
+            },
+            {
+              "price": 0.004,
+              "size": 13757.22
+            },
+            {
+              "price": 0.003,
+              "size": 19599.99
+            },
+            {
+              "price": 0.002,
+              "size": 650.0
+            },
+            {
+              "price": 0.001,
+              "size": 1328.55
+            }
+          ],
+          "asks": [
+            {
+              "price": 0.467,
+              "size": 309.4
+            },
+            {
+              "price": 0.468,
+              "size": 215.0
+            },
+            {
+              "price": 0.47,
+              "size": 200.0
+            },
+            {
+              "price": 0.471,
+              "size": 76.81
+            },
+            {
+              "price": 0.479,
+              "size": 200.0
+            },
+            {
+              "price": 0.482,
+              "size": 193.48
+            },
+            {
+              "price": 0.664,
+              "size": 10.5
+            },
+            {
+              "price": 0.665,
+              "size": 20.5
+            },
+            {
+              "price": 0.9,
+              "size": 23.69
+            },
+            {
+              "price": 0.95,
+              "size": 5.0
+            },
+            {
+              "price": 0.952,
+              "size": 382.0
+            },
+            {
+              "price": 0.96,
+              "size": 750.0
+            },
+            {
+              "price": 0.97,
+              "size": 1250.0
+            },
+            {
+              "price": 0.98,
+              "size": 1875.0
+            },
+            {
+              "price": 0.989,
+              "size": 9.54
+            },
+            {
+              "price": 0.99,
+              "size": 4125.0
+            },
+            {
+              "price": 0.992,
+              "size": 6093.75
+            },
+            {
+              "price": 0.993,
+              "size": 7500.0
+            },
+            {
+              "price": 0.994,
+              "size": 12500.0
+            },
+            {
+              "price": 0.995,
+              "size": 16350.15
+            },
+            {
+              "price": 0.996,
+              "size": 20875.0
+            },
+            {
+              "price": 0.997,
+              "size": 29516.66
+            },
+            {
+              "price": 0.998,
+              "size": 1150.0
+            },
+            {
+              "price": 0.999,
+              "size": 2422.04
+            }
+          ],
+          "sequence": 0,
+          "complete": true
+        },
+        "book_id": "5116ac76da4f74aa439010ed8b3bb41c73c7aa723dee5bd8a6457e08253881fe",
+        "book_sha256": "9923cd4c2eb2f52e1788cd98c33a2580dc521dc67576ee2dafa4a34a868ed206",
+        "market_expected_payout": 0.451,
+        "evidence_lineages": [
+          "UK Office for National Statistics:IHYQ"
+        ],
+        "market_baseline_comparable": false,
+        "adapter": "economics",
+        "enrollment_id": "c0c8d63d6952dfb86b3edd3d0bd3df3dd987fccbb405b720c82d120090ff1f56",
+        "reviewed_dependency_group": null,
+        "independence_reviewed": false,
+        "horizon_bucket": "1-7d",
+        "id": "5c593205b4b3d259b97a2ca71cff67c1bd5af08747862a2ddc3c18892ae7597e"
+      },
+      "study_id": "000000000047:f80c28b5bb9bb14a19f3f0bdc8145e1c92e9e22d6542ba75949829215ad6bebf",
+      "study_sha256": "82f32798482852b7e4fdd49d6648110b5f2ab38e07081dddc735d20ed0bf96f5"
+    }
+  ]
+}
