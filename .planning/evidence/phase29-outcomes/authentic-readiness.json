@@ -1,0 +1,173 @@
+{
+  "at": "2026-11-08T13:46:52.008708+00:00",
+  "scope": "read-only authentic forecast/source diagnostics; no journal mutation, no verified settlement or payout inference",
+  "maturity": {
+    "schema_version": "phase29-outcome-readiness-v1",
+    "as_of": "2026-11-08T13:46:52.008708+00:00",
+    "counts": {
+      "forecasts": 122,
+      "nominal_event_boundary_passed": 30,
+      "future_event_boundary": 92,
+      "scheduled_sports_start_passed_not_finality": 22,
+      "verification_due_forecasts": 30
+    },
+    "native_parent_groups": 40,
+    "verification_due_native_parent_groups": 13,
+    "domains": {
+      "crypto": {
+        "forecasts": 24,
+        "nominal_event_boundary_passed": 8,
+        "verification_due_forecasts": 8,
+        "future_event_boundary": 16
+      },
+      "economics": {
+        "forecasts": 4,
+        "future_event_boundary": 4
+      },
+      "finance": {
+        "forecasts": 2,
+        "future_event_boundary": 2
+      },
+      "sports": {
+        "forecasts": 82,
+        "future_event_boundary": 60,
+        "nominal_event_boundary_passed": 22,
+        "verification_due_forecasts": 22
+      },
+      "weather": {
+        "forecasts": 10,
+        "future_event_boundary": 10
+      }
+    },
+    "rejections": {},
+    "independently_verified_outcomes": null,
+    "certified_independent_events": null,
+    "scope": "current source-replayed forecast inventory; maturity never implies outcome finality or independence",
+    "research_only": true,
+    "trading_authority": false,
+    "certification_authority": false
+  },
+  "native_examples": [
+    {
+      "market_id": "6771152",
+      "question": "Will Bitcoin dip to $75,000 on November 7?",
+      "end_time": "2026-11-08T05:00:00Z",
+      "native_resolved_flag_observed": "resolved",
+      "closed_observed": true,
+      "observed_at": "2026-11-08T13:43:54.788995+00:00",
+      "source_url": "https://data-api.polymarket.com/v2/resolutions?condition=0x54180097c4c7a448e72c57f2b0bc8805509577015194b0e9efdd1f2b35c020df",
+      "response_status": 200,
+      "response_sha256": "dfd304b03a067548f433ee40e54ebd8a8c007a6efe99eaefff6c445521919ba6",
+      "diagnostics": {
+        "status": "withheld",
+        "condition_id": "0x54180097c4c7a448e72c57f2b0bc8805509577015194b0e9efdd1f2b35c020df",
+        "missing_fields": [
+          "resolved_at",
+          "payouts",
+          "reporter",
+          "market_type",
+          "resolution_source"
+        ],
+        "reasons": [
+          "unsupported_native_new_version_question_requires_verified_protocol",
+          "native_finality_fields_missing",
+          "verified_binary_payout_vector_unavailable"
+        ],
+        "canonical_response_sha256": "f965ab981181d6e9c65fde358a2ddf5d850922736628e3cfde6dda8a69b09551",
+        "verified": false,
+        "outcome": null,
+        "scope": "schema/protocol attribution only; existing exact identity/rules/native/chain proof gates unchanged",
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      }
+    },
+    {
+      "market_id": "6428608",
+      "question": "Knicks vs. Cavaliers",
+      "end_time": "2026-11-08T01:00:00Z",
+      "native_resolved_flag_observed": "resolved",
+      "closed_observed": true,
+      "observed_at": "2026-11-08T13:43:54.909663+00:00",
+      "source_url": "https://data-api.polymarket.com/v2/resolutions?condition=0xfefc26258fb1bf9c7d9e46977fbef2cf247a994e2db7975ad7726b8fde300d3a",
+      "response_status": 200,
+      "response_sha256": "ba2692d418a0bd14598b89cd6039434fe9b3a24e13a77298685cd9c1a72eb32b",
+      "diagnostics": {
+        "status": "withheld",
+        "condition_id": "0xfefc26258fb1bf9c7d9e46977fbef2cf247a994e2db7975ad7726b8fde300d3a",
+        "missing_fields": [
+          "reporter",
+          "market_type",
+          "transaction_hash"
+        ],
+        "reasons": [
+          "native_finality_fields_missing"
+        ],
+        "canonical_response_sha256": "9789a402e6ba99fd8c1f5cbc012d73d3db9e9e3ecd2049b12a1111e79b67212a",
+        "verified": false,
+        "outcome": null,
+        "scope": "schema/protocol attribution only; existing exact identity/rules/native/chain proof gates unchanged",
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      }
+    },
+    {
+      "market_id": "5563968",
+      "question": "Lightning vs. Wild",
+      "end_time": "2026-11-08T01:00:00Z",
+      "native_resolved_flag_observed": "resolved",
+      "closed_observed": true,
+      "observed_at": "2026-11-08T13:43:55.025296+00:00",
+      "source_url": "https://data-api.polymarket.com/v2/resolutions?condition=0xab43d5510e10564d2af8a3cbebb934b3edfcb585981c5ea7e07201616328331f",
+      "response_status": 200,
+      "response_sha256": "db72add8e1a53cdbe9270c3d5d731b559467263968e028ea3838bddcf613c110",
+      "diagnostics": {
+        "status": "withheld",
+        "condition_id": "0xab43d5510e10564d2af8a3cbebb934b3edfcb585981c5ea7e07201616328331f",
+        "missing_fields": [
+          "reporter",
+          "market_type",
+          "transaction_hash"
+        ],
+        "reasons": [
+          "native_finality_fields_missing"
+        ],
+        "canonical_response_sha256": "4d20ab681f030db753cc7ea6cb9042b13713be4b01bedfcc8fb4e92db142ece9",
+        "verified": false,
+        "outcome": null,
+        "scope": "schema/protocol attribution only; existing exact identity/rules/native/chain proof gates unchanged",
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      }
+    }
+  ],
+  "native_log_probe": {
+    "market_id": "5563968",
+    "condition_id": "0xab43d5510e10564d2af8a3cbebb934b3edfcb585981c5ea7e07201616328331f",
+    "claimed_resolved_block": 96936862,
+    "requests": 3,
+    "source": "https://polygon-bor-rpc.publicnode.com",
+    "result": "zero matching canonical legacy CTF resolution logs at the public API claimed block; no proof or outcome manufactured",
+    "artifact": "nhl-chain-probe/proofs.json"
+  },
+  "protocol_scope": "new_version_q is an observed API flag, not sufficient classification of contract protocol version; unknown schema is withheld",
+  "source_anchor": {
+    "schema_version": "1.0",
+    "id": "projection:408a05a65688d129915e7a01e0408cae6ab8c4b0dd0eb6fa8628206848b3780f:51db6e486ca91997d9b50fe97b126949e33dc4fd2c06d8331721f4629df1dbe7",
+    "timestamp": "2026-11-08T13:46:43.611539Z",
+    "available_at": "2026-11-08T13:46:43.611539Z",
+    "source": "neraium-poly/research-projection/v26",
+    "index_id": "408a05a65688d129915e7a01e0408cae6ab8c4b0dd0eb6fa8628206848b3780f",
+    "policy_sha256": "f10f138dfde8a2a7ef877010ff5c142d516c63be6474180444af2564abcd9e89",
+    "cursor": 1324313,
+    "cursor_id": "000000000678:6435ad83e7c0d869a0431749905ca38360b4be407d3fa3991a948fb981ba9b49",
+    "cursor_digest": "7d2efdd5195e45f3153b0a3cc0471b2ec10b214db0a839c5bc648b315589be76",
+    "chain": "b6e30aea6417e37a3ee51d12b438a6aadbb96210061494d4498d790faa44de25",
+    "entries": 1264,
+    "research_only": true,
+    "trading_authority": false,
+    "certification_authority": false
+  }
+}

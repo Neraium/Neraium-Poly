@@ -1,0 +1,11 @@
+# Phase29 outcome repairs
+
+Owned phase24/outcomes.py, new phase29/outcomes.py and test_phase29_outcomes.py only. No model definitions, native verification gates, account state, deployment or live journals changed.
+
+Bug fixed: existing adapters return plural `reasons`; scheduler consumed singular `reason` and collapsed actual NBA/weather/etc blockers to generic `withheld`. New append-only checkpoints preserve diagnostic_reasons (max8) and bounded cumulative reason categories, recover old checkpoints, expose verification-due vs future/in-progress counts. Due is calendar/scheduling readiness, never a verified outcome.
+
+Integration API: `phase29.outcomes.maturity_report(entries, as_of=UTC)` accepts anchored source-index entries (snapshot), deduplicates repeated forecasts, quarantines conflicting identities, rejects temporal/source-replay failures; counts nominal boundaries and sports-start-only semantics separately, plus native parent groups. Returns no asserted independent sample counts. `native_resolution_diagnostics(public_resolution_response, condition_id=hex)` provides non-authoritative schema/protocol gaps; even complete schema yields verified=False and requires full existing chain/rule/model replay.
+
+Authentic anchored inventory at2026-11-08T13:46Z:122forecasts/40nativeparents,30nominally matured across13parents (8crypto/22sports),92future. NBA6428608 and NHL5563968 have public resolved flags/payouts/time but empty transaction_hash and missing reporter/market_type. Crypto6771152 has new_version_q=true and missing required payout/finality fields. These are not independently verified outcomes. new_version_q alone is NOT an established contract-version classification. A3-request existing read-only chain probe for NHL condition at reported block96936862 found0matching legacy CTF logs; no payout/tx invented. Raw responses, source hashes, native resolution gaps and chain manifest preserved in evidence/phase29-outcomes.
+
+Verification:58 focused+related cases passed; final added blank-transaction regression gives16 focused cases. Ruff passes after style/stricthex validation. No genuine outcome appended. Primary blocker is incomplete/unsupported native finality proof, not simply waiting for all events. Official NBA access remains unavailable; NHL corroboration alone cannot authorize a native settlement.

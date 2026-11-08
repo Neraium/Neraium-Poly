@@ -128,7 +128,18 @@ class DomainOutcomes:
                 result={'status':'withheld','forecast_id':fid,'reason':f'{type(error).__name__}:{str(error)[:160]}'}
             s['checks']+=1;s['checked'][fid]=at(self.clock()).isoformat()
             if result.get('status')=='verified':s['verified'][fid]={'model_id':f['model_id'],'event_id':f['event_id']};s['pending'].pop(fid,None)
-            else:s['last_reasons'][p['adapter']]=result.get('reason',result.get('status'))
+            else:
+                from neraium_poly.research.phase29.outcomes import outcome_reasons
+                reasons=outcome_reasons(result)
+                s['last_reasons'][p['adapter']]=reasons[0]
+                # Backwards-compatible checkpoint extension: exact list-style
+                # adapter blockers were previously collapsed into 'withheld'.
+                tally=s.setdefault('reason_counts',{})
+                for reason in reasons:
+                    key=p['adapter']+':'+reason
+                    if key in tally or len(tally)<128:tally[key]=tally.get(key,0)+1
+                    else:tally['other_bounded_reason_categories']=tally.get('other_bounded_reason_categories',0)+1
+                result['diagnostic_reasons']=reasons
             self._commit(s,'outcome_check',original_study_id=study['id'],original_study_sha256=digest(study),
                 original_kind=p['kind'],forecast_id=fid,adapter=p['adapter'],result=result)
         return bool(due)
@@ -136,4 +147,9 @@ class DomainOutcomes:
     def status(self):
         return {'status':'research_only','last_at':self.state['last_at'],'pending_forecasts':len(self.state['pending']),
             'durable_verified_forecasts':len(self.state['verified']),'verified_by_model':dict(Counter(x['model_id'] for x in self.state['verified'].values())),'checks':self.state['checks'],'last_reasons':dict(self.state['last_reasons']),
+            'rejection_reasons':dict(self.state.get('reason_counts',{})),
+            'readiness':{'pending_forecasts':len(self.state['pending']),
+                'verification_due_forecasts':sum(self._due(p,at(self.clock())) for p in self.state['pending'].values()),
+                'future_or_in_progress_forecasts':sum(not self._due(p,at(self.clock())) for p in self.state['pending'].values()),
+                'scope':'verification schedule only; due sports boundaries are not proof of final completion'},
             'independent_event_count':0,'certification_authority':False,'trading_authority':False}
