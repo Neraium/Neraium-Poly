@@ -6,8 +6,9 @@ import json
 import logging
 import shutil
 from collections import Counter, deque
+from concurrent.futures import ThreadPoolExecutor
 from datetime import UTC, datetime, timedelta
-from threading import RLock
+from threading import Event, RLock
 
 import httpx
 from pydantic import Field
@@ -457,6 +458,7 @@ class ExperimentalRuntime:
             self._cycle_gate=gate=asyncio.Lock()
         async with gate:
             if self.stopping:return
+            self._cycle_abort=Event()
             self._cycle_done=asyncio.get_running_loop().create_future()
             try:
                 return await self._cycle_impl()
@@ -472,7 +474,64 @@ class ExperimentalRuntime:
                 except asyncio.CancelledError:interrupted=True
         return interrupted
 
+    def _admission_stopping(self):
+        abort = getattr(self, "_cycle_abort", None)
+        return self.stopping or (abort is not None and abort.is_set())
+
+    async def _sync_io(self, function, *args, cycle=False, **kwargs):
+        """One submitted synchronous job, no executor backlog; drain on cancel.
+
+        Financial admission still reads the current locked ledger in the worker.
+        This executor never authorizes from an operational/display snapshot.
+        """
+        gate = getattr(self, "_io_gate", None)
+        if gate is None:
+            self._io_gate = gate = asyncio.Lock()
+        async with gate:
+            if getattr(self, "_io_closed", False):
+                raise RuntimeError("experimental synchronous I/O lane closed")
+            executor = getattr(self, "_io_executor", None)
+            if executor is None:
+                self._io_executor = executor = ThreadPoolExecutor(max_workers=1, thread_name_prefix="paper-io")
+            import functools
+            worker = asyncio.get_running_loop().run_in_executor(executor, functools.partial(function, *args, **kwargs))
+            interrupted = False
+            while not worker.done():
+                try:
+                    await asyncio.shield(worker)
+                except asyncio.CancelledError:
+                    interrupted = True
+                    if cycle:
+                        self._cycle_abort.set()
+                except Exception:  # noqa: BLE001 - propagate the completed worker result after draining
+                    break
+            if interrupted:
+                # Consume a worker failure too; cancellation cannot abandon a
+                # live SQLite write or release the serial gate prematurely.
+                if worker.done() and not worker.cancelled():
+                    worker.exception()
+                raise asyncio.CancelledError
+            return worker.result()
+
     async def _cycle_impl(self):
+        if not await self._sync_io(self._cycle_preflight, cycle=True):
+            if self.event_intelligence is not None and not self.config.archive_management_enabled:
+                try:
+                    frame = await getattr(self.feed, "read_research", self.feed.read)()
+                    await self._sync_io(self._research_frame, frame, cycle=True)
+                except Exception as error:  # noqa: BLE001 - unavailable research cannot admit orders
+                    self.event_intelligence.sports_error = f"{type(error).__name__}:{str(error)[:120]}"
+            return
+        if self._admission_stopping():
+            return
+        frame = await self.feed.read()
+        await self._sync_io(self._process_frame, frame, cycle=True)
+
+    def _research_frame(self, frame):
+        with self._lock:
+            self.event_intelligence.on_research_frame(frame, self.clock())
+
+    def _cycle_preflight(self):
         if getattr(self,"memory_sampler",None):self.memory_sampler.sample("experimental_cycle_start")
         Settings.from_env()
         now = self.clock()
@@ -490,18 +549,11 @@ class ExperimentalRuntime:
                                       "archive": {k: status.get(k) for k in (
                                           "health", "usage_bytes", "budget_bytes", "free_bytes", "global_floor_bytes")},
                                       "observed_at": now.isoformat()})
-            # The paper account remains fail-closed. Separately bounded research
-            # may read public observations without writing paper execution evidence.
-            if self.event_intelligence is not None and not self.config.archive_management_enabled:
-                try:
-                    research_frame = await getattr(self.feed, "read_research", self.feed.read)()
-                    with self._lock:
-                        self.event_intelligence.on_research_frame(research_frame, self.clock())
-                except Exception as error:  # noqa: BLE001 - source failure preserves the stop
-                    self.event_intelligence.sports_error = f"{type(error).__name__}:{str(error)[:120]}"
             self._cancel_and_checkpoint(now)
-            return
-        frame = await self.feed.read()
+            return False
+        return True
+
+    def _process_frame(self, frame):
         now = self.clock()
         self.last_frame = frame
         if self.event_intelligence is not None:
@@ -516,19 +568,17 @@ class ExperimentalRuntime:
         books = {b.token_id: b for b in frame.books}
         markets = {m.token_id: m for m in selected.markets}
         with self._lock:
-            for index,market in enumerate(selected.markets):
+            for market in selected.markets:
                 self.events.append(market)
-                if (index+1)%8==0:await asyncio.sleep(0)
-            for index,book in enumerate(selected.books):
+            for book in selected.books:
                 if not self._budget_ok():
                     raise ValueError("experimental_storage_budget_exhausted")
                 if self.archive.record(book):
                     self.totals["observations"] += 1
-                if (index+1)%8==0:await asyncio.sleep(0)
             # Archival time is not executable quote freshness. Keep financial
             # admission synchronous, but qualify against the actual decision time.
             now = self.clock()
-            if self.stopping:
+            if self._admission_stopping():
                 self._cancel_and_checkpoint(now)
                 return
             signals = self.engine.evaluate_frame(selected, now)
@@ -586,7 +636,9 @@ class ExperimentalRuntime:
                 definition_ids.append(rid)
             for evidence in self.engine.intelligence.latest:
                 self.events.append(evidence)
-            self.account.advance(books, now=now, fees=selected.fees)
+            # Reconciliation may follow slow source validation; never advance
+            # pending fills using the pre-archive decision clock.
+            self.account.advance(books, now=self.clock(), fees=selected.fees)
             rejected = Counter()
             examples = {}
             qualified = 0
@@ -623,6 +675,9 @@ class ExperimentalRuntime:
                         self.config.risk_limits.standard_max,
                         max(self.config.position_notional, market.min_order_size * book.asks[0].price),
                     )
+                    if self._admission_stopping():
+                        self._cancel_and_checkpoint(self.clock())
+                        return
                     result = self.account.submit(
                         signal,
                         market,
@@ -779,13 +834,17 @@ class ExperimentalRuntime:
                     )
                 self.trace_cursors[source] = event["seq"]
 
+    def _publish_fee(self, token, result):
+        with self._lock:
+            self.fees[token] = result
+
     async def _fees_loop(self, should_exit):
         while not self.stopping and not should_exit():
             try:
-                if self.last_frame and self._budget_ok():
+                if self.last_frame and await self._sync_io(self._budget_ok):
                     now = self.clock()
                     # Exit fees get priority; no assumed zero fee for a held position.
-                    held = [p["token_id"] for p in self.account.snapshot(now=now)["positions"]]
+                    held = await self._sync_io(lambda: [p["token_id"] for p in self.account.snapshot(now=self.clock())["positions"]])
                     tokens = list(dict.fromkeys(held + self.selected))
                     pending = []
                     for token in tokens:
@@ -801,8 +860,7 @@ class ExperimentalRuntime:
                         self.fee_attempts[token] = self.clock()
                         result = await self.fee_adapter.observed_fee(token)
                         if result:
-                            with self._lock:
-                                self.fees[token] = result
+                            await self._sync_io(self._publish_fee, token, result)
 
                     await asyncio.gather(*(acquire(t) for t in pending[: self.config.fee_batch]))
                     keep = set(tokens)
@@ -818,7 +876,7 @@ class ExperimentalRuntime:
         next_check = self.clock()
         while not self.stopping and not should_exit():
             if self.event_intelligence is not None and self.clock() >= next_check and (
-                not self.config.archive_management_enabled or self._budget_ok()
+                not self.config.archive_management_enabled or await self._sync_io(self._budget_ok)
             ):
                 try:
                     await self.event_intelligence.resolve_pending()
@@ -854,7 +912,7 @@ class ExperimentalRuntime:
                 await outcomes.step()
             async with self._research_report_lock:
                 if getattr(self, "phase26_enabled", False):
-                    if self.phase26_index is None or not self._budget_ok():
+                    if self.phase26_index is None or not await self._sync_io(self._budget_ok):
                         raise ValueError("source-anchored projection unavailable or archive backpressure")
                     from neraium_poly.research.phase26.reporting import callbacks
                     verify_forecast, verify_outcome = callbacks(self.events, self.config.data_dir)
@@ -1004,14 +1062,14 @@ class ExperimentalRuntime:
         from neraium_poly.research.phase31.scorecard import CPIInputStudy
         next_check=None
         while not self.stopping and not should_exit():
-            if getattr(self,"domain_scorecard",None) is not None and (next_check is None or self.clock()>=next_check) and self._budget_ok():
+            if getattr(self,"domain_scorecard",None) is not None and (next_check is None or self.clock()>=next_check) and await self._sync_io(self._budget_ok):
                 try:
                     bundle=await collect_cpi_availability(clock=self.clock)
                     now=self.clock();target=now.replace(day=1)-timedelta(days=1)
                     result=cpi_qualification(bundle,target_year=target.year,target_month=target.month,as_of=now)
                     from neraium_poly.research.phase14.relationships import digest
-                    if self._budget_ok():
-                        self.events.append(CPIInputStudy(id=digest(['cpi-input-v31',bundle]),timestamp=now,available_at=now,source="neraium-poly/CPI-input/v31",bundle=bundle,qualification=result))
+                    if await self._sync_io(self._budget_ok):
+                        await self._sync_io(self.events.append, CPIInputStudy(id=digest(['cpi-input-v31',bundle]),timestamp=now,available_at=now,source="neraium-poly/CPI-input/v31",bundle=bundle,qualification=result))
                         self.cpi_input_qualification=result
                 except (ValueError,TypeError,KeyError,OSError,httpx.HTTPError) as error:
                     self.cpi_input_qualification={"status":"unavailable","reason":type(error).__name__,"forecast_probability":None,"trading_authority":False}
@@ -1024,7 +1082,7 @@ class ExperimentalRuntime:
         async def independent_events():
             while not self.stopping and not should_exit():
                 async with self._research_source_lock:
-                    if self.phase18 is not None and self.last_frame is not None and self._budget_ok():
+                    if self.phase18 is not None and self.last_frame is not None and await self._sync_io(self._budget_ok):
                         try:
                             committed = await self.phase18.step(self.last_frame)
                             self.phase18_error = None
@@ -1048,7 +1106,7 @@ class ExperimentalRuntime:
                         except Exception as error:
                             self.phase18_error = f"{type(error).__name__}:{str(error)[:160]}"
                             log.exception("phase18_event_research_withheld")
-                    if self.phase23 is not None and self.last_frame is not None and self._budget_ok():
+                    if self.phase23 is not None and self.last_frame is not None and await self._sync_io(self._budget_ok):
                         try:
                             await self.phase23.step(self.last_frame)
                             await self.phase23_outcomes.step()
@@ -1066,7 +1124,7 @@ class ExperimentalRuntime:
                 except Exception as error:
                     self.last_error = f"cycle_failed:{type(error).__name__}"
                     log.exception("experimental_cycle_withheld")
-                    self._cancel_and_checkpoint(self.clock())
+                    await self._sync_io(self._cancel_and_checkpoint, self.clock())
                 await asyncio.sleep(self.config.poll_seconds)
 
         await asyncio.gather(cycles(), self._fees_loop(should_exit), self._event_resolution_loop(should_exit), independent_events(), self._domain_research_loop(should_exit), self._domain_research_loop(should_exit, "phase25"), self._volume_research_loop(should_exit), self._research_fee_loop(should_exit), self._official_event_score_loop(should_exit), self._event_summary_sampler(should_exit), self._cpi_input_probe_loop(should_exit))
@@ -1131,8 +1189,10 @@ class ExperimentalRuntime:
 
     def archive_state(self):
         """Keep storage/account health readable without copying research histories."""
-        capital = self.account.risk.snapshot(now=self.clock())
-        return {"account_id": "experimental-paper", "cash": capital["cash"],
+        from neraium_poly.experimental.operations_ledger import operations_ledger
+
+        capital, counts = operations_ledger(self.account.directory, clock=self.clock)
+        return {**counts, "account_id": "experimental-paper", "cash": capital["cash"],
                 "bankroll": capital["equity"], "kill_switch": capital["kill_switch"],
                 "simulated_pnl": capital["equity"] - self.config.risk_limits.bankroll,
                 "generated_at": self.clock().isoformat(), "service": self.health(),
@@ -1174,12 +1234,6 @@ class ExperimentalRuntime:
         state["official_event_research"] = self.official_event_scores.status() if getattr(self,"official_event_scores",None) else {"status":"disabled"}
         state["research_costs"] = self.research_fees.status() if getattr(self,"research_fees",None) else None
         state["memory"] = self.memory_sampler.status() if getattr(self,"memory_sampler",None) else None
-        with self.account.risk._lock:
-            state["open_positions"] = self.account.risk.db.execute("SELECT count(*) FROM positions").fetchone()[0]
-            state["fills"] = self.account.risk.db.execute(
-                "SELECT count(*) FROM audit WHERE action IN ('fill','experimental_exit_fill')").fetchone()[0]
-        with self.account.broker._lock:
-            state["orders_submitted"] = self.account.broker.db.execute("SELECT count(*) FROM orders").fetchone()[0]
         return state
 
     def state(self):
@@ -1240,19 +1294,43 @@ class ExperimentalRuntime:
 
     async def close(self):
         self.stopping = True
-        interrupted=await self._finish_cycle()
-        self._cancel_and_checkpoint(self.clock())
+        task = getattr(self, "_close_task", None)
+        if task is None:
+            self._close_task = task = asyncio.create_task(self._close_resources())
+        interrupted = False
+        while not task.done():
+            try:
+                await asyncio.shield(task)
+            except asyncio.CancelledError:
+                interrupted = True
+            except Exception:  # noqa: BLE001 - propagate the completed worker result after draining
+                break
+        if interrupted:
+            if not task.cancelled():
+                task.exception()
+            raise asyncio.CancelledError
+        return task.result()
+
+    async def _close_resources(self):
+        await self._finish_cycle()
+        await self._sync_io(self._cancel_and_checkpoint, self.clock())
         if getattr(self, "phase26_inputs", None) is not None:
             await self.phase26_inputs.close()
         if getattr(self, "phase26_index", None) is not None:
             self.phase26_index.close()
         await self.feed.close()
         await self.fee_adapter.close()
+        try:
+            await self._sync_io(self._close_databases)
+        finally:
+            self._io_executor.shutdown(wait=True, cancel_futures=False)
+
+    def _close_databases(self):
+        self._io_closed = True
         if self.event_intelligence is not None:
             self.event_intelligence.close()
         self.events.close()
         self.account.close()
-        if interrupted:raise asyncio.CancelledError
 
 
 async def serve_experimental(config):

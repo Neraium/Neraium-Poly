@@ -1,0 +1,30 @@
+{
+  "scope": "controlled engineering fixtures only; genuine live latency/throughput measured by coordinator",
+  "changes": [
+    "single submitted synchronous paper I/O job, serialized executor max_workers1",
+    "archive and current locked risk processing off asyncio event loop",
+    "fee publication/snapshot and explicit budget-check lock waits off event loop",
+    "cancellation aborts new admission and drains writes before releasing cycle gate",
+    "idempotent shielded close drains cycle and shuts dedicated executor after persistence closes",
+    "fresh committed read-only per-ledger operational snapshots, no expiry/reconciliation/admission authority; no balance fallback on error"
+  ],
+  "focused_tests": [
+    {
+      "command": "pytest tests/test_phase34_latency.py tests/test_experimental_runtime.py tests/test_phase33_cycle_fairness.py",
+      "passed": 18,
+      "seconds": 48.75
+    },
+    {
+      "command": "pytest test_monitor_sqlite_lock_wait_is_bounded_and_never_returns_cached_cash",
+      "passed": 1,
+      "seconds": 0.79
+    },
+    {
+      "command": "pytest test_phase22_archive_status.py test_archive_runtime.py test_phase15_continuous.py test_phase16_continuous.py test_phase17_continuous.py",
+      "passed": 37,
+      "seconds": 7.19
+    }
+  ],
+  "ruff": "pass",
+  "safety": "No risk/account/strategy math, source records, limits, stops, quotas or live-execution authority changed"
+}
