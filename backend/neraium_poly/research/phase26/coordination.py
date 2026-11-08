@@ -37,7 +37,7 @@ class Inputs:
     def __init__(self,store,*,clock,can_write,watcher=None):
         self.store,self.clock,self.can_write=store,clock,can_write
         self.counts=Counter();self.last_sample={};self.last_global=None;self.last_preflight=None;self.rejections={}
-        policy={'version':'phase26-causal-inputs-v1','code_sha256':digest([Path(__file__).read_text(),Path(__file__).with_name('books.py').read_text()]),
+        policy={'version':'phase26-causal-inputs-v1','code_sha256':digest([Path(__file__).read_text(),Path(__file__).with_name('books.py').read_text(),(Path(__file__).parent.parent/'phase29'/'alignment.py').read_text()]),
                 'native_book_max_age_seconds':15,'max_spread':.05,'model_interval_seconds':300,
                 'record_sampling':'qualified books at most one/token/60seconds and one/second globally; selected books also preserved in forecasts',
                 'sports_check_after_start_hours':1,'finality_checks_relaxed':False,'primary_collection_duplicated':False,'max_supplemental_tokens':32,
