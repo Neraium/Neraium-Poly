@@ -1,0 +1,72 @@
+{
+  "at": "2026-11-08T01:28:33.611903+00:00",
+  "scope": "isolated actual public stream probe, no forecasts/trades",
+  "market_ids": [
+    "3566403",
+    "3566404",
+    "3566405",
+    "6747198"
+  ],
+  "native_tokens": 8,
+  "qualified_books": 0,
+  "durable_book_observations": 0,
+  "status": {
+    "status": "public_research_only",
+    "subscribed_tokens": 8,
+    "qualified_books": 0,
+    "max_tokens": 32,
+    "native_max_age_seconds": 15,
+    "max_spread": 0.05,
+    "counts": {
+      "stream_starts": 1,
+      "callbacks_observed": 8,
+      "callback_stale_book": 8,
+      "callback_large_spread": 2
+    },
+    "book_rejections": {
+      "stale_book": 8,
+      "large_spread": 2
+    },
+    "transport": {
+      "messages": 3,
+      "native_book_frames": 8,
+      "native_delta_frames": 0,
+      "native_books_delivered": 8,
+      "rest_books": 0,
+      "reconnects": 0,
+      "gaps": 0,
+      "out_of_order": 0,
+      "queue_overflows": 0,
+      "invalid_frames": 0,
+      "callbacks_failed": 0,
+      "invalidations": 2,
+      "resnapshot_failures": 0,
+      "gap_missing_baseline": 0,
+      "gap_source_time": 0,
+      "gap_top_integrity": 0,
+      "gap_invalid_delta": 0,
+      "stale_recovery_baselines": 0,
+      "ws_connected": true,
+      "subscribed_tokens": 8,
+      "cached_books": 8,
+      "resolved_tokens_withheld": 0,
+      "gap_tokens_withheld": 0,
+      "fresh_books": 0,
+      "queue_depth": 0,
+      "resnapshot_pending": 0,
+      "connection_generation": 1,
+      "last_message_at": "2026-11-08T01:28:29.048052+00:00",
+      "last_gap_at": null,
+      "http_requests": 0,
+      "http_rate_limits": 0,
+      "http_peak_inflight": 0,
+      "rate_requests_per_second": 2
+    },
+    "last_qualified_at": null,
+    "last_error": null,
+    "quarantined_tokens": 0,
+    "trading_authority": false,
+    "counter_scope": "transport callbacks and current snapshots; never independent observations"
+  },
+  "source_timestamps": []
+}
