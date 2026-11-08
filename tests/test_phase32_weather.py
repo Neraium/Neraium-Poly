@@ -43,7 +43,8 @@ async def test_official_station_result_separate_from_native_payout(monkeypatch,t
     assert r['event_result_verified'] and r['official_result']['resolution_value']==17
     p=weather.replay_weather_event(r,s,f,evidence_root=tmp_path,as_of=OBSERVED)
     assert p['outcome']==0 and p['brier']==f['probability']**2
-    assert p['event_end_lower']=='2026-11-08T16:05:00+00:00'
+    assert p['event_end_lower']=='2026-11-08T16:00:00+00:00'
+    assert p['event_end_upper']=='2026-11-08T16:05:00+00:00'
     assert not p['native_payout_verified'] and not p['market_baseline_comparable'] and p['market_brier'] is None
     assert not p['trading_authority'] and not p['certification_authority']
 

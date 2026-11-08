@@ -1,5 +1,5 @@
 {
-  "observed_at": "2026-11-08T20:38:26.177175+00:00",
+  "observed_at": "2026-11-08T20:39:42.140308+00:00",
   "source_documentation": "https://aviationweather.gov/data/api/",
   "forecast_inventory": 20,
   "verified_official_forecasts": 10,
@@ -40,9 +40,10 @@
         "token_id": "100429054464382097866097138746015543803508294805619807891313880055441225561267",
         "event_group_id": "7eff3e5934351800cfb93e856a34339fbc7c9ed842aebacad122d66e78a37614",
         "outcome": 0,
-        "available_at": "2026-11-08T20:38:26.430344+00:00",
-        "event_end_lower": "2026-11-08T16:05:38.270000+00:00",
+        "available_at": "2026-11-08T20:39:42.285037+00:00",
+        "event_end_lower": "2026-11-08T16:00:00+00:00",
         "event_end_upper": "2026-11-08T16:05:38.270000+00:00",
+        "reference_freeze": "2026-11-08T16:05:38.270000+00:00",
         "resolution_value": 17,
         "brier": 0.00267538644470868,
         "log_loss": 0.05310982531394841,
@@ -50,8 +51,8 @@
         "market_brier": null,
         "market_log_loss": null,
         "score_scope": "conditional official station-day reference, not native payout or market superiority",
-        "official_evidence_sha256": "1ba825229812e2da8d66d1fcaa187181148d1d8a5bbc592a274b8e23b7ed2fce",
-        "proof_sha256": "3691bf42aa5b45ed073ddd74599bb02dadaf3b1a76f55164851c12044cb16477",
+        "official_evidence_sha256": "c56d0f11a846e14746fe66941b1e8cedaa73addbaa210c6d061a5997ca2765e8",
+        "proof_sha256": "1e497bb0849ee65615b5878e5be9e8f21ecc11e7e10cb6883cf198a9b3a76348",
         "research_only": true,
         "native_payout_verified": false,
         "trading_authority": false,
@@ -61,7 +62,7 @@
       "reference_sources": [
         {
           "source_url": "https://aviationweather.gov/api/data/metar?ids=ZUCK&format=json&date=2026-11-08T19%3A00%3A00Z&hours=30",
-          "retrieved_at": "2026-11-08T20:38:26.422537+00:00",
+          "retrieved_at": "2026-11-08T20:39:42.283729+00:00",
           "content_sha256": "0f493834797fb3ed6d11305a01fdff45c53216eadfa4083a56f75de265cadccb",
           "bytes": 13829,
           "raw_file": "0f493834797fb3ed6d11305a01fdff45c53216eadfa4083a56f75de265cadccb.json"
@@ -77,7 +78,7 @@
         "period_start": "2026-11-07T16:00:00+00:00",
         "period_end": "2026-11-08T16:00:00+00:00",
         "reference_freeze": "2026-11-08T16:05:38.270000+00:00",
-        "observed_at": "2026-11-08T20:38:26.422537+00:00",
+        "observed_at": "2026-11-08T20:39:42.283729+00:00",
         "routine_reports": 31,
         "target": "routine_AWC_station_local_day_high_as_published_after_following_day_freeze",
         "material_error_correction_status": "not_adjudicated_native_gate_preserved"
@@ -111,9 +112,10 @@
         "token_id": "100429054464382097866097138746015543803508294805619807891313880055441225561267",
         "event_group_id": "7eff3e5934351800cfb93e856a34339fbc7c9ed842aebacad122d66e78a37614",
         "outcome": 0,
-        "available_at": "2026-11-08T20:38:26.464991+00:00",
-        "event_end_lower": "2026-11-08T16:05:38.270000+00:00",
+        "available_at": "2026-11-08T20:39:42.319705+00:00",
+        "event_end_lower": "2026-11-08T16:00:00+00:00",
         "event_end_upper": "2026-11-08T16:05:38.270000+00:00",
+        "reference_freeze": "2026-11-08T16:05:38.270000+00:00",
         "resolution_value": 17,
         "brier": 0.007431629013079668,
         "log_loss": 0.09015109699429757,
@@ -121,8 +123,8 @@
         "market_brier": null,
         "market_log_loss": null,
         "score_scope": "conditional official station-day reference, not native payout or market superiority",
-        "official_evidence_sha256": "1ba825229812e2da8d66d1fcaa187181148d1d8a5bbc592a274b8e23b7ed2fce",
-        "proof_sha256": "0cb1b5d18efc7c4cc43a521988de40c4a69e3e0c0813327631be5c9bc48500be",
+        "official_evidence_sha256": "c56d0f11a846e14746fe66941b1e8cedaa73addbaa210c6d061a5997ca2765e8",
+        "proof_sha256": "be5ffcf7d6fa8b165535185f1af8557958f05a946081a63ad27bdd6d5efdda38",
         "research_only": true,
         "native_payout_verified": false,
         "trading_authority": false,
@@ -132,7 +134,7 @@
       "reference_sources": [
         {
           "source_url": "https://aviationweather.gov/api/data/metar?ids=ZUCK&format=json&date=2026-11-08T19%3A00%3A00Z&hours=30",
-          "retrieved_at": "2026-11-08T20:38:26.422537+00:00",
+          "retrieved_at": "2026-11-08T20:39:42.283729+00:00",
           "content_sha256": "0f493834797fb3ed6d11305a01fdff45c53216eadfa4083a56f75de265cadccb",
           "bytes": 13829,
           "raw_file": "0f493834797fb3ed6d11305a01fdff45c53216eadfa4083a56f75de265cadccb.json"
@@ -148,7 +150,7 @@
         "period_start": "2026-11-07T16:00:00+00:00",
         "period_end": "2026-11-08T16:00:00+00:00",
         "reference_freeze": "2026-11-08T16:05:38.270000+00:00",
-        "observed_at": "2026-11-08T20:38:26.422537+00:00",
+        "observed_at": "2026-11-08T20:39:42.283729+00:00",
         "routine_reports": 31,
         "target": "routine_AWC_station_local_day_high_as_published_after_following_day_freeze",
         "material_error_correction_status": "not_adjudicated_native_gate_preserved"
@@ -182,9 +184,10 @@
         "token_id": "34042366474100853457203862973665563893587804972767945397437748411724879091733",
         "event_group_id": "e4488026ed0ef1f287e502f3b6cb9dcabe7db006daeec9e59e091fc8b4243cf4",
         "outcome": 1,
-        "available_at": "2026-11-08T20:38:26.558315+00:00",
-        "event_end_lower": "2026-11-08T16:05:38.724000+00:00",
+        "available_at": "2026-11-08T20:39:42.410580+00:00",
+        "event_end_lower": "2026-11-08T16:00:00+00:00",
         "event_end_upper": "2026-11-08T16:05:38.724000+00:00",
+        "reference_freeze": "2026-11-08T16:05:38.724000+00:00",
         "resolution_value": 15,
         "brier": 0.0074316290130796775,
         "log_loss": 0.09015109699429757,
@@ -192,8 +195,8 @@
         "market_brier": null,
         "market_log_loss": null,
         "score_scope": "conditional official station-day reference, not native payout or market superiority",
-        "official_evidence_sha256": "95f5f9712d6c311114e8cacd87076f34173c35360e24b02ecf0a6e0a610dbde5",
-        "proof_sha256": "5843b13aa3f95655a6d80e23efd80a7279b7beef8a0baff4f1b72341cee59e63",
+        "official_evidence_sha256": "c501a07b569bb563c03ccf544aa2af91188a47198d862dc43daa52df3832d94e",
+        "proof_sha256": "485ad0ba35c86ddffb1773a5ebedfd5ef29a7acb3d52e4d37d8ca5748cffee96",
         "research_only": true,
         "native_payout_verified": false,
         "trading_authority": false,
@@ -203,7 +206,7 @@
       "reference_sources": [
         {
           "source_url": "https://aviationweather.gov/api/data/metar?ids=ZSQD&format=json&date=2026-11-08T19%3A00%3A00Z&hours=30",
-          "retrieved_at": "2026-11-08T20:38:26.550259+00:00",
+          "retrieved_at": "2026-11-08T20:39:42.409411+00:00",
           "content_sha256": "f63d138443ec96ab3341cf9974d84d67bf4052002ada59f29eacb54bbb2f91cc",
           "bytes": 14400,
           "raw_file": "f63d138443ec96ab3341cf9974d84d67bf4052002ada59f29eacb54bbb2f91cc.json"
@@ -219,7 +222,7 @@
         "period_start": "2026-11-07T16:00:00+00:00",
         "period_end": "2026-11-08T16:00:00+00:00",
         "reference_freeze": "2026-11-08T16:05:38.724000+00:00",
-        "observed_at": "2026-11-08T20:38:26.550259+00:00",
+        "observed_at": "2026-11-08T20:39:42.409411+00:00",
         "routine_reports": 31,
         "target": "routine_AWC_station_local_day_high_as_published_after_following_day_freeze",
         "material_error_correction_status": "not_adjudicated_native_gate_preserved"
@@ -253,9 +256,10 @@
         "token_id": "34042366474100853457203862973665563893587804972767945397437748411724879091733",
         "event_group_id": "e4488026ed0ef1f287e502f3b6cb9dcabe7db006daeec9e59e091fc8b4243cf4",
         "outcome": 1,
-        "available_at": "2026-11-08T20:38:26.590588+00:00",
-        "event_end_lower": "2026-11-08T16:05:38.724000+00:00",
+        "available_at": "2026-11-08T20:39:42.442603+00:00",
+        "event_end_lower": "2026-11-08T16:00:00+00:00",
         "event_end_upper": "2026-11-08T16:05:38.724000+00:00",
+        "reference_freeze": "2026-11-08T16:05:38.724000+00:00",
         "resolution_value": 15,
         "brier": 0.0026753864447086793,
         "log_loss": 0.05310982531394841,
@@ -263,8 +267,8 @@
         "market_brier": null,
         "market_log_loss": null,
         "score_scope": "conditional official station-day reference, not native payout or market superiority",
-        "official_evidence_sha256": "95f5f9712d6c311114e8cacd87076f34173c35360e24b02ecf0a6e0a610dbde5",
-        "proof_sha256": "31ba8767618e1f30b54075e4affd31d1451e3af36c860ccb7cb2256611957e7a",
+        "official_evidence_sha256": "c501a07b569bb563c03ccf544aa2af91188a47198d862dc43daa52df3832d94e",
+        "proof_sha256": "d0ce13a874de0a4d4b35b4ed286392c3dc0f33bfc7da8941d6afe0555a988fa0",
         "research_only": true,
         "native_payout_verified": false,
         "trading_authority": false,
@@ -274,7 +278,7 @@
       "reference_sources": [
         {
           "source_url": "https://aviationweather.gov/api/data/metar?ids=ZSQD&format=json&date=2026-11-08T19%3A00%3A00Z&hours=30",
-          "retrieved_at": "2026-11-08T20:38:26.550259+00:00",
+          "retrieved_at": "2026-11-08T20:39:42.409411+00:00",
           "content_sha256": "f63d138443ec96ab3341cf9974d84d67bf4052002ada59f29eacb54bbb2f91cc",
           "bytes": 14400,
           "raw_file": "f63d138443ec96ab3341cf9974d84d67bf4052002ada59f29eacb54bbb2f91cc.json"
@@ -290,7 +294,7 @@
         "period_start": "2026-11-07T16:00:00+00:00",
         "period_end": "2026-11-08T16:00:00+00:00",
         "reference_freeze": "2026-11-08T16:05:38.724000+00:00",
-        "observed_at": "2026-11-08T20:38:26.550259+00:00",
+        "observed_at": "2026-11-08T20:39:42.409411+00:00",
         "routine_reports": 31,
         "target": "routine_AWC_station_local_day_high_as_published_after_following_day_freeze",
         "material_error_correction_status": "not_adjudicated_native_gate_preserved"
@@ -324,9 +328,10 @@
         "token_id": "94706811208291031924388973437051527458389928308352329951198252501785611674239",
         "event_group_id": "7eff3e5934351800cfb93e856a34339fbc7c9ed842aebacad122d66e78a37614",
         "outcome": 0,
-        "available_at": "2026-11-08T20:38:26.626176+00:00",
-        "event_end_lower": "2026-11-08T16:05:38.270000+00:00",
+        "available_at": "2026-11-08T20:39:42.474906+00:00",
+        "event_end_lower": "2026-11-08T16:00:00+00:00",
         "event_end_upper": "2026-11-08T16:05:38.270000+00:00",
+        "reference_freeze": "2026-11-08T16:05:38.270000+00:00",
         "resolution_value": 17,
         "brier": 0.07426051680489147,
         "log_loss": 0.318152041351561,
@@ -334,8 +339,8 @@
         "market_brier": null,
         "market_log_loss": null,
         "score_scope": "conditional official station-day reference, not native payout or market superiority",
-        "official_evidence_sha256": "1ba825229812e2da8d66d1fcaa187181148d1d8a5bbc592a274b8e23b7ed2fce",
-        "proof_sha256": "d940b081b1a726bc95bbf04aed93d3ac93302dcf714f2ad614ba3af68831582e",
+        "official_evidence_sha256": "c56d0f11a846e14746fe66941b1e8cedaa73addbaa210c6d061a5997ca2765e8",
+        "proof_sha256": "4a32e1335e19e863848ffad312b9efcfae2859f4e949518b17224d315e44441c",
         "research_only": true,
         "native_payout_verified": false,
         "trading_authority": false,
@@ -345,7 +350,7 @@
       "reference_sources": [
         {
           "source_url": "https://aviationweather.gov/api/data/metar?ids=ZUCK&format=json&date=2026-11-08T19%3A00%3A00Z&hours=30",
-          "retrieved_at": "2026-11-08T20:38:26.422537+00:00",
+          "retrieved_at": "2026-11-08T20:39:42.283729+00:00",
           "content_sha256": "0f493834797fb3ed6d11305a01fdff45c53216eadfa4083a56f75de265cadccb",
           "bytes": 13829,
           "raw_file": "0f493834797fb3ed6d11305a01fdff45c53216eadfa4083a56f75de265cadccb.json"
@@ -361,7 +366,7 @@
         "period_start": "2026-11-07T16:00:00+00:00",
         "period_end": "2026-11-08T16:00:00+00:00",
         "reference_freeze": "2026-11-08T16:05:38.270000+00:00",
-        "observed_at": "2026-11-08T20:38:26.422537+00:00",
+        "observed_at": "2026-11-08T20:39:42.283729+00:00",
         "routine_reports": 31,
         "target": "routine_AWC_station_local_day_high_as_published_after_following_day_freeze",
         "material_error_correction_status": "not_adjudicated_native_gate_preserved"
@@ -395,9 +400,10 @@
         "token_id": "94706811208291031924388973437051527458389928308352329951198252501785611674239",
         "event_group_id": "7eff3e5934351800cfb93e856a34339fbc7c9ed842aebacad122d66e78a37614",
         "outcome": 0,
-        "available_at": "2026-11-08T20:38:26.670158+00:00",
-        "event_end_lower": "2026-11-08T16:05:38.270000+00:00",
+        "available_at": "2026-11-08T20:39:42.519315+00:00",
+        "event_end_lower": "2026-11-08T16:00:00+00:00",
         "event_end_upper": "2026-11-08T16:05:38.270000+00:00",
+        "reference_freeze": "2026-11-08T16:05:38.270000+00:00",
         "resolution_value": 17,
         "brier": 0.04385840182518985,
         "log_loss": 0.23499345522048376,
@@ -405,8 +411,8 @@
         "market_brier": null,
         "market_log_loss": null,
         "score_scope": "conditional official station-day reference, not native payout or market superiority",
-        "official_evidence_sha256": "1ba825229812e2da8d66d1fcaa187181148d1d8a5bbc592a274b8e23b7ed2fce",
-        "proof_sha256": "97ce6a73b64805b99ce35f55352e185a1fd7cd1fa412426d12174fea71985ea7",
+        "official_evidence_sha256": "c56d0f11a846e14746fe66941b1e8cedaa73addbaa210c6d061a5997ca2765e8",
+        "proof_sha256": "ec51cd4c62104634d391c78f2e9057bbaf14079af7ccf057dfde08d952136881",
         "research_only": true,
         "native_payout_verified": false,
         "trading_authority": false,
@@ -416,7 +422,7 @@
       "reference_sources": [
         {
           "source_url": "https://aviationweather.gov/api/data/metar?ids=ZUCK&format=json&date=2026-11-08T19%3A00%3A00Z&hours=30",
-          "retrieved_at": "2026-11-08T20:38:26.422537+00:00",
+          "retrieved_at": "2026-11-08T20:39:42.283729+00:00",
           "content_sha256": "0f493834797fb3ed6d11305a01fdff45c53216eadfa4083a56f75de265cadccb",
           "bytes": 13829,
           "raw_file": "0f493834797fb3ed6d11305a01fdff45c53216eadfa4083a56f75de265cadccb.json"
@@ -432,7 +438,7 @@
         "period_start": "2026-11-07T16:00:00+00:00",
         "period_end": "2026-11-08T16:00:00+00:00",
         "reference_freeze": "2026-11-08T16:05:38.270000+00:00",
-        "observed_at": "2026-11-08T20:38:26.422537+00:00",
+        "observed_at": "2026-11-08T20:39:42.283729+00:00",
         "routine_reports": 31,
         "target": "routine_AWC_station_local_day_high_as_published_after_following_day_freeze",
         "material_error_correction_status": "not_adjudicated_native_gate_preserved"
@@ -466,9 +472,10 @@
         "token_id": "90490288749007726190456778562036922440984659371718742510948651630834554533232",
         "event_group_id": "1ec636b4404235099d7aea60ea89956197e86e354b4d0a3b1d67a841d3f71106",
         "outcome": 0,
-        "available_at": "2026-11-08T20:38:26.761711+00:00",
-        "event_end_lower": "2026-11-08T16:05:38.812000+00:00",
+        "available_at": "2026-11-08T20:39:42.605028+00:00",
+        "event_end_lower": "2026-11-08T16:00:00+00:00",
         "event_end_upper": "2026-11-08T16:05:38.812000+00:00",
+        "reference_freeze": "2026-11-08T16:05:38.812000+00:00",
         "resolution_value": 17,
         "brier": 0.033278351800364425,
         "log_loss": 0.20141086445338593,
@@ -476,8 +483,8 @@
         "market_brier": null,
         "market_log_loss": null,
         "score_scope": "conditional official station-day reference, not native payout or market superiority",
-        "official_evidence_sha256": "d39fa7130aaf62aa969b2838a24adb508ab22a9b899c3f2a2e3c47ee976f504e",
-        "proof_sha256": "848bd0409f36a9e275bec52e1f7fdbe2d82d916668fef9367ddc3414122fb4b0",
+        "official_evidence_sha256": "3c7d03bcfca905929730ed42a5ec55a8b35f8744bb4777134974fcacacc21826",
+        "proof_sha256": "22c52e38b85d10aa528fcb982040f69522ca7cd3315a2283c19d26f8df76d642",
         "research_only": true,
         "native_payout_verified": false,
         "trading_authority": false,
@@ -487,7 +494,7 @@
       "reference_sources": [
         {
           "source_url": "https://aviationweather.gov/api/data/metar?ids=ZUUU&format=json&date=2026-11-08T19%3A00%3A00Z&hours=30",
-          "retrieved_at": "2026-11-08T20:38:26.754204+00:00",
+          "retrieved_at": "2026-11-08T20:39:42.603987+00:00",
           "content_sha256": "ce309ad633d47ea1c9efaa7872e39e89822ff82f98f691a2cee5179832988dfe",
           "bytes": 13246,
           "raw_file": "ce309ad633d47ea1c9efaa7872e39e89822ff82f98f691a2cee5179832988dfe.json"
@@ -503,7 +510,7 @@
         "period_start": "2026-11-07T16:00:00+00:00",
         "period_end": "2026-11-08T16:00:00+00:00",
         "reference_freeze": "2026-11-08T16:05:38.812000+00:00",
-        "observed_at": "2026-11-08T20:38:26.754204+00:00",
+        "observed_at": "2026-11-08T20:39:42.603987+00:00",
         "routine_reports": 31,
         "target": "routine_AWC_station_local_day_high_as_published_after_following_day_freeze",
         "material_error_correction_status": "not_adjudicated_native_gate_preserved"
@@ -537,9 +544,10 @@
         "token_id": "90490288749007726190456778562036922440984659371718742510948651630834554533232",
         "event_group_id": "1ec636b4404235099d7aea60ea89956197e86e354b4d0a3b1d67a841d3f71106",
         "outcome": 0,
-        "available_at": "2026-11-08T20:38:26.794393+00:00",
-        "event_end_lower": "2026-11-08T16:05:38.812000+00:00",
+        "available_at": "2026-11-08T20:39:42.637713+00:00",
+        "event_end_lower": "2026-11-08T16:00:00+00:00",
         "event_end_upper": "2026-11-08T16:05:38.812000+00:00",
+        "reference_freeze": "2026-11-08T16:05:38.812000+00:00",
         "resolution_value": 17,
         "brier": 0.027143885681261602,
         "log_loss": 0.18002900550981035,
@@ -547,8 +555,8 @@
         "market_brier": null,
         "market_log_loss": null,
         "score_scope": "conditional official station-day reference, not native payout or market superiority",
-        "official_evidence_sha256": "d39fa7130aaf62aa969b2838a24adb508ab22a9b899c3f2a2e3c47ee976f504e",
-        "proof_sha256": "87138790e0e3fa4bb5edaf4b7788dedb6d6ebe85684b2587ccbb8a5790059afb",
+        "official_evidence_sha256": "3c7d03bcfca905929730ed42a5ec55a8b35f8744bb4777134974fcacacc21826",
+        "proof_sha256": "ce3b19037c5f6a20a9ac7056bbd8aa44f57e76e0fa6a9421e91cf1479370b67e",
         "research_only": true,
         "native_payout_verified": false,
         "trading_authority": false,
@@ -558,7 +566,7 @@
       "reference_sources": [
         {
           "source_url": "https://aviationweather.gov/api/data/metar?ids=ZUUU&format=json&date=2026-11-08T19%3A00%3A00Z&hours=30",
-          "retrieved_at": "2026-11-08T20:38:26.754204+00:00",
+          "retrieved_at": "2026-11-08T20:39:42.603987+00:00",
           "content_sha256": "ce309ad633d47ea1c9efaa7872e39e89822ff82f98f691a2cee5179832988dfe",
           "bytes": 13246,
           "raw_file": "ce309ad633d47ea1c9efaa7872e39e89822ff82f98f691a2cee5179832988dfe.json"
@@ -574,7 +582,7 @@
         "period_start": "2026-11-07T16:00:00+00:00",
         "period_end": "2026-11-08T16:00:00+00:00",
         "reference_freeze": "2026-11-08T16:05:38.812000+00:00",
-        "observed_at": "2026-11-08T20:38:26.754204+00:00",
+        "observed_at": "2026-11-08T20:39:42.603987+00:00",
         "routine_reports": 31,
         "target": "routine_AWC_station_local_day_high_as_published_after_following_day_freeze",
         "material_error_correction_status": "not_adjudicated_native_gate_preserved"
@@ -608,9 +616,10 @@
         "token_id": "9078095391908655107102102583867275197784611219670387421241082395926534077695",
         "event_group_id": "e4488026ed0ef1f287e502f3b6cb9dcabe7db006daeec9e59e091fc8b4243cf4",
         "outcome": 1,
-        "available_at": "2026-11-08T20:38:26.826802+00:00",
-        "event_end_lower": "2026-11-08T16:05:38.724000+00:00",
+        "available_at": "2026-11-08T20:39:42.670542+00:00",
+        "event_end_lower": "2026-11-08T16:00:00+00:00",
         "event_end_upper": "2026-11-08T16:05:38.724000+00:00",
+        "reference_freeze": "2026-11-08T16:05:38.724000+00:00",
         "resolution_value": 15,
         "brier": 0.00849694583041357,
         "log_loss": 0.09670792367039253,
@@ -618,8 +627,8 @@
         "market_brier": null,
         "market_log_loss": null,
         "score_scope": "conditional official station-day reference, not native payout or market superiority",
-        "official_evidence_sha256": "95f5f9712d6c311114e8cacd87076f34173c35360e24b02ecf0a6e0a610dbde5",
-        "proof_sha256": "09f2e295d7d39dae453f7901d599e043f72031f9d61b6c99bbc3b4d857bf9a54",
+        "official_evidence_sha256": "c501a07b569bb563c03ccf544aa2af91188a47198d862dc43daa52df3832d94e",
+        "proof_sha256": "a0dc51d959d21b9ddc8c747f3a93f2f46f230d378c2085b314c6c1cb90613f0d",
         "research_only": true,
         "native_payout_verified": false,
         "trading_authority": false,
@@ -629,7 +638,7 @@
       "reference_sources": [
         {
           "source_url": "https://aviationweather.gov/api/data/metar?ids=ZSQD&format=json&date=2026-11-08T19%3A00%3A00Z&hours=30",
-          "retrieved_at": "2026-11-08T20:38:26.550259+00:00",
+          "retrieved_at": "2026-11-08T20:39:42.409411+00:00",
           "content_sha256": "f63d138443ec96ab3341cf9974d84d67bf4052002ada59f29eacb54bbb2f91cc",
           "bytes": 14400,
           "raw_file": "f63d138443ec96ab3341cf9974d84d67bf4052002ada59f29eacb54bbb2f91cc.json"
@@ -645,7 +654,7 @@
         "period_start": "2026-11-07T16:00:00+00:00",
         "period_end": "2026-11-08T16:00:00+00:00",
         "reference_freeze": "2026-11-08T16:05:38.724000+00:00",
-        "observed_at": "2026-11-08T20:38:26.550259+00:00",
+        "observed_at": "2026-11-08T20:39:42.409411+00:00",
         "routine_reports": 31,
         "target": "routine_AWC_station_local_day_high_as_published_after_following_day_freeze",
         "material_error_correction_status": "not_adjudicated_native_gate_preserved"
@@ -679,9 +688,10 @@
         "token_id": "9078095391908655107102102583867275197784611219670387421241082395926534077695",
         "event_group_id": "e4488026ed0ef1f287e502f3b6cb9dcabe7db006daeec9e59e091fc8b4243cf4",
         "outcome": 1,
-        "available_at": "2026-11-08T20:38:26.859135+00:00",
-        "event_end_lower": "2026-11-08T16:05:38.724000+00:00",
+        "available_at": "2026-11-08T20:39:42.702844+00:00",
+        "event_end_lower": "2026-11-08T16:00:00+00:00",
         "event_end_upper": "2026-11-08T16:05:38.724000+00:00",
+        "reference_freeze": "2026-11-08T16:05:38.724000+00:00",
         "resolution_value": 15,
         "brier": 0.0264944754535249,
         "log_loss": 0.17765793229588617,
@@ -689,8 +699,8 @@
         "market_brier": null,
         "market_log_loss": null,
         "score_scope": "conditional official station-day reference, not native payout or market superiority",
-        "official_evidence_sha256": "95f5f9712d6c311114e8cacd87076f34173c35360e24b02ecf0a6e0a610dbde5",
-        "proof_sha256": "84fadfb16fbfcae6c00a4cc6e574bac708735ca22dee68a889de974c6153a2f9",
+        "official_evidence_sha256": "c501a07b569bb563c03ccf544aa2af91188a47198d862dc43daa52df3832d94e",
+        "proof_sha256": "ffae72d89ff53a20ff1dacd54a17c5d4e3cd2dd94fd2934fb54c0490bf42105d",
         "research_only": true,
         "native_payout_verified": false,
         "trading_authority": false,
@@ -700,7 +710,7 @@
       "reference_sources": [
         {
           "source_url": "https://aviationweather.gov/api/data/metar?ids=ZSQD&format=json&date=2026-11-08T19%3A00%3A00Z&hours=30",
-          "retrieved_at": "2026-11-08T20:38:26.550259+00:00",
+          "retrieved_at": "2026-11-08T20:39:42.409411+00:00",
           "content_sha256": "f63d138443ec96ab3341cf9974d84d67bf4052002ada59f29eacb54bbb2f91cc",
           "bytes": 14400,
           "raw_file": "f63d138443ec96ab3341cf9974d84d67bf4052002ada59f29eacb54bbb2f91cc.json"
@@ -716,7 +726,7 @@
         "period_start": "2026-11-07T16:00:00+00:00",
         "period_end": "2026-11-08T16:00:00+00:00",
         "reference_freeze": "2026-11-08T16:05:38.724000+00:00",
-        "observed_at": "2026-11-08T20:38:26.550259+00:00",
+        "observed_at": "2026-11-08T20:39:42.409411+00:00",
         "routine_reports": 31,
         "target": "routine_AWC_station_local_day_high_as_published_after_following_day_freeze",
         "material_error_correction_status": "not_adjudicated_native_gate_preserved"
@@ -952,47 +962,5 @@
       "reference_sources": null,
       "official_result": null
     }
-  ],
-  "descriptive_model_scores": {
-    "metar-diurnal-analog-v24.1": {
-      "forecasts": 2,
-      "station_day_groups": 2,
-      "brier": 0.005053507728894179,
-      "log_loss": 0.071630461154123,
-      "neutral_brier": 0.25,
-      "market_baseline_comparison": null,
-      "calibration": null,
-      "superiority_established": false
-    },
-    "metar-recent-climatology-v24.1": {
-      "forecasts": 2,
-      "station_day_groups": 2,
-      "brier": 0.005053507728894174,
-      "log_loss": 0.071630461154123,
-      "neutral_brier": 0.25,
-      "market_baseline_comparison": null,
-      "calibration": null,
-      "superiority_established": false
-    },
-    "metar-recency-kernel-v25.1": {
-      "forecasts": 3,
-      "station_day_groups": 3,
-      "brier": 0.03867860481188982,
-      "log_loss": 0.20542360982511318,
-      "neutral_brier": 0.25,
-      "market_baseline_comparison": null,
-      "calibration": null,
-      "superiority_established": false
-    },
-    "metar-diurnal-gaussian-v25.1": {
-      "forecasts": 3,
-      "station_day_groups": 3,
-      "brier": 0.03249892098665879,
-      "log_loss": 0.19756013100872674,
-      "neutral_brier": 0.25,
-      "market_baseline_comparison": null,
-      "calibration": null,
-      "superiority_established": false
-    }
-  }
+  ]
 }

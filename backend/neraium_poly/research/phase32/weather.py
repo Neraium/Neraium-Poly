@@ -138,8 +138,8 @@ def replay_weather_event(result,study,f,*,evidence_root,as_of):
     if type(p) not in (int,float) or not math.isfinite(p) or not 0<=p<=1:raise ValueError('finite_original_weather_probability_required')
     return {'event_result_verified':True,'verification_protocol':PROTOCOL,'forecast_id':f['id'],'event_id':f['event_id'],
         'market_id':f['market_id'],'token_id':f['token_id'],'event_group_id':result['event_group_id'],
-        'outcome':outcome,'available_at':result['available_at'],'event_end_lower':final['reference_freeze'],
-        'event_end_upper':final['reference_freeze'],'resolution_value':final['resolution_value'],
+        'outcome':outcome,'available_at':result['available_at'],'event_end_lower':final['period_end'],
+        'event_end_upper':final['reference_freeze'],'reference_freeze':final['reference_freeze'],'resolution_value':final['resolution_value'],
         'brier':(p-outcome)**2,'log_loss':-math.log(likelihood) if likelihood>0 else None,
         'log_loss_status':'finite' if likelihood>0 else 'positive_infinity','market_brier':None,'market_log_loss':None,
         'score_scope':'conditional official station-day reference, not native payout or market superiority',
