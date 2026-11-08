@@ -1,0 +1,12 @@
+{
+  "observed_at": "2026-11-08T12:46:24.419592+00:00",
+  "test": "test_actual_economic_ranker_small_edge_row_reaches_post_latency_shadow_fill",
+  "result": ".                                                                        [100%]\n1 passed in 0.30s",
+  "ruff": "Found 1 error (1 fixed, 0 remaining).",
+  "scope": "controlled B\u2192C integration fixture only; no actual market fill/profit claim",
+  "source_engine": "actual build_economic_findings qualified row; no manually constructed shadow finding",
+  "admission": "lower payout.415 vs native ask.41 (0.005<certified.03), full calibrated-cost fixture proof",
+  "fill": "observed next native book at+0.5sec,10%actual displayed depth; initial intent never counted as position",
+  "realized_pnl": null,
+  "actual_account_access": false
+}

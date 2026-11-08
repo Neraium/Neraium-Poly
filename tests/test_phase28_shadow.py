@@ -243,3 +243,62 @@ def test_post_latency_native_constraint_change_withholds_existing_order_fill(tmp
         assert e.status()['positions']==0 and e.status()['capital_reserved']==5
         assert all(v['realized_pnl'] is None for v in e.status()['strategies'].values())
     finally:store.close()
+
+
+def test_actual_economic_ranker_small_edge_row_reaches_post_latency_shadow_fill(tmp_path):
+    """Controlled end-to-end B→C interface regression, not real trading evidence."""
+    from test_phase27_findings import inputs as economic_inputs
+    from test_phase28_findings import proof as economic_cost_proof
+    from test_phase28_findings import report as economic_report
+
+    study, forecast, source_frame = economic_inputs('CONTROLLED-B-to-C')
+    forecast.update(probability=.42, lower_probability=.415, upper_probability=.425)
+    ranked = economic_report(study, forecast, source_frame,
+                             fee_quotes=economic_cost_proof(study, forecast, source_frame))
+    row = ranked['findings'][0]
+    assert row['shadow_eligible'] and row['qualified_research']
+    assert 0 < forecast['lower_probability']-source_frame.books[0].asks[0].price < .03
+
+    def replay_candidate(candidate, current_frame, *, as_of):
+        # This controlled verifier explicitly consumes B's actual qualified row
+        # and preserved native-cost/calibration evidence, rather than a hand-built
+        # shadow candidate. A production caller must independently replay them.
+        assert candidate['cost_evidence'] == row['cost_evidence']
+        assert digest(candidate['cost_evidence']) == candidate['fee_and_cost_evidence_sha256']
+        costs = candidate['cost_assumptions']
+        return {'verified': True, 'finding_id': candidate['id'],
+                **{k: candidate[k] for k in ('forecast_id','market_id','event_id','token_id')},
+                'book_sha256': digest(current_frame['books'][0]),
+                'calibration_verified': candidate['cost_evidence']['calibration_verified'],
+                'native_costs_verified': candidate['cost_evidence']['native_fee_verified'],
+                'settlement_rules_verified': candidate['cost_evidence']['settlement_rule_compatibility_verified'],
+                'forecast_at': forecast['timestamp'], 'evidence_available_at': candidate['cost_evidence']['available_at'],
+                'event_end_time': forecast['event_end_time'],
+                'lower_payout': forecast['lower_probability'], 'expected_payout': forecast['probability'],
+                'upper_payout': forecast['upper_probability'],
+                'fee_rate': costs['effective_entry_fee_rate'], 'slippage_per_share': costs['slippage_per_share'],
+                'settlement_cost_per_share': costs['settlement_cost_per_share'], 'exit_fee_rate': 0.,
+                'min_order_size': current_frame['markets'][0]['min_order_size'],
+                'resolution_rules_sha256': candidate['resolution_rules_sha256']}
+
+    store = EventStore(tmp_path/'CONTROLLED-B-C.sqlite'); clock = Clock()
+    engine = ShadowResearch(store, clock=clock, can_write=lambda: True,
+                            candidate_verifier=replay_candidate)
+    try:
+        assert engine.step(ranked, source_frame)
+        assert engine.status()['orders_attempted'] == 1
+        assert engine.status()['positions'] == 0 and engine.status()['capital_reserved'] == 5
+        clock.now += timedelta(seconds=.5)
+        observed = source_frame.books[0].model_copy(update={'id': 'CONTROLLED-post-latency',
+                         'timestamp': clock.now, 'available_at': clock.now})
+        later = source_frame.model_copy(update={'id': 'CONTROLLED-post-latency-frame',
+                         'timestamp': clock.now, 'available_at': clock.now, 'books': (observed,)})
+        assert engine.step(report(), later)
+        status = engine.status()
+        assert status['hypothetical_fills'] == status['positions'] == 1
+        assert status['position_quantity'] == pytest.approx(observed.asks[0].size*.1)
+        assert status['hypothetical_cash'] == pytest.approx(500-status['position_quantity']*.41)
+        assert status['realized_simulated_pnl'] is None and status['unrealized_simulated_pnl'] < 0
+        assert status['actual_account_access'] is False and status['trading_authority'] is False
+    finally:
+        store.close()
