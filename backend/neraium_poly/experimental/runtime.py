@@ -293,15 +293,17 @@ class ExperimentalRuntime:
                         raise ValueError("volume research requires anchored source projection")
                     shadow = ShadowResearch(self.events, clock=self.clock, can_write=self._budget_ok)
                     self.phase28 = VolumeResearch(self.events,self.phase26_index,clock=self.clock,can_write=self._budget_ok,shadow=shadow)
-                    from neraium_poly.research.phase31.scoring import MultiDomainEventScoring
-                    self.official_event_scores = MultiDomainEventScoring(self.events,self.phase26_index,
+                    from neraium_poly.research.phase32.scoring import DomainEventScoring
+                    self.official_event_scores = DomainEventScoring(self.events,self.phase26_index,
                         config.data_dir/"phase30-official-event-evidence",clock=self.clock,can_write=self._budget_ok)
                     self.cpi_input_qualification={"status":"pending","forecast_probability":None,"trading_authority":False}
                     from neraium_poly.research.phase31.scorecard import ScorecardPublisher
                     self.domain_scorecard=ScorecardPublisher(self.events,clock=self.clock,can_write=self._budget_ok,
                         official=lambda:self.official_event_scores.status(),macro=lambda:self.cpi_input_qualification,
                         shadow=lambda:self.phase28.shadow.status())
-                    self.phase28.on_report=self.domain_scorecard.observe
+                    from neraium_poly.research.phase32.pairs import PairResearch
+                    self.pair_research=PairResearch(self.events,clock=self.clock,can_write=self._budget_ok)
+                    self.phase28.on_report=self._publish_research_scorecards
                 except Exception as error:
                     self.phase28_error = f"{type(error).__name__}:{str(error)[:160]}"
                     log.exception("phase28_recovery_withheld")
@@ -937,6 +939,12 @@ class ExperimentalRuntime:
                 if self.stopping or should_exit():return
                 await asyncio.sleep(1)
 
+    def _publish_research_scorecards(self,volume,frame,entries):
+        try:
+            self.domain_scorecard.observe(volume,frame,entries)
+        finally:
+            self.pair_research.observe(volume,frame)
+
     def event_operations_summary(self):
         cache=getattr(self,"event_summary_cache",None)
         return cache.snapshot() if cache else {"status":"pending","summary_status":"withheld","certification_authority":False}
@@ -1121,6 +1129,7 @@ class ExperimentalRuntime:
 
         state = add_capacity(self.archive_state(), service="experimental", now=self.clock())
         state["operations_research"] = experimental_research(self, for_operations=True)
+        state["cross_market_research"] = self.pair_research.status() if getattr(self,"pair_research",None) else {"status":"disabled","trading_authority":False}
         state["domain_scorecard"] = self.domain_scorecard.status() if getattr(self,"domain_scorecard",None) else {"status":"disabled"}
         state["official_event_research"] = self.official_event_scores.status() if getattr(self,"official_event_scores",None) else {"status":"disabled"}
         state["research_costs"] = self.research_fees.status() if getattr(self,"research_fees",None) else None

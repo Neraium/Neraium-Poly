@@ -1597,6 +1597,10 @@ def _render_scorecard(experimental,width,height,errors):
         rows.append("No certified promotion / no proven edge")
         rows.append("Book counts: historical at report time")
         rows.append(f"As of {_seen(score.get('as_of'))}")
+    pairs=_mapping(experimental.get("cross_market_research"))
+    if pairs.get("status")=="conditional_research_only":
+        rows.append(f"Pairs {_number(pairs.get('paired_books_evaluated'))} Gross+ {_number(pairs.get('positive_conditional_gross_pairs'))}")
+        rows.append("Pair fees/native payout unverified")
     if errors:rows.append("API "+_clean(errors[0]))
     text=Text()
     for i,line in enumerate(rows[:height]):

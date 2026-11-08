@@ -1,0 +1,3 @@
+# Phase32
+Active integration coordinator: /home/ubuntu/Neraium-Poly, branch phase32-multidomain, baseline56a898d. Three native isolated writing agents weather/crypto/macro; root owns runtime routing, economic research and integration. Preserve frozen forecast models, account/stops/risks/resource limits,150/150GiB quotas/100GiBfloor, all evidence. No AWS/delete/migrate/live money.
+Exit: source-authentic non-sports official-event verification distinct from native payouts, continuous bounded economic findings, focused tests then one full integration/CI, preservation and bounded live validation; no unsupported profit claims.
