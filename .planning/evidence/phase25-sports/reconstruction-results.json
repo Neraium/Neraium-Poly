@@ -1,0 +1,2279 @@
+{
+  "evaluated_at": "2026-11-08T00:17:49.228746+00:00",
+  "classification": "EXPLORATORY_CURRENT_VINTAGE_RECONSTRUCTION",
+  "protocol_sha256": "199038a326744c237d4ccd7b1576799ea0b174915566751a2d76a82a064b4ff4",
+  "script_sha256": "9cb61b134b2359b33e26f3d0f1221e5f775e7c6e2d187d3bf483ff3a70e9e94e",
+  "source_sha256": "ca5116acfc69b43c7e9375094358a35435ba305684f683fbfef147d9bd1750da",
+  "dataset_sha256": "b64fe8acafdb989e65d549ad461b6718d7a5dbcf11e609017d7d2cc163faf86b",
+  "publisher_final_games": 197,
+  "initial_training_games": 137,
+  "heldback_targets": 60,
+  "eligible_targets": 60,
+  "rejections": [],
+  "native_game_ids": 60,
+  "calendar_day_blocks": 9,
+  "effective_independent_event_count": null,
+  "models": {
+    "nhl-causal-elo-v25.1": {
+      "brier": 0.24266669682639103,
+      "log_loss": 0.6781951509395516,
+      "brier_95pct_dayblock": [
+        0.22569539459909888,
+        0.25877582998617094
+      ],
+      "log_loss_95pct_dayblock": [
+        0.6432141326244537,
+        0.7119354559213128
+      ],
+      "calibration_in_large": {
+        "mean_probability": 0.5647047007565295,
+        "actual_home_win_rate": 0.5333333333333333
+      },
+      "paired_difference_vs_baselines": {
+        "constant_half": {
+          "brier": {
+            "mean": -0.007333303173608972,
+            "descriptive_95pct_dayblock": [
+              -0.024304605400901142,
+              0.008775829986170935
+            ]
+          },
+          "log_loss": {
+            "mean": -0.0149520296203937,
+            "descriptive_95pct_dayblock": [
+              -0.04993304793549164,
+              0.01878827536136756
+            ]
+          }
+        },
+        "causal_home_frequency_beta22": {
+          "brier": {
+            "mean": -0.007804321841278062,
+            "descriptive_95pct_dayblock": [
+              -0.01785648136451381,
+              0.004713449223164874
+            ]
+          },
+          "log_loss": {
+            "mean": -0.01593689152387869,
+            "descriptive_95pct_dayblock": [
+              -0.037008245479135254,
+              0.010281420000735009
+            ]
+          }
+        }
+      }
+    },
+    "nhl-beta-frequency-v25.1": {
+      "brier": 0.2450884850751615,
+      "log_loss": 0.6912118210300023,
+      "brier_95pct_dayblock": [
+        0.2205694498448766,
+        0.2763929249610982
+      ],
+      "log_loss_95pct_dayblock": [
+        0.6268648837431452,
+        0.7761627649412086
+      ],
+      "calibration_in_large": {
+        "mean_probability": 0.5453288444296207,
+        "actual_home_win_rate": 0.5333333333333333
+      },
+      "paired_difference_vs_baselines": {
+        "constant_half": {
+          "brier": {
+            "mean": -0.004911514924838502,
+            "descriptive_95pct_dayblock": [
+              -0.0294305501551234,
+              0.026392924961098206
+            ]
+          },
+          "log_loss": {
+            "mean": -0.0019353595299429066,
+            "descriptive_95pct_dayblock": [
+              -0.06628229681680012,
+              0.08301558438126329
+            ]
+          }
+        },
+        "causal_home_frequency_beta22": {
+          "brier": {
+            "mean": -0.005382533592507593,
+            "descriptive_95pct_dayblock": [
+              -0.03404955566498573,
+              0.027012516551570748
+            ]
+          },
+          "log_loss": {
+            "mean": -0.0029202214334278897,
+            "descriptive_95pct_dayblock": [
+              -0.07464290164051711,
+              0.08136225341369384
+            ]
+          }
+        }
+      }
+    },
+    "causal_home_frequency_beta22": {
+      "brier": 0.2504710186676691,
+      "log_loss": 0.6941320424634303,
+      "brier_95pct_dayblock": [
+        0.23687312510099606,
+        0.2609926847168909
+      ],
+      "log_loss_95pct_dayblock": [
+        0.6668049457413564,
+        0.7153279313630988
+      ],
+      "calibration_in_large": {
+        "mean_probability": 0.5676887022312003,
+        "actual_home_win_rate": 0.5333333333333333
+      },
+      "paired_difference_vs_baselines": {
+        "constant_half": {
+          "brier": {
+            "mean": 0.0004710186676690903,
+            "descriptive_95pct_dayblock": [
+              -0.013126874899003943,
+              0.010992684716890909
+            ]
+          },
+          "log_loss": {
+            "mean": 0.0009848619034849868,
+            "descriptive_95pct_dayblock": [
+              -0.026342234818588866,
+              0.02218075080315359
+            ]
+          }
+        },
+        "causal_home_frequency_beta22": {
+          "brier": {
+            "mean": 0.0,
+            "descriptive_95pct_dayblock": [
+              0.0,
+              0.0
+            ]
+          },
+          "log_loss": {
+            "mean": 0.0,
+            "descriptive_95pct_dayblock": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      }
+    },
+    "constant_half": {
+      "brier": 0.25,
+      "log_loss": 0.6931471805599453,
+      "brier_95pct_dayblock": [
+        0.25,
+        0.25
+      ],
+      "log_loss_95pct_dayblock": [
+        0.6931471805599453,
+        0.6931471805599453
+      ],
+      "calibration_in_large": {
+        "mean_probability": 0.5,
+        "actual_home_win_rate": 0.5333333333333333
+      },
+      "paired_difference_vs_baselines": {
+        "constant_half": {
+          "brier": {
+            "mean": 0.0,
+            "descriptive_95pct_dayblock": [
+              0.0,
+              0.0
+            ]
+          },
+          "log_loss": {
+            "mean": 0.0,
+            "descriptive_95pct_dayblock": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "causal_home_frequency_beta22": {
+          "brier": {
+            "mean": -0.0004710186676690903,
+            "descriptive_95pct_dayblock": [
+              -0.010992684716890914,
+              0.013126874899003943
+            ]
+          },
+          "log_loss": {
+            "mean": -0.0009848619034849868,
+            "descriptive_95pct_dayblock": [
+              -0.0221807508031536,
+              0.026342234818588862
+            ]
+          }
+        }
+      }
+    }
+  },
+  "exploratory_brier_order": [
+    "nhl-causal-elo-v25.1",
+    "nhl-beta-frequency-v25.1",
+    "constant_half",
+    "causal_home_frequency_beta22"
+  ],
+  "forecasting_superiority_supported": false,
+  "certification_eligible": false,
+  "profitability_rank": null,
+  "execution_pnl": null,
+  "calibration_status": "descriptive only; models already developed from current-vintage dataset",
+  "limitations": [
+    "Models already developed with this dataset; post-selection/overfit risk",
+    "All source data first retrieved now; no verified historical availability",
+    "24hour embargo avoids ordinary overlaps but cannot prove old finality or account for postponement/revisions",
+    "Calendar-day blocks do not eliminate cross-day shared-team dependence",
+    "Publisher is not official result authority",
+    "No contemporaneous historical market baseline or executable books; no trading return or superiority claim"
+  ],
+  "rows": [
+    {
+      "game_id": "401892604",
+      "target_start": "2026-10-30T00:00:00+00:00",
+      "start_embargo_cutoff": "2026-10-29T00:00:00+00:00",
+      "home_id": "19",
+      "away_id": "1",
+      "home": "Blues",
+      "away": "Bruins",
+      "actual_home_win": 1,
+      "training_games": 130,
+      "training_sha256": "946fb2fb742798b3c59373592a85fbfc4e4d14de1df7a7029459bc776cd02992",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.507143188152484,
+          "brier": 0.24290783698449775,
+          "log_loss": 0.6789618928731629
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.3958333333333333,
+          "brier": 0.3650173611111112,
+          "log_loss": 0.9267620317414506
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5671641791044776,
+          "brier": 0.18734684785030076,
+          "log_loss": 0.5671064596645803
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892605",
+      "target_start": "2026-10-30T00:00:00+00:00",
+      "start_embargo_cutoff": "2026-10-29T00:00:00+00:00",
+      "home_id": "27",
+      "away_id": "23",
+      "home": "Predators",
+      "away": "Capitals",
+      "actual_home_win": 0,
+      "training_games": 130,
+      "training_sha256": "946fb2fb742798b3c59373592a85fbfc4e4d14de1df7a7029459bc776cd02992",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.5055815851616329,
+          "brier": 0.2556127392545494,
+          "log_loss": 0.704373126690945
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.35315985130111527,
+          "brier": 0.12472188057102584,
+          "log_loss": 0.43565608038731013
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5671641791044776,
+          "brier": 0.3216752060592559,
+          "log_loss": 0.8373967894044919
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892606",
+      "target_start": "2026-10-30T00:00:00+00:00",
+      "start_embargo_cutoff": "2026-10-29T00:00:00+00:00",
+      "home_id": "9",
+      "away_id": "10",
+      "home": "Stars",
+      "away": "Canadiens",
+      "actual_home_win": 0,
+      "training_games": 130,
+      "training_sha256": "946fb2fb742798b3c59373592a85fbfc4e4d14de1df7a7029459bc776cd02992",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.5319413619224668,
+          "brier": 0.28296161252392876,
+          "log_loss": 0.7591616958757937
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.4784172661870504,
+          "brier": 0.22888308058589102,
+          "log_loss": 0.6508873712700627
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5671641791044776,
+          "brier": 0.3216752060592559,
+          "log_loss": 0.8373967894044919
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892607",
+      "target_start": "2026-10-30T00:00:00+00:00",
+      "start_embargo_cutoff": "2026-10-29T00:00:00+00:00",
+      "home_id": "30",
+      "away_id": "12",
+      "home": "Wild",
+      "away": "Islanders",
+      "actual_home_win": 0,
+      "training_games": 130,
+      "training_sha256": "946fb2fb742798b3c59373592a85fbfc4e4d14de1df7a7029459bc776cd02992",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.6307967390166257,
+          "brier": 0.397904525954009,
+          "log_loss": 0.9964079438264276
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.702258726899384,
+          "brier": 0.4931673195063435,
+          "log_loss": 1.2115303806620152
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5671641791044776,
+          "brier": 0.3216752060592559,
+          "log_loss": 0.8373967894044919
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892608",
+      "target_start": "2026-10-30T02:00:00+00:00",
+      "start_embargo_cutoff": "2026-10-29T02:00:00+00:00",
+      "home_id": "25",
+      "away_id": "2",
+      "home": "Ducks",
+      "away": "Sabres",
+      "actual_home_win": 0,
+      "training_games": 133,
+      "training_sha256": "fe47fb88bfe46d2bf642c95c89bf6e0c6e7f00f6e3781cdb6933ab0bf7b9b61f",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.5514454649979482,
+          "brier": 0.3040921008668033,
+          "log_loss": 0.8017250106677893
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.4880847308031774,
+          "brier": 0.23822670444321012,
+          "log_loss": 0.6695961574875412
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5766423357664233,
+          "brier": 0.3325163833981565,
+          "log_loss": 0.8595379152817055
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892609",
+      "target_start": "2026-10-30T02:00:00+00:00",
+      "start_embargo_cutoff": "2026-10-29T02:00:00+00:00",
+      "home_id": "8",
+      "away_id": "14",
+      "home": "Kings",
+      "away": "Senators",
+      "actual_home_win": 1,
+      "training_games": 133,
+      "training_sha256": "fe47fb88bfe46d2bf642c95c89bf6e0c6e7f00f6e3781cdb6933ab0bf7b9b61f",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.5585906188284039,
+          "brier": 0.19484224178629142,
+          "log_loss": 0.582338419689412
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.45471987720644674,
+          "brier": 0.29733041231375257,
+          "log_loss": 0.7880737041155587
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5766423357664233,
+          "brier": 0.17923171186530984,
+          "log_loss": 0.5505330733611035
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892610",
+      "target_start": "2026-10-30T02:00:00+00:00",
+      "start_embargo_cutoff": "2026-10-29T02:00:00+00:00",
+      "home_id": "18",
+      "away_id": "22",
+      "home": "Sharks",
+      "away": "Canucks",
+      "actual_home_win": 1,
+      "training_games": 133,
+      "training_sha256": "fe47fb88bfe46d2bf642c95c89bf6e0c6e7f00f6e3781cdb6933ab0bf7b9b61f",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.6327459740516425,
+          "brier": 0.13487551957527688,
+          "log_loss": 0.4576862421980184
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.7394234369150131,
+          "brier": 0.06790014522918415,
+          "log_loss": 0.3018845357747386
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5766423357664233,
+          "brier": 0.17923171186530984,
+          "log_loss": 0.5505330733611035
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892611",
+      "target_start": "2026-10-30T22:00:00+00:00",
+      "start_embargo_cutoff": "2026-10-29T22:00:00+00:00",
+      "home_id": "37",
+      "away_id": "11",
+      "home": "Golden Knights",
+      "away": "Devils",
+      "actual_home_win": 0,
+      "training_games": 133,
+      "training_sha256": "fe47fb88bfe46d2bf642c95c89bf6e0c6e7f00f6e3781cdb6933ab0bf7b9b61f",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.5423332460557343,
+          "brier": 0.29412534977734967,
+          "log_loss": 0.7816139711810578
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.4688824826182803,
+          "brier": 0.21985078250628193,
+          "log_loss": 0.63277196888981
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5766423357664233,
+          "brier": 0.3325163833981565,
+          "log_loss": 0.8595379152817055
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892612",
+      "target_start": "2026-10-30T23:00:00+00:00",
+      "start_embargo_cutoff": "2026-10-29T23:00:00+00:00",
+      "home_id": "26",
+      "away_id": "28",
+      "home": "Panthers",
+      "away": "Jets",
+      "actual_home_win": 1,
+      "training_games": 136,
+      "training_sha256": "923c78e02854a667eadd830802335367ba458ca32871563a3a7a82c58f79c6cb",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.6671537170938678,
+          "brier": 0.11078664804442896,
+          "log_loss": 0.40473479920783795
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.8277372262773722,
+          "brier": 0.029674463210613258,
+          "log_loss": 0.18905953453447327
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5785714285714286,
+          "brier": 0.1776020408163265,
+          "log_loss": 0.5471932679368654
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892613",
+      "target_start": "2026-10-31T00:00:00+00:00",
+      "start_embargo_cutoff": "2026-10-30T00:00:00+00:00",
+      "home_id": "3",
+      "away_id": "124292",
+      "home": "Flames",
+      "away": "Kraken",
+      "actual_home_win": 1,
+      "training_games": 141,
+      "training_sha256": "45a26132703317b2cda04e9b5b629d019cad51479a4f2afb2c78760f7d4d096e",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.5801590753843585,
+          "brier": 0.17626640198211677,
+          "log_loss": 0.5444529451421716
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.5724137931034483,
+          "brier": 0.18282996432818072,
+          "log_loss": 0.5578931346239764
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5724137931034483,
+          "brier": 0.18282996432818072,
+          "log_loss": 0.5578931346239764
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892614",
+      "target_start": "2026-10-31T17:00:00+00:00",
+      "start_embargo_cutoff": "2026-10-30T17:00:00+00:00",
+      "home_id": "1",
+      "away_id": "4",
+      "home": "Bruins",
+      "away": "Blackhawks",
+      "actual_home_win": 1,
+      "training_games": 144,
+      "training_sha256": "f851cdffef1e5a330c3130c6779d60ab42f0437d49c6e851c60c7b209f3ad429",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.6443786133128849,
+          "brier": 0.12646657066926661,
+          "log_loss": 0.4394688167575599
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.7513812154696133,
+          "brier": 0.06181130002136683,
+          "log_loss": 0.2858421455297736
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5743243243243243,
+          "brier": 0.18119978086194302,
+          "log_loss": 0.5545610172737986
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892615",
+      "target_start": "2026-10-31T17:00:00+00:00",
+      "start_embargo_cutoff": "2026-10-30T17:00:00+00:00",
+      "home_id": "5",
+      "away_id": "19",
+      "home": "Red Wings",
+      "away": "Blues",
+      "actual_home_win": 0,
+      "training_games": 144,
+      "training_sha256": "f851cdffef1e5a330c3130c6779d60ab42f0437d49c6e851c60c7b209f3ad429",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.5892483691264171,
+          "brier": 0.3472136405181423,
+          "log_loss": 0.8897665515952642
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.5743243243243243,
+          "brier": 0.3298484295105917,
+          "log_loss": 0.8540775473725825
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5743243243243243,
+          "brier": 0.3298484295105917,
+          "log_loss": 0.8540775473725825
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892616",
+      "target_start": "2026-10-31T18:00:00+00:00",
+      "start_embargo_cutoff": "2026-10-30T18:00:00+00:00",
+      "home_id": "27",
+      "away_id": "20",
+      "home": "Predators",
+      "away": "Lightning",
+      "actual_home_win": 1,
+      "training_games": 144,
+      "training_sha256": "f851cdffef1e5a330c3130c6779d60ab42f0437d49c6e851c60c7b209f3ad429",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.47564419951146386,
+          "brier": 0.2749490055059735,
+          "log_loss": 0.7430851842711291
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.2998765214323514,
+          "brier": 0.4901728852416648,
+          "log_loss": 1.2043844842799962
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5743243243243243,
+          "brier": 0.18119978086194302,
+          "log_loss": 0.5545610172737986
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892617",
+      "target_start": "2026-10-31T18:00:00+00:00",
+      "start_embargo_cutoff": "2026-10-30T18:00:00+00:00",
+      "home_id": "12",
+      "away_id": "6",
+      "home": "Islanders",
+      "away": "Oilers",
+      "actual_home_win": 0,
+      "training_games": 144,
+      "training_sha256": "f851cdffef1e5a330c3130c6779d60ab42f0437d49c6e851c60c7b209f3ad429",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.5581875613511555,
+          "brier": 0.31157335364715005,
+          "log_loss": 0.8168698339133998
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.49591598599766623,
+          "brier": 0.2459326651680375,
+          "log_loss": 0.6850123303536695
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5743243243243243,
+          "brier": 0.3298484295105917,
+          "log_loss": 0.8540775473725825
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892618",
+      "target_start": "2026-10-31T20:00:00+00:00",
+      "start_embargo_cutoff": "2026-10-30T20:00:00+00:00",
+      "home_id": "8",
+      "away_id": "2",
+      "home": "Kings",
+      "away": "Sabres",
+      "actual_home_win": 0,
+      "training_games": 144,
+      "training_sha256": "f851cdffef1e5a330c3130c6779d60ab42f0437d49c6e851c60c7b209f3ad429",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.5827146044653301,
+          "brier": 0.3395563102571861,
+          "log_loss": 0.8739848895176185
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.5743243243243243,
+          "brier": 0.3298484295105917,
+          "log_loss": 0.8540775473725825
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5743243243243243,
+          "brier": 0.3298484295105917,
+          "log_loss": 0.8540775473725825
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892619",
+      "target_start": "2026-10-31T20:00:00+00:00",
+      "start_embargo_cutoff": "2026-10-30T20:00:00+00:00",
+      "home_id": "18",
+      "away_id": "14",
+      "home": "Sharks",
+      "away": "Senators",
+      "actual_home_win": 0,
+      "training_games": 144,
+      "training_sha256": "f851cdffef1e5a330c3130c6779d60ab42f0437d49c6e851c60c7b209f3ad429",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.5602745215050816,
+          "brier": 0.3139075394477482,
+          "log_loss": 0.8216046592957844
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.5029585798816569,
+          "brier": 0.2529673330765731,
+          "log_loss": 0.6990819160797601
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5743243243243243,
+          "brier": 0.3298484295105917,
+          "log_loss": 0.8540775473725825
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892620",
+      "target_start": "2026-10-31T23:00:00+00:00",
+      "start_embargo_cutoff": "2026-10-30T23:00:00+00:00",
+      "home_id": "10",
+      "away_id": "16",
+      "home": "Canadiens",
+      "away": "Penguins",
+      "actual_home_win": 1,
+      "training_games": 146,
+      "training_sha256": "649a89f6a9e7dac47d8d273a1b7249574a7ecdf79eecaad0f011cc7195e7f062",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.6699214233521327,
+          "brier": 0.10895186676188202,
+          "log_loss": 0.40059485205370204
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.8088981785607644,
+          "brier": 0.036519906157393485,
+          "log_loss": 0.21208223070910948
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5733333333333334,
+          "brier": 0.18204444444444443,
+          "log_loss": 0.556287997842748
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892621",
+      "target_start": "2026-10-31T23:00:00+00:00",
+      "start_embargo_cutoff": "2026-10-30T23:00:00+00:00",
+      "home_id": "22",
+      "away_id": "21",
+      "home": "Canucks",
+      "away": "Maple Leafs",
+      "actual_home_win": 0,
+      "training_games": 146,
+      "training_sha256": "649a89f6a9e7dac47d8d273a1b7249574a7ecdf79eecaad0f011cc7195e7f062",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.4649783910590885,
+          "brier": 0.21620490415189864,
+          "log_loss": 0.6254481423580468
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.2681912681912682,
+          "brier": 0.07192655633404076,
+          "log_loss": 0.31223609450766404
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5733333333333334,
+          "brier": 0.3287111111111111,
+          "log_loss": 0.8517522107365839
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892622",
+      "target_start": "2026-11-01T00:00:00+00:00",
+      "start_embargo_cutoff": "2026-10-31T00:00:00+00:00",
+      "home_id": "9",
+      "away_id": "29",
+      "home": "Stars",
+      "away": "Blue Jackets",
+      "actual_home_win": 1,
+      "training_games": 147,
+      "training_sha256": "0a2b5070c7cc5b825d54db8f848a8c2f6a73847b2e02572a686ced4b9aca0e32",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.6030665322239716,
+          "brier": 0.15755617784070342,
+          "log_loss": 0.5057277529783132
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.6894711305191653,
+          "brier": 0.09642817878104527,
+          "log_loss": 0.3718304527933586
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5761589403973509,
+          "brier": 0.1796412438050963,
+          "log_loss": 0.5513717181603407
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892623",
+      "target_start": "2026-11-01T02:00:00+00:00",
+      "start_embargo_cutoff": "2026-10-31T02:00:00+00:00",
+      "home_id": "17",
+      "away_id": "3",
+      "home": "Avalanche",
+      "away": "Flames",
+      "actual_home_win": 1,
+      "training_games": 147,
+      "training_sha256": "0a2b5070c7cc5b825d54db8f848a8c2f6a73847b2e02572a686ced4b9aca0e32",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.5289143625271658,
+          "brier": 0.22192167783318653,
+          "log_loss": 0.63692874581064
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.4213755247013238,
+          "brier": 0.3348062834146684,
+          "log_loss": 0.8642308602164092
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5761589403973509,
+          "brier": 0.1796412438050963,
+          "log_loss": 0.5513717181603407
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892624",
+      "target_start": "2026-11-01T18:00:00+00:00",
+      "start_embargo_cutoff": "2026-10-31T18:00:00+00:00",
+      "home_id": "7",
+      "away_id": "28",
+      "home": "Hurricanes",
+      "away": "Jets",
+      "actual_home_win": 1,
+      "training_games": 151,
+      "training_sha256": "f235c4013e762614fd408c4c525405bfdec8cd1a9d9f50ccedea1dbdfbcc803c",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.7275442212138816,
+          "brier": 0.07423215139395027,
+          "log_loss": 0.31808049661011284
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.9182831200990508,
+          "brier": 0.0066776484607461595,
+          "log_loss": 0.08524952621618513
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5741935483870968,
+          "brier": 0.18131113423517167,
+          "log_loss": 0.5547887471871067
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892625",
+      "target_start": "2026-11-01T20:30:00+00:00",
+      "start_embargo_cutoff": "2026-10-31T20:30:00+00:00",
+      "home_id": "23",
+      "away_id": "30",
+      "home": "Capitals",
+      "away": "Wild",
+      "actual_home_win": 0,
+      "training_games": 153,
+      "training_sha256": "0cf997da4bc8d434c117973765951c7e893e333858b31b201cde67b276ddd0c4",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.5429438121533373,
+          "brier": 0.29478798315559845,
+          "log_loss": 0.7829489463093403
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.5498676081200353,
+          "brier": 0.30235438645964874,
+          "log_loss": 0.7982135353096349
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5668789808917197,
+          "brier": 0.32135177897683476,
+          "log_loss": 0.8367381001722013
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892626",
+      "target_start": "2026-11-01T21:00:00+00:00",
+      "start_embargo_cutoff": "2026-10-31T21:00:00+00:00",
+      "home_id": "15",
+      "away_id": "129764",
+      "home": "Flyers",
+      "away": "Utah",
+      "actual_home_win": 1,
+      "training_games": 153,
+      "training_sha256": "0cf997da4bc8d434c117973765951c7e893e333858b31b201cde67b276ddd0c4",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.47476761681173363,
+          "brier": 0.2758690563496259,
+          "log_loss": 0.7449298224232156
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.31245611571408505,
+          "brier": 0.4727165928189636,
+          "log_loss": 1.1632912493817844
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5668789808917197,
+          "brier": 0.1875938171933953,
+          "log_loss": 0.5676094356161683
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892627",
+      "target_start": "2026-11-01T23:00:00+00:00",
+      "start_embargo_cutoff": "2026-10-31T23:00:00+00:00",
+      "home_id": "13",
+      "away_id": "6",
+      "home": "Rangers",
+      "away": "Oilers",
+      "actual_home_win": 0,
+      "training_games": 155,
+      "training_sha256": "f1e79f07a7b126052aef4c3050056f7feec5debf2a6222b6dde2bf1caf189b15",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.4884614182055687,
+          "brier": 0.23859455707539548,
+          "log_loss": 0.6703322677069433
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.34106412005457026,
+          "brier": 0.11632473398859831,
+          "log_loss": 0.41712904823407887
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5660377358490566,
+          "brier": 0.32039871840512635,
+          "log_loss": 0.8347976976229721
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892628",
+      "target_start": "2026-11-02T01:00:00+00:00",
+      "start_embargo_cutoff": "2026-11-01T01:00:00+00:00",
+      "home_id": "25",
+      "away_id": "14",
+      "home": "Ducks",
+      "away": "Senators",
+      "actual_home_win": 1,
+      "training_games": 156,
+      "training_sha256": "930a4a3467d861f54fa019038114cdf5b664f57af8f09368be1deb1a6ac74f37",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.4949429261977806,
+          "brier": 0.25508264779766054,
+          "log_loss": 0.7033128236716174
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.3390101117615753,
+          "brier": 0.4369076323534451,
+          "log_loss": 1.081725343841302
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.56875,
+          "brier": 0.18597656250000003,
+          "log_loss": 0.564314308716977
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892629",
+      "target_start": "2026-11-03T00:00:00+00:00",
+      "start_embargo_cutoff": "2026-11-02T00:00:00+00:00",
+      "home_id": "1",
+      "away_id": "37",
+      "home": "Bruins",
+      "away": "Golden Knights",
+      "actual_home_win": 1,
+      "training_games": 161,
+      "training_sha256": "f07422341a3a6d72a718edc5849dcc071e00f61dbff71b5448797e179b32bbf9",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.6198312297563203,
+          "brier": 0.1445282938685917,
+          "log_loss": 0.47830804806933697
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.704412989175687,
+          "brier": 0.08737168096805256,
+          "log_loss": 0.3503904624737602
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5696969696969697,
+          "brier": 0.1851606978879706,
+          "log_loss": 0.5626506916305767
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892630",
+      "target_start": "2026-11-03T00:00:00+00:00",
+      "start_embargo_cutoff": "2026-11-02T00:00:00+00:00",
+      "home_id": "26",
+      "away_id": "5",
+      "home": "Panthers",
+      "away": "Red Wings",
+      "actual_home_win": 0,
+      "training_games": 161,
+      "training_sha256": "f07422341a3a6d72a718edc5849dcc071e00f61dbff71b5448797e179b32bbf9",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.5943114558697189,
+          "brier": 0.35320610657798485,
+          "log_loss": 0.9021695464612891
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.6383701188455009,
+          "brier": 0.4075164086348189,
+          "log_loss": 1.0171340179421617
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5696969696969697,
+          "brier": 0.32455463728191003,
+          "log_loss": 0.8432655968592652
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892631",
+      "target_start": "2026-11-03T01:00:00+00:00",
+      "start_embargo_cutoff": "2026-11-02T01:00:00+00:00",
+      "home_id": "4",
+      "away_id": "17",
+      "home": "Blackhawks",
+      "away": "Avalanche",
+      "actual_home_win": 0,
+      "training_games": 162,
+      "training_sha256": "5db3b4f276a64e32e9c523341ee215076547254197b268cdb215c9cdcf4625b9",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.5230577066752702,
+          "brier": 0.27358936451239296,
+          "log_loss": 0.7403597737671314
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.4554170661553212,
+          "brier": 0.2074047041455202,
+          "log_loss": 0.6077350362796211
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.572289156626506,
+          "brier": 0.32751487879227753,
+          "log_loss": 0.8493079113152279
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892632",
+      "target_start": "2026-11-03T02:00:00+00:00",
+      "start_embargo_cutoff": "2026-11-02T02:00:00+00:00",
+      "home_id": "18",
+      "away_id": "3",
+      "home": "Sharks",
+      "away": "Flames",
+      "actual_home_win": 0,
+      "training_games": 162,
+      "training_sha256": "5db3b4f276a64e32e9c523341ee215076547254197b268cdb215c9cdcf4625b9",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.5120096639750416,
+          "brier": 0.262153896003835,
+          "log_loss": 0.7174596765526206
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.4008438818565401,
+          "brier": 0.16067581762181984,
+          "log_loss": 0.5122330835338704
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.572289156626506,
+          "brier": 0.32751487879227753,
+          "log_loss": 0.8493079113152279
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892633",
+      "target_start": "2026-11-04T00:00:00+00:00",
+      "start_embargo_cutoff": "2026-11-03T00:00:00+00:00",
+      "home_id": "21",
+      "away_id": "129764",
+      "home": "Maple Leafs",
+      "away": "Utah",
+      "actual_home_win": 0,
+      "training_games": 164,
+      "training_sha256": "0ec0b4b2e56a7aeef586302cd5c4b5143aabfdf1958dff40c9029a9ed2de63af",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.5700329708321243,
+          "brier": 0.32493758783569754,
+          "log_loss": 0.8440467495880883
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.5333333333333333,
+          "brier": 0.28444444444444444,
+          "log_loss": 0.7621400520468967
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5714285714285714,
+          "brier": 0.32653061224489793,
+          "log_loss": 0.8472978603872036
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892634",
+      "target_start": "2026-11-04T00:00:00+00:00",
+      "start_embargo_cutoff": "2026-11-03T00:00:00+00:00",
+      "home_id": "10",
+      "away_id": "28",
+      "home": "Canadiens",
+      "away": "Jets",
+      "actual_home_win": 0,
+      "training_games": 164,
+      "training_sha256": "0ec0b4b2e56a7aeef586302cd5c4b5143aabfdf1958dff40c9029a9ed2de63af",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.7300947177646907,
+          "brier": 0.5330382969079034,
+          "log_loss": 1.309684188066661
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.9243697478991597,
+          "brier": 0.854459430831156,
+          "log_loss": 2.5818989157753105
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5714285714285714,
+          "brier": 0.32653061224489793,
+          "log_loss": 0.8472978603872036
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892635",
+      "target_start": "2026-11-04T00:00:00+00:00",
+      "start_embargo_cutoff": "2026-11-03T00:00:00+00:00",
+      "home_id": "20",
+      "away_id": "5",
+      "home": "Lightning",
+      "away": "Red Wings",
+      "actual_home_win": 1,
+      "training_games": 164,
+      "training_sha256": "0ec0b4b2e56a7aeef586302cd5c4b5143aabfdf1958dff40c9029a9ed2de63af",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.5664689586020215,
+          "brier": 0.18794916385561575,
+          "log_loss": 0.5683329950691812
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.5764705882352942,
+          "brier": 0.17937716262975772,
+          "log_loss": 0.5508309583796898
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5714285714285714,
+          "brier": 0.18367346938775514,
+          "log_loss": 0.5596157879354228
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892637",
+      "target_start": "2026-11-04T00:00:00+00:00",
+      "start_embargo_cutoff": "2026-11-03T00:00:00+00:00",
+      "home_id": "13",
+      "away_id": "19",
+      "home": "Rangers",
+      "away": "Blues",
+      "actual_home_win": 1,
+      "training_games": 164,
+      "training_sha256": "0ec0b4b2e56a7aeef586302cd5c4b5143aabfdf1958dff40c9029a9ed2de63af",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.508268782175473,
+          "brier": 0.24179959058319242,
+          "log_loss": 0.6767448725564402
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.3846153846153845,
+          "brier": 0.37869822485207105,
+          "log_loss": 0.9555114450274366
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5714285714285714,
+          "brier": 0.18367346938775514,
+          "log_loss": 0.5596157879354228
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892638",
+      "target_start": "2026-11-04T00:00:00+00:00",
+      "start_embargo_cutoff": "2026-11-03T00:00:00+00:00",
+      "home_id": "15",
+      "away_id": "30",
+      "home": "Flyers",
+      "away": "Wild",
+      "actual_home_win": 0,
+      "training_games": 164,
+      "training_sha256": "0ec0b4b2e56a7aeef586302cd5c4b5143aabfdf1958dff40c9029a9ed2de63af",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.4686755944300179,
+          "brier": 0.2196568128143306,
+          "log_loss": 0.6323825110071567
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.3478260869565218,
+          "brier": 0.12098298676748585,
+          "log_loss": 0.4274440148269396
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5714285714285714,
+          "brier": 0.32653061224489793,
+          "log_loss": 0.8472978603872036
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892639",
+      "target_start": "2026-11-04T00:00:00+00:00",
+      "start_embargo_cutoff": "2026-11-03T00:00:00+00:00",
+      "home_id": "16",
+      "away_id": "37",
+      "home": "Penguins",
+      "away": "Golden Knights",
+      "actual_home_win": 0,
+      "training_games": 164,
+      "training_sha256": "0ec0b4b2e56a7aeef586302cd5c4b5143aabfdf1958dff40c9029a9ed2de63af",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.5474824175100901,
+          "brier": 0.2997369974826926,
+          "log_loss": 0.7929286602657513
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.4878048780487805,
+          "brier": 0.23795359904818558,
+          "log_loss": 0.6690496289808848
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5714285714285714,
+          "brier": 0.32653061224489793,
+          "log_loss": 0.8472978603872036
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892640",
+      "target_start": "2026-11-04T00:00:00+00:00",
+      "start_embargo_cutoff": "2026-11-03T00:00:00+00:00",
+      "home_id": "23",
+      "away_id": "9",
+      "home": "Capitals",
+      "away": "Stars",
+      "actual_home_win": 0,
+      "training_games": 164,
+      "training_sha256": "0ec0b4b2e56a7aeef586302cd5c4b5143aabfdf1958dff40c9029a9ed2de63af",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.5607919698313377,
+          "brier": 0.314487633427312,
+          "log_loss": 0.8227821053276794
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.5384615384615384,
+          "brier": 0.28994082840236685,
+          "log_loss": 0.7731898882334817
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5714285714285714,
+          "brier": 0.32653061224489793,
+          "log_loss": 0.8472978603872036
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892641",
+      "target_start": "2026-11-04T00:00:00+00:00",
+      "start_embargo_cutoff": "2026-11-03T00:00:00+00:00",
+      "home_id": "29",
+      "away_id": "17",
+      "home": "Blue Jackets",
+      "away": "Avalanche",
+      "actual_home_win": 1,
+      "training_games": 164,
+      "training_sha256": "0ec0b4b2e56a7aeef586302cd5c4b5143aabfdf1958dff40c9029a9ed2de63af",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.535272562983432,
+          "brier": 0.21597159071598823,
+          "log_loss": 0.6249791982981755
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.45454545454545453,
+          "brier": 0.29752066115702475,
+          "log_loss": 0.7884573603642702
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5714285714285714,
+          "brier": 0.18367346938775514,
+          "log_loss": 0.5596157879354228
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892636",
+      "target_start": "2026-11-04T00:30:00+00:00",
+      "start_embargo_cutoff": "2026-11-03T00:30:00+00:00",
+      "home_id": "11",
+      "away_id": "6",
+      "home": "Devils",
+      "away": "Oilers",
+      "actual_home_win": 1,
+      "training_games": 164,
+      "training_sha256": "0ec0b4b2e56a7aeef586302cd5c4b5143aabfdf1958dff40c9029a9ed2de63af",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.5684800346570931,
+          "brier": 0.1862094804895436,
+          "log_loss": 0.5647890857449324
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.5714285714285715,
+          "brier": 0.18367346938775503,
+          "log_loss": 0.5596157879354225
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5714285714285714,
+          "brier": 0.18367346938775514,
+          "log_loss": 0.5596157879354228
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892642",
+      "target_start": "2026-11-04T01:00:00+00:00",
+      "start_embargo_cutoff": "2026-11-03T01:00:00+00:00",
+      "home_id": "27",
+      "away_id": "7",
+      "home": "Predators",
+      "away": "Hurricanes",
+      "actual_home_win": 1,
+      "training_games": 165,
+      "training_sha256": "b492ff2c649470bc3de8a086c4baa0f6a0a6274b949cde03e98b16772dcdea61",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.4223634910417021,
+          "brier": 0.33366393648152975,
+          "log_loss": 0.8618889825185027
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.20990488684814704,
+          "brier": 0.6242502878264394,
+          "log_loss": 1.5611007706345368
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5680473372781065,
+          "brier": 0.18658310283253388,
+          "log_loss": 0.5655505234552372
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892643",
+      "target_start": "2026-11-04T02:00:00+00:00",
+      "start_embargo_cutoff": "2026-11-03T02:00:00+00:00",
+      "home_id": "22",
+      "away_id": "25",
+      "home": "Canucks",
+      "away": "Ducks",
+      "actual_home_win": 0,
+      "training_games": 166,
+      "training_sha256": "b844c2288c1b5ffbe4182c2eee34505633f7080c6342be7669870027a9e80f62",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.501027686971593,
+          "brier": 0.25102874311210455,
+          "log_loss": 0.695204669682975
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.36860068259385664,
+          "brier": 0.13586646320865706,
+          "log_loss": 0.45981678393874237
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5647058823529412,
+          "brier": 0.3188927335640138,
+          "log_loss": 0.831733343846092
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892644",
+      "target_start": "2026-11-05T00:30:00+00:00",
+      "start_embargo_cutoff": "2026-11-04T00:30:00+00:00",
+      "home_id": "2",
+      "away_id": "14",
+      "home": "Sabres",
+      "away": "Senators",
+      "actual_home_win": 0,
+      "training_games": 175,
+      "training_sha256": "58aa18edeaa0a0dcb2a5b76126467ab7bd777a288a25fa3fd3deafd0af128f44",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.5725663718042995,
+          "brier": 0.3278322501211393,
+          "log_loss": 0.8499562583413051
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.558659217877095,
+          "brier": 0.31210012171904755,
+          "log_loss": 0.8179379533737337
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5586592178770949,
+          "brier": 0.31210012171904744,
+          "log_loss": 0.8179379533737334
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892645",
+      "target_start": "2026-11-05T00:30:00+00:00",
+      "start_embargo_cutoff": "2026-11-04T00:30:00+00:00",
+      "home_id": "26",
+      "away_id": "4",
+      "home": "Panthers",
+      "away": "Blackhawks",
+      "actual_home_win": 1,
+      "training_games": 175,
+      "training_sha256": "58aa18edeaa0a0dcb2a5b76126467ab7bd777a288a25fa3fd3deafd0af128f44",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.628326311855386,
+          "brier": 0.13814133045901977,
+          "log_loss": 0.4646956425965377
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.7225288509784245,
+          "brier": 0.07699023853935338,
+          "log_loss": 0.3249979276427485
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5586592178770949,
+          "brier": 0.19478168596485756,
+          "log_loss": 0.5822156198526637
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892646",
+      "target_start": "2026-11-05T03:00:00+00:00",
+      "start_embargo_cutoff": "2026-11-04T03:00:00+00:00",
+      "home_id": "8",
+      "away_id": "18",
+      "home": "Kings",
+      "away": "Sharks",
+      "actual_home_win": 1,
+      "training_games": 177,
+      "training_sha256": "3b9780ec1fdb6cd53d51a2ac1c4da003434f53f892a4d3889076b2723607694b",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.5928462945638234,
+          "brier": 0.16577413985040884,
+          "log_loss": 0.5228201133062037
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.6121212121212122,
+          "brier": 0.15044995408631767,
+          "log_loss": 0.49082495705932105
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5580110497237569,
+          "brier": 0.19535423216629527,
+          "log_loss": 0.5833765144245663
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892647",
+      "target_start": "2026-11-05T03:00:00+00:00",
+      "start_embargo_cutoff": "2026-11-04T03:00:00+00:00",
+      "home_id": "124292",
+      "away_id": "3",
+      "home": "Kraken",
+      "away": "Flames",
+      "actual_home_win": 1,
+      "training_games": 177,
+      "training_sha256": "3b9780ec1fdb6cd53d51a2ac1c4da003434f53f892a4d3889076b2723607694b",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.5253701738745429,
+          "brier": 0.22527347184788166,
+          "log_loss": 0.6436521717574963
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.4954449894884373,
+          "brier": 0.2545757586323232,
+          "log_loss": 0.7022989515802637
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5580110497237569,
+          "brier": 0.19535423216629527,
+          "log_loss": 0.5833765144245663
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892648",
+      "target_start": "2026-11-06T00:00:00+00:00",
+      "start_embargo_cutoff": "2026-11-05T00:00:00+00:00",
+      "home_id": "10",
+      "away_id": "129764",
+      "home": "Canadiens",
+      "away": "Utah",
+      "actual_home_win": 1,
+      "training_games": 177,
+      "training_sha256": "3b9780ec1fdb6cd53d51a2ac1c4da003434f53f892a4d3889076b2723607694b",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.5811878781788551,
+          "brier": 0.17540359338432954,
+          "log_loss": 0.5426812040436766
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.6273291925465839,
+          "brier": 0.13888353072798112,
+          "log_loss": 0.46628384814320345
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5580110497237569,
+          "brier": 0.19535423216629527,
+          "log_loss": 0.5833765144245663
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892649",
+      "target_start": "2026-11-06T00:00:00+00:00",
+      "start_embargo_cutoff": "2026-11-05T00:00:00+00:00",
+      "home_id": "5",
+      "away_id": "37",
+      "home": "Red Wings",
+      "away": "Golden Knights",
+      "actual_home_win": 0,
+      "training_games": 177,
+      "training_sha256": "3b9780ec1fdb6cd53d51a2ac1c4da003434f53f892a4d3889076b2723607694b",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.5649470726809313,
+          "brier": 0.3191651949307534,
+          "log_loss": 0.8322875832970309
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.5580110497237569,
+          "brier": 0.3113763316138091,
+          "log_loss": 0.8164703965919442
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5580110497237569,
+          "brier": 0.3113763316138091,
+          "log_loss": 0.8164703965919442
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892650",
+      "target_start": "2026-11-06T00:00:00+00:00",
+      "start_embargo_cutoff": "2026-11-05T00:00:00+00:00",
+      "home_id": "20",
+      "away_id": "4",
+      "home": "Lightning",
+      "away": "Blackhawks",
+      "actual_home_win": 1,
+      "training_games": 177,
+      "training_sha256": "3b9780ec1fdb6cd53d51a2ac1c4da003434f53f892a4d3889076b2723607694b",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.643467581171164,
+          "brier": 0.12711536567594053,
+          "log_loss": 0.4408836321254057
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.7518610421836229,
+          "brier": 0.06157294238619776,
+          "log_loss": 0.2852037564373137
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5580110497237569,
+          "brier": 0.19535423216629527,
+          "log_loss": 0.5833765144245663
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892651",
+      "target_start": "2026-11-06T00:00:00+00:00",
+      "start_embargo_cutoff": "2026-11-05T00:00:00+00:00",
+      "home_id": "11",
+      "away_id": "19",
+      "home": "Devils",
+      "away": "Blues",
+      "actual_home_win": 1,
+      "training_games": 177,
+      "training_sha256": "3b9780ec1fdb6cd53d51a2ac1c4da003434f53f892a4d3889076b2723607694b",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.6228780443560694,
+          "brier": 0.14222096942870274,
+          "log_loss": 0.47340453480500405
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.7084813701375604,
+          "brier": 0.08498311155687406,
+          "log_loss": 0.3446315149923731
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5580110497237569,
+          "brier": 0.19535423216629527,
+          "log_loss": 0.5833765144245663
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892652",
+      "target_start": "2026-11-06T00:00:00+00:00",
+      "start_embargo_cutoff": "2026-11-05T00:00:00+00:00",
+      "home_id": "12",
+      "away_id": "7",
+      "home": "Islanders",
+      "away": "Hurricanes",
+      "actual_home_win": 0,
+      "training_games": 177,
+      "training_sha256": "3b9780ec1fdb6cd53d51a2ac1c4da003434f53f892a4d3889076b2723607694b",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.484017373837899,
+          "brier": 0.2342728181769365,
+          "log_loss": 0.6616821842959156
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.36462093862815886,
+          "brier": 0.1329484288860796,
+          "log_loss": 0.45353351114918683
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5580110497237569,
+          "brier": 0.3113763316138091,
+          "log_loss": 0.8164703965919442
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892653",
+      "target_start": "2026-11-06T00:00:00+00:00",
+      "start_embargo_cutoff": "2026-11-05T00:00:00+00:00",
+      "home_id": "13",
+      "away_id": "15",
+      "home": "Rangers",
+      "away": "Flyers",
+      "actual_home_win": 1,
+      "training_games": 177,
+      "training_sha256": "3b9780ec1fdb6cd53d51a2ac1c4da003434f53f892a4d3889076b2723607694b",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.5834913224830218,
+          "brier": 0.17347947844694211,
+          "log_loss": 0.5387256988605009
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.6121212121212122,
+          "brier": 0.15044995408631767,
+          "log_loss": 0.49082495705932105
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5580110497237569,
+          "brier": 0.19535423216629527,
+          "log_loss": 0.5833765144245663
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892654",
+      "target_start": "2026-11-06T00:00:00+00:00",
+      "start_embargo_cutoff": "2026-11-05T00:00:00+00:00",
+      "home_id": "16",
+      "away_id": "1",
+      "home": "Penguins",
+      "away": "Bruins",
+      "actual_home_win": 0,
+      "training_games": 177,
+      "training_sha256": "3b9780ec1fdb6cd53d51a2ac1c4da003434f53f892a4d3889076b2723607694b",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.44498197162220987,
+          "brier": 0.19800895506878918,
+          "log_loss": 0.5887546821996963
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.25964010282776356,
+          "brier": 0.06741298299641163,
+          "log_loss": 0.3006188634825004
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5580110497237569,
+          "brier": 0.3113763316138091,
+          "log_loss": 0.8164703965919442
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892655",
+      "target_start": "2026-11-06T00:00:00+00:00",
+      "start_embargo_cutoff": "2026-11-05T00:00:00+00:00",
+      "home_id": "29",
+      "away_id": "9",
+      "home": "Blue Jackets",
+      "away": "Stars",
+      "actual_home_win": 1,
+      "training_games": 177,
+      "training_sha256": "3b9780ec1fdb6cd53d51a2ac1c4da003434f53f892a4d3889076b2723607694b",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.5056515502631977,
+          "brier": 0.2443803897571797,
+          "log_loss": 0.6819074827567277
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.38697318007662845,
+          "brier": 0.37580188194536174,
+          "log_loss": 0.9493998904814337
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5580110497237569,
+          "brier": 0.19535423216629527,
+          "log_loss": 0.5833765144245663
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892656",
+      "target_start": "2026-11-06T00:00:00+00:00",
+      "start_embargo_cutoff": "2026-11-05T00:00:00+00:00",
+      "home_id": "28",
+      "away_id": "22",
+      "home": "Jets",
+      "away": "Canucks",
+      "actual_home_win": 1,
+      "training_games": 177,
+      "training_sha256": "3b9780ec1fdb6cd53d51a2ac1c4da003434f53f892a4d3889076b2723607694b",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.6121267662331051,
+          "brier": 0.15044564547278827,
+          "log_loss": 0.4908158835513534
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.6654840344652813,
+          "brier": 0.11190093119762513,
+          "log_loss": 0.4072406317198192
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5580110497237569,
+          "brier": 0.19535423216629527,
+          "log_loss": 0.5833765144245663
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892657",
+      "target_start": "2026-11-06T01:00:00+00:00",
+      "start_embargo_cutoff": "2026-11-05T01:00:00+00:00",
+      "home_id": "6",
+      "away_id": "25",
+      "home": "Oilers",
+      "away": "Ducks",
+      "actual_home_win": 0,
+      "training_games": 179,
+      "training_sha256": "0752392177a7cc3f44319cb32b91efd49d02219fa7c7e097f44155aa9c853752",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.6416261717211136,
+          "brier": 0.41168414423749194,
+          "log_loss": 1.0261786243231559
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.7589285714285714,
+          "brier": 0.5759725765306122,
+          "log_loss": 1.4226620052907653
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5573770491803278,
+          "brier": 0.3106691749529696,
+          "log_loss": 0.8150369981689821
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892658",
+      "target_start": "2026-11-06T02:30:00+00:00",
+      "start_embargo_cutoff": "2026-11-05T02:30:00+00:00",
+      "home_id": "17",
+      "away_id": "27",
+      "home": "Avalanche",
+      "away": "Predators",
+      "actual_home_win": 0,
+      "training_games": 179,
+      "training_sha256": "0752392177a7cc3f44319cb32b91efd49d02219fa7c7e097f44155aa9c853752",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.597571150566277,
+          "brier": 0.35709127998910406,
+          "log_loss": 0.9102369693426933
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.6538461538461537,
+          "brier": 0.42751479289940814,
+          "log_loss": 1.0608719606852623
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5573770491803278,
+          "brier": 0.3106691749529696,
+          "log_loss": 0.8150369981689821
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892659",
+      "target_start": "2026-11-07T00:00:00+00:00",
+      "start_embargo_cutoff": "2026-11-06T00:00:00+00:00",
+      "home_id": "2",
+      "away_id": "29",
+      "home": "Sabres",
+      "away": "Blue Jackets",
+      "actual_home_win": 1,
+      "training_games": 190,
+      "training_sha256": "33aba37ea78bd6d2372e203a4ee3d7929aa6050bc2c1d4e9ec8deb11eb8b5570",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.5642175751310169,
+          "brier": 0.18990632182469092,
+          "log_loss": 0.5723153303658802
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.5670103092783506,
+          "brier": 0.1874800722712296,
+          "log_loss": 0.5673777932709118
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5670103092783505,
+          "brier": 0.18748007227122968,
+          "log_loss": 0.567377793270912
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892660",
+      "target_start": "2026-11-07T01:00:00+00:00",
+      "start_embargo_cutoff": "2026-11-06T01:00:00+00:00",
+      "home_id": "30",
+      "away_id": "18",
+      "home": "Wild",
+      "away": "Sharks",
+      "actual_home_win": 1,
+      "training_games": 191,
+      "training_sha256": "051797f7ad055362c8ca728824b5589e52e69d74fb2219095f3de38d7cfdd970",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.6936467626127543,
+          "brier": 0.09385230605764613,
+          "log_loss": 0.36579243564317804
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.8130726939523518,
+          "brier": 0.034941817746231126,
+          "log_loss": 0.20693475897602331
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5641025641025641,
+          "brier": 0.19000657462195925,
+          "log_loss": 0.5725191927713306
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892661",
+      "target_start": "2026-11-07T01:00:00+00:00",
+      "start_embargo_cutoff": "2026-11-06T01:00:00+00:00",
+      "home_id": "3",
+      "away_id": "25",
+      "home": "Flames",
+      "away": "Ducks",
+      "actual_home_win": 0,
+      "training_games": 191,
+      "training_sha256": "051797f7ad055362c8ca728824b5589e52e69d74fb2219095f3de38d7cfdd970",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.605015991724537,
+          "brier": 0.36604435024242504,
+          "log_loss": 0.9289100002791449
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.681453154875717,
+          "brier": 0.46437840229006794,
+          "log_loss": 1.1439857343321806
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5641025641025641,
+          "brier": 0.31821170282708744,
+          "log_loss": 0.8303483020734304
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892662",
+      "target_start": "2026-11-07T17:30:00+00:00",
+      "start_embargo_cutoff": "2026-11-06T17:30:00+00:00",
+      "home_id": "23",
+      "away_id": "26",
+      "home": "Capitals",
+      "away": "Panthers",
+      "actual_home_win": 1,
+      "training_games": 192,
+      "training_sha256": "55a4e65c09a50b5f07281edc2dd58d9759f208153321f24203a49e6ebf53aef3",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.5312138695576831,
+          "brier": 0.21976043609508092,
+          "log_loss": 0.6325905713006732
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.4987046632124351,
+          "brier": 0.2512970146849581,
+          "log_loss": 0.6957412157369922
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5612244897959183,
+          "brier": 0.19252394835485218,
+          "log_loss": 0.5776342934381011
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    },
+    {
+      "game_id": "401892663",
+      "target_start": "2026-11-07T18:00:00+00:00",
+      "start_embargo_cutoff": "2026-11-06T18:00:00+00:00",
+      "home_id": "27",
+      "away_id": "19",
+      "home": "Predators",
+      "away": "Blues",
+      "actual_home_win": 1,
+      "training_games": 192,
+      "training_sha256": "55a4e65c09a50b5f07281edc2dd58d9759f208153321f24203a49e6ebf53aef3",
+      "metrics": {
+        "nhl-causal-elo-v25.1": {
+          "probability": 0.5450830243957957,
+          "brier": 0.2069494546928762,
+          "log_loss": 0.6068171575802902
+        },
+        "nhl-beta-frequency-v25.1": {
+          "probability": 0.4987046632124351,
+          "brier": 0.2512970146849581,
+          "log_loss": 0.6957412157369922
+        },
+        "causal_home_frequency_beta22": {
+          "probability": 0.5612244897959183,
+          "brier": 0.19252394835485218,
+          "log_loss": 0.5776342934381011
+        },
+        "constant_half": {
+          "probability": 0.5,
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      }
+    }
+  ]
+}
