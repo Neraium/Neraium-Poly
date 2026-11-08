@@ -29,8 +29,8 @@ ProtectSystem=strict
 ProtectHome=read-only
 ReadWritePaths=/home/ubuntu/Neraium-Poly/data/experimental-paper
 ReadOnlyPaths=/home/ubuntu/Neraium-Poly/data/paper-live
-MemoryMax=768M
-CPUQuota=50%
+MemoryMax=2G
+CPUQuota=100%
 TasksMax=32
 LimitNOFILE=512
 
