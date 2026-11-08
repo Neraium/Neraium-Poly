@@ -1,0 +1,4 @@
+# Phase26
+Status:active
+Root/home/ubuntu/Neraium-Poly,branchphase26-intelligence,baseline1e41ad837be0ac00a57f87253960020a15d2f722. NativeCitadelstatus/architecture+AGENTS+latesthandoffread once. Preservenonprojectuntrackedrecoveryevidence.32CPU/233GiBavailableRAM/454GiBfree,load<1. Fouragents/3nativeworktrees,2boundedsourcejobs,onefinaltestworker; preserve1CPU/2GiBexperimentalallocation. Sharedcontract .planning/research/phase26-contract.md.
+Exit: authenticbook/source/outcome improvements, stableall-registryindex counts/replay, nofutureleakage/fakeoutcomes/SIIauthority; targetedtests+onefinalbackend/browser/audit/CI, shortlivecheck; account/journal/archivespreserved; exactstorageproposal(noapply); verifiedcommits+pushed. No AWS/retention/budget/risk/stopchanges. Checkpointsourceidentities beforestop/compaction.
