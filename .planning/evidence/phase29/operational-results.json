@@ -1,0 +1,550 @@
+{
+  "at": "2026-11-08T14:03:19.028280+00:00",
+  "source_commit": "e4c3cb0d56a8a3ec5adda98350ed0e39a3209615",
+  "bounded_observation": {
+    "readiness_attempts": [
+      {
+        "at": "2026-11-08T13:54:23.967057+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:54:28.974913+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:54:33.983637+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:54:38.988204+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:54:43.995881+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:54:49.003679+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:54:54.011598+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:54:59.019314+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:55:04.027143+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:55:09.034947+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:55:14.042196+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:55:19.049910+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:55:24.057619+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:55:29.065285+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:55:34.073134+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:55:39.080881+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:55:44.088219+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:55:49.096084+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:55:54.103896+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:55:59.111653+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:56:04.119400+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:56:09.127155+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:56:14.134990+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:56:19.142874+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:56:24.150697+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:56:29.158581+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:56:34.166466+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:56:39.174198+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:56:44.182151+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:56:49.190755+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:56:54.198968+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:56:59.207305+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:57:04.219992+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:57:09.228399+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:57:14.237064+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:57:19.245339+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:57:24.253930+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:57:29.368099+00:00",
+        "status": "initial_recovery_pending"
+      },
+      {
+        "at": "2026-11-08T13:57:39.019650+00:00",
+        "status": "initial_recovery_pending"
+      },
+      {
+        "at": "2026-11-08T13:57:44.495827+00:00",
+        "status": "initial_recovery_pending"
+      }
+    ],
+    "observed_seconds": 61.032937,
+    "samples": 3,
+    "scope": "one bounded post-change observation, not proof of indefinite operation",
+    "services": "MainPID=3546444\nNRestarts=0\nCPUQuotaPerSecUSec=1s\nMemoryMax=1073741824\nActiveState=active\n\nMainPID=3546445\nNRestarts=0\nCPUQuotaPerSecUSec=1s\nMemoryMax=2147483648\nActiveState=active\n"
+  },
+  "markets": 409,
+  "fresh_native_books_15s": [
+    61,
+    211,
+    324
+  ],
+  "before": {
+    "as_of": "2026-11-08T13:36:01.275538+00:00",
+    "counts": {
+      "findings_evaluated": 120,
+      "qualified_research_findings": 0,
+      "modeled_positive_gross_scenarios": 0,
+      "execution_authorized": 0,
+      "reviewed_canonical_groups": 40,
+      "statistically_independent_resolved_events": 0
+    },
+    "rejections": {
+      "forecast_outside_frozen_300_second_decision_window": 120,
+      "supported_contract_payout_semantics_required": 38,
+      "current_book_receipt_outside_15_seconds": 4,
+      "stale_book": 4,
+      "current_executable_book_missing": 52,
+      "current_exact_market_metadata_missing": 40,
+      "forecast_event_decision_horizon_ended": 30
+    },
+    "alignment_counts": {
+      "findings_considered": 120,
+      "exact_metadata_matches": 80,
+      "native_book_observations": 68,
+      "authentically_matched_executable_books": 64,
+      "current_forecasts_with_executable_books": 0
+    },
+    "alignment_categories": {
+      "MATCHED_EXECUTABLE_BOOK": 64,
+      "MARKET_DATA_QUALITY": 4,
+      "MARKET_DATA_UNAVAILABLE": 12,
+      "EVENT_LIFECYCLE": 30,
+      "DISCOVERY_COVERAGE": 10
+    }
+  },
+  "after": {
+    "as_of": "2026-11-08T14:00:06.907357+00:00",
+    "counts": {
+      "findings_evaluated": 120,
+      "qualified_research_findings": 0,
+      "modeled_positive_gross_scenarios": 0,
+      "execution_authorized": 0,
+      "reviewed_canonical_groups": 41,
+      "statistically_independent_resolved_events": 0
+    },
+    "pipeline_counts": {
+      "identity_validated": 84,
+      "book_matched": 76,
+      "book_executable": 72,
+      "economic_evaluation_completed": 32
+    },
+    "alignment_counts": {
+      "findings_considered": 120,
+      "exact_metadata_matches": 84,
+      "native_book_observations": 76,
+      "authentically_matched_executable_books": 72,
+      "current_forecasts_with_executable_books": 2
+    },
+    "alignment_categories": {
+      "MATCHED_EXECUTABLE_BOOK": 72,
+      "MARKET_DATA_UNAVAILABLE": 8,
+      "MARKET_DATA_QUALITY": 4,
+      "EVENT_LIFECYCLE": 26,
+      "DISCOVERY_COVERAGE": 10
+    },
+    "rejections": {
+      "causal_calibration_settlement_and_unconditional_value_proof_required": 2,
+      "conditional_model_scenario_not_validated_unconditional_value": 2,
+      "independent_exact_cost_replay_required": 2,
+      "positive_conservative_expected_dollar_profit_not_established": 2,
+      "forecast_outside_frozen_300_second_decision_window": 118,
+      "supported_contract_payout_semantics_required": 40,
+      "current_executable_book_missing": 44,
+      "current_book_receipt_outside_15_seconds": 4,
+      "stale_book": 4,
+      "current_exact_market_metadata_missing": 36,
+      "forecast_event_decision_horizon_ended": 26
+    }
+  },
+  "current_forecast_evaluation": {
+    "decision_at": "2026-11-08T14:00:06.907357+00:00",
+    "fresh_forecasts": 2,
+    "native_parent_events": 1,
+    "qualification": 0,
+    "modeling_only": true,
+    "source_reference": "matched-decision.json",
+    "later_stale_books_remain_withheld": true
+  },
+  "maturity": {
+    "schema_version": "phase29-outcome-readiness-v1",
+    "as_of": "2026-11-08T14:00:06.907357+00:00",
+    "counts": {
+      "forecasts": 124,
+      "nominal_event_boundary_passed": 30,
+      "future_event_boundary": 94,
+      "scheduled_sports_start_passed_not_finality": 22,
+      "verification_due_forecasts": 30
+    },
+    "native_parent_groups": 41,
+    "verification_due_native_parent_groups": 13,
+    "domains": {
+      "crypto": {
+        "forecasts": 24,
+        "nominal_event_boundary_passed": 8,
+        "verification_due_forecasts": 8,
+        "future_event_boundary": 16
+      },
+      "economics": {
+        "forecasts": 4,
+        "future_event_boundary": 4
+      },
+      "finance": {
+        "forecasts": 2,
+        "future_event_boundary": 2
+      },
+      "sports": {
+        "forecasts": 84,
+        "future_event_boundary": 62,
+        "nominal_event_boundary_passed": 22,
+        "verification_due_forecasts": 22
+      },
+      "weather": {
+        "forecasts": 10,
+        "future_event_boundary": 10
+      }
+    },
+    "rejections": {},
+    "independently_verified_outcomes": null,
+    "certified_independent_events": null,
+    "scope": "current source-replayed forecast inventory; maturity never implies outcome finality or independence",
+    "research_only": true,
+    "trading_authority": false,
+    "certification_authority": false
+  },
+  "native_cost_cache": {
+    "tokens": 6,
+    "maximum_tokens": 32,
+    "requests_per_cycle_max": 4,
+    "errors": {},
+    "all_in_costs_verified": false,
+    "trading_authority": false
+  },
+  "accounts": {
+    "collector": {
+      "cash": 500.0,
+      "simulated_pnl": 0.0,
+      "fills": null,
+      "orders_submitted": null,
+      "open_positions": null,
+      "kill_switch": null,
+      "suspended": false
+    },
+    "experimental": {
+      "cash": 496.11522059829053,
+      "simulated_pnl": -3.8847794017094657,
+      "fills": 10,
+      "orders_submitted": 13,
+      "open_positions": 0,
+      "kill_switch": false,
+      "suspended": null,
+      "new_qualified_opportunities": 0
+    }
+  },
+  "archives": {
+    "collector": {
+      "health": "ok",
+      "usage_bytes": 20089088411,
+      "budget_bytes": 161061273600,
+      "free_bytes": 435869888512,
+      "global_floor_bytes": 107374182400,
+      "growth_bytes_per_second": 187701.276941467,
+      "remaining_bytes": 140972185189,
+      "segments": 886,
+      "compressed_segments": 884,
+      "conditional_days_at_recent_rate": 8.692655374264616
+    },
+    "experimental": {
+      "health": "ok",
+      "usage_bytes": 12933979341,
+      "budget_bytes": 161061273600,
+      "free_bytes": 435831349248,
+      "global_floor_bytes": 107374182400,
+      "growth_bytes_per_second": 143886.61622032427,
+      "remaining_bytes": 148127294259,
+      "segments": 1975,
+      "compressed_segments": 1973,
+      "conditional_days_at_recent_rate": 11.915189342701812
+    }
+  },
+  "safety": {
+    "paper_trading": true,
+    "live_trading_enabled": false,
+    "certified_approval": "blocked",
+    "risk_stop_resets": false,
+    "risk_limit_changes": false,
+    "original_data_deleted": false
+  },
+  "shadow": {
+    "orders_attempted": 0,
+    "hypothetical_fills": 0,
+    "positions": 0,
+    "realized_simulated_pnl": null,
+    "rejections": {
+      "strategy_evidence_not_eligible": 24436
+    }
+  },
+  "memory": {
+    "collector": {
+      "schema_version": "phase28-memory-sample-v1",
+      "process_id": 3546444,
+      "proc_source": "/proc/self",
+      "status": "ok",
+      "stage": "collector_cycle_start",
+      "sampled_at": "2026-11-08T13:58:05.052256+00:00",
+      "interval_since_previous_seconds": 10.00822364911437,
+      "rss_bytes": 224886784,
+      "vm_hwm_bytes": 314535936,
+      "anon_rss_bytes": 204582912,
+      "file_rss_bytes": 20303872,
+      "shmem_rss_bytes": 0,
+      "vm_size_bytes": 766361600,
+      "threads": 4,
+      "minor_page_faults": 3203855,
+      "major_page_faults": 0,
+      "user_cpu_ticks": 15074,
+      "system_cpu_ticks": 2639,
+      "allocated_blocks": 734773,
+      "gc_stats": [
+        {
+          "collections": 988,
+          "collected": 8091,
+          "uncollectable": 0
+        },
+        {
+          "collections": 89,
+          "collected": 1004,
+          "uncollectable": 0
+        },
+        {
+          "collections": 7,
+          "collected": 92,
+          "uncollectable": 0
+        }
+      ],
+      "allocator": {
+        "status": "available",
+        "provider": "glibc 2.39",
+        "arena": 124907520,
+        "ordblks": 973,
+        "smblks": 9,
+        "hblks": 3,
+        "hblkhd": 1363968,
+        "usmblks": 0,
+        "fsmblks": 640,
+        "uordblks": 94558432,
+        "fordblks": 30349088,
+        "keepcost": 11334928,
+        "scope": "GNU allocator counters, not independently measured live heap or total RSS"
+      },
+      "rss_delta_bytes": 5570560,
+      "allocated_blocks_delta": 43833,
+      "peak_observed_rss_bytes": 224886784,
+      "errors": [],
+      "scope": "read-only observation; deltas since prior accepted sample are not causal attribution"
+    },
+    "experimental": {
+      "schema_version": "phase28-memory-sample-v1",
+      "process_id": 3546445,
+      "proc_source": "/proc/self",
+      "status": "ok",
+      "stage": "experimental_cycle_start",
+      "sampled_at": "2026-11-08T13:58:44.974316+00:00",
+      "interval_since_previous_seconds": 6.964338253019378,
+      "rss_bytes": 503021568,
+      "vm_hwm_bytes": 504098816,
+      "anon_rss_bytes": 482574336,
+      "file_rss_bytes": 20447232,
+      "shmem_rss_bytes": 0,
+      "vm_size_bytes": 747659264,
+      "threads": 6,
+      "minor_page_faults": 536587,
+      "major_page_faults": 0,
+      "user_cpu_ticks": 12055,
+      "system_cpu_ticks": 1788,
+      "allocated_blocks": 1394302,
+      "gc_stats": [
+        {
+          "collections": 15506,
+          "collected": 10407,
+          "uncollectable": 0
+        },
+        {
+          "collections": 1409,
+          "collected": 7638,
+          "uncollectable": 0
+        },
+        {
+          "collections": 86,
+          "collected": 2631,
+          "uncollectable": 0
+        }
+      ],
+      "allocator": {
+        "status": "available",
+        "provider": "glibc 2.39",
+        "arena": 347156480,
+        "ordblks": 1665,
+        "smblks": 2,
+        "hblks": 2,
+        "hblkhd": 401408,
+        "usmblks": 0,
+        "fsmblks": 160,
+        "uordblks": 122296832,
+        "fordblks": 224859648,
+        "keepcost": 51103312,
+        "scope": "GNU allocator counters, not independently measured live heap or total RSS"
+      },
+      "rss_delta_bytes": 8462336,
+      "allocated_blocks_delta": 35197,
+      "peak_observed_rss_bytes": 503021568,
+      "errors": [],
+      "scope": "read-only observation; deltas since prior accepted sample are not causal attribution"
+    },
+    "scope": "bounded postrestart samples, not proof of eliminated historical OOM; record allocation improvement separately"
+  },
+  "websocket": {
+    "messages": 49040,
+    "native_book_frames": 326,
+    "native_delta_frames": 48544,
+    "native_books_delivered": 70315,
+    "rest_books": 538,
+    "reconnects": 0,
+    "gaps": 25673,
+    "out_of_order": 1428,
+    "queue_overflows": 0,
+    "queue_byte_overflows": 0,
+    "queue_peak_bytes": 79000,
+    "largest_frame_bytes": 7321,
+    "oversized_frames": 0,
+    "book_level_budget_rejections": 0,
+    "invalid_frames": 0,
+    "callbacks_failed": 0,
+    "invalidations": 25675,
+    "resnapshot_failures": 0,
+    "gap_missing_baseline": 25571,
+    "gap_source_time": 70,
+    "gap_top_integrity": 16,
+    "gap_invalid_delta": 16,
+    "stale_recovery_baselines": 12,
+    "ws_connected": true,
+    "subscribed_tokens": 818,
+    "cached_books": 425,
+    "resolved_tokens_withheld": 0,
+    "gap_tokens_withheld": 281,
+    "fresh_books": 282,
+    "queue_depth": 0,
+    "queue_retained_bytes": 0,
+    "queue_budget_bytes": 8388608,
+    "queue_byte_scope": "conservative Python payload charge including in-flight consumer; decoder/socket buffers separate",
+    "websocket_max_queue": 1,
+    "websocket_max_frame_bytes": 16777216,
+    "cached_book_levels": 28376,
+    "max_cached_book_levels": 100000,
+    "max_levels_per_book": 4096,
+    "resnapshot_pending": 296,
+    "connection_generation": 1,
+    "last_message_at": "2026-11-08T13:58:50.531391+00:00",
+    "last_gap_at": "2026-11-08T13:58:50.189327+00:00",
+    "http_requests": 559,
+    "http_rate_limits": 0,
+    "http_peak_inflight": 2,
+    "rate_requests_per_second": 8.0
+  }
+}

@@ -1,0 +1,3575 @@
+{
+  "observed_at": "2026-11-08T14:01:34.153588+00:00",
+  "study_id": "14aab1d2582f0fb1a705fe3bda1e901257a62055b1e68ce86169254f31634d67",
+  "decision_at": "2026-11-08T14:01:02.848993+00:00",
+  "current_forecasts": [
+    {
+      "id": "4709c97b2bf44b6a3d3a8142270ae780eb206a6f62c3843858c95e235b442848",
+      "forecast_id": "32b7d8bb6ad47a32e13dd6bfca1485548efd088ee6f5a8e4a098b51e2d7357e8",
+      "model_id": "nhl-causal-elo-v25.1",
+      "model_version": "nhl-causal-elo-v25.1",
+      "model_sha256": "d7ba48afc4f83aef0fe24d5022b3391581ffb5cf475154d4df13ee92f1bc1706",
+      "feature_version": "nhl-final-results-home-away-v1",
+      "domain": "sports",
+      "market_id": "5609575",
+      "event_id": "1177626",
+      "token_id": "46690562314953296349029899777205973105221169499878198437949736561396611366525",
+      "original_study_id": "000000000367:9232db00fd226fbf023c706a9ab32e633310f9b6d98f125f81c2ac86926a7b8e",
+      "original_study_sha256": "9f41e913b9025834fe9968402c49ee3fa81eac9a84bd87aed1be5d4d8bffad28",
+      "original_forecast_sha256": "11d1ec8f5b9adebe90ae98f66f544edf988848974cf9bc85776ed29f0d79fb13",
+      "forecast_timestamp": "2026-11-08T13:59:11.918291+00:00",
+      "evidence_cutoff": "2026-11-08T13:59:11.581217+00:00",
+      "evidence_ids": [
+        "177277415c75f9b24e878877019d3d4da4f2764aea206da1c6c98f902d30aff7"
+      ],
+      "evidence_lineages": [
+        "ESPN:NHL:daily-scoreboards"
+      ],
+      "resolution_rules_sha256": "0924db41248085872d090e1fff9dec05b02e7eb394e3c7895ad649d304e96845",
+      "resolution_source": "https://www.nhl.com/scores",
+      "forecast_probability": 0.3627880880796108,
+      "expected_payout": null,
+      "probability_semantics": "binary_event_probability",
+      "original_target_conditioning": null,
+      "original_contract_conditioning": null,
+      "target_conditioning": "official_completed_game",
+      "uncertainty": {
+        "lower": 0.0,
+        "upper": 1.0,
+        "calibration_status": "unvalidated_research",
+        "confidence_level": null
+      },
+      "decision_at": "2026-11-08T14:01:02.848993+00:00",
+      "frame_id": "0cc9aeef90211452317e34a0897f9bc85b843248e9b42c4cb43d8035c2323376",
+      "frame_sha256": "c94ea671b1590f024bbd3b0a74bfd436831d1f7b9e81ba7256ed7a6584fc9722",
+      "book_id": null,
+      "book_sha256": null,
+      "book_source_timestamp": null,
+      "book_available_at": null,
+      "book_source": null,
+      "full_book_reference": "original full decision frame identified by frame_id/frame_sha256",
+      "observed_best_ask": null,
+      "observed_best_bid": null,
+      "executable_ask": null,
+      "executable_bid": null,
+      "market_midpoint": null,
+      "spread": null,
+      "gross_probability_gap_to_ask": null,
+      "gross_modeled_payout_gap_to_ask": null,
+      "estimated_after_cost_edge": null,
+      "standard_probe": null,
+      "capacity": null,
+      "fee_and_cost_evidence_sha256": null,
+      "confidence_status": "unvalidated_research",
+      "finding_rank": null,
+      "correlation": {
+        "canonical_group_id": "d304863efc9c6aa91892b7a9e85f17fa5d705bdb891ef8f68b5050d2d1abe202",
+        "dependency_tags": [
+          "team:NHL:Flames",
+          "team:NHL:Flyers"
+        ],
+        "independence_verified": false
+      },
+      "settlement_risk": {
+        "rules_match_current_market": true,
+        "resolution_finality_verified": false,
+        "expected_capital_lockup_seconds": null,
+        "status": "future_settlement_and_redemption_timing_unverified"
+      },
+      "relationship_context": [],
+      "status": "withheld",
+      "reasons": [
+        "current_executable_book_missing"
+      ],
+      "execution_authorized": false,
+      "research_only": true,
+      "trading_authority": false,
+      "certification_authority": false,
+      "forecast_age_seconds": 110.930702,
+      "book_qualified_for_current_observation": false,
+      "version": "phase28-volume-economic-findings-v1",
+      "certified_screening_status": "withheld",
+      "certified_book_screening_compatible": false,
+      "certified_minimum_edge_unchanged": 0.03,
+      "research_minimum_per_share_edge": null,
+      "execution_analysis": null,
+      "economics": null,
+      "scenario_expected_gross_profit": null,
+      "scenario_expected_net_profit": null,
+      "conservative_expected_net_profit": null,
+      "maximum_supported_quantity": null,
+      "capital_required": null,
+      "return_on_capital": null,
+      "break_even_entry_fee_rate_before_other_costs": null,
+      "scenario_rank": null,
+      "economic_rank": null,
+      "qualified_research": false,
+      "shadow_eligible": false,
+      "strategy_eligibility": [],
+      "strategy_rejections": {},
+      "cost_assumptions": null,
+      "price_levels": null,
+      "validated_profitability": false,
+      "correlation_adjusted_portfolio_contribution": null,
+      "certified_admission_required": true,
+      "native_market_constraints": {
+        "minimum_order_size": 5.0,
+        "price_tick_size": 0.01
+      },
+      "valuation_scope": "conditional_model_scenario",
+      "pipeline": {
+        "identity_validated": true,
+        "forecast_fresh_for_admission": true,
+        "forecast_age_seconds": 110.930702,
+        "book_matched": false,
+        "book_executable": false,
+        "probability_semantics": "binary_event_probability",
+        "economic_evaluation_completed": false,
+        "hypothesis_sensitivity": null,
+        "current_forecast_expected_profit": null,
+        "native_fee": {
+          "status": "unavailable",
+          "reason": "native_fee_observation_unavailable",
+          "all_in_costs_verified": false
+        },
+        "cost_completeness": "unknown_all_in_costs",
+        "research_only": true,
+        "trading_authority": false
+      }
+    },
+    {
+      "id": "b0267a4408cfa98115785b465d980743730c6558ad0ba046aa8c63be2ce53203",
+      "forecast_id": "2f23162d45fe4b684297edb890eec718b60ca42f3ac6669198b1a9f14bae7590",
+      "model_id": "nhl-beta-frequency-v25.1",
+      "model_version": "nhl-beta-frequency-v25.1",
+      "model_sha256": "c8c477ec4f9eb72badde574dccef47dab4e88fcd147c0cfc47d5aa80787052bc",
+      "feature_version": "nhl-final-results-home-away-v1",
+      "domain": "sports",
+      "market_id": "5609575",
+      "event_id": "1177626",
+      "token_id": "46690562314953296349029899777205973105221169499878198437949736561396611366525",
+      "original_study_id": "000000000367:9232db00fd226fbf023c706a9ab32e633310f9b6d98f125f81c2ac86926a7b8e",
+      "original_study_sha256": "9f41e913b9025834fe9968402c49ee3fa81eac9a84bd87aed1be5d4d8bffad28",
+      "original_forecast_sha256": "181457e00f0bffea1ef543dfa006e33ca9a8eec56297e82755339c5734592fc6",
+      "forecast_timestamp": "2026-11-08T13:59:11.918291+00:00",
+      "evidence_cutoff": "2026-11-08T13:59:11.581217+00:00",
+      "evidence_ids": [
+        "177277415c75f9b24e878877019d3d4da4f2764aea206da1c6c98f902d30aff7"
+      ],
+      "evidence_lineages": [
+        "ESPN:NHL:daily-scoreboards"
+      ],
+      "resolution_rules_sha256": "0924db41248085872d090e1fff9dec05b02e7eb394e3c7895ad649d304e96845",
+      "resolution_source": "https://www.nhl.com/scores",
+      "forecast_probability": 0.2615384615384615,
+      "expected_payout": null,
+      "probability_semantics": "binary_event_probability",
+      "original_target_conditioning": null,
+      "original_contract_conditioning": null,
+      "target_conditioning": "official_completed_game",
+      "uncertainty": {
+        "lower": 0.0,
+        "upper": 1.0,
+        "calibration_status": "unvalidated_research",
+        "confidence_level": null
+      },
+      "decision_at": "2026-11-08T14:01:02.848993+00:00",
+      "frame_id": "0cc9aeef90211452317e34a0897f9bc85b843248e9b42c4cb43d8035c2323376",
+      "frame_sha256": "c94ea671b1590f024bbd3b0a74bfd436831d1f7b9e81ba7256ed7a6584fc9722",
+      "book_id": null,
+      "book_sha256": null,
+      "book_source_timestamp": null,
+      "book_available_at": null,
+      "book_source": null,
+      "full_book_reference": "original full decision frame identified by frame_id/frame_sha256",
+      "observed_best_ask": null,
+      "observed_best_bid": null,
+      "executable_ask": null,
+      "executable_bid": null,
+      "market_midpoint": null,
+      "spread": null,
+      "gross_probability_gap_to_ask": null,
+      "gross_modeled_payout_gap_to_ask": null,
+      "estimated_after_cost_edge": null,
+      "standard_probe": null,
+      "capacity": null,
+      "fee_and_cost_evidence_sha256": null,
+      "confidence_status": "unvalidated_research",
+      "finding_rank": null,
+      "correlation": {
+        "canonical_group_id": "d304863efc9c6aa91892b7a9e85f17fa5d705bdb891ef8f68b5050d2d1abe202",
+        "dependency_tags": [
+          "team:NHL:Flames",
+          "team:NHL:Flyers"
+        ],
+        "independence_verified": false
+      },
+      "settlement_risk": {
+        "rules_match_current_market": true,
+        "resolution_finality_verified": false,
+        "expected_capital_lockup_seconds": null,
+        "status": "future_settlement_and_redemption_timing_unverified"
+      },
+      "relationship_context": [],
+      "status": "withheld",
+      "reasons": [
+        "current_executable_book_missing"
+      ],
+      "execution_authorized": false,
+      "research_only": true,
+      "trading_authority": false,
+      "certification_authority": false,
+      "forecast_age_seconds": 110.930702,
+      "book_qualified_for_current_observation": false,
+      "version": "phase28-volume-economic-findings-v1",
+      "certified_screening_status": "withheld",
+      "certified_book_screening_compatible": false,
+      "certified_minimum_edge_unchanged": 0.03,
+      "research_minimum_per_share_edge": null,
+      "execution_analysis": null,
+      "economics": null,
+      "scenario_expected_gross_profit": null,
+      "scenario_expected_net_profit": null,
+      "conservative_expected_net_profit": null,
+      "maximum_supported_quantity": null,
+      "capital_required": null,
+      "return_on_capital": null,
+      "break_even_entry_fee_rate_before_other_costs": null,
+      "scenario_rank": null,
+      "economic_rank": null,
+      "qualified_research": false,
+      "shadow_eligible": false,
+      "strategy_eligibility": [],
+      "strategy_rejections": {},
+      "cost_assumptions": null,
+      "price_levels": null,
+      "validated_profitability": false,
+      "correlation_adjusted_portfolio_contribution": null,
+      "certified_admission_required": true,
+      "native_market_constraints": {
+        "minimum_order_size": 5.0,
+        "price_tick_size": 0.01
+      },
+      "valuation_scope": "conditional_model_scenario",
+      "pipeline": {
+        "identity_validated": true,
+        "forecast_fresh_for_admission": true,
+        "forecast_age_seconds": 110.930702,
+        "book_matched": false,
+        "book_executable": false,
+        "probability_semantics": "binary_event_probability",
+        "economic_evaluation_completed": false,
+        "hypothesis_sensitivity": null,
+        "current_forecast_expected_profit": null,
+        "native_fee": {
+          "status": "unavailable",
+          "reason": "native_fee_observation_unavailable",
+          "all_in_costs_verified": false
+        },
+        "cost_completeness": "unknown_all_in_costs",
+        "research_only": true,
+        "trading_authority": false
+      }
+    }
+  ],
+  "verified_protocol_curve_findings": [
+    {
+      "forecast_id": "b3ad83f0e045a70676061c7eee391cd1f14972a9860a13018fdf4c4a79c101fb",
+      "market_id": "6428613",
+      "token_id": "79219126438270644699549814421343284924243205220675626625824147664744912880230",
+      "fee": {
+        "status": "verified_current_protocol_curve",
+        "token_id": "79219126438270644699549814421343284924243205220675626625824147664744912880230",
+        "condition_id": "0xdf5bcd8e6ab6829f0b3ce73cf6102c568170b3612fa73ec230566763ceb65d30",
+        "rate": 0.05,
+        "exponent": 1,
+        "taker_only": true,
+        "formula": "shares * fd.r * price * (1-price)",
+        "documentation": "https://docs.polymarket.com/trading/fees",
+        "fee_observation_id": "0a4f9010-b8bd-464b-888c-f9afe5ea76b8",
+        "fee_observation_sha256": "e32be9992168498033592e2a60cecebc9ace23ede468b52052b47b2a016a6b27",
+        "raw_response_ids": [
+          "0808fd3dce44d3d1d5c453f89d74a233c34bf8225de1a9fa595dae3e5e80831f",
+          "3bf893c0bc363ab502f85c2bae7430aa816b33459482ad7dd50f545b546a5207"
+        ],
+        "retrieval_ids": [
+          "6e4575b68ea623520a4e9b9040c2e74a60ddb7a370d3bad1ef991324482f2746",
+          "a62d5575545527f729b9a7a50ac3d87b027eb6bce204bd70650084209f0e54e8"
+        ],
+        "available_at": "2026-11-08T14:00:53.757242Z",
+        "as_of": "2026-11-08T14:01:02.681047+00:00",
+        "source_timestamp": null,
+        "timestamp_semantics": "public responses provide retrieval/availability time; exchange effective-time unavailable",
+        "rounding": "official nearest 5 decimals; per-fill count unknown, conservative bound used",
+        "all_in_costs_verified": false,
+        "missing_cost_evidence": [
+          "fill_fragmentation_rounding",
+          "additional_slippage",
+          "latency_adverse_selection",
+          "capital_lockup_cost",
+          "settlement_redemption_cost"
+        ],
+        "calibration_verified": false,
+        "research_only": true,
+        "trading_authority": false
+      }
+    },
+    {
+      "forecast_id": "824d0f9e2e0c9dffcf3661d94826a54a829553e364c6a9f0bacec2935422de12",
+      "market_id": "6428613",
+      "token_id": "79219126438270644699549814421343284924243205220675626625824147664744912880230",
+      "fee": {
+        "status": "verified_current_protocol_curve",
+        "token_id": "79219126438270644699549814421343284924243205220675626625824147664744912880230",
+        "condition_id": "0xdf5bcd8e6ab6829f0b3ce73cf6102c568170b3612fa73ec230566763ceb65d30",
+        "rate": 0.05,
+        "exponent": 1,
+        "taker_only": true,
+        "formula": "shares * fd.r * price * (1-price)",
+        "documentation": "https://docs.polymarket.com/trading/fees",
+        "fee_observation_id": "0a4f9010-b8bd-464b-888c-f9afe5ea76b8",
+        "fee_observation_sha256": "e32be9992168498033592e2a60cecebc9ace23ede468b52052b47b2a016a6b27",
+        "raw_response_ids": [
+          "0808fd3dce44d3d1d5c453f89d74a233c34bf8225de1a9fa595dae3e5e80831f",
+          "3bf893c0bc363ab502f85c2bae7430aa816b33459482ad7dd50f545b546a5207"
+        ],
+        "retrieval_ids": [
+          "6e4575b68ea623520a4e9b9040c2e74a60ddb7a370d3bad1ef991324482f2746",
+          "a62d5575545527f729b9a7a50ac3d87b027eb6bce204bd70650084209f0e54e8"
+        ],
+        "available_at": "2026-11-08T14:00:53.757242Z",
+        "as_of": "2026-11-08T14:01:02.681047+00:00",
+        "source_timestamp": null,
+        "timestamp_semantics": "public responses provide retrieval/availability time; exchange effective-time unavailable",
+        "rounding": "official nearest 5 decimals; per-fill count unknown, conservative bound used",
+        "all_in_costs_verified": false,
+        "missing_cost_evidence": [
+          "fill_fragmentation_rounding",
+          "additional_slippage",
+          "latency_adverse_selection",
+          "capital_lockup_cost",
+          "settlement_redemption_cost"
+        ],
+        "calibration_verified": false,
+        "research_only": true,
+        "trading_authority": false
+      }
+    },
+    {
+      "forecast_id": "ba854d2c23a5e72445e4c4a58135b791240e9f8e8b37f4f1c8d16304e7c83146",
+      "market_id": "5920626",
+      "token_id": "77848626876688716983588852240686636563373445326764845068265008490716712317223",
+      "fee": {
+        "status": "verified_current_protocol_curve",
+        "token_id": "77848626876688716983588852240686636563373445326764845068265008490716712317223",
+        "condition_id": "0xef96bd5e7cf502e392a078cc7bb84e6aef1f405e8351141ca5788b2c73a81480",
+        "rate": 0.03,
+        "exponent": 1,
+        "taker_only": true,
+        "formula": "shares * fd.r * price * (1-price)",
+        "documentation": "https://docs.polymarket.com/trading/fees",
+        "fee_observation_id": "e66e47db-f32e-4d28-aab4-042a774bb050",
+        "fee_observation_sha256": "23d2bbbc9f0c4a95313dd93aed307a6dfd551309f3828b452b2d120b663270eb",
+        "raw_response_ids": [
+          "61bb455dbe4e17732265544fe90497bd3026c34cd1e58c04ac6e9a4b2f982ba9",
+          "818c6112ca36f5fb4311042beac4fb4dd20335007dac52e19fbb75cb895d560f"
+        ],
+        "retrieval_ids": [
+          "436e1034f0a7e879ebcf2d68ec3f13ef9433bd57e7536d6e0613c03ba21dd82a",
+          "dd322df3096d8b8af4a4538f5a4cc1d3f1ba419cc5998376de926904e5255d84"
+        ],
+        "available_at": "2026-11-08T14:00:39.456190Z",
+        "as_of": "2026-11-08T14:01:02.681047+00:00",
+        "source_timestamp": null,
+        "timestamp_semantics": "public responses provide retrieval/availability time; exchange effective-time unavailable",
+        "rounding": "official nearest 5 decimals; per-fill count unknown, conservative bound used",
+        "all_in_costs_verified": false,
+        "missing_cost_evidence": [
+          "fill_fragmentation_rounding",
+          "additional_slippage",
+          "latency_adverse_selection",
+          "capital_lockup_cost",
+          "settlement_redemption_cost"
+        ],
+        "calibration_verified": false,
+        "research_only": true,
+        "trading_authority": false
+      }
+    },
+    {
+      "forecast_id": "5f45d889b9e1eb1ef861dd9eb095b0756b4d2ea3add94a264c46cd80fa736ddd",
+      "market_id": "5920626",
+      "token_id": "77848626876688716983588852240686636563373445326764845068265008490716712317223",
+      "fee": {
+        "status": "verified_current_protocol_curve",
+        "token_id": "77848626876688716983588852240686636563373445326764845068265008490716712317223",
+        "condition_id": "0xef96bd5e7cf502e392a078cc7bb84e6aef1f405e8351141ca5788b2c73a81480",
+        "rate": 0.03,
+        "exponent": 1,
+        "taker_only": true,
+        "formula": "shares * fd.r * price * (1-price)",
+        "documentation": "https://docs.polymarket.com/trading/fees",
+        "fee_observation_id": "e66e47db-f32e-4d28-aab4-042a774bb050",
+        "fee_observation_sha256": "23d2bbbc9f0c4a95313dd93aed307a6dfd551309f3828b452b2d120b663270eb",
+        "raw_response_ids": [
+          "61bb455dbe4e17732265544fe90497bd3026c34cd1e58c04ac6e9a4b2f982ba9",
+          "818c6112ca36f5fb4311042beac4fb4dd20335007dac52e19fbb75cb895d560f"
+        ],
+        "retrieval_ids": [
+          "436e1034f0a7e879ebcf2d68ec3f13ef9433bd57e7536d6e0613c03ba21dd82a",
+          "dd322df3096d8b8af4a4538f5a4cc1d3f1ba419cc5998376de926904e5255d84"
+        ],
+        "available_at": "2026-11-08T14:00:39.456190Z",
+        "as_of": "2026-11-08T14:01:02.681047+00:00",
+        "source_timestamp": null,
+        "timestamp_semantics": "public responses provide retrieval/availability time; exchange effective-time unavailable",
+        "rounding": "official nearest 5 decimals; per-fill count unknown, conservative bound used",
+        "all_in_costs_verified": false,
+        "missing_cost_evidence": [
+          "fill_fragmentation_rounding",
+          "additional_slippage",
+          "latency_adverse_selection",
+          "capital_lockup_cost",
+          "settlement_redemption_cost"
+        ],
+        "calibration_verified": false,
+        "research_only": true,
+        "trading_authority": false
+      }
+    },
+    {
+      "forecast_id": "e8ca52682c5c0e8078decac05e9478ac5a81887a66953a17b534bbbc2e5987de",
+      "market_id": "5920616",
+      "token_id": "48367501824322597594118449741134042441061133050596091491557182373590496425837",
+      "fee": {
+        "status": "verified_current_protocol_curve",
+        "token_id": "48367501824322597594118449741134042441061133050596091491557182373590496425837",
+        "condition_id": "0x3a6c15927b4379533f1db8056be7d345a25e86c18e335a62cbaec73e82a611e7",
+        "rate": 0.03,
+        "exponent": 1,
+        "taker_only": true,
+        "formula": "shares * fd.r * price * (1-price)",
+        "documentation": "https://docs.polymarket.com/trading/fees",
+        "fee_observation_id": "44484da0-1c7b-4fab-82e1-1909aae598e9",
+        "fee_observation_sha256": "48c6cd00a81d43faac2b8c18974dfc739eecfc651c831bc0064ec468529d3737",
+        "raw_response_ids": [
+          "7d70ae06a961951cfe2b99c17337b9376c6509bafe758b546de7455b84caa8df",
+          "c2d341e5a72d17aec94410114eeca997ec176066d0b1260640da59fbb94fd39d"
+        ],
+        "retrieval_ids": [
+          "ca66c901df49c5332ed828cc6834d5b1b7213e7c507aee979963486290bd1c51",
+          "59308c046730b1603e8bad8577c5fcf60df0909bcf27069ac762a0dd1584a5b0"
+        ],
+        "available_at": "2026-11-08T13:58:09.690196Z",
+        "as_of": "2026-11-08T14:01:02.681047+00:00",
+        "source_timestamp": null,
+        "timestamp_semantics": "public responses provide retrieval/availability time; exchange effective-time unavailable",
+        "rounding": "official nearest 5 decimals; per-fill count unknown, conservative bound used",
+        "all_in_costs_verified": false,
+        "missing_cost_evidence": [
+          "fill_fragmentation_rounding",
+          "additional_slippage",
+          "latency_adverse_selection",
+          "capital_lockup_cost",
+          "settlement_redemption_cost"
+        ],
+        "calibration_verified": false,
+        "research_only": true,
+        "trading_authority": false
+      }
+    },
+    {
+      "forecast_id": "ae95266ceddca03e2b237198abf0bff0b3c877ae986e1717e4f746d676c73abc",
+      "market_id": "5920616",
+      "token_id": "48367501824322597594118449741134042441061133050596091491557182373590496425837",
+      "fee": {
+        "status": "verified_current_protocol_curve",
+        "token_id": "48367501824322597594118449741134042441061133050596091491557182373590496425837",
+        "condition_id": "0x3a6c15927b4379533f1db8056be7d345a25e86c18e335a62cbaec73e82a611e7",
+        "rate": 0.03,
+        "exponent": 1,
+        "taker_only": true,
+        "formula": "shares * fd.r * price * (1-price)",
+        "documentation": "https://docs.polymarket.com/trading/fees",
+        "fee_observation_id": "44484da0-1c7b-4fab-82e1-1909aae598e9",
+        "fee_observation_sha256": "48c6cd00a81d43faac2b8c18974dfc739eecfc651c831bc0064ec468529d3737",
+        "raw_response_ids": [
+          "7d70ae06a961951cfe2b99c17337b9376c6509bafe758b546de7455b84caa8df",
+          "c2d341e5a72d17aec94410114eeca997ec176066d0b1260640da59fbb94fd39d"
+        ],
+        "retrieval_ids": [
+          "ca66c901df49c5332ed828cc6834d5b1b7213e7c507aee979963486290bd1c51",
+          "59308c046730b1603e8bad8577c5fcf60df0909bcf27069ac762a0dd1584a5b0"
+        ],
+        "available_at": "2026-11-08T13:58:09.690196Z",
+        "as_of": "2026-11-08T14:01:02.681047+00:00",
+        "source_timestamp": null,
+        "timestamp_semantics": "public responses provide retrieval/availability time; exchange effective-time unavailable",
+        "rounding": "official nearest 5 decimals; per-fill count unknown, conservative bound used",
+        "all_in_costs_verified": false,
+        "missing_cost_evidence": [
+          "fill_fragmentation_rounding",
+          "additional_slippage",
+          "latency_adverse_selection",
+          "capital_lockup_cost",
+          "settlement_redemption_cost"
+        ],
+        "calibration_verified": false,
+        "research_only": true,
+        "trading_authority": false
+      }
+    },
+    {
+      "forecast_id": "e67285d64c5b35e2016a74b47269202cc789976f2aef95fedf630960033797bf",
+      "market_id": "5920618",
+      "token_id": "15958206371881608074550160382583815733297192883347780465607399192524953510027",
+      "fee": {
+        "status": "verified_current_protocol_curve",
+        "token_id": "15958206371881608074550160382583815733297192883347780465607399192524953510027",
+        "condition_id": "0xf2b6f73984047ec5f5e1b733d01b41536d63f349fcf9e38f2e281f1f8b047147",
+        "rate": 0.03,
+        "exponent": 1,
+        "taker_only": true,
+        "formula": "shares * fd.r * price * (1-price)",
+        "documentation": "https://docs.polymarket.com/trading/fees",
+        "fee_observation_id": "10e5dc10-2d2e-4518-897e-df6713472a8f",
+        "fee_observation_sha256": "5b91fefe23026060dc6bf81a438e03b0b8147cde98123076005daecd0d2dbf10",
+        "raw_response_ids": [
+          "b089258664f9b26bb8bc17e7d42e76dc0d0c3665cf23c3a0fbeee8246efc4a15",
+          "062ecb71804f7926b6349a55772e9c1fb3e8922448aa36d7a98663b529ec8abc"
+        ],
+        "retrieval_ids": [
+          "718265ad2c91a84cc602eb4e7e81a613e09563a7ec2abffdcaffbdad03f59d70",
+          "a82c14a4690bfa5b4fbc20782052074a2860bfc043ed2dcd62082a791caca1e0"
+        ],
+        "available_at": "2026-11-08T14:00:54.253469Z",
+        "as_of": "2026-11-08T14:01:02.681047+00:00",
+        "source_timestamp": null,
+        "timestamp_semantics": "public responses provide retrieval/availability time; exchange effective-time unavailable",
+        "rounding": "official nearest 5 decimals; per-fill count unknown, conservative bound used",
+        "all_in_costs_verified": false,
+        "missing_cost_evidence": [
+          "fill_fragmentation_rounding",
+          "additional_slippage",
+          "latency_adverse_selection",
+          "capital_lockup_cost",
+          "settlement_redemption_cost"
+        ],
+        "calibration_verified": false,
+        "research_only": true,
+        "trading_authority": false
+      }
+    },
+    {
+      "forecast_id": "4a7980ffe175074d25405adb003d8ca692eef7672de8f130a6c1b58b0cb548c6",
+      "market_id": "5920618",
+      "token_id": "15958206371881608074550160382583815733297192883347780465607399192524953510027",
+      "fee": {
+        "status": "verified_current_protocol_curve",
+        "token_id": "15958206371881608074550160382583815733297192883347780465607399192524953510027",
+        "condition_id": "0xf2b6f73984047ec5f5e1b733d01b41536d63f349fcf9e38f2e281f1f8b047147",
+        "rate": 0.03,
+        "exponent": 1,
+        "taker_only": true,
+        "formula": "shares * fd.r * price * (1-price)",
+        "documentation": "https://docs.polymarket.com/trading/fees",
+        "fee_observation_id": "10e5dc10-2d2e-4518-897e-df6713472a8f",
+        "fee_observation_sha256": "5b91fefe23026060dc6bf81a438e03b0b8147cde98123076005daecd0d2dbf10",
+        "raw_response_ids": [
+          "b089258664f9b26bb8bc17e7d42e76dc0d0c3665cf23c3a0fbeee8246efc4a15",
+          "062ecb71804f7926b6349a55772e9c1fb3e8922448aa36d7a98663b529ec8abc"
+        ],
+        "retrieval_ids": [
+          "718265ad2c91a84cc602eb4e7e81a613e09563a7ec2abffdcaffbdad03f59d70",
+          "a82c14a4690bfa5b4fbc20782052074a2860bfc043ed2dcd62082a791caca1e0"
+        ],
+        "available_at": "2026-11-08T14:00:54.253469Z",
+        "as_of": "2026-11-08T14:01:02.681047+00:00",
+        "source_timestamp": null,
+        "timestamp_semantics": "public responses provide retrieval/availability time; exchange effective-time unavailable",
+        "rounding": "official nearest 5 decimals; per-fill count unknown, conservative bound used",
+        "all_in_costs_verified": false,
+        "missing_cost_evidence": [
+          "fill_fragmentation_rounding",
+          "additional_slippage",
+          "latency_adverse_selection",
+          "capital_lockup_cost",
+          "settlement_redemption_cost"
+        ],
+        "calibration_verified": false,
+        "research_only": true,
+        "trading_authority": false
+      }
+    },
+    {
+      "forecast_id": "fca2241a20262cf501e17895b8f1e66a61375b9b2ab5c4c1364e6ac011d017c9",
+      "market_id": "6833748",
+      "token_id": "15525226198022539782054741503755238848410866653852780590549088456283963147134",
+      "fee": {
+        "status": "verified_current_protocol_curve",
+        "token_id": "15525226198022539782054741503755238848410866653852780590549088456283963147134",
+        "condition_id": "0xab794ee393ba68dec29ee1defd3655d441c87feeee89e55e4cf338410eef052f",
+        "rate": 0.07,
+        "exponent": 1,
+        "taker_only": true,
+        "formula": "shares * fd.r * price * (1-price)",
+        "documentation": "https://docs.polymarket.com/trading/fees",
+        "fee_observation_id": "385616ae-6c22-4023-bf6e-6e82929a59f3",
+        "fee_observation_sha256": "f3ee08fd14833056a0e62de9ac56f5d6ef65a98740e3657031b7dfd7167caf1e",
+        "raw_response_ids": [
+          "e6483c9abb62adeac618708780d691bbae21da86c002e534b35b30da4a17b728",
+          "941b5ea5ec951a780bf2fe6ca6a8c8c2c05a2e8e44d93cfcdf86ccaaef937438"
+        ],
+        "retrieval_ids": [
+          "7c8a07d6bdbcb5e19bb165f5e5b8e0ceeca782a5b15ce09ae412e78ee83297f8",
+          "2e589d3fea7acf447f29df1b95d1a99cb44200eef300e122be1a5bf20dadf0f2"
+        ],
+        "available_at": "2026-11-08T13:59:46.472540Z",
+        "as_of": "2026-11-08T14:01:02.681047+00:00",
+        "source_timestamp": null,
+        "timestamp_semantics": "public responses provide retrieval/availability time; exchange effective-time unavailable",
+        "rounding": "official nearest 5 decimals; per-fill count unknown, conservative bound used",
+        "all_in_costs_verified": false,
+        "missing_cost_evidence": [
+          "fill_fragmentation_rounding",
+          "additional_slippage",
+          "latency_adverse_selection",
+          "capital_lockup_cost",
+          "settlement_redemption_cost"
+        ],
+        "calibration_verified": false,
+        "research_only": true,
+        "trading_authority": false
+      }
+    },
+    {
+      "forecast_id": "c8ad69264dce28a76cd97d074410649bbeb33f1358341616bc62ccd8a3062954",
+      "market_id": "6833748",
+      "token_id": "15525226198022539782054741503755238848410866653852780590549088456283963147134",
+      "fee": {
+        "status": "verified_current_protocol_curve",
+        "token_id": "15525226198022539782054741503755238848410866653852780590549088456283963147134",
+        "condition_id": "0xab794ee393ba68dec29ee1defd3655d441c87feeee89e55e4cf338410eef052f",
+        "rate": 0.07,
+        "exponent": 1,
+        "taker_only": true,
+        "formula": "shares * fd.r * price * (1-price)",
+        "documentation": "https://docs.polymarket.com/trading/fees",
+        "fee_observation_id": "385616ae-6c22-4023-bf6e-6e82929a59f3",
+        "fee_observation_sha256": "f3ee08fd14833056a0e62de9ac56f5d6ef65a98740e3657031b7dfd7167caf1e",
+        "raw_response_ids": [
+          "e6483c9abb62adeac618708780d691bbae21da86c002e534b35b30da4a17b728",
+          "941b5ea5ec951a780bf2fe6ca6a8c8c2c05a2e8e44d93cfcdf86ccaaef937438"
+        ],
+        "retrieval_ids": [
+          "7c8a07d6bdbcb5e19bb165f5e5b8e0ceeca782a5b15ce09ae412e78ee83297f8",
+          "2e589d3fea7acf447f29df1b95d1a99cb44200eef300e122be1a5bf20dadf0f2"
+        ],
+        "available_at": "2026-11-08T13:59:46.472540Z",
+        "as_of": "2026-11-08T14:01:02.681047+00:00",
+        "source_timestamp": null,
+        "timestamp_semantics": "public responses provide retrieval/availability time; exchange effective-time unavailable",
+        "rounding": "official nearest 5 decimals; per-fill count unknown, conservative bound used",
+        "all_in_costs_verified": false,
+        "missing_cost_evidence": [
+          "fill_fragmentation_rounding",
+          "additional_slippage",
+          "latency_adverse_selection",
+          "capital_lockup_cost",
+          "settlement_redemption_cost"
+        ],
+        "calibration_verified": false,
+        "research_only": true,
+        "trading_authority": false
+      }
+    },
+    {
+      "forecast_id": "b9af60d2415ff18c962603adc02b602f8a965158e18af57abc0d1c0f6dbe540f",
+      "market_id": "6833622",
+      "token_id": "8865471190029551213642541914820235677969131661735363644525892646249751218226",
+      "fee": {
+        "status": "verified_current_protocol_curve",
+        "token_id": "8865471190029551213642541914820235677969131661735363644525892646249751218226",
+        "condition_id": "0xc648f20ab9ae35d907df33dd083ea799bbda1840e9a0b40ac4472642758a4985",
+        "rate": 0.07,
+        "exponent": 1,
+        "taker_only": true,
+        "formula": "shares * fd.r * price * (1-price)",
+        "documentation": "https://docs.polymarket.com/trading/fees",
+        "fee_observation_id": "200f6a2f-db96-4c75-a529-a931582c9537",
+        "fee_observation_sha256": "921914da0848fc9047a492aa7aa6d3a0895d91725495811b7f86ed3127807d4c",
+        "raw_response_ids": [
+          "7d96b40af2129ceee9071bc456bd6e54c78973644f17add073571fb16b56ab8f",
+          "5c95ac6dc160b7c51bc2ee42096b7c55184586bc9ea96618f7be58149cd82b99"
+        ],
+        "retrieval_ids": [
+          "3186109a05e0ae4c0c91ca67bb694e7d5a09fd2ec4a14dde3f334cdee3b6ac70",
+          "782b11afcdc406c947b6625495ee7ac33e08ebc856dd89bfb423d95e4027e232"
+        ],
+        "available_at": "2026-11-08T14:00:39.937886Z",
+        "as_of": "2026-11-08T14:01:02.681047+00:00",
+        "source_timestamp": null,
+        "timestamp_semantics": "public responses provide retrieval/availability time; exchange effective-time unavailable",
+        "rounding": "official nearest 5 decimals; per-fill count unknown, conservative bound used",
+        "all_in_costs_verified": false,
+        "missing_cost_evidence": [
+          "fill_fragmentation_rounding",
+          "additional_slippage",
+          "latency_adverse_selection",
+          "capital_lockup_cost",
+          "settlement_redemption_cost"
+        ],
+        "calibration_verified": false,
+        "research_only": true,
+        "trading_authority": false
+      }
+    },
+    {
+      "forecast_id": "34f73805631b82458ddd92a6fd02ed0847bbb61f4685734b3e1d773924b56972",
+      "market_id": "6833622",
+      "token_id": "8865471190029551213642541914820235677969131661735363644525892646249751218226",
+      "fee": {
+        "status": "verified_current_protocol_curve",
+        "token_id": "8865471190029551213642541914820235677969131661735363644525892646249751218226",
+        "condition_id": "0xc648f20ab9ae35d907df33dd083ea799bbda1840e9a0b40ac4472642758a4985",
+        "rate": 0.07,
+        "exponent": 1,
+        "taker_only": true,
+        "formula": "shares * fd.r * price * (1-price)",
+        "documentation": "https://docs.polymarket.com/trading/fees",
+        "fee_observation_id": "200f6a2f-db96-4c75-a529-a931582c9537",
+        "fee_observation_sha256": "921914da0848fc9047a492aa7aa6d3a0895d91725495811b7f86ed3127807d4c",
+        "raw_response_ids": [
+          "7d96b40af2129ceee9071bc456bd6e54c78973644f17add073571fb16b56ab8f",
+          "5c95ac6dc160b7c51bc2ee42096b7c55184586bc9ea96618f7be58149cd82b99"
+        ],
+        "retrieval_ids": [
+          "3186109a05e0ae4c0c91ca67bb694e7d5a09fd2ec4a14dde3f334cdee3b6ac70",
+          "782b11afcdc406c947b6625495ee7ac33e08ebc856dd89bfb423d95e4027e232"
+        ],
+        "available_at": "2026-11-08T14:00:39.937886Z",
+        "as_of": "2026-11-08T14:01:02.681047+00:00",
+        "source_timestamp": null,
+        "timestamp_semantics": "public responses provide retrieval/availability time; exchange effective-time unavailable",
+        "rounding": "official nearest 5 decimals; per-fill count unknown, conservative bound used",
+        "all_in_costs_verified": false,
+        "missing_cost_evidence": [
+          "fill_fragmentation_rounding",
+          "additional_slippage",
+          "latency_adverse_selection",
+          "capital_lockup_cost",
+          "settlement_redemption_cost"
+        ],
+        "calibration_verified": false,
+        "research_only": true,
+        "trading_authority": false
+      }
+    },
+    {
+      "forecast_id": "60565e2eefb6c260a9c769a75059569c3e251081d302794c9a2ac92fe8234545",
+      "market_id": "5920618",
+      "token_id": "15958206371881608074550160382583815733297192883347780465607399192524953510027",
+      "fee": {
+        "status": "verified_current_protocol_curve",
+        "token_id": "15958206371881608074550160382583815733297192883347780465607399192524953510027",
+        "condition_id": "0xf2b6f73984047ec5f5e1b733d01b41536d63f349fcf9e38f2e281f1f8b047147",
+        "rate": 0.03,
+        "exponent": 1,
+        "taker_only": true,
+        "formula": "shares * fd.r * price * (1-price)",
+        "documentation": "https://docs.polymarket.com/trading/fees",
+        "fee_observation_id": "10e5dc10-2d2e-4518-897e-df6713472a8f",
+        "fee_observation_sha256": "5b91fefe23026060dc6bf81a438e03b0b8147cde98123076005daecd0d2dbf10",
+        "raw_response_ids": [
+          "b089258664f9b26bb8bc17e7d42e76dc0d0c3665cf23c3a0fbeee8246efc4a15",
+          "062ecb71804f7926b6349a55772e9c1fb3e8922448aa36d7a98663b529ec8abc"
+        ],
+        "retrieval_ids": [
+          "718265ad2c91a84cc602eb4e7e81a613e09563a7ec2abffdcaffbdad03f59d70",
+          "a82c14a4690bfa5b4fbc20782052074a2860bfc043ed2dcd62082a791caca1e0"
+        ],
+        "available_at": "2026-11-08T14:00:54.253469Z",
+        "as_of": "2026-11-08T14:01:02.681047+00:00",
+        "source_timestamp": null,
+        "timestamp_semantics": "public responses provide retrieval/availability time; exchange effective-time unavailable",
+        "rounding": "official nearest 5 decimals; per-fill count unknown, conservative bound used",
+        "all_in_costs_verified": false,
+        "missing_cost_evidence": [
+          "fill_fragmentation_rounding",
+          "additional_slippage",
+          "latency_adverse_selection",
+          "capital_lockup_cost",
+          "settlement_redemption_cost"
+        ],
+        "calibration_verified": false,
+        "research_only": true,
+        "trading_authority": false
+      }
+    },
+    {
+      "forecast_id": "467c5c49e29a942e0b52119be3a153cb1ac48a2da5d7e4a75cdbe4f70fdb8411",
+      "market_id": "5920618",
+      "token_id": "15958206371881608074550160382583815733297192883347780465607399192524953510027",
+      "fee": {
+        "status": "verified_current_protocol_curve",
+        "token_id": "15958206371881608074550160382583815733297192883347780465607399192524953510027",
+        "condition_id": "0xf2b6f73984047ec5f5e1b733d01b41536d63f349fcf9e38f2e281f1f8b047147",
+        "rate": 0.03,
+        "exponent": 1,
+        "taker_only": true,
+        "formula": "shares * fd.r * price * (1-price)",
+        "documentation": "https://docs.polymarket.com/trading/fees",
+        "fee_observation_id": "10e5dc10-2d2e-4518-897e-df6713472a8f",
+        "fee_observation_sha256": "5b91fefe23026060dc6bf81a438e03b0b8147cde98123076005daecd0d2dbf10",
+        "raw_response_ids": [
+          "b089258664f9b26bb8bc17e7d42e76dc0d0c3665cf23c3a0fbeee8246efc4a15",
+          "062ecb71804f7926b6349a55772e9c1fb3e8922448aa36d7a98663b529ec8abc"
+        ],
+        "retrieval_ids": [
+          "718265ad2c91a84cc602eb4e7e81a613e09563a7ec2abffdcaffbdad03f59d70",
+          "a82c14a4690bfa5b4fbc20782052074a2860bfc043ed2dcd62082a791caca1e0"
+        ],
+        "available_at": "2026-11-08T14:00:54.253469Z",
+        "as_of": "2026-11-08T14:01:02.681047+00:00",
+        "source_timestamp": null,
+        "timestamp_semantics": "public responses provide retrieval/availability time; exchange effective-time unavailable",
+        "rounding": "official nearest 5 decimals; per-fill count unknown, conservative bound used",
+        "all_in_costs_verified": false,
+        "missing_cost_evidence": [
+          "fill_fragmentation_rounding",
+          "additional_slippage",
+          "latency_adverse_selection",
+          "capital_lockup_cost",
+          "settlement_redemption_cost"
+        ],
+        "calibration_verified": false,
+        "research_only": true,
+        "trading_authority": false
+      }
+    },
+    {
+      "forecast_id": "a00081ac7060afde2ca26ae103a9232ef2c4c1f12f3086fc5b9ffa8620219b64",
+      "market_id": "5920616",
+      "token_id": "48367501824322597594118449741134042441061133050596091491557182373590496425837",
+      "fee": {
+        "status": "verified_current_protocol_curve",
+        "token_id": "48367501824322597594118449741134042441061133050596091491557182373590496425837",
+        "condition_id": "0x3a6c15927b4379533f1db8056be7d345a25e86c18e335a62cbaec73e82a611e7",
+        "rate": 0.03,
+        "exponent": 1,
+        "taker_only": true,
+        "formula": "shares * fd.r * price * (1-price)",
+        "documentation": "https://docs.polymarket.com/trading/fees",
+        "fee_observation_id": "44484da0-1c7b-4fab-82e1-1909aae598e9",
+        "fee_observation_sha256": "48c6cd00a81d43faac2b8c18974dfc739eecfc651c831bc0064ec468529d3737",
+        "raw_response_ids": [
+          "7d70ae06a961951cfe2b99c17337b9376c6509bafe758b546de7455b84caa8df",
+          "c2d341e5a72d17aec94410114eeca997ec176066d0b1260640da59fbb94fd39d"
+        ],
+        "retrieval_ids": [
+          "ca66c901df49c5332ed828cc6834d5b1b7213e7c507aee979963486290bd1c51",
+          "59308c046730b1603e8bad8577c5fcf60df0909bcf27069ac762a0dd1584a5b0"
+        ],
+        "available_at": "2026-11-08T13:58:09.690196Z",
+        "as_of": "2026-11-08T14:01:02.681047+00:00",
+        "source_timestamp": null,
+        "timestamp_semantics": "public responses provide retrieval/availability time; exchange effective-time unavailable",
+        "rounding": "official nearest 5 decimals; per-fill count unknown, conservative bound used",
+        "all_in_costs_verified": false,
+        "missing_cost_evidence": [
+          "fill_fragmentation_rounding",
+          "additional_slippage",
+          "latency_adverse_selection",
+          "capital_lockup_cost",
+          "settlement_redemption_cost"
+        ],
+        "calibration_verified": false,
+        "research_only": true,
+        "trading_authority": false
+      }
+    },
+    {
+      "forecast_id": "61197ec13abe715c58818c60408a6adb87179c16989e28ef71d357663e682259",
+      "market_id": "5920616",
+      "token_id": "48367501824322597594118449741134042441061133050596091491557182373590496425837",
+      "fee": {
+        "status": "verified_current_protocol_curve",
+        "token_id": "48367501824322597594118449741134042441061133050596091491557182373590496425837",
+        "condition_id": "0x3a6c15927b4379533f1db8056be7d345a25e86c18e335a62cbaec73e82a611e7",
+        "rate": 0.03,
+        "exponent": 1,
+        "taker_only": true,
+        "formula": "shares * fd.r * price * (1-price)",
+        "documentation": "https://docs.polymarket.com/trading/fees",
+        "fee_observation_id": "44484da0-1c7b-4fab-82e1-1909aae598e9",
+        "fee_observation_sha256": "48c6cd00a81d43faac2b8c18974dfc739eecfc651c831bc0064ec468529d3737",
+        "raw_response_ids": [
+          "7d70ae06a961951cfe2b99c17337b9376c6509bafe758b546de7455b84caa8df",
+          "c2d341e5a72d17aec94410114eeca997ec176066d0b1260640da59fbb94fd39d"
+        ],
+        "retrieval_ids": [
+          "ca66c901df49c5332ed828cc6834d5b1b7213e7c507aee979963486290bd1c51",
+          "59308c046730b1603e8bad8577c5fcf60df0909bcf27069ac762a0dd1584a5b0"
+        ],
+        "available_at": "2026-11-08T13:58:09.690196Z",
+        "as_of": "2026-11-08T14:01:02.681047+00:00",
+        "source_timestamp": null,
+        "timestamp_semantics": "public responses provide retrieval/availability time; exchange effective-time unavailable",
+        "rounding": "official nearest 5 decimals; per-fill count unknown, conservative bound used",
+        "all_in_costs_verified": false,
+        "missing_cost_evidence": [
+          "fill_fragmentation_rounding",
+          "additional_slippage",
+          "latency_adverse_selection",
+          "capital_lockup_cost",
+          "settlement_redemption_cost"
+        ],
+        "calibration_verified": false,
+        "research_only": true,
+        "trading_authority": false
+      }
+    }
+  ],
+  "counts": {
+    "findings_evaluated": 120,
+    "qualified_research_findings": 0,
+    "modeled_positive_gross_scenarios": 0,
+    "execution_authorized": 0,
+    "reviewed_canonical_groups": 41,
+    "statistically_independent_resolved_events": 0
+  },
+  "pipeline_counts": {
+    "identity_validated": 84,
+    "book_matched": 78,
+    "book_executable": 72,
+    "economic_evaluation_completed": 32
+  },
+  "source_maturity": {
+    "schema_version": "phase29-outcome-readiness-v1",
+    "as_of": "2026-11-08T14:01:02.848993+00:00",
+    "counts": {
+      "forecasts": 124,
+      "nominal_event_boundary_passed": 30,
+      "future_event_boundary": 94,
+      "scheduled_sports_start_passed_not_finality": 22,
+      "verification_due_forecasts": 30
+    },
+    "native_parent_groups": 41,
+    "verification_due_native_parent_groups": 13,
+    "domains": {
+      "crypto": {
+        "forecasts": 24,
+        "nominal_event_boundary_passed": 8,
+        "verification_due_forecasts": 8,
+        "future_event_boundary": 16
+      },
+      "economics": {
+        "forecasts": 4,
+        "future_event_boundary": 4
+      },
+      "finance": {
+        "forecasts": 2,
+        "future_event_boundary": 2
+      },
+      "sports": {
+        "forecasts": 84,
+        "future_event_boundary": 62,
+        "nominal_event_boundary_passed": 22,
+        "verification_due_forecasts": 22
+      },
+      "weather": {
+        "forecasts": 10,
+        "future_event_boundary": 10
+      }
+    },
+    "rejections": {},
+    "independently_verified_outcomes": null,
+    "certified_independent_events": null,
+    "scope": "current source-replayed forecast inventory; maturity never implies outcome finality or independence",
+    "research_only": true,
+    "trading_authority": false,
+    "certification_authority": false
+  },
+  "alignment": {
+    "schema_version": "phase29-native-alignment-v1",
+    "as_of": "2026-11-08T14:01:02.848993+00:00",
+    "counts": {
+      "findings_considered": 120,
+      "exact_metadata_matches": 84,
+      "native_book_observations": 78,
+      "authentically_matched_executable_books": 72,
+      "current_forecasts_with_executable_books": 0
+    },
+    "categories": {
+      "MARKET_DATA_UNAVAILABLE": 6,
+      "MATCHED_EXECUTABLE_BOOK": 72,
+      "MARKET_DATA_QUALITY": 6,
+      "EVENT_LIFECYCLE": 26,
+      "DISCOVERY_COVERAGE": 10
+    },
+    "findings": [
+      {
+        "forecast_id": "32b7d8bb6ad47a32e13dd6bfca1485548efd088ee6f5a8e4a098b51e2d7357e8",
+        "market_id": "5609575",
+        "event_id": "1177626",
+        "token_id": "46690562314953296349029899777205973105221169499878198437949736561396611366525",
+        "category": "MARKET_DATA_UNAVAILABLE",
+        "cause": "no_current_native_book_observation",
+        "reasons": [
+          "no_current_native_book_observation"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": true,
+        "event_horizon_ended": false,
+        "native_book_present": false,
+        "current_executable_book_matched": false,
+        "book_id": null,
+        "book_source_timestamp": null,
+        "book_available_at": null,
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "2f23162d45fe4b684297edb890eec718b60ca42f3ac6669198b1a9f14bae7590",
+        "market_id": "5609575",
+        "event_id": "1177626",
+        "token_id": "46690562314953296349029899777205973105221169499878198437949736561396611366525",
+        "category": "MARKET_DATA_UNAVAILABLE",
+        "cause": "no_current_native_book_observation",
+        "reasons": [
+          "no_current_native_book_observation"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": true,
+        "event_horizon_ended": false,
+        "native_book_present": false,
+        "current_executable_book_matched": false,
+        "book_id": null,
+        "book_source_timestamp": null,
+        "book_available_at": null,
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "f20d73bbb8eb01ddd547f60ddc8f9c5bff7b07c1479926b4fa6851c2d60a5dde",
+        "market_id": "5920626",
+        "event_id": "1217417",
+        "token_id": "105595942090130073190364000757535921800908124200569723529646419542572239411796",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "6cd02a22430c49ceb5559043e527e4863d45ddde96c25fa388c062009fc13d45",
+        "book_source_timestamp": "2026-11-08T14:00:55.368000+00:00",
+        "book_available_at": "2026-11-08T14:00:55.410094+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "d36e2ea958cf64a76436a198e04dd3fcca69db6bac61d950bb0e4841d7f7f23b",
+        "market_id": "5920626",
+        "event_id": "1217417",
+        "token_id": "105595942090130073190364000757535921800908124200569723529646419542572239411796",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "6cd02a22430c49ceb5559043e527e4863d45ddde96c25fa388c062009fc13d45",
+        "book_source_timestamp": "2026-11-08T14:00:55.368000+00:00",
+        "book_available_at": "2026-11-08T14:00:55.410094+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "c0df41dcb74eaacd4f06ac16190dc464c1ba4343c25b95d7ec581140104d5d92",
+        "market_id": "5920637",
+        "event_id": "1217424",
+        "token_id": "9026347656725652188657151828080650152818525279370267441646300484684940179692",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "dadbc9ead5edbe609c5ef9651fc0cdb45ca71e1eee0e6a685709b46059f83f90",
+        "book_source_timestamp": "2026-11-08T14:00:56.969000+00:00",
+        "book_available_at": "2026-11-08T14:00:57.012005+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "3d858854ca63c6722d7f8ddc19058a05d7065666485f949f846a5825de043f2e",
+        "market_id": "5920637",
+        "event_id": "1217424",
+        "token_id": "9026347656725652188657151828080650152818525279370267441646300484684940179692",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "dadbc9ead5edbe609c5ef9651fc0cdb45ca71e1eee0e6a685709b46059f83f90",
+        "book_source_timestamp": "2026-11-08T14:00:56.969000+00:00",
+        "book_available_at": "2026-11-08T14:00:57.012005+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "da86302da7e6fcd505e95f4305152ceb90df31450fc8d300ffbf0c317f16eb09",
+        "market_id": "5920639",
+        "event_id": "1217426",
+        "token_id": "109610133107137706659738959329715132131311590067090707652540433387998694455958",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "30e1822bc9c78c3228b33a416e1018356e914c104eb6ed5a3415595938b82a6c",
+        "book_source_timestamp": "2026-11-08T14:00:58.406000+00:00",
+        "book_available_at": "2026-11-08T14:00:58.446949+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "b17fa47811e18afeb961d9abbc6070eb36a5596f10269e9ca2763de33d6af7b9",
+        "market_id": "5920639",
+        "event_id": "1217426",
+        "token_id": "109610133107137706659738959329715132131311590067090707652540433387998694455958",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "30e1822bc9c78c3228b33a416e1018356e914c104eb6ed5a3415595938b82a6c",
+        "book_source_timestamp": "2026-11-08T14:00:58.406000+00:00",
+        "book_available_at": "2026-11-08T14:00:58.446949+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "80887982a3881d222d07d0caf5c49b3d742319aa37221da532425e3e6ab88c0f",
+        "market_id": "5920636",
+        "event_id": "1217423",
+        "token_id": "13561151917703091160223353636682540647474934157534876714790134524026257470489",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "1a6b557a370caba6f52491c7e24cecdc24c5d0dac7ca960a8a6ee5086fead3df",
+        "book_source_timestamp": "2026-11-08T14:00:58.553000+00:00",
+        "book_available_at": "2026-11-08T14:00:58.594581+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "18d35333234b6b2d4a0fd25f53327503a284b21fd7afac36a997c69bf849734a",
+        "market_id": "5920636",
+        "event_id": "1217423",
+        "token_id": "13561151917703091160223353636682540647474934157534876714790134524026257470489",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "1a6b557a370caba6f52491c7e24cecdc24c5d0dac7ca960a8a6ee5086fead3df",
+        "book_source_timestamp": "2026-11-08T14:00:58.553000+00:00",
+        "book_available_at": "2026-11-08T14:00:58.594581+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "b3ad83f0e045a70676061c7eee391cd1f14972a9860a13018fdf4c4a79c101fb",
+        "market_id": "6428613",
+        "event_id": "1284246",
+        "token_id": "79219126438270644699549814421343284924243205220675626625824147664744912880230",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "ec34682e5c1ba5a17890f303901742ad7901793cd9174b7157c9324e644aab59",
+        "book_source_timestamp": "2026-11-08T14:00:56.971000+00:00",
+        "book_available_at": "2026-11-08T14:00:57.042944+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "824d0f9e2e0c9dffcf3661d94826a54a829553e364c6a9f0bacec2935422de12",
+        "market_id": "6428613",
+        "event_id": "1284246",
+        "token_id": "79219126438270644699549814421343284924243205220675626625824147664744912880230",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "ec34682e5c1ba5a17890f303901742ad7901793cd9174b7157c9324e644aab59",
+        "book_source_timestamp": "2026-11-08T14:00:56.971000+00:00",
+        "book_available_at": "2026-11-08T14:00:57.042944+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "f1918058b501d259f2385b52bc763706c4f5857309a70a6054adf0defb1590e3",
+        "market_id": "5920615",
+        "event_id": "1217410",
+        "token_id": "71477801931810152629236327833600899137285592896436321316377016623987471186508",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "49eb33450a4e4f22a5ed5e5f5911c9b1a2851455a31423dd8f720e95b7fd9369",
+        "book_source_timestamp": "2026-11-08T14:00:53.074000+00:00",
+        "book_available_at": "2026-11-08T14:00:53.115151+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "b281f97fd7745645404fbbd843a4f89dc1b6cac97f5dfb07ae383d850f3f915f",
+        "market_id": "5920615",
+        "event_id": "1217410",
+        "token_id": "71477801931810152629236327833600899137285592896436321316377016623987471186508",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "49eb33450a4e4f22a5ed5e5f5911c9b1a2851455a31423dd8f720e95b7fd9369",
+        "book_source_timestamp": "2026-11-08T14:00:53.074000+00:00",
+        "book_available_at": "2026-11-08T14:00:53.115151+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "df00888917345a6a204cbae2247cbff709e4be713efd454078a460f37694e3fb",
+        "market_id": "5609555",
+        "event_id": "1177622",
+        "token_id": "16709506883266242302678707422410802837421855744162165142337004570711095555531",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "93820dd9c52daeba723fb22cfc89126e4e75111ce0877fdf9549dedd0413c786",
+        "book_source_timestamp": "2026-11-08T14:00:58.500000+00:00",
+        "book_available_at": "2026-11-08T14:00:58.543604+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "b03b65651c160fbd73504cf023aacddaaa2ee928d0c5c702f045e1ca2bf86086",
+        "market_id": "5609555",
+        "event_id": "1177622",
+        "token_id": "16709506883266242302678707422410802837421855744162165142337004570711095555531",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "93820dd9c52daeba723fb22cfc89126e4e75111ce0877fdf9549dedd0413c786",
+        "book_source_timestamp": "2026-11-08T14:00:58.500000+00:00",
+        "book_available_at": "2026-11-08T14:00:58.543604+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "ba854d2c23a5e72445e4c4a58135b791240e9f8e8b37f4f1c8d16304e7c83146",
+        "market_id": "5920626",
+        "event_id": "1217417",
+        "token_id": "77848626876688716983588852240686636563373445326764845068265008490716712317223",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "e1b1933993ffe518eca2b7ddfda5e7e70cb5d011a47c2d407b208146398bce29",
+        "book_source_timestamp": "2026-11-08T14:00:55.368000+00:00",
+        "book_available_at": "2026-11-08T14:00:55.410094+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "5f45d889b9e1eb1ef861dd9eb095b0756b4d2ea3add94a264c46cd80fa736ddd",
+        "market_id": "5920626",
+        "event_id": "1217417",
+        "token_id": "77848626876688716983588852240686636563373445326764845068265008490716712317223",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "e1b1933993ffe518eca2b7ddfda5e7e70cb5d011a47c2d407b208146398bce29",
+        "book_source_timestamp": "2026-11-08T14:00:55.368000+00:00",
+        "book_available_at": "2026-11-08T14:00:55.410094+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "74d7dc7760b787e6e933083a4ee630c3f9e9c2f89ea7337c6fde9a736d3e7eb7",
+        "market_id": "6428618",
+        "event_id": "1284248",
+        "token_id": "72951661521570586306276938106991413550414137975378590124874751079920074474086",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "d51fb2eedabc15fe5727ce4785ff0c38514033e8bd4d07e1c41285a9a0042351",
+        "book_source_timestamp": "2026-11-08T14:00:57.260000+00:00",
+        "book_available_at": "2026-11-08T14:00:57.301296+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "0682d1d95924281f8481d3bfe604983488d7fed880e646df946e75a283ad362b",
+        "market_id": "6428618",
+        "event_id": "1284248",
+        "token_id": "72951661521570586306276938106991413550414137975378590124874751079920074474086",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "d51fb2eedabc15fe5727ce4785ff0c38514033e8bd4d07e1c41285a9a0042351",
+        "book_source_timestamp": "2026-11-08T14:00:57.260000+00:00",
+        "book_available_at": "2026-11-08T14:00:57.301296+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "547321e1f406b094ab9227fe4ff4ee3d58180ea83370cc96250d09cc6a7b413e",
+        "market_id": "5920629",
+        "event_id": "1217420",
+        "token_id": "91471525512370531263048668917293652754626557427218687859075864659124414889076",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "1e0b51edf5808351db973f5f60495bcbeef87010b88a459460c3f489874c832b",
+        "book_source_timestamp": "2026-11-08T14:00:56.958000+00:00",
+        "book_available_at": "2026-11-08T14:00:57.009681+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "2aa15115e72238c559ec565cc57bd4144d1ddbaa69020c54d1730da727323980",
+        "market_id": "5920629",
+        "event_id": "1217420",
+        "token_id": "91471525512370531263048668917293652754626557427218687859075864659124414889076",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "1e0b51edf5808351db973f5f60495bcbeef87010b88a459460c3f489874c832b",
+        "book_source_timestamp": "2026-11-08T14:00:56.958000+00:00",
+        "book_available_at": "2026-11-08T14:00:57.009681+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "3f6d159c19de04df2ec33e2df328560aa9628336ffcd5c0b60fc85fa577d2bb7",
+        "market_id": "5920627",
+        "event_id": "1217418",
+        "token_id": "96082994400425840362220870488896004508032251664529860344353238683867507191814",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "44f0fbe614c90df68a0db51e4824a76426de77843d597348b7105a13eae79fd8",
+        "book_source_timestamp": "2026-11-08T14:00:56.969000+00:00",
+        "book_available_at": "2026-11-08T14:00:57.018957+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "150e3cf16fa71b4393c33a7ff260ea750e2bde7d2d879b04ef29fcac745c35d8",
+        "market_id": "5920627",
+        "event_id": "1217418",
+        "token_id": "96082994400425840362220870488896004508032251664529860344353238683867507191814",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "44f0fbe614c90df68a0db51e4824a76426de77843d597348b7105a13eae79fd8",
+        "book_source_timestamp": "2026-11-08T14:00:56.969000+00:00",
+        "book_available_at": "2026-11-08T14:00:57.018957+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "e8ca52682c5c0e8078decac05e9478ac5a81887a66953a17b534bbbc2e5987de",
+        "market_id": "5920616",
+        "event_id": "1217411",
+        "token_id": "48367501824322597594118449741134042441061133050596091491557182373590496425837",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "13de98080e436ff52c821532f045f1dc9ea57763adf668d5364e3175ec130853",
+        "book_source_timestamp": "2026-11-08T14:00:54.702000+00:00",
+        "book_available_at": "2026-11-08T14:00:54.768050+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "ae95266ceddca03e2b237198abf0bff0b3c877ae986e1717e4f746d676c73abc",
+        "market_id": "5920616",
+        "event_id": "1217411",
+        "token_id": "48367501824322597594118449741134042441061133050596091491557182373590496425837",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "13de98080e436ff52c821532f045f1dc9ea57763adf668d5364e3175ec130853",
+        "book_source_timestamp": "2026-11-08T14:00:54.702000+00:00",
+        "book_available_at": "2026-11-08T14:00:54.768050+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "e67285d64c5b35e2016a74b47269202cc789976f2aef95fedf630960033797bf",
+        "market_id": "5920618",
+        "event_id": "1217413",
+        "token_id": "15958206371881608074550160382583815733297192883347780465607399192524953510027",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "ee316233d106f7e2478cfc4f59912b5da536ff5b8e24907d075c3e1026df0780",
+        "book_source_timestamp": "2026-11-08T14:00:57.142000+00:00",
+        "book_available_at": "2026-11-08T14:00:57.182958+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "4a7980ffe175074d25405adb003d8ca692eef7672de8f130a6c1b58b0cb548c6",
+        "market_id": "5920618",
+        "event_id": "1217413",
+        "token_id": "15958206371881608074550160382583815733297192883347780465607399192524953510027",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "ee316233d106f7e2478cfc4f59912b5da536ff5b8e24907d075c3e1026df0780",
+        "book_source_timestamp": "2026-11-08T14:00:57.142000+00:00",
+        "book_available_at": "2026-11-08T14:00:57.182958+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "e4107c5c36e5df677c8ecf0d3359b823fd9985b26f1d608f940b5d3158c07ed3",
+        "market_id": "5920623",
+        "event_id": "1217415",
+        "token_id": "41493797291848620693592503937233352315293075119747138929440973426839666633626",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "4668b4aaabc2c13c6eb8e90191b0717c8b4b9a2c1d9bda499c6c595356269b67",
+        "book_source_timestamp": "2026-11-08T14:00:57.861000+00:00",
+        "book_available_at": "2026-11-08T14:00:57.904223+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "2fb23913540f3c949af016ab82c49685c0b52e1ff23678d03871c93ac54e07a7",
+        "market_id": "5920623",
+        "event_id": "1217415",
+        "token_id": "41493797291848620693592503937233352315293075119747138929440973426839666633626",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "4668b4aaabc2c13c6eb8e90191b0717c8b4b9a2c1d9bda499c6c595356269b67",
+        "book_source_timestamp": "2026-11-08T14:00:57.861000+00:00",
+        "book_available_at": "2026-11-08T14:00:57.904223+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "c96623d24ddd09ca6a38bf115a21afda91eb81726ac7a9d8199954cc84e9987a",
+        "market_id": "6833768",
+        "event_id": "1337807",
+        "token_id": "2766989238534391343650499744261636316824543641559218715399606393876294476897",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "d9e5c01cd646827b54087d7c784a1f0f762bae0fafcefb34e5dd66c85ba7ce25",
+        "book_source_timestamp": "2026-11-08T14:00:54+00:00",
+        "book_available_at": "2026-11-08T14:00:54.041613+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "15627c6bfa62e4b4a433c9c997900dc06fb927bb0056a79cbcedb95bb6bdbbda",
+        "market_id": "6833768",
+        "event_id": "1337807",
+        "token_id": "2766989238534391343650499744261636316824543641559218715399606393876294476897",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "d9e5c01cd646827b54087d7c784a1f0f762bae0fafcefb34e5dd66c85ba7ce25",
+        "book_source_timestamp": "2026-11-08T14:00:54+00:00",
+        "book_available_at": "2026-11-08T14:00:54.041613+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "c11e93f4c10dc3603d787596f12b6df76043cd2dc853f1ae3f907bace130f5bd",
+        "market_id": "6428624",
+        "event_id": "1284249",
+        "token_id": "24747277274566888753218557505067903347785233292211918367597588478005920535406",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "c772a14cb38cd9e10c7d38a85f0f0bea61c5211d6fd2c256109de14b1908a8b7",
+        "book_source_timestamp": "2026-11-08T14:00:58.560000+00:00",
+        "book_available_at": "2026-11-08T14:00:58.602726+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "2560e6d55d3b683c2a8ca3307d03619b2fbaf98ae127b265a96938a7b9cbb200",
+        "market_id": "6428624",
+        "event_id": "1284249",
+        "token_id": "24747277274566888753218557505067903347785233292211918367597588478005920535406",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "c772a14cb38cd9e10c7d38a85f0f0bea61c5211d6fd2c256109de14b1908a8b7",
+        "book_source_timestamp": "2026-11-08T14:00:58.560000+00:00",
+        "book_available_at": "2026-11-08T14:00:58.602726+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "47060675819b1e6439d02992e04e362091d2b76aca700a8d5b29e8f09a00a47b",
+        "market_id": "5609580",
+        "event_id": "1177627",
+        "token_id": "68941166023947127470919324084471242433155646873320073535130264850240350817128",
+        "category": "MARKET_DATA_UNAVAILABLE",
+        "cause": "no_current_native_book_observation",
+        "reasons": [
+          "forecast_not_current_300_seconds",
+          "no_current_native_book_observation"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": false,
+        "current_executable_book_matched": false,
+        "book_id": null,
+        "book_source_timestamp": null,
+        "book_available_at": null,
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "06b6046b2c5fa48c9844e1618cf43e4f43ef700e2d0514d811c1855f49d2375e",
+        "market_id": "5609580",
+        "event_id": "1177627",
+        "token_id": "68941166023947127470919324084471242433155646873320073535130264850240350817128",
+        "category": "MARKET_DATA_UNAVAILABLE",
+        "cause": "no_current_native_book_observation",
+        "reasons": [
+          "forecast_not_current_300_seconds",
+          "no_current_native_book_observation"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": false,
+        "current_executable_book_matched": false,
+        "book_id": null,
+        "book_source_timestamp": null,
+        "book_available_at": null,
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "ac21b3733b7fef39b975224f124d918ad17ebfa5ad22b5d06de604d1a5ee1e77",
+        "market_id": "6428639",
+        "event_id": "1284254",
+        "token_id": "54682143374622171316678779341118309250788450837510958145553243928947433650615",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "5994957464b3a28af0e0b2e916a25dbe751d5d39cf4574cf87c92a088566000a",
+        "book_source_timestamp": "2026-11-08T14:00:58.535000+00:00",
+        "book_available_at": "2026-11-08T14:00:58.581984+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "41164cf24fe8eaa9929019ec55559ec275fd0f87dd0e948872620ea96dba65d8",
+        "market_id": "6428639",
+        "event_id": "1284254",
+        "token_id": "54682143374622171316678779341118309250788450837510958145553243928947433650615",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "5994957464b3a28af0e0b2e916a25dbe751d5d39cf4574cf87c92a088566000a",
+        "book_source_timestamp": "2026-11-08T14:00:58.535000+00:00",
+        "book_available_at": "2026-11-08T14:00:58.581984+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "e266f71b373fef492b7dd7b12911702272d81db6d9be39da599ccf1358aac09a",
+        "market_id": "6833777",
+        "event_id": "1337807",
+        "token_id": "32940013901290387413253420880460135627014673743329391762220899604903503503961",
+        "category": "MARKET_DATA_QUALITY",
+        "cause": "native_book_not_current_or_executable",
+        "reasons": [
+          "book_receipt_outside_15_seconds",
+          "forecast_not_current_300_seconds",
+          "native_book_not_current_or_executable",
+          "stale_book"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": false,
+        "book_id": "3d08a5a04baf42d50558623551d5a677d24a6c046277b82dd08d5f579755f6d2",
+        "book_source_timestamp": "2026-11-08T14:00:10.479000+00:00",
+        "book_available_at": "2026-11-08T14:00:10.648882+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "312ab7e57463bf45bacf6727ba7ed2dee9e306680598405b5afe339d6191999b",
+        "market_id": "6833777",
+        "event_id": "1337807",
+        "token_id": "32940013901290387413253420880460135627014673743329391762220899604903503503961",
+        "category": "MARKET_DATA_QUALITY",
+        "cause": "native_book_not_current_or_executable",
+        "reasons": [
+          "book_receipt_outside_15_seconds",
+          "forecast_not_current_300_seconds",
+          "native_book_not_current_or_executable",
+          "stale_book"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": false,
+        "book_id": "3d08a5a04baf42d50558623551d5a677d24a6c046277b82dd08d5f579755f6d2",
+        "book_source_timestamp": "2026-11-08T14:00:10.479000+00:00",
+        "book_available_at": "2026-11-08T14:00:10.648882+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "af6c972b65230362db5accb343bbe99d5b99287db40d347c380dbbd1d8ce28c6",
+        "market_id": "6428633",
+        "event_id": "1284251",
+        "token_id": "33201547299778202190469491121777291119124614005093858688919500689844540635266",
+        "category": "MARKET_DATA_QUALITY",
+        "cause": "native_book_not_current_or_executable",
+        "reasons": [
+          "book_receipt_outside_15_seconds",
+          "forecast_not_current_300_seconds",
+          "native_book_not_current_or_executable",
+          "stale_book"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": false,
+        "book_id": "5b042ec2090bb52722af2871272958e8082b0bbc56f73c0974a2eead1623c257",
+        "book_source_timestamp": "2026-11-08T14:00:38.047000+00:00",
+        "book_available_at": "2026-11-08T14:00:38.091059+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "27e7f108e14af0428213fa801212f24aafa533d6236a582089071502f9db83a2",
+        "market_id": "6428633",
+        "event_id": "1284251",
+        "token_id": "33201547299778202190469491121777291119124614005093858688919500689844540635266",
+        "category": "MARKET_DATA_QUALITY",
+        "cause": "native_book_not_current_or_executable",
+        "reasons": [
+          "book_receipt_outside_15_seconds",
+          "forecast_not_current_300_seconds",
+          "native_book_not_current_or_executable",
+          "stale_book"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": false,
+        "book_id": "5b042ec2090bb52722af2871272958e8082b0bbc56f73c0974a2eead1623c257",
+        "book_source_timestamp": "2026-11-08T14:00:38.047000+00:00",
+        "book_available_at": "2026-11-08T14:00:38.091059+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "b25ca480ff2ef9572f1ee1e2951e505158ebab852b0e4b548aee5e26bbaa392a",
+        "market_id": "5920615",
+        "event_id": "1217410",
+        "token_id": "71477801931810152629236327833600899137285592896436321316377016623987471186508",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "49eb33450a4e4f22a5ed5e5f5911c9b1a2851455a31423dd8f720e95b7fd9369",
+        "book_source_timestamp": "2026-11-08T14:00:53.074000+00:00",
+        "book_available_at": "2026-11-08T14:00:53.115151+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "0ad01c0602fa745b9bb1ef026a4a0bde29d0964b583ab5d10dac3e0c3adedd15",
+        "market_id": "5920615",
+        "event_id": "1217410",
+        "token_id": "71477801931810152629236327833600899137285592896436321316377016623987471186508",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "49eb33450a4e4f22a5ed5e5f5911c9b1a2851455a31423dd8f720e95b7fd9369",
+        "book_source_timestamp": "2026-11-08T14:00:53.074000+00:00",
+        "book_available_at": "2026-11-08T14:00:53.115151+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "d68e8166f8ae2df24672f175268421b2fdea092f6a2d5288a45938f6249b420d",
+        "market_id": "6428635",
+        "event_id": "1284252",
+        "token_id": "58289239261271766265026058442996157007692541861495498696286722482331682255959",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "1fe34da3d43e755fbb87fcbb1dacb688f3c7f65448a9244050fa99c0756d5e08",
+        "book_source_timestamp": "2026-11-08T14:00:57.092000+00:00",
+        "book_available_at": "2026-11-08T14:00:57.133249+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "83c0a529449159e125d4d494bc31e62c5cad240da8d55f0cd5915dda0491f421",
+        "market_id": "6428635",
+        "event_id": "1284252",
+        "token_id": "58289239261271766265026058442996157007692541861495498696286722482331682255959",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "1fe34da3d43e755fbb87fcbb1dacb688f3c7f65448a9244050fa99c0756d5e08",
+        "book_source_timestamp": "2026-11-08T14:00:57.092000+00:00",
+        "book_available_at": "2026-11-08T14:00:57.133249+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "8b55cf04591a65664061fdc3367ae644f498d3e55e394546a5ef94768c7c5941",
+        "market_id": "5920627",
+        "event_id": "1217418",
+        "token_id": "96082994400425840362220870488896004508032251664529860344353238683867507191814",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "44f0fbe614c90df68a0db51e4824a76426de77843d597348b7105a13eae79fd8",
+        "book_source_timestamp": "2026-11-08T14:00:56.969000+00:00",
+        "book_available_at": "2026-11-08T14:00:57.018957+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "0577f45bef371637ef7fd39bcb603f4f7bc8ab5ca6f45760c7a4aab55e431f34",
+        "market_id": "5920627",
+        "event_id": "1217418",
+        "token_id": "96082994400425840362220870488896004508032251664529860344353238683867507191814",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "44f0fbe614c90df68a0db51e4824a76426de77843d597348b7105a13eae79fd8",
+        "book_source_timestamp": "2026-11-08T14:00:56.969000+00:00",
+        "book_available_at": "2026-11-08T14:00:57.018957+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "2b338788ddb24c246e5a3197c870f3a5250e3567d415084a158411f95e935373",
+        "market_id": "6833759",
+        "event_id": "1337807",
+        "token_id": "21329886691505189742532125702382940236953634906288467563692054272539745793420",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "c91b5cd470581eded8462e85a3f7da22882fe4f27957565d6f4cf66a2fef5c9a",
+        "book_source_timestamp": "2026-11-08T14:00:58.058000+00:00",
+        "book_available_at": "2026-11-08T14:00:58.101564+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "1d44abf94d853a6fbb57d77518448924eb168ec8ee8a6c117f550210ddffb315",
+        "market_id": "6833759",
+        "event_id": "1337807",
+        "token_id": "21329886691505189742532125702382940236953634906288467563692054272539745793420",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "c91b5cd470581eded8462e85a3f7da22882fe4f27957565d6f4cf66a2fef5c9a",
+        "book_source_timestamp": "2026-11-08T14:00:58.058000+00:00",
+        "book_available_at": "2026-11-08T14:00:58.101564+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "285cd31a668444e0b54ccc4cc7cbd145b51badda6f026eab632f613ebcdb17c3",
+        "market_id": "6833626",
+        "event_id": "1337794",
+        "token_id": "8218837395828197745009194031057694070517644492581568955501110377454159396195",
+        "category": "MARKET_DATA_UNAVAILABLE",
+        "cause": "no_current_native_book_observation",
+        "reasons": [
+          "forecast_not_current_300_seconds",
+          "no_current_native_book_observation"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": false,
+        "current_executable_book_matched": false,
+        "book_id": null,
+        "book_source_timestamp": null,
+        "book_available_at": null,
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "08df7e385d87c5e44ed962d0b02aebf6ff30fb00ef8d1d692c68eff7806fb303",
+        "market_id": "6833626",
+        "event_id": "1337794",
+        "token_id": "8218837395828197745009194031057694070517644492581568955501110377454159396195",
+        "category": "MARKET_DATA_UNAVAILABLE",
+        "cause": "no_current_native_book_observation",
+        "reasons": [
+          "forecast_not_current_300_seconds",
+          "no_current_native_book_observation"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": false,
+        "current_executable_book_matched": false,
+        "book_id": null,
+        "book_source_timestamp": null,
+        "book_available_at": null,
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "fca2241a20262cf501e17895b8f1e66a61375b9b2ab5c4c1364e6ac011d017c9",
+        "market_id": "6833748",
+        "event_id": "1337807",
+        "token_id": "15525226198022539782054741503755238848410866653852780590549088456283963147134",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "85988a0ceb58c41a5bfa12da9f6d4389a9d6845277a412b7dfca55d5f3875a9f",
+        "book_source_timestamp": "2026-11-08T14:00:58.734000+00:00",
+        "book_available_at": "2026-11-08T14:00:58.789041+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "c8ad69264dce28a76cd97d074410649bbeb33f1358341616bc62ccd8a3062954",
+        "market_id": "6833748",
+        "event_id": "1337807",
+        "token_id": "15525226198022539782054741503755238848410866653852780590549088456283963147134",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "85988a0ceb58c41a5bfa12da9f6d4389a9d6845277a412b7dfca55d5f3875a9f",
+        "book_source_timestamp": "2026-11-08T14:00:58.734000+00:00",
+        "book_available_at": "2026-11-08T14:00:58.789041+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "2647894884650c953f0d89e6520d771ca10b963c94820d0b64a8519d7e98f63f",
+        "market_id": "6833625",
+        "event_id": "1337794",
+        "token_id": "15743016772819404195694721549830522767502212591837660952497904201360535583380",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "7930b76d25c3f00528b01e2467b0f878ed25805d25b15f25e703d57d33545d58",
+        "book_source_timestamp": "2026-11-08T14:00:58.472000+00:00",
+        "book_available_at": "2026-11-08T14:00:58.514359+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "17c3d62ea6b44ce63fb64b88cb94bd102e7ece282c7ce53874c3750d7a494ccb",
+        "market_id": "6833625",
+        "event_id": "1337794",
+        "token_id": "15743016772819404195694721549830522767502212591837660952497904201360535583380",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "7930b76d25c3f00528b01e2467b0f878ed25805d25b15f25e703d57d33545d58",
+        "book_source_timestamp": "2026-11-08T14:00:58.472000+00:00",
+        "book_available_at": "2026-11-08T14:00:58.514359+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "c74367e08d683e317409873ef68a9b46822b24e97f1726d5abc612b15f090f27",
+        "market_id": "6833623",
+        "event_id": "1337794",
+        "token_id": "62492699475330551910313821582387715588321484741639650061158621648208689909659",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "f38c4f7379902eedc6b61eb0fa3507323526c17c8d05bdaa74c9b48f3b37a901",
+        "book_source_timestamp": "2026-11-08T14:00:58.750000+00:00",
+        "book_available_at": "2026-11-08T14:00:58.799709+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "b96284cbd64ffdc09a8079434cda5bbd14dd7ff3b6ecd8affc2868a9d42e05d6",
+        "market_id": "6833623",
+        "event_id": "1337794",
+        "token_id": "62492699475330551910313821582387715588321484741639650061158621648208689909659",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "f38c4f7379902eedc6b61eb0fa3507323526c17c8d05bdaa74c9b48f3b37a901",
+        "book_source_timestamp": "2026-11-08T14:00:58.750000+00:00",
+        "book_available_at": "2026-11-08T14:00:58.799709+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "b9af60d2415ff18c962603adc02b602f8a965158e18af57abc0d1c0f6dbe540f",
+        "market_id": "6833622",
+        "event_id": "1337794",
+        "token_id": "8865471190029551213642541914820235677969131661735363644525892646249751218226",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "66f03bc852b1ed08a4f72cd9bab953d640d43b2326d6c7988928e4b2885a35c0",
+        "book_source_timestamp": "2026-11-08T14:00:58.749000+00:00",
+        "book_available_at": "2026-11-08T14:00:58.798662+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "34f73805631b82458ddd92a6fd02ed0847bbb61f4685734b3e1d773924b56972",
+        "market_id": "6833622",
+        "event_id": "1337794",
+        "token_id": "8865471190029551213642541914820235677969131661735363644525892646249751218226",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "66f03bc852b1ed08a4f72cd9bab953d640d43b2326d6c7988928e4b2885a35c0",
+        "book_source_timestamp": "2026-11-08T14:00:58.749000+00:00",
+        "book_available_at": "2026-11-08T14:00:58.798662+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "3de1eb629e1e0cf74d639ef08172d1da0f463fdbc930d570f17e4d1309969cc8",
+        "market_id": "6428613",
+        "event_id": "1284246",
+        "token_id": "31892360732597251906366090738029921088485931726662819938762574367677406002375",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "296f2d3b56c178279ceb140740590861a5f210425c879ca88cd7a9efe90ab20f",
+        "book_source_timestamp": "2026-11-08T14:00:56.971000+00:00",
+        "book_available_at": "2026-11-08T14:00:57.042944+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "2793090080700e449ef73abafca691c6daac71a55de902107397c1885ce3dc8b",
+        "market_id": "6428613",
+        "event_id": "1284246",
+        "token_id": "31892360732597251906366090738029921088485931726662819938762574367677406002375",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "296f2d3b56c178279ceb140740590861a5f210425c879ca88cd7a9efe90ab20f",
+        "book_source_timestamp": "2026-11-08T14:00:56.971000+00:00",
+        "book_available_at": "2026-11-08T14:00:57.042944+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "5c593205b4b3d259b97a2ca71cff67c1bd5af08747862a2ddc3c18892ae7597e",
+        "market_id": "3566407",
+        "event_id": "844497",
+        "token_id": "99152048788234224357734975456328610052461154108689630888376315692101778386164",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "7a7ab2c1c4b05910b90b69a7de6f3a0ac472a95b37c5f9aeceaa9c0955a6bee1",
+        "book_source_timestamp": "2026-11-08T14:00:58.032000+00:00",
+        "book_available_at": "2026-11-08T14:00:58.824591+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "1869017d817ebc7a3d95d1b2d102b04d09a2ded3458298918ca4dbadae6ce61b",
+        "market_id": "3566407",
+        "event_id": "844497",
+        "token_id": "99152048788234224357734975456328610052461154108689630888376315692101778386164",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "7a7ab2c1c4b05910b90b69a7de6f3a0ac472a95b37c5f9aeceaa9c0955a6bee1",
+        "book_source_timestamp": "2026-11-08T14:00:58.032000+00:00",
+        "book_available_at": "2026-11-08T14:00:58.824591+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "4efabf715151a98029c13e0e56f7236a2cb1537504e3dce6ef5970365f93cbbe",
+        "market_id": "6747198",
+        "event_id": "1324979",
+        "token_id": "48590210093932277918192534757467877715987536553015361732850151516868508486077",
+        "category": "MARKET_DATA_QUALITY",
+        "cause": "native_book_not_current_or_executable",
+        "reasons": [
+          "book_receipt_outside_15_seconds",
+          "forecast_not_current_300_seconds",
+          "native_book_not_current_or_executable",
+          "stale_book"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": false,
+        "book_id": "593e51c3bb2c155cae01ec6dbacfb8c445685a1700c85aa3dccfdcce201fd454",
+        "book_source_timestamp": "2026-11-08T13:59:02.001000+00:00",
+        "book_available_at": "2026-11-08T13:59:02.072390+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "3fee7d83f1f6e38ecdb2258c618acccdca0335f9a9d1b631d40ce8b827c0c481",
+        "market_id": "6747198",
+        "event_id": "1324979",
+        "token_id": "48590210093932277918192534757467877715987536553015361732850151516868508486077",
+        "category": "MARKET_DATA_QUALITY",
+        "cause": "native_book_not_current_or_executable",
+        "reasons": [
+          "book_receipt_outside_15_seconds",
+          "forecast_not_current_300_seconds",
+          "native_book_not_current_or_executable",
+          "stale_book"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": false,
+        "book_id": "593e51c3bb2c155cae01ec6dbacfb8c445685a1700c85aa3dccfdcce201fd454",
+        "book_source_timestamp": "2026-11-08T13:59:02.001000+00:00",
+        "book_available_at": "2026-11-08T13:59:02.072390+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "80a35f2104915f6bf574ea6cb867b3017f4e65067c5831ffaa4c1bc75959bc0a",
+        "market_id": "5920629",
+        "event_id": "1217420",
+        "token_id": "91471525512370531263048668917293652754626557427218687859075864659124414889076",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "1e0b51edf5808351db973f5f60495bcbeef87010b88a459460c3f489874c832b",
+        "book_source_timestamp": "2026-11-08T14:00:56.958000+00:00",
+        "book_available_at": "2026-11-08T14:00:57.009681+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "51a5412fe5fc770aaaa619397d22436a4a10294b537a18a3b494c10a6e84df24",
+        "market_id": "5920629",
+        "event_id": "1217420",
+        "token_id": "91471525512370531263048668917293652754626557427218687859075864659124414889076",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "1e0b51edf5808351db973f5f60495bcbeef87010b88a459460c3f489874c832b",
+        "book_source_timestamp": "2026-11-08T14:00:56.958000+00:00",
+        "book_available_at": "2026-11-08T14:00:57.009681+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "e41bcbf7c9b679b81c906bdc06262a5f61ed87f242286a4f971f36371fa32144",
+        "market_id": "6428614",
+        "event_id": "1284247",
+        "token_id": "107249524867003095940240818670705535932024592288480068704346762748076084471491",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "6be94c19902f0b4403b38d8e3e271cc9b5a2486b17ca28ecd87604b431ed8dbb",
+        "book_source_timestamp": "2026-11-08T14:00:49.662000+00:00",
+        "book_available_at": "2026-11-08T14:00:49.703643+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "ae4d02bf4ca7faf6fddcb3602b1ba95b67a4896817100e9acbbfe7bc987e78a0",
+        "market_id": "6428614",
+        "event_id": "1284247",
+        "token_id": "107249524867003095940240818670705535932024592288480068704346762748076084471491",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "6be94c19902f0b4403b38d8e3e271cc9b5a2486b17ca28ecd87604b431ed8dbb",
+        "book_source_timestamp": "2026-11-08T14:00:49.662000+00:00",
+        "book_available_at": "2026-11-08T14:00:49.703643+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "337f3f1a622cac4a4038bc513642a3733147cb0186dbcdf86ca7bf9f1bcebe00",
+        "market_id": "3215007",
+        "event_id": "770450",
+        "token_id": "8077351031134730167836761678618167504307708651130165095377248922919635337796",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "ecc69ba595be2465b1a4b0c0dfd2efc2f732186d22b5e007f629d4f06a37e270",
+        "book_source_timestamp": "2026-11-08T14:00:58.729000+00:00",
+        "book_available_at": "2026-11-08T14:00:58.776314+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "03eccbcbaea7c3cfda2daacb51d4a9631483dbb3e04b751347e030c6c6f471bf",
+        "market_id": "3215007",
+        "event_id": "770450",
+        "token_id": "8077351031134730167836761678618167504307708651130165095377248922919635337796",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "ecc69ba595be2465b1a4b0c0dfd2efc2f732186d22b5e007f629d4f06a37e270",
+        "book_source_timestamp": "2026-11-08T14:00:58.729000+00:00",
+        "book_available_at": "2026-11-08T14:00:58.776314+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "60565e2eefb6c260a9c769a75059569c3e251081d302794c9a2ac92fe8234545",
+        "market_id": "5920618",
+        "event_id": "1217413",
+        "token_id": "15958206371881608074550160382583815733297192883347780465607399192524953510027",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "ee316233d106f7e2478cfc4f59912b5da536ff5b8e24907d075c3e1026df0780",
+        "book_source_timestamp": "2026-11-08T14:00:57.142000+00:00",
+        "book_available_at": "2026-11-08T14:00:57.182958+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "467c5c49e29a942e0b52119be3a153cb1ac48a2da5d7e4a75cdbe4f70fdb8411",
+        "market_id": "5920618",
+        "event_id": "1217413",
+        "token_id": "15958206371881608074550160382583815733297192883347780465607399192524953510027",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "ee316233d106f7e2478cfc4f59912b5da536ff5b8e24907d075c3e1026df0780",
+        "book_source_timestamp": "2026-11-08T14:00:57.142000+00:00",
+        "book_available_at": "2026-11-08T14:00:57.182958+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "a00081ac7060afde2ca26ae103a9232ef2c4c1f12f3086fc5b9ffa8620219b64",
+        "market_id": "5920616",
+        "event_id": "1217411",
+        "token_id": "48367501824322597594118449741134042441061133050596091491557182373590496425837",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "13de98080e436ff52c821532f045f1dc9ea57763adf668d5364e3175ec130853",
+        "book_source_timestamp": "2026-11-08T14:00:54.702000+00:00",
+        "book_available_at": "2026-11-08T14:00:54.768050+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "61197ec13abe715c58818c60408a6adb87179c16989e28ef71d357663e682259",
+        "market_id": "5920616",
+        "event_id": "1217411",
+        "token_id": "48367501824322597594118449741134042441061133050596091491557182373590496425837",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "13de98080e436ff52c821532f045f1dc9ea57763adf668d5364e3175ec130853",
+        "book_source_timestamp": "2026-11-08T14:00:54.702000+00:00",
+        "book_available_at": "2026-11-08T14:00:54.768050+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "ed04ab0f36cd9a06873f5cfaac6bd5aee03918e22eac9f21438bedeaeb44e85b",
+        "market_id": "5920639",
+        "event_id": "1217426",
+        "token_id": "109610133107137706659738959329715132131311590067090707652540433387998694455958",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "30e1822bc9c78c3228b33a416e1018356e914c104eb6ed5a3415595938b82a6c",
+        "book_source_timestamp": "2026-11-08T14:00:58.406000+00:00",
+        "book_available_at": "2026-11-08T14:00:58.446949+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "e1eaf48c65154f5d4cb1551ac8d28c76e6bb62265ea46c7ff9f335c763433b45",
+        "market_id": "5920639",
+        "event_id": "1217426",
+        "token_id": "109610133107137706659738959329715132131311590067090707652540433387998694455958",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "30e1822bc9c78c3228b33a416e1018356e914c104eb6ed5a3415595938b82a6c",
+        "book_source_timestamp": "2026-11-08T14:00:58.406000+00:00",
+        "book_available_at": "2026-11-08T14:00:58.446949+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "bd292c2c1382a9c3bcd33acf912c975416fd3e76fb90efdb2dad591d017f462e",
+        "market_id": "5920623",
+        "event_id": "1217415",
+        "token_id": "41493797291848620693592503937233352315293075119747138929440973426839666633626",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "4668b4aaabc2c13c6eb8e90191b0717c8b4b9a2c1d9bda499c6c595356269b67",
+        "book_source_timestamp": "2026-11-08T14:00:57.861000+00:00",
+        "book_available_at": "2026-11-08T14:00:57.904223+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "a332449a68aecd94d3618b0ba46d1c3fa964aca61d8d79e2f99eb90683cc5e90",
+        "market_id": "5920623",
+        "event_id": "1217415",
+        "token_id": "41493797291848620693592503937233352315293075119747138929440973426839666633626",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "4668b4aaabc2c13c6eb8e90191b0717c8b4b9a2c1d9bda499c6c595356269b67",
+        "book_source_timestamp": "2026-11-08T14:00:57.861000+00:00",
+        "book_available_at": "2026-11-08T14:00:57.904223+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "56c1d12946ca26dc5e0ce80b3a93cf3bd03de5be734e6921aef3aee9e19ee976",
+        "market_id": "5920637",
+        "event_id": "1217424",
+        "token_id": "9026347656725652188657151828080650152818525279370267441646300484684940179692",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "dadbc9ead5edbe609c5ef9651fc0cdb45ca71e1eee0e6a685709b46059f83f90",
+        "book_source_timestamp": "2026-11-08T14:00:56.969000+00:00",
+        "book_available_at": "2026-11-08T14:00:57.012005+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "20b6664de26e7f6193a4f58436658b1c32cbfc00a23d62c6463807ea4fb1d9ff",
+        "market_id": "5920637",
+        "event_id": "1217424",
+        "token_id": "9026347656725652188657151828080650152818525279370267441646300484684940179692",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "dadbc9ead5edbe609c5ef9651fc0cdb45ca71e1eee0e6a685709b46059f83f90",
+        "book_source_timestamp": "2026-11-08T14:00:56.969000+00:00",
+        "book_available_at": "2026-11-08T14:00:57.012005+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "e5f9e19433c0f9cc0df0c0bc5732130f05c09f9a1b2791dde95ce243eb2176ae",
+        "market_id": "5920615",
+        "event_id": "1217410",
+        "token_id": "71477801931810152629236327833600899137285592896436321316377016623987471186508",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "49eb33450a4e4f22a5ed5e5f5911c9b1a2851455a31423dd8f720e95b7fd9369",
+        "book_source_timestamp": "2026-11-08T14:00:53.074000+00:00",
+        "book_available_at": "2026-11-08T14:00:53.115151+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "35e3d00f55cdd4514a5d4f5e8676af14e15a0c5fb33052139456504e86cc0d03",
+        "market_id": "5920615",
+        "event_id": "1217410",
+        "token_id": "71477801931810152629236327833600899137285592896436321316377016623987471186508",
+        "category": "MATCHED_EXECUTABLE_BOOK",
+        "cause": "exact_current_native_two_sided_book",
+        "reasons": [
+          "exact_current_native_two_sided_book",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": true,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": true,
+        "current_executable_book_matched": true,
+        "book_id": "49eb33450a4e4f22a5ed5e5f5911c9b1a2851455a31423dd8f720e95b7fd9369",
+        "book_source_timestamp": "2026-11-08T14:00:53.074000+00:00",
+        "book_available_at": "2026-11-08T14:00:53.115151+00:00",
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "f41bfbe6a81385d04fa5bc13cf8f1ec0225ca856b132fec926d9f8bf90459d8d",
+        "market_id": "6771226",
+        "event_id": "1329694",
+        "token_id": "48282547470122183214352419627011849277938843939298476736967657326729356084092",
+        "category": "EVENT_LIFECYCLE",
+        "cause": "ended_event_not_in_active_universe",
+        "reasons": [
+          "ended_event_not_in_active_universe",
+          "forecast_event_horizon_ended",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": false,
+        "forecast_current": false,
+        "event_horizon_ended": true,
+        "native_book_present": false,
+        "current_executable_book_matched": false,
+        "book_id": null,
+        "book_source_timestamp": null,
+        "book_available_at": null,
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "531d2afdf2e9eab47e4d2eb2c03303905d845b772c8038b917071e39efe341ac",
+        "market_id": "6771226",
+        "event_id": "1329694",
+        "token_id": "48282547470122183214352419627011849277938843939298476736967657326729356084092",
+        "category": "EVENT_LIFECYCLE",
+        "cause": "ended_event_not_in_active_universe",
+        "reasons": [
+          "ended_event_not_in_active_universe",
+          "forecast_event_horizon_ended",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": false,
+        "forecast_current": false,
+        "event_horizon_ended": true,
+        "native_book_present": false,
+        "current_executable_book_matched": false,
+        "book_id": null,
+        "book_source_timestamp": null,
+        "book_available_at": null,
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "8fd59e4ba5a052d2285e6174cb4ead00ad847aa1336e25da857d94becb34dd50",
+        "market_id": "6741017",
+        "event_id": "1323624",
+        "token_id": "9078095391908655107102102583867275197784611219670387421241082395926534077695",
+        "category": "DISCOVERY_COVERAGE",
+        "cause": "current_exact_metadata_not_discovered",
+        "reasons": [
+          "current_exact_metadata_not_discovered",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": false,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": false,
+        "current_executable_book_matched": false,
+        "book_id": null,
+        "book_source_timestamp": null,
+        "book_available_at": null,
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "04b1fc89a32e86c29cdb7e32fd3a1b6b6a56dd87536862444a2bb4cf79d65609",
+        "market_id": "6741017",
+        "event_id": "1323624",
+        "token_id": "9078095391908655107102102583867275197784611219670387421241082395926534077695",
+        "category": "DISCOVERY_COVERAGE",
+        "cause": "current_exact_metadata_not_discovered",
+        "reasons": [
+          "current_exact_metadata_not_discovered",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": false,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": false,
+        "current_executable_book_matched": false,
+        "book_id": null,
+        "book_source_timestamp": null,
+        "book_available_at": null,
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "e50b569e42c954b6fc5819bf7f9f2987048d164330e31dc9d79d1cf808891524",
+        "market_id": "6740868",
+        "event_id": "1323613",
+        "token_id": "90490288749007726190456778562036922440984659371718742510948651630834554533232",
+        "category": "DISCOVERY_COVERAGE",
+        "cause": "current_exact_metadata_not_discovered",
+        "reasons": [
+          "current_exact_metadata_not_discovered",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": false,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": false,
+        "current_executable_book_matched": false,
+        "book_id": null,
+        "book_source_timestamp": null,
+        "book_available_at": null,
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "0a123b60661e4107146bfcd6fe6c1186aa27d3b34b278806add61ebddaab5f59",
+        "market_id": "6740868",
+        "event_id": "1323613",
+        "token_id": "90490288749007726190456778562036922440984659371718742510948651630834554533232",
+        "category": "DISCOVERY_COVERAGE",
+        "cause": "current_exact_metadata_not_discovered",
+        "reasons": [
+          "current_exact_metadata_not_discovered",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": false,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": false,
+        "current_executable_book_matched": false,
+        "book_id": null,
+        "book_source_timestamp": null,
+        "book_available_at": null,
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "e4741d8b03db567d0d405968b5d025b22d10335b4b278540e5559fea7d779b7f",
+        "market_id": "6740827",
+        "event_id": "1323602",
+        "token_id": "94706811208291031924388973437051527458389928308352329951198252501785611674239",
+        "category": "DISCOVERY_COVERAGE",
+        "cause": "current_exact_metadata_not_discovered",
+        "reasons": [
+          "current_exact_metadata_not_discovered",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": false,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": false,
+        "current_executable_book_matched": false,
+        "book_id": null,
+        "book_source_timestamp": null,
+        "book_available_at": null,
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "8e3d55b875d863b0d0808a66e9b066eddc1f8ce28d225144613e01c97f9f0af8",
+        "market_id": "6740827",
+        "event_id": "1323602",
+        "token_id": "94706811208291031924388973437051527458389928308352329951198252501785611674239",
+        "category": "DISCOVERY_COVERAGE",
+        "cause": "current_exact_metadata_not_discovered",
+        "reasons": [
+          "current_exact_metadata_not_discovered",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": false,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": false,
+        "current_executable_book_matched": false,
+        "book_id": null,
+        "book_source_timestamp": null,
+        "book_available_at": null,
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "e564a5e724b8e330cf169a99b32431ab59b7fa8c0decd70d940f6417ef6a2653",
+        "market_id": "6741015",
+        "event_id": "1323624",
+        "token_id": "34042366474100853457203862973665563893587804972767945397437748411724879091733",
+        "category": "DISCOVERY_COVERAGE",
+        "cause": "current_exact_metadata_not_discovered",
+        "reasons": [
+          "current_exact_metadata_not_discovered",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": false,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": false,
+        "current_executable_book_matched": false,
+        "book_id": null,
+        "book_source_timestamp": null,
+        "book_available_at": null,
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "5706f728a9caa514561d503dd37802f514fda9a3ba54c5befdaca93e25b857d8",
+        "market_id": "6741015",
+        "event_id": "1323624",
+        "token_id": "34042366474100853457203862973665563893587804972767945397437748411724879091733",
+        "category": "DISCOVERY_COVERAGE",
+        "cause": "current_exact_metadata_not_discovered",
+        "reasons": [
+          "current_exact_metadata_not_discovered",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": false,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": false,
+        "current_executable_book_matched": false,
+        "book_id": null,
+        "book_source_timestamp": null,
+        "book_available_at": null,
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "f1662a8afa4c01a45880382b97c672be0cb253fb1dc99ddf28dcd7abde5201f3",
+        "market_id": "6740825",
+        "event_id": "1323602",
+        "token_id": "100429054464382097866097138746015543803508294805619807891313880055441225561267",
+        "category": "DISCOVERY_COVERAGE",
+        "cause": "current_exact_metadata_not_discovered",
+        "reasons": [
+          "current_exact_metadata_not_discovered",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": false,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": false,
+        "current_executable_book_matched": false,
+        "book_id": null,
+        "book_source_timestamp": null,
+        "book_available_at": null,
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "595cf818cb4b51bec70858de3abc1674b8a96691a939c973bc09044f366d54e6",
+        "market_id": "6740825",
+        "event_id": "1323602",
+        "token_id": "100429054464382097866097138746015543803508294805619807891313880055441225561267",
+        "category": "DISCOVERY_COVERAGE",
+        "cause": "current_exact_metadata_not_discovered",
+        "reasons": [
+          "current_exact_metadata_not_discovered",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": false,
+        "forecast_current": false,
+        "event_horizon_ended": false,
+        "native_book_present": false,
+        "current_executable_book_matched": false,
+        "book_id": null,
+        "book_source_timestamp": null,
+        "book_available_at": null,
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "b60fd1d012967a32d7d470a85d2a829abf8cbd6bf028c696f0f61dae9437f92d",
+        "market_id": "6771152",
+        "event_id": "1329687",
+        "token_id": "36197221766530673822099000531957265986750812026717256101411969625964805042546",
+        "category": "EVENT_LIFECYCLE",
+        "cause": "ended_event_not_in_active_universe",
+        "reasons": [
+          "ended_event_not_in_active_universe",
+          "forecast_event_horizon_ended",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": false,
+        "forecast_current": false,
+        "event_horizon_ended": true,
+        "native_book_present": false,
+        "current_executable_book_matched": false,
+        "book_id": null,
+        "book_source_timestamp": null,
+        "book_available_at": null,
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "979add5087e3b0117dbee0eb482d43bce2c71bfbf580cd527cd011eeb43da9f6",
+        "market_id": "6771152",
+        "event_id": "1329687",
+        "token_id": "36197221766530673822099000531957265986750812026717256101411969625964805042546",
+        "category": "EVENT_LIFECYCLE",
+        "cause": "ended_event_not_in_active_universe",
+        "reasons": [
+          "ended_event_not_in_active_universe",
+          "forecast_event_horizon_ended",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": false,
+        "forecast_current": false,
+        "event_horizon_ended": true,
+        "native_book_present": false,
+        "current_executable_book_matched": false,
+        "book_id": null,
+        "book_source_timestamp": null,
+        "book_available_at": null,
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "e22b5c4dec815b9ddac03dc3726bcfc45d4a320e7c88dbd70bdcc2e30b20d1cf",
+        "market_id": "5563975",
+        "event_id": "1171319",
+        "token_id": "27302210298728598154400203886098631523287324641888918582780180220516555034202",
+        "category": "EVENT_LIFECYCLE",
+        "cause": "ended_event_not_in_active_universe",
+        "reasons": [
+          "ended_event_not_in_active_universe",
+          "forecast_event_horizon_ended",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": false,
+        "forecast_current": false,
+        "event_horizon_ended": true,
+        "native_book_present": false,
+        "current_executable_book_matched": false,
+        "book_id": null,
+        "book_source_timestamp": null,
+        "book_available_at": null,
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "0eece2c81e86f7d86eb31991596f705fb5a425f83e3c41f7d91637870fffba86",
+        "market_id": "5563975",
+        "event_id": "1171319",
+        "token_id": "27302210298728598154400203886098631523287324641888918582780180220516555034202",
+        "category": "EVENT_LIFECYCLE",
+        "cause": "ended_event_not_in_active_universe",
+        "reasons": [
+          "ended_event_not_in_active_universe",
+          "forecast_event_horizon_ended",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": false,
+        "forecast_current": false,
+        "event_horizon_ended": true,
+        "native_book_present": false,
+        "current_executable_book_matched": false,
+        "book_id": null,
+        "book_source_timestamp": null,
+        "book_available_at": null,
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "8eb011736ffd110150e40e982a2344a2e161438a740eeed99c81af81e89f816e",
+        "market_id": "5563995",
+        "event_id": "1171323",
+        "token_id": "15440327038183966147654380256972348997441208814514803981488222580557756674103",
+        "category": "EVENT_LIFECYCLE",
+        "cause": "ended_event_not_in_active_universe",
+        "reasons": [
+          "ended_event_not_in_active_universe",
+          "forecast_event_horizon_ended",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": false,
+        "forecast_current": false,
+        "event_horizon_ended": true,
+        "native_book_present": false,
+        "current_executable_book_matched": false,
+        "book_id": null,
+        "book_source_timestamp": null,
+        "book_available_at": null,
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "6913fad24cdd887663431170beb9a54dc4144150159bf24b4f9f20696474749b",
+        "market_id": "5563995",
+        "event_id": "1171323",
+        "token_id": "15440327038183966147654380256972348997441208814514803981488222580557756674103",
+        "category": "EVENT_LIFECYCLE",
+        "cause": "ended_event_not_in_active_universe",
+        "reasons": [
+          "ended_event_not_in_active_universe",
+          "forecast_event_horizon_ended",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": false,
+        "forecast_current": false,
+        "event_horizon_ended": true,
+        "native_book_present": false,
+        "current_executable_book_matched": false,
+        "book_id": null,
+        "book_source_timestamp": null,
+        "book_available_at": null,
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "f70b15892c1397bdb9655f8864bd48634f7104d7e788f1d5d9400dd30aed0bdf",
+        "market_id": "5563985",
+        "event_id": "1171321",
+        "token_id": "43682591912337501964133395875490081160295409767613189530696807878902310209171",
+        "category": "EVENT_LIFECYCLE",
+        "cause": "ended_event_not_in_active_universe",
+        "reasons": [
+          "ended_event_not_in_active_universe",
+          "forecast_event_horizon_ended",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": false,
+        "forecast_current": false,
+        "event_horizon_ended": true,
+        "native_book_present": false,
+        "current_executable_book_matched": false,
+        "book_id": null,
+        "book_source_timestamp": null,
+        "book_available_at": null,
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "abc6129d8cb2b71e6695284f2091a272aceeee299ddc7d540060b36efa43f118",
+        "market_id": "5563985",
+        "event_id": "1171321",
+        "token_id": "43682591912337501964133395875490081160295409767613189530696807878902310209171",
+        "category": "EVENT_LIFECYCLE",
+        "cause": "ended_event_not_in_active_universe",
+        "reasons": [
+          "ended_event_not_in_active_universe",
+          "forecast_event_horizon_ended",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": false,
+        "forecast_current": false,
+        "event_horizon_ended": true,
+        "native_book_present": false,
+        "current_executable_book_matched": false,
+        "book_id": null,
+        "book_source_timestamp": null,
+        "book_available_at": null,
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "daa6a47a6c4120b5a9eb3faf4110f6ead52a1aa00dc1cdc5a150a460b22ae1bf",
+        "market_id": "5563990",
+        "event_id": "1171322",
+        "token_id": "23842241898484612527327827577209550435928394251956631561628535847868640927156",
+        "category": "EVENT_LIFECYCLE",
+        "cause": "ended_event_not_in_active_universe",
+        "reasons": [
+          "ended_event_not_in_active_universe",
+          "forecast_event_horizon_ended",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": false,
+        "forecast_current": false,
+        "event_horizon_ended": true,
+        "native_book_present": false,
+        "current_executable_book_matched": false,
+        "book_id": null,
+        "book_source_timestamp": null,
+        "book_available_at": null,
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "1f1fb174f73827ee35c3a5165aeb4361da0cee3be5f04ebebb46701859cb8843",
+        "market_id": "5563990",
+        "event_id": "1171322",
+        "token_id": "23842241898484612527327827577209550435928394251956631561628535847868640927156",
+        "category": "EVENT_LIFECYCLE",
+        "cause": "ended_event_not_in_active_universe",
+        "reasons": [
+          "ended_event_not_in_active_universe",
+          "forecast_event_horizon_ended",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": false,
+        "forecast_current": false,
+        "event_horizon_ended": true,
+        "native_book_present": false,
+        "current_executable_book_matched": false,
+        "book_id": null,
+        "book_source_timestamp": null,
+        "book_available_at": null,
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "6f5faa2b27a09d1bbcebe464e4643be8649ce0f078817993a97d06ea00256c1f",
+        "market_id": "5563968",
+        "event_id": "1171316",
+        "token_id": "42177884254228727906860122813537291965072833137970751542447292275873835186072",
+        "category": "EVENT_LIFECYCLE",
+        "cause": "ended_event_not_in_active_universe",
+        "reasons": [
+          "ended_event_not_in_active_universe",
+          "forecast_event_horizon_ended",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": false,
+        "forecast_current": false,
+        "event_horizon_ended": true,
+        "native_book_present": false,
+        "current_executable_book_matched": false,
+        "book_id": null,
+        "book_source_timestamp": null,
+        "book_available_at": null,
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "4944da6a9d9f3c61804801b151e71f64d0adac29f1515bdae21207f204265ad6",
+        "market_id": "5563968",
+        "event_id": "1171316",
+        "token_id": "42177884254228727906860122813537291965072833137970751542447292275873835186072",
+        "category": "EVENT_LIFECYCLE",
+        "cause": "ended_event_not_in_active_universe",
+        "reasons": [
+          "ended_event_not_in_active_universe",
+          "forecast_event_horizon_ended",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": false,
+        "forecast_current": false,
+        "event_horizon_ended": true,
+        "native_book_present": false,
+        "current_executable_book_matched": false,
+        "book_id": null,
+        "book_source_timestamp": null,
+        "book_available_at": null,
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "519b01a53051dbfb27496477b4c67b1deebc0f8115ffabcf3bf0dd74623a7de0",
+        "market_id": "6428609",
+        "event_id": "1284242",
+        "token_id": "66537882599737940156471066272898803866527274084473053049426291500098109418778",
+        "category": "EVENT_LIFECYCLE",
+        "cause": "ended_event_not_in_active_universe",
+        "reasons": [
+          "ended_event_not_in_active_universe",
+          "forecast_event_horizon_ended",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": false,
+        "forecast_current": false,
+        "event_horizon_ended": true,
+        "native_book_present": false,
+        "current_executable_book_matched": false,
+        "book_id": null,
+        "book_source_timestamp": null,
+        "book_available_at": null,
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "150da3be94e737bf14bacf3a2c2f43191a2c2efa121633cc581a806ad26033a5",
+        "market_id": "6428609",
+        "event_id": "1284242",
+        "token_id": "66537882599737940156471066272898803866527274084473053049426291500098109418778",
+        "category": "EVENT_LIFECYCLE",
+        "cause": "ended_event_not_in_active_universe",
+        "reasons": [
+          "ended_event_not_in_active_universe",
+          "forecast_event_horizon_ended",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": false,
+        "forecast_current": false,
+        "event_horizon_ended": true,
+        "native_book_present": false,
+        "current_executable_book_matched": false,
+        "book_id": null,
+        "book_source_timestamp": null,
+        "book_available_at": null,
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "f130aa0b068f36e66c6805d47736a2c8eaea5153a2157f17b3ed10e59ddb284f",
+        "market_id": "6428610",
+        "event_id": "1284243",
+        "token_id": "23904303204222395938248616518334978671748463657071577968878478247188605665854",
+        "category": "EVENT_LIFECYCLE",
+        "cause": "ended_event_not_in_active_universe",
+        "reasons": [
+          "ended_event_not_in_active_universe",
+          "forecast_event_horizon_ended",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": false,
+        "forecast_current": false,
+        "event_horizon_ended": true,
+        "native_book_present": false,
+        "current_executable_book_matched": false,
+        "book_id": null,
+        "book_source_timestamp": null,
+        "book_available_at": null,
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "59a35c6a3e3991200a58a63e72985fa26c6417a32ba795547af4a3c49a252010",
+        "market_id": "6428610",
+        "event_id": "1284243",
+        "token_id": "23904303204222395938248616518334978671748463657071577968878478247188605665854",
+        "category": "EVENT_LIFECYCLE",
+        "cause": "ended_event_not_in_active_universe",
+        "reasons": [
+          "ended_event_not_in_active_universe",
+          "forecast_event_horizon_ended",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": false,
+        "forecast_current": false,
+        "event_horizon_ended": true,
+        "native_book_present": false,
+        "current_executable_book_matched": false,
+        "book_id": null,
+        "book_source_timestamp": null,
+        "book_available_at": null,
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "c0cee1cccc91a4464f38711b4df8171bfe6b2c21f22ceaa2a2b36c72be69f37c",
+        "market_id": "6428607",
+        "event_id": "1284240",
+        "token_id": "54981282061197287727673827028104030796914805657711098653861260722552109635113",
+        "category": "EVENT_LIFECYCLE",
+        "cause": "ended_event_not_in_active_universe",
+        "reasons": [
+          "ended_event_not_in_active_universe",
+          "forecast_event_horizon_ended",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": false,
+        "forecast_current": false,
+        "event_horizon_ended": true,
+        "native_book_present": false,
+        "current_executable_book_matched": false,
+        "book_id": null,
+        "book_source_timestamp": null,
+        "book_available_at": null,
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "52306f6369cc6b264136d14150651daeec6004b2192c3f5e90bf56bc72a64745",
+        "market_id": "6428607",
+        "event_id": "1284240",
+        "token_id": "54981282061197287727673827028104030796914805657711098653861260722552109635113",
+        "category": "EVENT_LIFECYCLE",
+        "cause": "ended_event_not_in_active_universe",
+        "reasons": [
+          "ended_event_not_in_active_universe",
+          "forecast_event_horizon_ended",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": false,
+        "forecast_current": false,
+        "event_horizon_ended": true,
+        "native_book_present": false,
+        "current_executable_book_matched": false,
+        "book_id": null,
+        "book_source_timestamp": null,
+        "book_available_at": null,
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "a708d409a817b55a3415d7e2b8a90001c8525a7ae26ddf04d4fea7341a5f9292",
+        "market_id": "6428611",
+        "event_id": "1284244",
+        "token_id": "29634894925886121038682433440193749295701799060767641313661334643511312411647",
+        "category": "EVENT_LIFECYCLE",
+        "cause": "ended_event_not_in_active_universe",
+        "reasons": [
+          "ended_event_not_in_active_universe",
+          "forecast_event_horizon_ended",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": false,
+        "forecast_current": false,
+        "event_horizon_ended": true,
+        "native_book_present": false,
+        "current_executable_book_matched": false,
+        "book_id": null,
+        "book_source_timestamp": null,
+        "book_available_at": null,
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "4aa60ff4a719008fe5b3495364e5c6d2cd6e72b8a14e248377d91190afc46dcd",
+        "market_id": "6428611",
+        "event_id": "1284244",
+        "token_id": "29634894925886121038682433440193749295701799060767641313661334643511312411647",
+        "category": "EVENT_LIFECYCLE",
+        "cause": "ended_event_not_in_active_universe",
+        "reasons": [
+          "ended_event_not_in_active_universe",
+          "forecast_event_horizon_ended",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": false,
+        "forecast_current": false,
+        "event_horizon_ended": true,
+        "native_book_present": false,
+        "current_executable_book_matched": false,
+        "book_id": null,
+        "book_source_timestamp": null,
+        "book_available_at": null,
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "c4cbfe396edc4b1d28b9328a4324c6042156bb90bd06512f9e4e90427bece4b4",
+        "market_id": "6428612",
+        "event_id": "1284245",
+        "token_id": "68897843193404181753815578007678743247297634880601563868863681340013595323444",
+        "category": "EVENT_LIFECYCLE",
+        "cause": "ended_event_not_in_active_universe",
+        "reasons": [
+          "ended_event_not_in_active_universe",
+          "forecast_event_horizon_ended",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": false,
+        "forecast_current": false,
+        "event_horizon_ended": true,
+        "native_book_present": false,
+        "current_executable_book_matched": false,
+        "book_id": null,
+        "book_source_timestamp": null,
+        "book_available_at": null,
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "8792b2ed37af142f0c80a1b1a1e3f9e32cc925ef0db20f25b6e459c35b18d6a0",
+        "market_id": "6428612",
+        "event_id": "1284245",
+        "token_id": "68897843193404181753815578007678743247297634880601563868863681340013595323444",
+        "category": "EVENT_LIFECYCLE",
+        "cause": "ended_event_not_in_active_universe",
+        "reasons": [
+          "ended_event_not_in_active_universe",
+          "forecast_event_horizon_ended",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": false,
+        "forecast_current": false,
+        "event_horizon_ended": true,
+        "native_book_present": false,
+        "current_executable_book_matched": false,
+        "book_id": null,
+        "book_source_timestamp": null,
+        "book_available_at": null,
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "f0d49f90fb4348a4af7d3b4b29bd0714004010fe854107f082c51582004348f5",
+        "market_id": "6428608",
+        "event_id": "1284241",
+        "token_id": "98339030638432941172219577059999946323641500652986639802957016688708378530308",
+        "category": "EVENT_LIFECYCLE",
+        "cause": "ended_event_not_in_active_universe",
+        "reasons": [
+          "ended_event_not_in_active_universe",
+          "forecast_event_horizon_ended",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": false,
+        "forecast_current": false,
+        "event_horizon_ended": true,
+        "native_book_present": false,
+        "current_executable_book_matched": false,
+        "book_id": null,
+        "book_source_timestamp": null,
+        "book_available_at": null,
+        "trading_authority": false
+      },
+      {
+        "forecast_id": "c5ef1ff867e5cb344fe61a04480f87905c0318c3eff4180e432fe7288b376eae",
+        "market_id": "6428608",
+        "event_id": "1284241",
+        "token_id": "98339030638432941172219577059999946323641500652986639802957016688708378530308",
+        "category": "EVENT_LIFECYCLE",
+        "cause": "ended_event_not_in_active_universe",
+        "reasons": [
+          "ended_event_not_in_active_universe",
+          "forecast_event_horizon_ended",
+          "forecast_not_current_300_seconds"
+        ],
+        "metadata_identity_verified": false,
+        "forecast_current": false,
+        "event_horizon_ended": true,
+        "native_book_present": false,
+        "current_executable_book_matched": false,
+        "book_id": null,
+        "book_source_timestamp": null,
+        "book_available_at": null,
+        "trading_authority": false
+      }
+    ],
+    "counter_scope": "one evaluation; repeated models/events are not independent outcomes",
+    "research_only": true,
+    "trading_authority": false,
+    "certification_authority": false
+  },
+  "report_sha256": "be3469b61b3af9e7a6f4f16b8fe75856d0d80f6ff0129835c87eda92d2bab74c",
+  "scope": "authentic most recent immutable research decision; no inferred profits/settlements"
+}
