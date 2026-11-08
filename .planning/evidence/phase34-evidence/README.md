@@ -1,0 +1,9 @@
+# Phase34 weather evidence
+
+Current independent public evidence probe: official Gamma market6772951 and parent1330011 agree on exact condition/question/tokens/rules. Fresh AWC acquisition succeeded; prospective model generation correctly withheld `fresh_native_two_sided_weather_book_required`. At22:44:21Z native CLOB was .61/.76 (15-cent spread). No new qualifying forecast or trade is claimed.
+
+Original Phase33 isolated21:15Z forecasts replay exactly: kernel.84017/Gaussian.78734, quantity9.871, principal$6.71133, conditional gross$1.5820/$1.0605. Both uncertainty lower bounds0 yield−$6.71133 gross at that quantity. Original native fee evidence remains missing. A22:41 public native fee proof verifies fd.r=.05; it is rejected as future evidence at the original cutoff. Net profit remains null, native payout/calibration unverified. Both models share AWC lineage and are not independent confirmation.
+
+Current production checkpoint shows target6772951 attempted4times and no forecasts for parent1330011;212 global cumulativeweatherbook failures are NOT all attributed to this target. Source scheduling previously prefers retry count before quote quality; new scheduling defers bad-book siblings only where a fresh exact same-parent/station-day sibling exists. All-no-fresh groups retain existing provider fallback. Optional subscription wrapper preserves32/domain-parent/retainedforecast slots while ranking weather bins near.5 for quote acquisition. Authentic metadata replay changes1selectedtoken,6772992, not target6772951 (already selected).
+
+No original/prospective records rewritten; no production journal/account writes. Source artifacts remain under this isolated worktree's ignored data/phase34-evidence; compact hashes/raw native fee evidence and acquisition script committed. APIs: https://aviationweather.gov/data/api/ ; https://docs.polymarket.com/trading/fees . Model superiority, calibration, SII and profitable capacity remain unestablished.

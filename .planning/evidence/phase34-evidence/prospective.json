@@ -1,0 +1,36 @@
+{
+  "scope": "isolated prospective source-backed research only; not production forecast enrollment, calibrated estimate, trade or position",
+  "started_at": "2026-11-08T22:41:26.990204+00:00",
+  "target_market_id": "6772951",
+  "metadata_url": "https://gamma-api.polymarket.com/markets/6772951",
+  "metadata_retrieved_at": "2026-11-08T22:41:27.019621+00:00",
+  "metadata_raw_sha256": "f421c6fc12999a1dfd0147e34f8362dd3dc921edb9dbabfd9e51f625e9c1f7d4",
+  "parent_event_url": "https://gamma-api.polymarket.com/events/1330011",
+  "parent_event_raw_sha256": "e7011379a9056a18ed07ecf884a5dc6d30ab98dc2acfb3a50315399ec9208133",
+  "parent_event_retrieved_at": "2026-11-08T22:41:27.027899+00:00",
+  "identity_binding": "official parent child exact market/condition/question/token/rules match",
+  "fee_observation": {
+    "fee_rate": 0.05,
+    "observed_at": "2026-11-08T22:41:27.398226+00:00",
+    "source": "https://clob.polymarket.com",
+    "reference": "/markets-by-token/2837344778740768706611833632901205223551899115628035920885877581443772947047",
+    "raw_response_ids": [
+      "1719b38460a97b6f75d00122576c21bfb90e4d9586f9d29c5b127058547ee291",
+      "2c423d6189a5bda26970d16234dbd0e3e298cc99d3802b4dceca02c7aa71b55e"
+    ],
+    "evidence_id": "7e4c27e8-1281-4500-9456-097fee96fabe",
+    "retrieval_ids": [
+      "e62c9c70c865fc72b75a66f4d5245562dd4baa10ea45d38ee7fdcbcd1980c35d",
+      "8c43f0b3e1dd080164453897f25d22aa3038f5b03da681ffd8e978aa4d4d85cd"
+    ]
+  },
+  "completed_at": "2026-11-08T22:41:32.809512+00:00",
+  "diagnostics": [],
+  "prospective_record_sha256": "a8e36dd2ac3e927645953d47ed63e21c7315523ba58260de09403ad41ab971e0",
+  "prospective_local_file": "data/phase34-evidence/prospective-a8e36dd2ac3e927645953d47ed63e21c7315523ba58260de09403ad41ab971e0.json",
+  "forecasts_generated": 0,
+  "source_rejections": [
+    "fresh_native_two_sided_weather_book_required"
+  ],
+  "evidence_sha256": "62471e3fcacea474e4f37bd98eba0dfb26158a98c0b696c818d7373d0b88373b"
+}

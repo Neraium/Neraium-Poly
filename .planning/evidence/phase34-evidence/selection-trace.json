@@ -1,0 +1,174 @@
+{
+  "observed_at": "2026-11-08T22:45:06.740711+00:00",
+  "production_checkpoint_available_at": "2026-11-08T22:38:32.195127Z",
+  "target_event_id": "1330011",
+  "target_market_id": "6772951",
+  "candidate_attempts": {
+    "weather|6772951|2837344778740768706611833632901205223551899115628035920885877581443772947047": 4
+  },
+  "parent_enrolled": false,
+  "all_weather_book_rejection_count": 212,
+  "reason_scope": "global cumulativeweatherbook failures, not all attributable tothis target",
+  "frozen_scheduler_order": [
+    "candidate_attempts",
+    "distance_to_probability_half",
+    "negative_depth",
+    "market_id",
+    "token_id"
+  ],
+  "repair": "prefer exact fresh executable siblings before threshold retry only within same supported station-day parent; no currentfresh sibling preservesproviderfallback",
+  "latest_live_native_book": {
+    "observed_at": "2026-11-08T22:44:21.755117+00:00",
+    "book": {
+      "schema_version": "1.0",
+      "id": "5bce3ac5f45ded50687d39292f64e0a3ecf32545152e268a0b509bc9134bf24f",
+      "timestamp": "2026-11-08T22:44:17.390000Z",
+      "available_at": "2026-11-08T22:44:21.754870Z",
+      "source": "https://clob.polymarket.com",
+      "exchange": "polymarket",
+      "market_id": "6772951",
+      "token_id": "2837344778740768706611833632901205223551899115628035920885877581443772947047",
+      "bids": [
+        {
+          "price": 0.61,
+          "size": 5.0
+        },
+        {
+          "price": 0.6,
+          "size": 5.0
+        },
+        {
+          "price": 0.59,
+          "size": 7.5
+        },
+        {
+          "price": 0.58,
+          "size": 12.5
+        },
+        {
+          "price": 0.56,
+          "size": 12.48
+        },
+        {
+          "price": 0.54,
+          "size": 25.0
+        },
+        {
+          "price": 0.52,
+          "size": 10.0
+        },
+        {
+          "price": 0.47,
+          "size": 10.0
+        },
+        {
+          "price": 0.31,
+          "size": 11.06
+        },
+        {
+          "price": 0.3,
+          "size": 5.0
+        },
+        {
+          "price": 0.07,
+          "size": 237.0
+        },
+        {
+          "price": 0.06,
+          "size": 5.0
+        },
+        {
+          "price": 0.05,
+          "size": 20.0
+        },
+        {
+          "price": 0.04,
+          "size": 75.0
+        },
+        {
+          "price": 0.03,
+          "size": 67.33
+        },
+        {
+          "price": 0.02,
+          "size": 60.0
+        },
+        {
+          "price": 0.01,
+          "size": 666.0
+        }
+      ],
+      "asks": [
+        {
+          "price": 0.76,
+          "size": 10.0
+        },
+        {
+          "price": 0.77,
+          "size": 30.0
+        },
+        {
+          "price": 0.78,
+          "size": 30.09
+        },
+        {
+          "price": 0.79,
+          "size": 5.0
+        },
+        {
+          "price": 0.8,
+          "size": 5.0
+        },
+        {
+          "price": 0.81,
+          "size": 5.0
+        },
+        {
+          "price": 0.89,
+          "size": 20.89
+        },
+        {
+          "price": 0.91,
+          "size": 70.44
+        },
+        {
+          "price": 0.92,
+          "size": 5.0
+        },
+        {
+          "price": 0.93,
+          "size": 12.0
+        },
+        {
+          "price": 0.94,
+          "size": 14.0
+        },
+        {
+          "price": 0.95,
+          "size": 28.0
+        },
+        {
+          "price": 0.96,
+          "size": 20.0
+        },
+        {
+          "price": 0.97,
+          "size": 38.0
+        },
+        {
+          "price": 0.98,
+          "size": 660.0
+        },
+        {
+          "price": 0.99,
+          "size": 10065.11
+        }
+      ],
+      "sequence": 0,
+      "complete": true
+    },
+    "quality_reasons": [
+      "large_spread"
+    ]
+  }
+}

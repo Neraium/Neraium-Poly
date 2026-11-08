@@ -1,0 +1,152 @@
+{
+  "scope": "isolated public fee evidence at22:41 retrieval, not retroactive fee proof for21:15forecast nor all-in current execution cost",
+  "proof": {
+    "status": "verified_current_protocol_curve",
+    "token_id": "2837344778740768706611833632901205223551899115628035920885877581443772947047",
+    "condition_id": "0xdcac3a11d048ce801c07932abdc35cfd577e3d796af8519fd16689d93af694ca",
+    "rate": 0.05,
+    "exponent": 1,
+    "taker_only": true,
+    "formula": "shares * fd.r * price * (1-price)",
+    "documentation": "https://docs.polymarket.com/trading/fees",
+    "fee_observation_id": "7e4c27e8-1281-4500-9456-097fee96fabe",
+    "fee_observation_sha256": "d26b772a5f8ddc4abf23c762531406b06b89ca06de85c4e794ea1bbe3fa2120a",
+    "raw_response_ids": [
+      "1719b38460a97b6f75d00122576c21bfb90e4d9586f9d29c5b127058547ee291",
+      "2c423d6189a5bda26970d16234dbd0e3e298cc99d3802b4dceca02c7aa71b55e"
+    ],
+    "retrieval_ids": [
+      "e62c9c70c865fc72b75a66f4d5245562dd4baa10ea45d38ee7fdcbcd1980c35d",
+      "8c43f0b3e1dd080164453897f25d22aa3038f5b03da681ffd8e978aa4d4d85cd"
+    ],
+    "available_at": "2026-11-08T22:41:27.398226Z",
+    "as_of": "2026-11-08T22:41:32.809512+00:00",
+    "source_timestamp": null,
+    "timestamp_semantics": "public responses provide retrieval/availability time; exchange effective-time unavailable",
+    "rounding": "official nearest 5 decimals; per-fill count unknown, conservative bound used",
+    "all_in_costs_verified": false,
+    "missing_cost_evidence": [
+      "fill_fragmentation_rounding",
+      "additional_slippage",
+      "latency_adverse_selection",
+      "capital_lockup_cost",
+      "settlement_redemption_cost"
+    ],
+    "calibration_verified": false,
+    "research_only": true,
+    "trading_authority": false
+  },
+  "records": [
+    {
+      "kind": "PublicFeeResponse",
+      "record": {
+        "schema_version": "1.0",
+        "id": "1719b38460a97b6f75d00122576c21bfb90e4d9586f9d29c5b127058547ee291",
+        "timestamp": "2026-11-08T22:41:27.130017Z",
+        "available_at": "2026-11-08T22:41:27.130017Z",
+        "source": "https://clob.polymarket.com",
+        "url": "https://clob.polymarket.com/markets-by-token/2837344778740768706611833632901205223551899115628035920885877581443772947047",
+        "content_sha256": "6f176c7e4d93bc7e866a419ae7be79037fe06b54d085753180281cb26c2590f3",
+        "hash_basis": "canonical_json_payload_not_HTTP_bytes",
+        "payload": {
+          "condition_id": "0xdcac3a11d048ce801c07932abdc35cfd577e3d796af8519fd16689d93af694ca",
+          "primary_token_id": "2837344778740768706611833632901205223551899115628035920885877581443772947047",
+          "secondary_token_id": "38422274419839947571193933985264293310212598351201576073940190242278988715206"
+        }
+      }
+    },
+    {
+      "kind": "PublicFeeReceipt",
+      "record": {
+        "schema_version": "1.0",
+        "id": "e62c9c70c865fc72b75a66f4d5245562dd4baa10ea45d38ee7fdcbcd1980c35d",
+        "timestamp": "2026-11-08T22:41:27.130017Z",
+        "available_at": "2026-11-08T22:41:27.130017Z",
+        "source": "https://clob.polymarket.com",
+        "raw_response_id": "1719b38460a97b6f75d00122576c21bfb90e4d9586f9d29c5b127058547ee291",
+        "content_sha256": "6f176c7e4d93bc7e866a419ae7be79037fe06b54d085753180281cb26c2590f3",
+        "url": "https://clob.polymarket.com/markets-by-token/2837344778740768706611833632901205223551899115628035920885877581443772947047"
+      }
+    },
+    {
+      "kind": "PublicFeeResponse",
+      "record": {
+        "schema_version": "1.0",
+        "id": "2c423d6189a5bda26970d16234dbd0e3e298cc99d3802b4dceca02c7aa71b55e",
+        "timestamp": "2026-11-08T22:41:27.391413Z",
+        "available_at": "2026-11-08T22:41:27.391413Z",
+        "source": "https://clob.polymarket.com",
+        "url": "https://clob.polymarket.com/clob-markets/0xdcac3a11d048ce801c07932abdc35cfd577e3d796af8519fd16689d93af694ca",
+        "content_sha256": "970585e11b53f0dd25f5ea35f577c2667949533c5d882139fb8e45ec3cbadfcb",
+        "hash_basis": "canonical_json_payload_not_HTTP_bytes",
+        "payload": {
+          "r": {
+            "mi": 20,
+            "ma": 4.5,
+            "e": true,
+            "moas": 30
+          },
+          "t": [
+            {
+              "t": "38422274419839947571193933985264293310212598351201576073940190242278988715206",
+              "o": "Yes"
+            },
+            {
+              "t": "2837344778740768706611833632901205223551899115628035920885877581443772947047",
+              "o": "No"
+            }
+          ],
+          "c": "0xdcac3a11d048ce801c07932abdc35cfd577e3d796af8519fd16689d93af694ca",
+          "mos": 5,
+          "mts": 0.01,
+          "mbf": 1000,
+          "tbf": 1000,
+          "ao": true,
+          "nr": true,
+          "aot": "2026-11-07T05:57:34Z",
+          "ibce": true,
+          "fd": {
+            "r": 0.05,
+            "e": 1,
+            "to": true
+          },
+          "v": "v1"
+        }
+      }
+    },
+    {
+      "kind": "PublicFeeReceipt",
+      "record": {
+        "schema_version": "1.0",
+        "id": "8c43f0b3e1dd080164453897f25d22aa3038f5b03da681ffd8e978aa4d4d85cd",
+        "timestamp": "2026-11-08T22:41:27.391413Z",
+        "available_at": "2026-11-08T22:41:27.391413Z",
+        "source": "https://clob.polymarket.com",
+        "raw_response_id": "2c423d6189a5bda26970d16234dbd0e3e298cc99d3802b4dceca02c7aa71b55e",
+        "content_sha256": "970585e11b53f0dd25f5ea35f577c2667949533c5d882139fb8e45ec3cbadfcb",
+        "url": "https://clob.polymarket.com/clob-markets/0xdcac3a11d048ce801c07932abdc35cfd577e3d796af8519fd16689d93af694ca"
+      }
+    },
+    {
+      "kind": "FeeObservation",
+      "record": {
+        "schema_version": "1.0",
+        "id": "7e4c27e8-1281-4500-9456-097fee96fabe",
+        "timestamp": "2026-11-08T22:41:27.398226Z",
+        "available_at": "2026-11-08T22:41:27.398226Z",
+        "source": "https://clob.polymarket.com",
+        "token_id": "2837344778740768706611833632901205223551899115628035920885877581443772947047",
+        "fee_rate": 0.05,
+        "raw_response_ids": [
+          "1719b38460a97b6f75d00122576c21bfb90e4d9586f9d29c5b127058547ee291",
+          "2c423d6189a5bda26970d16234dbd0e3e298cc99d3802b4dceca02c7aa71b55e"
+        ],
+        "retrieval_ids": [
+          "e62c9c70c865fc72b75a66f4d5245562dd4baa10ea45d38ee7fdcbcd1980c35d",
+          "8c43f0b3e1dd080164453897f25d22aa3038f5b03da681ffd8e978aa4d4d85cd"
+        ],
+        "assumption": "Current official exponent1 global notional fee bound; refreshed by receipt-time TTL"
+      }
+    }
+  ]
+}

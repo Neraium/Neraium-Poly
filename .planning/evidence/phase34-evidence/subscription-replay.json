@@ -1,0 +1,540 @@
+{
+  "observed_at": "2026-11-08T22:46:25.770367+00:00",
+  "source_weather_discovery_id": "50dfd0d3d00f47488304f6a9746da6292d80369b13179c661271e1e55185059a",
+  "source_weather_discovery_available_at": "2026-11-08T22:42:17.998724Z",
+  "source_frame_id": "c25b741d25a8a14bb4b01b57028e2e3a837d7813ad14a049c4e2535511b6701c",
+  "forecast_token_scope": "all indexed forecasts (conservative retained-token replay; actual runtime boundedwindow maydiffer)",
+  "before": [
+    {
+      "market_id": "3566407",
+      "token_id": "99152048788234224357734975456328610052461154108689630888376315692101778386164",
+      "event_id": "844497",
+      "metadata_probability": 0.403,
+      "forecast_retained": true
+    },
+    {
+      "market_id": "6747198",
+      "token_id": "27805043314167451041585109424567343629607467935229765861220000638853277227245",
+      "event_id": "1324979",
+      "metadata_probability": 0.675,
+      "forecast_retained": true
+    },
+    {
+      "market_id": "6772991",
+      "token_id": "33517236537751279764576613060226568848015904124539409726217939590559652836108",
+      "event_id": "1330021",
+      "metadata_probability": 0.09,
+      "forecast_retained": true
+    },
+    {
+      "market_id": "6773113",
+      "token_id": "24738025044260749655718873394837845986822284259287441969905650520512746280782",
+      "event_id": "1330033",
+      "metadata_probability": 0.0245,
+      "forecast_retained": true
+    },
+    {
+      "market_id": "6837184",
+      "token_id": "10628154104242188405032182425627838422501295007451007389475441120998288113978",
+      "event_id": "1338333",
+      "metadata_probability": 0.91,
+      "forecast_retained": true
+    },
+    {
+      "market_id": "6837216",
+      "token_id": "26303814850015981383534082336063286061561533604630888780608583328680633508217",
+      "event_id": "1338336",
+      "metadata_probability": 0.06,
+      "forecast_retained": true
+    },
+    {
+      "market_id": "6837346",
+      "token_id": "40701245710721011326182459853482303473479283867027232434034527300214323119617",
+      "event_id": "1338355",
+      "metadata_probability": 0.065,
+      "forecast_retained": true
+    },
+    {
+      "market_id": "6772946",
+      "token_id": "10910931327697993100273193301044107788956639341429168595453679511670248452290",
+      "event_id": "1330011",
+      "metadata_probability": 0.9995,
+      "forecast_retained": false
+    },
+    {
+      "market_id": "3566403",
+      "token_id": "108383410088857110457305717233034884967245620976808926196690223911249072342441",
+      "event_id": "844497",
+      "metadata_probability": 0.995,
+      "forecast_retained": false
+    },
+    {
+      "market_id": "6747198",
+      "token_id": "48590210093932277918192534757467877715987536553015361732850151516868508486077",
+      "event_id": "1324979",
+      "metadata_probability": 0.325,
+      "forecast_retained": true
+    },
+    {
+      "market_id": "6772946",
+      "token_id": "69201859905357874360523722059436657000601379749491261074374614448914365945449",
+      "event_id": "1330011",
+      "metadata_probability": 0.0005,
+      "forecast_retained": false
+    },
+    {
+      "market_id": "3566403",
+      "token_id": "9769882483242196039799920183205140420540977835382672959908285204066000996669",
+      "event_id": "844497",
+      "metadata_probability": 0.005,
+      "forecast_retained": false
+    },
+    {
+      "market_id": "6772947",
+      "token_id": "111532392717089265882223521157359592514179118743180355387926592079976215453496",
+      "event_id": "1330011",
+      "metadata_probability": 0.9995,
+      "forecast_retained": false
+    },
+    {
+      "market_id": "3566404",
+      "token_id": "1009960662354053515912768867916546632225431870371945254574085786809349672854",
+      "event_id": "844497",
+      "metadata_probability": 0.9965,
+      "forecast_retained": false
+    },
+    {
+      "market_id": "6772947",
+      "token_id": "14421564130732868280517454642140584829479859809835305176009278503499359131336",
+      "event_id": "1330011",
+      "metadata_probability": 0.0005,
+      "forecast_retained": false
+    },
+    {
+      "market_id": "3566404",
+      "token_id": "103264165535309010911739719171286187304478780169244829510340086215220290416168",
+      "event_id": "844497",
+      "metadata_probability": 0.0035,
+      "forecast_retained": false
+    },
+    {
+      "market_id": "6772948",
+      "token_id": "16316559999509378730795621821850204137750783031494448611074391393996626020683",
+      "event_id": "1330011",
+      "metadata_probability": 0.0005,
+      "forecast_retained": false
+    },
+    {
+      "market_id": "3566405",
+      "token_id": "10227129125353262203357641535462260515292523046101801953608436434573570827960",
+      "event_id": "844497",
+      "metadata_probability": 0.0065,
+      "forecast_retained": false
+    },
+    {
+      "market_id": "6772948",
+      "token_id": "47300563136729426896780493618345688242434138176451982315707723152289861816568",
+      "event_id": "1330011",
+      "metadata_probability": 0.9995,
+      "forecast_retained": false
+    },
+    {
+      "market_id": "3566405",
+      "token_id": "45220093594902643548153607514772594608551280464826961858979534765152620449884",
+      "event_id": "844497",
+      "metadata_probability": 0.9935,
+      "forecast_retained": false
+    },
+    {
+      "market_id": "6772949",
+      "token_id": "103918861384810904729768636147198702663151074427253384477908005371019371232414",
+      "event_id": "1330011",
+      "metadata_probability": 0.9995,
+      "forecast_retained": false
+    },
+    {
+      "market_id": "3566406",
+      "token_id": "24286205875391383509402672648810638471191840592140892691047258607227431065574",
+      "event_id": "844497",
+      "metadata_probability": 0.87,
+      "forecast_retained": false
+    },
+    {
+      "market_id": "6772949",
+      "token_id": "11375755275137448949966016495440505058354111430911239694788355706542091444749",
+      "event_id": "1330011",
+      "metadata_probability": 0.0005,
+      "forecast_retained": false
+    },
+    {
+      "market_id": "3566406",
+      "token_id": "47971714192708552059839444926775872876237684946926425547543007736581190624279",
+      "event_id": "844497",
+      "metadata_probability": 0.13,
+      "forecast_retained": false
+    },
+    {
+      "market_id": "6772950",
+      "token_id": "28115373891776192804835439173360298807095371167007267176163810782313430006205",
+      "event_id": "1330011",
+      "metadata_probability": 0.852,
+      "forecast_retained": false
+    },
+    {
+      "market_id": "3566407",
+      "token_id": "49962514023952813189477775248098476870528161060149023023356539209782837045200",
+      "event_id": "844497",
+      "metadata_probability": 0.597,
+      "forecast_retained": false
+    },
+    {
+      "market_id": "6772950",
+      "token_id": "66100231590031828876315294776042338646899004404655448134375736358918796609002",
+      "event_id": "1330011",
+      "metadata_probability": 0.148,
+      "forecast_retained": false
+    },
+    {
+      "market_id": "3566408",
+      "token_id": "63391331393656212469870483193900614872613925170376672120080628877451568069208",
+      "event_id": "844497",
+      "metadata_probability": 0.73,
+      "forecast_retained": false
+    },
+    {
+      "market_id": "6772951",
+      "token_id": "2837344778740768706611833632901205223551899115628035920885877581443772947047",
+      "event_id": "1330011",
+      "metadata_probability": 0.655,
+      "forecast_retained": false
+    },
+    {
+      "market_id": "3566408",
+      "token_id": "93110138070440994539707892272184303621130780324903620612674228524418461920771",
+      "event_id": "844497",
+      "metadata_probability": 0.27,
+      "forecast_retained": false
+    },
+    {
+      "market_id": "6772986",
+      "token_id": "13166678748577722140431216132881689860652594096792515170119984236946392558404",
+      "event_id": "1330021",
+      "metadata_probability": 0.0005,
+      "forecast_retained": false
+    },
+    {
+      "market_id": "3566409",
+      "token_id": "44352498921969673657024484854444662492601406723282611022265145720251644998595",
+      "event_id": "844497",
+      "metadata_probability": 0.997,
+      "forecast_retained": false
+    }
+  ],
+  "after": [
+    {
+      "market_id": "3566407",
+      "token_id": "99152048788234224357734975456328610052461154108689630888376315692101778386164",
+      "event_id": "844497",
+      "metadata_probability": 0.403,
+      "forecast_retained": true
+    },
+    {
+      "market_id": "6747198",
+      "token_id": "27805043314167451041585109424567343629607467935229765861220000638853277227245",
+      "event_id": "1324979",
+      "metadata_probability": 0.675,
+      "forecast_retained": true
+    },
+    {
+      "market_id": "6772991",
+      "token_id": "33517236537751279764576613060226568848015904124539409726217939590559652836108",
+      "event_id": "1330021",
+      "metadata_probability": 0.09,
+      "forecast_retained": true
+    },
+    {
+      "market_id": "6773113",
+      "token_id": "24738025044260749655718873394837845986822284259287441969905650520512746280782",
+      "event_id": "1330033",
+      "metadata_probability": 0.0245,
+      "forecast_retained": true
+    },
+    {
+      "market_id": "6837184",
+      "token_id": "10628154104242188405032182425627838422501295007451007389475441120998288113978",
+      "event_id": "1338333",
+      "metadata_probability": 0.91,
+      "forecast_retained": true
+    },
+    {
+      "market_id": "6837216",
+      "token_id": "26303814850015981383534082336063286061561533604630888780608583328680633508217",
+      "event_id": "1338336",
+      "metadata_probability": 0.06,
+      "forecast_retained": true
+    },
+    {
+      "market_id": "6837346",
+      "token_id": "40701245710721011326182459853482303473479283867027232434034527300214323119617",
+      "event_id": "1338355",
+      "metadata_probability": 0.065,
+      "forecast_retained": true
+    },
+    {
+      "market_id": "6772951",
+      "token_id": "2837344778740768706611833632901205223551899115628035920885877581443772947047",
+      "event_id": "1330011",
+      "metadata_probability": 0.655,
+      "forecast_retained": false
+    },
+    {
+      "market_id": "3566403",
+      "token_id": "108383410088857110457305717233034884967245620976808926196690223911249072342441",
+      "event_id": "844497",
+      "metadata_probability": 0.995,
+      "forecast_retained": false
+    },
+    {
+      "market_id": "6747198",
+      "token_id": "48590210093932277918192534757467877715987536553015361732850151516868508486077",
+      "event_id": "1324979",
+      "metadata_probability": 0.325,
+      "forecast_retained": true
+    },
+    {
+      "market_id": "6772950",
+      "token_id": "28115373891776192804835439173360298807095371167007267176163810782313430006205",
+      "event_id": "1330011",
+      "metadata_probability": 0.852,
+      "forecast_retained": false
+    },
+    {
+      "market_id": "3566403",
+      "token_id": "9769882483242196039799920183205140420540977835382672959908285204066000996669",
+      "event_id": "844497",
+      "metadata_probability": 0.005,
+      "forecast_retained": false
+    },
+    {
+      "market_id": "6772950",
+      "token_id": "66100231590031828876315294776042338646899004404655448134375736358918796609002",
+      "event_id": "1330011",
+      "metadata_probability": 0.148,
+      "forecast_retained": false
+    },
+    {
+      "market_id": "3566404",
+      "token_id": "1009960662354053515912768867916546632225431870371945254574085786809349672854",
+      "event_id": "844497",
+      "metadata_probability": 0.9965,
+      "forecast_retained": false
+    },
+    {
+      "market_id": "6772946",
+      "token_id": "69201859905357874360523722059436657000601379749491261074374614448914365945449",
+      "event_id": "1330011",
+      "metadata_probability": 0.0005,
+      "forecast_retained": false
+    },
+    {
+      "market_id": "3566404",
+      "token_id": "103264165535309010911739719171286187304478780169244829510340086215220290416168",
+      "event_id": "844497",
+      "metadata_probability": 0.0035,
+      "forecast_retained": false
+    },
+    {
+      "market_id": "6772947",
+      "token_id": "14421564130732868280517454642140584829479859809835305176009278503499359131336",
+      "event_id": "1330011",
+      "metadata_probability": 0.0005,
+      "forecast_retained": false
+    },
+    {
+      "market_id": "3566405",
+      "token_id": "10227129125353262203357641535462260515292523046101801953608436434573570827960",
+      "event_id": "844497",
+      "metadata_probability": 0.0065,
+      "forecast_retained": false
+    },
+    {
+      "market_id": "6772948",
+      "token_id": "16316559999509378730795621821850204137750783031494448611074391393996626020683",
+      "event_id": "1330011",
+      "metadata_probability": 0.0005,
+      "forecast_retained": false
+    },
+    {
+      "market_id": "3566405",
+      "token_id": "45220093594902643548153607514772594608551280464826961858979534765152620449884",
+      "event_id": "844497",
+      "metadata_probability": 0.9935,
+      "forecast_retained": false
+    },
+    {
+      "market_id": "6772949",
+      "token_id": "11375755275137448949966016495440505058354111430911239694788355706542091444749",
+      "event_id": "1330011",
+      "metadata_probability": 0.0005,
+      "forecast_retained": false
+    },
+    {
+      "market_id": "3566406",
+      "token_id": "24286205875391383509402672648810638471191840592140892691047258607227431065574",
+      "event_id": "844497",
+      "metadata_probability": 0.87,
+      "forecast_retained": false
+    },
+    {
+      "market_id": "6772946",
+      "token_id": "10910931327697993100273193301044107788956639341429168595453679511670248452290",
+      "event_id": "1330011",
+      "metadata_probability": 0.9995,
+      "forecast_retained": false
+    },
+    {
+      "market_id": "3566406",
+      "token_id": "47971714192708552059839444926775872876237684946926425547543007736581190624279",
+      "event_id": "844497",
+      "metadata_probability": 0.13,
+      "forecast_retained": false
+    },
+    {
+      "market_id": "6772947",
+      "token_id": "111532392717089265882223521157359592514179118743180355387926592079976215453496",
+      "event_id": "1330011",
+      "metadata_probability": 0.9995,
+      "forecast_retained": false
+    },
+    {
+      "market_id": "3566407",
+      "token_id": "49962514023952813189477775248098476870528161060149023023356539209782837045200",
+      "event_id": "844497",
+      "metadata_probability": 0.597,
+      "forecast_retained": false
+    },
+    {
+      "market_id": "6772948",
+      "token_id": "47300563136729426896780493618345688242434138176451982315707723152289861816568",
+      "event_id": "1330011",
+      "metadata_probability": 0.9995,
+      "forecast_retained": false
+    },
+    {
+      "market_id": "3566408",
+      "token_id": "63391331393656212469870483193900614872613925170376672120080628877451568069208",
+      "event_id": "844497",
+      "metadata_probability": 0.73,
+      "forecast_retained": false
+    },
+    {
+      "market_id": "6772949",
+      "token_id": "103918861384810904729768636147198702663151074427253384477908005371019371232414",
+      "event_id": "1330011",
+      "metadata_probability": 0.9995,
+      "forecast_retained": false
+    },
+    {
+      "market_id": "3566408",
+      "token_id": "93110138070440994539707892272184303621130780324903620612674228524418461920771",
+      "event_id": "844497",
+      "metadata_probability": 0.27,
+      "forecast_retained": false
+    },
+    {
+      "market_id": "6772992",
+      "token_id": "72138807575876410865411951359524462123126624025811138404039662307326113023113",
+      "event_id": "1330021",
+      "metadata_probability": 0.695,
+      "forecast_retained": false
+    },
+    {
+      "market_id": "3566409",
+      "token_id": "44352498921969673657024484854444662492601406723282611022265145720251644998595",
+      "event_id": "844497",
+      "metadata_probability": 0.997,
+      "forecast_retained": false
+    }
+  ],
+  "selection": {
+    "eligible_tokens": 80,
+    "selected_tokens": 32,
+    "deferred_tokens": 48,
+    "selected_parent_events": 8,
+    "selected_domains": {
+      "economics": 13,
+      "finance": 2,
+      "weather": 17
+    },
+    "rejections": {
+      "no_supported_adapter": 16
+    },
+    "maximum_tokens": 32,
+    "trading_authority": false,
+    "weather_acquisition_policy": "retained forecasts, then same-parent source probability distance to0.5; not independent forecasting evidence",
+    "weather_replacements": [
+      {
+        "previous_token": "10910931327697993100273193301044107788956639341429168595453679511670248452290",
+        "selected_token": "2837344778740768706611833632901205223551899115628035920885877581443772947047",
+        "event_id": "1330011"
+      },
+      {
+        "previous_token": "69201859905357874360523722059436657000601379749491261074374614448914365945449",
+        "selected_token": "28115373891776192804835439173360298807095371167007267176163810782313430006205",
+        "event_id": "1330011"
+      },
+      {
+        "previous_token": "111532392717089265882223521157359592514179118743180355387926592079976215453496",
+        "selected_token": "66100231590031828876315294776042338646899004404655448134375736358918796609002",
+        "event_id": "1330011"
+      },
+      {
+        "previous_token": "14421564130732868280517454642140584829479859809835305176009278503499359131336",
+        "selected_token": "69201859905357874360523722059436657000601379749491261074374614448914365945449",
+        "event_id": "1330011"
+      },
+      {
+        "previous_token": "16316559999509378730795621821850204137750783031494448611074391393996626020683",
+        "selected_token": "14421564130732868280517454642140584829479859809835305176009278503499359131336",
+        "event_id": "1330011"
+      },
+      {
+        "previous_token": "47300563136729426896780493618345688242434138176451982315707723152289861816568",
+        "selected_token": "16316559999509378730795621821850204137750783031494448611074391393996626020683",
+        "event_id": "1330011"
+      },
+      {
+        "previous_token": "103918861384810904729768636147198702663151074427253384477908005371019371232414",
+        "selected_token": "11375755275137448949966016495440505058354111430911239694788355706542091444749",
+        "event_id": "1330011"
+      },
+      {
+        "previous_token": "11375755275137448949966016495440505058354111430911239694788355706542091444749",
+        "selected_token": "10910931327697993100273193301044107788956639341429168595453679511670248452290",
+        "event_id": "1330011"
+      },
+      {
+        "previous_token": "28115373891776192804835439173360298807095371167007267176163810782313430006205",
+        "selected_token": "111532392717089265882223521157359592514179118743180355387926592079976215453496",
+        "event_id": "1330011"
+      },
+      {
+        "previous_token": "66100231590031828876315294776042338646899004404655448134375736358918796609002",
+        "selected_token": "47300563136729426896780493618345688242434138176451982315707723152289861816568",
+        "event_id": "1330011"
+      },
+      {
+        "previous_token": "2837344778740768706611833632901205223551899115628035920885877581443772947047",
+        "selected_token": "103918861384810904729768636147198702663151074427253384477908005371019371232414",
+        "event_id": "1330011"
+      },
+      {
+        "previous_token": "13166678748577722140431216132881689860652594096792515170119984236946392558404",
+        "selected_token": "72138807575876410865411951359524462123126624025811138404039662307326113023113",
+        "event_id": "1330021"
+      }
+    ],
+    "weather_policy_sha256": "069bb3fc42fb5f17cc16f38046564ace6d103aaceba8f3ece8c8d8a079fae4a5"
+  },
+  "scope": "authentic metadata acquisition ranking replay only; no new subscriptions, probabilities or performance"
+}
