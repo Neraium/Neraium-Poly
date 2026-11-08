@@ -2,6 +2,7 @@
 import hashlib
 from copy import deepcopy
 from datetime import UTC, datetime
+from types import SimpleNamespace
 
 import httpx
 import pytest
@@ -13,6 +14,12 @@ from test_phase25_finance_economics import NOW, book, economics, evidence, marke
 
 LATER=datetime(2026,11,13,12,tzinfo=UTC)
 GDP=b'<script>{"datePublished":"2026-11-12T07:00:00Z","dateModified":"2026-11-12T07:00:00Z"}</script>Release date: 12 November 2026 UK real gross domestic product (GDP) is estimated to have increased by 0.4% in Quarter 3 (July to Sept) 2026'
+
+
+@pytest.fixture(autouse=True)
+def controlled_available_disk(monkeypatch):
+    # Fixture resource capacity is independent of the host/CI filesystem.
+    monkeypatch.setattr(macro.shutil,"disk_usage",lambda _:SimpleNamespace(free=200*1024**3))
 
 
 async def gdp_forecast(monkeypatch):
@@ -127,3 +134,13 @@ def test_ONS_BST_metadata_is_day_bound_not_fake_release_hour():
     assert 'not an exact release hour' in result['timing_precision']
     with pytest.raises(ValueError,match='publication_day'):
         macro._final(contract,economics,[raw],[ref],datetime(2026,8,13,12,tzinfo=UTC))
+
+
+async def test_storage_floor_blocks_macro_before_any_request(monkeypatch,tmp_path):
+    f,_=await gdp_forecast(monkeypatch)
+    monkeypatch.setattr(macro.shutil,"disk_usage",lambda _:SimpleNamespace(free=99*1024**3))
+    async def forbidden(*a,**k):raise AssertionError("no source query below floor")
+    monkeypatch.setattr(macro,"_get",forbidden)
+    r=await macro.verify_macro_event(f,directory=tmp_path,clock=lambda:LATER)
+    assert not r['event_result_verified'] and 'filesystem_reserve' in r['reason']
+    assert not list(tmp_path.iterdir())

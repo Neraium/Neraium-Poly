@@ -3,6 +3,7 @@ import hashlib
 import json
 from copy import deepcopy
 from datetime import UTC, datetime, timedelta
+from types import SimpleNamespace
 
 import pytest
 from neraium_poly.research.phase24 import weather as model
@@ -10,6 +11,12 @@ from neraium_poly.research.phase32 import weather
 from test_phase24_weather_economics import NOW, book, market, weather_evidence
 
 OBSERVED=datetime(2026,11,8,20,tzinfo=UTC)
+
+
+@pytest.fixture(autouse=True)
+def controlled_available_disk(monkeypatch):
+    # Fixture resource capacity is independent of the host/CI filesystem.
+    monkeypatch.setattr(weather.shutil,"disk_usage",lambda _:SimpleNamespace(free=200*1024**3))
 
 
 async def original(monkeypatch):
@@ -105,3 +112,13 @@ def test_atomic_raw_publication_interruption_and_recovery(monkeypatch,tmp_path):
     assert not list(tmp_path.iterdir())
     ref=weather._save(tmp_path,raw,item);assert (tmp_path/ref['raw_file']).read_bytes()==raw
     assert weather._save(tmp_path,raw,item)==ref
+
+
+async def test_storage_floor_blocks_weather_before_any_request(monkeypatch,tmp_path):
+    f,_=await original(monkeypatch)
+    monkeypatch.setattr(weather.shutil,"disk_usage",lambda _:SimpleNamespace(free=99*1024**3))
+    async def forbidden(*a,**k):raise AssertionError("no source query below floor")
+    monkeypatch.setattr(weather,"_fetch",forbidden)
+    r=await weather.verify_weather_event(f,directory=tmp_path,clock=lambda:OBSERVED)
+    assert not r['event_result_verified'] and 'filesystem_reserve' in r['reason']
+    assert not list(tmp_path.iterdir())
