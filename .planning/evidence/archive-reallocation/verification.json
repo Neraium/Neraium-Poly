@@ -1,0 +1,315 @@
+{
+  "observed_at": "2026-11-08T04:13:23.096197+00:00",
+  "source_commit": "c600606a5424aa3817e386c38dcbfb5360067898",
+  "ci": [
+    {
+      "conclusion": "success",
+      "databaseId": 42445535115,
+      "headSha": "c600606a5424aa3817e386c38dcbfb5360067898",
+      "status": "completed"
+    }
+  ],
+  "applied_quotas_gib": {
+    "collector": 150,
+    "experimental": 150,
+    "combined": 300
+  },
+  "capacity": {
+    "schema_version": "phase18-shared-capacity-v1",
+    "approved": true,
+    "status": "admissible",
+    "reasons": [],
+    "service_roots": {
+      "collector": {
+        "path": "/home/ubuntu/Neraium-Poly/data/paper-live",
+        "device": 66305,
+        "inode": 5284604,
+        "current_usage_bytes": 18200116979,
+        "target_budget_bytes": 161061273600
+      },
+      "experimental": {
+        "path": "/home/ubuntu/Neraium-Poly/data/experimental-paper",
+        "device": 66305,
+        "inode": 5549473,
+        "current_usage_bytes": 8787614111,
+        "target_budget_bytes": 161061273600
+      }
+    },
+    "filesystem_capacity_bytes": 1038993555456,
+    "filesystem_available_bytes": 483033989120,
+    "protected_free_reserve_bytes": 107374182400,
+    "current_combined_service_bytes": 26987731090,
+    "target_combined_service_bytes": 322122547200,
+    "incremental_maximum_service_growth_bytes": 295134816110,
+    "projected_free_at_service_caps_bytes": 187899173010,
+    "temporary_headroom_bytes": 8589934592,
+    "shared_growth_reserve_bytes": 68719476736,
+    "projected_free_after_all_headrooms_bytes": 110589761682,
+    "headroom_above_protected_floor_bytes": 3215579282,
+    "nonservice_and_filesystem_overhead_used_bytes": 528971835246,
+    "accounting_scope": "all service-root logical file bytes; existing shared use already in available-space observation",
+    "other_workload_warning": "Future unrelated growth can invalidate this snapshot; live global floor must remain enforced",
+    "preallocation_performed": false,
+    "configuration_changed": false,
+    "infrastructure_change_authority": false,
+    "deletion_authority": false
+  },
+  "runways": {
+    "collector": {
+      "usage_gib": 16.950179803185165,
+      "pre_restart_observed_growth_bytes_per_second": 44338.17312130362,
+      "post_restart_observed_growth_bytes_per_second": 162695.92833189032,
+      "cross_restart_observed_growth_bytes_per_second": 73616.1019220345,
+      "cross_restart_window_seconds": 441.510025,
+      "conditional_pre_restart_rate_runway_days": 37.292596709287615,
+      "conditional_post_restart_rate_runway_days": 10.163042345265929,
+      "conservative_observed_rate_runway_days": 10.163042345265929,
+      "limitations": "short post-restart rate includes recovery/checkpoint transients; conditional projections, not guaranteed retention"
+    },
+    "experimental": {
+      "usage_gib": 8.18410339858383,
+      "pre_restart_observed_growth_bytes_per_second": 85668.2307178694,
+      "post_restart_observed_growth_bytes_per_second": 40779.096489726624,
+      "cross_restart_observed_growth_bytes_per_second": 71423.17096876792,
+      "cross_restart_window_seconds": 441.510025,
+      "conditional_pre_restart_rate_runway_days": 20.572697716382237,
+      "conditional_post_restart_rate_runway_days": 43.21887354468538,
+      "conservative_observed_rate_runway_days": 20.572697716382237,
+      "limitations": "short post-restart rate includes recovery/checkpoint transients; conditional projections, not guaranteed retention"
+    }
+  },
+  "account_records_unchanged_except_verified_append_only_audits": true,
+  "account_balances_limits_and_stops_unchanged": true,
+  "accounts": {
+    "paper-live": {
+      "cash": 500.0,
+      "realized_pnl": 0.0,
+      "emergency_stop": false,
+      "limits": {
+        "bankroll": 500.0,
+        "aggregate_fraction": 0.2,
+        "market_fraction": 0.05,
+        "event_fraction": 0.1,
+        "correlation_fraction": 0.1,
+        "daily_loss_fraction": 0.05,
+        "drawdown_fraction": 0.1,
+        "max_book_age_seconds": 15.0,
+        "max_market_age_seconds": 3600.0,
+        "max_estimate_age_seconds": 300.0,
+        "max_evidence_age_seconds": 3600.0,
+        "max_spread": 0.05,
+        "min_net_edge": 0.03,
+        "max_liquidity_participation": 0.25,
+        "approval_ttl_seconds": 10.0,
+        "standard_min": 2.0,
+        "standard_max": 5.0,
+        "high_min": 5.0,
+        "high_max": 15.0,
+        "exceptional_min": 15.0,
+        "exceptional_max": 25.0,
+        "kelly_fraction": 0.1
+      },
+      "positions": 0
+    },
+    "experimental-paper": {
+      "cash": 496.11522059829053,
+      "realized_pnl": -3.8847794017094013,
+      "emergency_stop": false,
+      "limits": {
+        "bankroll": 500.0,
+        "aggregate_fraction": 0.2,
+        "market_fraction": 0.05,
+        "event_fraction": 0.1,
+        "correlation_fraction": 0.1,
+        "daily_loss_fraction": 0.05,
+        "drawdown_fraction": 0.1,
+        "max_book_age_seconds": 15.0,
+        "max_market_age_seconds": 3600.0,
+        "max_estimate_age_seconds": 300.0,
+        "max_evidence_age_seconds": 3600.0,
+        "max_spread": 0.05,
+        "min_net_edge": 0.03,
+        "max_liquidity_participation": 0.25,
+        "approval_ttl_seconds": 10.0,
+        "standard_min": 2.0,
+        "standard_max": 5.0,
+        "high_min": 5.0,
+        "high_max": 15.0,
+        "exceptional_min": 15.0,
+        "exceptional_max": 25.0,
+        "kelly_fraction": 0.1
+      },
+      "positions": 0
+    }
+  },
+  "archive_catalog_bindings_preserved": 1949,
+  "journal_chains": {
+    "event-intelligence/forecasts.sqlite": {
+      "records": 3285,
+      "head_sha256": "beb736afb063fa83f978daca5dcd895204f803672f0b6ec53aaa8ffdd56f84a2",
+      "preexisting_prefix_preserved": true
+    },
+    "event-intelligence/sports/prospective.sqlite": {
+      "records": 15,
+      "head_sha256": "cc7f503a656441e18677b6fb68d21b09803b48382e226818c689aa5374c99cb0",
+      "preexisting_prefix_preserved": true
+    },
+    "event-intelligence/domains/forecasts.sqlite": {
+      "records": 125,
+      "head_sha256": "7016841c780c2fac02403f46699ff6ab600df8b903e7d4da4846518b8d4d386b",
+      "preexisting_prefix_preserved": true
+    }
+  },
+  "completed_compression_transitions_verified": [],
+  "cold_restoration": {
+    "at": "2026-11-08T04:12:02.290016+00:00",
+    "services": {
+      "paper-live": {
+        "segment": "segment-00000746.sqlite",
+        "restored_bytes": 3641344,
+        "raw_sha256": "334bc9e18807a8e0fa6281ba0d5301ebcb28a72ac76ed50d27b0f1ea7b7573f5",
+        "gzip_sha256": "a5e62d91af95ecbacd8bc5dc7adf68a0ab56b6e8cd5a2eb3449e786cd756a044",
+        "restoration_verified": true,
+        "scope": "one recent sealed segment; prior complete audit reused, catalog preservation checked separately"
+      },
+      "experimental-paper": {
+        "segment": "segment-00001200.sqlite",
+        "restored_bytes": 4079616,
+        "raw_sha256": "f2a667f0543602bc320ae81e0bf65fb78110cec08fe9d5070e58c19340c8351a",
+        "gzip_sha256": "02c8fab109e6a56f9335ae10848181fb378ccb2d14ad3e7d06c95b8e70f83642",
+        "restoration_verified": true,
+        "scope": "one recent sealed segment; prior complete audit reused, catalog preservation checked separately"
+      }
+    }
+  },
+  "live_snapshot": {
+    "observed_at": "2026-11-08T04:11:58.479485+00:00",
+    "markets": 405,
+    "fresh_books": 204,
+    "collector_health": {
+      "status": "ok",
+      "paper_trading": true,
+      "live_trading_enabled": false,
+      "mode": "live_market_paper",
+      "trading_status": "validation_blocked",
+      "last_ingestion_at": "2026-11-08T04:11:58.072296+00:00",
+      "last_ingestion_age_seconds": 0.047526,
+      "last_error": null,
+      "ledger_consistent": true,
+      "timestamp": "2026-11-08T04:11:58.119822+00:00"
+    },
+    "experimental_health": {
+      "status": "ok",
+      "account_id": "experimental-paper",
+      "validation_status": "unvalidated",
+      "paper_trading": true,
+      "live_trading_enabled": false,
+      "last_ingestion_at": "2026-11-08T04:11:55.971393+00:00",
+      "last_ingestion_age_seconds": 2.149363,
+      "last_error": null,
+      "fee_error": null,
+      "timestamp": "2026-11-08T04:11:58.120756+00:00"
+    }
+  },
+  "observation": {
+    "readiness_attempts": [
+      {
+        "at": "2026-11-08T04:09:05.213901+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T04:09:10.221708+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T04:09:15.230514+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T04:09:20.238608+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T04:09:25.247094+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T04:09:30.255050+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T04:09:35.263088+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T04:09:40.271186+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T04:09:45.279961+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T04:09:50.288503+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T04:09:55.298417+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T04:10:00.306306+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T04:10:05.315015+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T04:10:10.323546+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T04:10:15.331573+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T04:10:20.340030+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T04:10:25.348351+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T04:10:30.356312+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T04:10:35.364703+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T04:10:40.373299+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T04:10:45.468009+00:00",
+        "status": "initial_recovery_pending"
+      },
+      {
+        "at": "2026-11-08T04:10:51.498075+00:00",
+        "status": "initial_recovery_pending"
+      }
+    ],
+    "observed_seconds": 61.779631,
+    "samples": 3,
+    "scope": "one bounded post-change observation, not proof of indefinite operation",
+    "services": "MainPID=3368641\nNRestarts=0\nCPUQuotaPerSecUSec=1s\nMemoryMax=1073741824\nActiveState=active\n\nMainPID=3368643\nNRestarts=0\nCPUQuotaPerSecUSec=1s\nMemoryMax=2147483648\nActiveState=active\n"
+  },
+  "systemd": "Existing ExecStart config references preserved; no quota environment override; no unit, CPU or memory changes",
+  "live_trading_enabled": false,
+  "no_originals_deleted": true,
+  "no_migration_or_aws_changes": true,
+  "remaining_reallocation_blockers": []
+}
