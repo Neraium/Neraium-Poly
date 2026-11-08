@@ -15,6 +15,7 @@ from test_phase18_continuous import Clock, frame
 from test_phase18_forecasting import CUTOFF, artifact, market
 
 ASOF=datetime(2026,11,8,12,tzinfo=UTC)
+ORIGINAL_REFERENCE_GUARD=crypto._require_reference
 
 
 def approve(_authorization,*,as_of):return {'authorized':True,'scope':'CONTROLLED fixture only'}
@@ -48,7 +49,10 @@ def original(cutoff=CUTOFF):
 
 @pytest.fixture(autouse=True)
 def controlled(monkeypatch):
-    crypto._CACHE.clear();monkeypatch.setattr(crypto.shutil,'disk_usage',lambda _p:SimpleNamespace(free=200*1024**3))
+    crypto._CACHE.clear();monkeypatch.setattr(crypto,'_require_reference',lambda _f:None)
+    # Remaining cases isolate future reviewed-reference mechanics; the genuine
+    # current contradictory template has its own unpatched fail-closed test.
+    monkeypatch.setattr(crypto.shutil,'disk_usage',lambda _p:SimpleNamespace(free=200*1024**3))
 
 
 def install(monkeypatch,*,hit=None,missing=False):
@@ -152,4 +156,12 @@ async def test_license_default_closed_before_any_network_or_directory(monkeypatc
     _s,f=original();calls=install(monkeypatch)
     result=await crypto.verify_crypto_event(f,directory=tmp_path/'not-created',clock=lambda:ASOF)
     assert not result['event_result_verified'] and 'eligible_use_authorization_required' in result['reason']
+    assert not calls and not (tmp_path/'not-created').exists()
+
+
+async def test_licensed_access_cannot_override_actual_spot_reference_contradiction(monkeypatch,tmp_path):
+    _s,f=original();calls=install(monkeypatch)
+    monkeypatch.setattr(crypto,'_require_reference',ORIGINAL_REFERENCE_GUARD)
+    result=await verify(f,directory=tmp_path/'not-created',clock=lambda:ASOF)
+    assert not result['event_result_verified'] and 'spot_reference_rule_ambiguity_requires_review' in result['reason']
     assert not calls and not (tmp_path/'not-created').exists()

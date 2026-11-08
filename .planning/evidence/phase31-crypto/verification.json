@@ -1,8 +1,9 @@
 {
-  "focused_cases": 21,
+  "focused_cases": 22,
   "result": "passed",
   "ruff": "passed",
-  "fixture_scope": "controlledCSV/ZIPs/mockHTTP/licenserevieweronly; never authenticperformance",
+  "fixture_scope": "positive source/replay mechanics use explicit controlled referenceguard stub; separate unpatchedreal-rule regression provesblocked",
   "actual_crypto_outcomes": 0,
-  "default_license_gate": "closed"
+  "default_license_gate": "closed",
+  "exact_reference_guard": "defaultrejects actualSpot-exclusion rule beforeHTTP evenauthorized"
 }

@@ -74,5 +74,12 @@
     "Onlyfrozenmodel-supportedBTCUSDT/ETHUSDT daily-low contracts; no inventedSOL/terminal-close capability",
     "No source fallback after access restriction",
     "Independent historical archive revisions remain versioned observations, not native settlement proof"
-  ]
+  ],
+  "reference_ambiguity": {
+    "actual_rule_contains": "or spot markets will not be considered",
+    "forecast_reference": "api/v3 Spot candles; official archive isSpot",
+    "status": "withheld_before_HTTP_even_if_license_authorized",
+    "reason": "spot_reference_rule_ambiguity_requires_review",
+    "native_payout_and_comparability": "never inferred through contradiction"
+  }
 }

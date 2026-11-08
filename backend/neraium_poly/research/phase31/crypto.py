@@ -48,6 +48,15 @@ def _access(authorization,verifier,*,as_of):
     return authorization
 
 
+def _require_reference(forecast):
+    rules=str(forecast.get('market',{}).get('resolution_rules','')).lower()
+    # The preserved current rule template points to a Binance trading chart but
+    # explicitly excludes spot markets. A Spot archive cannot resolve that
+    # contradiction; neither a license nor a matching symbol authorizes guessing.
+    if re.search(r'\bspot markets\b[^.]*\bnot be considered\b',rules):
+        raise ValueError('spot_reference_rule_ambiguity_requires_review')
+
+
 def _us(value):
     d=at(value)-datetime(1970,1,1,tzinfo=UTC)
     return (d.days*86400+d.seconds)*1000000+d.microseconds
@@ -164,6 +173,7 @@ async def verify_crypto_event(forecast,*,directory,clock=None,access_authorizati
     clock=clock or (lambda:datetime.now(UTC));now=at(clock())
     try:
         authorization=_access(access_authorization,access_verifier,as_of=now)
+        _require_reference(forecast)
         c,start,end=_contract(forecast)
         if now<end:return {'status':'pending','event_result_verified':False,'reason':'exact_crypto_event_window_not_yet_complete',**AUTHORITY}
         root=_root(directory)
@@ -197,7 +207,7 @@ async def verify_crypto_event(forecast,*,directory,clock=None,access_authorizati
 
 
 def replay_crypto_event(result,study,forecast,*,evidence_root,as_of,access_verifier=None):
-    now=at(as_of);_access(result.get('access_authorization'),access_verifier,as_of=now);c,_start,end=_contract(forecast)
+    now=at(as_of);_access(result.get('access_authorization'),access_verifier,as_of=now);_require_reference(forecast);c,_start,end=_contract(forecast)
     if (result.get('status')!='official_event_verified' or result.get('market_baseline_comparable') is not True or result.get('verification_protocol')!=PROTOCOL or result.get('target')!=TARGET or result.get('event_result_verified') is not True
         or result.get('native_payout_verified') is not False or result.get('trading_authority') is not False or result.get('certification_authority') is not False
         or any(result.get(k)!=forecast[k] for k in ('event_id','market_id','token_id','rules_sha256'))
