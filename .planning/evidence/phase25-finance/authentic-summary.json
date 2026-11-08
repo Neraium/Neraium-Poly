@@ -1,0 +1,95 @@
+{
+  "at": "2026-11-08T00:02:22.006388+00:00",
+  "record_bytes_sha256": "a5e04cf577a246e353554f0c31c4c4a2446b215802e8c4f14c39253c63df127b",
+  "results": {
+    "finance": {
+      "metadata_tokens": 4,
+      "eligible_tokens": 2,
+      "forecasts": 2,
+      "parents": 1,
+      "rejections": [],
+      "forecasts_summary": [
+        {
+          "id": "20478091527a8d9a8b12b193ef3eee2edefdcab68837f8b4ad37f220f44f6b3b",
+          "model_id": "spx-weekday-beta-direction-v25.1",
+          "event_id": "1324979",
+          "market_id": "6747198",
+          "timestamp": "2026-11-08T00:02:00.800214+00:00",
+          "evidence_cutoff": "2026-11-08T00:02:00.557501+00:00",
+          "probability": 0.6033755274261603,
+          "training_observations": 235,
+          "book_id": "c7a6968f057115b05018fe00687cf093b25cfde69b78fe37b4e7a8ac525c10bb",
+          "target_conditioning": "ordinary completed strictly non-tied regular session; no halt/fallback or publisher discrepancy"
+        },
+        {
+          "id": "25a87026240bf85da17a4c38e42d0235c71e244e051c71ac9fcafab9cfb3ed82",
+          "model_id": "spx-gaussian-logreturn-direction-v25.1",
+          "event_id": "1324979",
+          "market_id": "6747198",
+          "timestamp": "2026-11-08T00:02:00.800214+00:00",
+          "evidence_cutoff": "2026-11-08T00:02:00.557501+00:00",
+          "probability": 0.5152451490710184,
+          "training_observations": 252,
+          "book_id": "c7a6968f057115b05018fe00687cf093b25cfde69b78fe37b4e7a8ac525c10bb",
+          "target_conditioning": "ordinary completed strictly non-tied regular session; no halt/fallback or publisher discrepancy"
+        }
+      ]
+    },
+    "economics": {
+      "metadata_tokens": 28,
+      "eligible_tokens": 14,
+      "forecasts": 2,
+      "parents": 1,
+      "rejections": [
+        "",
+        ""
+      ],
+      "forecasts_summary": [
+        {
+          "id": "a46a6118c6c16c63a6c1e2584aeeed563b50a287f00acc290e0366f7b226c13b",
+          "model_id": "uk-gdp-jeffreys-frequency-v25.1",
+          "event_id": "844497",
+          "market_id": "3566404",
+          "timestamp": "2026-11-08T00:02:22.001229+00:00",
+          "evidence_cutoff": "2026-11-08T00:02:21.772475+00:00",
+          "probability": 0.2073170731707317,
+          "training_observations": 40,
+          "book_id": "8f6afaf120e4335c5df981ff31b2e6c0f5609d80966725555c40d842e3d5905d",
+          "target_conditioning": "scheduled firstrelease without fallback/correction; current-vintage historical feature distribution"
+        },
+        {
+          "id": "1e68587fcdd02c439ae92fd69e6fc9249d71b2e45e71402de92ef15b9dc309e1",
+          "model_id": "uk-gdp-regularized-ar1-v25.1",
+          "event_id": "844497",
+          "market_id": "3566404",
+          "timestamp": "2026-11-08T00:02:22.001229+00:00",
+          "evidence_cutoff": "2026-11-08T00:02:21.772475+00:00",
+          "probability": 0.01902464054617714,
+          "training_observations": 40,
+          "book_id": "8f6afaf120e4335c5df981ff31b2e6c0f5609d80966725555c40d842e3d5905d",
+          "target_conditioning": "scheduled firstrelease without fallback/correction; current-vintage historical feature distribution"
+        }
+      ]
+    }
+  },
+  "research_only": true,
+  "trading_authority": false,
+  "certification_authority": false,
+  "historical_probe": {
+    "url": "https://www.ons.gov.uk/economy/grossdomesticproductgdp/bulletins/gdpfirstquarterlyestimateuk/apriltojune2026",
+    "sha256": "69e2a133ccedf77b93910bb08e27a27613c9d403d725bb44c0f9187ca328a95a",
+    "parsed": {
+      "value": 0.4,
+      "expected": 1,
+      "publication_day_lower_bound": "2026-08-13T00:00:00+00:00"
+    },
+    "scope": "actual prior official release; NOT an outcome for a prospective forecast"
+  },
+  "data_blockers": {
+    "CPI": "BLS October2025 denominator unavailable, no imputation",
+    "WSJ": "official historical price access403; financial labels withheld",
+    "Yahoo": "429 respected",
+    "Stooq": "404, not used",
+    "GDP_vintages": "current ONS IHYQ provides predictors, not verified firstrelease historical labels"
+  }
+}
