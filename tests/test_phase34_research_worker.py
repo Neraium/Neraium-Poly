@@ -176,3 +176,38 @@ async def test_owner_disappearing_during_native_job_drains_write_before_exit():
             await asyncio.sleep(.01)
         assert completed==[True] and worker.status()['closed']
     finally:release.set()
+
+
+async def test_cancellation_interrupts_async_source_once_and_drains_finally_promptly():
+    worker=ResearchWorker();entered=threading.Event();cleaning=threading.Event();finished=[]
+    async def slow_network():
+        entered.set()
+        try:await asyncio.sleep(60)
+        finally:
+            cleaning.set();await asyncio.sleep(.06)
+            finished.append(asyncio.current_task().cancelling())
+    running=asyncio.create_task(worker.run(slow_network));await reached(entered)
+    start=time.monotonic();running.cancel();await reached(cleaning)
+    running.cancel();await asyncio.sleep(.01);running.cancel()
+    assert not running.done()
+    with pytest.raises(asyncio.CancelledError):await running
+    assert time.monotonic()-start<1 and finished==[1]
+    assert worker.status()['active_jobs']==0
+    await worker.close()
+
+
+async def test_cancelled_source_drains_shielded_native_io_before_releasing_slot():
+    worker=ResearchWorker();entered=threading.Event();release=threading.Event();written=[]
+    def durable_work():entered.set();assert release.wait(3);written.append(True)
+    async def source():
+        native=asyncio.create_task(asyncio.to_thread(durable_work))
+        try:await asyncio.shield(native)
+        except asyncio.CancelledError:
+            await asyncio.gather(native,return_exceptions=True)
+            raise
+    running=asyncio.create_task(worker.run(source));await reached(entered);running.cancel();await asyncio.sleep(.01);running.cancel()
+    assert not running.done() and not written
+    release.set()
+    with pytest.raises(asyncio.CancelledError):await running
+    assert written==[True]
+    await worker.close()

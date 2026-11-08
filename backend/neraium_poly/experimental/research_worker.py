@@ -9,14 +9,16 @@ import threading
 from concurrent.futures import ThreadPoolExecutor
 
 
-async def _drain(future):
+async def _drain(future, *, cancel_once=None):
     """Cancellation cannot abandon a running archive operation or release a slot."""
-    interrupted=False
+    interrupted=False;requested=False
     while not future.done():
         try:
             await asyncio.shield(future)
         except asyncio.CancelledError:
             interrupted=True
+            if cancel_once is not None and not requested:
+                requested=True;cancel_once()
         except Exception:  # noqa: BLE001 - propagate the finished future below
             break
     if interrupted:
@@ -101,7 +103,10 @@ class ResearchWorker:
         if self._startup_error is not None:raise RuntimeError('research worker loop startup failed') from self._startup_error
 
     @staticmethod
-    async def _invoke(factory,args,kwargs):
+    async def _invoke(factory,args,kwargs,control):
+        control['task']=asyncio.current_task()
+        if control['requested']:
+            raise asyncio.CancelledError
         value=factory(*args,**kwargs)
         if not inspect.isawaitable(value):raise TypeError('research coroutine factory required')
         return await value
@@ -118,12 +123,21 @@ class ResearchWorker:
                 if self._closing or self._closed:raise RuntimeError('research worker closed')
                 await self._start()
                 if self._closing or self._closed:raise RuntimeError('research worker closed')
-                concurrent=asyncio.run_coroutine_threadsafe(self._invoke(factory,args,kwargs),self._loop)
+                control={'task':None,'requested':False}
+                def cancel_native():
+                    # Executed on the native loop, never concurrent.Future.cancel:
+                    # that Future becomes done only after task finally/IO drains.
+                    if control['requested']:return
+                    control['requested']=True
+                    task=control['task']
+                    if task is not None and not task.done():task.cancel()
+                concurrent=asyncio.run_coroutine_threadsafe(self._invoke(factory,args,kwargs,control),self._loop)
                 self._native_jobs.add(concurrent)
                 concurrent.add_done_callback(self._native_jobs.discard)
                 self._active=True;self._submitted+=1
                 try:
-                    return await _drain(asyncio.wrap_future(concurrent))
+                    return await _drain(asyncio.wrap_future(concurrent),
+                        cancel_once=lambda:self._loop.call_soon_threadsafe(cancel_native))
                 finally:
                     self._active=False;self._completed+=1
         finally:
