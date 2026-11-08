@@ -1,0 +1,218 @@
+{
+  "mode": "gather",
+  "studies": 41,
+  "serialized_total": 118943824,
+  "decoded_conservative_total": 194456150,
+  "max_decoded_study": 12494124,
+  "max_raw_study": 7134415,
+  "max_rss_kib": 252884,
+  "seconds": 1.3778338399715722,
+  "scope": "actual original source payload retention experiment, not sole attribution of service OOM",
+  "studies_sizes": [
+    {
+      "id": "000000000005:d103ad67e2009614d8d3089b786b47c5cc58c36dfbba33cdabef5a287837c6dd",
+      "serialized_bytes": 612656,
+      "decoded_conservative_bytes": 714997
+    },
+    {
+      "id": "000000000005:de23ae06ed46b481a31e5473c76d37c9dd2cef55ae1c84def1ff7ef04c719209",
+      "serialized_bytes": 7121908,
+      "decoded_conservative_bytes": 12470901
+    },
+    {
+      "id": "000000000006:f0f50bc1ee97af41f41efe2aef8e709b020d853e832e61b2770443e360afab0a",
+      "serialized_bytes": 7122147,
+      "decoded_conservative_bytes": 12471755
+    },
+    {
+      "id": "000000000007:3866175e104d3265fbd10d583999ffa82dc3dca30016306eef093d4dee2e380c",
+      "serialized_bytes": 4910925,
+      "decoded_conservative_bytes": 7615193
+    },
+    {
+      "id": "000000000007:94b1ce25a482d38d5e035788bd124deaba3c737cb3a5d8a3f054e794dc57a5b7",
+      "serialized_bytes": 430823,
+      "decoded_conservative_bytes": 481012
+    },
+    {
+      "id": "000000000008:263c3ba09ee0ac54739355a6bba9f0abe6b3eee31d9906a0eeada10543102faa",
+      "serialized_bytes": 4913002,
+      "decoded_conservative_bytes": 7635408
+    },
+    {
+      "id": "000000000013:370537dae3e07827d754b0e2162319efd982b04ee6c81253d457fb256c41f091",
+      "serialized_bytes": 4913103,
+      "decoded_conservative_bytes": 7628748
+    },
+    {
+      "id": "000000000013:a503685bed51b6a2f21ff38c49e4f2bebdc6300ec8ecfca693e2d5133f7964f7",
+      "serialized_bytes": 7134415,
+      "decoded_conservative_bytes": 12494124
+    },
+    {
+      "id": "000000000014:732bd15c1707a0f2f9e00b0849a19999f0ce1c653567193469a20555d5c58327",
+      "serialized_bytes": 7134401,
+      "decoded_conservative_bytes": 12492317
+    },
+    {
+      "id": "000000000014:de5f49e013183a586763ea4bff94ad9aba927e5ae46dafefa1c21fe2ef02fd8f",
+      "serialized_bytes": 4913432,
+      "decoded_conservative_bytes": 7631595
+    },
+    {
+      "id": "000000000015:369aeee780fe525bff4103c8c7adfbe8cf9c08c4d70b92f3afd2a40c3a5080a1",
+      "serialized_bytes": 430928,
+      "decoded_conservative_bytes": 471816
+    },
+    {
+      "id": "000000000015:e91f88652bfad14cc2a76dd6651d970b8dc504e7bc46f9438d039e47d84ae32b",
+      "serialized_bytes": 410568,
+      "decoded_conservative_bytes": 457813
+    },
+    {
+      "id": "000000000018:15045ca72d8583d6c6807aa3d4107d63cb87c79f7c8d3ce233689bad5b930f89",
+      "serialized_bytes": 387857,
+      "decoded_conservative_bytes": 429395
+    },
+    {
+      "id": "000000000020:7961039b9b762854d9d6ed4697fc04797f45d07df594a77db8bf678af17c0a05",
+      "serialized_bytes": 4935284,
+      "decoded_conservative_bytes": 7654305
+    },
+    {
+      "id": "000000000021:602f25754810d3b1ed404c1f815f4aa267791298feb712297df2c5af1f9220ae",
+      "serialized_bytes": 4935347,
+      "decoded_conservative_bytes": 7651400
+    },
+    {
+      "id": "000000000024:0be421c3183b63c320e0bd6622715554604b522a76e614b90a30019b49e7f981",
+      "serialized_bytes": 4935682,
+      "decoded_conservative_bytes": 7651031
+    },
+    {
+      "id": "000000000025:eaefac948375ddb787e2e39cdce805f980ae9e2b847ae356878ac29cd58a8192",
+      "serialized_bytes": 388104,
+      "decoded_conservative_bytes": 428175
+    },
+    {
+      "id": "000000000026:0a975f0a4d33c5a075ef734de3437c8bb9dabb9c986c49697c4d8e84ff2e2d6c",
+      "serialized_bytes": 7132694,
+      "decoded_conservative_bytes": 12492726
+    },
+    {
+      "id": "000000000028:062f3f25321ed647c48efa90380174d678b091e1ef176ebbd12c964e7009757e",
+      "serialized_bytes": 78970,
+      "decoded_conservative_bytes": 119802
+    },
+    {
+      "id": "000000000047:f80c28b5bb9bb14a19f3f0bdc8145e1c92e9e22d6542ba75949829215ad6bebf",
+      "serialized_bytes": 89601,
+      "decoded_conservative_bytes": 145482
+    },
+    {
+      "id": "000000000137:a5b3f3f577e6c6d38761aaefcf1573b96d1ae5727e729c9187616d296b01444e",
+      "serialized_bytes": 4920633,
+      "decoded_conservative_bytes": 7740202
+    },
+    {
+      "id": "000000000221:7aa39b79a6be851e539cbe4ec003175da670f0376a71a0b582eae4d5f3f0558d",
+      "serialized_bytes": 6915523,
+      "decoded_conservative_bytes": 11992219
+    },
+    {
+      "id": "000000000274:b091af64a8e32ebe77cff11fa71f17bcdd2907d6ac50cd40fff84ee24f03b228",
+      "serialized_bytes": 4941876,
+      "decoded_conservative_bytes": 7805359
+    },
+    {
+      "id": "000000000315:4d7ef825569e83462ff73bf5bef0a57fca20701402bddbd2c770c54822e08971",
+      "serialized_bytes": 4953075,
+      "decoded_conservative_bytes": 7820750
+    },
+    {
+      "id": "000000000346:07048ada170ed10e34c691a6cfcf77ed767502b2cfd75d8464b1af9c2c68dd25",
+      "serialized_bytes": 6916426,
+      "decoded_conservative_bytes": 11999732
+    },
+    {
+      "id": "000000000401:c068dabe20dc3b6bbeeb3689791f7ba6b8a3ebdd7f600f9cc32896d0ae0cf4eb",
+      "serialized_bytes": 4953740,
+      "decoded_conservative_bytes": 7826257
+    },
+    {
+      "id": "000000000437:d21fae3d4aa4623d503d01ae1aa15124ccdfee7cd9438223504ffb13ac5df254",
+      "serialized_bytes": 4953900,
+      "decoded_conservative_bytes": 7824041
+    },
+    {
+      "id": "000000000533:5b3a28268a19279b11b9745a61fe0df69f6b632c0450f463aa2f6af2efb7fdb2",
+      "serialized_bytes": 4954446,
+      "decoded_conservative_bytes": 7825063
+    },
+    {
+      "id": "14fbb28536e3adb14a97a15f551d00a0420c3758fc15da3d56d608be657cd99e",
+      "serialized_bytes": 271286,
+      "decoded_conservative_bytes": 328298
+    },
+    {
+      "id": "237d1f7d0d8b067d698330caad29eb5cd2d7397afc0dbe6696097f58fade01ef",
+      "serialized_bytes": 39961,
+      "decoded_conservative_bytes": 142048
+    },
+    {
+      "id": "42c58f078fe9d6cdbae397cc70b62579922ea20dfabd19c7802b5e4aa260670e",
+      "serialized_bytes": 238647,
+      "decoded_conservative_bytes": 351481
+    },
+    {
+      "id": "48e25312e1d1a9c7430a4c23110c290dd189b57c957c1eb4c214895d6d5bddc1",
+      "serialized_bytes": 237423,
+      "decoded_conservative_bytes": 363533
+    },
+    {
+      "id": "5e13f2a90aa3e406e29b202ce742983470ae44d66dab403519637771fc1dbb94",
+      "serialized_bytes": 202361,
+      "decoded_conservative_bytes": 227832
+    },
+    {
+      "id": "621c538d48aeca25cc3e776f7bb8babf92a4cf3b4eb3a8a31d9e30e2d49c1c41",
+      "serialized_bytes": 206679,
+      "decoded_conservative_bytes": 239521
+    },
+    {
+      "id": "6c9e793336909baad519f3b1b32bcc5ca27f982f6e82ad618c8cb07779ec34b0",
+      "serialized_bytes": 107814,
+      "decoded_conservative_bytes": 414096
+    },
+    {
+      "id": "8bb21a68766eb2595c5bc9f2a2ba200f524306f25d7a06e33419a98fa207059a",
+      "serialized_bytes": 39524,
+      "decoded_conservative_bytes": 145738
+    },
+    {
+      "id": "a4c81f0cb4b3910ec3f507e12820b7d9b49cf118a1ee8f2220755cf1e814e5f6",
+      "serialized_bytes": 377175,
+      "decoded_conservative_bytes": 908160
+    },
+    {
+      "id": "a5e5b25f5effd2f8e7ceaf365c3a6656c9a8041c9abb166dfde40a346e506ebe",
+      "serialized_bytes": 38215,
+      "decoded_conservative_bytes": 141029
+    },
+    {
+      "id": "b21c44b7d541de09932ef4683cf2f09382a04e0dee431e973dd98f8352293520",
+      "serialized_bytes": 37871,
+      "decoded_conservative_bytes": 143106
+    },
+    {
+      "id": "ce13a8128e26aae57a384f1a11f21e015f1ba05492ba26f191e07c3ff0b5d976",
+      "serialized_bytes": 202927,
+      "decoded_conservative_bytes": 230820
+    },
+    {
+      "id": "e6b03a2feaa2c562066788ff6120a50e032bfb8552f79d9d43a982d29202ab6d",
+      "serialized_bytes": 502475,
+      "decoded_conservative_bytes": 848870
+    }
+  ]
+}

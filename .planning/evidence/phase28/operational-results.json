@@ -1,0 +1,578 @@
+{
+  "at": "2026-11-08T13:11:14.926535+00:00",
+  "source_commit": "96b2b9f3425ef6aa3dd8244a08478662aec25c6c",
+  "observation": {
+    "readiness_attempts": [
+      {
+        "at": "2026-11-08T13:04:27.109158+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:04:32.116938+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:04:37.125662+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:04:42.133407+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:04:47.141175+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:04:52.148238+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:04:57.156042+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:05:02.163787+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:05:07.171515+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:05:12.179317+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:05:17.187121+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:05:22.195056+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:05:27.202848+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:05:32.210650+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:05:37.218494+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:05:42.226192+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:05:47.233957+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:05:52.241652+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:05:57.249363+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:06:02.257034+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:06:07.264779+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:06:12.272519+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:06:17.280420+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:06:22.288220+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:06:27.295249+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:06:32.303113+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:06:37.311612+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:06:42.319383+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:06:47.323570+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:06:52.332215+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:06:57.340272+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:07:02.348615+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:07:07.360969+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:07:12.370914+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:07:17.382297+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:07:22.390619+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:07:27.398991+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:07:32.408255+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:07:37.416480+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:07:42.421219+00:00",
+        "status": "ConnectError"
+      },
+      {
+        "at": "2026-11-08T13:07:49.917041+00:00",
+        "status": "initial_recovery_pending"
+      },
+      {
+        "at": "2026-11-08T13:07:55.270551+00:00",
+        "status": "initial_recovery_pending"
+      },
+      {
+        "at": "2026-11-08T13:08:00.599379+00:00",
+        "status": "initial_recovery_pending"
+      }
+    ],
+    "observed_seconds": 69.269649,
+    "samples": 3,
+    "scope": "one bounded post-change observation, not proof of indefinite operation",
+    "services": "MainPID=3476292\nNRestarts=0\nCPUQuotaPerSecUSec=1s\nMemoryMax=1073741824\nActiveState=active\n\nMainPID=3476294\nNRestarts=0\nCPUQuotaPerSecUSec=1s\nMemoryMax=2147483648\nActiveState=active\n"
+  },
+  "markets": 409,
+  "fresh_native_books_15s": [
+    52,
+    178,
+    219
+  ],
+  "native_source_examples": [
+    {
+      "id": "3c0387b0c52684049c6224271874d647e26ef6473fee93ad19b3a81b8c394f63",
+      "market_id": "1005345",
+      "token_id": "114099001942098296281785270417766246251997611881489147872695661760896453988741",
+      "timestamp": "2026-11-08T13:09:00.664000Z",
+      "available_at": "2026-11-08T13:09:03.024522Z"
+    },
+    {
+      "id": "657b3dd612b319b2d1b3d55914b4c258af97c1fd57ea07e50c7fd180df5f5915",
+      "market_id": "1005345",
+      "token_id": "42348210194000793656879816654977737197741719386554345184776805604525622774692",
+      "timestamp": "2026-11-08T13:09:00.664000Z",
+      "available_at": "2026-11-08T13:09:03.024522Z"
+    }
+  ],
+  "services": {
+    "collector": {
+      "status": "ok",
+      "paper_trading": true,
+      "live_trading_enabled": false,
+      "mode": "live_market_paper",
+      "trading_status": "validation_blocked",
+      "last_ingestion_at": "2026-11-08T13:09:07.250960+00:00",
+      "last_ingestion_age_seconds": 0.006092,
+      "last_error": null,
+      "ledger_consistent": true,
+      "timestamp": "2026-11-08T13:09:07.257052+00:00"
+    },
+    "experimental": {
+      "status": "ok",
+      "account_id": "experimental-paper",
+      "validation_status": "unvalidated",
+      "paper_trading": true,
+      "live_trading_enabled": false,
+      "last_ingestion_at": "2026-11-08T13:09:13.003750+00:00",
+      "last_ingestion_age_seconds": 1.037457,
+      "last_error": null,
+      "fee_error": null,
+      "timestamp": "2026-11-08T13:09:14.041207+00:00"
+    }
+  },
+  "accounts": {
+    "collector": {
+      "cash": 500.0,
+      "cumulative_simulated_pnl": 0.0,
+      "new_orders": 0,
+      "new_fills": 0,
+      "open_positions": null,
+      "emergency_stop": false
+    },
+    "experimental": {
+      "cash": 496.11522059829053,
+      "cumulative_simulated_pnl": -3.8847794017094657,
+      "new_orders": 0,
+      "new_fills": 0,
+      "open_positions": 0,
+      "emergency_stop": false,
+      "cumulative_orders": 13,
+      "cumulative_fills": 10
+    }
+  },
+  "archives": {
+    "collector": {
+      "usage_bytes": 19916924725,
+      "usage_gib": 18.54908161330968,
+      "budget_gib": 150.0,
+      "free_gib": 426.6070213317871,
+      "floor_gib": 100.0,
+      "published_recent_growth_bytes_per_second": 170900.3103528152,
+      "phase_average_growth_bytes_per_second": 53140.16422284921,
+      "phase_average_scope": "whole development interval including restart downtime; not steady-state prediction",
+      "conditional_runway_days_recent_rate": 9.55887760322779,
+      "conditional_runway_days_phase_average": 30.741627785820462,
+      "runway_warning": "conditional only; shared filesystem pressure, collection regimes and retain-all-originals policy can shorten it",
+      "segments": 874,
+      "compressed_segments": 872,
+      "health": "ok",
+      "original_deletions": false
+    },
+    "experimental": {
+      "usage_bytes": 12600717278,
+      "usage_gib": 11.735332457348704,
+      "budget_gib": 150.0,
+      "free_gib": 426.60718154907227,
+      "floor_gib": 100.0,
+      "published_recent_growth_bytes_per_second": 51864.52342629275,
+      "phase_average_growth_bytes_per_second": 113612.52145532778,
+      "phase_average_scope": "whole development interval including restart downtime; not steady-state prediction",
+      "conditional_runway_days_recent_rate": 33.1304206119049,
+      "conditional_runway_days_phase_average": 15.124155805526275,
+      "runway_warning": "conditional only; shared filesystem pressure, collection regimes and retain-all-originals policy can shorten it",
+      "segments": 1914,
+      "compressed_segments": 1912,
+      "health": "ok",
+      "original_deletions": false
+    }
+  },
+  "research": {
+    "as_of": "2026-11-08T13:09:02.155772+00:00",
+    "counts": {
+      "findings_evaluated": 116,
+      "qualified_research_findings": 0,
+      "modeled_positive_gross_scenarios": 0,
+      "execution_authorized": 0,
+      "reviewed_canonical_groups": 40,
+      "statistically_independent_resolved_events": 0
+    },
+    "totals": {
+      "evaluations": 2,
+      "finding_rows": 232
+    },
+    "rejections": {
+      "forecast_outside_frozen_300_second_decision_window": 116,
+      "supported_contract_payout_semantics_required": 34,
+      "current_executable_book_missing": 60,
+      "stale_book": 2,
+      "current_exact_market_metadata_missing": 40,
+      "forecast_event_decision_horizon_ended": 30
+    },
+    "source_deferred": {
+      "outside_original_budget": 0,
+      "decoded_source_budget": 0
+    },
+    "forecast_refresh_rejections": {
+      "payout_current_market_or_book_missing": 1
+    },
+    "window_forecast_records_available": 0,
+    "sii": {
+      "qualified_pairs": 0,
+      "incremental_value": null,
+      "reason": "no independent causal feature/outcome-pair proof supplied; batch partitions are not experiments"
+    },
+    "shadow": {
+      "status": "research_only",
+      "enrollment_id": "12f54431fc04fea4bd7adb8c111ab1efc1b1070f820a032852a4eaffe8e28c80",
+      "last_at": "2026-11-08T13:09:12.707898+00:00",
+      "capital_scope": "single hypothetical500USD shared pool, not certified/experimental account capital",
+      "hypothetical_cash": 500.0,
+      "capital_reserved": 0,
+      "positions": 0,
+      "position_quantity": 0,
+      "exposure": 0.0,
+      "capital_utilization": 0.0,
+      "orders_attempted": 0,
+      "pending_orders": 0,
+      "hypothetical_fills": 0,
+      "canceled": 0,
+      "expired": 0,
+      "realized_simulated_pnl": null,
+      "unrealized_simulated_pnl": null,
+      "drawdown": null,
+      "mark_status": "no_filled_positions",
+      "verified_settled_parent_events": 0,
+      "statistically_independent_events": null,
+      "settlements": 0,
+      "suspended": false,
+      "suspension_reason": null,
+      "strategies": {
+        "small_edge": {
+          "orders": 0,
+          "fills": 0,
+          "settlements": 0,
+          "realized_pnl": null,
+          "suspended": false,
+          "positions": 0,
+          "reserved": 0,
+          "exposure": 0
+        },
+        "high_conviction": {
+          "orders": 0,
+          "fills": 0,
+          "settlements": 0,
+          "realized_pnl": null,
+          "suspended": false,
+          "positions": 0,
+          "reserved": 0,
+          "exposure": 0
+        },
+        "cross_market": {
+          "orders": 0,
+          "fills": 0,
+          "settlements": 0,
+          "realized_pnl": null,
+          "suspended": false,
+          "positions": 0,
+          "reserved": 0,
+          "exposure": 0
+        },
+        "ensemble": {
+          "orders": 0,
+          "fills": 0,
+          "settlements": 0,
+          "realized_pnl": null,
+          "suspended": false,
+          "positions": 0,
+          "reserved": 0,
+          "exposure": 0
+        }
+      },
+      "rejections": {
+        "strategy_evidence_not_eligible": 928
+      },
+      "runtime_error": null,
+      "research_only": true,
+      "trading_authority": false,
+      "certification_authority": false,
+      "actual_account_access": false
+    }
+  },
+  "indexed_forecasts": {
+    "forecasts": 116,
+    "individually_verified_forecasts": 0,
+    "pending_forecasts": 116,
+    "reviewed_independent_groups": 0
+  },
+  "qualified_certification_events": {
+    "training": 0,
+    "heldout": 0,
+    "required_each": 100
+  },
+  "memory": {
+    "collector": {
+      "schema_version": "phase28-memory-sample-v1",
+      "process_id": 3476292,
+      "proc_source": "/proc/self",
+      "status": "ok",
+      "stage": "collector_cycle_start",
+      "sampled_at": "2026-11-08T13:08:24.722721+00:00",
+      "interval_since_previous_seconds": 10.018364110961556,
+      "rss_bytes": 227303424,
+      "vm_hwm_bytes": 314773504,
+      "anon_rss_bytes": 206979072,
+      "file_rss_bytes": 20324352,
+      "shmem_rss_bytes": 0,
+      "vm_size_bytes": 692019200,
+      "threads": 4,
+      "minor_page_faults": 3264286,
+      "major_page_faults": 1,
+      "user_cpu_ticks": 15601,
+      "system_cpu_ticks": 2722,
+      "allocated_blocks": 749316,
+      "gc_stats": [
+        {
+          "collections": 1023,
+          "collected": 7625,
+          "uncollectable": 0
+        },
+        {
+          "collections": 93,
+          "collected": 967,
+          "uncollectable": 0
+        },
+        {
+          "collections": 7,
+          "collected": 81,
+          "uncollectable": 0
+        }
+      ],
+      "allocator": {
+        "status": "available",
+        "provider": "glibc 2.39",
+        "arena": 125530112,
+        "ordblks": 904,
+        "smblks": 16,
+        "hblks": 3,
+        "hblkhd": 1363968,
+        "usmblks": 0,
+        "fsmblks": 1120,
+        "uordblks": 94447296,
+        "fordblks": 31082816,
+        "keepcost": 11063648,
+        "scope": "GNU allocator counters, not independently measured live heap or total RSS"
+      },
+      "rss_delta_bytes": 4997120,
+      "allocated_blocks_delta": 49074,
+      "peak_observed_rss_bytes": 227303424,
+      "errors": [],
+      "scope": "read-only observation; deltas since prior accepted sample are not causal attribution"
+    },
+    "experimental": {
+      "schema_version": "phase28-memory-sample-v1",
+      "process_id": 3476294,
+      "proc_source": "/proc/self",
+      "status": "ok",
+      "stage": "experimental_cycle_start",
+      "sampled_at": "2026-11-08T13:09:04.778558+00:00",
+      "interval_since_previous_seconds": 7.38051791395992,
+      "rss_bytes": 520855552,
+      "vm_hwm_bytes": 520855552,
+      "anon_rss_bytes": 500092928,
+      "file_rss_bytes": 20762624,
+      "shmem_rss_bytes": 0,
+      "vm_size_bytes": 846213120,
+      "threads": 6,
+      "minor_page_faults": 582921,
+      "major_page_faults": 0,
+      "user_cpu_ticks": 11906,
+      "system_cpu_ticks": 1804,
+      "allocated_blocks": 1411581,
+      "gc_stats": [
+        {
+          "collections": 13518,
+          "collected": 9976,
+          "uncollectable": 0
+        },
+        {
+          "collections": 1228,
+          "collected": 10486,
+          "uncollectable": 0
+        },
+        {
+          "collections": 67,
+          "collected": 4374,
+          "uncollectable": 0
+        }
+      ],
+      "allocator": {
+        "status": "available",
+        "provider": "glibc 2.39",
+        "arena": 382369792,
+        "ordblks": 1959,
+        "smblks": 1,
+        "hblks": 2,
+        "hblkhd": 401408,
+        "usmblks": 0,
+        "fsmblks": 48,
+        "uordblks": 126128224,
+        "fordblks": 256241568,
+        "keepcost": 35794416,
+        "scope": "GNU allocator counters, not independently measured live heap or total RSS"
+      },
+      "rss_delta_bytes": 64589824,
+      "allocated_blocks_delta": 377387,
+      "peak_observed_rss_bytes": 520855552,
+      "errors": [],
+      "scope": "read-only observation; deltas since prior accepted sample are not causal attribution"
+    },
+    "interpretation": "bounded low RSS after restart does not prove elimination of long-run OOM; streaming source memory reduction measured separately"
+  },
+  "websocket": {
+    "messages": 44391,
+    "native_book_frames": 194,
+    "native_delta_frames": 44094,
+    "native_books_delivered": 66673,
+    "rest_books": 513,
+    "reconnects": 0,
+    "gaps": 21171,
+    "out_of_order": 539,
+    "queue_overflows": 0,
+    "queue_byte_overflows": 0,
+    "queue_peak_bytes": 48014,
+    "largest_frame_bytes": 4627,
+    "oversized_frames": 0,
+    "book_level_budget_rejections": 0,
+    "invalid_frames": 0,
+    "callbacks_failed": 0,
+    "invalidations": 21173,
+    "resnapshot_failures": 0,
+    "gap_missing_baseline": 21079,
+    "gap_source_time": 74,
+    "gap_top_integrity": 12,
+    "gap_invalid_delta": 6,
+    "stale_recovery_baselines": 4,
+    "ws_connected": true,
+    "subscribed_tokens": 818,
+    "cached_books": 399,
+    "resolved_tokens_withheld": 0,
+    "gap_tokens_withheld": 299,
+    "fresh_books": 230,
+    "queue_depth": 0,
+    "queue_retained_bytes": 0,
+    "queue_budget_bytes": 8388608,
+    "queue_byte_scope": "conservative Python payload charge including in-flight consumer; decoder/socket buffers separate",
+    "websocket_max_queue": 1,
+    "websocket_max_frame_bytes": 16777216,
+    "cached_book_levels": 25489,
+    "max_cached_book_levels": 100000,
+    "max_levels_per_book": 4096,
+    "resnapshot_pending": 303,
+    "connection_generation": 1,
+    "last_message_at": "2026-11-08T13:09:07.269162+00:00",
+    "last_gap_at": "2026-11-08T13:09:07.268141+00:00",
+    "http_requests": 535,
+    "http_rate_limits": 0,
+    "http_peak_inflight": 2,
+    "rate_requests_per_second": 8.0
+  }
+}

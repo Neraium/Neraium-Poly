@@ -1,0 +1,54 @@
+{
+  "at": "2026-11-08T13:05:36.273204+00:00",
+  "source_commit": "96b2b9f3425ef6aa3dd8244a08478662aec25c6c",
+  "backend": {
+    "name": "pytest",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "tests": "1846",
+    "time": "159.725",
+    "timestamp": "2026-11-08T12:55:58.016624+00:00",
+    "hostname": "ip-172-31-67-49"
+  },
+  "ruff": "passed full backend/tests",
+  "dashboard_build": "passed",
+  "browser": {
+    "passed": 5,
+    "initial_infrastructure_failure": "missing Chromium; legitimate browser installation repaired before successful retry"
+  },
+  "python_dependency_audit": "no known vulnerabilities",
+  "npm_dependency_audit": "zero vulnerabilities",
+  "parallelism": {
+    "peak_active_agents_including_coordinator": 4,
+    "isolated_writing_worktrees": 3,
+    "backend_test_processes": 1,
+    "browser_workers": 1,
+    "blas_threads_per_research_process": 1,
+    "memory_comparison_workers": "two separate sequential subprocesses, not parallel"
+  },
+  "source_archives_deleted": false,
+  "certified_threshold_usd_per_share": 0.03,
+  "quotas_gib": {
+    "collector": 150,
+    "experimental": 150,
+    "filesystem_floor": 100
+  },
+  "account_integrity": "all account DB quick checks and historical audit prefixes passed",
+  "forecast_integrity": "complete chains and old journal prefixes preserved",
+  "archive_restoration": "one actual sealed segment per service, independent gzip/raw SHA comparison passed",
+  "limitations": [
+    "Unresolved forecasts do not establish independently resolved skill",
+    "Effective entry/settlement fee assumptions are not verified venue costs",
+    "No shadow execution authority from research registration",
+    "The memory retention experiment does not identify the sole cause of recurring collector OOMs"
+  ],
+  "ci": {
+    "run_id": 42483185964,
+    "source_commit": "96b2b9f3425ef6aa3dd8244a08478662aec25c6c",
+    "backend": "success",
+    "dashboard": "success",
+    "conclusion": "success",
+    "url": "https://github.com/Neraium/Neraium-Poly/actions/runs/42483185964"
+  }
+}
