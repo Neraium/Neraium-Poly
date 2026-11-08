@@ -6,6 +6,7 @@ archive checks. No financial account or strategy authority is provided here.
 import asyncio
 import inspect
 import threading
+from concurrent.futures import ThreadPoolExecutor
 
 
 async def _drain(future):
@@ -51,6 +52,7 @@ class ResearchWorker:
         try:
             self._loop=asyncio.new_event_loop()
             asyncio.set_event_loop(self._loop)
+            self._loop.set_default_executor(ThreadPoolExecutor(max_workers=2, thread_name_prefix="research-proof"))
         except BaseException as error:  # noqa: BLE001 - report startup failure to the owning caller
             self._startup_error=error
             self._ready.set()
@@ -125,5 +127,5 @@ class ResearchWorker:
         return {'active_jobs':int(self._active),'maximum_submitted_jobs':1,'pending_calls':self._pending,
             'maximum_pending_calls':self._max_pending,'submitted':self._submitted,
             'completed':self._completed,'closing':self._closing,'closed':self._closed,
-            'worker_alive':self._thread.is_alive() if self._thread else False,
+            'worker_alive':self._thread.is_alive() if self._thread else False,'maximum_proof_threads':2,
             'research_only':True,'trading_authority':False,'certification_authority':False}

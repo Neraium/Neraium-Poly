@@ -211,10 +211,11 @@ class ExperimentalRuntime:
                 from neraium_poly.research.phase23.continuous import ChallengerResearch
                 from neraium_poly.research.phase23.operations import ContinuousCompetition
                 from neraium_poly.research.phase23.outcomes import ChallengerOutcomes
+                from neraium_poly.research.phase33.competition_storage import CompetitionStorageAdapter
 
                 try:
                     self.phase23 = ChallengerResearch(self.events, clock=self.clock, can_write=self._budget_ok)
-                    self.phase23_competition = ContinuousCompetition(self.events, clock=self.clock, can_write=self._budget_ok, evidence_root=config.data_dir/"phase23-resolution-evidence")
+                    self.phase23_competition = ContinuousCompetition(CompetitionStorageAdapter(self.events, clock=self.clock, can_write=self._budget_ok), clock=self.clock, can_write=self._budget_ok, evidence_root=config.data_dir/"phase23-resolution-evidence")
                     self.phase23_outcomes = ChallengerOutcomes(self.events, config.data_dir/"phase23-resolution-evidence", clock=self.clock, can_write=self._budget_ok)
                 except Exception as error:
                     self.phase23 = self.phase23_competition = self.phase23_outcomes = None
@@ -513,6 +514,40 @@ class ExperimentalRuntime:
                 raise asyncio.CancelledError
             return worker.result()
 
+    async def _async_budget_ok(self):
+        return await self._sync_io(self._budget_ok)
+
+    def _observe_phase20(self):
+        originals = self.events.latest("EventProbabilityStudy", limit=1)
+        if originals:
+            self.phase20.observe(originals[0])
+
+    async def _research_io(self, factory, *args, **kwargs):
+        if self.stopping:
+            raise RuntimeError('research scheduling stopped')
+        worker = getattr(self, '_research_worker', None)
+        if worker is None:
+            from neraium_poly.experimental.research_worker import ResearchWorker
+            self._research_worker = worker = ResearchWorker()
+        return await worker.run(factory, *args, **kwargs)
+
+    def _select_weather_research(self, frame):
+        from neraium_poly.research.phase14.relationships import digest
+        from neraium_poly.research.phase34.selection import WeatherInputSelection, prepare_weather_frame
+
+        selected, report = prepare_weather_frame(frame, as_of=self.clock())
+        if report['preferred_tokens'] or report['deferred_tokens']:
+            if not self._budget_ok():
+                raise ValueError('weather_selection_archive_backpressure')
+            now = self.clock()
+            self.events.append(WeatherInputSelection(
+                id=digest(['phase34-weather-input-selection', report]), timestamp=now, available_at=now,
+                source='neraium-poly/weather-source-selection/v34',
+                **{k:report[k] for k in ('source_frame_id','selected_frame_id','source_frame_sha256',
+                    'selected_frame_sha256','policy_sha256','preferred_tokens','deferred_tokens','rejection_counts')}))
+        self.weather_input_selection = report
+        return selected
+
     async def _cycle_impl(self):
         if not await self._sync_io(self._cycle_preflight, cycle=True):
             if self.event_intelligence is not None and not self.config.archive_management_enabled:
@@ -638,6 +673,9 @@ class ExperimentalRuntime:
                 self.events.append(evidence)
             # Reconciliation may follow slow source validation; never advance
             # pending fills using the pre-archive decision clock.
+            if self._admission_stopping():
+                self._cancel_and_checkpoint(self.clock())
+                return
             self.account.advance(books, now=self.clock(), fees=selected.fees)
             rejected = Counter()
             examples = {}
@@ -879,7 +917,7 @@ class ExperimentalRuntime:
                 not self.config.archive_management_enabled or await self._sync_io(self._budget_ok)
             ):
                 try:
-                    await self.event_intelligence.resolve_pending()
+                    await self._research_io(self.event_intelligence.resolve_pending)
                 except Exception as error:
                     self.event_intelligence.resolution_status["last_error"] = type(error).__name__
                     log.exception("event_resolution_withheld")
@@ -900,16 +938,18 @@ class ExperimentalRuntime:
             frame = self.last_frame
             if family == "phase25":
                 async with self._research_source_lock:
-                    frame = await self.phase25_universe.frame(frame)
+                    frame = await self._research_io(self.phase25_universe.frame, frame)
                 if getattr(self, "phase26_inputs", None) is not None:
                     raw = self.last_frame.model_dump(mode="json") if hasattr(self.last_frame, "model_dump") else self.last_frame
                     last = engine.state.get("last_attempt_at")
-                    from datetime import datetime
                     due = not last or (self.clock()-datetime.fromisoformat(last)).total_seconds() >= 300
                     frame = await self.phase26_inputs.prepare(frame, base_tokens={m["token_id"] for m in raw["markets"]}, wait=due, forecast_tokens=getattr(self.phase28,"forecast_tokens",()))
+                last = engine.state.get("last_attempt_at")
+                if not last or (self.clock()-datetime.fromisoformat(last)).total_seconds() >= 300:
+                    frame = await self._sync_io(self._select_weather_research, frame)
             async with self._research_source_lock:
-                await engine.step(frame)
-                await outcomes.step()
+                await self._research_io(engine.step, frame)
+                await self._research_io(outcomes.step)
             async with self._research_report_lock:
                 if getattr(self, "phase26_enabled", False):
                     if self.phase26_index is None or not await self._sync_io(self._budget_ok):
@@ -1000,9 +1040,9 @@ class ExperimentalRuntime:
                 await asyncio.sleep(1)
 
     async def _research_fee_loop(self, should_exit):
+        from neraium_poly.experimental.research_fee_cache import AsyncBudgetResearchFeeCache
         from neraium_poly.research.phase28.inputs import current_frame
-        from neraium_poly.research.phase29.costs import ResearchFeeCache
-        self.research_fees=ResearchFeeCache(self.events,self.fee_adapter,clock=self.clock,can_write=self._budget_ok)
+        self.research_fees=AsyncBudgetResearchFeeCache(self.events,self.fee_adapter,clock=self.clock,can_write=self._async_budget_ok)
         while not self.stopping and not should_exit():
             if getattr(self,"phase28",None) is not None and self.last_frame is not None:
                 try:
@@ -1021,7 +1061,7 @@ class ExperimentalRuntime:
             scoring=getattr(self,"official_event_scores",None)
             if scoring is not None:
                 try:
-                    await scoring.step()
+                    await self._research_io(scoring.step)
                 except (ValueError,TypeError,KeyError,OSError) as error:
                     scoring.error=f"{type(error).__name__}:{str(error)[:160]}"
                     log.exception("official_event_research_withheld")
@@ -1084,21 +1124,19 @@ class ExperimentalRuntime:
                 async with self._research_source_lock:
                     if self.phase18 is not None and self.last_frame is not None and await self._sync_io(self._budget_ok):
                         try:
-                            committed = await self.phase18.step(self.last_frame)
+                            committed = await self._research_io(self.phase18.step, self.last_frame)
                             self.phase18_error = None
                             if committed and self.phase20 is not None:
                                 try:
-                                    originals = self.events.latest("EventProbabilityStudy", limit=1)
-                                    if originals:
-                                        self.phase20.observe(originals[0])
+                                    await self._sync_io(self._observe_phase20)
                                     self.phase20_error = None
                                 except Exception as error:
                                     self.phase20_error = f"{type(error).__name__}:{str(error)[:160]}"
                                     log.exception("phase20_pairing_withheld")
-                            await self.phase18.resolve_pending(self.config.data_dir / "phase18-resolution-evidence")
+                            await self._research_io(self.phase18.resolve_pending, self.config.data_dir / "phase18-resolution-evidence")
                             if self.phase21 is not None:
                                 try:
-                                    await self.phase21.step(self.phase18.state["pending"])
+                                    await self._research_io(self.phase21.step, self.phase18.state["pending"])
                                     self.phase21_error = None
                                 except Exception as error:
                                     self.phase21_error = f"{type(error).__name__}:{str(error)[:160]}"
@@ -1108,8 +1146,8 @@ class ExperimentalRuntime:
                             log.exception("phase18_event_research_withheld")
                     if self.phase23 is not None and self.last_frame is not None and await self._sync_io(self._budget_ok):
                         try:
-                            await self.phase23.step(self.last_frame)
-                            await self.phase23_outcomes.step()
+                            await self._research_io(self.phase23.step, self.last_frame)
+                            await self._research_io(self.phase23_outcomes.step)
                             await asyncio.to_thread(self.phase23_competition.step, self.last_frame)
                             self.phase23_error = None
                         except Exception as error:
@@ -1233,6 +1271,8 @@ class ExperimentalRuntime:
         state["domain_scorecard"] = self.domain_scorecard.status() if getattr(self,"domain_scorecard",None) else {"status":"disabled"}
         state["official_event_research"] = self.official_event_scores.status() if getattr(self,"official_event_scores",None) else {"status":"disabled"}
         state["research_costs"] = self.research_fees.status() if getattr(self,"research_fees",None) else None
+        state["weather_input_selection"] = getattr(self, "weather_input_selection", {"status":"not_yet_evaluated","trading_authority":False})
+        state["research_io"] = self._research_worker.status() if getattr(self, "_research_worker", None) else {"status":"not_started","trading_authority":False}
         state["memory"] = self.memory_sampler.status() if getattr(self,"memory_sampler",None) else None
         return state
 
@@ -1314,12 +1354,16 @@ class ExperimentalRuntime:
     async def _close_resources(self):
         await self._finish_cycle()
         await self._sync_io(self._cancel_and_checkpoint, self.clock())
+        if getattr(self, "_research_worker", None) is not None:
+            await self._research_worker.close()
         if getattr(self, "phase26_inputs", None) is not None:
             await self.phase26_inputs.close()
         if getattr(self, "phase26_index", None) is not None:
             self.phase26_index.close()
         await self.feed.close()
         await self.fee_adapter.close()
+        # Late outcome/source work is drained before the final recovery image.
+        await self._sync_io(self._cancel_and_checkpoint, self.clock())
         try:
             await self._sync_io(self._close_databases)
         finally:
