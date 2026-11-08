@@ -1,5 +1,9 @@
 # Phase27
-Status:active
+Status:complete_with_reported_research_limitations
 Coordinator checkout/home/ubuntu/Neraium-Poly, branchphase27-intelligence, baselineb1832d4, contractHEAD9619c40. Three isolated nativeCitadelwritingworktrees/fourconcurrentagents. FindingsA, forecastB, memoryC; rootcontinuousrecords/runtime/CLI/monitor. No modelsource/risk/accounts/quotas/stops changes.150/150GiBquota+100GiBfloor;1CPU/1GiBcollector and1CPU/2GiBexperimental unchanged.
 Exit: authentic source-bound findings and prospective enrollment, causal heldout evaluation/negativefindings preserved; measured memoryretention fix withgap invariants; no unauthorizedtrades/certification; targetedtests + one final relevant regression/CI + boundedlive preservation check, sourcepush andhandoff.
 Checkpoint: initialrootsourcecache/appendonly findings recorder implemented; targetedcontinuous5passed, narrowmonitorrepair pendingfinalregression. Workersfinishing; memorycommit e47ac9ab readyreview. AgentB authenticlast252SPX split126/63/63, rawweekdayworse, calibrationselectsbaselineweight0 -> noedge. Currentrootdirty integration preserved. Next review/cherry-pick workers, integrate prospective simpler baseline, finaltests/live.
+
+Checkpoint: main/source8b282b3fa131de3dcb05ab805a8f3766cee4bc78 pushed; CI42448131286 success(final source). Local1746regression+6changedframefocused+5browser/build/audits/scenario passed. Authentic frame64findings/26nativebook bindings losslessly replayed,0qualified. Both affectedservices restarting for newfindings/memorycode, resourcecapsunchanged. Nextoneboundedobservation and account/journal/catalog verification, storageforecast, finalhandoff.
+
+Completed: source8b282b3 onmain/CI42448131286success; frame-preserving economicfindings live65rows,oneconditionalSPXglobalpayoutforecast/oneexistingparent;0qualifiedopps/neworders/fills/verifiedoutcomes. Negativeweekdayholdout documented. Actualdecodedframe retention repaired, priorOOMattribution unknown; limitsunchanged. Sourcepreservation checkspassed,150/150GiB+100floor. Handoff.phase27.md anddelivery.json contain results/nextactions; originaluntrackedrecoveryevidence untouched.

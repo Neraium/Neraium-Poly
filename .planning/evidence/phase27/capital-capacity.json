@@ -1,0 +1,48 @@
+{
+  "scope": "authentic as-recorded prospective SPX conditional expected payout versus its contemporaneous native book; displayed depth is not guaranteed execution",
+  "forecast_id": "78a9335d36b2e35e178530d00c19fef531e5b56ef8d5bfff7574e9709b224791",
+  "event_id": "1324979",
+  "market_id": "6747198",
+  "forecast_at": "2026-11-08T04:52:57.084671+00:00",
+  "book_at": "2026-11-08T04:52:55.763000Z",
+  "expected_payout": 0.5236686390532544,
+  "best_ask": 0.52,
+  "best_bid": 0.5,
+  "gross_modeled_payout_gap": 0.00366863905325443,
+  "existing_minimum_net_edge": 0.03,
+  "model_point_gap_below_required_net_threshold_even_before_costs": true,
+  "all_displayed_ask_notional": 978.675,
+  "best_ask_displayed_notional": 52.0,
+  "fees": null,
+  "qualified_after_cost_edge": null,
+  "profitable_capacity": null,
+  "capacity": {
+    "schema_version": "phase18-capacity-v1",
+    "status": "withheld",
+    "reasons": [
+      "opportunity_exact_book_binding_required"
+    ],
+    "scenarios": [],
+    "hypothetical_capital_only": true,
+    "accounts_created": 0,
+    "trading_authority": false,
+    "certification_authority": false,
+    "actual_fill": false,
+    "net_pnl": null,
+    "net_return": null,
+    "drawdown": null,
+    "capital_turnover": null,
+    "risk_adjusted_performance": null,
+    "confidence_interval": null,
+    "limitations": [
+      "Scenarios are not accounts, actual fills, positions or paper performance",
+      "Hypothetical20%capital demand does not relax existing event/correlation/single-position limits",
+      "Anonymous displayed depth cannot prove queue priority, entry survival after latency or future exit liquidity",
+      "Unqualified forecasts produce only observed liquidity metrics and null expected value",
+      "Capital lockup follows known contract end only; actual settlement delay and disputes remain unknown"
+    ]
+  },
+  "settlement_scope": "ordinary completed reference-compatible sessions; authoritative WSJ/fallback risk unverified",
+  "research_only": true,
+  "trading_authority": false
+}
