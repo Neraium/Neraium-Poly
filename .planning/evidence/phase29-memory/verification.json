@@ -1,0 +1,32 @@
+{
+  "focused_tests": "40 passed in1.08s: new4 regressions plus full36 existing connectivity tests",
+  "ruff": "passed",
+  "behavior_preserved": [
+    "Decimal native price identity and sorting",
+    "size/side/finiteness validation",
+    "crossed-book rejection",
+    "max-level and aggregate-level budgets",
+    "gap watermarks and resnapshot behavior",
+    "native snapshot ID and source timestamps",
+    "immutable older snapshots"
+  ],
+  "change": "reuse frozen unchanged PriceLevel instances instead of full-book reconstruction per venue price delta",
+  "controlled_native_base_probe": {
+    "baseline_levels": 313,
+    "updates": 300,
+    "old_new_objects": 93900,
+    "new_new_objects": 300,
+    "seconds_before": 0.41374140488915145,
+    "seconds_after": 0.24133926583454013,
+    "peak_rss_kib_before": 66280,
+    "peak_rss_kib_after": 66096,
+    "interpretation": "99.68%fewer level instances;41.7%faster on controlled replacement stream, not a live throughput or OOM-elimination claim"
+  },
+  "safety": {
+    "resource_limits_changed": false,
+    "live_services_restarted": false,
+    "historical_files_changed": false,
+    "allocator_interventions": false
+  },
+  "remaining_blocker": "sole cause of historical anonymous OOM not independently identified; no new OOM during current process lifetime before this fix"
+}

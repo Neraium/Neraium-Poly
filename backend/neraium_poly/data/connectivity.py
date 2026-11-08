@@ -483,8 +483,11 @@ class CoverageFeed:
                         raise ValueError("missing baseline")
                     if (at - old.timestamp).total_seconds() > self.max_gap_seconds:
                         raise ValueError("detected source time gap")
-                    bids = {Decimal(str(v.price)): Decimal(str(v.size)) for v in old.bids}
-                    asks = {Decimal(str(v.price)): Decimal(str(v.size)) for v in old.asks}
+                    # Levels are frozen public records. Reuse unchanged instances
+                    # instead of rebuilding the whole book for each single-level
+                    # venue replacement; older snapshots remain immutable.
+                    bids = {Decimal(str(v.price)): v for v in old.bids}
+                    asks = {Decimal(str(v.price)): v for v in old.asks}
                     for update in updates:
                         price, size = Decimal(str(update["price"])), Decimal(str(update["size"]))
                         if not price.is_finite() or not size.is_finite() or not 0 < price < 1 or size < 0:
@@ -496,13 +499,12 @@ class CoverageFeed:
                         if size == 0:
                             levels.pop(price, None)
                         else:
-                            levels[price] = size
+                            previous = levels.get(price)
+                            if previous is None or Decimal(str(previous.size)) != size:
+                                levels[price] = PriceLevel(price=float(price), size=float(size))
 
                     def levels(values, reverse=False):
-                        return tuple(
-                            PriceLevel(price=float(p), size=float(v))
-                            for p, v in sorted(values.items(), reverse=reverse)
-                        )
+                        return tuple(v for _, v in sorted(values.items(), reverse=reverse))
 
                     if not self._admit_levels(token, len(bids) + len(asks), watermark=min(at, received)):
                         if background_recovery:
