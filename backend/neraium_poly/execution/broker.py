@@ -210,7 +210,7 @@ class PaperBroker:
     def _risk_ack(self, row, pending):
         decision = RiskDecision.model_validate_json(row["decision"])
         last = None
-        for event in self.risk.audit():
+        for event in self.risk.audit(action="fill"):
             if event["action"] == "fill":
                 payload = json.loads(event["payload"])
                 if payload["reservation_id"] == decision.reservation_id:
@@ -468,7 +468,7 @@ class PaperBroker:
             known = {}
             latest_fills = {}
             try:
-                for event in self.risk.audit():
+                for event in self.risk.audit(action="fill"):
                     if event["action"] == "fill":
                         payload = json.loads(event["payload"])
                         latest_fills[payload["reservation_id"]] = payload

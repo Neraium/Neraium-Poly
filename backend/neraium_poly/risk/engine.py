@@ -665,9 +665,19 @@ class RiskEngine:
             "simulated": True,
         }
 
-    def audit(self) -> list[dict]:
+    def audit(self, *, action: str | None = None) -> list[dict]:
+        """Read ordered audit records; optional SQL filter preserves full history.
+
+        Reconciliation needs every fill acknowledgement, not all historical marks.
+        Filtering before materialization bounds unrelated allocation without a
+        cache, checkpoint cursor, or omission of older/orphan fill evidence.
+        """
         with self._lock:
-            return [dict(row) for row in self.db.execute("SELECT * FROM audit ORDER BY seq")]
+            if action is None:
+                rows = self.db.execute("SELECT * FROM audit ORDER BY seq")
+            else:
+                rows = self.db.execute("SELECT * FROM audit WHERE action=? ORDER BY seq", (action,))
+            return [dict(row) for row in rows]
 
     def close(self):
         self.db.close()
