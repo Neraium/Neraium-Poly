@@ -111,6 +111,16 @@ class SupplementalBooks:
         self._last_rejections=dict(reasons)
         return tuple(result)
 
+    def observations(self):
+        """Current bounded native cache, including non-executable diagnostics.
+
+        Unlike snapshot(), this does not erase stale/one-sided observed books.
+        Callers must requalify every book; native times/depth remain unchanged.
+        Invalidated books remain absent because the authoritative feed removed them.
+        """
+        if self._closed:return ()
+        return tuple(self.feed.latest[t] for t in self._markets if t in self.feed.latest)
+
     async def wait_fresh(self,*,timeout=1):
         if not 0<=timeout<=30:raise ValueError('bounded_fresh_book_wait_required')
         if self._closed:return ()
@@ -127,6 +137,12 @@ class SupplementalBooks:
             'subscribed_tokens':len(self._markets),'qualified_books':len(books),'max_tokens':self.max_tokens,
             'native_max_age_seconds':15,'max_spread':.05,'counts':dict(self.counts),
             'book_rejections':getattr(self,'_last_rejections',{}),'transport':metrics,
+            'token_diagnostics':{t:{'market_id':m.market_id,
+                'reasons':list(self._reason(self.feed.latest[t],m,self.clock())) if t in self.feed.latest else
+                    ['transport_gap_withheld' if t in getattr(self.feed,'_gap_watermarks',{}) else 'missing_native_observation'],
+                'native_book_present':t in self.feed.latest,
+                'native_timestamp':self.feed.latest[t].timestamp.isoformat() if t in self.feed.latest else None}
+                for t,m in self._markets.items()},
             'last_qualified_at':self.last_qualified_at.isoformat() if self.last_qualified_at else None,
             'last_error':self.last_error,'quarantined_tokens':len(self._quarantined),
             'trading_authority':False,'counter_scope':'transport callbacks and current snapshots; never independent observations'}

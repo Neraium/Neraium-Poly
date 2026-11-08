@@ -16,7 +16,7 @@ def current_frame(primary, *, extra_markets=(), extra_books=(), as_of):
         if max(m.timestamp,m.available_at)>now:raise ValueError('future_supplemental_metadata')
         if m.token_id in markets:
             old=markets[m.token_id]
-            if (old.market_id,old.event_id,old.resolution_rules)!=(m.market_id,m.event_id,m.resolution_rules):
+            if (old.market_id,old.event_id,old.outcome,old.question,old.resolution_rules,old.resolution_source,old.end_time,old.tick_size,old.min_order_size)!=(m.market_id,m.event_id,m.outcome,m.question,m.resolution_rules,m.resolution_source,m.end_time,m.tick_size,m.min_order_size):
                 raise ValueError('conflicting_supplemental_market_identity')
         else:markets[m.token_id]=m
     for b in extra_books:

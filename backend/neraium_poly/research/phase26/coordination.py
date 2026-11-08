@@ -15,6 +15,7 @@ from neraium_poly.research.phase14.relationships import digest
 from neraium_poly.research.phase24.continuous import at
 from neraium_poly.research.phase25.continuous import modules
 from neraium_poly.research.phase26.books import SupplementalBooks
+from neraium_poly.research.phase29.alignment import select_supplemental_markets
 
 
 class ResearchInputPolicy(Record):
@@ -39,7 +40,9 @@ class Inputs:
         policy={'version':'phase26-causal-inputs-v1','code_sha256':digest([Path(__file__).read_text(),Path(__file__).with_name('books.py').read_text()]),
                 'native_book_max_age_seconds':15,'max_spread':.05,'model_interval_seconds':300,
                 'record_sampling':'qualified books at most one/token/60seconds and one/second globally; selected books also preserved in forecasts',
-                'sports_check_after_start_hours':1,'finality_checks_relaxed':False,'primary_collection_duplicated':False,'max_supplemental_tokens':32}
+                'sports_check_after_start_hours':1,'finality_checks_relaxed':False,'primary_collection_duplicated':False,'max_supplemental_tokens':32,
+                'supplemental_selection':'all supported adapter domains; bounded diverse parent-first; retained forecast priority',
+                'diagnostic_books':'raw authoritative cache available separately from executable snapshots'}
         identity=digest(['research-input-policy',policy]);existing=store.get(identity)
         if existing is None:
             if not self.can_write():raise ValueError('research input policy archive unavailable')
@@ -65,12 +68,12 @@ class Inputs:
         self.last_global=now;self.last_sample[book.token_id]=now
         self.last_sample=dict(list(self.last_sample.items())[-64:]);self.counts['archived_samples']+=1
 
-    async def prepare(self,frame,*,base_tokens,wait=False):
+    async def prepare(self,frame,*,base_tokens,wait=False,forecast_tokens=()):
         raw=frame.model_dump(mode='json') if hasattr(frame,'model_dump') else frame
-        now=at(self.clock());selected=[];adapters=modules()
-        for value in raw['markets']:
-            if value['token_id'] in base_tokens:continue
-            if any(adapters[name].supports(value,cutoff=now).get('supported') for name in ('finance','economics')):selected.append(value)
+        now=at(self.clock());adapters=modules()
+        selected,selection=select_supplemental_markets(raw['markets'],base_tokens=base_tokens,
+            adapters=adapters,as_of=now,maximum=getattr(self.watcher,'max_tokens',32),forecast_tokens=forecast_tokens)
+        self.selection=selection
         await self.watcher.update(selected)
         if wait and selected:await self.watcher.wait_fresh(timeout=20)
         return self.qualify(frame,adapters=adapters)
@@ -100,5 +103,5 @@ class Inputs:
 
     def status(self):
         return {'watcher':self.watcher.status(),'counts':dict(self.counts),'last_preflight':self.last_preflight,'preflight_rejections':self.rejections,
-                'policy_id':self.policy_id,'counter_scope':'process-local sampling/transport; durable observation records retained','scope':'sampled supplementary books and filtered research inputs; native source times and original model gates unchanged','trading_authority':False}
+                'selection':getattr(self,'selection',None),'policy_id':self.policy_id,'counter_scope':'process-local sampling/transport; durable observation records retained','scope':'sampled supplementary books and filtered research inputs; native source times and original model gates unchanged','trading_authority':False}
     async def close(self):await self.watcher.close()
