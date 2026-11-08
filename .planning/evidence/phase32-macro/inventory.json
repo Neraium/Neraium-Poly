@@ -1,0 +1,193 @@
+{
+  "observed_at": "2026-11-08T20:38:38.638044+00:00",
+  "inventory": {
+    "schema_version": "phase32-macro-outcome-inventory-v1",
+    "as_of": "2026-11-08T20:38:38.638044+00:00",
+    "forecasts": 4,
+    "reviewed_event_groups": 2,
+    "rows": [
+      {
+        "forecast_id": "03eccbcbaea7c3cfda2daacb51d4a9631483dbb3e04b751347e030c6c6f471bf",
+        "family": "fomc",
+        "domain": "economics",
+        "model_id": "fomc-scheduled-policy-frequency-v24.1",
+        "event_id": "770450",
+        "market_id": "3215007",
+        "token_id": "8077351031134730167836761678618167504307708651130165095377248922919635337796",
+        "forecast_timestamp": "2026-11-07T23:34:01.720376+00:00",
+        "original_available_at": "2026-11-07T23:34:01.739760+00:00",
+        "reference_event_cutoff": "2026-12-10T05:00:00+00:00",
+        "cutoff_precision": "contract forecast boundary; not an asserted exact final publication time",
+        "resolution_reference": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "canonical_group_id": "93f9747c9ba19291b881fa531672adad3880a8ccddbda247f31d9660f4f9b185",
+        "category": "NOT_YET_MATURE",
+        "reasons": [
+          "event_reference_window_or_release_has_not_completed"
+        ],
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false,
+        "native_payout_verified": false,
+        "forecast_probability": null
+      },
+      {
+        "forecast_id": "337f3f1a622cac4a4038bc513642a3733147cb0186dbcdf86ca7bf9f1bcebe00",
+        "family": "fomc",
+        "domain": "economics",
+        "model_id": "fomc-recent-policy-shrinkage-v24.1",
+        "event_id": "770450",
+        "market_id": "3215007",
+        "token_id": "8077351031134730167836761678618167504307708651130165095377248922919635337796",
+        "forecast_timestamp": "2026-11-07T23:34:01.720376+00:00",
+        "original_available_at": "2026-11-07T23:34:01.739760+00:00",
+        "reference_event_cutoff": "2026-12-10T05:00:00+00:00",
+        "cutoff_precision": "contract forecast boundary; not an asserted exact final publication time",
+        "resolution_reference": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "canonical_group_id": "93f9747c9ba19291b881fa531672adad3880a8ccddbda247f31d9660f4f9b185",
+        "category": "NOT_YET_MATURE",
+        "reasons": [
+          "event_reference_window_or_release_has_not_completed"
+        ],
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false,
+        "native_payout_verified": false,
+        "forecast_probability": null
+      },
+      {
+        "forecast_id": "1869017d817ebc7a3d95d1b2d102b04d09a2ded3458298918ca4dbadae6ce61b",
+        "family": "uk_gdp",
+        "domain": "economics",
+        "model_id": "uk-gdp-jeffreys-frequency-v25.1",
+        "event_id": "844497",
+        "market_id": "3566407",
+        "token_id": "99152048788234224357734975456328610052461154108689630888376315692101778386164",
+        "forecast_timestamp": "2026-11-08T01:34:08.567966+00:00",
+        "original_available_at": "2026-11-08T01:34:08.569240+00:00",
+        "reference_event_cutoff": "2026-11-12T00:00:00+00:00",
+        "cutoff_precision": "contract forecast boundary; not an asserted exact final publication time",
+        "resolution_reference": "https://www.ons.gov.uk/economy/grossdomesticproductgdp/bulletins/gdpfirstquarterlyestimateuk/previousreleases",
+        "canonical_group_id": "549d254401b5c9edeec8406ced6982ca141c01169eeccb0a23c6b791276ca993",
+        "category": "NOT_YET_MATURE",
+        "reasons": [
+          "event_reference_window_or_release_has_not_completed"
+        ],
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false,
+        "native_payout_verified": false,
+        "forecast_probability": null
+      },
+      {
+        "forecast_id": "5c593205b4b3d259b97a2ca71cff67c1bd5af08747862a2ddc3c18892ae7597e",
+        "family": "uk_gdp",
+        "domain": "economics",
+        "model_id": "uk-gdp-regularized-ar1-v25.1",
+        "event_id": "844497",
+        "market_id": "3566407",
+        "token_id": "99152048788234224357734975456328610052461154108689630888376315692101778386164",
+        "forecast_timestamp": "2026-11-08T01:34:08.567966+00:00",
+        "original_available_at": "2026-11-08T01:34:08.569240+00:00",
+        "reference_event_cutoff": "2026-11-12T00:00:00+00:00",
+        "cutoff_precision": "contract forecast boundary; not an asserted exact final publication time",
+        "resolution_reference": "https://www.ons.gov.uk/economy/grossdomesticproductgdp/bulletins/gdpfirstquarterlyestimateuk/previousreleases",
+        "canonical_group_id": "549d254401b5c9edeec8406ced6982ca141c01169eeccb0a23c6b791276ca993",
+        "category": "NOT_YET_MATURE",
+        "reasons": [
+          "event_reference_window_or_release_has_not_completed"
+        ],
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false,
+        "native_payout_verified": false,
+        "forecast_probability": null
+      }
+    ],
+    "official_event_verification_implemented": [
+      "uk_gdp_initial_release",
+      "scheduled_FOMC_statement_and_target_upper"
+    ],
+    "CPI_missing_reference_policy": "no interpolation, denominator fabrication, or unsupported fallback outcome",
+    "counts": {
+      "NOT_YET_MATURE": 4
+    },
+    "outcome_verification_performed": false,
+    "official_events_verified": null,
+    "native_settlements_verified": null,
+    "research_only": true,
+    "trading_authority": false,
+    "certification_authority": false,
+    "native_payout_verified": false,
+    "market_baseline_comparable": false
+  },
+  "exact_original_checks": [
+    {
+      "forecast_id": "03eccbcbaea7c3cfda2daacb51d4a9631483dbb3e04b751347e030c6c6f471bf",
+      "market_id": "3215007",
+      "event_id": "770450",
+      "model_id": "fomc-scheduled-policy-frequency-v24.1",
+      "kind": "fomc",
+      "official_publication_boundary": "2026-12-09T19:00:00+00:00",
+      "matured": false,
+      "original_timestamp": "2026-11-07T23:34:01.720376+00:00",
+      "source_hash_and_exact_contract_replayed": true,
+      "scope": "boundary is scheduled/contract bound, not asserted actual final publication"
+    },
+    {
+      "forecast_id": "337f3f1a622cac4a4038bc513642a3733147cb0186dbcdf86ca7bf9f1bcebe00",
+      "market_id": "3215007",
+      "event_id": "770450",
+      "model_id": "fomc-recent-policy-shrinkage-v24.1",
+      "kind": "fomc",
+      "official_publication_boundary": "2026-12-09T19:00:00+00:00",
+      "matured": false,
+      "original_timestamp": "2026-11-07T23:34:01.720376+00:00",
+      "source_hash_and_exact_contract_replayed": true,
+      "scope": "boundary is scheduled/contract bound, not asserted actual final publication"
+    },
+    {
+      "forecast_id": "1869017d817ebc7a3d95d1b2d102b04d09a2ded3458298918ca4dbadae6ce61b",
+      "market_id": "3566407",
+      "event_id": "844497",
+      "model_id": "uk-gdp-jeffreys-frequency-v25.1",
+      "kind": "uk_gdp_qoq_first_release",
+      "official_publication_boundary": "2026-11-12T00:00:00+00:00",
+      "matured": false,
+      "original_timestamp": "2026-11-08T01:34:08.567966+00:00",
+      "source_hash_and_exact_contract_replayed": true,
+      "scope": "boundary is scheduled/contract bound, not asserted actual final publication"
+    },
+    {
+      "forecast_id": "5c593205b4b3d259b97a2ca71cff67c1bd5af08747862a2ddc3c18892ae7597e",
+      "market_id": "3566407",
+      "event_id": "844497",
+      "model_id": "uk-gdp-regularized-ar1-v25.1",
+      "kind": "uk_gdp_qoq_first_release",
+      "official_publication_boundary": "2026-11-12T00:00:00+00:00",
+      "matured": false,
+      "original_timestamp": "2026-11-08T01:34:08.567966+00:00",
+      "source_hash_and_exact_contract_replayed": true,
+      "scope": "boundary is scheduled/contract bound, not asserted actual final publication"
+    }
+  ],
+  "official_source_checks": [
+    {
+      "source_url": "https://www.ons.gov.uk/economy/grossdomesticproductgdp/bulletins/gdpfirstquarterlyestimateuk/previousreleases",
+      "status": 200,
+      "retrieved_at": "2026-11-08T20:38:38.787392+00:00",
+      "content_sha256": "c10d5508a6c922e86333f2c120f0be89ed21a6476bc3932ac390a4111c0bb4db",
+      "bytes": 59765,
+      "availability_scope": "current source check, not historical feature availability"
+    },
+    {
+      "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+      "status": 200,
+      "retrieved_at": "2026-11-08T20:38:38.821228+00:00",
+      "content_sha256": "6ec95411c1eed858eaa32a9cea9c92aaf6d459be6ec05b9eca68a91add403450",
+      "bytes": 166350,
+      "availability_scope": "current source check, not historical feature availability"
+    }
+  ],
+  "new_verified_outcomes": 0,
+  "diagnosis": "All four original economic forecasts remain future; old verifiers conflate official result and native payout, now separated by new verifier. No CPI denominator imputation; no new unsupported forecasts."
+}
