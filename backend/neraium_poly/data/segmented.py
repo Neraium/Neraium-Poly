@@ -78,6 +78,40 @@ def _tree_size(directory):
         os.close(fd)
 
 
+def _active_sqlite_bytes(path):
+    """Constant-count metadata probes for one writer, never directory traversal.
+
+    Global admission still measures the complete service tree. This footprint is
+    only the active SQLite DB and its possible WAL/shared-memory/rollback files.
+    Immutable completion artifacts must never coexist with an admitted writer.
+    """
+    if not NAME.fullmatch(path.name):
+        raise ValueError("invalid active archive segment identity")
+    fd = os.open(path.parent, os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW)
+    try:
+        for suffix in (".manifest.json", ".manifest.json.pending", ".gz", ".gz.pending",
+                       ".cold-proof.json", ".cold-proof.json.pending"):
+            try:
+                os.stat(path.name + suffix, dir_fd=fd, follow_symlinks=False)
+            except FileNotFoundError:
+                continue
+            raise ValueError("immutable completion artifact beside active archive")
+        total = 0
+        for suffix in ("", "-wal", "-shm", "-journal"):
+            try:
+                metadata = os.stat(path.name + suffix, dir_fd=fd, follow_symlinks=False)
+            except FileNotFoundError:
+                if not suffix:
+                    raise ValueError("active archive source missing") from None
+                continue  # SQLite may remove optional sidecars concurrently.
+            if not stat.S_ISREG(metadata.st_mode):
+                raise ValueError("active archive file missing, symlinked or nonregular")
+            total += metadata.st_size
+        return total
+    finally:
+        os.close(fd)
+
+
 class ManagedEventStore:
     """Single-owner append-only event archive; budgets include the service tree."""
 
@@ -515,7 +549,7 @@ class ManagedEventStore:
             self._check_budget(payload_size * 3 + 256 * 1024)
             if self.active is None:
                 self._recover()
-            active_size = sum(p.stat().st_size for p in self.segment_dir.glob(self.active_name + "*") if p.is_file())
+            active_size = _active_sqlite_bytes(self._source(self.active_name))
             if active_size + payload_size * 2 + 8192 > self.segment_bytes and self.active.count():
                 self._seal_active()
                 self._create_active()
@@ -554,7 +588,7 @@ class ManagedEventStore:
                     self._dirty = False
                 if self.active is None:
                     self._recover()
-                active_size = sum(p.stat().st_size for p in self.segment_dir.glob(self.active_name + "*") if p.is_file())
+                active_size = _active_sqlite_bytes(self._source(self.active_name))
                 if active_size >= self.segment_bytes and self.active.count():
                     self._seal_active()
                     self._create_active()

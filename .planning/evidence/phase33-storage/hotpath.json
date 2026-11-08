@@ -1,0 +1,42 @@
+{
+  "paper-live": {
+    "scope": "five read-only metadata probes on same genuinely active SQLite directory; writer may change footprints concurrently",
+    "glob_seconds": [
+      0.0034778648987412453,
+      0.0026712750550359488,
+      0.0026428611017763615,
+      0.0027020080015063286,
+      0.002629833063110709
+    ],
+    "fixed_stat_seconds": [
+      9.411503560841084e-05,
+      4.515494219958782e-05,
+      2.812105230987072e-05,
+      3.025820478796959e-05,
+      3.450806252658367e-05
+    ],
+    "median_speedup": 77.41017198453557,
+    "active_segment": "segment-00001005.sqlite",
+    "same_active_last_footprint_bytes": 11222616
+  },
+  "experimental-paper": {
+    "scope": "five read-only metadata probes on same genuinely active SQLite directory; writer may change footprints concurrently",
+    "glob_seconds": [
+      0.008182419929653406,
+      0.007581965997815132,
+      0.007430128986015916,
+      0.007454646052792668,
+      0.007462015841156244
+    ],
+    "fixed_stat_seconds": [
+      7.969303987920284e-05,
+      3.8882018998265266e-05,
+      4.1811028495430946e-05,
+      3.74731607735157e-05,
+      3.323797136545181e-05
+    ],
+    "median_speedup": 191.91430983790127,
+    "active_segment": "segment-00002650.sqlite",
+    "same_active_last_footprint_bytes": 6028768
+  }
+}
