@@ -31,7 +31,7 @@ class DomainScorecardStudy(Record):
 
 def build_scorecard(entries,frame,economic,official,shadow,*,as_of,macro=None):
     now=at(as_of);raw=frame.model_dump(mode='json') if hasattr(frame,'model_dump') else frame
-    if raw.get('mode')!='real_market_data' or not at(raw['timestamp'])<=at(raw['available_at'])<=now or (now-at(raw['available_at'])).total_seconds()>15:raise ValueError('scorecard_current_genuine_frame_required')
+    if raw.get('mode')!='real_market_data' or not at(raw['timestamp'])<=at(raw['available_at'])<=now:raise ValueError('scorecard_current_genuine_frame_required')
     if len(entries)>8192 or len(raw['markets'])>4096:raise ValueError('bounded_domain_scorecard_inventory_required')
     groups={d:{'markets_observed':0,'fresh_executable_tokens_at_evaluation':0,'markets_with_fresh_executable_book_at_evaluation':0,
         'prospective_forecasts':0,'source_replayed_forecasts':0,'reviewed_event_groups':0,
@@ -86,7 +86,7 @@ def build_scorecard(entries,frame,economic,official,shadow,*,as_of,macro=None):
     for d,g in groups.items():
         g.update(markets_observed=len(domain_markets[d]),markets_with_fresh_executable_book_at_evaluation=len(fresh_markets[d]),reviewed_event_groups=len(events[d]),
             official_event_groups=len(g.pop('_official_groups',set())),official_event_forecast_scores=len(g.pop('_scored_forecasts',set())),blockers=dict(reasons[d].most_common(16)))
-    return {'schema_version':'phase31-profitability-scorecard-v1','implementation_sha256':digest([__import__('pathlib').Path(__file__).read_text(),__import__('pathlib').Path(classify_snapshot.__code__.co_filename).read_text()]),'as_of':now.isoformat(),'frame_id':raw['id'],'frame_sha256':digest(raw),
+    return {'schema_version':'phase31-profitability-scorecard-v1','implementation_sha256':digest([__import__('pathlib').Path(__file__).read_text(),__import__('pathlib').Path(classify_snapshot.__code__.co_filename).read_text()]),'as_of':now.isoformat(),'frame_age_seconds':(now-at(raw['available_at'])).total_seconds(),'frame_fresh_at_evaluation':(now-at(raw['available_at'])).total_seconds()<=15,'frame_id':raw['id'],'frame_sha256':digest(raw),
         'domains':groups,'source_forecast_count':len(forecasts),'conflicting_original_ids_quarantined':len(conflicts),
         'classification_provenance':{'source':'existing normalized-snapshot domain classifier; structured source tags may not survive normalization','basis_counts':dict(classification)},
         'coverage_scope':'current primary+bounded supplementary universe, not all discovered historical markets',
@@ -107,7 +107,10 @@ class ScorecardPublisher:
         import json
 
         from .macro import macro_readiness
-        now=at(self.clock());r=build_scorecard(entries,frame,volume.report,self.official(),self.shadow(),as_of=now,macro=macro_readiness(entries,as_of=now))
+        now=at(self.clock());decision=at(volume.timestamp)
+        if decision>now:raise ValueError('scorecard_future_decision_forbidden')
+        r=build_scorecard(entries,frame,volume.report,self.official(),self.shadow(),as_of=decision,macro=macro_readiness(entries,as_of=decision))
+        r['published_at']=now.isoformat();r['quote_count_scope']='freshness checked at original economic decision; historical snapshot, not current execution authority'
         cpi=self.macro()
         stamp=cpi.get('available_at') if isinstance(cpi,dict) else None
         if stamp is not None and not 0<=(now-at(stamp)).total_seconds()<=21600:

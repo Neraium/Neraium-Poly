@@ -25,7 +25,10 @@ def test_domains_include_empty_unsupported_categories_and_no_sample_inflation():
 
 def test_old_or_future_frame_cannot_present_current_scorecard():
     entries,frame=data()
-    with pytest.raises(ValueError):build_scorecard(entries,frame,{}, {},{},as_of=NOW+timedelta(seconds=16))
+    r=build_scorecard(entries,frame,{}, {},{},as_of=NOW+timedelta(seconds=16))
+    assert not r['frame_fresh_at_evaluation']
+    assert all(v['fresh_executable_tokens_at_evaluation']==0 for v in r['domains'].values())
+    with pytest.raises(ValueError):build_scorecard(entries,frame,{}, {},{},as_of=NOW-timedelta(seconds=1))
 
 
 def test_publisher_expires_current_counts_and_never_creates_account_authority():
@@ -74,3 +77,13 @@ def test_optional_scorecard_failure_cannot_invalidate_committed_economics(tmp_pa
         assert r.step({'books':[]}) and store.count(kind='VolumeStudy')==1
         assert r.error is None and r.status()['report_callback_error'].startswith('ValueError')
     finally:store.close()
+
+
+def test_processing_delay_never_freshens_decision_time_book_counts():
+    entries,frame=data();records=[]
+    p=ScorecardPublisher(SimpleNamespace(append=records.append),clock=lambda:NOW+timedelta(seconds=30),can_write=lambda:True,official=dict,macro=dict,shadow=dict)
+    volume=SimpleNamespace(id="CONTROLLED",timestamp=NOW,report={},model_dump=lambda **k:{})
+    p.observe(volume,frame,entries)
+    r=p.status();assert r['age_seconds']==30 and r['as_of']==NOW.isoformat()
+    assert r['published_at']==(NOW+timedelta(seconds=30)).isoformat()
+    assert r['frame_fresh_at_evaluation'] and not r['trading_authority']
