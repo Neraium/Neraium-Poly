@@ -94,7 +94,7 @@ def _portfolio(rows):
             'reason': 'standalone USD EV ranking is not joint risk approval or proof of independent events', **AUTHORITY}
 
 
-def build_economic_findings(studies, frame, *, as_of, verified_forecast_ids=(), fee_quotes=None):
+def build_economic_findings(studies, frame, *, as_of, verified_forecast_ids=(), fee_quotes=None, native_fee_observations=None, included_forecast_ids=None):
     """Rank conservative USD expected profit; preserve smaller-margin scenarios.
 
     phase27 is used only for source/time/identity taxonomy with *no* cost bundle,
@@ -106,10 +106,14 @@ def build_economic_findings(studies, frame, *, as_of, verified_forecast_ids=(), 
     now = at(as_of)
     _raw, markets, books, bad = _current(frame, now)
     originals, _rejected = bound_forecasts(studies, as_of=now)
+    if included_forecast_ids is not None:
+        included=set(included_forecast_ids)
+        originals={k:v for k,v in originals.items() if k in included}
     if len(originals) > 128:raise ValueError('bounded_phase28_forecast_universe_exceeded')
     base = build_findings(studies, frame, as_of=now, verified_forecast_ids=verified_forecast_ids, fee_quotes=None)
     rows = []; rejected = Counter(); verified = set(verified_forecast_ids)
     for previous in base['findings']:
+        if previous['forecast_id'] not in originals:continue
         row = dict(previous); source = originals[row['forecast_id']]; f, study = source['forecast'], source['study']
         b = books.get(row['token_id']); m = markets.get(row['token_id']); reasons = [x for x in previous['reasons'] if x not in NON_DATA_REASONS]
         row.update(id=digest([VERSION, previous['id']]), version=VERSION, certified_screening_status=previous['status'],
@@ -212,6 +216,9 @@ def build_economic_findings(studies, frame, *, as_of, verified_forecast_ids=(), 
                 if not interval_valid:reasons.append('supported_uncertainty_interval_required')
                 if not supported:reasons.append('positive_conservative_expected_dollar_profit_not_established')
                 elif not lot_ok:reasons.append('native_minimum_order_quantity_not_supported')
+        from neraium_poly.research.phase29.economics import diagnostic
+        row['pipeline'] = diagnostic(f, m, b, row, as_of=now,
+            native_fee=(native_fee_observations or {}).get(f['token_id']))
         row['reasons'] = sorted(set(reasons)); rejected.update(row['reasons']); rows.append(row)
     qualified = sorted((r for r in rows if r['qualified_research']),
                        key=lambda r: (-r['conservative_expected_net_profit'], r['id']))
@@ -219,7 +226,8 @@ def build_economic_findings(studies, frame, *, as_of, verified_forecast_ids=(), 
                          key=lambda r: (-r['scenario_expected_gross_profit'], r['id']))
     for rank, row in enumerate(qualified, 1):row['economic_rank'] = rank
     for rank, row in enumerate(exploratory, 1):row['scenario_rank'] = rank
-    report = {'schema_version': VERSION, 'as_of': now.isoformat(),
+    from neraium_poly.research.phase29.economics import stage_counts
+    report = {'pipeline_counts': stage_counts(rows), 'schema_version': VERSION, 'as_of': now.isoformat(),
         'policy': {'research_minimum_per_share_edge': None, 'certified_minimum_edge_unchanged': .03,
                    'ranking_metric': 'independently_supported_conservative_expected_net_profit_USD',
                    'scenario_ranking_metric': 'unvalidated_model_expected_gross_profit_USD',
@@ -281,7 +289,8 @@ def combine_economic_reports(reports, *, as_of):
     for rank, row in enumerate(qualified, 1):row['economic_rank'] = rank
     for rank, row in enumerate(exploratory, 1):row['scenario_rank'] = rank
     rejections = Counter(reason for row in rows for reason in row['reasons'])
-    result = {'schema_version': VERSION, 'as_of': now.isoformat(),
+    from neraium_poly.research.phase29.economics import stage_counts
+    result = {'pipeline_counts': stage_counts(rows), 'schema_version': VERSION, 'as_of': now.isoformat(),
         'policy': {'research_minimum_per_share_edge': None, 'certified_minimum_edge_unchanged': .03,
                    'ranking_metric': 'independently_supported_conservative_expected_net_profit_USD',
                    'scenario_ranking_metric': 'unvalidated_model_expected_gross_profit_USD',

@@ -67,12 +67,13 @@ class VolumeResearch:
     def __init__(self,store,index,*,clock,can_write,builder=None,combiner=None,shadow=None):
         self.store,self.index,self.clock,self.can_write=store,index,clock,can_write
         self.builder,self.combiner,self.shadow=builder,combiner,shadow
-        self.error=None;self.report=None;self.last_bucket=None;self.totals={'evaluations':0,'finding_rows':0}
+        self.forecast_tokens=();self.error=None;self.report=None;self.last_bucket=None;self.totals={'evaluations':0,'finding_rows':0}
         root=Path(__file__).parent
         policy={'version':'phase28-streamed-volume-v1','implementation_sha256':digest([p.read_text() for p in sorted(root.glob('*.py'))]),
+            'diagnostic_code_sha256':digest([p.read_text() for p in sorted(root.with_name('phase29').glob('*.py'))]),
             'publication_namespace_sha256':digest(str(getattr(store,'directory',getattr(store,'path','controlled')))),
             'cadence_seconds':60,'forecast_refresh_seconds':300,'forecast_count_scope':'300s window plus verified source SHA; source refreshes are not independent outcomes',
-            'original_forecast_budget':120,'maximum_study_decoded_bytes':32*1024**2,'raw_study_cache_bytes':0,
+            'original_forecast_budget':120,'original_selection':'future events with current metadata first, then newest immutable forecast','maximum_study_decoded_bytes':32*1024**2,'raw_study_cache_bytes':0,
             'research_minimum_per_share_edge':None,'certified_threshold_unchanged':.03,'actual_account_routing':False,
             'shadow_authority':'independent source replay required; existing accounts untouched','frame_evidence':'lossless packed full current frame'}
         self.enrollment_id=digest(['volume-research-enrollment',policy])
@@ -105,7 +106,7 @@ class VolumeResearch:
     @staticmethod
     def _summary(report,as_of,identity):
         rows=report.get('findings',[])
-        return {'status':'research_only','as_of':as_of,'record_id':identity,'counts':report.get('counts',{}),
+        return {'status':'research_only','as_of':as_of,'record_id':identity,'counts':report.get('counts',{}),'pipeline_counts':report.get('pipeline_counts',{}),'alignment':report.get('alignment',{}),'source_maturity':report.get('source_maturity',{}),
             'rankings':report.get('rankings',[]),'scenario_rankings':report.get('scenario_rankings',[]),
             'rejections':report.get('rejections',{}),'source_deferred':report.get('source_deferred',{}),
             'forecast_refresh_rejections':report.get('forecast_refresh_rejections',{}),
@@ -113,7 +114,7 @@ class VolumeResearch:
             'latest_findings':rows[:5],'portfolio':report.get('portfolio',{}),'sii':report.get('sii',{}),
             'research_only':True,'trading_authority':False,'certification_authority':False,'raw_study_cache_bytes':0}
 
-    def step(self,frame):
+    def step(self,frame,*,native_fee_observations=None):
         now=at(self.clock());bucket=int(now.timestamp())//60
         if bucket==self.last_bucket or not self.can_write():return False
         identity=digest(['volume-study',self.enrollment_id,bucket]);existing=self.store.get(identity)
@@ -128,7 +129,9 @@ class VolumeResearch:
                 fid=row['forecast_id']
                 if fid in refs and refs[fid]['forecast_sha256']!=row['forecast_sha256']:raise ValueError('conflicting volume original identity')
                 refs.setdefault(fid,row)
-        selected=sorted(refs.values(),key=lambda r:(at(r['forecast']['timestamp']),r['forecast_id']),reverse=True)[:120]
+        current_tokens={m.token_id for m in frame.markets} if hasattr(frame,'markets') else set()
+        selected=sorted(refs.values(),key=lambda r:(bool(r['forecast'].get('event_end_time') and at(r['forecast']['event_end_time'])>now),r['forecast'].get('token_id') in current_tokens,at(r['forecast']['timestamp']),r['forecast_id']),reverse=True)[:120]
+        self.forecast_tokens=tuple(dict.fromkeys(r['forecast']['token_id'] for r in selected if r['forecast'].get('token_id')))
         groups=defaultdict(list)
         for row in selected:groups[row['source_id']].append(row)
         verified={r['forecast_id'] for r in selected};deferred={'outside_original_budget':len(refs)-len(selected),'decoded_source_budget':0};refresh_rejections={};extra=[]
@@ -173,11 +176,18 @@ class VolumeResearch:
             for row in rows:
                 f=next(f for f in study['forecasts'] if f['id']==row['forecast_id'])
                 if digest(f)!=row['forecast_sha256']:raise ValueError('volume forecast source binding mismatch')
-            reports.append(builder([study],frame,as_of=decision,verified_forecast_ids=verified))
+            reports.append(builder([study],frame,as_of=decision,verified_forecast_ids=verified,**({'included_forecast_ids':[r['forecast_id'] for r in rows]} if self.builder is None else {}),**({'native_fee_observations':native_fee_observations} if native_fee_observations is not None else {})))
             del study
         for study in extra:
-            reports.append(builder([study],frame,as_of=decision,verified_forecast_ids={f['id'] for f in study['forecasts']}))
+            reports.append(builder([study],frame,as_of=decision,verified_forecast_ids={f['id'] for f in study['forecasts']},**({'native_fee_observations':native_fee_observations} if native_fee_observations is not None else {})))
         report=combiner(reports,as_of=decision)
+        if self.builder is None:
+            from neraium_poly.research.phase29.alignment import classify_alignment
+            report['alignment']=classify_alignment(report['findings'],frame,as_of=decision,
+                subscribed_tokens=frame.connectivity.get('research_subscribed_token_ids',()))
+            from neraium_poly.research.phase29.outcomes import maturity_report
+            report['source_maturity']=maturity_report(entries,as_of=decision)
+
         if report.get('trading_authority') is not False or report.get('research_only') is not True:raise ValueError('volume authority boundary rejected')
         report['source_deferred']=deferred;report['forecast_refresh_rejections']=refresh_rejections
         report['source_projection_forecast_count']=len(refs);report['window_forecast_records_available']=len(extra)

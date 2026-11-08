@@ -802,7 +802,7 @@ class ExperimentalRuntime:
                     last = engine.state.get("last_attempt_at")
                     from datetime import datetime
                     due = not last or (self.clock()-datetime.fromisoformat(last)).total_seconds() >= 300
-                    frame = await self.phase26_inputs.prepare(frame, base_tokens={m["token_id"] for m in raw["markets"]}, wait=due)
+                    frame = await self.phase26_inputs.prepare(frame, base_tokens={m["token_id"] for m in raw["markets"]}, wait=due, forecast_tokens=getattr(self.phase28,"forecast_tokens",()))
             async with self._research_source_lock:
                 await engine.step(frame)
                 await outcomes.step()
@@ -872,14 +872,16 @@ class ExperimentalRuntime:
                     from neraium_poly.research.phase28.inputs import current_frame
                     watcher = self.phase26_inputs.watcher if self.phase26_inputs else None
                     frame = current_frame(self.last_frame, extra_markets=tuple(watcher._markets.values()) if watcher else (),
-                        extra_books=watcher.snapshot() if watcher else (), as_of=self.clock())
+                        extra_books=watcher.observations() if watcher else (), as_of=self.clock())
                     async with self._research_report_lock:
                         def evaluate(current=frame):
                             from neraium_poly.research.phase26.reporting import callbacks
                             vf,vo=callbacks(self.events,self.config.data_dir)
                             self.phase26_index.step(self.events,as_of=self.clock(),forecast_verifier=vf,outcome_verifier=vo)
                             self.phase26_report=self.phase26_index.report(as_of=self.clock())
-                            return self.phase28.step(current)
+                            cache=getattr(self,'research_fees',None)
+                            proofs=cache.proofs(as_of=self.clock()) if cache else None
+                            return self.phase28.step(current,**({'native_fee_observations':proofs} if proofs is not None else {}))
                         worker=asyncio.create_task(asyncio.to_thread(evaluate))
                         try:
                             await asyncio.shield(worker)
@@ -889,6 +891,23 @@ class ExperimentalRuntime:
                 except Exception as error:
                     self.phase28.error=f"{type(error).__name__}:{str(error)[:160]}"
                     log.exception("phase28_volume_research_withheld")
+            for _ in range(10):
+                if self.stopping or should_exit():return
+                await asyncio.sleep(1)
+
+    async def _research_fee_loop(self, should_exit):
+        from neraium_poly.research.phase28.inputs import current_frame
+        from neraium_poly.research.phase29.costs import ResearchFeeCache
+        self.research_fees=ResearchFeeCache(self.events,self.fee_adapter,clock=self.clock,can_write=self._budget_ok)
+        while not self.stopping and not should_exit():
+            if getattr(self,"phase28",None) is not None and self.last_frame is not None:
+                try:
+                    watcher=self.phase26_inputs.watcher if self.phase26_inputs else None
+                    frame=current_frame(self.last_frame,extra_markets=tuple(watcher._markets.values()) if watcher else (),
+                        extra_books=watcher.observations() if watcher and hasattr(watcher,'observations') else watcher.snapshot() if watcher else (),as_of=self.clock())
+                    await self.research_fees.refresh(frame,forecast_tokens=getattr(self.phase28,'forecast_tokens',()))
+                except (ValueError, TypeError, OSError, KeyError) as error:
+                    self.research_fee_error=type(error).__name__
             for _ in range(10):
                 if self.stopping or should_exit():return
                 await asyncio.sleep(1)
@@ -942,7 +961,7 @@ class ExperimentalRuntime:
                     self._cancel_and_checkpoint(self.clock())
                 await asyncio.sleep(self.config.poll_seconds)
 
-        await asyncio.gather(cycles(), self._fees_loop(should_exit), self._event_resolution_loop(should_exit), independent_events(), self._domain_research_loop(should_exit), self._domain_research_loop(should_exit, "phase25"), self._volume_research_loop(should_exit))
+        await asyncio.gather(cycles(), self._fees_loop(should_exit), self._event_resolution_loop(should_exit), independent_events(), self._domain_research_loop(should_exit), self._domain_research_loop(should_exit, "phase25"), self._volume_research_loop(should_exit), self._research_fee_loop(should_exit))
 
     def health(self):
         last_success = self.last_success
@@ -1041,6 +1060,7 @@ class ExperimentalRuntime:
 
         state = add_capacity(self.archive_state(), service="experimental", now=self.clock())
         state["operations_research"] = experimental_research(self, for_operations=True)
+        state["research_costs"] = self.research_fees.status() if getattr(self,"research_fees",None) else None
         state["memory"] = self.memory_sampler.status() if getattr(self,"memory_sampler",None) else None
         with self.account.risk._lock:
             state["open_positions"] = self.account.risk.db.execute("SELECT count(*) FROM positions").fetchone()[0]

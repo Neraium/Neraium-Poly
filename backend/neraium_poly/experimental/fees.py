@@ -11,6 +11,7 @@ from neraium_poly.contracts import Record
 from neraium_poly.data.connectivity import ConcurrentPublicAdapter
 
 _refs = contextvars.ContextVar("fee_response_refs", default=None)
+_receipts = contextvars.ContextVar("fee_response_receipts", default=None)
 
 
 class PublicFeeResponse(Record):
@@ -20,10 +21,17 @@ class PublicFeeResponse(Record):
     payload: dict
 
 
+class PublicFeeReceipt(Record):
+    raw_response_id: str
+    content_sha256: str
+    url: str
+
+
 class FeeObservation(Record):
     token_id: str
     fee_rate: float = Field(ge=0, le=1)
     raw_response_ids: tuple[str, ...]
+    retrieval_ids: tuple[str, ...] = ()
     assumption: str = "Current official exponent1 global notional fee bound; refreshed by receipt-time TTL"
 
 
@@ -40,6 +48,7 @@ class AuditedFeeAdapter(ConcurrentPublicAdapter):
         if len(encoded) > 512 * 1024 or not self.can_write():
             raise ValueError("fee evidence budget exhausted")
         digest = hashlib.sha256(encoded.encode()).hexdigest()
+        received = datetime.now(UTC)
         rid = hashlib.sha256((base + path + digest).encode()).hexdigest()
         existing = self.store.get(rid)
         if existing:
@@ -47,7 +56,7 @@ class AuditedFeeAdapter(ConcurrentPublicAdapter):
             if kind != "PublicFeeResponse" or hashlib.sha256(payload.encode()).hexdigest() != sha:
                 raise ValueError("corrupt fee evidence")
         else:
-            now = datetime.now(UTC)
+            now = received
             self.store.append(
                 PublicFeeResponse(
                     id=rid,
@@ -59,14 +68,26 @@ class AuditedFeeAdapter(ConcurrentPublicAdapter):
                     payload=result,
                 )
             )
+        # Content-addressed responses remain deduplicated. Each real retrieval
+        # additionally receives a causal receipt; reusing old content must not
+        # silently erase the latest availability evidence.
+        receipt = PublicFeeReceipt(id=hashlib.sha256((rid+received.isoformat()).encode()).hexdigest(),
+            timestamp=received, available_at=received, source=base,
+            raw_response_id=rid, content_sha256=digest, url=base+path)
+        self.store.append(receipt)
         refs = _refs.get()
         if refs is not None:
             refs.append(rid)
+        receipts = _receipts.get()
+        if receipts is not None:
+            receipts.append(receipt.id)
         return result
 
     async def observed_fee(self, token):
         refs = []
         context = _refs.set(refs)
+        receipt_refs = []
+        receipt_context = _receipts.set(receipt_refs)
         try:
             model = await self.fee_model(token)
             if model is None or len(refs) < 2:
@@ -79,6 +100,7 @@ class AuditedFeeAdapter(ConcurrentPublicAdapter):
                 token_id=token,
                 fee_rate=model.effective_notional_bound(),
                 raw_response_ids=tuple(refs),
+                retrieval_ids=tuple(receipt_refs),
             )
             if not self.can_write():
                 return None
@@ -90,9 +112,11 @@ class AuditedFeeAdapter(ConcurrentPublicAdapter):
                 "reference": f"/markets-by-token/{token}",
                 "raw_response_ids": list(refs),
                 "evidence_id": observation.id,
+                "retrieval_ids": receipt_refs,
             }
         finally:
             _refs.reset(context)
+            _receipts.reset(receipt_context)
 
 
 def merge_fee_observations(*sources, now):

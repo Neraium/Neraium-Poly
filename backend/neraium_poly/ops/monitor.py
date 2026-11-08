@@ -1551,6 +1551,9 @@ def _render_findings(certified, experimental, width, height, errors):
         counts = _mapping(report.get("counts"))
         rows += [(f"Evaluated {_number(counts.get('findings_evaluated'))} Qualified {_number(counts.get('qualified_research_findings'))}", "white"),
                  (f"Reviewed groups {_number(counts.get('reviewed_canonical_groups'))}", "white")]
+        if volume:
+            stages=_mapping(report.get("pipeline_counts"))
+            rows.append((f"Books {_number(stages.get('book_executable'))} Values {_number(stages.get('economic_evaluation_completed'))}", "white"))
         for reason, count in sorted(_mapping(report.get("rejections")).items(), key=lambda x: -x[1])[:4]:
             rows.append((f"{_number(count)} {_clean(reason)}", "yellow"))
         for finding in report.get("latest_findings", [])[:3]:

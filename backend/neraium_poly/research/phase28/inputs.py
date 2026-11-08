@@ -26,6 +26,7 @@ def current_frame(primary, *, extra_markets=(), extra_books=(), as_of):
         if max(b.timestamp,b.available_at)>now:raise ValueError('future_supplemental_book')
         if b.token_id not in books or b.timestamp>books[b.token_id].timestamp:books[b.token_id]=b
     connectivity={**frame.connectivity,'research_primary_frame_id':frame.id,'research_primary_available_at':frame.available_at.isoformat(),
+                  'research_subscribed_token_ids':sorted(markets),
                   'research_composition':'native market/book clocks unchanged; composition clock is not quote freshness'}
     identity=digest(['current-research-frame',frame.id,now.isoformat(),sorted((t,b.id) for t,b in books.items()),sorted(markets)])
     return frame.model_copy(update={'id':identity,'timestamp':now,'available_at':now,'source':'neraium-poly/current-research-frame/v28',
