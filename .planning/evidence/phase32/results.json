@@ -1,0 +1,279 @@
+{
+  "observed_at": "2026-11-08T20:52:01.155413+00:00",
+  "verified_source_commit": "a26dd8f",
+  "forecasts_by_domain": {
+    "crypto": 24,
+    "sports": 130,
+    "economics": 4,
+    "weather": 20,
+    "finance": 2
+  },
+  "new_independent_forecasts_during_phase": 0,
+  "official_labels": 18,
+  "official_event_groups": {
+    "weather": 3,
+    "sports": 4
+  },
+  "weather_verified_forecasts": 10,
+  "models": [
+    {
+      "domain": "sports",
+      "model_id": "nhl-beta-frequency-v25.1",
+      "event_disjoint_groups": 4,
+      "descriptive_brier": 0.28250294500464024,
+      "descriptive_log_loss": 0.758001627796643,
+      "market_baseline_comparison": null,
+      "superiority_established": false
+    },
+    {
+      "domain": "sports",
+      "model_id": "nhl-causal-elo-v25.1",
+      "event_disjoint_groups": 4,
+      "descriptive_brier": 0.2706210128663171,
+      "descriptive_log_loss": 0.7352380445290576,
+      "market_baseline_comparison": null,
+      "superiority_established": false
+    },
+    {
+      "domain": "weather",
+      "model_id": "metar-diurnal-analog-v24.1",
+      "event_disjoint_groups": 2,
+      "descriptive_brier": 0.005053507728894179,
+      "descriptive_log_loss": 0.071630461154123,
+      "market_baseline_comparison": null,
+      "superiority_established": false
+    },
+    {
+      "domain": "weather",
+      "model_id": "metar-diurnal-gaussian-v25.1",
+      "event_disjoint_groups": 3,
+      "descriptive_brier": 0.03249892098665879,
+      "descriptive_log_loss": 0.19756013100872674,
+      "market_baseline_comparison": null,
+      "superiority_established": false
+    },
+    {
+      "domain": "weather",
+      "model_id": "metar-recency-kernel-v25.1",
+      "event_disjoint_groups": 3,
+      "descriptive_brier": 0.03867860481188982,
+      "descriptive_log_loss": 0.20542360982511312,
+      "market_baseline_comparison": null,
+      "superiority_established": false
+    },
+    {
+      "domain": "weather",
+      "model_id": "metar-recent-climatology-v24.1",
+      "event_disjoint_groups": 2,
+      "descriptive_brier": 0.005053507728894174,
+      "descriptive_log_loss": 0.07163046115412296,
+      "market_baseline_comparison": null,
+      "superiority_established": false
+    }
+  ],
+  "native_settlements": 0,
+  "certified_training_events": 0,
+  "certified_heldout_events": 0,
+  "sii_incremental_value": null,
+  "economics": {
+    "as_of": "2026-11-08T20:51:02.270350+00:00",
+    "counts": {
+      "findings_evaluated": 120,
+      "qualified_research_findings": 0,
+      "modeled_positive_gross_scenarios": 0,
+      "execution_authorized": 0,
+      "reviewed_canonical_groups": 34,
+      "statistically_independent_resolved_events": 0
+    },
+    "pipeline_counts": {
+      "identity_validated": 74,
+      "book_matched": 66,
+      "book_executable": 54,
+      "economic_evaluation_completed": 30
+    },
+    "rejections": {
+      "forecast_outside_frozen_300_second_decision_window": 120,
+      "supported_contract_payout_semantics_required": 50,
+      "current_executable_book_missing": 54,
+      "current_book_receipt_outside_15_seconds": 12,
+      "stale_book": 12,
+      "current_exact_market_metadata_missing": 46,
+      "forecast_event_decision_horizon_ended": 32
+    },
+    "runtime_error": null,
+    "report_callback_error": null
+  },
+  "paired_book_findings": {
+    "as_of": "2026-11-08T20:51:02.270350+00:00",
+    "paired_books_evaluated": 51,
+    "positive_conditional_gross_pairs": 0,
+    "qualified_opportunities": 0,
+    "rejections": {
+      "paired_current_book_missing": 74,
+      "fresh_authentic_unique_complete_depth_required": 94,
+      "exact_compatible_active_settlement_metadata_required": 122,
+      "exact_binary_yes_no_metadata_required": 68
+    }
+  },
+  "shadow": {
+    "status": "research_only",
+    "enrollment_id": "12f54431fc04fea4bd7adb8c111ab1efc1b1070f820a032852a4eaffe8e28c80",
+    "last_at": "2026-11-08T20:51:21.257661+00:00",
+    "capital_scope": "single hypothetical500USD shared pool, not certified/experimental account capital",
+    "hypothetical_cash": 500.0,
+    "capital_reserved": 0,
+    "positions": 0,
+    "position_quantity": 0,
+    "exposure": 0.0,
+    "capital_utilization": 0.0,
+    "orders_attempted": 0,
+    "pending_orders": 0,
+    "hypothetical_fills": 0,
+    "canceled": 0,
+    "expired": 0,
+    "realized_simulated_pnl": null,
+    "unrealized_simulated_pnl": null,
+    "drawdown": null,
+    "mark_status": "no_filled_positions",
+    "verified_settled_parent_events": 0,
+    "statistically_independent_events": null,
+    "settlements": 0,
+    "suspended": false,
+    "suspension_reason": null,
+    "strategies": {
+      "cross_market": {
+        "fills": 0,
+        "orders": 0,
+        "realized_pnl": null,
+        "settlements": 0,
+        "suspended": false,
+        "positions": 0,
+        "reserved": 0,
+        "exposure": 0
+      },
+      "ensemble": {
+        "fills": 0,
+        "orders": 0,
+        "realized_pnl": null,
+        "settlements": 0,
+        "suspended": false,
+        "positions": 0,
+        "reserved": 0,
+        "exposure": 0
+      },
+      "high_conviction": {
+        "fills": 0,
+        "orders": 0,
+        "realized_pnl": null,
+        "settlements": 0,
+        "suspended": false,
+        "positions": 0,
+        "reserved": 0,
+        "exposure": 0
+      },
+      "small_edge": {
+        "fills": 0,
+        "orders": 0,
+        "realized_pnl": null,
+        "settlements": 0,
+        "suspended": false,
+        "positions": 0,
+        "reserved": 0,
+        "exposure": 0
+      }
+    },
+    "rejections": {
+      "strategy_evidence_not_eligible": 213592
+    },
+    "runtime_error": null,
+    "research_only": true,
+    "trading_authority": false,
+    "certification_authority": false,
+    "actual_account_access": false
+  },
+  "accounts": {
+    "paper-live": {
+      "cash": 500.0,
+      "realized_pnl": 0.0,
+      "positions": 0,
+      "emergency_stop": false
+    },
+    "experimental-paper": {
+      "cash": 496.11522059829053,
+      "realized_pnl": -3.8847794017094013,
+      "positions": 0,
+      "emergency_stop": false
+    }
+  },
+  "account_prefixes_preserved": true,
+  "storage": {
+    "collector": {
+      "usage_gib": 20.12918386235833,
+      "budget_gib": 150.0,
+      "conditional_growth_kib_s": 45.55012686699467,
+      "conditional_runway_days": 34.60255356676749,
+      "free_gib": 397.93914794921875,
+      "floor_gib": 100.0,
+      "health": "ok"
+    },
+    "experimental": {
+      "usage_gib": 14.954991267994046,
+      "budget_gib": 150.0,
+      "conditional_growth_kib_s": 212.92584760590637,
+      "conditional_runway_days": 7.697262956731243,
+      "free_gib": 397.93914794921875,
+      "floor_gib": 100.0,
+      "health": "ok"
+    }
+  },
+  "journal_integrity": {
+    "event-intelligence/forecasts.sqlite": {
+      "records": 4662,
+      "head_sha256": "baf281e39ac3889a2bb469347b154a2d5727c9065f63583bb70bd2153a0b2804",
+      "preexisting_prefix_preserved": true
+    },
+    "event-intelligence/sports/prospective.sqlite": {
+      "records": 21,
+      "head_sha256": "f39795944e1f8f60ecc8f3994f1633fec98d57102889448add127a2d7b3ff157",
+      "preexisting_prefix_preserved": true
+    },
+    "event-intelligence/domains/forecasts.sqlite": {
+      "records": 189,
+      "head_sha256": "e37443721999b00cfd52a22d491f695b6da542b2d6f46db10f593425398ded27",
+      "preexisting_prefix_preserved": true
+    }
+  },
+  "immutable_catalog_segments_preserved": 3550,
+  "integrity_local_manifest_sha256": "f16d98d0406948f7c7dd82fc7b596fc2863e75a9e50b5413bcaa032e2fc8405f",
+  "api_latency_seconds": [
+    14.633118032012135,
+    0.44674654910340905,
+    0.5234149219468236
+  ],
+  "followup_latency": [
+    {
+      "at": "2026-11-08T20:52:44.679277+00:00",
+      "seconds": 0.1991190300323069,
+      "status": 200
+    },
+    {
+      "at": "2026-11-08T20:52:44.878402+00:00",
+      "seconds": 0.04565337998792529,
+      "status": 200
+    },
+    {
+      "at": "2026-11-08T20:52:44.924057+00:00",
+      "seconds": 0.041803542990237474,
+      "status": 200
+    }
+  ],
+  "latency_limitation": "one14.6s transient observed; synchronous journal/fee work remains on eventloop; spike not captured or causally resolved by20s profile",
+  "parallelism": {
+    "peak_agents_including_root": 4,
+    "writing_worktrees": 3,
+    "parallel_local_final_validation_processes": 3,
+    "pytest_cpu_workers": 1,
+    "browser_workers": 1
+  },
+  "scope": "official reference-event research, not native payout/certification/executable profitability; short observations not indefinite stability"
+}

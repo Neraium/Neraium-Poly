@@ -1,0 +1,152 @@
+{
+  "at": "2026-11-08T20:53:50.358783+00:00",
+  "scope": "all18 current-enrollment canonical labels independently replayed from production originals and saved raw sources; no writes",
+  "labels": [
+    {
+      "label_id": "b00de3927c3374d9ba7d0a63099f6e72fb970cf8b7779769ceea86125e010e3b",
+      "forecast_id": "f1662a8afa4c01a45880382b97c672be0cb253fb1dc99ddf28dcd7abde5201f3",
+      "domain": "weather",
+      "event_group_id": "7eff3e5934351800cfb93e856a34339fbc7c9ed842aebacad122d66e78a37614",
+      "outcome": 0,
+      "official_evidence_sha256": "bea57412637a194d7cbb9064e466d0ea9a90a2d59c53fbb6f04bf2f878758439"
+    },
+    {
+      "label_id": "38990e6843569d10ae12e58b1cb9c9b7b1fa8778da81493a1123be094ce7663f",
+      "forecast_id": "e564a5e724b8e330cf169a99b32431ab59b7fa8c0decd70d940f6417ef6a2653",
+      "domain": "weather",
+      "event_group_id": "e4488026ed0ef1f287e502f3b6cb9dcabe7db006daeec9e59e091fc8b4243cf4",
+      "outcome": 1,
+      "official_evidence_sha256": "a3886725e6a359024ee85432a2be6c89f1d6c50aa1ea641af62103fad5d9cf43"
+    },
+    {
+      "label_id": "5ef8d7792f77f8f8e7862ac9cc5d6553438c36f929c08dd78f1f713622dcc952",
+      "forecast_id": "e4741d8b03db567d0d405968b5d025b22d10335b4b278540e5559fea7d779b7f",
+      "domain": "weather",
+      "event_group_id": "7eff3e5934351800cfb93e856a34339fbc7c9ed842aebacad122d66e78a37614",
+      "outcome": 0,
+      "official_evidence_sha256": "bea57412637a194d7cbb9064e466d0ea9a90a2d59c53fbb6f04bf2f878758439"
+    },
+    {
+      "label_id": "0256d3f69289dc80bee07b22a5fbc5a30e22c7ebc2a31a587854ed7910e112fe",
+      "forecast_id": "8fd59e4ba5a052d2285e6174cb4ead00ad847aa1336e25da857d94becb34dd50",
+      "domain": "weather",
+      "event_group_id": "e4488026ed0ef1f287e502f3b6cb9dcabe7db006daeec9e59e091fc8b4243cf4",
+      "outcome": 1,
+      "official_evidence_sha256": "a3886725e6a359024ee85432a2be6c89f1d6c50aa1ea641af62103fad5d9cf43"
+    },
+    {
+      "label_id": "32326b4674ecde57d79f4401cecb7c5eb5336ac2bab70d8214454a735912af1e",
+      "forecast_id": "e50b569e42c954b6fc5819bf7f9f2987048d164330e31dc9d79d1cf808891524",
+      "domain": "weather",
+      "event_group_id": "1ec636b4404235099d7aea60ea89956197e86e354b4d0a3b1d67a841d3f71106",
+      "outcome": 0,
+      "official_evidence_sha256": "434fbe50e0a0305bf167e59178be2164534cafdfa153d77213440261a21ec620"
+    },
+    {
+      "label_id": "4adc1328799f83a9f75c0e845c9a0773bbf24c9011855041fa14c5d17ec68988",
+      "forecast_id": "8e3d55b875d863b0d0808a66e9b066eddc1f8ce28d225144613e01c97f9f0af8",
+      "domain": "weather",
+      "event_group_id": "7eff3e5934351800cfb93e856a34339fbc7c9ed842aebacad122d66e78a37614",
+      "outcome": 0,
+      "official_evidence_sha256": "bea57412637a194d7cbb9064e466d0ea9a90a2d59c53fbb6f04bf2f878758439"
+    },
+    {
+      "label_id": "d37a369afc67529c16786d72fc2dae248413718c72e009cb63534fac82cfdfdd",
+      "forecast_id": "5706f728a9caa514561d503dd37802f514fda9a3ba54c5befdaca93e25b857d8",
+      "domain": "weather",
+      "event_group_id": "e4488026ed0ef1f287e502f3b6cb9dcabe7db006daeec9e59e091fc8b4243cf4",
+      "outcome": 1,
+      "official_evidence_sha256": "a3886725e6a359024ee85432a2be6c89f1d6c50aa1ea641af62103fad5d9cf43"
+    },
+    {
+      "label_id": "3b4c09e53725b183b3895785a575bdf60970b49c3e95747c5e34b52ee3b1459b",
+      "forecast_id": "f70b15892c1397bdb9655f8864bd48634f7104d7e788f1d5d9400dd30aed0bdf",
+      "domain": "sports",
+      "event_group_id": "160542e4096d0f7ca6b0fce7c4fd1218a905cf6fdd112163d2c361a211059bb5",
+      "outcome": 1,
+      "official_evidence_sha256": "4347bcb230e5f5de49bd3fc872522ff99dca83e2799eff526d9544ba8c0c4a3d"
+    },
+    {
+      "label_id": "5fbc696f79fbcc1d2d624e8a3cc49031a2e1e29d5cb10abe0c6db192c23a0d16",
+      "forecast_id": "daa6a47a6c4120b5a9eb3faf4110f6ead52a1aa00dc1cdc5a150a460b22ae1bf",
+      "domain": "sports",
+      "event_group_id": "84a7e6af728eb63373f118f0447cc79048bcb3a14ef1f7dff7bbbb60f1c5d51d",
+      "outcome": 0,
+      "official_evidence_sha256": "a0f774dcb26e220f983ad9984e06564693cd1fa21bcf07c0584bdc3992eca45c"
+    },
+    {
+      "label_id": "50508bf66f72b15b41e3df91f65cb9b02a049aa4832aeac6ab552e1fb990c93b",
+      "forecast_id": "e22b5c4dec815b9ddac03dc3726bcfc45d4a320e7c88dbd70bdcc2e30b20d1cf",
+      "domain": "sports",
+      "event_group_id": "5ba259785af44c7a5fa52599c354b6ab851aefd0d59abed86bd1de80ff17f7cc",
+      "outcome": 1,
+      "official_evidence_sha256": "3554e4b618123b30ada36c9256d1d8f29cb17e298d11827cc304b4e40fc83312"
+    },
+    {
+      "label_id": "6c0fd99aea6e8fbd421ecbe83915bacb5ff3c5676ac825753c087db0f4f0f78f",
+      "forecast_id": "6f5faa2b27a09d1bbcebe464e4643be8649ce0f078817993a97d06ea00256c1f",
+      "domain": "sports",
+      "event_group_id": "fe5d8873419b76e45211ab794a1821c81195ed08aa3b43e099b49ec917818c14",
+      "outcome": 1,
+      "official_evidence_sha256": "32d3c2494377570699f3a7519650ca6193884a1054335a51c88948e689874a7b"
+    },
+    {
+      "label_id": "3d8aa8606dc5c5d758a6de4676704ee311db499069318da3d5f65edca6cd2e0f",
+      "forecast_id": "595cf818cb4b51bec70858de3abc1674b8a96691a939c973bc09044f366d54e6",
+      "domain": "weather",
+      "event_group_id": "7eff3e5934351800cfb93e856a34339fbc7c9ed842aebacad122d66e78a37614",
+      "outcome": 0,
+      "official_evidence_sha256": "bea57412637a194d7cbb9064e466d0ea9a90a2d59c53fbb6f04bf2f878758439"
+    },
+    {
+      "label_id": "4663752c0b6fbabf97af6df2b1c97d4e0a84f28444a10e10c20bc7c8b3ad02c7",
+      "forecast_id": "0a123b60661e4107146bfcd6fe6c1186aa27d3b34b278806add61ebddaab5f59",
+      "domain": "weather",
+      "event_group_id": "1ec636b4404235099d7aea60ea89956197e86e354b4d0a3b1d67a841d3f71106",
+      "outcome": 0,
+      "official_evidence_sha256": "434fbe50e0a0305bf167e59178be2164534cafdfa153d77213440261a21ec620"
+    },
+    {
+      "label_id": "84d065020b2952396487764361fe667fd9cbedd79943dd7a998ba2c9180cdcc8",
+      "forecast_id": "04b1fc89a32e86c29cdb7e32fd3a1b6b6a56dd87536862444a2bb4cf79d65609",
+      "domain": "weather",
+      "event_group_id": "e4488026ed0ef1f287e502f3b6cb9dcabe7db006daeec9e59e091fc8b4243cf4",
+      "outcome": 1,
+      "official_evidence_sha256": "a3886725e6a359024ee85432a2be6c89f1d6c50aa1ea641af62103fad5d9cf43"
+    },
+    {
+      "label_id": "52c5393c9084c3f6b8fbcebb319ad3ebea072f70841c5a594d7438e0a6ef2f76",
+      "forecast_id": "abc6129d8cb2b71e6695284f2091a272aceeee299ddc7d540060b36efa43f118",
+      "domain": "sports",
+      "event_group_id": "160542e4096d0f7ca6b0fce7c4fd1218a905cf6fdd112163d2c361a211059bb5",
+      "outcome": 1,
+      "official_evidence_sha256": "4347bcb230e5f5de49bd3fc872522ff99dca83e2799eff526d9544ba8c0c4a3d"
+    },
+    {
+      "label_id": "090856bdb052fb4be9ba01d019445568d85698b9ec1462a054ef28c711da40d8",
+      "forecast_id": "1f1fb174f73827ee35c3a5165aeb4361da0cee3be5f04ebebb46701859cb8843",
+      "domain": "sports",
+      "event_group_id": "84a7e6af728eb63373f118f0447cc79048bcb3a14ef1f7dff7bbbb60f1c5d51d",
+      "outcome": 0,
+      "official_evidence_sha256": "a0f774dcb26e220f983ad9984e06564693cd1fa21bcf07c0584bdc3992eca45c"
+    },
+    {
+      "label_id": "1dc599ab13b213ccbcb3a639fd683539a9542c765416a635d9136822819ebae0",
+      "forecast_id": "4944da6a9d9f3c61804801b151e71f64d0adac29f1515bdae21207f204265ad6",
+      "domain": "sports",
+      "event_group_id": "fe5d8873419b76e45211ab794a1821c81195ed08aa3b43e099b49ec917818c14",
+      "outcome": 1,
+      "official_evidence_sha256": "32d3c2494377570699f3a7519650ca6193884a1054335a51c88948e689874a7b"
+    },
+    {
+      "label_id": "eece7a00b71dbf88dbaeeffda62490b84a31c15b2a50937c3c9780ff46e4e3a0",
+      "forecast_id": "0eece2c81e86f7d86eb31991596f705fb5a425f83e3c41f7d91637870fffba86",
+      "domain": "sports",
+      "event_group_id": "5ba259785af44c7a5fa52599c354b6ab851aefd0d59abed86bd1de80ff17f7cc",
+      "outcome": 1,
+      "official_evidence_sha256": "3554e4b618123b30ada36c9256d1d8f29cb17e298d11827cc304b4e40fc83312"
+    }
+  ],
+  "verified": 18,
+  "enrollment_id": "4b6fd94427c843d4bf7de7b1de7ec73235edcc57e0f59fd4dfe39622b8ee12c8"
+}

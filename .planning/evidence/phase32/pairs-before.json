@@ -1,0 +1,3122 @@
+{
+  "schema_version": "phase32-paired-depth-v1",
+  "as_of": "2026-11-08T20:33:47.447506+00:00",
+  "frame_id": "e2942e227be77b283a2327602a088d3a65ba4fb97055fc23820f9f40a4438dcc",
+  "frame_sha256": "06c88ee8441bcedee2ea2de51514cdc8c63bf2961362492ef5a4ee0fd04b0bf5",
+  "markets_considered": 409,
+  "paired_books_evaluated": 49,
+  "positive_conditional_gross_pairs": 0,
+  "qualified_opportunities": 0,
+  "rejections": {
+    "paired_current_book_missing": 84,
+    "fresh_authentic_unique_complete_depth_required": 85,
+    "exact_compatible_active_settlement_metadata_required": 122,
+    "exact_binary_yes_no_metadata_required": 69
+  },
+  "findings": [
+    {
+      "source_book_ids": [
+        "fd60a7d7035b852fa16507ce144e774f03db2f040912fa93a36928510bb17eb7",
+        "3d1c497ad06287de828bb35a337a6f4cd4b1cdfcf55a53e8cb1fe65388815be1"
+      ],
+      "source_timestamps": [
+        "2026-11-08T20:33:42.920000+00:00",
+        "2026-11-08T20:33:42.920000+00:00"
+      ],
+      "receipt_timestamps": [
+        "2026-11-08T20:33:42.961120+00:00",
+        "2026-11-08T20:33:42.961120+00:00"
+      ],
+      "book_sha256": [
+        "f9dc7d0827acfb33caaaf74f5944b7c9615767b0d091cccd9388d451f4b747a6",
+        "9cfb310cff2023490ffcebb0da4d1032970ebafffae74a27ff148799b679c59a"
+      ],
+      "participation_assumption": 0.1,
+      "minimum_paired_quantity": 5.0,
+      "levels": [],
+      "matched_level_segments": 0,
+      "level_display_scope": "first64, complete source depth bound by volume frame hash",
+      "maximum": {
+        "bankroll": null,
+        "capital_ceiling": null,
+        "paired_shares": 0.0,
+        "acquisition_principal": 0.0,
+        "conditional_gross_profit": 0.0,
+        "native_minimum_size_met": false,
+        "fees": null,
+        "slippage_and_leg_risk": null,
+        "conservative_net_profit": null,
+        "return_on_capital": null,
+        "worst_case_acquisition_loss": 0.0,
+        "actual_fill": false
+      },
+      "capital_scenarios": [
+        {
+          "bankroll": 500.0,
+          "capital_ceiling": 100.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 1000.0,
+          "capital_ceiling": 200.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 10000.0,
+          "capital_ceiling": 2000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 100000.0,
+          "capital_ceiling": 20000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 1000000.0,
+          "capital_ceiling": 200000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        }
+      ],
+      "payout_assumption": "conditional 1USD per complementary complete set; native payoff/merge/redemption proof not established",
+      "capital_scope": "hypothetical20percent ceiling, no account or risk-limit change",
+      "qualified": false,
+      "trading_authority": false,
+      "research_only": true,
+      "market_id": "1105740",
+      "event_id": "143443",
+      "token_ids": [
+        "85482789936744260311999371350699987044247644306653001528276695717482676507600",
+        "70138439134789940151293221562290156019511842004756860386379046881297155754497"
+      ],
+      "rules_sha256": "b0aacec3efead9f772c8985295e5e90b1d4a6d5cbffd11b6c63da48c573545bc",
+      "question": "Will Edmundo Gonz\u00e1lez be the leader of Venezuela end of 2026?",
+      "end_time": "2026-12-31T00:00:00+00:00",
+      "settlement_reference": "https://www.un.org/dgacm/en/content/protocol/hshgnfa",
+      "blockers": [
+        "native_complete_set_payout_and_settlement_proof_required",
+        "all_in_cost_and_leg_risk_evidence_required",
+        "atomic_multi_leg_execution_not_authorized"
+      ]
+    },
+    {
+      "source_book_ids": [
+        "5f1106c4407e3bd3dd10359b8ec2771f2f2d7555999715c01d033eae0fcc6612",
+        "e1cdfd9d06e70921141008ec7c8f0d3bf863ed72978e199624c96446ee7628f4"
+      ],
+      "source_timestamps": [
+        "2026-11-08T20:33:39.493000+00:00",
+        "2026-11-08T20:33:39.493000+00:00"
+      ],
+      "receipt_timestamps": [
+        "2026-11-08T20:33:39.534686+00:00",
+        "2026-11-08T20:33:39.534686+00:00"
+      ],
+      "book_sha256": [
+        "933ae8d25e0cbba22ea77ffe437da9ecd87be7fc9b1b75ed1873a913fb5cd391",
+        "0296b5dab1c9890fe339e6201795e5c714c900806d2d44e8642bd6739bcf4dfa"
+      ],
+      "participation_assumption": 0.1,
+      "minimum_paired_quantity": 5.0,
+      "levels": [],
+      "matched_level_segments": 0,
+      "level_display_scope": "first64, complete source depth bound by volume frame hash",
+      "maximum": {
+        "bankroll": null,
+        "capital_ceiling": null,
+        "paired_shares": 0.0,
+        "acquisition_principal": 0.0,
+        "conditional_gross_profit": 0.0,
+        "native_minimum_size_met": false,
+        "fees": null,
+        "slippage_and_leg_risk": null,
+        "conservative_net_profit": null,
+        "return_on_capital": null,
+        "worst_case_acquisition_loss": 0.0,
+        "actual_fill": false
+      },
+      "capital_scenarios": [
+        {
+          "bankroll": 500.0,
+          "capital_ceiling": 100.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 1000.0,
+          "capital_ceiling": 200.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 10000.0,
+          "capital_ceiling": 2000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 100000.0,
+          "capital_ceiling": 20000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 1000000.0,
+          "capital_ceiling": 200000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        }
+      ],
+      "payout_assumption": "conditional 1USD per complementary complete set; native payoff/merge/redemption proof not established",
+      "capital_scope": "hypothetical20percent ceiling, no account or risk-limit change",
+      "qualified": false,
+      "trading_authority": false,
+      "research_only": true,
+      "market_id": "1105741",
+      "event_id": "143443",
+      "token_ids": [
+        "111206023652925249192617904527998565944558514529537236601741996492948632883698",
+        "80339409420962166114161973004452881729789538477338621544329890236335726311527"
+      ],
+      "rules_sha256": "b0aacec3efead9f772c8985295e5e90b1d4a6d5cbffd11b6c63da48c573545bc",
+      "question": "Will Mar\u00eda Corina Machado be the leader of Venezuela end of 2026?",
+      "end_time": "2027-01-01T04:59:00+00:00",
+      "settlement_reference": "https://www.un.org/dgacm/en/content/protocol/hshgnfa",
+      "blockers": [
+        "native_complete_set_payout_and_settlement_proof_required",
+        "all_in_cost_and_leg_risk_evidence_required",
+        "atomic_multi_leg_execution_not_authorized"
+      ]
+    },
+    {
+      "source_book_ids": [
+        "47fbc60a446e4d354e83b5fffd5833e3820b9add7716710c622071b103d7c20f",
+        "968dd4159a1a27c95303984e2a3cdb2b7aac80e5c443174c7d101c69b7274b27"
+      ],
+      "source_timestamps": [
+        "2026-11-08T20:33:45.950000+00:00",
+        "2026-11-08T20:33:45.950000+00:00"
+      ],
+      "receipt_timestamps": [
+        "2026-11-08T20:33:45.993661+00:00",
+        "2026-11-08T20:33:45.993661+00:00"
+      ],
+      "book_sha256": [
+        "692f6c8f08e9cf33e7ce6c254c044287f22119634e2bf20336c9e4ddfa295efc",
+        "5dda8851e7d503293ba18f480508cc48c1ebc93b0e78459157f05859d40a742b"
+      ],
+      "participation_assumption": 0.1,
+      "minimum_paired_quantity": 5.0,
+      "levels": [],
+      "matched_level_segments": 0,
+      "level_display_scope": "first64, complete source depth bound by volume frame hash",
+      "maximum": {
+        "bankroll": null,
+        "capital_ceiling": null,
+        "paired_shares": 0.0,
+        "acquisition_principal": 0.0,
+        "conditional_gross_profit": 0.0,
+        "native_minimum_size_met": false,
+        "fees": null,
+        "slippage_and_leg_risk": null,
+        "conservative_net_profit": null,
+        "return_on_capital": null,
+        "worst_case_acquisition_loss": 0.0,
+        "actual_fill": false
+      },
+      "capital_scenarios": [
+        {
+          "bankroll": 500.0,
+          "capital_ceiling": 100.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 1000.0,
+          "capital_ceiling": 200.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 10000.0,
+          "capital_ceiling": 2000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 100000.0,
+          "capital_ceiling": 20000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 1000000.0,
+          "capital_ceiling": 200000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        }
+      ],
+      "payout_assumption": "conditional 1USD per complementary complete set; native payoff/merge/redemption proof not established",
+      "capital_scope": "hypothetical20percent ceiling, no account or risk-limit change",
+      "qualified": false,
+      "trading_authority": false,
+      "research_only": true,
+      "market_id": "1105742",
+      "event_id": "143443",
+      "token_ids": [
+        "38667196958602416137463628517439560119304765709104570192447644733106171420112",
+        "6638895201070039547671726076818069674458322142629985177641367819559425166288"
+      ],
+      "rules_sha256": "b0aacec3efead9f772c8985295e5e90b1d4a6d5cbffd11b6c63da48c573545bc",
+      "question": "Will Delcy Rodr\u00edguez be the leader of Venezuela end of 2026?",
+      "end_time": "2027-01-01T04:59:00+00:00",
+      "settlement_reference": "https://www.un.org/dgacm/en/content/protocol/hshgnfa",
+      "blockers": [
+        "native_complete_set_payout_and_settlement_proof_required",
+        "all_in_cost_and_leg_risk_evidence_required",
+        "atomic_multi_leg_execution_not_authorized"
+      ]
+    },
+    {
+      "source_book_ids": [
+        "b292fafc330cf301325f0175e2fdf1a0c67a1055349c180023adcdc5b105e8e2",
+        "52fb8124b93d62b007a71248a5c19a8380fdd13cc87f7cce20f79d136d56218e"
+      ],
+      "source_timestamps": [
+        "2026-11-08T20:33:46.439000+00:00",
+        "2026-11-08T20:33:46.439000+00:00"
+      ],
+      "receipt_timestamps": [
+        "2026-11-08T20:33:46.505753+00:00",
+        "2026-11-08T20:33:46.505753+00:00"
+      ],
+      "book_sha256": [
+        "6538aa831d4383579165bc1f1b4febc91a19de41fb414b6251186c748e1f2525",
+        "80aaa8bd107f5c934a43f83794d56365636e8d2d507784fd4727e27adb6b7b51"
+      ],
+      "participation_assumption": 0.1,
+      "minimum_paired_quantity": 5.0,
+      "levels": [],
+      "matched_level_segments": 0,
+      "level_display_scope": "first64, complete source depth bound by volume frame hash",
+      "maximum": {
+        "bankroll": null,
+        "capital_ceiling": null,
+        "paired_shares": 0.0,
+        "acquisition_principal": 0.0,
+        "conditional_gross_profit": 0.0,
+        "native_minimum_size_met": false,
+        "fees": null,
+        "slippage_and_leg_risk": null,
+        "conservative_net_profit": null,
+        "return_on_capital": null,
+        "worst_case_acquisition_loss": 0.0,
+        "actual_fill": false
+      },
+      "capital_scenarios": [
+        {
+          "bankroll": 500.0,
+          "capital_ceiling": 100.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 1000.0,
+          "capital_ceiling": 200.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 10000.0,
+          "capital_ceiling": 2000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 100000.0,
+          "capital_ceiling": 20000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 1000000.0,
+          "capital_ceiling": 200000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        }
+      ],
+      "payout_assumption": "conditional 1USD per complementary complete set; native payoff/merge/redemption proof not established",
+      "capital_scope": "hypothetical20percent ceiling, no account or risk-limit change",
+      "qualified": false,
+      "trading_authority": false,
+      "research_only": true,
+      "market_id": "1105744",
+      "event_id": "143443",
+      "token_ids": [
+        "37090128566507509913630589460372620352013766554886380785463533062224343545231",
+        "21527446005162722668702146847806837944786417986794925592709069062391666573103"
+      ],
+      "rules_sha256": "b0aacec3efead9f772c8985295e5e90b1d4a6d5cbffd11b6c63da48c573545bc",
+      "question": "Will Nicol\u00e1s Maduro be the leader of Venezuela end of 2026?",
+      "end_time": "2027-01-01T04:59:00+00:00",
+      "settlement_reference": "https://www.un.org/dgacm/en/content/protocol/hshgnfa",
+      "blockers": [
+        "native_complete_set_payout_and_settlement_proof_required",
+        "all_in_cost_and_leg_risk_evidence_required",
+        "atomic_multi_leg_execution_not_authorized"
+      ]
+    },
+    {
+      "source_book_ids": [
+        "6b3e3b8250df49ebafa112a691b32e507caf74e0038ca6412eed49df407434e0",
+        "2d06fd01c582b5319949bcc32806cc2a8c1fe7be49b467f1e7010cc07a5c0e47"
+      ],
+      "source_timestamps": [
+        "2026-11-08T20:33:45.810000+00:00",
+        "2026-11-08T20:33:45.810000+00:00"
+      ],
+      "receipt_timestamps": [
+        "2026-11-08T20:33:45.850916+00:00",
+        "2026-11-08T20:33:45.850916+00:00"
+      ],
+      "book_sha256": [
+        "964ab400c0ced051cffde9b88b35928fa9444c5a9bb2e938ef3d522824e7fc92",
+        "2c76c22d837e4e82e4c2a89650bac7a8e9ec20ca33ee2b4f781414c85c299c43"
+      ],
+      "participation_assumption": 0.1,
+      "minimum_paired_quantity": 5.0,
+      "levels": [],
+      "matched_level_segments": 0,
+      "level_display_scope": "first64, complete source depth bound by volume frame hash",
+      "maximum": {
+        "bankroll": null,
+        "capital_ceiling": null,
+        "paired_shares": 0.0,
+        "acquisition_principal": 0.0,
+        "conditional_gross_profit": 0.0,
+        "native_minimum_size_met": false,
+        "fees": null,
+        "slippage_and_leg_risk": null,
+        "conservative_net_profit": null,
+        "return_on_capital": null,
+        "worst_case_acquisition_loss": 0.0,
+        "actual_fill": false
+      },
+      "capital_scenarios": [
+        {
+          "bankroll": 500.0,
+          "capital_ceiling": 100.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 1000.0,
+          "capital_ceiling": 200.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 10000.0,
+          "capital_ceiling": 2000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 100000.0,
+          "capital_ceiling": 20000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 1000000.0,
+          "capital_ceiling": 200000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        }
+      ],
+      "payout_assumption": "conditional 1USD per complementary complete set; native payoff/merge/redemption proof not established",
+      "capital_scope": "hypothetical20percent ceiling, no account or risk-limit change",
+      "qualified": false,
+      "trading_authority": false,
+      "research_only": true,
+      "market_id": "1105748",
+      "event_id": "143443",
+      "token_ids": [
+        "86169745307861674090452043379261530418870357324952931974995649343490068237899",
+        "82473771797407453562844762291919931002221279802613383962464132028745296294953"
+      ],
+      "rules_sha256": "b0aacec3efead9f772c8985295e5e90b1d4a6d5cbffd11b6c63da48c573545bc",
+      "question": "Will Marco Rubio be the leader of Venezuela end of 2026?",
+      "end_time": "2026-12-31T00:00:00+00:00",
+      "settlement_reference": "https://www.un.org/dgacm/en/content/protocol/hshgnfa",
+      "blockers": [
+        "native_complete_set_payout_and_settlement_proof_required",
+        "all_in_cost_and_leg_risk_evidence_required",
+        "atomic_multi_leg_execution_not_authorized"
+      ]
+    },
+    {
+      "source_book_ids": [
+        "0cc346fe231b4a3aedb44894e8d80c1b6474ca8f1c7ee687102402c8e110e347",
+        "cae5cc984ecf593b145ea8e6aa9c53d423e5fb4a84d14e0f16b1a1be696a368a"
+      ],
+      "source_timestamps": [
+        "2026-11-08T20:33:45.833000+00:00",
+        "2026-11-08T20:33:45.833000+00:00"
+      ],
+      "receipt_timestamps": [
+        "2026-11-08T20:33:45.874115+00:00",
+        "2026-11-08T20:33:45.874115+00:00"
+      ],
+      "book_sha256": [
+        "770d74825851a51b98588ef3919f65688944b753c24f205d1badc77d011c4e4e",
+        "36a78c7f81b21fdd08d4f97d917b644c8f66e0d4eef1feee927245314a904cd5"
+      ],
+      "participation_assumption": 0.1,
+      "minimum_paired_quantity": 5.0,
+      "levels": [],
+      "matched_level_segments": 0,
+      "level_display_scope": "first64, complete source depth bound by volume frame hash",
+      "maximum": {
+        "bankroll": null,
+        "capital_ceiling": null,
+        "paired_shares": 0.0,
+        "acquisition_principal": 0.0,
+        "conditional_gross_profit": 0.0,
+        "native_minimum_size_met": false,
+        "fees": null,
+        "slippage_and_leg_risk": null,
+        "conservative_net_profit": null,
+        "return_on_capital": null,
+        "worst_case_acquisition_loss": 0.0,
+        "actual_fill": false
+      },
+      "capital_scenarios": [
+        {
+          "bankroll": 500.0,
+          "capital_ceiling": 100.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 1000.0,
+          "capital_ceiling": 200.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 10000.0,
+          "capital_ceiling": 2000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 100000.0,
+          "capital_ceiling": 20000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 1000000.0,
+          "capital_ceiling": 200000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        }
+      ],
+      "payout_assumption": "conditional 1USD per complementary complete set; native payoff/merge/redemption proof not established",
+      "capital_scope": "hypothetical20percent ceiling, no account or risk-limit change",
+      "qualified": false,
+      "trading_authority": false,
+      "research_only": true,
+      "market_id": "1105749",
+      "event_id": "143443",
+      "token_ids": [
+        "42727638766042850249414793956193305049964960783968960523056590290643557215679",
+        "52729875612558691912225414396391898400398704573812194285409608089581613771941"
+      ],
+      "rules_sha256": "b0aacec3efead9f772c8985295e5e90b1d4a6d5cbffd11b6c63da48c573545bc",
+      "question": "Will Jorge Rodr\u00edguez be the leader of Venezuela end of 2026?",
+      "end_time": "2027-01-01T04:59:00+00:00",
+      "settlement_reference": "https://www.un.org/dgacm/en/content/protocol/hshgnfa",
+      "blockers": [
+        "native_complete_set_payout_and_settlement_proof_required",
+        "all_in_cost_and_leg_risk_evidence_required",
+        "atomic_multi_leg_execution_not_authorized"
+      ]
+    },
+    {
+      "source_book_ids": [
+        "e39400ceb4289ba868f073b4a184cd5cd15beac85ed2c10abba450eb6d70e17e",
+        "dcf616281865b09d89fedb2fb477f8a70859931ae38175f504f5729cd77696c9"
+      ],
+      "source_timestamps": [
+        "2026-11-08T20:33:43.011000+00:00",
+        "2026-11-08T20:33:43.011000+00:00"
+      ],
+      "receipt_timestamps": [
+        "2026-11-08T20:33:43.055344+00:00",
+        "2026-11-08T20:33:43.055344+00:00"
+      ],
+      "book_sha256": [
+        "53ea14f8f33fbe9bcf226a82657d655e07e839f727ce2dbef9afd49adceb9b77",
+        "1a3c56c1eca290608bbae0615da6e97ce82ea824aaac4bced47aa601ad557cd6"
+      ],
+      "participation_assumption": 0.1,
+      "minimum_paired_quantity": 5.0,
+      "levels": [],
+      "matched_level_segments": 0,
+      "level_display_scope": "first64, complete source depth bound by volume frame hash",
+      "maximum": {
+        "bankroll": null,
+        "capital_ceiling": null,
+        "paired_shares": 0.0,
+        "acquisition_principal": 0.0,
+        "conditional_gross_profit": 0.0,
+        "native_minimum_size_met": false,
+        "fees": null,
+        "slippage_and_leg_risk": null,
+        "conservative_net_profit": null,
+        "return_on_capital": null,
+        "worst_case_acquisition_loss": 0.0,
+        "actual_fill": false
+      },
+      "capital_scenarios": [
+        {
+          "bankroll": 500.0,
+          "capital_ceiling": 100.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 1000.0,
+          "capital_ceiling": 200.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 10000.0,
+          "capital_ceiling": 2000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 100000.0,
+          "capital_ceiling": 20000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 1000000.0,
+          "capital_ceiling": 200000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        }
+      ],
+      "payout_assumption": "conditional 1USD per complementary complete set; native payoff/merge/redemption proof not established",
+      "capital_scope": "hypothetical20percent ceiling, no account or risk-limit change",
+      "qualified": false,
+      "trading_authority": false,
+      "research_only": true,
+      "market_id": "1105750",
+      "event_id": "143443",
+      "token_ids": [
+        "104769838619091338531297529252838473576191240472079657441003392006780754738080",
+        "108782572173563047095456172508355020839174401654226217489075514363850290180565"
+      ],
+      "rules_sha256": "b0aacec3efead9f772c8985295e5e90b1d4a6d5cbffd11b6c63da48c573545bc",
+      "question": "Will Pete Hegseth be the leader of Venezuela end of 2026?",
+      "end_time": "2026-12-31T00:00:00+00:00",
+      "settlement_reference": "https://www.un.org/dgacm/en/content/protocol/hshgnfa",
+      "blockers": [
+        "native_complete_set_payout_and_settlement_proof_required",
+        "all_in_cost_and_leg_risk_evidence_required",
+        "atomic_multi_leg_execution_not_authorized"
+      ]
+    },
+    {
+      "source_book_ids": [
+        "a9e73ad304ec6b02cce2b48c7f65df516f23be1318a3735ec98fa1db5e93980b",
+        "af1f845c65447adc0dd29314ab8edc112e1262a8707155de23232b2b32e4e057"
+      ],
+      "source_timestamps": [
+        "2026-11-08T20:33:40.235000+00:00",
+        "2026-11-08T20:33:40.235000+00:00"
+      ],
+      "receipt_timestamps": [
+        "2026-11-08T20:33:40.276535+00:00",
+        "2026-11-08T20:33:40.276535+00:00"
+      ],
+      "book_sha256": [
+        "c6b1a8757374faefaa5d0a58721614c0fb32617dbf69884d45399f8c22e808b0",
+        "7f98bee072a23de0e23a84cb1dcd27ef4612ba1a1fa3e8eec418634e1849189c"
+      ],
+      "participation_assumption": 0.1,
+      "minimum_paired_quantity": 5.0,
+      "levels": [],
+      "matched_level_segments": 0,
+      "level_display_scope": "first64, complete source depth bound by volume frame hash",
+      "maximum": {
+        "bankroll": null,
+        "capital_ceiling": null,
+        "paired_shares": 0.0,
+        "acquisition_principal": 0.0,
+        "conditional_gross_profit": 0.0,
+        "native_minimum_size_met": false,
+        "fees": null,
+        "slippage_and_leg_risk": null,
+        "conservative_net_profit": null,
+        "return_on_capital": null,
+        "worst_case_acquisition_loss": 0.0,
+        "actual_fill": false
+      },
+      "capital_scenarios": [
+        {
+          "bankroll": 500.0,
+          "capital_ceiling": 100.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 1000.0,
+          "capital_ceiling": 200.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 10000.0,
+          "capital_ceiling": 2000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 100000.0,
+          "capital_ceiling": 20000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 1000000.0,
+          "capital_ceiling": 200000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        }
+      ],
+      "payout_assumption": "conditional 1USD per complementary complete set; native payoff/merge/redemption proof not established",
+      "capital_scope": "hypothetical20percent ceiling, no account or risk-limit change",
+      "qualified": false,
+      "trading_authority": false,
+      "research_only": true,
+      "market_id": "1105755",
+      "event_id": "143443",
+      "token_ids": [
+        "17704927682411404638982382980949594324217253655714867278953651574552110090318",
+        "13707761272063185033084273997321282553232999497653452620386294915179257041056"
+      ],
+      "rules_sha256": "b0aacec3efead9f772c8985295e5e90b1d4a6d5cbffd11b6c63da48c573545bc",
+      "question": "Will there be no head of state of Venezuela end of 2026?",
+      "end_time": "2026-12-31T00:00:00+00:00",
+      "settlement_reference": "https://www.un.org/dgacm/en/content/protocol/hshgnfa",
+      "blockers": [
+        "native_complete_set_payout_and_settlement_proof_required",
+        "all_in_cost_and_leg_risk_evidence_required",
+        "atomic_multi_leg_execution_not_authorized"
+      ]
+    },
+    {
+      "source_book_ids": [
+        "622f1eab180cacd7b60a89a938d4bb3beed14137b8f85572a7423df5fff01139",
+        "d3f7a414f75c7b5be0f5da1ca901ae74a82b38913643b394f1c1c4db91e62c92"
+      ],
+      "source_timestamps": [
+        "2026-11-08T20:33:43.563000+00:00",
+        "2026-11-08T20:33:43.563000+00:00"
+      ],
+      "receipt_timestamps": [
+        "2026-11-08T20:33:43.617883+00:00",
+        "2026-11-08T20:33:43.617883+00:00"
+      ],
+      "book_sha256": [
+        "1ca7beaf540e17b85e5dce1230cc8c1721c76c36b6b6f9a8a3ae6ce795b2a9b5",
+        "52f2e0e89d420fe8b07312ce05b7f213da71c053ce680d7d90f36053d95aa617"
+      ],
+      "participation_assumption": 0.1,
+      "minimum_paired_quantity": 5.0,
+      "levels": [],
+      "matched_level_segments": 0,
+      "level_display_scope": "first64, complete source depth bound by volume frame hash",
+      "maximum": {
+        "bankroll": null,
+        "capital_ceiling": null,
+        "paired_shares": 0.0,
+        "acquisition_principal": 0.0,
+        "conditional_gross_profit": 0.0,
+        "native_minimum_size_met": false,
+        "fees": null,
+        "slippage_and_leg_risk": null,
+        "conservative_net_profit": null,
+        "return_on_capital": null,
+        "worst_case_acquisition_loss": 0.0,
+        "actual_fill": false
+      },
+      "capital_scenarios": [
+        {
+          "bankroll": 500.0,
+          "capital_ceiling": 100.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 1000.0,
+          "capital_ceiling": 200.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 10000.0,
+          "capital_ceiling": 2000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 100000.0,
+          "capital_ceiling": 20000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 1000000.0,
+          "capital_ceiling": 200000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        }
+      ],
+      "payout_assumption": "conditional 1USD per complementary complete set; native payoff/merge/redemption proof not established",
+      "capital_scope": "hypothetical20percent ceiling, no account or risk-limit change",
+      "qualified": false,
+      "trading_authority": false,
+      "research_only": true,
+      "market_id": "2176270",
+      "event_id": "455875",
+      "token_ids": [
+        "83783489454659420807679723574840032660002326710045123865554753994450797728825",
+        "48727431314333088243693016929623363710488980152833544156961659445129455301311"
+      ],
+      "rules_sha256": "07d44f8775e710b9c6d5b3644aab0c2c8b824dca818e5b05f106eab0c89acf23",
+      "question": "Strait of Hormuz traffic returns to normal by December 31?",
+      "end_time": "2027-01-01T04:59:00+00:00",
+      "settlement_reference": "https://portwatch.imf.org/pages/cb5856222a5b4105adc6ee7e880a1730",
+      "blockers": [
+        "native_complete_set_payout_and_settlement_proof_required",
+        "all_in_cost_and_leg_risk_evidence_required",
+        "atomic_multi_leg_execution_not_authorized"
+      ]
+    },
+    {
+      "source_book_ids": [
+        "198a0a0a6797bb937567f4fb5d3586e940174a6c5c5152cc36296a46f3ae2643",
+        "8eb1f5f58f0978bee2984a94faeed2d93c446be8238fa89d8513b33af1ed6e93"
+      ],
+      "source_timestamps": [
+        "2026-11-08T20:33:46.112000+00:00",
+        "2026-11-08T20:33:46.112000+00:00"
+      ],
+      "receipt_timestamps": [
+        "2026-11-08T20:33:46.176794+00:00",
+        "2026-11-08T20:33:46.176794+00:00"
+      ],
+      "book_sha256": [
+        "7c98a04076a1c9628ebf7d3f13c49e07c2ccd942fb20be178e6d254ac327b42f",
+        "f21d8a14071a89c97408d571c03f244918b1f0a05d64afc74338336d566fe63f"
+      ],
+      "participation_assumption": 0.1,
+      "minimum_paired_quantity": 5.0,
+      "levels": [],
+      "matched_level_segments": 0,
+      "level_display_scope": "first64, complete source depth bound by volume frame hash",
+      "maximum": {
+        "bankroll": null,
+        "capital_ceiling": null,
+        "paired_shares": 0.0,
+        "acquisition_principal": 0.0,
+        "conditional_gross_profit": 0.0,
+        "native_minimum_size_met": false,
+        "fees": null,
+        "slippage_and_leg_risk": null,
+        "conservative_net_profit": null,
+        "return_on_capital": null,
+        "worst_case_acquisition_loss": 0.0,
+        "actual_fill": false
+      },
+      "capital_scenarios": [
+        {
+          "bankroll": 500.0,
+          "capital_ceiling": 100.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 1000.0,
+          "capital_ceiling": 200.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 10000.0,
+          "capital_ceiling": 2000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 100000.0,
+          "capital_ceiling": 20000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 1000000.0,
+          "capital_ceiling": 200000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        }
+      ],
+      "payout_assumption": "conditional 1USD per complementary complete set; native payoff/merge/redemption proof not established",
+      "capital_scope": "hypothetical20percent ceiling, no account or risk-limit change",
+      "qualified": false,
+      "trading_authority": false,
+      "research_only": true,
+      "market_id": "2853074",
+      "event_id": "276527",
+      "token_ids": [
+        "43976511902268111041633866799555037330317427315454056847054364885183934986197",
+        "33460385394344753109351907923235209397225125746318923726067817676780036931403"
+      ],
+      "rules_sha256": "de616550838955727bcb826995029e1454660a168d0b4c6476b7743ddf56eebe",
+      "question": "Bab el-Mandeb Strait effectively closed by December 31?",
+      "end_time": "2027-01-01T04:59:00+00:00",
+      "settlement_reference": "https://portwatch.imf.org/pages/6b1814d64903461b98144a6cc25eb79c",
+      "blockers": [
+        "native_complete_set_payout_and_settlement_proof_required",
+        "all_in_cost_and_leg_risk_evidence_required",
+        "atomic_multi_leg_execution_not_authorized"
+      ]
+    },
+    {
+      "source_book_ids": [
+        "81c410cd54fc1bc11a3cee4e669d5b239d6f82b96390dde2f301cc1f182b93c6",
+        "bb48f88e5e07975265c069cee6962896d634195f2afdd7fe420b2498d79ed2f6"
+      ],
+      "source_timestamps": [
+        "2026-11-08T20:33:46.336000+00:00",
+        "2026-11-08T20:33:46.336000+00:00"
+      ],
+      "receipt_timestamps": [
+        "2026-11-08T20:33:46.431052+00:00",
+        "2026-11-08T20:33:46.431052+00:00"
+      ],
+      "book_sha256": [
+        "4af8db347c3d478bcb3c40c40fd2f0642ff20a8f9760099725ba4bcc3e17a13c",
+        "d6c217bb1e9711248d3e5ffdaa4537c32d74f5d4760a4c772da141d8b6bf358f"
+      ],
+      "participation_assumption": 0.1,
+      "minimum_paired_quantity": 5.0,
+      "levels": [],
+      "matched_level_segments": 0,
+      "level_display_scope": "first64, complete source depth bound by volume frame hash",
+      "maximum": {
+        "bankroll": null,
+        "capital_ceiling": null,
+        "paired_shares": 0.0,
+        "acquisition_principal": 0.0,
+        "conditional_gross_profit": 0.0,
+        "native_minimum_size_met": false,
+        "fees": null,
+        "slippage_and_leg_risk": null,
+        "conservative_net_profit": null,
+        "return_on_capital": null,
+        "worst_case_acquisition_loss": 0.0,
+        "actual_fill": false
+      },
+      "capital_scenarios": [
+        {
+          "bankroll": 500.0,
+          "capital_ceiling": 100.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 1000.0,
+          "capital_ceiling": 200.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 10000.0,
+          "capital_ceiling": 2000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 100000.0,
+          "capital_ceiling": 20000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 1000000.0,
+          "capital_ceiling": 200000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        }
+      ],
+      "payout_assumption": "conditional 1USD per complementary complete set; native payoff/merge/redemption proof not established",
+      "capital_scope": "hypothetical20percent ceiling, no account or risk-limit change",
+      "qualified": false,
+      "trading_authority": false,
+      "research_only": true,
+      "market_id": "3215005",
+      "event_id": "770450",
+      "token_ids": [
+        "17640596861394454242836532536014033416733783473450136742726948856144855149507",
+        "104236736263775307891497202874191911203963566711959725788584750440530976742193"
+      ],
+      "rules_sha256": "7b7e9067489ddd8a06b05ea2a38e9392f66c5ea27fcc93db64908d8e3194e684",
+      "question": "Will the Fed decrease interest rates by 50+ bps after the December 2026 meeting?",
+      "end_time": "2026-12-09T23:59:00+00:00",
+      "settlement_reference": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+      "blockers": [
+        "native_complete_set_payout_and_settlement_proof_required",
+        "all_in_cost_and_leg_risk_evidence_required",
+        "atomic_multi_leg_execution_not_authorized"
+      ]
+    },
+    {
+      "source_book_ids": [
+        "bf08a2fb3251ea2f89e447ed4cf32e6fcbd7da88f932263cb7bd211b59de915e",
+        "37c92fb52714a7bc41c9a56c3a7a7bd8d8ff8d359b7ce21d105d7a10208a6d42"
+      ],
+      "source_timestamps": [
+        "2026-11-08T20:33:46.338000+00:00",
+        "2026-11-08T20:33:46.338000+00:00"
+      ],
+      "receipt_timestamps": [
+        "2026-11-08T20:33:46.432421+00:00",
+        "2026-11-08T20:33:46.432421+00:00"
+      ],
+      "book_sha256": [
+        "a5e76a24aac0871322f3d9b44498ba7cbac2aa0f76b4a677527678267fcb72fc",
+        "0c029d8ee27a91ecc2eea58ccd169e1783bf18432fcdcfd8b20ba43e5883167d"
+      ],
+      "participation_assumption": 0.1,
+      "minimum_paired_quantity": 5.0,
+      "levels": [],
+      "matched_level_segments": 0,
+      "level_display_scope": "first64, complete source depth bound by volume frame hash",
+      "maximum": {
+        "bankroll": null,
+        "capital_ceiling": null,
+        "paired_shares": 0.0,
+        "acquisition_principal": 0.0,
+        "conditional_gross_profit": 0.0,
+        "native_minimum_size_met": false,
+        "fees": null,
+        "slippage_and_leg_risk": null,
+        "conservative_net_profit": null,
+        "return_on_capital": null,
+        "worst_case_acquisition_loss": 0.0,
+        "actual_fill": false
+      },
+      "capital_scenarios": [
+        {
+          "bankroll": 500.0,
+          "capital_ceiling": 100.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 1000.0,
+          "capital_ceiling": 200.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 10000.0,
+          "capital_ceiling": 2000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 100000.0,
+          "capital_ceiling": 20000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 1000000.0,
+          "capital_ceiling": 200000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        }
+      ],
+      "payout_assumption": "conditional 1USD per complementary complete set; native payoff/merge/redemption proof not established",
+      "capital_scope": "hypothetical20percent ceiling, no account or risk-limit change",
+      "qualified": false,
+      "trading_authority": false,
+      "research_only": true,
+      "market_id": "3215006",
+      "event_id": "770450",
+      "token_ids": [
+        "77367448845023382525249480243608609306658725883285195065573683809293972009019",
+        "23677896678650147625251750117853328843601853501710889530409633595389256242910"
+      ],
+      "rules_sha256": "7b7e9067489ddd8a06b05ea2a38e9392f66c5ea27fcc93db64908d8e3194e684",
+      "question": "Will the Fed decrease interest rates by 25 bps after the December 2026 meeting?",
+      "end_time": "2026-12-09T23:59:00+00:00",
+      "settlement_reference": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+      "blockers": [
+        "native_complete_set_payout_and_settlement_proof_required",
+        "all_in_cost_and_leg_risk_evidence_required",
+        "atomic_multi_leg_execution_not_authorized"
+      ]
+    },
+    {
+      "source_book_ids": [
+        "8897994d3a5479eafb3cda08f2060c452f8943d6f3cd54882d501e5f97e7d625",
+        "02608df2101c81e1074634d4bef4e2c6bfe8f0380731777a811ac63d9b759314"
+      ],
+      "source_timestamps": [
+        "2026-11-08T20:33:47.335000+00:00",
+        "2026-11-08T20:33:47.335000+00:00"
+      ],
+      "receipt_timestamps": [
+        "2026-11-08T20:33:47.380420+00:00",
+        "2026-11-08T20:33:47.380420+00:00"
+      ],
+      "book_sha256": [
+        "eb99fff1db968a338a7a0b7122d6362afc3eb989cbd0217732d0253c4e088951",
+        "132b455b2624dd7f97b6ac2e07357898aacc1ac7fb2b84df68ef50bf1c771eed"
+      ],
+      "participation_assumption": 0.1,
+      "minimum_paired_quantity": 5.0,
+      "levels": [],
+      "matched_level_segments": 0,
+      "level_display_scope": "first64, complete source depth bound by volume frame hash",
+      "maximum": {
+        "bankroll": null,
+        "capital_ceiling": null,
+        "paired_shares": 0.0,
+        "acquisition_principal": 0.0,
+        "conditional_gross_profit": 0.0,
+        "native_minimum_size_met": false,
+        "fees": null,
+        "slippage_and_leg_risk": null,
+        "conservative_net_profit": null,
+        "return_on_capital": null,
+        "worst_case_acquisition_loss": 0.0,
+        "actual_fill": false
+      },
+      "capital_scenarios": [
+        {
+          "bankroll": 500.0,
+          "capital_ceiling": 100.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 1000.0,
+          "capital_ceiling": 200.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 10000.0,
+          "capital_ceiling": 2000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 100000.0,
+          "capital_ceiling": 20000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 1000000.0,
+          "capital_ceiling": 200000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        }
+      ],
+      "payout_assumption": "conditional 1USD per complementary complete set; native payoff/merge/redemption proof not established",
+      "capital_scope": "hypothetical20percent ceiling, no account or risk-limit change",
+      "qualified": false,
+      "trading_authority": false,
+      "research_only": true,
+      "market_id": "3215007",
+      "event_id": "770450",
+      "token_ids": [
+        "42865728742506860386768556888821101266630139112044622335353850919229585308601",
+        "8077351031134730167836761678618167504307708651130165095377248922919635337796"
+      ],
+      "rules_sha256": "7b7e9067489ddd8a06b05ea2a38e9392f66c5ea27fcc93db64908d8e3194e684",
+      "question": "Will there be no change in Fed interest rates after the December 2026 meeting?",
+      "end_time": "2026-12-09T23:59:00+00:00",
+      "settlement_reference": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+      "blockers": [
+        "native_complete_set_payout_and_settlement_proof_required",
+        "all_in_cost_and_leg_risk_evidence_required",
+        "atomic_multi_leg_execution_not_authorized"
+      ]
+    },
+    {
+      "source_book_ids": [
+        "4e54ff487b61400136b833d9923eab53ae2c608758483925a4ed849f9d896120",
+        "f45d20f111b3801aff7cda358974319d4eaa69f2d3de1cfdc22fb77b31b174d1"
+      ],
+      "source_timestamps": [
+        "2026-11-08T20:33:46.732000+00:00",
+        "2026-11-08T20:33:46.732000+00:00"
+      ],
+      "receipt_timestamps": [
+        "2026-11-08T20:33:46.784950+00:00",
+        "2026-11-08T20:33:46.784950+00:00"
+      ],
+      "book_sha256": [
+        "45f3e7f4046b4469116536ddeafef5ad56cb44ffdd4866de0feea30552b50734",
+        "260a113070f9d7d788f2e82d1435b46b728c06ee9d6ed60fadd690aed57734a1"
+      ],
+      "participation_assumption": 0.1,
+      "minimum_paired_quantity": 5.0,
+      "levels": [],
+      "matched_level_segments": 0,
+      "level_display_scope": "first64, complete source depth bound by volume frame hash",
+      "maximum": {
+        "bankroll": null,
+        "capital_ceiling": null,
+        "paired_shares": 0.0,
+        "acquisition_principal": 0.0,
+        "conditional_gross_profit": 0.0,
+        "native_minimum_size_met": false,
+        "fees": null,
+        "slippage_and_leg_risk": null,
+        "conservative_net_profit": null,
+        "return_on_capital": null,
+        "worst_case_acquisition_loss": 0.0,
+        "actual_fill": false
+      },
+      "capital_scenarios": [
+        {
+          "bankroll": 500.0,
+          "capital_ceiling": 100.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 1000.0,
+          "capital_ceiling": 200.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 10000.0,
+          "capital_ceiling": 2000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 100000.0,
+          "capital_ceiling": 20000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 1000000.0,
+          "capital_ceiling": 200000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        }
+      ],
+      "payout_assumption": "conditional 1USD per complementary complete set; native payoff/merge/redemption proof not established",
+      "capital_scope": "hypothetical20percent ceiling, no account or risk-limit change",
+      "qualified": false,
+      "trading_authority": false,
+      "research_only": true,
+      "market_id": "3215008",
+      "event_id": "770450",
+      "token_ids": [
+        "111662129652828266889360374468657435151479595863413519836161861837506140152890",
+        "94483965432909797688470702512207472940215538148754820061518518664128018848687"
+      ],
+      "rules_sha256": "7b7e9067489ddd8a06b05ea2a38e9392f66c5ea27fcc93db64908d8e3194e684",
+      "question": "Will the Fed increase interest rates by 25 bps after the December 2026 meeting?",
+      "end_time": "2026-12-09T23:59:00+00:00",
+      "settlement_reference": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+      "blockers": [
+        "native_complete_set_payout_and_settlement_proof_required",
+        "all_in_cost_and_leg_risk_evidence_required",
+        "atomic_multi_leg_execution_not_authorized"
+      ]
+    },
+    {
+      "source_book_ids": [
+        "a35c40d0383e526107b15a3aa5badc55e2f621f3bd471b5e8a0c38d0f09796db",
+        "e970980f036febaa1f6bc1cf7a5ffc36efcacabef5db63b3f0e3b18ca4e9f880"
+      ],
+      "source_timestamps": [
+        "2026-11-08T20:33:46.742000+00:00",
+        "2026-11-08T20:33:46.742000+00:00"
+      ],
+      "receipt_timestamps": [
+        "2026-11-08T20:33:46.794197+00:00",
+        "2026-11-08T20:33:46.794197+00:00"
+      ],
+      "book_sha256": [
+        "4746924fd09d6fedc2619b4f22f7059f26a78e2e5c07d2dbbd1207002cd32c5e",
+        "bd209f04e9498f6336fc7d897c4155951405302a8bbc4f512e8e116551d8f682"
+      ],
+      "participation_assumption": 0.1,
+      "minimum_paired_quantity": 5.0,
+      "levels": [],
+      "matched_level_segments": 0,
+      "level_display_scope": "first64, complete source depth bound by volume frame hash",
+      "maximum": {
+        "bankroll": null,
+        "capital_ceiling": null,
+        "paired_shares": 0.0,
+        "acquisition_principal": 0.0,
+        "conditional_gross_profit": 0.0,
+        "native_minimum_size_met": false,
+        "fees": null,
+        "slippage_and_leg_risk": null,
+        "conservative_net_profit": null,
+        "return_on_capital": null,
+        "worst_case_acquisition_loss": 0.0,
+        "actual_fill": false
+      },
+      "capital_scenarios": [
+        {
+          "bankroll": 500.0,
+          "capital_ceiling": 100.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 1000.0,
+          "capital_ceiling": 200.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 10000.0,
+          "capital_ceiling": 2000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 100000.0,
+          "capital_ceiling": 20000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 1000000.0,
+          "capital_ceiling": 200000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        }
+      ],
+      "payout_assumption": "conditional 1USD per complementary complete set; native payoff/merge/redemption proof not established",
+      "capital_scope": "hypothetical20percent ceiling, no account or risk-limit change",
+      "qualified": false,
+      "trading_authority": false,
+      "research_only": true,
+      "market_id": "3215012",
+      "event_id": "770451",
+      "token_ids": [
+        "63563009510989471204377539732457086916124654411092982704760023438039220215330",
+        "36342864926284644003283595741257595655709757799681943153551982143131732331338"
+      ],
+      "rules_sha256": "08bdcc26902e7db4aba1abd475c605f50ebe97751137f79fb8bfb59ace4fb373",
+      "question": "Will there be no change in Fed interest rates after the January 2027 meeting?",
+      "end_time": "2027-01-28T04:59:00+00:00",
+      "settlement_reference": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+      "blockers": [
+        "native_complete_set_payout_and_settlement_proof_required",
+        "all_in_cost_and_leg_risk_evidence_required",
+        "atomic_multi_leg_execution_not_authorized"
+      ]
+    },
+    {
+      "source_book_ids": [
+        "4c23fceb06c1d377b60e22f672ff59563b40c20bc30ca7418be760fefe02ba42",
+        "72bf0d2372dca21f170d06f63e2b148c88c4b30b878895fa0148b9c0215b5091"
+      ],
+      "source_timestamps": [
+        "2026-11-08T20:33:46.794000+00:00",
+        "2026-11-08T20:33:46.794000+00:00"
+      ],
+      "receipt_timestamps": [
+        "2026-11-08T20:33:46.836521+00:00",
+        "2026-11-08T20:33:46.836521+00:00"
+      ],
+      "book_sha256": [
+        "fa197e4e55079803294ceea2ceaa8d0d3985a2c5dc5533f64914f0a79d97b1ea",
+        "53ade6183906be36072b2dad35cfaadc6440e482a5037e3497770b6e4f4613a4"
+      ],
+      "participation_assumption": 0.1,
+      "minimum_paired_quantity": 5.0,
+      "levels": [],
+      "matched_level_segments": 0,
+      "level_display_scope": "first64, complete source depth bound by volume frame hash",
+      "maximum": {
+        "bankroll": null,
+        "capital_ceiling": null,
+        "paired_shares": 0.0,
+        "acquisition_principal": 0.0,
+        "conditional_gross_profit": 0.0,
+        "native_minimum_size_met": false,
+        "fees": null,
+        "slippage_and_leg_risk": null,
+        "conservative_net_profit": null,
+        "return_on_capital": null,
+        "worst_case_acquisition_loss": 0.0,
+        "actual_fill": false
+      },
+      "capital_scenarios": [
+        {
+          "bankroll": 500.0,
+          "capital_ceiling": 100.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 1000.0,
+          "capital_ceiling": 200.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 10000.0,
+          "capital_ceiling": 2000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 100000.0,
+          "capital_ceiling": 20000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 1000000.0,
+          "capital_ceiling": 200000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        }
+      ],
+      "payout_assumption": "conditional 1USD per complementary complete set; native payoff/merge/redemption proof not established",
+      "capital_scope": "hypothetical20percent ceiling, no account or risk-limit change",
+      "qualified": false,
+      "trading_authority": false,
+      "research_only": true,
+      "market_id": "3580932",
+      "event_id": "848341",
+      "token_ids": [
+        "100205215067722297517595068937257697192973299370955287626157382353628199508318",
+        "28042880819135054236705112210866715426402068267079731308218252509537644025901"
+      ],
+      "rules_sha256": "29d25fa42fe26d2c9cf4b32dffa617b5a7e558ad95252b6963e25d90f9a441ab",
+      "question": "Will Chiang Wan-an win the next Taipei Mayor election?",
+      "end_time": "2026-11-29T04:59:00+00:00",
+      "settlement_reference": "https://db.cec.gov.tw/",
+      "blockers": [
+        "native_complete_set_payout_and_settlement_proof_required",
+        "all_in_cost_and_leg_risk_evidence_required",
+        "atomic_multi_leg_execution_not_authorized"
+      ]
+    },
+    {
+      "source_book_ids": [
+        "4a41c703b93174c66726f6f0249cb3d2bb6b6a1ea37430700c08691340923bb8",
+        "3b7504ca23991ad3fa4312eaf87f9f314806329515e7d0b599c2b40757fb1e88"
+      ],
+      "source_timestamps": [
+        "2026-11-08T20:33:40.203000+00:00",
+        "2026-11-08T20:33:40.203000+00:00"
+      ],
+      "receipt_timestamps": [
+        "2026-11-08T20:33:40.244830+00:00",
+        "2026-11-08T20:33:40.244830+00:00"
+      ],
+      "book_sha256": [
+        "5d91ef718b908451f96ae1c187b0e56f9d9631ef258bbf38990491eea99fe8c0",
+        "cf3d9dff7a3ef4da07ba67c079cd702a89a474ea754c168203a603eeef93d876"
+      ],
+      "participation_assumption": 0.1,
+      "minimum_paired_quantity": 5.0,
+      "levels": [],
+      "matched_level_segments": 0,
+      "level_display_scope": "first64, complete source depth bound by volume frame hash",
+      "maximum": {
+        "bankroll": null,
+        "capital_ceiling": null,
+        "paired_shares": 0.0,
+        "acquisition_principal": 0.0,
+        "conditional_gross_profit": 0.0,
+        "native_minimum_size_met": false,
+        "fees": null,
+        "slippage_and_leg_risk": null,
+        "conservative_net_profit": null,
+        "return_on_capital": null,
+        "worst_case_acquisition_loss": 0.0,
+        "actual_fill": false
+      },
+      "capital_scenarios": [
+        {
+          "bankroll": 500.0,
+          "capital_ceiling": 100.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 1000.0,
+          "capital_ceiling": 200.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 10000.0,
+          "capital_ceiling": 2000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 100000.0,
+          "capital_ceiling": 20000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 1000000.0,
+          "capital_ceiling": 200000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        }
+      ],
+      "payout_assumption": "conditional 1USD per complementary complete set; native payoff/merge/redemption proof not established",
+      "capital_scope": "hypothetical20percent ceiling, no account or risk-limit change",
+      "qualified": false,
+      "trading_authority": false,
+      "research_only": true,
+      "market_id": "3580994",
+      "event_id": "848347",
+      "token_ids": [
+        "10653154764049368814330930734869721770637734314871119236238317953965277406484",
+        "24923302813032565767436220683004205555639221271397007550923446576564168677855"
+      ],
+      "rules_sha256": "7c1d304499b00323a54a3d4eb961089298065354162182b4b3ca97367f07b5b2",
+      "question": "Will Lee Shu-chuan win the next New Taipei Mayor election?",
+      "end_time": "2026-11-29T04:59:00+00:00",
+      "settlement_reference": "https://db.cec.gov.tw/",
+      "blockers": [
+        "native_complete_set_payout_and_settlement_proof_required",
+        "all_in_cost_and_leg_risk_evidence_required",
+        "atomic_multi_leg_execution_not_authorized"
+      ]
+    },
+    {
+      "source_book_ids": [
+        "633186eeb731d7a0a6cd2d9372d616ff507e114cee9d2baa427c95a264d3a09a",
+        "1bc94c17bd4dbf3398284b6b66d31bf6d9ff7141b0fcfcd5455e7ac591c0cc47"
+      ],
+      "source_timestamps": [
+        "2026-11-08T20:33:47.335000+00:00",
+        "2026-11-08T20:33:47.335000+00:00"
+      ],
+      "receipt_timestamps": [
+        "2026-11-08T20:33:47.381791+00:00",
+        "2026-11-08T20:33:47.381791+00:00"
+      ],
+      "book_sha256": [
+        "d3708e7b2355ea4539519a05008d857571d23c49f999ca3f2ccc9fd17fcd09dd",
+        "684ea59d03a154ca257f9b8826de7fa23614e0e5ef9debd7dfdccbc3d61dee3a"
+      ],
+      "participation_assumption": 0.1,
+      "minimum_paired_quantity": 5.0,
+      "levels": [],
+      "matched_level_segments": 0,
+      "level_display_scope": "first64, complete source depth bound by volume frame hash",
+      "maximum": {
+        "bankroll": null,
+        "capital_ceiling": null,
+        "paired_shares": 0.0,
+        "acquisition_principal": 0.0,
+        "conditional_gross_profit": 0.0,
+        "native_minimum_size_met": false,
+        "fees": null,
+        "slippage_and_leg_risk": null,
+        "conservative_net_profit": null,
+        "return_on_capital": null,
+        "worst_case_acquisition_loss": 0.0,
+        "actual_fill": false
+      },
+      "capital_scenarios": [
+        {
+          "bankroll": 500.0,
+          "capital_ceiling": 100.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 1000.0,
+          "capital_ceiling": 200.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 10000.0,
+          "capital_ceiling": 2000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 100000.0,
+          "capital_ceiling": 20000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 1000000.0,
+          "capital_ceiling": 200000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        }
+      ],
+      "payout_assumption": "conditional 1USD per complementary complete set; native payoff/merge/redemption proof not established",
+      "capital_scope": "hypothetical20percent ceiling, no account or risk-limit change",
+      "qualified": false,
+      "trading_authority": false,
+      "research_only": true,
+      "market_id": "4170752",
+      "event_id": "955999",
+      "token_ids": [
+        "44519917187614201324840344754587313130089468376066341616659963109992104660897",
+        "93224758975778995437432635475194584726397487088421435993429724655982309504086"
+      ],
+      "rules_sha256": "a038b681e4c7c3567e252db3eb0200349c2ad5088766df1404f8f557c1fa59bf",
+      "question": "Will the Fed Hike\u2013Pause\u2013Hike in the next three decisions (Sep\u2013Oct\u2013Dec)?",
+      "end_time": "2026-12-09T23:59:00+00:00",
+      "settlement_reference": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+      "blockers": [
+        "native_complete_set_payout_and_settlement_proof_required",
+        "all_in_cost_and_leg_risk_evidence_required",
+        "atomic_multi_leg_execution_not_authorized"
+      ]
+    },
+    {
+      "source_book_ids": [
+        "dd4f3fb8aa409874c80e5b8466733ab4688661240b056c58f317462d1dd0c3f1",
+        "a583bd06a165d8228909b2c3066219e5b3a986e2aac9be92d1e10520868160dc"
+      ],
+      "source_timestamps": [
+        "2026-11-08T20:33:42.858000+00:00",
+        "2026-11-08T20:33:42.858000+00:00"
+      ],
+      "receipt_timestamps": [
+        "2026-11-08T20:33:42.899806+00:00",
+        "2026-11-08T20:33:42.899806+00:00"
+      ],
+      "book_sha256": [
+        "709a67455885a29fa4cd03f21b744093d50f00b3c2078b947bfdf3161d04f73d",
+        "d7b3229e45c026700e14755003d19eff547c9779599ef23e6ce5115ba7a4b143"
+      ],
+      "participation_assumption": 0.1,
+      "minimum_paired_quantity": 5.0,
+      "levels": [],
+      "matched_level_segments": 0,
+      "level_display_scope": "first64, complete source depth bound by volume frame hash",
+      "maximum": {
+        "bankroll": null,
+        "capital_ceiling": null,
+        "paired_shares": 0.0,
+        "acquisition_principal": 0.0,
+        "conditional_gross_profit": 0.0,
+        "native_minimum_size_met": false,
+        "fees": null,
+        "slippage_and_leg_risk": null,
+        "conservative_net_profit": null,
+        "return_on_capital": null,
+        "worst_case_acquisition_loss": 0.0,
+        "actual_fill": false
+      },
+      "capital_scenarios": [
+        {
+          "bankroll": 500.0,
+          "capital_ceiling": 100.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 1000.0,
+          "capital_ceiling": 200.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 10000.0,
+          "capital_ceiling": 2000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 100000.0,
+          "capital_ceiling": 20000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 1000000.0,
+          "capital_ceiling": 200000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        }
+      ],
+      "payout_assumption": "conditional 1USD per complementary complete set; native payoff/merge/redemption proof not established",
+      "capital_scope": "hypothetical20percent ceiling, no account or risk-limit change",
+      "qualified": false,
+      "trading_authority": false,
+      "research_only": true,
+      "market_id": "4397022",
+      "event_id": "991810",
+      "token_ids": [
+        "15907269680083135091620869613557617263613890890387514554477997501123964677519",
+        "82487289327586076731223934931200437075809701560479426984178227650142334617441"
+      ],
+      "rules_sha256": "f3d01169ce80f284e79bd42d64c839b6ca3ece82fab1d7a78faa07ec92dc4f02",
+      "question": "Will Gen.G win Worlds 2026?",
+      "end_time": "2026-11-29T04:59:00+00:00",
+      "settlement_reference": "https://lolesports.com",
+      "blockers": [
+        "native_complete_set_payout_and_settlement_proof_required",
+        "all_in_cost_and_leg_risk_evidence_required",
+        "atomic_multi_leg_execution_not_authorized"
+      ]
+    },
+    {
+      "source_book_ids": [
+        "33d648551426355e489d4430f4970fb6c24bb9ac8470a3a27d6d3aab680dcda7",
+        "5ef657558c2dc482bedcd7168b35b4a46de869d83ca5a1469476c241d0033a12"
+      ],
+      "source_timestamps": [
+        "2026-11-08T20:33:42.556000+00:00",
+        "2026-11-08T20:33:42.556000+00:00"
+      ],
+      "receipt_timestamps": [
+        "2026-11-08T20:33:42.637292+00:00",
+        "2026-11-08T20:33:42.637292+00:00"
+      ],
+      "book_sha256": [
+        "b53706d94f605f1cd98e405911045ac750fe8b9195c24a19d6d30435327435d3",
+        "3432531aa9fdf2cb3d9fef02764ffbd34f5305454f1ecacb47c199000142b54e"
+      ],
+      "participation_assumption": 0.1,
+      "minimum_paired_quantity": 5.0,
+      "levels": [],
+      "matched_level_segments": 0,
+      "level_display_scope": "first64, complete source depth bound by volume frame hash",
+      "maximum": {
+        "bankroll": null,
+        "capital_ceiling": null,
+        "paired_shares": 0.0,
+        "acquisition_principal": 0.0,
+        "conditional_gross_profit": 0.0,
+        "native_minimum_size_met": false,
+        "fees": null,
+        "slippage_and_leg_risk": null,
+        "conservative_net_profit": null,
+        "return_on_capital": null,
+        "worst_case_acquisition_loss": 0.0,
+        "actual_fill": false
+      },
+      "capital_scenarios": [
+        {
+          "bankroll": 500.0,
+          "capital_ceiling": 100.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 1000.0,
+          "capital_ceiling": 200.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 10000.0,
+          "capital_ceiling": 2000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 100000.0,
+          "capital_ceiling": 20000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 1000000.0,
+          "capital_ceiling": 200000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        }
+      ],
+      "payout_assumption": "conditional 1USD per complementary complete set; native payoff/merge/redemption proof not established",
+      "capital_scope": "hypothetical20percent ceiling, no account or risk-limit change",
+      "qualified": false,
+      "trading_authority": false,
+      "research_only": true,
+      "market_id": "4397025",
+      "event_id": "991810",
+      "token_ids": [
+        "56360910151195441905859355697297471571491885496299657191480344412119595418796",
+        "101996110023306359267215939819928021406998500989415641847320025626005179879667"
+      ],
+      "rules_sha256": "f3d01169ce80f284e79bd42d64c839b6ca3ece82fab1d7a78faa07ec92dc4f02",
+      "question": "Will T1 win Worlds 2026?",
+      "end_time": "2026-11-29T04:59:00+00:00",
+      "settlement_reference": "https://lolesports.com",
+      "blockers": [
+        "native_complete_set_payout_and_settlement_proof_required",
+        "all_in_cost_and_leg_risk_evidence_required",
+        "atomic_multi_leg_execution_not_authorized"
+      ]
+    },
+    {
+      "source_book_ids": [
+        "b1e9ce1d7b97c9924f62d0cd28d5d90197fcfdc25ff99bfde1e14e45ff9eaa35",
+        "2d8f7f52f90f85498558f02ce4a06e196bd348dab76642e086378fbbc13f898f"
+      ],
+      "source_timestamps": [
+        "2026-11-08T20:33:44.645000+00:00",
+        "2026-11-08T20:33:44.645000+00:00"
+      ],
+      "receipt_timestamps": [
+        "2026-11-08T20:33:44.686215+00:00",
+        "2026-11-08T20:33:44.686215+00:00"
+      ],
+      "book_sha256": [
+        "999749dc1dade2f9fd632939b306d735620b00362b75d39936bf2e0d4fc79b8c",
+        "696ba625d5b57c3cdc00710619673d06a45cc1b9dad71c9239df5095050c66a8"
+      ],
+      "participation_assumption": 0.1,
+      "minimum_paired_quantity": 5.0,
+      "levels": [],
+      "matched_level_segments": 0,
+      "level_display_scope": "first64, complete source depth bound by volume frame hash",
+      "maximum": {
+        "bankroll": null,
+        "capital_ceiling": null,
+        "paired_shares": 0.0,
+        "acquisition_principal": 0.0,
+        "conditional_gross_profit": 0.0,
+        "native_minimum_size_met": false,
+        "fees": null,
+        "slippage_and_leg_risk": null,
+        "conservative_net_profit": null,
+        "return_on_capital": null,
+        "worst_case_acquisition_loss": 0.0,
+        "actual_fill": false
+      },
+      "capital_scenarios": [
+        {
+          "bankroll": 500.0,
+          "capital_ceiling": 100.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 1000.0,
+          "capital_ceiling": 200.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 10000.0,
+          "capital_ceiling": 2000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 100000.0,
+          "capital_ceiling": 20000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 1000000.0,
+          "capital_ceiling": 200000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        }
+      ],
+      "payout_assumption": "conditional 1USD per complementary complete set; native payoff/merge/redemption proof not established",
+      "capital_scope": "hypothetical20percent ceiling, no account or risk-limit change",
+      "qualified": false,
+      "trading_authority": false,
+      "research_only": true,
+      "market_id": "4397033",
+      "event_id": "991810",
+      "token_ids": [
+        "101156861859248010272982388611860996032700684150053028417361465335294418301847",
+        "869171973276415956635131341744431858844932704288749717904028189815261072106"
+      ],
+      "rules_sha256": "f3d01169ce80f284e79bd42d64c839b6ca3ece82fab1d7a78faa07ec92dc4f02",
+      "question": "Will Bilibili Gaming win Worlds 2026?",
+      "end_time": "2026-11-29T04:59:00+00:00",
+      "settlement_reference": "https://lolesports.com",
+      "blockers": [
+        "native_complete_set_payout_and_settlement_proof_required",
+        "all_in_cost_and_leg_risk_evidence_required",
+        "atomic_multi_leg_execution_not_authorized"
+      ]
+    },
+    {
+      "source_book_ids": [
+        "829a77e87595235a87a3fe0b313ba4d2a0080ebd26886b044f17f3b587df0c55",
+        "b23fdb3f80df9424a1f7dcd9f09f23ec7b5dfd2c91f64843ab53bc850e33e5ac"
+      ],
+      "source_timestamps": [
+        "2026-11-08T20:33:43.679000+00:00",
+        "2026-11-08T20:33:43.679000+00:00"
+      ],
+      "receipt_timestamps": [
+        "2026-11-08T20:33:43.722880+00:00",
+        "2026-11-08T20:33:43.722880+00:00"
+      ],
+      "book_sha256": [
+        "0ccca2ba72f1bd350695ab0dad02eb438372584283f712127ac54a7d3705f416",
+        "d0af27c7ecd3dc3d8855622c93fc9dea596ebf8be8af92701d5574dbf835a485"
+      ],
+      "participation_assumption": 0.1,
+      "minimum_paired_quantity": 5.0,
+      "levels": [],
+      "matched_level_segments": 0,
+      "level_display_scope": "first64, complete source depth bound by volume frame hash",
+      "maximum": {
+        "bankroll": null,
+        "capital_ceiling": null,
+        "paired_shares": 0.0,
+        "acquisition_principal": 0.0,
+        "conditional_gross_profit": 0.0,
+        "native_minimum_size_met": false,
+        "fees": null,
+        "slippage_and_leg_risk": null,
+        "conservative_net_profit": null,
+        "return_on_capital": null,
+        "worst_case_acquisition_loss": 0.0,
+        "actual_fill": false
+      },
+      "capital_scenarios": [
+        {
+          "bankroll": 500.0,
+          "capital_ceiling": 100.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 1000.0,
+          "capital_ceiling": 200.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 10000.0,
+          "capital_ceiling": 2000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 100000.0,
+          "capital_ceiling": 20000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 1000000.0,
+          "capital_ceiling": 200000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        }
+      ],
+      "payout_assumption": "conditional 1USD per complementary complete set; native payoff/merge/redemption proof not established",
+      "capital_scope": "hypothetical20percent ceiling, no account or risk-limit change",
+      "qualified": false,
+      "trading_authority": false,
+      "research_only": true,
+      "market_id": "4412200",
+      "event_id": "994461",
+      "token_ids": [
+        "34819265358532535745389081655110465366205614488485370986851183512281332080312",
+        "42274213845690772723790725807949730963070164957660604430887551499063365043259"
+      ],
+      "rules_sha256": "e44e3249bbf7b90a6a412df4a00b5d3435d34d48fab8f546dc50437c8269cf5c",
+      "question": "Will OpenAI announce another Millennium Prize solution by December 31, 2026?",
+      "end_time": "2027-01-01T04:59:00+00:00",
+      "settlement_reference": "https://www.claymath.org/millennium-problems/",
+      "blockers": [
+        "native_complete_set_payout_and_settlement_proof_required",
+        "all_in_cost_and_leg_risk_evidence_required",
+        "atomic_multi_leg_execution_not_authorized"
+      ]
+    },
+    {
+      "source_book_ids": [
+        "0e76a2a5b6edbe11b735e95c2d25868141d8a765943cd499219e763d3e4fc3f1",
+        "b320ae5f3936c905bf38a07e0e64bb666c99c894ab4b48125c19bfab5b6c089b"
+      ],
+      "source_timestamps": [
+        "2026-11-08T20:33:45.133000+00:00",
+        "2026-11-08T20:33:45.133000+00:00"
+      ],
+      "receipt_timestamps": [
+        "2026-11-08T20:33:45.174496+00:00",
+        "2026-11-08T20:33:45.174496+00:00"
+      ],
+      "book_sha256": [
+        "bc5a91c23af5ed50d1facdc6f9dd3b82a7c03e98a515ee3f6c9e5f97f12dea15",
+        "cba7cd2c80cd26aa77daa30470d5e5c3afeb83e07480a26f4e2df04c8999e577"
+      ],
+      "participation_assumption": 0.1,
+      "minimum_paired_quantity": 5.0,
+      "levels": [],
+      "matched_level_segments": 0,
+      "level_display_scope": "first64, complete source depth bound by volume frame hash",
+      "maximum": {
+        "bankroll": null,
+        "capital_ceiling": null,
+        "paired_shares": 0.0,
+        "acquisition_principal": 0.0,
+        "conditional_gross_profit": 0.0,
+        "native_minimum_size_met": false,
+        "fees": null,
+        "slippage_and_leg_risk": null,
+        "conservative_net_profit": null,
+        "return_on_capital": null,
+        "worst_case_acquisition_loss": 0.0,
+        "actual_fill": false
+      },
+      "capital_scenarios": [
+        {
+          "bankroll": 500.0,
+          "capital_ceiling": 100.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 1000.0,
+          "capital_ceiling": 200.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 10000.0,
+          "capital_ceiling": 2000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 100000.0,
+          "capital_ceiling": 20000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 1000000.0,
+          "capital_ceiling": 200000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        }
+      ],
+      "payout_assumption": "conditional 1USD per complementary complete set; native payoff/merge/redemption proof not established",
+      "capital_scope": "hypothetical20percent ceiling, no account or risk-limit change",
+      "qualified": false,
+      "trading_authority": false,
+      "research_only": true,
+      "market_id": "4664660",
+      "event_id": "1040632",
+      "token_ids": [
+        "101710261242353782178169970960141290793664334407820785299387426851248593040251",
+        "80323704655942361965241486948357244414437876273254409338672918535961629617578"
+      ],
+      "rules_sha256": "53aec8dda6e1fd714224baf747c69f21b82459b4b431b799231af89f398160ce",
+      "question": "Will Anthropic have the best AI model at the end of November 2026?",
+      "end_time": "2026-12-01T04:59:00+00:00",
+      "settlement_reference": "https://arena.ai/leaderboard/text/overall-no-style-control",
+      "blockers": [
+        "native_complete_set_payout_and_settlement_proof_required",
+        "all_in_cost_and_leg_risk_evidence_required",
+        "atomic_multi_leg_execution_not_authorized"
+      ]
+    },
+    {
+      "source_book_ids": [
+        "60f4ecbb1d99630e4c8cb77a74b39126cc8f4bee1cb2ae86bf3c81c2e414704f",
+        "a8416d4b78c627316c02695eeae1cd7f1cc56ae9d6ff4078aae6551961859e3c"
+      ],
+      "source_timestamps": [
+        "2026-11-08T20:33:45.392000+00:00",
+        "2026-11-08T20:33:45.392000+00:00"
+      ],
+      "receipt_timestamps": [
+        "2026-11-08T20:33:45.436230+00:00",
+        "2026-11-08T20:33:45.436230+00:00"
+      ],
+      "book_sha256": [
+        "6c3c07262f83979d3e57152cad393ba3363f2b6b152caf4e2de8fb9a19288170",
+        "69e0ad6a1a674b5a8885972f009139649e0ce5be272fdde71e1e9f719ffc6aab"
+      ],
+      "participation_assumption": 0.1,
+      "minimum_paired_quantity": 5.0,
+      "levels": [],
+      "matched_level_segments": 0,
+      "level_display_scope": "first64, complete source depth bound by volume frame hash",
+      "maximum": {
+        "bankroll": null,
+        "capital_ceiling": null,
+        "paired_shares": 0.0,
+        "acquisition_principal": 0.0,
+        "conditional_gross_profit": 0.0,
+        "native_minimum_size_met": false,
+        "fees": null,
+        "slippage_and_leg_risk": null,
+        "conservative_net_profit": null,
+        "return_on_capital": null,
+        "worst_case_acquisition_loss": 0.0,
+        "actual_fill": false
+      },
+      "capital_scenarios": [
+        {
+          "bankroll": 500.0,
+          "capital_ceiling": 100.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 1000.0,
+          "capital_ceiling": 200.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 10000.0,
+          "capital_ceiling": 2000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 100000.0,
+          "capital_ceiling": 20000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        },
+        {
+          "bankroll": 1000000.0,
+          "capital_ceiling": 200000.0,
+          "paired_shares": 0.0,
+          "acquisition_principal": 0.0,
+          "conditional_gross_profit": 0.0,
+          "native_minimum_size_met": false,
+          "fees": null,
+          "slippage_and_leg_risk": null,
+          "conservative_net_profit": null,
+          "return_on_capital": null,
+          "worst_case_acquisition_loss": 0.0,
+          "actual_fill": false
+        }
+      ],
+      "payout_assumption": "conditional 1USD per complementary complete set; native payoff/merge/redemption proof not established",
+      "capital_scope": "hypothetical20percent ceiling, no account or risk-limit change",
+      "qualified": false,
+      "trading_authority": false,
+      "research_only": true,
+      "market_id": "4664662",
+      "event_id": "1040632",
+      "token_ids": [
+        "50100838739790041081725661928040962915463448028276518599259026195484819209006",
+        "89770126580031834013198624982067658403222467359747686065071738211043626186661"
+      ],
+      "rules_sha256": "53aec8dda6e1fd714224baf747c69f21b82459b4b431b799231af89f398160ce",
+      "question": "Will Google have the best AI model at the end of November 2026?",
+      "end_time": "2026-12-01T04:59:00+00:00",
+      "settlement_reference": "https://arena.ai/leaderboard/text/overall-no-style-control",
+      "blockers": [
+        "native_complete_set_payout_and_settlement_proof_required",
+        "all_in_cost_and_leg_risk_evidence_required",
+        "atomic_multi_leg_execution_not_authorized"
+      ]
+    }
+  ],
+  "ranking_scope": "conditional gross only; costs/native payoff unknown, not economically qualified or guaranteed profit",
+  "independent_evidence_sources": 0,
+  "sii_incremental_value": null,
+  "actual_orders": 0,
+  "actual_fills": 0,
+  "realized_pnl": null,
+  "research_only": true,
+  "trading_authority": false
+}

@@ -1,0 +1,22 @@
+{
+  "tested_source_commit": "a26dd8f0852981d32caa1364f009234f748d119b",
+  "backend_local": "2059 passed,1 warning; two catch-up tests added after collection, focused8passed",
+  "focused_source_integration": "69 passed",
+  "macro_final": "14 passed",
+  "pair_binding_regressions": "17 passed",
+  "CI_portability_and_storage_floor": "34 passed",
+  "ruff": "passed",
+  "frontend_build": "passed",
+  "browser": "5 passed",
+  "dependency_audits": "no known Python vulnerabilities; npm0 vulnerabilities",
+  "paper_scenario": "passed",
+  "production_outcome_replay": "18 canonical labels exactly replayed from saved production originals and raw authoritative references, no writes",
+  "archive_verification": "original catalog hashes and journal prefixes preserved, one recent sealed per-service raw/gzip/restoration hash verified; full service startup verification preserved",
+  "bounded_observation": "63.96s after archive recovery,409markets/fresh320\u2192320\u2192223; no new OOM; not indefinite reliability proof",
+  "CI": {
+    "conclusion": "success",
+    "headSha": "a26dd8f0852981d32caa1364f009234f748d119b",
+    "url": "https://github.com/Neraium/Neraium-Poly/actions/runs/42522153439"
+  },
+  "CI_repair": "initial runner failure came from fixture host disk assumption; explicit controlled capacity plus low-space tests, production100GiBfloor unchanged"
+}
