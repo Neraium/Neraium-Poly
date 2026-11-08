@@ -452,6 +452,27 @@ class ExperimentalRuntime:
         )
 
     async def cycle(self):
+        gate=getattr(self,"_cycle_gate",None)
+        if gate is None:
+            self._cycle_gate=gate=asyncio.Lock()
+        async with gate:
+            if self.stopping:return
+            self._cycle_done=asyncio.get_running_loop().create_future()
+            try:
+                return await self._cycle_impl()
+            finally:
+                self._cycle_done.set_result(None)
+                self._cycle_done=None
+
+    async def _finish_cycle(self):
+        done=getattr(self,"_cycle_done",None);interrupted=False
+        if done is not None:
+            while not done.done():
+                try:await asyncio.shield(done)
+                except asyncio.CancelledError:interrupted=True
+        return interrupted
+
+    async def _cycle_impl(self):
         if getattr(self,"memory_sampler",None):self.memory_sampler.sample("experimental_cycle_start")
         Settings.from_env()
         now = self.clock()
@@ -495,13 +516,21 @@ class ExperimentalRuntime:
         books = {b.token_id: b for b in frame.books}
         markets = {m.token_id: m for m in selected.markets}
         with self._lock:
-            for market in selected.markets:
+            for index,market in enumerate(selected.markets):
                 self.events.append(market)
-            for book in selected.books:
+                if (index+1)%8==0:await asyncio.sleep(0)
+            for index,book in enumerate(selected.books):
                 if not self._budget_ok():
                     raise ValueError("experimental_storage_budget_exhausted")
                 if self.archive.record(book):
                     self.totals["observations"] += 1
+                if (index+1)%8==0:await asyncio.sleep(0)
+            # Archival time is not executable quote freshness. Keep financial
+            # admission synchronous, but qualify against the actual decision time.
+            now = self.clock()
+            if self.stopping:
+                self._cancel_and_checkpoint(now)
+                return
             signals = self.engine.evaluate_frame(selected, now)
             checks = []
             if self.config.phase16_execution_veto_enabled:
@@ -1211,6 +1240,7 @@ class ExperimentalRuntime:
 
     async def close(self):
         self.stopping = True
+        interrupted=await self._finish_cycle()
         self._cancel_and_checkpoint(self.clock())
         if getattr(self, "phase26_inputs", None) is not None:
             await self.phase26_inputs.close()
@@ -1222,6 +1252,7 @@ class ExperimentalRuntime:
             self.event_intelligence.close()
         self.events.close()
         self.account.close()
+        if interrupted:raise asyncio.CancelledError
 
 
 async def serve_experimental(config):
