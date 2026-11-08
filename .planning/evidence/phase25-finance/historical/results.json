@@ -1,0 +1,310 @@
+{
+  "classification": "RECONSTRUCTED HISTORICAL EXPLORATION",
+  "evaluated_at": "2026-11-08T00:18:27.308398+00:00",
+  "script_sha256": "85e4daf6365223ac3c511a8e188cc4a580e0c41c8f28751260504e2022071fcd",
+  "predeclaration_sha256": "5e9bd6912c18fbe72997b11f71b17ef80e9344dc6b8dd972a4c9e36c77e61290",
+  "source_records_sha256": "a5e04cf577a246e353554f0c31c4c4a2446b215802e8c4f14c39253c63df127b",
+  "frozen_model_source_hashes": {
+    "finance": "ee2cf333f2b1636dbf86b6fae78e98a5533082853fb89e63e85a8bd9a8ccb74c",
+    "economics": "fe97db82dde36d7e370adc91630b1b0d09c4f3725bea4c28ef6cb620a39bdfdb"
+  },
+  "source_first_verified_availability": {
+    "finance": "2026-11-08T00:02:00.557109Z",
+    "economics": "2026-11-08T00:02:01.300647Z"
+  },
+  "exact_current_algorithm_equivalence_verified": true,
+  "finance": {
+    "underlying": "FRED SP500 cash-index current-vintage closes; not WSJ market settlement labels",
+    "window": "last252 observed return intervals",
+    "ties_excluded": 0,
+    "conditional_target": "strict positive vs negative source close-to-close move in an ordinary completed session",
+    "first_observation": "2025-11-05",
+    "last_observation": "2026-11-05",
+    "observations": 252,
+    "metrics": {
+      "spx-weekday-beta-direction-v25.1": {
+        "observations": 252,
+        "brier": 0.24986789324185826,
+        "log_loss": 0.6929170054645317,
+        "log_loss_status": "finite",
+        "zero_likelihood_labels": 0,
+        "clipped_log_loss_epsilon_1e12": 0.6929170054645317
+      },
+      "spx-gaussian-logreturn-direction-v25.1": {
+        "observations": 252,
+        "brier": 0.2495286611301042,
+        "log_loss": 0.6922016355727328,
+        "log_loss_status": "finite",
+        "zero_likelihood_labels": 0,
+        "clipped_log_loss_epsilon_1e12": 0.6922016355727328
+      },
+      "constant_0.5": {
+        "observations": 252,
+        "brier": 0.25,
+        "log_loss": 0.6931471805599453,
+        "log_loss_status": "finite",
+        "zero_likelihood_labels": 0,
+        "clipped_log_loss_epsilon_1e12": 0.6931471805599453
+      },
+      "training_frequency": {
+        "observations": 252,
+        "brier": 0.2511650241554451,
+        "log_loss": 0.6955276200028988,
+        "log_loss_status": "finite",
+        "zero_likelihood_labels": 0,
+        "clipped_log_loss_epsilon_1e12": 0.6955276200028988
+      }
+    },
+    "paired_comparisons": [
+      {
+        "model": "spx-weekday-beta-direction-v25.1",
+        "baseline": "constant_0.5",
+        "score": "brier",
+        "model_minus_baseline": -0.00013210675814174637,
+        "interval95": [
+          -0.004476497769349763,
+          0.0052382471355418925
+        ],
+        "interpretation": "negative means lower reconstructed loss; descriptive dependent-bootstrap interval, not validated superiority"
+      },
+      {
+        "model": "spx-weekday-beta-direction-v25.1",
+        "baseline": "constant_0.5",
+        "score": "log_loss",
+        "model_minus_baseline": -0.00023017509541360052,
+        "interval95": [
+          -0.009021462313873265,
+          0.01063554555695724
+        ],
+        "interpretation": "negative means lower reconstructed loss; descriptive dependent-bootstrap interval, not validated superiority"
+      },
+      {
+        "model": "spx-weekday-beta-direction-v25.1",
+        "baseline": "training_frequency",
+        "score": "brier",
+        "model_minus_baseline": -0.0012971309135868824,
+        "interval95": [
+          -0.007812207521137311,
+          0.004347635473848068
+        ],
+        "interpretation": "negative means lower reconstructed loss; descriptive dependent-bootstrap interval, not validated superiority"
+      },
+      {
+        "model": "spx-weekday-beta-direction-v25.1",
+        "baseline": "training_frequency",
+        "score": "log_loss",
+        "model_minus_baseline": -0.002610614538367071,
+        "interval95": [
+          -0.01582598679190765,
+          0.008825293038417129
+        ],
+        "interpretation": "negative means lower reconstructed loss; descriptive dependent-bootstrap interval, not validated superiority"
+      },
+      {
+        "model": "spx-gaussian-logreturn-direction-v25.1",
+        "baseline": "constant_0.5",
+        "score": "brier",
+        "model_minus_baseline": -0.00047133886989580986,
+        "interval95": [
+          -0.004615741214319185,
+          0.00345827668905501
+        ],
+        "interpretation": "negative means lower reconstructed loss; descriptive dependent-bootstrap interval, not validated superiority"
+      },
+      {
+        "model": "spx-gaussian-logreturn-direction-v25.1",
+        "baseline": "constant_0.5",
+        "score": "log_loss",
+        "model_minus_baseline": -0.0009455449872124525,
+        "interval95": [
+          -0.009252506519618038,
+          0.006934138003720628
+        ],
+        "interpretation": "negative means lower reconstructed loss; descriptive dependent-bootstrap interval, not validated superiority"
+      },
+      {
+        "model": "spx-gaussian-logreturn-direction-v25.1",
+        "baseline": "training_frequency",
+        "score": "brier",
+        "model_minus_baseline": -0.001636363025340946,
+        "interval95": [
+          -0.005734437135391525,
+          0.0018816188764924542
+        ],
+        "interpretation": "negative means lower reconstructed loss; descriptive dependent-bootstrap interval, not validated superiority"
+      },
+      {
+        "model": "spx-gaussian-logreturn-direction-v25.1",
+        "baseline": "training_frequency",
+        "score": "log_loss",
+        "model_minus_baseline": -0.003325984430165923,
+        "interval95": [
+          -0.011623054726168041,
+          0.003777406162667778
+        ],
+        "interpretation": "negative means lower reconstructed loss; descriptive dependent-bootstrap interval, not validated superiority"
+      }
+    ],
+    "block_length": 20,
+    "bootstrap_replicates": 1000,
+    "reviewed_independent_events": 0,
+    "certification_qualified_events": 0,
+    "cost_adjusted_edge": null,
+    "simulated_or_real_pnl": null
+  },
+  "GDP": {
+    "underlying": "ONS IHYQ current-vintage real seasonally adjusted qoq growth; not historical firstrelease labels",
+    "window": "last40 quarters",
+    "conditional_target": {
+      "tail": "between",
+      "lower": "0",
+      "upper": "0.1",
+      "selected_outcome": "Yes"
+    },
+    "first_observation": "2016 Q3",
+    "last_observation": "2026 Q2",
+    "observations": 40,
+    "metrics": {
+      "uk-gdp-jeffreys-frequency-v25.1": {
+        "observations": 40,
+        "brier": 0.16760856632956575,
+        "log_loss": 0.5325380598889987,
+        "log_loss_status": "finite",
+        "zero_likelihood_labels": 0,
+        "clipped_log_loss_epsilon_1e12": 0.5325380598889987
+      },
+      "uk-gdp-regularized-ar1-v25.1": {
+        "observations": 40,
+        "brier": 0.18511639577968073,
+        "log_loss": 0.7146963112505821,
+        "log_loss_status": "finite",
+        "zero_likelihood_labels": 0,
+        "clipped_log_loss_epsilon_1e12": 0.7146963112505821
+      },
+      "constant_0.5": {
+        "observations": 40,
+        "brier": 0.25,
+        "log_loss": 0.6931471805599453,
+        "log_loss_status": "finite",
+        "zero_likelihood_labels": 0,
+        "clipped_log_loss_epsilon_1e12": 0.6931471805599453
+      },
+      "training_frequency": {
+        "observations": 40,
+        "brier": 0.16760856632956575,
+        "log_loss": 0.5325380598889987,
+        "log_loss_status": "finite",
+        "zero_likelihood_labels": 0,
+        "clipped_log_loss_epsilon_1e12": 0.5325380598889987
+      }
+    },
+    "paired_comparisons": [
+      {
+        "model": "uk-gdp-jeffreys-frequency-v25.1",
+        "baseline": "constant_0.5",
+        "score": "brier",
+        "model_minus_baseline": -0.08239143367043426,
+        "interval95": [
+          -0.17102840571088637,
+          0.0272880725758477
+        ],
+        "interpretation": "negative means lower reconstructed loss; descriptive dependent-bootstrap interval, not validated superiority"
+      },
+      {
+        "model": "uk-gdp-jeffreys-frequency-v25.1",
+        "baseline": "constant_0.5",
+        "score": "log_loss",
+        "model_minus_baseline": -0.16060912067094663,
+        "interval95": [
+          -0.3828330915653149,
+          0.12341617523725662
+        ],
+        "interpretation": "negative means lower reconstructed loss; descriptive dependent-bootstrap interval, not validated superiority"
+      },
+      {
+        "model": "uk-gdp-jeffreys-frequency-v25.1",
+        "baseline": "training_frequency",
+        "score": "brier",
+        "model_minus_baseline": 0.0,
+        "interval95": [
+          0.0,
+          0.0
+        ],
+        "interpretation": "negative means lower reconstructed loss; descriptive dependent-bootstrap interval, not validated superiority"
+      },
+      {
+        "model": "uk-gdp-jeffreys-frequency-v25.1",
+        "baseline": "training_frequency",
+        "score": "log_loss",
+        "model_minus_baseline": 0.0,
+        "interval95": [
+          0.0,
+          0.0
+        ],
+        "interpretation": "negative means lower reconstructed loss; descriptive dependent-bootstrap interval, not validated superiority"
+      },
+      {
+        "model": "uk-gdp-regularized-ar1-v25.1",
+        "baseline": "constant_0.5",
+        "score": "brier",
+        "model_minus_baseline": -0.06488360422031927,
+        "interval95": [
+          -0.17538215135563545,
+          0.07320086999587339
+        ],
+        "interpretation": "negative means lower reconstructed loss; descriptive dependent-bootstrap interval, not validated superiority"
+      },
+      {
+        "model": "uk-gdp-regularized-ar1-v25.1",
+        "baseline": "constant_0.5",
+        "score": "log_loss",
+        "model_minus_baseline": 0.02154913069063676,
+        "interval95": [
+          -0.398453746231229,
+          0.5589324144727588
+        ],
+        "interpretation": "negative means lower reconstructed loss; descriptive dependent-bootstrap interval, not validated superiority"
+      },
+      {
+        "model": "uk-gdp-regularized-ar1-v25.1",
+        "baseline": "training_frequency",
+        "score": "brier",
+        "model_minus_baseline": 0.017507829450114986,
+        "interval95": [
+          -0.0054993118648567416,
+          0.0494646202194663
+        ],
+        "interpretation": "negative means lower reconstructed loss; descriptive dependent-bootstrap interval, not validated superiority"
+      },
+      {
+        "model": "uk-gdp-regularized-ar1-v25.1",
+        "baseline": "training_frequency",
+        "score": "log_loss",
+        "model_minus_baseline": 0.18215825136158337,
+        "interval95": [
+          -0.030304398881050465,
+          0.4769542901172926
+        ],
+        "interpretation": "negative means lower reconstructed loss; descriptive dependent-bootstrap interval, not validated superiority"
+      }
+    ],
+    "block_length": 4,
+    "bootstrap_replicates": 1000,
+    "reviewed_independent_events": 0,
+    "certification_qualified_events": 0,
+    "cost_adjusted_edge": null,
+    "simulated_or_real_pnl": null
+  },
+  "limitations": [
+    "Source snapshots were first retrieved now; historical information availability and revisions are unverified",
+    "Models were already developed using these data; these are not untouched held-out tests",
+    "No contemporaneous Polymarket quotes or verified WSJ/firstrelease outcomes; no market baseline or trading P/L is computed",
+    "Block intervals address observed serial dependence only, not vintage leakage, post-selection, regime or dataset uncertainty",
+    "GDP current-vintage frequency baseline is mathematically identical to its Jeffreys challenger",
+    "No promotion, threshold tuning, certificate, backdated forecast or production-state write is authorized"
+  ],
+  "research_only": true,
+  "trading_authority": false,
+  "certification_authority": false,
+  "numerical_cpu_workers": 1
+}

@@ -1,0 +1,6 @@
+# Reconstructed historical exploration — no validated edge
+Predeclared last252SPXobservedreturns and last40GDPquarters;1000moving-block replicates,seed25,oneCPU. The current-vintage inputs were first retrieved now and models already developed using them: NOTprospective,PIT,untouchedheldout or certified results. No invented WSJprices/firstrelease labels, market quote comparisons or tradingP/L.
+
+SPXBrier:weekdayBeta0.249868,Gaussian0.249529,constant0.5baseline0.250000,trainingfrequency0.251165. All paired95%block intervals includezero. GDPfixed0.0–0.1bin Brier:Jeffreys0.167609 (identical to historical-frequency baseline),AR1 0.185116 (worsepointestimate);0.5baseline0.25. AR1-minus-frequency+0.017508,interval[-0.00550,0.04946]. No incremental skill established; beating0.5forararebin is not evidence beyondfrequency.
+
+Prefix-only mathematical equivalents match the actual frozen model forecasts at the current full-data cutoff. Predeclaration, input/model/script hashes, raw exploratory observations and metrics preserved. Initial evaluated script retained exactly as evaluated-source.txt; clean evaluate.py removed one unusedimport, reproduction proves identical metrics and observationbytes. No model changes or production writes.

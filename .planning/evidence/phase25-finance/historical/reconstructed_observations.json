@@ -1,0 +1,3219 @@
+{
+  "classification": "RECONSTRUCTED HISTORICAL EXPLORATION",
+  "finance": [
+    {
+      "target_source_date": "2025-11-05",
+      "reconstructed_feature_end_observation": "2025-11-04",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5461538461538461,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5229409503532135,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5787401574803149
+      }
+    },
+    {
+      "target_source_date": "2025-11-06",
+      "reconstructed_feature_end_observation": "2025-11-05",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5254901960784314,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5228833538864851,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5787401574803149
+      }
+    },
+    {
+      "target_source_date": "2025-11-07",
+      "reconstructed_feature_end_observation": "2025-11-06",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5354330708661418,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5217161244936753,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5787401574803149
+      }
+    },
+    {
+      "target_source_date": "2025-11-10",
+      "reconstructed_feature_end_observation": "2025-11-07",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.6,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5202947784952904,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5787401574803149
+      }
+    },
+    {
+      "target_source_date": "2025-11-11",
+      "reconstructed_feature_end_observation": "2025-11-10",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.4847328244274809,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5191004149376771,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5787401574803149
+      }
+    },
+    {
+      "target_source_date": "2025-11-12",
+      "reconstructed_feature_end_observation": "2025-11-11",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5461538461538461,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5183948492680154,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5787401574803149
+      }
+    },
+    {
+      "target_source_date": "2025-11-13",
+      "reconstructed_feature_end_observation": "2025-11-12",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5215686274509804,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5179772585013782,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5787401574803149
+      }
+    },
+    {
+      "target_source_date": "2025-11-14",
+      "reconstructed_feature_end_observation": "2025-11-13",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5393700787401575,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5155314305868848,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5748031496062992
+      }
+    },
+    {
+      "target_source_date": "2025-11-17",
+      "reconstructed_feature_end_observation": "2025-11-14",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.6,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5158551202740819,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5748031496062992
+      }
+    },
+    {
+      "target_source_date": "2025-11-18",
+      "reconstructed_feature_end_observation": "2025-11-17",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.48854961832061067,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5145693494870657,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5708661417322834
+      }
+    },
+    {
+      "target_source_date": "2025-11-19",
+      "reconstructed_feature_end_observation": "2025-11-18",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5461538461538461,
+        "spx-gaussian-logreturn-direction-v25.1": 0.514264588285983,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5708661417322834
+      }
+    },
+    {
+      "target_source_date": "2025-11-20",
+      "reconstructed_feature_end_observation": "2025-11-19",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5215686274509804,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5165890198075285,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5748031496062992
+      }
+    },
+    {
+      "target_source_date": "2025-11-21",
+      "reconstructed_feature_end_observation": "2025-11-20",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5354330708661418,
+        "spx-gaussian-logreturn-direction-v25.1": 0.513907462824295,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5708661417322834
+      }
+    },
+    {
+      "target_source_date": "2025-11-24",
+      "reconstructed_feature_end_observation": "2025-11-21",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5957446808510638,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5146705632399181,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5708661417322834
+      }
+    },
+    {
+      "target_source_date": "2025-11-25",
+      "reconstructed_feature_end_observation": "2025-11-24",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.48854961832061067,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5166668707855295,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5708661417322834
+      }
+    },
+    {
+      "target_source_date": "2025-11-26",
+      "reconstructed_feature_end_observation": "2025-11-25",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.55,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5171471768214158,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5708661417322834
+      }
+    },
+    {
+      "target_source_date": "2025-11-28",
+      "reconstructed_feature_end_observation": "2025-11-26",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5372549019607843,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5175947106046541,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5708661417322834
+      }
+    },
+    {
+      "target_source_date": "2025-12-01",
+      "reconstructed_feature_end_observation": "2025-11-28",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.597457627118644,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5178997542819767,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5708661417322834
+      }
+    },
+    {
+      "target_source_date": "2025-12-02",
+      "reconstructed_feature_end_observation": "2025-12-01",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.49049429657794674,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5164288684938596,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5669291338582677
+      }
+    },
+    {
+      "target_source_date": "2025-12-03",
+      "reconstructed_feature_end_observation": "2025-12-02",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5517241379310345,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5172656045474207,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5708661417322834
+      }
+    },
+    {
+      "target_source_date": "2025-12-04",
+      "reconstructed_feature_end_observation": "2025-12-03",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5176470588235295,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5169221286351824,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5708661417322834
+      }
+    },
+    {
+      "target_source_date": "2025-12-05",
+      "reconstructed_feature_end_observation": "2025-12-04",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5393700787401575,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5167411698257278,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5708661417322834
+      }
+    },
+    {
+      "target_source_date": "2025-12-08",
+      "reconstructed_feature_end_observation": "2025-12-05",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5957446808510638,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5169381323389795,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5708661417322834
+      }
+    },
+    {
+      "target_source_date": "2025-12-09",
+      "reconstructed_feature_end_observation": "2025-12-08",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.48854961832061067,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5156747498859822,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5669291338582677
+      }
+    },
+    {
+      "target_source_date": "2025-12-10",
+      "reconstructed_feature_end_observation": "2025-12-09",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5538461538461539,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5158080074766629,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5669291338582677
+      }
+    },
+    {
+      "target_source_date": "2025-12-11",
+      "reconstructed_feature_end_observation": "2025-12-10",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5215686274509804,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5163637383905957,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5669291338582677
+      }
+    },
+    {
+      "target_source_date": "2025-12-12",
+      "reconstructed_feature_end_observation": "2025-12-11",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5393700787401575,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5174706079654263,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5708661417322834
+      }
+    },
+    {
+      "target_source_date": "2025-12-15",
+      "reconstructed_feature_end_observation": "2025-12-12",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5957446808510638,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5164120078342895,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5708661417322834
+      }
+    },
+    {
+      "target_source_date": "2025-12-16",
+      "reconstructed_feature_end_observation": "2025-12-15",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.4847328244274809,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5151299448482944,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5669291338582677
+      }
+    },
+    {
+      "target_source_date": "2025-12-17",
+      "reconstructed_feature_end_observation": "2025-12-16",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5576923076923077,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5155405133328311,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5669291338582677
+      }
+    },
+    {
+      "target_source_date": "2025-12-18",
+      "reconstructed_feature_end_observation": "2025-12-17",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5254901960784314,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5139631958941124,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5669291338582677
+      }
+    },
+    {
+      "target_source_date": "2025-12-19",
+      "reconstructed_feature_end_observation": "2025-12-18",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5393700787401575,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5145002399325402,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5669291338582677
+      }
+    },
+    {
+      "target_source_date": "2025-12-22",
+      "reconstructed_feature_end_observation": "2025-12-19",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5957446808510638,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5161681863087559,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5708661417322834
+      }
+    },
+    {
+      "target_source_date": "2025-12-23",
+      "reconstructed_feature_end_observation": "2025-12-22",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.48091603053435117,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5212569056076154,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5748031496062992
+      }
+    },
+    {
+      "target_source_date": "2025-12-24",
+      "reconstructed_feature_end_observation": "2025-12-23",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5538461538461539,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5219785325299926,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5787401574803149
+      }
+    },
+    {
+      "target_source_date": "2025-12-26",
+      "reconstructed_feature_end_observation": "2025-12-24",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5411764705882353,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5209883650667012,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5787401574803149
+      }
+    },
+    {
+      "target_source_date": "2025-12-29",
+      "reconstructed_feature_end_observation": "2025-12-26",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.597457627118644,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5199838253957474,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5748031496062992
+      }
+    },
+    {
+      "target_source_date": "2025-12-30",
+      "reconstructed_feature_end_observation": "2025-12-29",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.4828897338403042,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5180595639237591,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5708661417322834
+      }
+    },
+    {
+      "target_source_date": "2025-12-31",
+      "reconstructed_feature_end_observation": "2025-12-30",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5555555555555556,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5179280296577218,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5708661417322834
+      }
+    },
+    {
+      "target_source_date": "2026-01-02",
+      "reconstructed_feature_end_observation": "2025-12-31",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5411764705882353,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5184503954416331,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5708661417322834
+      }
+    },
+    {
+      "target_source_date": "2026-01-05",
+      "reconstructed_feature_end_observation": "2026-01-02",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.597457627118644,
+        "spx-gaussian-logreturn-direction-v25.1": 0.520193701417265,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5748031496062992
+      }
+    },
+    {
+      "target_source_date": "2026-01-06",
+      "reconstructed_feature_end_observation": "2026-01-05",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.4828897338403042,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5216265932474254,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5787401574803149
+      }
+    },
+    {
+      "target_source_date": "2026-01-07",
+      "reconstructed_feature_end_observation": "2026-01-06",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5517241379310345,
+        "spx-gaussian-logreturn-direction-v25.1": 0.522754075814898,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5826771653543307
+      }
+    },
+    {
+      "target_source_date": "2026-01-08",
+      "reconstructed_feature_end_observation": "2026-01-07",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5236220472440944,
+        "spx-gaussian-logreturn-direction-v25.1": 0.520636337888583,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5787401574803149
+      }
+    },
+    {
+      "target_source_date": "2026-01-09",
+      "reconstructed_feature_end_observation": "2026-01-08",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.54296875,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5199065817762842,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5787401574803149
+      }
+    },
+    {
+      "target_source_date": "2026-01-12",
+      "reconstructed_feature_end_observation": "2026-01-09",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.6,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5223248707090018,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5826771653543307
+      }
+    },
+    {
+      "target_source_date": "2026-01-13",
+      "reconstructed_feature_end_observation": "2026-01-12",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.4847328244274809,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5223271974273516,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5826771653543307
+      }
+    },
+    {
+      "target_source_date": "2026-01-14",
+      "reconstructed_feature_end_observation": "2026-01-13",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5461538461538461,
+        "spx-gaussian-logreturn-direction-v25.1": 0.524259281323878,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5826771653543307
+      }
+    },
+    {
+      "target_source_date": "2026-01-15",
+      "reconstructed_feature_end_observation": "2026-01-14",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5217391304347826,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5233058586939696,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5787401574803149
+      }
+    },
+    {
+      "target_source_date": "2026-01-16",
+      "reconstructed_feature_end_observation": "2026-01-15",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.54296875,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5234991695481839,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5787401574803149
+      }
+    },
+    {
+      "target_source_date": "2026-01-20",
+      "reconstructed_feature_end_observation": "2026-01-16",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.4828897338403042,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5210397390224499,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5748031496062992
+      }
+    },
+    {
+      "target_source_date": "2026-01-21",
+      "reconstructed_feature_end_observation": "2026-01-20",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5440613026819924,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5183592003193946,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5748031496062992
+      }
+    },
+    {
+      "target_source_date": "2026-01-22",
+      "reconstructed_feature_end_observation": "2026-01-21",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5236220472440944,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5185647938922705,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5748031496062992
+      }
+    },
+    {
+      "target_source_date": "2026-01-23",
+      "reconstructed_feature_end_observation": "2026-01-22",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5408560311284046,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5181343290547322,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5748031496062992
+      }
+    },
+    {
+      "target_source_date": "2026-01-26",
+      "reconstructed_feature_end_observation": "2026-01-23",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.6042553191489362,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5173561201760768,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5748031496062992
+      }
+    },
+    {
+      "target_source_date": "2026-01-27",
+      "reconstructed_feature_end_observation": "2026-01-26",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.4770992366412214,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5173153057298603,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5748031496062992
+      }
+    },
+    {
+      "target_source_date": "2026-01-28",
+      "reconstructed_feature_end_observation": "2026-01-27",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5423076923076923,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5182564266839892,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5787401574803149
+      }
+    },
+    {
+      "target_source_date": "2026-01-29",
+      "reconstructed_feature_end_observation": "2026-01-28",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.525691699604743,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5203088193387292,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5787401574803149
+      }
+    },
+    {
+      "target_source_date": "2026-01-30",
+      "reconstructed_feature_end_observation": "2026-01-29",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.546875,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5189023506907964,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5748031496062992
+      }
+    },
+    {
+      "target_source_date": "2026-02-02",
+      "reconstructed_feature_end_observation": "2026-01-30",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.6042553191489362,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5189550685736977,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5748031496062992
+      }
+    },
+    {
+      "target_source_date": "2026-02-03",
+      "reconstructed_feature_end_observation": "2026-02-02",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.48091603053435117,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5189704710423004,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5748031496062992
+      }
+    },
+    {
+      "target_source_date": "2026-02-04",
+      "reconstructed_feature_end_observation": "2026-02-03",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5423076923076923,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5184959773424836,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5748031496062992
+      }
+    },
+    {
+      "target_source_date": "2026-02-05",
+      "reconstructed_feature_end_observation": "2026-02-04",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5217391304347826,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5188536762556981,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5748031496062992
+      }
+    },
+    {
+      "target_source_date": "2026-02-06",
+      "reconstructed_feature_end_observation": "2026-02-05",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.546875,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5161620610320208,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5708661417322834
+      }
+    },
+    {
+      "target_source_date": "2026-02-09",
+      "reconstructed_feature_end_observation": "2026-02-06",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.6042553191489362,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5181928093813808,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5708661417322834
+      }
+    },
+    {
+      "target_source_date": "2026-02-10",
+      "reconstructed_feature_end_observation": "2026-02-09",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.4770992366412214,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5183319634773349,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5708661417322834
+      }
+    },
+    {
+      "target_source_date": "2026-02-11",
+      "reconstructed_feature_end_observation": "2026-02-10",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5384615384615384,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5191957867237098,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5708661417322834
+      }
+    },
+    {
+      "target_source_date": "2026-02-12",
+      "reconstructed_feature_end_observation": "2026-02-11",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5177865612648221,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5182920969191325,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5669291338582677
+      }
+    },
+    {
+      "target_source_date": "2026-02-13",
+      "reconstructed_feature_end_observation": "2026-02-12",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.546875,
+        "spx-gaussian-logreturn-direction-v25.1": 0.51604214658419,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.562992125984252
+      }
+    },
+    {
+      "target_source_date": "2026-02-17",
+      "reconstructed_feature_end_observation": "2026-02-13",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.4752851711026616,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5164807319602295,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5669291338582677
+      }
+    },
+    {
+      "target_source_date": "2026-02-18",
+      "reconstructed_feature_end_observation": "2026-02-17",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5363984674329502,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5152395099459821,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5669291338582677
+      }
+    },
+    {
+      "target_source_date": "2026-02-19",
+      "reconstructed_feature_end_observation": "2026-02-18",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.515748031496063,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5159947647312763,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5708661417322834
+      }
+    },
+    {
+      "target_source_date": "2026-02-20",
+      "reconstructed_feature_end_observation": "2026-02-19",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5486381322957199,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5152802655730726,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5669291338582677
+      }
+    },
+    {
+      "target_source_date": "2026-02-23",
+      "reconstructed_feature_end_observation": "2026-02-20",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.6042553191489362,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5158860591709166,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5669291338582677
+      }
+    },
+    {
+      "target_source_date": "2026-02-24",
+      "reconstructed_feature_end_observation": "2026-02-23",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.48091603053435117,
+        "spx-gaussian-logreturn-direction-v25.1": 0.515040589251761,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5669291338582677
+      }
+    },
+    {
+      "target_source_date": "2026-02-25",
+      "reconstructed_feature_end_observation": "2026-02-24",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5423076923076923,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5184647834347211,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5708661417322834
+      }
+    },
+    {
+      "target_source_date": "2026-02-26",
+      "reconstructed_feature_end_observation": "2026-02-25",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5138339920948617,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5202304041031609,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5748031496062992
+      }
+    },
+    {
+      "target_source_date": "2026-02-27",
+      "reconstructed_feature_end_observation": "2026-02-26",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.55078125,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5201347501347647,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5748031496062992
+      }
+    },
+    {
+      "target_source_date": "2026-03-02",
+      "reconstructed_feature_end_observation": "2026-02-27",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.6042553191489362,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5195204182514542,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5708661417322834
+      }
+    },
+    {
+      "target_source_date": "2026-03-03",
+      "reconstructed_feature_end_observation": "2026-03-02",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.48091603053435117,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5218273034544396,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5748031496062992
+      }
+    },
+    {
+      "target_source_date": "2026-03-04",
+      "reconstructed_feature_end_observation": "2026-03-03",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5423076923076923,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5184336864817485,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5708661417322834
+      }
+    },
+    {
+      "target_source_date": "2026-03-05",
+      "reconstructed_feature_end_observation": "2026-03-04",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5138339920948617,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5219968969854306,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5748031496062992
+      }
+    },
+    {
+      "target_source_date": "2026-03-06",
+      "reconstructed_feature_end_observation": "2026-03-05",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.55078125,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5229496874322057,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5748031496062992
+      }
+    },
+    {
+      "target_source_date": "2026-03-09",
+      "reconstructed_feature_end_observation": "2026-03-06",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.6042553191489362,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5195726984679967,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5708661417322834
+      }
+    },
+    {
+      "target_source_date": "2026-03-10",
+      "reconstructed_feature_end_observation": "2026-03-09",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.48091603053435117,
+        "spx-gaussian-logreturn-direction-v25.1": 0.523264668233002,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5748031496062992
+      }
+    },
+    {
+      "target_source_date": "2026-03-11",
+      "reconstructed_feature_end_observation": "2026-03-10",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5461538461538461,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5222197412920012,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5708661417322834
+      }
+    },
+    {
+      "target_source_date": "2026-03-12",
+      "reconstructed_feature_end_observation": "2026-03-11",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5138339920948617,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5261723638754764,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5708661417322834
+      }
+    },
+    {
+      "target_source_date": "2026-03-13",
+      "reconstructed_feature_end_observation": "2026-03-12",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.546875,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5250223264607514,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5708661417322834
+      }
+    },
+    {
+      "target_source_date": "2026-03-16",
+      "reconstructed_feature_end_observation": "2026-03-13",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.6085106382978723,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5234934773364868,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5669291338582677
+      }
+    },
+    {
+      "target_source_date": "2026-03-17",
+      "reconstructed_feature_end_observation": "2026-03-16",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.4770992366412214,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5268817952709264,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5708661417322834
+      }
+    },
+    {
+      "target_source_date": "2026-03-18",
+      "reconstructed_feature_end_observation": "2026-03-17",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5423076923076923,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5244604345034103,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5708661417322834
+      }
+    },
+    {
+      "target_source_date": "2026-03-19",
+      "reconstructed_feature_end_observation": "2026-03-18",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5098814229249012,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5215932316521176,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5669291338582677
+      }
+    },
+    {
+      "target_source_date": "2026-03-20",
+      "reconstructed_feature_end_observation": "2026-03-19",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.54296875,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5227440578425205,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5669291338582677
+      }
+    },
+    {
+      "target_source_date": "2026-03-23",
+      "reconstructed_feature_end_observation": "2026-03-20",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.6085106382978723,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5190687833238501,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.562992125984252
+      }
+    },
+    {
+      "target_source_date": "2026-03-24",
+      "reconstructed_feature_end_observation": "2026-03-23",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.48091603053435117,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5209257225993761,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5669291338582677
+      }
+    },
+    {
+      "target_source_date": "2026-03-25",
+      "reconstructed_feature_end_observation": "2026-03-24",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5384615384615384,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5202834024651641,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.562992125984252
+      }
+    },
+    {
+      "target_source_date": "2026-03-26",
+      "reconstructed_feature_end_observation": "2026-03-25",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5098814229249012,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5186776302958025,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.562992125984252
+      }
+    },
+    {
+      "target_source_date": "2026-03-27",
+      "reconstructed_feature_end_observation": "2026-03-26",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.54296875,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5159240715387308,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5590551181102362
+      }
+    },
+    {
+      "target_source_date": "2026-03-30",
+      "reconstructed_feature_end_observation": "2026-03-27",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.6085106382978723,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5151013609678106,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5590551181102362
+      }
+    },
+    {
+      "target_source_date": "2026-03-31",
+      "reconstructed_feature_end_observation": "2026-03-30",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.48091603053435117,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5150112286551566,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5590551181102362
+      }
+    },
+    {
+      "target_source_date": "2026-04-01",
+      "reconstructed_feature_end_observation": "2026-03-31",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5423076923076923,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5216325778961001,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.562992125984252
+      }
+    },
+    {
+      "target_source_date": "2026-04-02",
+      "reconstructed_feature_end_observation": "2026-04-01",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5059288537549407,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5218496804154031,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.562992125984252
+      }
+    },
+    {
+      "target_source_date": "2026-04-06",
+      "reconstructed_feature_end_observation": "2026-04-02",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.6059322033898306,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5214871987907663,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.562992125984252
+      }
+    },
+    {
+      "target_source_date": "2026-04-07",
+      "reconstructed_feature_end_observation": "2026-04-06",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.4828897338403042,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5211790957374651,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.562992125984252
+      }
+    },
+    {
+      "target_source_date": "2026-04-08",
+      "reconstructed_feature_end_observation": "2026-04-07",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5440613026819924,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5292603966070542,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5669291338582677
+      }
+    },
+    {
+      "target_source_date": "2026-04-09",
+      "reconstructed_feature_end_observation": "2026-04-08",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5078740157480315,
+        "spx-gaussian-logreturn-direction-v25.1": 0.544106084832414,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5708661417322834
+      }
+    },
+    {
+      "target_source_date": "2026-04-10",
+      "reconstructed_feature_end_observation": "2026-04-09",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5390625,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5453795557332792,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5748031496062992
+      }
+    },
+    {
+      "target_source_date": "2026-04-13",
+      "reconstructed_feature_end_observation": "2026-04-10",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.6085106382978723,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5478505993462792,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5748031496062992
+      }
+    },
+    {
+      "target_source_date": "2026-04-14",
+      "reconstructed_feature_end_observation": "2026-04-13",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.48854961832061067,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5423927782157647,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5748031496062992
+      }
+    },
+    {
+      "target_source_date": "2026-04-15",
+      "reconstructed_feature_end_observation": "2026-04-14",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5423076923076923,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5525906471457442,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5787401574803149
+      }
+    },
+    {
+      "target_source_date": "2026-04-16",
+      "reconstructed_feature_end_observation": "2026-04-15",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5059288537549407,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5510636115001963,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5787401574803149
+      }
+    },
+    {
+      "target_source_date": "2026-04-17",
+      "reconstructed_feature_end_observation": "2026-04-16",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.53515625,
+        "spx-gaussian-logreturn-direction-v25.1": 0.550127607125819,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5787401574803149
+      }
+    },
+    {
+      "target_source_date": "2026-04-20",
+      "reconstructed_feature_end_observation": "2026-04-17",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.6127659574468085,
+        "spx-gaussian-logreturn-direction-v25.1": 0.552544794387336,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5826771653543307
+      }
+    },
+    {
+      "target_source_date": "2026-04-21",
+      "reconstructed_feature_end_observation": "2026-04-20",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.48854961832061067,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5572624462554436,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5826771653543307
+      }
+    },
+    {
+      "target_source_date": "2026-04-22",
+      "reconstructed_feature_end_observation": "2026-04-21",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5461538461538461,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5557024598078479,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5787401574803149
+      }
+    },
+    {
+      "target_source_date": "2026-04-23",
+      "reconstructed_feature_end_observation": "2026-04-22",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5059288537549407,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5632298897895076,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5826771653543307
+      }
+    },
+    {
+      "target_source_date": "2026-04-24",
+      "reconstructed_feature_end_observation": "2026-04-23",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.53515625,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5585746162367821,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5787401574803149
+      }
+    },
+    {
+      "target_source_date": "2026-04-27",
+      "reconstructed_feature_end_observation": "2026-04-24",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.6127659574468085,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5572274738723753,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5787401574803149
+      }
+    },
+    {
+      "target_source_date": "2026-04-28",
+      "reconstructed_feature_end_observation": "2026-04-27",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.48854961832061067,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5541182219041765,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5787401574803149
+      }
+    },
+    {
+      "target_source_date": "2026-04-29",
+      "reconstructed_feature_end_observation": "2026-04-28",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5461538461538461,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5516699714060666,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5748031496062992
+      }
+    },
+    {
+      "target_source_date": "2026-04-30",
+      "reconstructed_feature_end_observation": "2026-04-29",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5059288537549407,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5514583619138702,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5708661417322834
+      }
+    },
+    {
+      "target_source_date": "2026-05-01",
+      "reconstructed_feature_end_observation": "2026-04-30",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.53515625,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5522373227999575,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5708661417322834
+      }
+    },
+    {
+      "target_source_date": "2026-05-04",
+      "reconstructed_feature_end_observation": "2026-05-01",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.6127659574468085,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5525207369696996,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5708661417322834
+      }
+    },
+    {
+      "target_source_date": "2026-05-05",
+      "reconstructed_feature_end_observation": "2026-05-04",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.48854961832061067,
+        "spx-gaussian-logreturn-direction-v25.1": 0.550452660627234,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5669291338582677
+      }
+    },
+    {
+      "target_source_date": "2026-05-06",
+      "reconstructed_feature_end_observation": "2026-05-05",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5461538461538461,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5493606199192076,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5669291338582677
+      }
+    },
+    {
+      "target_source_date": "2026-05-07",
+      "reconstructed_feature_end_observation": "2026-05-06",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5059288537549407,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5533399070244336,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5708661417322834
+      }
+    },
+    {
+      "target_source_date": "2026-05-08",
+      "reconstructed_feature_end_observation": "2026-05-07",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5390625,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5542158609638701,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5708661417322834
+      }
+    },
+    {
+      "target_source_date": "2026-05-11",
+      "reconstructed_feature_end_observation": "2026-05-08",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.6085106382978723,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5549517754245268,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5708661417322834
+      }
+    },
+    {
+      "target_source_date": "2026-05-12",
+      "reconstructed_feature_end_observation": "2026-05-11",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.49236641221374045,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5542082526606734,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5708661417322834
+      }
+    },
+    {
+      "target_source_date": "2026-05-13",
+      "reconstructed_feature_end_observation": "2026-05-12",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5461538461538461,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5540227242943212,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5708661417322834
+      }
+    },
+    {
+      "target_source_date": "2026-05-14",
+      "reconstructed_feature_end_observation": "2026-05-13",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5019762845849802,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5503218049834688,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5708661417322834
+      }
+    },
+    {
+      "target_source_date": "2026-05-15",
+      "reconstructed_feature_end_observation": "2026-05-14",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5390625,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5503963847010253,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5708661417322834
+      }
+    },
+    {
+      "target_source_date": "2026-05-18",
+      "reconstructed_feature_end_observation": "2026-05-15",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.6127659574468085,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5473206716639553,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5669291338582677
+      }
+    },
+    {
+      "target_source_date": "2026-05-19",
+      "reconstructed_feature_end_observation": "2026-05-18",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.49236641221374045,
+        "spx-gaussian-logreturn-direction-v25.1": 0.546332907791871,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.562992125984252
+      }
+    },
+    {
+      "target_source_date": "2026-05-20",
+      "reconstructed_feature_end_observation": "2026-05-19",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.55,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5434863056513604,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5590551181102362
+      }
+    },
+    {
+      "target_source_date": "2026-05-21",
+      "reconstructed_feature_end_observation": "2026-05-20",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5019762845849802,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5453652445140162,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5590551181102362
+      }
+    },
+    {
+      "target_source_date": "2026-05-22",
+      "reconstructed_feature_end_observation": "2026-05-21",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.53515625,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5465485180718914,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.562992125984252
+      }
+    },
+    {
+      "target_source_date": "2026-05-26",
+      "reconstructed_feature_end_observation": "2026-05-22",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.49049429657794674,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5511461651683918,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5669291338582677
+      }
+    },
+    {
+      "target_source_date": "2026-05-27",
+      "reconstructed_feature_end_observation": "2026-05-26",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5517241379310345,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5524546854520533,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5708661417322834
+      }
+    },
+    {
+      "target_source_date": "2026-05-28",
+      "reconstructed_feature_end_observation": "2026-05-27",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5039370078740157,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5539892809567819,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5748031496062992
+      }
+    },
+    {
+      "target_source_date": "2026-05-29",
+      "reconstructed_feature_end_observation": "2026-05-28",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5369649805447471,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5516072149349571,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5748031496062992
+      }
+    },
+    {
+      "target_source_date": "2026-06-01",
+      "reconstructed_feature_end_observation": "2026-05-29",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.6127659574468085,
+        "spx-gaussian-logreturn-direction-v25.1": 0.553311927975372,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5787401574803149
+      }
+    },
+    {
+      "target_source_date": "2026-06-02",
+      "reconstructed_feature_end_observation": "2026-06-01",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.49429657794676807,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5530340395784298,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5787401574803149
+      }
+    },
+    {
+      "target_source_date": "2026-06-03",
+      "reconstructed_feature_end_observation": "2026-06-02",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5555555555555556,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5533241978116512,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5826771653543307
+      }
+    },
+    {
+      "target_source_date": "2026-06-04",
+      "reconstructed_feature_end_observation": "2026-06-03",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5039370078740157,
+        "spx-gaussian-logreturn-direction-v25.1": 0.550801704576294,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5787401574803149
+      }
+    },
+    {
+      "target_source_date": "2026-06-05",
+      "reconstructed_feature_end_observation": "2026-06-04",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5408560311284046,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5504621226237274,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5787401574803149
+      }
+    },
+    {
+      "target_source_date": "2026-06-08",
+      "reconstructed_feature_end_observation": "2026-06-05",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.6127659574468085,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5436511409424889,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5748031496062992
+      }
+    },
+    {
+      "target_source_date": "2026-06-09",
+      "reconstructed_feature_end_observation": "2026-06-08",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5453933944169634,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5787401574803149
+      }
+    },
+    {
+      "target_source_date": "2026-06-10",
+      "reconstructed_feature_end_observation": "2026-06-09",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.55,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5428791313488006,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5748031496062992
+      }
+    },
+    {
+      "target_source_date": "2026-06-11",
+      "reconstructed_feature_end_observation": "2026-06-10",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5059288537549407,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5389477267995845,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5708661417322834
+      }
+    },
+    {
+      "target_source_date": "2026-06-12",
+      "reconstructed_feature_end_observation": "2026-06-11",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.53515625,
+        "spx-gaussian-logreturn-direction-v25.1": 0.541027606260781,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5708661417322834
+      }
+    },
+    {
+      "target_source_date": "2026-06-15",
+      "reconstructed_feature_end_observation": "2026-06-12",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.6170212765957447,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5425872875087756,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5748031496062992
+      }
+    },
+    {
+      "target_source_date": "2026-06-16",
+      "reconstructed_feature_end_observation": "2026-06-15",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.4961832061068702,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5447861119070952,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5748031496062992
+      }
+    },
+    {
+      "target_source_date": "2026-06-17",
+      "reconstructed_feature_end_observation": "2026-06-16",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.55,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5460768313682669,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5748031496062992
+      }
+    },
+    {
+      "target_source_date": "2026-06-18",
+      "reconstructed_feature_end_observation": "2026-06-17",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5059288537549407,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5416103249388307,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5708661417322834
+      }
+    },
+    {
+      "target_source_date": "2026-06-22",
+      "reconstructed_feature_end_observation": "2026-06-18",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.6186440677966102,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5454310453052271,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5748031496062992
+      }
+    },
+    {
+      "target_source_date": "2026-06-23",
+      "reconstructed_feature_end_observation": "2026-06-22",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.49429657794676807,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5447219225481792,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5748031496062992
+      }
+    },
+    {
+      "target_source_date": "2026-06-24",
+      "reconstructed_feature_end_observation": "2026-06-23",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5478927203065134,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5419617030427161,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5748031496062992
+      }
+    },
+    {
+      "target_source_date": "2026-06-25",
+      "reconstructed_feature_end_observation": "2026-06-24",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5078740157480315,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5399588656881928,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5708661417322834
+      }
+    },
+    {
+      "target_source_date": "2026-06-26",
+      "reconstructed_feature_end_observation": "2026-06-25",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.53515625,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5378613862891545,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5669291338582677
+      }
+    },
+    {
+      "target_source_date": "2026-06-29",
+      "reconstructed_feature_end_observation": "2026-06-26",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.614406779661017,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5377665660755842,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5669291338582677
+      }
+    },
+    {
+      "target_source_date": "2026-06-30",
+      "reconstructed_feature_end_observation": "2026-06-29",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.49429657794676807,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5384229151750003,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5669291338582677
+      }
+    },
+    {
+      "target_source_date": "2026-07-01",
+      "reconstructed_feature_end_observation": "2026-06-30",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5478927203065134,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5389199950744554,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5669291338582677
+      }
+    },
+    {
+      "target_source_date": "2026-07-02",
+      "reconstructed_feature_end_observation": "2026-07-01",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5078740157480315,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5374765950985043,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.562992125984252
+      }
+    },
+    {
+      "target_source_date": "2026-07-06",
+      "reconstructed_feature_end_observation": "2026-07-02",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.614406779661017,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5377035985581278,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5669291338582677
+      }
+    },
+    {
+      "target_source_date": "2026-07-07",
+      "reconstructed_feature_end_observation": "2026-07-06",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.49429657794676807,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5381671536396193,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5669291338582677
+      }
+    },
+    {
+      "target_source_date": "2026-07-08",
+      "reconstructed_feature_end_observation": "2026-07-07",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5478927203065134,
+        "spx-gaussian-logreturn-direction-v25.1": 0.535655802982079,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.562992125984252
+      }
+    },
+    {
+      "target_source_date": "2026-07-09",
+      "reconstructed_feature_end_observation": "2026-07-08",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5078740157480315,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5367402873201386,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.562992125984252
+      }
+    },
+    {
+      "target_source_date": "2026-07-10",
+      "reconstructed_feature_end_observation": "2026-07-09",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5333333333333333,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5384407648058118,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5669291338582677
+      }
+    },
+    {
+      "target_source_date": "2026-07-13",
+      "reconstructed_feature_end_observation": "2026-07-10",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.614406779661017,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5380923522679715,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5669291338582677
+      }
+    },
+    {
+      "target_source_date": "2026-07-14",
+      "reconstructed_feature_end_observation": "2026-07-13",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.49049429657794674,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5358735178270652,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.562992125984252
+      }
+    },
+    {
+      "target_source_date": "2026-07-15",
+      "reconstructed_feature_end_observation": "2026-07-14",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5440613026819924,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5372877824515445,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5669291338582677
+      }
+    },
+    {
+      "target_source_date": "2026-07-16",
+      "reconstructed_feature_end_observation": "2026-07-15",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5078740157480315,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5377563863724587,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5669291338582677
+      }
+    },
+    {
+      "target_source_date": "2026-07-17",
+      "reconstructed_feature_end_observation": "2026-07-16",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5333333333333333,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5375127355861218,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5669291338582677
+      }
+    },
+    {
+      "target_source_date": "2026-07-20",
+      "reconstructed_feature_end_observation": "2026-07-17",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.6118143459915611,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5347324404791012,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.562992125984252
+      }
+    },
+    {
+      "target_source_date": "2026-07-21",
+      "reconstructed_feature_end_observation": "2026-07-20",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.49429657794676807,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5332998120458701,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5590551181102362
+      }
+    },
+    {
+      "target_source_date": "2026-07-22",
+      "reconstructed_feature_end_observation": "2026-07-21",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5440613026819924,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5349973427817276,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.562992125984252
+      }
+    },
+    {
+      "target_source_date": "2026-07-23",
+      "reconstructed_feature_end_observation": "2026-07-22",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5078740157480315,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5344455887993983,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5590551181102362
+      }
+    },
+    {
+      "target_source_date": "2026-07-24",
+      "reconstructed_feature_end_observation": "2026-07-23",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5294117647058824,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5317437645931231,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5551181102362205
+      }
+    },
+    {
+      "target_source_date": "2026-07-27",
+      "reconstructed_feature_end_observation": "2026-07-24",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.6075949367088608,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5303544076204074,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5551181102362205
+      }
+    },
+    {
+      "target_source_date": "2026-07-28",
+      "reconstructed_feature_end_observation": "2026-07-27",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.49809885931558934,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5302482396839763,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5551181102362205
+      }
+    },
+    {
+      "target_source_date": "2026-07-29",
+      "reconstructed_feature_end_observation": "2026-07-28",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5402298850574713,
+        "spx-gaussian-logreturn-direction-v25.1": 0.529888103154807,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5551181102362205
+      }
+    },
+    {
+      "target_source_date": "2026-07-30",
+      "reconstructed_feature_end_observation": "2026-07-29",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5078740157480315,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5266230834560306,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5511811023622047
+      }
+    },
+    {
+      "target_source_date": "2026-07-31",
+      "reconstructed_feature_end_observation": "2026-07-30",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5333333333333333,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5302153124090893,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5551181102362205
+      }
+    },
+    {
+      "target_source_date": "2026-08-03",
+      "reconstructed_feature_end_observation": "2026-07-31",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.6118143459915611,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5317827424909941,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5590551181102362
+      }
+    },
+    {
+      "target_source_date": "2026-08-04",
+      "reconstructed_feature_end_observation": "2026-08-03",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.49809885931558934,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5351703238663943,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.562992125984252
+      }
+    },
+    {
+      "target_source_date": "2026-08-05",
+      "reconstructed_feature_end_observation": "2026-08-04",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5363984674329502,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5417100441449285,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5669291338582677
+      }
+    },
+    {
+      "target_source_date": "2026-08-06",
+      "reconstructed_feature_end_observation": "2026-08-05",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5078740157480315,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5387749554403896,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.562992125984252
+      }
+    },
+    {
+      "target_source_date": "2026-08-07",
+      "reconstructed_feature_end_observation": "2026-08-06",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5333333333333333,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5394091687216753,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.562992125984252
+      }
+    },
+    {
+      "target_source_date": "2026-08-10",
+      "reconstructed_feature_end_observation": "2026-08-07",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.6118143459915611,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5392125130618088,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.562992125984252
+      }
+    },
+    {
+      "target_source_date": "2026-08-11",
+      "reconstructed_feature_end_observation": "2026-08-10",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5019011406844106,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5392548194410598,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.562992125984252
+      }
+    },
+    {
+      "target_source_date": "2026-08-12",
+      "reconstructed_feature_end_observation": "2026-08-11",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5363984674329502,
+        "spx-gaussian-logreturn-direction-v25.1": 0.537154712923517,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5590551181102362
+      }
+    },
+    {
+      "target_source_date": "2026-08-13",
+      "reconstructed_feature_end_observation": "2026-08-12",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5039370078740157,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5381621740392251,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.562992125984252
+      }
+    },
+    {
+      "target_source_date": "2026-08-14",
+      "reconstructed_feature_end_observation": "2026-08-13",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5372549019607843,
+        "spx-gaussian-logreturn-direction-v25.1": 0.537318010256872,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.562992125984252
+      }
+    },
+    {
+      "target_source_date": "2026-08-17",
+      "reconstructed_feature_end_observation": "2026-08-14",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.6118143459915611,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5363569467357574,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5590551181102362
+      }
+    },
+    {
+      "target_source_date": "2026-08-18",
+      "reconstructed_feature_end_observation": "2026-08-17",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.49809885931558934,
+        "spx-gaussian-logreturn-direction-v25.1": 0.535236017641469,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5551181102362205
+      }
+    },
+    {
+      "target_source_date": "2026-08-19",
+      "reconstructed_feature_end_observation": "2026-08-18",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5402298850574713,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5344075792809566,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5551181102362205
+      }
+    },
+    {
+      "target_source_date": "2026-08-20",
+      "reconstructed_feature_end_observation": "2026-08-19",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5039370078740157,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5348363679740464,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5590551181102362
+      }
+    },
+    {
+      "target_source_date": "2026-08-21",
+      "reconstructed_feature_end_observation": "2026-08-20",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5333333333333333,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5342375853246921,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5590551181102362
+      }
+    },
+    {
+      "target_source_date": "2026-08-24",
+      "reconstructed_feature_end_observation": "2026-08-21",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.6118143459915611,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5355518064101199,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.562992125984252
+      }
+    },
+    {
+      "target_source_date": "2026-08-25",
+      "reconstructed_feature_end_observation": "2026-08-24",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.49429657794676807,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5357971281199265,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.562992125984252
+      }
+    },
+    {
+      "target_source_date": "2026-08-26",
+      "reconstructed_feature_end_observation": "2026-08-25",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5402298850574713,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5336882724265513,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.562992125984252
+      }
+    },
+    {
+      "target_source_date": "2026-08-27",
+      "reconstructed_feature_end_observation": "2026-08-26",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5345106258817807,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.562992125984252
+      }
+    },
+    {
+      "target_source_date": "2026-08-28",
+      "reconstructed_feature_end_observation": "2026-08-27",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5333333333333333,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5350762739755615,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.562992125984252
+      }
+    },
+    {
+      "target_source_date": "2026-08-31",
+      "reconstructed_feature_end_observation": "2026-08-28",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.6075949367088608,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5341133267956832,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5590551181102362
+      }
+    },
+    {
+      "target_source_date": "2026-09-01",
+      "reconstructed_feature_end_observation": "2026-08-31",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.49809885931558934,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5328345795496547,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5551181102362205
+      }
+    },
+    {
+      "target_source_date": "2026-09-02",
+      "reconstructed_feature_end_observation": "2026-09-01",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5402298850574713,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5326830043905134,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5551181102362205
+      }
+    },
+    {
+      "target_source_date": "2026-09-03",
+      "reconstructed_feature_end_observation": "2026-09-02",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5349869255907241,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5590551181102362
+      }
+    },
+    {
+      "target_source_date": "2026-09-04",
+      "reconstructed_feature_end_observation": "2026-09-03",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5294117647058824,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5359669500317508,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5590551181102362
+      }
+    },
+    {
+      "target_source_date": "2026-09-08",
+      "reconstructed_feature_end_observation": "2026-09-04",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.49429657794676807,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5336458294450597,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5551181102362205
+      }
+    },
+    {
+      "target_source_date": "2026-09-09",
+      "reconstructed_feature_end_observation": "2026-09-08",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5402298850574713,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5330916351398911,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5551181102362205
+      }
+    },
+    {
+      "target_source_date": "2026-09-10",
+      "reconstructed_feature_end_observation": "2026-09-09",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5039370078740157,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5317033196577554,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5511811023622047
+      }
+    },
+    {
+      "target_source_date": "2026-09-11",
+      "reconstructed_feature_end_observation": "2026-09-10",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5254901960784314,
+        "spx-gaussian-logreturn-direction-v25.1": 0.529997295528406,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.547244094488189
+      }
+    },
+    {
+      "target_source_date": "2026-09-14",
+      "reconstructed_feature_end_observation": "2026-09-11",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.6016949152542372,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5310332397333803,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.547244094488189
+      }
+    },
+    {
+      "target_source_date": "2026-09-15",
+      "reconstructed_feature_end_observation": "2026-09-14",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.49429657794676807,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5284690346787633,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5433070866141733
+      }
+    },
+    {
+      "target_source_date": "2026-09-16",
+      "reconstructed_feature_end_observation": "2026-09-15",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5363984674329502,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5276632036758073,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5433070866141733
+      }
+    },
+    {
+      "target_source_date": "2026-09-17",
+      "reconstructed_feature_end_observation": "2026-09-16",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5258664210505862,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5393700787401575
+      }
+    },
+    {
+      "target_source_date": "2026-09-18",
+      "reconstructed_feature_end_observation": "2026-09-17",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5294117647058824,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5282289370881044,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5433070866141733
+      }
+    },
+    {
+      "target_source_date": "2026-09-21",
+      "reconstructed_feature_end_observation": "2026-09-18",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5991561181434599,
+        "spx-gaussian-logreturn-direction-v25.1": 0.52874252064499,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.547244094488189
+      }
+    },
+    {
+      "target_source_date": "2026-09-22",
+      "reconstructed_feature_end_observation": "2026-09-21",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.49429657794676807,
+        "spx-gaussian-logreturn-direction-v25.1": 0.530523918834308,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.547244094488189
+      }
+    },
+    {
+      "target_source_date": "2026-09-23",
+      "reconstructed_feature_end_observation": "2026-09-22",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5363984674329502,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5295964426985962,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5433070866141733
+      }
+    },
+    {
+      "target_source_date": "2026-09-24",
+      "reconstructed_feature_end_observation": "2026-09-23",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5039370078740157,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5272381663400152,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5393700787401575
+      }
+    },
+    {
+      "target_source_date": "2026-09-25",
+      "reconstructed_feature_end_observation": "2026-09-24",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5333333333333333,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5282865354682278,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5393700787401575
+      }
+    },
+    {
+      "target_source_date": "2026-09-28",
+      "reconstructed_feature_end_observation": "2026-09-25",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5991561181434599,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5298129509850631,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5433070866141733
+      }
+    },
+    {
+      "target_source_date": "2026-09-29",
+      "reconstructed_feature_end_observation": "2026-09-28",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.49429657794676807,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5292542432410028,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5433070866141733
+      }
+    },
+    {
+      "target_source_date": "2026-09-30",
+      "reconstructed_feature_end_observation": "2026-09-29",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5325670498084292,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5278144058986789,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5393700787401575
+      }
+    },
+    {
+      "target_source_date": "2026-10-01",
+      "reconstructed_feature_end_observation": "2026-09-30",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5039370078740157,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5268151106366343,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5354330708661418
+      }
+    },
+    {
+      "target_source_date": "2026-10-02",
+      "reconstructed_feature_end_observation": "2026-10-01",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5372549019607843,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5264108133475708,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5354330708661418
+      }
+    },
+    {
+      "target_source_date": "2026-10-05",
+      "reconstructed_feature_end_observation": "2026-10-02",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5991561181434599,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5271376646789023,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5354330708661418
+      }
+    },
+    {
+      "target_source_date": "2026-10-06",
+      "reconstructed_feature_end_observation": "2026-10-05",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.49429657794676807,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5282637126924701,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5354330708661418
+      }
+    },
+    {
+      "target_source_date": "2026-10-07",
+      "reconstructed_feature_end_observation": "2026-10-06",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5287356321839081,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5293400068747651,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5354330708661418
+      }
+    },
+    {
+      "target_source_date": "2026-10-08",
+      "reconstructed_feature_end_observation": "2026-10-07",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5039370078740157,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5282171143637491,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.531496062992126
+      }
+    },
+    {
+      "target_source_date": "2026-10-09",
+      "reconstructed_feature_end_observation": "2026-10-08",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5372549019607843,
+        "spx-gaussian-logreturn-direction-v25.1": 0.528044750354399,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.531496062992126
+      }
+    },
+    {
+      "target_source_date": "2026-10-12",
+      "reconstructed_feature_end_observation": "2026-10-09",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.6033755274261603,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5280665507278028,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.531496062992126
+      }
+    },
+    {
+      "target_source_date": "2026-10-13",
+      "reconstructed_feature_end_observation": "2026-10-12",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.49809885931558934,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5285001866631736,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.531496062992126
+      }
+    },
+    {
+      "target_source_date": "2026-10-14",
+      "reconstructed_feature_end_observation": "2026-10-13",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.524904214559387,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5345647975358074,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.531496062992126
+      }
+    },
+    {
+      "target_source_date": "2026-10-15",
+      "reconstructed_feature_end_observation": "2026-10-14",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5039370078740157,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5293900502222053,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5275590551181102
+      }
+    },
+    {
+      "target_source_date": "2026-10-16",
+      "reconstructed_feature_end_observation": "2026-10-15",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5372549019607843,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5303398444317886,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.531496062992126
+      }
+    },
+    {
+      "target_source_date": "2026-10-19",
+      "reconstructed_feature_end_observation": "2026-10-16",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.6033755274261603,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5272689325739289,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5275590551181102
+      }
+    },
+    {
+      "target_source_date": "2026-10-20",
+      "reconstructed_feature_end_observation": "2026-10-19",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.49429657794676807,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5293481534731539,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.531496062992126
+      }
+    },
+    {
+      "target_source_date": "2026-10-21",
+      "reconstructed_feature_end_observation": "2026-10-20",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5210727969348659,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5288856984122929,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.531496062992126
+      }
+    },
+    {
+      "target_source_date": "2026-10-22",
+      "reconstructed_feature_end_observation": "2026-10-21",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5039370078740157,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5279930091547114,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.531496062992126
+      }
+    },
+    {
+      "target_source_date": "2026-10-23",
+      "reconstructed_feature_end_observation": "2026-10-22",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5372549019607843,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5254535584737814,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5275590551181102
+      }
+    },
+    {
+      "target_source_date": "2026-10-26",
+      "reconstructed_feature_end_observation": "2026-10-23",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.6075949367088608,
+        "spx-gaussian-logreturn-direction-v25.1": 0.525484737352429,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5275590551181102
+      }
+    },
+    {
+      "target_source_date": "2026-10-27",
+      "reconstructed_feature_end_observation": "2026-10-26",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.49809885931558934,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5256965900784623,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5275590551181102
+      }
+    },
+    {
+      "target_source_date": "2026-10-28",
+      "reconstructed_feature_end_observation": "2026-10-27",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5210727969348659,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5253380518783674,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5275590551181102
+      }
+    },
+    {
+      "target_source_date": "2026-10-29",
+      "reconstructed_feature_end_observation": "2026-10-28",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5235727750973038,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5275590551181102
+      }
+    },
+    {
+      "target_source_date": "2026-10-30",
+      "reconstructed_feature_end_observation": "2026-10-29",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5333333333333333,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5225105506544541,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5236220472440944
+      }
+    },
+    {
+      "target_source_date": "2026-11-02",
+      "reconstructed_feature_end_observation": "2026-10-30",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.6075949367088608,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5186857589787675,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5236220472440944
+      }
+    },
+    {
+      "target_source_date": "2026-11-03",
+      "reconstructed_feature_end_observation": "2026-11-02",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.49809885931558934,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5196793719833597,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5236220472440944
+      }
+    },
+    {
+      "target_source_date": "2026-11-04",
+      "reconstructed_feature_end_observation": "2026-11-03",
+      "target": 1,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.5210727969348659,
+        "spx-gaussian-logreturn-direction-v25.1": 0.519877695476122,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5236220472440944
+      }
+    },
+    {
+      "target_source_date": "2026-11-05",
+      "reconstructed_feature_end_observation": "2026-11-04",
+      "target": 0,
+      "probabilities": {
+        "spx-weekday-beta-direction-v25.1": 0.49606299212598426,
+        "spx-gaussian-logreturn-direction-v25.1": 0.5224597791662762,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.5236220472440944
+      }
+    }
+  ],
+  "GDP": [
+    {
+      "target_source_period": "2016 Q3",
+      "reconstructed_feature_end_observation": "2016 Q2",
+      "target": 0,
+      "probabilities": {
+        "uk-gdp-jeffreys-frequency-v25.1": 0.10975609756097561,
+        "uk-gdp-regularized-ar1-v25.1": 0.08968811774320756,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.10975609756097561
+      }
+    },
+    {
+      "target_source_period": "2016 Q4",
+      "reconstructed_feature_end_observation": "2016 Q3",
+      "target": 0,
+      "probabilities": {
+        "uk-gdp-jeffreys-frequency-v25.1": 0.10975609756097561,
+        "uk-gdp-regularized-ar1-v25.1": 0.12647986299755337,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.10975609756097561
+      }
+    },
+    {
+      "target_source_period": "2017 Q1",
+      "reconstructed_feature_end_observation": "2016 Q4",
+      "target": 0,
+      "probabilities": {
+        "uk-gdp-jeffreys-frequency-v25.1": 0.10975609756097561,
+        "uk-gdp-regularized-ar1-v25.1": 0.10668591875136507,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.10975609756097561
+      }
+    },
+    {
+      "target_source_period": "2017 Q2",
+      "reconstructed_feature_end_observation": "2017 Q1",
+      "target": 0,
+      "probabilities": {
+        "uk-gdp-jeffreys-frequency-v25.1": 0.10975609756097561,
+        "uk-gdp-regularized-ar1-v25.1": 0.055639824225374335,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.10975609756097561
+      }
+    },
+    {
+      "target_source_period": "2017 Q3",
+      "reconstructed_feature_end_observation": "2017 Q2",
+      "target": 0,
+      "probabilities": {
+        "uk-gdp-jeffreys-frequency-v25.1": 0.10975609756097561,
+        "uk-gdp-regularized-ar1-v25.1": 0.0672705423869453,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.10975609756097561
+      }
+    },
+    {
+      "target_source_period": "2017 Q4",
+      "reconstructed_feature_end_observation": "2017 Q3",
+      "target": 0,
+      "probabilities": {
+        "uk-gdp-jeffreys-frequency-v25.1": 0.10975609756097561,
+        "uk-gdp-regularized-ar1-v25.1": 0.09254134063891845,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.10975609756097561
+      }
+    },
+    {
+      "target_source_period": "2018 Q1",
+      "reconstructed_feature_end_observation": "2017 Q4",
+      "target": 1,
+      "probabilities": {
+        "uk-gdp-jeffreys-frequency-v25.1": 0.10975609756097561,
+        "uk-gdp-regularized-ar1-v25.1": 0.07697433075046167,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.10975609756097561
+      }
+    },
+    {
+      "target_source_period": "2018 Q2",
+      "reconstructed_feature_end_observation": "2018 Q1",
+      "target": 0,
+      "probabilities": {
+        "uk-gdp-jeffreys-frequency-v25.1": 0.13414634146341464,
+        "uk-gdp-regularized-ar1-v25.1": 0.1535670886099244,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.13414634146341464
+      }
+    },
+    {
+      "target_source_period": "2018 Q3",
+      "reconstructed_feature_end_observation": "2018 Q2",
+      "target": 0,
+      "probabilities": {
+        "uk-gdp-jeffreys-frequency-v25.1": 0.13414634146341464,
+        "uk-gdp-regularized-ar1-v25.1": 0.15384659395180122,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.13414634146341464
+      }
+    },
+    {
+      "target_source_period": "2018 Q4",
+      "reconstructed_feature_end_observation": "2018 Q3",
+      "target": 1,
+      "probabilities": {
+        "uk-gdp-jeffreys-frequency-v25.1": 0.13414634146341464,
+        "uk-gdp-regularized-ar1-v25.1": 0.1383114784014392,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.13414634146341464
+      }
+    },
+    {
+      "target_source_period": "2019 Q1",
+      "reconstructed_feature_end_observation": "2018 Q4",
+      "target": 0,
+      "probabilities": {
+        "uk-gdp-jeffreys-frequency-v25.1": 0.15853658536585366,
+        "uk-gdp-regularized-ar1-v25.1": 0.13977550031623476,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.15853658536585366
+      }
+    },
+    {
+      "target_source_period": "2019 Q2",
+      "reconstructed_feature_end_observation": "2019 Q1",
+      "target": 0,
+      "probabilities": {
+        "uk-gdp-jeffreys-frequency-v25.1": 0.15853658536585366,
+        "uk-gdp-regularized-ar1-v25.1": 0.09385543740200808,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.15853658536585366
+      }
+    },
+    {
+      "target_source_period": "2019 Q3",
+      "reconstructed_feature_end_observation": "2019 Q2",
+      "target": 0,
+      "probabilities": {
+        "uk-gdp-jeffreys-frequency-v25.1": 0.15853658536585366,
+        "uk-gdp-regularized-ar1-v25.1": 0.11257499532939741,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.15853658536585366
+      }
+    },
+    {
+      "target_source_period": "2019 Q4",
+      "reconstructed_feature_end_observation": "2019 Q3",
+      "target": 1,
+      "probabilities": {
+        "uk-gdp-jeffreys-frequency-v25.1": 0.13414634146341464,
+        "uk-gdp-regularized-ar1-v25.1": 0.08696487773529582,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.13414634146341464
+      }
+    },
+    {
+      "target_source_period": "2020 Q1",
+      "reconstructed_feature_end_observation": "2019 Q4",
+      "target": 0,
+      "probabilities": {
+        "uk-gdp-jeffreys-frequency-v25.1": 0.15853658536585366,
+        "uk-gdp-regularized-ar1-v25.1": 0.12843616653671347,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.15853658536585366
+      }
+    },
+    {
+      "target_source_period": "2020 Q2",
+      "reconstructed_feature_end_observation": "2020 Q1",
+      "target": 0,
+      "probabilities": {
+        "uk-gdp-jeffreys-frequency-v25.1": 0.15853658536585366,
+        "uk-gdp-regularized-ar1-v25.1": 0.042613132310085455,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.15853658536585366
+      }
+    },
+    {
+      "target_source_period": "2020 Q3",
+      "reconstructed_feature_end_observation": "2020 Q2",
+      "target": 0,
+      "probabilities": {
+        "uk-gdp-jeffreys-frequency-v25.1": 0.15853658536585366,
+        "uk-gdp-regularized-ar1-v25.1": 1.5223378113660146e-12,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.15853658536585366
+      }
+    },
+    {
+      "target_source_period": "2020 Q4",
+      "reconstructed_feature_end_observation": "2020 Q3",
+      "target": 0,
+      "probabilities": {
+        "uk-gdp-jeffreys-frequency-v25.1": 0.15853658536585366,
+        "uk-gdp-regularized-ar1-v25.1": 0.0002481944171242034,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.15853658536585366
+      }
+    },
+    {
+      "target_source_period": "2021 Q1",
+      "reconstructed_feature_end_observation": "2020 Q4",
+      "target": 0,
+      "probabilities": {
+        "uk-gdp-jeffreys-frequency-v25.1": 0.13414634146341464,
+        "uk-gdp-regularized-ar1-v25.1": 0.01992569094428953,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.13414634146341464
+      }
+    },
+    {
+      "target_source_period": "2021 Q2",
+      "reconstructed_feature_end_observation": "2021 Q1",
+      "target": 0,
+      "probabilities": {
+        "uk-gdp-jeffreys-frequency-v25.1": 0.13414634146341464,
+        "uk-gdp-regularized-ar1-v25.1": 0.019549017583884998,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.13414634146341464
+      }
+    },
+    {
+      "target_source_period": "2021 Q3",
+      "reconstructed_feature_end_observation": "2021 Q2",
+      "target": 0,
+      "probabilities": {
+        "uk-gdp-jeffreys-frequency-v25.1": 0.10975609756097561,
+        "uk-gdp-regularized-ar1-v25.1": 0.016974630004208846,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.10975609756097561
+      }
+    },
+    {
+      "target_source_period": "2021 Q4",
+      "reconstructed_feature_end_observation": "2021 Q3",
+      "target": 0,
+      "probabilities": {
+        "uk-gdp-jeffreys-frequency-v25.1": 0.10975609756097561,
+        "uk-gdp-regularized-ar1-v25.1": 0.019154256501338562,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.10975609756097561
+      }
+    },
+    {
+      "target_source_period": "2022 Q1",
+      "reconstructed_feature_end_observation": "2021 Q4",
+      "target": 0,
+      "probabilities": {
+        "uk-gdp-jeffreys-frequency-v25.1": 0.08536585365853659,
+        "uk-gdp-regularized-ar1-v25.1": 0.019114691839293707,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.08536585365853659
+      }
+    },
+    {
+      "target_source_period": "2022 Q2",
+      "reconstructed_feature_end_observation": "2022 Q1",
+      "target": 0,
+      "probabilities": {
+        "uk-gdp-jeffreys-frequency-v25.1": 0.08536585365853659,
+        "uk-gdp-regularized-ar1-v25.1": 0.019061077094469747,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.08536585365853659
+      }
+    },
+    {
+      "target_source_period": "2022 Q3",
+      "reconstructed_feature_end_observation": "2022 Q2",
+      "target": 1,
+      "probabilities": {
+        "uk-gdp-jeffreys-frequency-v25.1": 0.08536585365853659,
+        "uk-gdp-regularized-ar1-v25.1": 0.018999065419105288,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.08536585365853659
+      }
+    },
+    {
+      "target_source_period": "2022 Q4",
+      "reconstructed_feature_end_observation": "2022 Q3",
+      "target": 0,
+      "probabilities": {
+        "uk-gdp-jeffreys-frequency-v25.1": 0.10975609756097561,
+        "uk-gdp-regularized-ar1-v25.1": 0.018892555604328343,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.10975609756097561
+      }
+    },
+    {
+      "target_source_period": "2023 Q1",
+      "reconstructed_feature_end_observation": "2022 Q4",
+      "target": 1,
+      "probabilities": {
+        "uk-gdp-jeffreys-frequency-v25.1": 0.10975609756097561,
+        "uk-gdp-regularized-ar1-v25.1": 0.01893859248743951,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.10975609756097561
+      }
+    },
+    {
+      "target_source_period": "2023 Q2",
+      "reconstructed_feature_end_observation": "2023 Q1",
+      "target": 1,
+      "probabilities": {
+        "uk-gdp-jeffreys-frequency-v25.1": 0.13414634146341464,
+        "uk-gdp-regularized-ar1-v25.1": 0.018899140948169912,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.13414634146341464
+      }
+    },
+    {
+      "target_source_period": "2023 Q3",
+      "reconstructed_feature_end_observation": "2023 Q2",
+      "target": 0,
+      "probabilities": {
+        "uk-gdp-jeffreys-frequency-v25.1": 0.15853658536585366,
+        "uk-gdp-regularized-ar1-v25.1": 0.018888352789997176,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.15853658536585366
+      }
+    },
+    {
+      "target_source_period": "2023 Q4",
+      "reconstructed_feature_end_observation": "2023 Q3",
+      "target": 0,
+      "probabilities": {
+        "uk-gdp-jeffreys-frequency-v25.1": 0.15853658536585366,
+        "uk-gdp-regularized-ar1-v25.1": 0.018851057540715865,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.15853658536585366
+      }
+    },
+    {
+      "target_source_period": "2024 Q1",
+      "reconstructed_feature_end_observation": "2023 Q4",
+      "target": 0,
+      "probabilities": {
+        "uk-gdp-jeffreys-frequency-v25.1": 0.15853658536585366,
+        "uk-gdp-regularized-ar1-v25.1": 0.018840644410049623,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.15853658536585366
+      }
+    },
+    {
+      "target_source_period": "2024 Q2",
+      "reconstructed_feature_end_observation": "2024 Q1",
+      "target": 0,
+      "probabilities": {
+        "uk-gdp-jeffreys-frequency-v25.1": 0.15853658536585366,
+        "uk-gdp-regularized-ar1-v25.1": 0.019041158329477725,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.15853658536585366
+      }
+    },
+    {
+      "target_source_period": "2024 Q3",
+      "reconstructed_feature_end_observation": "2024 Q2",
+      "target": 0,
+      "probabilities": {
+        "uk-gdp-jeffreys-frequency-v25.1": 0.15853658536585366,
+        "uk-gdp-regularized-ar1-v25.1": 0.01903363999949914,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.15853658536585366
+      }
+    },
+    {
+      "target_source_period": "2024 Q4",
+      "reconstructed_feature_end_observation": "2024 Q3",
+      "target": 0,
+      "probabilities": {
+        "uk-gdp-jeffreys-frequency-v25.1": 0.15853658536585366,
+        "uk-gdp-regularized-ar1-v25.1": 0.018979227434718804,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.15853658536585366
+      }
+    },
+    {
+      "target_source_period": "2025 Q1",
+      "reconstructed_feature_end_observation": "2024 Q4",
+      "target": 0,
+      "probabilities": {
+        "uk-gdp-jeffreys-frequency-v25.1": 0.15853658536585366,
+        "uk-gdp-regularized-ar1-v25.1": 0.01901303394902959,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.15853658536585366
+      }
+    },
+    {
+      "target_source_period": "2025 Q2",
+      "reconstructed_feature_end_observation": "2025 Q1",
+      "target": 0,
+      "probabilities": {
+        "uk-gdp-jeffreys-frequency-v25.1": 0.15853658536585366,
+        "uk-gdp-regularized-ar1-v25.1": 0.019039501361903577,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.15853658536585366
+      }
+    },
+    {
+      "target_source_period": "2025 Q3",
+      "reconstructed_feature_end_observation": "2025 Q2",
+      "target": 1,
+      "probabilities": {
+        "uk-gdp-jeffreys-frequency-v25.1": 0.15853658536585366,
+        "uk-gdp-regularized-ar1-v25.1": 0.01897962205470516,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.15853658536585366
+      }
+    },
+    {
+      "target_source_period": "2025 Q4",
+      "reconstructed_feature_end_observation": "2025 Q3",
+      "target": 1,
+      "probabilities": {
+        "uk-gdp-jeffreys-frequency-v25.1": 0.18292682926829268,
+        "uk-gdp-regularized-ar1-v25.1": 0.018967088980009483,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.18292682926829268
+      }
+    },
+    {
+      "target_source_period": "2026 Q1",
+      "reconstructed_feature_end_observation": "2025 Q4",
+      "target": 0,
+      "probabilities": {
+        "uk-gdp-jeffreys-frequency-v25.1": 0.2073170731707317,
+        "uk-gdp-regularized-ar1-v25.1": 0.018972416135690673,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.2073170731707317
+      }
+    },
+    {
+      "target_source_period": "2026 Q2",
+      "reconstructed_feature_end_observation": "2026 Q1",
+      "target": 0,
+      "probabilities": {
+        "uk-gdp-jeffreys-frequency-v25.1": 0.2073170731707317,
+        "uk-gdp-regularized-ar1-v25.1": 0.019049558898663388,
+        "constant_0.5": 0.5,
+        "training_frequency": 0.2073170731707317
+      }
+    }
+  ]
+}

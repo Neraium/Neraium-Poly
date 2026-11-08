@@ -1,0 +1,33 @@
+{
+  "recorded_at": "2026-11-08T00:17:05.967604+00:00",
+  "classification": "RECONSTRUCTED HISTORICAL EXPLORATION",
+  "windows": {
+    "SPX": "last252 source close-to-close returns; ties excluded from conditional strict-direction score",
+    "UK_GDP": "last40 current-vintage quarters; same frozen [0.0,0.1] reported-growth bin as authentic forecast"
+  },
+  "features": "prefix-only mathematical equivalents of frozen model algorithms; source snapshots first observed now, no invented historical availability",
+  "baselines": [
+    "constant .5",
+    "Jeffreys-smoothed historical frequency in latest252returns /40quarters respectively"
+  ],
+  "bootstrap": {
+    "replicates": 1000,
+    "seed": 25,
+    "SPX_block_length": 20,
+    "GDP_block_length": 4,
+    "method": "moving block percentile intervals, paired loss differences"
+  },
+  "no_tuning": true,
+  "source_records_sha256": "a5e04cf577a246e353554f0c31c4c4a2446b215802e8c4f14c39253c63df127b",
+  "model_source_hashes": {
+    "finance": "ee2cf333f2b1636dbf86b6fae78e98a5533082853fb89e63e85a8bd9a8ccb74c",
+    "economics": "fe97db82dde36d7e370adc91630b1b0d09c4f3725bea4c28ef6cb620a39bdfdb"
+  },
+  "restrictions": [
+    "no backdated forecasts or production ledger writes",
+    "no claim of prospective/untouchedheldout/PIT/certified performance",
+    "no market quote, WSJ result, execution or P/L fabrication",
+    "no model/threshold changes after evaluation",
+    "one numerical CPU worker"
+  ]
+}

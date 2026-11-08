@@ -1,0 +1,142 @@
+"""Reconstructed, current-vintage exploratory loss comparison. No ledger writes."""
+import argparse
+import csv
+import hashlib
+import io
+import json
+import math
+import random
+from datetime import UTC, datetime
+from itertools import pairwise
+from pathlib import Path
+from statistics import NormalDist, mean, stdev
+from zoneinfo import ZoneInfo
+
+from neraium_poly.research.phase25 import economics, finance
+
+
+def finance_predict(history,weekday):
+    returns=[(b[0],math.log(b[1]/a[1])) for a,b in pairwise(history)]
+    same=[v for day,v in returns[-1260:] if day.weekday()==weekday and v!=0]
+    if len(same)<50:raise ValueError('insufficient same-weekday reconstruction history')
+    recent=[v for _,v in returns[-252:]]
+    beta=(1+sum(v>0 for v in same))/(2+len(same))
+    gaussian=1-NormalDist(mean(recent),stdev(recent)).cdf(0)
+    nonzero=[v for v in recent if v!=0]
+    baseline=(1+sum(v>0 for v in nonzero))/(2+len(nonzero))
+    return {finance.MODELS[0]:beta,finance.MODELS[1]:gaussian,'constant_0.5':.5,'training_frequency':baseline}
+
+
+def gdp_predict(history,contract):
+    series=history[-40:]
+    frequency=(.5+sum(economics.hit(contract,x) for x in series))/(1+len(series))
+    xs,ys=series[:-1],series[1:];xm,ym=mean(xs),mean(ys)
+    beta=sum((x-xm)*(y-ym) for x,y in zip(xs,ys))/(sum((x-xm)**2 for x in xs)+1.)
+    beta=max(-.95,min(.95,beta));alpha=ym-beta*xm;pred=alpha+beta*series[-1]
+    sigma=stdev([y-alpha-beta*x for x,y in zip(xs,ys)]);normal=NormalDist(pred,sigma)
+    if contract['tail']=='negative':yes=normal.cdf(-.05)
+    elif contract['tail']=='at_least':yes=1-normal.cdf(float(contract['lower'])-.05)
+    else:yes=normal.cdf(float(contract['upper'])+.05)-normal.cdf(float(contract['lower'])-.05)
+    p=yes if contract['selected_outcome']=='Yes' else 1-yes
+    return {economics.MODELS[0]:frequency,economics.MODELS[1]:p,'constant_0.5':.5,'training_frequency':frequency}
+
+
+def percentile(values,q):
+    values=sorted(values);position=(len(values)-1)*q;lo=int(position);hi=min(lo+1,len(values)-1)
+    return values[lo]+(values[hi]-values[lo])*(position-lo)
+
+
+def summarize(rows,block,seed):
+    predictors=list(rows[0]['probabilities']);n=len(rows);losses={};metrics={}
+    for model in predictors:
+        ps=[r['probabilities'][model] for r in rows];ys=[r['target'] for r in rows]
+        bs=[(p-y)**2 for p,y in zip(ps,ys)];likelihoods=[p if y else 1-p for p,y in zip(ps,ys)]
+        logs=[-math.log(p) if p>0 else math.inf for p in likelihoods]
+        finite=all(math.isfinite(x) for x in logs)
+        losses[model]={'brier':bs,'log_loss':logs}
+        metrics[model]={'observations':n,'brier':mean(bs),'log_loss':mean(logs) if finite else None,
+                        'log_loss_status':'finite' if finite else 'positive_infinity',
+                        'zero_likelihood_labels':sum(p==0 for p in likelihoods),
+                        'clipped_log_loss_epsilon_1e12':mean(-math.log(max(p,1e-12)) for p in likelihoods)}
+    rng=random.Random(seed);boot=[]
+    for _ in range(1000):
+        indexes=[]
+        while len(indexes)<n:
+            start=rng.randrange(n-block+1);indexes.extend(range(start,start+block))
+        boot.append(indexes[:n])
+    comparisons=[]
+    for model in predictors:
+        if model in {'constant_0.5','training_frequency'}:continue
+        for baseline in ['constant_0.5','training_frequency']:
+            for score in ['brier','log_loss']:
+                differences=[a-b for a,b in zip(losses[model][score],losses[baseline][score])]
+                if not all(math.isfinite(x) for x in differences):
+                    comparisons.append({'model':model,'baseline':baseline,'score':score,'model_minus_baseline':None,'interval95':None,'reason':'infinite exact likelihood loss'})
+                    continue
+                means=[sum(differences[i] for i in indexes)/n for indexes in boot]
+                comparisons.append({'model':model,'baseline':baseline,'score':score,'model_minus_baseline':mean(differences),
+                                    'interval95':[percentile(means,.025),percentile(means,.975)],
+                                    'interpretation':'negative means lower reconstructed loss; descriptive dependent-bootstrap interval, not validated superiority'})
+    return {'observations':n,'metrics':metrics,'paired_comparisons':comparisons,'block_length':block,'bootstrap_replicates':1000,
+            'reviewed_independent_events':0,'certification_qualified_events':0,'cost_adjusted_edge':None,'simulated_or_real_pnl':None}
+
+
+def main():
+    parser=argparse.ArgumentParser();parser.add_argument('--records',type=Path,default=Path('data/phase25/authentic-records.json'))
+    parser.add_argument('--output-dir',type=Path,default=Path(__file__).parent);args=parser.parse_args()
+    plan=json.loads((args.output_dir/'predeclaration.json').read_text());raw=args.records.read_bytes()
+    if hashlib.sha256(raw).hexdigest()!=plan['source_records_sha256']:raise ValueError('predeclared source record hash mismatch')
+    for name in ['finance','economics']:
+        if hashlib.sha256(Path({'finance':finance,'economics':economics}[name].__file__).read_bytes()).hexdigest()!=plan['model_source_hashes'][name]:
+            raise ValueError('frozen model source hash mismatch')
+    studies={r['adapter']:r for r in json.loads(raw)}
+    fred=studies['finance'];gdp=studies['economics'];source_f=fred['evidence'][0]['payload']['raw_response_utf8'];source_g=gdp['evidence'][0]['payload']['raw_response_utf8']
+    values=[]
+    for row in csv.DictReader(io.StringIO(source_f)):
+        if row['SP500'] not in {'','.','NA'}:values.append((datetime.strptime(row['observation_date'],'%Y-%m-%d').date(),float(row['SP500'])))
+    rows_f=[];ties=0
+    for i in range(len(values)-252,len(values)):
+        ret=math.log(values[i][1]/values[i-1][1])
+        if ret==0:ties+=1;continue
+        rows_f.append({'target_source_date':str(values[i][0]),'reconstructed_feature_end_observation':str(values[i-1][0]),
+                       'target':int(ret>0),'probabilities':finance_predict(values[:i],values[i][0].weekday())})
+    actual_f=fred['forecasts'][0];equivalent_f=finance_predict(values,actual_f['contract']['target_weekday'])
+    for f in fred['forecasts']:
+        predicted=equivalent_f[f['model_id']] if f['contract']['selected_outcome']=='Up' else 1-equivalent_f[f['model_id']]
+        if abs(predicted-f['probability'])>1e-14:raise ValueError('finance reconstruction differs from frozen actual algorithm')
+    quarters=json.loads(source_g)['quarters'];quarters=sorted(quarters,key=lambda r:r['date']);growth=[float(r['value']) for r in quarters];contract=gdp['forecasts'][0]['contract']
+    rows_g=[{'target_source_period':quarters[i]['date'],'reconstructed_feature_end_observation':quarters[i-1]['date'],
+             'target':int(economics.hit(contract,growth[i])),'probabilities':gdp_predict(growth[:i],contract)} for i in range(len(growth)-40,len(growth))]
+    equivalent_g=gdp_predict(growth,contract)
+    for f in gdp['forecasts']:
+        if abs(equivalent_g[f['model_id']]-f['probability'])>1e-14:raise ValueError('GDP reconstruction differs from frozen actual algorithm')
+    now=datetime.now(UTC)
+    result={'classification':'RECONSTRUCTED HISTORICAL EXPLORATION','evaluated_at':now.isoformat(),
+            'script_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+            'predeclaration_sha256':hashlib.sha256((args.output_dir/'predeclaration.json').read_bytes()).hexdigest(),
+            'source_records_sha256':plan['source_records_sha256'],'frozen_model_source_hashes':plan['model_source_hashes'],
+            'source_first_verified_availability':{name:studies[name]['evidence'][0]['available_at'] for name in studies},
+            'exact_current_algorithm_equivalence_verified':True,
+            'finance':{'underlying':'FRED SP500 cash-index current-vintage closes; not WSJ market settlement labels',
+                       'window':'last252 observed return intervals','ties_excluded':ties,'conditional_target':'strict positive vs negative source close-to-close move in an ordinary completed session',
+                       'first_observation':rows_f[0]['target_source_date'],'last_observation':rows_f[-1]['target_source_date'],**summarize(rows_f,20,25)},
+            'GDP':{'underlying':'ONS IHYQ current-vintage real seasonally adjusted qoq growth; not historical firstrelease labels',
+                   'window':'last40 quarters','conditional_target':{k:contract[k] for k in ['tail','lower','upper','selected_outcome']},
+                   'first_observation':rows_g[0]['target_source_period'],'last_observation':rows_g[-1]['target_source_period'],**summarize(rows_g,4,25)},
+            'limitations':['Source snapshots were first retrieved now; historical information availability and revisions are unverified',
+                           'Models were already developed using these data; these are not untouched held-out tests',
+                           'No contemporaneous Polymarket quotes or verified WSJ/firstrelease outcomes; no market baseline or trading P/L is computed',
+                           'Block intervals address observed serial dependence only, not vintage leakage, post-selection, regime or dataset uncertainty',
+                           'GDP current-vintage frequency baseline is mathematically identical to its Jeffreys challenger',
+                           'No promotion, threshold tuning, certificate, backdated forecast or production-state write is authorized'],
+            'research_only':True,'trading_authority':False,'certification_authority':False,'numerical_cpu_workers':1}
+    with (args.output_dir/'results.json').open('x') as handle:json.dump(result,handle,indent=2,allow_nan=False);handle.write('\n')
+    with (args.output_dir/'reconstructed_observations.json').open('x') as handle:json.dump({'classification':result['classification'],'finance':rows_f,'GDP':rows_g},handle,indent=2,allow_nan=False);handle.write('\n')
+    for name in ['finance','GDP']:
+        print(name,result[name]['observations'])
+        for model,metric in result[name]['metrics'].items():print(model,round(metric['brier'],7),metric['log_loss'])
+        for comp in result[name]['paired_comparisons']:
+            if comp['score']=='brier':print(comp['model'],'minus',comp['baseline'],comp['model_minus_baseline'],comp['interval95'])
+
+
+if __name__=='__main__':main()

@@ -1,0 +1,10 @@
+{
+  "evaluated_source_sha256": "85e4daf6365223ac3c511a8e188cc4a580e0c41c8f28751260504e2022071fcd",
+  "clean_reproduction_script_sha256": "e31627afb779a4c7b8775702bf741507159af3695ed6f77ea3b48c3fe2f19a12",
+  "reproduction_reason": "removed one unused import; independently verified all metrics and observation bytes identical without model/threshold/window changes",
+  "all_model_metrics_identical": true,
+  "observation_bytes_identical": true,
+  "original_source_preserved": "evaluated-source.txt",
+  "source_records_sha256": "a5e04cf577a246e353554f0c31c4c4a2446b215802e8c4f14c39253c63df127b",
+  "numerical_cpu_workers": 1
+}
