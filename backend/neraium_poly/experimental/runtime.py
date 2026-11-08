@@ -303,6 +303,9 @@ class ExperimentalRuntime:
                         shadow=lambda:self.phase28.shadow.status())
                     from neraium_poly.research.phase32.pairs import PairResearch
                     self.pair_research=PairResearch(self.events,clock=self.clock,can_write=self._budget_ok)
+                    from neraium_poly.research.phase33.continuous import FeeHeadroomResearch
+                    self.fee_headroom_research=FeeHeadroomResearch(self.events,clock=self.clock,can_write=self._budget_ok,
+                        observations=self._causal_research_fee_observations)
                     self.phase28.on_report=self._publish_research_scorecards
                 except Exception as error:
                     self.phase28_error = f"{type(error).__name__}:{str(error)[:160]}"
@@ -944,6 +947,13 @@ class ExperimentalRuntime:
             self.domain_scorecard.observe(volume,frame,entries)
         finally:
             self.pair_research.observe(volume,frame)
+            headroom=getattr(self,"fee_headroom_research",None)
+            if headroom is not None:headroom.observe(volume,frame,self.pair_research.report if not self.pair_research.error else None)
+
+    def _causal_research_fee_observations(self,as_of):
+        from neraium_poly.experimental.fees import merge_fee_observations
+        cache=getattr(self,"research_fees",None)
+        return merge_fee_observations(dict(self.fees),dict(cache.observations) if cache else {},now=as_of)
 
     def event_operations_summary(self):
         cache=getattr(self,"event_summary_cache",None)
@@ -1129,6 +1139,7 @@ class ExperimentalRuntime:
 
         state = add_capacity(self.archive_state(), service="experimental", now=self.clock())
         state["operations_research"] = experimental_research(self, for_operations=True)
+        state["native_fee_headroom"] = self.fee_headroom_research.status() if getattr(self,"fee_headroom_research",None) else {"status":"disabled","trading_authority":False}
         state["cross_market_research"] = self.pair_research.status() if getattr(self,"pair_research",None) else {"status":"disabled","trading_authority":False}
         state["domain_scorecard"] = self.domain_scorecard.status() if getattr(self,"domain_scorecard",None) else {"status":"disabled"}
         state["official_event_research"] = self.official_event_scores.status() if getattr(self,"official_event_scores",None) else {"status":"disabled"}

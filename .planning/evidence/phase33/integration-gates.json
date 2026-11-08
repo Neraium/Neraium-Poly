@@ -1,0 +1,34 @@
+{
+  "baseline": "18c3c11",
+  "source_sha256": {
+    "backend/neraium_poly/experimental/fees.py": "8ab092a21c9a125e890878f88032efb219e1acf2c15d3aba9022b27f1c7228b0",
+    "backend/neraium_poly/research/phase28/continuous.py": "a8afb3d523c814445cefd0176dfeacddbe5c9b9bb3ad57fca88f2cc9e1b33d2a",
+    "backend/neraium_poly/research/phase33/storage.py": "999c01327cfbff6318efed9b41f7021039a0e99ed92bacc72e1e153d26ea886f",
+    "backend/neraium_poly/research/phase33/continuous.py": "5ec195863be6f3e3150a63fb3eca974ecce588c0c594bc27c98c45cf37a58c2d",
+    "backend/neraium_poly/research/phase33/economics.py": "69ee6cb791e5e676416f0c65ed2d896cf5ab50d342dd4d2b9f5f53767e169b3a",
+    "backend/neraium_poly/research/phase33/weather.py": "6a81034f00adc91879af9d49a9086698793e11b84d463049582eb0e455454ebd",
+    "backend/neraium_poly/cli.py": "43c5ae26710b79112ea47a58a982d1fe5cdd2f9a6ac9b378920e12c96008178c",
+    "backend/neraium_poly/experimental/runtime.py": "e8a4793977218245682104d40316b1cdac140c77acee5d59dc0ff5d196b29654"
+  },
+  "independent_reviews": {
+    "storage_codec_legacy_and_cli": "passed, weatheragent",
+    "fee_worker_shutdown_and_cancellation": "passed after closing/drain fix, storageagent",
+    "headroom_source_and_causal_publication": "passed after fullparentSHA/time guard, economicsagent"
+  },
+  "verification": {
+    "full_backend": "2119 passed",
+    "focused_integrated": "77 passed",
+    "review_regressions": "29 passed",
+    "browser": "5 passed",
+    "ruff_build_audits_scenario": "passed"
+  },
+  "parallelism": {
+    "peak_agents_including_root": 4,
+    "isolated_writing_worktrees": 3,
+    "concurrent_final_validation_processes": 3,
+    "pytest_workers": 1,
+    "browser_workers": 1,
+    "fee_journal_worker_limit": 2
+  },
+  "safety": "unchanged150/150GiBquota/100GiBfloor/CPU/memory/accounts/stops/limits/certification; no originalrewrite/deletion/migration/AWS/real trading"
+}

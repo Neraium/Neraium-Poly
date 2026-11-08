@@ -208,8 +208,8 @@ def main():
         if rows:
             row = rows[0]
             if volume_rows:
-                from neraium_poly.research.phase28.continuous import VolumeResearch
-                report = VolumeResearch._summary(row["report"], row["timestamp"], row["id"])
+                from neraium_poly.research.phase28.continuous import VolumeResearch, VolumeStudy
+                report = VolumeResearch._summary(VolumeStudy.model_validate(row).report, row["timestamp"], row["id"])
             else:
                 report = FindingsResearch._summary(row["findings"], row["timestamp"], row["id"])
             age = (datetime.now(UTC)-datetime.fromisoformat(row["timestamp"])).total_seconds()

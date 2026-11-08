@@ -98,6 +98,7 @@ def annotate_pair_fees(pair_report,frame,observations,store,*,as_of):
                     or metadata[0].question!=metadata[1].question):raise ValueError('exact_pair_event_and_settlement_metadata_required')
                 used.update(tokens)
                 participation=row['participation_assumption'];minimum=row['minimum_paired_quantity']
+                if not math.isfinite(minimum) or abs(minimum-max(m.min_order_size for m in metadata))>1e-9:raise ValueError('native_minimum_paired_size_mismatch')
                 pair_frontier(*source,as_of=now,minimum_quantity=minimum,participation=participation)
                 proofs=[]
                 for token in tokens:

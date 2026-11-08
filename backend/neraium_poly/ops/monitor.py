@@ -1600,7 +1600,10 @@ def _render_scorecard(experimental,width,height,errors):
     pairs=_mapping(experimental.get("cross_market_research"))
     if pairs.get("status")=="conditional_research_only":
         rows.append(f"Pairs {_number(pairs.get('paired_books_evaluated'))} Gross+ {_number(pairs.get('positive_conditional_gross_pairs'))}")
-        rows.append("Pair fees/native payout unverified")
+        headroom=_mapping(experimental.get("native_fee_headroom"))
+        if headroom.get("status")=="research_fee_headroom":
+            rows.append(f"Fee pairs {_number(headroom.get('verified_fee_pairs'))} Headroom+ {_number(headroom.get('positive_formula_headroom_pairs'))}")
+        rows.append("All-in costs/native payout unverified")
     if errors:rows.append("API "+_clean(errors[0]))
     text=Text()
     for i,line in enumerate(rows[:height]):
