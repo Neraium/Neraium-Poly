@@ -106,6 +106,7 @@ def annotate_pair_fees(pair_report,frame,observations,store,*,as_of):
                     if proof['status']!='verified_current_protocol_curve':raise ValueError(proof.get('reason','fee_proof_unavailable'))
                     proofs.append(proof)
                 if proofs[0]['condition_id']!=proofs[1]['condition_id']:raise ValueError('native_pair_condition_ids_mismatch')
+                if abs(proofs[0]['rate']-proofs[1]['rate'])>1e-12:raise ValueError('native_shared_condition_fee_curve_disagreement')
                 frontier=_frontier(source,proofs,participation,minimum)
                 result.update(status='conditional_verified_fee_formula',condition_id=proofs[0]['condition_id'],
                     native_fee_proofs=proofs,**frontier,all_in_costs_verified=False,

@@ -93,3 +93,9 @@ def test_pair_cost_cannot_relabel_the_exact_native_event_and_settlement(field,va
     f,r,o,s=sample();r['findings'][0][field]=value
     v=run(f,r,o,s);assert v['verified_fee_pairs']==0
     assert v['findings'][0]['reason']=='exact_pair_event_and_settlement_metadata_required'
+
+
+def test_conflicting_observations_for_same_native_condition_are_not_combined():
+    f,r,o,s=sample();s.records['N1']['payload']['fd']['r']=.05;s.records['N1']['content_sha256']=digest(s.records['N1']['payload']);s.records['N-obs']['fee_rate']=.05
+    v=run(f,r,o,s);assert v['verified_fee_pairs']==0
+    assert v['findings'][0]['reason']=='native_shared_condition_fee_curve_disagreement'
