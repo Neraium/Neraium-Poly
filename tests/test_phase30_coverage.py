@@ -4,7 +4,7 @@ from types import SimpleNamespace
 
 import pytest
 from neraium_poly.data import EventStore
-from neraium_poly.research.phase25 import discovery
+from neraium_poly.research.phase30 import coverage as discovery
 from neraium_poly.research.phase30.coverage import WEATHER_QUERIES, discover_weather
 from test_phase24_integration import inputs
 from test_phase24_weather_economics import NOW, market
@@ -47,13 +47,13 @@ async def test_universe_discovers_weather_without_missing_module_discover_method
     monkeypatch.setattr(discovery,'modules',lambda:{'weather':SimpleNamespace()})
     store=EventStore(tmp_path/'controlled.sqlite')
     try:
-        u=discovery.Universe(store,clock=lambda:frame.available_at,can_write=lambda:True)
+        u=discovery.WeatherUniverse(store,clock=lambda:frame.available_at,can_write=lambda:True)
         result=await u.frame(frame)
         assert len(result.markets)==2 and result.books==frame.books
-        record=store.latest('ExpansionDiscoveryStudy',limit=1)[0]
+        record=store.latest('WeatherDiscoveryStudy',limit=1)[0]
         assert record['discovery_policy_sha256']==u.policy_sha
         assert record['trading_authority'] is False and not record['rejections']
-        await u.frame(frame);assert store.count(kind='ExpansionDiscoveryStudy')==1
+        await u.frame(frame);assert store.count(kind='WeatherDiscoveryStudy')==1
     finally:store.close()
 
 
@@ -65,7 +65,28 @@ async def test_universe_source_failure_never_creates_metadata(tmp_path,monkeypat
     monkeypatch.setattr(discovery,'modules',lambda:{'weather':SimpleNamespace()})
     store=EventStore(tmp_path/'controlled.sqlite')
     try:
-        u=discovery.Universe(store,clock=lambda:frame.available_at,can_write=lambda:True)
+        u=discovery.WeatherUniverse(store,clock=lambda:frame.available_at,can_write=lambda:True)
         result=await u.frame(frame)
         assert result==frame and 'TimeoutError' in u.rejections['weather']
+    finally:store.close()
+
+
+async def test_weather_universe_does_not_change_or_reset_frozen_forecast_checkpoint(tmp_path,monkeypatch):
+    from neraium_poly.research.phase25.continuous import ExpansionResearch
+    from test_phase24_integration import adapter
+
+    m,_b,e,f,frame=inputs();store=EventStore(tmp_path/'controlled-checkpoint.sqlite')
+    async def extra(**kwargs):return [m.model_copy(update={'token_id':'CONTROLLED-extra','market_id':'CONTROLLED-extra'})]
+    monkeypatch.setattr(discovery,'discover_weather',extra)
+    monkeypatch.setattr(discovery,'modules',lambda:{'weather':SimpleNamespace()})
+    try:
+        old=ExpansionResearch(store,clock=lambda:frame.available_at,adapters={'weather':adapter(e,f)})
+        await old.step(frame);enrollment=old.enrollment_id;state=old.state.copy()
+        original=store.latest('ExpansionResearchStudy',limit=100)
+        world=discovery.WeatherUniverse(store,clock=lambda:frame.available_at,can_write=lambda:True)
+        await world.frame(frame)
+        recovered=ExpansionResearch(store,clock=lambda:frame.available_at,adapters={'weather':adapter(e,f)})
+        assert recovered.enrollment_id==enrollment and recovered.state==state
+        assert store.latest('ExpansionResearchStudy',limit=100)==original
+        assert store.count(kind='WeatherDiscoveryStudy')==1
     finally:store.close()
