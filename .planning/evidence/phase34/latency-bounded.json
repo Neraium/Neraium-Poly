@@ -1,0 +1,1083 @@
+{
+  "started_at": "2026-11-08T23:38:29.785385+00:00",
+  "scope": "120s real collection load, two bounded sequential samplers ops and health, no latency-timeout masking; quantiles empirical not asymptotic tail guarantees",
+  "samples": {
+    "operations": [
+      {
+        "at": "2026-11-08T23:38:29.814426+00:00",
+        "status": 200,
+        "seconds": 0.09088118211366236
+      },
+      {
+        "at": "2026-11-08T23:38:31.817533+00:00",
+        "status": 200,
+        "seconds": 0.049416269874200225
+      },
+      {
+        "at": "2026-11-08T23:38:33.817273+00:00",
+        "status": 200,
+        "seconds": 0.048828877042979
+      },
+      {
+        "at": "2026-11-08T23:38:35.815534+00:00",
+        "status": 200,
+        "seconds": 0.11372690787538886
+      },
+      {
+        "at": "2026-11-08T23:38:37.818258+00:00",
+        "status": 200,
+        "seconds": 0.048870709957554936
+      },
+      {
+        "at": "2026-11-08T23:38:39.816709+00:00",
+        "status": 200,
+        "seconds": 0.050321382004767656
+      },
+      {
+        "at": "2026-11-08T23:38:41.817090+00:00",
+        "status": 200,
+        "seconds": 0.06658958713524044
+      },
+      {
+        "at": "2026-11-08T23:38:43.816747+00:00",
+        "status": 200,
+        "seconds": 0.05925580416806042
+      },
+      {
+        "at": "2026-11-08T23:38:45.816095+00:00",
+        "status": 200,
+        "seconds": 0.04749751416966319
+      },
+      {
+        "at": "2026-11-08T23:38:47.817085+00:00",
+        "status": 200,
+        "seconds": 0.04722052603028715
+      },
+      {
+        "at": "2026-11-08T23:38:49.817465+00:00",
+        "status": 200,
+        "seconds": 0.04731025896035135
+      },
+      {
+        "at": "2026-11-08T23:38:51.817215+00:00",
+        "status": 200,
+        "seconds": 0.05164495506323874
+      },
+      {
+        "at": "2026-11-08T23:38:53.816960+00:00",
+        "status": 200,
+        "seconds": 0.05012127012014389
+      },
+      {
+        "at": "2026-11-08T23:38:55.815650+00:00",
+        "status": 200,
+        "seconds": 0.15456648403778672
+      },
+      {
+        "at": "2026-11-08T23:38:57.817097+00:00",
+        "status": 200,
+        "seconds": 0.061748777981847525
+      },
+      {
+        "at": "2026-11-08T23:38:59.817362+00:00",
+        "status": 200,
+        "seconds": 0.1424495039973408
+      },
+      {
+        "at": "2026-11-08T23:39:01.816786+00:00",
+        "status": 200,
+        "seconds": 0.0720561898779124
+      },
+      {
+        "at": "2026-11-08T23:39:03.817019+00:00",
+        "status": 200,
+        "seconds": 0.15199071797542274
+      },
+      {
+        "at": "2026-11-08T23:39:05.815535+00:00",
+        "status": 200,
+        "seconds": 0.06467883102595806
+      },
+      {
+        "at": "2026-11-08T23:39:07.817288+00:00",
+        "status": 200,
+        "seconds": 0.34375597396865487
+      },
+      {
+        "at": "2026-11-08T23:39:09.817825+00:00",
+        "status": 200,
+        "seconds": 0.0646074409596622
+      },
+      {
+        "at": "2026-11-08T23:39:11.816532+00:00",
+        "status": 200,
+        "seconds": 0.06381230405531824
+      },
+      {
+        "at": "2026-11-08T23:39:13.817403+00:00",
+        "status": 200,
+        "seconds": 0.0934852350037545
+      },
+      {
+        "at": "2026-11-08T23:39:15.816497+00:00",
+        "status": 200,
+        "seconds": 0.21988266496919096
+      },
+      {
+        "at": "2026-11-08T23:39:17.818278+00:00",
+        "status": 200,
+        "seconds": 0.3174606189131737
+      },
+      {
+        "at": "2026-11-08T23:39:19.816624+00:00",
+        "status": 200,
+        "seconds": 0.3907667309977114
+      },
+      {
+        "at": "2026-11-08T23:39:21.817124+00:00",
+        "status": 200,
+        "seconds": 0.32555171684361994
+      },
+      {
+        "at": "2026-11-08T23:39:23.816496+00:00",
+        "status": 200,
+        "seconds": 0.15192164620384574
+      },
+      {
+        "at": "2026-11-08T23:39:25.816527+00:00",
+        "status": 200,
+        "seconds": 0.1618074318394065
+      },
+      {
+        "at": "2026-11-08T23:39:27.817283+00:00",
+        "status": 200,
+        "seconds": 0.07904886384494603
+      },
+      {
+        "at": "2026-11-08T23:39:29.817369+00:00",
+        "status": 200,
+        "seconds": 0.11086816294118762
+      },
+      {
+        "at": "2026-11-08T23:39:31.817239+00:00",
+        "status": 200,
+        "seconds": 0.06990453600883484
+      },
+      {
+        "at": "2026-11-08T23:39:33.817210+00:00",
+        "status": 200,
+        "seconds": 0.07011722400784492
+      },
+      {
+        "at": "2026-11-08T23:39:35.815944+00:00",
+        "status": 200,
+        "seconds": 0.06998405000194907
+      },
+      {
+        "at": "2026-11-08T23:39:37.816975+00:00",
+        "status": 200,
+        "seconds": 0.08787982701323926
+      },
+      {
+        "at": "2026-11-08T23:39:39.817887+00:00",
+        "status": 200,
+        "seconds": 0.0707328689750284
+      },
+      {
+        "at": "2026-11-08T23:39:41.816657+00:00",
+        "status": 200,
+        "seconds": 0.07041818089783192
+      },
+      {
+        "at": "2026-11-08T23:39:43.816537+00:00",
+        "status": 200,
+        "seconds": 0.07111943000927567
+      },
+      {
+        "at": "2026-11-08T23:39:45.817454+00:00",
+        "status": 200,
+        "seconds": 0.0684390771202743
+      },
+      {
+        "at": "2026-11-08T23:39:47.816513+00:00",
+        "status": 200,
+        "seconds": 0.069002770120278
+      },
+      {
+        "at": "2026-11-08T23:39:49.816511+00:00",
+        "status": 200,
+        "seconds": 0.07428735797293484
+      },
+      {
+        "at": "2026-11-08T23:39:51.816853+00:00",
+        "status": 200,
+        "seconds": 0.07195101003162563
+      },
+      {
+        "at": "2026-11-08T23:39:53.816843+00:00",
+        "status": 200,
+        "seconds": 0.06938005611300468
+      },
+      {
+        "at": "2026-11-08T23:39:55.816743+00:00",
+        "status": 200,
+        "seconds": 0.07253802893683314
+      },
+      {
+        "at": "2026-11-08T23:39:57.817324+00:00",
+        "status": 200,
+        "seconds": 0.1424072259105742
+      },
+      {
+        "at": "2026-11-08T23:39:59.816727+00:00",
+        "status": 200,
+        "seconds": 0.06675983010791242
+      },
+      {
+        "at": "2026-11-08T23:40:01.816859+00:00",
+        "status": 200,
+        "seconds": 0.06663363613188267
+      },
+      {
+        "at": "2026-11-08T23:40:03.816543+00:00",
+        "status": 200,
+        "seconds": 0.06796792894601822
+      },
+      {
+        "at": "2026-11-08T23:40:05.817071+00:00",
+        "status": 200,
+        "seconds": 0.08839853014796972
+      },
+      {
+        "at": "2026-11-08T23:40:07.816535+00:00",
+        "status": 200,
+        "seconds": 0.12175491196103394
+      },
+      {
+        "at": "2026-11-08T23:40:09.817289+00:00",
+        "status": 200,
+        "seconds": 0.07332706800661981
+      },
+      {
+        "at": "2026-11-08T23:40:11.816804+00:00",
+        "status": 200,
+        "seconds": 0.2607648491393775
+      },
+      {
+        "at": "2026-11-08T23:40:13.816434+00:00",
+        "status": 200,
+        "seconds": 0.5626230870839208
+      },
+      {
+        "at": "2026-11-08T23:40:15.817184+00:00",
+        "status": 200,
+        "seconds": 0.1424853999633342
+      },
+      {
+        "at": "2026-11-08T23:40:17.816774+00:00",
+        "status": 200,
+        "seconds": 0.09983051521703601
+      },
+      {
+        "at": "2026-11-08T23:40:19.817633+00:00",
+        "status": 200,
+        "seconds": 1.0169458971358836
+      },
+      {
+        "at": "2026-11-08T23:40:21.815686+00:00",
+        "status": 200,
+        "seconds": 0.13863908010534942
+      },
+      {
+        "at": "2026-11-08T23:40:23.817312+00:00",
+        "status": 200,
+        "seconds": 0.2963056890293956
+      },
+      {
+        "at": "2026-11-08T23:40:25.816999+00:00",
+        "status": 200,
+        "seconds": 0.4565723149571568
+      },
+      {
+        "at": "2026-11-08T23:40:27.816235+00:00",
+        "status": 200,
+        "seconds": 0.21096677985042334
+      }
+    ],
+    "health": [
+      {
+        "at": "2026-11-08T23:38:29.829618+00:00",
+        "status": 200,
+        "seconds": 0.005876356968656182
+      },
+      {
+        "at": "2026-11-08T23:38:31.830417+00:00",
+        "status": 200,
+        "seconds": 0.036791251972317696
+      },
+      {
+        "at": "2026-11-08T23:38:33.830188+00:00",
+        "status": 200,
+        "seconds": 0.03488789685070515
+      },
+      {
+        "at": "2026-11-08T23:38:35.830503+00:00",
+        "status": 200,
+        "seconds": 0.03576130117289722
+      },
+      {
+        "at": "2026-11-08T23:38:37.830197+00:00",
+        "status": 200,
+        "seconds": 0.0373614439740777
+      },
+      {
+        "at": "2026-11-08T23:38:39.831659+00:00",
+        "status": 200,
+        "seconds": 0.03464340604841709
+      },
+      {
+        "at": "2026-11-08T23:38:41.830007+00:00",
+        "status": 200,
+        "seconds": 0.05259527615271509
+      },
+      {
+        "at": "2026-11-08T23:38:43.831716+00:00",
+        "status": 200,
+        "seconds": 0.04470045678317547
+      },
+      {
+        "at": "2026-11-08T23:38:45.831066+00:00",
+        "status": 200,
+        "seconds": 0.032940472941845655
+      },
+      {
+        "at": "2026-11-08T23:38:47.830104+00:00",
+        "status": 200,
+        "seconds": 0.033652596874162555
+      },
+      {
+        "at": "2026-11-08T23:38:49.830456+00:00",
+        "status": 200,
+        "seconds": 0.034689199877902865
+      },
+      {
+        "at": "2026-11-08T23:38:51.830208+00:00",
+        "status": 200,
+        "seconds": 0.03741619689390063
+      },
+      {
+        "at": "2026-11-08T23:38:53.829952+00:00",
+        "status": 200,
+        "seconds": 0.03662058990448713
+      },
+      {
+        "at": "2026-11-08T23:38:55.830524+00:00",
+        "status": 200,
+        "seconds": 0.16463591204956174
+      },
+      {
+        "at": "2026-11-08T23:38:57.829976+00:00",
+        "status": 200,
+        "seconds": 0.049336304888129234
+      },
+      {
+        "at": "2026-11-08T23:38:59.830268+00:00",
+        "status": 200,
+        "seconds": 0.06997053697705269
+      },
+      {
+        "at": "2026-11-08T23:39:01.831662+00:00",
+        "status": 200,
+        "seconds": 0.0562168569304049
+      },
+      {
+        "at": "2026-11-08T23:39:03.829940+00:00",
+        "status": 200,
+        "seconds": 0.005849967943504453
+      },
+      {
+        "at": "2026-11-08T23:39:05.830471+00:00",
+        "status": 200,
+        "seconds": 0.04858257784508169
+      },
+      {
+        "at": "2026-11-08T23:39:07.830308+00:00",
+        "status": 200,
+        "seconds": 0.09466194012202322
+      },
+      {
+        "at": "2026-11-08T23:39:09.829761+00:00",
+        "status": 200,
+        "seconds": 0.05136558506637812
+      },
+      {
+        "at": "2026-11-08T23:39:11.831425+00:00",
+        "status": 200,
+        "seconds": 0.04772515594959259
+      },
+      {
+        "at": "2026-11-08T23:39:13.830327+00:00",
+        "status": 200,
+        "seconds": 0.021459364099428058
+      },
+      {
+        "at": "2026-11-08T23:39:15.831386+00:00",
+        "status": 200,
+        "seconds": 0.11581561877392232
+      },
+      {
+        "at": "2026-11-08T23:39:17.830161+00:00",
+        "status": 200,
+        "seconds": 0.18323578406125307
+      },
+      {
+        "at": "2026-11-08T23:39:19.831531+00:00",
+        "status": 200,
+        "seconds": 0.03720119595527649
+      },
+      {
+        "at": "2026-11-08T23:39:21.830072+00:00",
+        "status": 200,
+        "seconds": 0.3105477869976312
+      },
+      {
+        "at": "2026-11-08T23:39:23.831431+00:00",
+        "status": 200,
+        "seconds": 0.05188037804327905
+      },
+      {
+        "at": "2026-11-08T23:39:25.831479+00:00",
+        "status": 200,
+        "seconds": 0.06260059308260679
+      },
+      {
+        "at": "2026-11-08T23:39:27.830218+00:00",
+        "status": 200,
+        "seconds": 0.06461479305289686
+      },
+      {
+        "at": "2026-11-08T23:39:29.830267+00:00",
+        "status": 200,
+        "seconds": 0.02320261998102069
+      },
+      {
+        "at": "2026-11-08T23:39:31.830134+00:00",
+        "status": 200,
+        "seconds": 0.05565258511342108
+      },
+      {
+        "at": "2026-11-08T23:39:33.830108+00:00",
+        "status": 200,
+        "seconds": 0.05624389695003629
+      },
+      {
+        "at": "2026-11-08T23:39:35.830881+00:00",
+        "status": 200,
+        "seconds": 0.053822983987629414
+      },
+      {
+        "at": "2026-11-08T23:39:37.829885+00:00",
+        "status": 200,
+        "seconds": 0.07242334517650306
+      },
+      {
+        "at": "2026-11-08T23:39:39.829790+00:00",
+        "status": 200,
+        "seconds": 0.057374696945771575
+      },
+      {
+        "at": "2026-11-08T23:39:41.831501+00:00",
+        "status": 200,
+        "seconds": 0.05427140695974231
+      },
+      {
+        "at": "2026-11-08T23:39:43.831412+00:00",
+        "status": 200,
+        "seconds": 0.054649922996759415
+      },
+      {
+        "at": "2026-11-08T23:39:45.830341+00:00",
+        "status": 200,
+        "seconds": 0.05432573799043894
+      },
+      {
+        "at": "2026-11-08T23:39:47.831319+00:00",
+        "status": 200,
+        "seconds": 0.05460990685969591
+      },
+      {
+        "at": "2026-11-08T23:39:49.831294+00:00",
+        "status": 200,
+        "seconds": 0.05811550002545118
+      },
+      {
+        "at": "2026-11-08T23:39:51.829821+00:00",
+        "status": 200,
+        "seconds": 0.05737065616995096
+      },
+      {
+        "at": "2026-11-08T23:39:53.831628+00:00",
+        "status": 200,
+        "seconds": 0.0543193188495934
+      },
+      {
+        "at": "2026-11-08T23:39:55.831615+00:00",
+        "status": 200,
+        "seconds": 0.05691204615868628
+      },
+      {
+        "at": "2026-11-08T23:39:57.830251+00:00",
+        "status": 200,
+        "seconds": 0.03468488994985819
+      },
+      {
+        "at": "2026-11-08T23:39:59.831615+00:00",
+        "status": 200,
+        "seconds": 0.0532053099013865
+      },
+      {
+        "at": "2026-11-08T23:40:01.831798+00:00",
+        "status": 200,
+        "seconds": 0.050894544925540686
+      },
+      {
+        "at": "2026-11-08T23:40:03.831411+00:00",
+        "status": 200,
+        "seconds": 0.05281319213099778
+      },
+      {
+        "at": "2026-11-08T23:40:05.829969+00:00",
+        "status": 200,
+        "seconds": 0.07468868093565106
+      },
+      {
+        "at": "2026-11-08T23:40:07.831419+00:00",
+        "status": 200,
+        "seconds": 0.025558798108249903
+      },
+      {
+        "at": "2026-11-08T23:40:09.830236+00:00",
+        "status": 200,
+        "seconds": 0.060529692796990275
+      },
+      {
+        "at": "2026-11-08T23:40:11.831702+00:00",
+        "status": 200,
+        "seconds": 0.07213007006794214
+      },
+      {
+        "at": "2026-11-08T23:40:13.831407+00:00",
+        "status": 200,
+        "seconds": 0.06477912305854261
+      },
+      {
+        "at": "2026-11-08T23:40:15.830098+00:00",
+        "status": 200,
+        "seconds": 0.006914905970916152
+      },
+      {
+        "at": "2026-11-08T23:40:17.831751+00:00",
+        "status": 200,
+        "seconds": 0.08417461207136512
+      },
+      {
+        "at": "2026-11-08T23:40:19.830706+00:00",
+        "status": 200,
+        "seconds": 0.10750859789550304
+      },
+      {
+        "at": "2026-11-08T23:40:21.830720+00:00",
+        "status": 200,
+        "seconds": 0.008314932929351926
+      },
+      {
+        "at": "2026-11-08T23:40:23.830221+00:00",
+        "status": 200,
+        "seconds": 0.12552174599841237
+      },
+      {
+        "at": "2026-11-08T23:40:25.829924+00:00",
+        "status": 200,
+        "seconds": 0.11985929007641971
+      },
+      {
+        "at": "2026-11-08T23:40:27.831132+00:00",
+        "status": 200,
+        "seconds": 0.0545898440759629
+      }
+    ]
+  },
+  "resource_samples": [
+    {
+      "at": "2026-11-08T23:38:29.829919+00:00",
+      "paper": {
+        "cpu.stat": "usage_usec 720944317\nuser_usec 680714452\nsystem_usec 40229865\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 12553\nnr_throttled 219\nthrottled_usec 1801189\nnr_bursts 0\nburst_usec 0",
+        "memory.current": "1071214592",
+        "memory.peak": "1074978816",
+        "memory.events": "low 0\nhigh 0\nmax 11887\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+        "memory.stat": "anon 407293952\nfile 656392192\nkernel 5574656\nkernel_stack 81920\npagetables 958464\nsec_pagetables 0\npercpu 544\nsock 0\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 176128\nfile_dirty 12288\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 126009344\nactive_anon 281284608\ninactive_file 656334848\nactive_file 57344\nunevictable 0\nslab_reclaimable 4314112\nslab_unreclaimable 210688\nslab 4524800\nworkingset_refault_anon 0\nworkingset_refault_file 20251\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 2887\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgpromote_success 0\npgscan 741454\npgsteal 741410\npswpin 0\npswpout 0\npgscan_kswapd 2880\npgscan_direct 738574\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 2866\npgsteal_direct 738544\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 3354937\npgmajfault 0\npgrefill 336232\npgactivate 14\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0"
+      },
+      "experimental": {
+        "cpu.stat": "usage_usec 173342705\nuser_usec 149397896\nsystem_usec 23944809\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 2196\nnr_throttled 325\nthrottled_usec 3671051\nnr_bursts 0\nburst_usec 0",
+        "memory.current": "2143711232",
+        "memory.peak": "2147684352",
+        "memory.events": "low 0\nhigh 0\nmax 7950\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+        "memory.stat": "anon 711725056\nfile 1421991936\nkernel 7012352\nkernel_stack 229376\npagetables 1675264\nsec_pagetables 0\npercpu 544\nsock 0\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 262144\nfile_dirty 43835392\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 4194304\nshmem_thp 0\ninactive_anon 0\nactive_anon 711606272\ninactive_file 1421877248\nactive_file 114688\nunevictable 0\nslab_reclaimable 4757824\nslab_unreclaimable 333424\nslab 5091248\nworkingset_refault_anon 0\nworkingset_refault_file 8709\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgpromote_success 0\npgscan 1068263\npgsteal 1068235\npswpin 0\npswpout 0\npgscan_kswapd 0\npgscan_direct 1068263\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 0\npgsteal_direct 1068235\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 1108820\npgmajfault 0\npgrefill 4767\npgactivate 28\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0"
+      },
+      "filesystem_free_bytes": 400190832640
+    },
+    {
+      "at": "2026-11-08T23:38:34.832248+00:00",
+      "paper": {
+        "cpu.stat": "usage_usec 722764950\nuser_usec 682502013\nsystem_usec 40262937\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 12603\nnr_throttled 219\nthrottled_usec 1801189\nnr_bursts 0\nburst_usec 0",
+        "memory.current": "1070931968",
+        "memory.peak": "1074978816",
+        "memory.events": "low 0\nhigh 0\nmax 11887\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+        "memory.stat": "anon 407293952\nfile 656392192\nkernel 5566464\nkernel_stack 81920\npagetables 958464\nsec_pagetables 0\npercpu 544\nsock 0\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 176128\nfile_dirty 12288\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 126009344\nactive_anon 281284608\ninactive_file 656334848\nactive_file 57344\nunevictable 0\nslab_reclaimable 4311392\nslab_unreclaimable 208696\nslab 4520088\nworkingset_refault_anon 0\nworkingset_refault_file 20251\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 2887\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgpromote_success 0\npgscan 741454\npgsteal 741410\npswpin 0\npswpout 0\npgscan_kswapd 2880\npgscan_direct 738574\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 2866\npgsteal_direct 738544\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 3354937\npgmajfault 0\npgrefill 336232\npgactivate 14\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0"
+      },
+      "experimental": {
+        "cpu.stat": "usage_usec 174199687\nuser_usec 150007904\nsystem_usec 24191783\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 2246\nnr_throttled 326\nthrottled_usec 3679471\nnr_bursts 0\nburst_usec 0",
+        "memory.current": "2066735104",
+        "memory.peak": "2147684352",
+        "memory.events": "low 0\nhigh 0\nmax 7950\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+        "memory.stat": "anon 675708928\nfile 1381748736\nkernel 5763072\nkernel_stack 229376\npagetables 1601536\nsec_pagetables 0\npercpu 544\nsock 4096\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 262144\nfile_dirty 2301952\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 4194304\nshmem_thp 0\ninactive_anon 0\nactive_anon 675708928\ninactive_file 1381634048\nactive_file 114688\nunevictable 0\nslab_reclaimable 3567424\nslab_unreclaimable 351208\nslab 3918632\nworkingset_refault_anon 0\nworkingset_refault_file 8714\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgpromote_success 0\npgscan 1068263\npgsteal 1068235\npswpin 0\npswpout 0\npgscan_kswapd 0\npgscan_direct 1068263\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 0\npgsteal_direct 1068235\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 1111597\npgmajfault 0\npgrefill 4767\npgactivate 28\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0"
+      },
+      "filesystem_free_bytes": 400230330368
+    },
+    {
+      "at": "2026-11-08T23:38:39.833241+00:00",
+      "paper": {
+        "cpu.stat": "usage_usec 724240045\nuser_usec 683947336\nsystem_usec 40292709\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 12653\nnr_throttled 219\nthrottled_usec 1801189\nnr_bursts 0\nburst_usec 0",
+        "memory.current": "1071251456",
+        "memory.peak": "1074978816",
+        "memory.events": "low 0\nhigh 0\nmax 11887\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+        "memory.stat": "anon 407293952\nfile 656392192\nkernel 5566464\nkernel_stack 81920\npagetables 958464\nsec_pagetables 0\npercpu 544\nsock 0\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 176128\nfile_dirty 12288\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 126009344\nactive_anon 281284608\ninactive_file 656334848\nactive_file 57344\nunevictable 0\nslab_reclaimable 4310352\nslab_unreclaimable 217360\nslab 4527712\nworkingset_refault_anon 0\nworkingset_refault_file 20251\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 2887\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgpromote_success 0\npgscan 741454\npgsteal 741410\npswpin 0\npswpout 0\npgscan_kswapd 2880\npgscan_direct 738574\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 2866\npgsteal_direct 738544\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 3354937\npgmajfault 0\npgrefill 336232\npgactivate 14\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0"
+      },
+      "experimental": {
+        "cpu.stat": "usage_usec 176752467\nuser_usec 151849097\nsystem_usec 24903369\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 2296\nnr_throttled 330\nthrottled_usec 3725313\nnr_bursts 0\nburst_usec 0",
+        "memory.current": "2058014720",
+        "memory.peak": "2147684352",
+        "memory.events": "low 0\nhigh 0\nmax 7964\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+        "memory.stat": "anon 671567872\nfile 1377173504\nkernel 5849088\nkernel_stack 229376\npagetables 1597440\nsec_pagetables 0\npercpu 544\nsock 0\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 262144\nfile_dirty 2535424\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 4194304\nshmem_thp 0\ninactive_anon 0\nactive_anon 671559680\ninactive_file 1377058816\nactive_file 114688\nunevictable 0\nslab_reclaimable 3641520\nslab_unreclaimable 355288\nslab 3996808\nworkingset_refault_anon 0\nworkingset_refault_file 8714\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgpromote_success 0\npgscan 1069964\npgsteal 1069936\npswpin 0\npswpout 0\npgscan_kswapd 0\npgscan_direct 1069964\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 0\npgsteal_direct 1069936\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 1133666\npgmajfault 0\npgrefill 4799\npgactivate 28\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0"
+      },
+      "filesystem_free_bytes": 400226344960
+    },
+    {
+      "at": "2026-11-08T23:38:44.836505+00:00",
+      "paper": {
+        "cpu.stat": "usage_usec 725475152\nuser_usec 685154919\nsystem_usec 40320232\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 12703\nnr_throttled 219\nthrottled_usec 1801189\nnr_bursts 0\nburst_usec 0",
+        "memory.current": "1070985216",
+        "memory.peak": "1074978816",
+        "memory.events": "low 0\nhigh 0\nmax 11887\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+        "memory.stat": "anon 407285760\nfile 656392192\nkernel 5509120\nkernel_stack 49152\npagetables 958464\nsec_pagetables 0\npercpu 544\nsock 0\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 176128\nfile_dirty 0\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 126009344\nactive_anon 281272320\ninactive_file 656334848\nactive_file 57344\nunevictable 0\nslab_reclaimable 4309312\nslab_unreclaimable 180408\nslab 4489720\nworkingset_refault_anon 0\nworkingset_refault_file 20251\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 2887\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgpromote_success 0\npgscan 741454\npgsteal 741410\npswpin 0\npswpout 0\npgscan_kswapd 2880\npgscan_direct 738574\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 2866\npgsteal_direct 738544\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 3354938\npgmajfault 0\npgrefill 336232\npgactivate 14\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0"
+      },
+      "experimental": {
+        "cpu.stat": "usage_usec 178738250\nuser_usec 153412490\nsystem_usec 25325760\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 2342\nnr_throttled 332\nthrottled_usec 3728996\nnr_bursts 0\nburst_usec 0",
+        "memory.current": "2061561856",
+        "memory.peak": "2147684352",
+        "memory.events": "low 0\nhigh 0\nmax 7967\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+        "memory.stat": "anon 675979264\nfile 1376210944\nkernel 5865472\nkernel_stack 229376\npagetables 1601536\nsec_pagetables 0\npercpu 544\nsock 0\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 262144\nfile_dirty 1261568\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 4194304\nshmem_thp 0\ninactive_anon 0\nactive_anon 675979264\ninactive_file 1376096256\nactive_file 114688\nunevictable 0\nslab_reclaimable 3668296\nslab_unreclaimable 354152\nslab 4022448\nworkingset_refault_anon 0\nworkingset_refault_file 8714\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgpromote_success 0\npgscan 1070407\npgsteal 1070379\npswpin 0\npswpout 0\npgscan_kswapd 0\npgscan_direct 1070407\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 0\npgsteal_direct 1070379\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 1156832\npgmajfault 0\npgrefill 4799\npgactivate 28\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0"
+      },
+      "filesystem_free_bytes": 400224022528
+    },
+    {
+      "at": "2026-11-08T23:38:49.837123+00:00",
+      "paper": {
+        "cpu.stat": "usage_usec 726657608\nuser_usec 686302027\nsystem_usec 40355580\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 12753\nnr_throttled 219\nthrottled_usec 1801189\nnr_bursts 0\nburst_usec 0",
+        "memory.current": "1070936064",
+        "memory.peak": "1074978816",
+        "memory.events": "low 0\nhigh 0\nmax 11887\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+        "memory.stat": "anon 407285760\nfile 656392192\nkernel 5513216\nkernel_stack 49152\npagetables 958464\nsec_pagetables 0\npercpu 544\nsock 0\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 176128\nfile_dirty 0\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 126009344\nactive_anon 281276416\ninactive_file 656334848\nactive_file 57344\nunevictable 0\nslab_reclaimable 4309312\nslab_unreclaimable 182944\nslab 4492256\nworkingset_refault_anon 0\nworkingset_refault_file 20251\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 2887\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgpromote_success 0\npgscan 741454\npgsteal 741410\npswpin 0\npswpout 0\npgscan_kswapd 2880\npgscan_direct 738574\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 2866\npgsteal_direct 738544\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 3354938\npgmajfault 0\npgrefill 336232\npgactivate 14\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0"
+      },
+      "experimental": {
+        "cpu.stat": "usage_usec 180967880\nuser_usec 155156307\nsystem_usec 25811573\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 2390\nnr_throttled 337\nthrottled_usec 3801493\nnr_bursts 0\nburst_usec 0",
+        "memory.current": "2060558336",
+        "memory.peak": "2147684352",
+        "memory.events": "low 0\nhigh 0\nmax 7967\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+        "memory.stat": "anon 674951168\nfile 1376952320\nkernel 5869568\nkernel_stack 212992\npagetables 1601536\nsec_pagetables 0\npercpu 544\nsock 4096\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 262144\nfile_dirty 1134592\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 4194304\nshmem_thp 0\ninactive_anon 0\nactive_anon 674951168\ninactive_file 1376837632\nactive_file 114688\nunevictable 0\nslab_reclaimable 3688928\nslab_unreclaimable 345480\nslab 4034408\nworkingset_refault_anon 0\nworkingset_refault_file 8714\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgpromote_success 0\npgscan 1070407\npgsteal 1070379\npswpin 0\npswpout 0\npgscan_kswapd 0\npgscan_direct 1070407\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 0\npgsteal_direct 1070379\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 1157088\npgmajfault 0\npgrefill 4799\npgactivate 28\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0"
+      },
+      "filesystem_free_bytes": 400223260672
+    },
+    {
+      "at": "2026-11-08T23:38:54.839169+00:00",
+      "paper": {
+        "cpu.stat": "usage_usec 728168398\nuser_usec 687776194\nsystem_usec 40392204\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 12803\nnr_throttled 219\nthrottled_usec 1801189\nnr_bursts 0\nburst_usec 0",
+        "memory.current": "1070837760",
+        "memory.peak": "1074978816",
+        "memory.events": "low 0\nhigh 0\nmax 11887\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+        "memory.stat": "anon 407285760\nfile 656392192\nkernel 5505024\nkernel_stack 49152\npagetables 958464\nsec_pagetables 0\npercpu 544\nsock 0\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 176128\nfile_dirty 0\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 126009344\nactive_anon 281276416\ninactive_file 656334848\nactive_file 57344\nunevictable 0\nslab_reclaimable 4310352\nslab_unreclaimable 180272\nslab 4490624\nworkingset_refault_anon 0\nworkingset_refault_file 20251\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 2887\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgpromote_success 0\npgscan 741454\npgsteal 741410\npswpin 0\npswpout 0\npgscan_kswapd 2880\npgscan_direct 738574\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 2866\npgsteal_direct 738544\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 3354938\npgmajfault 0\npgrefill 336232\npgactivate 14\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0"
+      },
+      "experimental": {
+        "cpu.stat": "usage_usec 181826922\nuser_usec 155760035\nsystem_usec 26066886\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 2421\nnr_throttled 337\nthrottled_usec 3801493\nnr_bursts 0\nburst_usec 0",
+        "memory.current": "2060414976",
+        "memory.peak": "2147684352",
+        "memory.events": "low 0\nhigh 0\nmax 7967\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+        "memory.stat": "anon 674693120\nfile 1377058816\nkernel 5877760\nkernel_stack 212992\npagetables 1601536\nsec_pagetables 0\npercpu 544\nsock 0\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 262144\nfile_dirty 1134592\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 4194304\nshmem_thp 0\ninactive_anon 0\nactive_anon 674689024\ninactive_file 1376944128\nactive_file 114688\nunevictable 0\nslab_reclaimable 3692168\nslab_unreclaimable 344472\nslab 4036640\nworkingset_refault_anon 0\nworkingset_refault_file 8714\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgpromote_success 0\npgscan 1070407\npgsteal 1070379\npswpin 0\npswpout 0\npgscan_kswapd 0\npgscan_direct 1070407\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 0\npgsteal_direct 1070379\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 1178978\npgmajfault 0\npgrefill 4799\npgactivate 28\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0"
+      },
+      "filesystem_free_bytes": 400223121408
+    },
+    {
+      "at": "2026-11-08T23:38:59.840942+00:00",
+      "paper": {
+        "cpu.stat": "usage_usec 729797255\nuser_usec 689291493\nsystem_usec 40505762\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 12853\nnr_throttled 220\nthrottled_usec 1818606\nnr_bursts 0\nburst_usec 0",
+        "memory.current": "1070813184",
+        "memory.peak": "1074978816",
+        "memory.events": "low 0\nhigh 0\nmax 11888\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+        "memory.stat": "anon 407285760\nfile 656130048\nkernel 5509120\nkernel_stack 49152\npagetables 958464\nsec_pagetables 0\npercpu 544\nsock 0\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 176128\nfile_dirty 0\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 126009344\nactive_anon 281276416\ninactive_file 656072704\nactive_file 57344\nunevictable 0\nslab_reclaimable 4310352\nslab_unreclaimable 175984\nslab 4486336\nworkingset_refault_anon 0\nworkingset_refault_file 20251\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 2887\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgpromote_success 0\npgscan 741518\npgsteal 741474\npswpin 0\npswpout 0\npgscan_kswapd 2880\npgscan_direct 738638\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 2866\npgsteal_direct 738608\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 3354938\npgmajfault 0\npgrefill 336232\npgactivate 14\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0"
+      },
+      "experimental": {
+        "cpu.stat": "usage_usec 185131576\nuser_usec 158388121\nsystem_usec 26743455\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 2471\nnr_throttled 349\nthrottled_usec 3911853\nnr_bursts 0\nburst_usec 0",
+        "memory.current": "2062553088",
+        "memory.peak": "2147684352",
+        "memory.events": "low 0\nhigh 0\nmax 7967\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+        "memory.stat": "anon 675483648\nfile 1377796096\nkernel 5910528\nkernel_stack 212992\npagetables 1605632\nsec_pagetables 0\npercpu 544\nsock 4096\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 262144\nfile_dirty 10227712\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 4194304\nshmem_thp 0\ninactive_anon 0\nactive_anon 675475456\ninactive_file 1377652736\nactive_file 114688\nunevictable 0\nslab_reclaimable 3716688\nslab_unreclaimable 349488\nslab 4066176\nworkingset_refault_anon 0\nworkingset_refault_file 8715\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgpromote_success 0\npgscan 1070407\npgsteal 1070379\npswpin 0\npswpout 0\npgscan_kswapd 0\npgscan_direct 1070407\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 0\npgsteal_direct 1070379\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 1202759\npgmajfault 0\npgrefill 4799\npgactivate 28\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0"
+      },
+      "filesystem_free_bytes": 400221560832
+    },
+    {
+      "at": "2026-11-08T23:39:04.843001+00:00",
+      "paper": {
+        "cpu.stat": "usage_usec 731349261\nuser_usec 690810579\nsystem_usec 40538682\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 12903\nnr_throttled 220\nthrottled_usec 1818606\nnr_bursts 0\nburst_usec 0",
+        "memory.current": "1070583808",
+        "memory.peak": "1074978816",
+        "memory.events": "low 0\nhigh 0\nmax 11888\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+        "memory.stat": "anon 407285760\nfile 656130048\nkernel 5509120\nkernel_stack 49152\npagetables 958464\nsec_pagetables 0\npercpu 544\nsock 0\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 176128\nfile_dirty 0\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 126009344\nactive_anon 281276416\ninactive_file 656072704\nactive_file 57344\nunevictable 0\nslab_reclaimable 4308272\nslab_unreclaimable 182144\nslab 4490416\nworkingset_refault_anon 0\nworkingset_refault_file 20251\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 2887\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgpromote_success 0\npgscan 741518\npgsteal 741474\npswpin 0\npswpout 0\npgscan_kswapd 2880\npgscan_direct 738638\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 2866\npgsteal_direct 738608\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 3354938\npgmajfault 0\npgrefill 336232\npgactivate 14\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0"
+      },
+      "experimental": {
+        "cpu.stat": "usage_usec 187298898\nuser_usec 160095220\nsystem_usec 27203677\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 2516\nnr_throttled 358\nthrottled_usec 3928832\nnr_bursts 0\nburst_usec 0",
+        "memory.current": "2062184448",
+        "memory.peak": "2147684352",
+        "memory.events": "low 0\nhigh 0\nmax 7977\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+        "memory.stat": "anon 677486592\nfile 1375047680\nkernel 6025216\nkernel_stack 229376\npagetables 1613824\nsec_pagetables 0\npercpu 544\nsock 0\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 262144\nfile_dirty 10469376\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 4194304\nshmem_thp 0\ninactive_anon 0\nactive_anon 677486592\ninactive_file 1374932992\nactive_file 114688\nunevictable 0\nslab_reclaimable 3798120\nslab_unreclaimable 365120\nslab 4163240\nworkingset_refault_anon 0\nworkingset_refault_file 8715\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgpromote_success 0\npgscan 1071787\npgsteal 1071759\npswpin 0\npswpout 0\npgscan_kswapd 0\npgscan_direct 1071787\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 0\npgsteal_direct 1071759\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 1225412\npgmajfault 0\npgrefill 4799\npgactivate 28\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0"
+      },
+      "filesystem_free_bytes": 400218652672
+    },
+    {
+      "at": "2026-11-08T23:39:09.844478+00:00",
+      "paper": {
+        "cpu.stat": "usage_usec 732513804\nuser_usec 691946594\nsystem_usec 40567209\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 12953\nnr_throttled 220\nthrottled_usec 1818606\nnr_bursts 0\nburst_usec 0",
+        "memory.current": "1070276608",
+        "memory.peak": "1074978816",
+        "memory.events": "low 0\nhigh 0\nmax 11888\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+        "memory.stat": "anon 407285760\nfile 656130048\nkernel 5496832\nkernel_stack 49152\npagetables 958464\nsec_pagetables 0\npercpu 544\nsock 0\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 176128\nfile_dirty 0\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 126009344\nactive_anon 281276416\ninactive_file 656072704\nactive_file 57344\nunevictable 0\nslab_reclaimable 4309312\nslab_unreclaimable 179064\nslab 4488376\nworkingset_refault_anon 0\nworkingset_refault_file 20251\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 2887\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgpromote_success 0\npgscan 741518\npgsteal 741474\npswpin 0\npswpout 0\npgscan_kswapd 2880\npgscan_direct 738638\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 2866\npgsteal_direct 738608\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 3354938\npgmajfault 0\npgrefill 336232\npgactivate 14\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0"
+      },
+      "experimental": {
+        "cpu.stat": "usage_usec 190045635\nuser_usec 162657175\nsystem_usec 27388460\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 2559\nnr_throttled 371\nthrottled_usec 3962384\nnr_bursts 0\nburst_usec 0",
+        "memory.current": "2074157056",
+        "memory.peak": "2147684352",
+        "memory.events": "low 0\nhigh 0\nmax 7977\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+        "memory.stat": "anon 689184768\nfile 1375047680\nkernel 6041600\nkernel_stack 229376\npagetables 1626112\nsec_pagetables 0\npercpu 544\nsock 4096\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 262144\nfile_dirty 10256384\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 4194304\nshmem_thp 0\ninactive_anon 0\nactive_anon 689160192\ninactive_file 1374932992\nactive_file 114688\nunevictable 0\nslab_reclaimable 3799632\nslab_unreclaimable 358840\nslab 4158472\nworkingset_refault_anon 0\nworkingset_refault_file 8715\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgpromote_success 0\npgscan 1071787\npgsteal 1071759\npswpin 0\npswpout 0\npgscan_kswapd 0\npgscan_direct 1071787\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 0\npgsteal_direct 1071759\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 1235770\npgmajfault 0\npgrefill 4799\npgactivate 28\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0"
+      },
+      "filesystem_free_bytes": 400218570752
+    },
+    {
+      "at": "2026-11-08T23:39:14.845941+00:00",
+      "paper": {
+        "cpu.stat": "usage_usec 734080605\nuser_usec 693489120\nsystem_usec 40591485\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 13003\nnr_throttled 220\nthrottled_usec 1818606\nnr_bursts 0\nburst_usec 0",
+        "memory.current": "1071194112",
+        "memory.peak": "1074978816",
+        "memory.events": "low 0\nhigh 0\nmax 11888\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+        "memory.stat": "anon 407285760\nfile 656130048\nkernel 5521408\nkernel_stack 49152\npagetables 958464\nsec_pagetables 0\npercpu 544\nsock 0\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 176128\nfile_dirty 0\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 126009344\nactive_anon 281276416\ninactive_file 656072704\nactive_file 57344\nunevictable 0\nslab_reclaimable 4309312\nslab_unreclaimable 191880\nslab 4501192\nworkingset_refault_anon 0\nworkingset_refault_file 20251\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 2887\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgpromote_success 0\npgscan 741518\npgsteal 741474\npswpin 0\npswpout 0\npgscan_kswapd 2880\npgscan_direct 738638\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 2866\npgsteal_direct 738608\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 3354938\npgmajfault 0\npgrefill 336232\npgactivate 14\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0"
+      },
+      "experimental": {
+        "cpu.stat": "usage_usec 195030306\nuser_usec 167192812\nsystem_usec 27837493\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 2609\nnr_throttled 394\nthrottled_usec 4017574\nnr_bursts 0\nburst_usec 0",
+        "memory.current": "2080014336",
+        "memory.peak": "2147684352",
+        "memory.events": "low 0\nhigh 0\nmax 7977\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+        "memory.stat": "anon 695050240\nfile 1375047680\nkernel 6053888\nkernel_stack 229376\npagetables 1642496\nsec_pagetables 0\npercpu 544\nsock 0\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 262144\nfile_dirty 10477568\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 4194304\nshmem_thp 0\ninactive_anon 0\nactive_anon 695050240\ninactive_file 1374904320\nactive_file 114688\nunevictable 0\nslab_reclaimable 3799632\nslab_unreclaimable 350632\nslab 4150264\nworkingset_refault_anon 0\nworkingset_refault_file 8715\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgpromote_success 0\npgscan 1071787\npgsteal 1071759\npswpin 0\npswpout 0\npgscan_kswapd 0\npgscan_direct 1071787\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 0\npgsteal_direct 1071759\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 1244732\npgmajfault 0\npgrefill 4799\npgactivate 28\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0"
+      },
+      "filesystem_free_bytes": 400218570752
+    },
+    {
+      "at": "2026-11-08T23:39:19.847236+00:00",
+      "paper": {
+        "cpu.stat": "usage_usec 735823621\nuser_usec 695182453\nsystem_usec 40641167\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 13053\nnr_throttled 220\nthrottled_usec 1818606\nnr_bursts 0\nburst_usec 0",
+        "memory.current": "1071591424",
+        "memory.peak": "1074978816",
+        "memory.events": "low 0\nhigh 0\nmax 11888\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+        "memory.stat": "anon 407285760\nfile 656224256\nkernel 5509120\nkernel_stack 49152\npagetables 958464\nsec_pagetables 0\npercpu 544\nsock 352256\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 176128\nfile_dirty 49152\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 126009344\nactive_anon 281276416\ninactive_file 656166912\nactive_file 57344\nunevictable 0\nslab_reclaimable 4309424\nslab_unreclaimable 187456\nslab 4496880\nworkingset_refault_anon 0\nworkingset_refault_file 20251\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 2887\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgpromote_success 0\npgscan 741518\npgsteal 741474\npswpin 0\npswpout 0\npgscan_kswapd 2880\npgscan_direct 738638\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 2866\npgsteal_direct 738608\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 3354951\npgmajfault 0\npgrefill 336232\npgactivate 14\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0"
+      },
+      "experimental": {
+        "cpu.stat": "usage_usec 200031503\nuser_usec 171930116\nsystem_usec 28101387\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 2659\nnr_throttled 434\nthrottled_usec 4307753\nnr_bursts 0\nburst_usec 0",
+        "memory.current": "2128486400",
+        "memory.peak": "2147684352",
+        "memory.events": "low 0\nhigh 0\nmax 7977\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+        "memory.stat": "anon 704270336\nfile 1413124096\nkernel 7200768\nkernel_stack 229376\npagetables 1658880\nsec_pagetables 0\npercpu 544\nsock 8192\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 262144\nfile_dirty 48902144\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 4194304\nshmem_thp 0\ninactive_anon 0\nactive_anon 704172032\ninactive_file 1412952064\nactive_file 114688\nunevictable 0\nslab_reclaimable 4932320\nslab_unreclaimable 358448\nslab 5290768\nworkingset_refault_anon 0\nworkingset_refault_file 8715\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgpromote_success 0\npgscan 1071787\npgsteal 1071759\npswpin 0\npswpout 0\npgscan_kswapd 0\npgscan_direct 1071787\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 0\npgsteal_direct 1071759\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 1269099\npgmajfault 0\npgrefill 4799\npgactivate 28\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0"
+      },
+      "filesystem_free_bytes": 400180383744
+    },
+    {
+      "at": "2026-11-08T23:39:24.849418+00:00",
+      "paper": {
+        "cpu.stat": "usage_usec 737943887\nuser_usec 697060794\nsystem_usec 40883093\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 13103\nnr_throttled 220\nthrottled_usec 1818606\nnr_bursts 0\nburst_usec 0",
+        "memory.current": "1072254976",
+        "memory.peak": "1074978816",
+        "memory.events": "low 0\nhigh 0\nmax 11888\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+        "memory.stat": "anon 407289856\nfile 656220160\nkernel 5521408\nkernel_stack 49152\npagetables 958464\nsec_pagetables 0\npercpu 544\nsock 2260992\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 176128\nfile_dirty 135168\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 126009344\nactive_anon 281280512\ninactive_file 656162816\nactive_file 57344\nunevictable 0\nslab_reclaimable 4319904\nslab_unreclaimable 182680\nslab 4502584\nworkingset_refault_anon 0\nworkingset_refault_file 20251\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 2887\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgpromote_success 0\npgscan 741518\npgsteal 741474\npswpin 0\npswpout 0\npgscan_kswapd 2880\npgscan_direct 738638\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 2866\npgsteal_direct 738608\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 3354976\npgmajfault 0\npgrefill 336232\npgactivate 14\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0"
+      },
+      "experimental": {
+        "cpu.stat": "usage_usec 205031003\nuser_usec 176632247\nsystem_usec 28398755\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 2709\nnr_throttled 475\nthrottled_usec 4861894\nnr_bursts 0\nburst_usec 0",
+        "memory.current": "2100699136",
+        "memory.peak": "2147684352",
+        "memory.events": "low 0\nhigh 0\nmax 8009\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+        "memory.stat": "anon 694247424\nfile 1395785728\nkernel 7184384\nkernel_stack 229376\npagetables 1638400\nsec_pagetables 0\npercpu 544\nsock 8192\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 262144\nfile_dirty 48885760\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 4194304\nshmem_thp 0\ninactive_anon 0\nactive_anon 694161408\ninactive_file 1395642368\nactive_file 114688\nunevictable 0\nslab_reclaimable 4929944\nslab_unreclaimable 363928\nslab 5293872\nworkingset_refault_anon 0\nworkingset_refault_file 8715\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgpromote_success 0\npgscan 1076020\npgsteal 1075992\npswpin 0\npswpout 0\npgscan_kswapd 0\npgscan_direct 1076020\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 0\npgsteal_direct 1075992\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 1303125\npgmajfault 0\npgrefill 4803\npgactivate 28\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0"
+      },
+      "filesystem_free_bytes": 400180400128
+    },
+    {
+      "at": "2026-11-08T23:39:29.850008+00:00",
+      "paper": {
+        "cpu.stat": "usage_usec 740167648\nuser_usec 699192988\nsystem_usec 40974659\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 13153\nnr_throttled 220\nthrottled_usec 1818606\nnr_bursts 0\nburst_usec 0",
+        "memory.current": "1071284224",
+        "memory.peak": "1074978816",
+        "memory.events": "low 0\nhigh 0\nmax 11888\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+        "memory.stat": "anon 407289856\nfile 656220160\nkernel 5529600\nkernel_stack 49152\npagetables 958464\nsec_pagetables 0\npercpu 544\nsock 0\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 176128\nfile_dirty 135168\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 126009344\nactive_anon 281280512\ninactive_file 656162816\nactive_file 57344\nunevictable 0\nslab_reclaimable 4324640\nslab_unreclaimable 185576\nslab 4510216\nworkingset_refault_anon 0\nworkingset_refault_file 20251\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 2887\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgpromote_success 0\npgscan 741518\npgsteal 741474\npswpin 0\npswpout 0\npgscan_kswapd 2880\npgscan_direct 738638\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 2866\npgsteal_direct 738608\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 3354976\npgmajfault 0\npgrefill 336232\npgactivate 14\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0"
+      },
+      "experimental": {
+        "cpu.stat": "usage_usec 207522743\nuser_usec 178675911\nsystem_usec 28846832\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 2752\nnr_throttled 486\nthrottled_usec 5057728\nnr_bursts 0\nburst_usec 0",
+        "memory.current": "2047815680",
+        "memory.peak": "2147684352",
+        "memory.events": "low 0\nhigh 0\nmax 8009\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+        "memory.stat": "anon 673570816\nfile 1364643840\nkernel 6148096\nkernel_stack 245760\npagetables 1589248\nsec_pagetables 0\npercpu 544\nsock 0\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 262144\nfile_dirty 10960896\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 4194304\nshmem_thp 0\ninactive_anon 0\nactive_anon 673497088\ninactive_file 1364500480\nactive_file 114688\nunevictable 0\nslab_reclaimable 3911880\nslab_unreclaimable 378952\nslab 4290832\nworkingset_refault_anon 0\nworkingset_refault_file 9442\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgpromote_success 0\npgscan 1076020\npgsteal 1075992\npswpin 0\npswpout 0\npgscan_kswapd 0\npgscan_direct 1076020\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 0\npgsteal_direct 1075992\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 1330588\npgmajfault 0\npgrefill 4803\npgactivate 28\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0"
+      },
+      "filesystem_free_bytes": 400217579520
+    },
+    {
+      "at": "2026-11-08T23:39:34.852405+00:00",
+      "paper": {
+        "cpu.stat": "usage_usec 742259847\nuser_usec 701122872\nsystem_usec 41136974\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 13203\nnr_throttled 226\nthrottled_usec 1954938\nnr_bursts 0\nburst_usec 0",
+        "memory.current": "1073848320",
+        "memory.peak": "1074978816",
+        "memory.events": "low 0\nhigh 0\nmax 12035\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+        "memory.stat": "anon 410267648\nfile 655486976\nkernel 5902336\nkernel_stack 49152\npagetables 958464\nsec_pagetables 0\npercpu 544\nsock 0\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 176128\nfile_dirty 135168\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 126009344\nactive_anon 284258304\ninactive_file 655429632\nactive_file 57344\nunevictable 0\nslab_reclaimable 4710336\nslab_unreclaimable 178536\nslab 4888872\nworkingset_refault_anon 0\nworkingset_refault_file 20251\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 2887\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgpromote_success 0\npgscan 745060\npgsteal 745016\npswpin 0\npswpout 0\npgscan_kswapd 2880\npgscan_direct 742180\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 2866\npgsteal_direct 742150\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 3355704\npgmajfault 0\npgrefill 336232\npgactivate 14\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0"
+      },
+      "experimental": {
+        "cpu.stat": "usage_usec 209486590\nuser_usec 180158045\nsystem_usec 29328544\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 2795\nnr_throttled 493\nthrottled_usec 5062901\nnr_bursts 0\nburst_usec 0",
+        "memory.current": "2050355200",
+        "memory.peak": "2147684352",
+        "memory.events": "low 0\nhigh 0\nmax 8009\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+        "memory.stat": "anon 675983360\nfile 1364717568\nkernel 6148096\nkernel_stack 245760\npagetables 1593344\nsec_pagetables 0\npercpu 544\nsock 4096\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 262144\nfile_dirty 1523712\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 4194304\nshmem_thp 0\ninactive_anon 0\nactive_anon 675926016\ninactive_file 1364574208\nactive_file 114688\nunevictable 0\nslab_reclaimable 3914736\nslab_unreclaimable 372416\nslab 4287152\nworkingset_refault_anon 0\nworkingset_refault_file 9442\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgpromote_success 0\npgscan 1076020\npgsteal 1075992\npswpin 0\npswpout 0\npgscan_kswapd 0\npgscan_direct 1076020\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 0\npgsteal_direct 1075992\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 1353214\npgmajfault 0\npgrefill 4803\npgactivate 28\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0"
+      },
+      "filesystem_free_bytes": 400214220800
+    },
+    {
+      "at": "2026-11-08T23:39:39.853567+00:00",
+      "paper": {
+        "cpu.stat": "usage_usec 743936164\nuser_usec 702773147\nsystem_usec 41163016\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 13253\nnr_throttled 226\nthrottled_usec 1954938\nnr_bursts 0\nburst_usec 0",
+        "memory.current": "1070936064",
+        "memory.peak": "1074978816",
+        "memory.events": "low 0\nhigh 0\nmax 12368\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+        "memory.stat": "anon 410271744\nfile 652873728\nkernel 5902336\nkernel_stack 49152\npagetables 958464\nsec_pagetables 0\npercpu 544\nsock 0\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 176128\nfile_dirty 135168\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 126009344\nactive_anon 284262400\ninactive_file 652816384\nactive_file 57344\nunevictable 0\nslab_reclaimable 4712128\nslab_unreclaimable 176968\nslab 4889096\nworkingset_refault_anon 0\nworkingset_refault_file 20251\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 2887\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgpromote_success 0\npgscan 745698\npgsteal 745654\npswpin 0\npswpout 0\npgscan_kswapd 2880\npgscan_direct 742818\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 2866\npgsteal_direct 742788\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 3355705\npgmajfault 0\npgrefill 336232\npgactivate 14\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0"
+      },
+      "experimental": {
+        "cpu.stat": "usage_usec 211852249\nuser_usec 181988985\nsystem_usec 29863264\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 2837\nnr_throttled 496\nthrottled_usec 5069930\nnr_bursts 0\nburst_usec 0",
+        "memory.current": "2047852544",
+        "memory.peak": "2147684352",
+        "memory.events": "low 0\nhigh 0\nmax 8009\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+        "memory.stat": "anon 673718272\nfile 1364717568\nkernel 6135808\nkernel_stack 245760\npagetables 1589248\nsec_pagetables 0\npercpu 544\nsock 0\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 262144\nfile_dirty 1744896\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 4194304\nshmem_thp 0\ninactive_anon 0\nactive_anon 673648640\ninactive_file 1364602880\nactive_file 114688\nunevictable 0\nslab_reclaimable 3914736\nslab_unreclaimable 380472\nslab 4295208\nworkingset_refault_anon 0\nworkingset_refault_file 9442\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgpromote_success 0\npgscan 1076020\npgsteal 1075992\npswpin 0\npswpout 0\npgscan_kswapd 0\npgscan_direct 1076020\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 0\npgsteal_direct 1075992\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 1375396\npgmajfault 0\npgrefill 4803\npgactivate 28\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0"
+      },
+      "filesystem_free_bytes": 400214216704
+    },
+    {
+      "at": "2026-11-08T23:39:44.855746+00:00",
+      "paper": {
+        "cpu.stat": "usage_usec 745359534\nuser_usec 704162478\nsystem_usec 41197055\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 13303\nnr_throttled 226\nthrottled_usec 1954938\nnr_bursts 0\nburst_usec 0",
+        "memory.current": "1071312896",
+        "memory.peak": "1074978816",
+        "memory.events": "low 0\nhigh 0\nmax 12368\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+        "memory.stat": "anon 410292224\nfile 652873728\nkernel 5906432\nkernel_stack 49152\npagetables 958464\nsec_pagetables 0\npercpu 544\nsock 0\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 176128\nfile_dirty 135168\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 126009344\nactive_anon 284262400\ninactive_file 652816384\nactive_file 57344\nunevictable 0\nslab_reclaimable 4710048\nslab_unreclaimable 175872\nslab 4885920\nworkingset_refault_anon 0\nworkingset_refault_file 20251\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 2887\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgpromote_success 0\npgscan 745698\npgsteal 745654\npswpin 0\npswpout 0\npgscan_kswapd 2880\npgscan_direct 742818\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 2866\npgsteal_direct 742788\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 3355710\npgmajfault 0\npgrefill 336232\npgactivate 14\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0"
+      },
+      "experimental": {
+        "cpu.stat": "usage_usec 213701087\nuser_usec 183453112\nsystem_usec 30247974\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 2877\nnr_throttled 497\nthrottled_usec 5070212\nnr_bursts 0\nburst_usec 0",
+        "memory.current": "2109493248",
+        "memory.peak": "2147684352",
+        "memory.events": "low 0\nhigh 0\nmax 8009\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+        "memory.stat": "anon 720609280\nfile 1378713600\nkernel 6680576\nkernel_stack 229376\npagetables 1675264\nsec_pagetables 0\npercpu 544\nsock 0\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 262144\nfile_dirty 13537280\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 4194304\nshmem_thp 0\ninactive_anon 0\nactive_anon 720596992\ninactive_file 1378598912\nactive_file 114688\nunevictable 0\nslab_reclaimable 4393232\nslab_unreclaimable 363744\nslab 4756976\nworkingset_refault_anon 0\nworkingset_refault_file 9442\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgpromote_success 0\npgscan 1076020\npgsteal 1075992\npswpin 0\npswpout 0\npgscan_kswapd 0\npgscan_direct 1076020\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 0\npgsteal_direct 1075992\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 1397482\npgmajfault 0\npgrefill 4803\npgactivate 28\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0"
+      },
+      "filesystem_free_bytes": 400174174208
+    },
+    {
+      "at": "2026-11-08T23:39:49.856923+00:00",
+      "paper": {
+        "cpu.stat": "usage_usec 746565725\nuser_usec 705323626\nsystem_usec 41242098\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 13353\nnr_throttled 226\nthrottled_usec 1954938\nnr_bursts 0\nburst_usec 0",
+        "memory.current": "1071480832",
+        "memory.peak": "1074978816",
+        "memory.events": "low 0\nhigh 0\nmax 12368\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+        "memory.stat": "anon 410292224\nfile 652873728\nkernel 5906432\nkernel_stack 49152\npagetables 958464\nsec_pagetables 0\npercpu 544\nsock 0\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 176128\nfile_dirty 135168\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 126009344\nactive_anon 284262400\ninactive_file 652816384\nactive_file 57344\nunevictable 0\nslab_reclaimable 4710048\nslab_unreclaimable 178560\nslab 4888608\nworkingset_refault_anon 0\nworkingset_refault_file 20251\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 2887\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgpromote_success 0\npgscan 745698\npgsteal 745654\npswpin 0\npswpout 0\npgscan_kswapd 2880\npgscan_direct 742818\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 2866\npgsteal_direct 742788\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 3355710\npgmajfault 0\npgrefill 336232\npgactivate 14\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0"
+      },
+      "experimental": {
+        "cpu.stat": "usage_usec 215253514\nuser_usec 184583152\nsystem_usec 30670361\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 2917\nnr_throttled 500\nthrottled_usec 5146048\nnr_bursts 0\nburst_usec 0",
+        "memory.current": "2047655936",
+        "memory.peak": "2147684352",
+        "memory.events": "low 0\nhigh 0\nmax 8009\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+        "memory.stat": "anon 671952896\nfile 1366659072\nkernel 6152192\nkernel_stack 212992\npagetables 1589248\nsec_pagetables 0\npercpu 544\nsock 4096\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 262144\nfile_dirty 1413120\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 4194304\nshmem_thp 0\ninactive_anon 0\nactive_anon 671928320\ninactive_file 1366515712\nactive_file 114688\nunevictable 0\nslab_reclaimable 3974488\nslab_unreclaimable 349264\nslab 4323752\nworkingset_refault_anon 0\nworkingset_refault_file 9442\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgpromote_success 0\npgscan 1076020\npgsteal 1075992\npswpin 0\npswpout 0\npgscan_kswapd 0\npgscan_direct 1076020\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 0\npgsteal_direct 1075992\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 1397553\npgmajfault 0\npgrefill 4803\npgactivate 28\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0"
+      },
+      "filesystem_free_bytes": 400212250624
+    },
+    {
+      "at": "2026-11-08T23:39:54.859293+00:00",
+      "paper": {
+        "cpu.stat": "usage_usec 748304221\nuser_usec 707035444\nsystem_usec 41268776\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 13403\nnr_throttled 226\nthrottled_usec 1954938\nnr_bursts 0\nburst_usec 0",
+        "memory.current": "1070743552",
+        "memory.peak": "1074978816",
+        "memory.events": "low 0\nhigh 0\nmax 12369\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+        "memory.stat": "anon 410324992\nfile 652611584\nkernel 5914624\nkernel_stack 49152\npagetables 958464\nsec_pagetables 0\npercpu 544\nsock 0\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 176128\nfile_dirty 40960\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 126009344\nactive_anon 284315648\ninactive_file 652554240\nactive_file 57344\nunevictable 0\nslab_reclaimable 4711088\nslab_unreclaimable 177904\nslab 4888992\nworkingset_refault_anon 0\nworkingset_refault_file 20251\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 2887\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgpromote_success 0\npgscan 745762\npgsteal 745718\npswpin 0\npswpout 0\npgscan_kswapd 2880\npgscan_direct 742882\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 2866\npgsteal_direct 742852\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 3355718\npgmajfault 0\npgrefill 336232\npgactivate 14\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0"
+      },
+      "experimental": {
+        "cpu.stat": "usage_usec 216846750\nuser_usec 185792879\nsystem_usec 31053870\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 2962\nnr_throttled 501\nthrottled_usec 5146343\nnr_bursts 0\nburst_usec 0",
+        "memory.current": "2047823872",
+        "memory.peak": "2147684352",
+        "memory.events": "low 0\nhigh 0\nmax 8009\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+        "memory.stat": "anon 672215040\nfile 1366732800\nkernel 6156288\nkernel_stack 212992\npagetables 1589248\nsec_pagetables 0\npercpu 544\nsock 0\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 262144\nfile_dirty 1187840\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 4194304\nshmem_thp 0\ninactive_anon 0\nactive_anon 672215040\ninactive_file 1366618112\nactive_file 114688\nunevictable 0\nslab_reclaimable 3976728\nslab_unreclaimable 357400\nslab 4334128\nworkingset_refault_anon 0\nworkingset_refault_file 9442\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgpromote_success 0\npgscan 1076020\npgsteal 1075992\npswpin 0\npswpout 0\npgscan_kswapd 0\npgscan_direct 1076020\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 0\npgsteal_direct 1075992\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 1419599\npgmajfault 0\npgrefill 4803\npgactivate 28\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0"
+      },
+      "filesystem_free_bytes": 400211320832
+    },
+    {
+      "at": "2026-11-08T23:39:59.860226+00:00",
+      "paper": {
+        "cpu.stat": "usage_usec 750654761\nuser_usec 709280995\nsystem_usec 41373766\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 13453\nnr_throttled 228\nthrottled_usec 1958781\nnr_bursts 0\nburst_usec 0",
+        "memory.current": "1070604288",
+        "memory.peak": "1074978816",
+        "memory.events": "low 0\nhigh 0\nmax 12369\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+        "memory.stat": "anon 410365952\nfile 652611584\nkernel 5906432\nkernel_stack 49152\npagetables 958464\nsec_pagetables 0\npercpu 544\nsock 0\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 176128\nfile_dirty 0\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 126009344\nactive_anon 284315648\ninactive_file 652554240\nactive_file 57344\nunevictable 0\nslab_reclaimable 4710048\nslab_unreclaimable 182984\nslab 4893032\nworkingset_refault_anon 0\nworkingset_refault_file 20251\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 2887\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgpromote_success 0\npgscan 745762\npgsteal 745718\npswpin 0\npswpout 0\npgscan_kswapd 2880\npgscan_direct 742882\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 2866\npgsteal_direct 742852\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 3355728\npgmajfault 0\npgrefill 336232\npgactivate 14\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0"
+      },
+      "experimental": {
+        "cpu.stat": "usage_usec 220580161\nuser_usec 188778297\nsystem_usec 31801864\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 3006\nnr_throttled 516\nthrottled_usec 5256158\nnr_bursts 0\nburst_usec 0",
+        "memory.current": "2045186048",
+        "memory.peak": "2147684352",
+        "memory.events": "low 0\nhigh 0\nmax 8009\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+        "memory.stat": "anon 669343744\nfile 1366732800\nkernel 6172672\nkernel_stack 229376\npagetables 1589248\nsec_pagetables 0\npercpu 544\nsock 8192\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 262144\nfile_dirty 1064960\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 4194304\nshmem_thp 0\ninactive_anon 0\nactive_anon 669327360\ninactive_file 1366589440\nactive_file 114688\nunevictable 0\nslab_reclaimable 3976424\nslab_unreclaimable 353584\nslab 4330008\nworkingset_refault_anon 0\nworkingset_refault_file 9442\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgpromote_success 0\npgscan 1076020\npgsteal 1075992\npswpin 0\npswpout 0\npgscan_kswapd 0\npgscan_direct 1076020\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 0\npgsteal_direct 1075992\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 1441760\npgmajfault 0\npgrefill 4803\npgactivate 28\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0"
+      },
+      "filesystem_free_bytes": 400211304448
+    },
+    {
+      "at": "2026-11-08T23:40:04.862601+00:00",
+      "paper": {
+        "cpu.stat": "usage_usec 752528711\nuser_usec 711111058\nsystem_usec 41417652\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 13503\nnr_throttled 228\nthrottled_usec 1958781\nnr_bursts 0\nburst_usec 0",
+        "memory.current": "1070743552",
+        "memory.peak": "1074978816",
+        "memory.events": "low 0\nhigh 0\nmax 12369\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+        "memory.stat": "anon 410382336\nfile 652611584\nkernel 5910528\nkernel_stack 49152\npagetables 958464\nsec_pagetables 0\npercpu 544\nsock 57344\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 176128\nfile_dirty 0\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 126009344\nactive_anon 284356608\ninactive_file 652554240\nactive_file 57344\nunevictable 0\nslab_reclaimable 4711088\nslab_unreclaimable 179360\nslab 4890448\nworkingset_refault_anon 0\nworkingset_refault_file 20251\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 2887\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgpromote_success 0\npgscan 745762\npgsteal 745718\npswpin 0\npswpout 0\npgscan_kswapd 2880\npgscan_direct 742882\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 2866\npgsteal_direct 742852\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 3355732\npgmajfault 0\npgrefill 336232\npgactivate 14\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0"
+      },
+      "experimental": {
+        "cpu.stat": "usage_usec 221289931\nuser_usec 189288199\nsystem_usec 32001731\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 3045\nnr_throttled 516\nthrottled_usec 5256158\nnr_bursts 0\nburst_usec 0",
+        "memory.current": "2045644800",
+        "memory.peak": "2147684352",
+        "memory.events": "low 0\nhigh 0\nmax 8009\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+        "memory.stat": "anon 669343744\nfile 1366732800\nkernel 6168576\nkernel_stack 229376\npagetables 1589248\nsec_pagetables 0\npercpu 544\nsock 0\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 262144\nfile_dirty 860160\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 4194304\nshmem_thp 0\ninactive_anon 0\nactive_anon 669343744\ninactive_file 1366618112\nactive_file 114688\nunevictable 0\nslab_reclaimable 3972864\nslab_unreclaimable 355520\nslab 4328384\nworkingset_refault_anon 0\nworkingset_refault_file 9442\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgpromote_success 0\npgscan 1076020\npgsteal 1075992\npswpin 0\npswpout 0\npgscan_kswapd 0\npgscan_direct 1076020\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 0\npgsteal_direct 1075992\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 1441770\npgmajfault 0\npgrefill 4803\npgactivate 28\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0"
+      },
+      "filesystem_free_bytes": 400211296256
+    },
+    {
+      "at": "2026-11-08T23:40:09.864002+00:00",
+      "paper": {
+        "cpu.stat": "usage_usec 754416789\nuser_usec 712954368\nsystem_usec 41462421\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 13553\nnr_throttled 228\nthrottled_usec 1958781\nnr_bursts 0\nburst_usec 0",
+        "memory.current": "1070419968",
+        "memory.peak": "1074978816",
+        "memory.events": "low 0\nhigh 0\nmax 12369\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+        "memory.stat": "anon 410382336\nfile 652611584\nkernel 5902336\nkernel_stack 49152\npagetables 958464\nsec_pagetables 0\npercpu 544\nsock 0\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 176128\nfile_dirty 0\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 126009344\nactive_anon 284372992\ninactive_file 652554240\nactive_file 57344\nunevictable 0\nslab_reclaimable 4712128\nslab_unreclaimable 182136\nslab 4894264\nworkingset_refault_anon 0\nworkingset_refault_file 20251\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 2887\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgpromote_success 0\npgscan 745762\npgsteal 745718\npswpin 0\npswpout 0\npgscan_kswapd 2880\npgscan_direct 742882\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 2866\npgsteal_direct 742852\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 3355732\npgmajfault 0\npgrefill 336232\npgactivate 14\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0"
+      },
+      "experimental": {
+        "cpu.stat": "usage_usec 225329585\nuser_usec 192753340\nsystem_usec 32576244\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 3092\nnr_throttled 529\nthrottled_usec 5350999\nnr_bursts 0\nburst_usec 0",
+        "memory.current": "2081488896",
+        "memory.peak": "2147684352",
+        "memory.events": "low 0\nhigh 0\nmax 8009\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+        "memory.stat": "anon 707067904\nfile 1364336640\nkernel 6197248\nkernel_stack 229376\npagetables 1671168\nsec_pagetables 0\npercpu 544\nsock 4096\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 262144\nfile_dirty 10596352\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 4194304\nshmem_thp 0\ninactive_anon 0\nactive_anon 707010560\ninactive_file 1364221952\nactive_file 114688\nunevictable 0\nslab_reclaimable 3906000\nslab_unreclaimable 358120\nslab 4264120\nworkingset_refault_anon 0\nworkingset_refault_file 9442\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgpromote_success 0\npgscan 1076020\npgsteal 1075992\npswpin 0\npswpout 0\npgscan_kswapd 0\npgscan_direct 1076020\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 0\npgsteal_direct 1075992\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 1476292\npgmajfault 0\npgrefill 4803\npgactivate 28\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0"
+      },
+      "filesystem_free_bytes": 400213704704
+    },
+    {
+      "at": "2026-11-08T23:40:14.865669+00:00",
+      "paper": {
+        "cpu.stat": "usage_usec 756121789\nuser_usec 714630936\nsystem_usec 41490852\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 13603\nnr_throttled 228\nthrottled_usec 1958781\nnr_bursts 0\nburst_usec 0",
+        "memory.current": "1071071232",
+        "memory.peak": "1074978816",
+        "memory.events": "low 0\nhigh 0\nmax 12369\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+        "memory.stat": "anon 410382336\nfile 652611584\nkernel 5902336\nkernel_stack 49152\npagetables 958464\nsec_pagetables 0\npercpu 544\nsock 0\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 176128\nfile_dirty 0\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 126009344\nactive_anon 284372992\ninactive_file 652554240\nactive_file 57344\nunevictable 0\nslab_reclaimable 4711088\nslab_unreclaimable 179664\nslab 4890752\nworkingset_refault_anon 0\nworkingset_refault_file 20251\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 2887\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgpromote_success 0\npgscan 745762\npgsteal 745718\npswpin 0\npswpout 0\npgscan_kswapd 2880\npgscan_direct 742882\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 2866\npgsteal_direct 742852\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 3355732\npgmajfault 0\npgrefill 336232\npgactivate 14\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0"
+      },
+      "experimental": {
+        "cpu.stat": "usage_usec 230308361\nuser_usec 197419714\nsystem_usec 32888647\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 3142\nnr_throttled 554\nthrottled_usec 5396358\nnr_bursts 0\nburst_usec 0",
+        "memory.current": "2065780736",
+        "memory.peak": "2147684352",
+        "memory.events": "low 0\nhigh 0\nmax 8009\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+        "memory.stat": "anon 689225728\nfile 1366478848\nkernel 6213632\nkernel_stack 229376\npagetables 1630208\nsec_pagetables 0\npercpu 544\nsock 0\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 262144\nfile_dirty 10338304\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 4194304\nshmem_thp 0\ninactive_anon 0\nactive_anon 689209344\ninactive_file 1366306816\nactive_file 114688\nunevictable 0\nslab_reclaimable 3975296\nslab_unreclaimable 362376\nslab 4337672\nworkingset_refault_anon 0\nworkingset_refault_file 9442\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgpromote_success 0\npgscan 1076020\npgsteal 1075992\npswpin 0\npswpout 0\npgscan_kswapd 0\npgscan_direct 1076020\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 0\npgsteal_direct 1075992\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 1479079\npgmajfault 0\npgrefill 4803\npgactivate 28\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0"
+      },
+      "filesystem_free_bytes": 400211537920
+    },
+    {
+      "at": "2026-11-08T23:40:19.866527+00:00",
+      "paper": {
+        "cpu.stat": "usage_usec 757980400\nuser_usec 716462761\nsystem_usec 41517638\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 13653\nnr_throttled 228\nthrottled_usec 1958781\nnr_bursts 0\nburst_usec 0",
+        "memory.current": "1070923776",
+        "memory.peak": "1074978816",
+        "memory.events": "low 0\nhigh 0\nmax 12369\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+        "memory.stat": "anon 410382336\nfile 652611584\nkernel 5902336\nkernel_stack 49152\npagetables 958464\nsec_pagetables 0\npercpu 544\nsock 0\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 176128\nfile_dirty 0\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 126009344\nactive_anon 284372992\ninactive_file 652554240\nactive_file 57344\nunevictable 0\nslab_reclaimable 4711088\nslab_unreclaimable 175904\nslab 4886992\nworkingset_refault_anon 0\nworkingset_refault_file 20251\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 2887\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgpromote_success 0\npgscan 745762\npgsteal 745718\npswpin 0\npswpout 0\npgscan_kswapd 2880\npgscan_direct 742882\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 2866\npgsteal_direct 742852\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 3355732\npgmajfault 0\npgrefill 336232\npgactivate 14\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0"
+      },
+      "experimental": {
+        "cpu.stat": "usage_usec 235291482\nuser_usec 202167335\nsystem_usec 33124147\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 3192\nnr_throttled 578\nthrottled_usec 5470467\nnr_bursts 0\nburst_usec 0",
+        "memory.current": "2086019072",
+        "memory.peak": "2147684352",
+        "memory.events": "low 0\nhigh 0\nmax 8009\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+        "memory.stat": "anon 708759552\nfile 1367015424\nkernel 6279168\nkernel_stack 229376\npagetables 1675264\nsec_pagetables 0\npercpu 544\nsock 12288\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 262144\nfile_dirty 10600448\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 4194304\nshmem_thp 0\ninactive_anon 0\nactive_anon 708714496\ninactive_file 1366843392\nactive_file 114688\nunevictable 0\nslab_reclaimable 3988656\nslab_unreclaimable 353504\nslab 4342160\nworkingset_refault_anon 0\nworkingset_refault_file 9442\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgpromote_success 0\npgscan 1076020\npgsteal 1075992\npswpin 0\npswpout 0\npgscan_kswapd 0\npgscan_direct 1076020\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 0\npgsteal_direct 1075992\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 1505682\npgmajfault 0\npgrefill 4803\npgactivate 28\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0"
+      },
+      "filesystem_free_bytes": 400210984960
+    },
+    {
+      "at": "2026-11-08T23:40:24.868512+00:00",
+      "paper": {
+        "cpu.stat": "usage_usec 759614646\nuser_usec 717994517\nsystem_usec 41620128\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 13703\nnr_throttled 228\nthrottled_usec 1958781\nnr_bursts 0\nburst_usec 0",
+        "memory.current": "1073065984",
+        "memory.peak": "1074978816",
+        "memory.events": "low 0\nhigh 0\nmax 12369\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+        "memory.stat": "anon 410382336\nfile 654127104\nkernel 5943296\nkernel_stack 49152\npagetables 958464\nsec_pagetables 0\npercpu 544\nsock 786432\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 176128\nfile_dirty 61440\nfile_writeback 32768\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 126009344\nactive_anon 284372992\ninactive_file 654069760\nactive_file 57344\nunevictable 0\nslab_reclaimable 4753104\nslab_unreclaimable 177752\nslab 4930856\nworkingset_refault_anon 0\nworkingset_refault_file 20251\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 2887\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgpromote_success 0\npgscan 745762\npgsteal 745718\npswpin 0\npswpout 0\npgscan_kswapd 2880\npgscan_direct 742882\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 2866\npgsteal_direct 742852\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 3355748\npgmajfault 0\npgrefill 336232\npgactivate 14\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0"
+      },
+      "experimental": {
+        "cpu.stat": "usage_usec 240284228\nuser_usec 206883208\nsystem_usec 33401020\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 3242\nnr_throttled 610\nthrottled_usec 5573512\nnr_bursts 0\nburst_usec 0",
+        "memory.current": "2089615360",
+        "memory.peak": "2147684352",
+        "memory.events": "low 0\nhigh 0\nmax 8009\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+        "memory.stat": "anon 711999488\nfile 1367310336\nkernel 6287360\nkernel_stack 229376\npagetables 1679360\nsec_pagetables 0\npercpu 544\nsock 4096\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 262144\nfile_dirty 10743808\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 4194304\nshmem_thp 0\ninactive_anon 0\nactive_anon 711999488\ninactive_file 1367166976\nactive_file 114688\nunevictable 0\nslab_reclaimable 3996416\nslab_unreclaimable 352200\nslab 4348616\nworkingset_refault_anon 0\nworkingset_refault_file 9442\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgpromote_success 0\npgscan 1076020\npgsteal 1075992\npswpin 0\npswpout 0\npgscan_kswapd 0\npgscan_direct 1076020\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 0\npgsteal_direct 1075992\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 1513703\npgmajfault 0\npgrefill 4803\npgactivate 28\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0"
+      },
+      "filesystem_free_bytes": 400208998400
+    },
+    {
+      "at": "2026-11-08T23:40:29.869861+00:00",
+      "paper": {
+        "cpu.stat": "usage_usec 762132546\nuser_usec 720220507\nsystem_usec 41912038\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 13753\nnr_throttled 229\nthrottled_usec 1964689\nnr_bursts 0\nburst_usec 0",
+        "memory.current": "1072152576",
+        "memory.peak": "1074978816",
+        "memory.events": "low 0\nhigh 0\nmax 12419\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+        "memory.stat": "anon 410382336\nfile 653402112\nkernel 5984256\nkernel_stack 49152\npagetables 958464\nsec_pagetables 0\npercpu 544\nsock 0\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 176128\nfile_dirty 98304\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 126009344\nactive_anon 284372992\ninactive_file 653344768\nactive_file 57344\nunevictable 0\nslab_reclaimable 4797952\nslab_unreclaimable 173160\nslab 4971112\nworkingset_refault_anon 0\nworkingset_refault_file 20251\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 2887\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgpromote_success 0\npgscan 746274\npgsteal 746230\npswpin 0\npswpout 0\npgscan_kswapd 2880\npgscan_direct 743394\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 2866\npgsteal_direct 743364\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 3355759\npgmajfault 0\npgrefill 336232\npgactivate 14\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0"
+      },
+      "experimental": {
+        "cpu.stat": "usage_usec 245280955\nuser_usec 211290378\nsystem_usec 33990576\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 3292\nnr_throttled 649\nthrottled_usec 6374129\nnr_bursts 0\nburst_usec 0",
+        "memory.current": "2048299008",
+        "memory.peak": "2147684352",
+        "memory.events": "low 0\nhigh 0\nmax 8026\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+        "memory.stat": "anon 680398848\nfile 1357852672\nkernel 6217728\nkernel_stack 229376\npagetables 1601536\nsec_pagetables 0\npercpu 544\nsock 4096\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nfile_mapped 290816\nfile_dirty 10858496\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 4194304\nshmem_thp 0\ninactive_anon 0\nactive_anon 680398848\ninactive_file 1357680640\nactive_file 114688\nunevictable 0\nslab_reclaimable 3997784\nslab_unreclaimable 352184\nslab 4349968\nworkingset_refault_anon 0\nworkingset_refault_file 9442\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgpromote_success 0\npgscan 1078331\npgsteal 1078303\npswpin 0\npswpout 0\npgscan_kswapd 0\npgscan_direct 1078331\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 0\npgsteal_direct 1078303\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 1577915\npgmajfault 0\npgrefill 4803\npgactivate 28\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0"
+      },
+      "filesystem_free_bytes": 400207609856
+    }
+  ],
+  "summary": {
+    "operations": {
+      "requests": 60,
+      "median": 0.07293254847172648,
+      "p95": 0.3940570101956835,
+      "p99": 0.7488954392052241,
+      "maximum": 1.0169458971358836,
+      "timeouts": 0,
+      "errors": 0
+    },
+    "health": {
+      "requests": 60,
+      "median": 0.05404719547368586,
+      "p95": 0.12747745430096974,
+      "p99": 0.23543370526516766,
+      "maximum": 0.3105477869976312,
+      "timeouts": 0,
+      "errors": 0
+    }
+  },
+  "finished_at": "2026-11-08T23:40:29.870697+00:00"
+}

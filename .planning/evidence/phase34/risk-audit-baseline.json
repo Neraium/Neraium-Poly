@@ -1,0 +1,66 @@
+{
+  "observed_at": "2026-11-08T22:42:52.661254+00:00",
+  "scope": "read-only complete ordered cursor pass; historical records unchanged; payload-bytes excluding Python overhead",
+  "unfiltered": {
+    "rows": 54802,
+    "payload_bytes": 1526875,
+    "seconds": 0.039112614933401346
+  },
+  "fill_only": {
+    "rows": 5,
+    "payload_bytes": 621,
+    "seconds": 0.0027046080213040113
+  },
+  "by_action": [
+    {
+      "action": "experimental_mark",
+      "n": 54744,
+      "payload_bytes": 1495694
+    },
+    {
+      "action": "approved",
+      "n": 13,
+      "payload_bytes": 14739
+    },
+    {
+      "action": "rejected",
+      "n": 7,
+      "payload_bytes": 7686
+    },
+    {
+      "action": "experimental_exit_fill",
+      "n": 5,
+      "payload_bytes": 4958
+    },
+    {
+      "action": "experimental_exit_requested",
+      "n": 5,
+      "payload_bytes": 965
+    },
+    {
+      "action": "kill_switch",
+      "n": 2,
+      "payload_bytes": 927
+    },
+    {
+      "action": "expired",
+      "n": 12,
+      "payload_bytes": 696
+    },
+    {
+      "action": "fill",
+      "n": 5,
+      "payload_bytes": 621
+    },
+    {
+      "action": "release",
+      "n": 8,
+      "payload_bytes": 464
+    },
+    {
+      "action": "experimental_strategy_suspended",
+      "n": 1,
+      "payload_bytes": 125
+    }
+  ]
+}

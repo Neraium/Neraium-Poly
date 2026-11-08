@@ -1,0 +1,527 @@
+{
+  "source_commit": "b0ed5dda0659b68c9463b43abc5a444730a1956e",
+  "observed_at": "2026-11-08T23:55:24.911102+00:00",
+  "latency_before": {
+    "operations": {
+      "requests": 57,
+      "median": 0.14336239988915622,
+      "p95": 7.39190400219522,
+      "p99": 11.964798445254555,
+      "maximum": 14.154316714964807,
+      "timeouts": 0,
+      "errors": 0
+    },
+    "health": {
+      "requests": 57,
+      "median": 0.06774785602465272,
+      "p95": 7.308718659402798,
+      "p99": 11.752224175501606,
+      "maximum": 13.710633715149015,
+      "timeouts": 0,
+      "errors": 0
+    }
+  },
+  "latency_final": {
+    "operations": {
+      "requests": 60,
+      "median": 0.07293254847172648,
+      "p95": 0.3940570101956835,
+      "p99": 0.7488954392052241,
+      "maximum": 1.0169458971358836,
+      "timeouts": 0,
+      "errors": 0
+    },
+    "health": {
+      "requests": 60,
+      "median": 0.05404719547368586,
+      "p95": 0.12747745430096974,
+      "p99": 0.23543370526516766,
+      "maximum": 0.3105477869976312,
+      "timeouts": 0,
+      "errors": 0
+    }
+  },
+  "comparison_scope": "identical120s bounded API samplers under authentic collection; empirical quantiles, not controlled future guarantees; shared-host benchmark activity differed between windows, so live changes alone are not controlled causal estimates",
+  "growth_before": {
+    "collector": {
+      "measurement_start": "2026-11-08T22:37:11.717181+00:00",
+      "measurement_end": "2026-11-08T22:41:45.431472+00:00",
+      "seconds": 273.714291,
+      "usage_bytes": 21937218801,
+      "budget_bytes": 161061273600,
+      "bytes_per_second": 20097.335728809277,
+      "conditional_runway_days": 80.12167072578278,
+      "end_measurement_age_seconds": 28.517166
+    },
+    "experimental": {
+      "measurement_start": "2026-11-08T22:37:07.533610+00:00",
+      "measurement_end": "2026-11-08T22:42:09.392289+00:00",
+      "seconds": 301.858679,
+      "usage_bytes": 16849872595,
+      "budget_bytes": 161061273600,
+      "bytes_per_second": 144645.48491580723,
+      "conditional_runway_days": 11.539340052884468,
+      "end_measurement_age_seconds": 3.447816
+    }
+  },
+  "growth_intermediate": {
+    "collector": {
+      "measurement_start": "2026-11-08T23:21:45.658511+00:00",
+      "measurement_end": "2026-11-08T23:26:48.510834+00:00",
+      "seconds": 302.852323,
+      "usage_bytes": 22086563867,
+      "budget_bytes": 161061273600,
+      "bytes_per_second": 51784.62837810229,
+      "conditional_runway_days": 31.061410214789895,
+      "end_measurement_age_seconds": 12.591941
+    },
+    "experimental": {
+      "measurement_start": "2026-11-08T23:21:57.527045+00:00",
+      "measurement_end": "2026-11-08T23:27:00.380578+00:00",
+      "seconds": 302.853533,
+      "usage_bytes": 17203272987,
+      "budget_bytes": 161061273600,
+      "bytes_per_second": 129229.83137198533,
+      "conditional_runway_days": 12.884201252652893,
+      "end_measurement_age_seconds": 0.802704
+    }
+  },
+  "growth_final": {
+    "collector": {
+      "measurement_start": "2026-11-08T23:38:27.834470+00:00",
+      "measurement_end": "2026-11-08T23:42:59.712004+00:00",
+      "seconds": 271.877534,
+      "usage_bytes": 22138378682,
+      "budget_bytes": 161061273600,
+      "bytes_per_second": 40579.35879321312,
+      "conditional_runway_days": 39.62368859891058,
+      "end_measurement_age_seconds": 30.350644
+    },
+    "experimental": {
+      "measurement_start": "2026-11-08T23:38:29.301007+00:00",
+      "measurement_end": "2026-11-08T23:43:25.878518+00:00",
+      "seconds": 296.577511,
+      "usage_bytes": 17299898319,
+      "budget_bytes": 161061273600,
+      "bytes_per_second": 101535.34197001201,
+      "conditional_runway_days": 16.387444747903462,
+      "end_measurement_age_seconds": 5.066616
+    }
+  },
+  "growth_scope": "physical cached accounting including active/warm/cold/index/WAL/temp; actual measurement-time separation; changing workload and transient allocation preclude causal/months claims",
+  "filesystem_free_bytes": 400128057344,
+  "markets": 406,
+  "fresh_native_books_15s": 324,
+  "archives": {
+    "collector": {
+      "usage_bytes": 22169888884,
+      "budget_bytes": 161061273600,
+      "free_bytes": 400128061440,
+      "global_floor_bytes": 107374182400,
+      "health": "ok",
+      "compressed_segments": 1029,
+      "sealed_segments": 1029,
+      "compression_profile": null
+    },
+    "experimental": {
+      "usage_bytes": 17395129453,
+      "budget_bytes": 161061273600,
+      "free_bytes": 400128057344,
+      "global_floor_bytes": 107374182400,
+      "health": "ok",
+      "compressed_segments": 2775,
+      "sealed_segments": 2775,
+      "compression_profile": null
+    }
+  },
+  "accounts": {
+    "paper-live": {
+      "cash": 500.0,
+      "realized_pnl": 0.0,
+      "emergency_stop": false,
+      "limits": {
+        "bankroll": 500.0,
+        "aggregate_fraction": 0.2,
+        "market_fraction": 0.05,
+        "event_fraction": 0.1,
+        "correlation_fraction": 0.1,
+        "daily_loss_fraction": 0.05,
+        "drawdown_fraction": 0.1,
+        "max_book_age_seconds": 15.0,
+        "max_market_age_seconds": 3600.0,
+        "max_estimate_age_seconds": 300.0,
+        "max_evidence_age_seconds": 3600.0,
+        "max_spread": 0.05,
+        "min_net_edge": 0.03,
+        "max_liquidity_participation": 0.25,
+        "approval_ttl_seconds": 10.0,
+        "standard_min": 2.0,
+        "standard_max": 5.0,
+        "high_min": 5.0,
+        "high_max": 15.0,
+        "exceptional_min": 15.0,
+        "exceptional_max": 25.0,
+        "kelly_fraction": 0.1
+      },
+      "positions": 0
+    },
+    "experimental-paper": {
+      "cash": 496.11522059829053,
+      "realized_pnl": -3.8847794017094013,
+      "emergency_stop": false,
+      "limits": {
+        "bankroll": 500.0,
+        "aggregate_fraction": 0.2,
+        "market_fraction": 0.05,
+        "event_fraction": 0.1,
+        "correlation_fraction": 0.1,
+        "daily_loss_fraction": 0.05,
+        "drawdown_fraction": 0.1,
+        "max_book_age_seconds": 15.0,
+        "max_market_age_seconds": 3600.0,
+        "max_estimate_age_seconds": 300.0,
+        "max_evidence_age_seconds": 3600.0,
+        "max_spread": 0.05,
+        "min_net_edge": 0.03,
+        "max_liquidity_participation": 0.25,
+        "approval_ttl_seconds": 10.0,
+        "standard_min": 2.0,
+        "standard_max": 5.0,
+        "high_min": 5.0,
+        "high_max": 15.0,
+        "exceptional_min": 15.0,
+        "exceptional_max": 25.0,
+        "kelly_fraction": 0.1
+      },
+      "positions": 0
+    }
+  },
+  "paper_orders_total": 13,
+  "paper_fills_total": 10,
+  "phase_new_paper_orders": 0,
+  "phase_new_paper_fills": 0,
+  "paper_positions": 0,
+  "research": {
+    "indexed_forecasts_by_domain": {
+      "crypto": 50,
+      "sports": 140,
+      "economics": 4,
+      "weather": 20,
+      "finance": 4
+    },
+    "canonical_event_groups": 54,
+    "phase_forecast_timestamps_by_domain": {
+      "sports": 4
+    },
+    "phase_new_canonical_groups": 1,
+    "index_replay_verified_rows": 218,
+    "statistical_independence_verified": false,
+    "official_labels": 22,
+    "official_groups_by_domain": {
+      "weather": 3,
+      "sports": 6
+    },
+    "native_outcomes": 0,
+    "certified_training": 0,
+    "certified_heldout": 0,
+    "models": [
+      {
+        "domain": "sports",
+        "model_id": "nhl-beta-frequency-v25.1",
+        "event_disjoint_groups": 6,
+        "descriptive_brier": 0.2664434077436668,
+        "descriptive_log_loss": 0.724666915252793,
+        "market_baseline_comparison": null,
+        "superiority_established": false
+      },
+      {
+        "domain": "sports",
+        "model_id": "nhl-causal-elo-v25.1",
+        "event_disjoint_groups": 6,
+        "descriptive_brier": 0.26196674229878086,
+        "descriptive_log_loss": 0.717411859337194,
+        "market_baseline_comparison": null,
+        "superiority_established": false
+      },
+      {
+        "domain": "weather",
+        "model_id": "metar-diurnal-analog-v24.1",
+        "event_disjoint_groups": 2,
+        "descriptive_brier": 0.005053507728894179,
+        "descriptive_log_loss": 0.071630461154123,
+        "market_baseline_comparison": null,
+        "superiority_established": false
+      },
+      {
+        "domain": "weather",
+        "model_id": "metar-diurnal-gaussian-v25.1",
+        "event_disjoint_groups": 3,
+        "descriptive_brier": 0.03249892098665879,
+        "descriptive_log_loss": 0.19756013100872674,
+        "market_baseline_comparison": null,
+        "superiority_established": false
+      },
+      {
+        "domain": "weather",
+        "model_id": "metar-recency-kernel-v25.1",
+        "event_disjoint_groups": 3,
+        "descriptive_brier": 0.03867860481188982,
+        "descriptive_log_loss": 0.20542360982511312,
+        "market_baseline_comparison": null,
+        "superiority_established": false
+      },
+      {
+        "domain": "weather",
+        "model_id": "metar-recent-climatology-v24.1",
+        "event_disjoint_groups": 2,
+        "descriptive_brier": 0.005053507728894174,
+        "descriptive_log_loss": 0.07163046115412296,
+        "market_baseline_comparison": null,
+        "superiority_established": false
+      }
+    ],
+    "latest_economic_counts": {
+      "findings_evaluated": 122,
+      "qualified_research_findings": 0,
+      "modeled_positive_gross_scenarios": 1,
+      "execution_authorized": 0,
+      "reviewed_canonical_groups": 31,
+      "statistically_independent_resolved_events": 0
+    },
+    "latest_economic_pipeline": {
+      "identity_validated": 100,
+      "book_matched": 70,
+      "book_executable": 42,
+      "economic_evaluation_completed": 42
+    },
+    "sii": {
+      "qualified_pairs": 0,
+      "incremental_value": null,
+      "reason": "no independent causal feature/outcome-pair proof supplied; batch partitions are not experiments"
+    },
+    "shadow": {
+      "status": "research_only",
+      "enrollment_id": "12f54431fc04fea4bd7adb8c111ab1efc1b1070f820a032852a4eaffe8e28c80",
+      "last_at": "2026-11-08T23:54:30.098077+00:00",
+      "capital_scope": "single hypothetical500USD shared pool, not certified/experimental account capital",
+      "hypothetical_cash": 500.0,
+      "capital_reserved": 0,
+      "positions": 0,
+      "position_quantity": 0,
+      "exposure": 0.0,
+      "capital_utilization": 0.0,
+      "orders_attempted": 0,
+      "pending_orders": 0,
+      "hypothetical_fills": 0,
+      "canceled": 0,
+      "expired": 0,
+      "realized_simulated_pnl": null,
+      "unrealized_simulated_pnl": null,
+      "drawdown": null,
+      "mark_status": "no_filled_positions",
+      "verified_settled_parent_events": 0,
+      "statistically_independent_events": null,
+      "settlements": 0,
+      "suspended": false,
+      "suspension_reason": null,
+      "strategies": {
+        "cross_market": {
+          "fills": 0,
+          "orders": 0,
+          "realized_pnl": null,
+          "settlements": 0,
+          "suspended": false,
+          "positions": 0,
+          "reserved": 0,
+          "exposure": 0
+        },
+        "ensemble": {
+          "fills": 0,
+          "orders": 0,
+          "realized_pnl": null,
+          "settlements": 0,
+          "suspended": false,
+          "positions": 0,
+          "reserved": 0,
+          "exposure": 0
+        },
+        "high_conviction": {
+          "fills": 0,
+          "orders": 0,
+          "realized_pnl": null,
+          "settlements": 0,
+          "suspended": false,
+          "positions": 0,
+          "reserved": 0,
+          "exposure": 0
+        },
+        "small_edge": {
+          "fills": 0,
+          "orders": 0,
+          "realized_pnl": null,
+          "settlements": 0,
+          "suspended": false,
+          "positions": 0,
+          "reserved": 0,
+          "exposure": 0
+        }
+      },
+      "rejections": {
+        "strategy_evidence_not_eligible": 295024
+      },
+      "runtime_error": null,
+      "research_only": true,
+      "trading_authority": false,
+      "certification_authority": false,
+      "actual_account_access": false
+    },
+    "native_fee_headroom": {
+      "schema_version": "phase33-pair-fee-headroom-v1",
+      "implementation_sha256": "1f4c0700543eb7b35fd86260eb08a243b0afd438da86d605d2fdd937701aae95",
+      "as_of": "2026-11-08T23:54:01.763715+00:00",
+      "source_pair_report_sha256": "2353e4cb17d668c44fdf9101bf80166a0acb36d67ce04b0870b902b828246de3",
+      "verified_fee_pairs": 6,
+      "positive_formula_headroom_pairs": 0,
+      "qualified_opportunities": 0,
+      "aggregate_deployable_capital": null,
+      "aggregate_net_profit": null,
+      "correlation_aggregation": "not summed across parent events",
+      "all_in_costs_verified": false,
+      "missing_all_in_evidence": [
+        "fill_fragmentation_rounding",
+        "additional_slippage",
+        "latency_adverse_selection",
+        "capital_lockup_cost",
+        "settlement_redemption_cost",
+        "atomic_two_leg_execution",
+        "native_complete_set_payout_proof"
+      ],
+      "conservative_expected_net_profit": null,
+      "research_only": true,
+      "trading_authority": false,
+      "certification_authority": false,
+      "actual_fill": false,
+      "realized_pnl": null,
+      "status": "research_fee_headroom",
+      "rejections": {
+        "native_fee_observation_unavailable": 18
+      },
+      "findings_evaluated": 24,
+      "age_seconds": 82.799632
+    },
+    "weather_selection": {
+      "schema_version": "phase34-weather-source-selection-v1",
+      "as_of": "2026-11-08T23:54:23.508321+00:00",
+      "source_frame_id": "504255eb4e1c30b85ddb6dcc8b141a3269aadba710742693bf79e747281f9d9c",
+      "source_frame_sha256": "4f3ca1abe2249a8988b96c49522cfa243c59ea0fc3961bf0f82eb7b831884ef7",
+      "selected_frame_id": "504255eb4e1c30b85ddb6dcc8b141a3269aadba710742693bf79e747281f9d9c",
+      "selected_frame_sha256": "4f3ca1abe2249a8988b96c49522cfa243c59ea0fc3961bf0f82eb7b831884ef7",
+      "policy_sha256": "7d0e88e7d4a9a4ae71bd9e09be76746f0169420c28658d935c9131671109fbb0",
+      "preferred_tokens": [],
+      "deferred_tokens": [],
+      "rejection_counts": {},
+      "supported_station_days": 6,
+      "scope": "source scheduling only; original model, evidence, spread, freshness, risk and forecast dedup gates unchanged",
+      "research_only": true,
+      "trading_authority": false,
+      "certification_authority": false
+    }
+  },
+  "health": {
+    "collector": {
+      "status": "ok",
+      "paper_trading": true,
+      "live_trading_enabled": false,
+      "mode": "live_market_paper",
+      "trading_status": "validation_blocked",
+      "last_ingestion_at": "2026-11-08T23:55:24.351955+00:00",
+      "last_ingestion_age_seconds": 0.055111,
+      "last_error": null,
+      "ledger_consistent": true,
+      "timestamp": "2026-11-08T23:55:24.407066+00:00"
+    },
+    "experimental": {
+      "status": "ok",
+      "account_id": "experimental-paper",
+      "validation_status": "unvalidated",
+      "paper_trading": true,
+      "live_trading_enabled": false,
+      "last_ingestion_at": "2026-11-08T23:55:22.092858+00:00",
+      "last_ingestion_age_seconds": 2.368541,
+      "last_error": null,
+      "fee_error": null,
+      "timestamp": "2026-11-08T23:55:24.461399+00:00"
+    }
+  },
+  "execution_pools": {
+    "asyncio_default_workers": 8,
+    "asyncio_thread_prefix": "research-io",
+    "anyio_worker_tokens": 4,
+    "previous_anyio_worker_tokens": 40,
+    "scope": "current event loop default executor and AnyIO thread limiter; service task/CPU/memory limits unchanged",
+    "research_only": true,
+    "trading_authority": false,
+    "certification_authority": false
+  },
+  "research_worker": {
+    "active_jobs": 0,
+    "maximum_submitted_jobs": 1,
+    "pending_calls": 0,
+    "maximum_pending_calls": 5,
+    "submitted": 699,
+    "completed": 699,
+    "closing": false,
+    "closed": false,
+    "worker_alive": true,
+    "maximum_proof_threads": 2,
+    "research_only": true,
+    "trading_authority": false,
+    "certification_authority": false
+  },
+  "services": "MainPID=3665014\nNRestarts=0\nMemoryCurrent=1070706688\nTasksCurrent=6\nCPUQuotaPerSecUSec=1s\nMemoryMax=1073741824\nTasksMax=64\nActiveState=active\n\nMainPID=3667626\nNRestarts=0\nMemoryCurrent=2117554176\nTasksCurrent=15\nCPUQuotaPerSecUSec=1s\nMemoryMax=2147483648\nTasksMax=32\nActiveState=active\n",
+  "oom_events": {
+    "collector": "low 0\nhigh 0\nmax 13342\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n",
+    "experimental": "low 0\nhigh 0\nmax 9256\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+  },
+  "parallelism": {
+    "peak_agents_including_coordinator": 4,
+    "isolated_writing_worktrees": 3,
+    "independent_root_validation_subprocesses_peak": 2
+  },
+  "safety": {
+    "aws_changes": false,
+    "original_deletions_or_migrations": false,
+    "quota_changes": false,
+    "risk_or_capital_changes": false,
+    "stop_resets": false,
+    "real_money_enabled": false
+  },
+  "ci": "https://github.com/Neraium/Neraium-Poly/actions/runs/42535643591",
+  "preservation": {
+    "accounts_quick_check_and_original_audit_prefixes": true,
+    "complete_forecast_journal_chain_prefixes_preserved": true,
+    "immutable_archive_catalog_original_hashes_preserved": true,
+    "latest_raw_and_gzip_restore_verified_per_service": true,
+    "new_wire_and_parent_hashes_verified": true,
+    "competition_logical_history_and_frozen_model_hash_preserved": true,
+    "reference_labels_replayed": 22,
+    "scope": "cold startup complete integrity/recovery plus endpoint checks and bounded recent physical restoration; no redundant full originals rehash"
+  },
+  "remaining_blockers": [
+    "No statistically established market-relative superiority or calibrated event-disjoint native outcomes",
+    "No SII controlled paired predictive/outcome evidence",
+    "All-in execution/native payout and independent-source qualification gaps keep opportunities research-only",
+    "Finite retain-originals runway; no retention deletion authorized",
+    "Shared filesystem growth and longer memory/stability require ongoing monitoring"
+  ],
+  "controlled_io_comparison": "controlled-io-comparison.json",
+  "shared_headroom_attribution": "shared-headroom.json",
+  "tests": {
+    "final_ci_run": 42535643591,
+    "source_commit": "b0ed5dda0659b68c9463b43abc5a444730a1956e",
+    "backend_passed": 2208,
+    "browser_passed": 5,
+    "build_scenario_ruff_dependency_audits": "passed",
+    "first_ci_repaired": "2200 assertion passes followed by orphan worker process-exit hang; closed-owner and once-only native cancellation regressions now pass"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "start": "2026-11-08T22:37:12.295416+00:00",
+  "end": "2026-11-08T22:42:12.500980+00:00",
+  "seconds": 300.205564,
+  "scope": "whole-service cached capacity bytes including raw/gzip/SQLite/WAL/temp; workload and temporary accounting may vary",
+  "services": {
+    "collector": {
+      "before_bytes": 21931717873,
+      "after_bytes": 21937218801,
+      "bytes_per_second": 18323.870906003594,
+      "conditional_runway_days": 87.87619842931734
+    },
+    "experimental": {
+      "before_bytes": 16806210100,
+      "after_bytes": 16849872595,
+      "bytes_per_second": 145441.99120839746,
+      "conditional_runway_days": 11.476145394394875
+    }
+  }
+}

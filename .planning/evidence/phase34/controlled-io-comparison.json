@@ -1,0 +1,51 @@
+{
+  "scope": "three matched controlled fixture cycles per source; identical injected20ms durable-append and80ms reconcile delays; no authentic performance/trading evidence",
+  "baseline_commit": "26ee812",
+  "final_commit": "b0ed5dda0659b68c9463b43abc5a444730a1956e",
+  "baseline": [
+    {
+      "wall_seconds": 0.3000682338606566,
+      "ticker_max_gap_seconds": 0.2895644309464842,
+      "ticker_samples": 3,
+      "actual_orders": 0,
+      "fixture_cash": 500
+    },
+    {
+      "wall_seconds": 0.2772175178397447,
+      "ticker_max_gap_seconds": 0.26667823805473745,
+      "ticker_samples": 3,
+      "actual_orders": 0,
+      "fixture_cash": 500
+    },
+    {
+      "wall_seconds": 0.24374739290215075,
+      "ticker_max_gap_seconds": 0.23324463982135057,
+      "ticker_samples": 3,
+      "actual_orders": 0,
+      "fixture_cash": 500
+    }
+  ],
+  "final": [
+    {
+      "wall_seconds": 0.2899872048292309,
+      "ticker_max_gap_seconds": 0.010223318124189973,
+      "ticker_samples": 54,
+      "actual_orders": 0,
+      "fixture_cash": 500
+    },
+    {
+      "wall_seconds": 0.27981557603925467,
+      "ticker_max_gap_seconds": 0.011738243978470564,
+      "ticker_samples": 52,
+      "actual_orders": 0,
+      "fixture_cash": 500
+    },
+    {
+      "wall_seconds": 0.2864543958567083,
+      "ticker_max_gap_seconds": 0.01759521197527647,
+      "ticker_samples": 53,
+      "actual_orders": 0,
+      "fixture_cash": 500
+    }
+  ]
+}

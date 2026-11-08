@@ -1,0 +1,13 @@
+Process 3661277: /home/ubuntu/Neraium-Poly/.venv/bin/python /home/ubuntu/Neraium-Poly/.venv/bin/pytest -q
+Python v3.12.3 (/usr/bin/python3.12)
+
+Thread 3661277 (idle): "MainThread"
+    _shutdown (threading.py:1622)
+Thread 3661758 (idle): "research-async-io"
+    EpollSelector.select (selectors.py:468)
+    BaseEventLoop._run_once (asyncio/base_events.py:1949)
+    BaseEventLoop.run_forever (asyncio/base_events.py:641)
+    ResearchWorker._thread_main (neraium_poly/experimental/research_worker.py:60)
+    Thread.run (threading.py:1010)
+    Thread._bootstrap_inner (threading.py:1073)
+    Thread._bootstrap (threading.py:1030)

@@ -1,0 +1,30 @@
+{
+  "at": "2026-11-08T23:43:47.717830+00:00",
+  "code_sha256": "151e506d238963b53e592b190ff5e6966669622036494bf2d7aa63a408b42e81",
+  "scope": "actual persisted future CompetitionStudy wires and logical-state hashes, no new records",
+  "records": [
+    {
+      "id": "11075ad52d1a6552ff2949e30d1aff5c3999c6e151822fb07547c0ad29641a6c",
+      "timestamp": "2026-11-08T23:42:43.178905Z",
+      "checkpoint_sha256": "998c54d6b2b7ec84b87c9f9761be7570b92aceb65706c2901925d918971a6f25",
+      "actual_wire_sha256": "0da8d118f767373829f47ebec56f07e32fea356108ec2a4a54c63a0a468d1528",
+      "cycles": 1345,
+      "history_frames": 16,
+      "enrollments": 1,
+      "logical_code_hash_preserved": true,
+      "verified_dense_wire": true
+    },
+    {
+      "id": "5010719d8b076dd4d0d22870df545344c88b2ebd06b8ab6c94ff72c5a06699b6",
+      "timestamp": "2026-11-08T23:41:24.505173Z",
+      "checkpoint_sha256": "ef0d800121d6a71cc4b755f94313cdc927e1cab78e9c25353ff403aaa5b63ee6",
+      "actual_wire_sha256": "58d1da65083d6a97c8af355cfd9d87907260173f30d2f10aa3b73cc8d2f0c5d4",
+      "cycles": 1344,
+      "history_frames": 16,
+      "enrollments": 1,
+      "logical_code_hash_preserved": true,
+      "verified_dense_wire": true
+    }
+  ],
+  "policy_id": "6c754fdffbbc72e2fcfb3606f484fd20e116bf7699073e289ce2a1432769bb77"
+}

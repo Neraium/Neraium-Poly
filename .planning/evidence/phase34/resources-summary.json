@@ -1,0 +1,61 @@
+{
+  "before": {
+    "paper": {
+      "elapsed_seconds": 120.062294,
+      "mean_logical_cpu_cores": 0.5599655042406569,
+      "anonymous_bytes_min": 419532800,
+      "anonymous_bytes_max": 419532800,
+      "cgroup_bytes_min": 988844032,
+      "cgroup_bytes_max": 993538048,
+      "oom_kill_delta": 0
+    },
+    "experimental": {
+      "elapsed_seconds": 120.062294,
+      "mean_logical_cpu_cores": 0.6503252136761606,
+      "anonymous_bytes_min": 714547200,
+      "anonymous_bytes_max": 801800192,
+      "cgroup_bytes_min": 2028036096,
+      "cgroup_bytes_max": 2112114688,
+      "oom_kill_delta": 0
+    }
+  },
+  "after": {
+    "paper": {
+      "elapsed_seconds": 120.040577,
+      "mean_logical_cpu_cores": 0.5719451265216761,
+      "anonymous_bytes_min": 261955584,
+      "anonymous_bytes_max": 339333120,
+      "cgroup_bytes_min": 1067315200,
+      "cgroup_bytes_max": 1073737728,
+      "oom_kill_delta": 0
+    },
+    "experimental": {
+      "elapsed_seconds": 120.040577,
+      "mean_logical_cpu_cores": 0.6093928138982537,
+      "anonymous_bytes_min": 532660224,
+      "anonymous_bytes_max": 716058624,
+      "cgroup_bytes_min": 2048589824,
+      "cgroup_bytes_max": 2147266560,
+      "oom_kill_delta": 0
+    }
+  },
+  "scope": "kernel cgroup samples during identical120s HTTPsamplers; anonymousmemory is not totalRSS; cgroup current includesreclaimablefilecache; serviceage/workloaddiffers afterrestart, no long-term leak conclusion",
+  "bounded": {
+    "paper": {
+      "seconds": 120.039942,
+      "mean_logical_cpu_cores": 0.3431210338305562,
+      "anonymous_bytes_min": 407285760,
+      "anonymous_bytes_max": 410382336,
+      "cgroup_bytes_max": 1073848320,
+      "oom_kill_delta": 0
+    },
+    "experimental": {
+      "seconds": 120.039942,
+      "mean_logical_cpu_cores": 0.5992859443400931,
+      "anonymous_bytes_min": 669343744,
+      "anonymous_bytes_max": 720609280,
+      "cgroup_bytes_max": 2143711232,
+      "oom_kill_delta": 0
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "scope": "read-only metadata attribution; unrelated project untouched, no cleanup authorized",
+  "unrelated_output_path": "/home/ubuntu/.local/share/neraium-citadel/worktrees/67cbc710e2914bb7/municipal-portable-pov-20261108/output/portable-pov/municipal-20261108",
+  "allocated_bytes": 23271854080,
+  "modified_since_baseline_allocated_gib": 20.838,
+  "modified_bytes_are_not_exact_growth_delta": true,
+  "major_new_files": [
+    {
+      "path": "10m-64-5gib/synthetic.csv",
+      "allocated_bytes": 5368709120,
+      "birth_utc": "2026-11-08T22:41:12Z"
+    },
+    {
+      "path": "10m-64-5gib/stage/data.sqlite",
+      "allocated_bytes": 5480128512,
+      "birth_utc": "2026-11-08T22:41:28Z",
+      "last_modified_utc": "2026-11-08T22:46:28Z"
+    },
+    {
+      "path": "stable-offline/stage/data.sqlite",
+      "allocated_bytes": 5480128512,
+      "birth_utc": "2026-11-08T22:46:32Z",
+      "last_modified_utc": "2026-11-08T22:50:51Z"
+    }
+  ],
+  "open_references": "none in bounded lsof observation, not proof of disposability",
+  "actions": "no contents read, no deletion, relocation, compression or other mutation"
+}

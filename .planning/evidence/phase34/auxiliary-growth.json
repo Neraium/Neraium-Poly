@@ -1,0 +1,97 @@
+{
+  "scope": "top-level actual experimental SQLite/WAL/SHM allocation at both window endpoints; sealed-kind sample separately reports logical payloads; WAL peaks may be temporary",
+  "before": "2026-11-08T22:37:12.295416+00:00",
+  "after": "2026-11-08T22:42:12.500980+00:00",
+  "files": [
+    {
+      "file": "events-archive.sqlite",
+      "size_bytes": 748584960,
+      "interval_growth_bytes": 851968
+    },
+    {
+      "file": "events.sqlite",
+      "size_bytes": 517521408,
+      "interval_growth_bytes": 0
+    },
+    {
+      "file": "events-archive.sqlite-wal",
+      "size_bytes": 28584592,
+      "interval_growth_bytes": 0
+    },
+    {
+      "file": "service.sqlite-wal",
+      "size_bytes": 6072912,
+      "interval_growth_bytes": 0
+    },
+    {
+      "file": "risk.sqlite",
+      "size_bytes": 5976064,
+      "interval_growth_bytes": 86016
+    },
+    {
+      "file": "service.sqlite",
+      "size_bytes": 5677056,
+      "interval_growth_bytes": 0
+    },
+    {
+      "file": "research-projection.sqlite-wal",
+      "size_bytes": 4132392,
+      "interval_growth_bytes": 0
+    },
+    {
+      "file": "risk.sqlite-wal",
+      "size_bytes": 4128272,
+      "interval_growth_bytes": 0
+    },
+    {
+      "file": "research-projection.sqlite",
+      "size_bytes": 2121728,
+      "interval_growth_bytes": 0
+    },
+    {
+      "file": "broker.sqlite-wal",
+      "size_bytes": 935272,
+      "interval_growth_bytes": 0
+    },
+    {
+      "file": "events.sqlite-shm",
+      "size_bytes": 32768,
+      "interval_growth_bytes": 0
+    },
+    {
+      "file": "broker.sqlite-shm",
+      "size_bytes": 32768,
+      "interval_growth_bytes": 0
+    },
+    {
+      "file": "service.sqlite-shm",
+      "size_bytes": 32768,
+      "interval_growth_bytes": 0
+    },
+    {
+      "file": "research-projection.sqlite-shm",
+      "size_bytes": 32768,
+      "interval_growth_bytes": 0
+    },
+    {
+      "file": "events-archive.sqlite-shm",
+      "size_bytes": 32768,
+      "interval_growth_bytes": 0
+    },
+    {
+      "file": "risk.sqlite-shm",
+      "size_bytes": 32768,
+      "interval_growth_bytes": 0
+    },
+    {
+      "file": "broker.sqlite",
+      "size_bytes": 4096,
+      "interval_growth_bytes": 0
+    },
+    {
+      "file": "events.sqlite-wal",
+      "size_bytes": 0,
+      "interval_growth_bytes": 0
+    }
+  ]
+}

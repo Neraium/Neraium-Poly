@@ -1,0 +1,25 @@
+{
+  "observed_at": "2026-11-08T23:43:45.975101+00:00",
+  "original_immutable_sources_preserved": 3792,
+  "journals": {
+    "event-intelligence/forecasts.sqlite": {
+      "records": 4896,
+      "head_sha256": "572478781d3a4e268e0e0aa296add2250b53b39e1a1f0b641e27299280a9e397",
+      "preexisting_prefix_preserved": true
+    },
+    "event-intelligence/sports/prospective.sqlite": {
+      "records": 22,
+      "head_sha256": "44692034b7edaf9ca87e2a7020bc1ead4be4b5612d0ccd430033a53f09baded4",
+      "preexisting_prefix_preserved": true
+    },
+    "event-intelligence/domains/forecasts.sqlite": {
+      "records": 199,
+      "head_sha256": "8dff598b0d97b63f9fa11a7d5ca4e31ef2eeb93759120f540543b1cb62435eb4",
+      "preexisting_prefix_preserved": true
+    }
+  },
+  "local_full_manifest": "data/phase34/integrity-after.json",
+  "full_manifest_sha256": "da106429e09401a2faec3053eaebcd74c4e773530a47aeedf1e6ada69b0142c1",
+  "original_probe_script_sha256": "a5f134a109b39e19937abe3fdafca0216bc422eafa89dedafbfd9211b39c246d",
+  "scope": "raw originals unchanged; complete startup integrity plus full journal-prefix/catalog preservation; newest physical copy restoration separately checked"
+}

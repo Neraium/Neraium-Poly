@@ -1,0 +1,26 @@
+{
+  "start": "2026-11-08T23:38:29.565207+00:00",
+  "end": "2026-11-08T23:43:29.800160+00:00",
+  "seconds": 300.234953,
+  "scope": "whole-service cached capacity bytes including raw/gzip/SQLite/WAL/temp; workload and temporary accounting may vary",
+  "services": {
+    "collector": {
+      "measurement_start": "2026-11-08T23:38:27.834470+00:00",
+      "measurement_end": "2026-11-08T23:42:59.712004+00:00",
+      "measurement_seconds": 271.877534,
+      "before_bytes": 22127346066,
+      "after_bytes": 22138378682,
+      "bytes_per_second": 40579.35879321312,
+      "conditional_runway_days": 39.62368859891058
+    },
+    "experimental": {
+      "measurement_start": "2026-11-08T23:38:29.301007+00:00",
+      "measurement_end": "2026-11-08T23:43:25.878518+00:00",
+      "measurement_seconds": 296.577511,
+      "before_bytes": 17269785220,
+      "after_bytes": 17299898319,
+      "bytes_per_second": 101535.34197001201,
+      "conditional_runway_days": 16.387444747903462
+    }
+  }
+}
