@@ -1,0 +1,232 @@
+{
+  "at": "2026-11-08T18:33:43.764403+00:00",
+  "discovered": 64,
+  "native_parents": [
+    "1330011",
+    "1330021",
+    "1330033",
+    "1338333",
+    "1338336",
+    "1338355"
+  ],
+  "market": {
+    "schema_version": "1.0",
+    "id": "6f0d0074f009c2dc6ce5d4ad1718472fdb1eca3731e2a3fda4823bb69902a4e8",
+    "timestamp": "2026-11-08T18:33:43.368175Z",
+    "available_at": "2026-11-08T18:33:43.368175Z",
+    "source": "https://gamma-api.polymarket.com",
+    "exchange": "polymarket",
+    "market_id": "6773115",
+    "event_id": "1330033",
+    "question": "Will the highest temperature in Qingdao be 10\u00b0C on November 9?",
+    "token_id": "93201894110784165705464700021750213028306275027396641963160462292310311545236",
+    "outcome": "No",
+    "probability": 0.445,
+    "status": "active",
+    "resolution_rules": "This market will resolve to the temperature range that contains the highest temperature reported at Qingdao Jiaodong International Airport (ZSQD) on 9 Nov '26.\n\nThe qualifying value is the highest temperature reported in the hourly temperature remark of any routine (METAR) observation for Qingdao Jiaodong International Airport (ZSQD) on that date, in tenths of a degree Celsius as reported. A report whose line begins with SPECI is a special observation and does not count. Every other report is routine, including one issued off the nominal hour and one that carries no METAR or SPECI label.\n\nFor How to Read the METAR Report, see: https://polymarket-upload.s3.us-east-2.amazonaws.com/market_products/Weather/How+to+Read+the+METAR+Report.pdf\n\nThe hourly temperature remark is the group beginning with the letter T followed by exactly eight digits. After the T, one digit for sign (0 positive, 1 negative) and three for tenths of a degree Celsius give the temperature; the following four are the dew point and are not used. T01390133 is 13.9\u00b0C; T10171022 is \u22121.7\u00b0C.\n\nIf a routine observation does not carry the hourly temperature remark, the temperature group in the body of that observation governs for that observation, in whole degrees Celsius as reported. It appears as temperature and dew point separated by a slash, with M marking a negative value: 18/12 is 18\u00b0C; M11/M17 is \u221211\u00b0C. An observation that reports no temperature in either place is disregarded.\n\nEach market in this event states its range in whole degrees Celsius. The qualifying value is rounded to the nearest whole degree, with a value ending in exactly half rounded up to the next higher whole degree, and that whole Celsius value determines which range contains it. For example, 13.9\u00b0C counts as 14\u00b0C; 17.4\u00b0C counts as 17\u00b0C; 16.5\u00b0C counts as 17\u00b0C; \u22121.7\u00b0C counts as \u22122\u00b0C; \u22128.5\u00b0C counts as \u22128\u00b0C.\n\nAn observation counts if its time stamp, converted to the station's local time (including any daylight-saving shift in effect), falls on the observation date.\n\nThis market will resolve at the issuance of the first METAR observation for the station on the day following the observation date or by 11:59 PM ET on the day following the observation date, whichever comes first. Resolution is determined from the observations the resolution source shows for the observation date.\n\nIn the event that the Aviation Weather Center has published no routine observation reporting a temperature for the observation date by 11:59 PM ET on the day following the observation date, the Weather Underground Daily Observations table will be used as the resolution source. In the event that neither source has published data sufficient to determine a temperature for the observation date by 11:59 PM ET on the day following the observation date, this market will resolve to the lowest bracket.\n\nThe report the resolution source shows for a given observation time is the one that counts, whether or not it is marked as a correction (COR). Changes to observations within this market's timeframe will be considered until the first datapoint for the following date has been published, after which any alterations will not be considered. Where the first routine observation for the following date is published before that deadline, resolution is determined from a read taken after it. Where it is not, resolution is determined from a read taken at that deadline.\n\nIn the case that the Resolution Source publishes data, sufficient to settle a Market, that is clearly erroneous and the result of technical or operational error, or of unauthorized interference with the Resolution Source or its data, the Market may remain open for a period of up to seven (7) calendar days (ET) from the time of the original release, in anticipation of a correction by the Resolution Source. If the Resolution Source publishes a corrected value within that period, that value will be eligible for resolution. If no corrected value is published within that period, Polymarket will issue a Clarification to determine whether the originally published value may be eligible for resolution, or whether other action is required to preserve the orderly functioning of the Market.\n\nThe resolution source for this market will be the routine observations for Qingdao Jiaodong International Airport (ZSQD) published here:\nhttps://aviationweather.gov/api/data/metar?ids=ZSQD&format=raw&date=2026-11-09T19:00:00Z&hours=30",
+    "resolution_source": "https://aviationweather.gov/api/data/metar?ids=ZSQD&format=raw&date=2026-11-09T19:00:00Z&hours=30",
+    "end_time": "2026-11-09T12:00:00Z",
+    "tick_size": 0.01,
+    "min_order_size": 5.0
+  },
+  "scope": "genuine public source ingestion probe; no live journals or accounts",
+  "book": {
+    "schema_version": "1.0",
+    "id": "7f830a604357a415025136781cbf031f054804e70b70d568c0e317f311c3eb25",
+    "timestamp": "2026-11-08T18:33:43.674000Z",
+    "available_at": "2026-11-08T18:33:43.974038Z",
+    "source": "https://clob.polymarket.com",
+    "exchange": "polymarket",
+    "market_id": "6773115",
+    "token_id": "93201894110784165705464700021750213028306275027396641963160462292310311545236",
+    "bids": [
+      {
+        "price": 0.43,
+        "size": 5.0
+      },
+      {
+        "price": 0.42,
+        "size": 120.0
+      },
+      {
+        "price": 0.41,
+        "size": 20.0
+      },
+      {
+        "price": 0.37,
+        "size": 13.4
+      },
+      {
+        "price": 0.36,
+        "size": 5.0
+      },
+      {
+        "price": 0.35,
+        "size": 119.38
+      },
+      {
+        "price": 0.34,
+        "size": 15.88
+      },
+      {
+        "price": 0.32,
+        "size": 6.25
+      },
+      {
+        "price": 0.3,
+        "size": 11.66
+      },
+      {
+        "price": 0.29,
+        "size": 10.0
+      },
+      {
+        "price": 0.28,
+        "size": 7.14
+      },
+      {
+        "price": 0.26,
+        "size": 7.69
+      },
+      {
+        "price": 0.24,
+        "size": 8.33
+      },
+      {
+        "price": 0.22,
+        "size": 9.09
+      },
+      {
+        "price": 0.2,
+        "size": 5.0
+      },
+      {
+        "price": 0.16,
+        "size": 10.0
+      },
+      {
+        "price": 0.1,
+        "size": 10.0
+      },
+      {
+        "price": 0.09,
+        "size": 11.11
+      },
+      {
+        "price": 0.08,
+        "size": 106.5
+      },
+      {
+        "price": 0.07,
+        "size": 14.28
+      },
+      {
+        "price": 0.06,
+        "size": 16.66
+      },
+      {
+        "price": 0.05,
+        "size": 20.0
+      },
+      {
+        "price": 0.04,
+        "size": 40.0
+      },
+      {
+        "price": 0.03,
+        "size": 67.33
+      },
+      {
+        "price": 0.02,
+        "size": 110.0
+      },
+      {
+        "price": 0.01,
+        "size": 626.0
+      }
+    ],
+    "asks": [
+      {
+        "price": 0.46,
+        "size": 120.99
+      },
+      {
+        "price": 0.47,
+        "size": 170.0
+      },
+      {
+        "price": 0.48,
+        "size": 60730.0
+      },
+      {
+        "price": 0.49,
+        "size": 29.0
+      },
+      {
+        "price": 0.5,
+        "size": 31.94
+      },
+      {
+        "price": 0.51,
+        "size": 10.27
+      },
+      {
+        "price": 0.54,
+        "size": 5.0
+      },
+      {
+        "price": 0.57,
+        "size": 5.0
+      },
+      {
+        "price": 0.76,
+        "size": 20.0
+      },
+      {
+        "price": 0.77,
+        "size": 10.0
+      },
+      {
+        "price": 0.91,
+        "size": 20.0
+      },
+      {
+        "price": 0.92,
+        "size": 23.0
+      },
+      {
+        "price": 0.94,
+        "size": 20.0
+      },
+      {
+        "price": 0.95,
+        "size": 10.0
+      },
+      {
+        "price": 0.98,
+        "size": 25.0
+      },
+      {
+        "price": 0.99,
+        "size": 10034.78
+      }
+    ],
+    "sequence": 0,
+    "complete": true
+  },
+  "book_quality": "DataHealth(healthy=True, reasons=(), age_seconds=0.300322, spread=0.030000000000000027)",
+  "forecast_result": {
+    "forecasts": [],
+    "evidence": [],
+    "rejections": [
+      ""
+    ]
+  },
+  "external_source_probe": {
+    "evidence_count": 2,
+    "source_ids": [
+      "ZSQD",
+      "ZSQD"
+    ]
+  }
+}

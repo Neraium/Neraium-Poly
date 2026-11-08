@@ -1,0 +1,9 @@
+# Phase30 coverage
+
+Actual18:27UTC prechange120findings:44matched,28native-stale/receiptquality,46ended,2unavailable(oneupcomingmarket6833626/twomodels). Previous weathercoveragegapsare nowended events, not currenttrade candidates. No freshness/time standards relaxed. Remaining supplementalGDP/SPX streams often lack fresh sourcebaseline despite attempts; external native-time failures remain legitimate.
+
+Actual software gap repaired: phase25 Universe silently skipped modules lacking discover(); existing weather model had no discovery route. NEWphase30.coverage.discover_weather uses existing bounded public Gamma acquisition for3reviewedcities, exactunchanged weather.supports station/source/rules checks, parent-diverse≤64tokens. Universe nowinvokes thisfallback and records combineddiscovery/helpercodehash. Existing32token WS cap unchanged; no quantmodelsource/hash changes, no authority, no live journal/accountwrites.
+
+AuthenticChengdu search normalized44supportedtokens/2nativeparentdays;3city route returned64tokens/6nativeparents at18:33UTC. Nativebookprobe market6773115/event1330033 source18:33:43.674Z mapped correctly. Initial independent-source call returned blankexception; explicit subsequent AWCcollection succeeded with2actualsourceevidence records. Full isolated prospective model attempt retained separately, never described as canonical live forecasts/trades. See artifact outcomes for exact unsupported/success states, not inferred probabilities.
+
+14 focusednew/existingintegrationcases passed;Ruffpassed. Source testscontrolledfixturesonly. API integratesautomaticallyin existingUniverse; rootneednotalterruntime. Existingpolicyfingerprintdiscovery.py changes newresearchenrollment, originalforecasts preserved. Full rawoperationsbefore.json remains untracked in this isolatedworktree, compactverifiable counters committed. No originalarchive deleted/moved.
