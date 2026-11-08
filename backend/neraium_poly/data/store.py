@@ -7,7 +7,28 @@ from datetime import datetime
 from pathlib import Path
 from threading import RLock
 
+from pydantic import BaseModel, ConfigDict, StrictStr
+
 from neraium_poly.contracts import Record
+
+
+class _EventMetadata(BaseModel):
+    # The JSON parser still consumes the complete payload, but unrelated nested
+    # evidence is not materialized as a second Python object graph.
+    model_config = ConfigDict(extra="ignore", frozen=True)
+    id: StrictStr
+    available_at: StrictStr
+    timestamp: StrictStr
+    qualified: object = None
+
+
+def _payload_metadata(payload, record_id, available_at, event_time):
+    value = _EventMetadata.model_validate_json(payload)
+    if (value.id != record_id
+        or datetime.fromisoformat(value.timestamp) != datetime.fromisoformat(event_time)
+        or datetime.fromisoformat(value.available_at) != datetime.fromisoformat(available_at)):
+        raise ValueError("archive row metadata does not match original payload")
+    return int(value.qualified) if type(value.qualified) is bool else -1
 
 
 class EventStore:
@@ -33,22 +54,25 @@ class EventStore:
         self.connection.close()
 
     def append(self, record: Record) -> bool:
-        payload = record.model_dump_json()
+        return self._append_payload(record.id, type(record).__name__,
+            record.available_at.isoformat(), record.timestamp.isoformat(), record.model_dump_json())
+
+    def _append_payload(self, record_id, kind, available_at, event_time, payload):
+        """Internal exact-payload path, independently checked before committing.
+
+        ManagedEventStore supplies its already serialized immutable text so the
+        active segment and catalog can never observe two serializations of a
+        mutable nested record. No validation or digest protection is bypassed.
+        """
         digest = hashlib.sha256(payload.encode()).hexdigest()
+        _payload_metadata(payload, record_id, available_at, event_time)
         with self._lock, self.connection:
             inserted = self.connection.execute(
                 "INSERT OR IGNORE INTO events VALUES (?,?,?,?,?,?)",
-                (
-                    record.id,
-                    type(record).__name__,
-                    record.available_at.isoformat(),
-                    record.timestamp.isoformat(),
-                    payload,
-                    digest,
-                ),
+                (record_id, kind, available_at, event_time, payload, digest),
             ).rowcount
             previous = self.connection.execute(
-                "SELECT digest FROM events WHERE id=?", (record.id,)
+                "SELECT digest FROM events WHERE id=?", (record_id,)
             ).fetchone()
             if previous[0] != digest:
                 raise ValueError("event ID collision with different payload")

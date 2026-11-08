@@ -1,0 +1,24 @@
+{
+  "focused_tests_passed": 40,
+  "suites": [
+    "phase30_memory",
+    "segmented_archive",
+    "archive_failures",
+    "phase15_managed_cold",
+    "archive_process_recovery",
+    "archive_segment_index"
+  ],
+  "ruff": "passed",
+  "source_originals_changed": false,
+  "service_restarts": false,
+  "memory_cap_changes": false,
+  "gc_or_malloc_trim": false,
+  "actual_ooms_since_phase29": {
+    "experimental": "2026-11-08T17:21:24Z",
+    "collector": "2026-11-08T17:33:12Z"
+  },
+  "current_oom_count": 1,
+  "allocator_evidence": "live malloc approximately flat but free arena grew; evidence does not establish sole causal allocation site",
+  "implemented": "single exact serialization; cached encoded byte count; syntax-checked metadata-only JSON extraction rather than materializing all nested evidence for indexing",
+  "post_deployment_longrun_required": true
+}

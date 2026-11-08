@@ -22,7 +22,7 @@ from datetime import UTC, datetime
 from pathlib import Path
 from threading import RLock
 
-from neraium_poly.data.store import EventStore
+from neraium_poly.data.store import EventStore, _payload_metadata
 
 NAME = re.compile(r"segment-[0-9]{8}\.sqlite\Z")
 CHUNK = 1024 * 1024
@@ -254,12 +254,7 @@ class ManagedEventStore:
         rid, kind, available, event, payload, digest = row
         if hashlib.sha256(payload.encode()).hexdigest() != digest:
             raise ValueError("corrupt archive payload digest")
-        parsed = json.loads(payload)
-        if (parsed.get("id") != rid
-            or datetime.fromisoformat(parsed["timestamp"]) != datetime.fromisoformat(event)
-            or datetime.fromisoformat(parsed["available_at"]) != datetime.fromisoformat(available)):
-            raise ValueError("archive row metadata does not match original payload")
-        qualified = int(parsed["qualified"]) if type(parsed.get("qualified")) is bool else -1
+        qualified = _payload_metadata(payload, rid, available, event)
         previous = self.catalog.execute("SELECT * FROM records WHERE id=?", (rid,)).fetchone()
         expected = (rid, kind, available, event, digest, segment, qualified)
         if previous:
@@ -499,8 +494,11 @@ class ManagedEventStore:
 
     def append(self, record):
         payload = record.model_dump_json()
-        digest = hashlib.sha256(payload.encode()).hexdigest()
-        if len(payload.encode()) > 8 * CHUNK:
+        encoded = payload.encode()
+        payload_size = len(encoded)
+        digest = hashlib.sha256(encoded).hexdigest()
+        del encoded
+        if payload_size > 8 * CHUNK:
             raise ValueError("archive record exceeds bounded payload size")
         with self._lock:
             if self._dirty:
@@ -514,22 +512,22 @@ class ManagedEventStore:
                 return False
             if self._last_error:
                 raise ValueError(self._last_error)
-            self._check_budget(len(payload.encode()) * 3 + 256 * 1024)
+            self._check_budget(payload_size * 3 + 256 * 1024)
             if self.active is None:
                 self._recover()
             active_size = sum(p.stat().st_size for p in self.segment_dir.glob(self.active_name + "*") if p.is_file())
-            if active_size + len(payload.encode()) * 2 + 8192 > self.segment_bytes and self.active.count():
+            if active_size + payload_size * 2 + 8192 > self.segment_bytes and self.active.count():
                 self._seal_active()
                 self._create_active()
             row = (record.id, type(record).__name__, record.available_at.isoformat(), record.timestamp.isoformat(), payload, digest)
-            self.active.append(record)
+            self.active._append_payload(record.id, type(record).__name__, row[2], row[3], payload)
             self._dirty = True
             try:
                 with self.catalog:
                     self._catalog_record(row, self.active_name)
                     self.catalog.execute("UPDATE segments SET records=records+1 WHERE name=?", (self.active_name,))
                 self._dirty = False
-                self._pending += len(payload.encode()) * 3 + 256 * 1024
+                self._pending += payload_size * 3 + 256 * 1024
             except BaseException:
                 self._last_error = "archive catalogue recovery required"
                 raise

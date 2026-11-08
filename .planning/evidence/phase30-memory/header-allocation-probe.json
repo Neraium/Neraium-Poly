@@ -1,0 +1,24 @@
+{
+  "actual_payload_bytes": 2436971,
+  "actual_payload_sha256": "b153a73200baaad6edd3f5086b0a45141b2609565a8b988fcfe63940920ecdf0",
+  "scope": "read-only actual VolumeStudy full JSON header extraction; one bounded probe, no process OOM causal claim",
+  "results": {
+    "full_header_decode": {
+      "elapsed_seconds": 0.8064817360136658,
+      "peak_traced_bytes": 3491412,
+      "current_traced_bytes": 21600,
+      "iterations": 30
+    },
+    "metadata_only_header": {
+      "elapsed_seconds": 0.0370768120046705,
+      "peak_traced_bytes": 882,
+      "current_traced_bytes": 136,
+      "iterations": 30
+    }
+  },
+  "serialization_calls_per_managed_append": {
+    "before": 2,
+    "after": 1
+  },
+  "original_bytes_changed": false
+}
