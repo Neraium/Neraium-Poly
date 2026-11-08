@@ -1273,6 +1273,7 @@ class ExperimentalRuntime:
         state["research_costs"] = self.research_fees.status() if getattr(self,"research_fees",None) else None
         state["weather_input_selection"] = getattr(self, "weather_input_selection", {"status":"not_yet_evaluated","trading_authority":False})
         state["research_io"] = self._research_worker.status() if getattr(self, "_research_worker", None) else {"status":"not_started","trading_authority":False}
+        state["execution_pools"] = getattr(self, "execution_pool_budget", {"status":"not_configured_by_service_entrypoint","trading_authority":False})
         state["memory"] = self.memory_sampler.status() if getattr(self,"memory_sampler",None) else None
         return state
 
@@ -1384,7 +1385,10 @@ async def serve_experimental(config):
 
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s %(message)s")
     logging.getLogger("httpx").setLevel(logging.WARNING)
+    from neraium_poly.experimental.executors import configure_execution_pools
+    pool_budget = await configure_execution_pools()
     runtime = ExperimentalRuntime(config)
+    runtime.execution_pool_budget = pool_budget
     app = create_app(runtime=runtime, local_port=config.port)
     server = uvicorn.Server(uvicorn.Config(app, host=config.host, port=config.port, log_level="warning"))
     try:
