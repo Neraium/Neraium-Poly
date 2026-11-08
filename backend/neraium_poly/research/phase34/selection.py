@@ -16,8 +16,10 @@ from neraium_poly.research.phase25.dependencies import at
 
 class WeatherInputSelection(Record):
     source_frame_id:str
-    policy_sha256:str
+    source_frame_sha256:str=Field(pattern=r"^[a-f0-9]{64}$")
+    policy_sha256:str=Field(pattern=r"^[a-f0-9]{64}$")
     selected_frame_id:str
+    selected_frame_sha256:str=Field(pattern=r"^[a-f0-9]{64}$")
     deferred_tokens:list[str]=Field(default_factory=list)
     preferred_tokens:list[str]=Field(default_factory=list)
     rejection_counts:dict=Field(default_factory=dict)
@@ -59,14 +61,14 @@ def prepare_weather_frame(frame, *, as_of):
             preferred.extend(fresh)
             for token in tokens:
                 if reasons[token]:deferred.append(token);counts.update(reasons[token])
-    policy=digest(Path(__file__).read_text());deferred_set=set(deferred);kept=[m for m in typed.markets if m.token_id not in deferred_set]
+    policy=digest(Path(__file__).read_text());source_sha=digest(raw);deferred_set=set(deferred);kept=[m for m in typed.markets if m.token_id not in deferred_set]
     selected=typed
     if deferred:
-        selected=SharedMarketFrame.model_validate({**raw,'id':digest(['phase34-weather-fresh-siblings',policy,raw['id'],sorted(deferred),now.isoformat()]),
+        selected=SharedMarketFrame.model_validate({**raw,'id':digest(['phase34-weather-fresh-siblings',policy,raw['id'],source_sha,sorted(deferred),now.isoformat()]),
             'timestamp':now.isoformat(),'available_at':now.isoformat(),'markets':[m.model_dump(mode='json') for m in kept],
             'books':[b.model_dump(mode='json') for b in typed.books if b.token_id not in deferred_set]})
-    report={'schema_version':'phase34-weather-source-selection-v1','as_of':now.isoformat(),'source_frame_id':typed.id,
-        'selected_frame_id':selected.id,'policy_sha256':policy,'preferred_tokens':preferred,'deferred_tokens':deferred,
+    report={'schema_version':'phase34-weather-source-selection-v1','as_of':now.isoformat(),'source_frame_id':typed.id,'source_frame_sha256':source_sha,
+        'selected_frame_id':selected.id,'selected_frame_sha256':digest(selected.model_dump(mode='json')),'policy_sha256':policy,'preferred_tokens':preferred,'deferred_tokens':deferred,
         'rejection_counts':dict(counts),'supported_station_days':len(groups),'scope':'source scheduling only; original model, evidence, spread, freshness, risk and forecast dedup gates unchanged',
         'research_only':True,'trading_authority':False,'certification_authority':False}
     return selected,report

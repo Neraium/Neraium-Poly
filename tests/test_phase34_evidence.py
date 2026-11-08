@@ -146,3 +146,29 @@ def test_weather_subscription_never_duplicates_base_tokens_or_reserved_forecast(
     assert [m.token_id for m in rows]==['A']
     rows,_=select_weather_aware_supplemental_markets([a,b],base_tokens=set(),adapters={'weather':weather},as_of=NOW,maximum=2,forecast_tokens=['B'])
     assert len(rows)==len({m.token_id for m in rows})==2
+
+
+
+def test_weather_selection_binds_exact_source_and_output_not_only_ids():
+    from neraium_poly.research.phase34.selection import prepare_weather_frame
+    frame=selection_case();selected,report=prepare_weather_frame(frame,as_of=NOW)
+    assert report['source_frame_sha256']==digest(frame.model_dump(mode='json'))
+    assert report['selected_frame_sha256']==digest(selected.model_dump(mode='json'))
+    # Same frame/book IDs and selection decisions, different original depth:
+    # neither the derived ID nor either persisted logical hash may alias it.
+    raw=frame.model_dump(mode='json');raw['books'][0]['asks'][0]['size']=101
+    changed,other=prepare_weather_frame(raw,as_of=NOW)
+    assert report['deferred_tokens']==other['deferred_tokens']
+    assert other['source_frame_id']==report['source_frame_id']
+    assert changed.id!=selected.id
+    assert report['source_frame_sha256']!=other['source_frame_sha256']
+    assert report['selected_frame_sha256']!=other['selected_frame_sha256']
+
+
+
+def test_weather_selection_record_requires_content_hash_bindings():
+    from neraium_poly.research.phase34.selection import WeatherInputSelection
+    from pydantic import ValidationError
+    data={'timestamp':NOW,'available_at':NOW,'source':'CONTROLLED','source_frame_id':'S','selected_frame_id':'T','policy_sha256':'c'*64}
+    with pytest.raises(ValidationError):WeatherInputSelection(**data)
+    with pytest.raises(ValidationError):WeatherInputSelection(**data,source_frame_sha256='invalid',selected_frame_sha256='b'*64)
