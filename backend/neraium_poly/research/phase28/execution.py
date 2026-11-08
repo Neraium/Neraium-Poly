@@ -63,7 +63,7 @@ def analyze_depth(book, *, as_of, expected_payout, lower_payout=None, upper_payo
         if (len(b.bids)+len(b.asks) > 4096
             or len({x.price for x in b.bids}) != len(b.bids)
             or len({x.price for x in b.asks}) != len(b.asks)
-            or any(len(x) > 512 for x in (b.id, b.market_id, b.token_id))):
+            or any(not 1 <= len(x) <= 512 for x in (b.id, b.market_id, b.token_id))):
             raise ValueError('bounded_unique_book_identity_and_levels_required')
         if any(not _number(x.size, EPS, 1e12) for x in (*b.bids, *b.asks)) or not _number(math.fsum(x.size for x in b.asks), 0, 1e12):
             raise ValueError('bounded_finite_displayed_quantity_required')

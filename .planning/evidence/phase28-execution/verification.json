@@ -1,6 +1,6 @@
 {
-  "focused_test_cases_passed": 31,
-  "ruff": "imports fixed; all checks passed",
+  "focused_test_cases_passed": 34,
+  "ruff": "All checks passed!",
   "api": "analyze_depth(book, *, as_of, expected_payout, lower_payout=None, upper_payout=None, fee_rate=None, slippage_per_share=0.0, latency_liquidity_fraction=0.1, capitals=CAPITALS, max_capital=None, fee_per_share=None, settlement_cost_per_share=None)",
   "fee_scope": "Effective acquisition surcharge scenario/bound, never raw exchange basefee. Absolute fee_per_share alternative; both cannot be supplied. Settlement provision independently nullable. Source/verifier evidence belongs to caller.",
   "small_edge_gate": null,
@@ -9,5 +9,6 @@
   "new_accounts_created": 0,
   "historical_originals_modified": false,
   "actual_fees_verified": false,
-  "scenario_profits_are_not_verified_performance": true
+  "scenario_profits_are_not_verified_performance": true,
+  "focused_followup": "3empty-identity regressions passed after explicit identitybound fix; prior31cases not redundantly rerun"
 }

@@ -168,3 +168,9 @@ def test_wide_spread_is_economic_input_not_research_admission_threshold():
     r=analyze(book(((.7,100),)),expected_payout=.8,lower_payout=.79,upper_payout=.9)
     assert r['status']=='conditional_assumption_scenarios'
     assert r['maximum_conservative_profit']['lower_net_profit']==pytest.approx(9)
+
+
+@pytest.mark.parametrize('field', ['id', 'market_id', 'token_id'])
+def test_empty_native_identity_cannot_produce_research_valuation(field):
+    r=analyze(book(**{field:''}))
+    assert r['status']=='withheld' and r['maximum_supported'] is None
