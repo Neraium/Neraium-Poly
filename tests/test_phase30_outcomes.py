@@ -73,3 +73,17 @@ async def test_official_event_group_deduplicates_models_for_identical_real_game(
     two=await outcomes.verify_official_event(changed,directory=tmp_path,clock=lambda:ASOF)
     assert one['event_group_id']==two['event_group_id'] and one['forecast_id']!=two['forecast_id']
     assert one['evidence_directory']!=two['evidence_directory']
+
+
+def test_official_schedule_disambiguates_historical_team_suffix_without_guessing():
+    import json
+    _m,f,_s,g,t,_h=fixtures()
+    # A retired catalog identity shares the current club's suffix, but does not
+    # appear in the official game at the exact forecast's scheduled date/time.
+    t['data'].append({'id':999,'fullName':'Historical Toronto Maple Leafs','leagueId':133})
+    r=native.select_game(json.dumps(g).encode(),json.dumps(t).encode(),f['contract']['parameters'],native.at(f['event_end_time']))
+    assert r['status']=='final_candidate' and r['teams']['Maple Leafs']['id']==10
+    # If two same-alias clubs really appear at this exact schedule, quarantine.
+    other=deepcopy(g['data'][0]);other.update(id=2026020269,gameNumber=269,homeTeamId=999);g['data'].append(other);g['total']=2
+    with pytest.raises(ValueError,match='unique_official_NHL_team_identity'):
+        native.select_game(json.dumps(g).encode(),json.dumps(t).encode(),f['contract']['parameters'],native.at(f['event_end_time']))

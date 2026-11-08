@@ -100,10 +100,22 @@ def _team_ids(teams,participants):
 def select_game(raw,teams_raw,parameters,start):
     """Strict primary identity and final-state check, before fetching the report."""
     if not 0<len(raw)<=MAX_BYTES or not 0<len(teams_raw)<=MAX_BYTES:raise ValueError('bounded_official_source_required')
-    data=json.loads(raw);teams=json.loads(teams_raw);ids=_team_ids(teams,parameters['participants'])
+    data=json.loads(raw);teams=json.loads(teams_raw)
     if not isinstance(data.get('data'),list) or not 0<=len(data['data'])<=50 or data.get('total',51)>50:
         raise ValueError('complete_bounded_official_game_date_required')
     local=at(start).astimezone(ZoneInfo('America/New_York'));season=local.year if local.month>=7 else local.year-1
+    # The official catalog includes retired franchises (e.g. Minnesota North
+    # Stars as well as Dallas Stars). Bind aliases to teams actually scheduled
+    # at this exact official date/time, never select a historical name by suffix.
+    current_ids=set()
+    for row in data['data']:
+        if row.get('gameDate')!=local.date().isoformat() or row.get('season')!=int(f'{season}{season+1}') or row.get('gameType')!=2:continue
+        scheduled=datetime.fromisoformat(row['easternStartTime'])
+        if scheduled.tzinfo is not None:raise ValueError('documented_eastern_game_clock_required')
+        if scheduled.replace(tzinfo=ZoneInfo('America/New_York')).astimezone(UTC)==at(start):
+            current_ids.update([row.get('homeTeamId'),row.get('visitingTeamId')])
+    if not isinstance(teams.get('data'),list) or len(teams['data'])>100:raise ValueError('bounded_official_team_catalog_required')
+    ids=_team_ids({**teams,'data':[t for t in teams['data'] if t.get('id') in current_ids]},parameters['participants'])
     found=[]
     for row in data['data']:
         if {row.get('homeTeamId'),row.get('visitingTeamId')}!={x['id'] for x in ids.values()}:continue
