@@ -4,13 +4,14 @@ from collections import Counter, defaultdict
 from datetime import timedelta
 from pathlib import Path
 
+from pydantic import Field
+
 from neraium_poly.contracts import MarketSnapshot, Record
 from neraium_poly.experimental.contracts import SharedMarketFrame
 from neraium_poly.research.phase14.relationships import digest
 from neraium_poly.research.phase25 import finance, weather
 from neraium_poly.research.phase25.continuous import modules
 from neraium_poly.research.phase25.dependencies import at
-from pydantic import Field
 
 WEATHER_QUERIES=('highest temperature in Chongqing','highest temperature in Qingdao','highest temperature in Chengdu')
 
