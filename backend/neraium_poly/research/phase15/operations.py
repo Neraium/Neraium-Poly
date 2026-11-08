@@ -66,6 +66,7 @@ def experimental_research(runtime, *, for_operations=False):
             "scope": "stable full declared-model registry projection; original legacy journals separately reconciled"}
     findings = getattr(runtime, "phase27", None)
     return {
+        "phase28": runtime.phase28.status() if getattr(runtime,"phase28",None) else {"status":"unavailable" if getattr(runtime,"phase28_error",None) else "disabled","runtime_error":getattr(runtime,"phase28_error",None),"trading_authority":False},
         "phase27": findings.status() if findings else {"status": "unavailable" if getattr(runtime, "phase27_error", None) else "disabled", "runtime_error": getattr(runtime, "phase27_error", None), "trading_authority": False},
         "phase26": intelligence,
         "phase25": expansion,

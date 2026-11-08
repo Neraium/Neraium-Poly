@@ -188,10 +188,15 @@ def main():
         from neraium_poly.research.phase17.provenance import ReadonlyArchive
         from neraium_poly.research.phase27.continuous import FindingsResearch
         with ReadonlyArchive(args.data_dir) as archive:
-            rows = archive.latest("EconomicFindingStudy", limit=1)
+            volume_rows = archive.latest("VolumeStudy", limit=1)
+            rows = volume_rows or archive.latest("EconomicFindingStudy", limit=1)
         if rows:
             row = rows[0]
-            report = FindingsResearch._summary(row["findings"], row["timestamp"], row["id"])
+            if volume_rows:
+                from neraium_poly.research.phase28.continuous import VolumeResearch
+                report = VolumeResearch._summary(row["report"], row["timestamp"], row["id"])
+            else:
+                report = FindingsResearch._summary(row["findings"], row["timestamp"], row["id"])
             age = (datetime.now(UTC)-datetime.fromisoformat(row["timestamp"])).total_seconds()
             report["observation_age_seconds"] = age
             report["status"] = "research_only" if 0 <= age <= 90 else "historical_stale"

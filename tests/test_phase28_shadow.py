@@ -302,3 +302,11 @@ def test_actual_economic_ranker_small_edge_row_reaches_post_latency_shadow_fill(
         assert status['actual_account_access'] is False and status['trading_authority'] is False
     finally:
         store.close()
+
+
+def test_market_exposure_aggregates_reservations_and_positions_across_sleeves():
+    state={'orders':{'o':{'market_id':'M','event_id':'E','clusters':['C'],'reserved':5}},
+           'positions':{'p':{'market_id':'M','event_id':'E','clusters':['C'],'cost':20},
+                        'other':{'market_id':'OTHER','event_id':'OTHER-E','clusters':['C'],'cost':30}}}
+    assert ShadowResearch._exposure(state,market='M')==25
+    assert ShadowResearch._exposure(state)==55

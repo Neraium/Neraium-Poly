@@ -70,7 +70,7 @@ class ShadowResearch:
         policy = {'version': 'phase28-shadow-v1', 'code_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
                   'publication_namespace': digest(str(getattr(store, 'directory', getattr(store, 'path', 'controlled-store')))),
                   'strategies': list(STRATEGIES), 'capital_scope': 'one hypothetical500USD shared research pool; not a paper account',
-                  'capital': 500., 'aggregate_exposure': 100., 'event_exposure': 50., 'correlation_exposure': 50.,
+                  'capital': 500., 'aggregate_exposure': 100., 'event_exposure': 50., 'correlation_exposure': 50., 'market_exposure': 25.,
                   'standard_notional': 5., 'high_conviction_notional': 10., 'minimum_order_notional': 2.,
                   'latency_seconds': .25, 'expiry_seconds': 60, 'liquidity_participation': .1,
                   'minimum_research_edge': 0., 'daily_loss_limit': 25., 'drawdown_limit': 50.,
@@ -139,10 +139,11 @@ class ShadowResearch:
         self.state, self.last_record = state, record.model_dump(mode='json');self.error = None
 
     @staticmethod
-    def _exposure(state, *, event=None, clusters=None):
+    def _exposure(state, *, event=None, clusters=None, market=None):
         total = 0.
         for x in [*state['orders'].values(), *state['positions'].values()]:
             if event is not None and x['event_id'] != event:continue
+            if market is not None and x['market_id'] != market:continue
             if clusters is not None and not set(x['clusters']).intersection(clusters):continue
             total += x.get('reserved', 0.)+x.get('cost', 0.)
         return total
@@ -309,7 +310,7 @@ class ShadowResearch:
                     requested = 10. if strategy == 'high_conviction' else 5.
                     available = min(state['cash']-sum(x['reserved'] for x in state['orders'].values()),
                                     100.-self._exposure(state), 50.-self._exposure(state, event=row['event_id']),
-                                    50.-self._exposure(state, clusters=groups), requested)
+                                    50.-self._exposure(state, clusters=groups), 25.-self._exposure(state, market=row['market_id']), requested)
                     if available < 2-EPS:raise ValueError('shadow_capital_or_concentration_limit')
                     cost = book.asks[0].price*(1+proof['fee_rate'])+proof['slippage_per_share']+proof['settlement_cost_per_share']
                     if proof['lower_payout']-cost <= EPS:raise ValueError('nonpositive_conservative_unit_profit_after_costs')

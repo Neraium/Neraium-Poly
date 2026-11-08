@@ -53,6 +53,8 @@ class LivePaperRuntime:
 
         self.config = config
         self.clock = clock or (lambda: datetime.now(UTC))
+        from neraium_poly.research.phase28.memory import MemorySampler
+        self.memory_sampler = MemorySampler()
         self.directory = config.data_dir.resolve()
         self.ledger = LiveLedger(self.directory)
         self._lock = RLock()
@@ -679,6 +681,7 @@ class LivePaperRuntime:
             )
 
     async def cycle(self):
+        if getattr(self,"memory_sampler",None):self.memory_sampler.sample("collector_cycle_start")
         Settings.from_env()
         now = self.clock()
         if self.config.archive_management_enabled:
@@ -812,6 +815,7 @@ class LivePaperRuntime:
                 self._save()
                 log.info("cycle %s", json.dumps(self.last_cycle))
         finally:
+            if getattr(self,"memory_sampler",None):self.memory_sampler.sample("collector_cycle_end")
             self.working = False
 
     async def _archive_measurements(self, should_stop):
@@ -895,6 +899,7 @@ class LivePaperRuntime:
             "simulated_pnl": account["equity"] - self.config.risk_limits.bankroll,
             "suspended": account["kill_switch"], "archive": self._archive_status(for_operations=True),
             "operation": {"cycles": self.totals["cycles"], "scan": dict(self.scan),
+                          "memory": self.memory_sampler.status() if getattr(self,"memory_sampler",None) else None,
                           "service": self.health(),
                           "connectivity": self.coverage.metrics() if self.coverage else {"ws_connected": False}},
             "scope": "archive health and current simulated capital; full event history remains in /api/state",

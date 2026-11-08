@@ -36,6 +36,7 @@ class ExperimentalConfig(BaseModel):
     phase25_research_enabled: bool = False
     phase26_intelligence_enabled: bool = False
     phase27_findings_enabled: bool = False
+    phase28_economics_enabled: bool = False
     phase16_execution_veto_enabled: bool = False
     phase15_relationship_research_enabled: bool = False
     domain_research_enabled: bool = False

@@ -54,6 +54,8 @@ class ExperimentalCycle(Record):
 class ExperimentalRuntime:
     def __init__(self, config: ExperimentalConfig, *, account=None, feed=None, clock=None, fee_adapter=None):
         Settings.from_env()
+        from neraium_poly.research.phase28.memory import MemorySampler
+        self.memory_sampler = MemorySampler()
         self.config = config
         self.clock = clock or (lambda: datetime.now(UTC))
         self._lock = RLock()
@@ -278,6 +280,19 @@ class ExperimentalRuntime:
                 except Exception as error:
                     self.phase27_error = f"{type(error).__name__}:{str(error)[:160]}"
                     log.exception("phase27_recovery_withheld")
+            self.phase28 = None
+            self.phase28_error = None
+            if config.phase28_economics_enabled:
+                try:
+                    from neraium_poly.research.phase28.continuous import VolumeResearch
+                    from neraium_poly.research.phase28.shadow import ShadowResearch
+                    if self.phase26_index is None:
+                        raise ValueError("volume research requires anchored source projection")
+                    shadow = ShadowResearch(self.events, clock=self.clock, can_write=self._budget_ok)
+                    self.phase28 = VolumeResearch(self.events,self.phase26_index,clock=self.clock,can_write=self._budget_ok,shadow=shadow)
+                except Exception as error:
+                    self.phase28_error = f"{type(error).__name__}:{str(error)[:160]}"
+                    log.exception("phase28_recovery_withheld")
             self.feed = feed or SharedFeedClient(config.source_url)
             self.fee_adapter = fee_adapter or AuditedFeeAdapter(
                 self.events, self._budget_ok, client=httpx.AsyncClient(timeout=5, follow_redirects=False)
@@ -420,6 +435,7 @@ class ExperimentalRuntime:
         )
 
     async def cycle(self):
+        if getattr(self,"memory_sampler",None):self.memory_sampler.sample("experimental_cycle_start")
         Settings.from_env()
         now = self.clock()
         if self.config.archive_management_enabled:
@@ -847,6 +863,36 @@ class ExperimentalRuntime:
                     break
                 await asyncio.sleep(1)
 
+    async def _volume_research_loop(self, should_exit):
+        # No external outcome/source-acquisition lock: fresh research observations
+        # must not wait for unrelated unresolved-event provider timeouts.
+        while not self.stopping and not should_exit():
+            if getattr(self,"phase28",None) is not None and self.last_frame is not None:
+                try:
+                    from neraium_poly.research.phase28.inputs import current_frame
+                    watcher = self.phase26_inputs.watcher if self.phase26_inputs else None
+                    frame = current_frame(self.last_frame, extra_markets=tuple(watcher._markets.values()) if watcher else (),
+                        extra_books=watcher.snapshot() if watcher else (), as_of=self.clock())
+                    async with self._research_report_lock:
+                        def evaluate(current=frame):
+                            from neraium_poly.research.phase26.reporting import callbacks
+                            vf,vo=callbacks(self.events,self.config.data_dir)
+                            self.phase26_index.step(self.events,as_of=self.clock(),forecast_verifier=vf,outcome_verifier=vo)
+                            self.phase26_report=self.phase26_index.report(as_of=self.clock())
+                            return self.phase28.step(current)
+                        worker=asyncio.create_task(asyncio.to_thread(evaluate))
+                        try:
+                            await asyncio.shield(worker)
+                        except asyncio.CancelledError:
+                            await asyncio.gather(worker,return_exceptions=True)
+                            raise
+                except Exception as error:
+                    self.phase28.error=f"{type(error).__name__}:{str(error)[:160]}"
+                    log.exception("phase28_volume_research_withheld")
+            for _ in range(10):
+                if self.stopping or should_exit():return
+                await asyncio.sleep(1)
+
     async def run(self, should_exit=lambda: False):
         async def independent_events():
             while not self.stopping and not should_exit():
@@ -896,7 +942,7 @@ class ExperimentalRuntime:
                     self._cancel_and_checkpoint(self.clock())
                 await asyncio.sleep(self.config.poll_seconds)
 
-        await asyncio.gather(cycles(), self._fees_loop(should_exit), self._event_resolution_loop(should_exit), independent_events(), self._domain_research_loop(should_exit), self._domain_research_loop(should_exit, "phase25"))
+        await asyncio.gather(cycles(), self._fees_loop(should_exit), self._event_resolution_loop(should_exit), independent_events(), self._domain_research_loop(should_exit), self._domain_research_loop(should_exit, "phase25"), self._volume_research_loop(should_exit))
 
     def health(self):
         last_success = self.last_success
@@ -995,6 +1041,7 @@ class ExperimentalRuntime:
 
         state = add_capacity(self.archive_state(), service="experimental", now=self.clock())
         state["operations_research"] = experimental_research(self, for_operations=True)
+        state["memory"] = self.memory_sampler.status() if getattr(self,"memory_sampler",None) else None
         with self.account.risk._lock:
             state["open_positions"] = self.account.risk.db.execute("SELECT count(*) FROM positions").fetchone()[0]
             state["fills"] = self.account.risk.db.execute(

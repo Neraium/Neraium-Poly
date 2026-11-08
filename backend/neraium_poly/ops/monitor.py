@@ -1536,7 +1536,9 @@ def _render_findings(certified, experimental, width, height, errors):
     from datetime import UTC, datetime
 
     now = datetime.now(UTC)
-    report = _mapping(_mapping(experimental.get("operations_research")).get("phase27"))
+    research = _mapping(experimental.get("operations_research"))
+    volume = _mapping(research.get("phase28"))
+    report = volume if volume and volume.get("status") != "disabled" else _mapping(research.get("phase27"))
     fresh = (report.get("status") == "research_only" and not report.get("runtime_error")
              and _ops_fresh(experimental.get("generated_at"), now)
              and _p16_recent(report.get("as_of"), now, seconds=90))
@@ -1554,7 +1556,10 @@ def _render_findings(certified, experimental, width, height, errors):
         for finding in report.get("latest_findings", [])[:3]:
             row = _mapping(finding)
             rows.append((f"M{_clean(row.get('market_id'))} {_clean(row.get('confidence_status'))}", "white"))
-            rows.append((f"P {scalar(row.get('forecast_probability'))} Ask {scalar(row.get('executable_ask'))} Edge {scalar(row.get('estimated_after_cost_edge'))}", "dim"))
+            if volume:
+                rows.append((f"Gross {_number(row.get('scenario_expected_gross_profit'),money=True)} Net {_number(row.get('conservative_expected_net_profit'),money=True)}", "dim"))
+            else:
+                rows.append((f"P {scalar(row.get('forecast_probability'))} Ask {scalar(row.get('executable_ask'))} Edge {scalar(row.get('estimated_after_cost_edge'))}", "dim"))
         rows.append(("P/L: insufficient evidence", "yellow"))
         rows.append((f"Last {_seen(report.get('as_of'))}", "dim"))
     else:
