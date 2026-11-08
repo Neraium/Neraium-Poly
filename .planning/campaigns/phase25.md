@@ -11,3 +11,5 @@ Root /home/ubuntu/Neraium-Poly, phase25-intelligence, baseline9371d301a55385e0a9
 
 ## Exit Evidence
 Required: real source/model replay and prospective evidence; causal grouping/scoring regressions; no unsupported model promotion; budgets unchanged and exact capacity proposal; account/journal/immutable-file integrity; CI source hash and actual source observation. A failed hypothesis is valid, fabricated capability is not. Root coordinates/cherry-picks; no shared-file writers.
+
+Checkpoint2026-11-08T00:09Z rootphase25-intelligence HEADf3e295c; adapters/competitionintegrated, rootNamespace/runtime/outcomehooks uncommitted. Genuineisolated generic6NHL/weather replays +4agentSPX/GDP replays. Finalbackendrunningonce;frontend5/browser/build/auditspassed. Next: finishfulltests, reviewactualsourceenrollment/callbacks, commits+mainCIbeforeexperimentalrestart, boundedliveobservation, preservation/capacityproposal. No risk/budget changes.
