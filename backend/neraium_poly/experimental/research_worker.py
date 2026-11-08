@@ -37,6 +37,8 @@ class ResearchWorker:
         self._ready=threading.Event()
         self._thread=None
         self._loop=None
+        self._owner_loop=None
+        self._native_jobs=set()
         self._startup_error=None
         self._shutdown_error=None
         self._close_task=None
@@ -57,6 +59,7 @@ class ResearchWorker:
             self._startup_error=error
             self._ready.set()
             return
+        self._loop.create_task(self._watch_owner_loop())
         self._ready.set()
         try:
             self._loop.run_forever()
@@ -69,9 +72,27 @@ class ResearchWorker:
                 self._loop.run_until_complete(self._loop.shutdown_default_executor())
             except BaseException as error:  # noqa: BLE001 - relay cleanup failure after thread termination
                 self._shutdown_error=error
-            finally:self._loop.close()
+            finally:
+                self._loop.close()
+                self._closed=True
+
+    async def _watch_owner_loop(self):
+        # Some embedding/test callers close their asyncio loop without invoking
+        # runtime.close(). An idle non-daemon worker must not outlive that owner.
+        # Track native jobs rather than abandoned caller Tasks: no archive write
+        # is cancelled simply because the owner loop disappeared.
+        while self._owner_loop is not None and not self._owner_loop.is_closed():
+            await asyncio.sleep(.05)
+        self._closing=True
+        while self._native_jobs:
+            pending=tuple(self._native_jobs)
+            await asyncio.gather(*(asyncio.shield(asyncio.wrap_future(job)) for job in pending),return_exceptions=True)
+        self._loop.call_soon(self._loop.stop)
 
     async def _start(self):
+        caller=asyncio.get_running_loop()
+        if self._owner_loop is None:self._owner_loop=caller
+        elif self._owner_loop is not caller:raise RuntimeError('research worker owner loop changed')
         if self._thread is None:
             self._thread=threading.Thread(target=self._thread_main,name='research-async-io',daemon=False)
             self._thread.start()
@@ -98,6 +119,8 @@ class ResearchWorker:
                 await self._start()
                 if self._closing or self._closed:raise RuntimeError('research worker closed')
                 concurrent=asyncio.run_coroutine_threadsafe(self._invoke(factory,args,kwargs),self._loop)
+                self._native_jobs.add(concurrent)
+                concurrent.add_done_callback(self._native_jobs.discard)
                 self._active=True;self._submitted+=1
                 try:
                     return await _drain(asyncio.wrap_future(concurrent))
@@ -110,6 +133,10 @@ class ResearchWorker:
         if self._thread is not None and threading.get_ident()==self._thread.ident:
             raise RuntimeError('research worker cannot close itself')
         self._closing=True
+        if self._closed:
+            if self._thread is not None and self._thread.is_alive():await asyncio.to_thread(self._thread.join)
+            if self._shutdown_error is not None:raise RuntimeError('research worker shutdown failed') from self._shutdown_error
+            return
         if self._close_task is None:self._close_task=asyncio.create_task(self._finish())
         return await _drain(self._close_task)
 

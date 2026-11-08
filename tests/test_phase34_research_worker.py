@@ -134,3 +134,45 @@ async def test_close_during_startup_cannot_publish_a_new_job(monkeypatch):
     with pytest.raises(RuntimeError,match='closed'):await running
     await close
     assert not called and worker.status()['submitted']==0 and not worker.status()['worker_alive']
+
+
+async def test_transient_owner_loop_closing_reaps_idle_non_daemon_worker():
+    worker=ResearchWorker()
+    def transient_owner():
+        async def model():return 'CONTROLLED'
+        async def once():assert await worker.run(model)=='CONTROLLED'
+        asyncio.run(once())
+    await asyncio.to_thread(transient_owner)
+    deadline=time.monotonic()+3
+    while worker.status()['worker_alive']:
+        assert time.monotonic()<deadline,'orphan research loop did not terminate'
+        await asyncio.sleep(.01)
+    assert worker.status()['closed'] and not worker._thread.daemon
+    await worker.close()
+
+
+async def test_owner_disappearing_during_native_job_drains_write_before_exit():
+    worker=ResearchWorker();entered=threading.Event();release=threading.Event();completed=[];owner_closed=threading.Event()
+    async def model():
+        entered.set();await asyncio.to_thread(release.wait)
+        # Stand-in for a source transaction that must finish, never real evidence.
+        completed.append(True)
+    def disappearing_owner():
+        loop=asyncio.new_event_loop();asyncio.set_event_loop(loop)
+        task=loop.create_task(worker.run(model))
+        while not entered.is_set():loop.run_until_complete(asyncio.sleep(.005))
+        loop.stop();loop.close();owner_closed.set()
+        # Keep the abandoned caller Task referenced until native draining ends;
+        # suppress only its expected destroyed-pending warning in this fixture.
+        task._log_destroy_pending=False
+    owner=asyncio.create_task(asyncio.to_thread(disappearing_owner));await reached(owner_closed)
+    try:
+        await asyncio.sleep(.08)
+        assert worker.status()['worker_alive'] and not completed
+        release.set();await owner
+        deadline=time.monotonic()+3
+        while worker.status()['worker_alive']:
+            assert time.monotonic()<deadline
+            await asyncio.sleep(.01)
+        assert completed==[True] and worker.status()['closed']
+    finally:release.set()
