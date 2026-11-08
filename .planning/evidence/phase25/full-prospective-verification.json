@@ -1,0 +1,1080 @@
+{
+  "at": "2026-11-08T00:51:13.252714+00:00",
+  "scope": "full original-study inventory for expansion registry, not a bounded report tail",
+  "forecasts": 18,
+  "native_parents": 9,
+  "by_domain": {
+    "sports": 10,
+    "weather": 6,
+    "finance": 2
+  },
+  "by_model": {
+    "nhl-beta-frequency-v25.1": 5,
+    "nhl-causal-elo-v25.1": 5,
+    "metar-diurnal-gaussian-v25.1": 3,
+    "metar-recency-kernel-v25.1": 3,
+    "spx-gaussian-logreturn-direction-v25.1": 1,
+    "spx-weekday-beta-direction-v25.1": 1
+  },
+  "source_model_replayed": 18,
+  "event_review": {
+    "schema_version": "phase25-source-event-review-v1",
+    "as_of": "2026-11-08T00:51:13.252714+00:00",
+    "reviews": [
+      {
+        "forecast_id": "04b1fc89a32e86c29cdb7e32fd3a1b6b6a56dd87536862444a2bb4cf79d65609",
+        "model_id": "metar-diurnal-gaussian-v25.1",
+        "native_parent_id": "1323624",
+        "canonical_group_id": "c639e6e839f753fd98bbe7cd05e8d16c3813f33c6d7f1e8e0262524f7916a070",
+        "descriptor": {
+          "domain": "weather",
+          "resolution_reference": "https://aviationweather.gov/api/data/metar?ids=ZSQD&format=raw&date=2026-11-08T19:00:00Z&hours=30",
+          "station": "ZSQD",
+          "day": "2026-11-08",
+          "variable": "daily_high_temperature",
+          "starts_at": "2026-11-07T16:00:00+00:00",
+          "ends_at": "2026-11-08T16:00:00+00:00"
+        },
+        "dependency_tags": [
+          "weather-station:ZSQD",
+          "weather-UTC-day:2026-11-07"
+        ],
+        "evidence_lineages": [
+          "NOAA/AWC:ZSQD"
+        ],
+        "original_study_id": "000000000025:eaefac948375ddb787e2e39cdce805f980ae9e2b847ae356878ac29cd58a8192",
+        "original_study_sha256": "88afd4a52187d903aec7262fc6d104c0265ab0482cc9dca920a7364b2c62fd60",
+        "original_forecast_sha256": "c68fa61279e93d4ae6a32c69781b06cd1542ce61e6a66906b03fdaa0509d73dd",
+        "source_model_replay_verified": true,
+        "review_policy": "phase25-source-event-review-v1",
+        "review_status": "source_event_identity_reviewed",
+        "statistical_independence_established": false,
+        "certified_group_id": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "forecast_id": "0a123b60661e4107146bfcd6fe6c1186aa27d3b34b278806add61ebddaab5f59",
+        "model_id": "metar-diurnal-gaussian-v25.1",
+        "native_parent_id": "1323613",
+        "canonical_group_id": "b25628a266d891a2a5c221f69b552ed403deffce6d5b493327db77bd9c27ffda",
+        "descriptor": {
+          "domain": "weather",
+          "resolution_reference": "https://aviationweather.gov/api/data/metar?ids=ZUUU&format=raw&date=2026-11-08T19:00:00Z&hours=30",
+          "station": "ZUUU",
+          "day": "2026-11-08",
+          "variable": "daily_high_temperature",
+          "starts_at": "2026-11-07T16:00:00+00:00",
+          "ends_at": "2026-11-08T16:00:00+00:00"
+        },
+        "dependency_tags": [
+          "weather-station:ZUUU",
+          "weather-UTC-day:2026-11-07"
+        ],
+        "evidence_lineages": [
+          "NOAA/AWC:ZUUU"
+        ],
+        "original_study_id": "000000000015:e91f88652bfad14cc2a76dd6651d970b8dc504e7bc46f9438d039e47d84ae32b",
+        "original_study_sha256": "765e708448d4cdcaeae9163e1dafc78b10d149e93266e66a471751c7c3c69909",
+        "original_forecast_sha256": "34506038ebe3f056e7ab6d4d416950264edf284a3c164b259f3a071d2224b162",
+        "source_model_replay_verified": true,
+        "review_policy": "phase25-source-event-review-v1",
+        "review_status": "source_event_identity_reviewed",
+        "statistical_independence_established": false,
+        "certified_group_id": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "forecast_id": "0eece2c81e86f7d86eb31991596f705fb5a425f83e3c41f7d91637870fffba86",
+        "model_id": "nhl-beta-frequency-v25.1",
+        "native_parent_id": "1171319",
+        "canonical_group_id": "ecbd235c5a1cd92d459585c8b47f3fe0c1ee1d12361c4d3d3a196508b3095a78",
+        "descriptor": {
+          "domain": "sports",
+          "resolution_reference": "https://www.nhl.com/scores",
+          "league": "NHL",
+          "participants": [
+            "Sharks",
+            "Stars"
+          ],
+          "starts_at": "2026-11-08T01:00:00+00:00",
+          "source_game_id": "401892669",
+          "source_id_namespace": "ESPN:NHL:daily-scoreboards:NHL"
+        },
+        "dependency_tags": [
+          "team:NHL:Sharks",
+          "team:NHL:Stars"
+        ],
+        "evidence_lineages": [
+          "ESPN:NHL:daily-scoreboards"
+        ],
+        "original_study_id": "000000000026:0a975f0a4d33c5a075ef734de3437c8bb9dabb9c986c49697c4d8e84ff2e2d6c",
+        "original_study_sha256": "26d2689ed3b55ffaf22a584b8f39a02d19a523b263d1d58d8ac5bf886d451aab",
+        "original_forecast_sha256": "f9120cc115d029de101d99f4674b081f8583fe57447a936d05ecb565f666084d",
+        "source_model_replay_verified": true,
+        "review_policy": "phase25-source-event-review-v1",
+        "review_status": "source_event_identity_reviewed",
+        "statistical_independence_established": false,
+        "certified_group_id": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "forecast_id": "1f1fb174f73827ee35c3a5165aeb4361da0cee3be5f04ebebb46701859cb8843",
+        "model_id": "nhl-causal-elo-v25.1",
+        "native_parent_id": "1171322",
+        "canonical_group_id": "6675620bae27e78b867d54bcc20761537fdc3de237b101a87645e8a65e9d4dae",
+        "descriptor": {
+          "domain": "sports",
+          "resolution_reference": "https://www.nhl.com/scores",
+          "league": "NHL",
+          "participants": [
+            "Kings",
+            "Penguins"
+          ],
+          "starts_at": "2026-11-08T02:00:00+00:00",
+          "source_game_id": "401892672",
+          "source_id_namespace": "ESPN:NHL:daily-scoreboards:NHL"
+        },
+        "dependency_tags": [
+          "team:NHL:Kings",
+          "team:NHL:Penguins"
+        ],
+        "evidence_lineages": [
+          "ESPN:NHL:daily-scoreboards"
+        ],
+        "original_study_id": "000000000006:f0f50bc1ee97af41f41efe2aef8e709b020d853e832e61b2770443e360afab0a",
+        "original_study_sha256": "5b40b0b513a899d62a5afb3073b10d979c2fb5a7ab73e9d70008481ff0f80a84",
+        "original_forecast_sha256": "6d26c8d24021487fbf9d6b643cb727d1c96f3c0573b1960b424790254ac6b668",
+        "source_model_replay_verified": true,
+        "review_policy": "phase25-source-event-review-v1",
+        "review_status": "source_event_identity_reviewed",
+        "statistical_independence_established": false,
+        "certified_group_id": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "forecast_id": "3fee7d83f1f6e38ecdb2258c618acccdca0335f9a9d1b631d40ce8b827c0c481",
+        "model_id": "spx-gaussian-logreturn-direction-v25.1",
+        "native_parent_id": "1324979",
+        "canonical_group_id": "51ac3d78a77df92f07e98b74922111c85c4da75713b8fdade9a97a8893813a14",
+        "descriptor": {
+          "domain": "finance",
+          "resolution_reference": "https://www.wsj.com/market-data/stocks",
+          "symbol": "SPX",
+          "starts_at": "2026-11-09T14:30:00+00:00",
+          "ends_at": "2026-11-09T21:00:00+00:00",
+          "reference_source": "https://www.wsj.com/market-data/stocks"
+        },
+        "dependency_tags": [
+          "financial-symbol:SPX",
+          "financial-UTC-day:2026-11-09"
+        ],
+        "evidence_lineages": [
+          "FRED:SP500:cash-index"
+        ],
+        "original_study_id": "000000000028:062f3f25321ed647c48efa90380174d678b091e1ef176ebbd12c964e7009757e",
+        "original_study_sha256": "6058a435cc6f9bf7ae45a9c28baef0e29487345ed4433954e7418a664e7af45d",
+        "original_forecast_sha256": "3aa98541454ef4357ff5845a1c41e964b9079bc683f75844065f9869d25dd3f5",
+        "source_model_replay_verified": true,
+        "review_policy": "phase25-source-event-review-v1",
+        "review_status": "source_event_identity_reviewed",
+        "statistical_independence_established": false,
+        "certified_group_id": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "forecast_id": "4944da6a9d9f3c61804801b151e71f64d0adac29f1515bdae21207f204265ad6",
+        "model_id": "nhl-beta-frequency-v25.1",
+        "native_parent_id": "1171316",
+        "canonical_group_id": "af32edf89291dc13e7e2a5bef1d54a98cc72ea1b20bff66719df498877f4b644",
+        "descriptor": {
+          "domain": "sports",
+          "resolution_reference": "https://www.nhl.com/scores",
+          "league": "NHL",
+          "participants": [
+            "Lightning",
+            "Wild"
+          ],
+          "starts_at": "2026-11-08T01:00:00+00:00",
+          "source_game_id": "401892670",
+          "source_id_namespace": "ESPN:NHL:daily-scoreboards:NHL"
+        },
+        "dependency_tags": [
+          "team:NHL:Lightning",
+          "team:NHL:Wild"
+        ],
+        "evidence_lineages": [
+          "ESPN:NHL:daily-scoreboards"
+        ],
+        "original_study_id": "000000000005:de23ae06ed46b481a31e5473c76d37c9dd2cef55ae1c84def1ff7ef04c719209",
+        "original_study_sha256": "65f4f050c544d8f94963a1e65c2ddd7a391910aca664aaaafba25758bf7758b4",
+        "original_forecast_sha256": "f2499a36cc77153ec112dae84bc1ea3203102ed98fc4a8b75d0162519719027a",
+        "source_model_replay_verified": true,
+        "review_policy": "phase25-source-event-review-v1",
+        "review_status": "source_event_identity_reviewed",
+        "statistical_independence_established": false,
+        "certified_group_id": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "forecast_id": "4efabf715151a98029c13e0e56f7236a2cb1537504e3dce6ef5970365f93cbbe",
+        "model_id": "spx-weekday-beta-direction-v25.1",
+        "native_parent_id": "1324979",
+        "canonical_group_id": "51ac3d78a77df92f07e98b74922111c85c4da75713b8fdade9a97a8893813a14",
+        "descriptor": {
+          "domain": "finance",
+          "resolution_reference": "https://www.wsj.com/market-data/stocks",
+          "symbol": "SPX",
+          "starts_at": "2026-11-09T14:30:00+00:00",
+          "ends_at": "2026-11-09T21:00:00+00:00",
+          "reference_source": "https://www.wsj.com/market-data/stocks"
+        },
+        "dependency_tags": [
+          "financial-symbol:SPX",
+          "financial-UTC-day:2026-11-09"
+        ],
+        "evidence_lineages": [
+          "FRED:SP500:cash-index"
+        ],
+        "original_study_id": "000000000028:062f3f25321ed647c48efa90380174d678b091e1ef176ebbd12c964e7009757e",
+        "original_study_sha256": "6058a435cc6f9bf7ae45a9c28baef0e29487345ed4433954e7418a664e7af45d",
+        "original_forecast_sha256": "b3adeb7047477fab0b1181fb9c0fa38e30c06c934bd329babc24829050dce92a",
+        "source_model_replay_verified": true,
+        "review_policy": "phase25-source-event-review-v1",
+        "review_status": "source_event_identity_reviewed",
+        "statistical_independence_established": false,
+        "certified_group_id": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "forecast_id": "6913fad24cdd887663431170beb9a54dc4144150159bf24b4f9f20696474749b",
+        "model_id": "nhl-causal-elo-v25.1",
+        "native_parent_id": "1171323",
+        "canonical_group_id": "c60bb531b35f17815d0b53989b7f40b8a337460047e8079e14caf14cc4f1f234",
+        "descriptor": {
+          "domain": "sports",
+          "resolution_reference": "https://www.nhl.com/scores",
+          "league": "NHL",
+          "participants": [
+            "Canucks",
+            "Oilers"
+          ],
+          "starts_at": "2026-11-08T03:00:00+00:00",
+          "source_game_id": "401892673",
+          "source_id_namespace": "ESPN:NHL:daily-scoreboards:NHL"
+        },
+        "dependency_tags": [
+          "team:NHL:Canucks",
+          "team:NHL:Oilers"
+        ],
+        "evidence_lineages": [
+          "ESPN:NHL:daily-scoreboards"
+        ],
+        "original_study_id": "000000000014:732bd15c1707a0f2f9e00b0849a19999f0ce1c653567193469a20555d5c58327",
+        "original_study_sha256": "bc5db2490502f93e6126abca73b06f865398c4502a051cb065878b3e4dcb682e",
+        "original_forecast_sha256": "51fbabf10289c20a42f07832ef276bd5de16d6753a4a3425f46542423a33ddad",
+        "source_model_replay_verified": true,
+        "review_policy": "phase25-source-event-review-v1",
+        "review_status": "source_event_identity_reviewed",
+        "statistical_independence_established": false,
+        "certified_group_id": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "forecast_id": "6f5faa2b27a09d1bbcebe464e4643be8649ce0f078817993a97d06ea00256c1f",
+        "model_id": "nhl-causal-elo-v25.1",
+        "native_parent_id": "1171316",
+        "canonical_group_id": "af32edf89291dc13e7e2a5bef1d54a98cc72ea1b20bff66719df498877f4b644",
+        "descriptor": {
+          "domain": "sports",
+          "resolution_reference": "https://www.nhl.com/scores",
+          "league": "NHL",
+          "participants": [
+            "Lightning",
+            "Wild"
+          ],
+          "starts_at": "2026-11-08T01:00:00+00:00",
+          "source_game_id": "401892670",
+          "source_id_namespace": "ESPN:NHL:daily-scoreboards:NHL"
+        },
+        "dependency_tags": [
+          "team:NHL:Lightning",
+          "team:NHL:Wild"
+        ],
+        "evidence_lineages": [
+          "ESPN:NHL:daily-scoreboards"
+        ],
+        "original_study_id": "000000000005:de23ae06ed46b481a31e5473c76d37c9dd2cef55ae1c84def1ff7ef04c719209",
+        "original_study_sha256": "65f4f050c544d8f94963a1e65c2ddd7a391910aca664aaaafba25758bf7758b4",
+        "original_forecast_sha256": "1f08cac24b26d7235b70ade24f1876c2f4becedcd8cf960a35bb0c8700337eb2",
+        "source_model_replay_verified": true,
+        "review_policy": "phase25-source-event-review-v1",
+        "review_status": "source_event_identity_reviewed",
+        "statistical_independence_established": false,
+        "certified_group_id": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "forecast_id": "8e3d55b875d863b0d0808a66e9b066eddc1f8ce28d225144613e01c97f9f0af8",
+        "model_id": "metar-diurnal-gaussian-v25.1",
+        "native_parent_id": "1323602",
+        "canonical_group_id": "07f4d91b1784909231b0a526c7a607d9cbcf87080fd4cbdeceb912df6bf0a5fe",
+        "descriptor": {
+          "domain": "weather",
+          "resolution_reference": "https://aviationweather.gov/api/data/metar?ids=ZUCK&format=raw&date=2026-11-08T19:00:00Z&hours=30",
+          "station": "ZUCK",
+          "day": "2026-11-08",
+          "variable": "daily_high_temperature",
+          "starts_at": "2026-11-07T16:00:00+00:00",
+          "ends_at": "2026-11-08T16:00:00+00:00"
+        },
+        "dependency_tags": [
+          "weather-station:ZUCK",
+          "weather-UTC-day:2026-11-07"
+        ],
+        "evidence_lineages": [
+          "NOAA/AWC:ZUCK"
+        ],
+        "original_study_id": "000000000007:94b1ce25a482d38d5e035788bd124deaba3c737cb3a5d8a3f054e794dc57a5b7",
+        "original_study_sha256": "e477049864485a9ddbdd28d8bb3fde6ad5617551776ed34fe375ebc1a679f9cb",
+        "original_forecast_sha256": "465c58a7ee2f8238db3b0159a31cc94069bef5e1cdbfd9a42c5a677de9532fc5",
+        "source_model_replay_verified": true,
+        "review_policy": "phase25-source-event-review-v1",
+        "review_status": "source_event_identity_reviewed",
+        "statistical_independence_established": false,
+        "certified_group_id": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "forecast_id": "8eb011736ffd110150e40e982a2344a2e161438a740eeed99c81af81e89f816e",
+        "model_id": "nhl-beta-frequency-v25.1",
+        "native_parent_id": "1171323",
+        "canonical_group_id": "c60bb531b35f17815d0b53989b7f40b8a337460047e8079e14caf14cc4f1f234",
+        "descriptor": {
+          "domain": "sports",
+          "resolution_reference": "https://www.nhl.com/scores",
+          "league": "NHL",
+          "participants": [
+            "Canucks",
+            "Oilers"
+          ],
+          "starts_at": "2026-11-08T03:00:00+00:00",
+          "source_game_id": "401892673",
+          "source_id_namespace": "ESPN:NHL:daily-scoreboards:NHL"
+        },
+        "dependency_tags": [
+          "team:NHL:Canucks",
+          "team:NHL:Oilers"
+        ],
+        "evidence_lineages": [
+          "ESPN:NHL:daily-scoreboards"
+        ],
+        "original_study_id": "000000000014:732bd15c1707a0f2f9e00b0849a19999f0ce1c653567193469a20555d5c58327",
+        "original_study_sha256": "bc5db2490502f93e6126abca73b06f865398c4502a051cb065878b3e4dcb682e",
+        "original_forecast_sha256": "c6e28c8da1f0c1e5c637743e4a0182636d66b6d1f609ac47641a3259edf4e386",
+        "source_model_replay_verified": true,
+        "review_policy": "phase25-source-event-review-v1",
+        "review_status": "source_event_identity_reviewed",
+        "statistical_independence_established": false,
+        "certified_group_id": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "forecast_id": "8fd59e4ba5a052d2285e6174cb4ead00ad847aa1336e25da857d94becb34dd50",
+        "model_id": "metar-recency-kernel-v25.1",
+        "native_parent_id": "1323624",
+        "canonical_group_id": "c639e6e839f753fd98bbe7cd05e8d16c3813f33c6d7f1e8e0262524f7916a070",
+        "descriptor": {
+          "domain": "weather",
+          "resolution_reference": "https://aviationweather.gov/api/data/metar?ids=ZSQD&format=raw&date=2026-11-08T19:00:00Z&hours=30",
+          "station": "ZSQD",
+          "day": "2026-11-08",
+          "variable": "daily_high_temperature",
+          "starts_at": "2026-11-07T16:00:00+00:00",
+          "ends_at": "2026-11-08T16:00:00+00:00"
+        },
+        "dependency_tags": [
+          "weather-station:ZSQD",
+          "weather-UTC-day:2026-11-07"
+        ],
+        "evidence_lineages": [
+          "NOAA/AWC:ZSQD"
+        ],
+        "original_study_id": "000000000025:eaefac948375ddb787e2e39cdce805f980ae9e2b847ae356878ac29cd58a8192",
+        "original_study_sha256": "88afd4a52187d903aec7262fc6d104c0265ab0482cc9dca920a7364b2c62fd60",
+        "original_forecast_sha256": "d232b55ed2e13e22671d8c05b85dbead2c3221fd5ea5c2516ee9aead7a427759",
+        "source_model_replay_verified": true,
+        "review_policy": "phase25-source-event-review-v1",
+        "review_status": "source_event_identity_reviewed",
+        "statistical_independence_established": false,
+        "certified_group_id": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "forecast_id": "abc6129d8cb2b71e6695284f2091a272aceeee299ddc7d540060b36efa43f118",
+        "model_id": "nhl-causal-elo-v25.1",
+        "native_parent_id": "1171321",
+        "canonical_group_id": "1125f9b5bbe154c56363487b4e84639f06bb0acf01218b0a1e5c67cc0f9c8b5f",
+        "descriptor": {
+          "domain": "sports",
+          "resolution_reference": "https://www.nhl.com/scores",
+          "league": "NHL",
+          "participants": [
+            "Avalanche",
+            "Red Wings"
+          ],
+          "starts_at": "2026-11-08T02:00:00+00:00",
+          "source_game_id": "401892671",
+          "source_id_namespace": "ESPN:NHL:daily-scoreboards:NHL"
+        },
+        "dependency_tags": [
+          "team:NHL:Avalanche",
+          "team:NHL:Red Wings"
+        ],
+        "evidence_lineages": [
+          "ESPN:NHL:daily-scoreboards"
+        ],
+        "original_study_id": "000000000013:a503685bed51b6a2f21ff38c49e4f2bebdc6300ec8ecfca693e2d5133f7964f7",
+        "original_study_sha256": "a7f6c474c794e5c94916a3bfc47fcdea77110c8ffbe40b45352bad8177ff2ae0",
+        "original_forecast_sha256": "a14ca3a71fb2f2ff533ad48fbe35b9d85adfeaae407c33d08df5ab9a7002bdf8",
+        "source_model_replay_verified": true,
+        "review_policy": "phase25-source-event-review-v1",
+        "review_status": "source_event_identity_reviewed",
+        "statistical_independence_established": false,
+        "certified_group_id": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "forecast_id": "daa6a47a6c4120b5a9eb3faf4110f6ead52a1aa00dc1cdc5a150a460b22ae1bf",
+        "model_id": "nhl-beta-frequency-v25.1",
+        "native_parent_id": "1171322",
+        "canonical_group_id": "6675620bae27e78b867d54bcc20761537fdc3de237b101a87645e8a65e9d4dae",
+        "descriptor": {
+          "domain": "sports",
+          "resolution_reference": "https://www.nhl.com/scores",
+          "league": "NHL",
+          "participants": [
+            "Kings",
+            "Penguins"
+          ],
+          "starts_at": "2026-11-08T02:00:00+00:00",
+          "source_game_id": "401892672",
+          "source_id_namespace": "ESPN:NHL:daily-scoreboards:NHL"
+        },
+        "dependency_tags": [
+          "team:NHL:Kings",
+          "team:NHL:Penguins"
+        ],
+        "evidence_lineages": [
+          "ESPN:NHL:daily-scoreboards"
+        ],
+        "original_study_id": "000000000006:f0f50bc1ee97af41f41efe2aef8e709b020d853e832e61b2770443e360afab0a",
+        "original_study_sha256": "5b40b0b513a899d62a5afb3073b10d979c2fb5a7ab73e9d70008481ff0f80a84",
+        "original_forecast_sha256": "7cc731bfa609128e51424efbf22ccd7b155eba71a235b2e135a391c700e4dd02",
+        "source_model_replay_verified": true,
+        "review_policy": "phase25-source-event-review-v1",
+        "review_status": "source_event_identity_reviewed",
+        "statistical_independence_established": false,
+        "certified_group_id": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "forecast_id": "e22b5c4dec815b9ddac03dc3726bcfc45d4a320e7c88dbd70bdcc2e30b20d1cf",
+        "model_id": "nhl-causal-elo-v25.1",
+        "native_parent_id": "1171319",
+        "canonical_group_id": "ecbd235c5a1cd92d459585c8b47f3fe0c1ee1d12361c4d3d3a196508b3095a78",
+        "descriptor": {
+          "domain": "sports",
+          "resolution_reference": "https://www.nhl.com/scores",
+          "league": "NHL",
+          "participants": [
+            "Sharks",
+            "Stars"
+          ],
+          "starts_at": "2026-11-08T01:00:00+00:00",
+          "source_game_id": "401892669",
+          "source_id_namespace": "ESPN:NHL:daily-scoreboards:NHL"
+        },
+        "dependency_tags": [
+          "team:NHL:Sharks",
+          "team:NHL:Stars"
+        ],
+        "evidence_lineages": [
+          "ESPN:NHL:daily-scoreboards"
+        ],
+        "original_study_id": "000000000026:0a975f0a4d33c5a075ef734de3437c8bb9dabb9c986c49697c4d8e84ff2e2d6c",
+        "original_study_sha256": "26d2689ed3b55ffaf22a584b8f39a02d19a523b263d1d58d8ac5bf886d451aab",
+        "original_forecast_sha256": "7306631fb438685386677a3ad6e85586b2d0a8c56717d478478e35a94921e16f",
+        "source_model_replay_verified": true,
+        "review_policy": "phase25-source-event-review-v1",
+        "review_status": "source_event_identity_reviewed",
+        "statistical_independence_established": false,
+        "certified_group_id": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "forecast_id": "e4741d8b03db567d0d405968b5d025b22d10335b4b278540e5559fea7d779b7f",
+        "model_id": "metar-recency-kernel-v25.1",
+        "native_parent_id": "1323602",
+        "canonical_group_id": "07f4d91b1784909231b0a526c7a607d9cbcf87080fd4cbdeceb912df6bf0a5fe",
+        "descriptor": {
+          "domain": "weather",
+          "resolution_reference": "https://aviationweather.gov/api/data/metar?ids=ZUCK&format=raw&date=2026-11-08T19:00:00Z&hours=30",
+          "station": "ZUCK",
+          "day": "2026-11-08",
+          "variable": "daily_high_temperature",
+          "starts_at": "2026-11-07T16:00:00+00:00",
+          "ends_at": "2026-11-08T16:00:00+00:00"
+        },
+        "dependency_tags": [
+          "weather-station:ZUCK",
+          "weather-UTC-day:2026-11-07"
+        ],
+        "evidence_lineages": [
+          "NOAA/AWC:ZUCK"
+        ],
+        "original_study_id": "000000000007:94b1ce25a482d38d5e035788bd124deaba3c737cb3a5d8a3f054e794dc57a5b7",
+        "original_study_sha256": "e477049864485a9ddbdd28d8bb3fde6ad5617551776ed34fe375ebc1a679f9cb",
+        "original_forecast_sha256": "8be79dd5fe8dc6a896c2ed81c1392e38242936eb02ceb1524c32a7f781702982",
+        "source_model_replay_verified": true,
+        "review_policy": "phase25-source-event-review-v1",
+        "review_status": "source_event_identity_reviewed",
+        "statistical_independence_established": false,
+        "certified_group_id": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "forecast_id": "e50b569e42c954b6fc5819bf7f9f2987048d164330e31dc9d79d1cf808891524",
+        "model_id": "metar-recency-kernel-v25.1",
+        "native_parent_id": "1323613",
+        "canonical_group_id": "b25628a266d891a2a5c221f69b552ed403deffce6d5b493327db77bd9c27ffda",
+        "descriptor": {
+          "domain": "weather",
+          "resolution_reference": "https://aviationweather.gov/api/data/metar?ids=ZUUU&format=raw&date=2026-11-08T19:00:00Z&hours=30",
+          "station": "ZUUU",
+          "day": "2026-11-08",
+          "variable": "daily_high_temperature",
+          "starts_at": "2026-11-07T16:00:00+00:00",
+          "ends_at": "2026-11-08T16:00:00+00:00"
+        },
+        "dependency_tags": [
+          "weather-station:ZUUU",
+          "weather-UTC-day:2026-11-07"
+        ],
+        "evidence_lineages": [
+          "NOAA/AWC:ZUUU"
+        ],
+        "original_study_id": "000000000015:e91f88652bfad14cc2a76dd6651d970b8dc504e7bc46f9438d039e47d84ae32b",
+        "original_study_sha256": "765e708448d4cdcaeae9163e1dafc78b10d149e93266e66a471751c7c3c69909",
+        "original_forecast_sha256": "4e8735bd528844fb454b440799e438ebd9f14a3a6588af70691bf429e434eb80",
+        "source_model_replay_verified": true,
+        "review_policy": "phase25-source-event-review-v1",
+        "review_status": "source_event_identity_reviewed",
+        "statistical_independence_established": false,
+        "certified_group_id": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "forecast_id": "f70b15892c1397bdb9655f8864bd48634f7104d7e788f1d5d9400dd30aed0bdf",
+        "model_id": "nhl-beta-frequency-v25.1",
+        "native_parent_id": "1171321",
+        "canonical_group_id": "1125f9b5bbe154c56363487b4e84639f06bb0acf01218b0a1e5c67cc0f9c8b5f",
+        "descriptor": {
+          "domain": "sports",
+          "resolution_reference": "https://www.nhl.com/scores",
+          "league": "NHL",
+          "participants": [
+            "Avalanche",
+            "Red Wings"
+          ],
+          "starts_at": "2026-11-08T02:00:00+00:00",
+          "source_game_id": "401892671",
+          "source_id_namespace": "ESPN:NHL:daily-scoreboards:NHL"
+        },
+        "dependency_tags": [
+          "team:NHL:Avalanche",
+          "team:NHL:Red Wings"
+        ],
+        "evidence_lineages": [
+          "ESPN:NHL:daily-scoreboards"
+        ],
+        "original_study_id": "000000000013:a503685bed51b6a2f21ff38c49e4f2bebdc6300ec8ecfca693e2d5133f7964f7",
+        "original_study_sha256": "a7f6c474c794e5c94916a3bfc47fcdea77110c8ffbe40b45352bad8177ff2ae0",
+        "original_forecast_sha256": "e4a29d9e4f4ac87901d54a3451941badf5472f1ca8e53dfe32b86ca197e218f8",
+        "source_model_replay_verified": true,
+        "review_policy": "phase25-source-event-review-v1",
+        "review_status": "source_event_identity_reviewed",
+        "statistical_independence_established": false,
+        "certified_group_id": null,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      }
+    ],
+    "counts": {
+      "forecasts_examined": 18,
+      "source_identity_reviewed_forecasts": 18,
+      "native_parent_ids": 9,
+      "reviewed_canonical_groups": 9,
+      "conservative_dependency_clusters": 7,
+      "statistically_independent_events": 0,
+      "certification_independent_events": 0
+    },
+    "groups": [
+      {
+        "canonical_group_id": "07f4d91b1784909231b0a526c7a607d9cbcf87080fd4cbdeceb912df6bf0a5fe",
+        "forecasts": 2,
+        "native_parent_ids": [
+          "1323602"
+        ],
+        "models": [
+          "metar-diurnal-gaussian-v25.1",
+          "metar-recency-kernel-v25.1"
+        ]
+      },
+      {
+        "canonical_group_id": "1125f9b5bbe154c56363487b4e84639f06bb0acf01218b0a1e5c67cc0f9c8b5f",
+        "forecasts": 2,
+        "native_parent_ids": [
+          "1171321"
+        ],
+        "models": [
+          "nhl-beta-frequency-v25.1",
+          "nhl-causal-elo-v25.1"
+        ]
+      },
+      {
+        "canonical_group_id": "51ac3d78a77df92f07e98b74922111c85c4da75713b8fdade9a97a8893813a14",
+        "forecasts": 2,
+        "native_parent_ids": [
+          "1324979"
+        ],
+        "models": [
+          "spx-gaussian-logreturn-direction-v25.1",
+          "spx-weekday-beta-direction-v25.1"
+        ]
+      },
+      {
+        "canonical_group_id": "6675620bae27e78b867d54bcc20761537fdc3de237b101a87645e8a65e9d4dae",
+        "forecasts": 2,
+        "native_parent_ids": [
+          "1171322"
+        ],
+        "models": [
+          "nhl-beta-frequency-v25.1",
+          "nhl-causal-elo-v25.1"
+        ]
+      },
+      {
+        "canonical_group_id": "af32edf89291dc13e7e2a5bef1d54a98cc72ea1b20bff66719df498877f4b644",
+        "forecasts": 2,
+        "native_parent_ids": [
+          "1171316"
+        ],
+        "models": [
+          "nhl-beta-frequency-v25.1",
+          "nhl-causal-elo-v25.1"
+        ]
+      },
+      {
+        "canonical_group_id": "b25628a266d891a2a5c221f69b552ed403deffce6d5b493327db77bd9c27ffda",
+        "forecasts": 2,
+        "native_parent_ids": [
+          "1323613"
+        ],
+        "models": [
+          "metar-diurnal-gaussian-v25.1",
+          "metar-recency-kernel-v25.1"
+        ]
+      },
+      {
+        "canonical_group_id": "c60bb531b35f17815d0b53989b7f40b8a337460047e8079e14caf14cc4f1f234",
+        "forecasts": 2,
+        "native_parent_ids": [
+          "1171323"
+        ],
+        "models": [
+          "nhl-beta-frequency-v25.1",
+          "nhl-causal-elo-v25.1"
+        ]
+      },
+      {
+        "canonical_group_id": "c639e6e839f753fd98bbe7cd05e8d16c3813f33c6d7f1e8e0262524f7916a070",
+        "forecasts": 2,
+        "native_parent_ids": [
+          "1323624"
+        ],
+        "models": [
+          "metar-diurnal-gaussian-v25.1",
+          "metar-recency-kernel-v25.1"
+        ]
+      },
+      {
+        "canonical_group_id": "ecbd235c5a1cd92d459585c8b47f3fe0c1ee1d12361c4d3d3a196508b3095a78",
+        "forecasts": 2,
+        "native_parent_ids": [
+          "1171319"
+        ],
+        "models": [
+          "nhl-beta-frequency-v25.1",
+          "nhl-causal-elo-v25.1"
+        ]
+      }
+    ],
+    "dependency_clusters": [
+      [
+        "07f4d91b1784909231b0a526c7a607d9cbcf87080fd4cbdeceb912df6bf0a5fe",
+        "b25628a266d891a2a5c221f69b552ed403deffce6d5b493327db77bd9c27ffda",
+        "c639e6e839f753fd98bbe7cd05e8d16c3813f33c6d7f1e8e0262524f7916a070"
+      ],
+      [
+        "1125f9b5bbe154c56363487b4e84639f06bb0acf01218b0a1e5c67cc0f9c8b5f"
+      ],
+      [
+        "51ac3d78a77df92f07e98b74922111c85c4da75713b8fdade9a97a8893813a14"
+      ],
+      [
+        "6675620bae27e78b867d54bcc20761537fdc3de237b101a87645e8a65e9d4dae"
+      ],
+      [
+        "af32edf89291dc13e7e2a5bef1d54a98cc72ea1b20bff66719df498877f4b644"
+      ],
+      [
+        "c60bb531b35f17815d0b53989b7f40b8a337460047e8079e14caf14cc4f1f234"
+      ],
+      [
+        "ecbd235c5a1cd92d459585c8b47f3fe0c1ee1d12361c4d3d3a196508b3095a78"
+      ]
+    ],
+    "shared_evidence_lineages": [
+      {
+        "lineage": "ESPN:NHL:daily-scoreboards",
+        "canonical_groups": [
+          "1125f9b5bbe154c56363487b4e84639f06bb0acf01218b0a1e5c67cc0f9c8b5f",
+          "6675620bae27e78b867d54bcc20761537fdc3de237b101a87645e8a65e9d4dae",
+          "af32edf89291dc13e7e2a5bef1d54a98cc72ea1b20bff66719df498877f4b644",
+          "c60bb531b35f17815d0b53989b7f40b8a337460047e8079e14caf14cc4f1f234",
+          "ecbd235c5a1cd92d459585c8b47f3fe0c1ee1d12361c4d3d3a196508b3095a78"
+        ]
+      }
+    ],
+    "rejections": {},
+    "certification_requirements": {
+      "training": 100,
+      "heldout": 100
+    },
+    "limitations": [
+      "Canonical events are identity-reviewed, not certified statistically independent samples",
+      "Shared teams/stations/assets/release series and contemporaneous regimes remain dependent",
+      "A shared publisher or model input is not independent supporting confirmation"
+    ],
+    "research_only": true,
+    "trading_authority": false,
+    "certification_authority": false
+  },
+  "forecasts_detail": [
+    {
+      "forecast_id": "4944da6a9d9f3c61804801b151e71f64d0adac29f1515bdae21207f204265ad6",
+      "model_id": "nhl-beta-frequency-v25.1",
+      "event_id": "1171316",
+      "market_id": "5563968",
+      "domain": "sports",
+      "timestamp": "2026-11-08T00:18:34.928503+00:00",
+      "evidence_cutoff": "2026-11-08T00:18:34.669369+00:00",
+      "book_timestamp": "2026-11-08T00:18:25.881000Z",
+      "model_sha256": "c8c477ec4f9eb72badde574dccef47dab4e88fcd147c0cfc47d5aa80787052bc",
+      "probability": 0.36401673640167365,
+      "station": null,
+      "original_record_sha256": "65f4f050c544d8f94963a1e65c2ddd7a391910aca664aaaafba25758bf7758b4",
+      "source_model_replayed": true
+    },
+    {
+      "forecast_id": "6f5faa2b27a09d1bbcebe464e4643be8649ce0f078817993a97d06ea00256c1f",
+      "model_id": "nhl-causal-elo-v25.1",
+      "event_id": "1171316",
+      "market_id": "5563968",
+      "domain": "sports",
+      "timestamp": "2026-11-08T00:18:34.928503+00:00",
+      "evidence_cutoff": "2026-11-08T00:18:34.669369+00:00",
+      "book_timestamp": "2026-11-08T00:18:25.881000Z",
+      "model_sha256": "d7ba48afc4f83aef0fe24d5022b3391581ffb5cf475154d4df13ee92f1bc1706",
+      "probability": 0.3870748463234378,
+      "station": null,
+      "original_record_sha256": "65f4f050c544d8f94963a1e65c2ddd7a391910aca664aaaafba25758bf7758b4",
+      "source_model_replayed": true
+    },
+    {
+      "forecast_id": "1f1fb174f73827ee35c3a5165aeb4361da0cee3be5f04ebebb46701859cb8843",
+      "model_id": "nhl-causal-elo-v25.1",
+      "event_id": "1171322",
+      "market_id": "5563990",
+      "domain": "sports",
+      "timestamp": "2026-11-08T00:18:35.445192+00:00",
+      "evidence_cutoff": "2026-11-08T00:18:34.686210+00:00",
+      "book_timestamp": "2026-11-08T00:18:33.713000Z",
+      "model_sha256": "d7ba48afc4f83aef0fe24d5022b3391581ffb5cf475154d4df13ee92f1bc1706",
+      "probability": 0.6281983756199847,
+      "station": null,
+      "original_record_sha256": "5b40b0b513a899d62a5afb3073b10d979c2fb5a7ab73e9d70008481ff0f80a84",
+      "source_model_replayed": true
+    },
+    {
+      "forecast_id": "daa6a47a6c4120b5a9eb3faf4110f6ead52a1aa00dc1cdc5a150a460b22ae1bf",
+      "model_id": "nhl-beta-frequency-v25.1",
+      "event_id": "1171322",
+      "market_id": "5563990",
+      "domain": "sports",
+      "timestamp": "2026-11-08T00:18:35.445192+00:00",
+      "evidence_cutoff": "2026-11-08T00:18:34.686210+00:00",
+      "book_timestamp": "2026-11-08T00:18:33.713000Z",
+      "model_sha256": "c8c477ec4f9eb72badde574dccef47dab4e88fcd147c0cfc47d5aa80787052bc",
+      "probability": 0.6963350785340314,
+      "station": null,
+      "original_record_sha256": "5b40b0b513a899d62a5afb3073b10d979c2fb5a7ab73e9d70008481ff0f80a84",
+      "source_model_replayed": true
+    },
+    {
+      "forecast_id": "8e3d55b875d863b0d0808a66e9b066eddc1f8ce28d225144613e01c97f9f0af8",
+      "model_id": "metar-diurnal-gaussian-v25.1",
+      "event_id": "1323602",
+      "market_id": "6740827",
+      "domain": "weather",
+      "timestamp": "2026-11-08T00:18:36.379483+00:00",
+      "evidence_cutoff": "2026-11-08T00:18:36.364986+00:00",
+      "book_timestamp": "2026-11-08T00:18:30.732000Z",
+      "model_sha256": "f17c44bfbf9d63483b33374f661b84389af33b23516c562b6911f93ead22f41e",
+      "probability": 0.20942397624242992,
+      "station": "ZUCK",
+      "original_record_sha256": "e477049864485a9ddbdd28d8bb3fde6ad5617551776ed34fe375ebc1a679f9cb",
+      "source_model_replayed": true
+    },
+    {
+      "forecast_id": "e4741d8b03db567d0d405968b5d025b22d10335b4b278540e5559fea7d779b7f",
+      "model_id": "metar-recency-kernel-v25.1",
+      "event_id": "1323602",
+      "market_id": "6740827",
+      "domain": "weather",
+      "timestamp": "2026-11-08T00:18:36.379483+00:00",
+      "evidence_cutoff": "2026-11-08T00:18:36.364986+00:00",
+      "book_timestamp": "2026-11-08T00:18:30.732000Z",
+      "model_sha256": "92e7de184159e1eb898cf6a82a41fe737295da3c6fa99508da02678d4be54cfd",
+      "probability": 0.27250782888733943,
+      "station": "ZUCK",
+      "original_record_sha256": "e477049864485a9ddbdd28d8bb3fde6ad5617551776ed34fe375ebc1a679f9cb",
+      "source_model_replayed": true
+    },
+    {
+      "forecast_id": "abc6129d8cb2b71e6695284f2091a272aceeee299ddc7d540060b36efa43f118",
+      "model_id": "nhl-causal-elo-v25.1",
+      "event_id": "1171321",
+      "market_id": "5563985",
+      "domain": "sports",
+      "timestamp": "2026-11-08T00:29:12.635354+00:00",
+      "evidence_cutoff": "2026-11-08T00:29:12.501085+00:00",
+      "book_timestamp": "2026-11-08T00:29:08.400000Z",
+      "model_sha256": "d7ba48afc4f83aef0fe24d5022b3391581ffb5cf475154d4df13ee92f1bc1706",
+      "probability": 0.563080996237664,
+      "station": null,
+      "original_record_sha256": "a7f6c474c794e5c94916a3bfc47fcdea77110c8ffbe40b45352bad8177ff2ae0",
+      "source_model_replayed": true
+    },
+    {
+      "forecast_id": "f70b15892c1397bdb9655f8864bd48634f7104d7e788f1d5d9400dd30aed0bdf",
+      "model_id": "nhl-beta-frequency-v25.1",
+      "event_id": "1171321",
+      "market_id": "5563985",
+      "domain": "sports",
+      "timestamp": "2026-11-08T00:29:12.635354+00:00",
+      "evidence_cutoff": "2026-11-08T00:29:12.501085+00:00",
+      "book_timestamp": "2026-11-08T00:29:08.400000Z",
+      "model_sha256": "c8c477ec4f9eb72badde574dccef47dab4e88fcd147c0cfc47d5aa80787052bc",
+      "probability": 0.5671641791044776,
+      "station": null,
+      "original_record_sha256": "a7f6c474c794e5c94916a3bfc47fcdea77110c8ffbe40b45352bad8177ff2ae0",
+      "source_model_replayed": true
+    },
+    {
+      "forecast_id": "6913fad24cdd887663431170beb9a54dc4144150159bf24b4f9f20696474749b",
+      "model_id": "nhl-causal-elo-v25.1",
+      "event_id": "1171323",
+      "market_id": "5563995",
+      "domain": "sports",
+      "timestamp": "2026-11-08T00:29:12.952622+00:00",
+      "evidence_cutoff": "2026-11-08T00:29:12.516567+00:00",
+      "book_timestamp": "2026-11-08T00:29:08.092000Z",
+      "model_sha256": "d7ba48afc4f83aef0fe24d5022b3391581ffb5cf475154d4df13ee92f1bc1706",
+      "probability": 0.7235021987555413,
+      "station": null,
+      "original_record_sha256": "bc5db2490502f93e6126abca73b06f865398c4502a051cb065878b3e4dcb682e",
+      "source_model_replayed": true
+    },
+    {
+      "forecast_id": "8eb011736ffd110150e40e982a2344a2e161438a740eeed99c81af81e89f816e",
+      "model_id": "nhl-beta-frequency-v25.1",
+      "event_id": "1171323",
+      "market_id": "5563995",
+      "domain": "sports",
+      "timestamp": "2026-11-08T00:29:12.952622+00:00",
+      "evidence_cutoff": "2026-11-08T00:29:12.516567+00:00",
+      "book_timestamp": "2026-11-08T00:29:08.092000Z",
+      "model_sha256": "c8c477ec4f9eb72badde574dccef47dab4e88fcd147c0cfc47d5aa80787052bc",
+      "probability": 0.89728453364817,
+      "station": null,
+      "original_record_sha256": "bc5db2490502f93e6126abca73b06f865398c4502a051cb065878b3e4dcb682e",
+      "source_model_replayed": true
+    },
+    {
+      "forecast_id": "0a123b60661e4107146bfcd6fe6c1186aa27d3b34b278806add61ebddaab5f59",
+      "model_id": "metar-diurnal-gaussian-v25.1",
+      "event_id": "1323613",
+      "market_id": "6740868",
+      "domain": "weather",
+      "timestamp": "2026-11-08T00:29:16.631278+00:00",
+      "evidence_cutoff": "2026-11-08T00:29:16.615938+00:00",
+      "book_timestamp": "2026-11-08T00:29:10.900000Z",
+      "model_sha256": "f17c44bfbf9d63483b33374f661b84389af33b23516c562b6911f93ead22f41e",
+      "probability": 0.16475401567567816,
+      "station": "ZUUU",
+      "original_record_sha256": "765e708448d4cdcaeae9163e1dafc78b10d149e93266e66a471751c7c3c69909",
+      "source_model_replayed": true
+    },
+    {
+      "forecast_id": "e50b569e42c954b6fc5819bf7f9f2987048d164330e31dc9d79d1cf808891524",
+      "model_id": "metar-recency-kernel-v25.1",
+      "event_id": "1323613",
+      "market_id": "6740868",
+      "domain": "weather",
+      "timestamp": "2026-11-08T00:29:16.631278+00:00",
+      "evidence_cutoff": "2026-11-08T00:29:16.615938+00:00",
+      "book_timestamp": "2026-11-08T00:29:10.900000Z",
+      "model_sha256": "92e7de184159e1eb898cf6a82a41fe737295da3c6fa99508da02678d4be54cfd",
+      "probability": 0.18242355056396756,
+      "station": "ZUUU",
+      "original_record_sha256": "765e708448d4cdcaeae9163e1dafc78b10d149e93266e66a471751c7c3c69909",
+      "source_model_replayed": true
+    },
+    {
+      "forecast_id": "04b1fc89a32e86c29cdb7e32fd3a1b6b6a56dd87536862444a2bb4cf79d65609",
+      "model_id": "metar-diurnal-gaussian-v25.1",
+      "event_id": "1323624",
+      "market_id": "6741017",
+      "domain": "weather",
+      "timestamp": "2026-11-08T00:39:44.909085+00:00",
+      "evidence_cutoff": "2026-11-08T00:39:44.891283+00:00",
+      "book_timestamp": "2026-11-08T00:39:39.778000Z",
+      "model_sha256": "f17c44bfbf9d63483b33374f661b84389af33b23516c562b6911f93ead22f41e",
+      "probability": 0.837228763433078,
+      "station": "ZSQD",
+      "original_record_sha256": "88afd4a52187d903aec7262fc6d104c0265ab0482cc9dca920a7364b2c62fd60",
+      "source_model_replayed": true
+    },
+    {
+      "forecast_id": "8fd59e4ba5a052d2285e6174cb4ead00ad847aa1336e25da857d94becb34dd50",
+      "model_id": "metar-recency-kernel-v25.1",
+      "event_id": "1323624",
+      "market_id": "6741017",
+      "domain": "weather",
+      "timestamp": "2026-11-08T00:39:44.909085+00:00",
+      "evidence_cutoff": "2026-11-08T00:39:44.891283+00:00",
+      "book_timestamp": "2026-11-08T00:39:39.778000Z",
+      "model_sha256": "92e7de184159e1eb898cf6a82a41fe737295da3c6fa99508da02678d4be54cfd",
+      "probability": 0.9078211204753845,
+      "station": "ZSQD",
+      "original_record_sha256": "88afd4a52187d903aec7262fc6d104c0265ab0482cc9dca920a7364b2c62fd60",
+      "source_model_replayed": true
+    },
+    {
+      "forecast_id": "0eece2c81e86f7d86eb31991596f705fb5a425f83e3c41f7d91637870fffba86",
+      "model_id": "nhl-beta-frequency-v25.1",
+      "event_id": "1171319",
+      "market_id": "5563975",
+      "domain": "sports",
+      "timestamp": "2026-11-08T00:40:19.350764+00:00",
+      "evidence_cutoff": "2026-11-08T00:40:19.273861+00:00",
+      "book_timestamp": "2026-11-08T00:40:15.136000Z",
+      "model_sha256": "c8c477ec4f9eb72badde574dccef47dab4e88fcd147c0cfc47d5aa80787052bc",
+      "probability": 0.7691154422788605,
+      "station": null,
+      "original_record_sha256": "26d2689ed3b55ffaf22a584b8f39a02d19a523b263d1d58d8ac5bf886d451aab",
+      "source_model_replayed": true
+    },
+    {
+      "forecast_id": "e22b5c4dec815b9ddac03dc3726bcfc45d4a320e7c88dbd70bdcc2e30b20d1cf",
+      "model_id": "nhl-causal-elo-v25.1",
+      "event_id": "1171319",
+      "market_id": "5563975",
+      "domain": "sports",
+      "timestamp": "2026-11-08T00:40:19.350764+00:00",
+      "evidence_cutoff": "2026-11-08T00:40:19.273861+00:00",
+      "book_timestamp": "2026-11-08T00:40:15.136000Z",
+      "model_sha256": "d7ba48afc4f83aef0fe24d5022b3391581ffb5cf475154d4df13ee92f1bc1706",
+      "probability": 0.6517538335091516,
+      "station": null,
+      "original_record_sha256": "26d2689ed3b55ffaf22a584b8f39a02d19a523b263d1d58d8ac5bf886d451aab",
+      "source_model_replayed": true
+    },
+    {
+      "forecast_id": "3fee7d83f1f6e38ecdb2258c618acccdca0335f9a9d1b631d40ce8b827c0c481",
+      "model_id": "spx-gaussian-logreturn-direction-v25.1",
+      "event_id": "1324979",
+      "market_id": "6747198",
+      "domain": "finance",
+      "timestamp": "2026-11-08T00:45:07.605878+00:00",
+      "evidence_cutoff": "2026-11-08T00:45:07.588304+00:00",
+      "book_timestamp": "2026-11-08T00:44:57.397000Z",
+      "model_sha256": "eb87c826ea2801030105a57e7cea126e5333ff7c1d52ceaabbb015404870145a",
+      "probability": 0.5152451490710184,
+      "station": null,
+      "original_record_sha256": "6058a435cc6f9bf7ae45a9c28baef0e29487345ed4433954e7418a664e7af45d",
+      "source_model_replayed": true
+    },
+    {
+      "forecast_id": "4efabf715151a98029c13e0e56f7236a2cb1537504e3dce6ef5970365f93cbbe",
+      "model_id": "spx-weekday-beta-direction-v25.1",
+      "event_id": "1324979",
+      "market_id": "6747198",
+      "domain": "finance",
+      "timestamp": "2026-11-08T00:45:07.605878+00:00",
+      "evidence_cutoff": "2026-11-08T00:45:07.588304+00:00",
+      "book_timestamp": "2026-11-08T00:44:57.397000Z",
+      "model_sha256": "af337d9504ba57fe4fc56c406e57d27f9fc4ae29706a63db38237ecf68195ee2",
+      "probability": 0.6033755274261603,
+      "station": null,
+      "original_record_sha256": "6058a435cc6f9bf7ae45a9c28baef0e29487345ed4433954e7418a664e7af45d",
+      "source_model_replayed": true
+    }
+  ]
+}

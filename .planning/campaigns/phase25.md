@@ -1,5 +1,5 @@
 # Phase25
-Status: active
+Status: complete
 Root /home/ubuntu/Neraium-Poly, phase25-intelligence, baseline9371d301a55385e0a99e4473306755198118a291; tracked clean at start; unrelated untracked recovery evidence preserved. Native Citadel /do→/archon, one bounded campaign, no daemon/spending approval inferred. Claims .planning/research/phase25-contract.md.32CPUs/234GiBavailableRAM/455GiBfree/load<1. Four-agent maximum, three native writing worktrees, bounded source jobs2 and one numerical/pytest worker; preserve service resource quotas.
 
 | Phase | End condition | validator_retries_remaining |
@@ -13,3 +13,7 @@ Root /home/ubuntu/Neraium-Poly, phase25-intelligence, baseline9371d301a55385e0a9
 Required: real source/model replay and prospective evidence; causal grouping/scoring regressions; no unsupported model promotion; budgets unchanged and exact capacity proposal; account/journal/immutable-file integrity; CI source hash and actual source observation. A failed hypothesis is valid, fabricated capability is not. Root coordinates/cherry-picks; no shared-file writers.
 
 Checkpoint2026-11-08T00:09Z rootphase25-intelligence HEADf3e295c; adapters/competitionintegrated, rootNamespace/runtime/outcomehooks uncommitted. Genuineisolated generic6NHL/weather replays +4agentSPX/GDP replays. Finalbackendrunningonce;frontend5/browser/build/auditspassed. Next: finishfulltests, reviewactualsourceenrollment/callbacks, commits+mainCIbeforeexperimentalrestart, boundedliveobservation, preservation/capacityproposal. No risk/budget changes.
+
+Recovery checkpoint2026-11-08T00:27Z mainc053cf76755f5d2b1a3f1070c09f0d4646967c8d, rootcheckout unchanged. InitialsourceCI42428692016passed,e1bdb86. Initialsoak exposedOOM at00:23:11 under768MiB;systemd recoveredPID3344493(NRestarts1),forecasts/checkpoints preserved. Profilecoldcombinedreport maxRSS174648KiB. Host32CPU/234GiBavailableRAM/load1: persistentlocalexperimentalCPU1core/RAM2GiBapplied+unittemplateupdated;noAWS/budget/risk/stopchanges. MemoryCurrent839MBafterrecovery exceedsoldcap; new2GiBboundnotunbounded. Final-resourceCI42429740726running; final10minsoak data/phase25/recovered-observation,starts00:27,lastplanned00:37. CollectorPID3322307unchanged. Historicalexploration artifactscommitted4c7acde/cc1cce3; no credibleincrementaledge. Next: verifyresourceCI+stablefinalsoak, replay newforecasts/readcheckpoint, account/archive integrity, capacityproposalexactmeasured(noapply), finalhff/sourceevidencecommit+push. Preserveall initialfailedobservations; no automatic stopreset.
+
+Deliveredverifiedsourcec053cf7/main;finalCI42429740726green. Finalfullinventory18P25/9canonicalevents,99globalvs71baseline,allhashespreserved;noqualifiedoutcomes/edge/trades. OOMrecoveryandboundedresourcefixretained;final617s11/11healthy,noadditionalrestart. Details .planning/handoffs/phase25.md; nextactionfinalevidencecommit/push,memory/indexsync. No archive/risklimit changes.

@@ -1,0 +1,11 @@
+Nov 08 00:14:31 ip-172-31-67-49 systemd[1]: Stopping neraium-poly-experimental.service - Neraium-Poly isolated UNVALIDATED experimental paper research...
+Nov 08 00:14:31 ip-172-31-67-49 systemd[1]: neraium-poly-experimental.service: Deactivated successfully.
+Nov 08 00:14:31 ip-172-31-67-49 systemd[1]: Stopped neraium-poly-experimental.service - Neraium-Poly isolated UNVALIDATED experimental paper research.
+Nov 08 00:14:31 ip-172-31-67-49 systemd[1]: neraium-poly-experimental.service: Consumed 10min 25.047s CPU time, 730.6M memory peak, 0B memory swap peak.
+Nov 08 00:14:31 ip-172-31-67-49 systemd[1]: Started neraium-poly-experimental.service - Neraium-Poly isolated UNVALIDATED experimental paper research.
+Nov 08 00:23:11 ip-172-31-67-49 systemd[1]: neraium-poly-experimental.service: A process of this unit has been killed by the OOM killer.
+Nov 08 00:23:11 ip-172-31-67-49 systemd[1]: neraium-poly-experimental.service: Main process exited, code=killed, status=9/KILL
+Nov 08 00:23:11 ip-172-31-67-49 systemd[1]: neraium-poly-experimental.service: Failed with result 'oom-kill'.
+Nov 08 00:23:11 ip-172-31-67-49 systemd[1]: neraium-poly-experimental.service: Consumed 2min 47.244s CPU time, 211.2M memory peak, 0B memory swap peak.
+Nov 08 00:23:21 ip-172-31-67-49 systemd[1]: neraium-poly-experimental.service: Scheduled restart job, restart counter is at 1.
+Nov 08 00:23:21 ip-172-31-67-49 systemd[1]: Started neraium-poly-experimental.service - Neraium-Poly isolated UNVALIDATED experimental paper research.

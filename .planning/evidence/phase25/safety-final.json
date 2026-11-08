@@ -1,0 +1,23 @@
+{
+  "neraium-poly-paper.service": {
+    "pid": 3322307,
+    "flags": {
+      "PAPER_TRADING": "true",
+      "LIVE_TRADING_ENABLED": "false"
+    }
+  },
+  "neraium-poly-experimental.service": {
+    "pid": 3344493,
+    "flags": {
+      "PAPER_TRADING": "true",
+      "LIVE_TRADING_ENABLED": "false"
+    }
+  },
+  "paper-live_config_diff": {},
+  "experimental-paper_config_diff": {
+    "phase25_research_enabled": [
+      null,
+      true
+    ]
+  }
+}

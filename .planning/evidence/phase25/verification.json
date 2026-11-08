@@ -1,0 +1,39 @@
+{
+  "source_head": "c053cf76755f5d2b1a3f1070c09f0d4646967c8d",
+  "application_source": "1969095",
+  "backend": {
+    "passed": 1602,
+    "seconds": 146.08,
+    "full_local_runs": 1,
+    "evidence": "data/phase25/backend-final.xml"
+  },
+  "browser": {
+    "passed": 5,
+    "workers": 1
+  },
+  "build": "passed",
+  "ruff": "passed",
+  "dependency_audits": "pip/npm passed",
+  "scenario": "controlled fixture only, passed",
+  "systemd_unit_validation": "passed",
+  "initial_ci": 42428692016,
+  "final_resource_ci": 42429740726,
+  "initial_oom": "observed and retained; source/frame/ledger recovery verified, no stop reset",
+  "actual_parallelism": {
+    "agents_peak_including_root": 4,
+    "isolated_writing_worktrees": 3,
+    "historical_cpu_workers": 2,
+    "pytest_cpu_workers": 1,
+    "browser_workers": 1,
+    "source_adapter_jobs": 2
+  },
+  "resources": {
+    "logical_cpus": 32,
+    "available_ram_gib_before": 234,
+    "experimental_cpu_quota_cores": 1,
+    "experimental_memory_max_gib": 2
+  },
+  "paper_only": true,
+  "no_aws_mutation": true,
+  "no_retention_or_budget_changes": true
+}

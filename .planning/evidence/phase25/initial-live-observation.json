@@ -1,0 +1,218 @@
+{
+  "observed_from": "2026-11-08T00:14:48.594391+00:00",
+  "observed_until": "2026-11-08T00:26:16.412005+00:00",
+  "window_seconds": 687.817614,
+  "samples": 12,
+  "services": {
+    "collector": {
+      "api_samples_successful": 12,
+      "api_samples_errors": 0,
+      "health": {
+        "status": "ok",
+        "paper_trading": true,
+        "live_trading_enabled": false,
+        "mode": "live_market_paper",
+        "trading_status": "validation_blocked",
+        "last_ingestion_at": "2026-11-08T00:26:16.413298+00:00",
+        "last_ingestion_age_seconds": 0.00084,
+        "last_error": null,
+        "ledger_consistent": true,
+        "timestamp": "2026-11-08T00:26:16.414138+00:00"
+      },
+      "archive": {
+        "health": "ok",
+        "usage_bytes": 17490867726,
+        "budget_bytes": 214748364800,
+        "free_bytes": 487906078720,
+        "global_floor_bytes": 107374182400,
+        "growth_bytes_per_second": 64818.46695214751,
+        "seconds_to_exhaustion": null,
+        "measurement_at": "2026-11-08T00:26:14.703061+00:00",
+        "measurement_completed_at": "2026-11-08T00:26:14.818500+00:00",
+        "segments": 694,
+        "compressed_segments": 693,
+        "records": 4301046,
+        "cold_verification": {
+          "enabled": true,
+          "minimum_scan_interval_seconds": 60,
+          "last_scan_at": "2026-11-08T00:25:35.089161+00:00",
+          "last_success_at": "2026-11-08T00:25:35.089161+00:00",
+          "last_segment": "segment-00000693.sqlite",
+          "last_error": null,
+          "scope": "process-local progress; immutable proof presence is reported separately"
+        }
+      },
+      "measured_net_growth_bytes_per_second": 71091.17726307639,
+      "growth_window_seconds": 695.412144,
+      "conditional_budget_runway_days": 32.114714802827116,
+      "new_segments": 4,
+      "new_compressed_segments": 4,
+      "new_archived_records": 8661,
+      "operations_latency_median_seconds": 0.043402254581451416,
+      "operations_latency_max_seconds": 3.1659717590082437
+    },
+    "experimental": {
+      "api_samples_successful": 7,
+      "api_samples_errors": 5,
+      "health": {
+        "status": "ok",
+        "account_id": "experimental-paper",
+        "validation_status": "unvalidated",
+        "paper_trading": true,
+        "live_trading_enabled": false,
+        "last_ingestion_at": "2026-11-08T00:26:12.557182+00:00",
+        "last_ingestion_age_seconds": 3.881453,
+        "last_error": null,
+        "fee_error": null,
+        "timestamp": "2026-11-08T00:26:16.438635+00:00"
+      },
+      "archive": {
+        "health": "ok",
+        "usage_bytes": 7665766497,
+        "budget_bytes": 107374182400,
+        "free_bytes": 487905603584,
+        "global_floor_bytes": 107374182400,
+        "growth_bytes_per_second": 89916.67004911698,
+        "seconds_to_exhaustion": null,
+        "measurement_at": "2026-11-08T00:26:12.139720+00:00",
+        "measurement_completed_at": "2026-11-08T00:26:12.209547+00:00",
+        "segments": 1000,
+        "compressed_segments": 999,
+        "records": 1041154,
+        "cold_verification": {
+          "enabled": true,
+          "minimum_scan_interval_seconds": 60,
+          "last_scan_at": "2026-11-08T00:25:19.583247+00:00",
+          "last_success_at": "2026-11-08T00:25:19.583247+00:00",
+          "last_segment": "segment-00000987.sqlite",
+          "last_error": null,
+          "scope": "process-local progress; immutable proof presence is reported separately"
+        }
+      },
+      "measured_net_growth_bytes_per_second": 93953.90993021821,
+      "growth_window_seconds": 556.800372,
+      "conditional_budget_runway_days": 12.282965044531245,
+      "new_segments": 9,
+      "new_compressed_segments": 9,
+      "new_archived_records": 2540,
+      "operations_latency_median_seconds": 2.3205006029456854,
+      "operations_latency_max_seconds": 9.41648339992389
+    }
+  },
+  "last_frame": {
+    "id": "dd01a4701b4f1ec0b977677d9b81745e941295621c338922695e422419d3e7d3",
+    "timestamp": "2026-11-08T00:26:16.822210Z",
+    "market_ids": 405,
+    "outcome_tokens": 810,
+    "books": 594,
+    "fresh_15s": 287,
+    "producer_health": {
+      "status": "ok",
+      "last_error": null,
+      "books_withheld_at_export": 0,
+      "last_ingestion_at": "2026-11-08T00:26:16.821652+00:00",
+      "paper_trading": true,
+      "live_trading_enabled": false
+    },
+    "youngest_book_age_seconds": 0.278072,
+    "latest_book_timestamp": "2026-11-08T00:26:16Z"
+  },
+  "last_domain": {
+    "status": "research_only",
+    "forecasts": 6,
+    "native_parents": 3,
+    "last_evaluation_at": "2026-11-08T00:23:09.137674+00:00",
+    "runtime_error": null,
+    "models": {
+      "metar-diurnal-gaussian-v25.1": {
+        "brier": null,
+        "forecasts": 1,
+        "log_loss": null,
+        "resolved": 0
+      },
+      "metar-recency-kernel-v25.1": {
+        "brier": null,
+        "forecasts": 1,
+        "log_loss": null,
+        "resolved": 0
+      },
+      "nhl-beta-frequency-v25.1": {
+        "brier": null,
+        "forecasts": 2,
+        "log_loss": null,
+        "resolved": 0
+      },
+      "nhl-causal-elo-v25.1": {
+        "brier": null,
+        "forecasts": 2,
+        "log_loss": null,
+        "resolved": 0
+      },
+      "spx-gaussian-logreturn-direction-v25.1": {
+        "brier": null,
+        "forecasts": 0,
+        "log_loss": null,
+        "resolved": 0
+      },
+      "spx-weekday-beta-direction-v25.1": {
+        "brier": null,
+        "forecasts": 0,
+        "log_loss": null,
+        "resolved": 0
+      },
+      "uk-gdp-jeffreys-frequency-v25.1": {
+        "brier": null,
+        "forecasts": 0,
+        "log_loss": null,
+        "resolved": 0
+      },
+      "uk-gdp-regularized-ar1-v25.1": {
+        "brier": null,
+        "forecasts": 0,
+        "log_loss": null,
+        "resolved": 0
+      }
+    },
+    "outcome_verification": {
+      "status": "research_only",
+      "last_at": "2026-11-08T00:25:52.922147+00:00",
+      "pending_forecasts": 6,
+      "durable_verified_forecasts": 0,
+      "verified_by_model": {},
+      "checks": 0,
+      "last_reasons": {},
+      "independent_event_count": 0,
+      "certification_authority": false,
+      "trading_authority": false
+    },
+    "discovery": {
+      "last_source_at": "2026-11-08T00:25:52.571198+00:00",
+      "discovered_market_ids": 16,
+      "added_market_ids": 16,
+      "added_outcome_tokens": 32,
+      "source": "public Gamma metadata; books independently acquired from public CLOB",
+      "errors": {}
+    }
+  },
+  "last_accounts": {
+    "cash": 496.11522059829053,
+    "bankroll": 496.11522059829053,
+    "simulated_pnl": -3.8847794017094657,
+    "kill_switch": false,
+    "orders_submitted": 13,
+    "fills": 10,
+    "open_positions": 0
+  },
+  "action": "collector_not_restarted; experimental_planned_restart_only; no stop reset/no new authority/no deletion",
+  "resource_snapshot": {
+    "logical_cpus": 32,
+    "loadavg": [
+      0.7802734375,
+      0.984375,
+      1.06982421875
+    ],
+    "memory": "               total        used        free      shared  buff/cache   available\nMem:     265985810432 14631682048  2235883520   810049536 252194648064 251354128384\nSwap:              0           0           0\n",
+    "disk": "Filesystem         1B-blocks         Used    Available Use% Mounted on\n/dev/root      1038993555456 551126528000 487850250240  54% /\n",
+    "units": "MainPID=3322307\nNRestarts=0\nMemoryCurrent=987475968\nMemoryPeak=1073958912\nCPUQuotaPerSecUSec=1s\nMemoryMax=1073741824\nActiveState=active\n\nMainPID=3344493\nNRestarts=1\nMemoryCurrent=930213888\nMemoryPeak=1034117120\nCPUQuotaPerSecUSec=1s\nMemoryMax=2147483648\nActiveState=active\n"
+  }
+}

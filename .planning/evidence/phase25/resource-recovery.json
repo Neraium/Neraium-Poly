@@ -1,0 +1,25 @@
+{
+  "at": "2026-11-08T00:28:06.063515+00:00",
+  "incident": "experimental unit exceeded original768MiB MemoryMax at2026-11-08T00:23:11Z; systemd auto-recovered once",
+  "before": {
+    "cpu_quota_cores": 0.5,
+    "memory_max_bytes": 805306368
+  },
+  "after": {
+    "cpu_quota_cores": 1,
+    "memory_max_bytes": 2147483648
+  },
+  "host_headroom": {
+    "logical_cpus": 32,
+    "available_ram_gib": 234,
+    "load_one_minute": 1.01
+  },
+  "configuration": "persistent systemctl set-property and matching repository unit template",
+  "cost": "existing paid host allocation only; no AWS API mutation/provisioning or additional infrastructure",
+  "financial_controls": "unchanged accounts/budgets/risk/approval/stops; no reset",
+  "source_profile": "data/phase25/report-resource-profile.txt",
+  "profile_maximum_rss_kib": 174648,
+  "observation_scope": "bounded cold unified-report process, not a whole-service peak or heap-leak proof",
+  "initial_failure_evidence": "initial-oom-recovery.txt",
+  "next_verification": "ten-minute bounded final-resource observation; retain initial failure and unexpected restart count"
+}

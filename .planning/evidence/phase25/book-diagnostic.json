@@ -1,0 +1,42 @@
+{
+  "at": "2026-11-08T00:36:56.497875+00:00",
+  "scope": "read-only public-book acquisition, no forecasts or trades",
+  "observations": [
+    {
+      "market": "6747198",
+      "outcome": "Up",
+      "book_source": "https://clob.polymarket.com",
+      "book_time": "2026-11-08T00:36:21.191000+00:00",
+      "age": 14.299299,
+      "bid": 0.52,
+      "ask": 0.57,
+      "native_provenance": false,
+      "duration": 0.21380301797762513
+    },
+    {
+      "market": "6747198",
+      "outcome": "Down",
+      "book_source": "https://clob.polymarket.com",
+      "book_time": "2026-11-08T00:36:21.191000+00:00",
+      "age": 14.525066,
+      "bid": 0.43,
+      "ask": 0.48,
+      "native_provenance": false,
+      "duration": 0.22571800299920142
+    },
+    {
+      "market": "3566403",
+      "outcome": "Yes",
+      "error_type": "TimeoutError",
+      "error": "",
+      "duration": 10.225870862836018
+    },
+    {
+      "market": "3566403",
+      "outcome": "No",
+      "error_type": "TimeoutError",
+      "error": "",
+      "duration": 10.229722831165418
+    }
+  ]
+}

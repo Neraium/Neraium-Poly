@@ -1,0 +1,65 @@
+{
+  "at": "2026-11-08T00:48:28.636876+00:00",
+  "applied": false,
+  "approved_limits_gib": {
+    "collector": 200,
+    "experimental": 100
+  },
+  "filesystem_floor_gib": 100,
+  "temporary_headroom_gib": 8,
+  "shared_workload_growth_headroom_gib": 64,
+  "services": {
+    "collector": {
+      "usage_gib": 16.34721348527819,
+      "growth_bytes_per_second": 56300.45715715584,
+      "measurement_window_seconds": 3484.19352,
+      "budget_gib": 200.0,
+      "conditional_runway_days": 40.53887835402448,
+      "measurement_at": "2026-11-08T00:48:15.026814+00:00",
+      "free_gib": 453.8383140563965
+    },
+    "experimental": {
+      "usage_gib": 7.279943482019007,
+      "growth_bytes_per_second": 95775.19292798256,
+      "measurement_window_seconds": 3471.672777,
+      "budget_gib": 100.0,
+      "conditional_runway_days": 12.03113997653114,
+      "measurement_at": "2026-11-08T00:48:26.625479+00:00",
+      "free_gib": 453.8383140563965
+    }
+  },
+  "existing_joint_allowance_remaining_gib": 276.3728430327028,
+  "free_after_full_existing_joint_allowance_gib": 177.46547102369368,
+  "maximum_joint_budget_under_current_protected_headrooms_gib": 305,
+  "preferred_approval_request": {
+    "collector_budget_gib": 120,
+    "experimental_budget_gib": 180,
+    "combined_budget_gib": 300,
+    "new_infrastructure_cost": 0,
+    "conditional_runways_days": {
+      "collector": 22.87995615704498,
+      "experimental": 22.411754853915703
+    },
+    "reason": "redistribute unused quota against measured growth; exact owner approval required before configuration changes"
+  },
+  "retain_collector_200_maximum_experimental_proposal_gib": 105,
+  "compression": {
+    "paper-live": {
+      "pairs": 697,
+      "raw_bytes": 8700907520,
+      "gzip_bytes": 2298512242,
+      "gzip_ratio": 0.2641692532321042,
+      "duplicate_sealed_raw_hash_groups": 0,
+      "scope": "size/hash-catalog inventory; separate full-hash/restoration checks verify integrity"
+    },
+    "experimental-paper": {
+      "pairs": 1022,
+      "raw_bytes": 4378611712,
+      "gzip_bytes": 1649262133,
+      "gzip_ratio": 0.3766632534417338,
+      "duplicate_sealed_raw_hash_groups": 0,
+      "scope": "size/hash-catalog inventory; separate full-hash/restoration checks verify integrity"
+    }
+  },
+  "retention": "Retain all originals. No deletion/migration/limits applied. Existing lossless cold-copy proposal remains approval-dependent; copying alone does not free local originals. Current short-window rates include new enrollment/source bursts and shared workload variability."
+}

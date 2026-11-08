@@ -1,0 +1,45 @@
+{
+  "at": "2026-11-08T00:47:53.238878+00:00",
+  "ws_connected": true,
+  "certified_cash": 500.0,
+  "models": {
+    "metar-diurnal-gaussian-v25.1": 3,
+    "metar-recency-kernel-v25.1": 3,
+    "nhl-beta-frequency-v25.1": 5,
+    "nhl-causal-elo-v25.1": 5,
+    "spx-gaussian-logreturn-direction-v25.1": 1,
+    "spx-weekday-beta-direction-v25.1": 1,
+    "uk-gdp-jeffreys-frequency-v25.1": 0,
+    "uk-gdp-regularized-ar1-v25.1": 0
+  },
+  "phase25": {
+    "forecasts": 18,
+    "native_parents": 9,
+    "runtime_error": null,
+    "last_evaluation_at": "2026-11-08T00:45:17.835171+00:00",
+    "discovery": {
+      "last_source_at": "2026-11-08T00:41:03.659301+00:00",
+      "discovered_market_ids": 16,
+      "added_market_ids": 16,
+      "added_outcome_tokens": 32,
+      "source": "public Gamma metadata; books independently acquired from public CLOB",
+      "errors": {}
+    }
+  },
+  "accounts": {
+    "bankroll": 496.11522059829053,
+    "simulated_pnl": -3.8847794017094657,
+    "orders_submitted": 13,
+    "fills": 10,
+    "open_positions": 0,
+    "kill_switch": false
+  },
+  "source_frame": {
+    "id": "faf81d161954d58ac23f163cb6b74cc9d4d1c31a7522a52adbab08d1c71acbe1",
+    "timestamp": "2026-11-08T00:47:53.607929Z",
+    "markets": 405,
+    "fresh_books": 277,
+    "last_source_book": "2026-11-08T00:47:53.566000Z"
+  },
+  "units": "MainPID=3322307\nNRestarts=0\nMemoryCurrent=970612736\nMemoryPeak=1073958912\nCPUQuotaPerSecUSec=1s\nMemoryMax=1073741824\nActiveState=active\n\nMainPID=3344493\nNRestarts=1\nMemoryCurrent=1532329984\nMemoryPeak=1553625088\nCPUQuotaPerSecUSec=1s\nMemoryMax=2147483648\nActiveState=active\n"
+}

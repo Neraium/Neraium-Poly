@@ -1,0 +1,38 @@
+{
+  "at": "2026-11-07T23:50:33.699800+00:00",
+  "head": "6ebe75573c04d2b5adac31bd65dd4ce76d4b6674",
+  "cpu_count": 32,
+  "available_memory": "               total        used        free      shared  buff/cache   available\nMem:     265985810432 14361563136  3045928960   810057728 251654696960 251624247296\nSwap:              0           0           0\n",
+  "loadavg": [
+    0.8369140625,
+    0.85400390625,
+    0.86474609375
+  ],
+  "filesystem": "Filesystem         1B-blocks         Used    Available Use% Mounted on\n/dev/root      1038993555456 550636916736 488339861504  53% /\n",
+  "services": {
+    "collector": {
+      "cash": 500.0,
+      "orders": null,
+      "fills": null,
+      "stop": null,
+      "archive": {
+        "health": "ok",
+        "usage_bytes": 17356525137,
+        "budget_bytes": 214748364800,
+        "global_floor_bytes": 107374182400
+      }
+    },
+    "experimental": {
+      "cash": 496.11522059829053,
+      "orders": 13,
+      "fills": 10,
+      "stop": false,
+      "archive": {
+        "health": "ok",
+        "usage_bytes": 7484279663,
+        "budget_bytes": 107374182400,
+        "global_floor_bytes": 107374182400
+      }
+    }
+  }
+}
