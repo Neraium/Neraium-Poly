@@ -104,14 +104,14 @@ def build_economic_findings(studies, frame, *, as_of, verified_forecast_ids=(), 
     from .execution import analyze_depth
 
     now = at(as_of)
-    _raw, _markets, books, bad = _current(frame, now)
+    _raw, markets, books, bad = _current(frame, now)
     originals, _rejected = bound_forecasts(studies, as_of=now)
     if len(originals) > 128:raise ValueError('bounded_phase28_forecast_universe_exceeded')
     base = build_findings(studies, frame, as_of=now, verified_forecast_ids=verified_forecast_ids, fee_quotes=None)
     rows = []; rejected = Counter(); verified = set(verified_forecast_ids)
     for previous in base['findings']:
         row = dict(previous); source = originals[row['forecast_id']]; f, study = source['forecast'], source['study']
-        b = books.get(row['token_id']); reasons = [x for x in previous['reasons'] if x not in NON_DATA_REASONS]
+        b = books.get(row['token_id']); m = markets.get(row['token_id']); reasons = [x for x in previous['reasons'] if x not in NON_DATA_REASONS]
         row.update(id=digest([VERSION, previous['id']]), version=VERSION, certified_screening_status=previous['status'],
             certified_book_screening_compatible=previous['book_qualified_for_current_observation'],
             certified_minimum_edge_unchanged=.03, research_minimum_per_share_edge=None,
@@ -126,6 +126,7 @@ def build_economic_findings(studies, frame, *, as_of, verified_forecast_ids=(), 
         row['finding_rank'] = None; row['estimated_after_cost_edge'] = None
         row['standard_probe'] = None; row['capacity'] = None
         row['certified_admission_required'] = True
+        row['native_market_constraints'] = {'minimum_order_size': m.min_order_size if m else None, 'price_tick_size': m.tick_size if m else None}
         value = _expected_payout(f)
         semantics = f.get('probability_semantics')
         if semantics == 'binary_event_probability' and _number(f.get('probability')):
@@ -186,7 +187,7 @@ def build_economic_findings(studies, frame, *, as_of, verified_forecast_ids=(), 
             evidence_valid = _qualified_evidence(costs, f)
             conservative = analysis.get('maximum_conservative_profit')
             supported = isinstance(conservative, dict) and _number(conservative.get('lower_net_profit'), 1e-12, 1e15)
-            minimum = f['market'].get('min_order_size')
+            minimum = m.min_order_size if m is not None else None
             lot_ok = (supported and _number(minimum, 1e-9, 1e12)
                       and conservative['quantity']+1e-9 >= minimum)
             if (evidence_valid and f['id'] in verified and not conditional and interval_valid and supported and lot_ok):

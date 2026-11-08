@@ -152,3 +152,24 @@ def test_replayed_cost_evidence_preserved_without_callback_or_original_mutation(
     assert q[f['id']]['evidence']==old and 'verifier' not in row['cost_evidence']
     q[f['id']]['evidence']['calibration_artifact_sha256']='x'*64
     assert not report(s,f,frame,fee_quotes=q)['findings'][0]['qualified_research']
+
+
+def test_current_native_minimum_order_size_cannot_use_smaller_original_metadata():
+    s,f,frame=inputs();m=frame.markets[0].model_copy(update={'min_order_size':1000})
+    current=frame.model_copy(update={'markets':(m,)})
+    row=report(s,f,current,fee_quotes=proof(s,f,current))['findings'][0]
+    assert row['native_market_constraints']['minimum_order_size']==1000
+    assert row['scenario_expected_gross_profit']>0 and not row['qualified_research']
+    assert 'native_minimum_order_quantity_not_supported' in row['reasons']
+
+
+def test_wide_spread_is_measured_acquisition_cost_not_automatic_research_rejection():
+    s,f,frame=inputs();b=frame.books[0];bid=b.bids[0].model_copy(update={'price':.30})
+    b=b.model_copy(update={'bids':(bid,)})
+    current=frame.model_copy(update={'books':(b,)})
+    row=report(s,f,current,fee_quotes=proof(s,f,current))['findings'][0]
+    assert row['spread']>.05 and not row['certified_book_screening_compatible']
+    assert row['qualified_research'] and row['book_qualified_for_current_observation']
+    assert row['cost_assumptions']['spread_paid_once_through_actual_asks']
+    assert row['economics']['principal']==pytest.approx(row['economics']['quantity']*.41)
+    assert not row['execution_authorized']

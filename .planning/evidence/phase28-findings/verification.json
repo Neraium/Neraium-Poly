@@ -1,13 +1,14 @@
 {
-  "controlled_test_cases_passed": 23,
+  "controlled_test_cases_passed": 25,
   "ruff": "passed",
   "execution_dependency_commit": "e5ea15fd6ae37f400ae477f6334047f005c9ceb5",
   "builder": "build_economic_findings(studies,frame,*,as_of,verified_forecast_ids=(),fee_quotes=None)",
   "streaming_merger": "combine_economic_reports(reports,*,as_of)",
-  "implementation_sha256": "60725858cae918bec765377e9070e691b1c7dacdfcd06fdcab3b0b83ed55bd02",
+  "implementation_sha256": "959c9b9e1f712c6700f3ddb44c3c7b671c5241ef0cfa3157445a57fd0aac1ad4",
   "no_three_cent_research_gate": true,
   "certified_threshold_untouched": true,
   "genuine_new_forecasts_generated": 0,
   "real_or_paper_account_orders": 0,
-  "authentic_probe_scope": "original real Phase27 decision replay, not live trading or validated profitability"
+  "authentic_probe_scope": "original real Phase27 decision replay, not live trading or validated profitability",
+  "test_scope": "23 baselinefocusedcases plus2changedcurrent-native-minimum/widespreadregressions; parentfinalsuitecoversall"
 }

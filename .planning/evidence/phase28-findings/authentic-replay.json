@@ -1,5 +1,5 @@
 {
-  "observed_at": "2026-11-08T12:26:04.165509+00:00",
+  "observed_at": "2026-11-08T12:28:32.799711+00:00",
   "scope": "new Phase28 valuation replay of authentic append-only prospective Phase27 forecast and its original actual decision frame; not a new live forecast, fill or profit",
   "source_record_id": "fe0ac156cf09b4c163493e859b8479db47ab0c95dc7ddb7f626c8a02bf15957a",
   "forecast_study_id": "8f7a9d9a218d41f688da24f56d6c7184495abfd524bbb25204aa5cbf7bac8ee1",
@@ -899,6 +899,10 @@
         "validated_profitability": false,
         "correlation_adjusted_portfolio_contribution": null,
         "certified_admission_required": true,
+        "native_market_constraints": {
+          "minimum_order_size": 5.0,
+          "price_tick_size": 0.01
+        },
         "valuation_scope": "conditional_model_scenario",
         "cost_evidence": null
       }
