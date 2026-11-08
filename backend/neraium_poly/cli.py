@@ -36,6 +36,7 @@ def main():
             "challenger-report",
             "forecast-reconcile",
             "domain-leaderboard",
+            "findings",
             "strategy-approve",
             "strategy-status",
             "strategy-revoke",
@@ -65,7 +66,7 @@ def main():
     parser.add_argument("--width", type=int)
     parser.add_argument("--no-color", action="store_true")
     parser.add_argument(
-        "--view", choices=("summary", "strategies", "rejections", "research", "events", "domains", "archives", "operations", "readiness", "edge", "challengers"), default="summary"
+        "--view", choices=("summary", "strategies", "rejections", "research", "events", "domains", "archives", "operations", "readiness", "edge", "challengers", "findings"), default="summary"
     )
     parser.add_argument("--scope", choices=("cycle", "epoch"), default="cycle")
     parser.add_argument("--refresh", type=float, default=3)
@@ -181,6 +182,26 @@ def main():
                 indent=2,
             )
         )
+    elif args.command == "findings":
+        from datetime import UTC, datetime
+
+        from neraium_poly.research.phase17.provenance import ReadonlyArchive
+        from neraium_poly.research.phase27.continuous import FindingsResearch
+        with ReadonlyArchive(args.data_dir) as archive:
+            rows = archive.latest("EconomicFindingStudy", limit=1)
+        if rows:
+            row = rows[0]
+            report = FindingsResearch._summary(row["findings"], row["timestamp"], row["id"])
+            age = (datetime.now(UTC)-datetime.fromisoformat(row["timestamp"])).total_seconds()
+            report["observation_age_seconds"] = age
+            report["status"] = "research_only" if 0 <= age <= 90 else "historical_stale"
+        else:
+            report = {"status": "pending", "research_only": True, "trading_authority": False}
+        if args.output:
+            with args.output.open("x") as handle:
+                json.dump(report, handle, indent=2)
+                handle.write("\n")
+        print(json.dumps(report, indent=2))
     elif args.command in {"forecast-reconcile", "domain-leaderboard"}:
         from datetime import UTC, datetime
 

@@ -1,0 +1,35 @@
+{
+  "at": "2026-11-08T04:46:08.825823+00:00",
+  "backend_regression": {
+    "name": "pytest",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "tests": "1746",
+    "time": "152.146",
+    "timestamp": "2026-11-08T04:41:24.877148+00:00",
+    "hostname": "ip-172-31-67-49"
+  },
+  "post_regression_changed_evidence_component_tests": "......                                                                   [100%]\n6 passed in 0.42s",
+  "reason_for_focused_followup": "complete lossless decision-frame archive added after audit exposed hash-only references; CI will test final integrated source",
+  "ruff": "All checks passed!",
+  "browser": "5passed",
+  "build": "passed",
+  "pip_audit": "no known vulnerabilities",
+  "npm_audit": "0 vulnerabilities",
+  "parallelism": {
+    "concurrent_agents_including_coordinator": 4,
+    "isolated_writing_worktrees": 3,
+    "simultaneous_validation_pipelines": 3,
+    "pytest_cpu_workers": 1,
+    "browser_workers": 1,
+    "historical_model_cpu_workers": 1
+  },
+  "account_and_risk_code_changed": false,
+  "quotas_gib": [
+    150,
+    150
+  ],
+  "floor_gib": 100,
+  "live_trading_enabled": false
+}

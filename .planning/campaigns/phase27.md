@@ -1,0 +1,5 @@
+# Phase27
+Status:active
+Coordinator checkout/home/ubuntu/Neraium-Poly, branchphase27-intelligence, baselineb1832d4, contractHEAD9619c40. Three isolated nativeCitadelwritingworktrees/fourconcurrentagents. FindingsA, forecastB, memoryC; rootcontinuousrecords/runtime/CLI/monitor. No modelsource/risk/accounts/quotas/stops changes.150/150GiBquota+100GiBfloor;1CPU/1GiBcollector and1CPU/2GiBexperimental unchanged.
+Exit: authentic source-bound findings and prospective enrollment, causal heldout evaluation/negativefindings preserved; measured memoryretention fix withgap invariants; no unauthorizedtrades/certification; targetedtests + one final relevant regression/CI + boundedlive preservation check, sourcepush andhandoff.
+Checkpoint: initialrootsourcecache/appendonly findings recorder implemented; targetedcontinuous5passed, narrowmonitorrepair pendingfinalregression. Workersfinishing; memorycommit e47ac9ab readyreview. AgentB authenticlast252SPX split126/63/63, rawweekdayworse, calibrationselectsbaselineweight0 -> noedge. Currentrootdirty integration preserved. Next review/cherry-pick workers, integrate prospective simpler baseline, finaltests/live.

@@ -64,7 +64,9 @@ def experimental_research(runtime, *, for_operations=False):
         intelligence = {"status": "source_anchored_research", "inputs": runtime.phase26_inputs.status() if runtime.phase26_inputs else None,
             "projection": runtime.phase26_report, "runtime_error": runtime.phase26_error, "trading_authority": False,
             "scope": "stable full declared-model registry projection; original legacy journals separately reconciled"}
+    findings = getattr(runtime, "phase27", None)
     return {
+        "phase27": findings.status() if findings else {"status": "unavailable" if getattr(runtime, "phase27_error", None) else "disabled", "runtime_error": getattr(runtime, "phase27_error", None), "trading_authority": False},
         "phase26": intelligence,
         "phase25": expansion,
         "phase24": domain if domain is not None else {"status": "unavailable" if getattr(runtime, "phase24_error", None) else "disabled",

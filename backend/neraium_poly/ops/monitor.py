@@ -105,11 +105,13 @@ def render_monitor(
     """
     width, height = max(30, min(int(width), 160)), max(12, min(int(height or 24), 100))
     certified, experimental = _mapping(certified), _mapping(experimental)
-    if view not in {"summary", "strategies", "rejections", "research", "events", "domains", "archives", "operations", "readiness", "edge", "challengers"} or scope not in {
+    if view not in {"summary", "strategies", "rejections", "research", "events", "domains", "archives", "operations", "readiness", "edge", "challengers", "findings"} or scope not in {
         "cycle",
         "epoch",
     }:
         raise ValueError("monitor view or scope invalid")
+    if view == "findings":
+        return _render_findings(certified, experimental, width, height, errors)
     if view == "challengers":
         return _render_challengers(certified, experimental, width, height, errors)
     if view == "edge":
@@ -1278,7 +1280,7 @@ def monitor(
 ):
     loopback_url(certified_url)
     loopback_url(experimental_url)
-    if view in {"operations", "readiness", "edge", "challengers"}:
+    if view in {"operations", "readiness", "edge", "challengers", "findings"}:
         def operations_url(value):
             parsed = urlsplit(value)
             return urlunsplit((parsed.scheme, parsed.netloc, "/api/operations-state", "", ""))
@@ -1527,4 +1529,46 @@ def _render_domain_challengers(certified, experimental, legacy, domain, width, h
     for index,(label,style) in enumerate(rows[:height]):
         if index:text.append("\n")
         line=Text(label,style=style,no_wrap=True,overflow="ellipsis");line.truncate(width,overflow="ellipsis");text.append_text(line)
+    return text
+
+
+def _render_findings(certified, experimental, width, height, errors):
+    from datetime import UTC, datetime
+
+    now = datetime.now(UTC)
+    report = _mapping(_mapping(experimental.get("operations_research")).get("phase27"))
+    fresh = (report.get("status") == "research_only" and not report.get("runtime_error")
+             and _ops_fresh(experimental.get("generated_at"), now)
+             and _p16_recent(report.get("as_of"), now, seconds=90))
+    def scalar(value):
+        import math
+        return f"{value:.3f}" if type(value) in (int, float) and math.isfinite(value) else "—"
+
+    rows = [("ECONOMIC FINDINGS", "bold cyan"), ("RESEARCH ONLY / NO TRADE AUTHORITY", "yellow")]
+    if fresh:
+        counts = _mapping(report.get("counts"))
+        rows += [(f"Evaluated {_number(counts.get('findings_evaluated'))} Qualified {_number(counts.get('qualified_research_findings'))}", "white"),
+                 (f"Reviewed groups {_number(counts.get('reviewed_canonical_groups'))}", "white")]
+        for reason, count in sorted(_mapping(report.get("rejections")).items(), key=lambda x: -x[1])[:4]:
+            rows.append((f"{_number(count)} {_clean(reason)}", "yellow"))
+        for finding in report.get("latest_findings", [])[:3]:
+            row = _mapping(finding)
+            rows.append((f"M{_clean(row.get('market_id'))} {_clean(row.get('confidence_status'))}", "white"))
+            rows.append((f"P {scalar(row.get('forecast_probability'))} Ask {scalar(row.get('executable_ask'))} Edge {scalar(row.get('estimated_after_cost_edge'))}", "dim"))
+        rows.append(("P/L: insufficient evidence", "yellow"))
+        rows.append((f"Last {_seen(report.get('as_of'))}", "dim"))
+    else:
+        rows.append(("Findings unavailable / stale", "yellow"))
+        if report.get("runtime_error"):
+            rows.append((_clean(report['runtime_error']), "yellow"))
+    rows += [(f"Exp {_number(experimental.get('cash'), money=True)} Cert {_number(certified.get('cash'), money=True)}", "white")]
+    if errors:
+        rows.append(("API " + _clean(errors[0]), "yellow"))
+    text = Text()
+    for i, (value, style) in enumerate(rows[:height]):
+        if i:
+            text.append("\n")
+        line = Text(_clean(value), style=style, no_wrap=True, overflow="ellipsis")
+        line.truncate(width, overflow="ellipsis")
+        text.append_text(line)
     return text

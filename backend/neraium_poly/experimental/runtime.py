@@ -267,6 +267,17 @@ class ExperimentalRuntime:
                 except Exception as error:
                     self.phase26_error = f"{type(error).__name__}:{str(error)[:160]}"
                     log.exception("phase26_recovery_withheld")
+            self.phase27 = None
+            self.phase27_error = None
+            if config.phase27_findings_enabled:
+                try:
+                    from neraium_poly.research.phase27.continuous import FindingsResearch
+                    if self.phase26_index is None:
+                        raise ValueError("findings require source-anchored research index")
+                    self.phase27 = FindingsResearch(self.events, self.phase26_index, clock=self.clock, can_write=self._budget_ok)
+                except Exception as error:
+                    self.phase27_error = f"{type(error).__name__}:{str(error)[:160]}"
+                    log.exception("phase27_recovery_withheld")
             self.feed = feed or SharedFeedClient(config.source_url)
             self.fee_adapter = fee_adapter or AuditedFeeAdapter(
                 self.events, self._budget_ok, client=httpx.AsyncClient(timeout=5, follow_redirects=False)
@@ -787,7 +798,14 @@ class ExperimentalRuntime:
                     verify_forecast, verify_outcome = callbacks(self.events, self.config.data_dir)
                     def evaluate():
                         self.phase26_index.step(self.events, as_of=self.clock(), forecast_verifier=verify_forecast, outcome_verifier=verify_outcome)
-                        return self.phase26_index.report(as_of=self.clock())
+                        report = self.phase26_index.report(as_of=self.clock())
+                        if family == "phase25" and getattr(self, "phase27", None) is not None:
+                            try:
+                                self.phase27.step(frame)
+                            except Exception as error:
+                                self.phase27.error = f"{type(error).__name__}:{str(error)[:160]}"
+                                log.exception("phase27_findings_withheld")
+                        return report
                     worker = asyncio.create_task(asyncio.to_thread(evaluate))
                 else:
                     worker = asyncio.create_task(asyncio.to_thread(combined_report, self.events, as_of=self.clock(),
