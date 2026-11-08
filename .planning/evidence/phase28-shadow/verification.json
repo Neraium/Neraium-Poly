@@ -1,0 +1,14 @@
+{
+  "observed_at": "2026-11-08T12:32:37.578406+00:00",
+  "tests": "..................                                                       [100%]\n18 passed in 0.83s",
+  "ruff": "All checks passed!",
+  "data_scope": "controlled engineering fixtures only; no market profitability or actual fills claimed",
+  "actual_account_access": false,
+  "live_trading_authority": false,
+  "source_gate": "independently replayed candidate calibration/rules/cost proof and fresh exact native book; absent callback fails closed",
+  "simulated_exposure_scope": "one hypothetical500USD research pool shared across four strategy sleeves; not new paper accounts",
+  "independent_source_outcomes_generated": 0,
+  "authentic_shadow_fills_claimed": 0,
+  "minimum_research_per_share_edge": 0,
+  "certified_threshold_modified": false
+}
