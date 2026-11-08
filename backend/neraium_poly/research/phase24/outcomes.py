@@ -32,14 +32,18 @@ class DomainOutcomeStudy(Record):
     certification_authority: Literal[False]=False
 
 
-def replay_domain_outcome(row,study,f,*,evidence_root,as_of):
+def replay_domain_outcome(row,study,f,*,evidence_root,as_of,modules=None):
     adapter=row['adapter']
     if adapter not in ('weather','economics','finance','sports'):raise ValueError('unsupported domain outcome adapter')
     if digest(study)!=row['original_study_sha256'] or row['forecast_id']!=f['id']:
         raise ValueError('outcome original binding mismatch')
-    module=importlib.import_module('neraium_poly.research.phase24.'+adapter)
+    if row.get('original_study_id',study['id'])!=study['id']:raise ValueError('outcome original record identity mismatch')
+    members=[x for x in study.get('forecasts',[]) if x.get('id')==f['id']]
+    if len(members)!=1 or digest(members[0])!=digest(f):raise ValueError('unique immutable forecast membership required')
+    module=modules[adapter] if modules is not None else importlib.import_module('neraium_poly.research.phase24.'+adapter)
     if not hasattr(module,'replay_outcome'):raise ValueError('domain outcome replay implementation unavailable')
     byid={e['id']:e for e in study.get('evidence',[])}
+    if len(byid)!=len(study.get('evidence',[])):raise ValueError('duplicate outcome source evidence identity')
     evidence=[byid[x] for x in f['evidence_ids']]
     replay=module.replay(f,evidence,as_of=as_of)
     if not isinstance(replay,dict) or replay.get('verified') is not True:raise ValueError('original domain model/source replay failed')
@@ -71,6 +75,10 @@ class DomainOutcomes:
         if not self.can_write():raise ValueError('outcome archive backpressure')
         self.store.append(row);self.state=s
 
+    def _module(self,adapter):return importlib.import_module('neraium_poly.research.phase24.'+adapter)
+
+    def _replay(self,*args,**kwargs):return replay_domain_outcome(*args,**kwargs)
+
     async def step(self):
         now=at(self.clock())
         if not self.can_write() or self.state['last_at'] and (now-at(self.state['last_at'])).total_seconds()<300:return False
@@ -99,13 +107,13 @@ class DomainOutcomes:
                     if result.get('status')=='verified':
                         await asyncio.to_thread(replay_nfl_outcome,result,study,f,evidence_root=self.directory/'legacy_nfl',as_of=at(self.clock()))
                 else:
-                    mod=importlib.import_module('neraium_poly.research.phase24.'+p['adapter'])
+                    mod=self._module(p['adapter'])
                     result=await mod.verify_outcome(f,directory=self.directory/p['adapter'],clock=self.clock)
                     if result.get('forecast_id',fid)!=fid:raise ValueError('outcome forecast identifier mismatch')
                     result['forecast_id']=fid
                     if result.get('status')=='verified' or result.get('verified') is True:
-                        probe={'adapter':p['adapter'],'original_study_sha256':digest(study),'forecast_id':fid,'result':result}
-                        await asyncio.to_thread(replay_domain_outcome,probe,study,f,evidence_root=self.directory,as_of=at(self.clock()))
+                        probe={'adapter':p['adapter'],'original_study_id':study['id'],'original_study_sha256':digest(study),'forecast_id':fid,'result':result}
+                        await asyncio.to_thread(self._replay,probe,study,f,evidence_root=self.directory,as_of=at(self.clock()))
                         result['status']='verified' # only independently replayed proofs become scheduler labels
                     else:result.setdefault('status','withheld')
             except Exception as error: # noqa: BLE001 - failed verification cannot create an outcome

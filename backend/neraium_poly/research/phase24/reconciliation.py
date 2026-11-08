@@ -11,7 +11,7 @@ from neraium_poly.research.phase12.ledger import content_sha256
 from neraium_poly.research.phase14.relationships import digest
 from neraium_poly.research.phase17.provenance import ReadonlyArchive
 
-KINDS=('EventProbabilityStudy','ChallengerStudy','DomainResearchStudy')
+KINDS=('EventProbabilityStudy','ChallengerStudy','DomainResearchStudy','ExpansionResearchStudy')
 PHASE23_REPORTED_AT=datetime(2026,11,7,22,21,27,646946,tzinfo=UTC)
 
 
@@ -52,6 +52,16 @@ def _replay_archive(study,f,scope,root,now):
         else:raise ValueError('unknown_phase23_model_domain')
     # New domain adapters independently replay their own frozen evidence through
     # the coordinator. Inventorying them never silently asserts validation.
+
+    elif scope in ('phase24_domains','phase25_expansion'):
+        import importlib
+        phase='phase25' if scope=='phase25_expansion' else 'phase24'
+        adapter=f['adapter']
+        if adapter not in ('finance','economics','sports','weather'):raise ValueError('unsupported original forecast adapter')
+        selected={e['id']:e for e in study['evidence']}
+        if len(selected)!=len(study['evidence']):raise ValueError('duplicate original evidence IDs')
+        proof=importlib.import_module(f'neraium_poly.research.{phase}.{adapter}').replay(f,[selected[x] for x in f['evidence_ids']],as_of=now)
+        if not isinstance(proof,dict) or proof.get('verified') is not True:raise ValueError('original domain source/model replay failed')
 
 
 def _sports_journal(root,now):
@@ -107,7 +117,7 @@ def reconcile(data_dir,*,as_of,reference_directory=None):
                 if used>128*1024**2:raise ValueError('forecast_inventory_byte_budget')
                 study=json.loads(raw[1])
                 if _at(study['available_at'])>now:continue
-                scope={'EventProbabilityStudy':'phase18_crypto','ChallengerStudy':'phase23_challengers','DomainResearchStudy':'phase24_domains'}[kind]
+                scope={'EventProbabilityStudy':'phase18_crypto','ChallengerStudy':'phase23_challengers','DomainResearchStudy':'phase24_domains','ExpansionResearchStudy':'phase25_expansion'}[kind]
                 forecasts=([study['forecast']] if kind=='EventProbabilityStudy' and study.get('operation')=='forecast_scan' and study.get('forecast') else study.get('forecasts',[]) if kind!='EventProbabilityStudy' else [])
                 for f in forecasts:
                     if not _at(f['timestamp'])<=_at(study['available_at'])<=now:raise ValueError('forecast_timestamp_not_in_original_record')
@@ -145,11 +155,11 @@ def reconcile(data_dir,*,as_of,reference_directory=None):
         preserved['phase23_reported_18']={'expected':len(expected),'preserved':len(expected),'missing':[],'ids':sorted(expected)}
         witnesses.append({'path':str(p23),'sha256':hashlib.sha256(original).hexdigest()})
     counts=dict(Counter(e['scope'] for e in entries));scopes={}
-    for name in ('phase18_crypto','phase13_nfl','phase23_challengers','phase24_domains'):
+    for name in ('phase18_crypto','phase13_nfl','phase23_challengers','phase24_domains','phase25_expansion'):
         rows=[e for e in entries if e['scope']==name]
         scopes[name]={'forecasts':len(rows),'native_parent_ids':sorted({e['event_id'] for e in rows}),'models':dict(Counter(e['model_version'] for e in rows)),
             'content_set_sha256':digest(sorted((e['forecast_id'],e['forecast_sha256']) for e in rows)),
-            'source_model_replayed':name!='phase24_domains','scope':'original immutable records, never reconstructed predictions'}
+            'source_model_replayed':True,'scope':'original immutable records, never reconstructed predictions'}
     return {'schema_version':'phase24-forecast-reconciliation-v1','as_of':now.isoformat(),'archive_records_examined':totals,'bytes_examined':used,
         'scopes':scopes,'scope_counts':counts,'total_original_forecasts':len(entries),'additional_legacy_nfl_since_reported_three':max(0,counts.get('phase13_nfl',0)-3),'native_parent_ids':len({e['event_id'] for e in entries}),
         'reviewed_independent_event_groups':0,'qualified_training_events':0,'qualified_heldout_events':0,'preservation_witnesses':preserved,

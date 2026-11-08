@@ -1450,7 +1450,8 @@ def _render_challengers(certified, experimental, width, height, errors):
     research = _mapping(_mapping(experimental.get("operations_research")).get("phase23"))
     domain = _mapping(_mapping(experimental.get("operations_research")).get("phase24"))
     if domain.get("status") != "disabled" and domain:
-        return _render_domain_challengers(certified, experimental, research, domain, width, height, errors)
+        return _render_domain_challengers(certified, experimental, research, domain, width, height, errors,
+            expansion=_mapping(_mapping(experimental.get("operations_research")).get("phase25")))
     current = (research.get("status") == "research_only" and not research.get("runtime_error")
                and _ops_fresh(experimental.get("generated_at"), now)
                and _p16_recent(research.get("last_evaluation_at"), now, seconds=360))
@@ -1480,21 +1481,29 @@ def _render_challengers(certified, experimental, width, height, errors):
     return text
 
 
-def _render_domain_challengers(certified, experimental, legacy, domain, width, height, errors):
+def _render_domain_challengers(certified, experimental, legacy, domain, width, height, errors, expansion=None):
     from datetime import UTC, datetime
 
     now = datetime.now(UTC)
     fresh = (domain.get("status") == "research_only" and not domain.get("runtime_error")
              and _ops_fresh(experimental.get("generated_at"), now)
              and _p16_recent(domain.get("last_evaluation_at"), now, seconds=360))
+    expansion = _mapping(expansion)
+    expansion_fresh = (expansion.get("status") == "research_only" and not expansion.get("runtime_error")
+                       and _p16_recent(expansion.get("last_evaluation_at"), now, seconds=360))
     rows = [("RESEARCH MODEL REGISTRIES", "bold cyan"), ("NO TRADING AUTHORITY", "yellow")]
     if fresh:
         rows += [(f"P23 {_number(legacy.get('forecasts'))} P24 {_number(domain.get('forecasts'))} forecasts", "white"),
                  ("Registry totals; legacy separate", "dim"),
                  (f"P24 parents {_number(domain.get('native_parents'))} unreviewed", "white")]
         models = [("24", name, _mapping(row)) for name, row in _mapping(domain.get("models")).items()]
+        if expansion_fresh:
+            rows.append((f"P25 {_number(expansion.get('forecasts'))} forecasts / {_number(expansion.get('native_parents'))} parents", "cyan"))
+            models += [("25", name, _mapping(row)) for name, row in _mapping(expansion.get("models")).items()]
+        elif expansion and expansion.get("status") != "disabled":
+            rows.append(("P25 unavailable / stale", "yellow"))
         models += [("23", name, _mapping(row)) for name, row in _mapping(legacy.get("models")).items()]
-        models.sort(key=lambda x: (not bool(x[2].get('forecasts')), x[0] != '24', x[1]))
+        models.sort(key=lambda x: (not bool(x[2].get('forecasts')), -int(x[0]), x[1]))
         maximum = max(0, height-len(rows)-5)
         for phase, name, row in models[:maximum]:
             rows.append((f"{phase} F{_number(row.get('forecasts'))} V{_number(row.get('resolved'))} {_clean(name)}", "white"))

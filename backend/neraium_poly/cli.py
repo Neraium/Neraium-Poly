@@ -191,10 +191,10 @@ def main():
             report = reconcile(args.data_dir, as_of=now)
         else:
             from neraium_poly.research.phase17.provenance import ReadonlyArchive
-            from neraium_poly.research.phase24.operations import combined_report
+            from neraium_poly.research.phase25.operations import unified_report as combined_report
 
             with ReadonlyArchive(args.data_dir, max_query_bytes=128*1024**2) as archive:
-                report = combined_report(archive, as_of=now, evidence_root=args.data_dir/"phase24-resolution-evidence")
+                report = combined_report(archive, as_of=now, evidence_root=args.data_dir/"phase25-resolution-evidence")
         if args.output:
             with args.output.open("x") as handle:
                 json.dump(report, handle, indent=2)

@@ -231,6 +231,21 @@ class ExperimentalRuntime:
                     self.phase24 = self.phase24_outcomes = None
                     self.phase24_error = f"{type(error).__name__}:{str(error)[:160]}"
                     log.exception("phase24_recovery_withheld")
+            self.phase25 = self.phase25_outcomes = self.phase25_universe = None
+            self.phase25_report = self.phase25_error = None
+            if config.phase25_research_enabled:
+                from neraium_poly.research.phase25.continuous import ExpansionOutcomes, ExpansionResearch
+                from neraium_poly.research.phase25.discovery import Universe
+
+                try:
+                    self.phase25 = ExpansionResearch(self.events, clock=self.clock, can_write=self._budget_ok)
+                    self.phase25_outcomes = ExpansionOutcomes(self.events, config.data_dir/"phase25-resolution-evidence",
+                        clock=self.clock, can_write=self._budget_ok)
+                    self.phase25_universe = Universe(self.events, clock=self.clock, can_write=self._budget_ok)
+                except Exception as error:
+                    self.phase25 = self.phase25_outcomes = self.phase25_universe = None
+                    self.phase25_error = f"{type(error).__name__}:{str(error)[:160]}"
+                    log.exception("phase25_recovery_withheld")
             self.feed = feed or SharedFeedClient(config.source_url)
             self.fee_adapter = fee_adapter or AuditedFeeAdapter(
                 self.events, self._budget_ok, client=httpx.AsyncClient(timeout=5, follow_redirects=False)
@@ -719,26 +734,36 @@ class ExperimentalRuntime:
                 next_check = self.clock() + timedelta(seconds=300)
             await asyncio.sleep(2)
 
-    async def _domain_research_loop(self, should_exit):
-        from neraium_poly.research.phase24.operations import combined_report
+    async def _domain_research_loop(self, should_exit, family="phase24"):
+        if family not in ("phase24", "phase25"):
+            raise ValueError("unknown research enrollment")
+        if family == "phase25":
+            from neraium_poly.research.phase25.operations import unified_report as combined_report
+        else:
+            from neraium_poly.research.phase24.operations import combined_report
+        engine = getattr(self, family, None)
+        outcomes = getattr(self, family+"_outcomes", None)
 
         async def one_cycle():
             async with self._research_source_lock:
-                await self.phase24.step(self.last_frame)
-                await self.phase24_outcomes.step()
+                frame = self.last_frame
+                if family == "phase25":
+                    frame = await self.phase25_universe.frame(frame)
+                await engine.step(frame)
+                await outcomes.step()
             worker = asyncio.create_task(asyncio.to_thread(combined_report, self.events, as_of=self.clock(),
-                evidence_root=self.config.data_dir/"phase24-resolution-evidence"))
+                evidence_root=self.config.data_dir/(family+"-resolution-evidence")))
             try:
-                self.phase24_report = await asyncio.shield(worker)
+                setattr(self, family+"_report", await asyncio.shield(worker))
             except asyncio.CancelledError:
                 await asyncio.gather(worker, return_exceptions=True)
                 raise
-            self.phase24_error = None
+            setattr(self, family+"_error", None)
 
         while not self.stopping and not should_exit():
             job = None
             try:
-                if self.phase24 is not None and self.last_frame is not None:
+                if engine is not None and self.last_frame is not None:
                     job = asyncio.create_task(one_cycle())
                     while not job.done() and not self.stopping and not should_exit():
                         await asyncio.wait({job}, timeout=1)
@@ -750,8 +775,8 @@ class ExperimentalRuntime:
                     return
                 raise
             except Exception as error:
-                self.phase24_error = f"{type(error).__name__}:{str(error)[:160]}"
-                log.exception("phase24_domain_research_withheld")
+                setattr(self, family+"_error", f"{type(error).__name__}:{str(error)[:160]}")
+                log.exception("%s_domain_research_withheld", family)
             finally:
                 if job is not None and not job.done():
                     job.cancel()
@@ -810,7 +835,7 @@ class ExperimentalRuntime:
                     self._cancel_and_checkpoint(self.clock())
                 await asyncio.sleep(self.config.poll_seconds)
 
-        await asyncio.gather(cycles(), self._fees_loop(should_exit), self._event_resolution_loop(should_exit), independent_events(), self._domain_research_loop(should_exit))
+        await asyncio.gather(cycles(), self._fees_loop(should_exit), self._event_resolution_loop(should_exit), independent_events(), self._domain_research_loop(should_exit), self._domain_research_loop(should_exit, "phase25"))
 
     def health(self):
         last_success = self.last_success

@@ -46,7 +46,21 @@ def experimental_research(runtime, *, for_operations=False):
         domain["pending_forecasts"] = max(0, domain["forecasts"]-resolved)
         domain["leaderboard"] = runtime.phase24_report
         domain["runtime_error"] = runtime.phase24_error
+    expansion = {"status": "disabled", "trading_authority": False}
+    if getattr(runtime, "phase25", None):
+        expansion = runtime.phase25.status()
+        verification = runtime.phase25_outcomes.status()
+        expansion["outcome_verification"] = verification
+        expansion["leaderboard"] = runtime.phase25_report
+        expansion["runtime_error"] = runtime.phase25_error
+        expansion["discovery"] = runtime.phase25_universe.status()
+        for name, count in verification.get("verified_by_model", {}).items():
+            if name in expansion["models"]:
+                expansion["models"][name]["resolved"] = count
+    elif getattr(runtime, "phase25_error", None):
+        expansion = {"status": "unavailable", "runtime_error": runtime.phase25_error, "trading_authority": False}
     return {
+        "phase25": expansion,
         "phase24": domain if domain is not None else {"status": "unavailable" if getattr(runtime, "phase24_error", None) else "disabled",
                         "runtime_error": getattr(runtime, "phase24_error", None), "trading_authority": False},
         "domains": event.get("domains", {"status": "unavailable"}),
