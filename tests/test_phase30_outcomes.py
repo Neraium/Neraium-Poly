@@ -8,6 +8,14 @@ from neraium_poly.research.phase30 import outcomes
 from test_phase26_outcomes import ASOF, NOW, fixtures, install
 
 
+@pytest.fixture(autouse=True)
+def controlled_storage_capacity(monkeypatch):
+    # CI disks need not have the shared production host's100GiB reserve. Only
+    # these controlled engineering fixtures simulate capacity; source guard stays.
+    from types import SimpleNamespace
+    monkeypatch.setattr(outcomes.shutil,'disk_usage',lambda path:SimpleNamespace(free=200*1024**3))
+
+
 async def verified(monkeypatch,tmp_path):
     _m,f,study,g,t,h=fixtures();calls=install(monkeypatch,g,t,h,final_proof=False)
     result=await outcomes.verify_official_event(f,directory=tmp_path,clock=lambda:ASOF)
@@ -87,3 +95,12 @@ def test_official_schedule_disambiguates_historical_team_suffix_without_guessing
     other=deepcopy(g['data'][0]);other.update(id=2026020269,gameNumber=269,homeTeamId=999);g['data'].append(other);g['total']=2
     with pytest.raises(ValueError,match='unique_official_NHL_team_identity'):
         native.select_game(json.dumps(g).encode(),json.dumps(t).encode(),f['contract']['parameters'],native.at(f['event_end_time']))
+
+
+async def test_event_evidence_storage_fails_closed_below_production_floor(monkeypatch,tmp_path):
+    from types import SimpleNamespace
+    _m,f,_s,g,t,h=fixtures();calls=install(monkeypatch,g,t,h)
+    monkeypatch.setattr(outcomes.shutil,'disk_usage',lambda path:SimpleNamespace(free=99*1024**3))
+    result=await outcomes.verify_official_event(f,directory=tmp_path,clock=lambda:ASOF)
+    assert not result['event_result_verified'] and 'filesystem_reserve' in result['reason']
+    assert not calls and not result['native_payout_verified']
