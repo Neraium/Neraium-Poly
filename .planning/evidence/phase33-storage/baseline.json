@@ -1,0 +1,262 @@
+{
+  "paper-live": {
+    "recent_sealed_segments": 6,
+    "first": "2026-11-08T20:37:23.193881+00:00",
+    "last": "2026-11-08T21:05:53.685409+00:00",
+    "kinds": {
+      "DiscoveryIntelligenceStudy": {
+        "records": 3,
+        "payload_bytes": 20361861
+      },
+      "MarketSnapshot": {
+        "records": 6306,
+        "payload_bytes": 14015303
+      },
+      "BookDelta": {
+        "records": 4843,
+        "payload_bytes": 6428461
+      },
+      "RelationshipEvidence": {
+        "records": 2922,
+        "payload_bytes": 1673640
+      },
+      "ForecastDiscoveryStudy": {
+        "records": 3,
+        "payload_bytes": 699273
+      },
+      "OrderBookSnapshot": {
+        "records": 320,
+        "payload_bytes": 463479
+      },
+      "BookReceipt": {
+        "records": 44,
+        "payload_bytes": 28238
+      },
+      "LiveCycle": {
+        "records": 15,
+        "payload_bytes": 6232
+      },
+      "MarketRelationship": {
+        "records": 9,
+        "payload_bytes": 4068
+      }
+    },
+    "sample_raw_bytes": 55398400,
+    "sample_gzip_bytes": 12657664,
+    "top_nonsegment_items": [
+      [
+        2585690112,
+        "events-archive.sqlite"
+      ],
+      [
+        2017968128,
+        "archive-baseline/"
+      ],
+      [
+        2017935360,
+        "events.sqlite"
+      ],
+      [
+        122040320,
+        "risk.sqlite"
+      ],
+      [
+        113003392,
+        "events-archive.sqlite-wal"
+      ],
+      [
+        64403725,
+        "events-cold-cache/"
+      ],
+      [
+        6390152,
+        "service.sqlite-wal"
+      ],
+      [
+        4739072,
+        "service.sqlite"
+      ],
+      [
+        4148872,
+        "risk.sqlite-wal"
+      ],
+      [
+        45056,
+        "broker.sqlite"
+      ],
+      [
+        32768,
+        "service.sqlite-shm"
+      ],
+      [
+        32768,
+        "risk.sqlite-shm"
+      ]
+    ],
+    "sample_interval_seconds_by_record_availability": 1710.491528,
+    "sample_sealed_raw_plus_gzip_bytes_per_second": 39787.43120673323,
+    "scope": "consecutive6sealedsegments only; availability timestamps approximate wallwindow, excludes active/catalog/WAL/evidence/checkpoints. Not complete service rate or runway."
+  },
+  "experimental-paper": {
+    "recent_sealed_segments": 6,
+    "first": "2026-11-08T20:54:04.550303+00:00",
+    "last": "2026-11-08T21:06:17.049054+00:00",
+    "kinds": {
+      "VolumeStudy": {
+        "records": 5,
+        "payload_bytes": 11128931
+      },
+      "CompetitionStudy": {
+        "records": 3,
+        "payload_bytes": 2083201
+      },
+      "QualificationStudy": {
+        "records": 13,
+        "payload_bytes": 1898853
+      },
+      "BookDelta": {
+        "records": 608,
+        "payload_bytes": 806412
+      },
+      "EmpiricalResearchUpdate": {
+        "records": 6,
+        "payload_bytes": 755812
+      },
+      "RelationshipEvidence": {
+        "records": 180,
+        "payload_bytes": 595042
+      },
+      "ExperimentalCycle": {
+        "records": 19,
+        "payload_bytes": 550625
+      },
+      "ExpansionResearchStudy": {
+        "records": 2,
+        "payload_bytes": 422719
+      },
+      "PairStudy": {
+        "records": 4,
+        "payload_bytes": 346793
+      },
+      "ShadowStudy": {
+        "records": 4,
+        "payload_bytes": 328556
+      },
+      "MarketSnapshot": {
+        "records": 66,
+        "payload_bytes": 125025
+      },
+      "PublicFeeReceipt": {
+        "records": 166,
+        "payload_bytes": 85407
+      },
+      "DomainScorecardStudy": {
+        "records": 4,
+        "payload_bytes": 85171
+      },
+      "EventProbabilityStudy": {
+        "records": 1,
+        "payload_bytes": 67584
+      },
+      "FeeObservation": {
+        "records": 83,
+        "payload_bytes": 58681
+      },
+      "OrderBookSnapshot": {
+        "records": 32,
+        "payload_bytes": 39306
+      },
+      "ResearchInputObservation": {
+        "records": 21,
+        "payload_bytes": 37299
+      },
+      "ExpansionOutcomeStudy": {
+        "records": 3,
+        "payload_bytes": 18572
+      },
+      "ChallengerOutcomeStudy": {
+        "records": 2,
+        "payload_bytes": 17756
+      },
+      "EventScoreSnapshot": {
+        "records": 1,
+        "payload_bytes": 15966
+      },
+      "ChallengerStudy": {
+        "records": 1,
+        "payload_bytes": 7276
+      },
+      "PublicFeeResponse": {
+        "records": 6,
+        "payload_bytes": 5052
+      },
+      "ResearchProjectionAnchor": {
+        "records": 6,
+        "payload_bytes": 4948
+      },
+      "BookReceipt": {
+        "records": 6,
+        "payload_bytes": 3991
+      },
+      "ForecastWindow": {
+        "records": 2,
+        "payload_bytes": 1011
+      }
+    },
+    "sample_raw_bytes": 20455424,
+    "sample_gzip_bytes": 8915541,
+    "top_nonsegment_items": [
+      [
+        732778496,
+        "events-archive.sqlite"
+      ],
+      [
+        517554176,
+        "archive-baseline/"
+      ],
+      [
+        517521408,
+        "events.sqlite"
+      ],
+      [
+        123453558,
+        "event-intelligence/"
+      ],
+      [
+        63744636,
+        "events-cold-cache/"
+      ],
+      [
+        57094628,
+        "phase24-resolution-evidence/"
+      ],
+      [
+        28584592,
+        "events-archive.sqlite-wal"
+      ],
+      [
+        23995927,
+        "phase23-resolution-evidence/"
+      ],
+      [
+        13353873,
+        "phase25-resolution-evidence/"
+      ],
+      [
+        11970412,
+        "phase18-resolution-evidence/"
+      ],
+      [
+        6922240,
+        "operator-recovery/"
+      ],
+      [
+        6072912,
+        "service.sqlite-wal"
+      ]
+    ],
+    "sample_interval_seconds_by_record_availability": 732.498751,
+    "sample_sealed_raw_plus_gzip_bytes_per_second": 40096.94891616273,
+    "scope": "consecutive6sealedsegments only; availability timestamps approximate wallwindow, excludes active/catalog/WAL/evidence/checkpoints. Not complete service rate or runway."
+  }
+}

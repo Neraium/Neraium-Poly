@@ -1,0 +1,46 @@
+{
+  "observed_at": "2026-11-08T21:11:55.008560+00:00",
+  "scope": "identical genuine archived VolumeStudy inputs, isolated benchmark SQLite with same ledger schema; not live-runway or full-archive claim",
+  "records": 3,
+  "source_segments": [
+    "segment-00002592.sqlite",
+    "segment-00002591.sqlite",
+    "segment-00002590.sqlite",
+    "segment-00002589.sqlite",
+    "segment-00002588.sqlite",
+    "segment-00002587.sqlite"
+  ],
+  "canonical_report_hashes": [
+    "2d5d30bd89b6fc46f4d37e89affab1dac62bc0f8b20c70823408ee3a688dfaf9",
+    "35585701e0ee4b33888bdde41c247201cb825c1256afb4b02b24a5ffa9d60e40",
+    "3badf313f94a47639c824507b05ebb436c1f35cde724a4c06f86faa0a89cd55f"
+  ],
+  "payload_bytes_before": 7830648,
+  "payload_bytes_after": 2902109,
+  "new_dense_encoding_cpu_seconds": 1.417935206,
+  "statistics": {
+    "before": {
+      "sqlite_bytes": 7856128,
+      "additional_cold_gzip_bytes": 2602221,
+      "retain_both_total_bytes": 10458349,
+      "restored_sha256": "fcb4f2a6f395c680482f08d3fc25710e7f37f7c8b1a139a3c02fbbc587f19ce3",
+      "decoded_reports": 3
+    },
+    "after": {
+      "sqlite_bytes": 2920448,
+      "additional_cold_gzip_bytes": 2191101,
+      "retain_both_total_bytes": 5111549,
+      "restored_sha256": "56f665d8f800e9437ba348b280ab1b291dac7d57135b41310badbd37f23fc7e6",
+      "decoded_reports": 3
+    }
+  },
+  "physical_total_saving_fraction": 0.5112470429127962,
+  "local_controlled_artifact_directory": "/home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/poly-p33-storage-20261108/data/phase33-storage/benchmark-lgovia4n",
+  "original_service_sources": "read_only_no_rewrite_no_delete_no_migration",
+  "peak_transient_upper_bound_description": "One logical record/frame decoded at a time; existing8MiBraw/2MiBencoded codec ceilings remain. Benchmark retains both closedSQLite and verifiedgzip, no temp deletion.",
+  "one_genuine_frame_codec_cpu_seconds": {
+    "level1_existing": 0.16727609699999998,
+    "level6_dense": 0.19663058099999997
+  },
+  "codec_cpu_scope": "one recorded genuine frame, full encoding+independent roundtrip, excludes service/storage I/O"
+}

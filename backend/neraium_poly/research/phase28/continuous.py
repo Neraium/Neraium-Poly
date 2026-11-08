@@ -4,15 +4,16 @@ from collections import defaultdict
 from pathlib import Path
 from typing import Literal
 
-from pydantic import Field
+from pydantic import Field, field_serializer, field_validator
 
 from neraium_poly.contracts import Record
 from neraium_poly.data.connectivity import _payload_bytes
 from neraium_poly.research.phase14.relationships import digest
-from neraium_poly.research.phase16.checkpoints import pack_checkpoint, unpack_checkpoint
+from neraium_poly.research.phase16.checkpoints import unpack_checkpoint
 from neraium_poly.research.phase24.archive import latest
 from neraium_poly.research.phase25.dependencies import at
 from neraium_poly.research.phase27.payout import PayoutForecastStudy, propose_spx
+from neraium_poly.research.phase33.storage import decode_report, encode_report, pack_dense_checkpoint
 
 
 class VolumeEnrollment(Record):
@@ -47,6 +48,14 @@ class VolumeStudy(Record):
     certification_authority: Literal[False] = False
 
 
+    @field_validator("report",mode="before")
+    @classmethod
+    def report_from_wire(cls,value):return decode_report(value)
+
+    @field_serializer("report")
+    def report_to_wire(self,value):return encode_report(value)
+
+
 class ForecastStore:
     def __init__(self, store, parent):self.store,self.parent=store,parent
     def get(self, identity):
@@ -69,14 +78,15 @@ class VolumeResearch:
         self.builder,self.combiner,self.shadow=builder,combiner,shadow;self.on_report=on_report;self.report_callback_error=None
         self.forecast_tokens=();self.error=None;self.report=None;self.last_bucket=None;self.totals={'evaluations':0,'finding_rows':0}
         root=Path(__file__).parent
-        policy={'version':'phase28-streamed-volume-v1','implementation_sha256':digest([p.read_text() for p in sorted(root.glob('*.py'))]),
+        policy={'version':'phase33-lossless-volume-storage-v1','implementation_sha256':digest([p.read_text() for p in sorted(root.glob('*.py'))]),
             'event_research_code_sha256':digest([p.read_text() for p in sorted(root.with_name('phase30').glob('*.py'))]),
             'diagnostic_code_sha256':digest([p.read_text() for p in sorted(root.with_name('phase29').glob('*.py'))]),
             'publication_namespace_sha256':digest(str(getattr(store,'directory',getattr(store,'path','controlled')))),
             'cadence_seconds':60,'forecast_refresh_seconds':300,'forecast_count_scope':'300s window plus verified source SHA; source refreshes are not independent outcomes',
             'original_forecast_budget':120,'original_selection':'future events with current metadata first, then newest immutable forecast','maximum_study_decoded_bytes':32*1024**2,'raw_study_cache_bytes':0,
             'research_minimum_per_share_edge':None,'certified_threshold_unchanged':.03,'actual_account_routing':False,
-            'shadow_authority':'independent source replay required; existing accounts untouched','frame_evidence':'lossless packed full current frame'}
+            'shadow_authority':'independent source replay required; existing accounts untouched','frame_evidence':'lossless level6 packed full current frame','report_evidence':'lossless bounded canonical report envelope, legacy plaintext supported',
+            'storage_codec_sha256':digest(Path(encode_report.__code__.co_filename).read_text())}
         self.enrollment_id=digest(['volume-research-enrollment',policy])
         if store.get(self.enrollment_id) is None:
             if not can_write():raise ValueError('volume enrollment archive unavailable')
@@ -192,7 +202,7 @@ class VolumeResearch:
         if report.get('trading_authority') is not False or report.get('research_only') is not True:raise ValueError('volume authority boundary rejected')
         report['source_deferred']=deferred;report['forecast_refresh_rejections']=refresh_rejections
         report['source_projection_forecast_count']=len(refs);report['window_forecast_records_available']=len(extra)
-        raw=frame.model_dump(mode='json') if hasattr(frame,'model_dump') else frame;packed=pack_checkpoint(raw);sha=digest(raw)
+        raw=frame.model_dump(mode='json') if hasattr(frame,'model_dump') else frame;packed=pack_dense_checkpoint(raw);sha=digest(raw)
         if any(r.get('frame_sha256')!=sha for r in report.get('findings',[]) if r.get('frame_sha256') is not None):raise ValueError('volume finding frame binding mismatch')
         if digest(unpack_checkpoint(packed))!=sha:raise ValueError('volume frame lossless roundtrip failed')
         if len(json.dumps(report,separators=(',',':')).encode())>8*1024**2:raise ValueError('bounded volume report required')
@@ -209,4 +219,4 @@ class VolumeResearch:
         return True
 
     def status(self):
-        return {**(self.report or {'status':'pending'}),'runtime_error':self.error,'report_callback_error':self.report_callback_error,'totals':dict(self.totals),'shadow':self.shadow.status() if self.shadow else {'status':'disabled'},'research_only':True,'trading_authority':False,'raw_study_cache_bytes':0,'counter_scope':'evaluation rows; parent-event independence reported separately'}
+        return {**(self.report or {'status':'pending'}),'runtime_error':self.error,'report_callback_error':self.report_callback_error,'totals':dict(self.totals),'shadow':self.shadow.status() if self.shadow else {'status':'disabled'},'research_only':True,'trading_authority':False,'raw_study_cache_bytes':0,'counter_scope':'current versioned research enrollment evaluation rows; prior records retained; parent-event independence reported separately'}
