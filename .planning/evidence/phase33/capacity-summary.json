@@ -1,0 +1,31 @@
+{
+  "window_seconds": 300.099753,
+  "rates": {
+    "collector": {
+      "before_bytes_per_second": 54158,
+      "after_window_bytes_per_second": 28526.58795757156,
+      "after_usage_bytes": 21847687251,
+      "quota_bytes": 161061273600,
+      "conditional_runway_days": 56.48303831209398
+    },
+    "experimental": {
+      "before_bytes_per_second": 130051,
+      "after_window_bytes_per_second": 130408.5245281758,
+      "after_usage_bytes": 16614144099,
+      "quota_bytes": 161061273600,
+      "conditional_runway_days": 12.820034446986858
+    }
+  },
+  "filesystem_free_bytes": 426359316480,
+  "filesystem_floor_bytes": 107374182400,
+  "limitations": [
+    "Different before/after observation windows and changing live workload; no causal whole-service growth reduction established",
+    "Five-minute window includes WAL/temp/compression accounting; not an indefinite-operation guarantee",
+    "All original archives retained; no retention deletion or quota change"
+  ],
+  "matched_three_record_benchmark": {
+    "before_retained_sqlite_and_gzip_bytes": 10458349,
+    "after_retained_sqlite_and_gzip_bytes": 5111549,
+    "reduction_fraction": 0.5112470429127962
+  }
+}

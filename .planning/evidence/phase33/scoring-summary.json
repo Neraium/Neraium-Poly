@@ -1,0 +1,62 @@
+{
+  "verified_forecast_labels": 20,
+  "distinct_official_event_groups": 8,
+  "event_groups_by_domain": {
+    "weather": 3,
+    "sports": 5
+  },
+  "statistical_independence_verified": false,
+  "effective_independent_sample_size": null,
+  "models": [
+    {
+      "domain": "sports",
+      "model_id": "nhl-beta-frequency-v25.1",
+      "event_disjoint_groups": 5,
+      "descriptive_brier": 0.24750656084786757,
+      "market_baseline_comparison": null,
+      "superiority_established": false
+    },
+    {
+      "domain": "sports",
+      "model_id": "nhl-causal-elo-v25.1",
+      "event_disjoint_groups": 5,
+      "descriptive_brier": 0.24711010696640906,
+      "market_baseline_comparison": null,
+      "superiority_established": false
+    },
+    {
+      "domain": "weather",
+      "model_id": "metar-diurnal-analog-v24.1",
+      "event_disjoint_groups": 2,
+      "descriptive_brier": 0.005053507728894179,
+      "market_baseline_comparison": null,
+      "superiority_established": false
+    },
+    {
+      "domain": "weather",
+      "model_id": "metar-diurnal-gaussian-v25.1",
+      "event_disjoint_groups": 3,
+      "descriptive_brier": 0.03249892098665879,
+      "market_baseline_comparison": null,
+      "superiority_established": false
+    },
+    {
+      "domain": "weather",
+      "model_id": "metar-recency-kernel-v25.1",
+      "event_disjoint_groups": 3,
+      "descriptive_brier": 0.03867860481188982,
+      "market_baseline_comparison": null,
+      "superiority_established": false
+    },
+    {
+      "domain": "weather",
+      "model_id": "metar-recent-climatology-v24.1",
+      "event_disjoint_groups": 2,
+      "descriptive_brier": 0.005053507728894174,
+      "market_baseline_comparison": null,
+      "superiority_established": false
+    }
+  ],
+  "observed_at": "2026-11-08T22:23:49.021935Z",
+  "scope": "Official event-result research; not native payout/certification/market superiority"
+}

@@ -1,0 +1,33 @@
+{
+  "at": "2026-11-08T22:27:26.321458+00:00",
+  "scope": "read-only exact persisted-wire hashes, bounded new-volume decode and derived-source references",
+  "volumes": [
+    {
+      "id": "d8201ee0c0d148e50c4a1e7f2f73f428c7e973bb6bbdefb923f15baf579d40d2",
+      "wire_sha256": "48d81a362bca41529b62db277fd7d9ba9554e95c70574c342c5ced1e01e1a5c5",
+      "logical_report_sha256": "69452ce447d7858195912ca0d534ca413a1ae920cab444c56ca4df5d4d85c770",
+      "frame_sha256": "b63e871f8c8454127d23a1447dabf7229c83965c16036c7b2342662336450ce5",
+      "report_raw_bytes": 1505238,
+      "report_gzip_bytes": 101124
+    },
+    {
+      "id": "6d733454f4d62a1e2457fb9f8934a2bf9f00939a9690392a065516515bd0108f",
+      "wire_sha256": "c3862034167cf90d18470354be5be308dd462e63f38422240fe08e6958e5438b",
+      "logical_report_sha256": "69b60b9edfd719517db0010ccad961574d69b865d65b2d8fa7e70a7c9e32ce9c",
+      "frame_sha256": "4f69ba96d20a9c121bf6a3259d9b9455de8ddc6d2e782ad0595cde5fb95c8139",
+      "report_raw_bytes": 1250279,
+      "report_gzip_bytes": 86772
+    },
+    {
+      "id": "fe88dc2af8bf09e5e25bd54de1ef1380fdb272e46bc3a22d2bdf3e66e10290d9",
+      "wire_sha256": "f870e490f4e5bb5f06bfc065a7382e9ec2cd627892d19bce4cf5fe448f0378f9",
+      "logical_report_sha256": "4fc9065b40095c2aed6072bccaa1da3849be47afc5c1157b8f68967144e08e4c",
+      "frame_sha256": "dcab0411d2916faa1ed07b44e2d47699b55325b88a9899f16905abb4ca8ce162",
+      "report_raw_bytes": 1585702,
+      "report_gzip_bytes": 109432
+    }
+  ],
+  "pairs": 3,
+  "scorecards": 3,
+  "fee_studies": 3
+}

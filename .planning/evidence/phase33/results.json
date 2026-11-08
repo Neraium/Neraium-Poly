@@ -1,0 +1,280 @@
+{
+  "source_commit": "612e0284a4a42e4c5dce3ef450e4fff937f3670b",
+  "observed_at": "2026-11-08T22:27:21.453259+00:00",
+  "markets": 406,
+  "fresh_native_books_15s": 266,
+  "bounded_observation_seconds": 62.281634,
+  "latency": {
+    "before": {
+      "n": 12,
+      "median_seconds": 0.35088089399505407,
+      "maximum_seconds": 13.297122479882091,
+      "errors": [],
+      "scope": "bounded60s sample, workload not controlled; residual tail latency unresolved"
+    },
+    "after": {
+      "n": 12,
+      "median_seconds": 0.44706945947837085,
+      "maximum_seconds": 10.064657423179597,
+      "errors": [],
+      "scope": "bounded60s sample, workload not controlled; residual tail latency unresolved"
+    }
+  },
+  "accounts": {
+    "paper-live": {
+      "cash": 500.0,
+      "realized_pnl": 0.0,
+      "emergency_stop": false,
+      "limits": {
+        "bankroll": 500.0,
+        "aggregate_fraction": 0.2,
+        "market_fraction": 0.05,
+        "event_fraction": 0.1,
+        "correlation_fraction": 0.1,
+        "daily_loss_fraction": 0.05,
+        "drawdown_fraction": 0.1,
+        "max_book_age_seconds": 15.0,
+        "max_market_age_seconds": 3600.0,
+        "max_estimate_age_seconds": 300.0,
+        "max_evidence_age_seconds": 3600.0,
+        "max_spread": 0.05,
+        "min_net_edge": 0.03,
+        "max_liquidity_participation": 0.25,
+        "approval_ttl_seconds": 10.0,
+        "standard_min": 2.0,
+        "standard_max": 5.0,
+        "high_min": 5.0,
+        "high_max": 15.0,
+        "exceptional_min": 15.0,
+        "exceptional_max": 25.0,
+        "kelly_fraction": 0.1
+      },
+      "positions": 0
+    },
+    "experimental-paper": {
+      "cash": 496.11522059829053,
+      "realized_pnl": -3.8847794017094013,
+      "emergency_stop": false,
+      "limits": {
+        "bankroll": 500.0,
+        "aggregate_fraction": 0.2,
+        "market_fraction": 0.05,
+        "event_fraction": 0.1,
+        "correlation_fraction": 0.1,
+        "daily_loss_fraction": 0.05,
+        "drawdown_fraction": 0.1,
+        "max_book_age_seconds": 15.0,
+        "max_market_age_seconds": 3600.0,
+        "max_estimate_age_seconds": 300.0,
+        "max_evidence_age_seconds": 3600.0,
+        "max_spread": 0.05,
+        "min_net_edge": 0.03,
+        "max_liquidity_participation": 0.25,
+        "approval_ttl_seconds": 10.0,
+        "standard_min": 2.0,
+        "standard_max": 5.0,
+        "high_min": 5.0,
+        "high_max": 15.0,
+        "exceptional_min": 15.0,
+        "exceptional_max": 25.0,
+        "kelly_fraction": 0.1
+      },
+      "positions": 0
+    }
+  },
+  "research": {
+    "indexed_forecasts_by_domain": {
+      "crypto": 46,
+      "weather": 20,
+      "economics": 4,
+      "finance": 4,
+      "sports": 136
+    },
+    "canonical_groups": 53,
+    "during_phase_forecasts": 30,
+    "during_phase_groups": 6,
+    "qualification_training_groups": 0,
+    "qualification_heldout_groups": 0,
+    "official_labels": 20,
+    "official_event_groups": 8,
+    "official_weather_labels": 10,
+    "official_station_days": 3,
+    "new_official_labels_this_phase": 2,
+    "native_payouts_verified": 0,
+    "last_evaluation_counts": {
+      "findings_evaluated": 120,
+      "qualified_research_findings": 0,
+      "modeled_positive_gross_scenarios": 0,
+      "execution_authorized": 0,
+      "reviewed_canonical_groups": 33,
+      "statistically_independent_resolved_events": 0
+    },
+    "last_pipeline_counts": {
+      "identity_validated": 82,
+      "book_matched": 54,
+      "book_executable": 50,
+      "economic_evaluation_completed": 44
+    },
+    "shadow": {
+      "status": "research_only",
+      "enrollment_id": "12f54431fc04fea4bd7adb8c111ab1efc1b1070f820a032852a4eaffe8e28c80",
+      "last_at": "2026-11-08T22:26:43.177558+00:00",
+      "capital_scope": "single hypothetical500USD shared pool, not certified/experimental account capital",
+      "hypothetical_cash": 500.0,
+      "capital_reserved": 0,
+      "positions": 0,
+      "position_quantity": 0,
+      "exposure": 0.0,
+      "capital_utilization": 0.0,
+      "orders_attempted": 0,
+      "pending_orders": 0,
+      "hypothetical_fills": 0,
+      "canceled": 0,
+      "expired": 0,
+      "realized_simulated_pnl": null,
+      "unrealized_simulated_pnl": null,
+      "drawdown": null,
+      "mark_status": "no_filled_positions",
+      "verified_settled_parent_events": 0,
+      "statistically_independent_events": null,
+      "settlements": 0,
+      "suspended": false,
+      "suspension_reason": null,
+      "strategies": {
+        "cross_market": {
+          "fills": 0,
+          "orders": 0,
+          "realized_pnl": null,
+          "settlements": 0,
+          "suspended": false,
+          "positions": 0,
+          "reserved": 0,
+          "exposure": 0
+        },
+        "ensemble": {
+          "fills": 0,
+          "orders": 0,
+          "realized_pnl": null,
+          "settlements": 0,
+          "suspended": false,
+          "positions": 0,
+          "reserved": 0,
+          "exposure": 0
+        },
+        "high_conviction": {
+          "fills": 0,
+          "orders": 0,
+          "realized_pnl": null,
+          "settlements": 0,
+          "suspended": false,
+          "positions": 0,
+          "reserved": 0,
+          "exposure": 0
+        },
+        "small_edge": {
+          "fills": 0,
+          "orders": 0,
+          "realized_pnl": null,
+          "settlements": 0,
+          "suspended": false,
+          "positions": 0,
+          "reserved": 0,
+          "exposure": 0
+        }
+      },
+      "rejections": {
+        "strategy_evidence_not_eligible": 255428
+      },
+      "runtime_error": null,
+      "research_only": true,
+      "trading_authority": false,
+      "certification_authority": false,
+      "actual_account_access": false
+    },
+    "sii": {
+      "qualified_pairs": 0,
+      "incremental_value": null,
+      "reason": "no independent causal feature/outcome-pair proof supplied; batch partitions are not experiments"
+    },
+    "native_fee_summary": {
+      "schema_version": "phase33-pair-fee-headroom-v1",
+      "implementation_sha256": "1f4c0700543eb7b35fd86260eb08a243b0afd438da86d605d2fdd937701aae95",
+      "as_of": "2026-11-08T22:26:27.824937+00:00",
+      "source_pair_report_sha256": "c80b2ab074adb11f7a2f2118f0a17e1cf86a267f59d7f7104db4ebc6a0b2bac9",
+      "verified_fee_pairs": 2,
+      "positive_formula_headroom_pairs": 0,
+      "qualified_opportunities": 0,
+      "aggregate_deployable_capital": null,
+      "aggregate_net_profit": null,
+      "correlation_aggregation": "not summed across parent events",
+      "all_in_costs_verified": false,
+      "missing_all_in_evidence": [
+        "fill_fragmentation_rounding",
+        "additional_slippage",
+        "latency_adverse_selection",
+        "capital_lockup_cost",
+        "settlement_redemption_cost",
+        "atomic_two_leg_execution",
+        "native_complete_set_payout_proof"
+      ],
+      "conservative_expected_net_profit": null,
+      "research_only": true,
+      "trading_authority": false,
+      "certification_authority": false,
+      "actual_fill": false,
+      "realized_pnl": null,
+      "status": "research_fee_headroom",
+      "rejections": {
+        "native_fee_observation_unavailable": 22
+      },
+      "findings_evaluated": 24,
+      "age_seconds": 53.01527
+    }
+  },
+  "preservation": {
+    "accounts_and_audit_prefixes_verified": true,
+    "full_journal_chain_and_prior_prefixes_verified": true,
+    "immutable_catalog_original_hashes_preserved": true,
+    "physical_recent_segment_restoration_per_service": true,
+    "wire_and_derived_parent_hashes_verified": true,
+    "integrity_after_local_reference": "data/phase33/integrity-after.json",
+    "integrity_after_sha256": "4f0d5e230a002f1ba1329116a53b25edb7ccc49cd58c6bd54cbaa7a2b6c8360b"
+  },
+  "services": "MainPID=3646506\nNRestarts=0\nMemoryCurrent=993415168\nMemoryPeak=1073741824\nActiveState=active\n\nMainPID=3652631\nNRestarts=0\nMemoryCurrent=2107596800\nMemoryPeak=2147844096\nActiveState=active\n",
+  "memory_events": {
+    "collector": "low 0\nhigh 0\nmax 14996\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n",
+    "experimental": "low 0\nhigh 0\nmax 4435\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+  },
+  "safety": {
+    "collector_quota_gib": 150,
+    "experimental_quota_gib": 150,
+    "free_floor_gib": 100,
+    "live_trading_enabled": false,
+    "emergency_stop_changes": false,
+    "risk_or_account_capital_changes": false,
+    "deleted_originals": false,
+    "aws_changes": false
+  },
+  "tests": {
+    "final_ci": "42530044830 success",
+    "backend": 2144,
+    "browser": 5,
+    "build_ruff_audits_scenario": "pass"
+  },
+  "remaining_blockers": [
+    "Residual9-10s operational tail under live load",
+    "No statistically supported forecasting superiority, market comparison unavailable for official cohorts",
+    "Weather tiny dependent cohorts cannot support calibration or certification",
+    "Unknown all-in execution/rounding/native payout costs; research estimates confer no authority",
+    "No whole-service experimental growth reduction demonstrated; retain-all policy finite runway",
+    "Crypto settlement-reference ambiguity/licensing; missing official macro reference data"
+  ],
+  "remaining_tail_profile": {
+    "scope": "two post-fix stacks captured only during >2s real operations requests; no locals",
+    "paths": [
+      "synchronous immutable-source lookup during archive append",
+      "synchronous RiskEngine.audit/PaperBroker.reconcile during account.advance"
+    ],
+    "background_contention": "concurrent phase27 findings model_dump worker observed; source/risk verification retained"
+  }
+}
