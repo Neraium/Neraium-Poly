@@ -1,0 +1,24 @@
+{
+  "protocol": "phase27-payout-v1",
+  "hypothesis": "A weekday-conditioned Dirichlet(0.5,0.5,0.5) SPX closing-direction distribution retaining exact-cent ties may improve expected-settlement-payout prediction versus an all-weekday historical frequency baseline.",
+  "frozen_before_results": true,
+  "target": "Up token payout1/0.5/0 for rounded close rising/tied/falling; Down complementary. Ordinary completed reference-compatible sessions only; halt/fallback/cancellation risk remains unmodeled.",
+  "training_fraction": 0.5,
+  "calibration_fraction": 0.25,
+  "heldout_fraction": 0.25,
+  "calibration_grid": [
+    0,
+    0.25,
+    0.5,
+    0.75,
+    1
+  ],
+  "minimum_weekday_training_events": 12,
+  "training_window": 252,
+  "bootstrap": "1000 resamples of contiguous5-event blocks, seed2701; interval conditional on exploratory reconstruction",
+  "selection": "shrinkage fitted on calibration only; heldout never used to choose weight",
+  "current_data_limitation": "Downloaded historical closes have collected-now availability. Reconstruction is not point-in-time historical evidence, independently verified WSJ settlement or prospective trading.",
+  "trading_authority": false,
+  "certification_authority": false,
+  "evaluation_window_events": 252
+}

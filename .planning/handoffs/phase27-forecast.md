@@ -1,0 +1,14 @@
+# Phase27 forecasting worker
+Worktree poly-p27-forecast-20261108, contract baseline9619c40. Own files only; production models, accounts, services, quotas and original records untouched.
+
+API in research.phase27.forecasting:
+- definitions() returns weekday challenger and DISTINCT global tie-aware baseline.
+- BASELINE_MODEL='spx-global-dirichlet-payout-v27.1'; MODEL='spx-weekday-dirichlet-payout-v27.1'.
+- derive_spx_payout(study, original_f, market=actual_current_market, book=actual_fresh_book, cutoff=actual_generation_time, model_id=BASELINE_MODEL) independently replays original frozen SPX source/model, validates original study availability, exact current unstarted contract/rules, current FRED history and native fresh two-sided book. Returns NEW research forecast with id/hash, original study+forecast references, selected-outcome expected_payout and full up/tie/down distribution. Original conditioning retained, NEW including-ties conditioning explicit. Global baseline is default; raw weekday is a distinct unsupported exploratory challenger.
+- replay_spx_payout(new_f, study, original_f, as_of=...) rederives all model/book/provenance fields. Extra enclosing ledger metadata may be added by coordinator.
+- fit_payout_posterior(rows, cutoff=..., weekday=None) uses unique canonical SPX event days, observed availability, source hashes; no market prices as inputs. Robust bounds remain0/1; parameter-only interval is NOT calibration.
+- evaluate_payout_challenger(rows,reconstructed=False): strict availability gate, frozen126/63/63 split on last252 events, calibration-only shrinkage, heldout untouched. reconstructed=True marks all historical causal/certification limitations.
+
+Authentic result: immutable original FRED source e3d7566c49052717d5f4afd0dd50c0c7056f6e5859c5dc83d2f71437c17c2c77,2512 source daily directions. Last252 reconstruction: heldout squared payout error weekday0.265802, global-frequency0.258937, neutral0.250000. Calibration selects weight0, so calibrated equals frequency with improvement0 and bootstrapCI[0,0]. This rejects the weekday feature; it does NOT establish baseline skill. Strict PIT replay rejects collected-now historical availability. No contemporaneous market baseline/depth, independent verified WSJ labels or certified training/heldout events. New genuine forecasts0 in worker; coordinator may prospectively record frozen baseline with new current inputs. No profitable edge.
+
+19 controlled cases passed (18 before final additive neutral metric, new neutral case1); Ruff passed. Authentic experiment~0.06seconds, one CPU process. Reproduce with PYTHONPATH=backend python .planning/evidence/phase27-forecast/reproduce.py /home/ubuntu/Neraium-Poly. Full source refs, protocol and results in own evidence folder. Source frozen for coordinator integration; no subsequent edits without notification.
