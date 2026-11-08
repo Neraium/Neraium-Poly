@@ -52,8 +52,10 @@ def executable_diagnostic(forecast, *, evaluated_at, forecast_verified=False, co
             raise ValueError("causal_fresh_exact_executable_book_required")
         op = {"market_id": f["market_id"], "token_id": f["token_id"], "book_id": book.id,
               "book_sha256": f["book_sha256"], "evaluated_at": when.isoformat(),
-              "end_time": f["event_end_time"], "research_qualified": False}
+              "end_time": None, "research_qualified": False}
         result["capacity"] = capacity_scenarios(op, book)
+        result["capacity"]["time_to_forecast_cutoff_seconds"] = (at(f["event_end_time"])-when).total_seconds()
+        result["capacity"]["capital_lockup_status"] = "settlement_and_redemption_timing_unverified"
         if (f.get("target_conditioning") or f.get("conditioning")
                 or f.get("unconditional_contract_probability") is False
                 or f.get("probability_semantics") != "binary_event_probability"
@@ -94,6 +96,8 @@ def executable_diagnostic(forecast, *, evaluated_at, forecast_verified=False, co
         op.update(research_qualified=True, fee_rate=fee, lower_probability=lower,
                   qualified_net_edge=edge, min_order_size=minimum)
         result["capacity"] = capacity_scenarios(op, book)
+        result["capacity"]["time_to_forecast_cutoff_seconds"] = (at(f["event_end_time"])-when).total_seconds()
+        result["capacity"]["capital_lockup_status"] = "settlement_and_redemption_timing_unverified"
         result["status"] = "qualified_research_diagnostic"
     except (ValueError, KeyError, TypeError, OverflowError, OSError, StopIteration) as error:
         result["reasons"].append(str(error)[:160])

@@ -59,7 +59,13 @@ def experimental_research(runtime, *, for_operations=False):
                 expansion["models"][name]["resolved"] = count
     elif getattr(runtime, "phase25_error", None):
         expansion = {"status": "unavailable", "runtime_error": runtime.phase25_error, "trading_authority": False}
+    intelligence = {"status": "disabled", "trading_authority": False}
+    if getattr(runtime, "phase26_enabled", False):
+        intelligence = {"status": "source_anchored_research", "inputs": runtime.phase26_inputs.status() if runtime.phase26_inputs else None,
+            "projection": runtime.phase26_report, "runtime_error": runtime.phase26_error, "trading_authority": False,
+            "scope": "stable full declared-model registry projection; original legacy journals separately reconciled"}
     return {
+        "phase26": intelligence,
         "phase25": expansion,
         "phase24": domain if domain is not None else {"status": "unavailable" if getattr(runtime, "phase24_error", None) else "disabled",
                         "runtime_error": getattr(runtime, "phase24_error", None), "trading_authority": False},

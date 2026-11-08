@@ -1493,6 +1493,11 @@ def _render_domain_challengers(certified, experimental, legacy, domain, width, h
                        and _p16_recent(expansion.get("last_evaluation_at"), now, seconds=360))
     rows = [("RESEARCH MODEL REGISTRIES", "bold cyan"), ("NO TRADING AUTHORITY", "yellow")]
     if fresh:
+        intelligence = _mapping(_mapping(experimental.get("operations_research")).get("phase26"))
+        projection = _mapping(intelligence.get("projection"))
+        if projection:
+            status = _mapping(projection.get("projection")).get("status", "unknown")
+            rows.append((f"Index {_number(_mapping(projection.get('counts')).get('forecasts'))} {status}", "cyan"))
         rows += [(f"P23 {_number(legacy.get('forecasts'))} P24 {_number(domain.get('forecasts'))} forecasts", "white"),
                  ("Registry totals; legacy separate", "dim"),
                  (f"P24 parents {_number(domain.get('native_parents'))} unreviewed", "white")]

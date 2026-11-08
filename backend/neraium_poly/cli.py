@@ -193,8 +193,17 @@ def main():
             from neraium_poly.research.phase17.provenance import ReadonlyArchive
             from neraium_poly.research.phase25.operations import unified_report as combined_report
 
-            with ReadonlyArchive(args.data_dir, max_query_bytes=128*1024**2) as archive:
-                report = combined_report(archive, as_of=now, evidence_root=args.data_dir/"phase25-resolution-evidence")
+            index_path = args.data_dir/"research-projection.sqlite"
+            if index_path.is_file():
+                from neraium_poly.research.phase26.index import ResearchIndex
+                index = ResearchIndex(index_path, source_directory=args.data_dir, readonly=True)
+                try:
+                    report = index.report(as_of=now)
+                finally:
+                    index.close()
+            else:
+                with ReadonlyArchive(args.data_dir, max_query_bytes=128*1024**2) as archive:
+                    report = combined_report(archive, as_of=now, evidence_root=args.data_dir/"phase25-resolution-evidence")
         if args.output:
             with args.output.open("x") as handle:
                 json.dump(report, handle, indent=2)

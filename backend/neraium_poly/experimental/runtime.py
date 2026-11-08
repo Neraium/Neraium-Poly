@@ -216,6 +216,7 @@ class ExperimentalRuntime:
                     self.phase23_error = f"{type(error).__name__}:{str(error)[:160]}"
                     log.exception("phase23_research_recovery_withheld")
             self._research_source_lock = asyncio.Lock()
+            self._research_report_lock = asyncio.Lock()
             self.phase24 = self.phase24_outcomes = None
             self.phase24_report = None
             self.phase24_error = None
@@ -246,6 +247,26 @@ class ExperimentalRuntime:
                     self.phase25 = self.phase25_outcomes = self.phase25_universe = None
                     self.phase25_error = f"{type(error).__name__}:{str(error)[:160]}"
                     log.exception("phase25_recovery_withheld")
+            self.phase26_enabled = config.phase26_intelligence_enabled
+            self.phase26_index = self.phase26_inputs = None
+            self.phase26_report = self.phase26_error = None
+            if self.phase26_enabled:
+                from neraium_poly.research.phase26.coordination import Inputs
+                from neraium_poly.research.phase26.index import ResearchIndex
+                from neraium_poly.research.phase26.routing import (
+                    OfficialDomainOutcomes,
+                    OfficialExpansionOutcomes,
+                )
+                try:
+                    self.phase26_index = ResearchIndex(config.data_dir/"research-projection.sqlite", source_directory=config.data_dir)
+                    self.phase26_inputs = Inputs(self.events, clock=self.clock, can_write=self._budget_ok)
+                    if self.phase24 is not None:
+                        self.phase24_outcomes = OfficialDomainOutcomes(self.events, config.data_dir/"phase24-resolution-evidence", clock=self.clock, can_write=self._budget_ok)
+                    if self.phase25 is not None:
+                        self.phase25_outcomes = OfficialExpansionOutcomes(self.events, config.data_dir/"phase25-resolution-evidence", clock=self.clock, can_write=self._budget_ok)
+                except Exception as error:
+                    self.phase26_error = f"{type(error).__name__}:{str(error)[:160]}"
+                    log.exception("phase26_recovery_withheld")
             self.feed = feed or SharedFeedClient(config.source_url)
             self.fee_adapter = fee_adapter or AuditedFeeAdapter(
                 self.events, self._budget_ok, client=httpx.AsyncClient(timeout=5, follow_redirects=False)
@@ -745,19 +766,41 @@ class ExperimentalRuntime:
         outcomes = getattr(self, family+"_outcomes", None)
 
         async def one_cycle():
-            async with self._research_source_lock:
-                frame = self.last_frame
-                if family == "phase25":
+            frame = self.last_frame
+            if family == "phase25":
+                async with self._research_source_lock:
                     frame = await self.phase25_universe.frame(frame)
+                if getattr(self, "phase26_inputs", None) is not None:
+                    raw = self.last_frame.model_dump(mode="json") if hasattr(self.last_frame, "model_dump") else self.last_frame
+                    last = engine.state.get("last_attempt_at")
+                    from datetime import datetime
+                    due = not last or (self.clock()-datetime.fromisoformat(last)).total_seconds() >= 300
+                    frame = await self.phase26_inputs.prepare(frame, base_tokens={m["token_id"] for m in raw["markets"]}, wait=due)
+            async with self._research_source_lock:
                 await engine.step(frame)
                 await outcomes.step()
-            worker = asyncio.create_task(asyncio.to_thread(combined_report, self.events, as_of=self.clock(),
-                evidence_root=self.config.data_dir/(family+"-resolution-evidence")))
-            try:
-                setattr(self, family+"_report", await asyncio.shield(worker))
-            except asyncio.CancelledError:
-                await asyncio.gather(worker, return_exceptions=True)
-                raise
+            async with self._research_report_lock:
+                if getattr(self, "phase26_enabled", False):
+                    if self.phase26_index is None or not self._budget_ok():
+                        raise ValueError("source-anchored projection unavailable or archive backpressure")
+                    from neraium_poly.research.phase26.reporting import callbacks
+                    verify_forecast, verify_outcome = callbacks(self.events, self.config.data_dir)
+                    def evaluate():
+                        self.phase26_index.step(self.events, as_of=self.clock(), forecast_verifier=verify_forecast, outcome_verifier=verify_outcome)
+                        return self.phase26_index.report(as_of=self.clock())
+                    worker = asyncio.create_task(asyncio.to_thread(evaluate))
+                else:
+                    worker = asyncio.create_task(asyncio.to_thread(combined_report, self.events, as_of=self.clock(),
+                        evidence_root=self.config.data_dir/(family+"-resolution-evidence")))
+                try:
+                    report = await asyncio.shield(worker)
+                    setattr(self, family+"_report", report)
+                    if getattr(self, "phase26_enabled", False):
+                        self.phase26_report = report
+                        self.phase26_error = None
+                except asyncio.CancelledError:
+                    await asyncio.gather(worker, return_exceptions=True)
+                    raise
             setattr(self, family+"_error", None)
 
         while not self.stopping and not should_exit():
@@ -1001,6 +1044,10 @@ class ExperimentalRuntime:
     async def close(self):
         self.stopping = True
         self._cancel_and_checkpoint(self.clock())
+        if getattr(self, "phase26_inputs", None) is not None:
+            await self.phase26_inputs.close()
+        if getattr(self, "phase26_index", None) is not None:
+            self.phase26_index.close()
         await self.feed.close()
         await self.fee_adapter.close()
         if self.event_intelligence is not None:

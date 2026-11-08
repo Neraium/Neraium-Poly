@@ -1,0 +1,29 @@
+{
+  "observed_at": "2026-11-08T01:52:03.484573+00:00",
+  "backend": {
+    "name": "pytest",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "tests": "1669",
+    "time": "152.095",
+    "timestamp": "2026-11-08T01:49:03.951649+00:00",
+    "hostname": "ip-172-31-67-49"
+  },
+  "ruff": "All checks passed!",
+  "browser": "5 passed",
+  "frontend_build": "passed",
+  "pip_audit": "No known vulnerabilities found",
+  "npm_audit": "0 vulnerabilities",
+  "scenario": "engineering fixtures only, passed",
+  "parallelism": {
+    "peak_agents_including_coordinator": 4,
+    "isolated_writing_worktrees": 3,
+    "backend_pytest_processes": 1,
+    "browser_test_workers": 1,
+    "overlapping_backend_and_frontend_validation": true,
+    "experimental_resources_unchanged": "1 CPU / 2 GiB"
+  },
+  "live_trading_enabled": false,
+  "archive_quotas_changed": false
+}

@@ -1,0 +1,3417 @@
+{
+  "observed_at": "2026-11-08T01:48:18.896687+00:00",
+  "scope": "isolated hash-identical copies of authentic original research records; no forecasts generated",
+  "copied_records": [
+    {
+      "id": "88f993aa16a345fece6aaf9e1dfaa88851d53f7864097b29444bed60ae4f7012",
+      "kind": "ChallengerStudy",
+      "sha256": "499197ac74c0428f5a56c3063951c7a51fc8468c1d79b44b80ea09ba2704d7cd"
+    },
+    {
+      "id": "46c4cbe6d3e6e7ec60d712fd4dd4382379509e43d0c0f59f67c20458d7dddf10",
+      "kind": "ChallengerStudy",
+      "sha256": "7efac7447bf958c8d6a7be87c31737e6c1a2f7f10ae1f64186f407b561d00c22"
+    },
+    {
+      "id": "e6b03a2feaa2c562066788ff6120a50e032bfb8552f79d9d43a982d29202ab6d",
+      "kind": "ChallengerStudy",
+      "sha256": "39ff42ebdc271da0b99ef91c41c538a60d0d2d2d0f9a1bb1d260fdbffb7f9287"
+    },
+    {
+      "id": "b21c44b7d541de09932ef4683cf2f09382a04e0dee431e973dd98f8352293520",
+      "kind": "ChallengerStudy",
+      "sha256": "ebcb883899fc9a58421972af7102c6e5b7eedaf248ab0ce84fa2f454aa222271"
+    },
+    {
+      "id": "7d92c7cfa041da99d0509e65130a5d7c9de52f5c5060d3ddb0633f6cd2bf2255",
+      "kind": "ChallengerStudy",
+      "sha256": "f0ffd7358552dd72df57a4a7945bfcdacc5d4f1c09716e7f60c6a89b531b69d2"
+    },
+    {
+      "id": "6c9e793336909baad519f3b1b32bcc5ca27f982f6e82ad618c8cb07779ec34b0",
+      "kind": "ChallengerStudy",
+      "sha256": "b5ddf954467be83be68564bd31f34e0f730ab62fdef98c734b7af2dcccc2c016"
+    },
+    {
+      "id": "0c2d33d7f4a84ed2e2637be5f950be4686aa7a7639cb14d9163dd02e3c79a08b",
+      "kind": "ChallengerStudy",
+      "sha256": "68159f44b2d4891c487987f8086d0ad7ed2c6993764670f770307073634414e9"
+    },
+    {
+      "id": "0dbb330435b0d766f010a8a22671ada302b4779304a2ef1ad568ce92dd75c5b0",
+      "kind": "ChallengerStudy",
+      "sha256": "d4deb374692a16a138a8d6dc960359f445267aed8a2a09d937202d4ccb82576b"
+    },
+    {
+      "id": "541dce5e9b11fdb5335ac5ed5cc131da56ee2da8f2d55f8128f170693db44c2f",
+      "kind": "ChallengerStudy",
+      "sha256": "b0e77b54bfc8b3acbe04fe363da40334b0819921d11b0e44a8391dcd1722a4ad"
+    },
+    {
+      "id": "dcceb6b53cca5f808b682b015a124fd15f4753bc3adb597bb5f8f2362ab88692",
+      "kind": "ChallengerStudy",
+      "sha256": "4d3b34428024a1f300e439399c3fb596bf0093d1c099c7b54c2408da6350e987"
+    },
+    {
+      "id": "8662775fd3224d1a1f67bfc49dfeb6755e2328c9ee63fc57595b622560d914ac",
+      "kind": "ChallengerStudy",
+      "sha256": "62726cf2b6a1ef0736373685cfc048dbd8972a9b064d0439161087f6db259f19"
+    },
+    {
+      "id": "78ddb864143fb93f93903a09070dc758f36e108a00a45492a074ccd94691a734",
+      "kind": "ChallengerStudy",
+      "sha256": "d8f43b6d3eefa93aae8dac230c90f701fb17a06948dbc3967cfc55d6a27462be"
+    },
+    {
+      "id": "f86b0297d00e6a910153001dc2d5f69bcaa51d1504b19a55a3aebcc6a5e6fde8",
+      "kind": "ChallengerStudy",
+      "sha256": "b99d6435054887a97aa4db70cf8e6c2f0f1300157af960b8db6d09b6ec95a4e5"
+    },
+    {
+      "id": "c06c2e27a54b3359798a797368416a7cb0033faae83a1734ec83a18fdf055015",
+      "kind": "ChallengerStudy",
+      "sha256": "eb0faab9456c4aa8f77f2fabed1d5930890c81ca9c35ee837112d1411b3ea7d4"
+    },
+    {
+      "id": "19e738b3467205c0af0196e468dc487538e638765b2c49cefd95ad1f4956b626",
+      "kind": "ChallengerStudy",
+      "sha256": "e3a87042e789d00bc4ee8915574b06676e2da1718c3d7d8ab32553bd0b9ecae8"
+    },
+    {
+      "id": "e094c4a142e04ebdd5572b76c9a40ece74e1c0547983dca77bcf266b54db0d42",
+      "kind": "ChallengerStudy",
+      "sha256": "82225f9e82a4cc8dc2ce05c062478b35faf0b351a221228c41865ac56f326a79"
+    },
+    {
+      "id": "14bc31543e2f9d31150b7e0299ba5fed3f49edf10275330036fd8bd90e8447c2",
+      "kind": "ChallengerStudy",
+      "sha256": "1f2b9af60096f8f760212c53becee1dbbe7865bc050259e01aee338fee7ba9e1"
+    },
+    {
+      "id": "a23bba9c6b42940a75d03f178c1c744175e55bb21f3887d0b112f3ec8c5f50ef",
+      "kind": "ChallengerStudy",
+      "sha256": "448f2bb2040d7d67d0b4851202f53bc21f7706a5ca9b6040d8c8aadf3675fd6f"
+    },
+    {
+      "id": "8b19842336bc043d91f3eaa9d19e4c9940596cd8705a618cd21d5e886c78ffca",
+      "kind": "ChallengerStudy",
+      "sha256": "cbe34767c26cab4ee361a9d37860f0ea87a5ea1110c826c89b763048249aefb3"
+    },
+    {
+      "id": "77a0b8926d92933380598254bd725660f2c9a7dbc8fc9f40cdc1b3b51123eceb",
+      "kind": "ChallengerStudy",
+      "sha256": "fa3abc3807027a1b52d256bd877993db5cc1d3d28b415190a9ccbf1d7d3b146b"
+    },
+    {
+      "id": "000000000001:d0803fa833706450957539b44d9d1001b742e0c9131071ec760a78789aab078a",
+      "kind": "DomainResearchStudy",
+      "sha256": "a58113518b3def5a904609e1444e3ca3f5ad9b86f70ebf768e769d62f3438bdc"
+    },
+    {
+      "id": "000000000002:234d7b37bf141c7768bdb99a184a1ad0a81ea73a48d0282a1c88c1d5d23ef61c",
+      "kind": "DomainResearchStudy",
+      "sha256": "36639ef1e3da973e20f76d413b4fe95b4d6ee8b08bbb705beaa2b3d72a37cd6d"
+    },
+    {
+      "id": "000000000003:9cf40cd6dab536bde2def0c23fbf6a4b0274fde7ac0c50f955b4e475d8821eb3",
+      "kind": "DomainResearchStudy",
+      "sha256": "0d6e6a8eea815feb8770357511926fa3d88c00e9a93d4ebcccc23b140af790d9"
+    },
+    {
+      "id": "000000000004:2d2119ca53f086436f373101ff0587e379f1dc1f7423389324c6196d92cc14f3",
+      "kind": "DomainResearchStudy",
+      "sha256": "1284d3a261ec4e39e81bd50ef1026cb9d3a0ddacf6160a18b6609754f92a4e7a"
+    },
+    {
+      "id": "000000000005:d103ad67e2009614d8d3089b786b47c5cc58c36dfbba33cdabef5a287837c6dd",
+      "kind": "DomainResearchStudy",
+      "sha256": "cfec24e3331520f15dbb72b67e613c25ddaa4df2d09e8e99c53c4ba40c522e9b"
+    },
+    {
+      "id": "000000000006:642fb79dba9dba1dcaed1074566541402649772183736179bcb7b8b3b44c2039",
+      "kind": "DomainResearchStudy",
+      "sha256": "2cb348259bd69aa24b7e9566a714ef3bebafe30ca1c69b44dc5a36579493e80a"
+    },
+    {
+      "id": "000000000007:3866175e104d3265fbd10d583999ffa82dc3dca30016306eef093d4dee2e380c",
+      "kind": "DomainResearchStudy",
+      "sha256": "eb7462aab3da658cfab5d72c71a14c224b950c1ea2c42d19e0e5f9ed51443756"
+    },
+    {
+      "id": "000000000008:263c3ba09ee0ac54739355a6bba9f0abe6b3eee31d9906a0eeada10543102faa",
+      "kind": "DomainResearchStudy",
+      "sha256": "f49cfcf9a96e1a65f0f5094842d6fb572ceca4d1f8c55aab5db653e450b2913a"
+    },
+    {
+      "id": "01cf71f0ef6a77ecbf4119f131d30e9b33975d894a279d6cd10135660a9ae881",
+      "kind": "ChallengerStudy",
+      "sha256": "d1bb6679610bb7aa2fce9f7b67e21e172e144962a31fa0ec2698968987953f69"
+    },
+    {
+      "id": "000000000009:ee7c54e513dde1e094a5758f524148b79859c251f692aebb5d05ed861c23e4b5",
+      "kind": "DomainResearchStudy",
+      "sha256": "3d312c0fed65ffe6b44d7059af265028f6a98649e876c1f584763698fa1c8eb6"
+    },
+    {
+      "id": "000000000010:744d04c8e6840de5f2d4d2da2f5b7e161066e5780a57121d5a1a9ba072f07eb3",
+      "kind": "DomainResearchStudy",
+      "sha256": "fb655c588f2792cbe87419e15e56b1df94ae2e150849afea9c08815f615200db"
+    },
+    {
+      "id": "000000000011:18d19aec0b1c98885fc07a9484c4775a47eeb65b2c6dc6bd68870e1a9cf27c98",
+      "kind": "DomainResearchStudy",
+      "sha256": "1a0f1ed966ec50574cb5501be0429f060ec7df3b4d96b27c927ebe92354fc71e"
+    },
+    {
+      "id": "000000000012:8999d39f112f1b771a7b930f6e475637a0ef2fbf2953d045fa2a7b1e00e7d0ac",
+      "kind": "DomainResearchStudy",
+      "sha256": "7758e5c9428263043db585c153823725f4c6991ab9c058249b89eba8f4e50794"
+    },
+    {
+      "id": "000000000013:370537dae3e07827d754b0e2162319efd982b04ee6c81253d457fb256c41f091",
+      "kind": "DomainResearchStudy",
+      "sha256": "bfa88c5c3ad8739f66a2cb163a9a0f70d7e3b56a268f5cfe814f49ffbadf8f48"
+    },
+    {
+      "id": "000000000014:de5f49e013183a586763ea4bff94ad9aba927e5ae46dafefa1c21fe2ef02fd8f",
+      "kind": "DomainResearchStudy",
+      "sha256": "f43cd745185903bd432f269b9a8c2be5be79714136d72fe62710a061b9ee45c1"
+    },
+    {
+      "id": "000000000015:369aeee780fe525bff4103c8c7adfbe8cf9c08c4d70b92f3afd2a40c3a5080a1",
+      "kind": "DomainResearchStudy",
+      "sha256": "33ef03a52c193963b1d3e98ca918a079e58c282f23f2ed0130e3e8a5686043ad"
+    },
+    {
+      "id": "b1a252710b3986e86d628455a90448f33f60e43998c4ed5317aaf942d7ed3ff6",
+      "kind": "ChallengerStudy",
+      "sha256": "1400135c73fb7add2df2c354b8d7491fc53d8951e9f89d0043214f178db4e023"
+    },
+    {
+      "id": "000000000016:768254b68320f961db216797c17aab8e33cd912d3bc7ec2a6d0ad74a6bc6da4e",
+      "kind": "DomainResearchStudy",
+      "sha256": "beb2fb57f9d83d6f9f2dd8309b6e29aa47b04e29d06398b54abb75571b1ce58e"
+    },
+    {
+      "id": "000000000017:57e0baa2b4ad58e33e06ea29ccee17c955643cc20b4e23758311606e14effdf2",
+      "kind": "DomainResearchStudy",
+      "sha256": "e1dbdecf3cf72d5e3980e3036039e238d6aaccdf6131cc032cf5136d2fc62190"
+    },
+    {
+      "id": "000000000018:15045ca72d8583d6c6807aa3d4107d63cb87c79f7c8d3ce233689bad5b930f89",
+      "kind": "DomainResearchStudy",
+      "sha256": "27ab350961c45612657197c49b4625b9501440942a50a85c21035375a730e6b4"
+    },
+    {
+      "id": "000000000019:21a78cb74502095b89e79dd1c174d89e6b246d4c5f783b17d9e79c3d06cd0362",
+      "kind": "DomainResearchStudy",
+      "sha256": "ecb71ff838bf059c76378556edf78aea722f0c94c5b24728af537bb8fdbcc3db"
+    },
+    {
+      "id": "000000000020:7961039b9b762854d9d6ed4697fc04797f45d07df594a77db8bf678af17c0a05",
+      "kind": "DomainResearchStudy",
+      "sha256": "b57b1ee60d14283a5ecc8496c925702b3b409fbaac7232c4d459f0e9cf99b383"
+    },
+    {
+      "id": "000000000021:602f25754810d3b1ed404c1f815f4aa267791298feb712297df2c5af1f9220ae",
+      "kind": "DomainResearchStudy",
+      "sha256": "5710ff6005490f37433c7db5cd6f845fa21977f0d7a9bd262fb73be249a23148"
+    },
+    {
+      "id": "c672ee7aafa369e7de66fc596f3cd3e02b54ce42e0638650c974ba52ceafa78b",
+      "kind": "ChallengerStudy",
+      "sha256": "02a762092358e56e57e9f7bd185b7099758a524817458e61cbc877b60b29ebd3"
+    },
+    {
+      "id": "000000000022:62b0b28172b6e6447d79d20a83f8820b383822240cf4f2402c815e243c9f88c2",
+      "kind": "DomainResearchStudy",
+      "sha256": "1f35ba4acacb1954eff421febd42922dc6e7e6992c081d0d61e26fc11518ef06"
+    },
+    {
+      "id": "000000000023:ecc17d62c03f67989af11db70184cac3999a3d6c6a3b573df70b460cb4a51749",
+      "kind": "DomainResearchStudy",
+      "sha256": "162e3cb9859db12febce49f8c0058febab2c14464825690879b3e6dd9a092dcd"
+    },
+    {
+      "id": "000000000024:0be421c3183b63c320e0bd6622715554604b522a76e614b90a30019b49e7f981",
+      "kind": "DomainResearchStudy",
+      "sha256": "2fda5107b5994c12664938f38780050b208902c24ccad7d90947abb5e6bb665c"
+    },
+    {
+      "id": "000000000025:0db681bb98bde6d06d5a5577eff77ccfbbe9ca09b75b9ee8904d4a27b999b421",
+      "kind": "DomainResearchStudy",
+      "sha256": "442b733c5527e25454cb00d52fad92266d300888683f132d00ad904419928bc5"
+    },
+    {
+      "id": "12a015a03a604bdb2af7c2bf4b5f131991de56d9f2b940f56d3ee8a0c94a144a",
+      "kind": "ChallengerStudy",
+      "sha256": "1e41e60097be88838cacbbbcbd0a45a7bdef749b9126b24a0748512956cd14b7"
+    },
+    {
+      "id": "000000000026:962caba6f4485399e309a784bbf7c5dcdb82e0279db0cc2b92a9c1d0659b8d7a",
+      "kind": "DomainResearchStudy",
+      "sha256": "36c82abe3c4a731cd3e60273880a87b14cd8d64747356992ec8215372e4de9c3"
+    },
+    {
+      "id": "000000000027:fc78dfcc0ef3fca112400c31ba77a19aa01c2b7ceaa2f6ca61d688777a94319c",
+      "kind": "DomainResearchStudy",
+      "sha256": "20f9f254466bac461468ebe5b164fc145aed590ed76b011ba196769dea5cebd2"
+    },
+    {
+      "id": "000000000028:aecb2daa9dc92af149e05cd104bed0d7612753cf23137c79c45279e6e83c36b1",
+      "kind": "DomainResearchStudy",
+      "sha256": "6d9369c4d692b50757b3f3463b73bbb0a8fab83455498a86fc220fd0c087ee18"
+    },
+    {
+      "id": "99bc55fff3fc10f44c06b40c419865427f0d71aa6867c3d241a7effcc3769fcd",
+      "kind": "ChallengerStudy",
+      "sha256": "49ff718e258bd7ecc6fb4ee79b4207b80a90fed9154f53044f12f63872c1b2cd"
+    },
+    {
+      "id": "000000000029:4a296b40bd0114a6f22c60ad86520de407b698888768bb7d6d310c40b67d5bb4",
+      "kind": "DomainResearchStudy",
+      "sha256": "787c6ac7002687d4af9a975229aa8f20940f6861bc8a5bdf06568042bc0a6115"
+    },
+    {
+      "id": "000000000030:87af0760b09f0e6d305667ec241089e8698832bb6b14fddc6315962c1d6ecece",
+      "kind": "DomainResearchStudy",
+      "sha256": "6a8a32bcd1d8a0c9480566027fc1af47fc946ef7db4f741076ddcb0258f4d40f"
+    },
+    {
+      "id": "000000000031:db457911c2b4c240352e1ce7e93be207d7e8369f8eb52286ff3dde39c45987a7",
+      "kind": "DomainResearchStudy",
+      "sha256": "523a61e55c7608f3c8ba2f3f6014d69049a3435ad136a9f51c73f8b71b5107c3"
+    },
+    {
+      "id": "372a9d1767b4c9580fc1e3bcf6ac8874b9e7394f1c67c1de916f8d7d95273c9a",
+      "kind": "ChallengerStudy",
+      "sha256": "3ae85e5a46016f29fc4061e1062b657d5c5596294a95d0ec94b54107c9ebfaab"
+    },
+    {
+      "id": "000000000032:406b952a4ac3712f709417f494c5c863858d2875967fd75bbbc1052fcbb93295",
+      "kind": "DomainResearchStudy",
+      "sha256": "6deb2a3066627e481f2a0f1054ef77ceef7b3dccad6393913ca7df3bcb5325a7"
+    },
+    {
+      "id": "000000000033:99e86f97ba7e6db17edc0615daf647c9f6db5e2fd1c71121579affb65bf09d58",
+      "kind": "DomainResearchStudy",
+      "sha256": "fc20f33054c497901b5ebc8e01090c34eb4cdc29a424e0080a80f5779ab08d0f"
+    },
+    {
+      "id": "000000000034:f8469658e95d5123b9f13bd8fca7c936cf22c45494a591642b19d899792f4d5c",
+      "kind": "DomainResearchStudy",
+      "sha256": "58ac7076b49add346ed65ce32a21386a1d4aeb9433b587e1840eb8e4bd21a013"
+    },
+    {
+      "id": "1ac276b5425825e22d6f62d7a2828fc18808acd6d5497bf59a4e20a37dbe53af",
+      "kind": "ChallengerStudy",
+      "sha256": "7cf5ab6f0a6c46b2204f0dbb2ea9a672888554d4ad8d82474fbf869a92065872"
+    },
+    {
+      "id": "000000000035:9e92302ec11366259e8d76727ce227029e7e7f292f48c387bb497df0a60fee56",
+      "kind": "DomainResearchStudy",
+      "sha256": "233f14e8f27860f82887551683348807e5edb5dd1e2520eb34330b8c29f35aa8"
+    },
+    {
+      "id": "000000000036:aa3011ef4d234c85848c0d9ca7ef1433f65a13770cd498999751b9048dd170ed",
+      "kind": "DomainResearchStudy",
+      "sha256": "5aec838a83fc9a45546b2c4e620f68e973a5530e2f710692bd9f0963f0cfdf91"
+    },
+    {
+      "id": "000000000037:035f594f9f4b6b8fee729fdd24781ad3fea4e4990576de4ce3acbf745bbd73bb",
+      "kind": "DomainResearchStudy",
+      "sha256": "36378fb3ce6a843496cc27eeb9111942da87ecd40edebd2ac63659e6fcacb378"
+    },
+    {
+      "id": "47aae5df78557530cc3a82bfe0838bd2107253c902f63e325778eab74b2a348c",
+      "kind": "ChallengerStudy",
+      "sha256": "1397992cf9c4700a85a38ab47b0e91186742e9c123f2f5f6de36a8e7a0e2a5a5"
+    },
+    {
+      "id": "a5e5b25f5effd2f8e7ceaf365c3a6656c9a8041c9abb166dfde40a346e506ebe",
+      "kind": "ChallengerStudy",
+      "sha256": "16e01ea13c0bc95fffff8b85b9e8f22dade4d7dba0cbc40d4a4c3b5f2c5b8e03"
+    },
+    {
+      "id": "000000000038:a8cd3d428f573159c65e65d4fed7508cee91443d76c5b47f111bbb6ec29d6f73",
+      "kind": "DomainResearchStudy",
+      "sha256": "069fcb72ce40ec67d0198019925d31a2c6d812af0f75b232bdff157be9998f96"
+    },
+    {
+      "id": "000000000039:a720c3a45a46314dacb190f37b775475c8e3d8561fd4816d09fc6e8a3100331d",
+      "kind": "DomainResearchStudy",
+      "sha256": "edcd54257753eb26f85bbc221f79d3b1d4f16ca47a9a544184e58e8bdc45a3d3"
+    },
+    {
+      "id": "000000000040:e2273683dc06342c17105ba9b0f92f69b031e25b8b40c845e88e0c73a143492b",
+      "kind": "DomainResearchStudy",
+      "sha256": "82e05e3e95eb437863c32caf2b4583142e31115f93b0e363e7b2039b78bc69ac"
+    },
+    {
+      "id": "000000000001:5a18dac5c08cfe91c07d4d0002311fcc7b268ee70e44fcea4f6fc2651b7f5e0b",
+      "kind": "ExpansionResearchStudy",
+      "sha256": "ef1147db188281f877e0674558d50c8dcb372b4c286ac75e60994b3f487b3991"
+    },
+    {
+      "id": "000000000002:e9459e026ba93d93a1246c655c3d65335686dd3017971dd701b61d73efc52a37",
+      "kind": "ExpansionResearchStudy",
+      "sha256": "e0927e8154da9ff1ebe645ba709134f59eaf5b3d933de93665390f3d4c07ea3a"
+    },
+    {
+      "id": "000000000003:f44fe093d6e1019b2158d29f207323f4833af43111da3138ba806d36e5382210",
+      "kind": "ExpansionResearchStudy",
+      "sha256": "d6da11cfb1746e9ec3a63122475782778fd0af561d67bcb22085f690bee3be4b"
+    },
+    {
+      "id": "000000000004:d86b4cbb59cfd446cc692cd888c967c0f614e106894807264c327735dd3cfb2e",
+      "kind": "ExpansionResearchStudy",
+      "sha256": "24c33589da85ba571a58c27b6680ce10989e92e605cf1b4e27e7cbe55a74487a"
+    },
+    {
+      "id": "000000000005:de23ae06ed46b481a31e5473c76d37c9dd2cef55ae1c84def1ff7ef04c719209",
+      "kind": "ExpansionResearchStudy",
+      "sha256": "cc342e08cbfaf0a72a8412796cbd69f8489c265c1dd31b202f63b29287764a89"
+    },
+    {
+      "id": "000000000006:f0f50bc1ee97af41f41efe2aef8e709b020d853e832e61b2770443e360afab0a",
+      "kind": "ExpansionResearchStudy",
+      "sha256": "52ede9cd5e85e0bd4825276936164d806cfd46c6cddcc135fe5c5d37d3059620"
+    },
+    {
+      "id": "000000000007:94b1ce25a482d38d5e035788bd124deaba3c737cb3a5d8a3f054e794dc57a5b7",
+      "kind": "ExpansionResearchStudy",
+      "sha256": "651f00365a9e820e1a015b3384bbeee719bd8190a0acaaf137a40ba7e970c0d3"
+    },
+    {
+      "id": "000000000008:6e92cd2b1684df080db392272a6eef652358d840621468efab7d3bf3abc00c84",
+      "kind": "ExpansionResearchStudy",
+      "sha256": "d148d2d97ad8c7593d9961e9a9f577af50c43fb6f954506ec2c2c6ff14d90d54"
+    },
+    {
+      "id": "fb12fd22cae499d378a2c00296d2cf23a91ad5f81c0146f906ca9731c9114335",
+      "kind": "ChallengerStudy",
+      "sha256": "8c31cbec066a98bd25683a5b7f95e39b689018871d3df37cff15204b24df0959"
+    },
+    {
+      "id": "000000000041:c41403de868ec4222cd88d178bbd2af0f7c377c30997daf481cae4d9d404eef3",
+      "kind": "DomainResearchStudy",
+      "sha256": "9021f38ae412c672e1a90b416a9102d1ba783a1e054fc360874d65e6760682df"
+    },
+    {
+      "id": "000000000042:1f545ab78b716da8409d450ae541a23e3deaf4af231e2083d0475eac6f808831",
+      "kind": "DomainResearchStudy",
+      "sha256": "6e554b9593abad3cdfba8d6fce46d3b1f8a539c028a9e742f23291c2af2a9811"
+    },
+    {
+      "id": "000000000043:4509b5083bdeba18ef6546f0ec3f46043badf0e94d7597c6b700177af7376417",
+      "kind": "DomainResearchStudy",
+      "sha256": "1f6e94f61b0450a62586591b312931e4e20e78713216b978261b307a8c5e75ab"
+    },
+    {
+      "id": "000000000009:39765a8df1810e917a1174f29a8e26ed10ebe0780fc5a5451e2db9c6b0028522",
+      "kind": "ExpansionResearchStudy",
+      "sha256": "34f2fe3f22fade654f85c9bc1525a165d68e35b1be88219a629a9d51073257d5"
+    },
+    {
+      "id": "a9bdebb0244803f07ccde919bbd54ee0e0dbb1ab5be5f044f2c9f0ce4e6426c5",
+      "kind": "ChallengerStudy",
+      "sha256": "df1bbf87556442c34c8d134db6b8e35fde5f4605b91a0bab36aec13ab3c15b99"
+    },
+    {
+      "id": "000000000044:f99e123f5a609ec247699293d59ba3508d57bdfdbb90b21dd5df3483e4387976",
+      "kind": "DomainResearchStudy",
+      "sha256": "fb8f301292dcc3ebf87b56033b4cdd97993ec4fe7ffa3241d36884d2cb1295a8"
+    },
+    {
+      "id": "000000000045:7db754c861b0ae877c8fe83e00de7cf1d3d1027c837c8fd5d2866ab6998a41d9",
+      "kind": "DomainResearchStudy",
+      "sha256": "74dcce6d49f927134a2100d9a248d67fead268c6def79e3ba247407292b517d8"
+    },
+    {
+      "id": "000000000046:49c21d79fab2e7ca2882541c5fd2eaf27d3613825e4e0566b05fd9f0ab3a44e4",
+      "kind": "DomainResearchStudy",
+      "sha256": "9473513e73bc607ea75c812a2bb16ac46e2a3d4f11b66e0f5c44a24d17519079"
+    },
+    {
+      "id": "000000000010:abe14e556c8121fd24858e694a9fd49eac01af077c8d4a09ffd01529acb0d2cb",
+      "kind": "ExpansionResearchStudy",
+      "sha256": "27fef8057b904787a7c30358d16174fedb18f156706f84085dd7dc16716fbd0f"
+    },
+    {
+      "id": "000000000011:1f9ec31eea6f88bbbacd4de4e2272feb3aa38060a9b5d58ad2bdff590bd962aa",
+      "kind": "ExpansionResearchStudy",
+      "sha256": "a314dbb4bd952ff388c07e5f15336ba49394db4894a43294383c0b8e24c9305b"
+    },
+    {
+      "id": "000000000012:d43e3942c549593296e9f971a6eedc6562685f3d3652cff78f83032f7bc8e4ed",
+      "kind": "ExpansionResearchStudy",
+      "sha256": "4f9dabed9bfb5673e1ac4166db99c284ccbe68fb9b2be6449abcb4c5c011af8c"
+    },
+    {
+      "id": "000000000013:a503685bed51b6a2f21ff38c49e4f2bebdc6300ec8ecfca693e2d5133f7964f7",
+      "kind": "ExpansionResearchStudy",
+      "sha256": "8100e9741a9f2867dca4dc57a19d387b4d93a7b312b014aceb01da6e7480b032"
+    },
+    {
+      "id": "000000000014:732bd15c1707a0f2f9e00b0849a19999f0ce1c653567193469a20555d5c58327",
+      "kind": "ExpansionResearchStudy",
+      "sha256": "281fd6a7d5a7fc43b3136b063652083aff3490395059803ec9babada4800a5a4"
+    },
+    {
+      "id": "000000000015:e91f88652bfad14cc2a76dd6651d970b8dc504e7bc46f9438d039e47d84ae32b",
+      "kind": "ExpansionResearchStudy",
+      "sha256": "3425ee71c6d7f2d1e7a314e5e960b4a9f25f13d4645cc10d4061c1d0eec8db58"
+    },
+    {
+      "id": "000000000016:488e6a63986ca7b2f3cacaedab44d4f6fee1b443d29385b89152d402eba7f06e",
+      "kind": "ExpansionResearchStudy",
+      "sha256": "f6e34ee05bbcdea7efd5c98483287ca7d8487afb9c755768a57f84b6dbe04b69"
+    },
+    {
+      "id": "305aae7b9f484ec6bc132ee3b914a14416605717804ccd43a9fd10d1c7f46721",
+      "kind": "ChallengerStudy",
+      "sha256": "cd68c7b16beb026ff6c6761b39373db3fbf117d34219e02c3640550ea44aa7c3"
+    },
+    {
+      "id": "000000000047:9855dec499a909397ef53218e6de4ee4e53ef4600c43732b26c11f21131f2216",
+      "kind": "DomainResearchStudy",
+      "sha256": "a203b0bf18039b7963854f11b8c7ef435f0767878a9402c029cbb498df99cc4d"
+    },
+    {
+      "id": "000000000048:1bf44fd62c0f204313a2ccf2d3a9202486310c07861162e26d83962e56642537",
+      "kind": "DomainResearchStudy",
+      "sha256": "229becf1de8deb68de337d6e5bc0e5452c4d29744745bf2cb0d045e82ca721f8"
+    },
+    {
+      "id": "000000000049:f359348ca0cc93b7c512612f045133321c4c99b3f976a480006b86aa9d4132ba",
+      "kind": "DomainResearchStudy",
+      "sha256": "5f1e4d2a48dc8365cfab44990c1196a5ab438209de1063be3dc1b340758ca159"
+    },
+    {
+      "id": "000000000017:403fc9a56eeb3950c9ebea44318736f0999e23e490b833998d737d904894548f",
+      "kind": "ExpansionResearchStudy",
+      "sha256": "a0bf40c418805f75600f09a9342194490ff1ca92344e526ca99fc0c496a084b0"
+    },
+    {
+      "id": "000000000018:6ccaf5cd7da41eaedfd5e896d998acd1e48e9b14d94451d4dac2d7225279eb95",
+      "kind": "ExpansionResearchStudy",
+      "sha256": "8116ee31d7de606b05df48a8fe11bd2e0e3032a676dd126bb10b70d15cf44aa5"
+    },
+    {
+      "id": "000000000019:917a450a089c89fb6dba0c1097d06cf4ec2f2f03f821c25f980a578bbf3582a7",
+      "kind": "ExpansionResearchStudy",
+      "sha256": "b5d919a5a5408e694bcbdf5a034ceaf11e5973ffdf0bbb01fac48479bee8e561"
+    },
+    {
+      "id": "000000000020:b45ddb45902765229e64d04aba51411c64427750d647fa5a6daff588cd505007",
+      "kind": "ExpansionResearchStudy",
+      "sha256": "342e4818d9c760879b9b6589975ae5c0a4060a02e546c04edee5d110ac8a631a"
+    },
+    {
+      "id": "000000000021:f5593bb5d65ac16c5464b191b060059ddffff67e1b06d30a39fc0c7926d04e3e",
+      "kind": "ExpansionResearchStudy",
+      "sha256": "6873dc537bb2ac3c2e9198857317b31ddcf1f435b0c276e29d2be8290eb2bfe0"
+    },
+    {
+      "id": "446cddfd2c440756380c2b06325bba52706629a0296457d70dc9f98162ab11a1",
+      "kind": "ChallengerStudy",
+      "sha256": "8f6f264fd57814901cf92ee579b250da8b5715ada3d9bb1ca41389c6ed29e1e8"
+    },
+    {
+      "id": "000000000050:01a3ba73b02b9d8034b80b0783b276e56644784e494fe82ff10bfdbc07c0fd2e",
+      "kind": "DomainResearchStudy",
+      "sha256": "28619e19d64cfccf1b65d594a935e9c0fee2ae13395e0dfc5ea1788d89b999bd"
+    },
+    {
+      "id": "000000000051:fb2ffd6f8423f8fed93bf22eabe2d11e62a0942d8f3397f61fdf9d6db8150628",
+      "kind": "DomainResearchStudy",
+      "sha256": "87d4a3e288cdfadc9105195ee697e47e26b3aed5036161d35bd458705ce0ed47"
+    },
+    {
+      "id": "000000000052:cf05db9fd0b671afd7799f45adcfae4f076c951579ca30bb1401044b9a32478c",
+      "kind": "DomainResearchStudy",
+      "sha256": "b871d9128828d10f6e31f3a38653e27a37351ca0cc59202221d90e300566a4ee"
+    },
+    {
+      "id": "000000000022:39365b2b46c16afd71f246e16dbfd59480927a377d6701ea30b9f9cbe69d9994",
+      "kind": "ExpansionResearchStudy",
+      "sha256": "0df497f57ee3d1202ad846aa5238c924a81b8e4c70f5a28022a97fdc37d40795"
+    },
+    {
+      "id": "000000000023:4f8b4ab951a112d5ee0401031ecd911eab47b2563684f7158be6ff9e79ee0848",
+      "kind": "ExpansionResearchStudy",
+      "sha256": "9e12bf278b1810c39987c7a5ab48d27b793c7b4e541d10bda5cc5d0613150977"
+    },
+    {
+      "id": "000000000024:f8ba1de8fe1904e7deda03df122c2b799932b886abec5c02df52c132be62290d",
+      "kind": "ExpansionResearchStudy",
+      "sha256": "72fb400e8bd76c8ca4d46036cfa66c6367fcc74af493d3defb2bac37f1712202"
+    },
+    {
+      "id": "000000000025:eaefac948375ddb787e2e39cdce805f980ae9e2b847ae356878ac29cd58a8192",
+      "kind": "ExpansionResearchStudy",
+      "sha256": "950d01ad0685b475e2489465797e4a9e429f63fa173ac3869644170a6320e099"
+    },
+    {
+      "id": "000000000026:0a975f0a4d33c5a075ef734de3437c8bb9dabb9c986c49697c4d8e84ff2e2d6c",
+      "kind": "ExpansionResearchStudy",
+      "sha256": "36c736cefda5ad2620dff5c188c060d0a07bf24d7cc3730a3948db1b95e98866"
+    },
+    {
+      "id": "0767da9a9e106e0970d503b1cde17da6b42f11a2cf2ad479279196f9b4195c7b",
+      "kind": "ChallengerStudy",
+      "sha256": "b43c7b662cde378004483e731c9e1ab105299575958dd4b8c91d9aae25a8c8fa"
+    },
+    {
+      "id": "000000000053:e40e3e111c820e8fba38e3935806d55657ddf53817ddd2b32ca06a36492bade2",
+      "kind": "DomainResearchStudy",
+      "sha256": "86afca0f7f42d86ee138a132c41dd9f96dec5a1bd93045e0e18a0c456cb49e2b"
+    },
+    {
+      "id": "000000000054:2394b2a137bbe46751a96a35c0e34b8f31b89ba15d3e81eab6aeb1207d4f8594",
+      "kind": "DomainResearchStudy",
+      "sha256": "214dd2b20d182c0b0ae2882f7919548bfe1e9b33be9f5ac8caec0f34e1a09502"
+    },
+    {
+      "id": "000000000055:7b1ab517c719d6ce90e8c282257c01e7b5118195c4f604195f91d71c7e600d38",
+      "kind": "DomainResearchStudy",
+      "sha256": "062d35b72a15c476683047e137680da1124dd15edd5cfa71cf0752a9b7d4df30"
+    },
+    {
+      "id": "000000000027:bfaeae5fc528e6154b63f5deba5f6d192455657351fc081add21df48b9de78eb",
+      "kind": "ExpansionResearchStudy",
+      "sha256": "e647797bac736a887760fb505f23357da3fa9d5b9de616cb5da304e428ba9caf"
+    },
+    {
+      "id": "000000000028:062f3f25321ed647c48efa90380174d678b091e1ef176ebbd12c964e7009757e",
+      "kind": "ExpansionResearchStudy",
+      "sha256": "d424a10149e0939016cc2346170da3362164f91ae959453df09e5e5c883167bc"
+    },
+    {
+      "id": "000000000029:c4ad0759076448f3d465ca64d1305fcd3f4367dc7afe5f0947533263715a07e0",
+      "kind": "ExpansionResearchStudy",
+      "sha256": "f62c5aa186685d83c5aeabe66eaa3b84faf42b09eb893c977cfc471349a7e2bb"
+    },
+    {
+      "id": "a32c63533065c642b1727c79ac4efbaeec59380511781652a4f78f56b285464d",
+      "kind": "ChallengerStudy",
+      "sha256": "c9699c2fbe832899dc1458509eb16a236092d1b60bce86d0e749ccbd6fe1714c"
+    },
+    {
+      "id": "000000000056:45a8c973ca8e6151fbdc62bfc2c9449e7f30d6b42460faba99011a61d5403bc1",
+      "kind": "DomainResearchStudy",
+      "sha256": "180dc6022426b7237a4dd86d7282172d977bf3b5b97be0cc40a0d8ae30a2b888"
+    },
+    {
+      "id": "000000000057:c4d784bb71682befc7911e281b148ed0d89eb710383e6013b99f30f20fbb70f9",
+      "kind": "DomainResearchStudy",
+      "sha256": "20092715e384dd94a58177fbc1f381fd0628a0045f52d9155ca45bb93dd38a92"
+    },
+    {
+      "id": "000000000058:4ab8b7cff0e515faa7b237e853bce3d362dd3bfa1c76c7444b6d16eaba4b4f20",
+      "kind": "DomainResearchStudy",
+      "sha256": "120404312eabb56246bb2f95d4ecd3bb537daabd9e4982bf1b7b5a1ceaf6361e"
+    },
+    {
+      "id": "000000000030:00b9d7837833888d89dcde4aaffbea591f693295ff510c4ef7e60dff12145303",
+      "kind": "ExpansionResearchStudy",
+      "sha256": "1b6737e12bb2c3fa7a358c50c631bc9ea43f86afac3ee4eefa3350ec26f451fe"
+    },
+    {
+      "id": "000000000031:01908a6ab505205a32d05ff07e8cd9b404cea13b32e9a318e53f71a9ca6dd89f",
+      "kind": "ExpansionResearchStudy",
+      "sha256": "aac9f2991c45ea61f8faca88f09149b79b35e932da61012754ca1440c88ed1d3"
+    },
+    {
+      "id": "8618bc0761f8740886d5d289f8add74457fa2ca22f0caf9dc8d05a349d5591e4",
+      "kind": "ChallengerStudy",
+      "sha256": "e31af02675735ebf441908ef9f10a4b6872431a9710a547c5cffb95af858c784"
+    },
+    {
+      "id": "000000000059:0ae6da06be1927972f0f96be304b9cfcc23af60097f8a4eb77e783451bf5165a",
+      "kind": "DomainResearchStudy",
+      "sha256": "c65903c8c31c32f86bc4a4bfd80608075fbaf90247c9862d00b23f005bf0fe3b"
+    },
+    {
+      "id": "000000000060:40aa1b7354f1b5f687c6082d30a651950cb0d4c777dfb9d69b068378e5bb0228",
+      "kind": "DomainResearchStudy",
+      "sha256": "8ccb650e31a0586df102542a0597329b4ca10ceead1097029255c258d0cb33ad"
+    },
+    {
+      "id": "000000000061:26fb0d0a2bd9274ba468238fd64c6191b8af45a6392d460ffd8d530e3a329ffb",
+      "kind": "DomainResearchStudy",
+      "sha256": "8aa1857424b3af00654557b8ad2274543b9e6002c1695809dbd11874ef5458df"
+    },
+    {
+      "id": "000000000032:57527558e9d8ed4afdfa6f36c5085b52d3795a23298eab7f2f5d722a811ff345",
+      "kind": "ExpansionResearchStudy",
+      "sha256": "d8b1e9631dc22212a7a11c48b2d1e08b3500e34431cd88aa60986d3e1ef0dc04"
+    },
+    {
+      "id": "000000000033:3e44ca8ee9328498ba1b563720d36e52ec84c412e32b10663e464ae3629b5708",
+      "kind": "ExpansionResearchStudy",
+      "sha256": "4955440265c1e15b28f17db6eb725c67441b4197f51fb7a26c2763576ac18ba9"
+    },
+    {
+      "id": "3a9157f1d2420e14613700f2677ca37b73d9cd71c7e30a1d305bb2c23affcd62",
+      "kind": "ChallengerStudy",
+      "sha256": "432960296ed648fb32a2e2aa756ec90f28729c5390abe743dca367637ecdeae8"
+    },
+    {
+      "id": "000000000062:806e161010caae12a285dd7b15ef5698f82811752dcc8c48c589d5a8d408b2cf",
+      "kind": "DomainResearchStudy",
+      "sha256": "163fb928510ba40398145a5cb9b2e641a4078aef3aa08b7674b411e183c4c48c"
+    },
+    {
+      "id": "000000000063:c6a178bccd41a6ee582777aed8f923bd296a123bab8156b8023eff1ce156f764",
+      "kind": "DomainResearchStudy",
+      "sha256": "abdcefce757f7f72bd3a20620634ff5cd00017d87231aca38a2ead54c3a63da0"
+    },
+    {
+      "id": "000000000064:0fded5a28e46f62f5e0327596d3685505ed37c88f3d076de00a22d476b728a1d",
+      "kind": "DomainResearchStudy",
+      "sha256": "d646a373d50ab1b1ff3851a38969e378c82f6e121d0da8ea9414b481354407bb"
+    },
+    {
+      "id": "000000000034:bed36c871e3a090843d92e20f99395a19cc4f7e25f95834cbfaa1487c1018cd5",
+      "kind": "ExpansionResearchStudy",
+      "sha256": "2e7816aa9e53ffbd66bd939b3756638d5e4ccb7383f7674f7cc04d99b0da3765"
+    },
+    {
+      "id": "000000000035:019afc76bff142de0c03c6f59720f0f7eb438c653f061a2ac77ec3e0847310b7",
+      "kind": "ExpansionResearchStudy",
+      "sha256": "ba600ca7bb8fdbd2e0df408d5b8194b1cbe7828804f14a40612e99b1c7eefeb2"
+    },
+    {
+      "id": "8d531af89a18ab34d46782a5bae363fd4c3f15f9f8d08bee51fe9adfffed08d5",
+      "kind": "ChallengerStudy",
+      "sha256": "13613753617e0570b4da0751128ad28dff713cd987d98c413c30799ea2b93d90"
+    },
+    {
+      "id": "000000000065:fd2cb315d4e71b95f2f2bdc9aeaac3beb114a34a4bd2e570118cf7191fcbd9da",
+      "kind": "DomainResearchStudy",
+      "sha256": "345b892bbeea514dc167e21074a5c53f113fe5a46a7b5f7adedbcb2581d4ca0f"
+    },
+    {
+      "id": "000000000066:ff5114d25dbbab406a687a3f7c4a752c1c3cd40c3df32dc4f004bf1b33357108",
+      "kind": "DomainResearchStudy",
+      "sha256": "47838c4856d5dae8f4d4790f992714076afb85640a9eefe08ea77791d5898a72"
+    },
+    {
+      "id": "000000000067:ed3097daa7c28dc2d08cf33089d86eed4b76a77e09084a6bb35788d8b609f293",
+      "kind": "DomainResearchStudy",
+      "sha256": "dec4c686f3ed5fc3d30044e4552994061612b76ed24dfb9761b9580b6c93ef68"
+    },
+    {
+      "id": "000000000036:e9a39d9c7e259cba48cc8c2762f2c5330b06ac699d987b2b1122f6f2dc3c4920",
+      "kind": "ExpansionResearchStudy",
+      "sha256": "b2db610135215bdeaf3f923c1739fcb0b2d48d1f5ea853368445525b86233e85"
+    },
+    {
+      "id": "000000000037:f8f587d1f46fda7e2e53771eff7ee3ebee95ebb093083e48fa814b3c33a12405",
+      "kind": "ExpansionResearchStudy",
+      "sha256": "801755d8191a437553493efa97d4cc4100a355ba75ab89273b2f51889d964b35"
+    },
+    {
+      "id": "ae5888dc05a9cdc217b478f09262d33eb308cdadba5116730536de5faf4ee95c",
+      "kind": "ChallengerStudy",
+      "sha256": "bb27c83b8cb34a4586310e5df5e8190def7f2b07dedffa5118f993f4875fec98"
+    },
+    {
+      "id": "000000000068:95fdcb9eabc81f27b12a9781be2dd7b49e130bec5f5e79513d7197bcbe64f000",
+      "kind": "DomainResearchStudy",
+      "sha256": "86b3295f7dc8643d112517e453429d354baea693226c7b547dbc0ccee0809fd0"
+    },
+    {
+      "id": "000000000069:108e5742b84f59096a5f62ce81a86ac4692c2fb5c97f32bcc1f069476478d832",
+      "kind": "DomainResearchStudy",
+      "sha256": "6324f2bb0bf736c1e31b33d01c9c0682156d385c6800907f61f0af0c20c250c2"
+    },
+    {
+      "id": "000000000070:596ed71a8a9983d7fce34b8ffafb0499ef824fb446f3a5532a52a7b52786a7a4",
+      "kind": "DomainResearchStudy",
+      "sha256": "79acbaa954f4cac2af29364a97e738277c22e1d8653bab494a1f829ef13de65a"
+    },
+    {
+      "id": "000000000038:d8f9ce88dd3782c4c9a64be21b77e45958a71185817bec3a2513766d811891fe",
+      "kind": "ExpansionResearchStudy",
+      "sha256": "147f9f7f8db682ba6467e56d4052d3684f558abf67804ff570464d8835dd4c40"
+    },
+    {
+      "id": "000000000039:188877caafd9a86b75609ed79fd040337ef8833fd99e435bd18a05a1e0631ae2",
+      "kind": "ExpansionResearchStudy",
+      "sha256": "b4c156a6031ccc7f136843340c5cd3b82af5f04f626712b1751389d1febaa960"
+    },
+    {
+      "id": "6017e0b367b7ba95023e4506b98b259a4342cfa5d6c3bd5ee7724504dd4f0feb",
+      "kind": "ChallengerStudy",
+      "sha256": "21e18f8c11e24708e6b798871a3829694743e73ed3f7035e21484a6e92b13a86"
+    },
+    {
+      "id": "000000000071:026773c5c7128cb73c83f3a0971e19408d25764a4ef38f9639f54ad07ba0f2fd",
+      "kind": "DomainResearchStudy",
+      "sha256": "0c75aa0f1a36fe687d2a6e62d0b2db11259b970577996c1ad305766e222a4697"
+    },
+    {
+      "id": "000000000072:75528ac4de8dd1259cb6c6d35d4a6e3be452c2ffdff4fbebe5797d48a4a7dd95",
+      "kind": "DomainResearchStudy",
+      "sha256": "ed40be6fdd6522f06a2f23f66fed665b5931551076b31df3e9c232e605107699"
+    },
+    {
+      "id": "000000000073:a4841265cccb73beb3457c266109bc8264a061e0bcb0060293f65cfb282524f0",
+      "kind": "DomainResearchStudy",
+      "sha256": "cd2bdf86d392596e6cfb0f8df714a10cf036522313d7e7dafebda76be1d18e6b"
+    },
+    {
+      "id": "000000000040:f10264f70a26d2c09164731b8a79c335a702793f6083e096e6c64255adb0c4af",
+      "kind": "ExpansionResearchStudy",
+      "sha256": "f80abe678c64468efe929476b3c416cbbe48a143d8f90f623ae2eb78ddafc5f1"
+    },
+    {
+      "id": "000000000041:73521c57cf5989838ba23fbc8961d0dbe54cb4793dbcf6c32c485eec696b3772",
+      "kind": "ExpansionResearchStudy",
+      "sha256": "bf8c2449885023afdb167d65fe97c256c0739651fc1fe412bde8677da27e4b99"
+    },
+    {
+      "id": "3bad4c93602854d920b1322bf7cb7ac8bea6046b1796adaaeff5e74f84bab623",
+      "kind": "ChallengerStudy",
+      "sha256": "30fff641ec4cad42cf5937ef0621c4cea71e1c1b953bee93734ec8a5876e3241"
+    },
+    {
+      "id": "000000000074:f084a02d9bea29979360a11b58fb9416852dba3492a96afa4f2d6f637c60ddd8",
+      "kind": "DomainResearchStudy",
+      "sha256": "f0c55bf09fbb95e02ef57ecaa8e22b93649a4883280e2f2cc51c3d7824fadb12"
+    },
+    {
+      "id": "000000000075:bad590d80065aa09f59dcf8163f624028a4f878f654ed63046c6e82691e1962e",
+      "kind": "DomainResearchStudy",
+      "sha256": "84a6b81c878adf972df278e46549435c2f87aac50ef10aecbf2573ab1eaa65d0"
+    },
+    {
+      "id": "000000000076:59e4aed6de8ccfaf7f929b1b928b60ec2662adbb0801d8426683c393784d5255",
+      "kind": "DomainResearchStudy",
+      "sha256": "4a87df7c8fc5317b871fa20865f9db11782c6e2a7b1b1c2979a75818b077129b"
+    },
+    {
+      "id": "000000000042:19582b5012eba1dc236d00af25fd74562c2cc0c02eb0ec86439e97f94fa4982c",
+      "kind": "ExpansionResearchStudy",
+      "sha256": "e450e5155c87feeecc7f69a3a20b9f0acc1dd956513350c6fee85de8371d49bd"
+    },
+    {
+      "id": "000000000043:43604d9c5d005cffcfdfafd6e8513e714f6f9be5bd505809d7c18224123c0103",
+      "kind": "ExpansionResearchStudy",
+      "sha256": "2b3e62b85c71370331124f239242616e532edc8375cc78e369648aa84afa0317"
+    },
+    {
+      "id": "698a48f05e56751709e399155495b346edb9f45add5b261e1d89ee5e2f39d601",
+      "kind": "ChallengerStudy",
+      "sha256": "6baf90deb3aafc590b1245036a7acb308c94045546537de733f5996ecc9e190a"
+    },
+    {
+      "id": "000000000077:46ff0d21d7ab12f0df93e1ac7de4adfe4d003724d26c93f3ca2e925dc90cad6c",
+      "kind": "DomainResearchStudy",
+      "sha256": "f4314ace502249b8b23ecd81add533f9469d75845d58eebec2ac339de846868e"
+    },
+    {
+      "id": "000000000078:ccd5929f94bba740d1bff2fd27d286b4f9ece1e46bd55457e900dc0d9d83b28c",
+      "kind": "DomainResearchStudy",
+      "sha256": "d0faec9f4cf7df00ecb118cce1495a5d08455bb0abbd2658ed8e1507e4f0d6ef"
+    },
+    {
+      "id": "000000000079:7301785d333b4ea8f399ca9e4db7a17f6f67d8c98a1c694656a8f4866c45cc8f",
+      "kind": "DomainResearchStudy",
+      "sha256": "02e38a6586cc3763a98ce37c17c730f2eb0d15511c773ee41a95f29c2ec98886"
+    },
+    {
+      "id": "7279661b0befe048e12603fbd9e938b70ae2b198e5d28b442ca83faa7ef401c5",
+      "kind": "ChallengerStudy",
+      "sha256": "c8120328629f70f7bee107e3625600d4956e584f0f4e0f9e078a68a85981453f"
+    },
+    {
+      "id": "000000000044:d9449e0db5a4ae6b1eed13cbf20c44ed8733eb88c99e56c67f0bf03778f77baa",
+      "kind": "ExpansionResearchStudy",
+      "sha256": "facd70caeaa9194150439de3acc22f5648f424e15faf92fcc0544ecff885145b"
+    },
+    {
+      "id": "000000000045:4af08d78344fae35b08a965bf244ee5d377bc9ec1951b5b422c8bed439dfe3dc",
+      "kind": "ExpansionResearchStudy",
+      "sha256": "66d0fd1cd8b73dfe342ce4b01db1c53e28de23f286418340c46c106d2d09c802"
+    },
+    {
+      "id": "000000000080:06abd209c9d3916131cf0da8bf61f2e44d0c701d2842f6376b5c2904f2d15eb9",
+      "kind": "DomainResearchStudy",
+      "sha256": "4ff47f4c62d2b5ca094cebd95dd32288d742758aabad9fbe4a0ca58fe960fcc7"
+    },
+    {
+      "id": "000000000081:f8c42bb90b48bf864347ed7d9615082d2a0d2f86998a342ccf211fa057c1aae6",
+      "kind": "DomainResearchStudy",
+      "sha256": "eb243bc8495319739279a2d05950e1cecff16b8f8d21b53c81f475b4aab285a9"
+    },
+    {
+      "id": "000000000082:02a6b47f50025b95724e89bf71851713a1b4c83447619b17d4fea59f9db90ce0",
+      "kind": "DomainResearchStudy",
+      "sha256": "ce57621d4b8a4cd29456b142ce8cadc3d6fbcfc4ecff3677ed5302007bda1fa6"
+    },
+    {
+      "id": "daa93374fc0f392d925ccd30cae6eafa0e199d8f193c9a5b30dc0190e25ecd4c",
+      "kind": "ChallengerStudy",
+      "sha256": "336b07f3a4f6ba9d58913ae0fa84e33c79b391e6423b616a4b0f2844cda5b2ea"
+    },
+    {
+      "id": "000000000046:d6e6920bca77fd61c17d35bad48630020c104025879282f417e78901fd11e1a2",
+      "kind": "ExpansionResearchStudy",
+      "sha256": "937e13b734c87183e5edce6c443d2e6a67b52d2236f34d710164edec36fd4575"
+    },
+    {
+      "id": "000000000047:f80c28b5bb9bb14a19f3f0bdc8145e1c92e9e22d6542ba75949829215ad6bebf",
+      "kind": "ExpansionResearchStudy",
+      "sha256": "92ed9216b81aa6e073345d63f7bcc0c8e12b85c73231c1136623ef14f2b27842"
+    },
+    {
+      "id": "000000000083:2a6bc79c38dac69829231064e0ae0d730fc126a295bb38a0de77f0d227c741ce",
+      "kind": "DomainResearchStudy",
+      "sha256": "c1ca6d83267b9a67410d37b59bda6224e3c1243b5ffeb7a2573f43f63966b5df"
+    },
+    {
+      "id": "000000000084:32246b283d7f8048aff5b43db6dcc3970dc07d012c0f0a2bf7e15ed8078a3fc1",
+      "kind": "DomainResearchStudy",
+      "sha256": "462e576fbd58d31e639fdf3aeee20ac052aae50672ff60ca0e5d2f18a5326cf1"
+    },
+    {
+      "id": "000000000085:78311acc2555d88a784f9c61cdb827134b0f411e2f63a20c74a6c3ba079dd620",
+      "kind": "DomainResearchStudy",
+      "sha256": "bf61bfd8e27e37d4d230e6b850a177bdafd716f0a68b351096afc198d9800011"
+    },
+    {
+      "id": "efa3280682c15f24ac7868f95bd6d4f847718756d17bc1ff2d24835d5480bed8",
+      "kind": "ChallengerStudy",
+      "sha256": "85a9a57596f7fdff0db0f019d6932cf584bc029b2457d7ce6f2555c93ffce783"
+    },
+    {
+      "id": "000000000048:3627f74e78cfbb1fcb54f6d6e4f0458d3de410d0c5ba7a49ca6ea34737c29e65",
+      "kind": "ExpansionResearchStudy",
+      "sha256": "fa8f81b93bac04d4d96b5d28f1babe06ad9e143f6973bb23761300ed4631fa6c"
+    },
+    {
+      "id": "000000000086:3ce0dc2ed3246904a197bad110aec0e809f8ffa2f245e69181bc3a1d71e3c1c8",
+      "kind": "DomainResearchStudy",
+      "sha256": "ce5d2f569ced1cbf01d58edb2b927e15dd22e975e2beb6e0deadc441d44c0ff0"
+    },
+    {
+      "id": "000000000087:5cd7d0108630f3c34f8b6a7c82e7641a55ad47b73ebec6b309cbf3ddd84e4f66",
+      "kind": "DomainResearchStudy",
+      "sha256": "9936b544d83c4c53a72f630c408a8efbfa0f51cc79b149d5e99b5539d15fbc69"
+    },
+    {
+      "id": "000000000088:35f0e1e478a9ddd59de3a88938c29753fb58b73f3720e5fbcb4bd8787c84493f",
+      "kind": "DomainResearchStudy",
+      "sha256": "65e59fd07c53abfdc51ce660261917c086008f96fa2b720b829747d58522332a"
+    },
+    {
+      "id": "7b4af27ec0d8b57ed4f1aa6d4371b231cfc4ff1e20902410bfa353c450828787",
+      "kind": "ChallengerStudy",
+      "sha256": "2d0960cd2174d56894e28eff046662eee8e4fcd2561011f116bb345181856bce"
+    },
+    {
+      "id": "000000000049:8f2b29d2162b4a8f602ba92e1a412859d8c62be14299f5bfea88303715782c84",
+      "kind": "ExpansionResearchStudy",
+      "sha256": "0d9056bd15f46d76d9aed7f95a6d45f775d53b3877d30013949ff0c75ae08b12"
+    }
+  ],
+  "copy_seconds": 5.432807787088677,
+  "bootstrap_seconds": 4.4469190498348325,
+  "report_seconds": 0.006325963186100125,
+  "unchanged_step_and_report_seconds": 0.008282825816422701,
+  "forecast_replays": 60,
+  "unchanged_forecast_replays": 0,
+  "unchanged_step": {
+    "processed_records": 0,
+    "read_bytes": 0,
+    "source_cursor": 183,
+    "source_head": 183,
+    "caught_up": true,
+    "anchor_id": "projection:ced7aed93ba96a9ea6e5c02efedcb70d5f6d62c882dc0f41bc50ea59504b72a1:7cb83d945ba18410bd67c1b20268aff57db9ef692fd4ce9cec4ee8205f381e12"
+  },
+  "steps": [
+    {
+      "processed_records": 32,
+      "read_bytes": 11784586,
+      "source_cursor": 32,
+      "source_head": 183,
+      "caught_up": false,
+      "anchor_id": "projection:ced7aed93ba96a9ea6e5c02efedcb70d5f6d62c882dc0f41bc50ea59504b72a1:0137d2321a8436b032c45d863688c9a088768e4f71ab6ef632a49bdd14fbcda4"
+    },
+    {
+      "processed_records": 10,
+      "read_bytes": 16195726,
+      "source_cursor": 42,
+      "source_head": 183,
+      "caught_up": false,
+      "anchor_id": "projection:ced7aed93ba96a9ea6e5c02efedcb70d5f6d62c882dc0f41bc50ea59504b72a1:2d23e513f10049a28c5e967ba09d2521e68afefca600a29fba57810feb47e0d0"
+    },
+    {
+      "processed_records": 31,
+      "read_bytes": 13705012,
+      "source_cursor": 73,
+      "source_head": 183,
+      "caught_up": false,
+      "anchor_id": "projection:ced7aed93ba96a9ea6e5c02efedcb70d5f6d62c882dc0f41bc50ea59504b72a1:906460bd1bc9396fecdf11458438b4aeabb42f22dd3145b18d43843b46223386"
+    },
+    {
+      "processed_records": 16,
+      "read_bytes": 16403699,
+      "source_cursor": 89,
+      "source_head": 183,
+      "caught_up": false,
+      "anchor_id": "projection:ced7aed93ba96a9ea6e5c02efedcb70d5f6d62c882dc0f41bc50ea59504b72a1:7643823bb95899df27971fddaf4c398c530964f69a918f2b903138e69b56272e"
+    },
+    {
+      "processed_records": 20,
+      "read_bytes": 16549915,
+      "source_cursor": 109,
+      "source_head": 183,
+      "caught_up": false,
+      "anchor_id": "projection:ced7aed93ba96a9ea6e5c02efedcb70d5f6d62c882dc0f41bc50ea59504b72a1:60af3de5f3d876d33855a43d16abd7466e677a7e287632ddd0461099ceffe295"
+    },
+    {
+      "processed_records": 32,
+      "read_bytes": 10960044,
+      "source_cursor": 141,
+      "source_head": 183,
+      "caught_up": false,
+      "anchor_id": "projection:ced7aed93ba96a9ea6e5c02efedcb70d5f6d62c882dc0f41bc50ea59504b72a1:ef76ab37c43a3a26aa1f3e5291dab0c174612591d44f2403e0c53446a4927a06"
+    },
+    {
+      "processed_records": 32,
+      "read_bytes": 3551960,
+      "source_cursor": 173,
+      "source_head": 183,
+      "caught_up": false,
+      "anchor_id": "projection:ced7aed93ba96a9ea6e5c02efedcb70d5f6d62c882dc0f41bc50ea59504b72a1:e69ead23aeda14b9e1ffe02d2b0e8ff8cbd415a3125e5442552e429c3dd13abc"
+    },
+    {
+      "processed_records": 10,
+      "read_bytes": 1240556,
+      "source_cursor": 183,
+      "source_head": 183,
+      "caught_up": true,
+      "anchor_id": "projection:ced7aed93ba96a9ea6e5c02efedcb70d5f6d62c882dc0f41bc50ea59504b72a1:7cb83d945ba18410bd67c1b20268aff57db9ef692fd4ce9cec4ee8205f381e12"
+    }
+  ],
+  "max_rss_kib": 288572,
+  "report": {
+    "schema_version": "phase26-indexed-competition-v1",
+    "as_of": "2026-11-08T01:48:18.878039+00:00",
+    "counts": {
+      "forecasts": 60,
+      "individually_verified_forecasts": 0,
+      "pending_forecasts": 60,
+      "reviewed_independent_groups": 0
+    },
+    "leaderboard": [
+      {
+        "model_id": "cpi-yoy-increment-gaussian-v24.1",
+        "forecasts": 0,
+        "verified_forecast_outcomes": 0,
+        "pending_forecasts": 0,
+        "native_parent_ids": 0,
+        "model_sha256s": [],
+        "descriptive_verified_scores": [],
+        "calibration": null,
+        "metrics": null,
+        "confidence_intervals": null,
+        "profitability_rank": null,
+        "independent_event_count": 0,
+        "net_executable_edge": null,
+        "simulated_pnl": null,
+        "reason": "independent calibrated event-disjoint cohorts remain required",
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "model_id": "cpi-yoy-ridge-ar1-v24.1",
+        "forecasts": 0,
+        "verified_forecast_outcomes": 0,
+        "pending_forecasts": 0,
+        "native_parent_ids": 0,
+        "model_sha256s": [],
+        "descriptive_verified_scores": [],
+        "calibration": null,
+        "metrics": null,
+        "confidence_intervals": null,
+        "profitability_rank": null,
+        "independent_event_count": 0,
+        "net_executable_edge": null,
+        "simulated_pnl": null,
+        "reason": "independent calibrated event-disjoint cohorts remain required",
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "model_id": "empirical-ohlc-block-bootstrap-v23.1",
+        "forecasts": 3,
+        "verified_forecast_outcomes": 0,
+        "pending_forecasts": 3,
+        "native_parent_ids": 2,
+        "model_sha256s": [
+          "1aae861913d43ec42fa1ead1d90839d35abea30bf921d4dbe848cc9c8f259472"
+        ],
+        "descriptive_verified_scores": [],
+        "calibration": null,
+        "metrics": null,
+        "confidence_intervals": null,
+        "profitability_rank": null,
+        "independent_event_count": 0,
+        "net_executable_edge": null,
+        "simulated_pnl": null,
+        "reason": "independent calibrated event-disjoint cohorts remain required",
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "model_id": "fomc-recent-policy-shrinkage-v24.1",
+        "forecasts": 1,
+        "verified_forecast_outcomes": 0,
+        "pending_forecasts": 1,
+        "native_parent_ids": 1,
+        "model_sha256s": [
+          "9f507077a8aea26062d1b55fbcfffffe1f786cff69e536c6bb36417846565bbe"
+        ],
+        "descriptive_verified_scores": [],
+        "calibration": null,
+        "metrics": null,
+        "confidence_intervals": null,
+        "profitability_rank": null,
+        "independent_event_count": 0,
+        "net_executable_edge": null,
+        "simulated_pnl": null,
+        "reason": "independent calibrated event-disjoint cohorts remain required",
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "model_id": "fomc-scheduled-policy-frequency-v24.1",
+        "forecasts": 1,
+        "verified_forecast_outcomes": 0,
+        "pending_forecasts": 1,
+        "native_parent_ids": 1,
+        "model_sha256s": [
+          "432c6cb5e5374492b8b89e1b1c51e854e2d5f559a8fb6e200dca3b99e7924bc9"
+        ],
+        "descriptive_verified_scores": [],
+        "calibration": null,
+        "metrics": null,
+        "confidence_intervals": null,
+        "profitability_rank": null,
+        "independent_event_count": 0,
+        "net_executable_edge": null,
+        "simulated_pnl": null,
+        "reason": "independent calibrated event-disjoint cohorts remain required",
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "model_id": "gaussian-first-passage-v23.1",
+        "forecasts": 3,
+        "verified_forecast_outcomes": 0,
+        "pending_forecasts": 3,
+        "native_parent_ids": 2,
+        "model_sha256s": [
+          "03327bf8b5ee88ab4f72dbe0bc4a7cb0061d9517c4e657d4661b038e27d7bee7"
+        ],
+        "descriptive_verified_scores": [],
+        "calibration": null,
+        "metrics": null,
+        "confidence_intervals": null,
+        "profitability_rank": null,
+        "independent_event_count": 0,
+        "net_executable_edge": null,
+        "simulated_pnl": null,
+        "reason": "independent calibrated event-disjoint cohorts remain required",
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "model_id": "metar-diurnal-analog-v24.1",
+        "forecasts": 2,
+        "verified_forecast_outcomes": 0,
+        "pending_forecasts": 2,
+        "native_parent_ids": 2,
+        "model_sha256s": [
+          "46443a4844feab6a0740a9c6f60d8a4daad7c344c67850a5f18dd1885f7d608c"
+        ],
+        "descriptive_verified_scores": [],
+        "calibration": null,
+        "metrics": null,
+        "confidence_intervals": null,
+        "profitability_rank": null,
+        "independent_event_count": 0,
+        "net_executable_edge": null,
+        "simulated_pnl": null,
+        "reason": "independent calibrated event-disjoint cohorts remain required",
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "model_id": "metar-diurnal-gaussian-v25.1",
+        "forecasts": 3,
+        "verified_forecast_outcomes": 0,
+        "pending_forecasts": 3,
+        "native_parent_ids": 3,
+        "model_sha256s": [
+          "f17c44bfbf9d63483b33374f661b84389af33b23516c562b6911f93ead22f41e"
+        ],
+        "descriptive_verified_scores": [],
+        "calibration": null,
+        "metrics": null,
+        "confidence_intervals": null,
+        "profitability_rank": null,
+        "independent_event_count": 0,
+        "net_executable_edge": null,
+        "simulated_pnl": null,
+        "reason": "independent calibrated event-disjoint cohorts remain required",
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "model_id": "metar-recency-kernel-v25.1",
+        "forecasts": 3,
+        "verified_forecast_outcomes": 0,
+        "pending_forecasts": 3,
+        "native_parent_ids": 3,
+        "model_sha256s": [
+          "92e7de184159e1eb898cf6a82a41fe737295da3c6fa99508da02678d4be54cfd"
+        ],
+        "descriptive_verified_scores": [],
+        "calibration": null,
+        "metrics": null,
+        "confidence_intervals": null,
+        "profitability_rank": null,
+        "independent_event_count": 0,
+        "net_executable_edge": null,
+        "simulated_pnl": null,
+        "reason": "independent calibrated event-disjoint cohorts remain required",
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "model_id": "metar-recent-climatology-v24.1",
+        "forecasts": 2,
+        "verified_forecast_outcomes": 0,
+        "pending_forecasts": 2,
+        "native_parent_ids": 2,
+        "model_sha256s": [
+          "7a696e590e023c5cea7111d3bc172adaa982eaf3792a91167f905bfdb59d91ff"
+        ],
+        "descriptive_verified_scores": [],
+        "calibration": null,
+        "metrics": null,
+        "confidence_intervals": null,
+        "profitability_rank": null,
+        "independent_event_count": 0,
+        "net_executable_edge": null,
+        "simulated_pnl": null,
+        "reason": "independent calibrated event-disjoint cohorts remain required",
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "model_id": "nba-causal-elo-v24.1",
+        "forecasts": 7,
+        "verified_forecast_outcomes": 0,
+        "pending_forecasts": 7,
+        "native_parent_ids": 7,
+        "model_sha256s": [
+          "977904d51cc400bbff4a726bbea143b6dd6b864e7bd636ea25a6736848b8dff3"
+        ],
+        "descriptive_verified_scores": [],
+        "calibration": null,
+        "metrics": null,
+        "confidence_intervals": null,
+        "profitability_rank": null,
+        "independent_event_count": 0,
+        "net_executable_edge": null,
+        "simulated_pnl": null,
+        "reason": "independent calibrated event-disjoint cohorts remain required",
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "model_id": "nba-team-frequency-v24.1",
+        "forecasts": 7,
+        "verified_forecast_outcomes": 0,
+        "pending_forecasts": 7,
+        "native_parent_ids": 7,
+        "model_sha256s": [
+          "0699de3b7aaaf8857c8c0b8ce9c9d06824659e7d55841f67ec4eebc1ee7b8732"
+        ],
+        "descriptive_verified_scores": [],
+        "calibration": null,
+        "metrics": null,
+        "confidence_intervals": null,
+        "profitability_rank": null,
+        "independent_event_count": 0,
+        "net_executable_edge": null,
+        "simulated_pnl": null,
+        "reason": "independent calibrated event-disjoint cohorts remain required",
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "model_id": "nfl-davidson-team-strength-v23.1",
+        "forecasts": 7,
+        "verified_forecast_outcomes": 0,
+        "pending_forecasts": 7,
+        "native_parent_ids": 7,
+        "model_sha256s": [
+          "64664ca7989c2518e099c7cd0e6acbf26cd75cf218b199533c064795c4ceb0a8"
+        ],
+        "descriptive_verified_scores": [],
+        "calibration": null,
+        "metrics": null,
+        "confidence_intervals": null,
+        "profitability_rank": null,
+        "independent_event_count": 0,
+        "net_executable_edge": null,
+        "simulated_pnl": null,
+        "reason": "independent calibrated event-disjoint cohorts remain required",
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "model_id": "nfl-ternary-frequency-v23.1",
+        "forecasts": 7,
+        "verified_forecast_outcomes": 0,
+        "pending_forecasts": 7,
+        "native_parent_ids": 7,
+        "model_sha256s": [
+          "cbd08b3074b9a5c01b6c4f44a2d2f45e6bcd2e6a94038e92a6bc70f47ac100ea"
+        ],
+        "descriptive_verified_scores": [],
+        "calibration": null,
+        "metrics": null,
+        "confidence_intervals": null,
+        "profitability_rank": null,
+        "independent_event_count": 0,
+        "net_executable_edge": null,
+        "simulated_pnl": null,
+        "reason": "independent calibrated event-disjoint cohorts remain required",
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "model_id": "nhl-beta-frequency-v25.1",
+        "forecasts": 5,
+        "verified_forecast_outcomes": 0,
+        "pending_forecasts": 5,
+        "native_parent_ids": 5,
+        "model_sha256s": [
+          "c8c477ec4f9eb72badde574dccef47dab4e88fcd147c0cfc47d5aa80787052bc"
+        ],
+        "descriptive_verified_scores": [],
+        "calibration": null,
+        "metrics": null,
+        "confidence_intervals": null,
+        "profitability_rank": null,
+        "independent_event_count": 0,
+        "net_executable_edge": null,
+        "simulated_pnl": null,
+        "reason": "independent calibrated event-disjoint cohorts remain required",
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "model_id": "nhl-causal-elo-v25.1",
+        "forecasts": 5,
+        "verified_forecast_outcomes": 0,
+        "pending_forecasts": 5,
+        "native_parent_ids": 5,
+        "model_sha256s": [
+          "d7ba48afc4f83aef0fe24d5022b3391581ffb5cf475154d4df13ee92f1bc1706"
+        ],
+        "descriptive_verified_scores": [],
+        "calibration": null,
+        "metrics": null,
+        "confidence_intervals": null,
+        "profitability_rank": null,
+        "independent_event_count": 0,
+        "net_executable_edge": null,
+        "simulated_pnl": null,
+        "reason": "independent calibrated event-disjoint cohorts remain required",
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "model_id": "spx-gaussian-logreturn-direction-v25.1",
+        "forecasts": 1,
+        "verified_forecast_outcomes": 0,
+        "pending_forecasts": 1,
+        "native_parent_ids": 1,
+        "model_sha256s": [
+          "eb87c826ea2801030105a57e7cea126e5333ff7c1d52ceaabbb015404870145a"
+        ],
+        "descriptive_verified_scores": [],
+        "calibration": null,
+        "metrics": null,
+        "confidence_intervals": null,
+        "profitability_rank": null,
+        "independent_event_count": 0,
+        "net_executable_edge": null,
+        "simulated_pnl": null,
+        "reason": "independent calibrated event-disjoint cohorts remain required",
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "model_id": "spx-weekday-beta-direction-v25.1",
+        "forecasts": 1,
+        "verified_forecast_outcomes": 0,
+        "pending_forecasts": 1,
+        "native_parent_ids": 1,
+        "model_sha256s": [
+          "af337d9504ba57fe4fc56c406e57d27f9fc4ae29706a63db38237ecf68195ee2"
+        ],
+        "descriptive_verified_scores": [],
+        "calibration": null,
+        "metrics": null,
+        "confidence_intervals": null,
+        "profitability_rank": null,
+        "independent_event_count": 0,
+        "net_executable_edge": null,
+        "simulated_pnl": null,
+        "reason": "independent calibrated event-disjoint cohorts remain required",
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "model_id": "uk-gdp-jeffreys-frequency-v25.1",
+        "forecasts": 1,
+        "verified_forecast_outcomes": 0,
+        "pending_forecasts": 1,
+        "native_parent_ids": 1,
+        "model_sha256s": [
+          "1031d902164834dd38d2472c15d76040c12ac9d2fc193a84d1ee44ab1bfaa054"
+        ],
+        "descriptive_verified_scores": [],
+        "calibration": null,
+        "metrics": null,
+        "confidence_intervals": null,
+        "profitability_rank": null,
+        "independent_event_count": 0,
+        "net_executable_edge": null,
+        "simulated_pnl": null,
+        "reason": "independent calibrated event-disjoint cohorts remain required",
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      {
+        "model_id": "uk-gdp-regularized-ar1-v25.1",
+        "forecasts": 1,
+        "verified_forecast_outcomes": 0,
+        "pending_forecasts": 1,
+        "native_parent_ids": 1,
+        "model_sha256s": [
+          "f47b615703e833311de2bcec42a0941a23e49d747372cf4349c5ce71fa63bfc3"
+        ],
+        "descriptive_verified_scores": [],
+        "calibration": null,
+        "metrics": null,
+        "confidence_intervals": null,
+        "profitability_rank": null,
+        "independent_event_count": 0,
+        "net_executable_edge": null,
+        "simulated_pnl": null,
+        "reason": "independent calibrated event-disjoint cohorts remain required",
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      }
+    ],
+    "research_competition": {
+      "event_review": {
+        "counts": {
+          "forecasts_examined": 60,
+          "source_identity_reviewed_forecasts": 60,
+          "native_parent_ids": 27,
+          "reviewed_canonical_groups": 27,
+          "conservative_dependency_clusters": 24,
+          "statistically_independent_events": 0,
+          "certification_independent_events": 0
+        },
+        "reviews": [
+          {
+            "canonical_group_id": "88e590d715d114ccc0f53f52c4d791494cf945ed5a45a204b9912c4c63a7c964",
+            "dependency_tags": [
+              "crypto-symbol:BTCUSDT",
+              "crypto-UTC-day:2026-11-07"
+            ],
+            "descriptor": {
+              "domain": "crypto",
+              "ends_at": "2026-11-08T05:00:00+00:00",
+              "resolution_reference": "https://www.binance.com/en/trade/BTC_USDT",
+              "starts_at": "2026-11-07T05:00:00+00:00",
+              "symbol": "BTCUSDT"
+            },
+            "evidence_lineages": [
+              "binance:BTCUSDT"
+            ],
+            "forecast_id": "7af31a3d7ac5aa9333dd07e895295ef0a04e61258ce8c42f170fb9d9c792f72f",
+            "original_study_id": "e6b03a2feaa2c562066788ff6120a50e032bfb8552f79d9d43a982d29202ab6d",
+            "original_study_sha256": "71c3b7e5b92c6a427ed916e3eed86a54b71ee24c1027b35d212500e4187ba290",
+            "original_forecast_sha256": "55f4fea99fe8f4c76879885f811aac1c3f3832273e0edb8380723338fb8fb7b8"
+          },
+          {
+            "canonical_group_id": "88e590d715d114ccc0f53f52c4d791494cf945ed5a45a204b9912c4c63a7c964",
+            "dependency_tags": [
+              "crypto-symbol:BTCUSDT",
+              "crypto-UTC-day:2026-11-07"
+            ],
+            "descriptor": {
+              "domain": "crypto",
+              "ends_at": "2026-11-08T05:00:00+00:00",
+              "resolution_reference": "https://www.binance.com/en/trade/BTC_USDT",
+              "starts_at": "2026-11-07T05:00:00+00:00",
+              "symbol": "BTCUSDT"
+            },
+            "evidence_lineages": [
+              "binance:BTCUSDT"
+            ],
+            "forecast_id": "02f142a6e4c574a16fb38a28d69493b17f71e13514118eaeaebe86a93cc119c3",
+            "original_study_id": "e6b03a2feaa2c562066788ff6120a50e032bfb8552f79d9d43a982d29202ab6d",
+            "original_study_sha256": "71c3b7e5b92c6a427ed916e3eed86a54b71ee24c1027b35d212500e4187ba290",
+            "original_forecast_sha256": "314711bbab239ad60a5cd30fd46c376a0d429a8a0b86a2de842e55755321315d"
+          },
+          {
+            "canonical_group_id": "88e590d715d114ccc0f53f52c4d791494cf945ed5a45a204b9912c4c63a7c964",
+            "dependency_tags": [
+              "crypto-symbol:BTCUSDT",
+              "crypto-UTC-day:2026-11-07"
+            ],
+            "descriptor": {
+              "domain": "crypto",
+              "ends_at": "2026-11-08T05:00:00+00:00",
+              "resolution_reference": "https://www.binance.com/en/trade/BTC_USDT",
+              "starts_at": "2026-11-07T05:00:00+00:00",
+              "symbol": "BTCUSDT"
+            },
+            "evidence_lineages": [
+              "binance:BTCUSDT"
+            ],
+            "forecast_id": "fe4ddc98e6d8354da63e5b9da70bd8ecf5fc4dc4a3e79e414e97b6ccd59cccf7",
+            "original_study_id": "e6b03a2feaa2c562066788ff6120a50e032bfb8552f79d9d43a982d29202ab6d",
+            "original_study_sha256": "71c3b7e5b92c6a427ed916e3eed86a54b71ee24c1027b35d212500e4187ba290",
+            "original_forecast_sha256": "884581f5799f74e0ce8990044a564df61dd3d0bb33d196c57ff1a78df38c91b2"
+          },
+          {
+            "canonical_group_id": "88e590d715d114ccc0f53f52c4d791494cf945ed5a45a204b9912c4c63a7c964",
+            "dependency_tags": [
+              "crypto-symbol:BTCUSDT",
+              "crypto-UTC-day:2026-11-07"
+            ],
+            "descriptor": {
+              "domain": "crypto",
+              "ends_at": "2026-11-08T05:00:00+00:00",
+              "resolution_reference": "https://www.binance.com/en/trade/BTC_USDT",
+              "starts_at": "2026-11-07T05:00:00+00:00",
+              "symbol": "BTCUSDT"
+            },
+            "evidence_lineages": [
+              "binance:BTCUSDT"
+            ],
+            "forecast_id": "0a0b7b345fe1ac7f6cc02f57deef4b460c42108baaaec4d1a44476686b8da041",
+            "original_study_id": "e6b03a2feaa2c562066788ff6120a50e032bfb8552f79d9d43a982d29202ab6d",
+            "original_study_sha256": "71c3b7e5b92c6a427ed916e3eed86a54b71ee24c1027b35d212500e4187ba290",
+            "original_forecast_sha256": "5c1c9837599f981e7adc06b3935f02f87e9eb67056d75b19d63ceec4b4f0ce0c"
+          },
+          {
+            "canonical_group_id": "55551b5c402247836b091564c4b7b944e6a23947328d31aba4eeba933d31bee8",
+            "dependency_tags": [
+              "crypto-symbol:ETHUSDT",
+              "crypto-UTC-day:2026-11-07"
+            ],
+            "descriptor": {
+              "domain": "crypto",
+              "ends_at": "2026-11-08T05:00:00+00:00",
+              "resolution_reference": "https://www.binance.com/en/trade/ETH_USDT",
+              "starts_at": "2026-11-07T05:00:00+00:00",
+              "symbol": "ETHUSDT"
+            },
+            "evidence_lineages": [
+              "binance:ETHUSDT"
+            ],
+            "forecast_id": "f41bfbe6a81385d04fa5bc13cf8f1ec0225ca856b132fec926d9f8bf90459d8d",
+            "original_study_id": "e6b03a2feaa2c562066788ff6120a50e032bfb8552f79d9d43a982d29202ab6d",
+            "original_study_sha256": "71c3b7e5b92c6a427ed916e3eed86a54b71ee24c1027b35d212500e4187ba290",
+            "original_forecast_sha256": "2aedc5d6e923cdb4218c120b6916df556002338a6e729d80f5c92c6df0f3205a"
+          },
+          {
+            "canonical_group_id": "55551b5c402247836b091564c4b7b944e6a23947328d31aba4eeba933d31bee8",
+            "dependency_tags": [
+              "crypto-symbol:ETHUSDT",
+              "crypto-UTC-day:2026-11-07"
+            ],
+            "descriptor": {
+              "domain": "crypto",
+              "ends_at": "2026-11-08T05:00:00+00:00",
+              "resolution_reference": "https://www.binance.com/en/trade/ETH_USDT",
+              "starts_at": "2026-11-07T05:00:00+00:00",
+              "symbol": "ETHUSDT"
+            },
+            "evidence_lineages": [
+              "binance:ETHUSDT"
+            ],
+            "forecast_id": "531d2afdf2e9eab47e4d2eb2c03303905d845b772c8038b917071e39efe341ac",
+            "original_study_id": "e6b03a2feaa2c562066788ff6120a50e032bfb8552f79d9d43a982d29202ab6d",
+            "original_study_sha256": "71c3b7e5b92c6a427ed916e3eed86a54b71ee24c1027b35d212500e4187ba290",
+            "original_forecast_sha256": "cb681d7ea8a422b951ea78a8b87f2ceafea7ef08fb545d07990dc1ff581cbe6f"
+          },
+          {
+            "canonical_group_id": "040b0e5e7480d11a7505f1185c478787a49efdee34facdb27d02e07a7c3f0ec2",
+            "dependency_tags": [
+              "team:NFL:ATL",
+              "team:NFL:CIN"
+            ],
+            "descriptor": {
+              "domain": "sports",
+              "league": "NFL",
+              "participants": [
+                "ATL",
+                "CIN"
+              ],
+              "resolution_reference": "https://www.nfl.com/scores",
+              "source_game_id": "2026_09_CIN_ATL",
+              "source_id_namespace": "nflverse/nflverse-data:NFL",
+              "starts_at": "2026-11-08T14:30:00+00:00"
+            },
+            "evidence_lineages": [
+              "nflverse:games.csv"
+            ],
+            "forecast_id": "35e3d00f55cdd4514a5d4f5e8676af14e15a0c5fb33052139456504e86cc0d03",
+            "original_study_id": "e6b03a2feaa2c562066788ff6120a50e032bfb8552f79d9d43a982d29202ab6d",
+            "original_study_sha256": "71c3b7e5b92c6a427ed916e3eed86a54b71ee24c1027b35d212500e4187ba290",
+            "original_forecast_sha256": "8f4bffecf7933134368aed79d5e882beb6fa8193114fc07e46687bae339cb496"
+          },
+          {
+            "canonical_group_id": "040b0e5e7480d11a7505f1185c478787a49efdee34facdb27d02e07a7c3f0ec2",
+            "dependency_tags": [
+              "team:NFL:ATL",
+              "team:NFL:CIN"
+            ],
+            "descriptor": {
+              "domain": "sports",
+              "league": "NFL",
+              "participants": [
+                "ATL",
+                "CIN"
+              ],
+              "resolution_reference": "https://www.nfl.com/scores",
+              "source_game_id": "2026_09_CIN_ATL",
+              "source_id_namespace": "nflverse/nflverse-data:NFL",
+              "starts_at": "2026-11-08T14:30:00+00:00"
+            },
+            "evidence_lineages": [
+              "nflverse:games.csv"
+            ],
+            "forecast_id": "e5f9e19433c0f9cc0df0c0bc5732130f05c09f9a1b2791dde95ce243eb2176ae",
+            "original_study_id": "e6b03a2feaa2c562066788ff6120a50e032bfb8552f79d9d43a982d29202ab6d",
+            "original_study_sha256": "71c3b7e5b92c6a427ed916e3eed86a54b71ee24c1027b35d212500e4187ba290",
+            "original_forecast_sha256": "01c5a96319225069e9f84fbc5b8e863f1f6108ac576d61c0be504b8440c8e8d0"
+          },
+          {
+            "canonical_group_id": "8fa2bb6c615a2e26181480a21fe00dead7712c1014f76619bcf073ea7423c771",
+            "dependency_tags": [
+              "team:NFL:HOU",
+              "team:NFL:LAC"
+            ],
+            "descriptor": {
+              "domain": "sports",
+              "league": "NFL",
+              "participants": [
+                "HOU",
+                "LAC"
+              ],
+              "resolution_reference": "https://www.nfl.com/scores",
+              "source_game_id": "2026_09_HOU_LAC",
+              "source_id_namespace": "nflverse/nflverse-data:NFL",
+              "starts_at": "2026-11-08T21:05:00+00:00"
+            },
+            "evidence_lineages": [
+              "nflverse:games.csv"
+            ],
+            "forecast_id": "20b6664de26e7f6193a4f58436658b1c32cbfc00a23d62c6463807ea4fb1d9ff",
+            "original_study_id": "e6b03a2feaa2c562066788ff6120a50e032bfb8552f79d9d43a982d29202ab6d",
+            "original_study_sha256": "71c3b7e5b92c6a427ed916e3eed86a54b71ee24c1027b35d212500e4187ba290",
+            "original_forecast_sha256": "13841b7bd4b9e9faceedbfc8bd0356bb593f17d176b8518f295b901c6db5e7d1"
+          },
+          {
+            "canonical_group_id": "8fa2bb6c615a2e26181480a21fe00dead7712c1014f76619bcf073ea7423c771",
+            "dependency_tags": [
+              "team:NFL:HOU",
+              "team:NFL:LAC"
+            ],
+            "descriptor": {
+              "domain": "sports",
+              "league": "NFL",
+              "participants": [
+                "HOU",
+                "LAC"
+              ],
+              "resolution_reference": "https://www.nfl.com/scores",
+              "source_game_id": "2026_09_HOU_LAC",
+              "source_id_namespace": "nflverse/nflverse-data:NFL",
+              "starts_at": "2026-11-08T21:05:00+00:00"
+            },
+            "evidence_lineages": [
+              "nflverse:games.csv"
+            ],
+            "forecast_id": "56c1d12946ca26dc5e0ce80b3a93cf3bd03de5be734e6921aef3aee9e19ee976",
+            "original_study_id": "e6b03a2feaa2c562066788ff6120a50e032bfb8552f79d9d43a982d29202ab6d",
+            "original_study_sha256": "71c3b7e5b92c6a427ed916e3eed86a54b71ee24c1027b35d212500e4187ba290",
+            "original_forecast_sha256": "615d831b4dad282488001d7d7418d283e4d9cd0430d88e2c9f26bdd64bbb8040"
+          },
+          {
+            "canonical_group_id": "09ef4f838dbce8fa2a0b84b2b13a7e460b4dfbf9406781748fc0756a568566af",
+            "dependency_tags": [
+              "team:NFL:KC",
+              "team:NFL:NYJ"
+            ],
+            "descriptor": {
+              "domain": "sports",
+              "league": "NFL",
+              "participants": [
+                "KC",
+                "NYJ"
+              ],
+              "resolution_reference": "https://www.nfl.com/scores",
+              "source_game_id": "2026_09_NYJ_KC",
+              "source_id_namespace": "nflverse/nflverse-data:NFL",
+              "starts_at": "2026-11-08T18:00:00+00:00"
+            },
+            "evidence_lineages": [
+              "nflverse:games.csv"
+            ],
+            "forecast_id": "bd292c2c1382a9c3bcd33acf912c975416fd3e76fb90efdb2dad591d017f462e",
+            "original_study_id": "b21c44b7d541de09932ef4683cf2f09382a04e0dee431e973dd98f8352293520",
+            "original_study_sha256": "a3441cd7735a0e1c2a8d157bdf9ae056dda5a18e26e921daca61beef15bc39b5",
+            "original_forecast_sha256": "22fe3cb9343cce7ea0e02b716376dde159be0617dc73898f7439ff773a641f83"
+          },
+          {
+            "canonical_group_id": "09ef4f838dbce8fa2a0b84b2b13a7e460b4dfbf9406781748fc0756a568566af",
+            "dependency_tags": [
+              "team:NFL:KC",
+              "team:NFL:NYJ"
+            ],
+            "descriptor": {
+              "domain": "sports",
+              "league": "NFL",
+              "participants": [
+                "KC",
+                "NYJ"
+              ],
+              "resolution_reference": "https://www.nfl.com/scores",
+              "source_game_id": "2026_09_NYJ_KC",
+              "source_id_namespace": "nflverse/nflverse-data:NFL",
+              "starts_at": "2026-11-08T18:00:00+00:00"
+            },
+            "evidence_lineages": [
+              "nflverse:games.csv"
+            ],
+            "forecast_id": "a332449a68aecd94d3618b0ba46d1c3fa964aca61d8d79e2f99eb90683cc5e90",
+            "original_study_id": "b21c44b7d541de09932ef4683cf2f09382a04e0dee431e973dd98f8352293520",
+            "original_study_sha256": "a3441cd7735a0e1c2a8d157bdf9ae056dda5a18e26e921daca61beef15bc39b5",
+            "original_forecast_sha256": "7c9533428d91e01b8c34f1a2237d2d692b8a0d8b74d6b8d2b731bf57f905de87"
+          },
+          {
+            "canonical_group_id": "9f7da292f5f8ae4726e4be4712db78bfd6a10a986016af4145d01b05f31f4ff0",
+            "dependency_tags": [
+              "team:NFL:LV",
+              "team:NFL:SF"
+            ],
+            "descriptor": {
+              "domain": "sports",
+              "league": "NFL",
+              "participants": [
+                "LV",
+                "SF"
+              ],
+              "resolution_reference": "https://www.nfl.com/scores",
+              "source_game_id": "2026_09_LV_SF",
+              "source_id_namespace": "nflverse/nflverse-data:NFL",
+              "starts_at": "2026-11-08T21:05:00+00:00"
+            },
+            "evidence_lineages": [
+              "nflverse:games.csv"
+            ],
+            "forecast_id": "ed04ab0f36cd9a06873f5cfaac6bd5aee03918e22eac9f21438bedeaeb44e85b",
+            "original_study_id": "6c9e793336909baad519f3b1b32bcc5ca27f982f6e82ad618c8cb07779ec34b0",
+            "original_study_sha256": "65308e9d7ddbe86c524f9fbc4b2e23c59ed89d67c61178955bbc7acaac5b611a",
+            "original_forecast_sha256": "19e47c47f56e432c41237cc065b34854af54357c3cc31a82f8bcff76e0864a84"
+          },
+          {
+            "canonical_group_id": "9f7da292f5f8ae4726e4be4712db78bfd6a10a986016af4145d01b05f31f4ff0",
+            "dependency_tags": [
+              "team:NFL:LV",
+              "team:NFL:SF"
+            ],
+            "descriptor": {
+              "domain": "sports",
+              "league": "NFL",
+              "participants": [
+                "LV",
+                "SF"
+              ],
+              "resolution_reference": "https://www.nfl.com/scores",
+              "source_game_id": "2026_09_LV_SF",
+              "source_id_namespace": "nflverse/nflverse-data:NFL",
+              "starts_at": "2026-11-08T21:05:00+00:00"
+            },
+            "evidence_lineages": [
+              "nflverse:games.csv"
+            ],
+            "forecast_id": "e1eaf48c65154f5d4cb1551ac8d28c76e6bb62265ea46c7ff9f335c763433b45",
+            "original_study_id": "6c9e793336909baad519f3b1b32bcc5ca27f982f6e82ad618c8cb07779ec34b0",
+            "original_study_sha256": "65308e9d7ddbe86c524f9fbc4b2e23c59ed89d67c61178955bbc7acaac5b611a",
+            "original_forecast_sha256": "d46ac0c4d07053eb744791a4fd38d0247eb4efa049a683ef1147670e339da0a9"
+          },
+          {
+            "canonical_group_id": "3812845b8ae7dc14672c9364a84171f0eddc1093c67f9efa21b0cf3dc0da0443",
+            "dependency_tags": [
+              "team:NFL:CAR",
+              "team:NFL:DEN"
+            ],
+            "descriptor": {
+              "domain": "sports",
+              "league": "NFL",
+              "participants": [
+                "CAR",
+                "DEN"
+              ],
+              "resolution_reference": "https://www.nfl.com/scores",
+              "source_game_id": "2026_09_DEN_CAR",
+              "source_id_namespace": "nflverse/nflverse-data:NFL",
+              "starts_at": "2026-11-08T18:00:00+00:00"
+            },
+            "evidence_lineages": [
+              "nflverse:games.csv"
+            ],
+            "forecast_id": "a00081ac7060afde2ca26ae103a9232ef2c4c1f12f3086fc5b9ffa8620219b64",
+            "original_study_id": "6c9e793336909baad519f3b1b32bcc5ca27f982f6e82ad618c8cb07779ec34b0",
+            "original_study_sha256": "65308e9d7ddbe86c524f9fbc4b2e23c59ed89d67c61178955bbc7acaac5b611a",
+            "original_forecast_sha256": "c3f0a4d880aedeeea4e8252b04b7182933e368707fdb8c64c67d6b6861ceb9af"
+          },
+          {
+            "canonical_group_id": "3812845b8ae7dc14672c9364a84171f0eddc1093c67f9efa21b0cf3dc0da0443",
+            "dependency_tags": [
+              "team:NFL:CAR",
+              "team:NFL:DEN"
+            ],
+            "descriptor": {
+              "domain": "sports",
+              "league": "NFL",
+              "participants": [
+                "CAR",
+                "DEN"
+              ],
+              "resolution_reference": "https://www.nfl.com/scores",
+              "source_game_id": "2026_09_DEN_CAR",
+              "source_id_namespace": "nflverse/nflverse-data:NFL",
+              "starts_at": "2026-11-08T18:00:00+00:00"
+            },
+            "evidence_lineages": [
+              "nflverse:games.csv"
+            ],
+            "forecast_id": "61197ec13abe715c58818c60408a6adb87179c16989e28ef71d357663e682259",
+            "original_study_id": "6c9e793336909baad519f3b1b32bcc5ca27f982f6e82ad618c8cb07779ec34b0",
+            "original_study_sha256": "65308e9d7ddbe86c524f9fbc4b2e23c59ed89d67c61178955bbc7acaac5b611a",
+            "original_forecast_sha256": "8030224ce785e7ae11e9c792068c4c10b45779d958c15c10ca552bdecf8021ae"
+          },
+          {
+            "canonical_group_id": "80b5583676e4acfc9b3640ac781f7ce9f5a4d18002f86a856baa3b94ae0a198f",
+            "dependency_tags": [
+              "team:NFL:DAL",
+              "team:NFL:IND"
+            ],
+            "descriptor": {
+              "domain": "sports",
+              "league": "NFL",
+              "participants": [
+                "DAL",
+                "IND"
+              ],
+              "resolution_reference": "https://www.nfl.com/scores",
+              "source_game_id": "2026_09_DAL_IND",
+              "source_id_namespace": "nflverse/nflverse-data:NFL",
+              "starts_at": "2026-11-08T18:00:00+00:00"
+            },
+            "evidence_lineages": [
+              "nflverse:games.csv"
+            ],
+            "forecast_id": "467c5c49e29a942e0b52119be3a153cb1ac48a2da5d7e4a75cdbe4f70fdb8411",
+            "original_study_id": "6c9e793336909baad519f3b1b32bcc5ca27f982f6e82ad618c8cb07779ec34b0",
+            "original_study_sha256": "65308e9d7ddbe86c524f9fbc4b2e23c59ed89d67c61178955bbc7acaac5b611a",
+            "original_forecast_sha256": "4ae3154a88449e048602db1fbb3182767b6be35273f97a4e5d27823aa02c1228"
+          },
+          {
+            "canonical_group_id": "80b5583676e4acfc9b3640ac781f7ce9f5a4d18002f86a856baa3b94ae0a198f",
+            "dependency_tags": [
+              "team:NFL:DAL",
+              "team:NFL:IND"
+            ],
+            "descriptor": {
+              "domain": "sports",
+              "league": "NFL",
+              "participants": [
+                "DAL",
+                "IND"
+              ],
+              "resolution_reference": "https://www.nfl.com/scores",
+              "source_game_id": "2026_09_DAL_IND",
+              "source_id_namespace": "nflverse/nflverse-data:NFL",
+              "starts_at": "2026-11-08T18:00:00+00:00"
+            },
+            "evidence_lineages": [
+              "nflverse:games.csv"
+            ],
+            "forecast_id": "60565e2eefb6c260a9c769a75059569c3e251081d302794c9a2ac92fe8234545",
+            "original_study_id": "6c9e793336909baad519f3b1b32bcc5ca27f982f6e82ad618c8cb07779ec34b0",
+            "original_study_sha256": "65308e9d7ddbe86c524f9fbc4b2e23c59ed89d67c61178955bbc7acaac5b611a",
+            "original_forecast_sha256": "0cd051252926ef30d823a3902b3f4eef1797347db774084d1689de835268b4ef"
+          },
+          {
+            "canonical_group_id": "93f9747c9ba19291b881fa531672adad3880a8ccddbda247f31d9660f4f9b185",
+            "dependency_tags": [
+              "economic-series:FED:scheduled-FOMC"
+            ],
+            "descriptor": {
+              "domain": "economics",
+              "resolution_reference": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+              "series_id": "FED:scheduled-FOMC",
+              "target_period": "2026-12-09"
+            },
+            "evidence_lineages": [
+              "FRED:DFEDTARU",
+              "FederalReserve:scheduled-FOMC"
+            ],
+            "forecast_id": "03eccbcbaea7c3cfda2daacb51d4a9631483dbb3e04b751347e030c6c6f471bf",
+            "original_study_id": "000000000005:d103ad67e2009614d8d3089b786b47c5cc58c36dfbba33cdabef5a287837c6dd",
+            "original_study_sha256": "cfe9a759bb65a23016020a731065a6d38e06103a8a3efe179038f3e61634bee4",
+            "original_forecast_sha256": "5b8e7ffd730cd92c868c6dced56bdb427aafc71f50814717c6630e3dade2931b"
+          },
+          {
+            "canonical_group_id": "93f9747c9ba19291b881fa531672adad3880a8ccddbda247f31d9660f4f9b185",
+            "dependency_tags": [
+              "economic-series:FED:scheduled-FOMC"
+            ],
+            "descriptor": {
+              "domain": "economics",
+              "resolution_reference": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+              "series_id": "FED:scheduled-FOMC",
+              "target_period": "2026-12-09"
+            },
+            "evidence_lineages": [
+              "FRED:DFEDTARU",
+              "FederalReserve:scheduled-FOMC"
+            ],
+            "forecast_id": "337f3f1a622cac4a4038bc513642a3733147cb0186dbcdf86ca7bf9f1bcebe00",
+            "original_study_id": "000000000005:d103ad67e2009614d8d3089b786b47c5cc58c36dfbba33cdabef5a287837c6dd",
+            "original_study_sha256": "cfe9a759bb65a23016020a731065a6d38e06103a8a3efe179038f3e61634bee4",
+            "original_forecast_sha256": "9bb83157417041a468d93a22d8bdbfe374071af1efa29d4343b628f03d9702a7"
+          },
+          {
+            "canonical_group_id": "703dde3909636532fc7e5747fcb0df39208da12f7a4258f77b2e8f5864ead87d",
+            "dependency_tags": [
+              "team:NBA:Lakers",
+              "team:NBA:Pistons"
+            ],
+            "descriptor": {
+              "domain": "sports",
+              "league": "NBA",
+              "participants": [
+                "Lakers",
+                "Pistons"
+              ],
+              "resolution_reference": "https://www.nba.com/",
+              "source_game_id": "401909946",
+              "source_id_namespace": "ESPN:NBA:daily-scoreboards:NBA",
+              "starts_at": "2026-11-08T23:00:00+00:00"
+            },
+            "evidence_lineages": [
+              "ESPN:NBA:daily-scoreboards"
+            ],
+            "forecast_id": "ae4d02bf4ca7faf6fddcb3602b1ba95b67a4896817100e9acbbfe7bc987e78a0",
+            "original_study_id": "000000000007:3866175e104d3265fbd10d583999ffa82dc3dca30016306eef093d4dee2e380c",
+            "original_study_sha256": "f6f74e143d1cbff2a6abcf38f9a6eaca044ac3b6b0b126113d15509f5d597a9b",
+            "original_forecast_sha256": "d5872367cb54673f3ebafa34f3bc51d8e0be0dd93b04e318d1a4d604e08942c5"
+          },
+          {
+            "canonical_group_id": "703dde3909636532fc7e5747fcb0df39208da12f7a4258f77b2e8f5864ead87d",
+            "dependency_tags": [
+              "team:NBA:Lakers",
+              "team:NBA:Pistons"
+            ],
+            "descriptor": {
+              "domain": "sports",
+              "league": "NBA",
+              "participants": [
+                "Lakers",
+                "Pistons"
+              ],
+              "resolution_reference": "https://www.nba.com/",
+              "source_game_id": "401909946",
+              "source_id_namespace": "ESPN:NBA:daily-scoreboards:NBA",
+              "starts_at": "2026-11-08T23:00:00+00:00"
+            },
+            "evidence_lineages": [
+              "ESPN:NBA:daily-scoreboards"
+            ],
+            "forecast_id": "e41bcbf7c9b679b81c906bdc06262a5f61ed87f242286a4f971f36371fa32144",
+            "original_study_id": "000000000007:3866175e104d3265fbd10d583999ffa82dc3dca30016306eef093d4dee2e380c",
+            "original_study_sha256": "f6f74e143d1cbff2a6abcf38f9a6eaca044ac3b6b0b126113d15509f5d597a9b",
+            "original_forecast_sha256": "fd22469c1b800d1d79ef34dd3fac31d7c3c0e0ec4c29b16b8ad4444775574cc7"
+          },
+          {
+            "canonical_group_id": "9c90e60eda4566d0aa99b83ae9ac8c6ad3b0a5978218553a0e3c8c86faeb0b46",
+            "dependency_tags": [
+              "team:NBA:Cavaliers",
+              "team:NBA:Knicks"
+            ],
+            "descriptor": {
+              "domain": "sports",
+              "league": "NBA",
+              "participants": [
+                "Cavaliers",
+                "Knicks"
+              ],
+              "resolution_reference": "https://www.nba.com/",
+              "source_game_id": "401909940",
+              "source_id_namespace": "ESPN:NBA:daily-scoreboards:NBA",
+              "starts_at": "2026-11-08T01:00:00+00:00"
+            },
+            "evidence_lineages": [
+              "ESPN:NBA:daily-scoreboards"
+            ],
+            "forecast_id": "f0d49f90fb4348a4af7d3b4b29bd0714004010fe854107f082c51582004348f5",
+            "original_study_id": "000000000008:263c3ba09ee0ac54739355a6bba9f0abe6b3eee31d9906a0eeada10543102faa",
+            "original_study_sha256": "b8dcf1a48d5aedcdc19e0b42760d4b25054b24903285b364a7170f91c8d20b2e",
+            "original_forecast_sha256": "dc815b22a782df242baa1829fcfd156fd0bcd1994cb5e4fd00d15584eca1c42f"
+          },
+          {
+            "canonical_group_id": "9c90e60eda4566d0aa99b83ae9ac8c6ad3b0a5978218553a0e3c8c86faeb0b46",
+            "dependency_tags": [
+              "team:NBA:Cavaliers",
+              "team:NBA:Knicks"
+            ],
+            "descriptor": {
+              "domain": "sports",
+              "league": "NBA",
+              "participants": [
+                "Cavaliers",
+                "Knicks"
+              ],
+              "resolution_reference": "https://www.nba.com/",
+              "source_game_id": "401909940",
+              "source_id_namespace": "ESPN:NBA:daily-scoreboards:NBA",
+              "starts_at": "2026-11-08T01:00:00+00:00"
+            },
+            "evidence_lineages": [
+              "ESPN:NBA:daily-scoreboards"
+            ],
+            "forecast_id": "c5ef1ff867e5cb344fe61a04480f87905c0318c3eff4180e432fe7288b376eae",
+            "original_study_id": "000000000008:263c3ba09ee0ac54739355a6bba9f0abe6b3eee31d9906a0eeada10543102faa",
+            "original_study_sha256": "b8dcf1a48d5aedcdc19e0b42760d4b25054b24903285b364a7170f91c8d20b2e",
+            "original_forecast_sha256": "17847493e5a1b21cee6e8917fda66ae31d5e335198f9d17211aebe4700ed3ce4"
+          },
+          {
+            "canonical_group_id": "b0e138beb52eb95d2f188283a9cf0107cab0965524c9544814828a47e04a18fc",
+            "dependency_tags": [
+              "team:NBA:Spurs",
+              "team:NBA:Trail Blazers"
+            ],
+            "descriptor": {
+              "domain": "sports",
+              "league": "NBA",
+              "participants": [
+                "Spurs",
+                "Trail Blazers"
+              ],
+              "resolution_reference": "https://www.nba.com/",
+              "source_game_id": "401909944",
+              "source_id_namespace": "ESPN:NBA:daily-scoreboards:NBA",
+              "starts_at": "2026-11-08T03:00:00+00:00"
+            },
+            "evidence_lineages": [
+              "ESPN:NBA:daily-scoreboards"
+            ],
+            "forecast_id": "8792b2ed37af142f0c80a1b1a1e3f9e32cc925ef0db20f25b6e459c35b18d6a0",
+            "original_study_id": "000000000013:370537dae3e07827d754b0e2162319efd982b04ee6c81253d457fb256c41f091",
+            "original_study_sha256": "5fcf9c4da1c3f07ef46ae19ced6d8e59d92f35a4ff52c2bfed7fb6e84c6b2c2a",
+            "original_forecast_sha256": "80bb76cdd2e25dffe7e8d506875c9288c0c9c9415fe0df965bdd3e4a319b22c2"
+          },
+          {
+            "canonical_group_id": "b0e138beb52eb95d2f188283a9cf0107cab0965524c9544814828a47e04a18fc",
+            "dependency_tags": [
+              "team:NBA:Spurs",
+              "team:NBA:Trail Blazers"
+            ],
+            "descriptor": {
+              "domain": "sports",
+              "league": "NBA",
+              "participants": [
+                "Spurs",
+                "Trail Blazers"
+              ],
+              "resolution_reference": "https://www.nba.com/",
+              "source_game_id": "401909944",
+              "source_id_namespace": "ESPN:NBA:daily-scoreboards:NBA",
+              "starts_at": "2026-11-08T03:00:00+00:00"
+            },
+            "evidence_lineages": [
+              "ESPN:NBA:daily-scoreboards"
+            ],
+            "forecast_id": "c4cbfe396edc4b1d28b9328a4324c6042156bb90bd06512f9e4e90427bece4b4",
+            "original_study_id": "000000000013:370537dae3e07827d754b0e2162319efd982b04ee6c81253d457fb256c41f091",
+            "original_study_sha256": "5fcf9c4da1c3f07ef46ae19ced6d8e59d92f35a4ff52c2bfed7fb6e84c6b2c2a",
+            "original_forecast_sha256": "4cf9991aa77e123d42d5e4378f5b505986049643e0f7073f19af839e11ed1cd9"
+          },
+          {
+            "canonical_group_id": "d3dd659c616200a27e990d54c0b3ac7b9f9e70289667a251c8bcedba11e91a6c",
+            "dependency_tags": [
+              "team:NBA:Rockets",
+              "team:NBA:Suns"
+            ],
+            "descriptor": {
+              "domain": "sports",
+              "league": "NBA",
+              "participants": [
+                "Rockets",
+                "Suns"
+              ],
+              "resolution_reference": "https://www.nba.com/",
+              "source_game_id": "401909943",
+              "source_id_namespace": "ESPN:NBA:daily-scoreboards:NBA",
+              "starts_at": "2026-11-08T02:00:00+00:00"
+            },
+            "evidence_lineages": [
+              "ESPN:NBA:daily-scoreboards"
+            ],
+            "forecast_id": "4aa60ff4a719008fe5b3495364e5c6d2cd6e72b8a14e248377d91190afc46dcd",
+            "original_study_id": "000000000014:de5f49e013183a586763ea4bff94ad9aba927e5ae46dafefa1c21fe2ef02fd8f",
+            "original_study_sha256": "ca8397fe6ff2afe916b947c59eb341825a7cddc00fe7f64a991d88337035a5fe",
+            "original_forecast_sha256": "7cc2343ab993c386abd9c51bc0f40272e9ee97c732c5525f5cb64aa7bf8ee646"
+          },
+          {
+            "canonical_group_id": "d3dd659c616200a27e990d54c0b3ac7b9f9e70289667a251c8bcedba11e91a6c",
+            "dependency_tags": [
+              "team:NBA:Rockets",
+              "team:NBA:Suns"
+            ],
+            "descriptor": {
+              "domain": "sports",
+              "league": "NBA",
+              "participants": [
+                "Rockets",
+                "Suns"
+              ],
+              "resolution_reference": "https://www.nba.com/",
+              "source_game_id": "401909943",
+              "source_id_namespace": "ESPN:NBA:daily-scoreboards:NBA",
+              "starts_at": "2026-11-08T02:00:00+00:00"
+            },
+            "evidence_lineages": [
+              "ESPN:NBA:daily-scoreboards"
+            ],
+            "forecast_id": "a708d409a817b55a3415d7e2b8a90001c8525a7ae26ddf04d4fea7341a5f9292",
+            "original_study_id": "000000000014:de5f49e013183a586763ea4bff94ad9aba927e5ae46dafefa1c21fe2ef02fd8f",
+            "original_study_sha256": "ca8397fe6ff2afe916b947c59eb341825a7cddc00fe7f64a991d88337035a5fe",
+            "original_forecast_sha256": "e15a7877515aec929de3f8c99a7889c8e3d03cb752dc61b756b1b0e4dfb3fdbf"
+          },
+          {
+            "canonical_group_id": "07f4d91b1784909231b0a526c7a607d9cbcf87080fd4cbdeceb912df6bf0a5fe",
+            "dependency_tags": [
+              "weather-station:ZUCK",
+              "weather-UTC-day:2026-11-07"
+            ],
+            "descriptor": {
+              "day": "2026-11-08",
+              "domain": "weather",
+              "ends_at": "2026-11-08T16:00:00+00:00",
+              "resolution_reference": "https://aviationweather.gov/api/data/metar?ids=ZUCK&format=raw&date=2026-11-08T19:00:00Z&hours=30",
+              "starts_at": "2026-11-07T16:00:00+00:00",
+              "station": "ZUCK",
+              "variable": "daily_high_temperature"
+            },
+            "evidence_lineages": [
+              "NOAA/AWC:ZUCK"
+            ],
+            "forecast_id": "595cf818cb4b51bec70858de3abc1674b8a96691a939c973bc09044f366d54e6",
+            "original_study_id": "000000000015:369aeee780fe525bff4103c8c7adfbe8cf9c08c4d70b92f3afd2a40c3a5080a1",
+            "original_study_sha256": "1e1c42f14cbcfa703e6454da73758a80d51200eada44cc76fb106c6c83cf0e95",
+            "original_forecast_sha256": "5f0e861f49585f590fc519651035cbadf5ea34638851db29dcd06881e341594e"
+          },
+          {
+            "canonical_group_id": "07f4d91b1784909231b0a526c7a607d9cbcf87080fd4cbdeceb912df6bf0a5fe",
+            "dependency_tags": [
+              "weather-station:ZUCK",
+              "weather-UTC-day:2026-11-07"
+            ],
+            "descriptor": {
+              "day": "2026-11-08",
+              "domain": "weather",
+              "ends_at": "2026-11-08T16:00:00+00:00",
+              "resolution_reference": "https://aviationweather.gov/api/data/metar?ids=ZUCK&format=raw&date=2026-11-08T19:00:00Z&hours=30",
+              "starts_at": "2026-11-07T16:00:00+00:00",
+              "station": "ZUCK",
+              "variable": "daily_high_temperature"
+            },
+            "evidence_lineages": [
+              "NOAA/AWC:ZUCK"
+            ],
+            "forecast_id": "f1662a8afa4c01a45880382b97c672be0cb253fb1dc99ddf28dcd7abde5201f3",
+            "original_study_id": "000000000015:369aeee780fe525bff4103c8c7adfbe8cf9c08c4d70b92f3afd2a40c3a5080a1",
+            "original_study_sha256": "1e1c42f14cbcfa703e6454da73758a80d51200eada44cc76fb106c6c83cf0e95",
+            "original_forecast_sha256": "012fac89869ad085ed3dd4ecd90b7ccf88fdab79c4625ae3189e8be9d7f26bcd"
+          },
+          {
+            "canonical_group_id": "c639e6e839f753fd98bbe7cd05e8d16c3813f33c6d7f1e8e0262524f7916a070",
+            "dependency_tags": [
+              "weather-station:ZSQD",
+              "weather-UTC-day:2026-11-07"
+            ],
+            "descriptor": {
+              "day": "2026-11-08",
+              "domain": "weather",
+              "ends_at": "2026-11-08T16:00:00+00:00",
+              "resolution_reference": "https://aviationweather.gov/api/data/metar?ids=ZSQD&format=raw&date=2026-11-08T19:00:00Z&hours=30",
+              "starts_at": "2026-11-07T16:00:00+00:00",
+              "station": "ZSQD",
+              "variable": "daily_high_temperature"
+            },
+            "evidence_lineages": [
+              "NOAA/AWC:ZSQD"
+            ],
+            "forecast_id": "5706f728a9caa514561d503dd37802f514fda9a3ba54c5befdaca93e25b857d8",
+            "original_study_id": "000000000018:15045ca72d8583d6c6807aa3d4107d63cb87c79f7c8d3ce233689bad5b930f89",
+            "original_study_sha256": "36158b76e6cdce1e74507c1d9aea436b53bf3bfc6f83a4f7dc54b88ef57d2f1f",
+            "original_forecast_sha256": "4562c9fb45f554a1fbb375fa662fb13834ab2671ed09f85fb4fa0f9aedf46ba7"
+          },
+          {
+            "canonical_group_id": "c639e6e839f753fd98bbe7cd05e8d16c3813f33c6d7f1e8e0262524f7916a070",
+            "dependency_tags": [
+              "weather-station:ZSQD",
+              "weather-UTC-day:2026-11-07"
+            ],
+            "descriptor": {
+              "day": "2026-11-08",
+              "domain": "weather",
+              "ends_at": "2026-11-08T16:00:00+00:00",
+              "resolution_reference": "https://aviationweather.gov/api/data/metar?ids=ZSQD&format=raw&date=2026-11-08T19:00:00Z&hours=30",
+              "starts_at": "2026-11-07T16:00:00+00:00",
+              "station": "ZSQD",
+              "variable": "daily_high_temperature"
+            },
+            "evidence_lineages": [
+              "NOAA/AWC:ZSQD"
+            ],
+            "forecast_id": "e564a5e724b8e330cf169a99b32431ab59b7fa8c0decd70d940f6417ef6a2653",
+            "original_study_id": "000000000018:15045ca72d8583d6c6807aa3d4107d63cb87c79f7c8d3ce233689bad5b930f89",
+            "original_study_sha256": "36158b76e6cdce1e74507c1d9aea436b53bf3bfc6f83a4f7dc54b88ef57d2f1f",
+            "original_forecast_sha256": "d0640ef6ecf06c45645b8700379f899a495862ce4872c10011e93cab62f79430"
+          },
+          {
+            "canonical_group_id": "e2d28a38ebcaa4225029beb3f6f9b4c85a4f1ce75b484b14ac4107ed07b725ff",
+            "dependency_tags": [
+              "team:NBA:Hawks",
+              "team:NBA:Nets"
+            ],
+            "descriptor": {
+              "domain": "sports",
+              "league": "NBA",
+              "participants": [
+                "Hawks",
+                "Nets"
+              ],
+              "resolution_reference": "https://www.nba.com/",
+              "source_game_id": "401909939",
+              "source_id_namespace": "ESPN:NBA:daily-scoreboards:NBA",
+              "starts_at": "2026-11-08T00:30:00+00:00"
+            },
+            "evidence_lineages": [
+              "ESPN:NBA:daily-scoreboards"
+            ],
+            "forecast_id": "52306f6369cc6b264136d14150651daeec6004b2192c3f5e90bf56bc72a64745",
+            "original_study_id": "000000000020:7961039b9b762854d9d6ed4697fc04797f45d07df594a77db8bf678af17c0a05",
+            "original_study_sha256": "2a74ecc67d82b7ebdbad867eb9afa9635c06a4c0b123eaec406368ece70cf710",
+            "original_forecast_sha256": "79ea695098792d72ff90bc7b11d23562cf0bff56b3c2c8b477515f13f045d826"
+          },
+          {
+            "canonical_group_id": "e2d28a38ebcaa4225029beb3f6f9b4c85a4f1ce75b484b14ac4107ed07b725ff",
+            "dependency_tags": [
+              "team:NBA:Hawks",
+              "team:NBA:Nets"
+            ],
+            "descriptor": {
+              "domain": "sports",
+              "league": "NBA",
+              "participants": [
+                "Hawks",
+                "Nets"
+              ],
+              "resolution_reference": "https://www.nba.com/",
+              "source_game_id": "401909939",
+              "source_id_namespace": "ESPN:NBA:daily-scoreboards:NBA",
+              "starts_at": "2026-11-08T00:30:00+00:00"
+            },
+            "evidence_lineages": [
+              "ESPN:NBA:daily-scoreboards"
+            ],
+            "forecast_id": "c0cee1cccc91a4464f38711b4df8171bfe6b2c21f22ceaa2a2b36c72be69f37c",
+            "original_study_id": "000000000020:7961039b9b762854d9d6ed4697fc04797f45d07df594a77db8bf678af17c0a05",
+            "original_study_sha256": "2a74ecc67d82b7ebdbad867eb9afa9635c06a4c0b123eaec406368ece70cf710",
+            "original_forecast_sha256": "baa8c1239d13e3444e964ffd9b9bf1ad094d72e4325314cf2284293a63957173"
+          },
+          {
+            "canonical_group_id": "35d6fbd9dbf207be929932c458801dc4ae2a7e51f50f2126ac408b39c2020838",
+            "dependency_tags": [
+              "team:NBA:Magic",
+              "team:NBA:Warriors"
+            ],
+            "descriptor": {
+              "domain": "sports",
+              "league": "NBA",
+              "participants": [
+                "Magic",
+                "Warriors"
+              ],
+              "resolution_reference": "https://www.nba.com/",
+              "source_game_id": "401909942",
+              "source_id_namespace": "ESPN:NBA:daily-scoreboards:NBA",
+              "starts_at": "2026-11-08T01:30:00+00:00"
+            },
+            "evidence_lineages": [
+              "ESPN:NBA:daily-scoreboards"
+            ],
+            "forecast_id": "f130aa0b068f36e66c6805d47736a2c8eaea5153a2157f17b3ed10e59ddb284f",
+            "original_study_id": "000000000021:602f25754810d3b1ed404c1f815f4aa267791298feb712297df2c5af1f9220ae",
+            "original_study_sha256": "5045f82552e4c63e4824681787287c793ce2698448bef4ac9f041458aedabd37",
+            "original_forecast_sha256": "abdc5dfee58495cb4c9dee4414803cc90d824b4134626ffcb6f5855590b1c36b"
+          },
+          {
+            "canonical_group_id": "35d6fbd9dbf207be929932c458801dc4ae2a7e51f50f2126ac408b39c2020838",
+            "dependency_tags": [
+              "team:NBA:Magic",
+              "team:NBA:Warriors"
+            ],
+            "descriptor": {
+              "domain": "sports",
+              "league": "NBA",
+              "participants": [
+                "Magic",
+                "Warriors"
+              ],
+              "resolution_reference": "https://www.nba.com/",
+              "source_game_id": "401909942",
+              "source_id_namespace": "ESPN:NBA:daily-scoreboards:NBA",
+              "starts_at": "2026-11-08T01:30:00+00:00"
+            },
+            "evidence_lineages": [
+              "ESPN:NBA:daily-scoreboards"
+            ],
+            "forecast_id": "59a35c6a3e3991200a58a63e72985fa26c6417a32ba795547af4a3c49a252010",
+            "original_study_id": "000000000021:602f25754810d3b1ed404c1f815f4aa267791298feb712297df2c5af1f9220ae",
+            "original_study_sha256": "5045f82552e4c63e4824681787287c793ce2698448bef4ac9f041458aedabd37",
+            "original_forecast_sha256": "d54b3a320fbdb1772ef9f4d989be19731dc8e0959d5e6d40cb420205bae152ef"
+          },
+          {
+            "canonical_group_id": "8369102586154c3b8f0ed14b6afd2afb8fd4e2b604aaddbf862456e2f14c6325",
+            "dependency_tags": [
+              "team:NBA:Thunder",
+              "team:NBA:Wizards"
+            ],
+            "descriptor": {
+              "domain": "sports",
+              "league": "NBA",
+              "participants": [
+                "Thunder",
+                "Wizards"
+              ],
+              "resolution_reference": "https://www.nba.com/",
+              "source_game_id": "401909941",
+              "source_id_namespace": "ESPN:NBA:daily-scoreboards:NBA",
+              "starts_at": "2026-11-08T01:00:00+00:00"
+            },
+            "evidence_lineages": [
+              "ESPN:NBA:daily-scoreboards"
+            ],
+            "forecast_id": "519b01a53051dbfb27496477b4c67b1deebc0f8115ffabcf3bf0dd74623a7de0",
+            "original_study_id": "000000000024:0be421c3183b63c320e0bd6622715554604b522a76e614b90a30019b49e7f981",
+            "original_study_sha256": "1c2123b5eb9a2d3c267be2e6ef10bec488d59745adeada97dbf7c6aece1d7850",
+            "original_forecast_sha256": "1726878a2a0759cad0d8334859a2b6c665bd3b634cdc376d72cd4a27ce2fd576"
+          },
+          {
+            "canonical_group_id": "8369102586154c3b8f0ed14b6afd2afb8fd4e2b604aaddbf862456e2f14c6325",
+            "dependency_tags": [
+              "team:NBA:Thunder",
+              "team:NBA:Wizards"
+            ],
+            "descriptor": {
+              "domain": "sports",
+              "league": "NBA",
+              "participants": [
+                "Thunder",
+                "Wizards"
+              ],
+              "resolution_reference": "https://www.nba.com/",
+              "source_game_id": "401909941",
+              "source_id_namespace": "ESPN:NBA:daily-scoreboards:NBA",
+              "starts_at": "2026-11-08T01:00:00+00:00"
+            },
+            "evidence_lineages": [
+              "ESPN:NBA:daily-scoreboards"
+            ],
+            "forecast_id": "150da3be94e737bf14bacf3a2c2f43191a2c2efa121633cc581a806ad26033a5",
+            "original_study_id": "000000000024:0be421c3183b63c320e0bd6622715554604b522a76e614b90a30019b49e7f981",
+            "original_study_sha256": "1c2123b5eb9a2d3c267be2e6ef10bec488d59745adeada97dbf7c6aece1d7850",
+            "original_forecast_sha256": "5df6d286f9a5a0f3cc069a1b92afe834b064ab26dfe9f5559ffa03cf0db54d7e"
+          },
+          {
+            "canonical_group_id": "d4732f1de4a9065e1ec5c0f8e054c232fc146c55ac0363f51de6794741077adf",
+            "dependency_tags": [
+              "team:NFL:NYG",
+              "team:NFL:PHI"
+            ],
+            "descriptor": {
+              "domain": "sports",
+              "league": "NFL",
+              "participants": [
+                "NYG",
+                "PHI"
+              ],
+              "resolution_reference": "https://www.nfl.com/scores",
+              "source_game_id": "2026_09_NYG_PHI",
+              "source_id_namespace": "nflverse/nflverse-data:NFL",
+              "starts_at": "2026-11-08T18:00:00+00:00"
+            },
+            "evidence_lineages": [
+              "nflverse:games.csv"
+            ],
+            "forecast_id": "51a5412fe5fc770aaaa619397d22436a4a10294b537a18a3b494c10a6e84df24",
+            "original_study_id": "a5e5b25f5effd2f8e7ceaf365c3a6656c9a8041c9abb166dfde40a346e506ebe",
+            "original_study_sha256": "8097b68a1c7aa20748b1bf2bc699b5e7cc13449cefd6125c307c7fc20eaded31",
+            "original_forecast_sha256": "df2d6b1b548c5528dab38a96e9e1e0016dbe12e0c282243d93483c59bdb14e45"
+          },
+          {
+            "canonical_group_id": "d4732f1de4a9065e1ec5c0f8e054c232fc146c55ac0363f51de6794741077adf",
+            "dependency_tags": [
+              "team:NFL:NYG",
+              "team:NFL:PHI"
+            ],
+            "descriptor": {
+              "domain": "sports",
+              "league": "NFL",
+              "participants": [
+                "NYG",
+                "PHI"
+              ],
+              "resolution_reference": "https://www.nfl.com/scores",
+              "source_game_id": "2026_09_NYG_PHI",
+              "source_id_namespace": "nflverse/nflverse-data:NFL",
+              "starts_at": "2026-11-08T18:00:00+00:00"
+            },
+            "evidence_lineages": [
+              "nflverse:games.csv"
+            ],
+            "forecast_id": "80a35f2104915f6bf574ea6cb867b3017f4e65067c5831ffaa4c1bc75959bc0a",
+            "original_study_id": "a5e5b25f5effd2f8e7ceaf365c3a6656c9a8041c9abb166dfde40a346e506ebe",
+            "original_study_sha256": "8097b68a1c7aa20748b1bf2bc699b5e7cc13449cefd6125c307c7fc20eaded31",
+            "original_forecast_sha256": "f1816ac6a6ea4822bda8a7c7fa44639fd87d0e73e225fd005dabbd4c47b3ee2d"
+          },
+          {
+            "canonical_group_id": "af32edf89291dc13e7e2a5bef1d54a98cc72ea1b20bff66719df498877f4b644",
+            "dependency_tags": [
+              "team:NHL:Lightning",
+              "team:NHL:Wild"
+            ],
+            "descriptor": {
+              "domain": "sports",
+              "league": "NHL",
+              "participants": [
+                "Lightning",
+                "Wild"
+              ],
+              "resolution_reference": "https://www.nhl.com/scores",
+              "source_game_id": "401892670",
+              "source_id_namespace": "ESPN:NHL:daily-scoreboards:NHL",
+              "starts_at": "2026-11-08T01:00:00+00:00"
+            },
+            "evidence_lineages": [
+              "ESPN:NHL:daily-scoreboards"
+            ],
+            "forecast_id": "6f5faa2b27a09d1bbcebe464e4643be8649ce0f078817993a97d06ea00256c1f",
+            "original_study_id": "000000000005:de23ae06ed46b481a31e5473c76d37c9dd2cef55ae1c84def1ff7ef04c719209",
+            "original_study_sha256": "65f4f050c544d8f94963a1e65c2ddd7a391910aca664aaaafba25758bf7758b4",
+            "original_forecast_sha256": "1f08cac24b26d7235b70ade24f1876c2f4becedcd8cf960a35bb0c8700337eb2"
+          },
+          {
+            "canonical_group_id": "af32edf89291dc13e7e2a5bef1d54a98cc72ea1b20bff66719df498877f4b644",
+            "dependency_tags": [
+              "team:NHL:Lightning",
+              "team:NHL:Wild"
+            ],
+            "descriptor": {
+              "domain": "sports",
+              "league": "NHL",
+              "participants": [
+                "Lightning",
+                "Wild"
+              ],
+              "resolution_reference": "https://www.nhl.com/scores",
+              "source_game_id": "401892670",
+              "source_id_namespace": "ESPN:NHL:daily-scoreboards:NHL",
+              "starts_at": "2026-11-08T01:00:00+00:00"
+            },
+            "evidence_lineages": [
+              "ESPN:NHL:daily-scoreboards"
+            ],
+            "forecast_id": "4944da6a9d9f3c61804801b151e71f64d0adac29f1515bdae21207f204265ad6",
+            "original_study_id": "000000000005:de23ae06ed46b481a31e5473c76d37c9dd2cef55ae1c84def1ff7ef04c719209",
+            "original_study_sha256": "65f4f050c544d8f94963a1e65c2ddd7a391910aca664aaaafba25758bf7758b4",
+            "original_forecast_sha256": "f2499a36cc77153ec112dae84bc1ea3203102ed98fc4a8b75d0162519719027a"
+          },
+          {
+            "canonical_group_id": "6675620bae27e78b867d54bcc20761537fdc3de237b101a87645e8a65e9d4dae",
+            "dependency_tags": [
+              "team:NHL:Kings",
+              "team:NHL:Penguins"
+            ],
+            "descriptor": {
+              "domain": "sports",
+              "league": "NHL",
+              "participants": [
+                "Kings",
+                "Penguins"
+              ],
+              "resolution_reference": "https://www.nhl.com/scores",
+              "source_game_id": "401892672",
+              "source_id_namespace": "ESPN:NHL:daily-scoreboards:NHL",
+              "starts_at": "2026-11-08T02:00:00+00:00"
+            },
+            "evidence_lineages": [
+              "ESPN:NHL:daily-scoreboards"
+            ],
+            "forecast_id": "1f1fb174f73827ee35c3a5165aeb4361da0cee3be5f04ebebb46701859cb8843",
+            "original_study_id": "000000000006:f0f50bc1ee97af41f41efe2aef8e709b020d853e832e61b2770443e360afab0a",
+            "original_study_sha256": "5b40b0b513a899d62a5afb3073b10d979c2fb5a7ab73e9d70008481ff0f80a84",
+            "original_forecast_sha256": "6d26c8d24021487fbf9d6b643cb727d1c96f3c0573b1960b424790254ac6b668"
+          },
+          {
+            "canonical_group_id": "6675620bae27e78b867d54bcc20761537fdc3de237b101a87645e8a65e9d4dae",
+            "dependency_tags": [
+              "team:NHL:Kings",
+              "team:NHL:Penguins"
+            ],
+            "descriptor": {
+              "domain": "sports",
+              "league": "NHL",
+              "participants": [
+                "Kings",
+                "Penguins"
+              ],
+              "resolution_reference": "https://www.nhl.com/scores",
+              "source_game_id": "401892672",
+              "source_id_namespace": "ESPN:NHL:daily-scoreboards:NHL",
+              "starts_at": "2026-11-08T02:00:00+00:00"
+            },
+            "evidence_lineages": [
+              "ESPN:NHL:daily-scoreboards"
+            ],
+            "forecast_id": "daa6a47a6c4120b5a9eb3faf4110f6ead52a1aa00dc1cdc5a150a460b22ae1bf",
+            "original_study_id": "000000000006:f0f50bc1ee97af41f41efe2aef8e709b020d853e832e61b2770443e360afab0a",
+            "original_study_sha256": "5b40b0b513a899d62a5afb3073b10d979c2fb5a7ab73e9d70008481ff0f80a84",
+            "original_forecast_sha256": "7cc731bfa609128e51424efbf22ccd7b155eba71a235b2e135a391c700e4dd02"
+          },
+          {
+            "canonical_group_id": "07f4d91b1784909231b0a526c7a607d9cbcf87080fd4cbdeceb912df6bf0a5fe",
+            "dependency_tags": [
+              "weather-station:ZUCK",
+              "weather-UTC-day:2026-11-07"
+            ],
+            "descriptor": {
+              "day": "2026-11-08",
+              "domain": "weather",
+              "ends_at": "2026-11-08T16:00:00+00:00",
+              "resolution_reference": "https://aviationweather.gov/api/data/metar?ids=ZUCK&format=raw&date=2026-11-08T19:00:00Z&hours=30",
+              "starts_at": "2026-11-07T16:00:00+00:00",
+              "station": "ZUCK",
+              "variable": "daily_high_temperature"
+            },
+            "evidence_lineages": [
+              "NOAA/AWC:ZUCK"
+            ],
+            "forecast_id": "e4741d8b03db567d0d405968b5d025b22d10335b4b278540e5559fea7d779b7f",
+            "original_study_id": "000000000007:94b1ce25a482d38d5e035788bd124deaba3c737cb3a5d8a3f054e794dc57a5b7",
+            "original_study_sha256": "e477049864485a9ddbdd28d8bb3fde6ad5617551776ed34fe375ebc1a679f9cb",
+            "original_forecast_sha256": "8be79dd5fe8dc6a896c2ed81c1392e38242936eb02ceb1524c32a7f781702982"
+          },
+          {
+            "canonical_group_id": "07f4d91b1784909231b0a526c7a607d9cbcf87080fd4cbdeceb912df6bf0a5fe",
+            "dependency_tags": [
+              "weather-station:ZUCK",
+              "weather-UTC-day:2026-11-07"
+            ],
+            "descriptor": {
+              "day": "2026-11-08",
+              "domain": "weather",
+              "ends_at": "2026-11-08T16:00:00+00:00",
+              "resolution_reference": "https://aviationweather.gov/api/data/metar?ids=ZUCK&format=raw&date=2026-11-08T19:00:00Z&hours=30",
+              "starts_at": "2026-11-07T16:00:00+00:00",
+              "station": "ZUCK",
+              "variable": "daily_high_temperature"
+            },
+            "evidence_lineages": [
+              "NOAA/AWC:ZUCK"
+            ],
+            "forecast_id": "8e3d55b875d863b0d0808a66e9b066eddc1f8ce28d225144613e01c97f9f0af8",
+            "original_study_id": "000000000007:94b1ce25a482d38d5e035788bd124deaba3c737cb3a5d8a3f054e794dc57a5b7",
+            "original_study_sha256": "e477049864485a9ddbdd28d8bb3fde6ad5617551776ed34fe375ebc1a679f9cb",
+            "original_forecast_sha256": "465c58a7ee2f8238db3b0159a31cc94069bef5e1cdbfd9a42c5a677de9532fc5"
+          },
+          {
+            "canonical_group_id": "1125f9b5bbe154c56363487b4e84639f06bb0acf01218b0a1e5c67cc0f9c8b5f",
+            "dependency_tags": [
+              "team:NHL:Avalanche",
+              "team:NHL:Red Wings"
+            ],
+            "descriptor": {
+              "domain": "sports",
+              "league": "NHL",
+              "participants": [
+                "Avalanche",
+                "Red Wings"
+              ],
+              "resolution_reference": "https://www.nhl.com/scores",
+              "source_game_id": "401892671",
+              "source_id_namespace": "ESPN:NHL:daily-scoreboards:NHL",
+              "starts_at": "2026-11-08T02:00:00+00:00"
+            },
+            "evidence_lineages": [
+              "ESPN:NHL:daily-scoreboards"
+            ],
+            "forecast_id": "abc6129d8cb2b71e6695284f2091a272aceeee299ddc7d540060b36efa43f118",
+            "original_study_id": "000000000013:a503685bed51b6a2f21ff38c49e4f2bebdc6300ec8ecfca693e2d5133f7964f7",
+            "original_study_sha256": "a7f6c474c794e5c94916a3bfc47fcdea77110c8ffbe40b45352bad8177ff2ae0",
+            "original_forecast_sha256": "a14ca3a71fb2f2ff533ad48fbe35b9d85adfeaae407c33d08df5ab9a7002bdf8"
+          },
+          {
+            "canonical_group_id": "1125f9b5bbe154c56363487b4e84639f06bb0acf01218b0a1e5c67cc0f9c8b5f",
+            "dependency_tags": [
+              "team:NHL:Avalanche",
+              "team:NHL:Red Wings"
+            ],
+            "descriptor": {
+              "domain": "sports",
+              "league": "NHL",
+              "participants": [
+                "Avalanche",
+                "Red Wings"
+              ],
+              "resolution_reference": "https://www.nhl.com/scores",
+              "source_game_id": "401892671",
+              "source_id_namespace": "ESPN:NHL:daily-scoreboards:NHL",
+              "starts_at": "2026-11-08T02:00:00+00:00"
+            },
+            "evidence_lineages": [
+              "ESPN:NHL:daily-scoreboards"
+            ],
+            "forecast_id": "f70b15892c1397bdb9655f8864bd48634f7104d7e788f1d5d9400dd30aed0bdf",
+            "original_study_id": "000000000013:a503685bed51b6a2f21ff38c49e4f2bebdc6300ec8ecfca693e2d5133f7964f7",
+            "original_study_sha256": "a7f6c474c794e5c94916a3bfc47fcdea77110c8ffbe40b45352bad8177ff2ae0",
+            "original_forecast_sha256": "e4a29d9e4f4ac87901d54a3451941badf5472f1ca8e53dfe32b86ca197e218f8"
+          },
+          {
+            "canonical_group_id": "c60bb531b35f17815d0b53989b7f40b8a337460047e8079e14caf14cc4f1f234",
+            "dependency_tags": [
+              "team:NHL:Canucks",
+              "team:NHL:Oilers"
+            ],
+            "descriptor": {
+              "domain": "sports",
+              "league": "NHL",
+              "participants": [
+                "Canucks",
+                "Oilers"
+              ],
+              "resolution_reference": "https://www.nhl.com/scores",
+              "source_game_id": "401892673",
+              "source_id_namespace": "ESPN:NHL:daily-scoreboards:NHL",
+              "starts_at": "2026-11-08T03:00:00+00:00"
+            },
+            "evidence_lineages": [
+              "ESPN:NHL:daily-scoreboards"
+            ],
+            "forecast_id": "6913fad24cdd887663431170beb9a54dc4144150159bf24b4f9f20696474749b",
+            "original_study_id": "000000000014:732bd15c1707a0f2f9e00b0849a19999f0ce1c653567193469a20555d5c58327",
+            "original_study_sha256": "bc5db2490502f93e6126abca73b06f865398c4502a051cb065878b3e4dcb682e",
+            "original_forecast_sha256": "51fbabf10289c20a42f07832ef276bd5de16d6753a4a3425f46542423a33ddad"
+          },
+          {
+            "canonical_group_id": "c60bb531b35f17815d0b53989b7f40b8a337460047e8079e14caf14cc4f1f234",
+            "dependency_tags": [
+              "team:NHL:Canucks",
+              "team:NHL:Oilers"
+            ],
+            "descriptor": {
+              "domain": "sports",
+              "league": "NHL",
+              "participants": [
+                "Canucks",
+                "Oilers"
+              ],
+              "resolution_reference": "https://www.nhl.com/scores",
+              "source_game_id": "401892673",
+              "source_id_namespace": "ESPN:NHL:daily-scoreboards:NHL",
+              "starts_at": "2026-11-08T03:00:00+00:00"
+            },
+            "evidence_lineages": [
+              "ESPN:NHL:daily-scoreboards"
+            ],
+            "forecast_id": "8eb011736ffd110150e40e982a2344a2e161438a740eeed99c81af81e89f816e",
+            "original_study_id": "000000000014:732bd15c1707a0f2f9e00b0849a19999f0ce1c653567193469a20555d5c58327",
+            "original_study_sha256": "bc5db2490502f93e6126abca73b06f865398c4502a051cb065878b3e4dcb682e",
+            "original_forecast_sha256": "c6e28c8da1f0c1e5c637743e4a0182636d66b6d1f609ac47641a3259edf4e386"
+          },
+          {
+            "canonical_group_id": "b25628a266d891a2a5c221f69b552ed403deffce6d5b493327db77bd9c27ffda",
+            "dependency_tags": [
+              "weather-station:ZUUU",
+              "weather-UTC-day:2026-11-07"
+            ],
+            "descriptor": {
+              "day": "2026-11-08",
+              "domain": "weather",
+              "ends_at": "2026-11-08T16:00:00+00:00",
+              "resolution_reference": "https://aviationweather.gov/api/data/metar?ids=ZUUU&format=raw&date=2026-11-08T19:00:00Z&hours=30",
+              "starts_at": "2026-11-07T16:00:00+00:00",
+              "station": "ZUUU",
+              "variable": "daily_high_temperature"
+            },
+            "evidence_lineages": [
+              "NOAA/AWC:ZUUU"
+            ],
+            "forecast_id": "e50b569e42c954b6fc5819bf7f9f2987048d164330e31dc9d79d1cf808891524",
+            "original_study_id": "000000000015:e91f88652bfad14cc2a76dd6651d970b8dc504e7bc46f9438d039e47d84ae32b",
+            "original_study_sha256": "765e708448d4cdcaeae9163e1dafc78b10d149e93266e66a471751c7c3c69909",
+            "original_forecast_sha256": "4e8735bd528844fb454b440799e438ebd9f14a3a6588af70691bf429e434eb80"
+          },
+          {
+            "canonical_group_id": "b25628a266d891a2a5c221f69b552ed403deffce6d5b493327db77bd9c27ffda",
+            "dependency_tags": [
+              "weather-station:ZUUU",
+              "weather-UTC-day:2026-11-07"
+            ],
+            "descriptor": {
+              "day": "2026-11-08",
+              "domain": "weather",
+              "ends_at": "2026-11-08T16:00:00+00:00",
+              "resolution_reference": "https://aviationweather.gov/api/data/metar?ids=ZUUU&format=raw&date=2026-11-08T19:00:00Z&hours=30",
+              "starts_at": "2026-11-07T16:00:00+00:00",
+              "station": "ZUUU",
+              "variable": "daily_high_temperature"
+            },
+            "evidence_lineages": [
+              "NOAA/AWC:ZUUU"
+            ],
+            "forecast_id": "0a123b60661e4107146bfcd6fe6c1186aa27d3b34b278806add61ebddaab5f59",
+            "original_study_id": "000000000015:e91f88652bfad14cc2a76dd6651d970b8dc504e7bc46f9438d039e47d84ae32b",
+            "original_study_sha256": "765e708448d4cdcaeae9163e1dafc78b10d149e93266e66a471751c7c3c69909",
+            "original_forecast_sha256": "34506038ebe3f056e7ab6d4d416950264edf284a3c164b259f3a071d2224b162"
+          },
+          {
+            "canonical_group_id": "c639e6e839f753fd98bbe7cd05e8d16c3813f33c6d7f1e8e0262524f7916a070",
+            "dependency_tags": [
+              "weather-station:ZSQD",
+              "weather-UTC-day:2026-11-07"
+            ],
+            "descriptor": {
+              "day": "2026-11-08",
+              "domain": "weather",
+              "ends_at": "2026-11-08T16:00:00+00:00",
+              "resolution_reference": "https://aviationweather.gov/api/data/metar?ids=ZSQD&format=raw&date=2026-11-08T19:00:00Z&hours=30",
+              "starts_at": "2026-11-07T16:00:00+00:00",
+              "station": "ZSQD",
+              "variable": "daily_high_temperature"
+            },
+            "evidence_lineages": [
+              "NOAA/AWC:ZSQD"
+            ],
+            "forecast_id": "8fd59e4ba5a052d2285e6174cb4ead00ad847aa1336e25da857d94becb34dd50",
+            "original_study_id": "000000000025:eaefac948375ddb787e2e39cdce805f980ae9e2b847ae356878ac29cd58a8192",
+            "original_study_sha256": "88afd4a52187d903aec7262fc6d104c0265ab0482cc9dca920a7364b2c62fd60",
+            "original_forecast_sha256": "d232b55ed2e13e22671d8c05b85dbead2c3221fd5ea5c2516ee9aead7a427759"
+          },
+          {
+            "canonical_group_id": "c639e6e839f753fd98bbe7cd05e8d16c3813f33c6d7f1e8e0262524f7916a070",
+            "dependency_tags": [
+              "weather-station:ZSQD",
+              "weather-UTC-day:2026-11-07"
+            ],
+            "descriptor": {
+              "day": "2026-11-08",
+              "domain": "weather",
+              "ends_at": "2026-11-08T16:00:00+00:00",
+              "resolution_reference": "https://aviationweather.gov/api/data/metar?ids=ZSQD&format=raw&date=2026-11-08T19:00:00Z&hours=30",
+              "starts_at": "2026-11-07T16:00:00+00:00",
+              "station": "ZSQD",
+              "variable": "daily_high_temperature"
+            },
+            "evidence_lineages": [
+              "NOAA/AWC:ZSQD"
+            ],
+            "forecast_id": "04b1fc89a32e86c29cdb7e32fd3a1b6b6a56dd87536862444a2bb4cf79d65609",
+            "original_study_id": "000000000025:eaefac948375ddb787e2e39cdce805f980ae9e2b847ae356878ac29cd58a8192",
+            "original_study_sha256": "88afd4a52187d903aec7262fc6d104c0265ab0482cc9dca920a7364b2c62fd60",
+            "original_forecast_sha256": "c68fa61279e93d4ae6a32c69781b06cd1542ce61e6a66906b03fdaa0509d73dd"
+          },
+          {
+            "canonical_group_id": "ecbd235c5a1cd92d459585c8b47f3fe0c1ee1d12361c4d3d3a196508b3095a78",
+            "dependency_tags": [
+              "team:NHL:Sharks",
+              "team:NHL:Stars"
+            ],
+            "descriptor": {
+              "domain": "sports",
+              "league": "NHL",
+              "participants": [
+                "Sharks",
+                "Stars"
+              ],
+              "resolution_reference": "https://www.nhl.com/scores",
+              "source_game_id": "401892669",
+              "source_id_namespace": "ESPN:NHL:daily-scoreboards:NHL",
+              "starts_at": "2026-11-08T01:00:00+00:00"
+            },
+            "evidence_lineages": [
+              "ESPN:NHL:daily-scoreboards"
+            ],
+            "forecast_id": "e22b5c4dec815b9ddac03dc3726bcfc45d4a320e7c88dbd70bdcc2e30b20d1cf",
+            "original_study_id": "000000000026:0a975f0a4d33c5a075ef734de3437c8bb9dabb9c986c49697c4d8e84ff2e2d6c",
+            "original_study_sha256": "26d2689ed3b55ffaf22a584b8f39a02d19a523b263d1d58d8ac5bf886d451aab",
+            "original_forecast_sha256": "7306631fb438685386677a3ad6e85586b2d0a8c56717d478478e35a94921e16f"
+          },
+          {
+            "canonical_group_id": "ecbd235c5a1cd92d459585c8b47f3fe0c1ee1d12361c4d3d3a196508b3095a78",
+            "dependency_tags": [
+              "team:NHL:Sharks",
+              "team:NHL:Stars"
+            ],
+            "descriptor": {
+              "domain": "sports",
+              "league": "NHL",
+              "participants": [
+                "Sharks",
+                "Stars"
+              ],
+              "resolution_reference": "https://www.nhl.com/scores",
+              "source_game_id": "401892669",
+              "source_id_namespace": "ESPN:NHL:daily-scoreboards:NHL",
+              "starts_at": "2026-11-08T01:00:00+00:00"
+            },
+            "evidence_lineages": [
+              "ESPN:NHL:daily-scoreboards"
+            ],
+            "forecast_id": "0eece2c81e86f7d86eb31991596f705fb5a425f83e3c41f7d91637870fffba86",
+            "original_study_id": "000000000026:0a975f0a4d33c5a075ef734de3437c8bb9dabb9c986c49697c4d8e84ff2e2d6c",
+            "original_study_sha256": "26d2689ed3b55ffaf22a584b8f39a02d19a523b263d1d58d8ac5bf886d451aab",
+            "original_forecast_sha256": "f9120cc115d029de101d99f4674b081f8583fe57447a936d05ecb565f666084d"
+          },
+          {
+            "canonical_group_id": "51ac3d78a77df92f07e98b74922111c85c4da75713b8fdade9a97a8893813a14",
+            "dependency_tags": [
+              "financial-symbol:SPX",
+              "financial-UTC-day:2026-11-09"
+            ],
+            "descriptor": {
+              "domain": "finance",
+              "ends_at": "2026-11-09T21:00:00+00:00",
+              "reference_source": "https://www.wsj.com/market-data/stocks",
+              "resolution_reference": "https://www.wsj.com/market-data/stocks",
+              "starts_at": "2026-11-09T14:30:00+00:00",
+              "symbol": "SPX"
+            },
+            "evidence_lineages": [
+              "FRED:SP500:cash-index"
+            ],
+            "forecast_id": "4efabf715151a98029c13e0e56f7236a2cb1537504e3dce6ef5970365f93cbbe",
+            "original_study_id": "000000000028:062f3f25321ed647c48efa90380174d678b091e1ef176ebbd12c964e7009757e",
+            "original_study_sha256": "6058a435cc6f9bf7ae45a9c28baef0e29487345ed4433954e7418a664e7af45d",
+            "original_forecast_sha256": "b3adeb7047477fab0b1181fb9c0fa38e30c06c934bd329babc24829050dce92a"
+          },
+          {
+            "canonical_group_id": "51ac3d78a77df92f07e98b74922111c85c4da75713b8fdade9a97a8893813a14",
+            "dependency_tags": [
+              "financial-symbol:SPX",
+              "financial-UTC-day:2026-11-09"
+            ],
+            "descriptor": {
+              "domain": "finance",
+              "ends_at": "2026-11-09T21:00:00+00:00",
+              "reference_source": "https://www.wsj.com/market-data/stocks",
+              "resolution_reference": "https://www.wsj.com/market-data/stocks",
+              "starts_at": "2026-11-09T14:30:00+00:00",
+              "symbol": "SPX"
+            },
+            "evidence_lineages": [
+              "FRED:SP500:cash-index"
+            ],
+            "forecast_id": "3fee7d83f1f6e38ecdb2258c618acccdca0335f9a9d1b631d40ce8b827c0c481",
+            "original_study_id": "000000000028:062f3f25321ed647c48efa90380174d678b091e1ef176ebbd12c964e7009757e",
+            "original_study_sha256": "6058a435cc6f9bf7ae45a9c28baef0e29487345ed4433954e7418a664e7af45d",
+            "original_forecast_sha256": "3aa98541454ef4357ff5845a1c41e964b9079bc683f75844065f9869d25dd3f5"
+          },
+          {
+            "canonical_group_id": "549d254401b5c9edeec8406ced6982ca141c01169eeccb0a23c6b791276ca993",
+            "dependency_tags": [
+              "economic-series:IHYQ"
+            ],
+            "descriptor": {
+              "domain": "economics",
+              "resolution_reference": "https://www.ons.gov.uk/economy/grossdomesticproductgdp/bulletins/gdpfirstquarterlyestimateuk/previousreleases",
+              "series_id": "IHYQ",
+              "target_period": "2026 Q3"
+            },
+            "evidence_lineages": [
+              "ONS:IHYQ:current-vintage"
+            ],
+            "forecast_id": "1869017d817ebc7a3d95d1b2d102b04d09a2ded3458298918ca4dbadae6ce61b",
+            "original_study_id": "000000000047:f80c28b5bb9bb14a19f3f0bdc8145e1c92e9e22d6542ba75949829215ad6bebf",
+            "original_study_sha256": "82f32798482852b7e4fdd49d6648110b5f2ab38e07081dddc735d20ed0bf96f5",
+            "original_forecast_sha256": "3287faf94715b414d0e6d1feb55bb74a467d384e43b9bbb6cb9475ee060b278d"
+          },
+          {
+            "canonical_group_id": "549d254401b5c9edeec8406ced6982ca141c01169eeccb0a23c6b791276ca993",
+            "dependency_tags": [
+              "economic-series:IHYQ"
+            ],
+            "descriptor": {
+              "domain": "economics",
+              "resolution_reference": "https://www.ons.gov.uk/economy/grossdomesticproductgdp/bulletins/gdpfirstquarterlyestimateuk/previousreleases",
+              "series_id": "IHYQ",
+              "target_period": "2026 Q3"
+            },
+            "evidence_lineages": [
+              "ONS:IHYQ:current-vintage"
+            ],
+            "forecast_id": "5c593205b4b3d259b97a2ca71cff67c1bd5af08747862a2ddc3c18892ae7597e",
+            "original_study_id": "000000000047:f80c28b5bb9bb14a19f3f0bdc8145e1c92e9e22d6542ba75949829215ad6bebf",
+            "original_study_sha256": "82f32798482852b7e4fdd49d6648110b5f2ab38e07081dddc735d20ed0bf96f5",
+            "original_forecast_sha256": "de6c8cfd3ee31d20271655b34d8dc7722ced70681ebe2d3beb88e09cdd499a6d"
+          }
+        ],
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      "same_cohort_disagreements": [
+        {
+          "cohort_id": "15305de59ee105bb4b7b140bdf0c5546b85d26faa0f00af1c43e34e87affae65",
+          "forecast_ids": [
+            "595cf818cb4b51bec70858de3abc1674b8a96691a939c973bc09044f366d54e6",
+            "f1662a8afa4c01a45880382b97c672be0cb253fb1dc99ddf28dcd7abde5201f3"
+          ],
+          "model_ids": [
+            "metar-diurnal-analog-v24.1",
+            "metar-recent-climatology-v24.1"
+          ],
+          "probability_range": 0.03448275862068966,
+          "independent_confirmation_count": null,
+          "ensemble_probability": null
+        },
+        {
+          "cohort_id": "166e08af244e5192f91839ba526d568c0f7f1139c0ba3e738e303dda5ee51207",
+          "forecast_ids": [
+            "4aa60ff4a719008fe5b3495364e5c6d2cd6e72b8a14e248377d91190afc46dcd",
+            "a708d409a817b55a3415d7e2b8a90001c8525a7ae26ddf04d4fea7341a5f9292"
+          ],
+          "model_ids": [
+            "nba-causal-elo-v24.1",
+            "nba-team-frequency-v24.1"
+          ],
+          "probability_range": 0.20100963478162515,
+          "independent_confirmation_count": null,
+          "ensemble_probability": null
+        },
+        {
+          "cohort_id": "23c473337552b187fd26f0da913fe0939604cda529181dfac1412ee4e8fb2c6c",
+          "forecast_ids": [
+            "8e3d55b875d863b0d0808a66e9b066eddc1f8ce28d225144613e01c97f9f0af8",
+            "e4741d8b03db567d0d405968b5d025b22d10335b4b278540e5559fea7d779b7f"
+          ],
+          "model_ids": [
+            "metar-diurnal-gaussian-v25.1",
+            "metar-recency-kernel-v25.1"
+          ],
+          "probability_range": 0.06308385264490951,
+          "independent_confirmation_count": null,
+          "ensemble_probability": null
+        },
+        {
+          "cohort_id": "2a0db1e6f04bc34cb5f0db2943b35ee86d6f1b9312a4ae41d66fa56a9483292a",
+          "forecast_ids": [
+            "20b6664de26e7f6193a4f58436658b1c32cbfc00a23d62c6463807ea4fb1d9ff",
+            "56c1d12946ca26dc5e0ce80b3a93cf3bd03de5be734e6921aef3aee9e19ee976"
+          ],
+          "model_ids": [
+            "nfl-davidson-team-strength-v23.1",
+            "nfl-ternary-frequency-v23.1"
+          ],
+          "probability_range": 0.013114719737394864,
+          "independent_confirmation_count": null,
+          "ensemble_probability": null
+        },
+        {
+          "cohort_id": "2d55e15f65d7752fa877021272bd631a347400eab46ba3f4ca53a5434c36d062",
+          "forecast_ids": [
+            "1869017d817ebc7a3d95d1b2d102b04d09a2ded3458298918ca4dbadae6ce61b",
+            "5c593205b4b3d259b97a2ca71cff67c1bd5af08747862a2ddc3c18892ae7597e"
+          ],
+          "model_ids": [
+            "uk-gdp-jeffreys-frequency-v25.1",
+            "uk-gdp-regularized-ar1-v25.1"
+          ],
+          "probability_range": 0.1882439200783006,
+          "independent_confirmation_count": null,
+          "ensemble_probability": null
+        },
+        {
+          "cohort_id": "538d75d66a8c28e802b5a9d8a848c55cc0a06943b1577c60c4b7248e81c92be1",
+          "forecast_ids": [
+            "0a0b7b345fe1ac7f6cc02f57deef4b460c42108baaaec4d1a44476686b8da041",
+            "fe4ddc98e6d8354da63e5b9da70bd8ecf5fc4dc4a3e79e414e97b6ccd59cccf7"
+          ],
+          "model_ids": [
+            "empirical-ohlc-block-bootstrap-v23.1",
+            "gaussian-first-passage-v23.1"
+          ],
+          "probability_range": 7.643124000879053e-11,
+          "independent_confirmation_count": null,
+          "ensemble_probability": null
+        },
+        {
+          "cohort_id": "591428fef8cf9ae4cd695ffbecb677e20901a25fb426124c8171c8d75b383fe6",
+          "forecast_ids": [
+            "1f1fb174f73827ee35c3a5165aeb4361da0cee3be5f04ebebb46701859cb8843",
+            "daa6a47a6c4120b5a9eb3faf4110f6ead52a1aa00dc1cdc5a150a460b22ae1bf"
+          ],
+          "model_ids": [
+            "nhl-beta-frequency-v25.1",
+            "nhl-causal-elo-v25.1"
+          ],
+          "probability_range": 0.06813670291404672,
+          "independent_confirmation_count": null,
+          "ensemble_probability": null
+        },
+        {
+          "cohort_id": "5c00f1c0386edcfccf93f6904dd64fa60d8ea94801f0d1579fd7cfe786417310",
+          "forecast_ids": [
+            "0eece2c81e86f7d86eb31991596f705fb5a425f83e3c41f7d91637870fffba86",
+            "e22b5c4dec815b9ddac03dc3726bcfc45d4a320e7c88dbd70bdcc2e30b20d1cf"
+          ],
+          "model_ids": [
+            "nhl-beta-frequency-v25.1",
+            "nhl-causal-elo-v25.1"
+          ],
+          "probability_range": 0.11736160876970891,
+          "independent_confirmation_count": null,
+          "ensemble_probability": null
+        },
+        {
+          "cohort_id": "5f1b2e814e181e8ff54699ec21ad0408a35ff9f71733e9332ad77ceb7557453a",
+          "forecast_ids": [
+            "0a123b60661e4107146bfcd6fe6c1186aa27d3b34b278806add61ebddaab5f59",
+            "e50b569e42c954b6fc5819bf7f9f2987048d164330e31dc9d79d1cf808891524"
+          ],
+          "model_ids": [
+            "metar-diurnal-gaussian-v25.1",
+            "metar-recency-kernel-v25.1"
+          ],
+          "probability_range": 0.0176695348882894,
+          "independent_confirmation_count": null,
+          "ensemble_probability": null
+        },
+        {
+          "cohort_id": "64afa3b98e9e712edcbd9d883f18606cc5aa2d645e90226815ae84e24ee5e6b3",
+          "forecast_ids": [
+            "3fee7d83f1f6e38ecdb2258c618acccdca0335f9a9d1b631d40ce8b827c0c481",
+            "4efabf715151a98029c13e0e56f7236a2cb1537504e3dce6ef5970365f93cbbe"
+          ],
+          "model_ids": [
+            "spx-gaussian-logreturn-direction-v25.1",
+            "spx-weekday-beta-direction-v25.1"
+          ],
+          "probability_range": 0.08813037835514193,
+          "independent_confirmation_count": null,
+          "ensemble_probability": null
+        },
+        {
+          "cohort_id": "64fa39f7228cb3b7b5a26c55c74ca9283b66db3549220dd58d4a53bdfe698b41",
+          "forecast_ids": [
+            "61197ec13abe715c58818c60408a6adb87179c16989e28ef71d357663e682259",
+            "a00081ac7060afde2ca26ae103a9232ef2c4c1f12f3086fc5b9ffa8620219b64"
+          ],
+          "model_ids": [
+            "nfl-davidson-team-strength-v23.1",
+            "nfl-ternary-frequency-v23.1"
+          ],
+          "probability_range": 0.018508184643521886,
+          "independent_confirmation_count": null,
+          "ensemble_probability": null
+        },
+        {
+          "cohort_id": "65bf8e3639b3731540523460f883ddd56bae9cbdc04d5473e7f5f7ab9fd71723",
+          "forecast_ids": [
+            "abc6129d8cb2b71e6695284f2091a272aceeee299ddc7d540060b36efa43f118",
+            "f70b15892c1397bdb9655f8864bd48634f7104d7e788f1d5d9400dd30aed0bdf"
+          ],
+          "model_ids": [
+            "nhl-beta-frequency-v25.1",
+            "nhl-causal-elo-v25.1"
+          ],
+          "probability_range": 0.004083182866813528,
+          "independent_confirmation_count": null,
+          "ensemble_probability": null
+        },
+        {
+          "cohort_id": "65e2ba8fb37f71bf88577824cda1c97d632466f7726c4f0acfb6295115a5c607",
+          "forecast_ids": [
+            "531d2afdf2e9eab47e4d2eb2c03303905d845b772c8038b917071e39efe341ac",
+            "f41bfbe6a81385d04fa5bc13cf8f1ec0225ca856b132fec926d9f8bf90459d8d"
+          ],
+          "model_ids": [
+            "empirical-ohlc-block-bootstrap-v23.1",
+            "gaussian-first-passage-v23.1"
+          ],
+          "probability_range": 0.021795141856817964,
+          "independent_confirmation_count": null,
+          "ensemble_probability": null
+        },
+        {
+          "cohort_id": "68f400d8a699d7e5e9899304804ad97786bc86331b99dea769bb71359b90ae7b",
+          "forecast_ids": [
+            "e1eaf48c65154f5d4cb1551ac8d28c76e6bb62265ea46c7ff9f335c763433b45",
+            "ed04ab0f36cd9a06873f5cfaac6bd5aee03918e22eac9f21438bedeaeb44e85b"
+          ],
+          "model_ids": [
+            "nfl-davidson-team-strength-v23.1",
+            "nfl-ternary-frequency-v23.1"
+          ],
+          "probability_range": 0.07914255777865592,
+          "independent_confirmation_count": null,
+          "ensemble_probability": null
+        },
+        {
+          "cohort_id": "7712ac2719197b410e0a654ea9b2a482ea95977ee398bc728d2c1dee1275bed4",
+          "forecast_ids": [
+            "8792b2ed37af142f0c80a1b1a1e3f9e32cc925ef0db20f25b6e459c35b18d6a0",
+            "c4cbfe396edc4b1d28b9328a4324c6042156bb90bd06512f9e4e90427bece4b4"
+          ],
+          "model_ids": [
+            "nba-causal-elo-v24.1",
+            "nba-team-frequency-v24.1"
+          ],
+          "probability_range": 0.018597955173147773,
+          "independent_confirmation_count": null,
+          "ensemble_probability": null
+        },
+        {
+          "cohort_id": "77bb822001941e90455f25a8b532fcc6872c6549069757380e6b486679092a81",
+          "forecast_ids": [
+            "6913fad24cdd887663431170beb9a54dc4144150159bf24b4f9f20696474749b",
+            "8eb011736ffd110150e40e982a2344a2e161438a740eeed99c81af81e89f816e"
+          ],
+          "model_ids": [
+            "nhl-beta-frequency-v25.1",
+            "nhl-causal-elo-v25.1"
+          ],
+          "probability_range": 0.17378233489262862,
+          "independent_confirmation_count": null,
+          "ensemble_probability": null
+        },
+        {
+          "cohort_id": "8e2d4ff091a1c4fc950791a4f7e590a794a16a174cce47c8f21e920418a1ae22",
+          "forecast_ids": [
+            "04b1fc89a32e86c29cdb7e32fd3a1b6b6a56dd87536862444a2bb4cf79d65609",
+            "8fd59e4ba5a052d2285e6174cb4ead00ad847aa1336e25da857d94becb34dd50"
+          ],
+          "model_ids": [
+            "metar-diurnal-gaussian-v25.1",
+            "metar-recency-kernel-v25.1"
+          ],
+          "probability_range": 0.0705923570423066,
+          "independent_confirmation_count": null,
+          "ensemble_probability": null
+        },
+        {
+          "cohort_id": "92d043390ee1b9beab25dd4c59550f304508755707ce5da1515f5e12b7058ee9",
+          "forecast_ids": [
+            "5706f728a9caa514561d503dd37802f514fda9a3ba54c5befdaca93e25b857d8",
+            "e564a5e724b8e330cf169a99b32431ab59b7fa8c0decd70d940f6417ef6a2653"
+          ],
+          "model_ids": [
+            "metar-diurnal-analog-v24.1",
+            "metar-recent-climatology-v24.1"
+          ],
+          "probability_range": 0.034482758620689724,
+          "independent_confirmation_count": null,
+          "ensemble_probability": null
+        },
+        {
+          "cohort_id": "a15400660c5daa175eabe1bd9695b52149acc9c54fa222153324176e098aa858",
+          "forecast_ids": [
+            "52306f6369cc6b264136d14150651daeec6004b2192c3f5e90bf56bc72a64745",
+            "c0cee1cccc91a4464f38711b4df8171bfe6b2c21f22ceaa2a2b36c72be69f37c"
+          ],
+          "model_ids": [
+            "nba-causal-elo-v24.1",
+            "nba-team-frequency-v24.1"
+          ],
+          "probability_range": 0.14926337803918677,
+          "independent_confirmation_count": null,
+          "ensemble_probability": null
+        },
+        {
+          "cohort_id": "a48fcbb3851e408b62bfa50e8a7fecebe6bdbf93b0c4471d6272932e82c3a12c",
+          "forecast_ids": [
+            "03eccbcbaea7c3cfda2daacb51d4a9631483dbb3e04b751347e030c6c6f471bf",
+            "337f3f1a622cac4a4038bc513642a3733147cb0186dbcdf86ca7bf9f1bcebe00"
+          ],
+          "model_ids": [
+            "fomc-recent-policy-shrinkage-v24.1",
+            "fomc-scheduled-policy-frequency-v24.1"
+          ],
+          "probability_range": 0.07291666666666663,
+          "independent_confirmation_count": null,
+          "ensemble_probability": null
+        },
+        {
+          "cohort_id": "b126ce32c57c270b0f7c1139e9dcf089a83a18f4587886767b3c532aa26b9fa2",
+          "forecast_ids": [
+            "35e3d00f55cdd4514a5d4f5e8676af14e15a0c5fb33052139456504e86cc0d03",
+            "e5f9e19433c0f9cc0df0c0bc5732130f05c09f9a1b2791dde95ce243eb2176ae"
+          ],
+          "model_ids": [
+            "nfl-davidson-team-strength-v23.1",
+            "nfl-ternary-frequency-v23.1"
+          ],
+          "probability_range": 0.035693975055049454,
+          "independent_confirmation_count": null,
+          "ensemble_probability": null
+        },
+        {
+          "cohort_id": "c59700cc42892e610fffd751a56d1a54e0e914fb0db94a2b744635b834daa1ab",
+          "forecast_ids": [
+            "a332449a68aecd94d3618b0ba46d1c3fa964aca61d8d79e2f99eb90683cc5e90",
+            "bd292c2c1382a9c3bcd33acf912c975416fd3e76fb90efdb2dad591d017f462e"
+          ],
+          "model_ids": [
+            "nfl-davidson-team-strength-v23.1",
+            "nfl-ternary-frequency-v23.1"
+          ],
+          "probability_range": 0.05903219886814909,
+          "independent_confirmation_count": null,
+          "ensemble_probability": null
+        },
+        {
+          "cohort_id": "c948ccfee081fe213f5767558b353f73ff8e3e242ddf741f990d197f5d126a84",
+          "forecast_ids": [
+            "02f142a6e4c574a16fb38a28d69493b17f71e13514118eaeaebe86a93cc119c3",
+            "7af31a3d7ac5aa9333dd07e895295ef0a04e61258ce8c42f170fb9d9c792f72f"
+          ],
+          "model_ids": [
+            "empirical-ohlc-block-bootstrap-v23.1",
+            "gaussian-first-passage-v23.1"
+          ],
+          "probability_range": 0.006578119531118994,
+          "independent_confirmation_count": null,
+          "ensemble_probability": null
+        },
+        {
+          "cohort_id": "cbb71f5aa92b80902ec885f5d302712904e5c272da220827258e14ffe818e0d7",
+          "forecast_ids": [
+            "51a5412fe5fc770aaaa619397d22436a4a10294b537a18a3b494c10a6e84df24",
+            "80a35f2104915f6bf574ea6cb867b3017f4e65067c5831ffaa4c1bc75959bc0a"
+          ],
+          "model_ids": [
+            "nfl-davidson-team-strength-v23.1",
+            "nfl-ternary-frequency-v23.1"
+          ],
+          "probability_range": 0.0014961115119420665,
+          "independent_confirmation_count": null,
+          "ensemble_probability": null
+        },
+        {
+          "cohort_id": "eb66421e778bc4dbe476c512d524f2e5f1c7eabbefdc38915f6bf853102a032b",
+          "forecast_ids": [
+            "4944da6a9d9f3c61804801b151e71f64d0adac29f1515bdae21207f204265ad6",
+            "6f5faa2b27a09d1bbcebe464e4643be8649ce0f078817993a97d06ea00256c1f"
+          ],
+          "model_ids": [
+            "nhl-beta-frequency-v25.1",
+            "nhl-causal-elo-v25.1"
+          ],
+          "probability_range": 0.02305810992176416,
+          "independent_confirmation_count": null,
+          "ensemble_probability": null
+        },
+        {
+          "cohort_id": "ef934c838392ffade6c56ec558a8d1c9717f58d949237c747e5e92930f8a4173",
+          "forecast_ids": [
+            "ae4d02bf4ca7faf6fddcb3602b1ba95b67a4896817100e9acbbfe7bc987e78a0",
+            "e41bcbf7c9b679b81c906bdc06262a5f61ed87f242286a4f971f36371fa32144"
+          ],
+          "model_ids": [
+            "nba-causal-elo-v24.1",
+            "nba-team-frequency-v24.1"
+          ],
+          "probability_range": 0.02799680811390315,
+          "independent_confirmation_count": null,
+          "ensemble_probability": null
+        },
+        {
+          "cohort_id": "f6e80293dfe35d865e94ecc321df54ef17a0d0f863c31004b5b2c02c7ee80b1c",
+          "forecast_ids": [
+            "150da3be94e737bf14bacf3a2c2f43191a2c2efa121633cc581a806ad26033a5",
+            "519b01a53051dbfb27496477b4c67b1deebc0f8115ffabcf3bf0dd74623a7de0"
+          ],
+          "model_ids": [
+            "nba-causal-elo-v24.1",
+            "nba-team-frequency-v24.1"
+          ],
+          "probability_range": 0.14400915024182126,
+          "independent_confirmation_count": null,
+          "ensemble_probability": null
+        },
+        {
+          "cohort_id": "f77fc13a18fa8e1eaaf32234f32111bc3f0647c3177fea045b7fa4b63b140515",
+          "forecast_ids": [
+            "c5ef1ff867e5cb344fe61a04480f87905c0318c3eff4180e432fe7288b376eae",
+            "f0d49f90fb4348a4af7d3b4b29bd0714004010fe854107f082c51582004348f5"
+          ],
+          "model_ids": [
+            "nba-causal-elo-v24.1",
+            "nba-team-frequency-v24.1"
+          ],
+          "probability_range": 0.02231262880568685,
+          "independent_confirmation_count": null,
+          "ensemble_probability": null
+        },
+        {
+          "cohort_id": "fb630598ce42ed6a8fee4806f391fbc6a6ebcfb54cc34dcf7620624627a2d2f6",
+          "forecast_ids": [
+            "59a35c6a3e3991200a58a63e72985fa26c6417a32ba795547af4a3c49a252010",
+            "f130aa0b068f36e66c6805d47736a2c8eaea5153a2157f17b3ed10e59ddb284f"
+          ],
+          "model_ids": [
+            "nba-causal-elo-v24.1",
+            "nba-team-frequency-v24.1"
+          ],
+          "probability_range": 0.16423704208740597,
+          "independent_confirmation_count": null,
+          "ensemble_probability": null
+        },
+        {
+          "cohort_id": "ffb6fe309a366d2efa5314eebb13f8fce6f5e6d94118713586392d65af0cb6eb",
+          "forecast_ids": [
+            "467c5c49e29a942e0b52119be3a153cb1ac48a2da5d7e4a75cdbe4f70fdb8411",
+            "60565e2eefb6c260a9c769a75059569c3e251081d302794c9a2ac92fe8234545"
+          ],
+          "model_ids": [
+            "nfl-davidson-team-strength-v23.1",
+            "nfl-ternary-frequency-v23.1"
+          ],
+          "probability_range": 0.02097443291521317,
+          "independent_confirmation_count": null,
+          "ensemble_probability": null
+        }
+      ],
+      "sii": {
+        "qualified_pairs": 0,
+        "resolved_pairs": [],
+        "incremental_predictive_value": null,
+        "reason": "independent causal feature and outcome pair replay required; flags never qualify"
+      },
+      "ensemble": {
+        "weights": null,
+        "probabilities": null,
+        "reason": "event-disjoint calibration not established"
+      },
+      "research_only": true,
+      "trading_authority": false,
+      "certification_authority": false
+    },
+    "domains": {
+      "crypto": 6,
+      "sports": 38,
+      "economics": 4,
+      "weather": 10,
+      "finance": 2
+    },
+    "rejections": {},
+    "certification_requirements": {
+      "training_independent_events": 100,
+      "heldout_independent_events": 100
+    },
+    "sii_incremental_value": null,
+    "view_scope": "complete anchored indexed P23/P24/P25 registries; bootstrap/progress explicit; legacy Phase18/13 separately reconciled",
+    "research_only": true,
+    "trading_authority": false,
+    "certification_authority": false,
+    "projection": {
+      "anchor": {
+        "schema_version": "1.0",
+        "id": "projection:ced7aed93ba96a9ea6e5c02efedcb70d5f6d62c882dc0f41bc50ea59504b72a1:7cb83d945ba18410bd67c1b20268aff57db9ef692fd4ce9cec4ee8205f381e12",
+        "timestamp": "2026-11-08T01:48:18.853856Z",
+        "available_at": "2026-11-08T01:48:18.853856Z",
+        "source": "neraium-poly/research-projection/v26",
+        "index_id": "ced7aed93ba96a9ea6e5c02efedcb70d5f6d62c882dc0f41bc50ea59504b72a1",
+        "policy_sha256": "f10f138dfde8a2a7ef877010ff5c142d516c63be6474180444af2564abcd9e89",
+        "cursor": 183,
+        "cursor_id": "000000000049:8f2b29d2162b4a8f602ba92e1a412859d8c62be14299f5bfea88303715782c84",
+        "cursor_digest": "0d9056bd15f46d76d9aed7f95a6d45f775d53b3877d30013949ff0c75ae08b12",
+        "chain": "91adb5ff30d91af9bfff5ffd9be877afb974e0f2124c20fc1b114690711ea0fa",
+        "entries": 80,
+        "research_only": true,
+        "trading_authority": false,
+        "certification_authority": false
+      },
+      "progress": {
+        "processed_records": 10,
+        "read_bytes": 1240556,
+        "source_cursor": 183,
+        "source_head": 183,
+        "caught_up": true,
+        "anchor_id": "projection:ced7aed93ba96a9ea6e5c02efedcb70d5f6d62c882dc0f41bc50ea59504b72a1:7cb83d945ba18410bd67c1b20268aff57db9ef692fd4ce9cec4ee8205f381e12"
+      },
+      "scope": "all indexed P23/P24/P25 model registries; legacy Phase18/13 separate; bootstrap explicit",
+      "status": "caught_up",
+      "source_replay_policy": "independent replay on ingestion, checksummed original-source-anchored projection on render; not a full archive integrity scan"
+    }
+  }
+}

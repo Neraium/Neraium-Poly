@@ -41,13 +41,18 @@ def replay_domain_outcome(row,study,f,*,evidence_root,as_of,modules=None):
     members=[x for x in study.get('forecasts',[]) if x.get('id')==f['id']]
     if len(members)!=1 or digest(members[0])!=digest(f):raise ValueError('unique immutable forecast membership required')
     module=modules[adapter] if modules is not None else importlib.import_module('neraium_poly.research.phase24.'+adapter)
-    if not hasattr(module,'replay_outcome'):raise ValueError('domain outcome replay implementation unavailable')
+    if row['result'].get('verification_protocol')=='official-sports-v26' and adapter=='sports':
+        from neraium_poly.research.phase26.outcomes import replay_sport_outcome
+        outcome_replay=replay_sport_outcome
+    else:
+        if not hasattr(module,'replay_outcome'):raise ValueError('domain outcome replay implementation unavailable')
+        outcome_replay=module.replay_outcome
     byid={e['id']:e for e in study.get('evidence',[])}
     if len(byid)!=len(study.get('evidence',[])):raise ValueError('duplicate outcome source evidence identity')
     evidence=[byid[x] for x in f['evidence_ids']]
     replay=module.replay(f,evidence,as_of=as_of)
     if not isinstance(replay,dict) or replay.get('verified') is not True:raise ValueError('original domain model/source replay failed')
-    proof=module.replay_outcome(row['result'],study,f,evidence_root=Path(evidence_root)/adapter,as_of=as_of)
+    proof=outcome_replay(row['result'],study,f,evidence_root=Path(evidence_root)/adapter,as_of=as_of)
     if (not isinstance(proof,dict) or proof.get('verified') is not True or proof.get('forecast_id')!=f['id']
         or any(proof.get(k)!=f[k] for k in ('event_id','market_id','token_id','rules_sha256'))
         or not at(study['available_at'])<at(proof['resolved_at'])<=at(proof['available_at'])<=at(as_of)):
@@ -79,6 +84,9 @@ class DomainOutcomes:
 
     def _replay(self,*args,**kwargs):return replay_domain_outcome(*args,**kwargs)
 
+    def _due(self,p,now):
+        return at(p['end'])+(timedelta(hours=4) if p['adapter'] in ('legacy_nfl','sports') else timedelta())<=now
+
     async def step(self):
         now=at(self.clock())
         if not self.can_write() or self.state['last_at'] and (now-at(self.state['last_at'])).total_seconds()<300:return False
@@ -96,7 +104,7 @@ class DomainOutcomes:
                     s['pending'][f['id']]={'study_id':row['id'],'kind':kind,'adapter':adapter,'end':f['event_end_time']}
             if rows:s['source_heads'][kind]=rows[0]['id']
         self._commit(s,'index')
-        due=[(fid,p) for fid,p in s['pending'].items() if at(p['end'])+(timedelta(hours=4) if p['adapter'] in ('legacy_nfl','sports') else timedelta())<=now]
+        due=[(fid,p) for fid,p in s['pending'].items() if self._due(p,now)]
         for fid,p in sorted(due,key=lambda x:s['checked'].get(x[0],''))[:2]:
             if not self.can_write():return False
             s=deepcopy(self.state);study=original(self.store,p['study_id']);f=next(x for x in study['forecasts'] if x['id']==fid)
