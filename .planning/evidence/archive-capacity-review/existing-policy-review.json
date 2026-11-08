@@ -1,0 +1,42 @@
+{
+  "schema_version": "phase18-shared-capacity-v1",
+  "approved": false,
+  "status": "blocked",
+  "reasons": [
+    "targets_cannot_preserve_protected_free_reserve"
+  ],
+  "service_roots": {
+    "collector": {
+      "path": "/home/ubuntu/Neraium-Poly/data/paper-live",
+      "device": 66305,
+      "inode": 5284604,
+      "current_usage_bytes": 18163764492,
+      "target_budget_bytes": 214748364800
+    },
+    "experimental": {
+      "path": "/home/ubuntu/Neraium-Poly/data/experimental-paper",
+      "device": 66305,
+      "inode": 5549473,
+      "current_usage_bytes": 8732700746,
+      "target_budget_bytes": 214748364800
+    }
+  },
+  "filesystem_capacity_bytes": 1038993555456,
+  "filesystem_available_bytes": 483939053568,
+  "protected_free_reserve_bytes": 107374182400,
+  "current_combined_service_bytes": 26896465238,
+  "target_combined_service_bytes": 429496729600,
+  "incremental_maximum_service_growth_bytes": 402600264362,
+  "projected_free_at_service_caps_bytes": 81338789206,
+  "temporary_headroom_bytes": 8589934592,
+  "shared_growth_reserve_bytes": 68719476736,
+  "projected_free_after_all_headrooms_bytes": 4029377878,
+  "headroom_above_protected_floor_bytes": -103344804522,
+  "nonservice_and_filesystem_overhead_used_bytes": 528158036650,
+  "accounting_scope": "all service-root logical file bytes; existing shared use already in available-space observation",
+  "other_workload_warning": "Future unrelated growth can invalidate this snapshot; live global floor must remain enforced",
+  "preallocation_performed": false,
+  "configuration_changed": false,
+  "infrastructure_change_authority": false,
+  "deletion_authority": false
+}

@@ -1,0 +1,54 @@
+{
+  "observed_at": "2026-11-08T03:59:21.111122+00:00",
+  "authorized_target_gib": {
+    "collector": 200,
+    "experimental": 200,
+    "combined": 400,
+    "filesystem_reserve": 100
+  },
+  "services": {
+    "collector": {
+      "usage_bytes": 18163170548,
+      "budget_bytes": 214748364800,
+      "global_floor_bytes": 107374182400,
+      "growth_bytes_per_second": 50351.088382249676,
+      "health": "ok",
+      "measurement_at": "2026-11-08T03:59:01.422055+00:00",
+      "measurement_age_seconds": 19.708893,
+      "measurement_status": "cached",
+      "last_error": null,
+      "retention_policy": "retain_all_originals_and_verified_copies",
+      "cash": 500.0,
+      "conditional_current_budget_runway_days": 45.18852865434781
+    },
+    "experimental": {
+      "usage_bytes": 8730700438,
+      "budget_bytes": 107374182400,
+      "global_floor_bytes": 107374182400,
+      "growth_bytes_per_second": 83103.94354188138,
+      "health": "ok",
+      "measurement_at": "2026-11-08T03:59:20.590675+00:00",
+      "measurement_age_seconds": 0.812256,
+      "measurement_status": "cached",
+      "last_error": null,
+      "retention_policy": "retain_all_originals_and_verified_copies",
+      "cash": 496.11522059829053,
+      "conditional_current_budget_runway_days": 13.738300717070047
+    }
+  },
+  "configuration_sha256": {
+    "paper-live.example.json": "b21cf19de81a4b422cddefe15b82998935e3399b5ea8b523f28fd70fb06f2376",
+    "experimental-paper.example.json": "6e5dda16b3e19efcb3c45d09aee46afff2f1fd5151b0458a09f6b1a57ed02a44"
+  },
+  "filesystem_capacity_bytes": 1038993555456,
+  "filesystem_available_bytes": 483939053568,
+  "current_combined_archive_bytes": 26893870986,
+  "additional_capacity_to_full_target_bytes": 402602858614,
+  "free_after_full_target_bytes": 81336194954,
+  "required_free_before_expansion_bytes": 509977041014,
+  "capacity_shortfall_bytes": 26037987446,
+  "fully_backed_combined_budget_with_100gib_reserve_bytes": 403458742154,
+  "applied": false,
+  "decision": "unchanged: full 400GiB combined target cannot be backed while preserving100GiB reserve",
+  "software_constraint": "ExperimentalSettings.archive_budget_mb currently caps at131072MiB(128GiB); no change made while capacity prerequisite fails"
+}

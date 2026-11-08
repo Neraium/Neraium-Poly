@@ -1,0 +1,18 @@
+{
+  "observed_at": "2026-11-08T04:00:15.561479+00:00",
+  "configuration_unchanged": {
+    "paper-live.example.json": true,
+    "experimental-paper.example.json": true
+  },
+  "account_integrity": {
+    "paper-live/risk.sqlite": "ok",
+    "paper-live/broker.sqlite": "ok",
+    "experimental-paper/risk.sqlite": "ok",
+    "experimental-paper/broker.sqlite": "ok"
+  },
+  "applied": false,
+  "services_restarted": false,
+  "live_trading_enabled": false,
+  "services": "MainPID=3357796\nNRestarts=1\nCPUQuotaPerSecUSec=1s\nMemoryMax=1073741824\nActiveState=active\n\nMainPID=3357608\nNRestarts=0\nCPUQuotaPerSecUSec=1s\nMemoryMax=2147483648\nActiveState=active\n",
+  "focused_tests": ".....                                                                    [100%]\n5 passed in 1.39s\n"
+}
