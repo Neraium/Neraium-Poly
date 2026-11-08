@@ -1,0 +1,75 @@
+{
+  "observed_at": "2026-11-08T19:33:04.773609+00:00",
+  "scope": "metadata-only public-source feasibility observations; no canonical event labels, no dataset redistribution or live use authorization",
+  "official_documentation": "https://github.com/binance/binance-public-data",
+  "official_dataset_terms": "https://raw.githubusercontent.com/binance/binance-public-data/master/TERMS_AND_CONDITIONS.md",
+  "license_findings": {
+    "published_version": "1.0",
+    "last_updated": "2026-08-26",
+    "license": "CC BY-NC-SA 4.0",
+    "live_platform_access_authorized": false,
+    "required_gate": "explicit eligible noncommercial/nonproduction scope or separate commercial license evidence plus independent review callback",
+    "source_acquisition_default": "closed before HTTP/directory creation"
+  },
+  "actual_forecast_inventory": {
+    "crypto_forecasts": 24,
+    "calendar_matured_forecasts": 8,
+    "native_parent_events": 2,
+    "exact_windows": "2026-11-07T05:00:00Z through 2026-11-08T05:00:00Z",
+    "symbols": [
+      "BTCUSDT",
+      "ETHUSDT"
+    ]
+  },
+  "provider_observations": {
+    "BTC_UTC2026_11_07": {
+      "zip_http_status": 200,
+      "compressed_bytes": 63418,
+      "sha256": "d8e0793619a103b346b362b2192932937c76c50ae9c63dc0aae6833b7b5b2214",
+      "official_checksum_http_status": 200,
+      "official_checksum_matches": true,
+      "timestamp_unit_observed": "microseconds",
+      "relevant_ET_prefix_minutes": 1140,
+      "prefix_low": 75571.08,
+      "barrier_thresholds": [
+        75000,
+        74000
+      ],
+      "prefix_barrier_hit": false
+    },
+    "ETH_UTC2026_11_07": {
+      "zip_http_status": 200,
+      "checksum_independently_checked": false,
+      "relevant_ET_prefix_minutes": 1140,
+      "prefix_low": 2223.15,
+      "barrier_thresholds": [
+        2200,
+        2100
+      ],
+      "prefix_barrier_hit": false
+    },
+    "UTC2026_11_08_required_remainder": {
+      "symbols": [
+        "BTCUSDT",
+        "ETHUSDT"
+      ],
+      "observed_archive_http_status": 404,
+      "meaning": "required00\u201305Z remainder is not yet published; no NO label may be inferred"
+    },
+    "original_api": {
+      "source": "https://api.binance.com/api/v3/klines",
+      "observed_status": 451,
+      "alternate_venue_or_host_attempted": false
+    }
+  },
+  "outcomes_verified": 0,
+  "native_payouts_verified": 0,
+  "certified_events": 0,
+  "code_implemented": "checksummed bounded full-UTC-day 1m archive parser, strictmicrosecond/ms semantics, exact ETwindow, firsthitprospectivity, independent originalmodel replay, marketbaseline scoring only supportedunconditional target; explicit license gate stays closed",
+  "limitations": [
+    "Full NO requires completeexactETday; officialnextUTCdayarchive absent",
+    "Onlyfrozenmodel-supportedBTCUSDT/ETHUSDT daily-low contracts; no inventedSOL/terminal-close capability",
+    "No source fallback after access restriction",
+    "Independent historical archive revisions remain versioned observations, not native settlement proof"
+  ]
+}
