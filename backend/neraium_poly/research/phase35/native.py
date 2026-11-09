@@ -10,6 +10,7 @@ from __future__ import annotations
 import hashlib
 import json
 import re
+import shutil
 from datetime import UTC, datetime
 from pathlib import Path
 
@@ -164,6 +165,12 @@ def verify_native_bundle(bundle):
 class NativeResearchClient(ReadOnlySettlementClient):
     """Extends existing bounded evidence capture with allowlisted eth_call only."""
 
+    def __init__(self, directory, **kwargs):
+        super().__init__(directory, **kwargs)
+        if shutil.disk_usage(self.directory).free < 100 * 1024**3 + self.max_bytes:
+            self.client.close()
+            raise ValueError("protected 100 GiB filesystem reserve")
+
     def call(self, target, name, block_hash, *args):
         target, data = call_key(target, name, *args)
         if target not in (CTF, NEG_RISK) or (target == NEG_RISK and name != "wrapped_collateral"):
@@ -299,6 +306,8 @@ def replay_native_directory(directory):
         if hashlib.sha256(raw).hexdigest() != entry["response_sha256"]:
             raise ValueError("RPC evidence hash mismatch")
         result = json.loads(raw)
+        if entry.get("status") != 200:
+            raise ValueError("unsuccessful evidence HTTP response")
         if entry["method"] == "GET":
             native[entry["url"]] = result
             continue
