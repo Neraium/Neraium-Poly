@@ -1,0 +1,74 @@
+{
+  "accounts": {
+    "experimental": {
+      "account_id": "experimental-paper",
+      "bankroll": 496.11522059829053,
+      "cash": 496.11522059829053,
+      "fills": 10,
+      "kill_switch": false,
+      "open_positions": 0,
+      "orders_submitted": 13,
+      "simulated_pnl": -3.8847794017094657
+    },
+    "port_18742_paper_state": {
+      "bankroll": 500.0,
+      "cash": 500.0,
+      "kill_switch": null,
+      "open_positions": null,
+      "simulated_pnl": 0.0
+    }
+  },
+  "archive": {
+    "budget_bytes": 161061273600,
+    "free_bytes": 377886883840,
+    "global_floor_bytes": 107374182400,
+    "growth_bytes_per_second": 96616.2534322775,
+    "health": "ok",
+    "usage_bytes": 18099207411
+  },
+  "baseline_commit": "6223425",
+  "branch": "phase36-edge-validation",
+  "captured_at": "2026-11-09T01:45:51Z",
+  "metadata_identity_conflict_count": 44,
+  "outcomes": {
+    "certified_heldout_events": 0,
+    "certified_training_events": 0,
+    "distinct_official_event_groups": 9,
+    "verified_forecast_labels": 22
+  },
+  "safety": {
+    "certified_threshold_modified": false,
+    "experimental_emergency_stop": false,
+    "live_trading_enabled": false
+  },
+  "services": {
+    "collector_process_observed": true,
+    "experimental": {
+      "account_id": "experimental-paper",
+      "fee_error": null,
+      "last_error": null,
+      "last_ingestion_age_seconds": 2.380394,
+      "last_ingestion_at": "2026-11-09T01:45:48.819536+00:00",
+      "live_trading_enabled": false,
+      "paper_trading": true,
+      "status": "ok",
+      "timestamp": "2026-11-09T01:45:51.199930+00:00",
+      "validation_status": "unvalidated"
+    },
+    "paper_dashboard_status_http_200": true
+  },
+  "supplemental_book_watcher": {
+    "last_error": "supplemental_token_identity_conflict",
+    "last_qualified_at": "2026-11-09T01:19:48.398469+00:00",
+    "qualified_books": 0,
+    "quarantined_tokens": 1,
+    "status": "degraded",
+    "subscribed_tokens": 0
+  },
+  "weather": {
+    "calibration_status": "unvalidated_research",
+    "forecasts": 6,
+    "native_parents": 3,
+    "pending_forecasts": 6
+  }
+}

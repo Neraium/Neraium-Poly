@@ -1,0 +1,65 @@
+{
+  "account": {
+    "account_id": "experimental-paper",
+    "bankroll": 496.11522059829053,
+    "cash": 496.11522059829053,
+    "fills": 10,
+    "kill_switch": false,
+    "open_positions": 0,
+    "orders_submitted": 13,
+    "simulated_pnl": -3.8847794017094657
+  },
+  "archive": {
+    "budget_bytes": 161061273600,
+    "free_bytes": 376822317056,
+    "global_floor_bytes": 107374182400,
+    "growth_bytes_per_second": 110812.04906617088,
+    "health": "ok",
+    "usage_bytes": 18127361871
+  },
+  "captured_at": "2026-11-09T01:49:41.444152+00:00",
+  "experimental_cgroup": {
+    "main_pid": 3689333,
+    "memory_current": "2025975808",
+    "memory_events": "low 0\nhigh 0\nmax 9620\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+    "memory_peak": "2148040704"
+  },
+  "experimental_service": {
+    "account_id": "experimental-paper",
+    "fee_error": null,
+    "last_error": null,
+    "last_ingestion_age_seconds": 3.979076,
+    "last_ingestion_at": "2026-11-09T01:49:37.385563+00:00",
+    "live_trading_enabled": false,
+    "paper_trading": true,
+    "status": "ok",
+    "timestamp": "2026-11-09T01:49:41.364639+00:00",
+    "validation_status": "unvalidated"
+  },
+  "filesystem": "/dev/root           968G  617G      351G  64% /",
+  "live_trading_enabled": false,
+  "metadata_identity_conflicts": 51,
+  "observation_seconds": 230.444152,
+  "other_paper_state": {
+    "bankroll": 500.0,
+    "cash": 500.0,
+    "kill_switch": null,
+    "open_positions": null,
+    "simulated_pnl": 0.0
+  },
+  "watcher": {
+    "identity_quarantine_saturated": null,
+    "last_error": "supplemental_token_identity_conflict",
+    "last_qualified_at": "2026-11-09T01:19:48.398469+00:00",
+    "qualified_books": 0,
+    "status": "degraded",
+    "subscribed_tokens": 0
+  },
+  "websocket": {
+    "gaps": 2301,
+    "messages": 24483,
+    "native_books_delivered": 34900,
+    "reconnects": 17,
+    "ws_connected": false
+  }
+}

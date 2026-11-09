@@ -32,7 +32,8 @@ class SupplementalBooks:
         self.feed=feed or CoverageFeed(OperationalPolymarketAdapter(clock=self.clock),max_tokens=max_tokens,
             concurrency=2,rate=2,queue_size=64,max_reconnects=8,max_gap_seconds=30)
         self._markets={};self._signature=None;self._task=None;self._closed=False;self._lock=asyncio.Lock()
-        self._quarantined={};self.counts=Counter();self.last_error=None;self.last_qualified_at=None
+        self._quarantined={};self._identity_quarantine_saturated=False
+        self.counts=Counter();self.last_error=None;self.last_qualified_at=None
         self._changed=asyncio.Event()
 
     def _reason(self,book,market,now):
@@ -56,32 +57,37 @@ class SupplementalBooks:
         if self._closed:raise ValueError('supplemental_watcher_closed')
         values=list(markets)
         if len(values)>self.max_tokens:raise ValueError('supplemental32_token_budget_required')
-        now=self.clock();selected={}
+        now=self.clock();selected={};ambiguous=set();identities={}
         for value in values:
             m=MarketSnapshot.model_validate(value.model_dump() if hasattr(value,'model_dump') else value)
             if m.exchange!='polymarket' or m.source!='https://gamma-api.polymarket.com' or not m.timestamp<=m.available_at<=now:
                 raise ValueError('authentic_causal_supplemental_metadata_required')
-            if m.token_id in selected and _identity(selected[m.token_id])!=_identity(m):
-                async with self._lock:
-                    await self.feed.stop_stream();self._task=None;self._signature=None;self._markets={}
-                    self.last_error='ambiguous_supplemental_token_identity';self.counts['metadata_identity_conflicts']+=1
-                raise ValueError(self.last_error)
+            if m.token_id in ambiguous:continue
+            identity=_identity(m)
+            if m.token_id in identities and identities[m.token_id]!=identity:
+                ambiguous.add(m.token_id);selected.pop(m.token_id,None);continue
+            identities[m.token_id]=identity
             if m.status=='active' and m.end_time and m.end_time>now:selected[m.token_id]=m
         async with self._lock:
             if self._closed:raise ValueError('supplemental_watcher_closed')
-            changed=[token for token,m in selected.items() if token in self._markets and _identity(m)!=_identity(self._markets[token])]
-            changed += [token for token,m in selected.items() if token in self._quarantined and _identity(m)!=self._quarantined[token]]
-            if changed:
-                for token in changed:
-                    if token not in self._quarantined and len(self._quarantined)<self.max_tokens:
-                        self._quarantined[token]=_identity(self._markets[token])
-                self.counts['metadata_identity_conflicts']+=len(set(changed))
-                await self.feed.stop_stream();self._task=None;self._signature=None;self._markets={}
-                self.last_error='supplemental_token_identity_conflict';raise ValueError(self.last_error)
+            conflicts=ambiguous|{token for token,m in selected.items()
+                if token in self._markets and _identity(m)!=_identity(self._markets[token])}
+            conflicts-=self._quarantined.keys()
+            for token in conflicts:
+                self.counts['metadata_identity_conflicts']+=1
+                if len(self._quarantined)<self.max_tokens:
+                    self._quarantined[token]='ambiguous_batch' if token in ambiguous else 'changed_identity'
+                else:
+                    self._identity_quarantine_saturated=True
+            # A token whose identity was ambiguous is permanently withheld for
+            # this watcher lifetime. Other valid tokens remain subscribable.
+            quarantined=ambiguous|self._quarantined.keys()|conflicts
+            selected={token:m for token,m in selected.items() if token not in quarantined}
+            if self._identity_quarantine_saturated:selected={}
             signature=digest(sorted((token,_identity(m)) for token,m in selected.items()))
             running=self._task is not None and not self._task.done()
             self._markets=selected
-            if signature==self._signature and running:
+            if signature==self._signature and (running or not selected):
                 self.feed.set_markets(tuple(selected.values()));return False
             await self.feed.stop_stream();self._task=None
             self._signature=signature;self.last_error=None
@@ -133,10 +139,12 @@ class SupplementalBooks:
 
     def status(self):
         books=self.snapshot();metrics=self.feed.metrics()
-        return {'status':'closed' if self._closed else 'degraded' if self.last_error else 'public_research_only',
+        return {'status':'closed' if self._closed else 'degraded' if self.last_error or self._identity_quarantine_saturated else 'public_research_only',
             'subscribed_tokens':len(self._markets),'qualified_books':len(books),'max_tokens':self.max_tokens,
             'native_max_age_seconds':15,'max_spread':.05,'counts':dict(self.counts),
             'book_rejections':getattr(self,'_last_rejections',{}),'transport':metrics,
+            'identity_quarantine_saturated':self._identity_quarantine_saturated,
+            'quarantine_reasons':dict(Counter(self._quarantined.values())),
             'token_diagnostics':{t:{'market_id':m.market_id,
                 'reasons':list(self._reason(self.feed.latest[t],m,self.clock())) if t in self.feed.latest else
                     ['transport_gap_withheld' if t in getattr(self.feed,'_gap_watermarks',{}) else 'missing_native_observation'],

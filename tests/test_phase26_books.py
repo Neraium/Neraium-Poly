@@ -55,21 +55,44 @@ async def test_bounded_subscription_reuse_and_native_cache_invalidation():
 async def test_changed_contract_identity_quarantines_and_clears(field,value):
     f=FakeFeed();m=market();w=SupplementalBooks(clock=lambda:NOW,feed=f)
     try:
-        await w.update([m]);f.latest[m.token_id]=book(m)
-        with pytest.raises(ValueError,match='identity_conflict'):await w.update([m.model_copy(update={field:value})])
+        other=market('other');await w.update([m,other]);f.latest[m.token_id]=book(m)
+        assert await w.update([m.model_copy(update={field:value}),other])
         assert w.snapshot()==() and w.status()['quarantined_tokens']==1
-        with pytest.raises(ValueError):await w.update([m.model_copy(update={field:value})])
+        assert set(w._markets)=={other.token_id} and f.starts==2
+        assert not await w.update([m.model_copy(update={field:value}),other])
+        assert f.starts==2 and w.status()['counts']['metadata_identity_conflicts']==1
     finally:await w.close()
 
 
 async def test_duplicate_identity_future_metadata_and_subscription_cap_reject():
     f=FakeFeed();m=market();w=SupplementalBooks(clock=lambda:NOW,feed=f)
     try:
-        await w.update([m]);f.latest[m.token_id]=book(m)
-        with pytest.raises(ValueError,match='ambiguous'):await w.update([m,m.model_copy(update={'question':'conflict'})])
-        assert not w.snapshot()
+        other=market('other');await w.update([m,other]);f.latest[m.token_id]=book(m)
+        assert await w.update([m,m.model_copy(update={'question':'conflict'}),other])
+        assert not w.snapshot() and set(w._markets)=={other.token_id}
+        assert w.status()['quarantined_tokens']==1 and f.starts==2
+        assert not await w.update([m,m.model_copy(update={'question':'conflict'}),other])
+        assert f.starts==2
         with pytest.raises(ValueError,match='causal'):await w.update([m.model_copy(update={'available_at':NOW+timedelta(seconds=1)})])
         with pytest.raises(ValueError,match='32_token'):await w.update([market(str(i)) for i in range(33)])
+    finally:await w.close()
+
+
+async def test_quarantine_capacity_saturation_fails_closed():
+    f=FakeFeed();first=market('first');second=market('second');w=SupplementalBooks(clock=lambda:NOW,feed=f,max_tokens=2)
+    try:
+        await w.update([first,second])
+        await w.update([first.model_copy(update={'question':'changed'}),second])
+        await w.update([first.model_copy(update={'question':'changed'}),second.model_copy(update={'question':'changed'})])
+        assert w.status()['quarantined_tokens']==2
+        # New ambiguous identities cannot be retained after the bounded
+        # quarantine fills; fail closed rather than accidentally resubscribe.
+        third=market('third')
+        await w.update([third,third.model_copy(update={'question':'conflict'})])
+        assert w.status()['identity_quarantine_saturated'] is True
+        assert w.status()['subscribed_tokens']==0
+        await w.update([third])
+        assert w.status()['subscribed_tokens']==0
     finally:await w.close()
 
 
