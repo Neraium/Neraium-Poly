@@ -1,0 +1,1475 @@
+{
+  "as_of": "2026-11-09T00:38:02.770116+00:00",
+  "baseline_sample_limit": 64,
+  "baselines": [
+    {
+      "ask": 0.51,
+      "bid": 0.467,
+      "book_id": "499f95e05961877fa3ba6d1c115e7b0989f45acdea8ca12ff14151b182afed01",
+      "book_sha256": "2a12e3ec6d4b30cc39548875bab5ade5ed795fa11954e021698bd9699bb7cb54",
+      "certification_authority": false,
+      "comparison_rejections": [
+        "conditional_or_unreviewed_native_payout_semantics"
+      ],
+      "conditioning": "routine AWC availability and no material future correction/fallback",
+      "domain": "weather",
+      "event_id": "1323602",
+      "evidence_cutoff": "2026-11-07T23:39:21.107660+00:00",
+      "forecast_at": "2026-11-07T23:39:21.154945+00:00",
+      "forecast_id": "595cf818cb4b51bec70858de3abc1674b8a96691a939c973bc09044f366d54e6",
+      "forecast_sha256": "5f0e861f49585f590fc519651035cbadf5ea34638851db29dcd06881e341594e",
+      "market_at": "2026-11-07T23:39:10.909000+00:00",
+      "market_available_at": "2026-11-07T23:39:19.610083+00:00",
+      "market_expected_payout_midpoint": 0.48850000000000005,
+      "market_id": "6740825",
+      "model_id": "metar-diurnal-analog-v24.1",
+      "model_interval": [
+        0.0,
+        1.0
+      ],
+      "model_probability": 0.05172413793103448,
+      "model_sha256": "46443a4844feab6a0740a9c6f60d8a4daad7c344c67850a5f18dd1885f7d608c",
+      "model_version": "metar-diurnal-analog-v24.1",
+      "native_probability_semantics_comparable": false,
+      "native_sensitivity": {
+        "alternative_payout_interval": [
+          0.0,
+          1.0
+        ],
+        "certification_authority": false,
+        "condition_probability_interval": [
+          0.0,
+          1.0
+        ],
+        "ex_ante_condition_evidence_verified": false,
+        "interval_status": "assumption_sensitivity_not_confidence_interval",
+        "market_superiority": null,
+        "native_expected_payout_interval": [
+          0.0,
+          1.0
+        ],
+        "qualified_opportunity": false,
+        "research_only": true,
+        "trading_authority": false
+      },
+      "original_study_id": "000000000015:369aeee780fe525bff4103c8c7adfbe8cf9c08c4d70b92f3afd2a40c3a5080a1",
+      "original_study_sha256": "1e1c42f14cbcfa703e6454da73758a80d51200eada44cc76fb106c6c83cf0e95",
+      "paired_brier": null,
+      "paired_log_loss": null,
+      "probability_semantics": "binary_event_probability",
+      "recorded_at": "2026-11-07T23:39:21.157878+00:00",
+      "research_only": true,
+      "rules_sha256": "6dda004bb705da937e7bd8863a392d325b422e9705021bd51d4a4ddded2effd9",
+      "token_id": "100429054464382097866097138746015543803508294805619807891313880055441225561267",
+      "trading_authority": false
+    },
+    {
+      "ask": 0.51,
+      "bid": 0.467,
+      "book_id": "499f95e05961877fa3ba6d1c115e7b0989f45acdea8ca12ff14151b182afed01",
+      "book_sha256": "2a12e3ec6d4b30cc39548875bab5ade5ed795fa11954e021698bd9699bb7cb54",
+      "certification_authority": false,
+      "comparison_rejections": [
+        "conditional_or_unreviewed_native_payout_semantics"
+      ],
+      "conditioning": "routine AWC availability and no material future correction/fallback",
+      "domain": "weather",
+      "event_id": "1323602",
+      "evidence_cutoff": "2026-11-07T23:39:21.107660+00:00",
+      "forecast_at": "2026-11-07T23:39:21.154945+00:00",
+      "forecast_id": "f1662a8afa4c01a45880382b97c672be0cb253fb1dc99ddf28dcd7abde5201f3",
+      "forecast_sha256": "012fac89869ad085ed3dd4ecd90b7ccf88fdab79c4625ae3189e8be9d7f26bcd",
+      "market_at": "2026-11-07T23:39:10.909000+00:00",
+      "market_available_at": "2026-11-07T23:39:19.610083+00:00",
+      "market_expected_payout_midpoint": 0.48850000000000005,
+      "market_id": "6740825",
+      "model_id": "metar-recent-climatology-v24.1",
+      "model_interval": [
+        0.0,
+        1.0
+      ],
+      "model_probability": 0.08620689655172414,
+      "model_sha256": "7a696e590e023c5cea7111d3bc172adaa982eaf3792a91167f905bfdb59d91ff",
+      "model_version": "metar-recent-climatology-v24.1",
+      "native_probability_semantics_comparable": false,
+      "native_sensitivity": {
+        "alternative_payout_interval": [
+          0.0,
+          1.0
+        ],
+        "certification_authority": false,
+        "condition_probability_interval": [
+          0.0,
+          1.0
+        ],
+        "ex_ante_condition_evidence_verified": false,
+        "interval_status": "assumption_sensitivity_not_confidence_interval",
+        "market_superiority": null,
+        "native_expected_payout_interval": [
+          0.0,
+          1.0
+        ],
+        "qualified_opportunity": false,
+        "research_only": true,
+        "trading_authority": false
+      },
+      "original_study_id": "000000000015:369aeee780fe525bff4103c8c7adfbe8cf9c08c4d70b92f3afd2a40c3a5080a1",
+      "original_study_sha256": "1e1c42f14cbcfa703e6454da73758a80d51200eada44cc76fb106c6c83cf0e95",
+      "paired_brier": null,
+      "paired_log_loss": null,
+      "probability_semantics": "binary_event_probability",
+      "recorded_at": "2026-11-07T23:39:21.157878+00:00",
+      "research_only": true,
+      "rules_sha256": "6dda004bb705da937e7bd8863a392d325b422e9705021bd51d4a4ddded2effd9",
+      "token_id": "100429054464382097866097138746015543803508294805619807891313880055441225561267",
+      "trading_authority": false
+    },
+    {
+      "ask": 0.98,
+      "bid": 0.936,
+      "book_id": "4294e1a3943f2837b8df83345beee478eac8882425c6b0d1e4ec9c6773e9e9e5",
+      "book_sha256": "ce933e23c7a00505d765e8092f596147e18bd1f9bd8beee62878d51f62923aa3",
+      "certification_authority": false,
+      "comparison_rejections": [
+        "conditional_or_unreviewed_native_payout_semantics"
+      ],
+      "conditioning": "routine AWC availability and no material future correction/fallback",
+      "domain": "weather",
+      "event_id": "1323624",
+      "evidence_cutoff": "2026-11-07T23:44:42.632943+00:00",
+      "forecast_at": "2026-11-07T23:44:42.645216+00:00",
+      "forecast_id": "5706f728a9caa514561d503dd37802f514fda9a3ba54c5befdaca93e25b857d8",
+      "forecast_sha256": "4562c9fb45f554a1fbb375fa662fb13834ab2671ed09f85fb4fa0f9aedf46ba7",
+      "market_at": "2026-11-07T23:44:38.416000+00:00",
+      "market_available_at": "2026-11-07T23:44:42.356997+00:00",
+      "market_expected_payout_midpoint": 0.958,
+      "market_id": "6741015",
+      "model_id": "metar-diurnal-analog-v24.1",
+      "model_interval": [
+        0.0,
+        1.0
+      ],
+      "model_probability": 0.9137931034482758,
+      "model_sha256": "46443a4844feab6a0740a9c6f60d8a4daad7c344c67850a5f18dd1885f7d608c",
+      "model_version": "metar-diurnal-analog-v24.1",
+      "native_probability_semantics_comparable": false,
+      "native_sensitivity": {
+        "alternative_payout_interval": [
+          0.0,
+          1.0
+        ],
+        "certification_authority": false,
+        "condition_probability_interval": [
+          0.0,
+          1.0
+        ],
+        "ex_ante_condition_evidence_verified": false,
+        "interval_status": "assumption_sensitivity_not_confidence_interval",
+        "market_superiority": null,
+        "native_expected_payout_interval": [
+          0.0,
+          1.0
+        ],
+        "qualified_opportunity": false,
+        "research_only": true,
+        "trading_authority": false
+      },
+      "original_study_id": "000000000018:15045ca72d8583d6c6807aa3d4107d63cb87c79f7c8d3ce233689bad5b930f89",
+      "original_study_sha256": "36158b76e6cdce1e74507c1d9aea436b53bf3bfc6f83a4f7dc54b88ef57d2f1f",
+      "paired_brier": null,
+      "paired_log_loss": null,
+      "probability_semantics": "binary_event_probability",
+      "recorded_at": "2026-11-07T23:44:42.661022+00:00",
+      "research_only": true,
+      "rules_sha256": "e6076e6c3de30988343730a8d730ec12c7f9adae9f07c5052d8b1da544699617",
+      "token_id": "34042366474100853457203862973665563893587804972767945397437748411724879091733",
+      "trading_authority": false
+    },
+    {
+      "ask": 0.98,
+      "bid": 0.936,
+      "book_id": "4294e1a3943f2837b8df83345beee478eac8882425c6b0d1e4ec9c6773e9e9e5",
+      "book_sha256": "ce933e23c7a00505d765e8092f596147e18bd1f9bd8beee62878d51f62923aa3",
+      "certification_authority": false,
+      "comparison_rejections": [
+        "conditional_or_unreviewed_native_payout_semantics"
+      ],
+      "conditioning": "routine AWC availability and no material future correction/fallback",
+      "domain": "weather",
+      "event_id": "1323624",
+      "evidence_cutoff": "2026-11-07T23:44:42.632943+00:00",
+      "forecast_at": "2026-11-07T23:44:42.645216+00:00",
+      "forecast_id": "e564a5e724b8e330cf169a99b32431ab59b7fa8c0decd70d940f6417ef6a2653",
+      "forecast_sha256": "d0640ef6ecf06c45645b8700379f899a495862ce4872c10011e93cab62f79430",
+      "market_at": "2026-11-07T23:44:38.416000+00:00",
+      "market_available_at": "2026-11-07T23:44:42.356997+00:00",
+      "market_expected_payout_midpoint": 0.958,
+      "market_id": "6741015",
+      "model_id": "metar-recent-climatology-v24.1",
+      "model_interval": [
+        0.0,
+        1.0
+      ],
+      "model_probability": 0.9482758620689655,
+      "model_sha256": "7a696e590e023c5cea7111d3bc172adaa982eaf3792a91167f905bfdb59d91ff",
+      "model_version": "metar-recent-climatology-v24.1",
+      "native_probability_semantics_comparable": false,
+      "native_sensitivity": {
+        "alternative_payout_interval": [
+          0.0,
+          1.0
+        ],
+        "certification_authority": false,
+        "condition_probability_interval": [
+          0.0,
+          1.0
+        ],
+        "ex_ante_condition_evidence_verified": false,
+        "interval_status": "assumption_sensitivity_not_confidence_interval",
+        "market_superiority": null,
+        "native_expected_payout_interval": [
+          0.0,
+          1.0
+        ],
+        "qualified_opportunity": false,
+        "research_only": true,
+        "trading_authority": false
+      },
+      "original_study_id": "000000000018:15045ca72d8583d6c6807aa3d4107d63cb87c79f7c8d3ce233689bad5b930f89",
+      "original_study_sha256": "36158b76e6cdce1e74507c1d9aea436b53bf3bfc6f83a4f7dc54b88ef57d2f1f",
+      "paired_brier": null,
+      "paired_log_loss": null,
+      "probability_semantics": "binary_event_probability",
+      "recorded_at": "2026-11-07T23:44:42.661022+00:00",
+      "research_only": true,
+      "rules_sha256": "e6076e6c3de30988343730a8d730ec12c7f9adae9f07c5052d8b1da544699617",
+      "token_id": "34042366474100853457203862973665563893587804972767945397437748411724879091733",
+      "trading_authority": false
+    },
+    {
+      "ask": 0.57,
+      "bid": 0.56,
+      "book_id": "5cb0656db76c1debb2c7c37df842b42599decfc63cdd414373dcb72f38aee6f3",
+      "book_sha256": "52d0c24b3bab09c16bb298b8d8aac61e1066225cd129c44fdb56671fcf1b4d59",
+      "certification_authority": false,
+      "comparison_rejections": [
+        "conditional_or_unreviewed_native_payout_semantics"
+      ],
+      "conditioning": "official_completed_game",
+      "domain": "sports",
+      "event_id": "1171316",
+      "evidence_cutoff": "2026-11-08T00:18:34.669369+00:00",
+      "forecast_at": "2026-11-08T00:18:34.928503+00:00",
+      "forecast_id": "4944da6a9d9f3c61804801b151e71f64d0adac29f1515bdae21207f204265ad6",
+      "forecast_sha256": "f2499a36cc77153ec112dae84bc1ea3203102ed98fc4a8b75d0162519719027a",
+      "market_at": "2026-11-08T00:18:25.881000+00:00",
+      "market_available_at": "2026-11-08T00:18:34.668990+00:00",
+      "market_expected_payout_midpoint": 0.565,
+      "market_id": "5563968",
+      "model_id": "nhl-beta-frequency-v25.1",
+      "model_interval": [
+        0.0,
+        1.0
+      ],
+      "model_probability": 0.36401673640167365,
+      "model_sha256": "c8c477ec4f9eb72badde574dccef47dab4e88fcd147c0cfc47d5aa80787052bc",
+      "model_version": "nhl-beta-frequency-v25.1",
+      "native_probability_semantics_comparable": false,
+      "native_sensitivity": {
+        "alternative_payout_interval": [
+          0.0,
+          1.0
+        ],
+        "certification_authority": false,
+        "condition_probability_interval": [
+          0.0,
+          1.0
+        ],
+        "ex_ante_condition_evidence_verified": false,
+        "interval_status": "assumption_sensitivity_not_confidence_interval",
+        "market_superiority": null,
+        "native_expected_payout_interval": [
+          0.0,
+          1.0
+        ],
+        "qualified_opportunity": false,
+        "research_only": true,
+        "trading_authority": false
+      },
+      "original_study_id": "000000000005:de23ae06ed46b481a31e5473c76d37c9dd2cef55ae1c84def1ff7ef04c719209",
+      "original_study_sha256": "65f4f050c544d8f94963a1e65c2ddd7a391910aca664aaaafba25758bf7758b4",
+      "paired_brier": null,
+      "paired_log_loss": null,
+      "probability_semantics": "binary_event_probability",
+      "recorded_at": "2026-11-08T00:18:35.037535+00:00",
+      "research_only": true,
+      "rules_sha256": "cebf44fb0acfa88fc378a3f8f669632cb2281580daae03745551ed4875431bda",
+      "token_id": "42177884254228727906860122813537291965072833137970751542447292275873835186072",
+      "trading_authority": false
+    },
+    {
+      "ask": 0.57,
+      "bid": 0.56,
+      "book_id": "5cb0656db76c1debb2c7c37df842b42599decfc63cdd414373dcb72f38aee6f3",
+      "book_sha256": "52d0c24b3bab09c16bb298b8d8aac61e1066225cd129c44fdb56671fcf1b4d59",
+      "certification_authority": false,
+      "comparison_rejections": [
+        "conditional_or_unreviewed_native_payout_semantics"
+      ],
+      "conditioning": "official_completed_game",
+      "domain": "sports",
+      "event_id": "1171316",
+      "evidence_cutoff": "2026-11-08T00:18:34.669369+00:00",
+      "forecast_at": "2026-11-08T00:18:34.928503+00:00",
+      "forecast_id": "6f5faa2b27a09d1bbcebe464e4643be8649ce0f078817993a97d06ea00256c1f",
+      "forecast_sha256": "1f08cac24b26d7235b70ade24f1876c2f4becedcd8cf960a35bb0c8700337eb2",
+      "market_at": "2026-11-08T00:18:25.881000+00:00",
+      "market_available_at": "2026-11-08T00:18:34.668990+00:00",
+      "market_expected_payout_midpoint": 0.565,
+      "market_id": "5563968",
+      "model_id": "nhl-causal-elo-v25.1",
+      "model_interval": [
+        0.0,
+        1.0
+      ],
+      "model_probability": 0.3870748463234378,
+      "model_sha256": "d7ba48afc4f83aef0fe24d5022b3391581ffb5cf475154d4df13ee92f1bc1706",
+      "model_version": "nhl-causal-elo-v25.1",
+      "native_probability_semantics_comparable": false,
+      "native_sensitivity": {
+        "alternative_payout_interval": [
+          0.0,
+          1.0
+        ],
+        "certification_authority": false,
+        "condition_probability_interval": [
+          0.0,
+          1.0
+        ],
+        "ex_ante_condition_evidence_verified": false,
+        "interval_status": "assumption_sensitivity_not_confidence_interval",
+        "market_superiority": null,
+        "native_expected_payout_interval": [
+          0.0,
+          1.0
+        ],
+        "qualified_opportunity": false,
+        "research_only": true,
+        "trading_authority": false
+      },
+      "original_study_id": "000000000005:de23ae06ed46b481a31e5473c76d37c9dd2cef55ae1c84def1ff7ef04c719209",
+      "original_study_sha256": "65f4f050c544d8f94963a1e65c2ddd7a391910aca664aaaafba25758bf7758b4",
+      "paired_brier": null,
+      "paired_log_loss": null,
+      "probability_semantics": "binary_event_probability",
+      "recorded_at": "2026-11-08T00:18:35.037535+00:00",
+      "research_only": true,
+      "rules_sha256": "cebf44fb0acfa88fc378a3f8f669632cb2281580daae03745551ed4875431bda",
+      "token_id": "42177884254228727906860122813537291965072833137970751542447292275873835186072",
+      "trading_authority": false
+    },
+    {
+      "ask": 0.52,
+      "bid": 0.51,
+      "book_id": "ef92bad0c33c11fb6d25401501a50befe01b499ea843cb25f4112b45e75cfbba",
+      "book_sha256": "fd254a074cd2bbe01dc741c739fd17dd278f0cbe0984f23686dfaf1dfb5872c7",
+      "certification_authority": false,
+      "comparison_rejections": [
+        "conditional_or_unreviewed_native_payout_semantics"
+      ],
+      "conditioning": "official_completed_game",
+      "domain": "sports",
+      "event_id": "1171322",
+      "evidence_cutoff": "2026-11-08T00:18:34.686210+00:00",
+      "forecast_at": "2026-11-08T00:18:35.445192+00:00",
+      "forecast_id": "1f1fb174f73827ee35c3a5165aeb4361da0cee3be5f04ebebb46701859cb8843",
+      "forecast_sha256": "6d26c8d24021487fbf9d6b643cb727d1c96f3c0573b1960b424790254ac6b668",
+      "market_at": "2026-11-08T00:18:33.713000+00:00",
+      "market_available_at": "2026-11-08T00:18:34.685787+00:00",
+      "market_expected_payout_midpoint": 0.515,
+      "market_id": "5563990",
+      "model_id": "nhl-causal-elo-v25.1",
+      "model_interval": [
+        0.0,
+        1.0
+      ],
+      "model_probability": 0.6281983756199847,
+      "model_sha256": "d7ba48afc4f83aef0fe24d5022b3391581ffb5cf475154d4df13ee92f1bc1706",
+      "model_version": "nhl-causal-elo-v25.1",
+      "native_probability_semantics_comparable": false,
+      "native_sensitivity": {
+        "alternative_payout_interval": [
+          0.0,
+          1.0
+        ],
+        "certification_authority": false,
+        "condition_probability_interval": [
+          0.0,
+          1.0
+        ],
+        "ex_ante_condition_evidence_verified": false,
+        "interval_status": "assumption_sensitivity_not_confidence_interval",
+        "market_superiority": null,
+        "native_expected_payout_interval": [
+          0.0,
+          1.0
+        ],
+        "qualified_opportunity": false,
+        "research_only": true,
+        "trading_authority": false
+      },
+      "original_study_id": "000000000006:f0f50bc1ee97af41f41efe2aef8e709b020d853e832e61b2770443e360afab0a",
+      "original_study_sha256": "5b40b0b513a899d62a5afb3073b10d979c2fb5a7ab73e9d70008481ff0f80a84",
+      "paired_brier": null,
+      "paired_log_loss": null,
+      "probability_semantics": "binary_event_probability",
+      "recorded_at": "2026-11-08T00:18:35.546609+00:00",
+      "research_only": true,
+      "rules_sha256": "765cf57463cba51d9fecb2f534187ed26286fe46cb2b5c72bf5c3ea2dc65dc7d",
+      "token_id": "23842241898484612527327827577209550435928394251956631561628535847868640927156",
+      "trading_authority": false
+    },
+    {
+      "ask": 0.52,
+      "bid": 0.51,
+      "book_id": "ef92bad0c33c11fb6d25401501a50befe01b499ea843cb25f4112b45e75cfbba",
+      "book_sha256": "fd254a074cd2bbe01dc741c739fd17dd278f0cbe0984f23686dfaf1dfb5872c7",
+      "certification_authority": false,
+      "comparison_rejections": [
+        "conditional_or_unreviewed_native_payout_semantics"
+      ],
+      "conditioning": "official_completed_game",
+      "domain": "sports",
+      "event_id": "1171322",
+      "evidence_cutoff": "2026-11-08T00:18:34.686210+00:00",
+      "forecast_at": "2026-11-08T00:18:35.445192+00:00",
+      "forecast_id": "daa6a47a6c4120b5a9eb3faf4110f6ead52a1aa00dc1cdc5a150a460b22ae1bf",
+      "forecast_sha256": "7cc731bfa609128e51424efbf22ccd7b155eba71a235b2e135a391c700e4dd02",
+      "market_at": "2026-11-08T00:18:33.713000+00:00",
+      "market_available_at": "2026-11-08T00:18:34.685787+00:00",
+      "market_expected_payout_midpoint": 0.515,
+      "market_id": "5563990",
+      "model_id": "nhl-beta-frequency-v25.1",
+      "model_interval": [
+        0.0,
+        1.0
+      ],
+      "model_probability": 0.6963350785340314,
+      "model_sha256": "c8c477ec4f9eb72badde574dccef47dab4e88fcd147c0cfc47d5aa80787052bc",
+      "model_version": "nhl-beta-frequency-v25.1",
+      "native_probability_semantics_comparable": false,
+      "native_sensitivity": {
+        "alternative_payout_interval": [
+          0.0,
+          1.0
+        ],
+        "certification_authority": false,
+        "condition_probability_interval": [
+          0.0,
+          1.0
+        ],
+        "ex_ante_condition_evidence_verified": false,
+        "interval_status": "assumption_sensitivity_not_confidence_interval",
+        "market_superiority": null,
+        "native_expected_payout_interval": [
+          0.0,
+          1.0
+        ],
+        "qualified_opportunity": false,
+        "research_only": true,
+        "trading_authority": false
+      },
+      "original_study_id": "000000000006:f0f50bc1ee97af41f41efe2aef8e709b020d853e832e61b2770443e360afab0a",
+      "original_study_sha256": "5b40b0b513a899d62a5afb3073b10d979c2fb5a7ab73e9d70008481ff0f80a84",
+      "paired_brier": null,
+      "paired_log_loss": null,
+      "probability_semantics": "binary_event_probability",
+      "recorded_at": "2026-11-08T00:18:35.546609+00:00",
+      "research_only": true,
+      "rules_sha256": "765cf57463cba51d9fecb2f534187ed26286fe46cb2b5c72bf5c3ea2dc65dc7d",
+      "token_id": "23842241898484612527327827577209550435928394251956631561628535847868640927156",
+      "trading_authority": false
+    },
+    {
+      "ask": 0.088,
+      "bid": 0.061,
+      "book_id": "a3b68889e8e9bf920ee9c0c4db0bd175dd919b21b10537b8d89c1ecb5787c028",
+      "book_sha256": "228e2de9c0559127e04cdb5e5e6da6d03f7964c30ac0a928171ebaa6c867b1dc",
+      "certification_authority": false,
+      "comparison_rejections": [
+        "conditional_or_unreviewed_native_payout_semantics"
+      ],
+      "conditioning": "routine AWC availability and no material future correction/fallback",
+      "domain": "weather",
+      "event_id": "1323602",
+      "evidence_cutoff": "2026-11-08T00:18:36.364986+00:00",
+      "forecast_at": "2026-11-08T00:18:36.379483+00:00",
+      "forecast_id": "8e3d55b875d863b0d0808a66e9b066eddc1f8ce28d225144613e01c97f9f0af8",
+      "forecast_sha256": "465c58a7ee2f8238db3b0159a31cc94069bef5e1cdbfd9a42c5a677de9532fc5",
+      "market_at": "2026-11-08T00:18:30.732000+00:00",
+      "market_available_at": "2026-11-08T00:18:36.061414+00:00",
+      "market_expected_payout_midpoint": 0.0745,
+      "market_id": "6740827",
+      "model_id": "metar-diurnal-gaussian-v25.1",
+      "model_interval": [
+        0.0,
+        1.0
+      ],
+      "model_probability": 0.20942397624242992,
+      "model_sha256": "f17c44bfbf9d63483b33374f661b84389af33b23516c562b6911f93ead22f41e",
+      "model_version": "metar-diurnal-gaussian-v25.1",
+      "native_probability_semantics_comparable": false,
+      "native_sensitivity": {
+        "alternative_payout_interval": [
+          0.0,
+          1.0
+        ],
+        "certification_authority": false,
+        "condition_probability_interval": [
+          0.0,
+          1.0
+        ],
+        "ex_ante_condition_evidence_verified": false,
+        "interval_status": "assumption_sensitivity_not_confidence_interval",
+        "market_superiority": null,
+        "native_expected_payout_interval": [
+          0.0,
+          1.0
+        ],
+        "qualified_opportunity": false,
+        "research_only": true,
+        "trading_authority": false
+      },
+      "original_study_id": "000000000007:94b1ce25a482d38d5e035788bd124deaba3c737cb3a5d8a3f054e794dc57a5b7",
+      "original_study_sha256": "e477049864485a9ddbdd28d8bb3fde6ad5617551776ed34fe375ebc1a679f9cb",
+      "paired_brier": null,
+      "paired_log_loss": null,
+      "probability_semantics": "binary_event_probability",
+      "recorded_at": "2026-11-08T00:18:36.382327+00:00",
+      "research_only": true,
+      "rules_sha256": "6dda004bb705da937e7bd8863a392d325b422e9705021bd51d4a4ddded2effd9",
+      "token_id": "94706811208291031924388973437051527458389928308352329951198252501785611674239",
+      "trading_authority": false
+    },
+    {
+      "ask": 0.088,
+      "bid": 0.061,
+      "book_id": "a3b68889e8e9bf920ee9c0c4db0bd175dd919b21b10537b8d89c1ecb5787c028",
+      "book_sha256": "228e2de9c0559127e04cdb5e5e6da6d03f7964c30ac0a928171ebaa6c867b1dc",
+      "certification_authority": false,
+      "comparison_rejections": [
+        "conditional_or_unreviewed_native_payout_semantics"
+      ],
+      "conditioning": "routine AWC availability and no material future correction/fallback",
+      "domain": "weather",
+      "event_id": "1323602",
+      "evidence_cutoff": "2026-11-08T00:18:36.364986+00:00",
+      "forecast_at": "2026-11-08T00:18:36.379483+00:00",
+      "forecast_id": "e4741d8b03db567d0d405968b5d025b22d10335b4b278540e5559fea7d779b7f",
+      "forecast_sha256": "8be79dd5fe8dc6a896c2ed81c1392e38242936eb02ceb1524c32a7f781702982",
+      "market_at": "2026-11-08T00:18:30.732000+00:00",
+      "market_available_at": "2026-11-08T00:18:36.061414+00:00",
+      "market_expected_payout_midpoint": 0.0745,
+      "market_id": "6740827",
+      "model_id": "metar-recency-kernel-v25.1",
+      "model_interval": [
+        0.0,
+        1.0
+      ],
+      "model_probability": 0.27250782888733943,
+      "model_sha256": "92e7de184159e1eb898cf6a82a41fe737295da3c6fa99508da02678d4be54cfd",
+      "model_version": "metar-recency-kernel-v25.1",
+      "native_probability_semantics_comparable": false,
+      "native_sensitivity": {
+        "alternative_payout_interval": [
+          0.0,
+          1.0
+        ],
+        "certification_authority": false,
+        "condition_probability_interval": [
+          0.0,
+          1.0
+        ],
+        "ex_ante_condition_evidence_verified": false,
+        "interval_status": "assumption_sensitivity_not_confidence_interval",
+        "market_superiority": null,
+        "native_expected_payout_interval": [
+          0.0,
+          1.0
+        ],
+        "qualified_opportunity": false,
+        "research_only": true,
+        "trading_authority": false
+      },
+      "original_study_id": "000000000007:94b1ce25a482d38d5e035788bd124deaba3c737cb3a5d8a3f054e794dc57a5b7",
+      "original_study_sha256": "e477049864485a9ddbdd28d8bb3fde6ad5617551776ed34fe375ebc1a679f9cb",
+      "paired_brier": null,
+      "paired_log_loss": null,
+      "probability_semantics": "binary_event_probability",
+      "recorded_at": "2026-11-08T00:18:36.382327+00:00",
+      "research_only": true,
+      "rules_sha256": "6dda004bb705da937e7bd8863a392d325b422e9705021bd51d4a4ddded2effd9",
+      "token_id": "94706811208291031924388973437051527458389928308352329951198252501785611674239",
+      "trading_authority": false
+    },
+    {
+      "ask": 0.67,
+      "bid": 0.66,
+      "book_id": "b2d0affaf1bab35c4279d371341229c79c681a9fb1d276db6c80ed00868c7ced",
+      "book_sha256": "07f338c15fd4338a1c5247a5be3677a7b9b1dfccad799c31046bad0cfde8422f",
+      "certification_authority": false,
+      "comparison_rejections": [
+        "conditional_or_unreviewed_native_payout_semantics"
+      ],
+      "conditioning": "official_completed_game",
+      "domain": "sports",
+      "event_id": "1171321",
+      "evidence_cutoff": "2026-11-08T00:29:12.501085+00:00",
+      "forecast_at": "2026-11-08T00:29:12.635354+00:00",
+      "forecast_id": "abc6129d8cb2b71e6695284f2091a272aceeee299ddc7d540060b36efa43f118",
+      "forecast_sha256": "a14ca3a71fb2f2ff533ad48fbe35b9d85adfeaae407c33d08df5ab9a7002bdf8",
+      "market_at": "2026-11-08T00:29:08.400000+00:00",
+      "market_available_at": "2026-11-08T00:29:12.500739+00:00",
+      "market_expected_payout_midpoint": 0.665,
+      "market_id": "5563985",
+      "model_id": "nhl-causal-elo-v25.1",
+      "model_interval": [
+        0.0,
+        1.0
+      ],
+      "model_probability": 0.563080996237664,
+      "model_sha256": "d7ba48afc4f83aef0fe24d5022b3391581ffb5cf475154d4df13ee92f1bc1706",
+      "model_version": "nhl-causal-elo-v25.1",
+      "native_probability_semantics_comparable": false,
+      "native_sensitivity": {
+        "alternative_payout_interval": [
+          0.0,
+          1.0
+        ],
+        "certification_authority": false,
+        "condition_probability_interval": [
+          0.0,
+          1.0
+        ],
+        "ex_ante_condition_evidence_verified": false,
+        "interval_status": "assumption_sensitivity_not_confidence_interval",
+        "market_superiority": null,
+        "native_expected_payout_interval": [
+          0.0,
+          1.0
+        ],
+        "qualified_opportunity": false,
+        "research_only": true,
+        "trading_authority": false
+      },
+      "original_study_id": "000000000013:a503685bed51b6a2f21ff38c49e4f2bebdc6300ec8ecfca693e2d5133f7964f7",
+      "original_study_sha256": "a7f6c474c794e5c94916a3bfc47fcdea77110c8ffbe40b45352bad8177ff2ae0",
+      "paired_brier": null,
+      "paired_log_loss": null,
+      "probability_semantics": "binary_event_probability",
+      "recorded_at": "2026-11-08T00:29:12.693034+00:00",
+      "research_only": true,
+      "rules_sha256": "98399eea639f1da8c61a162aca854dbb5df9c9064983eb12f433be781fd6512c",
+      "token_id": "43682591912337501964133395875490081160295409767613189530696807878902310209171",
+      "trading_authority": false
+    },
+    {
+      "ask": 0.67,
+      "bid": 0.66,
+      "book_id": "b2d0affaf1bab35c4279d371341229c79c681a9fb1d276db6c80ed00868c7ced",
+      "book_sha256": "07f338c15fd4338a1c5247a5be3677a7b9b1dfccad799c31046bad0cfde8422f",
+      "certification_authority": false,
+      "comparison_rejections": [
+        "conditional_or_unreviewed_native_payout_semantics"
+      ],
+      "conditioning": "official_completed_game",
+      "domain": "sports",
+      "event_id": "1171321",
+      "evidence_cutoff": "2026-11-08T00:29:12.501085+00:00",
+      "forecast_at": "2026-11-08T00:29:12.635354+00:00",
+      "forecast_id": "f70b15892c1397bdb9655f8864bd48634f7104d7e788f1d5d9400dd30aed0bdf",
+      "forecast_sha256": "e4a29d9e4f4ac87901d54a3451941badf5472f1ca8e53dfe32b86ca197e218f8",
+      "market_at": "2026-11-08T00:29:08.400000+00:00",
+      "market_available_at": "2026-11-08T00:29:12.500739+00:00",
+      "market_expected_payout_midpoint": 0.665,
+      "market_id": "5563985",
+      "model_id": "nhl-beta-frequency-v25.1",
+      "model_interval": [
+        0.0,
+        1.0
+      ],
+      "model_probability": 0.5671641791044776,
+      "model_sha256": "c8c477ec4f9eb72badde574dccef47dab4e88fcd147c0cfc47d5aa80787052bc",
+      "model_version": "nhl-beta-frequency-v25.1",
+      "native_probability_semantics_comparable": false,
+      "native_sensitivity": {
+        "alternative_payout_interval": [
+          0.0,
+          1.0
+        ],
+        "certification_authority": false,
+        "condition_probability_interval": [
+          0.0,
+          1.0
+        ],
+        "ex_ante_condition_evidence_verified": false,
+        "interval_status": "assumption_sensitivity_not_confidence_interval",
+        "market_superiority": null,
+        "native_expected_payout_interval": [
+          0.0,
+          1.0
+        ],
+        "qualified_opportunity": false,
+        "research_only": true,
+        "trading_authority": false
+      },
+      "original_study_id": "000000000013:a503685bed51b6a2f21ff38c49e4f2bebdc6300ec8ecfca693e2d5133f7964f7",
+      "original_study_sha256": "a7f6c474c794e5c94916a3bfc47fcdea77110c8ffbe40b45352bad8177ff2ae0",
+      "paired_brier": null,
+      "paired_log_loss": null,
+      "probability_semantics": "binary_event_probability",
+      "recorded_at": "2026-11-08T00:29:12.693034+00:00",
+      "research_only": true,
+      "rules_sha256": "98399eea639f1da8c61a162aca854dbb5df9c9064983eb12f433be781fd6512c",
+      "token_id": "43682591912337501964133395875490081160295409767613189530696807878902310209171",
+      "trading_authority": false
+    },
+    {
+      "ask": 0.019,
+      "bid": 0.011,
+      "book_id": "4d6c8c880964655f8a9f23354eb0d05c84f819db329979d293682fd9a7c0595d",
+      "book_sha256": "86334597ea10b5c543c20cf78ed8e10288c8cc1467e466153a5ae3d9e643164e",
+      "certification_authority": false,
+      "comparison_rejections": [
+        "conditional_or_unreviewed_native_payout_semantics"
+      ],
+      "conditioning": "routine AWC availability and no material future correction/fallback",
+      "domain": "weather",
+      "event_id": "1323613",
+      "evidence_cutoff": "2026-11-08T00:29:16.615938+00:00",
+      "forecast_at": "2026-11-08T00:29:16.631278+00:00",
+      "forecast_id": "0a123b60661e4107146bfcd6fe6c1186aa27d3b34b278806add61ebddaab5f59",
+      "forecast_sha256": "34506038ebe3f056e7ab6d4d416950264edf284a3c164b259f3a071d2224b162",
+      "market_at": "2026-11-08T00:29:10.900000+00:00",
+      "market_available_at": "2026-11-08T00:29:13.343540+00:00",
+      "market_expected_payout_midpoint": 0.015,
+      "market_id": "6740868",
+      "model_id": "metar-diurnal-gaussian-v25.1",
+      "model_interval": [
+        0.0,
+        1.0
+      ],
+      "model_probability": 0.16475401567567816,
+      "model_sha256": "f17c44bfbf9d63483b33374f661b84389af33b23516c562b6911f93ead22f41e",
+      "model_version": "metar-diurnal-gaussian-v25.1",
+      "native_probability_semantics_comparable": false,
+      "native_sensitivity": {
+        "alternative_payout_interval": [
+          0.0,
+          1.0
+        ],
+        "certification_authority": false,
+        "condition_probability_interval": [
+          0.0,
+          1.0
+        ],
+        "ex_ante_condition_evidence_verified": false,
+        "interval_status": "assumption_sensitivity_not_confidence_interval",
+        "market_superiority": null,
+        "native_expected_payout_interval": [
+          0.0,
+          1.0
+        ],
+        "qualified_opportunity": false,
+        "research_only": true,
+        "trading_authority": false
+      },
+      "original_study_id": "000000000015:e91f88652bfad14cc2a76dd6651d970b8dc504e7bc46f9438d039e47d84ae32b",
+      "original_study_sha256": "765e708448d4cdcaeae9163e1dafc78b10d149e93266e66a471751c7c3c69909",
+      "paired_brier": null,
+      "paired_log_loss": null,
+      "probability_semantics": "binary_event_probability",
+      "recorded_at": "2026-11-08T00:29:16.633994+00:00",
+      "research_only": true,
+      "rules_sha256": "cc08cd95d2b68b68c91bab44e04f12d58931be4638c03a7eb73a128f3c8302b1",
+      "token_id": "90490288749007726190456778562036922440984659371718742510948651630834554533232",
+      "trading_authority": false
+    },
+    {
+      "ask": 0.019,
+      "bid": 0.011,
+      "book_id": "4d6c8c880964655f8a9f23354eb0d05c84f819db329979d293682fd9a7c0595d",
+      "book_sha256": "86334597ea10b5c543c20cf78ed8e10288c8cc1467e466153a5ae3d9e643164e",
+      "certification_authority": false,
+      "comparison_rejections": [
+        "conditional_or_unreviewed_native_payout_semantics"
+      ],
+      "conditioning": "routine AWC availability and no material future correction/fallback",
+      "domain": "weather",
+      "event_id": "1323613",
+      "evidence_cutoff": "2026-11-08T00:29:16.615938+00:00",
+      "forecast_at": "2026-11-08T00:29:16.631278+00:00",
+      "forecast_id": "e50b569e42c954b6fc5819bf7f9f2987048d164330e31dc9d79d1cf808891524",
+      "forecast_sha256": "4e8735bd528844fb454b440799e438ebd9f14a3a6588af70691bf429e434eb80",
+      "market_at": "2026-11-08T00:29:10.900000+00:00",
+      "market_available_at": "2026-11-08T00:29:13.343540+00:00",
+      "market_expected_payout_midpoint": 0.015,
+      "market_id": "6740868",
+      "model_id": "metar-recency-kernel-v25.1",
+      "model_interval": [
+        0.0,
+        1.0
+      ],
+      "model_probability": 0.18242355056396756,
+      "model_sha256": "92e7de184159e1eb898cf6a82a41fe737295da3c6fa99508da02678d4be54cfd",
+      "model_version": "metar-recency-kernel-v25.1",
+      "native_probability_semantics_comparable": false,
+      "native_sensitivity": {
+        "alternative_payout_interval": [
+          0.0,
+          1.0
+        ],
+        "certification_authority": false,
+        "condition_probability_interval": [
+          0.0,
+          1.0
+        ],
+        "ex_ante_condition_evidence_verified": false,
+        "interval_status": "assumption_sensitivity_not_confidence_interval",
+        "market_superiority": null,
+        "native_expected_payout_interval": [
+          0.0,
+          1.0
+        ],
+        "qualified_opportunity": false,
+        "research_only": true,
+        "trading_authority": false
+      },
+      "original_study_id": "000000000015:e91f88652bfad14cc2a76dd6651d970b8dc504e7bc46f9438d039e47d84ae32b",
+      "original_study_sha256": "765e708448d4cdcaeae9163e1dafc78b10d149e93266e66a471751c7c3c69909",
+      "paired_brier": null,
+      "paired_log_loss": null,
+      "probability_semantics": "binary_event_probability",
+      "recorded_at": "2026-11-08T00:29:16.633994+00:00",
+      "research_only": true,
+      "rules_sha256": "cc08cd95d2b68b68c91bab44e04f12d58931be4638c03a7eb73a128f3c8302b1",
+      "token_id": "90490288749007726190456778562036922440984659371718742510948651630834554533232",
+      "trading_authority": false
+    },
+    {
+      "ask": 0.998,
+      "bid": 0.997,
+      "book_id": "1486bff89ae894be23d0315d196ce25f29c03e8d361d328005d8da39f1253c31",
+      "book_sha256": "3bec67864ebb29048eb47819fd3bc7ef349333c99b951b0bda788d54ca0ba3a3",
+      "certification_authority": false,
+      "comparison_rejections": [
+        "conditional_or_unreviewed_native_payout_semantics"
+      ],
+      "conditioning": "routine AWC availability and no material future correction/fallback",
+      "domain": "weather",
+      "event_id": "1323624",
+      "evidence_cutoff": "2026-11-08T00:39:44.891283+00:00",
+      "forecast_at": "2026-11-08T00:39:44.909085+00:00",
+      "forecast_id": "04b1fc89a32e86c29cdb7e32fd3a1b6b6a56dd87536862444a2bb4cf79d65609",
+      "forecast_sha256": "c68fa61279e93d4ae6a32c69781b06cd1542ce61e6a66906b03fdaa0509d73dd",
+      "market_at": "2026-11-08T00:39:39.778000+00:00",
+      "market_available_at": "2026-11-08T00:39:44.585831+00:00",
+      "market_expected_payout_midpoint": 0.9975,
+      "market_id": "6741017",
+      "model_id": "metar-diurnal-gaussian-v25.1",
+      "model_interval": [
+        0.0,
+        1.0
+      ],
+      "model_probability": 0.837228763433078,
+      "model_sha256": "f17c44bfbf9d63483b33374f661b84389af33b23516c562b6911f93ead22f41e",
+      "model_version": "metar-diurnal-gaussian-v25.1",
+      "native_probability_semantics_comparable": false,
+      "native_sensitivity": {
+        "alternative_payout_interval": [
+          0.0,
+          1.0
+        ],
+        "certification_authority": false,
+        "condition_probability_interval": [
+          0.0,
+          1.0
+        ],
+        "ex_ante_condition_evidence_verified": false,
+        "interval_status": "assumption_sensitivity_not_confidence_interval",
+        "market_superiority": null,
+        "native_expected_payout_interval": [
+          0.0,
+          1.0
+        ],
+        "qualified_opportunity": false,
+        "research_only": true,
+        "trading_authority": false
+      },
+      "original_study_id": "000000000025:eaefac948375ddb787e2e39cdce805f980ae9e2b847ae356878ac29cd58a8192",
+      "original_study_sha256": "88afd4a52187d903aec7262fc6d104c0265ab0482cc9dca920a7364b2c62fd60",
+      "paired_brier": null,
+      "paired_log_loss": null,
+      "probability_semantics": "binary_event_probability",
+      "recorded_at": "2026-11-08T00:39:44.911531+00:00",
+      "research_only": true,
+      "rules_sha256": "e6076e6c3de30988343730a8d730ec12c7f9adae9f07c5052d8b1da544699617",
+      "token_id": "9078095391908655107102102583867275197784611219670387421241082395926534077695",
+      "trading_authority": false
+    },
+    {
+      "ask": 0.998,
+      "bid": 0.997,
+      "book_id": "1486bff89ae894be23d0315d196ce25f29c03e8d361d328005d8da39f1253c31",
+      "book_sha256": "3bec67864ebb29048eb47819fd3bc7ef349333c99b951b0bda788d54ca0ba3a3",
+      "certification_authority": false,
+      "comparison_rejections": [
+        "conditional_or_unreviewed_native_payout_semantics"
+      ],
+      "conditioning": "routine AWC availability and no material future correction/fallback",
+      "domain": "weather",
+      "event_id": "1323624",
+      "evidence_cutoff": "2026-11-08T00:39:44.891283+00:00",
+      "forecast_at": "2026-11-08T00:39:44.909085+00:00",
+      "forecast_id": "8fd59e4ba5a052d2285e6174cb4ead00ad847aa1336e25da857d94becb34dd50",
+      "forecast_sha256": "d232b55ed2e13e22671d8c05b85dbead2c3221fd5ea5c2516ee9aead7a427759",
+      "market_at": "2026-11-08T00:39:39.778000+00:00",
+      "market_available_at": "2026-11-08T00:39:44.585831+00:00",
+      "market_expected_payout_midpoint": 0.9975,
+      "market_id": "6741017",
+      "model_id": "metar-recency-kernel-v25.1",
+      "model_interval": [
+        0.0,
+        1.0
+      ],
+      "model_probability": 0.9078211204753845,
+      "model_sha256": "92e7de184159e1eb898cf6a82a41fe737295da3c6fa99508da02678d4be54cfd",
+      "model_version": "metar-recency-kernel-v25.1",
+      "native_probability_semantics_comparable": false,
+      "native_sensitivity": {
+        "alternative_payout_interval": [
+          0.0,
+          1.0
+        ],
+        "certification_authority": false,
+        "condition_probability_interval": [
+          0.0,
+          1.0
+        ],
+        "ex_ante_condition_evidence_verified": false,
+        "interval_status": "assumption_sensitivity_not_confidence_interval",
+        "market_superiority": null,
+        "native_expected_payout_interval": [
+          0.0,
+          1.0
+        ],
+        "qualified_opportunity": false,
+        "research_only": true,
+        "trading_authority": false
+      },
+      "original_study_id": "000000000025:eaefac948375ddb787e2e39cdce805f980ae9e2b847ae356878ac29cd58a8192",
+      "original_study_sha256": "88afd4a52187d903aec7262fc6d104c0265ab0482cc9dca920a7364b2c62fd60",
+      "paired_brier": null,
+      "paired_log_loss": null,
+      "probability_semantics": "binary_event_probability",
+      "recorded_at": "2026-11-08T00:39:44.911531+00:00",
+      "research_only": true,
+      "rules_sha256": "e6076e6c3de30988343730a8d730ec12c7f9adae9f07c5052d8b1da544699617",
+      "token_id": "9078095391908655107102102583867275197784611219670387421241082395926534077695",
+      "trading_authority": false
+    },
+    {
+      "ask": 0.74,
+      "bid": 0.73,
+      "book_id": "b630070aa5efac7634c4698f1cb7378b737a68f5f0f0b4ccf0934eddd5c5d0e8",
+      "book_sha256": "2a22b577a30734d35ac9a2df3c2ca3456313e598100686cfd1d072182bf71818",
+      "certification_authority": false,
+      "comparison_rejections": [
+        "conditional_or_unreviewed_native_payout_semantics"
+      ],
+      "conditioning": "official_completed_game",
+      "domain": "sports",
+      "event_id": "1171319",
+      "evidence_cutoff": "2026-11-08T00:40:19.273861+00:00",
+      "forecast_at": "2026-11-08T00:40:19.350764+00:00",
+      "forecast_id": "0eece2c81e86f7d86eb31991596f705fb5a425f83e3c41f7d91637870fffba86",
+      "forecast_sha256": "f9120cc115d029de101d99f4674b081f8583fe57447a936d05ecb565f666084d",
+      "market_at": "2026-11-08T00:40:15.136000+00:00",
+      "market_available_at": "2026-11-08T00:40:19.273418+00:00",
+      "market_expected_payout_midpoint": 0.735,
+      "market_id": "5563975",
+      "model_id": "nhl-beta-frequency-v25.1",
+      "model_interval": [
+        0.0,
+        1.0
+      ],
+      "model_probability": 0.7691154422788605,
+      "model_sha256": "c8c477ec4f9eb72badde574dccef47dab4e88fcd147c0cfc47d5aa80787052bc",
+      "model_version": "nhl-beta-frequency-v25.1",
+      "native_probability_semantics_comparable": false,
+      "native_sensitivity": {
+        "alternative_payout_interval": [
+          0.0,
+          1.0
+        ],
+        "certification_authority": false,
+        "condition_probability_interval": [
+          0.0,
+          1.0
+        ],
+        "ex_ante_condition_evidence_verified": false,
+        "interval_status": "assumption_sensitivity_not_confidence_interval",
+        "market_superiority": null,
+        "native_expected_payout_interval": [
+          0.0,
+          1.0
+        ],
+        "qualified_opportunity": false,
+        "research_only": true,
+        "trading_authority": false
+      },
+      "original_study_id": "000000000026:0a975f0a4d33c5a075ef734de3437c8bb9dabb9c986c49697c4d8e84ff2e2d6c",
+      "original_study_sha256": "26d2689ed3b55ffaf22a584b8f39a02d19a523b263d1d58d8ac5bf886d451aab",
+      "paired_brier": null,
+      "paired_log_loss": null,
+      "probability_semantics": "binary_event_probability",
+      "recorded_at": "2026-11-08T00:40:19.389626+00:00",
+      "research_only": true,
+      "rules_sha256": "81579a63f2adedf94c5e9773e4bf005eea7e4e87b59287d6a70e1405107a67be",
+      "token_id": "27302210298728598154400203886098631523287324641888918582780180220516555034202",
+      "trading_authority": false
+    },
+    {
+      "ask": 0.74,
+      "bid": 0.73,
+      "book_id": "b630070aa5efac7634c4698f1cb7378b737a68f5f0f0b4ccf0934eddd5c5d0e8",
+      "book_sha256": "2a22b577a30734d35ac9a2df3c2ca3456313e598100686cfd1d072182bf71818",
+      "certification_authority": false,
+      "comparison_rejections": [
+        "conditional_or_unreviewed_native_payout_semantics"
+      ],
+      "conditioning": "official_completed_game",
+      "domain": "sports",
+      "event_id": "1171319",
+      "evidence_cutoff": "2026-11-08T00:40:19.273861+00:00",
+      "forecast_at": "2026-11-08T00:40:19.350764+00:00",
+      "forecast_id": "e22b5c4dec815b9ddac03dc3726bcfc45d4a320e7c88dbd70bdcc2e30b20d1cf",
+      "forecast_sha256": "7306631fb438685386677a3ad6e85586b2d0a8c56717d478478e35a94921e16f",
+      "market_at": "2026-11-08T00:40:15.136000+00:00",
+      "market_available_at": "2026-11-08T00:40:19.273418+00:00",
+      "market_expected_payout_midpoint": 0.735,
+      "market_id": "5563975",
+      "model_id": "nhl-causal-elo-v25.1",
+      "model_interval": [
+        0.0,
+        1.0
+      ],
+      "model_probability": 0.6517538335091516,
+      "model_sha256": "d7ba48afc4f83aef0fe24d5022b3391581ffb5cf475154d4df13ee92f1bc1706",
+      "model_version": "nhl-causal-elo-v25.1",
+      "native_probability_semantics_comparable": false,
+      "native_sensitivity": {
+        "alternative_payout_interval": [
+          0.0,
+          1.0
+        ],
+        "certification_authority": false,
+        "condition_probability_interval": [
+          0.0,
+          1.0
+        ],
+        "ex_ante_condition_evidence_verified": false,
+        "interval_status": "assumption_sensitivity_not_confidence_interval",
+        "market_superiority": null,
+        "native_expected_payout_interval": [
+          0.0,
+          1.0
+        ],
+        "qualified_opportunity": false,
+        "research_only": true,
+        "trading_authority": false
+      },
+      "original_study_id": "000000000026:0a975f0a4d33c5a075ef734de3437c8bb9dabb9c986c49697c4d8e84ff2e2d6c",
+      "original_study_sha256": "26d2689ed3b55ffaf22a584b8f39a02d19a523b263d1d58d8ac5bf886d451aab",
+      "paired_brier": null,
+      "paired_log_loss": null,
+      "probability_semantics": "binary_event_probability",
+      "recorded_at": "2026-11-08T00:40:19.389626+00:00",
+      "research_only": true,
+      "rules_sha256": "81579a63f2adedf94c5e9773e4bf005eea7e4e87b59287d6a70e1405107a67be",
+      "token_id": "27302210298728598154400203886098631523287324641888918582780180220516555034202",
+      "trading_authority": false
+    },
+    {
+      "ask": 0.57,
+      "bid": 0.56,
+      "book_id": "b219e22cabdb7d81282882021708937f66ee14fbac8f047ea03333071d58c079",
+      "book_sha256": "92f4545fe62941763acaf220d85edd21b315d29d1122b4d23e3226655134394e",
+      "certification_authority": false,
+      "comparison_rejections": [
+        "conditional_or_unreviewed_native_payout_semantics"
+      ],
+      "conditioning": "official_completed_game",
+      "domain": "sports",
+      "event_id": "1177622",
+      "evidence_cutoff": "2026-11-08T12:09:20.139025+00:00",
+      "forecast_at": "2026-11-08T12:09:20.210600+00:00",
+      "forecast_id": "b03b65651c160fbd73504cf023aacddaaa2ee928d0c5c702f045e1ca2bf86086",
+      "forecast_sha256": "6a6c1b1701499a734cb38ba71272e8e0f125bfc10b7fc3f21ad1db62d10ccd07",
+      "market_at": "2026-11-08T12:09:14.546000+00:00",
+      "market_available_at": "2026-11-08T12:09:20.138679+00:00",
+      "market_expected_payout_midpoint": 0.565,
+      "market_id": "5609555",
+      "model_id": "nhl-causal-elo-v25.1",
+      "model_interval": [
+        0.0,
+        1.0
+      ],
+      "model_probability": 0.6087628808934705,
+      "model_sha256": "d7ba48afc4f83aef0fe24d5022b3391581ffb5cf475154d4df13ee92f1bc1706",
+      "model_version": "nhl-causal-elo-v25.1",
+      "native_probability_semantics_comparable": false,
+      "native_sensitivity": {
+        "alternative_payout_interval": [
+          0.0,
+          1.0
+        ],
+        "certification_authority": false,
+        "condition_probability_interval": [
+          0.0,
+          1.0
+        ],
+        "ex_ante_condition_evidence_verified": false,
+        "interval_status": "assumption_sensitivity_not_confidence_interval",
+        "market_superiority": null,
+        "native_expected_payout_interval": [
+          0.0,
+          1.0
+        ],
+        "qualified_opportunity": false,
+        "research_only": true,
+        "trading_authority": false
+      },
+      "original_study_id": "000000000346:07048ada170ed10e34c691a6cfcf77ed767502b2cfd75d8464b1af9c2c68dd25",
+      "original_study_sha256": "c8544261ea92b2f262c5f0a3f429e76d8b5951cccbb7a1aeca5afe9352d4ef3a",
+      "paired_brier": null,
+      "paired_log_loss": null,
+      "probability_semantics": "binary_event_probability",
+      "recorded_at": "2026-11-08T12:09:20.245869+00:00",
+      "research_only": true,
+      "rules_sha256": "a939f90972eb8a718866aef1f0a50773c689bfc4a89a514baa138cbfc676928f",
+      "token_id": "16709506883266242302678707422410802837421855744162165142337004570711095555531",
+      "trading_authority": false
+    },
+    {
+      "ask": 0.57,
+      "bid": 0.56,
+      "book_id": "b219e22cabdb7d81282882021708937f66ee14fbac8f047ea03333071d58c079",
+      "book_sha256": "92f4545fe62941763acaf220d85edd21b315d29d1122b4d23e3226655134394e",
+      "certification_authority": false,
+      "comparison_rejections": [
+        "conditional_or_unreviewed_native_payout_semantics"
+      ],
+      "conditioning": "official_completed_game",
+      "domain": "sports",
+      "event_id": "1177622",
+      "evidence_cutoff": "2026-11-08T12:09:20.139025+00:00",
+      "forecast_at": "2026-11-08T12:09:20.210600+00:00",
+      "forecast_id": "df00888917345a6a204cbae2247cbff709e4be713efd454078a460f37694e3fb",
+      "forecast_sha256": "a5470db7f393811e3d092ede17f759a97ef562f75afb68fd47ad88f68b80f84f",
+      "market_at": "2026-11-08T12:09:14.546000+00:00",
+      "market_available_at": "2026-11-08T12:09:20.138679+00:00",
+      "market_expected_payout_midpoint": 0.565,
+      "market_id": "5609555",
+      "model_id": "nhl-beta-frequency-v25.1",
+      "model_interval": [
+        0.0,
+        1.0
+      ],
+      "model_probability": 0.6720960137162452,
+      "model_sha256": "c8c477ec4f9eb72badde574dccef47dab4e88fcd147c0cfc47d5aa80787052bc",
+      "model_version": "nhl-beta-frequency-v25.1",
+      "native_probability_semantics_comparable": false,
+      "native_sensitivity": {
+        "alternative_payout_interval": [
+          0.0,
+          1.0
+        ],
+        "certification_authority": false,
+        "condition_probability_interval": [
+          0.0,
+          1.0
+        ],
+        "ex_ante_condition_evidence_verified": false,
+        "interval_status": "assumption_sensitivity_not_confidence_interval",
+        "market_superiority": null,
+        "native_expected_payout_interval": [
+          0.0,
+          1.0
+        ],
+        "qualified_opportunity": false,
+        "research_only": true,
+        "trading_authority": false
+      },
+      "original_study_id": "000000000346:07048ada170ed10e34c691a6cfcf77ed767502b2cfd75d8464b1af9c2c68dd25",
+      "original_study_sha256": "c8544261ea92b2f262c5f0a3f429e76d8b5951cccbb7a1aeca5afe9352d4ef3a",
+      "paired_brier": null,
+      "paired_log_loss": null,
+      "probability_semantics": "binary_event_probability",
+      "recorded_at": "2026-11-08T12:09:20.245869+00:00",
+      "research_only": true,
+      "rules_sha256": "a939f90972eb8a718866aef1f0a50773c689bfc4a89a514baa138cbfc676928f",
+      "token_id": "16709506883266242302678707422410802837421855744162165142337004570711095555531",
+      "trading_authority": false
+    },
+    {
+      "ask": 0.51,
+      "bid": 0.5,
+      "book_id": "4749227f2d62108d67aa86bd84193dd98d91310a924d25a46f72be36d2b8792b",
+      "book_sha256": "4674d3866bb056b8ffe209795841ab19135561bf6cbf931c795ecc35aa591682",
+      "certification_authority": false,
+      "comparison_rejections": [
+        "conditional_or_unreviewed_native_payout_semantics"
+      ],
+      "conditioning": "official_completed_game",
+      "domain": "sports",
+      "event_id": "1177623",
+      "evidence_cutoff": "2026-11-08T19:01:23.495994+00:00",
+      "forecast_at": "2026-11-08T19:01:23.565915+00:00",
+      "forecast_id": "2a299949f6a6cc86d6ee808460b908847a888321f0083ba891b31c4b604e5c92",
+      "forecast_sha256": "a7b10e7ce8bab64353f11d7a89bebc3c540820e9c423b1a808ea6ae8b3644fe7",
+      "market_at": "2026-11-08T19:01:08.913000+00:00",
+      "market_available_at": "2026-11-08T19:01:23.495626+00:00",
+      "market_expected_payout_midpoint": 0.505,
+      "market_id": "5609560",
+      "model_id": "nhl-beta-frequency-v25.1",
+      "model_interval": [
+        0.0,
+        1.0
+      ],
+      "model_probability": 0.39906103286384964,
+      "model_sha256": "c8c477ec4f9eb72badde574dccef47dab4e88fcd147c0cfc47d5aa80787052bc",
+      "model_version": "nhl-beta-frequency-v25.1",
+      "native_probability_semantics_comparable": false,
+      "native_sensitivity": {
+        "alternative_payout_interval": [
+          0.0,
+          1.0
+        ],
+        "certification_authority": false,
+        "condition_probability_interval": [
+          0.0,
+          1.0
+        ],
+        "ex_ante_condition_evidence_verified": false,
+        "interval_status": "assumption_sensitivity_not_confidence_interval",
+        "market_superiority": null,
+        "native_expected_payout_interval": [
+          0.0,
+          1.0
+        ],
+        "qualified_opportunity": false,
+        "research_only": true,
+        "trading_authority": false
+      },
+      "original_study_id": "000000000425:a64aa83b2f955b2542adbc5d228b726aa568c68988dd8940bd1e1eae34f284fc",
+      "original_study_sha256": "d7be0c57b40ab2afe02dd3a27d179b7ad7a158b4f24bdc1fba5d55bc45ce5415",
+      "paired_brier": null,
+      "paired_log_loss": null,
+      "probability_semantics": "binary_event_probability",
+      "recorded_at": "2026-11-08T19:01:23.601363+00:00",
+      "research_only": true,
+      "rules_sha256": "da1e8a6d771ec8ed3132b818ce7a0f6d1702492387af243a0016d7667bd08c92",
+      "token_id": "101415398625662300773903076205479904206017591538940633519853600239956927134884",
+      "trading_authority": false
+    },
+    {
+      "ask": 0.51,
+      "bid": 0.5,
+      "book_id": "4749227f2d62108d67aa86bd84193dd98d91310a924d25a46f72be36d2b8792b",
+      "book_sha256": "4674d3866bb056b8ffe209795841ab19135561bf6cbf931c795ecc35aa591682",
+      "certification_authority": false,
+      "comparison_rejections": [
+        "conditional_or_unreviewed_native_payout_semantics"
+      ],
+      "conditioning": "official_completed_game",
+      "domain": "sports",
+      "event_id": "1177623",
+      "evidence_cutoff": "2026-11-08T19:01:23.495994+00:00",
+      "forecast_at": "2026-11-08T19:01:23.565915+00:00",
+      "forecast_id": "cb774f7f4133721ab42ab8d88dd95a8e3914f9ca4fe6b011201ac4148326fec1",
+      "forecast_sha256": "15aac17bef64a9d1ae0dd77884f481ed322eb6430d62c863aee1d9a4f80582c8",
+      "market_at": "2026-11-08T19:01:08.913000+00:00",
+      "market_available_at": "2026-11-08T19:01:23.495626+00:00",
+      "market_expected_payout_midpoint": 0.505,
+      "market_id": "5609560",
+      "model_id": "nhl-causal-elo-v25.1",
+      "model_interval": [
+        0.0,
+        1.0
+      ],
+      "model_probability": 0.42012939463994214,
+      "model_sha256": "d7ba48afc4f83aef0fe24d5022b3391581ffb5cf475154d4df13ee92f1bc1706",
+      "model_version": "nhl-causal-elo-v25.1",
+      "native_probability_semantics_comparable": false,
+      "native_sensitivity": {
+        "alternative_payout_interval": [
+          0.0,
+          1.0
+        ],
+        "certification_authority": false,
+        "condition_probability_interval": [
+          0.0,
+          1.0
+        ],
+        "ex_ante_condition_evidence_verified": false,
+        "interval_status": "assumption_sensitivity_not_confidence_interval",
+        "market_superiority": null,
+        "native_expected_payout_interval": [
+          0.0,
+          1.0
+        ],
+        "qualified_opportunity": false,
+        "research_only": true,
+        "trading_authority": false
+      },
+      "original_study_id": "000000000425:a64aa83b2f955b2542adbc5d228b726aa568c68988dd8940bd1e1eae34f284fc",
+      "original_study_sha256": "d7be0c57b40ab2afe02dd3a27d179b7ad7a158b4f24bdc1fba5d55bc45ce5415",
+      "paired_brier": null,
+      "paired_log_loss": null,
+      "probability_semantics": "binary_event_probability",
+      "recorded_at": "2026-11-08T19:01:23.601363+00:00",
+      "research_only": true,
+      "rules_sha256": "da1e8a6d771ec8ed3132b818ce7a0f6d1702492387af243a0016d7667bd08c92",
+      "token_id": "101415398625662300773903076205479904206017591538940633519853600239956927134884",
+      "trading_authority": false
+    }
+  ],
+  "calibration": null,
+  "certification_authority": false,
+  "comparison_scope": "Original expected-payout quote preserved; conditional reference forecasts are never relabelled as unconditional native probabilities",
+  "event_disjoint_heldout_groups": 0,
+  "exact_original_market_baselines": 22,
+  "execution_cost_adjusted_performance": null,
+  "input_rows": 46,
+  "market_superiority": null,
+  "metrics": null,
+  "models": [
+    {
+      "brier_vs_market": null,
+      "calibration": null,
+      "certification_authority": false,
+      "domain": "sports",
+      "log_loss_vs_market": null,
+      "market_superiority": null,
+      "model_id": "nhl-beta-frequency-v25.1",
+      "model_sha256": "c8c477ec4f9eb72badde574dccef47dab4e88fcd147c0cfc47d5aa80787052bc",
+      "model_version": "nhl-beta-frequency-v25.1",
+      "native_semantics_comparable": 0,
+      "original_forecasts": 6,
+      "original_market_baselines_preserved": 6,
+      "rank": null,
+      "research_only": true,
+      "status": "conditional_target_not_native_comparable",
+      "trading_authority": false
+    },
+    {
+      "brier_vs_market": null,
+      "calibration": null,
+      "certification_authority": false,
+      "domain": "sports",
+      "log_loss_vs_market": null,
+      "market_superiority": null,
+      "model_id": "nhl-causal-elo-v25.1",
+      "model_sha256": "d7ba48afc4f83aef0fe24d5022b3391581ffb5cf475154d4df13ee92f1bc1706",
+      "model_version": "nhl-causal-elo-v25.1",
+      "native_semantics_comparable": 0,
+      "original_forecasts": 6,
+      "original_market_baselines_preserved": 6,
+      "rank": null,
+      "research_only": true,
+      "status": "conditional_target_not_native_comparable",
+      "trading_authority": false
+    },
+    {
+      "brier_vs_market": null,
+      "calibration": null,
+      "certification_authority": false,
+      "domain": "weather",
+      "log_loss_vs_market": null,
+      "market_superiority": null,
+      "model_id": "metar-diurnal-analog-v24.1",
+      "model_sha256": "46443a4844feab6a0740a9c6f60d8a4daad7c344c67850a5f18dd1885f7d608c",
+      "model_version": "metar-diurnal-analog-v24.1",
+      "native_semantics_comparable": 0,
+      "original_forecasts": 2,
+      "original_market_baselines_preserved": 2,
+      "rank": null,
+      "research_only": true,
+      "status": "conditional_target_not_native_comparable",
+      "trading_authority": false
+    },
+    {
+      "brier_vs_market": null,
+      "calibration": null,
+      "certification_authority": false,
+      "domain": "weather",
+      "log_loss_vs_market": null,
+      "market_superiority": null,
+      "model_id": "metar-diurnal-gaussian-v25.1",
+      "model_sha256": "f17c44bfbf9d63483b33374f661b84389af33b23516c562b6911f93ead22f41e",
+      "model_version": "metar-diurnal-gaussian-v25.1",
+      "native_semantics_comparable": 0,
+      "original_forecasts": 3,
+      "original_market_baselines_preserved": 3,
+      "rank": null,
+      "research_only": true,
+      "status": "conditional_target_not_native_comparable",
+      "trading_authority": false
+    },
+    {
+      "brier_vs_market": null,
+      "calibration": null,
+      "certification_authority": false,
+      "domain": "weather",
+      "log_loss_vs_market": null,
+      "market_superiority": null,
+      "model_id": "metar-recency-kernel-v25.1",
+      "model_sha256": "92e7de184159e1eb898cf6a82a41fe737295da3c6fa99508da02678d4be54cfd",
+      "model_version": "metar-recency-kernel-v25.1",
+      "native_semantics_comparable": 0,
+      "original_forecasts": 3,
+      "original_market_baselines_preserved": 3,
+      "rank": null,
+      "research_only": true,
+      "status": "conditional_target_not_native_comparable",
+      "trading_authority": false
+    },
+    {
+      "brier_vs_market": null,
+      "calibration": null,
+      "certification_authority": false,
+      "domain": "weather",
+      "log_loss_vs_market": null,
+      "market_superiority": null,
+      "model_id": "metar-recent-climatology-v24.1",
+      "model_sha256": "7a696e590e023c5cea7111d3bc172adaa982eaf3792a91167f905bfdb59d91ff",
+      "model_version": "metar-recent-climatology-v24.1",
+      "native_semantics_comparable": 0,
+      "original_forecasts": 2,
+      "original_market_baselines_preserved": 2,
+      "rank": null,
+      "research_only": true,
+      "status": "conditional_target_not_native_comparable",
+      "trading_authority": false
+    }
+  ],
+  "native_semantics_comparable_forecasts": 0,
+  "native_verified_pairs": 0,
+  "rejections": {
+    "repeated_original_forecast_not_independent": 24
+  },
+  "research_only": true,
+  "schema_version": "phase35-original-market-baseline-audit-v1",
+  "trading_authority": false
+}
