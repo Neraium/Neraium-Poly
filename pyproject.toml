@@ -28,3 +28,8 @@ asyncio_default_fixture_loop_scope = "function"
 
 [tool.ruff]
 line-length = 110
+
+# This already-enrolled model hashes its complete source. Preserve original
+# prospective model identities; its import-spacing style has no runtime effect.
+[tool.ruff.lint.per-file-ignores]
+"backend/neraium_poly/research/phase35/weather.py" = ["I001"]

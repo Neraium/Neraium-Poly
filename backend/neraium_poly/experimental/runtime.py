@@ -253,6 +253,24 @@ class ExperimentalRuntime:
                     self.phase25 = self.phase25_outcomes = self.phase25_universe = None
                     self.phase25_error = f"{type(error).__name__}:{str(error)[:160]}"
                     log.exception("phase25_recovery_withheld")
+            self.phase35 = self.phase35_native = self.phase35_universe = self.phase35_outcomes = None
+            self.phase35_error = self.phase35_native_error = None
+            if config.phase25_research_enabled:
+                from neraium_poly.research.phase35.continuous import WorldWeatherResearch
+                from neraium_poly.research.phase35.discovery import WorldWeatherUniverse
+                from neraium_poly.research.phase35.outcomes import WorldWeatherOutcomes
+                from neraium_poly.research.phase35.persistence import NativeResearchPublisher
+                try:
+                    self.phase35 = WorldWeatherResearch(self.events, clock=self.clock, can_write=self._budget_ok)
+                    self.phase35_universe = WorldWeatherUniverse(self.events, clock=self.clock, can_write=self._budget_ok)
+                    self.phase35_native = NativeResearchPublisher(self.events, config.data_dir/'phase35-native',
+                        clock=self.clock, can_write=self._budget_ok)
+                    self.phase35_outcomes = WorldWeatherOutcomes(self.events, config.data_dir/'phase35-weather-outcomes',
+                        clock=self.clock, can_write=self._budget_ok)
+                except Exception as error:
+                    self.phase35 = self.phase35_native = self.phase35_universe = self.phase35_outcomes = None
+                    self.phase35_error = f"{type(error).__name__}:{str(error)[:160]}"
+                    log.exception('phase35_research_recovery_withheld')
             self.phase26_enabled = config.phase26_intelligence_enabled
             self.phase26_index = self.phase26_inputs = None
             self.phase26_report = self.phase26_error = None
@@ -1007,6 +1025,39 @@ class ExperimentalRuntime:
                     break
                 await asyncio.sleep(1)
 
+    async def _phase35_research_once(self):
+        async with self._research_source_lock:
+            if not await self._sync_io(self._budget_ok):
+                return
+            try:
+                await self._research_io(self.phase35_native.step)
+                self.phase35_native_error = None
+            except Exception as error:
+                # Native proof failure cannot qualify a payout or prevent a
+                # separate source-qualified prospective research observation.
+                self.phase35_native_error = f'{type(error).__name__}:{str(error)[:160]}'
+                log.exception('phase35_native_evidence_withheld')
+            frame = await self._research_io(self.phase35_universe.frame, self.last_frame)
+            await self._research_io(self.phase35.step, frame)
+            if getattr(self, 'phase35_outcomes', None) is not None:
+                await self._research_io(self.phase35_outcomes.step)
+
+    async def _phase35_research_loop(self, should_exit):
+        # Existing serial research worker owns all archival writes. API reads
+        # only cached status; no new executor, account or admission authority.
+        while not self.stopping and not should_exit():
+            if getattr(self, 'phase35', None) is not None and self.last_frame is not None:
+                try:
+                    await self._phase35_research_once()
+                    self.phase35_error = None
+                except Exception as error:
+                    self.phase35_error = f'{type(error).__name__}:{str(error)[:160]}'
+                    log.exception('phase35_research_withheld')
+            for _ in range(30):
+                if self.stopping or should_exit():
+                    return
+                await asyncio.sleep(1)
+
     async def _volume_research_loop(self, should_exit):
         # No external outcome/source-acquisition lock: fresh research observations
         # must not wait for unrelated unresolved-event provider timeouts.
@@ -1165,7 +1216,7 @@ class ExperimentalRuntime:
                     await self._sync_io(self._cancel_and_checkpoint, self.clock())
                 await asyncio.sleep(self.config.poll_seconds)
 
-        await asyncio.gather(cycles(), self._fees_loop(should_exit), self._event_resolution_loop(should_exit), independent_events(), self._domain_research_loop(should_exit), self._domain_research_loop(should_exit, "phase25"), self._volume_research_loop(should_exit), self._research_fee_loop(should_exit), self._official_event_score_loop(should_exit), self._event_summary_sampler(should_exit), self._cpi_input_probe_loop(should_exit))
+        await asyncio.gather(cycles(), self._fees_loop(should_exit), self._event_resolution_loop(should_exit), independent_events(), self._domain_research_loop(should_exit), self._domain_research_loop(should_exit, "phase25"), self._phase35_research_loop(should_exit), self._volume_research_loop(should_exit), self._research_fee_loop(should_exit), self._official_event_score_loop(should_exit), self._event_summary_sampler(should_exit), self._cpi_input_probe_loop(should_exit))
 
     def health(self):
         last_success = self.last_success
@@ -1272,6 +1323,13 @@ class ExperimentalRuntime:
         state["official_event_research"] = self.official_event_scores.status() if getattr(self,"official_event_scores",None) else {"status":"disabled"}
         state["research_costs"] = self.research_fees.status() if getattr(self,"research_fees",None) else None
         state["weather_input_selection"] = getattr(self, "weather_input_selection", {"status":"not_yet_evaluated","trading_authority":False})
+        state['independent_weather_research'] = {
+            'forecasts': self.phase35.status() if getattr(self, 'phase35', None) else None,
+            'native_evidence': self.phase35_native.status() if getattr(self, 'phase35_native', None) else None,
+            'discovery': self.phase35_universe.status() if getattr(self, 'phase35_universe', None) else None,
+            'official_outcomes': self.phase35_outcomes.status() if getattr(self, 'phase35_outcomes', None) else None,
+            'last_error': getattr(self, 'phase35_error', None),
+            'native_last_error': getattr(self, 'phase35_native_error', None), 'trading_authority': False}
         state["research_io"] = self._research_worker.status() if getattr(self, "_research_worker", None) else {"status":"not_started","trading_authority":False}
         state["execution_pools"] = getattr(self, "execution_pool_budget", {"status":"not_configured_by_service_entrypoint","trading_authority":False})
         state["memory"] = self.memory_sampler.status() if getattr(self,"memory_sampler",None) else None

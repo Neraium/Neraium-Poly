@@ -316,6 +316,10 @@ def replay_native_directory(directory):
         method, params = entry["request"]["method"], entry["request"]["params"]
         results.append((method, params, result["result"]))
         if method == "eth_call":
+            if (len(params) != 2 or params[1] != {
+                "blockHash": bundle["finalized"]["hash"], "requireCanonical": True
+            }):
+                raise ValueError("explicit canonical finalized state request required")
             calls[(params[0]["to"], params[0]["data"], params[1]["blockHash"])] = result["result"]
     for key, url in (
         ("gamma", f"https://gamma-api.polymarket.com/markets/{bundle['forecast']['market_id']}"),

@@ -1,0 +1,18 @@
+{
+  "report": {
+    "status": "research_only",
+    "native_verified_markets": 5,
+    "native_parent_events": 3,
+    "native_forecast_bindings": 5,
+    "market_relative_model_superiority": null,
+    "certified_training_groups": 0,
+    "certified_heldout_groups": 0,
+    "trust_limit": "attributed finalized HTTPS RPC evidence; not independent node consensus",
+    "trading_authority": false,
+    "certification_authority": false,
+    "last_checked_at": "2026-11-09T00:48:31.339156+00:00",
+    "blocker": "conditional_forecasts_not_native_calibrated_probabilities"
+  },
+  "append_attempts": 5,
+  "production_archive_writes": 0
+}

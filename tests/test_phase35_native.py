@@ -193,3 +193,23 @@ def test_no_transaction_or_arbitrary_contract_methods(tmp_path):
             c.call("0x" + "a" * 40, "condition", "0x" + "b" * 64, NEG_RISK, "0x" + "c" * 64, 2)
     finally:
         c.client.close()
+
+
+@pytest.mark.parametrize('canonical', [False, None])
+def test_state_replay_requires_explicit_canonical_block_request(tmp_path, canonical):
+    import hashlib
+    bundle = fixture_bundle()
+    (tmp_path/'bundle.json').write_text(json.dumps(bundle))
+    (tmp_path/'raw').mkdir()
+    raw = json.dumps({'id': 1, 'result': '0x'+word(1)}).encode()
+    (tmp_path/'raw/state.json').write_bytes(raw)
+    block = {'blockHash': bundle['finalized']['hash']}
+    if canonical is not None:
+        block['requireCanonical'] = canonical
+    (tmp_path/'manifest.json').write_text(json.dumps({'responses': [{
+        'method':'POST','status':200,'response_path':'raw/state.json',
+        'response_sha256':hashlib.sha256(raw).hexdigest(),
+        'request':{'id':1,'method':'eth_call','params':[{'to':CTF,'data':'0x00'},block]}
+    }]}))
+    with pytest.raises(ValueError, match='explicit canonical finalized'):
+        replay_native_directory(tmp_path)

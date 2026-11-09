@@ -1588,6 +1588,12 @@ def _render_findings(certified, experimental, width, height, errors):
 
 def _render_scorecard(experimental,width,height,errors):
     score=_mapping(experimental.get("domain_scorecard"));rows=["DOMAIN SCORECARD / RESEARCH ONLY"]
+    supplement=_mapping(experimental.get('independent_weather_research'))
+    if supplement:
+        forecasts=_mapping(supplement.get('forecasts'));native=_mapping(supplement.get('native_evidence'))
+        rows.append(f"New AWC forecasts {_number(forecasts.get('forecasts'))}")
+        rows.append(f"Native proofs {_number(native.get('native_verified_markets'))} / parents {_number(native.get('native_parent_events'))}")
+        rows.append("Conditional models: no market score")
     if score.get("status")!="research_only":rows.append("Scorecard pending / stale")
     else:
         rows.append("Forecasts / event labels / groups")
@@ -1603,7 +1609,7 @@ def _render_scorecard(experimental,width,height,errors):
         headroom=_mapping(experimental.get("native_fee_headroom"))
         if headroom.get("status")=="research_fee_headroom":
             rows.append(f"Fee pairs {_number(headroom.get('verified_fee_pairs'))} Headroom+ {_number(headroom.get('positive_formula_headroom_pairs'))}")
-        rows.append("All-in costs/native payout unverified")
+        rows.append("Pair costs/payouts unverified")
     if errors:rows.append("API "+_clean(errors[0]))
     text=Text()
     for i,line in enumerate(rows[:height]):

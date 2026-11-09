@@ -1,0 +1,124 @@
+{
+  "at": "2026-11-09T00:49:40.338630+00:00",
+  "markets": 406,
+  "fresh_books": 225,
+  "domains": {
+    "crypto": {
+      "prospective_forecasts": 50,
+      "reviewed_event_groups": 4,
+      "official_event_forecast_scores": 0,
+      "official_event_groups": 0,
+      "evidence_qualified_positive_net_estimates": 0,
+      "qualified_paper_opportunities": 0
+    },
+    "finance": {
+      "prospective_forecasts": 4,
+      "reviewed_event_groups": 1,
+      "official_event_forecast_scores": 0,
+      "official_event_groups": 0,
+      "evidence_qualified_positive_net_estimates": 0,
+      "qualified_paper_opportunities": 0
+    },
+    "economics": {
+      "prospective_forecasts": 4,
+      "reviewed_event_groups": 2,
+      "official_event_forecast_scores": 0,
+      "official_event_groups": 0,
+      "evidence_qualified_positive_net_estimates": 0,
+      "qualified_paper_opportunities": 0
+    },
+    "weather": {
+      "prospective_forecasts": 20,
+      "reviewed_event_groups": 8,
+      "official_event_forecast_scores": 10,
+      "official_event_groups": 3,
+      "evidence_qualified_positive_net_estimates": 0,
+      "qualified_paper_opportunities": 0
+    },
+    "sports": {
+      "prospective_forecasts": 142,
+      "reviewed_event_groups": 40,
+      "official_event_forecast_scores": 12,
+      "official_event_groups": 6,
+      "evidence_qualified_positive_net_estimates": 0,
+      "qualified_paper_opportunities": 0
+    },
+    "politics": {
+      "prospective_forecasts": 0,
+      "reviewed_event_groups": 0,
+      "official_event_forecast_scores": 0,
+      "official_event_groups": 0,
+      "evidence_qualified_positive_net_estimates": 0,
+      "qualified_paper_opportunities": 0
+    },
+    "geopolitics": {
+      "prospective_forecasts": 0,
+      "reviewed_event_groups": 0,
+      "official_event_forecast_scores": 0,
+      "official_event_groups": 0,
+      "evidence_qualified_positive_net_estimates": 0,
+      "qualified_paper_opportunities": 0
+    },
+    "technology": {
+      "prospective_forecasts": 0,
+      "reviewed_event_groups": 0,
+      "official_event_forecast_scores": 0,
+      "official_event_groups": 0,
+      "evidence_qualified_positive_net_estimates": 0,
+      "qualified_paper_opportunities": 0
+    },
+    "science": {
+      "prospective_forecasts": 0,
+      "reviewed_event_groups": 0,
+      "official_event_forecast_scores": 0,
+      "official_event_groups": 0,
+      "evidence_qualified_positive_net_estimates": 0,
+      "qualified_paper_opportunities": 0
+    },
+    "esports": {
+      "prospective_forecasts": 0,
+      "reviewed_event_groups": 0,
+      "official_event_forecast_scores": 0,
+      "official_event_groups": 0,
+      "evidence_qualified_positive_net_estimates": 0,
+      "qualified_paper_opportunities": 0
+    },
+    "entertainment": {
+      "prospective_forecasts": 0,
+      "reviewed_event_groups": 0,
+      "official_event_forecast_scores": 0,
+      "official_event_groups": 0,
+      "evidence_qualified_positive_net_estimates": 0,
+      "qualified_paper_opportunities": 0
+    },
+    "other": {
+      "prospective_forecasts": 0,
+      "reviewed_event_groups": 0,
+      "official_event_forecast_scores": 0,
+      "official_event_groups": 0,
+      "evidence_qualified_positive_net_estimates": 0,
+      "qualified_paper_opportunities": 0
+    }
+  },
+  "official": {
+    "verified_forecast_labels": 22,
+    "distinct_official_event_groups": 9,
+    "event_groups_by_domain": {
+      "weather": 3,
+      "sports": 6
+    },
+    "effective_independent_sample_size": null
+  },
+  "account": {
+    "cash": 496.11522059829053,
+    "kill_switch": false,
+    "simulated_pnl": -3.8847794017094657,
+    "orders_submitted": 13,
+    "fills": 10,
+    "open_positions": 0
+  },
+  "sii_paired_events": 0,
+  "sii_incremental_value": null,
+  "certified_train": 0,
+  "certified_heldout": 0
+}
