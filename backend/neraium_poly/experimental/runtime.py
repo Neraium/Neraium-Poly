@@ -549,6 +549,10 @@ class ExperimentalRuntime:
             self._research_worker = worker = ResearchWorker()
         return await worker.run(factory, *args, **kwargs)
 
+    async def _publish_phase35_native(self):
+        """Keep synchronous proof replay and SQLite publication off the worker loop."""
+        return await asyncio.to_thread(self.phase35_native.step)
+
     def _select_weather_research(self, frame):
         from neraium_poly.research.phase14.relationships import digest
         from neraium_poly.research.phase34.selection import WeatherInputSelection, prepare_weather_frame
@@ -1030,7 +1034,7 @@ class ExperimentalRuntime:
             if not await self._sync_io(self._budget_ok):
                 return
             try:
-                await self._research_io(self.phase35_native.step)
+                await self._research_io(self._publish_phase35_native)
                 self.phase35_native_error = None
             except Exception as error:
                 # Native proof failure cannot qualify a payout or prevent a

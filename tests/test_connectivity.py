@@ -291,10 +291,38 @@ async def test_native_stream_delivery_and_cancel_clears_cache(now, market):
 async def test_queue_overflow_invalidates_state(feed, now):
     await feed.handle(full(now))
     feed._queue = asyncio.Queue(maxsize=1)
+    feed.queue_put_timeout = 0.01
     socket = Socket([json.dumps([full(now), full(now)])])
     with pytest.raises(StreamGap):
         await feed._receive(socket)
-    assert not feed.latest and feed.metrics()["queue_overflows"] == 1
+    metrics = feed.metrics()
+    assert not feed.latest and metrics["queue_overflows"] == 1
+    assert metrics["queue_backpressure_waits"] == metrics["queue_backpressure_timeouts"] == 1
+
+
+async def test_queue_backpressure_drains_burst_without_reconnect(feed, now):
+    feed._queue = asyncio.Queue(maxsize=1)
+    feed.queue_put_timeout = 0.1
+    socket = Socket([json.dumps([full(now - timedelta(milliseconds=2)), delta(now - timedelta(milliseconds=1), [
+        {"asset_id": "t1", "side": "BUY", "price": ".39", "size": "4"}
+    ])])])
+    delivered = []
+    consumer = asyncio.create_task(feed._consume(delivered.append))
+    receiver = asyncio.create_task(feed._receive(socket))
+    try:
+        for _ in range(100):
+            if len(delivered) == 2:
+                break
+            await asyncio.sleep(0.005)
+        assert len(delivered) == 2
+        metrics = feed.metrics()
+        assert metrics["queue_backpressure_waits"] == 1
+        assert metrics["queue_backpressure_timeouts"] == metrics["queue_overflows"] == 0
+        assert metrics["queue_retained_bytes"] == 0
+    finally:
+        receiver.cancel()
+        consumer.cancel()
+        await asyncio.gather(receiver, consumer, return_exceptions=True)
 
 
 async def test_malformed_frame_reconnect_budget_withholds_cache(now, market):

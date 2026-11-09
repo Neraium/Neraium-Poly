@@ -161,6 +161,7 @@ class CoverageFeed:
         self.adapter.discovery_offset = getattr(self._original, "discovery_offset", 0)
         self.max_tokens, self.queue_size = max_tokens, queue_size
         self.queue_bytes = queue_bytes
+        self.queue_put_timeout = 1.0
         self.max_book_levels, self.max_cached_levels = max_book_levels, max_cached_levels
         self._queued_bytes = 0
         self.connector, self.max_reconnects, self.max_gap_seconds = connector, max_reconnects, max_gap_seconds
@@ -187,6 +188,8 @@ class CoverageFeed:
                 "gaps",
                 "out_of_order",
                 "queue_overflows",
+                "queue_backpressure_waits",
+                "queue_backpressure_timeouts",
                 "queue_byte_overflows",
                 "queue_peak_bytes",
                 "largest_frame_bytes",
@@ -205,6 +208,7 @@ class CoverageFeed:
         }
         self.last_message_at = None
         self.last_gap_at = None
+        self.last_reconnect_reason = None
         self._cursor = 0
 
     def metrics(self) -> dict:
@@ -221,6 +225,7 @@ class CoverageFeed:
             "queue_retained_bytes": self._queued_bytes,
             "queue_budget_bytes": self.queue_bytes,
             "queue_byte_scope": "conservative Python payload charge including in-flight consumer; decoder/socket buffers separate",
+            "last_reconnect_reason": self.last_reconnect_reason,
             "websocket_max_queue": 1,
             "websocket_max_frame_bytes": 16 * 1024**2,
             "cached_book_levels": sum(len(b.bids) + len(b.asks) for b in self.latest.values()),
@@ -602,19 +607,33 @@ class CoverageFeed:
                     # Yield to consumers before a second burst fills the bounded queue.
                     if index and index % 16 == 0:
                         await asyncio.sleep(0)
-                    try:
-                        charge = _payload_bytes(event, self.queue_bytes - self._queued_bytes)
-                        if self._queued_bytes + charge > self.queue_bytes:
-                            self._metrics["queue_byte_overflows"] += 1
-                            self._invalidate()
-                            raise StreamGap("market queue byte budget exceeded")
-                        self._queue.put_nowait((event, charge))
-                        self._queued_bytes += charge
-                        self._metrics["queue_peak_bytes"] = max(self._metrics["queue_peak_bytes"], self._queued_bytes)
-                    except asyncio.QueueFull:
-                        self._metrics["queue_overflows"] += 1
+                    charge = _payload_bytes(event, self.queue_bytes - self._queued_bytes)
+                    if self._queued_bytes + charge > self.queue_bytes:
+                        self._metrics["queue_byte_overflows"] += 1
                         self._invalidate()
-                        raise StreamGap("market queue overflow") from None
+                        raise StreamGap("market queue byte budget exceeded")
+                    self._queued_bytes += charge
+                    self._metrics["queue_peak_bytes"] = max(self._metrics["queue_peak_bytes"], self._queued_bytes)
+                    try:
+                        self._queue.put_nowait((event, charge))
+                    except asyncio.QueueFull:
+                        # Backpressure the socket reader briefly instead of
+                        # discarding a valid burst. The queue and byte budget
+                        # remain bounded; a stalled consumer still fails closed.
+                        self._metrics["queue_backpressure_waits"] += 1
+                        try:
+                            await asyncio.wait_for(
+                                self._queue.put((event, charge)), timeout=self.queue_put_timeout
+                            )
+                        except TimeoutError:
+                            self._queued_bytes -= charge
+                            self._metrics["queue_backpressure_timeouts"] += 1
+                            self._metrics["queue_overflows"] += 1
+                            self._invalidate()
+                            raise StreamGap("market queue backpressure timeout") from None
+                        except asyncio.CancelledError:
+                            self._queued_bytes -= charge
+                            raise
             finally:
                 # Neither an empty queue nor a completed callback should retain
                 # the whole previous decoded universe while waiting for IO.
@@ -690,7 +709,10 @@ class CoverageFeed:
                     for task in done:
                         task.result()
                     raise StreamGap("market stream closed")
-            except (OSError, ValueError, TypeError, TimeoutError, WebSocketException, StreamGap):
+            except (OSError, ValueError, TypeError, TimeoutError, WebSocketException, StreamGap) as error:
+                self.last_reconnect_reason = (
+                    str(error)[:96] if isinstance(error, StreamGap) else type(error).__name__
+                )
                 attempt += 1
                 self._metrics["reconnects"] += 1
                 if attempt > self.max_reconnects:
