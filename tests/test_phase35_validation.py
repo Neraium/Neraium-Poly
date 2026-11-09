@@ -149,3 +149,73 @@ def test_native_semantics_without_resolved_labels_do_not_create_scores_or_rank()
     assert r['native_semantics_comparable_forecasts']==1 and r['native_verified_pairs']==0
     assert r['models'][0]['rank'] is None and r['metrics'] is None
     assert not r['trading_authority']
+
+
+def finalized_item():
+    item=original();f=item['forecast'];f['contract']={'station':'ZUCK','day':'2026-11-08'}
+    item['proof']={'native_payout_verified':True,'proof_status':'rpc_corroborated_finalized_ctf_resolution',
+        'market_id':f['market_id'],'event_id':f['event_id'],'rules_sha256':f['rules_sha256'],
+        'forecast_sha256':digest(f),'token_ids':['Yes','No'],'payouts':[0,1],
+        'settlement_at':(NOW+timedelta(hours=14)).isoformat(),
+        'available_at':(NOW+timedelta(hours=15)).isoformat(),
+        'trading_authority':False,'certification_authority':False}
+    return item
+
+
+def native_report(items,**kwargs):
+    from neraium_poly.research.phase35.validation import native_market_baseline_report
+    return native_market_baseline_report(items,as_of=NOW+timedelta(days=2),forecast_verifier=replay,
+        native_verifier=kwargs.pop('native_verifier',lambda item,**_:item['proof']),**kwargs)
+
+
+def test_descriptive_native_market_scores_do_not_relabel_conditional_models():
+    item=finalized_item();before=deepcopy(item);r=native_report([item]);d=r['domains'][0]
+    assert item==before and r['native_event_groups']==r['scored_native_market_targets']==1
+    assert d['descriptive_native_market_brier']==pytest.approx(.41**2)
+    import math
+    assert d['descriptive_native_market_log_loss']==pytest.approx(-math.log(.59))
+    assert r['conditional_model_forecasts']==1 and r['model_vs_native_market_scores'] is None
+    assert r['confidence_intervals'] is None and r['realized_simulated_pnl'] is None
+    assert r['certified_training_events']==r['certified_heldout_events']==0
+    assert not r['trading_authority'] and not r['certification_authority']
+
+
+@pytest.mark.parametrize('fault',['missing_replay','proof_hash','token','rules','future_settlement','late_publication','fractional'])
+def test_native_market_scoring_rejects_unbound_or_noncausal_outcomes(fault):
+    item=finalized_item();p=item['proof']
+    if fault=='proof_hash':p['forecast_sha256']='0'*64
+    elif fault=='token':p['token_ids']=['OTHER','No']
+    elif fault=='rules':p['rules_sha256']='0'*64
+    elif fault=='future_settlement':p['settlement_at']=(NOW+timedelta(days=3)).isoformat()
+    elif fault=='late_publication':item['study']['available_at']=(NOW+timedelta(hours=14)).isoformat()
+    elif fault=='fractional':p['payouts']=[1,1]
+    r=native_report([item],native_verifier=None if fault=='missing_replay' else lambda item,**_:item['proof'])
+    assert not r['domains'] and not r['native_event_groups'] and r['rejections']
+
+
+def test_same_parent_station_day_and_multiple_models_do_not_inflate_native_samples():
+    a=finalized_item();b=deepcopy(a)
+    b['forecast']['id']='CONTROLLED-ALTERNATIVE';b['forecast']['model_id']='CONTROLLED-ALTERNATIVE'
+    b['proof']['forecast_sha256']=digest(b['forecast'])
+    r=native_report([a,a,b]);assert r['exact_original_forecasts_with_native_proof']==2
+    assert r['scored_native_market_targets']==r['native_event_groups']==1
+    assert r['rejections']['repeated_native_forecast_not_independent']==1
+    assert r['conditional_model_forecasts']==2
+
+
+def test_parent_aliases_share_one_station_day_but_inconsistent_day_binding_quarantines():
+    a=finalized_item();b=deepcopy(a);f=b['forecast'];f['id']='CONTROLLED-OTHER'
+    f['market']['event_id']=f['event_id']='CONTROLLED-parent-alias'
+    b['proof'].update(event_id=f['event_id'],forecast_sha256=digest(f))
+    r=native_report([a,b]);assert r['native_event_groups']==1
+    f['event_id']=f['market']['event_id']=a['forecast']['event_id'];f['contract']['day']='2026-11-09'
+    b['proof'].update(event_id=f['event_id'],forecast_sha256=digest(f))
+    r=native_report([a,b]);assert r['native_event_groups']==0
+    assert r['rejections']['native_parent_has_inconsistent_station_day_groups']==2
+
+
+def test_native_replay_failure_is_bounded_and_never_scores():
+    def broken(*args,**kwargs):raise RuntimeError('controlled RPC unavailable')
+    r=native_report([finalized_item()],native_verifier=broken)
+    assert r['rejections']=={'native_source_replay_failed':1}
+    assert r['native_event_groups']==0

@@ -173,3 +173,106 @@ def validate_native_market_rows(rows,*,training_end,heldout_start,as_of,verify_r
         'native_payout_verified_scope':'per row independently replayed; not automatic certification',
         'market_baseline':'exact prospective native bid/ask midpoint; not executable acquisition price',
         'execution_cost_adjusted_performance':None,**AUTHORITY}
+
+
+def native_market_baseline_report(records,*,as_of,forecast_verifier=None,native_verifier=None):
+    """Descriptive original native marks against exact finalized token payouts.
+
+    Each input contains study, forecast, proof; native_verifier(item, as_of=...)
+    must replay its raw native source and return that exact proof. Multiple
+    forecast models, contracts and outcome sides never create extra event-days.
+    Conditional model probabilities remain outside native-market comparisons.
+    These completion-observed descriptive scores cannot establish superiority.
+    """
+    now=at(as_of);rows={};rejected=Counter();inputs=0;bad=set()
+    for item in records:
+        inputs+=1
+        if inputs>MAX_ROWS:raise ValueError('bounded_native_baseline_inventory_required')
+        try:
+            f,s,p=item['forecast'],item['study'],item['proof']
+            if not callable(native_verifier):raise TypeError('independent_native_source_replay_required')
+            try:checked=native_verifier(item,as_of=now)
+            except Exception as error:raise ValueError('native_source_replay_failed') from error
+            if (not isinstance(checked,dict) or digest(checked)!=digest(p)
+                or p.get('native_payout_verified') is not True
+                or p.get('proof_status')!='rpc_corroborated_finalized_ctf_resolution'
+                or p.get('trading_authority') is not False or p.get('certification_authority') is not False
+                or any(p.get(k)!=f[k] for k in ('market_id','event_id','rules_sha256'))
+                or p.get('forecast_sha256')!=digest(f)
+                or not at(f['timestamp'])<=at(s['available_at'])<at(f['event_end_time'])
+                or not at(s['available_at'])<at(p['settlement_at'])<=at(p['available_at'])<=now):
+                raise ValueError('exact_original_finalized_native_token_proof_required')
+            tokens,payouts=p['token_ids'],p['payouts']
+            if (not isinstance(tokens,(list,tuple)) or len(tokens)!=2 or len(set(tokens))!=2
+                or not isinstance(payouts,(list,tuple)) or len(payouts)!=2
+                or any(type(n) is not int or n<0 for n in payouts) or not sum(payouts)>0
+                or f['token_id'] not in tokens):raise ValueError('exact_native_payout_vector_required')
+            y=payouts[tokens.index(f['token_id'])]/sum(payouts)
+            if y not in (0.,1.):raise ValueError('fractional_native_payout_is_not_binary_event_label')
+            audit=audit_market_baselines([item],as_of=now,forecast_verifier=forecast_verifier)
+            if len(audit['baselines'])!=1:raise ValueError('original_forecast_model_and_book_replay_required')
+            row=audit['baselines'][0]
+            if f['domain']=='weather':
+                # Original model replay authenticates this exact rule-derived contract.
+                contract=f['contract'];station,day=contract['station'],contract['day']
+                if not isinstance(station,str) or len(station)!=4 or not isinstance(day,str) or len(day)!=10:
+                    raise ValueError('exact_weather_station_day_dependency_required')
+                group=digest(['native-weather-station-day',station,day])
+            else:group=digest(['native-parent-event',f['domain'],f['event_id']])
+            prob=row['market_expected_payout_midpoint']
+            ll=-(math.log(prob) if y else math.log1p(-prob)) if 0<prob<1 else 0. if prob==y else None
+            row.update(event_group_id=group,native_outcome=y,native_market_brier=(prob-y)**2,
+                native_market_log_loss=ll,native_proof_sha256=digest(p),settlement_at=p['settlement_at'],
+                native_evidence_available_at=p['available_at'],native_payout_verified=True,
+                model_native_brier=None,model_native_log_loss=None,market_relative_improvement=None)
+            key=f['id']
+            if key in bad:raise ValueError('conflicting_native_forecast_identity')
+            if key in rows:
+                old=rows[key]
+                if old['forecast_sha256']!=row['forecast_sha256'] or old['native_outcome']!=y:
+                    rows.pop(key);bad.add(key);raise ValueError('conflicting_native_forecast_identity')
+                rejected['repeated_native_forecast_not_independent']+=1
+                continue
+            rows[key]=row
+        except (KeyError,ValueError,TypeError,OverflowError,OSError) as error:rejected[str(error)[:160]]+=1
+    # A parent alias cannot claim multiple independent station-days.
+    parents=defaultdict(set)
+    for row in rows.values():parents[row['event_id']].add(row['event_group_id'])
+    ambiguous={parent for parent,groups in parents.items() if len(groups)!=1}
+    targets={};outcomes=defaultdict(set)
+    for row in rows.values():
+        if row['event_id'] in ambiguous:
+            rejected['native_parent_has_inconsistent_station_day_groups']+=1;continue
+        key=(row['domain'],row['event_group_id'],row['market_id'],row['token_id'])
+        outcomes[key].add(row['native_outcome'])
+        if key not in targets or (row['forecast_at'],row['forecast_id'])<(targets[key]['forecast_at'],targets[key]['forecast_id']):targets[key]=row
+    for key,values in outcomes.items():
+        if len(values)>1:targets.pop(key,None);rejected['contradictory_native_target_payouts']+=1
+    groups=defaultdict(list)
+    for key,row in targets.items():groups[key[:2]].append(row)
+    def mean(items,key):
+        return sum(r[key] for r in items)/len(items) if items and all(r[key] is not None for r in items) else None
+    events=[{'domain':domain,'event_group_id':group,'targets':len(items),
+        'native_market_brier':mean(items,'native_market_brier'),'native_market_log_loss':mean(items,'native_market_log_loss'),
+        'target_scores':sorted(items,key=lambda r:(r['market_id'],r['token_id']))} for (domain,group),items in sorted(groups.items())]
+    by_domain=defaultdict(list)
+    for event in events:by_domain[event['domain']].append(event)
+    domains=[{'domain':domain,'event_groups':len(items),'exact_native_targets':sum(x['targets'] for x in items),
+        'descriptive_native_market_brier':mean(items,'native_market_brier'),
+        'descriptive_native_market_log_loss':mean(items,'native_market_log_loss'),
+        'log_loss_status':'positive_infinity' if any(x['native_market_log_loss'] is None for x in items) else 'finite',
+        'conditional_model_market_comparison':None,'market_superiority':None,'calibration':None,
+        'confidence_intervals':None,**AUTHORITY} for domain,items in sorted(by_domain.items())]
+    return {'schema_version':'phase35-native-market-baseline-descriptive-v1','as_of':now.isoformat(),
+        'input_rows':inputs,'exact_original_forecasts_with_native_proof':len(rows),
+        'scored_native_market_targets':len(targets),'native_event_groups':len(events),'domains':domains,'events':events,
+        'conditional_model_forecasts':sum(not r['native_probability_semantics_comparable'] for r in rows.values()),
+        'model_vs_native_market_scores':None,'market_superiority':None,'calibration':None,'confidence_intervals':None,
+        'effective_independent_sample_size':None,'statistical_independence_verified':False,
+        'certified_training_events':0,'certified_heldout_events':0,'realized_simulated_pnl':None,
+        'execution_cost_adjusted_performance':None,'rejections':dict(rejected),
+        'aggregation':'earliest original forecast per exact native target; equal target weights within station-day/parent, equal group weights per domain',
+        'limitations':['Observed finalized subset; no completion-conditioned superiority claim',
+            'Native midpoint is a descriptive forecast baseline, not an executable acquisition price',
+            'Conditional reference models retain original targets; native proof cannot relabel their probability',
+            'Distinct station-days or parent IDs do not establish statistical independence'],**AUTHORITY}

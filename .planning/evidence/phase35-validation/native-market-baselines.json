@@ -1,0 +1,443 @@
+{
+  "aggregation": "earliest original forecast per exact native target; equal target weights within station-day/parent, equal group weights per domain",
+  "as_of": "2026-11-09T00:47:19.223678+00:00",
+  "calibration": null,
+  "certification_authority": false,
+  "certified_heldout_events": 0,
+  "certified_training_events": 0,
+  "conditional_model_forecasts": 5,
+  "confidence_intervals": null,
+  "domains": [
+    {
+      "calibration": null,
+      "certification_authority": false,
+      "conditional_model_market_comparison": null,
+      "confidence_intervals": null,
+      "descriptive_native_market_brier": 0.04106712500000001,
+      "descriptive_native_market_log_loss": 0.137244457901422,
+      "domain": "weather",
+      "event_groups": 3,
+      "exact_native_targets": 5,
+      "log_loss_status": "finite",
+      "market_superiority": null,
+      "research_only": true,
+      "trading_authority": false
+    }
+  ],
+  "effective_independent_sample_size": null,
+  "events": [
+    {
+      "domain": "weather",
+      "event_group_id": "0c43a17e2e8a850a25b46172d730b39256220a95a88c80450c4719bf3da508a2",
+      "native_market_brier": 0.0008851250000000015,
+      "native_market_log_loss": 0.022705315614697512,
+      "target_scores": [
+        {
+          "ask": 0.98,
+          "bid": 0.936,
+          "book_id": "4294e1a3943f2837b8df83345beee478eac8882425c6b0d1e4ec9c6773e9e9e5",
+          "book_sha256": "ce933e23c7a00505d765e8092f596147e18bd1f9bd8beee62878d51f62923aa3",
+          "certification_authority": false,
+          "comparison_rejections": [
+            "conditional_or_unreviewed_native_payout_semantics"
+          ],
+          "conditioning": "routine AWC availability and no material future correction/fallback",
+          "domain": "weather",
+          "event_group_id": "0c43a17e2e8a850a25b46172d730b39256220a95a88c80450c4719bf3da508a2",
+          "event_id": "1323624",
+          "evidence_cutoff": "2026-11-07T23:44:42.632943+00:00",
+          "forecast_at": "2026-11-07T23:44:42.645216+00:00",
+          "forecast_id": "5706f728a9caa514561d503dd37802f514fda9a3ba54c5befdaca93e25b857d8",
+          "forecast_sha256": "4562c9fb45f554a1fbb375fa662fb13834ab2671ed09f85fb4fa0f9aedf46ba7",
+          "market_at": "2026-11-07T23:44:38.416000+00:00",
+          "market_available_at": "2026-11-07T23:44:42.356997+00:00",
+          "market_expected_payout_midpoint": 0.958,
+          "market_id": "6741015",
+          "market_relative_improvement": null,
+          "model_id": "metar-diurnal-analog-v24.1",
+          "model_interval": [
+            0.0,
+            1.0
+          ],
+          "model_native_brier": null,
+          "model_native_log_loss": null,
+          "model_probability": 0.9137931034482758,
+          "model_sha256": "46443a4844feab6a0740a9c6f60d8a4daad7c344c67850a5f18dd1885f7d608c",
+          "model_version": "metar-diurnal-analog-v24.1",
+          "native_evidence_available_at": "2026-11-09T00:38:00.595466+00:00",
+          "native_market_brier": 0.0017640000000000032,
+          "native_market_log_loss": 0.04290750101127655,
+          "native_outcome": 1.0,
+          "native_payout_verified": true,
+          "native_probability_semantics_comparable": false,
+          "native_proof_sha256": "b0d3e1566fd1c7503db81ae0b6e8b99fb6edc8191b4d423174242495109c1558",
+          "native_sensitivity": {
+            "alternative_payout_interval": [
+              0.0,
+              1.0
+            ],
+            "certification_authority": false,
+            "condition_probability_interval": [
+              0.0,
+              1.0
+            ],
+            "ex_ante_condition_evidence_verified": false,
+            "interval_status": "assumption_sensitivity_not_confidence_interval",
+            "market_superiority": null,
+            "native_expected_payout_interval": [
+              0.0,
+              1.0
+            ],
+            "qualified_opportunity": false,
+            "research_only": true,
+            "trading_authority": false
+          },
+          "original_study_id": "000000000018:15045ca72d8583d6c6807aa3d4107d63cb87c79f7c8d3ce233689bad5b930f89",
+          "original_study_sha256": "36158b76e6cdce1e74507c1d9aea436b53bf3bfc6f83a4f7dc54b88ef57d2f1f",
+          "paired_brier": null,
+          "paired_log_loss": null,
+          "probability_semantics": "binary_event_probability",
+          "recorded_at": "2026-11-07T23:44:42.661022+00:00",
+          "research_only": true,
+          "rules_sha256": "e6076e6c3de30988343730a8d730ec12c7f9adae9f07c5052d8b1da544699617",
+          "settlement_at": "2026-11-08T16:36:07+00:00",
+          "token_id": "34042366474100853457203862973665563893587804972767945397437748411724879091733",
+          "trading_authority": false
+        },
+        {
+          "ask": 0.998,
+          "bid": 0.997,
+          "book_id": "1486bff89ae894be23d0315d196ce25f29c03e8d361d328005d8da39f1253c31",
+          "book_sha256": "3bec67864ebb29048eb47819fd3bc7ef349333c99b951b0bda788d54ca0ba3a3",
+          "certification_authority": false,
+          "comparison_rejections": [
+            "conditional_or_unreviewed_native_payout_semantics"
+          ],
+          "conditioning": "routine AWC availability and no material future correction/fallback",
+          "domain": "weather",
+          "event_group_id": "0c43a17e2e8a850a25b46172d730b39256220a95a88c80450c4719bf3da508a2",
+          "event_id": "1323624",
+          "evidence_cutoff": "2026-11-08T00:39:44.891283+00:00",
+          "forecast_at": "2026-11-08T00:39:44.909085+00:00",
+          "forecast_id": "8fd59e4ba5a052d2285e6174cb4ead00ad847aa1336e25da857d94becb34dd50",
+          "forecast_sha256": "d232b55ed2e13e22671d8c05b85dbead2c3221fd5ea5c2516ee9aead7a427759",
+          "market_at": "2026-11-08T00:39:39.778000+00:00",
+          "market_available_at": "2026-11-08T00:39:44.585831+00:00",
+          "market_expected_payout_midpoint": 0.9975,
+          "market_id": "6741017",
+          "market_relative_improvement": null,
+          "model_id": "metar-recency-kernel-v25.1",
+          "model_interval": [
+            0.0,
+            1.0
+          ],
+          "model_native_brier": null,
+          "model_native_log_loss": null,
+          "model_probability": 0.9078211204753845,
+          "model_sha256": "92e7de184159e1eb898cf6a82a41fe737295da3c6fa99508da02678d4be54cfd",
+          "model_version": "metar-recency-kernel-v25.1",
+          "native_evidence_available_at": "2026-11-09T00:38:04.033015+00:00",
+          "native_market_brier": 6.2499999999997335e-06,
+          "native_market_log_loss": 0.002503130218118477,
+          "native_outcome": 1.0,
+          "native_payout_verified": true,
+          "native_probability_semantics_comparable": false,
+          "native_proof_sha256": "7a2d72e4f9622db0f34aefd615197b4bad0a01ff08d2dc87b0cc9e5d98bb95d9",
+          "native_sensitivity": {
+            "alternative_payout_interval": [
+              0.0,
+              1.0
+            ],
+            "certification_authority": false,
+            "condition_probability_interval": [
+              0.0,
+              1.0
+            ],
+            "ex_ante_condition_evidence_verified": false,
+            "interval_status": "assumption_sensitivity_not_confidence_interval",
+            "market_superiority": null,
+            "native_expected_payout_interval": [
+              0.0,
+              1.0
+            ],
+            "qualified_opportunity": false,
+            "research_only": true,
+            "trading_authority": false
+          },
+          "original_study_id": "000000000025:eaefac948375ddb787e2e39cdce805f980ae9e2b847ae356878ac29cd58a8192",
+          "original_study_sha256": "88afd4a52187d903aec7262fc6d104c0265ab0482cc9dca920a7364b2c62fd60",
+          "paired_brier": null,
+          "paired_log_loss": null,
+          "probability_semantics": "binary_event_probability",
+          "recorded_at": "2026-11-08T00:39:44.911531+00:00",
+          "research_only": true,
+          "rules_sha256": "e6076e6c3de30988343730a8d730ec12c7f9adae9f07c5052d8b1da544699617",
+          "settlement_at": "2026-11-08T16:36:07+00:00",
+          "token_id": "9078095391908655107102102583867275197784611219670387421241082395926534077695",
+          "trading_authority": false
+        }
+      ],
+      "targets": 2
+    },
+    {
+      "domain": "weather",
+      "event_group_id": "81555b7756b2242b8a772096bc20537276f232f6887c2ed7df2fe7489ab90618",
+      "native_market_brier": 0.12209125000000003,
+      "native_market_log_loss": 0.3739144202795204,
+      "target_scores": [
+        {
+          "ask": 0.51,
+          "bid": 0.467,
+          "book_id": "499f95e05961877fa3ba6d1c115e7b0989f45acdea8ca12ff14151b182afed01",
+          "book_sha256": "2a12e3ec6d4b30cc39548875bab5ade5ed795fa11954e021698bd9699bb7cb54",
+          "certification_authority": false,
+          "comparison_rejections": [
+            "conditional_or_unreviewed_native_payout_semantics"
+          ],
+          "conditioning": "routine AWC availability and no material future correction/fallback",
+          "domain": "weather",
+          "event_group_id": "81555b7756b2242b8a772096bc20537276f232f6887c2ed7df2fe7489ab90618",
+          "event_id": "1323602",
+          "evidence_cutoff": "2026-11-07T23:39:21.107660+00:00",
+          "forecast_at": "2026-11-07T23:39:21.154945+00:00",
+          "forecast_id": "595cf818cb4b51bec70858de3abc1674b8a96691a939c973bc09044f366d54e6",
+          "forecast_sha256": "5f0e861f49585f590fc519651035cbadf5ea34638851db29dcd06881e341594e",
+          "market_at": "2026-11-07T23:39:10.909000+00:00",
+          "market_available_at": "2026-11-07T23:39:19.610083+00:00",
+          "market_expected_payout_midpoint": 0.48850000000000005,
+          "market_id": "6740825",
+          "market_relative_improvement": null,
+          "model_id": "metar-diurnal-analog-v24.1",
+          "model_interval": [
+            0.0,
+            1.0
+          ],
+          "model_native_brier": null,
+          "model_native_log_loss": null,
+          "model_probability": 0.05172413793103448,
+          "model_sha256": "46443a4844feab6a0740a9c6f60d8a4daad7c344c67850a5f18dd1885f7d608c",
+          "model_version": "metar-diurnal-analog-v24.1",
+          "native_evidence_available_at": "2026-11-09T00:37:10.572751+00:00",
+          "native_market_brier": 0.23863225000000005,
+          "native_market_log_loss": 0.6704076935904559,
+          "native_outcome": 0.0,
+          "native_payout_verified": true,
+          "native_probability_semantics_comparable": false,
+          "native_proof_sha256": "f4bf5760dd5ab4b27886a442c823325e02a509731e0d288fd437654342049a4a",
+          "native_sensitivity": {
+            "alternative_payout_interval": [
+              0.0,
+              1.0
+            ],
+            "certification_authority": false,
+            "condition_probability_interval": [
+              0.0,
+              1.0
+            ],
+            "ex_ante_condition_evidence_verified": false,
+            "interval_status": "assumption_sensitivity_not_confidence_interval",
+            "market_superiority": null,
+            "native_expected_payout_interval": [
+              0.0,
+              1.0
+            ],
+            "qualified_opportunity": false,
+            "research_only": true,
+            "trading_authority": false
+          },
+          "original_study_id": "000000000015:369aeee780fe525bff4103c8c7adfbe8cf9c08c4d70b92f3afd2a40c3a5080a1",
+          "original_study_sha256": "1e1c42f14cbcfa703e6454da73758a80d51200eada44cc76fb106c6c83cf0e95",
+          "paired_brier": null,
+          "paired_log_loss": null,
+          "probability_semantics": "binary_event_probability",
+          "recorded_at": "2026-11-07T23:39:21.157878+00:00",
+          "research_only": true,
+          "rules_sha256": "6dda004bb705da937e7bd8863a392d325b422e9705021bd51d4a4ddded2effd9",
+          "settlement_at": "2026-11-08T16:35:49+00:00",
+          "token_id": "100429054464382097866097138746015543803508294805619807891313880055441225561267",
+          "trading_authority": false
+        },
+        {
+          "ask": 0.088,
+          "bid": 0.061,
+          "book_id": "a3b68889e8e9bf920ee9c0c4db0bd175dd919b21b10537b8d89c1ecb5787c028",
+          "book_sha256": "228e2de9c0559127e04cdb5e5e6da6d03f7964c30ac0a928171ebaa6c867b1dc",
+          "certification_authority": false,
+          "comparison_rejections": [
+            "conditional_or_unreviewed_native_payout_semantics"
+          ],
+          "conditioning": "routine AWC availability and no material future correction/fallback",
+          "domain": "weather",
+          "event_group_id": "81555b7756b2242b8a772096bc20537276f232f6887c2ed7df2fe7489ab90618",
+          "event_id": "1323602",
+          "evidence_cutoff": "2026-11-08T00:18:36.364986+00:00",
+          "forecast_at": "2026-11-08T00:18:36.379483+00:00",
+          "forecast_id": "e4741d8b03db567d0d405968b5d025b22d10335b4b278540e5559fea7d779b7f",
+          "forecast_sha256": "8be79dd5fe8dc6a896c2ed81c1392e38242936eb02ceb1524c32a7f781702982",
+          "market_at": "2026-11-08T00:18:30.732000+00:00",
+          "market_available_at": "2026-11-08T00:18:36.061414+00:00",
+          "market_expected_payout_midpoint": 0.0745,
+          "market_id": "6740827",
+          "market_relative_improvement": null,
+          "model_id": "metar-recency-kernel-v25.1",
+          "model_interval": [
+            0.0,
+            1.0
+          ],
+          "model_native_brier": null,
+          "model_native_log_loss": null,
+          "model_probability": 0.27250782888733943,
+          "model_sha256": "92e7de184159e1eb898cf6a82a41fe737295da3c6fa99508da02678d4be54cfd",
+          "model_version": "metar-recency-kernel-v25.1",
+          "native_evidence_available_at": "2026-11-09T00:38:01.733551+00:00",
+          "native_market_brier": 0.00555025,
+          "native_market_log_loss": 0.07742114696858485,
+          "native_outcome": 0.0,
+          "native_payout_verified": true,
+          "native_probability_semantics_comparable": false,
+          "native_proof_sha256": "9b4f633f2e3c202a5b7a28599c6287efea2281cbabe54654cf1760927a146b82",
+          "native_sensitivity": {
+            "alternative_payout_interval": [
+              0.0,
+              1.0
+            ],
+            "certification_authority": false,
+            "condition_probability_interval": [
+              0.0,
+              1.0
+            ],
+            "ex_ante_condition_evidence_verified": false,
+            "interval_status": "assumption_sensitivity_not_confidence_interval",
+            "market_superiority": null,
+            "native_expected_payout_interval": [
+              0.0,
+              1.0
+            ],
+            "qualified_opportunity": false,
+            "research_only": true,
+            "trading_authority": false
+          },
+          "original_study_id": "000000000007:94b1ce25a482d38d5e035788bd124deaba3c737cb3a5d8a3f054e794dc57a5b7",
+          "original_study_sha256": "e477049864485a9ddbdd28d8bb3fde6ad5617551776ed34fe375ebc1a679f9cb",
+          "paired_brier": null,
+          "paired_log_loss": null,
+          "probability_semantics": "binary_event_probability",
+          "recorded_at": "2026-11-08T00:18:36.382327+00:00",
+          "research_only": true,
+          "rules_sha256": "6dda004bb705da937e7bd8863a392d325b422e9705021bd51d4a4ddded2effd9",
+          "settlement_at": "2026-11-08T16:35:48+00:00",
+          "token_id": "94706811208291031924388973437051527458389928308352329951198252501785611674239",
+          "trading_authority": false
+        }
+      ],
+      "targets": 2
+    },
+    {
+      "domain": "weather",
+      "event_group_id": "86aae5ca047993e74fbed53710ebba5a22bc349d9d934a7745f914ca87361d14",
+      "native_market_brier": 0.000225,
+      "native_market_log_loss": 0.01511363781004817,
+      "target_scores": [
+        {
+          "ask": 0.019,
+          "bid": 0.011,
+          "book_id": "4d6c8c880964655f8a9f23354eb0d05c84f819db329979d293682fd9a7c0595d",
+          "book_sha256": "86334597ea10b5c543c20cf78ed8e10288c8cc1467e466153a5ae3d9e643164e",
+          "certification_authority": false,
+          "comparison_rejections": [
+            "conditional_or_unreviewed_native_payout_semantics"
+          ],
+          "conditioning": "routine AWC availability and no material future correction/fallback",
+          "domain": "weather",
+          "event_group_id": "86aae5ca047993e74fbed53710ebba5a22bc349d9d934a7745f914ca87361d14",
+          "event_id": "1323613",
+          "evidence_cutoff": "2026-11-08T00:29:16.615938+00:00",
+          "forecast_at": "2026-11-08T00:29:16.631278+00:00",
+          "forecast_id": "e50b569e42c954b6fc5819bf7f9f2987048d164330e31dc9d79d1cf808891524",
+          "forecast_sha256": "4e8735bd528844fb454b440799e438ebd9f14a3a6588af70691bf429e434eb80",
+          "market_at": "2026-11-08T00:29:10.900000+00:00",
+          "market_available_at": "2026-11-08T00:29:13.343540+00:00",
+          "market_expected_payout_midpoint": 0.015,
+          "market_id": "6740868",
+          "market_relative_improvement": null,
+          "model_id": "metar-recency-kernel-v25.1",
+          "model_interval": [
+            0.0,
+            1.0
+          ],
+          "model_native_brier": null,
+          "model_native_log_loss": null,
+          "model_probability": 0.18242355056396756,
+          "model_sha256": "92e7de184159e1eb898cf6a82a41fe737295da3c6fa99508da02678d4be54cfd",
+          "model_version": "metar-recency-kernel-v25.1",
+          "native_evidence_available_at": "2026-11-09T00:38:02.976228+00:00",
+          "native_market_brier": 0.000225,
+          "native_market_log_loss": 0.01511363781004817,
+          "native_outcome": 0.0,
+          "native_payout_verified": true,
+          "native_probability_semantics_comparable": false,
+          "native_proof_sha256": "ed5769bdf00eb084e0f09ed36e59fa45cc6fc38f72999b080f3956ea567c16d6",
+          "native_sensitivity": {
+            "alternative_payout_interval": [
+              0.0,
+              1.0
+            ],
+            "certification_authority": false,
+            "condition_probability_interval": [
+              0.0,
+              1.0
+            ],
+            "ex_ante_condition_evidence_verified": false,
+            "interval_status": "assumption_sensitivity_not_confidence_interval",
+            "market_superiority": null,
+            "native_expected_payout_interval": [
+              0.0,
+              1.0
+            ],
+            "qualified_opportunity": false,
+            "research_only": true,
+            "trading_authority": false
+          },
+          "original_study_id": "000000000015:e91f88652bfad14cc2a76dd6651d970b8dc504e7bc46f9438d039e47d84ae32b",
+          "original_study_sha256": "765e708448d4cdcaeae9163e1dafc78b10d149e93266e66a471751c7c3c69909",
+          "paired_brier": null,
+          "paired_log_loss": null,
+          "probability_semantics": "binary_event_probability",
+          "recorded_at": "2026-11-08T00:29:16.633994+00:00",
+          "research_only": true,
+          "rules_sha256": "cc08cd95d2b68b68c91bab44e04f12d58931be4638c03a7eb73a128f3c8302b1",
+          "settlement_at": "2026-11-08T16:36:54+00:00",
+          "token_id": "90490288749007726190456778562036922440984659371718742510948651630834554533232",
+          "trading_authority": false
+        }
+      ],
+      "targets": 1
+    }
+  ],
+  "exact_original_forecasts_with_native_proof": 5,
+  "execution_cost_adjusted_performance": null,
+  "failed_native_attempts": [
+    {
+      "error": "native source evidence mismatch",
+      "path": "/home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/poly-p35-native-20261109/data/phase35-native/finalized-proof-2"
+    }
+  ],
+  "input_rows": 5,
+  "limitations": [
+    "Observed finalized subset; no completion-conditioned superiority claim",
+    "Native midpoint is a descriptive forecast baseline, not an executable acquisition price",
+    "Conditional reference models retain original targets; native proof cannot relabel their probability",
+    "Distinct station-days or parent IDs do not establish statistical independence"
+  ],
+  "market_superiority": null,
+  "model_vs_native_market_scores": null,
+  "native_event_groups": 3,
+  "realized_simulated_pnl": null,
+  "rejections": {},
+  "research_only": true,
+  "schema_version": "phase35-native-market-baseline-descriptive-v1",
+  "scored_native_market_targets": 5,
+  "statistical_independence_verified": false,
+  "trading_authority": false,
+  "unmatched_originals": []
+}
