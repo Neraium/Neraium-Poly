@@ -72,22 +72,25 @@
   "known_preexisting_unrelated_error": "Phase35 native publisher reports TypeError: research coroutine factory required; present before activation; not modified in scoped deployment",
   "observation": {
     "final_runtime_check": {
-      "at": "2026-11-09T02:29:55.057527+00:00",
-      "ingestion_age_seconds": 5.562135,
-      "native_books_delivered": 17517,
-      "qualified_books": 10,
-      "reconnects": 9,
+      "at": "2026-11-09T02:34:06.782940+00:00",
+      "ingestion_age_seconds": 6.762959,
+      "native_book_deliveries": 24547,
+      "qualified_books": 14,
+      "reconnects": 16,
       "service": "ok",
       "subscribed_tokens": 32,
-      "ws_connected": true
+      "websocket_connected": true
     },
     "fixture_tests_verify_conflict_isolation": true,
     "identity_conflicts_observed_live": 0,
-    "samples": 13,
-    "samples_with_fresh_books": 11,
-    "samples_with_ws_and_subscriptions": 11,
-    "seconds": 124.337177,
-    "simultaneous_quarantine_and_valid_books_observed": false
+    "live_conflicts_observed": 0,
+    "longest_observed_disconnect_seconds": 30,
+    "samples": 20,
+    "samples_with_fresh_books": 15,
+    "samples_with_ws_and_subscriptions": 15,
+    "seconds": 185.190188,
+    "simultaneous_quarantine_and_valid_books_observed": false,
+    "websocket_reconnects_final": 16
   },
   "oom_kills_after_restart": 0,
   "orders_fills_positions_unchanged": true,

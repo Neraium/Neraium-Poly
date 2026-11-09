@@ -1,0 +1,28 @@
+{
+  "archive_health_all_samples": "ok",
+  "duration_seconds": 60.853011,
+  "ended_at": "2026-11-09T02:34:06.782940+00:00",
+  "ending_state": {
+    "ingestion_age_seconds": 6.762959,
+    "native_book_deliveries": 24547,
+    "qualified_books": 14,
+    "service": "ok",
+    "subscribed_tokens": 32,
+    "websocket_connected": true
+  },
+  "errors": 0,
+  "fresh_book_samples": 4,
+  "longest_observed_disconnect_seconds": 30,
+  "metadata_conflicts_observed": 0,
+  "native_book_deliveries_end": 24547,
+  "native_book_deliveries_start": 23441,
+  "orders_fills_positions_changed": false,
+  "recovered_to_connected_and_fresh": true,
+  "samples": 7,
+  "service_health_all_samples": "ok",
+  "started_at": "2026-11-09T02:33:05.929929+00:00",
+  "subscribed_tokens": 32,
+  "websocket_connected_samples": 4,
+  "websocket_reconnect_count_end": 16,
+  "websocket_reconnect_count_start": 15
+}
