@@ -1,0 +1,69 @@
+{
+  "account": {
+    "bankroll": 496.11522059829053,
+    "cash": 496.11522059829053,
+    "fills": 10,
+    "kill_switch": false,
+    "open_positions": 0,
+    "orders_submitted": 13,
+    "simulated_pnl": -3.8847794017094657
+  },
+  "archive": {
+    "budget_bytes": 161061273600,
+    "free_bytes": 375050379264,
+    "health": "ok",
+    "last_error": null,
+    "usage_bytes": 18283279628
+  },
+  "authorized_head": "802d7005d8c2b4fc9560f42cdc1ca9c062b8e168",
+  "authorized_source_commit": "152b85d61cc9bded6d05513ca8e851551d274f9d",
+  "journal_integrity_file_sha256": "d53c74572a096503e6829f0b2c7d7a73743e9e8c2c3760080c4c7d102aa168e5",
+  "journal_integrity_summary": {
+    "event-intelligence/domains/forecasts.sqlite": {
+      "head_sha256": "06abb8e8d980ad76c1a8da1983068cba845d37aa8dc76bf808f3c625496e30f8",
+      "preexisting_prefix_preserved": true,
+      "records": 209
+    },
+    "event-intelligence/forecasts.sqlite": {
+      "head_sha256": "a25454a7e295c6229bafbd169b3577866c89efe1daa0acde6198bc2ebd6c135f",
+      "preexisting_prefix_preserved": true,
+      "records": 5055
+    },
+    "event-intelligence/sports/prospective.sqlite": {
+      "head_sha256": "f9da0e984c4080caad15cf9f317b05a9eb18f95695cf8c07d8daec1c26a67fc7",
+      "preexisting_prefix_preserved": true,
+      "records": 24
+    }
+  },
+  "paper_reference": {
+    "bankroll": 500.0,
+    "cash": 500.0,
+    "kill_switch": null,
+    "simulated_pnl": 0.0
+  },
+  "rollback_commit": "6223425",
+  "rollback_module_sha256": "cfa8968bee0d236447efc70d33b2dde9b532a1f596faee5e1218a097c0255f97",
+  "systemd": {
+    "ActiveState": "active",
+    "CPUQuotaPerSecUSec": "1s",
+    "Environment": "PAPER_TRADING=true LIVE_TRADING_ENABLED=false PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1 OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1",
+    "ExecStart": "{ path=/home/ubuntu/Neraium-Poly/.venv/bin/neraium-poly ; argv[]=/home/ubuntu/Neraium-Poly/.venv/bin/neraium-poly experimental-paper --config /home/ubuntu/Neraium-Poly/config/experimental-paper.example.json ; ignore_errors=no ; start_time=[Mon 2026-11-09 01:01:42 UTC] ; stop_time=[n/a] ; pid=3689333 ; code=(null) ; status=0/0 }",
+    "MainPID": "3689333",
+    "MemoryMax": "2147483648",
+    "NeedDaemonReload": "yes",
+    "NoNewPrivileges": "yes",
+    "ProtectHome": "read-only",
+    "ProtectSystem": "strict",
+    "ReadOnlyPaths": "/home/ubuntu/Neraium-Poly/data/paper-live",
+    "ReadWritePaths": "/home/ubuntu/Neraium-Poly/data/experimental-paper",
+    "SubState": "running",
+    "TasksMax": "32"
+  },
+  "watcher_before": {
+    "last_error": "supplemental_token_identity_conflict",
+    "qualified_books": 0,
+    "status": "degraded",
+    "subscribed_tokens": 0
+  },
+  "working_module_sha256": "d1a8f229de4b69716483c9d7e1072565cf900f1105c68e11582d94118cb61585"
+}

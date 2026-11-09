@@ -1,0 +1,125 @@
+{
+  "account_after": {
+    "account_id": "experimental-paper",
+    "bankroll": 496.11522059829053,
+    "cash": 496.11522059829053,
+    "fills": 10,
+    "kill_switch": false,
+    "open_positions": 0,
+    "orders_submitted": 13,
+    "simulated_pnl": -3.8847794017094657
+  },
+  "account_before": {
+    "bankroll": 496.11522059829053,
+    "cash": 496.11522059829053,
+    "fills": 10,
+    "kill_switch": false,
+    "open_positions": 0,
+    "orders_submitted": 13,
+    "simulated_pnl": -3.8847794017094657
+  },
+  "activation": {
+    "daemon_reload_or_unit_edit": false,
+    "effective_cpu_quota_per_sec": "1s",
+    "effective_memory_max_bytes": 2147483648,
+    "effective_tasks_max": 32,
+    "memory_max_bytes": 2147483648,
+    "paper_only": true,
+    "pid_after": "3702635",
+    "pid_before": "3689333",
+    "restart_only_authorized_unit": true,
+    "systemd_reload_warning": true,
+    "tasks_max": 32,
+    "unit": "neraium-poly-experimental.service"
+  },
+  "archive_after": {
+    "budget_bytes": 161061273600,
+    "free_bytes": 374367141888,
+    "health": "ok",
+    "last_error": null,
+    "usage_bytes": 18359775607
+  },
+  "authorized_source": {
+    "branch": "phase36-edge-validation",
+    "code_commit": "152b85d",
+    "review_head": "802d700",
+    "working_tree_source_clean": true
+  },
+  "both_account_snapshots_unchanged": true,
+  "integrity": {
+    "archive_catalog_segments_after": 3989,
+    "archive_catalog_segments_before": 3978,
+    "post_journal_heads": {
+      "event-intelligence/domains/forecasts.sqlite": "06abb8e8d980ad76c1a8da1983068cba845d37aa8dc76bf808f3c625496e30f8",
+      "event-intelligence/forecasts.sqlite": "f144a6bad08d98ac02162dc039a8ff961dda21380ba0d2e66c9244d780dea33e",
+      "event-intelligence/sports/prospective.sqlite": "f9da0e984c4080caad15cf9f317b05a9eb18f95695cf8c07d8daec1c26a67fc7"
+    },
+    "post_journal_records": {
+      "event-intelligence/domains/forecasts.sqlite": 209,
+      "event-intelligence/forecasts.sqlite": 5067,
+      "event-intelligence/sports/prospective.sqlite": 24
+    },
+    "pre_journal_records": {
+      "event-intelligence/domains/forecasts.sqlite": 209,
+      "event-intelligence/forecasts.sqlite": 5055,
+      "event-intelligence/sports/prospective.sqlite": 24
+    },
+    "preexisting_prefixes_preserved": true,
+    "restored_compressed_segments": [
+      "paper-live/segment-00001037.sqlite"
+    ]
+  },
+  "known_preexisting_unrelated_error": "Phase35 native publisher reports TypeError: research coroutine factory required; present before activation; not modified in scoped deployment",
+  "observation": {
+    "final_runtime_check": {
+      "at": "2026-11-09T02:29:55.057527+00:00",
+      "ingestion_age_seconds": 5.562135,
+      "native_books_delivered": 17517,
+      "qualified_books": 10,
+      "reconnects": 9,
+      "service": "ok",
+      "subscribed_tokens": 32,
+      "ws_connected": true
+    },
+    "fixture_tests_verify_conflict_isolation": true,
+    "identity_conflicts_observed_live": 0,
+    "samples": 13,
+    "samples_with_fresh_books": 11,
+    "samples_with_ws_and_subscriptions": 11,
+    "seconds": 124.337177,
+    "simultaneous_quarantine_and_valid_books_observed": false
+  },
+  "oom_kills_after_restart": 0,
+  "orders_fills_positions_unchanged": true,
+  "paper_reference_after": {
+    "account_id": null,
+    "bankroll": 500.0,
+    "cash": 500.0,
+    "fills": null,
+    "kill_switch": null,
+    "open_positions": null,
+    "orders_submitted": null,
+    "simulated_pnl": 0.0
+  },
+  "paper_reference_before": {
+    "bankroll": 500.0,
+    "cash": 500.0,
+    "kill_switch": null,
+    "simulated_pnl": 0.0
+  },
+  "rollback": {
+    "module_sha256": "cfa8968bee0d236447efc70d33b2dde9b532a1f596faee5e1218a097c0255f97",
+    "source_commit": "6223425",
+    "verified": true
+  },
+  "tests_ci": {
+    "backend": 2313,
+    "browser_tests": 5,
+    "focused": 31,
+    "frontend_build": "pass",
+    "github_ci": "pass",
+    "github_run": 42547704043,
+    "npm_audit": "0 vulnerabilities",
+    "ruff": "pass"
+  }
+}

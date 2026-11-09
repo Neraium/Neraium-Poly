@@ -1,0 +1,77 @@
+{
+  "account": {
+    "account_id": "experimental-paper",
+    "bankroll": 496.11522059829053,
+    "cash": 496.11522059829053,
+    "fills": 10,
+    "kill_switch": false,
+    "open_positions": 0,
+    "orders_submitted": 13,
+    "simulated_pnl": -3.8847794017094657
+  },
+  "archive": {
+    "budget_bytes": 161061273600,
+    "free_bytes": 374367141888,
+    "health": "ok",
+    "last_error": null,
+    "usage_bytes": 18359775607
+  },
+  "captured_at": "2026-11-09T02:29:55.057527+00:00",
+  "counts": {
+    "callback_large_spread": 4785,
+    "callback_missing_liquidity": 5040,
+    "callback_stale_book": 16,
+    "callbacks_observed": 17688,
+    "callbacks_qualified": 7849,
+    "stream_failures": 1,
+    "stream_starts": 2
+  },
+  "memory": {
+    "current": "2041098240",
+    "events": "low 0\nhigh 0\nmax 9152\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n",
+    "peak": "2147848192"
+  },
+  "paper_reference": {
+    "account_id": null,
+    "bankroll": 500.0,
+    "cash": 500.0,
+    "fills": null,
+    "kill_switch": null,
+    "open_positions": null,
+    "orders_submitted": null,
+    "simulated_pnl": 0.0
+  },
+  "pid": "3702635",
+  "service": {
+    "account_id": "experimental-paper",
+    "fee_error": null,
+    "last_error": null,
+    "last_ingestion_age_seconds": 5.562135,
+    "last_ingestion_at": "2026-11-09T02:29:49.495392+00:00",
+    "live_trading_enabled": false,
+    "paper_trading": true,
+    "status": "ok",
+    "timestamp": "2026-11-09T02:29:55.057527+00:00",
+    "validation_status": "unvalidated"
+  },
+  "transport": {
+    "fresh_books": 13,
+    "gaps": 1358,
+    "last_message_at": "2026-11-09T02:29:55.029250+00:00",
+    "messages": 11860,
+    "native_books_delivered": 17517,
+    "queue_overflows": 9,
+    "reconnects": 9,
+    "ws_connected": true
+  },
+  "watcher": {
+    "identity_quarantine_saturated": false,
+    "last_error": null,
+    "last_qualified_at": "2026-11-09T02:29:55.033581+00:00",
+    "qualified_books": 10,
+    "quarantine_reasons": {},
+    "quarantined_tokens": 0,
+    "status": "public_research_only",
+    "subscribed_tokens": 32
+  }
+}

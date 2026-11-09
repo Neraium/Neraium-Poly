@@ -1,0 +1,81 @@
+{
+  "archive": {
+    "budget_bytes": 161061273600,
+    "free_bytes": 374426951680,
+    "global_floor_bytes": 107374182400,
+    "growth_bytes_per_second": 122660.21818848424,
+    "health": "ok",
+    "usage_bytes": 18326668104
+  },
+  "captured_at": "2026-11-09T02:24:19.071606+00:00",
+  "effective_limits": {
+    "cpu_quota": "1s",
+    "memory_max": "2147483648",
+    "tasks_max": "32"
+  },
+  "experimental_account": {
+    "bankroll": 496.11522059829053,
+    "cash": 496.11522059829053,
+    "fills": 10,
+    "kill_switch": false,
+    "open_positions": 0,
+    "orders_submitted": 13,
+    "simulated_pnl": -3.8847794017094657
+  },
+  "integrity": {
+    "all_preexisting_prefixes_preserved": true,
+    "catalog_segments": 3989,
+    "compression_transitions_verified": [
+      "paper-live/segment-00001037.sqlite"
+    ],
+    "journal_count": 3
+  },
+  "paper_reference": {
+    "bankroll": 500.0,
+    "cash": 500.0,
+    "kill_switch": null,
+    "simulated_pnl": 0.0
+  },
+  "post_restart_service": {
+    "account_id": "experimental-paper",
+    "fee_error": null,
+    "last_error": null,
+    "last_ingestion_age_seconds": 5.523712,
+    "live_trading_enabled": false,
+    "paper_trading": true,
+    "status": "ok"
+  },
+  "rollback_baseline": "6223425",
+  "soak_summary": {
+    "any_quarantine_with_active_books": false,
+    "duration_seconds": 124.337177,
+    "max_conflicts": 0,
+    "sample_errors": [],
+    "samples": 13,
+    "samples_with_fresh_qualified_books": 11,
+    "samples_with_valid_subscriptions": 11
+  },
+  "watcher": {
+    "identity_quarantine_saturated": false,
+    "last_error": null,
+    "last_qualified_at": "2026-11-09T02:24:18.998806+00:00",
+    "qualified_books": 11,
+    "quarantined_tokens": 0,
+    "status": "public_research_only",
+    "subscribed_tokens": 32
+  },
+  "watcher_counts": {
+    "callback_large_spread": 3362,
+    "callback_missing_liquidity": 3389,
+    "callback_stale_book": 6,
+    "callbacks_observed": 11214,
+    "callbacks_qualified": 4459,
+    "stream_starts": 1
+  },
+  "watcher_transport": {
+    "gaps": 798,
+    "native_books_delivered": 11110,
+    "queue_overflows": 5,
+    "ws_connected": true
+  }
+}
