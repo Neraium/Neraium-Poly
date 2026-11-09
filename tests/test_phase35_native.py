@@ -184,7 +184,11 @@ def test_mutated_raw_evidence_is_rejected(tmp_path):
         replay_native_directory(tmp_path)
 
 
-def test_no_transaction_or_arbitrary_contract_methods(tmp_path):
+def test_no_transaction_or_arbitrary_contract_methods(tmp_path, monkeypatch):
+    from types import SimpleNamespace
+
+    from neraium_poly.research.phase35 import native
+    monkeypatch.setattr(native.shutil, 'disk_usage', lambda _: SimpleNamespace(free=200 * 1024**3))
     c = NativeResearchClient(tmp_path)
     try:
         with pytest.raises(ValueError, match="only explicit"):
@@ -193,6 +197,15 @@ def test_no_transaction_or_arbitrary_contract_methods(tmp_path):
             c.call("0x" + "a" * 40, "condition", "0x" + "b" * 64, NEG_RISK, "0x" + "c" * 64, 2)
     finally:
         c.client.close()
+
+
+def test_client_preserves_global_reserve_including_response_budget(tmp_path, monkeypatch):
+    from types import SimpleNamespace
+
+    from neraium_poly.research.phase35 import native
+    monkeypatch.setattr(native.shutil, 'disk_usage', lambda _: SimpleNamespace(free=100 * 1024**3))
+    with pytest.raises(ValueError, match='protected 100 GiB'):
+        NativeResearchClient(tmp_path, max_bytes=1024**2)
 
 
 @pytest.mark.parametrize('canonical', [False, None])
