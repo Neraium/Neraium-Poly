@@ -1,0 +1,502 @@
+{
+  "status": "authentic_conditional_research_hypothesis_only",
+  "observed_at": "2026-11-09T00:40:39.943576+00:00",
+  "raw_evidence_path": "data/phase35-weather/genuine-probe-no.json",
+  "raw_evidence_sha256": "88e9e2927eafbb1af40ba7c39b3898641c1672c6b8de7c5a4ab1d46b55313505",
+  "new_forecasts": 2,
+  "new_independent_station_days": 0,
+  "canonical_group": "weather:ZSPD:2026-11-10",
+  "native_unconditional_probabilities": 0,
+  "fee_proof": {
+    "status": "verified_current_protocol_curve",
+    "token_id": "111768571537534896727472485715607416820858649485254505299899755194375721668861",
+    "condition_id": "0xb6d4408778c71a3ee324432928ba3e1ec19de7f7be5a20b832f539923fc6aaf0",
+    "rate": 0.05,
+    "exponent": 1,
+    "taker_only": true,
+    "formula": "shares * fd.r * price * (1-price)",
+    "documentation": "https://docs.polymarket.com/trading/fees",
+    "fee_observation_id": "218045ee-be0d-4371-a152-22d9d26ef737",
+    "fee_observation_sha256": "f9b4bebdb8288e968af21955f23945baec9b4600d71f729c4162e0278a16730c",
+    "raw_response_ids": [
+      "ad22000147972291cdb5baf4c4670ad80f13ce07c0b2cb92d2381aa3485abb28",
+      "06ab7d8c9fdfb0e710cfc6d58e9b0114f83533b28d3c56dc29531d8987ff4c65"
+    ],
+    "retrieval_ids": [
+      "753951860d29857e7abe99ceca358901b5536240926e7c45de8ddde773c9d67e",
+      "bc20b664e1f011a39758a79e33ac7cd32a48b78d941a71833b15ab67de94432b"
+    ],
+    "available_at": "2026-11-09T00:40:39.097584Z",
+    "as_of": "2026-11-09T00:40:39.098271+00:00",
+    "source_timestamp": null,
+    "timestamp_semantics": "public responses provide retrieval/availability time; exchange effective-time unavailable",
+    "rounding": "official nearest 5 decimals; per-fill count unknown, conservative bound used",
+    "all_in_costs_verified": false,
+    "missing_cost_evidence": [
+      "fill_fragmentation_rounding",
+      "additional_slippage",
+      "latency_adverse_selection",
+      "capital_lockup_cost",
+      "settlement_redemption_cost"
+    ],
+    "calibration_verified": false,
+    "research_only": true,
+    "trading_authority": false
+  },
+  "forecasts": [
+    {
+      "model_id": "awc-calendar-frequency-v35.1",
+      "model_sha256": "16c16e3eb07ac5c0c723a45b4962fee5e49e48ae60a139e29cf77cc5a2820b80",
+      "event_id": "1338327",
+      "market_id": "6837117",
+      "token_id": "111768571537534896727472485715607416820858649485254505299899755194375721668861",
+      "probability": 1.0,
+      "lower_probability": 0.0,
+      "upper_probability": 1.0,
+      "timestamp": "2026-11-09T00:40:39.900044+00:00",
+      "evidence_cutoff": "2026-11-09T00:40:39.876463+00:00",
+      "market_expected_payout": 0.54,
+      "book_id": "adc26b361bb48379368f45d06abe08f91fb01eacb5099232156913187c8a2f0b",
+      "book_sha256": "50d5209fe5ad11a430b17d86d9e5bd659b9d0d4d76f3cd6e74ea2c13e4f110f8",
+      "dataset_sha256": "8b5451f29dbf3c9139a295204fe0109a7c42dd5a40985404e79111eedc9e04e5",
+      "calibration_status": "unvalidated_research",
+      "unconditional_contract_probability": false,
+      "book": {
+        "schema_version": "1.0",
+        "id": "adc26b361bb48379368f45d06abe08f91fb01eacb5099232156913187c8a2f0b",
+        "timestamp": "2026-11-09T00:40:27.273000Z",
+        "available_at": "2026-11-09T00:40:39.876092Z",
+        "source": "https://clob.polymarket.com",
+        "exchange": "polymarket",
+        "market_id": "6837117",
+        "token_id": "111768571537534896727472485715607416820858649485254505299899755194375721668861",
+        "bids": [
+          {
+            "price": 0.53,
+            "size": 5.0
+          },
+          {
+            "price": 0.51,
+            "size": 385.39
+          },
+          {
+            "price": 0.5,
+            "size": 205.0
+          },
+          {
+            "price": 0.49,
+            "size": 118.8
+          },
+          {
+            "price": 0.47,
+            "size": 30.0
+          },
+          {
+            "price": 0.45,
+            "size": 68.34
+          },
+          {
+            "price": 0.44,
+            "size": 9.86
+          },
+          {
+            "price": 0.42,
+            "size": 10.0
+          },
+          {
+            "price": 0.4,
+            "size": 5.0
+          },
+          {
+            "price": 0.38,
+            "size": 5.26
+          },
+          {
+            "price": 0.36,
+            "size": 65.55
+          },
+          {
+            "price": 0.35,
+            "size": 100.0
+          },
+          {
+            "price": 0.34,
+            "size": 5.88
+          },
+          {
+            "price": 0.32,
+            "size": 6.25
+          },
+          {
+            "price": 0.31,
+            "size": 33.0
+          },
+          {
+            "price": 0.3,
+            "size": 21.66
+          },
+          {
+            "price": 0.29,
+            "size": 33.0
+          },
+          {
+            "price": 0.28,
+            "size": 67.14
+          },
+          {
+            "price": 0.27,
+            "size": 33.0
+          },
+          {
+            "price": 0.26,
+            "size": 7.69
+          },
+          {
+            "price": 0.25,
+            "size": 33.0
+          },
+          {
+            "price": 0.24,
+            "size": 8.33
+          },
+          {
+            "price": 0.23,
+            "size": 33.0
+          },
+          {
+            "price": 0.22,
+            "size": 9.09
+          },
+          {
+            "price": 0.2,
+            "size": 5.0
+          },
+          {
+            "price": 0.1,
+            "size": 10.0
+          },
+          {
+            "price": 0.09,
+            "size": 11.11
+          },
+          {
+            "price": 0.08,
+            "size": 72.5
+          },
+          {
+            "price": 0.07,
+            "size": 14.28
+          },
+          {
+            "price": 0.06,
+            "size": 16.66
+          },
+          {
+            "price": 0.05,
+            "size": 25.0
+          },
+          {
+            "price": 0.04,
+            "size": 35.0
+          },
+          {
+            "price": 0.03,
+            "size": 43.33
+          },
+          {
+            "price": 0.02,
+            "size": 120.0
+          },
+          {
+            "price": 0.01,
+            "size": 626.0
+          }
+        ],
+        "asks": [
+          {
+            "price": 0.55,
+            "size": 150.0
+          },
+          {
+            "price": 0.56,
+            "size": 215.0
+          },
+          {
+            "price": 0.57,
+            "size": 61789.89
+          },
+          {
+            "price": 0.58,
+            "size": 11.36
+          },
+          {
+            "price": 0.59,
+            "size": 14.31
+          },
+          {
+            "price": 0.69,
+            "size": 5.0
+          },
+          {
+            "price": 0.73,
+            "size": 39.0
+          },
+          {
+            "price": 0.74,
+            "size": 153.23
+          },
+          {
+            "price": 0.79,
+            "size": 53.33
+          },
+          {
+            "price": 0.8,
+            "size": 25.0
+          },
+          {
+            "price": 0.84,
+            "size": 56.25
+          },
+          {
+            "price": 0.95,
+            "size": 25.0
+          },
+          {
+            "price": 0.96,
+            "size": 5.0
+          }
+        ],
+        "sequence": 0,
+        "complete": true
+      }
+    },
+    {
+      "model_id": "awc-jeffreys-frequency-v35.1",
+      "model_sha256": "57ac31135f97b2055931833dfe01a48a182bade1713ffb88e6e9fd9002c1d8e4",
+      "event_id": "1338327",
+      "market_id": "6837117",
+      "token_id": "111768571537534896727472485715607416820858649485254505299899755194375721668861",
+      "probability": 0.9772727272727273,
+      "lower_probability": 0.0,
+      "upper_probability": 1.0,
+      "timestamp": "2026-11-09T00:40:39.900044+00:00",
+      "evidence_cutoff": "2026-11-09T00:40:39.876463+00:00",
+      "market_expected_payout": 0.54,
+      "book_id": "adc26b361bb48379368f45d06abe08f91fb01eacb5099232156913187c8a2f0b",
+      "book_sha256": "50d5209fe5ad11a430b17d86d9e5bd659b9d0d4d76f3cd6e74ea2c13e4f110f8",
+      "dataset_sha256": "8b5451f29dbf3c9139a295204fe0109a7c42dd5a40985404e79111eedc9e04e5",
+      "calibration_status": "unvalidated_research",
+      "unconditional_contract_probability": false,
+      "book": {
+        "schema_version": "1.0",
+        "id": "adc26b361bb48379368f45d06abe08f91fb01eacb5099232156913187c8a2f0b",
+        "timestamp": "2026-11-09T00:40:27.273000Z",
+        "available_at": "2026-11-09T00:40:39.876092Z",
+        "source": "https://clob.polymarket.com",
+        "exchange": "polymarket",
+        "market_id": "6837117",
+        "token_id": "111768571537534896727472485715607416820858649485254505299899755194375721668861",
+        "bids": [
+          {
+            "price": 0.53,
+            "size": 5.0
+          },
+          {
+            "price": 0.51,
+            "size": 385.39
+          },
+          {
+            "price": 0.5,
+            "size": 205.0
+          },
+          {
+            "price": 0.49,
+            "size": 118.8
+          },
+          {
+            "price": 0.47,
+            "size": 30.0
+          },
+          {
+            "price": 0.45,
+            "size": 68.34
+          },
+          {
+            "price": 0.44,
+            "size": 9.86
+          },
+          {
+            "price": 0.42,
+            "size": 10.0
+          },
+          {
+            "price": 0.4,
+            "size": 5.0
+          },
+          {
+            "price": 0.38,
+            "size": 5.26
+          },
+          {
+            "price": 0.36,
+            "size": 65.55
+          },
+          {
+            "price": 0.35,
+            "size": 100.0
+          },
+          {
+            "price": 0.34,
+            "size": 5.88
+          },
+          {
+            "price": 0.32,
+            "size": 6.25
+          },
+          {
+            "price": 0.31,
+            "size": 33.0
+          },
+          {
+            "price": 0.3,
+            "size": 21.66
+          },
+          {
+            "price": 0.29,
+            "size": 33.0
+          },
+          {
+            "price": 0.28,
+            "size": 67.14
+          },
+          {
+            "price": 0.27,
+            "size": 33.0
+          },
+          {
+            "price": 0.26,
+            "size": 7.69
+          },
+          {
+            "price": 0.25,
+            "size": 33.0
+          },
+          {
+            "price": 0.24,
+            "size": 8.33
+          },
+          {
+            "price": 0.23,
+            "size": 33.0
+          },
+          {
+            "price": 0.22,
+            "size": 9.09
+          },
+          {
+            "price": 0.2,
+            "size": 5.0
+          },
+          {
+            "price": 0.1,
+            "size": 10.0
+          },
+          {
+            "price": 0.09,
+            "size": 11.11
+          },
+          {
+            "price": 0.08,
+            "size": 72.5
+          },
+          {
+            "price": 0.07,
+            "size": 14.28
+          },
+          {
+            "price": 0.06,
+            "size": 16.66
+          },
+          {
+            "price": 0.05,
+            "size": 25.0
+          },
+          {
+            "price": 0.04,
+            "size": 35.0
+          },
+          {
+            "price": 0.03,
+            "size": 43.33
+          },
+          {
+            "price": 0.02,
+            "size": 120.0
+          },
+          {
+            "price": 0.01,
+            "size": 626.0
+          }
+        ],
+        "asks": [
+          {
+            "price": 0.55,
+            "size": 150.0
+          },
+          {
+            "price": 0.56,
+            "size": 215.0
+          },
+          {
+            "price": 0.57,
+            "size": 61789.89
+          },
+          {
+            "price": 0.58,
+            "size": 11.36
+          },
+          {
+            "price": 0.59,
+            "size": 14.31
+          },
+          {
+            "price": 0.69,
+            "size": 5.0
+          },
+          {
+            "price": 0.73,
+            "size": 39.0
+          },
+          {
+            "price": 0.74,
+            "size": 153.23
+          },
+          {
+            "price": 0.79,
+            "size": 53.33
+          },
+          {
+            "price": 0.8,
+            "size": 25.0
+          },
+          {
+            "price": 0.84,
+            "size": 56.25
+          },
+          {
+            "price": 0.95,
+            "size": 25.0
+          },
+          {
+            "price": 0.96,
+            "size": 5.0
+          }
+        ],
+        "sequence": 0,
+        "complete": true
+      }
+    }
+  ],
+  "economic_status": "Conditional point disagreement only; uncalibrated seasonal transfer; lowerbound0; native probability unavailable; all-in costs unverified; no execution authority",
+  "replay": "Both forecasts verified against original exact raw evidence/model/book"
+}
