@@ -1,0 +1,138 @@
+[
+  {
+    "model_id": "awc-calendar-frequency-v35.1",
+    "market_id": "6837117",
+    "decision_at": "2026-11-09T00:40:39.900044+00:00",
+    "conditional_probability": 1.0,
+    "native_probability_bounds": [
+      0.0,
+      1.0
+    ],
+    "rejections": [
+      "unconditional_native_probability_unqualified",
+      "calibration_unvalidated",
+      "all_in_execution_costs_unverified",
+      "research_strategy_has_no_execution_authority"
+    ],
+    "scenarios": [
+      {
+        "bankroll_hypothetical": 500,
+        "supported_quantity": 172.62505689088115,
+        "capital_with_protocol_fee": 100.00000000000001,
+        "conditional_point_headroom_after_protocol_fee": 72.62505689088114,
+        "native_headroom_bounds_before_unverified_costs": [
+          -100.00000000000001,
+          72.62505689088114
+        ]
+      },
+      {
+        "bankroll_hypothetical": 1000,
+        "supported_quantity": 344.3711131720638,
+        "capital_with_protocol_fee": 199.99999999999997,
+        "conditional_point_headroom_after_protocol_fee": 144.37111317206384,
+        "native_headroom_bounds_before_unverified_costs": [
+          -199.99999999999997,
+          144.37111317206384
+        ]
+      },
+      {
+        "bankroll_hypothetical": 10000,
+        "supported_quantity": 3435.8001262333514,
+        "capital_with_protocol_fee": 2000.0,
+        "conditional_point_headroom_after_protocol_fee": 1435.8001262333514,
+        "native_headroom_bounds_before_unverified_costs": [
+          -2000.0,
+          1435.8001262333514
+        ]
+      },
+      {
+        "bankroll_hypothetical": 100000,
+        "supported_quantity": 6254.237,
+        "capital_with_protocol_fee": 3648.6462736149997,
+        "conditional_point_headroom_after_protocol_fee": 2605.5907263850004,
+        "native_headroom_bounds_before_unverified_costs": [
+          -3648.6462736149997,
+          2605.5907263850004
+        ]
+      },
+      {
+        "bankroll_hypothetical": 1000000,
+        "supported_quantity": 6254.237,
+        "capital_with_protocol_fee": 3648.6462736149997,
+        "conditional_point_headroom_after_protocol_fee": 2605.5907263850004,
+        "native_headroom_bounds_before_unverified_costs": [
+          -3648.6462736149997,
+          2605.5907263850004
+        ]
+      }
+    ]
+  },
+  {
+    "model_id": "awc-jeffreys-frequency-v35.1",
+    "market_id": "6837117",
+    "decision_at": "2026-11-09T00:40:39.900044+00:00",
+    "conditional_probability": 0.9772727272727273,
+    "native_probability_bounds": [
+      0.0,
+      1.0
+    ],
+    "rejections": [
+      "unconditional_native_probability_unqualified",
+      "calibration_unvalidated",
+      "all_in_execution_costs_unverified",
+      "research_strategy_has_no_execution_authority"
+    ],
+    "scenarios": [
+      {
+        "bankroll_hypothetical": 500,
+        "supported_quantity": 172.62505689088115,
+        "capital_with_protocol_fee": 100.00000000000001,
+        "conditional_point_headroom_after_protocol_fee": 68.70176014336111,
+        "native_headroom_bounds_before_unverified_costs": [
+          -100.00000000000001,
+          72.62505689088114
+        ]
+      },
+      {
+        "bankroll_hypothetical": 1000,
+        "supported_quantity": 344.3711131720638,
+        "capital_with_protocol_fee": 199.99999999999997,
+        "conditional_point_headroom_after_protocol_fee": 136.54449696360783,
+        "native_headroom_bounds_before_unverified_costs": [
+          -199.99999999999997,
+          144.37111317206384
+        ]
+      },
+      {
+        "bankroll_hypothetical": 10000,
+        "supported_quantity": 3435.8001262333514,
+        "capital_with_protocol_fee": 2000.0,
+        "conditional_point_headroom_after_protocol_fee": 1357.713759728048,
+        "native_headroom_bounds_before_unverified_costs": [
+          -2000.0,
+          1435.8001262333514
+        ]
+      },
+      {
+        "bankroll_hypothetical": 100000,
+        "supported_quantity": 6254.237,
+        "capital_with_protocol_fee": 3648.6462736149997,
+        "conditional_point_headroom_after_protocol_fee": 2463.4489763850006,
+        "native_headroom_bounds_before_unverified_costs": [
+          -3648.6462736149997,
+          2605.5907263850004
+        ]
+      },
+      {
+        "bankroll_hypothetical": 1000000,
+        "supported_quantity": 6254.237,
+        "capital_with_protocol_fee": 3648.6462736149997,
+        "conditional_point_headroom_after_protocol_fee": 2463.4489763850006,
+        "native_headroom_bounds_before_unverified_costs": [
+          -3648.6462736149997,
+          2605.5907263850004
+        ]
+      }
+    ]
+  }
+]
