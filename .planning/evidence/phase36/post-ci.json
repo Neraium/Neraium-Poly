@@ -1,0 +1,32 @@
+{
+  "archive": {
+    "budget_bytes": 161061273600,
+    "free_bytes": 376309088256,
+    "global_floor_bytes": 107374182400,
+    "growth_bytes_per_second": 106717.56263408787,
+    "health": "ok",
+    "usage_bytes": 18147803306
+  },
+  "captured_at": "2026-11-09T01:53:13.911749+00:00",
+  "experimental_account": {
+    "cash": 496.11522059829053,
+    "fills": 10,
+    "kill_switch": false,
+    "open_positions": 0,
+    "orders_submitted": 13,
+    "simulated_pnl": -3.8847794017094657
+  },
+  "experimental_service": "ok",
+  "last_ingestion_age_seconds": 13.954921,
+  "live_trading_enabled": false,
+  "metadata_identity_conflicts": 57,
+  "other_paper_equity": 500.0,
+  "reason": "repository AGENTS.md prohibits deployment; no service restart performed",
+  "source_change_activated": false,
+  "supplemental_watcher": {
+    "last_error": "supplemental_token_identity_conflict",
+    "qualified_books": 0,
+    "status": "degraded",
+    "subscribed_tokens": 0
+  }
+}

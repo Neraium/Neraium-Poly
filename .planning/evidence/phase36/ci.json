@@ -1,0 +1,19 @@
+{
+  "workflow": "Paper research certification",
+  "run_id": 42547704043,
+  "head_sha": "152b85d61cc9bded6d05513ca8e851551d274f9d",
+  "conclusion": "success",
+  "jobs": [
+    "backend",
+    "dashboard"
+  ],
+  "ci_actions": [
+    "ruff",
+    "pytest",
+    "scenario",
+    "pip-audit",
+    "frontend-build",
+    "playwright-5",
+    "npm-audit"
+  ]
+}
