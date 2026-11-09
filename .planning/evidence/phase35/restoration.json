@@ -1,0 +1,21 @@
+{
+  "at": "2026-11-09T01:10:52.126728+00:00",
+  "services": {
+    "paper-live": {
+      "segment": "segment-00001045.sqlite",
+      "restored_bytes": 10444800,
+      "raw_sha256": "1aca8efdb9598a2bc3096e9d0b6421b36115ec7a6d47b8b519146a205c3dfe20",
+      "gzip_sha256": "563528a31299747adfeaddf25ab0dd83f51f59840687c71655e64404e28bad4c",
+      "restoration_verified": true,
+      "scope": "one recent sealed segment; prior complete audit reused, catalog preservation checked separately"
+    },
+    "experimental-paper": {
+      "segment": "segment-00002852.sqlite",
+      "restored_bytes": 5173248,
+      "raw_sha256": "b7a2ebe655d15b8e9fa7771a46ac0d2b644901726b555081d7497a4cf659fc6b",
+      "gzip_sha256": "41ecda422cf0b23a0db75b1cbad947bf2b264733dccf58fa1b98dedbcd9b24f3",
+      "restoration_verified": true,
+      "scope": "one recent sealed segment; prior complete audit reused, catalog preservation checked separately"
+    }
+  }
+}

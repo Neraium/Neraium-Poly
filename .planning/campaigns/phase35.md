@@ -1,0 +1,13 @@
+# Phase35 delivered with unresolved profitability
+Root `/home/ubuntu/Neraium-Poly`; branch `phase35-edge-validation`; baseline be4e9a4; final source f4df0b25b2db7528d0a6444cec56137c0725464e. Coordinator plus three isolated native writing agents; reviewed/cherry-picked source milestones. Prior unrelated untracked evidence untouched.
+
+| Exit condition | Result | Evidence |
+|---|---|---|
+| Native non-sports payout verification, exact assets/rules/finality | passed | five weather markets/three station-days, original forecast bindings and immutable copied raw manifests; native source/tests; production-source-replay.json |
+| Authentic additional prospective research | passed | fixed21-calendar-day AWC empirical/Jeffreys challengers, Beijing/Shanghai/Shenzhen; six durable forecasts/three station-days; eight earlier raw probes retained separately (same event groups) |
+| Market-relative causal baseline validation | passed with withheld comparisons | 22 original midpoint baselines recovered; five native targets/three days yield descriptive MARKET-only Brier.041067125/logloss.137244458; all conditional model/native comparisons withheld |
+| Executable economic evaluation without authority | passed | original No-side book/native fee replay; 6254.237share10%depth cap/$3648.646274inclprotocolfee; native probabilitybounds0..1, all-in costs unknown => rejected; no retrospectively invented fills |
+| Source/recovery/risk/account/archive validation | passed | CI42543092702:2312backend/5browser/build/scenario/Ruff/audits; preservation/restoration/source-replay records |
+| Bounded running deployment | passed with measured limitations | only experimental restarted, collector PID unchanged;13samples/~6min genuine collection, new forecast progression2→6,228–319freshbooks; zero neworders/fills/OOMkills; cached mixed-client API median.195s/P993.640s/max3.658s (not equivalent to Phase34isolatedbenchmark) |
+
+No independently established market-relative advantage, conservative positive native net opportunity, SII benefit or realized shadow profit. Certified0/0 remains blocked at unchanged100/100. Accounts certified500/experimental496.1152205983 with cumulative−3.8847794017 unchanged. 150/150GiB budgets/100GiB reserve, resources/stops/approval thresholds preserved; live execution disabled. ~364GiBfree; conservative conditional service-budget runway35.1/13.1days; shared workload growth can shorten it. No original deletion, migration, AWS or spending change. Future: calibrate prospective native-target probability semantics on full event cohorts, qualify all-in costs, grow verified event samples, investigate measured shared latency tails without diverting research into speculative infrastructure.

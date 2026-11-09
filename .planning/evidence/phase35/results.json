@@ -1,0 +1,483 @@
+{
+  "source_commit": "f4df0b25b2db7528d0a6444cec56137c0725464e",
+  "observed_seconds": 370.839923,
+  "observation": {
+    "samples": 13,
+    "markets": 406,
+    "fresh_books": 319,
+    "minimum_fresh_books": 228,
+    "source_frame_progressed": true,
+    "api": {
+      "operations_requests": 26,
+      "median": 0.19481026090215892,
+      "p95": 3.4098626030026935,
+      "p99": 3.639890258142259,
+      "maximum": 3.658241374185309
+    },
+    "scope": "bounded observation, not indefinite stability proof"
+  },
+  "new_research": {
+    "native_proofs": 5,
+    "native_parent_events": 3,
+    "durable_new_forecasts": 6,
+    "new_station_days": 3,
+    "restore_state_verified": true
+  },
+  "source_probes": {
+    "forecasts": 8,
+    "station_days": 3,
+    "scope": "earlier separately timestamped original probes; same station-days as new durable service forecasts, never additional independent events"
+  },
+  "legacy_domain_counts": {
+    "crypto": {
+      "prospective_forecasts": 50,
+      "reviewed_event_groups": 4,
+      "official_event_forecast_scores": 0,
+      "qualified_paper_opportunities": 0
+    },
+    "finance": {
+      "prospective_forecasts": 4,
+      "reviewed_event_groups": 1,
+      "official_event_forecast_scores": 0,
+      "qualified_paper_opportunities": 0
+    },
+    "economics": {
+      "prospective_forecasts": 4,
+      "reviewed_event_groups": 2,
+      "official_event_forecast_scores": 0,
+      "qualified_paper_opportunities": 0
+    },
+    "weather": {
+      "prospective_forecasts": 20,
+      "reviewed_event_groups": 8,
+      "official_event_forecast_scores": 10,
+      "qualified_paper_opportunities": 0
+    },
+    "sports": {
+      "prospective_forecasts": 142,
+      "reviewed_event_groups": 40,
+      "official_event_forecast_scores": 12,
+      "qualified_paper_opportunities": 0
+    },
+    "politics": {
+      "prospective_forecasts": 0,
+      "reviewed_event_groups": 0,
+      "official_event_forecast_scores": 0,
+      "qualified_paper_opportunities": 0
+    },
+    "geopolitics": {
+      "prospective_forecasts": 0,
+      "reviewed_event_groups": 0,
+      "official_event_forecast_scores": 0,
+      "qualified_paper_opportunities": 0
+    },
+    "technology": {
+      "prospective_forecasts": 0,
+      "reviewed_event_groups": 0,
+      "official_event_forecast_scores": 0,
+      "qualified_paper_opportunities": 0
+    },
+    "science": {
+      "prospective_forecasts": 0,
+      "reviewed_event_groups": 0,
+      "official_event_forecast_scores": 0,
+      "qualified_paper_opportunities": 0
+    },
+    "esports": {
+      "prospective_forecasts": 0,
+      "reviewed_event_groups": 0,
+      "official_event_forecast_scores": 0,
+      "qualified_paper_opportunities": 0
+    },
+    "entertainment": {
+      "prospective_forecasts": 0,
+      "reviewed_event_groups": 0,
+      "official_event_forecast_scores": 0,
+      "qualified_paper_opportunities": 0
+    },
+    "other": {
+      "prospective_forecasts": 0,
+      "reviewed_event_groups": 0,
+      "official_event_forecast_scores": 0,
+      "qualified_paper_opportunities": 0
+    }
+  },
+  "official_event_results": {
+    "verified_forecast_labels": 22,
+    "distinct_official_event_groups": 9,
+    "event_groups_by_domain": {
+      "weather": 3,
+      "sports": 6
+    }
+  },
+  "new_native_market_baseline": {
+    "domains": [
+      {
+        "calibration": null,
+        "certification_authority": false,
+        "conditional_model_market_comparison": null,
+        "confidence_intervals": null,
+        "descriptive_native_market_brier": 0.04106712500000001,
+        "descriptive_native_market_log_loss": 0.137244457901422,
+        "domain": "weather",
+        "event_groups": 3,
+        "exact_native_targets": 5,
+        "log_loss_status": "finite",
+        "market_superiority": null,
+        "research_only": true,
+        "trading_authority": false
+      }
+    ],
+    "effective_independent_sample_size": null,
+    "market_superiority": null,
+    "certified_training_events": 0,
+    "certified_heldout_events": 0
+  },
+  "sii": {
+    "sii_paired_events": 0,
+    "sii_incremental_value": null
+  },
+  "shadow": {
+    "orders_attempted": 0,
+    "hypothetical_fills": 0,
+    "positions": 0,
+    "capital_utilization": 0.0,
+    "realized_simulated_pnl": null,
+    "drawdown": null
+  },
+  "accounts": {
+    "paper-live": {
+      "cash": 500.0,
+      "realized_pnl": 0.0,
+      "emergency_stop": false,
+      "limits": {
+        "bankroll": 500.0,
+        "aggregate_fraction": 0.2,
+        "market_fraction": 0.05,
+        "event_fraction": 0.1,
+        "correlation_fraction": 0.1,
+        "daily_loss_fraction": 0.05,
+        "drawdown_fraction": 0.1,
+        "max_book_age_seconds": 15.0,
+        "max_market_age_seconds": 3600.0,
+        "max_estimate_age_seconds": 300.0,
+        "max_evidence_age_seconds": 3600.0,
+        "max_spread": 0.05,
+        "min_net_edge": 0.03,
+        "max_liquidity_participation": 0.25,
+        "approval_ttl_seconds": 10.0,
+        "standard_min": 2.0,
+        "standard_max": 5.0,
+        "high_min": 5.0,
+        "high_max": 15.0,
+        "exceptional_min": 15.0,
+        "exceptional_max": 25.0,
+        "kelly_fraction": 0.1
+      },
+      "positions": 0
+    },
+    "experimental-paper": {
+      "cash": 496.11522059829053,
+      "realized_pnl": -3.8847794017094013,
+      "emergency_stop": false,
+      "limits": {
+        "bankroll": 500.0,
+        "aggregate_fraction": 0.2,
+        "market_fraction": 0.05,
+        "event_fraction": 0.1,
+        "correlation_fraction": 0.1,
+        "daily_loss_fraction": 0.05,
+        "drawdown_fraction": 0.1,
+        "max_book_age_seconds": 15.0,
+        "max_market_age_seconds": 3600.0,
+        "max_estimate_age_seconds": 300.0,
+        "max_evidence_age_seconds": 3600.0,
+        "max_spread": 0.05,
+        "min_net_edge": 0.03,
+        "max_liquidity_participation": 0.25,
+        "approval_ttl_seconds": 10.0,
+        "standard_min": 2.0,
+        "standard_max": 5.0,
+        "high_min": 5.0,
+        "high_max": 15.0,
+        "exceptional_min": 15.0,
+        "exceptional_max": 25.0,
+        "kelly_fraction": 0.1
+      },
+      "positions": 0
+    }
+  },
+  "account_prefixes_preserved": true,
+  "new_orders": 0,
+  "new_fills": 0,
+  "qualified_opportunities": 0,
+  "positive_conservative_native_net_opportunities": 0,
+  "hypothetical_weather_snapshot": {
+    "supported_quantity_cap": 6254.237,
+    "capital_including_protocol_fee": 3648.6462736149997,
+    "conditional_point_headroom_is_validated_edge": false,
+    "native_probability_bounds": [
+      0,
+      1
+    ],
+    "all_in_costs_verified": false,
+    "current_opportunity": false,
+    "scope": "reconstructed economics at original source probe timestamp; no retroactive shadow fill",
+    "conditional_point_headroom_after_protocol_fee": [
+      2605.5907263850004,
+      2463.4489763850006
+    ]
+  },
+  "capacity": {
+    "collector": {
+      "usage_gib": 20.839909475296736,
+      "quota_gib": 150.0,
+      "whole_archive_growth_bytes_per_second": 14179.808251119715,
+      "last_rolling_growth_bytes_per_second": 45744.753084859076,
+      "runway_rate_bytes_per_second": 45744.753084859076,
+      "conditional_service_budget_runway_days": 35.08917685849036,
+      "counter_scope": "whole archive delta over active observation; includes enrollment/forecast bursts; other workload growth can shorten runway"
+    },
+    "experimental": {
+      "usage_gib": 16.631786751560867,
+      "quota_gib": 150.0,
+      "whole_archive_growth_bytes_per_second": 122474.69644739409,
+      "last_rolling_growth_bytes_per_second": 126728.63125811021,
+      "runway_rate_bytes_per_second": 126728.63125811021,
+      "conditional_service_budget_runway_days": 13.078674043079685,
+      "counter_scope": "whole archive delta over active observation; includes enrollment/forecast bursts; other workload growth can shorten runway"
+    }
+  },
+  "filesystem_free_gib": 363.99767684936523,
+  "protected_reserve_gib": 100,
+  "memory": {
+    "paper": {
+      "memory.current": "1068576768",
+      "memory.events": "low 0\nhigh 0\nmax 17147\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+      "cpu.stat": "usage_usec 3431611864\nuser_usec 3325529100\nsystem_usec 106082764\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 69058\nnr_throttled 1315\nthrottled_usec 12149711\nnr_bursts 0\nburst_usec 0"
+    },
+    "experimental": {
+      "memory.current": "2062741504",
+      "memory.events": "low 0\nhigh 0\nmax 8370\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+      "cpu.stat": "usage_usec 479115154\nuser_usec 417087805\nsystem_usec 62027349\nnice_usec 0\ncore_sched.force_idle_usec 0\nnr_periods 6454\nnr_throttled 1799\nthrottled_usec 15497711\nnr_bursts 0\nburst_usec 0"
+    }
+  },
+  "service_state": "MainPID=3665014\nNRestarts=0\nCPUQuotaPerSecUSec=1s\nMemoryMax=1073741824\nTasksMax=64\nActiveState=active\nSubState=running\n\nMainPID=3689333\nNRestarts=0\nCPUQuotaPerSecUSec=1s\nMemoryMax=2147483648\nTasksMax=32\nActiveState=active\nSubState=running\n",
+  "ci": {
+    "conclusion": "success",
+    "databaseId": 42543092702,
+    "headSha": "f4df0b25b2db7528d0a6444cec56137c0725464e",
+    "jobs": [
+      {
+        "completedAt": "2026-11-09T00:59:44Z",
+        "conclusion": "success",
+        "databaseId": 128922157211,
+        "name": "dashboard",
+        "startedAt": "2026-11-09T00:59:08Z",
+        "status": "completed",
+        "steps": [
+          {
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/checkout@v4",
+            "number": 2,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/setup-node@v4",
+            "number": 3,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run astral-sh/setup-uv@v6",
+            "number": 4,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run uv sync --project .. --frozen --python 3.12",
+            "number": 5,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run npm ci --no-fund",
+            "number": 6,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run npm run build",
+            "number": 7,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run npx playwright install --with-deps --only-shell chromium",
+            "number": 8,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run npm test",
+            "number": 9,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run npm audit --audit-level=high",
+            "number": 10,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Run astral-sh/setup-uv@v6",
+            "number": 18,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Run actions/setup-node@v4",
+            "number": 19,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Run actions/checkout@v4",
+            "number": 20,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 21,
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/Neraium/Neraium-Poly/actions/runs/42543092702/job/128922157211"
+      },
+      {
+        "completedAt": "2026-11-09T01:00:23Z",
+        "conclusion": "success",
+        "databaseId": 128922157630,
+        "name": "backend",
+        "startedAt": "2026-11-09T00:59:07Z",
+        "status": "completed",
+        "steps": [
+          {
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/checkout@v4",
+            "number": 2,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run astral-sh/setup-uv@v6",
+            "number": 3,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run uv sync --frozen --extra dev --extra research --python 3.12",
+            "number": 4,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run uv run --frozen ruff check backend tests",
+            "number": 5,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run uv run --frozen pytest -q --junitxml=certification.xml",
+            "number": 6,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run uv run --frozen neraium-poly scenario --output scenario.json",
+            "number": 7,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run uv export --frozen --no-emit-project --no-hashes --format requirements-txt --output-file /tmp/audit-requirements.txt",
+            "number": 8,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run uv run --frozen pip-audit -r /tmp/audit-requirements.txt --disable-pip --no-deps",
+            "number": 9,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run actions/upload-artifact@v4",
+            "number": 10,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Run astral-sh/setup-uv@v6",
+            "number": 19,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Run actions/checkout@v4",
+            "number": 20,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 21,
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/Neraium/Neraium-Poly/actions/runs/42543092702/job/128922157630"
+      }
+    ],
+    "status": "completed",
+    "url": "https://github.com/Neraium/Neraium-Poly/actions/runs/42543092702"
+  },
+  "validation": {
+    "backend_ci_passed": 2312,
+    "dashboard_browser_passed": 5,
+    "ruff": "passed",
+    "scenario": "passed",
+    "python_audit": "no known vulnerabilities",
+    "npm_audit": "0 vulnerabilities"
+  },
+  "limitations": [
+    "Conditional reference probabilities remain uncalibrated for native payouts; no market-relative model superiority",
+    "Only3 weather native-payout station-days; statistical independence and effective sample size unverified",
+    "Certified training/heldout0/0; unchanged minimum100/100",
+    "SII paired cohort0, incremental value unmeasured",
+    "All-in costs and native probability uncertainty remain qualification blockers",
+    "Other-domain official-reference/licensing and future-maturity limitations remain; no substituted outcomes",
+    "Existing systemd unit metadata requests reload; persistent control drop-ins retain same1CPU/2GiB/TasksMax32; no daemon-reload or limits change performed",
+    "Observed mixed-client operations API maximum3.658s/P993.640s; isolated Phase34 latency benchmark is not directly comparable; further tail-latency profiling remains"
+  ],
+  "evidence_scope": {
+    "account_integrity": "SQLite quick_check plus retained table-prefix fingerprints",
+    "archive_integrity": "3899 sealed/legacy catalog identities preserved; one recent sealed original/gzip pair per service independently restored; service startup recovery reused full catalog verification",
+    "forecast_integrity": "three existing tamper-evident journals fully replayed with all preexisting prefixes; six new service forecasts and five native proof bindings independently replayed",
+    "native": "five exact market/token payout proofs; only three canonical station-days, not five independent events"
+  }
+}

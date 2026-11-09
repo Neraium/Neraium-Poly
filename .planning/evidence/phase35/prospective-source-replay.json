@@ -1,0 +1,999 @@
+{
+  "as_of": "2026-11-09T00:56:53.319905+00:00",
+  "authentic_probe_forecasts": 8,
+  "distinct_station_days": 3,
+  "rows": [
+    {
+      "model": "awc-calendar-frequency-v35.1",
+      "station": "ZBAA",
+      "day": "2026-11-10",
+      "timestamp": "2026-11-09T00:39:45.317891+00:00",
+      "market_id": "6837198",
+      "token_id": "39147642694061291207448008038903701581412415326601452438804205986896056543356",
+      "probability": 0.09523809523809523,
+      "native_interval": [
+        0,
+        1
+      ],
+      "book_sha256": "f1467ff1e2b0547dee3c50e2f924179b624a778f6743c1a21805733a6d17ef55",
+      "source_path": "data/experimental-paper/phase35-weather-source-probes/genuine-probe-additional.json",
+      "source_sha256": "d903b93edb527d2298c896d37a3d7de2f6df5031b488ebebd8399566036542ce",
+      "replayed": true
+    },
+    {
+      "model": "awc-jeffreys-frequency-v35.1",
+      "station": "ZBAA",
+      "day": "2026-11-10",
+      "timestamp": "2026-11-09T00:39:45.317891+00:00",
+      "market_id": "6837198",
+      "token_id": "39147642694061291207448008038903701581412415326601452438804205986896056543356",
+      "probability": 0.11363636363636363,
+      "native_interval": [
+        0,
+        1
+      ],
+      "book_sha256": "f1467ff1e2b0547dee3c50e2f924179b624a778f6743c1a21805733a6d17ef55",
+      "source_path": "data/experimental-paper/phase35-weather-source-probes/genuine-probe-additional.json",
+      "source_sha256": "d903b93edb527d2298c896d37a3d7de2f6df5031b488ebebd8399566036542ce",
+      "replayed": true
+    },
+    {
+      "model": "awc-calendar-frequency-v35.1",
+      "station": "ZGSZ",
+      "day": "2026-11-10",
+      "timestamp": "2026-11-09T00:39:46.163575+00:00",
+      "market_id": "6837228",
+      "token_id": "74286914456860125151895440392824379902055039084241608163313595537361761612877",
+      "probability": 0.0,
+      "native_interval": [
+        0,
+        1
+      ],
+      "book_sha256": "acd787e48248de1864aaa96c4e504b3cf09a42a83b81b8e1ec1ee717ca299a0f",
+      "source_path": "data/experimental-paper/phase35-weather-source-probes/genuine-probe-additional.json",
+      "source_sha256": "d903b93edb527d2298c896d37a3d7de2f6df5031b488ebebd8399566036542ce",
+      "replayed": true
+    },
+    {
+      "model": "awc-jeffreys-frequency-v35.1",
+      "station": "ZGSZ",
+      "day": "2026-11-10",
+      "timestamp": "2026-11-09T00:39:46.163575+00:00",
+      "market_id": "6837228",
+      "token_id": "74286914456860125151895440392824379902055039084241608163313595537361761612877",
+      "probability": 0.022727272727272728,
+      "native_interval": [
+        0,
+        1
+      ],
+      "book_sha256": "acd787e48248de1864aaa96c4e504b3cf09a42a83b81b8e1ec1ee717ca299a0f",
+      "source_path": "data/experimental-paper/phase35-weather-source-probes/genuine-probe-additional.json",
+      "source_sha256": "d903b93edb527d2298c896d37a3d7de2f6df5031b488ebebd8399566036542ce",
+      "replayed": true
+    },
+    {
+      "model": "awc-calendar-frequency-v35.1",
+      "station": "ZSPD",
+      "day": "2026-11-10",
+      "timestamp": "2026-11-09T00:40:39.900044+00:00",
+      "market_id": "6837117",
+      "token_id": "111768571537534896727472485715607416820858649485254505299899755194375721668861",
+      "probability": 1.0,
+      "native_interval": [
+        0,
+        1
+      ],
+      "book_sha256": "50d5209fe5ad11a430b17d86d9e5bd659b9d0d4d76f3cd6e74ea2c13e4f110f8",
+      "source_path": "data/experimental-paper/phase35-weather-source-probes/genuine-probe-no.json",
+      "source_sha256": "88e9e2927eafbb1af40ba7c39b3898641c1672c6b8de7c5a4ab1d46b55313505",
+      "replayed": true
+    },
+    {
+      "model": "awc-jeffreys-frequency-v35.1",
+      "station": "ZSPD",
+      "day": "2026-11-10",
+      "timestamp": "2026-11-09T00:40:39.900044+00:00",
+      "market_id": "6837117",
+      "token_id": "111768571537534896727472485715607416820858649485254505299899755194375721668861",
+      "probability": 0.9772727272727273,
+      "native_interval": [
+        0,
+        1
+      ],
+      "book_sha256": "50d5209fe5ad11a430b17d86d9e5bd659b9d0d4d76f3cd6e74ea2c13e4f110f8",
+      "source_path": "data/experimental-paper/phase35-weather-source-probes/genuine-probe-no.json",
+      "source_sha256": "88e9e2927eafbb1af40ba7c39b3898641c1672c6b8de7c5a4ab1d46b55313505",
+      "replayed": true
+    },
+    {
+      "model": "awc-calendar-frequency-v35.1",
+      "station": "ZSPD",
+      "day": "2026-11-10",
+      "timestamp": "2026-11-09T00:38:55.937966+00:00",
+      "market_id": "6837117",
+      "token_id": "114723790899911627768609497566347697258335629237401049616348800415676805662928",
+      "probability": 0.0,
+      "native_interval": [
+        0,
+        1
+      ],
+      "book_sha256": "ee04f66ca02407e0ea3629006d0876a8d6864975dfbffe7cd0f6b0423640d80a",
+      "source_path": "data/experimental-paper/phase35-weather-source-probes/genuine-probe.json",
+      "source_sha256": "54c154bbae5f3ddaa2cc7b3c84c3fafaaccc180b5e1ac4f577e6c03cae709d57",
+      "replayed": true
+    },
+    {
+      "model": "awc-jeffreys-frequency-v35.1",
+      "station": "ZSPD",
+      "day": "2026-11-10",
+      "timestamp": "2026-11-09T00:38:55.937966+00:00",
+      "market_id": "6837117",
+      "token_id": "114723790899911627768609497566347697258335629237401049616348800415676805662928",
+      "probability": 0.022727272727272728,
+      "native_interval": [
+        0,
+        1
+      ],
+      "book_sha256": "ee04f66ca02407e0ea3629006d0876a8d6864975dfbffe7cd0f6b0423640d80a",
+      "source_path": "data/experimental-paper/phase35-weather-source-probes/genuine-probe.json",
+      "source_sha256": "54c154bbae5f3ddaa2cc7b3c84c3fafaaccc180b5e1ac4f577e6c03cae709d57",
+      "replayed": true
+    }
+  ],
+  "snapshot_economics": [
+    {
+      "status": "economically_evaluated_research_snapshot",
+      "forecast_sha256": "fb53d0e15ee90b24f94720bfaa21333981a86f012ac9f3ba89461bf8b76a2838",
+      "model_id": "awc-calendar-frequency-v35.1",
+      "market_id": "6837117",
+      "event_id": "1338327",
+      "token_id": "111768571537534896727472485715607416820858649485254505299899755194375721668861",
+      "decision_at": "2026-11-09T00:40:39.900044+00:00",
+      "book_source_at": "2026-11-09T00:40:27.273000Z",
+      "book_available_at": "2026-11-09T00:40:39.876092Z",
+      "book_sha256": "50d5209fe5ad11a430b17d86d9e5bd659b9d0d4d76f3cd6e74ea2c13e4f110f8",
+      "conditional_probability": 1.0,
+      "native_probability_bounds": [
+        0.0,
+        1.0
+      ],
+      "fee_proof": {
+        "status": "verified_current_protocol_curve",
+        "token_id": "111768571537534896727472485715607416820858649485254505299899755194375721668861",
+        "condition_id": "0xb6d4408778c71a3ee324432928ba3e1ec19de7f7be5a20b832f539923fc6aaf0",
+        "rate": 0.05,
+        "exponent": 1,
+        "taker_only": true,
+        "formula": "shares * fd.r * price * (1-price)",
+        "documentation": "https://docs.polymarket.com/trading/fees",
+        "fee_observation_id": "218045ee-be0d-4371-a152-22d9d26ef737",
+        "fee_observation_sha256": "f9b4bebdb8288e968af21955f23945baec9b4600d71f729c4162e0278a16730c",
+        "raw_response_ids": [
+          "ad22000147972291cdb5baf4c4670ad80f13ce07c0b2cb92d2381aa3485abb28",
+          "06ab7d8c9fdfb0e710cfc6d58e9b0114f83533b28d3c56dc29531d8987ff4c65"
+        ],
+        "retrieval_ids": [
+          "753951860d29857e7abe99ceca358901b5536240926e7c45de8ddde773c9d67e",
+          "bc20b664e1f011a39758a79e33ac7cd32a48b78d941a71833b15ab67de94432b"
+        ],
+        "available_at": "2026-11-09T00:40:39.097584Z",
+        "as_of": "2026-11-09T00:40:39.900044+00:00",
+        "source_timestamp": null,
+        "timestamp_semantics": "public responses provide retrieval/availability time; exchange effective-time unavailable",
+        "rounding": "official nearest 5 decimals; per-fill count unknown, conservative bound used",
+        "all_in_costs_verified": false,
+        "missing_cost_evidence": [
+          "fill_fragmentation_rounding",
+          "additional_slippage",
+          "latency_adverse_selection",
+          "capital_lockup_cost",
+          "settlement_redemption_cost"
+        ],
+        "calibration_verified": false,
+        "research_only": true,
+        "trading_authority": false
+      },
+      "fee_formula": "quantity * fd.r * price * (1-price)",
+      "scenarios": [
+        {
+          "bankroll_hypothetical": 500,
+          "capital_fraction": 0.2,
+          "participation": 0.1,
+          "levels": [
+            {
+              "price": 0.55,
+              "displayed_quantity": 150.0,
+              "participating_quantity": 15.0,
+              "acquisition_cost": 8.25,
+              "protocol_fee_before_rounding": 0.185625
+            },
+            {
+              "price": 0.56,
+              "displayed_quantity": 215.0,
+              "participating_quantity": 21.5,
+              "acquisition_cost": 12.040000000000001,
+              "protocol_fee_before_rounding": 0.26488
+            },
+            {
+              "price": 0.57,
+              "displayed_quantity": 61789.89,
+              "participating_quantity": 136.12505689088115,
+              "acquisition_cost": 77.59128242780226,
+              "protocol_fee_before_rounding": 1.6682125721977485
+            }
+          ],
+          "supported_quantity": 172.62505689088115,
+          "acquisition_cost": 97.88128242780226,
+          "protocol_fee_before_rounding": 2.1187175721977485,
+          "capital_with_protocol_fee": 100.00000000000001,
+          "conditional_gross_point_headroom": 74.74377446307889,
+          "conditional_point_headroom_after_protocol_fee": 72.62505689088114,
+          "native_headroom_bounds_before_unverified_costs": [
+            -100.00000000000001,
+            72.62505689088114
+          ],
+          "maximum_acquisition_loss_before_unverified_costs": 100.00000000000001,
+          "capital_utilization": 0.20000000000000004,
+          "actual_fill": false,
+          "guaranteed_capacity": false
+        },
+        {
+          "bankroll_hypothetical": 1000,
+          "capital_fraction": 0.2,
+          "participation": 0.1,
+          "levels": [
+            {
+              "price": 0.55,
+              "displayed_quantity": 150.0,
+              "participating_quantity": 15.0,
+              "acquisition_cost": 8.25,
+              "protocol_fee_before_rounding": 0.185625
+            },
+            {
+              "price": 0.56,
+              "displayed_quantity": 215.0,
+              "participating_quantity": 21.5,
+              "acquisition_cost": 12.040000000000001,
+              "protocol_fee_before_rounding": 0.26488
+            },
+            {
+              "price": 0.57,
+              "displayed_quantity": 61789.89,
+              "participating_quantity": 307.8711131720638,
+              "acquisition_cost": 175.48653450807635,
+              "protocol_fee_before_rounding": 3.772960491923642
+            }
+          ],
+          "supported_quantity": 344.3711131720638,
+          "acquisition_cost": 195.77653450807634,
+          "protocol_fee_before_rounding": 4.223465491923642,
+          "capital_with_protocol_fee": 199.99999999999997,
+          "conditional_gross_point_headroom": 148.59457866398748,
+          "conditional_point_headroom_after_protocol_fee": 144.37111317206384,
+          "native_headroom_bounds_before_unverified_costs": [
+            -199.99999999999997,
+            144.37111317206384
+          ],
+          "maximum_acquisition_loss_before_unverified_costs": 199.99999999999997,
+          "capital_utilization": 0.19999999999999998,
+          "actual_fill": false,
+          "guaranteed_capacity": false
+        },
+        {
+          "bankroll_hypothetical": 10000,
+          "capital_fraction": 0.2,
+          "participation": 0.1,
+          "levels": [
+            {
+              "price": 0.55,
+              "displayed_quantity": 150.0,
+              "participating_quantity": 15.0,
+              "acquisition_cost": 8.25,
+              "protocol_fee_before_rounding": 0.185625
+            },
+            {
+              "price": 0.56,
+              "displayed_quantity": 215.0,
+              "participating_quantity": 21.5,
+              "acquisition_cost": 12.040000000000001,
+              "protocol_fee_before_rounding": 0.26488
+            },
+            {
+              "price": 0.57,
+              "displayed_quantity": 61789.89,
+              "participating_quantity": 3399.3001262333514,
+              "acquisition_cost": 1937.6010719530102,
+              "protocol_fee_before_rounding": 41.658423046989725
+            }
+          ],
+          "supported_quantity": 3435.8001262333514,
+          "acquisition_cost": 1957.8910719530102,
+          "protocol_fee_before_rounding": 42.108928046989725,
+          "capital_with_protocol_fee": 2000.0,
+          "conditional_gross_point_headroom": 1477.9090542803413,
+          "conditional_point_headroom_after_protocol_fee": 1435.8001262333514,
+          "native_headroom_bounds_before_unverified_costs": [
+            -2000.0,
+            1435.8001262333514
+          ],
+          "maximum_acquisition_loss_before_unverified_costs": 2000.0,
+          "capital_utilization": 0.2,
+          "actual_fill": false,
+          "guaranteed_capacity": false
+        },
+        {
+          "bankroll_hypothetical": 100000,
+          "capital_fraction": 0.2,
+          "participation": 0.1,
+          "levels": [
+            {
+              "price": 0.55,
+              "displayed_quantity": 150.0,
+              "participating_quantity": 15.0,
+              "acquisition_cost": 8.25,
+              "protocol_fee_before_rounding": 0.185625
+            },
+            {
+              "price": 0.56,
+              "displayed_quantity": 215.0,
+              "participating_quantity": 21.5,
+              "acquisition_cost": 12.040000000000001,
+              "protocol_fee_before_rounding": 0.26488
+            },
+            {
+              "price": 0.57,
+              "displayed_quantity": 61789.89,
+              "participating_quantity": 6178.9890000000005,
+              "acquisition_cost": 3522.02373,
+              "protocol_fee_before_rounding": 75.723510195
+            },
+            {
+              "price": 0.58,
+              "displayed_quantity": 11.36,
+              "participating_quantity": 1.136,
+              "acquisition_cost": 0.6588799999999999,
+              "protocol_fee_before_rounding": 0.013836479999999998
+            },
+            {
+              "price": 0.59,
+              "displayed_quantity": 14.31,
+              "participating_quantity": 1.431,
+              "acquisition_cost": 0.84429,
+              "protocol_fee_before_rounding": 0.017307945
+            },
+            {
+              "price": 0.69,
+              "displayed_quantity": 5.0,
+              "participating_quantity": 0.5,
+              "acquisition_cost": 0.345,
+              "protocol_fee_before_rounding": 0.005347500000000001
+            },
+            {
+              "price": 0.73,
+              "displayed_quantity": 39.0,
+              "participating_quantity": 3.9000000000000004,
+              "acquisition_cost": 2.847,
+              "protocol_fee_before_rounding": 0.0384345
+            },
+            {
+              "price": 0.74,
+              "displayed_quantity": 153.23,
+              "participating_quantity": 15.323,
+              "acquisition_cost": 11.33902,
+              "protocol_fee_before_rounding": 0.14740726
+            },
+            {
+              "price": 0.79,
+              "displayed_quantity": 53.33,
+              "participating_quantity": 5.333,
+              "acquisition_cost": 4.21307,
+              "protocol_fee_before_rounding": 0.044237235
+            },
+            {
+              "price": 0.8,
+              "displayed_quantity": 25.0,
+              "participating_quantity": 2.5,
+              "acquisition_cost": 2.0,
+              "protocol_fee_before_rounding": 0.02
+            },
+            {
+              "price": 0.84,
+              "displayed_quantity": 56.25,
+              "participating_quantity": 5.625,
+              "acquisition_cost": 4.725,
+              "protocol_fee_before_rounding": 0.037800000000000014
+            },
+            {
+              "price": 0.95,
+              "displayed_quantity": 25.0,
+              "participating_quantity": 2.5,
+              "acquisition_cost": 2.375,
+              "protocol_fee_before_rounding": 0.005937500000000005
+            },
+            {
+              "price": 0.96,
+              "displayed_quantity": 5.0,
+              "participating_quantity": 0.5,
+              "acquisition_cost": 0.48,
+              "protocol_fee_before_rounding": 0.0009600000000000009
+            }
+          ],
+          "supported_quantity": 6254.237,
+          "acquisition_cost": 3572.14099,
+          "protocol_fee_before_rounding": 76.505283615,
+          "capital_with_protocol_fee": 3648.6462736149997,
+          "conditional_gross_point_headroom": 2682.09601,
+          "conditional_point_headroom_after_protocol_fee": 2605.5907263850004,
+          "native_headroom_bounds_before_unverified_costs": [
+            -3648.6462736149997,
+            2605.5907263850004
+          ],
+          "maximum_acquisition_loss_before_unverified_costs": 3648.6462736149997,
+          "capital_utilization": 0.03648646273615,
+          "actual_fill": false,
+          "guaranteed_capacity": false
+        },
+        {
+          "bankroll_hypothetical": 1000000,
+          "capital_fraction": 0.2,
+          "participation": 0.1,
+          "levels": [
+            {
+              "price": 0.55,
+              "displayed_quantity": 150.0,
+              "participating_quantity": 15.0,
+              "acquisition_cost": 8.25,
+              "protocol_fee_before_rounding": 0.185625
+            },
+            {
+              "price": 0.56,
+              "displayed_quantity": 215.0,
+              "participating_quantity": 21.5,
+              "acquisition_cost": 12.040000000000001,
+              "protocol_fee_before_rounding": 0.26488
+            },
+            {
+              "price": 0.57,
+              "displayed_quantity": 61789.89,
+              "participating_quantity": 6178.9890000000005,
+              "acquisition_cost": 3522.02373,
+              "protocol_fee_before_rounding": 75.723510195
+            },
+            {
+              "price": 0.58,
+              "displayed_quantity": 11.36,
+              "participating_quantity": 1.136,
+              "acquisition_cost": 0.6588799999999999,
+              "protocol_fee_before_rounding": 0.013836479999999998
+            },
+            {
+              "price": 0.59,
+              "displayed_quantity": 14.31,
+              "participating_quantity": 1.431,
+              "acquisition_cost": 0.84429,
+              "protocol_fee_before_rounding": 0.017307945
+            },
+            {
+              "price": 0.69,
+              "displayed_quantity": 5.0,
+              "participating_quantity": 0.5,
+              "acquisition_cost": 0.345,
+              "protocol_fee_before_rounding": 0.005347500000000001
+            },
+            {
+              "price": 0.73,
+              "displayed_quantity": 39.0,
+              "participating_quantity": 3.9000000000000004,
+              "acquisition_cost": 2.847,
+              "protocol_fee_before_rounding": 0.0384345
+            },
+            {
+              "price": 0.74,
+              "displayed_quantity": 153.23,
+              "participating_quantity": 15.323,
+              "acquisition_cost": 11.33902,
+              "protocol_fee_before_rounding": 0.14740726
+            },
+            {
+              "price": 0.79,
+              "displayed_quantity": 53.33,
+              "participating_quantity": 5.333,
+              "acquisition_cost": 4.21307,
+              "protocol_fee_before_rounding": 0.044237235
+            },
+            {
+              "price": 0.8,
+              "displayed_quantity": 25.0,
+              "participating_quantity": 2.5,
+              "acquisition_cost": 2.0,
+              "protocol_fee_before_rounding": 0.02
+            },
+            {
+              "price": 0.84,
+              "displayed_quantity": 56.25,
+              "participating_quantity": 5.625,
+              "acquisition_cost": 4.725,
+              "protocol_fee_before_rounding": 0.037800000000000014
+            },
+            {
+              "price": 0.95,
+              "displayed_quantity": 25.0,
+              "participating_quantity": 2.5,
+              "acquisition_cost": 2.375,
+              "protocol_fee_before_rounding": 0.005937500000000005
+            },
+            {
+              "price": 0.96,
+              "displayed_quantity": 5.0,
+              "participating_quantity": 0.5,
+              "acquisition_cost": 0.48,
+              "protocol_fee_before_rounding": 0.0009600000000000009
+            }
+          ],
+          "supported_quantity": 6254.237,
+          "acquisition_cost": 3572.14099,
+          "protocol_fee_before_rounding": 76.505283615,
+          "capital_with_protocol_fee": 3648.6462736149997,
+          "conditional_gross_point_headroom": 2682.09601,
+          "conditional_point_headroom_after_protocol_fee": 2605.5907263850004,
+          "native_headroom_bounds_before_unverified_costs": [
+            -3648.6462736149997,
+            2605.5907263850004
+          ],
+          "maximum_acquisition_loss_before_unverified_costs": 3648.6462736149997,
+          "capital_utilization": 0.0036486462736149998,
+          "actual_fill": false,
+          "guaranteed_capacity": false
+        }
+      ],
+      "rejections": [
+        "unconditional_native_probability_unqualified",
+        "calibration_unvalidated",
+        "all_in_execution_costs_unverified",
+        "research_strategy_has_no_execution_authority"
+      ],
+      "conditional_point_estimate_is_validated_edge": false,
+      "all_in_costs_verified": false,
+      "net_profit_verified": false,
+      "current_executable_opportunity": false,
+      "actual_fill": false,
+      "research_only": true,
+      "trading_authority": false,
+      "limitations": [
+        "Original decision snapshot only; no current depth or fill guarantee",
+        "Both weather challengers share one AWC lineage and one event; do not aggregate capacity",
+        "Fees before rounding; unknown fill fragmentation, latency, additional slippage, capital lockup and settlement costs",
+        "Native lower bound remains zero; conditional point headroom is not conservative net expected profit"
+      ]
+    },
+    {
+      "status": "economically_evaluated_research_snapshot",
+      "forecast_sha256": "f06ee88e20ccbd0d344380a98c45d42e01fdfcfa1c17b4714e4b5c4fb85dbcd9",
+      "model_id": "awc-jeffreys-frequency-v35.1",
+      "market_id": "6837117",
+      "event_id": "1338327",
+      "token_id": "111768571537534896727472485715607416820858649485254505299899755194375721668861",
+      "decision_at": "2026-11-09T00:40:39.900044+00:00",
+      "book_source_at": "2026-11-09T00:40:27.273000Z",
+      "book_available_at": "2026-11-09T00:40:39.876092Z",
+      "book_sha256": "50d5209fe5ad11a430b17d86d9e5bd659b9d0d4d76f3cd6e74ea2c13e4f110f8",
+      "conditional_probability": 0.9772727272727273,
+      "native_probability_bounds": [
+        0.0,
+        1.0
+      ],
+      "fee_proof": {
+        "status": "verified_current_protocol_curve",
+        "token_id": "111768571537534896727472485715607416820858649485254505299899755194375721668861",
+        "condition_id": "0xb6d4408778c71a3ee324432928ba3e1ec19de7f7be5a20b832f539923fc6aaf0",
+        "rate": 0.05,
+        "exponent": 1,
+        "taker_only": true,
+        "formula": "shares * fd.r * price * (1-price)",
+        "documentation": "https://docs.polymarket.com/trading/fees",
+        "fee_observation_id": "218045ee-be0d-4371-a152-22d9d26ef737",
+        "fee_observation_sha256": "f9b4bebdb8288e968af21955f23945baec9b4600d71f729c4162e0278a16730c",
+        "raw_response_ids": [
+          "ad22000147972291cdb5baf4c4670ad80f13ce07c0b2cb92d2381aa3485abb28",
+          "06ab7d8c9fdfb0e710cfc6d58e9b0114f83533b28d3c56dc29531d8987ff4c65"
+        ],
+        "retrieval_ids": [
+          "753951860d29857e7abe99ceca358901b5536240926e7c45de8ddde773c9d67e",
+          "bc20b664e1f011a39758a79e33ac7cd32a48b78d941a71833b15ab67de94432b"
+        ],
+        "available_at": "2026-11-09T00:40:39.097584Z",
+        "as_of": "2026-11-09T00:40:39.900044+00:00",
+        "source_timestamp": null,
+        "timestamp_semantics": "public responses provide retrieval/availability time; exchange effective-time unavailable",
+        "rounding": "official nearest 5 decimals; per-fill count unknown, conservative bound used",
+        "all_in_costs_verified": false,
+        "missing_cost_evidence": [
+          "fill_fragmentation_rounding",
+          "additional_slippage",
+          "latency_adverse_selection",
+          "capital_lockup_cost",
+          "settlement_redemption_cost"
+        ],
+        "calibration_verified": false,
+        "research_only": true,
+        "trading_authority": false
+      },
+      "fee_formula": "quantity * fd.r * price * (1-price)",
+      "scenarios": [
+        {
+          "bankroll_hypothetical": 500,
+          "capital_fraction": 0.2,
+          "participation": 0.1,
+          "levels": [
+            {
+              "price": 0.55,
+              "displayed_quantity": 150.0,
+              "participating_quantity": 15.0,
+              "acquisition_cost": 8.25,
+              "protocol_fee_before_rounding": 0.185625
+            },
+            {
+              "price": 0.56,
+              "displayed_quantity": 215.0,
+              "participating_quantity": 21.5,
+              "acquisition_cost": 12.040000000000001,
+              "protocol_fee_before_rounding": 0.26488
+            },
+            {
+              "price": 0.57,
+              "displayed_quantity": 61789.89,
+              "participating_quantity": 136.12505689088115,
+              "acquisition_cost": 77.59128242780226,
+              "protocol_fee_before_rounding": 1.6682125721977485
+            }
+          ],
+          "supported_quantity": 172.62505689088115,
+          "acquisition_cost": 97.88128242780226,
+          "protocol_fee_before_rounding": 2.1187175721977485,
+          "capital_with_protocol_fee": 100.00000000000001,
+          "conditional_gross_point_headroom": 70.82047771555887,
+          "conditional_point_headroom_after_protocol_fee": 68.70176014336111,
+          "native_headroom_bounds_before_unverified_costs": [
+            -100.00000000000001,
+            72.62505689088114
+          ],
+          "maximum_acquisition_loss_before_unverified_costs": 100.00000000000001,
+          "capital_utilization": 0.20000000000000004,
+          "actual_fill": false,
+          "guaranteed_capacity": false
+        },
+        {
+          "bankroll_hypothetical": 1000,
+          "capital_fraction": 0.2,
+          "participation": 0.1,
+          "levels": [
+            {
+              "price": 0.55,
+              "displayed_quantity": 150.0,
+              "participating_quantity": 15.0,
+              "acquisition_cost": 8.25,
+              "protocol_fee_before_rounding": 0.185625
+            },
+            {
+              "price": 0.56,
+              "displayed_quantity": 215.0,
+              "participating_quantity": 21.5,
+              "acquisition_cost": 12.040000000000001,
+              "protocol_fee_before_rounding": 0.26488
+            },
+            {
+              "price": 0.57,
+              "displayed_quantity": 61789.89,
+              "participating_quantity": 307.8711131720638,
+              "acquisition_cost": 175.48653450807635,
+              "protocol_fee_before_rounding": 3.772960491923642
+            }
+          ],
+          "supported_quantity": 344.3711131720638,
+          "acquisition_cost": 195.77653450807634,
+          "protocol_fee_before_rounding": 4.223465491923642,
+          "capital_with_protocol_fee": 199.99999999999997,
+          "conditional_gross_point_headroom": 140.76796245553146,
+          "conditional_point_headroom_after_protocol_fee": 136.54449696360783,
+          "native_headroom_bounds_before_unverified_costs": [
+            -199.99999999999997,
+            144.37111317206384
+          ],
+          "maximum_acquisition_loss_before_unverified_costs": 199.99999999999997,
+          "capital_utilization": 0.19999999999999998,
+          "actual_fill": false,
+          "guaranteed_capacity": false
+        },
+        {
+          "bankroll_hypothetical": 10000,
+          "capital_fraction": 0.2,
+          "participation": 0.1,
+          "levels": [
+            {
+              "price": 0.55,
+              "displayed_quantity": 150.0,
+              "participating_quantity": 15.0,
+              "acquisition_cost": 8.25,
+              "protocol_fee_before_rounding": 0.185625
+            },
+            {
+              "price": 0.56,
+              "displayed_quantity": 215.0,
+              "participating_quantity": 21.5,
+              "acquisition_cost": 12.040000000000001,
+              "protocol_fee_before_rounding": 0.26488
+            },
+            {
+              "price": 0.57,
+              "displayed_quantity": 61789.89,
+              "participating_quantity": 3399.3001262333514,
+              "acquisition_cost": 1937.6010719530102,
+              "protocol_fee_before_rounding": 41.658423046989725
+            }
+          ],
+          "supported_quantity": 3435.8001262333514,
+          "acquisition_cost": 1957.8910719530102,
+          "protocol_fee_before_rounding": 42.108928046989725,
+          "capital_with_protocol_fee": 2000.0,
+          "conditional_gross_point_headroom": 1399.8226877750378,
+          "conditional_point_headroom_after_protocol_fee": 1357.713759728048,
+          "native_headroom_bounds_before_unverified_costs": [
+            -2000.0,
+            1435.8001262333514
+          ],
+          "maximum_acquisition_loss_before_unverified_costs": 2000.0,
+          "capital_utilization": 0.2,
+          "actual_fill": false,
+          "guaranteed_capacity": false
+        },
+        {
+          "bankroll_hypothetical": 100000,
+          "capital_fraction": 0.2,
+          "participation": 0.1,
+          "levels": [
+            {
+              "price": 0.55,
+              "displayed_quantity": 150.0,
+              "participating_quantity": 15.0,
+              "acquisition_cost": 8.25,
+              "protocol_fee_before_rounding": 0.185625
+            },
+            {
+              "price": 0.56,
+              "displayed_quantity": 215.0,
+              "participating_quantity": 21.5,
+              "acquisition_cost": 12.040000000000001,
+              "protocol_fee_before_rounding": 0.26488
+            },
+            {
+              "price": 0.57,
+              "displayed_quantity": 61789.89,
+              "participating_quantity": 6178.9890000000005,
+              "acquisition_cost": 3522.02373,
+              "protocol_fee_before_rounding": 75.723510195
+            },
+            {
+              "price": 0.58,
+              "displayed_quantity": 11.36,
+              "participating_quantity": 1.136,
+              "acquisition_cost": 0.6588799999999999,
+              "protocol_fee_before_rounding": 0.013836479999999998
+            },
+            {
+              "price": 0.59,
+              "displayed_quantity": 14.31,
+              "participating_quantity": 1.431,
+              "acquisition_cost": 0.84429,
+              "protocol_fee_before_rounding": 0.017307945
+            },
+            {
+              "price": 0.69,
+              "displayed_quantity": 5.0,
+              "participating_quantity": 0.5,
+              "acquisition_cost": 0.345,
+              "protocol_fee_before_rounding": 0.005347500000000001
+            },
+            {
+              "price": 0.73,
+              "displayed_quantity": 39.0,
+              "participating_quantity": 3.9000000000000004,
+              "acquisition_cost": 2.847,
+              "protocol_fee_before_rounding": 0.0384345
+            },
+            {
+              "price": 0.74,
+              "displayed_quantity": 153.23,
+              "participating_quantity": 15.323,
+              "acquisition_cost": 11.33902,
+              "protocol_fee_before_rounding": 0.14740726
+            },
+            {
+              "price": 0.79,
+              "displayed_quantity": 53.33,
+              "participating_quantity": 5.333,
+              "acquisition_cost": 4.21307,
+              "protocol_fee_before_rounding": 0.044237235
+            },
+            {
+              "price": 0.8,
+              "displayed_quantity": 25.0,
+              "participating_quantity": 2.5,
+              "acquisition_cost": 2.0,
+              "protocol_fee_before_rounding": 0.02
+            },
+            {
+              "price": 0.84,
+              "displayed_quantity": 56.25,
+              "participating_quantity": 5.625,
+              "acquisition_cost": 4.725,
+              "protocol_fee_before_rounding": 0.037800000000000014
+            },
+            {
+              "price": 0.95,
+              "displayed_quantity": 25.0,
+              "participating_quantity": 2.5,
+              "acquisition_cost": 2.375,
+              "protocol_fee_before_rounding": 0.005937500000000005
+            },
+            {
+              "price": 0.96,
+              "displayed_quantity": 5.0,
+              "participating_quantity": 0.5,
+              "acquisition_cost": 0.48,
+              "protocol_fee_before_rounding": 0.0009600000000000009
+            }
+          ],
+          "supported_quantity": 6254.237,
+          "acquisition_cost": 3572.14099,
+          "protocol_fee_before_rounding": 76.505283615,
+          "capital_with_protocol_fee": 3648.6462736149997,
+          "conditional_gross_point_headroom": 2539.9542600000004,
+          "conditional_point_headroom_after_protocol_fee": 2463.4489763850006,
+          "native_headroom_bounds_before_unverified_costs": [
+            -3648.6462736149997,
+            2605.5907263850004
+          ],
+          "maximum_acquisition_loss_before_unverified_costs": 3648.6462736149997,
+          "capital_utilization": 0.03648646273615,
+          "actual_fill": false,
+          "guaranteed_capacity": false
+        },
+        {
+          "bankroll_hypothetical": 1000000,
+          "capital_fraction": 0.2,
+          "participation": 0.1,
+          "levels": [
+            {
+              "price": 0.55,
+              "displayed_quantity": 150.0,
+              "participating_quantity": 15.0,
+              "acquisition_cost": 8.25,
+              "protocol_fee_before_rounding": 0.185625
+            },
+            {
+              "price": 0.56,
+              "displayed_quantity": 215.0,
+              "participating_quantity": 21.5,
+              "acquisition_cost": 12.040000000000001,
+              "protocol_fee_before_rounding": 0.26488
+            },
+            {
+              "price": 0.57,
+              "displayed_quantity": 61789.89,
+              "participating_quantity": 6178.9890000000005,
+              "acquisition_cost": 3522.02373,
+              "protocol_fee_before_rounding": 75.723510195
+            },
+            {
+              "price": 0.58,
+              "displayed_quantity": 11.36,
+              "participating_quantity": 1.136,
+              "acquisition_cost": 0.6588799999999999,
+              "protocol_fee_before_rounding": 0.013836479999999998
+            },
+            {
+              "price": 0.59,
+              "displayed_quantity": 14.31,
+              "participating_quantity": 1.431,
+              "acquisition_cost": 0.84429,
+              "protocol_fee_before_rounding": 0.017307945
+            },
+            {
+              "price": 0.69,
+              "displayed_quantity": 5.0,
+              "participating_quantity": 0.5,
+              "acquisition_cost": 0.345,
+              "protocol_fee_before_rounding": 0.005347500000000001
+            },
+            {
+              "price": 0.73,
+              "displayed_quantity": 39.0,
+              "participating_quantity": 3.9000000000000004,
+              "acquisition_cost": 2.847,
+              "protocol_fee_before_rounding": 0.0384345
+            },
+            {
+              "price": 0.74,
+              "displayed_quantity": 153.23,
+              "participating_quantity": 15.323,
+              "acquisition_cost": 11.33902,
+              "protocol_fee_before_rounding": 0.14740726
+            },
+            {
+              "price": 0.79,
+              "displayed_quantity": 53.33,
+              "participating_quantity": 5.333,
+              "acquisition_cost": 4.21307,
+              "protocol_fee_before_rounding": 0.044237235
+            },
+            {
+              "price": 0.8,
+              "displayed_quantity": 25.0,
+              "participating_quantity": 2.5,
+              "acquisition_cost": 2.0,
+              "protocol_fee_before_rounding": 0.02
+            },
+            {
+              "price": 0.84,
+              "displayed_quantity": 56.25,
+              "participating_quantity": 5.625,
+              "acquisition_cost": 4.725,
+              "protocol_fee_before_rounding": 0.037800000000000014
+            },
+            {
+              "price": 0.95,
+              "displayed_quantity": 25.0,
+              "participating_quantity": 2.5,
+              "acquisition_cost": 2.375,
+              "protocol_fee_before_rounding": 0.005937500000000005
+            },
+            {
+              "price": 0.96,
+              "displayed_quantity": 5.0,
+              "participating_quantity": 0.5,
+              "acquisition_cost": 0.48,
+              "protocol_fee_before_rounding": 0.0009600000000000009
+            }
+          ],
+          "supported_quantity": 6254.237,
+          "acquisition_cost": 3572.14099,
+          "protocol_fee_before_rounding": 76.505283615,
+          "capital_with_protocol_fee": 3648.6462736149997,
+          "conditional_gross_point_headroom": 2539.9542600000004,
+          "conditional_point_headroom_after_protocol_fee": 2463.4489763850006,
+          "native_headroom_bounds_before_unverified_costs": [
+            -3648.6462736149997,
+            2605.5907263850004
+          ],
+          "maximum_acquisition_loss_before_unverified_costs": 3648.6462736149997,
+          "capital_utilization": 0.0036486462736149998,
+          "actual_fill": false,
+          "guaranteed_capacity": false
+        }
+      ],
+      "rejections": [
+        "unconditional_native_probability_unqualified",
+        "calibration_unvalidated",
+        "all_in_execution_costs_unverified",
+        "research_strategy_has_no_execution_authority"
+      ],
+      "conditional_point_estimate_is_validated_edge": false,
+      "all_in_costs_verified": false,
+      "net_profit_verified": false,
+      "current_executable_opportunity": false,
+      "actual_fill": false,
+      "research_only": true,
+      "trading_authority": false,
+      "limitations": [
+        "Original decision snapshot only; no current depth or fill guarantee",
+        "Both weather challengers share one AWC lineage and one event; do not aggregate capacity",
+        "Fees before rounding; unknown fill fragmentation, latency, additional slippage, capital lockup and settlement costs",
+        "Native lower bound remains zero; conditional point headroom is not conservative net expected profit"
+      ]
+    }
+  ],
+  "scope": "original external-source probes, separately timestamped from later durable service enrollment; not extra independent events",
+  "qualified_opportunities": 0,
+  "fills": 0,
+  "trading_authority": false
+}

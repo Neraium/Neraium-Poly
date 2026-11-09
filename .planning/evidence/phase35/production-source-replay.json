@@ -1,0 +1,152 @@
+{
+  "observed_at": "2026-11-09T01:10:52.431900+00:00",
+  "native_proofs": 5,
+  "native_parent_events": 3,
+  "durable_new_forecasts": 6,
+  "new_station_days": 3,
+  "forecast_rows": [
+    {
+      "forecast_id": "112f83fb06402e0185cc22aa2b87d0c1229949989b9357f4a1bd71d3ec772fad",
+      "forecast_sha256": "1d7da1e2a380f9869625c2ba209cc5252017c61009fce120347d5f2bbdc68c66",
+      "model": "awc-calendar-frequency-v35.1",
+      "market_id": "6837228",
+      "event_id": "1338337",
+      "token_id": "15930035241214437230910027521535416531979521471443085878028386518534017561585",
+      "timestamp": "2026-11-09T01:10:11.687168+00:00",
+      "station": "ZGSZ",
+      "day": "2026-11-10",
+      "probability": 1.0,
+      "interval": [
+        0.0,
+        1.0
+      ],
+      "source_study_id": "000000000007:cebf933695599b5342c0f3489e89e515c1f8d47eecafada264f3b587501374b1"
+    },
+    {
+      "forecast_id": "4e3c1a32ddc4d156d75726287c6ce0e49ea5c5fbd5d99b75e5504881619502e8",
+      "forecast_sha256": "dbe3d87f820e1f3bf2538021fda1ae707908b53e3d7c67d39c7f7cbc6cb5dde8",
+      "model": "awc-jeffreys-frequency-v35.1",
+      "market_id": "6837228",
+      "event_id": "1338337",
+      "token_id": "15930035241214437230910027521535416531979521471443085878028386518534017561585",
+      "timestamp": "2026-11-09T01:10:11.687168+00:00",
+      "station": "ZGSZ",
+      "day": "2026-11-10",
+      "probability": 0.9772727272727273,
+      "interval": [
+        0.0,
+        1.0
+      ],
+      "source_study_id": "000000000007:cebf933695599b5342c0f3489e89e515c1f8d47eecafada264f3b587501374b1"
+    },
+    {
+      "forecast_id": "34f277437f9d368a8eeea80f0e902ebab52e7ac7621205af6ab9c3ba890fd63b",
+      "forecast_sha256": "37d2774c118aa824ba719e06e1c18d20365c8f492c911eeabcd996478c08e6ad",
+      "model": "awc-calendar-frequency-v35.1",
+      "market_id": "6837198",
+      "event_id": "1338334",
+      "token_id": "106002679402157256501812449407687069845628790372158390382870423521728558310626",
+      "timestamp": "2026-11-09T01:10:10.564096+00:00",
+      "station": "ZBAA",
+      "day": "2026-11-10",
+      "probability": 0.9047619047619048,
+      "interval": [
+        0.0,
+        1.0
+      ],
+      "source_study_id": "000000000006:acb97a80740f86838661e5432d0b3cb4dbc1840cc17757c79092d1ba8389e361"
+    },
+    {
+      "forecast_id": "d0740e29f393011fb3b38aeb052d70d10464d6419221776ec6f02bc70cca6d75",
+      "forecast_sha256": "47f71458d5b652c4e89317a84de19f4cbab349d3196fc335fb53e32dc1a0d4e1",
+      "model": "awc-jeffreys-frequency-v35.1",
+      "market_id": "6837198",
+      "event_id": "1338334",
+      "token_id": "106002679402157256501812449407687069845628790372158390382870423521728558310626",
+      "timestamp": "2026-11-09T01:10:10.564096+00:00",
+      "station": "ZBAA",
+      "day": "2026-11-10",
+      "probability": 0.8863636363636364,
+      "interval": [
+        0.0,
+        1.0
+      ],
+      "source_study_id": "000000000006:acb97a80740f86838661e5432d0b3cb4dbc1840cc17757c79092d1ba8389e361"
+    },
+    {
+      "forecast_id": "34dca485cb0f52dc8f55efad72228426049a99e72d7e676f6de4e1a61528b5d5",
+      "forecast_sha256": "518dbcd6c2981dbff53a7b6ea51931f14802bf5f2d082e66f23f1cd52ecd8de6",
+      "model": "awc-calendar-frequency-v35.1",
+      "market_id": "6837117",
+      "event_id": "1338327",
+      "token_id": "114723790899911627768609497566347697258335629237401049616348800415676805662928",
+      "timestamp": "2026-11-09T01:04:52.482253+00:00",
+      "station": "ZSPD",
+      "day": "2026-11-10",
+      "probability": 0.0,
+      "interval": [
+        0.0,
+        1.0
+      ],
+      "source_study_id": "000000000003:a82a8e98a0df8473e2355d80f93b5e9e829b3c9826bcb7ef4e8d1e670c97b0f9"
+    },
+    {
+      "forecast_id": "cb3c887a35fbf707613a5f772719c5d037c5474c68a879d05c1efaefb5fe2eb3",
+      "forecast_sha256": "86845e6f3bd575d492974093ed5074f4d47939701ee030faabcc4ad84de8aef0",
+      "model": "awc-jeffreys-frequency-v35.1",
+      "market_id": "6837117",
+      "event_id": "1338327",
+      "token_id": "114723790899911627768609497566347697258335629237401049616348800415676805662928",
+      "timestamp": "2026-11-09T01:04:52.482253+00:00",
+      "station": "ZSPD",
+      "day": "2026-11-10",
+      "probability": 0.022727272727272728,
+      "interval": [
+        0.0,
+        1.0
+      ],
+      "source_study_id": "000000000003:a82a8e98a0df8473e2355d80f93b5e9e829b3c9826bcb7ef4e8d1e670c97b0f9"
+    }
+  ],
+  "restore_state_verified": true,
+  "outcome_checks": {
+    "status": "research_only",
+    "last_at": "2026-11-09T01:10:13.093246+00:00",
+    "pending_forecasts": 6,
+    "durable_verified_forecasts": 0,
+    "verified_by_model": {},
+    "checks": 0,
+    "last_reasons": {},
+    "rejection_reasons": {},
+    "readiness": {
+      "pending_forecasts": 6,
+      "verification_due_forecasts": 0,
+      "future_or_in_progress_forecasts": 6,
+      "scope": "verification schedule only; due sports boundaries are not proof of final completion"
+    },
+    "independent_event_count": 0,
+    "certification_authority": false,
+    "trading_authority": false,
+    "native_payout_verified": false,
+    "market_baseline_comparable": false,
+    "score_scope": "conditional official-reference descriptive results only"
+  },
+  "discovery": {
+    "last_source_at": "2026-11-09T01:04:50.998560+00:00",
+    "discovered_outcome_tokens": 88,
+    "added_outcome_tokens": 0,
+    "canonical_station_days": 3,
+    "native_parents": 4,
+    "counter_scope": "station-day groups deduplicate Gamma parents; not independently verified outcomes",
+    "discovery_policy_sha256": "5add9e9a4032d1df4f0a805ee0ffee68ebc895d1c37a2a39ff0cb18d73ff771b",
+    "errors": {
+      "pre_day_forecast_window_required": 88
+    },
+    "research_only": true,
+    "trading_authority": false
+  },
+  "counter_scope": "new immutable Phase35 namespace; eight earlier source probes retained separately, not additional independent event groups",
+  "qualified_opportunities": 0,
+  "market_superiority": null,
+  "trading_authority": false
+}

@@ -1,0 +1,26 @@
+{
+  "at": "2026-11-09T01:10:51.738503+00:00",
+  "journals": {
+    "event-intelligence/forecasts.sqlite": {
+      "records": 4989,
+      "head_sha256": "4478479811f118f872a6be8c58de1d38358e1274db7747af684840c16e80672f",
+      "preexisting_prefix_preserved": true
+    },
+    "event-intelligence/sports/prospective.sqlite": {
+      "records": 24,
+      "head_sha256": "f9da0e984c4080caad15cf9f317b05a9eb18f95695cf8c07d8daec1c26a67fc7",
+      "preexisting_prefix_preserved": true
+    },
+    "event-intelligence/domains/forecasts.sqlite": {
+      "records": 205,
+      "head_sha256": "7a680cb013e99137a9bd4244be7a6ab311a764425eac5e43add0ff8bae860001",
+      "preexisting_prefix_preserved": true
+    }
+  },
+  "preserved_catalog_entries": 3899,
+  "compression_transitions_verified": [
+    "paper-live/segment-00001037.sqlite"
+  ],
+  "scope": "complete journal chains and catalog preservation; physical hash restoration checked on one recent sealed segment per service, no redundant full archive rehash",
+  "raw_local_evidence_sha256": "c6173e9b4ad2e4172325b6f91bc0c27690a479e9bb6f9fba7f02dc5a31e0eee3"
+}

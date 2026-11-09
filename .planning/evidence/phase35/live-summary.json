@@ -1,0 +1,917 @@
+{
+  "observed_seconds": 521.4538293820806,
+  "api": {
+    "operations_requests": 26,
+    "median": 0.19481026090215892,
+    "p95": 3.4098626030026935,
+    "p99": 3.639890258142259,
+    "maximum": 3.658241374185309
+  },
+  "raw_local_evidence": {
+    "path": ".planning/evidence/phase35/live-observation.json",
+    "sha256": "1be026d554c4135a56c4d4cc9acd436cee9a987a8fb06a8e978537b1f95aab57"
+  },
+  "samples": [
+    {
+      "at": "2026-11-09T01:04:28.033029+00:00",
+      "health": [
+        "ok",
+        "ok"
+      ],
+      "markets": 406,
+      "fresh_books": 228,
+      "source_frame_id": "f5abd5322b75f070f493e89051e80a449d486d43a42e99fb0f2455ccdee9b43b",
+      "account": {
+        "cash": 496.11522059829053,
+        "kill_switch": false,
+        "simulated_pnl": -3.8847794017094657,
+        "orders_submitted": 13,
+        "fills": 10,
+        "open_positions": 0
+      },
+      "archives": {
+        "collector": {
+          "usage_bytes": 22371423973,
+          "free_bytes": 391787253760,
+          "budget_bytes": 161061273600,
+          "global_floor_bytes": 107374182400,
+          "growth_bytes_per_second": 56103.0308115606,
+          "sealed_segments": 1044,
+          "compressed_segments": 1044,
+          "health": "ok"
+        },
+        "experimental": {
+          "usage_bytes": 17812826536,
+          "free_bytes": 391787253760,
+          "budget_bytes": 161061273600,
+          "global_floor_bytes": 107374182400,
+          "growth_bytes_per_second": null,
+          "sealed_segments": 2846,
+          "compressed_segments": 2846,
+          "health": "ok"
+        }
+      },
+      "research_error": null,
+      "native_error": null,
+      "new_forecasts": 0,
+      "native_markets": 0
+    },
+    {
+      "at": "2026-11-09T01:04:58.363123+00:00",
+      "health": [
+        "ok",
+        "ok"
+      ],
+      "markets": 406,
+      "fresh_books": 230,
+      "source_frame_id": "4adc6021b37346ab07129dc296ec1ad65363f059e5958950221fca399d1e918b",
+      "account": {
+        "cash": 496.11522059829053,
+        "kill_switch": false,
+        "simulated_pnl": -3.8847794017094657,
+        "orders_submitted": 13,
+        "fills": 10,
+        "open_positions": 0
+      },
+      "archives": {
+        "collector": {
+          "usage_bytes": 22366573460,
+          "free_bytes": 391352291328,
+          "budget_bytes": 161061273600,
+          "global_floor_bytes": 107374182400,
+          "growth_bytes_per_second": 53282.21764075665,
+          "sealed_segments": 1045,
+          "compressed_segments": 1045,
+          "health": "ok"
+        },
+        "experimental": {
+          "usage_bytes": 17818333415,
+          "free_bytes": 391352274944,
+          "budget_bytes": 161061273600,
+          "global_floor_bytes": 107374182400,
+          "growth_bytes_per_second": 228616.14368922095,
+          "sealed_segments": 2846,
+          "compressed_segments": 2846,
+          "health": "ok"
+        }
+      },
+      "research_error": null,
+      "native_error": "TypeError:research coroutine factory required",
+      "new_forecasts": 2,
+      "native_markets": 5
+    },
+    {
+      "at": "2026-11-09T01:05:31.296481+00:00",
+      "health": [
+        "ok",
+        "ok"
+      ],
+      "markets": 406,
+      "fresh_books": 236,
+      "source_frame_id": "e7120c8bfe051a7283f6264a41c162dcb1728ea5769595f07bf5e169c01dbfd9",
+      "account": {
+        "cash": 496.11522059829053,
+        "kill_switch": false,
+        "simulated_pnl": -3.8847794017094657,
+        "orders_submitted": 13,
+        "fills": 10,
+        "open_positions": 0
+      },
+      "archives": {
+        "collector": {
+          "usage_bytes": 22366573460,
+          "free_bytes": 390854590464,
+          "budget_bytes": 161061273600,
+          "global_floor_bytes": 107374182400,
+          "growth_bytes_per_second": 53245.96206719719,
+          "sealed_segments": 1045,
+          "compressed_segments": 1045,
+          "health": "ok"
+        },
+        "experimental": {
+          "usage_bytes": 17824973095,
+          "free_bytes": 390853779456,
+          "budget_bytes": 161061273600,
+          "global_floor_bytes": 107374182400,
+          "growth_bytes_per_second": 190454.0885143322,
+          "sealed_segments": 2847,
+          "compressed_segments": 2847,
+          "health": "ok"
+        }
+      },
+      "research_error": null,
+      "native_error": "TypeError:research coroutine factory required",
+      "new_forecasts": 2,
+      "native_markets": 5
+    },
+    {
+      "at": "2026-11-09T01:06:01.600995+00:00",
+      "health": [
+        "ok",
+        "ok"
+      ],
+      "markets": 406,
+      "fresh_books": 270,
+      "source_frame_id": "f46af0d4ca694fd7775bdb33649e4f73807d35a26f87443ef8a869aa62cba949",
+      "account": {
+        "cash": 496.11522059829053,
+        "kill_switch": false,
+        "simulated_pnl": -3.8847794017094657,
+        "orders_submitted": 13,
+        "fills": 10,
+        "open_positions": 0
+      },
+      "archives": {
+        "collector": {
+          "usage_bytes": 22369141676,
+          "free_bytes": 390848147456,
+          "budget_bytes": 161061273600,
+          "global_floor_bytes": 107374182400,
+          "growth_bytes_per_second": 55468.823973371305,
+          "sealed_segments": 1045,
+          "compressed_segments": 1045,
+          "health": "ok"
+        },
+        "experimental": {
+          "usage_bytes": 17829189894,
+          "free_bytes": 390848147456,
+          "budget_bytes": 161061273600,
+          "global_floor_bytes": 107374182400,
+          "growth_bytes_per_second": 187983.28946465306,
+          "sealed_segments": 2848,
+          "compressed_segments": 2848,
+          "health": "ok"
+        }
+      },
+      "research_error": null,
+      "native_error": "TypeError:research coroutine factory required",
+      "new_forecasts": 2,
+      "native_markets": 5
+    },
+    {
+      "at": "2026-11-09T01:06:31.908048+00:00",
+      "health": [
+        "ok",
+        "ok"
+      ],
+      "markets": 406,
+      "fresh_books": 294,
+      "source_frame_id": "54fb98b885f081c88ff3d8ffe2a4146b964a2d0f7c2616fd903627c7d9291a7e",
+      "account": {
+        "cash": 496.11522059829053,
+        "kill_switch": false,
+        "simulated_pnl": -3.8847794017094657,
+        "orders_submitted": 13,
+        "fills": 10,
+        "open_positions": 0
+      },
+      "archives": {
+        "collector": {
+          "usage_bytes": 22369141676,
+          "free_bytes": 390842433536,
+          "budget_bytes": 161061273600,
+          "global_floor_bytes": 107374182400,
+          "growth_bytes_per_second": 55727.14332239483,
+          "sealed_segments": 1045,
+          "compressed_segments": 1045,
+          "health": "ok"
+        },
+        "experimental": {
+          "usage_bytes": 17834987314,
+          "free_bytes": 390842433536,
+          "budget_bytes": 161061273600,
+          "global_floor_bytes": 107374182400,
+          "growth_bytes_per_second": 195372.57781394664,
+          "sealed_segments": 2848,
+          "compressed_segments": 2848,
+          "health": "ok"
+        }
+      },
+      "research_error": null,
+      "native_error": "TypeError:research coroutine factory required",
+      "new_forecasts": 2,
+      "native_markets": 5
+    },
+    {
+      "at": "2026-11-09T01:07:02.242408+00:00",
+      "health": [
+        "ok",
+        "ok"
+      ],
+      "markets": 406,
+      "fresh_books": 258,
+      "source_frame_id": "73b0854055a2cc1a9932b7c791cd805a5e7e1cb8e6016271805256566d73c87e",
+      "account": {
+        "cash": 496.11522059829053,
+        "kill_switch": false,
+        "simulated_pnl": -3.8847794017094657,
+        "orders_submitted": 13,
+        "fills": 10,
+        "open_positions": 0
+      },
+      "archives": {
+        "collector": {
+          "usage_bytes": 22371505068,
+          "free_bytes": 390872485888,
+          "budget_bytes": 161061273600,
+          "global_floor_bytes": 107374182400,
+          "growth_bytes_per_second": 51032.8337311751,
+          "sealed_segments": 1045,
+          "compressed_segments": 1045,
+          "health": "ok"
+        },
+        "experimental": {
+          "usage_bytes": 17835439618,
+          "free_bytes": 390872485888,
+          "budget_bytes": 161061273600,
+          "global_floor_bytes": 107374182400,
+          "growth_bytes_per_second": 157166.23226839397,
+          "sealed_segments": 2849,
+          "compressed_segments": 2849,
+          "health": "ok"
+        }
+      },
+      "research_error": null,
+      "native_error": "TypeError:research coroutine factory required",
+      "new_forecasts": 2,
+      "native_markets": 5
+    },
+    {
+      "at": "2026-11-09T01:07:36.061889+00:00",
+      "health": [
+        "ok",
+        "ok"
+      ],
+      "markets": 406,
+      "fresh_books": 246,
+      "source_frame_id": "331630510e27602bcc54a76f04f2ad2461505d46bd9d24450a0fe11bc94946c3",
+      "account": {
+        "cash": 496.11522059829053,
+        "kill_switch": false,
+        "simulated_pnl": -3.8847794017094657,
+        "orders_submitted": 13,
+        "fills": 10,
+        "open_positions": 0
+      },
+      "archives": {
+        "collector": {
+          "usage_bytes": 22371505068,
+          "free_bytes": 390869102592,
+          "budget_bytes": 161061273600,
+          "global_floor_bytes": 107374182400,
+          "growth_bytes_per_second": 50534.73994060377,
+          "sealed_segments": 1045,
+          "compressed_segments": 1045,
+          "health": "ok"
+        },
+        "experimental": {
+          "usage_bytes": 17835846827,
+          "free_bytes": 390869102592,
+          "budget_bytes": 161061273600,
+          "global_floor_bytes": 107374182400,
+          "growth_bytes_per_second": 148288.8710216469,
+          "sealed_segments": 2849,
+          "compressed_segments": 2849,
+          "health": "ok"
+        }
+      },
+      "research_error": null,
+      "native_error": "TypeError:research coroutine factory required",
+      "new_forecasts": 2,
+      "native_markets": 5
+    },
+    {
+      "at": "2026-11-09T01:08:06.524723+00:00",
+      "health": [
+        "ok",
+        "ok"
+      ],
+      "markets": 406,
+      "fresh_books": 269,
+      "source_frame_id": "cfbea3bfd8f384cf3bc86bef105995b3156daed5ad43822e5e55cc1aed10dcec",
+      "account": {
+        "cash": 496.11522059829053,
+        "kill_switch": false,
+        "simulated_pnl": -3.8847794017094657,
+        "orders_submitted": 13,
+        "fills": 10,
+        "open_positions": 0
+      },
+      "archives": {
+        "collector": {
+          "usage_bytes": 22374372268,
+          "free_bytes": 390865301504,
+          "budget_bytes": 161061273600,
+          "global_floor_bytes": 107374182400,
+          "growth_bytes_per_second": 52964.4750405776,
+          "sealed_segments": 1045,
+          "compressed_segments": 1045,
+          "health": "ok"
+        },
+        "experimental": {
+          "usage_bytes": 17838576565,
+          "free_bytes": 390865301504,
+          "budget_bytes": 161061273600,
+          "global_floor_bytes": 107374182400,
+          "growth_bytes_per_second": 126034.20590514026,
+          "sealed_segments": 2850,
+          "compressed_segments": 2850,
+          "health": "ok"
+        }
+      },
+      "research_error": null,
+      "native_error": "TypeError:research coroutine factory required",
+      "new_forecasts": 2,
+      "native_markets": 5
+    },
+    {
+      "at": "2026-11-09T01:08:36.971746+00:00",
+      "health": [
+        "ok",
+        "ok"
+      ],
+      "markets": 406,
+      "fresh_books": 285,
+      "source_frame_id": "51b222faf7f72df3c68b7c06375975cab1f8b30b45e77ac2042f494f02d2180b",
+      "account": {
+        "cash": 496.11522059829053,
+        "kill_switch": false,
+        "simulated_pnl": -3.8847794017094657,
+        "orders_submitted": 13,
+        "fills": 10,
+        "open_positions": 0
+      },
+      "archives": {
+        "collector": {
+          "usage_bytes": 22374372268,
+          "free_bytes": 390857744384,
+          "budget_bytes": 161061273600,
+          "global_floor_bytes": 107374182400,
+          "growth_bytes_per_second": 48094.78195837696,
+          "sealed_segments": 1045,
+          "compressed_segments": 1045,
+          "health": "ok"
+        },
+        "experimental": {
+          "usage_bytes": 17844831281,
+          "free_bytes": 390857744384,
+          "budget_bytes": 161061273600,
+          "global_floor_bytes": 107374182400,
+          "growth_bytes_per_second": 129643.62057454955,
+          "sealed_segments": 2850,
+          "compressed_segments": 2850,
+          "health": "ok"
+        }
+      },
+      "research_error": null,
+      "native_error": "TypeError:research coroutine factory required",
+      "new_forecasts": 2,
+      "native_markets": 5
+    },
+    {
+      "at": "2026-11-09T01:09:07.289800+00:00",
+      "health": [
+        "ok",
+        "ok"
+      ],
+      "markets": 406,
+      "fresh_books": 278,
+      "source_frame_id": "5bae30330c1bc71446699c642665047118952a39174e8b41af9d56b8d105a454",
+      "account": {
+        "cash": 496.11522059829053,
+        "kill_switch": false,
+        "simulated_pnl": -3.8847794017094657,
+        "orders_submitted": 13,
+        "fills": 10,
+        "open_positions": 0
+      },
+      "archives": {
+        "collector": {
+          "usage_bytes": 22376682412,
+          "free_bytes": 390853373952,
+          "budget_bytes": 161061273600,
+          "global_floor_bytes": 107374182400,
+          "growth_bytes_per_second": 49292.06165526626,
+          "sealed_segments": 1045,
+          "compressed_segments": 1045,
+          "health": "ok"
+        },
+        "experimental": {
+          "usage_bytes": 17846658121,
+          "free_bytes": 390853373952,
+          "budget_bytes": 161061273600,
+          "global_floor_bytes": 107374182400,
+          "growth_bytes_per_second": 129239.41918118129,
+          "sealed_segments": 2850,
+          "compressed_segments": 2850,
+          "health": "ok"
+        }
+      },
+      "research_error": null,
+      "native_error": "TypeError:research coroutine factory required",
+      "new_forecasts": 2,
+      "native_markets": 5
+    },
+    {
+      "at": "2026-11-09T01:09:37.723133+00:00",
+      "health": [
+        "ok",
+        "ok"
+      ],
+      "markets": 406,
+      "fresh_books": 285,
+      "source_frame_id": "e3cf44b8274c1be3d9bfbc07396dfa783694d5ea3b242e55e646b66511f63626",
+      "account": {
+        "cash": 496.11522059829053,
+        "kill_switch": false,
+        "simulated_pnl": -3.8847794017094657,
+        "orders_submitted": 13,
+        "fills": 10,
+        "open_positions": 0
+      },
+      "archives": {
+        "collector": {
+          "usage_bytes": 22376682412,
+          "free_bytes": 390851403776,
+          "budget_bytes": 161061273600,
+          "global_floor_bytes": 107374182400,
+          "growth_bytes_per_second": 47528.5912854701,
+          "sealed_segments": 1045,
+          "compressed_segments": 1045,
+          "health": "ok"
+        },
+        "experimental": {
+          "usage_bytes": 17847432479,
+          "free_bytes": 390851403776,
+          "budget_bytes": 161061273600,
+          "global_floor_bytes": 107374182400,
+          "growth_bytes_per_second": 115299.76602135693,
+          "sealed_segments": 2851,
+          "compressed_segments": 2851,
+          "health": "ok"
+        }
+      },
+      "research_error": null,
+      "native_error": "TypeError:research coroutine factory required",
+      "new_forecasts": 2,
+      "native_markets": 5
+    },
+    {
+      "at": "2026-11-09T01:10:08.305212+00:00",
+      "health": [
+        "ok",
+        "ok"
+      ],
+      "markets": 406,
+      "fresh_books": 309,
+      "source_frame_id": "882331e61e9814fef49eba21deca3d01bd614b0c6203383537cc5f49ff52cfe1",
+      "account": {
+        "cash": 496.11522059829053,
+        "kill_switch": false,
+        "simulated_pnl": -3.8847794017094657,
+        "orders_submitted": 13,
+        "fills": 10,
+        "open_positions": 0
+      },
+      "archives": {
+        "collector": {
+          "usage_bytes": 22376682412,
+          "free_bytes": 390808879104,
+          "budget_bytes": 161061273600,
+          "global_floor_bytes": 107374182400,
+          "growth_bytes_per_second": 47525.68040032104,
+          "sealed_segments": 1045,
+          "compressed_segments": 1045,
+          "health": "ok"
+        },
+        "experimental": {
+          "usage_bytes": 17850914099,
+          "free_bytes": 390808866816,
+          "budget_bytes": 161061273600,
+          "global_floor_bytes": 107374182400,
+          "growth_bytes_per_second": 118009.65640439373,
+          "sealed_segments": 2851,
+          "compressed_segments": 2851,
+          "health": "ok"
+        }
+      },
+      "research_error": null,
+      "native_error": "TypeError:research coroutine factory required",
+      "new_forecasts": 2,
+      "native_markets": 5
+    },
+    {
+      "at": "2026-11-09T01:10:38.872952+00:00",
+      "health": [
+        "ok",
+        "ok"
+      ],
+      "markets": 406,
+      "fresh_books": 319,
+      "source_frame_id": "86776cdf1150f2f1d431385ea1c61136c1dc79a382008d9bb41281b6cd8f0743",
+      "account": {
+        "cash": 496.11522059829053,
+        "kill_switch": false,
+        "simulated_pnl": -3.8847794017094657,
+        "orders_submitted": 13,
+        "fills": 10,
+        "open_positions": 0
+      },
+      "archives": {
+        "collector": {
+          "usage_bytes": 22376682412,
+          "free_bytes": 390839533568,
+          "budget_bytes": 161061273600,
+          "global_floor_bytes": 107374182400,
+          "growth_bytes_per_second": 45744.753084859076,
+          "sealed_segments": 1045,
+          "compressed_segments": 1045,
+          "health": "ok"
+        },
+        "experimental": {
+          "usage_bytes": 17858245043,
+          "free_bytes": 390839529472,
+          "budget_bytes": 161061273600,
+          "global_floor_bytes": 107374182400,
+          "growth_bytes_per_second": 126728.63125811021,
+          "sealed_segments": 2852,
+          "compressed_segments": 2852,
+          "health": "ok"
+        }
+      },
+      "research_error": null,
+      "native_error": "TypeError:research coroutine factory required",
+      "new_forecasts": 6,
+      "native_markets": 5
+    }
+  ],
+  "latencies": [
+    {
+      "port": 18742,
+      "endpoint": "health",
+      "seconds": 0.017123627942055464
+    },
+    {
+      "port": 18743,
+      "endpoint": "health",
+      "seconds": 0.019191831117495894
+    },
+    {
+      "port": 18743,
+      "endpoint": "operations-state",
+      "seconds": 0.059513916028663516
+    },
+    {
+      "port": 18742,
+      "endpoint": "operations-state",
+      "seconds": 0.20927283796481788
+    },
+    {
+      "port": 18742,
+      "endpoint": "market-frame",
+      "seconds": 0.2149002009537071
+    },
+    {
+      "port": 18743,
+      "endpoint": "health",
+      "seconds": 0.004708548774942756
+    },
+    {
+      "port": 18742,
+      "endpoint": "health",
+      "seconds": 0.23107199696823955
+    },
+    {
+      "port": 18742,
+      "endpoint": "operations-state",
+      "seconds": 0.23414121102541685
+    },
+    {
+      "port": 18742,
+      "endpoint": "market-frame",
+      "seconds": 0.24258542293682694
+    },
+    {
+      "port": 18743,
+      "endpoint": "operations-state",
+      "seconds": 0.2872005579993129
+    },
+    {
+      "port": 18743,
+      "endpoint": "health",
+      "seconds": 0.026053709909319878
+    },
+    {
+      "port": 18742,
+      "endpoint": "health",
+      "seconds": 2.775391275063157
+    },
+    {
+      "port": 18742,
+      "endpoint": "operations-state",
+      "seconds": 2.775261805159971
+    },
+    {
+      "port": 18742,
+      "endpoint": "market-frame",
+      "seconds": 2.7780711641535163
+    },
+    {
+      "port": 18743,
+      "endpoint": "operations-state",
+      "seconds": 2.8849396819714457
+    },
+    {
+      "port": 18743,
+      "endpoint": "health",
+      "seconds": 0.0035904881078749895
+    },
+    {
+      "port": 18742,
+      "endpoint": "operations-state",
+      "seconds": 0.06584513187408447
+    },
+    {
+      "port": 18743,
+      "endpoint": "operations-state",
+      "seconds": 0.13703059405088425
+    },
+    {
+      "port": 18742,
+      "endpoint": "health",
+      "seconds": 0.23689983203075826
+    },
+    {
+      "port": 18742,
+      "endpoint": "market-frame",
+      "seconds": 0.24359322199597955
+    },
+    {
+      "port": 18743,
+      "endpoint": "health",
+      "seconds": 0.003925523022189736
+    },
+    {
+      "port": 18742,
+      "endpoint": "operations-state",
+      "seconds": 0.020888003055006266
+    },
+    {
+      "port": 18742,
+      "endpoint": "health",
+      "seconds": 0.024057900067418814
+    },
+    {
+      "port": 18743,
+      "endpoint": "operations-state",
+      "seconds": 0.18034768383949995
+    },
+    {
+      "port": 18742,
+      "endpoint": "market-frame",
+      "seconds": 0.2504990438465029
+    },
+    {
+      "port": 18743,
+      "endpoint": "health",
+      "seconds": 0.003862119046971202
+    },
+    {
+      "port": 18742,
+      "endpoint": "operations-state",
+      "seconds": 0.04107631393708289
+    },
+    {
+      "port": 18742,
+      "endpoint": "health",
+      "seconds": 0.07625305000692606
+    },
+    {
+      "port": 18743,
+      "endpoint": "operations-state",
+      "seconds": 0.11532358103431761
+    },
+    {
+      "port": 18742,
+      "endpoint": "market-frame",
+      "seconds": 0.2746251169592142
+    },
+    {
+      "port": 18743,
+      "endpoint": "health",
+      "seconds": 0.003890290157869458
+    },
+    {
+      "port": 18742,
+      "endpoint": "health",
+      "seconds": 3.5844640841241926
+    },
+    {
+      "port": 18742,
+      "endpoint": "operations-state",
+      "seconds": 3.5848369100131094
+    },
+    {
+      "port": 18743,
+      "endpoint": "operations-state",
+      "seconds": 3.658241374185309
+    },
+    {
+      "port": 18742,
+      "endpoint": "market-frame",
+      "seconds": 3.759381704032421
+    },
+    {
+      "port": 18743,
+      "endpoint": "health",
+      "seconds": 0.031226075952872634
+    },
+    {
+      "port": 18742,
+      "endpoint": "operations-state",
+      "seconds": 0.033793707145377994
+    },
+    {
+      "port": 18742,
+      "endpoint": "health",
+      "seconds": 0.2850299710407853
+    },
+    {
+      "port": 18742,
+      "endpoint": "market-frame",
+      "seconds": 0.2903196350671351
+    },
+    {
+      "port": 18743,
+      "endpoint": "operations-state",
+      "seconds": 0.41292834002524614
+    },
+    {
+      "port": 18743,
+      "endpoint": "health",
+      "seconds": 0.0041459850035607815
+    },
+    {
+      "port": 18742,
+      "endpoint": "health",
+      "seconds": 0.2576967829372734
+    },
+    {
+      "port": 18742,
+      "endpoint": "market-frame",
+      "seconds": 0.2581268341746181
+    },
+    {
+      "port": 18742,
+      "endpoint": "operations-state",
+      "seconds": 0.2802698069717735
+    },
+    {
+      "port": 18743,
+      "endpoint": "operations-state",
+      "seconds": 0.39696604781784117
+    },
+    {
+      "port": 18743,
+      "endpoint": "health",
+      "seconds": 0.004165519028902054
+    },
+    {
+      "port": 18742,
+      "endpoint": "health",
+      "seconds": 0.008774264017120004
+    },
+    {
+      "port": 18743,
+      "endpoint": "operations-state",
+      "seconds": 0.08285532705485821
+    },
+    {
+      "port": 18742,
+      "endpoint": "operations-state",
+      "seconds": 0.24502136302180588
+    },
+    {
+      "port": 18742,
+      "endpoint": "market-frame",
+      "seconds": 0.2502285810187459
+    },
+    {
+      "port": 18743,
+      "endpoint": "health",
+      "seconds": 0.0039884489960968494
+    },
+    {
+      "port": 18742,
+      "endpoint": "health",
+      "seconds": 0.005740559194236994
+    },
+    {
+      "port": 18742,
+      "endpoint": "operations-state",
+      "seconds": 0.023267425131052732
+    },
+    {
+      "port": 18743,
+      "endpoint": "operations-state",
+      "seconds": 0.0824337659869343
+    },
+    {
+      "port": 18742,
+      "endpoint": "market-frame",
+      "seconds": 0.3659899430349469
+    },
+    {
+      "port": 18742,
+      "endpoint": "operations-state",
+      "seconds": 0.02118106186389923
+    },
+    {
+      "port": 18742,
+      "endpoint": "health",
+      "seconds": 0.025927813025191426
+    },
+    {
+      "port": 18742,
+      "endpoint": "market-frame",
+      "seconds": 0.2815873140934855
+    },
+    {
+      "port": 18743,
+      "endpoint": "health",
+      "seconds": 0.30592647613957524
+    },
+    {
+      "port": 18743,
+      "endpoint": "operations-state",
+      "seconds": 0.5270987059921026
+    },
+    {
+      "port": 18743,
+      "endpoint": "health",
+      "seconds": 0.003570578061044216
+    },
+    {
+      "port": 18742,
+      "endpoint": "health",
+      "seconds": 0.16532454709522426
+    },
+    {
+      "port": 18742,
+      "endpoint": "operations-state",
+      "seconds": 0.16564936796203256
+    },
+    {
+      "port": 18742,
+      "endpoint": "market-frame",
+      "seconds": 0.3783622891642153
+    },
+    {
+      "port": 18743,
+      "endpoint": "operations-state",
+      "seconds": 0.49731245380826294
+    }
+  ],
+  "no_observed_timeout": true,
+  "scope": "five concurrent bounded client requests per sample; mixed service end-to-end latency, not comparable to isolated Phase34 benchmark"
+}
