@@ -1,0 +1,106 @@
+{
+  "captured_at": "2026-11-15T09:10:52Z",
+  "source": {
+    "branch": "phase36-edge-validation",
+    "commit": "7d4418eda8fddc8c35900dc375f906436f257ad1",
+    "ci_run": "42563546908",
+    "ci_conclusion": "success",
+    "ci_head_sha": "7d4418eda8fddc8c35900dc375f906436f257ad1"
+  },
+  "deployment": {
+    "working_directory": "/home/ubuntu/Neraium-Poly",
+    "manual_restart_performed": false,
+    "experimental_process_started_at": "2026-11-13T06:43:58Z",
+    "paper_process_started_at": "2026-11-15T08:57:01Z",
+    "source_active_in_both_processes": true,
+    "basis": "Both main processes start after the source commit, execute from the repository working directory, and tracked source has not changed since the commit. Native publisher TypeError is absent from experimental journal after its process start."
+  },
+  "paper_only": {
+    "experimental_process_env": {
+      "PAPER_TRADING": "true",
+      "LIVE_TRADING_ENABLED": "false"
+    },
+    "reference_process_env": {
+      "PAPER_TRADING": "true",
+      "LIVE_TRADING_ENABLED": "false"
+    },
+    "experimental_risk_account": {
+      "cash": 496.11522059829053,
+      "realized_pnl": -3.8847794017094013,
+      "kill_switch": true,
+      "kill_switch_at": "2026-11-15T09:09:49.770707Z",
+      "positions": 0,
+      "unreleased_reservations": 0,
+      "orders": 13,
+      "fills": 10
+    },
+    "reference_risk_account": {
+      "cash": 500.0,
+      "realized_pnl": 0.0,
+      "kill_switch": false,
+      "positions": 0,
+      "unreleased_reservations": 0,
+      "orders": 0
+    },
+    "risk_limits_unchanged": {
+      "bankroll": 500,
+      "aggregate_fraction": 0.2,
+      "max_book_age_seconds": 15,
+      "min_net_edge": 0.03
+    }
+  },
+  "health": {
+    "experimental": {
+      "systemd_active": true,
+      "restarts": 0,
+      "health": "degraded",
+      "last_ingestion_at": "2026-11-15T08:57:02.387215Z",
+      "last_ingestion_age_seconds": 829.664582,
+      "last_error": "cycle_failed:ConnectError",
+      "trading_halted_by_latched_kill_switch": true
+    },
+    "reference": {
+      "systemd_active": true,
+      "restarts": 3,
+      "health_api_available": false,
+      "oom_killed_at": "2026-11-15T08:56:51Z",
+      "main_process_start_at": "2026-11-15T08:57:01Z",
+      "memory_limit_bytes": 1073741824,
+      "memory_current_bytes": 1073635328,
+      "startup_blocked_on_archive_io_observed": true
+    },
+    "source_connectivity_from_host": {
+      "polymarket_clob_markets_http": 200,
+      "polymarket_gamma_events_http": 200
+    },
+    "storage": {
+      "collector_budget_gib": 150,
+      "experimental_budget_gib": 150,
+      "filesystem_reserve_gib": 100,
+      "filesystem_available_bytes": 253721194496
+    }
+  },
+  "integrity": {
+    "quick_check": {
+      "experimental_risk_broker_service": "ok",
+      "reference_risk_broker_service": "ok"
+    },
+    "service_state_record_hashes": "valid",
+    "full_archive_integrity_scan": "not_run; reference process is in archive I/O recovery and archive-state APIs are not responding"
+  },
+  "rollback": {
+    "baseline_commit": "7399fb46ef0200532dae598647fa27c6183bf8fe",
+    "revert_rehearsal": "passed in a disposable detached worktree; reverting 7d4418e restored all changed paths to baseline"
+  },
+  "safety_actions": {
+    "experimental_kill_switch_api": "activated; latch preserved",
+    "systemd_stop_attempt": "denied by systemd interactive authentication; no permission bypass attempted",
+    "other_services_modified": false
+  },
+  "research": {
+    "new_verified_outcomes": 0,
+    "independent_event_groups": 0,
+    "qualified_positive_net_opportunities": 0,
+    "post_source_deployment_websocket_metrics": "unavailable; API state/operations endpoints time out during current service degradation"
+  }
+}
