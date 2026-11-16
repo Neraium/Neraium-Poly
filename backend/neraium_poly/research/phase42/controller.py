@@ -110,12 +110,11 @@ async def service_loop(runtime,should_exit):
                         began=time.monotonic();origin='combined_experimental_frame'
                         if (runtime.clock()-frame.available_at).total_seconds()>10:
                             # Same authorized loopback feed; no cached/stale book substitution.
-                            with httpx.Client(timeout=3,trust_env=False) as client:
-                                with client.stream('GET',runtime.config.source_url) as response:
-                                    response.raise_for_status();raw=bytearray()
-                                    for chunk in response.iter_bytes():
-                                        if len(raw)+len(chunk)>8*1024**2:raise ValueError('bounded reference frame exceeded')
-                                        raw.extend(chunk)
+                            with httpx.Client(timeout=3,trust_env=False) as client, client.stream('GET',runtime.config.source_url) as response:
+                                response.raise_for_status();raw=bytearray()
+                                for chunk in response.iter_bytes():
+                                    if len(raw)+len(chunk)>8*1024**2:raise ValueError('bounded reference frame exceeded')
+                                    raw.extend(chunk)
                             frame=SharedMarketFrame.model_validate_json(raw);origin='fresh_reference_read'
                         if controller is None:controller=Controller(runtime.events,risk_limits=runtime.config.risk_limits.model_dump(),clock=runtime.clock,can_write=runtime._budget_ok,directory=runtime.config.data_dir/'phase42-native')
                         cache=getattr(runtime,'research_fees',None)
