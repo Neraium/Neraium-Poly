@@ -21,7 +21,7 @@ def publish(store,engine,report,now):
                 'market_id':m.get('market_id',event.get('book',{}).get('market_id')),'question':m.get('question'),'token_id':c.get('token_id'),
                 'quantity':event.get('quantity'),'capital':event.get('capital',event.get('cost')),'estimated_net_value':event.get('estimated_net_value'),
                 'net_modeled_pnl':event.get('pnl'),'model_probability':c.get('probability'),'pricing_target':c.get('target'),
-                'uncertainty':c.get('uncertainty'),'fee_verified':event.get('fee_verified'),'evidence_kind':c.get('evidence_kind'),
+                'uncertainty':c.get('uncertainty'),'forecast_at':c.get('forecast',{}).get('timestamp'),'entry_limit':c.get('limit',c.get('book',{}).get('asks',[{}])[0].get('price')),'fee_verified':event.get('fee_verified'),'evidence_kind':c.get('evidence_kind'),
                 'native_settled':event.get('native_settled',False),'actual_fill':False,'original_cycle_id':row['id'],'original_cycle_sha256':digest(row)}
             identity=digest(['shadow-card42',row['id'],i])
             if store.get(identity) is None:store.append(ShadowDecisionCard(id=identity,timestamp=now,available_at=now,source='neraium-poly/trader-desk/v42',cycle_id=row['id'],payload=card))

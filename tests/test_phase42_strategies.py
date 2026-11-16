@@ -244,10 +244,14 @@ def test_source_inventory_skips_empty_scans_and_retains_original_batch(setup):
 def test_reviewed_source_transition_carries_losses_and_keeps_old_records(setup,tmp_path):
     from neraium_poly.research.phase14.relationships import digest
     from neraium_poly.research.phase16.checkpoints import pack_checkpoint
-    from neraium_poly.research.phase42.engine import LEGACY_SOURCE_SHA256, StrategyCycle
+    from neraium_poly.research.phase42.engine import (
+        LEGACY_DEFINITIONS_SHA256,
+        LEGACY_SOURCE_SHA256,
+        StrategyCycle,
+    )
     x,clock,_m,_b,_f,frame,fees,_store,risk=setup
     old=copy.deepcopy(x.last);state=unpack_checkpoint(old['checkpoint']);state['profiles']['aggressive']['cash']=497.
-    old['policy']['code_sha256']=LEGACY_SOURCE_SHA256;old['checkpoint']=pack_checkpoint(state);old['state_sha256']=digest(state)
+    old['policy']['code_sha256']=LEGACY_SOURCE_SHA256;old['policy']['definitions_sha256']=LEGACY_DEFINITIONS_SHA256;old['checkpoint']=pack_checkpoint(state);old['state_sha256']=digest(state)
     store=EventStore(tmp_path/'legacy.sqlite');store.append(StrategyCycle.model_validate(old))
     recovered=StrategyEngine(store,risk_limits=risk,clock=lambda:clock[0],can_write=lambda:True)
     assert recovered.state['profiles']['aggressive']['cash']==497.
@@ -280,3 +284,34 @@ async def test_refresh_is_bounded_namespaced_and_keeps_scientific_formulas(setup
     assert result['status']=='completed' and not result['model_formulas_changed']
     assert store.latest('RefreshDomainStudy',10) and not store.latest('DomainResearchStudy',10)
     assert (await sources.refresh(store,frame,clock=lambda:clock[0],can_write=lambda:True,stop=Event()))['status']=='already_recorded_epoch'
+
+
+def test_model_disagreement_cannot_masquerade_as_external_evidence_repricing(setup):
+    _x,_clock,m,b,f,_frame,fees,_store,_risk=setup
+    old={**f,'id':'CONTROLLED-other-model','model_id':'UNRELATED-model','probability':.2,'timestamp':(NOW-timedelta(seconds=10)).isoformat(),'evidence_cutoff':(NOW-timedelta(seconds=11)).isoformat()}
+    cs,rs=propose({m.token_id:m},{m.token_id:b},{f['id']:f},{},{m.token_id:old},fees,NOW)
+    assert not any(c['strategy']=='event_repricing' for c in cs)
+    assert any(r['strategy']=='event_repricing' for r in rs)
+
+
+async def test_source_job_is_drained_on_service_shutdown(setup,monkeypatch,tmp_path):
+    import asyncio
+
+    from neraium_poly.research.phase42 import controller, sources
+    from neraium_poly.risk import RiskLimits
+    _x,_clock,_m,_b,_f,frame,_fees,_store,_risk=setup
+    monkeypatch.setenv('NERAIUM_SHADOW_RESEARCH','true');monkeypatch.setenv('NERAIUM_SHADOW_SOURCE_REFRESH','true')
+    runtime=SimpleNamespace(stopping=False,last_frame=frame,events=None,config=SimpleNamespace(risk_limits=RiskLimits(),data_dir=tmp_path,source_url='http://127.0.0.1:18742/api/market-frame'),clock=lambda:NOW)
+    async def budget():return True
+    runtime._async_budget_ok=budget;runtime._budget_ok=lambda:True
+    monkeypatch.setattr(sources,'read_reference',lambda url:frame)
+    async def pending(*args,stop,**kwargs):
+        while not stop.is_set():await asyncio.sleep(.01)
+        raise asyncio.CancelledError
+    monkeypatch.setattr(sources,'refresh',pending)
+    class Controlled:
+        def __init__(self,*args,**kwargs):pass
+        def tick(self,*args):runtime.stopping=True;return {'as_of':NOW.isoformat()}
+    monkeypatch.setattr(controller,'Controller',Controlled)
+    await controller.service_loop(runtime,lambda:False)
+    assert runtime.shadow_source_status['status']=='cancelled_and_drained'

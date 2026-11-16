@@ -30,8 +30,8 @@ def propose(markets,books,forecasts,history,prior_forecasts,fees,now):
             candidates.append({**common,'strategy':'independent','key':f['id'],'target':f['probability'],'probability':f['probability'],
                 'uncertainty':f.get('uncertainty',{'lower':f.get('lower_probability'),'upper':f.get('upper_probability')}),'forecast':f,'domain':f['domain'],
                 'evidence_kind':'source_replayed_independent_model; original conditional assumptions retained'})
-            old=prior_forecasts.get(token)
-            if old and old['id']!=f['id'] and at(old['evidence_cutoff'])<at(f['evidence_cutoff']) and at(old['timestamp'])<at(f['timestamp']) and abs(f['probability']-old['probability'])>=.01:
+            old=prior_forecasts.get(token+'|'+f['model_id'],prior_forecasts.get(token))
+            if old and old['model_id']==f['model_id'] and old.get('model_sha256')==f.get('model_sha256') and old['id']!=f['id'] and at(old['evidence_cutoff'])<at(f['evidence_cutoff']) and at(old['timestamp'])<at(f['timestamp']) and abs(f['probability']-old['probability'])>=.01:
                 candidates.append({**candidates[-1],'strategy':'event_repricing','key':digest([old['id'],f['id']]),'revision_from':old})
             else:reject('event_repricing',token,'new_independent_evidence_revision_unavailable')
         else:

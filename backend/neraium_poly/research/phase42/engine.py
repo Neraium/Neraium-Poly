@@ -21,6 +21,7 @@ from neraium_poly.research.phase41.simulation import ProfileExperiment, number
 from neraium_poly.research.phase42.strategies import DEFINITIONS, propose
 
 LEGACY_SOURCE_SHA256='34de68d0a56fe84a39c6476299d432f652c3cb9bfb7e4bf934ba7f07318e6734'  # Reviewed Phase42 entry/exit policy; forward-only inventory/provenance transition.
+LEGACY_DEFINITIONS_SHA256='d60142b125c6bacb56ed548603a6307402f9b01e308691a0c75f696521c86d94'
 EPS=1e-8
 PROFILES={
  'aggressive':{'size':3.,'edge':0.,'spread':.20,'haircut':0.,'unknown_fee':.10},
@@ -62,8 +63,8 @@ class StrategyEngine:
         if previous:self._adopt(previous[0])
     def _adopt(self,row):
         if row['policy']!=self.policy:
-            compatible={**row['policy'],'code_sha256':self.policy['code_sha256']}
-            if row['policy']['code_sha256']!=LEGACY_SOURCE_SHA256 or compatible!=self.policy:raise ValueError('frozen strategy source/policy mismatch; no reset permitted')
+            compatible={**row['policy'],'code_sha256':self.policy['code_sha256'],'definitions_sha256':self.policy['definitions_sha256']}
+            if row['policy']['code_sha256']!=LEGACY_SOURCE_SHA256 or row['policy']['definitions_sha256']!=LEGACY_DEFINITIONS_SHA256 or compatible!=self.policy:raise ValueError('frozen strategy source/policy mismatch; no reset permitted')
         state=unpack_checkpoint(row['checkpoint'])
         if digest(state)!=row['state_sha256']:raise ValueError('strategy checkpoint integrity failure')
         if row['previous_id']:
@@ -139,7 +140,9 @@ class StrategyEngine:
             if not history or at(history[-1]['at'])<b.timestamp:history.append({'at':b.timestamp.isoformat(),'mid':(b.bids[0].price+b.asks[0].price)/2,'book_sha256':digest(b.model_dump(mode='json'))})
             state['history'][token]=history[-32:]
         state['history']={t:h for t,h in state['history'].items() if t in markets}
-        for f in sorted(state['forecasts'].values(),key=lambda f:f['timestamp']):state['prior_forecasts'][f['token_id']]=f
+        for f in sorted((source_forecasts if source_forecasts is not None else state['forecasts']).values(),key=lambda f:f['timestamp']):
+            key=f['token_id']+'|'+f['model_id'];old=state['prior_forecasts'].get(key)
+            if old is None or at(old['timestamp'])<=at(f['timestamp']):state['prior_forecasts'][key]=f
         for name,config in PROFILES.items():
             s=state['profiles'][name];self.credits(s,books);counts=Counter(s['counts']);rejects=Counter(s['rejects'])
             for r in rejections:rejects[r['strategy']+':'+r['reason']]+=1

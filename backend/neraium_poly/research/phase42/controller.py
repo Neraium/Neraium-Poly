@@ -160,6 +160,7 @@ async def service_loop(runtime,should_exit):
         source_stop.set()
         if source_future is not None:
             try:await _drain(source_future)
+            except asyncio.CancelledError:runtime.shadow_source_status={'status':'cancelled_and_drained'}
             except Exception as error:runtime.shadow_source_status={'status':'withheld_on_close','error':str(error)[:180]}  # noqa: BLE001
         source_executor.shutdown(wait=True,cancel_futures=True)
         executor.shutdown(wait=True,cancel_futures=True)
