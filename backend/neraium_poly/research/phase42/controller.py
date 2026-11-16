@@ -113,6 +113,7 @@ async def service_loop(runtime,should_exit):
                             with httpx.Client(timeout=3,trust_env=False) as client, client.stream('GET',runtime.config.source_url) as response:
                                 response.raise_for_status();raw=bytearray()
                                 for chunk in response.iter_bytes():
+                                    if time.monotonic()-began>4:raise ValueError('reference frame absolute read deadline exceeded')
                                     if len(raw)+len(chunk)>8*1024**2:raise ValueError('bounded reference frame exceeded')
                                     raw.extend(chunk)
                             frame=SharedMarketFrame.model_validate_json(raw);origin='fresh_reference_read'

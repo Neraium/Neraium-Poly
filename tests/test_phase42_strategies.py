@@ -200,3 +200,29 @@ def test_trader_desk_cards_preserve_decisions_without_duplicate_orders(setup):
     assert any(c['estimated_net_value']>0 for c in cards)
     assert report['positions']==[] and report['unfilled_orders']
     again=publish(store,x,x.report(),clock[0]);assert again['recent_decisions']==cards
+
+
+async def test_starved_combined_frame_uses_fresh_bounded_read_only_reference(setup,monkeypatch,tmp_path):
+    import httpx
+
+    from neraium_poly.research.phase42 import controller
+    from neraium_poly.risk import RiskLimits
+    _x,_clock,_m,_b,_f,frame,_fees,_store,_risk=setup
+    monkeypatch.setenv('NERAIUM_SHADOW_RESEARCH','true')
+    runtime=SimpleNamespace(stopping=False,last_frame=frame.model_copy(update={'available_at':NOW-timedelta(seconds=20)}),events=None,
+        config=SimpleNamespace(risk_limits=RiskLimits(),data_dir=tmp_path,source_url='http://127.0.0.1:18742/api/market-frame'),clock=lambda:NOW)
+    async def budget():return True
+    runtime._async_budget_ok=budget;runtime._budget_ok=lambda:True
+    methods=[]
+    def request(req):methods.append(req.method);return httpx.Response(200,json=frame.model_dump(mode='json'))
+    client=httpx.Client
+    monkeypatch.setattr(httpx,'Client',lambda **kwargs:client(**kwargs,transport=httpx.MockTransport(request)))
+    class Controlled:
+        def __init__(self,*args,**kwargs):pass
+        def tick(self,observed,fees):
+            assert observed.available_at==NOW;runtime.stopping=True;return {'as_of':NOW.isoformat()}
+    monkeypatch.setattr(controller,'Controller',Controlled)
+    await controller.service_loop(runtime,lambda:False)
+    assert methods==['GET'] and runtime.shadow_research_error is None
+    assert runtime.shadow_research_snapshot['shadow_worker']['frame_origin']=='fresh_reference_read'
+    assert runtime.shadow_research_snapshot['shadow_worker']['maximum_workers']==1
