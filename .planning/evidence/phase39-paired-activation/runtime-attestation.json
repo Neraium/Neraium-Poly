@@ -1,0 +1,44 @@
+{
+  "source": "c7e29fcb248dde04ac02c61165aa1252dea67b1a",
+  "pid": 384223,
+  "phase20": {
+    "status": "research_only",
+    "declared_at": "2026-11-07T18:31:45.604201+00:00",
+    "last_evaluation_at": "2026-11-11T06:59:27.443898+00:00",
+    "experiment_sha256": "0bd88d11c46e9492f4a845d706c70d1e06d9f7729f993bbfb3ec0af3064ce48f",
+    "observations": 104,
+    "paired": 0,
+    "withheld": 104,
+    "rejections": {
+      "frozen_trained_sii_challenger_unavailable": 98,
+      "missed_timely_enrollment_after_recovery": 6
+    },
+    "sii_challenger": "unavailable; frozen trained model and qualified relationship evidence required",
+    "brier_improvement": null,
+    "log_loss_improvement": null,
+    "after_cost_edge": null,
+    "sii_in_trading_path": false,
+    "last_error": null,
+    "counter_scope": "new prospective forecasts since declaration; no historical backfill",
+    "trading_authority": false,
+    "certification_authority": false,
+    "runtime_error": null
+  },
+  "volume_status": {
+    "status": "research_only",
+    "last_error": null,
+    "counts": {
+      "execution_authorized": 0,
+      "findings_evaluated": 122,
+      "modeled_positive_gross_scenarios": 0,
+      "qualified_research_findings": 0,
+      "reviewed_canonical_groups": 37,
+      "statistically_independent_resolved_events": 0
+    }
+  },
+  "sampler": {
+    "sampling_error": null,
+    "sampling_task_active": false,
+    "sampling_queue": "one coalesced wake bit; authoritative native cache only"
+  }
+}

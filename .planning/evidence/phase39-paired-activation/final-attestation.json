@@ -1,0 +1,94 @@
+{
+  "source": "c7e29fcb248dde04ac02c61165aa1252dea67b1a",
+  "pid": "384223",
+  "process_source_flags": {
+    "PAPER_TRADING": "true",
+    "LIVE_TRADING_ENABLED": "false",
+    "PYTHONPATH": "/home/ubuntu/Neraium-Poly/.deploy/releases/c7e29fcb248dde04ac02c61165aa1252dea67b1a/backend",
+    "NERAIUM_DEPLOYED_SOURCE": "c7e29fcb248dde04ac02c61165aa1252dea67b1a"
+  },
+  "manifest_verified_files": 250,
+  "reference_pid": "355170",
+  "reference_source": "1342482fd9431f4e2e69d8788d864cb32fd1d4e9",
+  "journal_prefixes_preserved": {
+    "data/experimental-paper/event-intelligence/domains/forecasts.sqlite": true,
+    "data/experimental-paper/event-intelligence/forecasts.sqlite": true,
+    "data/experimental-paper/event-intelligence/sports/prospective.sqlite": true
+  },
+  "recovery_audit": {
+    "schema_version": "1.0",
+    "id": "adf6b0eedd391dd10b5cb9b2942d56873396faed9dce34ba07157efef9c998ca",
+    "timestamp": "2026-11-16T10:07:03.404707Z",
+    "available_at": "2026-11-16T10:07:03.404707Z",
+    "source": "neraium-poly/paired-recovery/v39",
+    "result": {
+      "frontier": "2026-11-11T06:59:12.121950+00:00",
+      "cutoff": "2026-11-16T10:07:03.404707+00:00",
+      "verified_rows": 1848,
+      "ignored_non_forecasts": 1848,
+      "retained_originals": 0,
+      "source_bytes_verified": 412981084,
+      "retained_serialized_bytes": 2,
+      "source_chain_sha256": "fd53a5bf98dea937ee4849bc55130c738bc08c7b9ffc573d1180409ab32eca95",
+      "scan_complete": true,
+      "snapshot_guard_bytes": 67108864,
+      "page_rows": 128,
+      "max_source_payload_bytes": 16777216,
+      "checkpoint_id": "89d42644b25456d19f2dbfc8fe3a0c30db313a48feee67522cd7bc48ff7f7b21",
+      "experiment_sha256": "0bd88d11c46e9492f4a845d706c70d1e06d9f7729f993bbfb3ec0af3064ce48f",
+      "recovery_code_sha256": "775975219b0d9a125ebea79ce6a1695079120d5ff47c19eb2f1886b7e8ee6536"
+    },
+    "research_only": true,
+    "trading_authority": false,
+    "certification_authority": false
+  },
+  "phase20": {
+    "status": "research_only",
+    "declared_at": "2026-11-07T18:31:45.604201+00:00",
+    "last_evaluation_at": "2026-11-11T06:59:27.443898+00:00",
+    "experiment_sha256": "0bd88d11c46e9492f4a845d706c70d1e06d9f7729f993bbfb3ec0af3064ce48f",
+    "observations": 104,
+    "paired": 0,
+    "withheld": 104,
+    "rejections": {
+      "frozen_trained_sii_challenger_unavailable": 98,
+      "missed_timely_enrollment_after_recovery": 6
+    },
+    "sii_challenger": "unavailable; frozen trained model and qualified relationship evidence required",
+    "brier_improvement": null,
+    "log_loss_improvement": null,
+    "after_cost_edge": null,
+    "sii_in_trading_path": false,
+    "last_error": null,
+    "counter_scope": "new prospective forecasts since declaration; no historical backfill",
+    "trading_authority": false,
+    "certification_authority": false,
+    "runtime_error": null
+  },
+  "phase28_counts": {
+    "findings_evaluated": 122,
+    "qualified_research_findings": 0,
+    "modeled_positive_gross_scenarios": 1,
+    "execution_authorized": 0,
+    "reviewed_canonical_groups": 37,
+    "statistically_independent_resolved_events": 0
+  },
+  "sampler": {
+    "sampling_error": null,
+    "sampling_task_active": true,
+    "sampling_queue": "one coalesced wake bit; authoritative native cache only",
+    "counts": {
+      "transport_notifications": 8160,
+      "coalesced_notifications": 7661,
+      "preflights": 2,
+      "supported_token_observations": 4,
+      "qualified_token_observations": 4,
+      "qualified_callbacks": 110,
+      "archived_samples": 107,
+      "callback_quality_rejections": 2
+    }
+  },
+  "rollback_executed": false,
+  "stop_reset": false,
+  "order_admission_resumed": false
+}
