@@ -1,0 +1,14 @@
+{
+  "at": "2026-11-16T11:49:01.983111+00:00",
+  "phase": "41",
+  "status": "completed; final-source backend and dashboard CI passed",
+  "head": "f649cd5697e05be68f85cfbd698260c96992d546",
+  "branch": "citadel/phase41-shadow-profiles",
+  "worktree": "/home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/phase41-shadow-profiles",
+  "ci_run": 43860966382,
+  "evidence": "results.json; ledger-manifest.json; account-preservation.json",
+  "blockers": "zero native-settled cohort; unreviewed dependence; conditional model/calibration uncertainty; no demonstrated profit",
+  "next_action": "record CI; resume same experiment directory for future prospective cohorts; no capital reset",
+  "live_changes": false,
+  "ci_conclusion": "success"
+}

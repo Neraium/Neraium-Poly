@@ -1,6 +1,7 @@
 # Phase 41 — experimental qualification and measured shadow alternatives
 
 Branch: `citadel/phase41-shadow-profiles`; base `ee5cb89d11ea2ed2d9ee42e03e21c24e3e8d13c0`.
+Implementation: `f649cd5697e05be68f85cfbd698260c96992d546`, pushed and remote SHA verified. Final-source CI `43860966382` passed: 2,355 backend tests, five dashboard tests, build, repository Ruff, scenario, Python/npm audits. Subsequent evidence-only commit does not change executable source.
 Worktree: `/home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/phase41-shadow-profiles`.
 
 Implemented three frozen, mutually exclusive $500 research profiles. Aggressive permits uncalibrated source-backed forecasts and sub-three-cent positive modeled edges; balanced shrinks toward the market and requires native fee evidence; conservative requires existing conservative verification. No broker, real-account, wallet, stop, or deployment access. Existing financial policy untouched.
