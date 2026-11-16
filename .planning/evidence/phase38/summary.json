@@ -1,0 +1,288 @@
+{
+  "archives": {
+    "experimental-paper": {
+      "active_files_excluded": [
+        "segment-00008584.sqlite"
+      ],
+      "captured_range_complete": true,
+      "completed_at": "2026-11-16T06:59:59.633626+00:00",
+      "compressed_copies_verified": 8583,
+      "errors": [],
+      "immutable_sources_verified": 8584,
+      "last_completed_cursor": "segment-00008584.sqlite",
+      "raw_bytes_verified": 34339999744,
+      "records_verified": 3510528,
+      "report_path": ".planning/evidence/phase38/experimental-paper-integrity.jsonl",
+      "report_sha256": "9288aa4055f56846d721cf31f1d6cfa811876ea69610b346b479379ea1dbf2bc",
+      "scope": "Immutable sources in captured ranges; active/unindexed crash state and later appends require exclusive writer recovery. No deletion or admission authority.",
+      "segment_sequence_contiguous": true,
+      "started_at": "2026-11-16T06:47:48.499187+00:00",
+      "verifier_peak_rss_bytes": 148090880
+    },
+    "paper-live": {
+      "active_files_excluded": [
+        "segment-00003478.sqlite"
+      ],
+      "captured_range_complete": true,
+      "completed_at": "2026-11-16T06:56:14.162842+00:00",
+      "compressed_copies_verified": 3477,
+      "errors": [],
+      "immutable_sources_verified": 3478,
+      "last_completed_cursor": "segment-00003478.sqlite",
+      "raw_bytes_verified": 34215817216,
+      "records_verified": 10348743,
+      "report_path": ".planning/evidence/phase38/paper-live-integrity.jsonl",
+      "report_sha256": "5ac0b223af251de6e52cc515cd910c9e9ff16eaaba8b936e0bf8160fab57de1c",
+      "scope": "Immutable sources in captured ranges; active/unindexed crash state and later appends require exclusive writer recovery. No deletion or admission authority.",
+      "segment_sequence_contiguous": true,
+      "started_at": "2026-11-16T06:43:26.906757+00:00",
+      "verifier_peak_rss_bytes": 128303104
+    }
+  },
+  "branch": "phase38-recovery",
+  "ci": {
+    "conclusion": "success",
+    "run": 43820619710,
+    "source_revision": "1342482fd9431f4e2e69d8788d864cb32fd1d4e9"
+  },
+  "controlled_backpressure_benchmark": {
+    "after": {
+      "delivered": 80,
+      "failure": null,
+      "metrics": {
+        "consumer_max_seconds": 0.001428648829460144,
+        "queue_backpressure_seconds": 0.09598422748968005,
+        "queue_backpressure_waits": 76,
+        "queue_overflows": 0,
+        "queue_peak_bytes": 8802,
+        "queue_peak_depth": 4,
+        "reconnects": 0
+      },
+      "offered": 80,
+      "seconds": 0.10484727518633008
+    },
+    "before": {
+      "delivered": 0,
+      "failure": "reconnect budget exhausted",
+      "metrics": {
+        "consumer_max_seconds": null,
+        "queue_backpressure_seconds": null,
+        "queue_backpressure_waits": null,
+        "queue_overflows": 1,
+        "queue_peak_bytes": 5868,
+        "queue_peak_depth": null,
+        "reconnects": 1
+      },
+      "offered": 80,
+      "seconds": 0.005806582979857922
+    },
+    "kind": "CONTROLLED fixture, no financial result",
+    "same_callback_delay_seconds": 0.001,
+    "same_queue_size": 4
+  },
+  "controlled_memory_benchmark": {
+    "after": {
+      "allocator": {
+        "arena": 272068608,
+        "fordblks": 260334256,
+        "fsmblks": 0,
+        "hblkhd": 1363968,
+        "hblks": 3,
+        "keepcost": 3376,
+        "ordblks": 155,
+        "provider": "glibc 2.39",
+        "scope": "GNU allocator counters, not independently measured live heap or total RSS",
+        "smblks": 0,
+        "status": "available",
+        "uordblks": 11734352,
+        "usmblks": 0
+      },
+      "rss_bytes": 50077696
+    },
+    "before": {
+      "allocator": {
+        "arena": 272658432,
+        "fordblks": 260925856,
+        "fsmblks": 0,
+        "hblkhd": 1363968,
+        "hblks": 3,
+        "keepcost": 593200,
+        "ordblks": 155,
+        "provider": "glibc 2.39",
+        "scope": "GNU allocator counters, not independently measured live heap or total RSS",
+        "smblks": 0,
+        "status": "available",
+        "uordblks": 11732576,
+        "usmblks": 0
+      },
+      "rss_bytes": 310710272
+    },
+    "kind": "controlled_fragmentation_fixture",
+    "live_objects_preserved": true,
+    "release": {
+      "allocated_before_bytes": 11732576,
+      "attempts": 1,
+      "elapsed_seconds": 0.012832187116146088,
+      "free_before_bytes": 260925856,
+      "pages_released": true,
+      "status": "attempted"
+    }
+  },
+  "controlled_recovery_benchmark": {
+    "comparison_scope": "same records, full metadata/hash verification; directory-budget traversal excluded in both",
+    "kind": "controlled_recovery_fixture",
+    "results": {
+      "after": {
+        "maxrss_bytes": 59248640,
+        "random_record_lookups": 0,
+        "records": 50000,
+        "seconds": 0.40285973297432065
+      },
+      "before": {
+        "maxrss_bytes": 71397376,
+        "random_record_lookups": 50000,
+        "records": 50000,
+        "seconds": 0.5408708630129695
+      }
+    }
+  },
+  "ending_safety": {
+    "accounts": {
+      "experimental-paper": {
+        "buy_fill_events": 5,
+        "cash": 496.11522059829053,
+        "exit_fill_events": 5,
+        "fills": 10,
+        "id": 1,
+        "kill": 1,
+        "limits_sha256": "5d49295ce5df09ad48cda10e3f9fe2eadc5ce793ea741e0070a05f4eca00a6b0",
+        "open_reports": 0,
+        "orders": 13,
+        "peak": 500.0,
+        "positions": 0,
+        "realized": -3.8847794017094013,
+        "reservations": 0
+      },
+      "paper-live": {
+        "buy_fill_events": 0,
+        "cash": 500.0,
+        "exit_fill_events": 0,
+        "fills": 0,
+        "id": 1,
+        "kill": 0,
+        "limits_sha256": "5d49295ce5df09ad48cda10e3f9fe2eadc5ce793ea741e0070a05f4eca00a6b0",
+        "open_reports": 0,
+        "orders": 0,
+        "peak": 500.0,
+        "positions": 0,
+        "realized": 0.0,
+        "reservations": 0
+      }
+    },
+    "at": "2026-11-16T07:00:57.089337+00:00",
+    "config/experimental-paper.example.json": {
+      "archive_budget_mb": 153600,
+      "archive_reserve_disk_mb": 102400
+    },
+    "config/paper-live.example.json": {
+      "archive_budget_mb": 153600,
+      "archive_reserve_disk_mb": 102400
+    },
+    "filesystem_free_bytes": 228812492800,
+    "journal_prefixes": {
+      "data/experimental-paper/event-intelligence/domains/forecasts.sqlite": {
+        "preserved": true,
+        "prior_records": 357
+      },
+      "data/experimental-paper/event-intelligence/forecasts.sqlite": {
+        "preserved": true,
+        "prior_records": 15510
+      },
+      "data/experimental-paper/event-intelligence/sports/prospective.sqlite": {
+        "preserved": true,
+        "prior_records": 34
+      }
+    },
+    "no_service_restart_performed": true,
+    "no_stop_reset_performed": true,
+    "services": {
+      "neraium-poly-experimental.service": {
+        "ActiveState": "active",
+        "CPUQuotaPerSecUSec": "1s",
+        "MainPID": "3993187",
+        "MemoryCurrent": "2118426624",
+        "MemoryMax": "2147483648",
+        "NRestarts": "0",
+        "health": {
+          "account_id": "experimental-paper",
+          "fee_error": null,
+          "last_error": null,
+          "last_ingestion_age_seconds": 8.705116,
+          "last_ingestion_at": "2026-11-16T07:00:48.674773+00:00",
+          "live_trading_enabled": false,
+          "paper_trading": true,
+          "status": "ok",
+          "timestamp": "2026-11-16T07:00:57.379889+00:00",
+          "validation_status": "unvalidated"
+        },
+        "mode_flags": {
+          "LIVE_TRADING_ENABLED": "false",
+          "PAPER_TRADING": "true"
+        }
+      },
+      "neraium-poly-paper.service": {
+        "ActiveState": "active",
+        "CPUQuotaPerSecUSec": "1s",
+        "MainPID": "190586",
+        "MemoryCurrent": "1070665728",
+        "MemoryMax": "1073741824",
+        "NRestarts": "3",
+        "health": {
+          "last_error": null,
+          "last_ingestion_age_seconds": 0.006193,
+          "last_ingestion_at": "2026-11-16T07:00:57.120834+00:00",
+          "ledger_consistent": true,
+          "live_trading_enabled": false,
+          "mode": "live_market_paper",
+          "paper_trading": true,
+          "status": "ok",
+          "timestamp": "2026-11-16T07:00:57.127027+00:00",
+          "trading_status": "validation_blocked"
+        },
+        "mode_flags": {
+          "LIVE_TRADING_ENABLED": "false",
+          "PAPER_TRADING": "true"
+        }
+      }
+    }
+  },
+  "production_deployed": false,
+  "public_probe": {
+    "counts": {
+      "callbacks": 601,
+      "qualified_callbacks": 599
+    },
+    "event_loop_lag_p99_seconds": 0.0014614369720220566,
+    "max_rss_bytes": 54534144,
+    "metrics": {
+      "consumer_max_seconds": 0.013319894205778837,
+      "fresh_books": 14,
+      "messages": 422,
+      "queue_overflows": 0,
+      "queue_peak_depth": 16,
+      "reconnects": 0
+    },
+    "seconds": 61.08375594485551,
+    "started_at": "2026-11-16T06:44:42.603353+00:00",
+    "tokens": 16
+  },
+  "source_revision": "1342482fd9431f4e2e69d8788d864cb32fd1d4e9",
+  "starting_revision": "7e42feedc6460b592db3524f70ae5710dec4a164",
+  "tests": {
+    "backend_passed": 2325,
+    "browser_passed": 5,
+    "dashboard_build": "passed",
+    "focused_recovery_connectivity_passed": 52,
+    "ruff": "passed"
+  }
+}
