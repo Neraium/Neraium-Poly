@@ -1,0 +1,16 @@
+{
+  "phase": "engineering verified; final-source CI passed; final450s observation and postflight complete; ongoing economic experiment unproven; evidence commit/push next",
+  "at": "2026-11-16T14:32:41.476776+00:00",
+  "branch": "citadel/phase42-continuous-shadow",
+  "head": "156b9707bb266dea26716305178aff04d669756b",
+  "worktree": "/home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/phase42-continuous-shadow",
+  "active_experimental_source": "156b9707bb266dea26716305178aff04d669756b",
+  "active_pid": 439070,
+  "reference_source": "1342482fd9431f4e2e69d8788d864cb32fd1d4e9",
+  "reference_pid": 355170,
+  "rollback": "admission-activation/deploy.py --rollback quiesces research at c7 source; no financial restore",
+  "safety": "stop latched; no account or risk changes; no reference restart",
+  "ci_run": 43882259453,
+  "ci_result": "success",
+  "next_action": "commit/push compact evidence then sync Citadel; service continues collecting; never clear stop or promote on current losses"
+}

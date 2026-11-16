@@ -1,0 +1,20 @@
+{
+  "source_result": {
+    "status": "completed",
+    "epoch": 5982785,
+    "bytes_written": 6413095,
+    "elapsed_seconds": 33.58406292507425,
+    "errors": [
+      "domains:ValueError:8MiB source-wave evidence bound reached; no truncation"
+    ],
+    "model_formulas_changed": false,
+    "observations_are_not_independent_events": true
+  },
+  "audit": {
+    "rows_scanned": 7,
+    "retained_studies": 3,
+    "retained_bytes": 6380161,
+    "source_guard_bytes": 16777216
+  },
+  "actual_forecasts": 16
+}

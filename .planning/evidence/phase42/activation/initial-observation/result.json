@@ -1,0 +1,482 @@
+{
+  "source": "69cfb398e9687c059247858f32164697b529c54c",
+  "pid": "417291",
+  "duration_seconds": 519.7326188432053,
+  "ready_after_seconds": 459.01638125721365,
+  "post_ready_seconds": 60.71623843582347,
+  "samples": 104,
+  "fresh_research_samples": 5,
+  "final": {
+    "at": "2026-11-16T13:06:06.242164+00:00",
+    "elapsed": 519.7180516491644,
+    "service": {
+      "MainPID": "417291",
+      "NRestarts": "0",
+      "MemoryCurrent": "1716596736",
+      "CPUUsageNSec": "664639515000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "8185",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "health": {
+      "status": "ok",
+      "account_id": "experimental-paper",
+      "validation_status": "unvalidated",
+      "paper_trading": true,
+      "live_trading_enabled": false,
+      "last_ingestion_at": "2026-11-16T13:05:55.047247+00:00",
+      "last_ingestion_age_seconds": 11.205832,
+      "last_error": null,
+      "fee_error": null,
+      "public_feed": {
+        "status": "ok",
+        "producer_url": "http://127.0.0.1:18742/api/market-frame",
+        "attempts": 13,
+        "failures": 0,
+        "trading_authority": false,
+        "attempted_at": "2026-11-16T13:05:51.362944+00:00",
+        "failure_boundary": null,
+        "error_type": null,
+        "elapsed_seconds": 0.3647588724270463,
+        "producer_available_at": "2026-11-16T13:05:51.368678+00:00"
+      },
+      "timestamp": "2026-11-16T13:06:06.253079+00:00"
+    },
+    "latency": 0.00190818402916193,
+    "research": {
+      "as_of": "2026-11-16T13:05:10.176184+00:00",
+      "markets_evaluated_unique": 84,
+      "cycles": 2,
+      "profiles": {
+        "aggressive": {
+          "strategies": {
+            "independent": {
+              "candidates": 0,
+              "orders": 0,
+              "fill_events": 0,
+              "open_positions": 0,
+              "unrealized_net_pnl": 0,
+              "exposure": 0,
+              "modeled_exit_net_pnl": 0,
+              "verified_settlement_net_pnl": 0,
+              "wins": 0,
+              "losses": 0,
+              "closed_observations": 0
+            },
+            "consistency": {
+              "candidates": 0,
+              "orders": 0,
+              "fill_events": 0,
+              "open_positions": 0,
+              "unrealized_net_pnl": 0,
+              "exposure": 0,
+              "modeled_exit_net_pnl": 0,
+              "verified_settlement_net_pnl": 0,
+              "wins": 0,
+              "losses": 0,
+              "closed_observations": 0
+            },
+            "momentum": {
+              "candidates": 0,
+              "orders": 0,
+              "fill_events": 0,
+              "open_positions": 0,
+              "unrealized_net_pnl": 0,
+              "exposure": 0,
+              "modeled_exit_net_pnl": 0,
+              "verified_settlement_net_pnl": 0,
+              "wins": 0,
+              "losses": 0,
+              "closed_observations": 0
+            },
+            "spread_capture": {
+              "candidates": 255,
+              "orders": 7,
+              "fill_events": 0,
+              "open_positions": 0,
+              "unrealized_net_pnl": 0,
+              "exposure": 0,
+              "modeled_exit_net_pnl": 0,
+              "verified_settlement_net_pnl": 0,
+              "wins": 0,
+              "losses": 0,
+              "closed_observations": 0
+            },
+            "event_repricing": {
+              "candidates": 0,
+              "orders": 0,
+              "fill_events": 0,
+              "open_positions": 0,
+              "unrealized_net_pnl": 0,
+              "exposure": 0,
+              "modeled_exit_net_pnl": 0,
+              "verified_settlement_net_pnl": 0,
+              "wins": 0,
+              "losses": 0,
+              "closed_observations": 0
+            }
+          },
+          "cash_hypothetical": 500.0,
+          "exposure": 16.30937838727539,
+          "open_positions": 0,
+          "pending_orders": 7,
+          "unrealized_net_pnl": 0.0,
+          "maximum_drawdown": 0.0,
+          "suspended": false,
+          "rejections": {
+            "independent:independent_source_forecast_unavailable": 255,
+            "event_repricing:independent_source_forecast_unavailable": 255,
+            "momentum:causal_30second_history_unavailable": 255,
+            "consistency:exact_two_token_condition_unavailable": 32,
+            "consistency:complementary_native_identity_or_fee_evidence_unverified": 110,
+            "consistency:combined_executable_asks_not_below_unit_payout": 2,
+            "spread_capture:net_hypothesis_or_native_minimum_size": 245,
+            "independent:fresh_executable_book_unavailable": 1,
+            "consistency:fresh_executable_book_unavailable": 1,
+            "momentum:fresh_executable_book_unavailable": 1,
+            "spread_capture:fresh_executable_book_unavailable": 1,
+            "event_repricing:fresh_executable_book_unavailable": 1,
+            "spread_capture:already_enrolled_or_open": 3
+          }
+        },
+        "balanced": {
+          "strategies": {
+            "independent": {
+              "candidates": 0,
+              "orders": 0,
+              "fill_events": 0,
+              "open_positions": 0,
+              "unrealized_net_pnl": 0,
+              "exposure": 0,
+              "modeled_exit_net_pnl": 0,
+              "verified_settlement_net_pnl": 0,
+              "wins": 0,
+              "losses": 0,
+              "closed_observations": 0
+            },
+            "consistency": {
+              "candidates": 0,
+              "orders": 0,
+              "fill_events": 0,
+              "open_positions": 0,
+              "unrealized_net_pnl": 0,
+              "exposure": 0,
+              "modeled_exit_net_pnl": 0,
+              "verified_settlement_net_pnl": 0,
+              "wins": 0,
+              "losses": 0,
+              "closed_observations": 0
+            },
+            "momentum": {
+              "candidates": 0,
+              "orders": 0,
+              "fill_events": 0,
+              "open_positions": 0,
+              "unrealized_net_pnl": 0,
+              "exposure": 0,
+              "modeled_exit_net_pnl": 0,
+              "verified_settlement_net_pnl": 0,
+              "wins": 0,
+              "losses": 0,
+              "closed_observations": 0
+            },
+            "spread_capture": {
+              "candidates": 255,
+              "orders": 0,
+              "fill_events": 0,
+              "open_positions": 0,
+              "unrealized_net_pnl": 0,
+              "exposure": 0,
+              "modeled_exit_net_pnl": 0,
+              "verified_settlement_net_pnl": 0,
+              "wins": 0,
+              "losses": 0,
+              "closed_observations": 0
+            },
+            "event_repricing": {
+              "candidates": 0,
+              "orders": 0,
+              "fill_events": 0,
+              "open_positions": 0,
+              "unrealized_net_pnl": 0,
+              "exposure": 0,
+              "modeled_exit_net_pnl": 0,
+              "verified_settlement_net_pnl": 0,
+              "wins": 0,
+              "losses": 0,
+              "closed_observations": 0
+            }
+          },
+          "cash_hypothetical": 500.0,
+          "exposure": 0,
+          "open_positions": 0,
+          "pending_orders": 0,
+          "unrealized_net_pnl": 0.0,
+          "maximum_drawdown": 0.0,
+          "suspended": false,
+          "rejections": {
+            "independent:independent_source_forecast_unavailable": 255,
+            "event_repricing:independent_source_forecast_unavailable": 255,
+            "momentum:causal_30second_history_unavailable": 255,
+            "consistency:exact_two_token_condition_unavailable": 32,
+            "consistency:complementary_native_identity_or_fee_evidence_unverified": 110,
+            "consistency:combined_executable_asks_not_below_unit_payout": 2,
+            "spread_capture:native_fee_unavailable": 244,
+            "spread_capture:net_hypothesis_or_native_minimum_size": 11,
+            "independent:fresh_executable_book_unavailable": 1,
+            "consistency:fresh_executable_book_unavailable": 1,
+            "momentum:fresh_executable_book_unavailable": 1,
+            "spread_capture:fresh_executable_book_unavailable": 1,
+            "event_repricing:fresh_executable_book_unavailable": 1
+          }
+        },
+        "conservative": {
+          "strategies": {
+            "independent": {
+              "candidates": 0,
+              "orders": 0,
+              "fill_events": 0,
+              "open_positions": 0,
+              "unrealized_net_pnl": 0,
+              "exposure": 0,
+              "modeled_exit_net_pnl": 0,
+              "verified_settlement_net_pnl": 0,
+              "wins": 0,
+              "losses": 0,
+              "closed_observations": 0
+            },
+            "consistency": {
+              "candidates": 0,
+              "orders": 0,
+              "fill_events": 0,
+              "open_positions": 0,
+              "unrealized_net_pnl": 0,
+              "exposure": 0,
+              "modeled_exit_net_pnl": 0,
+              "verified_settlement_net_pnl": 0,
+              "wins": 0,
+              "losses": 0,
+              "closed_observations": 0
+            },
+            "momentum": {
+              "candidates": 0,
+              "orders": 0,
+              "fill_events": 0,
+              "open_positions": 0,
+              "unrealized_net_pnl": 0,
+              "exposure": 0,
+              "modeled_exit_net_pnl": 0,
+              "verified_settlement_net_pnl": 0,
+              "wins": 0,
+              "losses": 0,
+              "closed_observations": 0
+            },
+            "spread_capture": {
+              "candidates": 255,
+              "orders": 0,
+              "fill_events": 0,
+              "open_positions": 0,
+              "unrealized_net_pnl": 0,
+              "exposure": 0,
+              "modeled_exit_net_pnl": 0,
+              "verified_settlement_net_pnl": 0,
+              "wins": 0,
+              "losses": 0,
+              "closed_observations": 0
+            },
+            "event_repricing": {
+              "candidates": 0,
+              "orders": 0,
+              "fill_events": 0,
+              "open_positions": 0,
+              "unrealized_net_pnl": 0,
+              "exposure": 0,
+              "modeled_exit_net_pnl": 0,
+              "verified_settlement_net_pnl": 0,
+              "wins": 0,
+              "losses": 0,
+              "closed_observations": 0
+            }
+          },
+          "cash_hypothetical": 500.0,
+          "exposure": 0,
+          "open_positions": 0,
+          "pending_orders": 0,
+          "unrealized_net_pnl": 0.0,
+          "maximum_drawdown": 0.0,
+          "suspended": false,
+          "rejections": {
+            "independent:independent_source_forecast_unavailable": 255,
+            "event_repricing:independent_source_forecast_unavailable": 255,
+            "momentum:causal_30second_history_unavailable": 255,
+            "consistency:exact_two_token_condition_unavailable": 32,
+            "consistency:complementary_native_identity_or_fee_evidence_unverified": 110,
+            "consistency:combined_executable_asks_not_below_unit_payout": 2,
+            "spread_capture:native_fee_unavailable": 233,
+            "spread_capture:conservative_calibration_withheld": 11,
+            "spread_capture:profile_spread": 11,
+            "independent:fresh_executable_book_unavailable": 1,
+            "consistency:fresh_executable_book_unavailable": 1,
+            "momentum:fresh_executable_book_unavailable": 1,
+            "spread_capture:fresh_executable_book_unavailable": 1,
+            "event_repricing:fresh_executable_book_unavailable": 1
+          }
+        }
+      },
+      "verified_outcomes": 0,
+      "scoring_excluded_nonbinary_or_missing_baseline": 0,
+      "scores": null,
+      "forecasts": 0,
+      "strategy_policy_sha256": "f5ba8a17133e5fbb0ed5d8db4302bbae1856d98712a8390342edd65f570d225a",
+      "parent_events": 0,
+      "hypotheses": {
+        "independent": {
+          "thesis": "External source-model probability exceeds all-in asks.",
+          "exit": "take executable bids on net target, five-minute timeout or stop",
+          "horizon": 300,
+          "scored_probability": true
+        },
+        "consistency": {
+          "thesis": "Same verified binary condition: combined two-token acquisition below unit payout. Partial-leg exposure retained.",
+          "exit": "native payout; no assumption of atomic execution",
+          "horizon": 86400,
+          "scored_probability": false
+        },
+        "momentum": {
+          "thesis": "Past-only 30\u2013120s midpoint drift persists; pricing target, not independent event probability.",
+          "exit": "executable target, reversal/time stop at60s",
+          "horizon": 60,
+          "scored_probability": false
+        },
+        "spread_capture": {
+          "thesis": "A resting bid can enter only when subsequent observed asks cross it; adverse selection may dominate spread.",
+          "exit": "executable bid covers round-trip costs or120s timeout",
+          "horizon": 120,
+          "scored_probability": false
+        },
+        "event_repricing": {
+          "thesis": "New external-source probability revision precedes market adjustment.",
+          "exit": "executable target or180s timeout",
+          "horizon": 180,
+          "scored_probability": true
+        }
+      },
+      "profiles_are_alternatives": true,
+      "trading_authority": false,
+      "actual_account_access": false,
+      "calibration": "unvalidated; no fitted improvement claimed",
+      "phase41_profiles": {
+        "profiles": {
+          "aggressive": {
+            "orders": 0,
+            "fill_events": 0,
+            "open_orders": 0,
+            "open_positions": 0,
+            "cash_hypothetical": 500.0,
+            "exposure": 0,
+            "fees_modeled": 0.0,
+            "realized_simulated_pnl": null,
+            "unrealized_simulated_pnl": null,
+            "maximum_drawdown": null,
+            "settled_positions": 0,
+            "suspended": false,
+            "rejections": {},
+            "capital_utilization": 0.0,
+            "marked_equity": 500.0
+          },
+          "balanced": {
+            "orders": 0,
+            "fill_events": 0,
+            "open_orders": 0,
+            "open_positions": 0,
+            "cash_hypothetical": 500.0,
+            "exposure": 0,
+            "fees_modeled": 0.0,
+            "realized_simulated_pnl": null,
+            "unrealized_simulated_pnl": null,
+            "maximum_drawdown": null,
+            "settled_positions": 0,
+            "suspended": false,
+            "rejections": {},
+            "capital_utilization": 0.0,
+            "marked_equity": 500.0
+          },
+          "conservative": {
+            "orders": 0,
+            "fill_events": 0,
+            "open_orders": 0,
+            "open_positions": 0,
+            "cash_hypothetical": 500.0,
+            "exposure": 0,
+            "fees_modeled": 0.0,
+            "realized_simulated_pnl": null,
+            "unrealized_simulated_pnl": null,
+            "maximum_drawdown": null,
+            "settled_positions": 0,
+            "suspended": false,
+            "rejections": {},
+            "capital_utilization": 0.0,
+            "marked_equity": 500.0
+          }
+        },
+        "policy_id": "4efc7772d769264dfc8062fc35d3e3875b4f7cd149f60d82f01c2c35f320b964",
+        "cohort_forecasts": 0,
+        "parent_events": 0,
+        "reviewed_independent_events": 0,
+        "profile_capital_is_not_additive": true,
+        "verified_cohort_labels": 0,
+        "promotion": {
+          "heldout_start": "2026-11-17T13:03:41.192530+00:00",
+          "reviewed_oos_groups": 0,
+          "matured_missing_labels": 0,
+          "research_recommendation": null,
+          "oos_results": [],
+          "method": "common native-labeled cohort, reviewed dependence groups, zero returns for no-trade groups;1000group bootstrap draws;3-profile Bonferroni; min20heldout groups",
+          "scope": "research profile preference only; modeled fills/costs are not demonstrated real returns; no certification or trading authority"
+        },
+        "actual_account_access": false,
+        "trading_authority": false,
+        "scope": "prospective assumption-dependent shadow execution, not actual fills or proven edge"
+      },
+      "source_withholding": {},
+      "execution": "isolated shadow only; no account/order-admission access",
+      "maximum_cycle_seconds": 30,
+      "native_proof_requests_per_5min": 2,
+      "age_seconds": 56.078189,
+      "status": "stale",
+      "runtime_error": null
+    }
+  },
+  "peak_memory_bytes": 2147471360,
+  "accounts_unchanged": true,
+  "accounts": {
+    "paper-live": {
+      "cash": 500.0,
+      "realized": 0.0,
+      "kill": 0,
+      "limits_sha256": "5d49295ce5df09ad48cda10e3f9fe2eadc5ce793ea741e0070a05f4eca00a6b0",
+      "positions": 0,
+      "reservations": 0,
+      "orders": 0
+    },
+    "experimental-paper": {
+      "cash": 496.11522059829053,
+      "realized": -3.8847794017094013,
+      "kill": 1,
+      "limits_sha256": "5d49295ce5df09ad48cda10e3f9fe2eadc5ce793ea741e0070a05f4eca00a6b0",
+      "positions": 0,
+      "reservations": 0,
+      "orders": 13
+    }
+  },
+  "rollback_executed": false
+}

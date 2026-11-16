@@ -1,0 +1,29 @@
+{
+  "scope": "Nov16 Phase41 historical decision/fill snapshots and final11:35 mark; not new trades or settlements; fees/slippage remain execution-model estimates",
+  "profiles": {
+    "aggressive": {
+      "hypothetical_quantity": 59.97307652971148,
+      "entry_principal": 24.0395238256947,
+      "modeled_entry_fees": 0.8405299999999999,
+      "entry_slippage_and_redemption_reserves": 0.11994615305942113,
+      "gross_executable_bid_mark": 22.26995653358945,
+      "modeled_exit_fees": 0.80691,
+      "exit_slippage_reserve": 0.08995961479456721,
+      "gross_bid_mark_minus_entry_principal": -1.7695672921052505,
+      "marked_net_pnl": -3.6269130599592385,
+      "total_modeled_fee_and_reserve_drag": 1.8573457678539884
+    },
+    "balanced": {
+      "hypothetical_quantity": 59.97307614935551,
+      "entry_principal": 24.039523703837535,
+      "modeled_entry_fees": 0.8405299999999999,
+      "entry_slippage_and_redemption_reserves": 0.11994615229871053,
+      "gross_executable_bid_mark": 22.26995643469689,
+      "modeled_exit_fees": 0.80691,
+      "exit_slippage_reserve": 0.08995961422403326,
+      "gross_bid_mark_minus_entry_principal": -1.7695672691406443,
+      "marked_net_pnl": -3.626913035663388,
+      "total_modeled_fee_and_reserve_drag": 1.857345766522744
+    }
+  }
+}
