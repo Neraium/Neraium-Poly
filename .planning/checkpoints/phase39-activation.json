@@ -1,0 +1,17 @@
+{
+  "phase": "39-activation",
+  "step": "reviewed paired-recovery follow-up activated; second startup and15-minute observation in progress",
+  "worktree": "/home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/phase39-stream-repair",
+  "branch": "citadel/phase39-stream-repair",
+  "head": "c7e29fcb248dde04ac02c61165aa1252dea67b1a",
+  "deployed_source": "c7e29fcb248dde04ac02c61165aa1252dea67b1a",
+  "experimental_pid": 384223,
+  "reference_pid": 355170,
+  "reference_source": "1342482fd9431f4e2e69d8788d864cb32fd1d4e9",
+  "monitor_session": 42565,
+  "evidence": ".planning/evidence/phase39-paired-activation",
+  "next_action": "Inspect monitor incident/result first. On success run postflight and prefix checks, summarize both cohorts, verify deployed source, commit/push evidence and memory sync. No tests or deployments need repeating.",
+  "boundaries": "experimental only; no orders, no risk/resource changes, no evidence deletion",
+  "additional_source": "c7e29fcb248dde04ac02c61165aa1252dea67b1a",
+  "additional_deployed": true
+}

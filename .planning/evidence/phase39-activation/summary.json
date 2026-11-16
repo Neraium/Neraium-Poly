@@ -1,0 +1,359 @@
+{
+  "observation": {
+    "status": "completed",
+    "startup_seconds": 510.3768580169417,
+    "observation_seconds": 900.5296102333814,
+    "samples": 48,
+    "experimental_pid": "379539",
+    "reference_pid": "355170",
+    "source": "57b75a50f78d8df93ac15c06deaf626c255deb6b",
+    "stop_reset": false,
+    "order_admission_resumed": false
+  },
+  "counter_window_seconds": 870.003477493301,
+  "first_at": "2026-11-16T09:44:39.428401+00:00",
+  "last_at": "2026-11-16T09:59:09.431879+00:00",
+  "services": {
+    "neraium-poly-experimental.service": {
+      "pid": "379539",
+      "pid_unchanged": true,
+      "automatic_restarts_delta": 0,
+      "oom_kills_delta": 0,
+      "cgroup_memory_bytes": {
+        "min": 1760182272,
+        "max": 2118000640
+      },
+      "rss_bytes": {
+        "min": 669908992,
+        "max": 1176977408
+      },
+      "health_roundtrip_seconds": {
+        "median": 0.037239213939756155,
+        "p95": 0.28117302991449833,
+        "p99": 0.30747745698317885,
+        "maximum": 0.30747745698317885
+      },
+      "operations_roundtrip_seconds": {
+        "median": 0.29577622888609767,
+        "p95": 1.0463509177789092,
+        "p99": 1.3391925892792642,
+        "maximum": 1.3391925892792642
+      },
+      "ingestion_age_seconds": {
+        "median": 10.364568,
+        "p95": 30.385887,
+        "p99": 33.322209,
+        "maximum": 33.322209
+      },
+      "cpu_core_equivalents": 0.9846325918928249,
+      "health_status_counts": {
+        "ok": 28,
+        "degraded": 2
+      },
+      "archive_end": {
+        "budget_bytes": 161061273600,
+        "cold_verification": {
+          "enabled": true,
+          "last_error": null,
+          "last_scan_at": "2026-11-16T09:59:02.755216+00:00",
+          "last_segment": "segment-00008640.sqlite",
+          "last_success_at": "2026-11-16T09:59:02.755216+00:00",
+          "minimum_scan_interval_seconds": 60,
+          "scope": "process-local progress; immutable proof presence is reported separately"
+        },
+        "compressed_segments": 8640,
+        "free_bytes": 222563799040,
+        "global_floor_bytes": 107374182400,
+        "growth_bytes_per_second": 59859.87525637415,
+        "health": "ok",
+        "last_error": null,
+        "measurement_at": "2026-11-16T09:59:08.090310+00:00",
+        "records": 3538976,
+        "sealed_segments": 8640,
+        "seconds_to_exhaustion": null,
+        "segments": 8641,
+        "usage_bytes": 54922830112
+      },
+      "archive_growth_bytes_per_second": 62990.901091452215,
+      "new_sealed_segments": 9,
+      "new_compressed_segments": 9,
+      "supplemental_counter_deltas": {
+        "reconnects": 0,
+        "queue_overflows": 0,
+        "queue_backpressure_waits": 0,
+        "queue_backpressure_seconds": 0,
+        "queue_backpressure_timeouts": 0,
+        "consumer_events": 4617,
+        "messages": 4648,
+        "native_books_delivered": 7286,
+        "invalidations": 506,
+        "gaps": 504
+      },
+      "supplemental_active_window_seconds": 630.002652418334,
+      "supplemental_activation_sample_at": "2026-11-16T09:48:39.429226+00:00",
+      "supplemental_reconnects_per_hour": 0.0,
+      "supplemental_queue_peak_depth": 16,
+      "supplemental_consumer_max_seconds": 0.0453194878064096,
+      "final_supplemental": {
+        "counts": {
+          "callback_missing_liquidity": 1722,
+          "callback_stale_book": 24,
+          "callbacks_observed": 7413,
+          "callbacks_qualified": 5688,
+          "stream_starts": 1
+        },
+        "identity_quarantine_saturated": false,
+        "last_error": null,
+        "last_qualified_at": "2026-11-16T09:59:09.713248+00:00",
+        "qualified_books": 9,
+        "quarantined_tokens": 0,
+        "status": "public_research_only",
+        "subscribed_tokens": 32,
+        "transport": {
+          "book_level_budget_rejections": 0,
+          "cached_book_levels": 1486,
+          "cached_books": 32,
+          "callbacks_failed": 0,
+          "connection_generation": 1,
+          "consumer_events": 4617,
+          "consumer_max_seconds": 0.0453194878064096,
+          "consumer_total_seconds": 2.2064717053435743,
+          "fresh_books": 9,
+          "gap_invalid_delta": 0,
+          "gap_missing_baseline": 377,
+          "gap_source_time": 109,
+          "gap_tokens_withheld": 0,
+          "gap_top_integrity": 18,
+          "gaps": 504,
+          "http_peak_inflight": 1,
+          "http_rate_limits": 0,
+          "http_requests": 127,
+          "invalid_frames": 0,
+          "invalidations": 506,
+          "largest_frame_bytes": 60484,
+          "last_gap_at": "2026-11-16T09:59:07.418861+00:00",
+          "last_message_at": "2026-11-16T09:59:09.721280+00:00",
+          "last_reconnect_reason": null,
+          "max_cached_book_levels": 100000,
+          "max_levels_per_book": 4096,
+          "messages": 4648,
+          "native_book_frames": 40,
+          "native_books_delivered": 7286,
+          "native_delta_frames": 4576,
+          "out_of_order": 3,
+          "oversized_frames": 0,
+          "queue_backpressure_seconds": 0,
+          "queue_backpressure_timeouts": 0,
+          "queue_backpressure_waits": 0,
+          "queue_budget_bytes": 8388608,
+          "queue_byte_overflows": 0,
+          "queue_byte_scope": "conservative Python payload charge including in-flight consumer; decoder/socket buffers separate",
+          "queue_depth": 0,
+          "queue_overflows": 0,
+          "queue_peak_bytes": 338829,
+          "queue_peak_depth": 16,
+          "queue_retained_bytes": 0,
+          "rate_requests_per_second": 2,
+          "reconnects": 0,
+          "resnapshot_failures": 0,
+          "resnapshot_pending": 0,
+          "resolved_tokens_withheld": 0,
+          "rest_books": 127,
+          "stale_recovery_baselines": 0,
+          "subscribed_tokens": 32,
+          "websocket_max_frame_bytes": 16777216,
+          "websocket_max_queue": 1,
+          "ws_connected": true
+        }
+      },
+      "fresh_supplemental_samples": 21,
+      "supplemental_active_samples": 22
+    },
+    "neraium-poly-paper.service": {
+      "pid": "355170",
+      "pid_unchanged": true,
+      "automatic_restarts_delta": 0,
+      "oom_kills_delta": 0,
+      "cgroup_memory_bytes": {
+        "min": 1021693952,
+        "max": 1073721344
+      },
+      "rss_bytes": {
+        "min": 445476864,
+        "max": 513945600
+      },
+      "health_roundtrip_seconds": {
+        "median": 0.024623848032206297,
+        "p95": 0.12872514501214027,
+        "p99": 0.16752104321494699,
+        "maximum": 0.16752104321494699
+      },
+      "operations_roundtrip_seconds": {
+        "median": 0.03821349609643221,
+        "p95": 0.17443168628960848,
+        "p99": 0.21775530511513352,
+        "maximum": 0.21775530511513352
+      },
+      "ingestion_age_seconds": {
+        "median": 0.000445,
+        "p95": 0.033733,
+        "p99": 0.047708,
+        "maximum": 0.047708
+      },
+      "cpu_core_equivalents": 0.532767535982141,
+      "health_status_counts": {
+        "ok": 29,
+        "degraded": 0
+      },
+      "archive_end": {
+        "budget_bytes": 161061273600,
+        "cold_verification": {
+          "enabled": true,
+          "last_error": null,
+          "last_scan_at": "2026-11-16T09:58:12.396842+00:00",
+          "last_segment": "segment-00003522.sqlite",
+          "last_success_at": "2026-11-16T09:55:27.369396+00:00",
+          "minimum_scan_interval_seconds": 60,
+          "scope": "process-local progress; immutable proof presence is reported separately"
+        },
+        "compressed_segments": 3522,
+        "free_bytes": 222563799040,
+        "global_floor_bytes": 107374182400,
+        "growth_bytes_per_second": 59207.876517131,
+        "health": "ok",
+        "last_error": null,
+        "measurement_at": "2026-11-16T09:58:45.559138+00:00",
+        "records": 10485684,
+        "sealed_segments": 3522,
+        "seconds_to_exhaustion": null,
+        "segments": 3523,
+        "usage_bytes": 50962417282
+      },
+      "archive_growth_bytes_per_second": 58115.582647644434,
+      "new_sealed_segments": 4,
+      "new_compressed_segments": 4
+    }
+  },
+  "accounts_start": {
+    "experimental-paper": {
+      "cash": 496.11522059829053,
+      "kill": 1,
+      "limits_sha256": "5d49295ce5df09ad48cda10e3f9fe2eadc5ce793ea741e0070a05f4eca00a6b0",
+      "orders": 13,
+      "positions": 0,
+      "realized": -3.8847794017094013,
+      "reservations": 0
+    },
+    "paper-live": {
+      "cash": 500.0,
+      "kill": 0,
+      "limits_sha256": "5d49295ce5df09ad48cda10e3f9fe2eadc5ce793ea741e0070a05f4eca00a6b0",
+      "orders": 0,
+      "positions": 0,
+      "realized": 0.0,
+      "reservations": 0
+    }
+  },
+  "accounts_end": {
+    "experimental-paper": {
+      "cash": 496.11522059829053,
+      "kill": 1,
+      "limits_sha256": "5d49295ce5df09ad48cda10e3f9fe2eadc5ce793ea741e0070a05f4eca00a6b0",
+      "orders": 13,
+      "positions": 0,
+      "realized": -3.8847794017094013,
+      "reservations": 0
+    },
+    "paper-live": {
+      "cash": 500.0,
+      "kill": 0,
+      "limits_sha256": "5d49295ce5df09ad48cda10e3f9fe2eadc5ce793ea741e0070a05f4eca00a6b0",
+      "orders": 0,
+      "positions": 0,
+      "realized": 0.0,
+      "reservations": 0
+    }
+  },
+  "disk_free_bytes": 222563803136,
+  "no_safety_incident": true,
+  "phase38_comparison": {
+    "counter_window_seconds": 870.9977614521049,
+    "experimental": {
+      "archive": {
+        "budget_bytes": 161061273600,
+        "cold_verification": {
+          "enabled": true,
+          "last_error": null,
+          "last_scan_at": "2026-11-16T08:16:12.936548+00:00",
+          "last_segment": "segment-00008603.sqlite",
+          "last_success_at": "2026-11-16T08:14:49.155493+00:00",
+          "minimum_scan_interval_seconds": 60,
+          "scope": "process-local progress; immutable proof presence is reported separately"
+        },
+        "final_usage_bytes": 54681534128,
+        "growth_bytes": 31368446,
+        "growth_bytes_per_second_observed": 36014.38188279995,
+        "health": "ok",
+        "new_compressed_segments": 5,
+        "new_sealed_segments": 5
+      },
+      "automatic_restarts": 0,
+      "consumer_max_seconds": 3.312731677200645,
+      "counter_deltas": {
+        "invalidations": 926,
+        "messages": 11479,
+        "native_books_delivered": 15415,
+        "out_of_order": 49,
+        "queue_backpressure_seconds": 10.446948972530663,
+        "queue_backpressure_timeouts": 4,
+        "queue_backpressure_waits": 302,
+        "queue_overflows": 4,
+        "reconnects": 4
+      },
+      "cpu_core_equivalents": 0.9866388147396578,
+      "final_fresh_books": 11,
+      "final_ws_connected": true,
+      "health_degraded_samples": 3,
+      "health_errors": [],
+      "health_ok_samples": 27,
+      "health_rtt_seconds": {
+        "max": 0.24594001984223723,
+        "median": 0.026618091855198145,
+        "p95": 0.20772297587245703,
+        "p99": 0.24594001984223723,
+        "scope": "loopback HTTP round-trip including client/dispatch overhead, not direct event-loop lag"
+      },
+      "ingestion_age_seconds": {
+        "last": 11.373516,
+        "max": 37.516527
+      },
+      "journal_checks": {
+        "generic_error_records": 28,
+        "native_publisher_errors": 0,
+        "sqlite_errors": 0
+      },
+      "last_reconnect_reason": "market queue backpressure timeout",
+      "loaded_source": "1342482fd9431f4e2e69d8788d864cb32fd1d4e9",
+      "max_cgroup_bytes": 2077413376,
+      "memory_limit_bytes": 2147483648,
+      "messages_per_second": 13.179138349176132,
+      "new_oom_kills": 0,
+      "peak_queue_depth": 64,
+      "pid": "358172",
+      "reconnects_per_hour": 16.532763501013704,
+      "rss_bytes": {
+        "first": 814870528,
+        "last": 989253632,
+        "max": 1181753344,
+        "min": 720457728
+      }
+    }
+  },
+  "limitations": [
+    "Different genuine market traffic/cohorts; normalized rates are descriptive, not a matched causal experiment.",
+    "Supplemental discovery startup is excluded from active-stream rate denominator, with 30-second sampling uncertainty.",
+    "HTTP roundtrip includes client/dispatch overhead, not an internal event-loop lag measurement.",
+    "Cold verification reports are reused; no repeated complete historical archive audit.",
+    "This bounded observation does not establish indefinite reliability or profitability."
+  ]
+}

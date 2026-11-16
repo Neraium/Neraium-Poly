@@ -1,0 +1,19 @@
+{
+  "source": "c7e29fcb248dde04ac02c61165aa1252dea67b1a",
+  "reviewer": "integration coordinator; source review, not independent scientific validation",
+  "ci": 43843171050,
+  "status": "passed",
+  "scope": "experimental-only source-recovery I/O adapter",
+  "checked": [
+    "128-row metadata pages, one authenticated raw source at a time",
+    "16MiB per-source bound and unchanged64MiB retained snapshot guard",
+    "complete snapshot scan required before enrollment;100000-row/60-second scan cap",
+    "original forecast objects unmodified; exact hash, identity and time verification",
+    "frozen experiment code/model/checkpoints unchanged; late enrollment remains withheld",
+    "audit write mandatory before returning sources; storage/error failures remain closed",
+    "no risk, stop, sizing, resource, archive or execution-authority change"
+  ],
+  "tests": "12 recovery/frozen-experiment checks,44 runtime/account/feed checks; passing Ruff and CI",
+  "live_readonly_scan": "1846 rows/412441663 bytes; zero eligible originals; no enrollment or audit appended",
+  "rollback_source": "57b75a50f78d8df93ac15c06deaf626c255deb6b"
+}

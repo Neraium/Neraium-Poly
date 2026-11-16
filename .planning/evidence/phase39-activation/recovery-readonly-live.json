@@ -1,0 +1,25 @@
+{
+  "read_only": true,
+  "enrollment_performed": false,
+  "audit_appended": false,
+  "source_path": "/home/ubuntu/Neraium-Poly/data/experimental-paper",
+  "checkpoint_id": "89d42644b25456d19f2dbfc8fe3a0c30db313a48feee67522cd7bc48ff7f7b21",
+  "status": "complete",
+  "coverage": {
+    "frontier": "2026-11-11T06:59:12.121950+00:00",
+    "cutoff": "2026-11-16T09:52:07.579179+00:00",
+    "verified_rows": 1846,
+    "ignored_non_forecasts": 1846,
+    "retained_originals": 0,
+    "source_bytes_verified": 412441663,
+    "retained_serialized_bytes": 2,
+    "source_chain_sha256": "265c90a4da111f405b1c73fb361198cc30d76fd082974c1bee08b0a9e2578d7c",
+    "scan_complete": true,
+    "snapshot_guard_bytes": 67108864,
+    "page_rows": 128,
+    "max_source_payload_bytes": 16777216
+  },
+  "source_candidates": 0,
+  "elapsed_seconds": 2.6258340976201,
+  "peak_rss_kib": 50912
+}

@@ -1,0 +1,13 @@
+{
+  "pid": "379539",
+  "environment": {
+    "PAPER_TRADING": "true",
+    "LIVE_TRADING_ENABLED": "false",
+    "PYTHONPATH": "/home/ubuntu/Neraium-Poly/.deploy/releases/57b75a50f78d8df93ac15c06deaf626c255deb6b/backend",
+    "NERAIUM_DEPLOYED_SOURCE": "57b75a50f78d8df93ac15c06deaf626c255deb6b"
+  },
+  "cwd": "/home/ubuntu/Neraium-Poly",
+  "cmdline": "/home/ubuntu/Neraium-Poly/.venv/bin/python /home/ubuntu/Neraium-Poly/.venv/bin/neraium-poly experimental-paper --config /home/ubuntu/Neraium-Poly/config/experimental-paper.example.json ",
+  "reference_pid": "355170",
+  "basis": "immutable source manifest, process-specific import path and deployment marker; runtime sampler schema must additionally confirm loaded repair after recovery"
+}

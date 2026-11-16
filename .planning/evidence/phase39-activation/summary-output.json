@@ -1,0 +1,54 @@
+{
+  "duration": {
+    "status": "completed",
+    "startup_seconds": 510.3768580169417,
+    "observation_seconds": 900.5296102333814,
+    "samples": 48,
+    "experimental_pid": "379539",
+    "reference_pid": "355170",
+    "source": "57b75a50f78d8df93ac15c06deaf626c255deb6b",
+    "stop_reset": false,
+    "order_admission_resumed": false
+  },
+  "services": {
+    "neraium-poly-experimental.service": {
+      "pid": "379539",
+      "automatic_restarts_delta": 0,
+      "oom_kills_delta": 0,
+      "health_roundtrip_seconds": {
+        "median": 0.037239213939756155,
+        "p95": 0.28117302991449833,
+        "p99": 0.30747745698317885,
+        "maximum": 0.30747745698317885
+      },
+      "supplemental_counter_deltas": {
+        "reconnects": 0,
+        "queue_overflows": 0,
+        "queue_backpressure_waits": 0,
+        "queue_backpressure_seconds": 0,
+        "queue_backpressure_timeouts": 0,
+        "consumer_events": 4617,
+        "messages": 4648,
+        "native_books_delivered": 7286,
+        "invalidations": 506,
+        "gaps": 504
+      },
+      "supplemental_active_window_seconds": 630.002652418334,
+      "supplemental_queue_peak_depth": 16,
+      "supplemental_consumer_max_seconds": 0.0453194878064096,
+      "fresh_supplemental_samples": 21,
+      "supplemental_active_samples": 22
+    },
+    "neraium-poly-paper.service": {
+      "pid": "355170",
+      "automatic_restarts_delta": 0,
+      "oom_kills_delta": 0,
+      "health_roundtrip_seconds": {
+        "median": 0.024623848032206297,
+        "p95": 0.12872514501214027,
+        "p99": 0.16752104321494699,
+        "maximum": 0.16752104321494699
+      }
+    }
+  }
+}
