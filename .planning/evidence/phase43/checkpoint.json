@@ -1,0 +1,20 @@
+{
+  "at": "2026-11-16T20:13:30.310374+00:00",
+  "branch": "citadel/phase43-economics",
+  "worktree": "/home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/phase43-economics",
+  "source": "6f0032a71e64fd91d9cc51d9f8910d579c40c58f",
+  "CI": {
+    "run": 43943417610,
+    "conclusion": "success",
+    "backend_tests": 2384,
+    "browser_tests": 5
+  },
+  "experimental_pid": 460056,
+  "reference_pid": 355170,
+  "phase": "complete: deployed, attested, bounded observation completed, final safety gates passed",
+  "observer_session": 65283,
+  "next": "leave running; collect independent native outcomes and matched exit results; intermittent read timeouts remain",
+  "completed": "525-cycle loss audit;95 focused+29 post-veto tests;Ruff;CI; source-only rollback verification; source switch experimental only",
+  "safety": "no reference restart; stop latched; no actual orders; rollback source156b970 with shadow disabled, never financial DB restoration",
+  "remaining": "intermittent freshness/read timeouts;0native settlements; no calibrated/model-relative superiority or verified profitable strategy"
+}

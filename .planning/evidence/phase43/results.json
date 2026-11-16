@@ -1,0 +1,407 @@
+{
+  "source": "6f0032a71e64fd91d9cc51d9f8910d579c40c58f",
+  "pid": "460056",
+  "release_files_verified": 269,
+  "policy_matches_running_code": true,
+  "observation_seconds": 863.8863136768341,
+  "post_ready_seconds": 362.176435535308,
+  "active_samples": 75,
+  "fresh_samples": 42,
+  "healthy_ingestion_samples": 56,
+  "runtime_errors": [
+    "ReadTimeout:timed out",
+    "ValueError:fresh genuine frame required",
+    "ValueError:fresh real frame required"
+  ],
+  "final_research_status": "fresh",
+  "cycles": 551,
+  "markets": 420,
+  "forecasts": 34,
+  "parent_events": 7,
+  "verified_native_outcomes": 0,
+  "scores": null,
+  "profiles": {
+    "aggressive": {
+      "cash": 473.39732908627684,
+      "open": 0,
+      "orders": 0,
+      "drawdown": 26.60267091372316,
+      "suspended": true,
+      "strategies": {
+        "independent": {
+          "orders": 30,
+          "fill_events": 27,
+          "modeled_exit_net_pnl": -14.113658859189254,
+          "verified_settlement_net_pnl": 0,
+          "unrealized_net_pnl": 0
+        },
+        "consistency": {
+          "orders": 0,
+          "fill_events": 0,
+          "modeled_exit_net_pnl": 0,
+          "verified_settlement_net_pnl": 0,
+          "unrealized_net_pnl": 0
+        },
+        "momentum": {
+          "orders": 9,
+          "fill_events": 6,
+          "modeled_exit_net_pnl": -4.077010127023749,
+          "verified_settlement_net_pnl": 0,
+          "unrealized_net_pnl": 0
+        },
+        "spread_capture": {
+          "orders": 654,
+          "fill_events": 9,
+          "modeled_exit_net_pnl": -6.088203301243593,
+          "verified_settlement_net_pnl": 0,
+          "unrealized_net_pnl": 0
+        },
+        "event_repricing": {
+          "orders": 4,
+          "fill_events": 4,
+          "modeled_exit_net_pnl": -2.323798626266595,
+          "verified_settlement_net_pnl": 0,
+          "unrealized_net_pnl": 0
+        }
+      },
+      "new_stop_veto": 0
+    },
+    "balanced": {
+      "cash": 492.9008460591684,
+      "open": 0,
+      "orders": 0,
+      "drawdown": 7.099153940831627,
+      "suspended": false,
+      "strategies": {
+        "independent": {
+          "orders": 4,
+          "fill_events": 4,
+          "modeled_exit_net_pnl": -3.7078351455557446,
+          "verified_settlement_net_pnl": 0,
+          "unrealized_net_pnl": 0
+        },
+        "consistency": {
+          "orders": 0,
+          "fill_events": 0,
+          "modeled_exit_net_pnl": 0,
+          "verified_settlement_net_pnl": 0,
+          "unrealized_net_pnl": 0
+        },
+        "momentum": {
+          "orders": 4,
+          "fill_events": 4,
+          "modeled_exit_net_pnl": -1.3240417682505878,
+          "verified_settlement_net_pnl": 0,
+          "unrealized_net_pnl": 0
+        },
+        "spread_capture": {
+          "orders": 67,
+          "fill_events": 1,
+          "modeled_exit_net_pnl": -2.067277027025252,
+          "verified_settlement_net_pnl": 0,
+          "unrealized_net_pnl": 0
+        },
+        "event_repricing": {
+          "orders": 0,
+          "fill_events": 0,
+          "modeled_exit_net_pnl": 0,
+          "verified_settlement_net_pnl": 0,
+          "unrealized_net_pnl": 0
+        }
+      },
+      "new_stop_veto": 0
+    },
+    "conservative": {
+      "cash": 500.0,
+      "open": 0,
+      "orders": 0,
+      "drawdown": 0.0,
+      "suspended": false,
+      "strategies": {
+        "independent": {
+          "orders": 0,
+          "fill_events": 0,
+          "modeled_exit_net_pnl": 0,
+          "verified_settlement_net_pnl": 0,
+          "unrealized_net_pnl": 0
+        },
+        "consistency": {
+          "orders": 0,
+          "fill_events": 0,
+          "modeled_exit_net_pnl": 0,
+          "verified_settlement_net_pnl": 0,
+          "unrealized_net_pnl": 0
+        },
+        "momentum": {
+          "orders": 0,
+          "fill_events": 0,
+          "modeled_exit_net_pnl": 0,
+          "verified_settlement_net_pnl": 0,
+          "unrealized_net_pnl": 0
+        },
+        "spread_capture": {
+          "orders": 0,
+          "fill_events": 0,
+          "modeled_exit_net_pnl": 0,
+          "verified_settlement_net_pnl": 0,
+          "unrealized_net_pnl": 0
+        },
+        "event_repricing": {
+          "orders": 0,
+          "fill_events": 0,
+          "modeled_exit_net_pnl": 0,
+          "verified_settlement_net_pnl": 0,
+          "unrealized_net_pnl": 0
+        }
+      },
+      "new_stop_veto": 0
+    }
+  },
+  "tournament": {
+    "policy": {
+      "version": "phase43-matched-exits-v1",
+      "arms": [
+        "hold_native",
+        "first_executable_bid",
+        "evidence_repricing",
+        "time_300s",
+        "risk_20pct"
+      ],
+      "participation": 0.1,
+      "slippage_per_share": 0.0015,
+      "latency_seconds": 0.5,
+      "max_entries": 256,
+      "selection": "first256 actual new modeled filled orders per profile; no winner selection or automatic promotion",
+      "comparison": "alternative exit paths on identical entries, not five funded accounts; model fees retained; no queue or exchange-fill claim",
+      "evidence_repricing": "fresh same-model external probability revision below net bid, or net bid reaches frozen entry probability target",
+      "risk_budgets_usd": {
+        "aggregate": 100.0,
+        "market": 25.0,
+        "event": 50.0,
+        "correlation": 50.0
+      },
+      "checkpoint": "256 entries per profile is a fixed review checkpoint; no automatic clearing"
+    },
+    "entries": 0,
+    "matched_fill_counts": {},
+    "withheld_fills": 0,
+    "withholding_reasons": {},
+    "arms": {
+      "hold_native": {
+        "cash_hypothetical_by_profile": {},
+        "maximum_drawdown_by_profile": {},
+        "suspended_profiles": {},
+        "closed_lots": 0,
+        "open_lots": 0,
+        "modeled_exit_pnl": 0,
+        "verified_settlement_pnl": 0,
+        "unrealized_net_pnl": 0,
+        "unresolved_capital": 0,
+        "parent_events": 0,
+        "limitation": "alternative exit experiment; unresolved holds have no settled result; no winner selection"
+      },
+      "first_executable_bid": {
+        "cash_hypothetical_by_profile": {},
+        "maximum_drawdown_by_profile": {},
+        "suspended_profiles": {},
+        "closed_lots": 0,
+        "open_lots": 0,
+        "modeled_exit_pnl": 0,
+        "verified_settlement_pnl": 0,
+        "unrealized_net_pnl": 0,
+        "unresolved_capital": 0,
+        "parent_events": 0,
+        "limitation": "alternative exit experiment; unresolved holds have no settled result; no winner selection"
+      },
+      "evidence_repricing": {
+        "cash_hypothetical_by_profile": {},
+        "maximum_drawdown_by_profile": {},
+        "suspended_profiles": {},
+        "closed_lots": 0,
+        "open_lots": 0,
+        "modeled_exit_pnl": 0,
+        "verified_settlement_pnl": 0,
+        "unrealized_net_pnl": 0,
+        "unresolved_capital": 0,
+        "parent_events": 0,
+        "limitation": "alternative exit experiment; unresolved holds have no settled result; no winner selection"
+      },
+      "time_300s": {
+        "cash_hypothetical_by_profile": {},
+        "maximum_drawdown_by_profile": {},
+        "suspended_profiles": {},
+        "closed_lots": 0,
+        "open_lots": 0,
+        "modeled_exit_pnl": 0,
+        "verified_settlement_pnl": 0,
+        "unrealized_net_pnl": 0,
+        "unresolved_capital": 0,
+        "parent_events": 0,
+        "limitation": "alternative exit experiment; unresolved holds have no settled result; no winner selection"
+      },
+      "risk_20pct": {
+        "cash_hypothetical_by_profile": {},
+        "maximum_drawdown_by_profile": {},
+        "suspended_profiles": {},
+        "closed_lots": 0,
+        "open_lots": 0,
+        "modeled_exit_pnl": 0,
+        "verified_settlement_pnl": 0,
+        "unrealized_net_pnl": 0,
+        "unresolved_capital": 0,
+        "parent_events": 0,
+        "limitation": "alternative exit experiment; unresolved holds have no settled result; no winner selection"
+      }
+    },
+    "checkpoint_reached": false
+  },
+  "disk_free_GiB": 197.16118240356445,
+  "archive": {
+    "open_positions": 0,
+    "fills": 10,
+    "orders_submitted": 13,
+    "capital_observation": {
+      "risk_read_started_at": "2026-11-16T20:10:14.347880+00:00",
+      "broker_read_started_at": "2026-11-16T20:10:14.357896+00:00",
+      "read_completed_at": "2026-11-16T20:10:14.358392+00:00",
+      "scope": "current committed read-only per-ledger transactions; no cross-ledger atomicity or implicit expiry",
+      "admission_authority": false,
+      "reconciliation_performed": false
+    },
+    "account_id": "experimental-paper",
+    "cash": 496.11522059829053,
+    "bankroll": 496.11522059829053,
+    "kill_switch": true,
+    "simulated_pnl": -3.8847794017094657,
+    "generated_at": "2026-11-16T20:10:14.358404+00:00",
+    "service": {
+      "status": "ok",
+      "account_id": "experimental-paper",
+      "validation_status": "unvalidated",
+      "paper_trading": true,
+      "live_trading_enabled": false,
+      "last_ingestion_at": "2026-11-16T20:09:56.255396+00:00",
+      "last_ingestion_age_seconds": 18.10301,
+      "last_error": null,
+      "fee_error": null,
+      "public_feed": {
+        "status": "ok",
+        "producer_url": "http://127.0.0.1:18742/api/market-frame",
+        "attempts": 19,
+        "failures": 3,
+        "trading_authority": false,
+        "attempted_at": "2026-11-16T20:10:07.452663+00:00",
+        "failure_boundary": null,
+        "error_type": null,
+        "elapsed_seconds": 0.42886674171313643,
+        "producer_available_at": "2026-11-16T20:10:07.456180+00:00"
+      },
+      "timestamp": "2026-11-16T20:10:14.358406+00:00"
+    },
+    "archive": {
+      "managed": true,
+      "usage_bytes": 58664626491,
+      "usage_is_conservative_estimate": false,
+      "budget_bytes": 161061273600,
+      "active_bytes": 1318216,
+      "segment_bytes": 8388608,
+      "future_compression_profile": "gzip-level6-streaming-verified-v34",
+      "segments": 9281,
+      "sealed_segments": 9280,
+      "compressed_segments": 9279,
+      "legacy_records": 164111,
+      "records": 3652375,
+      "free_bytes": 211700195328,
+      "growth_bytes_per_second": 219817.2827303662,
+      "remaining_bytes": 102396647109,
+      "seconds_to_exhaustion": null,
+      "global_floor_bytes": 107374182400,
+      "retention_policy": "retain_all_originals_and_verified_copies",
+      "archive_tiers": {
+        "active_segments": 1,
+        "sealed_originals_present": 9280,
+        "cold_only_segments": 0,
+        "cold_only_verified_this_process": 0,
+        "cold_proofs_present": 9063,
+        "derived_cache_bytes": 65988566,
+        "derived_cache_budget_bytes": 67108864,
+        "counts_scope": "current catalog and filesystem; proof presence is not integrity verification"
+      },
+      "tier_usage_bytes": {
+        "active": 1318216,
+        "warm": 36568526848,
+        "cold": 16374771675,
+        "protected": 517521408,
+        "derived_cache": 65988566,
+        "segment_metadata": 311990325,
+        "catalog_state": 4824509453
+      },
+      "cold_verification": {
+        "enabled": true,
+        "minimum_scan_interval_seconds": 60,
+        "last_scan_at": "2026-11-16T20:10:06.079226+00:00",
+        "last_success_at": "2026-11-16T20:10:06.079226+00:00",
+        "last_segment": "segment-00009063.sqlite",
+        "last_error": null,
+        "scope": "process-local progress; immutable proof presence is reported separately"
+      },
+      "warnings": [],
+      "cold_only_names_sample": [],
+      "health": "ok",
+      "last_error": null,
+      "measurement_at": "2026-11-16T20:10:06.645943+00:00",
+      "measurement_completed_at": "2026-11-16T20:10:07.450362+00:00",
+      "measurement_scope": "strict archive measurement window; admission uses strict checks",
+      "measurement_age_seconds": 7.712482,
+      "measurement_status": "cached",
+      "snapshot_only": true,
+      "admission_authority": false,
+      "usage_is_historical": true,
+      "measurement_max_age_seconds": 60,
+      "free_space_measured_at": "2026-11-16T20:10:14.358425+00:00"
+    },
+    "experimental_totals": {
+      "cycles": 59240,
+      "observations": 2044791,
+      "qualified_opportunities": 86,
+      "signals": 19247907
+    },
+    "scope": "archive health and current simulated capital; research histories remain in /api/state"
+  },
+  "actual_accounts": {
+    "paper-live": {
+      "cash": 500.0,
+      "realized": 0.0,
+      "stop": 0,
+      "positions": 0,
+      "orders": 0
+    },
+    "experimental-paper": {
+      "cash": 496.11522059829053,
+      "realized": -3.8847794017094013,
+      "stop": 1,
+      "positions": 0,
+      "orders": 13
+    }
+  },
+  "journals": {
+    "data/experimental-paper/event-intelligence/forecasts.sqlite": {
+      "records": 16443,
+      "head_sha256": "d9cfe67a0304e2c638818f2463e5b3a97c6ff7c72a57c8716c1bdd2b5ab95149",
+      "integrity": "verified"
+    },
+    "data/experimental-paper/event-intelligence/domains/forecasts.sqlite": {
+      "records": 357,
+      "head_sha256": "4c6d2e49f06a6165bd933ceef69aed4e04984701e1bf4dd35527d738337c050b",
+      "integrity": "verified"
+    },
+    "data/experimental-paper/event-intelligence/sports/prospective.sqlite": {
+      "records": 34,
+      "head_sha256": "814ecf6a8b2cb49775c961c68a8bab23db4b378ecfa241d79241ff6e03fa6868",
+      "integrity": "verified"
+    }
+  },
+  "rollback_executed": false,
+  "reference_restarted": false,
+  "CI": 43943417610
+}

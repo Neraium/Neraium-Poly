@@ -1,0 +1,6 @@
+dashboard	Run npm ci --no-fund	2026-11-16T19:50:06.0827780Z found 0 vulnerabilities
+dashboard	Run npm test	2026-11-16T19:50:29.8630458Z   5 passed (4.8s)
+dashboard	Run npm audit --audit-level=high	2026-11-16T19:50:30.3502736Z found 0 vulnerabilities
+backend	Run uv run --frozen ruff check backend tests	2026-11-16T19:50:03.0806205Z All checks passed!
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-16T19:51:32.6518213Z 2384 passed, 1 warning in 88.03s (0:01:28)
+backend	Run uv run --frozen pip-audit -r /tmp/audit-requirements.txt --disable-pip --no-deps	2026-11-16T19:51:34.0266365Z No known vulnerabilities found
