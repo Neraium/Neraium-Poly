@@ -1,0 +1,28 @@
+{
+  "at": "2026-11-16T11:42:26.409293+00:00",
+  "accounts": {
+    "paper-live": {
+      "cash": 500.0,
+      "realized": 0.0,
+      "kill": 0,
+      "limits_sha256": "5d49295ce5df09ad48cda10e3f9fe2eadc5ce793ea741e0070a05f4eca00a6b0",
+      "positions": 0,
+      "reservations": 0,
+      "orders": 0
+    },
+    "experimental-paper": {
+      "cash": 496.11522059829053,
+      "realized": -3.8847794017094013,
+      "kill": 1,
+      "limits_sha256": "5d49295ce5df09ad48cda10e3f9fe2eadc5ce793ea741e0070a05f4eca00a6b0",
+      "positions": 0,
+      "reservations": 0,
+      "orders": 13
+    }
+  },
+  "unsafe": [],
+  "service_pids": {
+    "neraium-poly-paper.service": "355170",
+    "neraium-poly-experimental.service": "384223"
+  }
+}

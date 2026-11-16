@@ -1,0 +1,152 @@
+{
+  "as_of": "2026-11-16T11:35:52.185814+00:00",
+  "elapsed_seconds": 182.0077640977688,
+  "cycles": 85,
+  "source_phase": {
+    "markets_evaluated": 404,
+    "supported_tokens": 56,
+    "prospective_forecasts": 20,
+    "forecast_parent_events": 5
+  },
+  "forecasts_by_domain": {
+    "economics": 2,
+    "crypto": 14,
+    "sports": 4
+  },
+  "cohort_forecasts": 20,
+  "parent_events": 5,
+  "profiles": {
+    "aggressive": {
+      "orders": 5,
+      "fill_events": 6,
+      "open_orders": 0,
+      "open_positions": 5,
+      "cash_hypothetical": 475.00000002124585,
+      "exposure": 24.999999978754122,
+      "fees_modeled": 0.84053,
+      "realized_simulated_pnl": null,
+      "unrealized_simulated_pnl": -3.626913059959242,
+      "maximum_drawdown": 3.7143232385306533,
+      "settled_positions": 0,
+      "suspended": false,
+      "rejections": {
+        "positive_modeled_net_value_at_native_minimum_not_established": 1026,
+        "already_enrolled_profile_forecast": 420,
+        "current_book_quality": 26,
+        "incomplete_executable_portfolio_mark": 105,
+        "current_book_missing": 118
+      },
+      "capital_utilization": 0.04999999995750824,
+      "marked_equity": 496.37308694004076
+    },
+    "balanced": {
+      "orders": 5,
+      "fill_events": 7,
+      "open_orders": 0,
+      "open_positions": 5,
+      "cash_hypothetical": 475.00000014386376,
+      "exposure": 24.999999856136245,
+      "fees_modeled": 0.84053,
+      "realized_simulated_pnl": null,
+      "unrealized_simulated_pnl": -3.626913035663385,
+      "maximum_drawdown": 3.7143232142348097,
+      "settled_positions": 0,
+      "suspended": false,
+      "rejections": {
+        "positive_modeled_net_value_at_native_minimum_not_established": 793,
+        "already_enrolled_profile_forecast": 420,
+        "current_book_quality": 26,
+        "incomplete_executable_portfolio_mark": 105,
+        "current_native_fee_unavailable": 233,
+        "current_book_missing": 118
+      },
+      "capital_utilization": 0.04999999971227249,
+      "marked_equity": 496.3730869643366
+    },
+    "conservative": {
+      "orders": 0,
+      "fill_events": 0,
+      "open_orders": 0,
+      "open_positions": 0,
+      "cash_hypothetical": 500.0,
+      "exposure": 0,
+      "fees_modeled": 0.0,
+      "realized_simulated_pnl": null,
+      "unrealized_simulated_pnl": null,
+      "maximum_drawdown": null,
+      "settled_positions": 0,
+      "suspended": false,
+      "rejections": {
+        "conservative_calibration_and_full_cost_proofs_required": 1190,
+        "current_book_quality": 64,
+        "current_native_fee_unavailable": 324,
+        "current_book_missing": 122
+      },
+      "capital_utilization": 0.0,
+      "marked_equity": 500.0
+    }
+  },
+  "native_books_used_for_fills": 6,
+  "distinct_primary_frames": 85,
+  "fee_bases": {
+    "verified_native_curve": 10
+  },
+  "profile_fill_details": {
+    "aggressive": {
+      "orders_with_fills": 5,
+      "fully_filled_orders": 5,
+      "sum_intent_modeled_net_ev": 3.9274016126904825,
+      "source_models": [
+        "empirical-ohlc-block-bootstrap-v23.1",
+        "empirical-ohlc-block-bootstrap-v23.1",
+        "nba-causal-elo-v24.1",
+        "nba-team-frequency-v24.1",
+        "empirical-ohlc-block-bootstrap-v23.1"
+      ]
+    },
+    "balanced": {
+      "orders_with_fills": 5,
+      "fully_filled_orders": 5,
+      "sum_intent_modeled_net_ev": 2.5437846459998514,
+      "source_models": [
+        "empirical-ohlc-block-bootstrap-v23.1",
+        "empirical-ohlc-block-bootstrap-v23.1",
+        "nba-causal-elo-v24.1",
+        "nba-team-frequency-v24.1",
+        "empirical-ohlc-block-bootstrap-v23.1"
+      ]
+    },
+    "conservative": {
+      "orders_with_fills": 0,
+      "fully_filled_orders": 0,
+      "sum_intent_modeled_net_ev": 0,
+      "source_models": []
+    }
+  },
+  "cohort_identical_across_profiles": true,
+  "verified_cohort_labels": 0,
+  "promotion": {
+    "heldout_start": "2026-11-17T11:31:57.799908+00:00",
+    "reviewed_oos_groups": 0,
+    "matured_missing_labels": 0,
+    "research_recommendation": null,
+    "oos_results": [],
+    "method": "common native-labeled cohort, reviewed dependence groups, zero returns for no-trade groups;1000group bootstrap draws;3-profile Bonferroni; min20heldout groups",
+    "scope": "research profile preference only; modeled fills/costs are not demonstrated real returns; no certification or trading authority"
+  },
+  "feed_errors": [
+    {
+      "at": "2026-11-16T11:33:43.251910+00:00",
+      "reason": "ReadTimeout:"
+    }
+  ],
+  "validation": {
+    "rows_hashed": 87,
+    "state_checksums_verified": 86,
+    "lineage_verified": true,
+    "latency_depth_and_risk_budgets_verified": true,
+    "sqlite_quick_check": "ok"
+  },
+  "realized_profitability_demonstrated": false,
+  "raw_data_scope": "SQLite and full source/report artifacts retained locally, not committed; three alternative shadow scenarios not additive capital"
+}
