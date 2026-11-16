@@ -315,3 +315,22 @@ async def test_source_job_is_drained_on_service_shutdown(setup,monkeypatch,tmp_p
     monkeypatch.setattr(controller,'Controller',Controlled)
     await controller.service_loop(runtime,lambda:False)
     assert runtime.shadow_source_status['status']=='cancelled_and_drained'
+
+
+async def test_shadow_capacity_admission_does_not_queue_on_financial_io(monkeypatch,tmp_path):
+    import threading
+
+    from neraium_poly.research.phase42 import controller
+    from neraium_poly.risk import RiskLimits
+    monkeypatch.setenv('NERAIUM_SHADOW_RESEARCH','true');monkeypatch.setenv('NERAIUM_SHADOW_SOURCE_REFRESH','false')
+    runtime=SimpleNamespace(stopping=False,last_frame=SimpleNamespace(available_at=NOW),events=None,config=SimpleNamespace(risk_limits=RiskLimits(),data_dir=tmp_path),clock=lambda:NOW)
+    owner=threading.get_ident();admissions=[]
+    async def forbidden():runtime.stopping=True;raise AssertionError('financial IO queue touched')
+    def budget():admissions.append(threading.get_ident());return True
+    runtime._async_budget_ok=forbidden;runtime._budget_ok=budget
+    class Controlled:
+        def __init__(self,*args,**kwargs):pass
+        def tick(self,*args):runtime.stopping=True;return {'as_of':NOW.isoformat()}
+    monkeypatch.setattr(controller,'Controller',Controlled)
+    await controller.service_loop(runtime,lambda:False)
+    assert runtime.shadow_research_error is None and admissions and all(n!=owner for n in admissions)

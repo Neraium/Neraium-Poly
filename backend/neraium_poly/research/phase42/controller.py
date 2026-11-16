@@ -117,13 +117,13 @@ async def service_loop(runtime,should_exit):
                 except Exception as error:runtime.shadow_source_status={'status':'withheld','error':str(error)[:180]}  # noqa: BLE001
                 source_future=None;source_due=time.monotonic()+300
             try:
-                if not await runtime._async_budget_ok():raise ValueError('archive budget admission withheld')
                 frame=runtime.last_frame
                 if frame is not None:
                     def work(frame=frame):
                         nonlocal controller
                         import time
                         began=time.monotonic();origin='combined_experimental_frame'
+                        if not runtime._budget_ok():raise ValueError('archive budget admission withheld')
                         if (runtime.clock()-frame.available_at).total_seconds()>10:
                             # Same authorized loopback feed; no cached/stale book substitution.
                             with httpx.Client(timeout=3,trust_env=False) as client, client.stream('GET',runtime.config.source_url) as response:
