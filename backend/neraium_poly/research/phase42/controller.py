@@ -87,26 +87,50 @@ async def service_loop(runtime,should_exit):
     """Opt-in, serial bounded scheduling inside the existing experimental cgroup."""
     import os
     if os.environ.get('NERAIUM_SHADOW_RESEARCH')!='true':return
+    from concurrent.futures import ThreadPoolExecutor
+
+    import httpx
+
+    from neraium_poly.experimental.contracts import SharedMarketFrame
+    from neraium_poly.experimental.research_worker import _drain
+    # Long external-model jobs already occupy the shared research worker. One
+    # independent shadow-only lane prevents starvation; store append locks still
+    # serialize immutable writes. Existing cgroup/thread/CPU/memory caps remain.
+    executor=ThreadPoolExecutor(max_workers=1,thread_name_prefix='shadow-only')
     controller=None
-    while not runtime.stopping and not should_exit():
-        try:
-            if not await runtime._async_budget_ok():raise ValueError('archive budget admission withheld')
-            frame=runtime.last_frame
-            if frame is not None:
-                def work(frame=frame):
-                    nonlocal controller
-                    if controller is None:controller=Controller(runtime.events,risk_limits=runtime.config.risk_limits.model_dump(),clock=runtime.clock,can_write=runtime._budget_ok,directory=runtime.config.data_dir/'phase42-native')
-                    cache=getattr(runtime,'research_fees',None)
-                    fees=cache.proofs(as_of=runtime.clock()) if cache else {}
-                    return controller.tick(frame,fees)
-                async def isolated_work():
-                    from neraium_poly.experimental.research_worker import _drain
-                    return await _drain(asyncio.create_task(asyncio.to_thread(work)))
-                report=await runtime._research_io(isolated_work)
-                runtime.shadow_research_snapshot=report
-                runtime.shadow_research_error=None
-        except Exception as error:  # noqa: BLE001 - research failure withholds only shadow work; never authorizes accounts
-            runtime.shadow_research_error=f'{type(error).__name__}:{str(error)[:180]}'
-        for _ in range(5):
-            if runtime.stopping or should_exit():return
-            await asyncio.sleep(1)
+    try:
+        while not runtime.stopping and not should_exit():
+            try:
+                if not await runtime._async_budget_ok():raise ValueError('archive budget admission withheld')
+                frame=runtime.last_frame
+                if frame is not None:
+                    def work(frame=frame):
+                        nonlocal controller
+                        import time
+                        began=time.monotonic();origin='combined_experimental_frame'
+                        if (runtime.clock()-frame.available_at).total_seconds()>10:
+                            # Same authorized loopback feed; no cached/stale book substitution.
+                            with httpx.Client(timeout=3,trust_env=False) as client:
+                                with client.stream('GET',runtime.config.source_url) as response:
+                                    response.raise_for_status();raw=bytearray()
+                                    for chunk in response.iter_bytes():
+                                        if len(raw)+len(chunk)>8*1024**2:raise ValueError('bounded reference frame exceeded')
+                                        raw.extend(chunk)
+                            frame=SharedMarketFrame.model_validate_json(raw);origin='fresh_reference_read'
+                        if controller is None:controller=Controller(runtime.events,risk_limits=runtime.config.risk_limits.model_dump(),clock=runtime.clock,can_write=runtime._budget_ok,directory=runtime.config.data_dir/'phase42-native')
+                        cache=getattr(runtime,'research_fees',None)
+                        fees=cache.proofs(as_of=runtime.clock()) if cache else {}
+                        report=controller.tick(frame,fees)
+                        return {**report,'shadow_worker':{'maximum_workers':1,'queued_jobs':0,'cycle_seconds':time.monotonic()-began,'frame_origin':origin}}
+                    worker=asyncio.get_running_loop().run_in_executor(executor,work)
+                    report=await _drain(worker)
+                    runtime.shadow_research_snapshot=report
+                    runtime.shadow_research_error=None
+            except Exception as error:  # noqa: BLE001 - withhold shadow only; never financial authority
+                runtime.shadow_research_error=f'{type(error).__name__}:{str(error)[:180]}'
+            for _ in range(5):
+                if runtime.stopping or should_exit():return
+                await asyncio.sleep(1)
+    finally:
+        # _drain above ensures an active SQLite write finishes before shutdown.
+        executor.shutdown(wait=True,cancel_futures=True)

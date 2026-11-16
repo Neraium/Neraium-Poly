@@ -134,7 +134,7 @@ async def test_opt_in_service_loop_uses_async_worker_and_never_account_access(mo
     from neraium_poly.risk import RiskLimits
     monkeypatch.setenv('NERAIUM_SHADOW_RESEARCH','true')
     def forbidden(*args):raise AssertionError('actual account access')
-    runtime=SimpleNamespace(stopping=False,last_frame='CONTROLLED-frame',events=None,config=SimpleNamespace(risk_limits=RiskLimits(),data_dir=tmp_path),
+    runtime=SimpleNamespace(stopping=False,last_frame=SimpleNamespace(available_at=NOW),events=None,config=SimpleNamespace(risk_limits=RiskLimits(),data_dir=tmp_path),
         clock=lambda:NOW,account=SimpleNamespace(place_order=forbidden))
     async def budget():return True
     async def io(factory):return await factory()
@@ -143,7 +143,7 @@ async def test_opt_in_service_loop_uses_async_worker_and_never_account_access(mo
         def __init__(self,*args,**kwargs):pass
         def tick(self,frame,fees):
             with pytest.raises(RuntimeError):asyncio.get_running_loop()  # Synchronous IO is off the event loop.
-            assert frame=='CONTROLLED-frame';runtime.stopping=True;return {'as_of':NOW.isoformat(),'trading_authority':False}
+            assert frame.available_at==NOW;runtime.stopping=True;return {'as_of':NOW.isoformat(),'trading_authority':False}
     monkeypatch.setattr(controller,'Controller',Controlled)
     await controller.service_loop(runtime,lambda:False)
     assert runtime.shadow_research_error is None and not runtime.shadow_research_snapshot['trading_authority']
