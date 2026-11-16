@@ -1184,6 +1184,7 @@ class ExperimentalRuntime:
                 await asyncio.sleep(1)
 
     async def run(self, should_exit=lambda: False):
+        from neraium_poly.research.phase42.controller import service_loop as shadow_research_loop
         async def independent_events():
             while not self.stopping and not should_exit():
                 async with self._research_source_lock:
@@ -1230,7 +1231,7 @@ class ExperimentalRuntime:
                     await self._sync_io(self._cancel_and_checkpoint, self.clock())
                 await asyncio.sleep(self.config.poll_seconds)
 
-        await asyncio.gather(cycles(), self._fees_loop(should_exit), self._event_resolution_loop(should_exit), independent_events(), self._domain_research_loop(should_exit), self._domain_research_loop(should_exit, "phase25"), self._phase35_research_loop(should_exit), self._volume_research_loop(should_exit), self._research_fee_loop(should_exit), self._official_event_score_loop(should_exit), self._event_summary_sampler(should_exit), self._cpi_input_probe_loop(should_exit))
+        await asyncio.gather(shadow_research_loop(self, should_exit), cycles(), self._fees_loop(should_exit), self._event_resolution_loop(should_exit), independent_events(), self._domain_research_loop(should_exit), self._domain_research_loop(should_exit, "phase25"), self._phase35_research_loop(should_exit), self._volume_research_loop(should_exit), self._research_fee_loop(should_exit), self._official_event_score_loop(should_exit), self._event_summary_sampler(should_exit), self._cpi_input_probe_loop(should_exit))
 
     def health(self):
         last_success = self.last_success

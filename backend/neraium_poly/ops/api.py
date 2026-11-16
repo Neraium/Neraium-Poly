@@ -79,6 +79,18 @@ def create_app(runtime=None, frontend_path: Path | None = None, local_port: int 
             raise HTTPException(404, "Actual operations state unavailable in this mode")
         return runtime.operations_state()
 
+    @app.get("/api/shadow-research")
+    def shadow_research():
+        from neraium_poly.research.phase42.dashboard import snapshot
+        return snapshot(runtime, datetime.now(UTC))
+
+    @app.get("/research")
+    def research_dashboard():
+        from fastapi.responses import HTMLResponse
+
+        from neraium_poly.research.phase42.dashboard import HTML
+        return HTMLResponse(HTML, headers={"Content-Security-Policy": "default-src 'self'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src 'self'; frame-ancestors 'none'"})
+
     @app.post("/api/scenario")
     def scenario():
         with lock:
