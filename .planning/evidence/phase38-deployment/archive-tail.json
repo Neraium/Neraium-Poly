@@ -1,0 +1,102 @@
+{
+  "experimental-paper": {
+    "active_sources_verified": false,
+    "admission_authority": false,
+    "after": "segment-00008583.sqlite",
+    "completed_at": "2026-11-16T07:10:22.679517+00:00",
+    "directory": "/home/ubuntu/Neraium-Poly/data/experimental-paper",
+    "elapsed_seconds": 0.19167284527793527,
+    "next_after": "segment-00008587.sqlite",
+    "originals_modified": false,
+    "range_complete": true,
+    "records_verified": 1501,
+    "retention_authority": false,
+    "segments": [
+      {
+        "gzip_sha256": "caca870115a644d13d9c0b392ef6ada8e993c7a13d4391436bf23b758924e14a",
+        "raw_bytes": 4182016,
+        "raw_sha256": "e2ac951ddc32cae27ec19397e9848f230f01ca1866e4634cd7c8f53a0cc972de",
+        "records": 389,
+        "segment": "segment-00008584.sqlite",
+        "status": "verified"
+      },
+      {
+        "gzip_sha256": "7a726cdee19a5fd40da5f7fd2305496cfffdf0cc9fa70701232b0db62b51a639",
+        "raw_bytes": 4550656,
+        "raw_sha256": "990d780cae9bd8c2e2e2adab4fde52941bdc6437c054e50c7ed8a8ba9b8cf71c",
+        "records": 667,
+        "segment": "segment-00008585.sqlite",
+        "status": "verified"
+      },
+      {
+        "gzip_sha256": "456ef39d6c6eff599a8eb605201f14f79fc95a08e48eb12289858ec602869959",
+        "raw_bytes": 3944448,
+        "raw_sha256": "743fb680c3a9540310a8d96799d73dfe2818bd4e817f5338282fb1ffd44b2845",
+        "records": 445,
+        "segment": "segment-00008586.sqlite",
+        "status": "verified"
+      },
+      {
+        "segment": "segment-00008587.sqlite",
+        "status": "active_withheld"
+      }
+    ],
+    "source_bytes_verified": 12677120,
+    "started_at": "2026-11-16T07:10:22.487845+00:00",
+    "status": "range_verified"
+  },
+  "paper-live": {
+    "active_sources_verified": false,
+    "admission_authority": false,
+    "after": "segment-00003477.sqlite",
+    "completed_at": "2026-11-16T07:10:23.211106+00:00",
+    "directory": "/home/ubuntu/Neraium-Poly/data/paper-live",
+    "elapsed_seconds": 0.5314939972013235,
+    "next_after": "segment-00003482.sqlite",
+    "originals_modified": false,
+    "range_complete": true,
+    "records_verified": 9895,
+    "retention_authority": false,
+    "segments": [
+      {
+        "gzip_sha256": "704d9944e701b6ad2d7bb6b3d119a8a8a227439db328315c15665cabae0b96c8",
+        "raw_bytes": 11649024,
+        "raw_sha256": "45ee91c9fbab33bb8ba2dda7bbe62f1fbcde102d0059e032dbfc3fe23309d5e5",
+        "records": 2497,
+        "segment": "segment-00003478.sqlite",
+        "status": "verified"
+      },
+      {
+        "gzip_sha256": "97b1097436885239dfd6a2091fbf98dfa757a5ee603817dc8f45db01785fdf90",
+        "raw_bytes": 4321280,
+        "raw_sha256": "7780b4149945747fd849d30d6533d7f5f1f01454c747d7b55dd76b97a6bc9fb9",
+        "records": 1923,
+        "segment": "segment-00003479.sqlite",
+        "status": "verified"
+      },
+      {
+        "gzip_sha256": "df7a7f71db7c33d7d1974fe5b3150958fd6af3b73216d473ffd174fc797ab930",
+        "raw_bytes": 11595776,
+        "raw_sha256": "d51284f3aa2b27f3f3181d35e122ec68e3523c67377291f989eb8e460c6008ef",
+        "records": 2468,
+        "segment": "segment-00003480.sqlite",
+        "status": "verified"
+      },
+      {
+        "gzip_sha256": null,
+        "raw_bytes": 6770688,
+        "raw_sha256": "046f154a6026510d61f5e57107d30b3109a291405114f2ba3b382b50ddc066ba",
+        "records": 3007,
+        "segment": "segment-00003481.sqlite",
+        "status": "verified"
+      },
+      {
+        "segment": "segment-00003482.sqlite",
+        "status": "active_withheld"
+      }
+    ],
+    "source_bytes_verified": 34336768,
+    "started_at": "2026-11-16T07:10:22.679612+00:00",
+    "status": "range_verified"
+  }
+}

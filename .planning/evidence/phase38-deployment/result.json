@@ -1,0 +1,97 @@
+{
+  "accounts": {
+    "experimental-paper": {
+      "cash": 496.11522059829053,
+      "kill": 1,
+      "positions": 0,
+      "realized": -3.8847794017094013,
+      "reservations": 0
+    },
+    "paper-live": {
+      "cash": 500.0,
+      "kill": 0,
+      "positions": 0,
+      "realized": 0.0,
+      "reservations": 0
+    }
+  },
+  "at": "2026-11-16T07:12:11.650881+00:00",
+  "authorization_scope": [
+    "neraium-poly-paper.service",
+    "neraium-poly-experimental.service"
+  ],
+  "ci_conclusion": "success",
+  "ci_run": 43820619710,
+  "deployment_performed": false,
+  "filesystem_free_bytes": 228710977536,
+  "founder_deployment_authorized": true,
+  "observation_seconds": 0,
+  "observation_started": false,
+  "requested_source": "1342482fd9431f4e2e69d8788d864cb32fd1d4e9",
+  "restart_attempt": {
+    "command": "systemctl --no-ask-password --no-block restart neraium-poly-paper.service",
+    "error": "Failed to restart neraium-poly-paper.service: Interactive authentication required.",
+    "exit_code": 1,
+    "privilege_escalation_attempted": false,
+    "uid": 1000
+  },
+  "rollback_executed": false,
+  "rollback_source": "7e42feedc6460b592db3524f70ae5710dec4a164",
+  "services": {
+    "neraium-poly-experimental.service": {
+      "ActiveState": "active",
+      "CPUQuotaPerSecUSec": "1s",
+      "MainPID": "3993187",
+      "MemoryCurrent": "2074230784",
+      "MemoryMax": "2147483648",
+      "NRestarts": "0",
+      "cgroup_memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 9562384,
+        "oom": 0,
+        "oom_group_kill": 0,
+        "oom_kill": 0,
+        "sock_throttled": 8
+      },
+      "health": {
+        "account_id": "experimental-paper",
+        "fee_error": null,
+        "last_error": null,
+        "last_ingestion_age_seconds": 18.429671,
+        "last_ingestion_at": "2026-11-16T07:11:56.315153+00:00",
+        "live_trading_enabled": false,
+        "paper_trading": true,
+        "status": "ok",
+        "timestamp": "2026-11-16T07:12:14.744824+00:00",
+        "validation_status": "unvalidated"
+      },
+      "pid_unchanged": true,
+      "requested_runtime_revision_verified": false,
+      "restarts_unchanged": true,
+      "runtime_revision": "existing unrestarted process; exact loaded revision not attested"
+    },
+    "neraium-poly-paper.service": {
+      "ActiveState": "active",
+      "CPUQuotaPerSecUSec": "1s",
+      "MainPID": "190586",
+      "MemoryCurrent": "1073725440",
+      "MemoryMax": "1073741824",
+      "NRestarts": "3",
+      "cgroup_memory_events": {
+        "high": 0,
+        "low": 0,
+        "max": 2121084,
+        "oom": 0,
+        "oom_group_kill": 0,
+        "oom_kill": 0,
+        "sock_throttled": 0
+      },
+      "health_error": "ReadTimeout",
+      "pid_unchanged": true,
+      "requested_runtime_revision_verified": false,
+      "restarts_unchanged": true,
+      "runtime_revision": "existing unrestarted process; exact loaded revision not attested"
+    }
+  }
+}
