@@ -18,7 +18,8 @@ from test_phase24_integration import NOW, inputs
 
 
 @pytest.fixture
-def setup(tmp_path):
+def setup(tmp_path,monkeypatch):
+    monkeypatch.setenv('NERAIUM_SHADOW_SOURCE_REFRESH','false')
     m,b,_e,f,frame=inputs();f.update(id='CONTROLLED',market=m.model_dump(mode='json'),book=b.model_dump(mode='json'),calibration_status='unvalidated',probability=.7,lower_probability=.55,market_probability=.455)
     risk=json.loads(Path('config/experimental-paper.example.json').read_text())['risk_limits'];store=EventStore(tmp_path/'research.sqlite');clock=[NOW]
     x=StrategyEngine(store,risk_limits=risk,clock=lambda:clock[0],can_write=lambda:True)
@@ -132,7 +133,7 @@ async def test_opt_in_service_loop_uses_async_worker_and_never_account_access(mo
 
     from neraium_poly.research.phase42 import controller
     from neraium_poly.risk import RiskLimits
-    monkeypatch.setenv('NERAIUM_SHADOW_RESEARCH','true')
+    monkeypatch.setenv('NERAIUM_SHADOW_RESEARCH','true');monkeypatch.setenv('NERAIUM_SHADOW_SOURCE_REFRESH','false')
     def forbidden(*args):raise AssertionError('actual account access')
     runtime=SimpleNamespace(stopping=False,last_frame=SimpleNamespace(available_at=NOW),events=None,config=SimpleNamespace(risk_limits=RiskLimits(),data_dir=tmp_path),
         clock=lambda:NOW,account=SimpleNamespace(place_order=forbidden))
@@ -207,7 +208,7 @@ async def test_starved_combined_frame_uses_fresh_bounded_read_only_reference(set
     from neraium_poly.research.phase42 import controller
     from neraium_poly.risk import RiskLimits
     _x,_clock,_m,_b,_f,frame,_fees,_store,_risk=setup
-    monkeypatch.setenv('NERAIUM_SHADOW_RESEARCH','true')
+    monkeypatch.setenv('NERAIUM_SHADOW_RESEARCH','true');monkeypatch.setenv('NERAIUM_SHADOW_SOURCE_REFRESH','false')
     runtime=SimpleNamespace(stopping=False,last_frame=frame.model_copy(update={'available_at':NOW-timedelta(seconds=20)}),events=None,
         config=SimpleNamespace(risk_limits=RiskLimits(),data_dir=tmp_path,source_url='http://127.0.0.1:18742/api/market-frame'),clock=lambda:NOW)
     async def budget():return True
@@ -225,3 +226,57 @@ async def test_starved_combined_frame_uses_fresh_bounded_read_only_reference(set
     assert methods==['GET'] and runtime.shadow_research_error is None
     assert runtime.shadow_research_snapshot['shadow_worker']['frame_origin']=='fresh_reference_read'
     assert runtime.shadow_research_snapshot['shadow_worker']['maximum_workers']==1
+
+
+def test_source_inventory_skips_empty_scans_and_retains_original_batch(setup):
+    from neraium_poly.contracts import Record
+    from neraium_poly.research.phase42.sources import forecast_studies
+    _x,_clock,_m,_b,f,_frame,_fees,store,_risk=setup
+    class DomainResearchStudy(Record):
+        forecasts:list
+    store.append(DomainResearchStudy(id='CONTROLLED-real-batch',timestamp=NOW,available_at=NOW,source='CONTROLLED',forecasts=[f]))
+    for i in range(4):store.append(DomainResearchStudy(id=f'CONTROLLED-empty-{i}',timestamp=NOW+timedelta(seconds=i+1),available_at=NOW+timedelta(seconds=i+1),source='CONTROLLED',forecasts=[]))
+    rows,audit=forecast_studies(store)
+    assert [r['id'] for r in rows]==['CONTROLLED-real-batch'] and audit['rows_scanned']==5
+    assert audit['retained_bytes']<audit['source_guard_bytes']==16*1024**2
+
+
+def test_reviewed_source_transition_carries_losses_and_keeps_old_records(setup,tmp_path):
+    from neraium_poly.research.phase14.relationships import digest
+    from neraium_poly.research.phase16.checkpoints import pack_checkpoint
+    from neraium_poly.research.phase42.engine import LEGACY_SOURCE_SHA256, StrategyCycle
+    x,clock,_m,_b,_f,frame,fees,_store,risk=setup
+    old=copy.deepcopy(x.last);state=unpack_checkpoint(old['checkpoint']);state['profiles']['aggressive']['cash']=497.
+    old['policy']['code_sha256']=LEGACY_SOURCE_SHA256;old['checkpoint']=pack_checkpoint(state);old['state_sha256']=digest(state)
+    store=EventStore(tmp_path/'legacy.sqlite');store.append(StrategyCycle.model_validate(old))
+    recovered=StrategyEngine(store,risk_limits=risk,clock=lambda:clock[0],can_write=lambda:True)
+    assert recovered.state['profiles']['aggressive']['cash']==497.
+    recovered.step(frame,fees);assert recovered.state['profiles']['aggressive']['cash']==497.
+    assert any(e['type']=='reviewed_source_transition' for e in events(recovered))
+    assert store.get(old['id']) is not None;store.close()
+
+
+def test_refreshed_input_is_not_added_as_an_independent_cohort_event(setup):
+    x,_clock,_m,_b,f,frame,fees,_store,_risk=setup
+    updated={**f,'id':'CONTROLLED-updated','probability':.8}
+    x.step(frame,fees,source_forecasts={updated['id']:updated})
+    assert len(x.state['forecasts'])==1 and updated['id'] not in x.state['forecasts']
+    assert any(e.get('candidate',{}).get('forecast',{}).get('id')==updated['id'] for e in events(x))
+
+
+async def test_refresh_is_bounded_namespaced_and_keeps_scientific_formulas(setup,monkeypatch):
+    from threading import Event
+
+    from neraium_poly.research.phase24.continuous import DomainResearchStudy
+    from neraium_poly.research.phase42 import sources
+    _x,clock,_m,_b,_f,frame,_fees,store,_risk=setup
+    class Controlled:
+        def __init__(self,scope,**kwargs):self.store=scope;self.enrollment_id='CONTROLLED-model';self.state={'enrollment_id':self.enrollment_id}
+        async def step(self,observed):
+            row=DomainResearchStudy(id='CONTROLLED-refresh-'+self.enrollment_id,timestamp=clock[0],available_at=clock[0],source='CONTROLLED',operation='scan',enrollment_id=self.enrollment_id,checkpoint={},checkpoint_sha256='0'*64)
+            self.store.append(row)
+    monkeypatch.setattr(sources,'DomainResearch',Controlled);monkeypatch.setattr(sources,'ChallengerResearch',Controlled)
+    result=await sources.refresh(store,frame,clock=lambda:clock[0],can_write=lambda:True,stop=Event())
+    assert result['status']=='completed' and not result['model_formulas_changed']
+    assert store.latest('RefreshDomainStudy',10) and not store.latest('DomainResearchStudy',10)
+    assert (await sources.refresh(store,frame,clock=lambda:clock[0],can_write=lambda:True,stop=Event()))['status']=='already_recorded_epoch'

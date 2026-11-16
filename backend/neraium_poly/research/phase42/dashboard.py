@@ -19,5 +19,6 @@ def snapshot(runtime,now):
     report=getattr(runtime,'shadow_research_snapshot',None)
     if not report:return {'status':'withheld','reason':getattr(runtime,'shadow_research_error',None) or 'shadow research disabled or initializing','trading_authority':False}
     age=(now-at(report['as_of'])).total_seconds() if report.get('as_of') else None
+    if report.get('input_frame_available_at'):age=max(age or 0,(now-at(report['input_frame_available_at'])).total_seconds())
     error=getattr(runtime,'shadow_research_error',None)
     return {**report,'age_seconds':age,'status':'fresh' if age is not None and 0<=age<=20 and not error else 'stale','runtime_error':error,'trading_authority':False}

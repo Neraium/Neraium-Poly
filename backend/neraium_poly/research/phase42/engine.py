@@ -20,6 +20,7 @@ from neraium_poly.research.phase24.continuous import at
 from neraium_poly.research.phase41.simulation import ProfileExperiment, number
 from neraium_poly.research.phase42.strategies import DEFINITIONS, propose
 
+LEGACY_SOURCE_SHA256='34de68d0a56fe84a39c6476299d432f652c3cb9bfb7e4bf934ba7f07318e6734'  # Reviewed Phase42 entry/exit policy; forward-only inventory/provenance transition.
 EPS=1e-8
 PROFILES={
  'aggressive':{'size':3.,'edge':0.,'spread':.20,'haircut':0.,'unknown_fee':.10},
@@ -60,7 +61,9 @@ class StrategyEngine:
         previous=store.latest('StrategyCycle',1)
         if previous:self._adopt(previous[0])
     def _adopt(self,row):
-        if row['policy']!=self.policy:raise ValueError('frozen strategy source/policy mismatch; no reset permitted')
+        if row['policy']!=self.policy:
+            compatible={**row['policy'],'code_sha256':self.policy['code_sha256']}
+            if row['policy']['code_sha256']!=LEGACY_SOURCE_SHA256 or compatible!=self.policy:raise ValueError('frozen strategy source/policy mismatch; no reset permitted')
         state=unpack_checkpoint(row['checkpoint'])
         if digest(state)!=row['state_sha256']:raise ValueError('strategy checkpoint integrity failure')
         if row['previous_id']:
@@ -74,6 +77,7 @@ class StrategyEngine:
         if not self.can_write():raise ValueError('shadow capacity admission withheld')
         if len(state['forecasts'])>512 or len(state['markets_seen'])>4096 or any(len(s['closed'])>2048 or len(s['seen'])>4096 or len(s['credits'])>32768 for s in state['profiles'].values()):raise ValueError('bounded research state exhausted; preserve and review')
         now=at(self.clock());state['sequence']+=1;state['last_at']=now.isoformat()
+        if self.last and self.last['policy']!=self.policy:events=[{'type':'reviewed_source_transition','from':self.last['policy']['code_sha256'],'to':self.policy['code_sha256'],'scope':'forward-only refreshed-input inventory; all positions, cash, limits and original decisions retained'},*events]
         row=StrategyCycle(id=identity,timestamp=now,available_at=now,source='neraium-poly/strategy-competition/v42',policy=self.policy,
             previous_id=self.last['id'] if self.last else None,previous_sha256=digest(self.last) if self.last else None,
             checkpoint=pack_checkpoint(state),state_sha256=digest(state),events=[{'type':'lossless_decision_batch','payload':pack_checkpoint({'decisions':events}),'sha256':digest(events)}],observations=observations)
@@ -115,7 +119,7 @@ class StrategyEngine:
             levels.append({'price':level.price,'quantity':q,'fee':fee});value+=amount;left-=q
             if consume:s['credits'][key]-=q
         return value,p['quantity']-left,levels
-    def step(self,frame,fees):
+    def step(self,frame,fees,*,source_forecasts=None):
         now=at(self.clock());raw=frame.model_dump(mode='json') if hasattr(frame,'model_dump') else frame
         if raw.get('mode')!='real_market_data' or raw.get('producer_health',{}).get('status')!='ok' or not at(raw['timestamp'])<=at(raw['available_at'])<=now or (now-at(raw['available_at'])).total_seconds()>15:raise ValueError('fresh real frame required')
         if len(raw['markets'])>4096 or len(raw['books'])>4096:raise ValueError('bounded universe required')
@@ -129,7 +133,7 @@ class StrategyEngine:
         markets={t:markets[t] for t in ranked};books={t:b.model_copy(update={'bids':b.bids[:8],'asks':b.asks[:8]}) for t,b in books.items() if t in markets}
         state=copy.deepcopy(self.state);events=[]
         state['markets_seen']=sorted(set(state['markets_seen'])|{m.market_id for m in markets.values()})
-        candidates,rejections=propose(markets,books,state['forecasts'],state['history'],state['prior_forecasts'],fees,now)
+        candidates,rejections=propose(markets,books,source_forecasts if source_forecasts is not None else state['forecasts'],state['history'],state['prior_forecasts'],fees,now)
         for token,b in books.items():
             history=state['history'].setdefault(token,[])
             if not history or at(history[-1]['at'])<b.timestamp:history.append({'at':b.timestamp.isoformat(),'mid':(b.bids[0].price+b.asks[0].price)/2,'book_sha256':digest(b.model_dump(mode='json'))})
