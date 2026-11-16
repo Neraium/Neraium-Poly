@@ -190,3 +190,13 @@ def test_controller_persists_original_source_bindings_for_restart_settlement(set
     assert recovered.bindings==c.bindings
     assert recovered.engine.state==c.engine.state
     assert recovered.profiles.state==c.profiles.state
+
+
+def test_trader_desk_cards_preserve_decisions_without_duplicate_orders(setup):
+    from neraium_poly.research.phase42.desk import publish
+    x,clock,_m,_b,_f,frame,fees,store,_risk=setup;x.step(frame,fees)
+    report=publish(store,x,x.report(),clock[0]);cards=report['recent_decisions']
+    assert cards and all(c['actual_fill'] is False for c in cards)
+    assert any(c['estimated_net_value']>0 for c in cards)
+    assert report['positions']==[] and report['unfilled_orders']
+    again=publish(store,x,x.report(),clock[0]);assert again['recent_decisions']==cards

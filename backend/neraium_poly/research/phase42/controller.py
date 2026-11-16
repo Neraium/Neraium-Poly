@@ -78,6 +78,8 @@ class Controller:
             self.next_outcomes=now+timedelta(seconds=300)
         self.report={**self.engine.report(),'phase41_profiles':self.profiles.report(),'source_withholding':dict(self.errors),
             'execution':'isolated shadow only; no account/order-admission access','maximum_cycle_seconds':30,'native_proof_requests_per_5min':2}
+        from neraium_poly.research.phase42.desk import publish
+        self.report=publish(self.store,self.engine,self.report,now)
         return self.report
 
 
