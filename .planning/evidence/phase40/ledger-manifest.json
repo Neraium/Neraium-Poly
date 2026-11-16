@@ -1,0 +1,655 @@
+{
+  "database_bytes": 40501248,
+  "records": [
+    {
+      "id": "64e6f6d59230d9dbc4b803f2a24d2ee78abed1d734785d60f5c331bae4e2429a",
+      "kind": "ShadowEnrollment",
+      "payload_sha256": "20ebfa2c3c261b8ef74bd74cba50363d8cdea9bc3d6d97d51780ec4f45ae2420"
+    },
+    {
+      "id": "def9886f60d98fceb3e1113e71387e985da9e04641321b364d4d3d3e055e871d",
+      "kind": "CampaignEvidence",
+      "payload_sha256": "e6dbd86a69c7d3b2674430c2c62d0943e8e38d471b3165c69446e22e8a317892"
+    },
+    {
+      "id": "34e9a08375083fcba49e1555744587516c445d397eb9f2b94901d8114955b759",
+      "kind": "CampaignEvidence",
+      "payload_sha256": "ca731d6ee13fc44a6f75f9c543adb24ecd1b6dc9a13f2672d9513226d97668b2"
+    },
+    {
+      "id": "000000000001:95000acd88f9d6c1f173c2a7584496c4669b8daf87236fec594f0003fb4eca94",
+      "kind": "DomainResearchStudy",
+      "payload_sha256": "624b48a0010c03780dfab23ac33b2f0edadd2801817374a36f80a97fe39fb5bb"
+    },
+    {
+      "id": "000000000002:957a91f87141274931350cf9a5d10f03c3d9c06f03bbc559ee146aecee31cac4",
+      "kind": "DomainResearchStudy",
+      "payload_sha256": "90213b827b21259015c8696cd11d9f716372f6899daf8a5273050ac4dd5c5735"
+    },
+    {
+      "id": "000000000003:94af47953225627e3b5258932042a14f42ae87710019c4c280e1f7dd4753dc66",
+      "kind": "DomainResearchStudy",
+      "payload_sha256": "478af89ec1a196f05406fe138fb7e3894d02e15a8dde3418645b6a2f62e4a15f"
+    },
+    {
+      "id": "000000000004:3267479840302489d903c5efc62bff46ab5560680affda366f8f16e9f8ed82fd",
+      "kind": "DomainResearchStudy",
+      "payload_sha256": "7fecf794d5db092a49621772c25bd214b9322e81feba1c4eb664437c5591b3e4"
+    },
+    {
+      "id": "000000000005:7641e3fb4c6f06be01b9184258bcb5293fad252c61d4382215de4f2b1171d942",
+      "kind": "DomainResearchStudy",
+      "payload_sha256": "03128ca264acf543558c4b8e3b7c3f7955a3891fa0e8c0c1315dfd1a1313220c"
+    },
+    {
+      "id": "000000000006:48433b56bcc029f9ab3daecf9334a1307ba27efaaf9e3a8b38d39125526465d3",
+      "kind": "DomainResearchStudy",
+      "payload_sha256": "22b2163d64d45fecfde0fa6c7ad0acc6b9a3fb80a8e431d8433c0cce6b5b233e"
+    },
+    {
+      "id": "b82b8deefc1ea4b8b32e69aa959de8d6201f437c78099580999cc7ea27b5a89f",
+      "kind": "CampaignEvidence",
+      "payload_sha256": "645e2c24090a5adc4fcc361139dfe2cd02aa3e2f06ed08e8ee90b01154dde10d"
+    },
+    {
+      "id": "f04005f266ed73002c5d9fff4c2f07ccd933548aab58e6489159b0a61e02b982",
+      "kind": "ChallengerStudy",
+      "payload_sha256": "fb03354ed2cbb4a8c3c19ff9c00b3b5cd8575f1f3e77fbaa888ac7978d1d8d7e"
+    },
+    {
+      "id": "f1ca3ec76004307a960f37e9f158354e68f043d4a6fb858c90089a1699aaaf9e",
+      "kind": "ChallengerStudy",
+      "payload_sha256": "84f750ee4c886ab1c2bb5f2557c7cd39bc19a2aeeb8e033dc9b5d4e87e2658c9"
+    },
+    {
+      "id": "2600059fcfd97c59e0d438e70aae8b62e6f866d41a56e8138a408a175be3f0f2",
+      "kind": "PublicFeeResponse",
+      "payload_sha256": "b5e7f4b99add60381d6f78c7f827fdade8f6769ca4731295b93374ac0337e025"
+    },
+    {
+      "id": "862c05dc9c50d4bd9665ab7055178e083d04c498d284d88a26be01a72fb03072",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "23db0a0b6c11c7361d50152ad08735ff81276c6f75fad800d5b37188e5d64479"
+    },
+    {
+      "id": "9360362e920eb829e216e9049d839318db8c3b9e107a0638f7e2ce70d065941c",
+      "kind": "PublicFeeResponse",
+      "payload_sha256": "9ffe4189f056b465cb8d258af96ef6686244c1b4f9bdccd83487b92484567c3c"
+    },
+    {
+      "id": "9d3a1a5cdffa3a2353a8e979d582bc7715b2d32fd7597ce2caa240c8e08cd996",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "2a852a8372a71b7cf95b655032c69614cc05603e1ceff9e5b9bc9e531532ce47"
+    },
+    {
+      "id": "3c0857c1-9383-4fce-aed6-879f8951f226",
+      "kind": "FeeObservation",
+      "payload_sha256": "c2b4fabd301e958d2fba0db714b070715ed88765d2c09e4ecf28c4ea4350dd45"
+    },
+    {
+      "id": "3ada174be629c7c9c1521a8fc726b922b5adf313e2ac88a503a888b97976f9d6",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "fade951ee22ed1d666614e6c926faaf48275c3bbba1abd4f2d0dfb2ed280aed4"
+    },
+    {
+      "id": "7efd726d4d0d97e2b4a263f26f3d9f4d66be58dbc6f5a3a2e662dcebe0633158",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "4df6220c4c11891f967e3d8ac517b9476aa7d522ca30ab0441ca69f7306900a8"
+    },
+    {
+      "id": "ae012237-9f07-4e6f-ba59-2b94aaa25942",
+      "kind": "FeeObservation",
+      "payload_sha256": "7f404cdb77327cfa00408266b071f1adb935935f6879b84b47f58ce02396dbbc"
+    },
+    {
+      "id": "292f9159d03c0308ab2f2e673a982807b03006f6e0bb7da7d7c578f9d9393b42",
+      "kind": "PublicFeeResponse",
+      "payload_sha256": "780b8c822f6e9707d498a7deeef83820bfcf56b53b22244064359197b6388d98"
+    },
+    {
+      "id": "110c1acd68a0353222fd4ccca4f68419d4242248ec6706a7db6f34dab2b54083",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "d9368dbf7319e797b0e6ab02ca2b0915addaca0606340bb1ae972c12282685a3"
+    },
+    {
+      "id": "426e6160e20e55267eddbd3b6862c2b8066373a61de312d3821caf8c1cec8db1",
+      "kind": "PublicFeeResponse",
+      "payload_sha256": "15023037ef50a564257857061cc2d315c98eff875030ee4ca010626e3828b7a5"
+    },
+    {
+      "id": "090802641a2d7d1c47ede0d7d2641c548adced3a37cb25c11bb0ade607de342d",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "0d351ef08902ed54214e4f25afe434c9d760f0beca618c93cb33d63619d103e2"
+    },
+    {
+      "id": "a5c1d5d3-7fe8-496e-86a6-e664dd8506cc",
+      "kind": "FeeObservation",
+      "payload_sha256": "524334ebb95d980998faf25cf99fd1725b8a2d99cf161dd56e8673eef0d690f4"
+    },
+    {
+      "id": "1329f78781bf2c4dfaf93b1c5d5f14845d99c8c506789d683112d2bca05bbe8c",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "369045d360e4caa78837b57c07494f1002cbb3987a56fe456200df87483aabec"
+    },
+    {
+      "id": "f41c50e5021733a364d5d90228dd3e1ce8a7db92840a4790aa45383cd3d2814f",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "d29397ccdebe538e5fd4cdced324c85a6b043afd813e4717d76765db2840e301"
+    },
+    {
+      "id": "5bc5fc1b-42f4-45a3-8b07-7a42efd219b8",
+      "kind": "FeeObservation",
+      "payload_sha256": "836288b7edba257fd84d5101fbfb05b08d50b53b5bf3a6458b044b7b8f9c8eb8"
+    },
+    {
+      "id": "53e26ef67df2a584f1223413d810dbc430ad2030c9c3ce55b65ff9e2b140b0d4",
+      "kind": "PublicFeeResponse",
+      "payload_sha256": "401f76d51891b000e6b73792bc5e1eb12d6bf405d55c8cde82567b928b042bb3"
+    },
+    {
+      "id": "cfb23e69f8e25dea6181440abb9dc2725734e42070a450ab0b4ad0bc12e89c41",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "3ff1c52cae15851c4e53a8dcaecdbeab8149ab2c4f628dd255f9a9643a8e6f4f"
+    },
+    {
+      "id": "f92692b5bd38655446386fd76bb5af2855adc20eaf17cca3f3367b9eedbdcfd6",
+      "kind": "PublicFeeResponse",
+      "payload_sha256": "239dff82118d07014c5d88c4c22dc2cf63dda4dba5385de14a04fe28c355d813"
+    },
+    {
+      "id": "bc496da0b80a0c8e4e3d6f5cd5b712d4c8e3ad7cfd57647f52264558a7472063",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "329615e6f3a341d529013fa1f0e0e52d499064e910ab5d43f2042fa28d150966"
+    },
+    {
+      "id": "e9e5c4ed-6760-4db8-9e0c-3fa0148ec26c",
+      "kind": "FeeObservation",
+      "payload_sha256": "763359545c585033444b4d8f35122e90c83d1ebb0d3f9597748d381ee3801d67"
+    },
+    {
+      "id": "2cee96973a819dab6544d83de13a63a57e546bd36f38a65e0a51389d9e7ff53e",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "35a054d43366790d43fdf87b2599555cd8eda7532beb94a587f4ee468a80a9dc"
+    },
+    {
+      "id": "c2e98c01d3259a5f54ce8704ea0e9845578dcf2a7d58ed29779d4f0c4f291381",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "6c560079741386dc92decaf0e6e540bd0bc19ea9041220e273e913f8ff5421e8"
+    },
+    {
+      "id": "c47b5ac2-0926-4270-b463-b027cf712f12",
+      "kind": "FeeObservation",
+      "payload_sha256": "3780412d134d7f965e383c7d90527a7f46afb3a3715c3fba40f91309f5a9f2c3"
+    },
+    {
+      "id": "1df7e3577c72766c260b90bf73a86e279a53be80c2e1f5e116b50790380eb007",
+      "kind": "CampaignEvidence",
+      "payload_sha256": "5eddd7e6694ae1cafb17173c51e6bc7f045ee8902aab3125cb697089a18bafd5"
+    },
+    {
+      "id": "51db8c102f857bc952a59f9893bdc6a436a6599352ab4666bb43ebda432ae764",
+      "kind": "CampaignEvidence",
+      "payload_sha256": "7864a8c41e4da33eef1925acef4d90a6198ea7a72bf299084fcdab705e685cad"
+    },
+    {
+      "id": "b6e9fee7ca3cf2204a217cbe5f78c70410f13955cb60e4d5688e6aca11715907",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "9d1b12c3aa22cdbd9510673fe1d548b2f36643e56905462e2e98097ee223129c"
+    },
+    {
+      "id": "bcab15be56517a8a57914bb41369b0c1e18753921ea5016558ee2040e064502d",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "caa5f9b0005ddb77f6a5c41f19d5aedcdd766149c6ab56cc2adf38482cea09b6"
+    },
+    {
+      "id": "6d73760d-dc58-45da-a0a4-e94f0aa3883d",
+      "kind": "FeeObservation",
+      "payload_sha256": "9aab8ff2d433752916bd7528a652d488e7f88a786e9b6820e85078debf5fe3bd"
+    },
+    {
+      "id": "64f8449bc16884b3e29431c4b80164b5ec05aee0f60a3bb3520a481c8063cdb6",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "bbf071b2d7b9c168cac927b80c36e5e46a04d8f22e46d1e0086f5345c07427a3"
+    },
+    {
+      "id": "2ce5e12a75e0386a051309c345857eb8edcf68d8abcbfcea856c33ae9b9eaeab",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "cfeaea8055eb2ce38049938d9595746d6d82b382e31a52741a3d58f16fb836ad"
+    },
+    {
+      "id": "6bd2e799-013d-486d-9af0-c0ddd535253e",
+      "kind": "FeeObservation",
+      "payload_sha256": "015cf8e5ec6194d1c66dc996be2f280a12fbb9cba27c230b7a6da31e30676b88"
+    },
+    {
+      "id": "d65039c6770c783bc9757bb882063dff084451a2359f7bbcb9a586a12eb94ae8",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "9f14a91f344c3334e87b47f82f329879e6b5a1020ba79f89ce1ebbed1ca79172"
+    },
+    {
+      "id": "fab7f27a3c44e0cd5851ded95c7d55e9575d014d23a2f25b4fb8f5c2ac8e48d6",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "b1fe329087e309fbd0530f56cbe12f2a3de19071076def4f3bafc2e04ec2b4de"
+    },
+    {
+      "id": "0f124f46-4a03-46eb-8d97-f9ac3c2cae84",
+      "kind": "FeeObservation",
+      "payload_sha256": "7fdbaa63fb7ebc3b355075027d02b9726c78379f8d8e762b43b920989abed1f3"
+    },
+    {
+      "id": "69c77b319a3d1e97d0fc975e330f27fefcbc32e029b2b6d49ccdb8f800e766e7",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "f84880ef65b834f3ebca489477e73ab0c1fa23dcec56065f0dd02e74ff9ec63f"
+    },
+    {
+      "id": "d286498b67d1ca18a74facd0fb3b45684d2ba12fb1cdfbb0f804a4f8d5206e08",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "27494932fb964949682d24d47fbfe70f13449355bfa02106e0c392190105642e"
+    },
+    {
+      "id": "5aeb7792-fe73-47e8-87fa-0f60d2f2375a",
+      "kind": "FeeObservation",
+      "payload_sha256": "15000bc4b19074d52ea62c195259eafd6f640e5a1f8165952177e2470c4389e6"
+    },
+    {
+      "id": "ed67d9024da136c4af0f5af0bf3e8828f7f10c40160a454288822b508ab39dd5",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "f846101ab886c056c4a1b7d89d33eeee5b4efd8bbb5718ae6438e390bd472bc5"
+    },
+    {
+      "id": "4f436776f32316bcbe943876dec2c7ebd52ae5d33d40ff37ad009b004660e7d2",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "37e76e8e69acfd5475a217db015274a8c7d7ff88e9a3d9df3ebcb179c16bd9ca"
+    },
+    {
+      "id": "417d0553-b02c-4bad-a3c4-27f9b3b57594",
+      "kind": "FeeObservation",
+      "payload_sha256": "5a34970a5a18ecfd475023dd996d8384971ca62d810868da25fa11db44be920f"
+    },
+    {
+      "id": "e49ff8153167f0cf2bb266c0a4f7a6bae10e3d486b5885f33d888e78a46a0e16",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "1aefecc57669c596f321599c88ae4d6dec39ea0185af37f4f820ecb31d10229b"
+    },
+    {
+      "id": "bcd3356dd9f568e1831eb3fb6fa74d8f66bb93700e1a6f921678d9a75838db5c",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "66968e6aecd54239085de4e7a7b809c5d86283c8a7d4bd283941e46e18bff4a5"
+    },
+    {
+      "id": "ddcfbf63-8c58-4c17-ae67-0cc3fe4c9759",
+      "kind": "FeeObservation",
+      "payload_sha256": "15ba7b5fafcf5b8f3a7fc7dc2e47053509c5dc8dcdffba49493e61d992217f01"
+    },
+    {
+      "id": "7c9f95e640b845d6f1d667f32fe77e5992e585f4877e19ff62016ec303d521ee",
+      "kind": "PublicFeeResponse",
+      "payload_sha256": "223c12ec703e30fb1facf230bb93398eaa2eccf596ab526ddeb6f09569b4f762"
+    },
+    {
+      "id": "09369e846f69ce53b3a239f1dc68d7dafb5489adccdaa10471717a6b6c25a520",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "8d143ade4c19ab26163c096e34b9d21d5f79adaca1c38ad4f1f8f2def86e0c51"
+    },
+    {
+      "id": "9287deff732da2409f256f34828ab8e57f2038e0fefb4fb104456a566ff0b7d6",
+      "kind": "PublicFeeResponse",
+      "payload_sha256": "8ce6b908321ffd9d5afb69b5cff5d6887420081822f3f1d89fe8e39acb3b6f07"
+    },
+    {
+      "id": "dd3e32e1cabe6a537cb0f95bc58b9584bb414c5e3e0a8b0b461f3153279cc0e8",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "4a2affff7a4fa2dc587528d8532aec6f02c82feba4048c8c33ceabf4a644b142"
+    },
+    {
+      "id": "525119e5-7a8b-4f82-8285-fab8a73c43a2",
+      "kind": "FeeObservation",
+      "payload_sha256": "c706e416a94e2121a98dd32392c264b24bcddb6e5270b31cc88560eef842b2bf"
+    },
+    {
+      "id": "91cf7260c3f407f8675ea5a302ddcbbb3f55f25eb2c0b68a4719c37247779a82",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "0b0bce1642650a6452c799a6349de42f6d2e3524a2b2c325736d93715ff954b3"
+    },
+    {
+      "id": "589fd8c05c60372214883ebe52cd9e1b4b57e9737a8f69a5e4917f339e71cad8",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "b99055ce7c62d5b56817ab80d3be9306080b6473d932f6b967e09f97114c5a56"
+    },
+    {
+      "id": "3e010dda-3853-41bc-890c-a988305239f0",
+      "kind": "FeeObservation",
+      "payload_sha256": "90dabd5014480a92bef20a459f1207b751cec33c5745ede084d1511f8ebca7af"
+    },
+    {
+      "id": "aad1426194cc288f036ea44ac34962e6e29d75afa4cd15081d1b08cafa0d502e",
+      "kind": "PublicFeeResponse",
+      "payload_sha256": "dd5f4f6a298de3e892a0ece781716f42207905a9d0a3e4dbda01d1ffc547d400"
+    },
+    {
+      "id": "e8ef952ccdd1c50f8ee4af55685e6b78e2e55243ff3018f9ca6128cced03f998",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "6c360c3ea9c8c18adbdc0c4f065ecd4dd9a8e963d63a853fab33a54650cbad51"
+    },
+    {
+      "id": "07ecfc273d3580871d754c04474f075583c8c27fababfa2a00a919cd462043d0",
+      "kind": "PublicFeeResponse",
+      "payload_sha256": "6b2c4ff099db987e5616fd90febde1f18d19b756b4a9ab83d84941e190f519fa"
+    },
+    {
+      "id": "aac90b679d95bbe6f854a185dcb9f32d685c752518a259ad558055dc57310382",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "c46d98664b62b73f15e8e109f0c1ff19eb363b86a8ba07c6936dc0594e8dac8a"
+    },
+    {
+      "id": "e59309b3-e08d-463c-a8de-87d096a8ece1",
+      "kind": "FeeObservation",
+      "payload_sha256": "38287988d03568d18734853df561ae8b6c938d64cfdfa7b8f0df27e9e2e5adf9"
+    },
+    {
+      "id": "4f66bc9bc5f8bd811be098886efff783205ed5b31b39d82b82090e306eb62e79",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "c0ecfdc73a86e6e0299087fa3ed69d96497562432b24f8b3c078362e3df3b5cf"
+    },
+    {
+      "id": "1ce27b1ef9cff489b7736d9ae1ff65ef4679353ec3929c5d7181edd1ecbe2c34",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "e6e497426edf554d78c2ca75d33a6aa1031344dfcdabfdb914a4afa28ff2c4a4"
+    },
+    {
+      "id": "e8a427cf-74cb-47a0-b5fd-81bcab5d488d",
+      "kind": "FeeObservation",
+      "payload_sha256": "c3d2f01a97d625e0db3ae8ed8c4f63e609194468ef7fc8360c0efbfdd7f963ef"
+    },
+    {
+      "id": "9113bfe1059879f8c9a063126bb91f6a53053132777119be0840caf704897ec5",
+      "kind": "PublicFeeResponse",
+      "payload_sha256": "7d453823dc721b8d4b8fe079157176e2aef838da1b89e6a6f3017b265ad6a6e8"
+    },
+    {
+      "id": "baa560177ea603d8d06bc632702ff234bcb2af8ea5d3407fa01759a7ad85c20c",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "cd9a9471aa379623c716b0ab9d502acb955fea81a4634f6924eb526f7871e33d"
+    },
+    {
+      "id": "ddd1aada1e06fb940d122a6894b4de0c3023c36a387554bf61604bcae64e51c6",
+      "kind": "PublicFeeResponse",
+      "payload_sha256": "811a1841874ecc39b7fddca85f5b1206083441c99226f3abadfd99014011b97a"
+    },
+    {
+      "id": "22d6d479ba07411fb89661d2c88c24223048b8154c01fd4d7a5ce57c9b31fd8b",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "2ad10abedcf03ab4013ec8dbd0fe28f8627c1b6d7b289214f6c1976c78e8221f"
+    },
+    {
+      "id": "439d381b-d897-459a-a130-66c82ef21650",
+      "kind": "FeeObservation",
+      "payload_sha256": "07e5b4f749b20c537da0a5928f4a6020bafc8a226facf0cf9a2d504bbe3fbe4a"
+    },
+    {
+      "id": "091c2c00d857750c3b5ce93c2bfdab97141d141fc604dfe756e34e89db08cdec",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "0a54c9839635c753cdb1b4fe13e5b113fc0d046c839bd26a9d6fd10537f38c5f"
+    },
+    {
+      "id": "d1ae39143a396b475e3e87ab7d8dd0cbec006f9cf15fec227e6da528e465359e",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "08ed7e563813e6a460f4be038347a7bf7686f4088e764449ff562e117dc186e4"
+    },
+    {
+      "id": "d9bbd066-9bb6-4387-b237-ade3a12830aa",
+      "kind": "FeeObservation",
+      "payload_sha256": "c9a2f055f0918bdb16e5a059715671decda061c6bdf30fc3611439855dbbfaf2"
+    },
+    {
+      "id": "49b42a8da0ccc4c872b846e4b5a30e55ca658b70a6feeb23691c78234c434f95",
+      "kind": "PublicFeeResponse",
+      "payload_sha256": "feeea655909ae561496d19332955429ec941a213cb95565dd0827ecc94ac8de5"
+    },
+    {
+      "id": "e33cf19b218a9c361ddf332c8f24f8d58034f66757e07155cfa6a860cd92eb45",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "b01e9bf24bbd9b8bca77faa26afa93e46ad8473140f16dc1a39e56538d344b0b"
+    },
+    {
+      "id": "73c8a5dc2831edb53bf6e54cafd7c7eb34078fe5a403e32e1fbe453771bf4cc8",
+      "kind": "PublicFeeResponse",
+      "payload_sha256": "a10791077a021e0c775151dd041a5e90f529fb9aedd3cbdecac33324a11239eb"
+    },
+    {
+      "id": "db34e270c533c2d15122877a1dbf812498736fcd563a8cc0f9cd91d0811771d0",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "6d1d266c62beeaa378b5f6ddd8a7c3983fd1748ca7b530a601e4e902e6b86d57"
+    },
+    {
+      "id": "40ec1671-5e28-44ba-b8cc-6649856a9cc1",
+      "kind": "FeeObservation",
+      "payload_sha256": "cbad50f653688d6660048532b260a923e9c0c4514d8c59b856cb8e15dd781cf8"
+    },
+    {
+      "id": "60cc9db3a088dd5e0d19fc838be90c9fb1ba893471ad8da4bdbf0b66af7964ed",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "94df5727095454aae8b11ec2ac4be7f999a2065e0810a75a9f8c9046ce880717"
+    },
+    {
+      "id": "ec4a7e71ad5c75660ba2541d4ebf67a86edcfbb32318a323d0b82a9a713a9842",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "192a28e932655cb5d77032c1f34f77088718bd2fc8c2289776cb5249be65e227"
+    },
+    {
+      "id": "24e0f857-889a-43fb-ba21-647af4284375",
+      "kind": "FeeObservation",
+      "payload_sha256": "a1a336ef2981496739f6ee6e57e43b72dee226af89a82df02b34d1c9ad4e9cd9"
+    },
+    {
+      "id": "0aef82a8074166eca796739cd7184061b5e17ee3f1b0dd27b60d43344834aa2a",
+      "kind": "PublicFeeResponse",
+      "payload_sha256": "a0e33a0a80177cfb96cf9ad9f49c1638e8cc8fa6f45325ec7becd883c8fb941e"
+    },
+    {
+      "id": "e13f8a6c1fa1534ce1a07d4362050a557c829d7ffda87a12bc0a4ed18b0c66a6",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "008e75a5059f6aac6ef77c70171a3a2941cecd8a3ccf612c837e70e1cf6da383"
+    },
+    {
+      "id": "04d328590fba3074196c925d046971b02b31e7e547a998100672a93f071081b6",
+      "kind": "PublicFeeResponse",
+      "payload_sha256": "e702186b87efea08beba478721659f5bfedbf71ee29d6d8fdc388b542eef1319"
+    },
+    {
+      "id": "d9034cf1277bab2df4c40a6932869eed5bd701fb571804b65693e53b5b30cb54",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "5688a6b8a96708784309208e87ecccaf1b85ebe9b642abc6e5a919f30c3b8048"
+    },
+    {
+      "id": "a7a414db-49fc-4a35-8953-9805afc4699d",
+      "kind": "FeeObservation",
+      "payload_sha256": "9429dbcedf7a849d4b7185e4e8c65d0e8fc8f14f46263e2f3a839b3d7b4adf6f"
+    },
+    {
+      "id": "1ad913e84d85828ac9c15ef342530420fd79c9cb9e6748ac4b78da133f3204c3",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "a8c06e33cc5f96be0d0af489de2980065ea92ab8378b662ff59f0705f29b97d8"
+    },
+    {
+      "id": "dd8a48f935da7118a84e52aa8f855599cd824f96a8fc8f939fa168abf01efdfd",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "38aad3cf60926fdc723ec784b85c105714d18f8b54a3c348180c94ee80a64490"
+    },
+    {
+      "id": "ac6e9082-2b16-45ee-8dd6-21c8a0b65407",
+      "kind": "FeeObservation",
+      "payload_sha256": "6b01d78a7388120f55bbde5c502030dc7ef29665fde8370d6bc82ff3914cd855"
+    },
+    {
+      "id": "0cbb9ababe5bd3838e06893183988296e1ef720656a8f120a9175b1ebdfa49db",
+      "kind": "PublicFeeResponse",
+      "payload_sha256": "757f08ce211a692551f887ac5135d9412aa53cde493df6cf6ff30d109ffdba1d"
+    },
+    {
+      "id": "a1f6841cda09e9ded90705c19848a337215594f5dad833b9b0c2e864a3440066",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "4a4692cf3e8e46826138b5a954a6ad04c83ad25725c4ccf6f3cbd69ac86aa8c4"
+    },
+    {
+      "id": "78d1f4a6374d5496ab7b4353cf18866945dadd502526c2fe78c193e9b81a3cdc",
+      "kind": "PublicFeeResponse",
+      "payload_sha256": "ca1fb660abbced18c2371625191788240be1182d42b1bc8ca1fb87c340ef4aa7"
+    },
+    {
+      "id": "b4c2a10e5a35d78903d0ef3a0064d3d22bcc56649419cee535594c8bb7a93d70",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "df985a913fb2b72e0a4ac124c4e3e142f31709befeb177aaec95b0266c287148"
+    },
+    {
+      "id": "81e13fd9-944d-4bc5-a65d-338e60ebb97a",
+      "kind": "FeeObservation",
+      "payload_sha256": "96a7572a964f6e5380503441004467039b107b419910e4bf91ae0aa8833e1438"
+    },
+    {
+      "id": "d6b62bb5e59790c8b9a9c697dfcc57c4be69e2311e3fbf1d5f7c3989612c9306",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "b5dbc4db269ae2f1374129e175445afa3455c6805accb8a890ca830da474a505"
+    },
+    {
+      "id": "6c9d2f14ab23a142527134cbcdd4e3b954ec2747f7032eb6e197a82240b6e411",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "b2cb321520310ff96ab94926f29cc03ad977999cd3f48539caf1016053754ccf"
+    },
+    {
+      "id": "b7a306f5-8af2-43d9-a642-5028e01ed1b3",
+      "kind": "FeeObservation",
+      "payload_sha256": "9270f28c2d4fadda5214245c419987e0d4b83fca070b162237ad22ea96a21da9"
+    },
+    {
+      "id": "ca83b05433a664e06927572a12664805855468a413df7754f7412f65df020f51",
+      "kind": "PublicFeeResponse",
+      "payload_sha256": "9483f051a7afc22020ff33889662ba11cf87301783e87a605e5d4eec7992d46c"
+    },
+    {
+      "id": "905226459f79cb8ce1d0b1e86d6cda00ffc12ebdb9e7341fcb7f1a1107dde908",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "714e9a5eace03f10369422cd267ce25efbb8c168834bf6b8b109ac8dd74189bc"
+    },
+    {
+      "id": "640164e02830cdd5c37dc8073367de2891925f89ba013bd41abe2fdd39281048",
+      "kind": "PublicFeeResponse",
+      "payload_sha256": "d259f80a3b62d5552edc859b94f9d3ae43dee760d0f8c9e23a72edf50286a6a7"
+    },
+    {
+      "id": "1725bccd418f93a3291ed4d1e40b3170b9834a63b3c74cba2b72560f2b53cd2e",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "7072b72f9ae72c10020418bb0a51a06b834044372ad7487494fcf65122764ebd"
+    },
+    {
+      "id": "547b6ccd-a324-4278-9a74-fde2b449a81d",
+      "kind": "FeeObservation",
+      "payload_sha256": "2ae75417d06f39f1545ff8f6dcdadd2d7a6a7d8f1ef68ce5751c3537a3280d98"
+    },
+    {
+      "id": "1b92c0f93581cf838b667b06b125b96b989907b90b01ac648598673af905d89a",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "879db9e5558a801a36f69097f85d522fe1e758b644ebc1db02a0556c6684ea4c"
+    },
+    {
+      "id": "6c29fbbfb4a7200ef46c352b3331fb8ee3a8ac142eb7a5334cd261eab72754a5",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "4bbda3c14eb4ce629ce341b365a07428c18cffa6c9ff1516b7936e3dfc3282eb"
+    },
+    {
+      "id": "9ee9e58d-ea0c-4b2f-b2eb-7d9820c889b5",
+      "kind": "FeeObservation",
+      "payload_sha256": "8b99ba14ae88a7a005ddb9cc7c0f854bda3887d605076daf13222c54b733bbdb"
+    },
+    {
+      "id": "ef38bddd04d65e29e3dda4ca3481ad2ebc805e8f73a842e037ccaeca43d47e8b",
+      "kind": "PublicFeeResponse",
+      "payload_sha256": "6a3deafb13652620af5eeb6b8df2f16625526672a22023eedc15cb0db9dc3a19"
+    },
+    {
+      "id": "c6dffc6ae7e5468582f42d5c42199917217b92c17c00660dd940a9bb166246a6",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "25b28551de64bf73f14639b08fe293d167e4385080bbebffe46351441b138337"
+    },
+    {
+      "id": "2655b00c1a8a9ffdbd3eb5b8e3d425b385a51f98e338ba83e7a7f0b667cb5951",
+      "kind": "PublicFeeResponse",
+      "payload_sha256": "4c9dff9bf78ad9022fad6d714a4d37c918841b230ea53aea03e6bb0d2d83a132"
+    },
+    {
+      "id": "16f5616916069904267b34aa74e842a39540938b444b61da082ab18179bb86c1",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "b95defd0ed089e2474276ce023fc51be94da43c2b72288fad01c587ec95d76ba"
+    },
+    {
+      "id": "4499dcd4-cbff-4a24-891d-86e7386cb8b1",
+      "kind": "FeeObservation",
+      "payload_sha256": "d10dca10eb44bc16553cdec316b99c906b0a95c2780ba1f0e0c206a0723b42e4"
+    },
+    {
+      "id": "92da5cdd9f4b6cc0708d3d5ae6d521b92580d9e9251dd99dc6e5bb0f45d48c03",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "8fca8ba9deece61abc3dbf31626b7b2272b7ddd163b6fe4429f939aa0a0b5048"
+    },
+    {
+      "id": "c60c199168768a1b44b00f6b2cac82269da33922d48bb26134ae84ed6073a7c7",
+      "kind": "PublicFeeReceipt",
+      "payload_sha256": "aa995bbc45e0f9f1f3ee10ec046a4565dcb5fba480aa94df62a3e16305aed942"
+    },
+    {
+      "id": "e86a1bc9-acef-406c-a936-78fa16384420",
+      "kind": "FeeObservation",
+      "payload_sha256": "51900909cd881caa9b369ee0f1355f7217806c74f8616d792f90af86a664b410"
+    },
+    {
+      "id": "0b3c2b2499987ebcf72374bfd80ecd0abd9e26998b8aa97bbc23e3b719eee46f",
+      "kind": "CampaignEvidence",
+      "payload_sha256": "31afdaf686110734a454e7a85ac38d38be5c9e480dd51ef65979d897441c6ffd"
+    },
+    {
+      "id": "shadow:64e6f6d59230d9dbc4b803f2a24d2ee78abed1d734785d60f5c331bae4e2429a:000000000001",
+      "kind": "ShadowStudy",
+      "payload_sha256": "036d8c089fef5485a8b6d5b3d87a4e9ab6c261934fc17710dfc8b22aa20ac76b"
+    },
+    {
+      "id": "ba9ad7fed085c49ecf9476293e5c84c5936f73fb3b2a556c5ceb98b0ec27a1e8",
+      "kind": "CampaignEvidence",
+      "payload_sha256": "78f0721c56899de3a2a45e2db990f4161205313416718285402111f2f8bef910"
+    },
+    {
+      "id": "shadow:64e6f6d59230d9dbc4b803f2a24d2ee78abed1d734785d60f5c331bae4e2429a:000000000002",
+      "kind": "ShadowStudy",
+      "payload_sha256": "8d87970928812fabaa581a0b7a0d4894f959341aafcda15e8de190220003fb4b"
+    },
+    {
+      "id": "000000000001:9e2bb07b915a3d1bfc1f306e912c19f9b8a250604bc8f4ca37c1635a1a230d92",
+      "kind": "DomainOutcomeStudy",
+      "payload_sha256": "ddb83c426924f37e984f51b9c15e109d87e735f30ee4fa30fe5fb4cf3a7741ed"
+    },
+    {
+      "id": "f010eb0687754179f8c3b5821f7aeae5d0210d5f53a81515e5e2c05a3424ead1",
+      "kind": "CampaignEvidence",
+      "payload_sha256": "17038934aa787c7c2901c9aa61a7e54f7a83f9d05e8689da9f1b8d6ef260bc61"
+    },
+    {
+      "id": "286ea6afa808d28f19f3a9f0e1007687609fcf0f40f64b4cec8c3f444e202ad6",
+      "kind": "ChallengerOutcomeStudy",
+      "payload_sha256": "d97b7458c02681cdf85d65e1fa2903f8d11b922e486ec40a523ba8e0026abb16"
+    },
+    {
+      "id": "81b69fb2ab5acacd3f4d6cdae9032d66557ae9d6cbd759229c887a653d4a7a6e",
+      "kind": "CampaignEvidence",
+      "payload_sha256": "96e93958006f40283182940b593d2e891d6a664539d8733c838f232289e4f438"
+    },
+    {
+      "id": "000000000002:8c823f9d432448beba063d0cd847bd450bc4f2c413a555bd6ec45d1d845858e4",
+      "kind": "DomainOutcomeStudy",
+      "payload_sha256": "65dbfe9bfb5aa32b4fd9977901fbc379a2a03cdf141c3ad52eeb63bda94a5d58"
+    },
+    {
+      "id": "ae38fe09c54e7f929081ea4008307f40b5bcd18dbd1730ddaff584a37391e496",
+      "kind": "CampaignEvidence",
+      "payload_sha256": "ba9bed422acb5e6d1a215c7d49635d7f96ce3e3808927c86d79352a899339029"
+    }
+  ]
+}

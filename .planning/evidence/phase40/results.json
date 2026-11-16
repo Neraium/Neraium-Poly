@@ -1,0 +1,341 @@
+{
+  "decision_snapshot_as_of": "2026-11-16T10:52:38.773337+00:00",
+  "markets": 404,
+  "outcome_tokens": 808,
+  "fresh_executable_tokens": 276,
+  "supported_tokens": 58,
+  "prospective_forecasts_by_domain": {
+    "economics": 2,
+    "sports": 4,
+    "crypto": 16
+  },
+  "source_replayed_forecasts": 22,
+  "parent_events": 5,
+  "reviewed_independent_events": 0,
+  "qualified_opportunities": 0,
+  "economic_depth_scenarios": 20,
+  "conservative_all_in_net_ev": null,
+  "shadow": {
+    "status": "research_only",
+    "enrollment_id": "64e6f6d59230d9dbc4b803f2a24d2ee78abed1d734785d60f5c331bae4e2429a",
+    "last_at": "2026-11-16T10:52:38.477726+00:00",
+    "capital_scope": "single hypothetical500USD shared pool, not certified/experimental account capital",
+    "hypothetical_cash": 500.0,
+    "capital_reserved": 0,
+    "positions": 0,
+    "position_quantity": 0,
+    "exposure": 0.0,
+    "capital_utilization": 0.0,
+    "orders_attempted": 0,
+    "pending_orders": 0,
+    "hypothetical_fills": 0,
+    "canceled": 0,
+    "expired": 0,
+    "realized_simulated_pnl": null,
+    "unrealized_simulated_pnl": null,
+    "drawdown": null,
+    "mark_status": "no_filled_positions",
+    "verified_settled_parent_events": 0,
+    "statistically_independent_events": null,
+    "settlements": 0,
+    "suspended": false,
+    "suspension_reason": null,
+    "strategies": {
+      "small_edge": {
+        "orders": 0,
+        "fills": 0,
+        "settlements": 0,
+        "realized_pnl": null,
+        "suspended": false,
+        "positions": 0,
+        "reserved": 0,
+        "exposure": 0
+      },
+      "high_conviction": {
+        "orders": 0,
+        "fills": 0,
+        "settlements": 0,
+        "realized_pnl": null,
+        "suspended": false,
+        "positions": 0,
+        "reserved": 0,
+        "exposure": 0
+      },
+      "cross_market": {
+        "orders": 0,
+        "fills": 0,
+        "settlements": 0,
+        "realized_pnl": null,
+        "suspended": false,
+        "positions": 0,
+        "reserved": 0,
+        "exposure": 0
+      },
+      "ensemble": {
+        "orders": 0,
+        "fills": 0,
+        "settlements": 0,
+        "realized_pnl": null,
+        "suspended": false,
+        "positions": 0,
+        "reserved": 0,
+        "exposure": 0
+      }
+    },
+    "rejections": {
+      "strategy_evidence_not_eligible": 176
+    },
+    "runtime_error": null,
+    "research_only": true,
+    "trading_authority": false,
+    "certification_authority": false,
+    "actual_account_access": false
+  },
+  "outcomes": {
+    "pending_forecasts": 22,
+    "verified_forecasts": 0,
+    "domains": {
+      "status": "research_only",
+      "last_at": "2026-11-16T11:00:40.713147+00:00",
+      "pending_forecasts": 6,
+      "durable_verified_forecasts": 0,
+      "verified_by_model": {},
+      "checks": 0,
+      "last_reasons": {},
+      "rejection_reasons": {},
+      "readiness": {
+        "pending_forecasts": 6,
+        "verification_due_forecasts": 0,
+        "future_or_in_progress_forecasts": 6,
+        "scope": "verification schedule only; due sports boundaries are not proof of final completion"
+      },
+      "independent_event_count": 0,
+      "certification_authority": false,
+      "trading_authority": false
+    },
+    "crypto": {
+      "status": "research_only",
+      "last_at": "2026-11-16T10:56:50.963909+00:00",
+      "checks": 0,
+      "verified_forecasts": 0,
+      "registered_pending_forecasts": 16,
+      "verified_by_model": {},
+      "last_reason": null,
+      "verification": "exact model replay plus finalized native proof plus complete independent reference",
+      "sports_status": "existing verified NFL outcome pipeline preserved; new ternary challenger scoring requires target-compatible corroboration",
+      "trading_authority": false,
+      "certification_authority": false
+    },
+    "reviewed_independent_groups": 0,
+    "official_event_result_is_not_native_payout": true
+  },
+  "performance": {
+    "domains": {
+      "schema_version": "phase24-verified-evaluation-v1",
+      "as_of": "2026-11-16T11:00:40.723892+00:00",
+      "leaderboard": [
+        {
+          "model_id": "fomc-recent-policy-shrinkage-v24.1",
+          "forecasts": 1,
+          "verified_forecast_outcomes": 0,
+          "native_parent_ids": 1,
+          "pending_forecasts": 1,
+          "descriptive_verified_scores": [],
+          "calibration": null,
+          "independent_event_count": 0,
+          "metrics": null,
+          "confidence_intervals": null,
+          "profitability_rank": null,
+          "net_executable_edge": null,
+          "simulated_pnl": null,
+          "reason": "reviewed event-disjoint cohorts and homogeneous chronological splits required",
+          "research_only": true,
+          "trading_authority": false,
+          "certification_authority": false,
+          "experimental_admission_authority": false
+        },
+        {
+          "model_id": "fomc-scheduled-policy-frequency-v24.1",
+          "forecasts": 1,
+          "verified_forecast_outcomes": 0,
+          "native_parent_ids": 1,
+          "pending_forecasts": 1,
+          "descriptive_verified_scores": [],
+          "calibration": null,
+          "independent_event_count": 0,
+          "metrics": null,
+          "confidence_intervals": null,
+          "profitability_rank": null,
+          "net_executable_edge": null,
+          "simulated_pnl": null,
+          "reason": "reviewed event-disjoint cohorts and homogeneous chronological splits required",
+          "research_only": true,
+          "trading_authority": false,
+          "certification_authority": false,
+          "experimental_admission_authority": false
+        },
+        {
+          "model_id": "nba-causal-elo-v24.1",
+          "forecasts": 2,
+          "verified_forecast_outcomes": 0,
+          "native_parent_ids": 2,
+          "pending_forecasts": 2,
+          "descriptive_verified_scores": [],
+          "calibration": null,
+          "independent_event_count": 0,
+          "metrics": null,
+          "confidence_intervals": null,
+          "profitability_rank": null,
+          "net_executable_edge": null,
+          "simulated_pnl": null,
+          "reason": "reviewed event-disjoint cohorts and homogeneous chronological splits required",
+          "research_only": true,
+          "trading_authority": false,
+          "certification_authority": false,
+          "experimental_admission_authority": false
+        },
+        {
+          "model_id": "nba-team-frequency-v24.1",
+          "forecasts": 2,
+          "verified_forecast_outcomes": 0,
+          "native_parent_ids": 2,
+          "pending_forecasts": 2,
+          "descriptive_verified_scores": [],
+          "calibration": null,
+          "independent_event_count": 0,
+          "metrics": null,
+          "confidence_intervals": null,
+          "profitability_rank": null,
+          "net_executable_edge": null,
+          "simulated_pnl": null,
+          "reason": "reviewed event-disjoint cohorts and homogeneous chronological splits required",
+          "research_only": true,
+          "trading_authority": false,
+          "certification_authority": false,
+          "experimental_admission_authority": false
+        }
+      ],
+      "rejections": {},
+      "counts": {
+        "forecasts": 6,
+        "individually_verified_forecasts": 0,
+        "pending_forecasts": 6,
+        "reviewed_independent_groups": 0
+      },
+      "sii_incremental_value": null,
+      "ensemble_weights": null,
+      "certification_requirements": {
+        "training_independent_events": 100,
+        "heldout_independent_events": 100
+      },
+      "research_only": true,
+      "trading_authority": false,
+      "certification_authority": false,
+      "experimental_admission_authority": false
+    },
+    "crypto": {
+      "schema_version": "phase23-research-competition-v1",
+      "evaluated_at": "2026-11-16T11:00:40.723892+00:00",
+      "leaderboard": [
+        {
+          "model_version": "empirical-ohlc-block-bootstrap-v23.1",
+          "prospective_forecasts": 8,
+          "pending_forecasts": 8,
+          "unreviewed_parent_events": 2,
+          "independent_verified_events": 0,
+          "category": "prospective_unresolved",
+          "metrics": null,
+          "score_semantics": "binary_event_probability",
+          "calibration_status": "insufficient_independent_events",
+          "statistically_supported_brier_improvement": false,
+          "profitability_rank": null,
+          "net_hypothetical_executable_edge": null,
+          "simulated_realized_pnl": null,
+          "drawdown": null,
+          "source_lineages": [
+            "Binance public market data:BTCUSDT:1794766080000:1794826079999",
+            "Binance public market data:ETHUSDT:1794766080000:1794826079999"
+          ],
+          "research_only": true,
+          "trading_authority": false,
+          "certification_authority": false,
+          "experimental_admission_authority": false
+        },
+        {
+          "model_version": "gaussian-first-passage-v23.1",
+          "prospective_forecasts": 8,
+          "pending_forecasts": 8,
+          "unreviewed_parent_events": 2,
+          "independent_verified_events": 0,
+          "category": "prospective_unresolved",
+          "metrics": null,
+          "score_semantics": "binary_event_probability",
+          "calibration_status": "insufficient_independent_events",
+          "statistically_supported_brier_improvement": false,
+          "profitability_rank": null,
+          "net_hypothetical_executable_edge": null,
+          "simulated_realized_pnl": null,
+          "drawdown": null,
+          "source_lineages": [
+            "Binance public market data:BTCUSDT:1794766080000:1794826079999",
+            "Binance public market data:ETHUSDT:1794766080000:1794826079999"
+          ],
+          "research_only": true,
+          "trading_authority": false,
+          "certification_authority": false,
+          "experimental_admission_authority": false
+        }
+      ],
+      "counts": {
+        "historical_exploratory_studies": 0,
+        "prospective_forecasts": 16,
+        "pending_forecasts": 16,
+        "native_parent_events": 2,
+        "independent_verified_groups": 0,
+        "certified_execution_authorized_challengers": 0
+      },
+      "rejections": {
+        "independent_outcome_replay_required": 1
+      },
+      "shared_lineage_models": [
+        {
+          "left": "empirical-ohlc-block-bootstrap-v23.1",
+          "right": "gaussian-first-passage-v23.1",
+          "shared_source_lineages": [
+            "Binance public market data:BTCUSDT:1794766080000:1794826079999",
+            "Binance public market data:ETHUSDT:1794766080000:1794826079999"
+          ],
+          "independent_confirmations": false
+        }
+      ],
+      "sii_incremental_value": null,
+      "ensemble_status": "withheld_until_independent_chronological_calibration",
+      "ranking_scope": "Verified paired forecast scores only; pending models never ranked by profitability",
+      "certified_requirements": {
+        "training_independent_events": 100,
+        "heldout_independent_events": 100
+      },
+      "research_only": true,
+      "trading_authority": false,
+      "certification_authority": false,
+      "experimental_admission_authority": false
+    }
+  },
+  "immutable_source_report_sha256": "a851a7763ce8d55ea2d1eba4248720611830f66453e903ea106ba6788598bc25",
+  "quote_and_forecast_provenance": "append-only campaign.sqlite retained locally; no originals modified",
+  "validation": {
+    "original_enrollment_source_snapshot_verified": true,
+    "source_code_sha256": "097a0d025a08399d135605ca6afc3c963b08b9fe73590e1aa9a6af4e59668e2c",
+    "records_hash_verified": 130,
+    "campaign_chain_head": "ae38fe09c54e7f929081ea4008307f40b5bcd18dbd1730ddaff584a37391e496",
+    "sqlite_quick_check": "ok"
+  },
+  "limitations": [
+    "Unresolved forecasts are not settled performance.",
+    "No calibrated all-in proof or candidate/settlement verifier is registered; qualified execution remains withheld.",
+    "Shadow pool is hypothetical; existing accounts are never opened or modified.",
+    "Snapshots show capacity, not guaranteed fills.",
+    "One acquisition campaign interrupted by a replay return-type mismatch; evaluation resumed without collecting or reconstructing predictions.",
+    "Snapshots are time-bound research evidence and cannot authorize current trades."
+  ]
+}
