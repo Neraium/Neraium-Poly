@@ -55,6 +55,8 @@ class LivePaperRuntime:
         self.clock = clock or (lambda: datetime.now(UTC))
         from neraium_poly.research.phase28.memory import MemorySampler
         self.memory_sampler = MemorySampler()
+        from neraium_poly.data.memory_reserve import AllocatorReserve
+        self.allocator_reserve = AllocatorReserve()
         self.directory = config.data_dir.resolve()
         self.ledger = LiveLedger(self.directory)
         self._lock = RLock()
@@ -681,6 +683,8 @@ class LivePaperRuntime:
             )
 
     async def cycle(self):
+        if getattr(self,"allocator_reserve",None):
+            await asyncio.to_thread(self.allocator_reserve.release)
         if getattr(self,"memory_sampler",None):self.memory_sampler.sample("collector_cycle_start")
         Settings.from_env()
         now = self.clock()

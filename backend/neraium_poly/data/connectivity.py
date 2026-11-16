@@ -192,6 +192,11 @@ class CoverageFeed:
                 "queue_backpressure_timeouts",
                 "queue_byte_overflows",
                 "queue_peak_bytes",
+                "queue_peak_depth",
+                "queue_backpressure_seconds",
+                "consumer_events",
+                "consumer_max_seconds",
+                "consumer_total_seconds",
                 "largest_frame_bytes",
                 "oversized_frames",
                 "book_level_budget_rejections",
@@ -621,10 +626,10 @@ class CoverageFeed:
                         # discarding a valid burst. The queue and byte budget
                         # remain bounded; a stalled consumer still fails closed.
                         self._metrics["queue_backpressure_waits"] += 1
+                        waiting_at = monotonic()
                         try:
-                            await asyncio.wait_for(
-                                self._queue.put((event, charge)), timeout=self.queue_put_timeout
-                            )
+                            async with asyncio.timeout(self.queue_put_timeout):
+                                await self._queue.put((event, charge))
                         except TimeoutError:
                             self._queued_bytes -= charge
                             self._metrics["queue_backpressure_timeouts"] += 1
@@ -634,6 +639,9 @@ class CoverageFeed:
                         except asyncio.CancelledError:
                             self._queued_bytes -= charge
                             raise
+                        finally:
+                            self._metrics["queue_backpressure_seconds"] += monotonic() - waiting_at
+                    self._metrics["queue_peak_depth"] = max(self._metrics["queue_peak_depth"], self._queue.qsize())
             finally:
                 # Neither an empty queue nor a completed callback should retain
                 # the whole previous decoded universe while waiting for IO.
@@ -643,6 +651,7 @@ class CoverageFeed:
     async def _consume(self, on_book):
         while True:
             queued = await self._queue.get()
+            started = monotonic()
             charge = 0
             try:
                 if isinstance(queued, tuple):
@@ -667,6 +676,10 @@ class CoverageFeed:
                         self._metrics["callbacks_failed"] += 1
                         raise StreamGap("market consumer failed") from error
             finally:
+                elapsed = monotonic() - started
+                self._metrics["consumer_events"] += 1
+                self._metrics["consumer_total_seconds"] += elapsed
+                self._metrics["consumer_max_seconds"] = max(self._metrics["consumer_max_seconds"], elapsed)
                 self._queued_bytes -= charge
                 self._queue.task_done()
                 queued = event = book = value = None

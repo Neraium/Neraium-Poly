@@ -2,6 +2,7 @@
 
 import hashlib
 from datetime import UTC, datetime
+from time import monotonic
 from urllib.parse import urlparse
 
 import httpx
@@ -91,14 +92,40 @@ class SharedFeedClient:
         if not 1024 <= max_bytes <= 32 * 1024 * 1024:
             raise ValueError("bounded frame budget required")
         self.max_bytes = max_bytes
-        self.client = client or httpx.AsyncClient(timeout=10, follow_redirects=False)
+        # A local producer must never be routed through a host HTTP proxy.
+        self.client = client or httpx.AsyncClient(timeout=10, follow_redirects=False, trust_env=False)
+        self._diagnostic = {"status": "not_observed", "producer_url": self.url,
+                            "attempts": 0, "failures": 0, "trading_authority": False}
 
     async def read(self, now=None) -> SharedMarketFrame:
-        return await self._read(now)
+        return await self._observe(now)
 
     async def read_research(self, now=None) -> SharedMarketFrame:
         """Diagnostics may classify cached metadata; degraded books are always stripped."""
-        return await self._read(now, diagnostics=True)
+        return await self._observe(now, diagnostics=True)
+
+    def status(self):
+        return dict(self._diagnostic)
+
+    async def _observe(self, now=None, *, diagnostics=False):
+        start = monotonic()
+        self._diagnostic['attempts'] += 1
+        self._diagnostic['attempted_at'] = datetime.now(UTC).isoformat()
+        try:
+            frame = await self._read(now, diagnostics=diagnostics)
+        except (httpx.HTTPError, ValueError) as error:
+            reason = ('loopback_producer_unreachable' if isinstance(error, httpx.ConnectError)
+                      else 'loopback_producer_timeout' if isinstance(error, httpx.TimeoutException)
+                      else 'loopback_producer_http_error' if isinstance(error, httpx.HTTPError)
+                      else 'producer_frame_withheld')
+            self._diagnostic.update(status='unavailable', failure_boundary=reason,
+                error_type=type(error).__name__, failures=self._diagnostic['failures'] + 1,
+                elapsed_seconds=monotonic() - start)
+            raise  # No cached books or external-feed fallback may authorize orders.
+        self._diagnostic.update(status='ok' if frame.producer_health.get('status') == 'ok' else 'degraded',
+            failure_boundary=None, error_type=None, elapsed_seconds=monotonic() - start,
+            producer_available_at=frame.available_at.isoformat())
+        return frame
 
     async def _read(self, now=None, *, diagnostics=False) -> SharedMarketFrame:
         data = bytearray()

@@ -32,10 +32,14 @@ def test_readonly_reverification_reuses_bounded_accounting_and_verifies_every_ro
     store = managed(path)
     try:
         seen, walks, floors = [], [], []
-        catalog = store._catalog_record
+        metadata = segmented._payload_metadata
         tree_size = segmented._tree_size
         disk_usage = segmented.shutil.disk_usage
-        monkeypatch.setattr(store, '_catalog_record', lambda row, name: (seen.append(row[0]), catalog(row, name))[1])
+        # The recovery merge verifies existing rows without the insertion-only
+        # catalog helper. Observe the mandatory payload validation itself.
+        monkeypatch.setattr(segmented, '_payload_metadata',
+                            lambda payload, rid, available, event:
+                            (seen.append(rid), metadata(payload, rid, available, event))[1])
         monkeypatch.setattr(segmented, '_tree_size', lambda p: (walks.append(p), tree_size(p))[1])
         monkeypatch.setattr(segmented.shutil, 'disk_usage', lambda p: (floors.append(p), disk_usage(p))[1])
         store._usage_at = None

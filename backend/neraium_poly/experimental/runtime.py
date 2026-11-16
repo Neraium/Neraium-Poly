@@ -57,6 +57,8 @@ class ExperimentalRuntime:
         Settings.from_env()
         from neraium_poly.research.phase28.memory import MemorySampler
         self.memory_sampler = MemorySampler()
+        from neraium_poly.data.memory_reserve import AllocatorReserve
+        self.allocator_reserve = AllocatorReserve()
         self.config = config
         from neraium_poly.research.phase31.operations import EventSummaryCache
         self.event_summary_cache=EventSummaryCache(clock=clock)
@@ -551,7 +553,11 @@ class ExperimentalRuntime:
 
     async def _publish_phase35_native(self):
         """Keep synchronous proof replay and SQLite publication off the worker loop."""
-        return await asyncio.to_thread(self.phase35_native.step)
+        from neraium_poly.experimental.research_worker import _drain
+        # Cancelling to_thread alone abandons the Future, not its SQLite writer.
+        # Drain the real task before the research serial gate or source lock can
+        # be released, then propagate cancellation to the caller.
+        return await _drain(asyncio.create_task(asyncio.to_thread(self.phase35_native.step)))
 
     def _select_weather_research(self, frame):
         from neraium_poly.research.phase14.relationships import digest
@@ -571,6 +577,8 @@ class ExperimentalRuntime:
         return selected
 
     async def _cycle_impl(self):
+        if getattr(self, 'allocator_reserve', None):
+            await self._sync_io(self.allocator_reserve.release)
         if not await self._sync_io(self._cycle_preflight, cycle=True):
             if self.event_intelligence is not None and not self.config.archive_management_enabled:
                 try:
@@ -1238,6 +1246,7 @@ class ExperimentalRuntime:
             "last_ingestion_age_seconds": age,
             "last_error": self.last_error,
             "fee_error": self.fee_error,
+            "public_feed": self.feed.status() if hasattr(self.feed, "status") else None,
             "timestamp": now.isoformat(),
         }
 

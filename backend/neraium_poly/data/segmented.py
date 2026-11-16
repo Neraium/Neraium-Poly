@@ -50,7 +50,11 @@ def _sync_dir(path):
 def _readonly(path):
     if path.is_symlink() or not path.is_file():
         raise ValueError("archive source missing or symlinked")
-    return sqlite3.connect(f"file:{path.resolve()}?mode=ro", uri=True, timeout=10)
+    connection = sqlite3.connect(f"file:{path.resolve()}?mode=ro", uri=True, timeout=10)
+    connection.execute("PRAGMA cache_size=-4096")
+    connection.execute("PRAGMA temp_store=FILE")
+    connection.execute("PRAGMA mmap_size=0")
+    return connection
 
 
 def _tree_size(directory):
@@ -190,6 +194,9 @@ class ManagedEventStore:
             if self.catalog.execute("PRAGMA quick_check").fetchall()[0][0] != "ok":
                 raise ValueError("corrupt archive catalogue")
             self._recover()
+            self.catalog.execute("PRAGMA shrink_memory")
+            from neraium_poly.data.memory_reserve import AllocatorReserve
+            self.recovery_allocator = AllocatorReserve().release()
             _sync_dir(self.directory)
             self._usage_at = None
             # Publish the first exact sample only after complete recovery. HTTP
@@ -304,12 +311,24 @@ class ManagedEventStore:
     def _index_segment(self, path, name=None):
         name = name or ("legacy" if path == self.path else path.name)
         source = _readonly(path)
+        # Verify in identity order against a stable read-only catalog snapshot.
+        # Existing archives previously made one random primary-key lookup per
+        # record. A merge scan bounds Python state to two rows and keeps SQLite
+        # sorting on disk, including the much larger immutable legacy source.
+        indexed_source = None
         total = 0
         try:
+            indexed_source = _readonly(self.catalog_path)
+            indexed_source.execute("BEGIN")
+            indexed_rows = indexed_source.execute(
+                "SELECT id,kind,available_at,event_time,digest,segment,qualified FROM records "
+                "WHERE segment=? ORDER BY id", (name,)
+            )
+            previous = next(indexed_rows, None)
             if source.execute("PRAGMA quick_check").fetchone()[0] != "ok":
                 raise ValueError("corrupt archive segment")
             with self.catalog:
-                for row in source.execute("SELECT id,kind,available_at,event_time,payload,digest FROM events"):
+                for row in source.execute("SELECT id,kind,available_at,event_time,payload,digest FROM events ORDER BY id"):
                     if total % 1000 == 0:
                         # Pure verification allocates no new source/catalogue rows.
                         # Retain the existing <=1s tree accounting and fresh global
@@ -317,17 +336,30 @@ class ManagedEventStore:
                         # every1000already-indexed records. Any orphan insertion
                         # invalidates accounting before the next batch/write.
                         self._check_budget(512 * 1024)
-                    if self._catalog_record(row, name):
+                    rid, kind, available, event, payload, digest = row
+                    if hashlib.sha256(payload.encode()).hexdigest() != digest:
+                        raise ValueError("corrupt archive payload digest")
+                    qualified = _payload_metadata(payload, rid, available, event)
+                    expected = (rid, kind, available, event, digest, name, qualified)
+                    if previous is not None and previous[0] < rid:
+                        raise ValueError("catalogue references missing archive records")
+                    if previous is not None and previous[0] == rid:
+                        if tuple(previous) != expected:
+                            raise ValueError("archive identity collision or catalogue mismatch")
+                        previous = next(indexed_rows, None)
+                    elif self._catalog_record(row, name):
                         self._usage_at = None
                     total += 1
                     if total % 1000 == 0:
                         self.catalog.commit()
                 indexed = self.catalog.execute("SELECT count(*) FROM records WHERE segment=?", (name,)).fetchone()[0]
-                if indexed != total:
+                if previous is not None or indexed != total:
                     raise ValueError("catalogue references missing archive records")
                 self.catalog.execute("UPDATE segments SET records=? WHERE name=? AND records<>?", (total, name, total))
         finally:
             source.close()
+            if indexed_source is not None:
+                indexed_source.close()
         return total
 
     def _manifest(self, name, *, digest, size, records):
