@@ -204,7 +204,6 @@ def test_trader_desk_cards_preserve_decisions_without_duplicate_orders(setup):
 
 async def test_starved_combined_frame_uses_fresh_bounded_read_only_reference(setup,monkeypatch,tmp_path):
     import httpx
-
     from neraium_poly.research.phase42 import controller
     from neraium_poly.risk import RiskLimits
     _x,_clock,_m,_b,_f,frame,_fees,_store,_risk=setup
