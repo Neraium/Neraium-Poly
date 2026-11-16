@@ -22,6 +22,8 @@ from neraium_poly.research.phase42.strategies import DEFINITIONS, propose
 
 LEGACY_SOURCE_SHA256='34de68d0a56fe84a39c6476299d432f652c3cb9bfb7e4bf934ba7f07318e6734'  # Reviewed Phase42 entry/exit policy; forward-only inventory/provenance transition.
 LEGACY_DEFINITIONS_SHA256='d60142b125c6bacb56ed548603a6307402f9b01e308691a0c75f696521c86d94'
+DEPLOYED_SOURCE_SHA256='7208eb2e84d64f141fa16e247ec6b92eb30356a6dac2223f5123702035485808'
+DEPLOYED_DEFINITIONS_SHA256='2e451f687dec791505d5206c5f9e511ee83342afea9a63da6473c1e799dd070c'
 EPS=1e-8
 PROFILES={
  'aggressive':{'size':3.,'edge':0.,'spread':.20,'haircut':0.,'unknown_fee':.10},
@@ -52,6 +54,7 @@ class StrategyEngine:
         self.policy={'version':'phase42-v1','profiles':PROFILES,'strategies':DEFINITIONS,'risk':self.risk,
             'code_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),'definitions_sha256':hashlib.sha256(Path(__file__).with_name('strategies.py').read_bytes()).hexdigest(),
             'extra_slippage_per_share':.0015,'redemption_reserve_per_share':.0005,'latency_seconds':.5,'depth_levels_per_side':8,'participation':min(.1,self.risk['max_liquidity_participation']),
+            'economic_sources_sha256':{n:hashlib.sha256((Path(__file__).parent.parent/'phase43'/n).read_bytes()).hexdigest() for n in ('economics.py','tournament.py','baseline.json')},
             'capital':'three mutually exclusive500USD hypothetical portfolios; strategies SHARE each profile capital',
             'fill_assumption':'first eight authentic levels per side only, never extrapolated; later native snapshot with marketable depth; observed growth-only replenishment; passive entries require crossed limit; no guaranteed actual execution',
             'retirement':'after20closed independent-event research observations and negative total net P/L, no new entries; never certify; fixed checkpoint, no holdout reuse',
@@ -63,27 +66,38 @@ class StrategyEngine:
         if previous:self._adopt(previous[0])
     def _adopt(self,row):
         if row['policy']!=self.policy:
-            compatible={**row['policy'],'code_sha256':self.policy['code_sha256'],'definitions_sha256':self.policy['definitions_sha256']}
-            if row['policy']['code_sha256']!=LEGACY_SOURCE_SHA256 or row['policy']['definitions_sha256']!=LEGACY_DEFINITIONS_SHA256 or compatible!=self.policy:raise ValueError('frozen strategy source/policy mismatch; no reset permitted')
+            compatible={**row['policy'],'code_sha256':self.policy['code_sha256'],'definitions_sha256':self.policy['definitions_sha256'],'economic_sources_sha256':self.policy['economic_sources_sha256']}
+            if (row['policy']['code_sha256'],row['policy']['definitions_sha256']) not in ((LEGACY_SOURCE_SHA256,LEGACY_DEFINITIONS_SHA256),(DEPLOYED_SOURCE_SHA256,DEPLOYED_DEFINITIONS_SHA256)) or compatible!=self.policy:raise ValueError('frozen strategy source/policy mismatch; no reset permitted')
         state=unpack_checkpoint(row['checkpoint'])
         if digest(state)!=row['state_sha256']:raise ValueError('strategy checkpoint integrity failure')
         if row['previous_id']:
             prior=self.store.get(row['previous_id'])
             if not prior or digest(json.loads(prior[1]))!=row['previous_sha256']:raise ValueError('strategy lineage failure')
+        if row['policy']['code_sha256']==DEPLOYED_SOURCE_SHA256 and 'loss_ledger' not in state:
+            baseline=json.loads((Path(__file__).parent.parent/'phase43/baseline.json').read_text())
+            if baseline['original_cycle']['id']!=row['id'] or baseline['original_cycle']['sha256']!=digest(row):raise ValueError('Phase43 loss baseline does not bind current original cycle; re-audit required')
+            state['loss_ledger']=baseline['ledger']
+            state['loss_baseline_source']=baseline['original_cycle']
         self.state,self.last=state,row
     def _commit(self,state,events,observations):
         identity=f'strategy42:{self.state["sequence"]+1:012d}'
         prior=self.store.get(identity)
         if prior:self._adopt(json.loads(prior[1]));return False
         if not self.can_write():raise ValueError('shadow capacity admission withheld')
+        # Deleted zero credits are derived cache entries, not source evidence.
+        # Retain prior displayed sizes: missing credit still means zero and an
+        # unchanged quote cannot replenish consumed depth after recovery.
+        for profile in state['profiles'].values():
+            profile['credits']={k:v for k,v in profile['credits'].items() if v>EPS}
         if len(state['forecasts'])>512 or len(state['markets_seen'])>4096 or any(len(s['closed'])>2048 or len(s['seen'])>4096 or len(s['credits'])>32768 for s in state['profiles'].values()):raise ValueError('bounded research state exhausted; preserve and review')
         now=at(self.clock());state['sequence']+=1;state['last_at']=now.isoformat()
-        if self.last and self.last['policy']!=self.policy:events=[{'type':'reviewed_source_transition','from':self.last['policy']['code_sha256'],'to':self.policy['code_sha256'],'scope':'forward-only refreshed-input inventory; all positions, cash, limits and original decisions retained'},*events]
+        if self.last and self.last['policy']!=self.policy:events=[{'type':'reviewed_source_transition','from':self.last['policy']['code_sha256'],'to':self.policy['code_sha256'],'scope':'Phase43: zero-credit cache compaction, passive new-entry retirement, settlement-aligned new independent entries, matched exits; original cash, losses, suspension, positions and immutable records retained'},*events]
         row=StrategyCycle(id=identity,timestamp=now,available_at=now,source='neraium-poly/strategy-competition/v42',policy=self.policy,
             previous_id=self.last['id'] if self.last else None,previous_sha256=digest(self.last) if self.last else None,
             checkpoint=pack_checkpoint(state),state_sha256=digest(state),events=[{'type':'lossless_decision_batch','payload':pack_checkpoint({'decisions':events}),'sha256':digest(events)}],observations=observations)
         if len(row.model_dump_json().encode())>8*1024**2:raise ValueError('bounded shadow record exceeded')
-        self.store.append(row);self.state,self.last=state,row.model_dump(mode='json');return True
+        self.store.append(row)
+        self.state,self.last=state,row.model_dump(mode='json');return True
     def enroll(self,forecasts,*,verifier):
         state=copy.deepcopy(self.state);events=[];now=at(self.clock())
         for f in forecasts:
@@ -129,7 +143,8 @@ class StrategyEngine:
         markets={t:m for t,m in markets.items() if m.status=='active' and m.end_time and m.end_time>now and m.resolution_rules and m.resolution_source and max(m.timestamp,m.available_at)<=now}
         books={t:b for t,b in allbooks.items() if t in markets and b.market_id==markets[t].market_id and b.source in PUBLIC_BOOK_SOURCES and assess_book(b,now,max_spread=.25,expected_token=t).healthy and len(b.asks)+len(b.bids)<=4096 and all(abs(l.price/markets[t].tick_size-round(l.price/markets[t].tick_size))<1e-7 for l in (*b.asks,*b.bids))}
         # Fixed bounded universe, prioritize executable depth, preserve open instruments.
-        held={p['token_id'] for s in self.state['profiles'].values() for p in [*s['positions'].values(),*s['orders'].values()]}
+        tournament_held={p['token_id'] for arm in self.state.get('exit_tournament',{}).get('arms',{}).values() for p in arm['positions'].values()}
+        held=tournament_held|{p['token_id'] for s in self.state['profiles'].values() for p in [*s['positions'].values(),*s['orders'].values()]}
         ranked=sorted(markets,key=lambda t:(t not in held,-sum(l.size*l.price for l in books[t].asks[:5]) if t in books else 0,t))[:128]
         markets={t:markets[t] for t in ranked};books={t:b.model_copy(update={'bids':b.bids[:8],'asks':b.asks[:8]}) for t,b in books.items() if t in markets}
         state=copy.deepcopy(self.state);events=[]
@@ -155,11 +170,14 @@ class StrategyEngine:
                 timeout=(now-at(p['entered_at'])).total_seconds()>=DEFINITIONS[p['strategy']]['horizon']
                 target=q>EPS and value>p['cost']*q/p['quantity']+.005*q
                 stop=q>EPS and value<p['cost']*q/p['quantity']*.8
+                if p.get('exit_policy')=='settlement_aligned_v43':
+                    timeout=False
+                    target=q>EPS and value>=p['target']*q
                 if p['strategy']=='consistency' or not (target or timeout or stop) or b.timestamp<at(p['entered_at'])+timedelta(seconds=.5):continue
                 value,q,levels=self.proceeds(s,p,b,consume=True)
                 if q<=EPS:continue
                 cost=p['cost']*q/p['quantity'];p['cost']-=cost;p['quantity']-=q;s['cash']+=value;s['day_loss']+=value-cost
-                closed={'strategy':p['strategy'],'event_id':p['event_id'],'forecast_id':p.get('forecast_id'),'pnl':value-cost,'cost':cost,'kind':'modeled_bid_exit','native_settled':False,'at':now.isoformat()}
+                closed={'strategy':p['strategy'],'event_id':p['event_id'],'forecast_id':p.get('forecast_id'),'pnl':value-cost,'cost':cost,'kind':'modeled_bid_exit','native_settled':False,'at':now.isoformat(),'exit_triggers':{'target':target,'timeout':timeout,'risk_stop':stop},'exit_policy':p.get('exit_policy','phase42_legacy')}
                 s['closed'].append(closed);counts[p['strategy']+':exits']+=1;events.append({'type':'modeled_exit','profile':name,'order_id':oid,'levels':levels,'book':b.model_dump(mode='json'),**closed})
                 if p['quantity']<=EPS:del s['positions'][oid]
             # Pending limit orders require a later native snapshot; no quote-equals-fill shortcut.
@@ -178,7 +196,7 @@ class StrategyEngine:
                 if quantity>EPS:
                     p=s['positions'].setdefault(oid,{**{k:v for k,v in o.items() if k not in ('reserved','remaining')},'quantity':0.,'cost':0.,'entered_at':now.isoformat()})
                     p['quantity']+=quantity;p['cost']+=spent;p['last_fill_at']=now.isoformat();s['cash']-=spent;o['reserved']-=spent;o['remaining']-=quantity
-                    counts[o['strategy']+':fills']+=1;events.append({'type':'modeled_fill','profile':name,'order_id':oid,'strategy':o['strategy'],'levels':levels,'cost':spent,'quantity':quantity,'book':b.model_dump(mode='json'),'actual_fill':False})
+                    counts[o['strategy']+':fills']+=1;events.append({'type':'modeled_fill','profile':name,'order_id':oid,'strategy':o['strategy'],'levels':levels,'cost':spent,'quantity':quantity,'book':b.model_dump(mode='json'),'actual_fill':False,'entry':copy.deepcopy(p)})
                     if o['remaining']<=EPS or o['reserved']<=EPS:del s['orders'][oid]
             # Executable liquidation marks; unknown full depth is never rendered as current profit.
             pnl=0.;markable=True;mark_s=copy.deepcopy(s)
@@ -196,6 +214,7 @@ class StrategyEngine:
                 strategy=c['strategy'];counts[strategy+':candidates']+=1
                 try:
                     token=c['token_id'];m=markets[token];b=books[token];key=strategy+':'+c['key']
+                    if strategy=='spread_capture':raise ValueError('retired_crossed_ask_passive_proxy; adverse_selection_and_queue_position_unverified')
                     if s['suspended'] or (s['positions'] and not markable):raise ValueError('loss_stop_or_incomplete_portfolio_mark')
                     if key in s['seen'] or any(p['strategy']==strategy and p['token_id']==token for p in [*s['positions'].values(),*s['orders'].values()]):raise ValueError('already_enrolled_or_open')
                     closed=[p for p in s['closed'] if p['strategy']==strategy]
@@ -224,14 +243,25 @@ class StrategyEngine:
                         if q>EPS:last=price
                         if c.get('passive'):break
                     if quantity+EPS<m.min_order_size or net<=EPS:raise ValueError('net_hypothesis_or_native_minimum_size')
+                    if strategy!='consistency':
+                        liquidation,exit_quantity,_=self.proceeds(s,{'quantity':quantity,'rate':rate},b,consume=False)
+                        if exit_quantity+EPS<quantity:raise ValueError('entry_exit_risk_unobservable_at_intended_size')
+                        if liquidation<spent*.8:raise ValueError('entry_liquidation_already_breaches_20pct_exit_rule')
                     oid=digest([name,key]);s['orders'][oid]={'id':oid,'strategy':strategy,'token_id':token,'market_id':m.market_id,'event_id':m.event_id,'domain':c['domain'],
                         'market':c['market'],'forecast_id':c.get('forecast',{}).get('id'),'created_at':now.isoformat(),'expires':(now+timedelta(seconds=30)).isoformat(),
+                        'exit_policy':'settlement_aligned_v43' if strategy=='independent' else 'phase42_legacy','model_id':c.get('forecast',{}).get('model_id'),'model_sha256':c.get('forecast',{}).get('model_sha256'),
                         'rate':rate,'reserved':spent,'remaining':quantity,'limit':last,'target':target,'bundle':c.get('bundle')}
                     s['seen'].append(key);counts[strategy+':orders']+=1
                     events.append({'type':'shadow_intent','profile':name,'order_id':oid,'quantity':quantity,'capital':spent,'estimated_net_value':net,'fee_verified':known,'candidate':c,'pricing_target_not_independent_probability':c['probability'] is None})
                 except ValueError as error:
                     reason=str(error);rejects[strategy+':'+reason]+=1;events.append({'type':'rejection','profile':name,'strategy':strategy,'token_id':c['token_id'],'reason':reason})
             s['counts'],s['rejects']=dict(counts),dict(rejects)
+        from neraium_poly.research.phase43 import economics, tournament
+        experiment=state.setdefault('exit_tournament',tournament.initialize())
+        tournament.advance(experiment,events,books,now,forecasts=source_forecasts,markets=markets)
+        state['loss_ledger']=economics.ledger(events,state.get('loss_ledger'))
+        pending={name+'|'+oid for name,s in state['profiles'].items() for oid in s['orders']}
+        state['loss_ledger']['trades']={key:t for key,t in state['loss_ledger']['trades'].items() if t['quantity']>0 or key in pending}
         return self._commit(state,events,{'frame_id':raw['id'],'frame_sha256':digest(raw),'markets_evaluated':len(markets),'fresh_books':len(books),'candidates':len(candidates),'fees':fees})
     @staticmethod
     def compatible(p,m):
@@ -246,6 +276,9 @@ class StrategyEngine:
             if (proof.get('forecast_id')!=fid or proof.get('native_payout_verified') is not True or proof.get('verified') is not True or not number(proof.get('payout'),0,1)
                 or any(proof.get(k)!=f[k] for k in ('market_id','event_id','token_id','rules_sha256')) or not at(f['timestamp'])<at(proof['resolved_at'])<=at(proof['available_at'])<=now):raise ValueError('exact native proof required')
             state['labels'][fid]=proof
+            if 'exit_tournament' in state:
+                from neraium_poly.research.phase43 import tournament
+                tournament.settle(state['exit_tournament'],proof,now)
             for name,s in state['profiles'].items():
                 for oid,p in list(s['positions'].items()):
                     if p['token_id']!=f['token_id'] or p['market_id']!=f['market_id'] or not self.compatible(p,MarketSnapshot.model_validate(f['market'])) or not at(p['last_fill_at'])<at(proof['resolved_at']):continue
@@ -267,13 +300,18 @@ class StrategyEngine:
                     'verified_settlement_net_pnl':sum(p['pnl'] for p in closed if p['native_settled']),'wins':sum(p['pnl']>0 for p in closed),'losses':sum(p['pnl']<0 for p in closed),'closed_observations':len(closed)}
             out[name]={'strategies':strategies,'cash_hypothetical':s['cash'],'exposure':self.exposure(s),'open_positions':len(s['positions']),'pending_orders':len(s['orders']),
                 'unrealized_net_pnl':s['unrealized'],'maximum_drawdown':s['drawdown'],'suspended':s['suspended'],'rejections':s['rejects']}
-        labels=[(self.state['forecasts'][fid],p) for fid,p in self.state['labels'].items() if number(self.state['forecasts'][fid].get('market_probability'),0,1)]
+        labels=[(self.state['forecasts'][fid],p) for fid,p in self.state['labels'].items() if number(self.state['forecasts'][fid].get('market_probability'),0,1) and p.get('payout') in (0,1)]
         scores=None
         if labels:
             import math
             def score(key):
-                ps=[min(1-1e-12,max(1e-12,f[key])) for f,p in labels];ys=[p['payout'] for f,p in labels]
+                ps=[min(1-1e-12,max(1e-12,.5 if key=='neutral' else f[key])) for f,p in labels];ys=[p['payout'] for f,p in labels]
                 return {'brier':sum((a-y)**2 for a,y in zip(ps,ys,strict=True))/len(ps),'log_loss':-sum(y*math.log(a)+(1-y)*math.log(1-a) for a,y in zip(ps,ys,strict=True))/len(ps)}
-            scores={'model':score('probability'),'market':score('market_probability'),'forecast_count':len(labels),'native_parent_events':len({f['event_id'] for f,p in labels}),'reviewed_independent_events':0,'limitation':'descriptive only; dependency review and heldout validation missing; no calibration fit'}
-        return {'as_of':self.state['last_at'],'markets_evaluated_unique':len(self.state['markets_seen']),'cycles':self.state['sequence'],'profiles':out,'verified_outcomes':len(self.state['labels']),'scoring_excluded_nonbinary_or_missing_baseline':len(self.state['labels'])-len(labels),'scores':scores,
+            scores={'model':score('probability'),'market':score('market_probability'),'neutral':score('neutral'),'forecast_count':len(labels),'native_parent_events':len({f['event_id'] for f,p in labels}),'reviewed_independent_events':0,'limitation':'descriptive only; dependency review and heldout validation missing; no calibration fit'}
+        from neraium_poly.research.phase43 import economics, tournament
+        economic_report={'loss_attribution':economics.attribution(self.state.get('loss_ledger',{'trades':{},'unmatched_exits':0})),
+            'exit_tournament':tournament.report(self.state['exit_tournament'],at(self.clock())) if 'exit_tournament' in self.state else None,
+            'strategy_changes':{'spread_capture':'retired for new intents: crossed-ask passive proxy without queue evidence; historical losses retained', 'independent':'new positions settlement-aligned with risk stop; old positions keep frozen legacy exits'},
+            'next_milestone':'256 matched filled entries per profile or independent native resolutions; no automatic promotion; zero-credit compaction preserves the8MiB guard'}
+        return {**economic_report,'as_of':self.state['last_at'],'markets_evaluated_unique':len(self.state['markets_seen']),'cycles':self.state['sequence'],'profiles':out,'verified_outcomes':len(self.state['labels']),'scoring_excluded_nonbinary_or_missing_baseline':len(self.state['labels'])-len(labels),'scores':scores,
             'forecasts':len(self.state['forecasts']),'strategy_policy_sha256':digest(self.policy),'parent_events':len({f['event_id'] for f in self.state['forecasts'].values()}),'hypotheses':DEFINITIONS,'profiles_are_alternatives':True,'trading_authority':False,'actual_account_access':False,'calibration':'unvalidated; no fitted improvement claimed'}

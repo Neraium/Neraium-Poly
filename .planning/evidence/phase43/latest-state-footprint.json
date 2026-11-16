@@ -1,0 +1,628 @@
+{
+  "record": "strategy42:000000000525",
+  "at": "2026-11-16T19:33:23.275436Z",
+  "state_sha256": "a3be2252940491c23f5a4d355ac871a0f3c3cc38ffa55f8c0e04c7f077c0f950",
+  "bytes": {
+    "forecasts": 325518,
+    "history": 18105,
+    "labels": 2,
+    "last_at": 34,
+    "markets_seen": 3856,
+    "prior_forecasts": 328709,
+    "profiles": 7706957,
+    "sequence": 3
+  },
+  "profiles": {
+    "aggressive": {
+      "bytes": {
+        "books": 188036,
+        "cash": 18,
+        "closed": 11440,
+        "counts": 409,
+        "credits": 2353589,
+        "day": 12,
+        "day_loss": 18,
+        "drawdown": 17,
+        "orders": 2,
+        "peak": 5,
+        "positions": 2,
+        "rejects": 1397,
+        "seen": 57015,
+        "suspended": 4,
+        "unrealized": 3
+      },
+      "cash": 473.39732908627684,
+      "drawdown": 26.60267091372316,
+      "suspended": true,
+      "closed": [
+        {
+          "at": "2026-11-16T13:17:58.440583+00:00",
+          "cost": 1.308256,
+          "event_id": "1375597",
+          "forecast_id": null,
+          "kind": "modeled_bid_exit",
+          "native_settled": false,
+          "pnl": -0.4483155000000001,
+          "strategy": "spread_capture"
+        },
+        {
+          "at": "2026-11-16T13:59:13.021133+00:00",
+          "cost": 2.9800899999999997,
+          "event_id": "1396658",
+          "forecast_id": null,
+          "kind": "modeled_bid_exit",
+          "native_settled": false,
+          "pnl": -1.8080374999999997,
+          "strategy": "spread_capture"
+        },
+        {
+          "at": "2026-11-16T14:04:27.966123+00:00",
+          "cost": 2.5450500000000003,
+          "event_id": "1379184",
+          "forecast_id": "e6c31ecd719f31520ed44c2d4028c05dd07a093682e0b2a530767ce17f93da7d",
+          "kind": "modeled_bid_exit",
+          "native_settled": false,
+          "pnl": -0.49865000000000004,
+          "strategy": "independent"
+        },
+        {
+          "at": "2026-11-16T14:08:49.901766+00:00",
+          "cost": 2.9999999999976366,
+          "event_id": "1398461",
+          "forecast_id": null,
+          "kind": "modeled_bid_exit",
+          "native_settled": false,
+          "pnl": -0.7690906349203206,
+          "strategy": "spread_capture"
+        },
+        {
+          "at": "2026-11-16T14:10:12.787761+00:00",
+          "cost": 2.888105576731617,
+          "event_id": "1379184",
+          "forecast_id": "de281aba5b232832e4770739fa26530d418ac9d37fa02a4cc9fc58adda8b6a0f",
+          "kind": "modeled_bid_exit",
+          "native_settled": false,
+          "pnl": -0.6395955795761621,
+          "strategy": "independent"
+        },
+        {
+          "at": "2026-11-16T14:18:31.131244+00:00",
+          "cost": 2.999999999997673,
+          "event_id": "1299582",
+          "forecast_id": "fd6cbc77839dc416de95b1585e988015a180e9b87634cdc8883235f582109b28",
+          "kind": "modeled_bid_exit",
+          "native_settled": false,
+          "pnl": -0.38876951298694484,
+          "strategy": "independent"
+        },
+        {
+          "at": "2026-11-16T14:25:16.867332+00:00",
+          "cost": 2.4668300000000007,
+          "event_id": "1399649",
+          "forecast_id": "5b589a9b64e2b96c244ecf917790184e085511535c391eaa51b2fe4d26afa31c",
+          "kind": "modeled_bid_exit",
+          "native_settled": false,
+          "pnl": -0.18570000000000064,
+          "strategy": "independent"
+        },
+        {
+          "at": "2026-11-16T14:25:38.212501+00:00",
+          "cost": 2.999999999997673,
+          "event_id": "1299582",
+          "forecast_id": "c696ae66b2986a530c2d806f0b20f0e8cf2aa9c694fc2e0f1deb1cbb621f7b38",
+          "kind": "modeled_bid_exit",
+          "native_settled": false,
+          "pnl": -0.38876951298694484,
+          "strategy": "independent"
+        },
+        {
+          "at": "2026-11-16T14:26:32.049857+00:00",
+          "cost": 2.9999958427355287,
+          "event_id": "1399649",
+          "forecast_id": "ea26f21c74349743cd6c4ca0586813a4429d9a4ddefcfbcc13df7143d71b6552",
+          "kind": "modeled_bid_exit",
+          "native_settled": false,
+          "pnl": -0.6786879868946278,
+          "strategy": "independent"
+        },
+        {
+          "at": "2026-11-16T14:28:53.044193+00:00",
+          "cost": 1.8429455399516621e-06,
+          "event_id": "1399649",
+          "forecast_id": "ea26f21c74349743cd6c4ca0586813a4429d9a4ddefcfbcc13df7143d71b6552",
+          "kind": "modeled_bid_exit",
+          "native_settled": false,
+          "pnl": -3.8110293573074485e-07,
+          "strategy": "independent"
+        },
+        {
+          "at": "2026-11-16T14:28:53.044193+00:00",
+          "cost": 0.0555,
+          "event_id": "1390601",
+          "forecast_id": null,
+          "kind": "modeled_bid_exit",
+          "native_settled": false,
+          "pnl": -0.019930000000000003,
+          "strategy": "spread_capture"
+        },
+        {
+          "at": "2026-11-16T14:36:27.299323+00:00",
+          "cost": 2.9999999999995826,
+          "event_id": "1379184",
+          "forecast_id": "96799143b37743fc9ad8d8d2a470534b775deb775de3c98d5e72557db8567d49",
+          "kind": "modeled_bid_exit",
+          "native_settled": false,
+          "pnl": -1.218428608490441,
+          "strategy": "independent"
+        },
+        {
+          "at": "2026-11-16T14:38:26.611357+00:00",
+          "cost": 1.01034,
+          "event_id": "1396656",
+          "forecast_id": null,
+          "kind": "modeled_bid_exit",
+          "native_settled": false,
+          "pnl": -0.23620399999999997,
+          "strategy": "spread_capture"
+        },
+        {
+          "at": "2026-11-16T14:39:47.644357+00:00",
+          "cost": 2.9999999999988924,
+          "event_id": "1379184",
+          "forecast_id": null,
+          "kind": "modeled_bid_exit",
+          "native_settled": false,
+          "pnl": -0.6458377290074497,
+          "strategy": "momentum"
+        },
+        {
+          "at": "2026-11-16T14:40:51.439586+00:00",
+          "cost": 2.9999904804963746,
+          "event_id": "1379184",
+          "forecast_id": null,
+          "kind": "modeled_bid_exit",
+          "native_settled": false,
+          "pnl": -1.1761247302767897,
+          "strategy": "spread_capture"
+        },
+        {
+          "at": "2026-11-16T14:48:21.197048+00:00",
+          "cost": 2.999999999997673,
+          "event_id": "1299582",
+          "forecast_id": "ebac3b1c154e90cf64d99ce6545dd66471e6cf6c19250633d72e12a1dce17c8d",
+          "kind": "modeled_bid_exit",
+          "native_settled": false,
+          "pnl": -0.38876951298694484,
+          "strategy": "independent"
+        },
+        {
+          "at": "2026-11-16T15:01:04.217072+00:00",
+          "cost": 2.999999999997673,
+          "event_id": "1299582",
+          "forecast_id": "a53c778ed3174d824d93e6bfdf4507e99290377dec980ce07afcec13f3156db6",
+          "kind": "modeled_bid_exit",
+          "native_settled": false,
+          "pnl": -0.38876951298694484,
+          "strategy": "independent"
+        },
+        {
+          "at": "2026-11-16T15:02:06.891072+00:00",
+          "cost": 2.999999999998804,
+          "event_id": "770450",
+          "forecast_id": "cc74ed9995c003afe3aebcabbcedbab4bb542d57af395ce646b5a42013952e82",
+          "kind": "modeled_bid_exit",
+          "native_settled": false,
+          "pnl": -0.8381574999998507,
+          "strategy": "independent"
+        },
+        {
+          "at": "2026-11-16T15:02:47.315823+00:00",
+          "cost": 2.9999992018787416,
+          "event_id": "1399652",
+          "forecast_id": null,
+          "kind": "modeled_bid_exit",
+          "native_settled": false,
+          "pnl": -0.7244826848179606,
+          "strategy": "momentum"
+        },
+        {
+          "at": "2026-11-16T15:15:13.282983+00:00",
+          "cost": 2.483045697674113,
+          "event_id": "1395638",
+          "forecast_id": null,
+          "kind": "modeled_bid_exit",
+          "native_settled": false,
+          "pnl": -0.5940029360464825,
+          "strategy": "spread_capture"
+        },
+        {
+          "at": "2026-11-16T15:16:21.783508+00:00",
+          "cost": 1.6149999999999998,
+          "event_id": "1399649",
+          "forecast_id": "4ab611ce33375493699194575b80d7a0947200b092de8ded8af34e5982dc0a33",
+          "kind": "modeled_bid_exit",
+          "native_settled": false,
+          "pnl": 0.11095000000000033,
+          "strategy": "independent"
+        },
+        {
+          "at": "2026-11-16T15:17:28.862776+00:00",
+          "cost": 0.60723,
+          "event_id": "1395638",
+          "forecast_id": null,
+          "kind": "modeled_bid_exit",
+          "native_settled": false,
+          "pnl": -0.23637000000000002,
+          "strategy": "spread_capture"
+        },
+        {
+          "at": "2026-11-16T15:21:23.546502+00:00",
+          "cost": 2.9999922166023296,
+          "event_id": "1399649",
+          "forecast_id": "ed8e881d11d4be45adb87dd16e084cb1f6f614ad27b112df6aeb31fb7325193b",
+          "kind": "modeled_bid_exit",
+          "native_settled": false,
+          "pnl": -0.6314139839798507,
+          "strategy": "independent"
+        },
+        {
+          "at": "2026-11-16T15:24:40.074129+00:00",
+          "cost": 2.999999999997673,
+          "event_id": "1299582",
+          "forecast_id": "56428d872a420c8e11b67cc3d9e46587b3f8069c90534beb49009daa72d0d0f0",
+          "kind": "modeled_bid_exit",
+          "native_settled": false,
+          "pnl": -0.38876951298694484,
+          "strategy": "independent"
+        },
+        {
+          "at": "2026-11-16T15:24:54.892776+00:00",
+          "cost": 2.9999999999988423,
+          "event_id": "1390769",
+          "forecast_id": null,
+          "kind": "modeled_bid_exit",
+          "native_settled": false,
+          "pnl": -0.766071598360528,
+          "strategy": "momentum"
+        },
+        {
+          "at": "2026-11-16T15:26:18.130608+00:00",
+          "cost": 2.9999991931162335,
+          "event_id": "1397697",
+          "forecast_id": null,
+          "kind": "modeled_bid_exit",
+          "native_settled": false,
+          "pnl": -0.9188628549642579,
+          "strategy": "momentum"
+        },
+        {
+          "at": "2026-11-16T15:30:41.051630+00:00",
+          "cost": 2.120706,
+          "event_id": "1390601",
+          "forecast_id": null,
+          "kind": "modeled_bid_exit",
+          "native_settled": false,
+          "pnl": -0.8001280000000002,
+          "strategy": "spread_capture"
+        },
+        {
+          "at": "2026-11-16T15:31:13.002349+00:00",
+          "cost": 2.999999999998706,
+          "event_id": "1399649",
+          "forecast_id": "9cbf0ae40a4735cf6ccec42494aedc4645a0bd00ab05863f1714a5398594da7a",
+          "kind": "modeled_bid_exit",
+          "native_settled": false,
+          "pnl": -1.0717238372089,
+          "strategy": "independent"
+        },
+        {
+          "at": "2026-11-16T15:33:39.094044+00:00",
+          "cost": 0.71203,
+          "event_id": "1399649",
+          "forecast_id": "acbdfa87353e20d302645e9f49bbcb8e1779bc7ec736d223e9ef1e1a319e2d1b",
+          "kind": "modeled_bid_exit",
+          "native_settled": false,
+          "pnl": 0.036839999999999984,
+          "strategy": "independent"
+        },
+        {
+          "at": "2026-11-16T15:48:05.654648+00:00",
+          "cost": 2.999999999997673,
+          "event_id": "1299582",
+          "forecast_id": "f9e7dc54027d30f3473bff149542e29758ad3496de4ec2987c5e1cc23dca03c7",
+          "kind": "modeled_bid_exit",
+          "native_settled": false,
+          "pnl": -0.38876951298694484,
+          "strategy": "independent"
+        },
+        {
+          "at": "2026-11-16T15:54:43.341012+00:00",
+          "cost": 2.7214,
+          "event_id": "1399649",
+          "forecast_id": "8a810d9767025b25575ad8c0da617bb80ecba15635a80610dfbdf897dfd735e3",
+          "kind": "modeled_bid_exit",
+          "native_settled": false,
+          "pnl": -0.7215275000000001,
+          "strategy": "independent"
+        },
+        {
+          "at": "2026-11-16T15:55:48.200771+00:00",
+          "cost": 2.9999974085850782,
+          "event_id": "770450",
+          "forecast_id": "f39b06f171236e48058c7bbfa545c9ba97d4515545b982a000a4679b3649f114",
+          "kind": "modeled_bid_exit",
+          "native_settled": false,
+          "pnl": -0.867611967032051,
+          "strategy": "independent"
+        },
+        {
+          "at": "2026-11-16T15:59:38.272901+00:00",
+          "cost": 2.999999999997673,
+          "event_id": "1299582",
+          "forecast_id": "748490ffc9a5b4d7ea053fedc4e3639244b6d5159e6da64c6a295e8ab827c862",
+          "kind": "modeled_bid_exit",
+          "native_settled": false,
+          "pnl": -0.38876951298694484,
+          "strategy": "independent"
+        },
+        {
+          "at": "2026-11-16T16:00:02.089974+00:00",
+          "cost": 2.9999999999995848,
+          "event_id": "1399652",
+          "forecast_id": "4a01f42aa0817c26cca3644c6d3817c81d769bf6d3ba5dd9725846e1da9de1eb",
+          "kind": "modeled_bid_exit",
+          "native_settled": false,
+          "pnl": -0.7882739835164294,
+          "strategy": "event_repricing"
+        },
+        {
+          "at": "2026-11-16T16:00:02.089974+00:00",
+          "cost": 2.9999999999995848,
+          "event_id": "1399652",
+          "forecast_id": "4a01f42aa0817c26cca3644c6d3817c81d769bf6d3ba5dd9725846e1da9de1eb",
+          "kind": "modeled_bid_exit",
+          "native_settled": false,
+          "pnl": -0.7882739835164294,
+          "strategy": "independent"
+        },
+        {
+          "at": "2026-11-16T16:00:24.133368+00:00",
+          "cost": 2.7214,
+          "event_id": "1399649",
+          "forecast_id": "b4465e6f77b6c0ff249579d6bca1ca1bc981f656a844b79f397db742aaa9cb89",
+          "kind": "modeled_bid_exit",
+          "native_settled": false,
+          "pnl": -0.7215275000000001,
+          "strategy": "independent"
+        },
+        {
+          "at": "2026-11-16T16:02:18.318404+00:00",
+          "cost": 2.999999999998016,
+          "event_id": "1399649",
+          "forecast_id": "a9d8f789554fe9b8406863b26f8eb8179be74207e4f02900d5b609e1fbb4025e",
+          "kind": "modeled_bid_exit",
+          "native_settled": false,
+          "pnl": -0.7207693321914848,
+          "strategy": "event_repricing"
+        },
+        {
+          "at": "2026-11-16T16:02:18.318404+00:00",
+          "cost": 2.999999999998016,
+          "event_id": "1399649",
+          "forecast_id": "a9d8f789554fe9b8406863b26f8eb8179be74207e4f02900d5b609e1fbb4025e",
+          "kind": "modeled_bid_exit",
+          "native_settled": false,
+          "pnl": -0.7978338527392945,
+          "strategy": "independent"
+        },
+        {
+          "at": "2026-11-16T16:04:03.606150+00:00",
+          "cost": 2.9999946173842473,
+          "event_id": "1389036",
+          "forecast_id": null,
+          "kind": "modeled_bid_exit",
+          "native_settled": false,
+          "pnl": -1.0217547188261595,
+          "strategy": "momentum"
+        },
+        {
+          "at": "2026-11-16T16:04:38.831330+00:00",
+          "cost": 2.3483759218834164e-06,
+          "event_id": "1389036",
+          "forecast_id": null,
+          "kind": "modeled_bid_exit",
+          "native_settled": false,
+          "pnl": -5.410473937672575e-07,
+          "strategy": "momentum"
+        },
+        {
+          "at": "2026-11-16T16:05:13.034230+00:00",
+          "cost": 2.999999999997673,
+          "event_id": "1299582",
+          "forecast_id": "86343c8c2099eb7c55e9ad17feb156e97f4d5a88113f3d451320779e0ce88130",
+          "kind": "modeled_bid_exit",
+          "native_settled": false,
+          "pnl": -0.38876951298694484,
+          "strategy": "independent"
+        },
+        {
+          "at": "2026-11-16T16:06:19.784751+00:00",
+          "cost": 0.35828000000000004,
+          "event_id": "1399649",
+          "forecast_id": "9414d5f1914b60ecca84e9b9b39c214a9f0fcf1de294b192e36e5e08ba6519c3",
+          "kind": "modeled_bid_exit",
+          "native_settled": false,
+          "pnl": -0.08843000000000001,
+          "strategy": "event_repricing"
+        },
+        {
+          "at": "2026-11-16T16:06:19.784751+00:00",
+          "cost": 2.9999932833936533,
+          "event_id": "1399652",
+          "forecast_id": "c7476dca8ef054c8a4db27a3112f0227194b63dd89519536a8c36ce9ff4cfb53",
+          "kind": "modeled_bid_exit",
+          "native_settled": false,
+          "pnl": -0.746694119602727,
+          "strategy": "independent"
+        },
+        {
+          "at": "2026-11-16T16:07:43.894732+00:00",
+          "cost": 2.999999999997594,
+          "event_id": "1399649",
+          "forecast_id": "ec8531379d6ee5c05164ea3d836d4c62729378d6f38b7797637323775154379a",
+          "kind": "modeled_bid_exit",
+          "native_settled": false,
+          "pnl": -0.7263253105586811,
+          "strategy": "event_repricing"
+        },
+        {
+          "at": "2026-11-16T16:07:43.894732+00:00",
+          "cost": 2.999999999997594,
+          "event_id": "1399649",
+          "forecast_id": "ec8531379d6ee5c05164ea3d836d4c62729378d6f38b7797637323775154379a",
+          "kind": "modeled_bid_exit",
+          "native_settled": false,
+          "pnl": -0.7454653105586813,
+          "strategy": "independent"
+        },
+        {
+          "at": "2026-11-16T16:07:43.894732+00:00",
+          "cost": 2.993276598828513e-06,
+          "event_id": "1399652",
+          "forecast_id": "c7476dca8ef054c8a4db27a3112f0227194b63dd89519536a8c36ce9ff4cfb53",
+          "kind": "modeled_bid_exit",
+          "native_settled": false,
+          "pnl": -6.445917428170315e-07,
+          "strategy": "independent"
+        }
+      ]
+    },
+    "balanced": {
+      "bytes": {
+        "books": 188036,
+        "cash": 17,
+        "closed": 1903,
+        "counts": 326,
+        "credits": 2353589,
+        "day": 12,
+        "day_loss": 19,
+        "drawdown": 17,
+        "orders": 2,
+        "peak": 5,
+        "positions": 2,
+        "rejects": 1467,
+        "seen": 6115,
+        "suspended": 5,
+        "unrealized": 3
+      },
+      "cash": 492.9008460591684,
+      "drawdown": 7.099153940831627,
+      "suspended": false,
+      "closed": [
+        {
+          "at": "2026-11-16T14:05:38.317972+00:00",
+          "cost": 2.0975335722543353,
+          "event_id": "1379184",
+          "forecast_id": "e6c31ecd719f31520ed44c2d4028c05dd07a093682e0b2a530767ce17f93da7d",
+          "kind": "modeled_bid_exit",
+          "native_settled": false,
+          "pnl": -0.22871036994219662,
+          "strategy": "independent"
+        },
+        {
+          "at": "2026-11-16T14:18:31.131244+00:00",
+          "cost": 4.9999999999974705,
+          "event_id": "1379184",
+          "forecast_id": "de281aba5b232832e4770739fa26530d418ac9d37fa02a4cc9fc58adda8b6a0f",
+          "kind": "modeled_bid_exit",
+          "native_settled": false,
+          "pnl": -0.532011755725061,
+          "strategy": "independent"
+        },
+        {
+          "at": "2026-11-16T14:39:47.644357+00:00",
+          "cost": 4.9999999999974705,
+          "event_id": "1379184",
+          "forecast_id": null,
+          "kind": "modeled_bid_exit",
+          "native_settled": false,
+          "pnl": -1.0763934351140838,
+          "strategy": "momentum"
+        },
+        {
+          "at": "2026-11-16T14:40:51.439586+00:00",
+          "cost": 4.9999999999957865,
+          "event_id": "1379184",
+          "forecast_id": null,
+          "kind": "modeled_bid_exit",
+          "native_settled": false,
+          "pnl": -2.067277027025252,
+          "strategy": "spread_capture"
+        },
+        {
+          "at": "2026-11-16T15:02:06.891072+00:00",
+          "cost": 4.999997935095781,
+          "event_id": "1379184",
+          "forecast_id": null,
+          "kind": "modeled_bid_exit",
+          "native_settled": false,
+          "pnl": -0.14596167003728588,
+          "strategy": "momentum"
+        },
+        {
+          "at": "2026-11-16T15:04:53.271602+00:00",
+          "cost": 4.999999357508461,
+          "event_id": "1379184",
+          "forecast_id": null,
+          "kind": "modeled_bid_exit",
+          "native_settled": false,
+          "pnl": -0.10168666309921814,
+          "strategy": "momentum"
+        },
+        {
+          "at": "2026-11-16T15:31:13.002349+00:00",
+          "cost": 4.999999999996569,
+          "event_id": "1399649",
+          "forecast_id": "9cbf0ae40a4735cf6ccec42494aedc4645a0bd00ab05863f1714a5398594da7a",
+          "kind": "modeled_bid_exit",
+          "native_settled": false,
+          "pnl": -1.8499240988361425,
+          "strategy": "independent"
+        },
+        {
+          "at": "2026-11-16T15:58:06.711647+00:00",
+          "cost": 4.999999999998024,
+          "event_id": "770450",
+          "forecast_id": "f39b06f171236e48058c7bbfa545c9ba97d4515545b982a000a4679b3649f114",
+          "kind": "modeled_bid_exit",
+          "native_settled": false,
+          "pnl": -1.0971889210523447,
+          "strategy": "independent"
+        }
+      ]
+    },
+    "conservative": {
+      "bytes": {
+        "books": 188036,
+        "cash": 5,
+        "closed": 2,
+        "counts": 124,
+        "credits": 2353589,
+        "day": 12,
+        "day_loss": 3,
+        "drawdown": 3,
+        "orders": 2,
+        "peak": 5,
+        "positions": 2,
+        "rejects": 1165,
+        "seen": 2,
+        "suspended": 5,
+        "unrealized": 3
+      },
+      "cash": 500.0,
+      "drawdown": 0.0,
+      "suspended": false,
+      "closed": []
+    }
+  }
+}

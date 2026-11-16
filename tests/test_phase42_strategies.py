@@ -53,22 +53,21 @@ def test_bid_exit_is_realized_modeled_not_native_settlement_and_recovery_keeps_s
     x,clock,_m,b,_f,frame,fees,store,risk=setup;x.step(frame,fees)
     clock[0]+=timedelta(seconds=1);x.step(frame_at(frame,b,clock[0]),fees)
     assert x.state['profiles']['balanced']['positions']
-    clock[0]+=timedelta(seconds=1);x.step(frame_at(frame,b,clock[0],bid=.60,ask=.62),fees)
+    clock[0]+=timedelta(seconds=1);x.step(frame_at(frame,b,clock[0],bid=.74,ask=.76),fees)
     closed=x.state['profiles']['balanced']['closed'];assert closed and closed[0]['pnl']>0 and not closed[0]['native_settled']
-    assert any(e['type']=='modeled_exit' and e['book']['bids'][0]['price']==.60 for e in events(x))
+    assert any(e['type']=='modeled_exit' and e['book']['bids'][0]['price']==.74 for e in events(x))
     recovered=StrategyEngine(store,risk_limits=risk,clock=lambda:clock[0],can_write=lambda:True)
     assert recovered.state==x.state
     assert recovered.report()['profiles']['balanced']['strategies']['independent']['verified_settlement_net_pnl']==0
 
 
-def test_passive_order_requires_later_crossed_limit_not_a_repeated_quote(setup):
+def test_retired_passive_proxy_does_not_open_new_orders(setup):
     x,clock,_m,b,_f,frame,fees,_store,_risk=setup
-    wide=frame_at(frame,b,NOW,bid=.40,ask=.46);x.step(wide,fees)
-    orders=[o for o in x.state['profiles']['aggressive']['orders'].values() if o['strategy']=='spread_capture'];assert orders
-    clock[0]+=timedelta(seconds=1);x.step(frame_at(frame,b,clock[0],bid=.40,ask=.46),fees)
-    assert not any(p['strategy']=='spread_capture' for p in x.state['profiles']['aggressive']['positions'].values())
+    x.step(frame_at(frame,b,NOW,bid=.40,ask=.46),fees)
     clock[0]+=timedelta(seconds=1);x.step(frame_at(frame,b,clock[0],bid=.38,ask=.40),fees)
-    assert any(p['strategy']=='spread_capture' for p in x.state['profiles']['aggressive']['positions'].values())
+    for state in x.state['profiles'].values():
+        assert not any(o['strategy']=='spread_capture' for o in [*state['orders'].values(),*state['positions'].values()])
+        assert any('retired_crossed_ask_passive_proxy' in reason for reason in state['rejects'])
 
 
 def test_distinct_momentum_and_external_revision_hypotheses_are_causal(setup):

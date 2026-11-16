@@ -1,0 +1,69 @@
+{
+  "by_strategy": {
+    "aggressive/spread_capture": {
+      "modeled_exit_pnl": -6.088203301243593,
+      "gross_price_pnl": -3.4082143202587845,
+      "allocated_entry_fees": 1.1410399999999998,
+      "exit_fees": 0.9189099999999999,
+      "entry_reserve": 0.35430798913417627,
+      "exit_slippage": 0.2657309918506322
+    },
+    "aggressive/independent": {
+      "modeled_exit_pnl": -14.113658859189254,
+      "gross_price_pnl": -3.9859059791874687,
+      "allocated_entry_fees": 4.5065,
+      "exit_fees": 4.2738299999999985,
+      "entry_reserve": 0.7699559314295914,
+      "exit_slippage": 0.5774669485721936
+    },
+    "balanced/independent": {
+      "modeled_exit_pnl": -3.7078351455557446,
+      "gross_price_pnl": -1.7707928188212827,
+      "allocated_entry_fees": 0.6931799999999999,
+      "exit_fees": 0.61405,
+      "entry_reserve": 0.35989275813397803,
+      "exit_slippage": 0.26991956860048427
+    },
+    "aggressive/momentum": {
+      "modeled_exit_pnl": -4.077010127023749,
+      "gross_price_pnl": -1.8355011109748096,
+      "allocated_entry_fees": 0.98092,
+      "exit_fees": 0.8689300000000001,
+      "entry_reserve": 0.2238051520279651,
+      "exit_slippage": 0.16785386402097457
+    },
+    "balanced/momentum": {
+      "modeled_exit_pnl": -1.3240417682505878,
+      "gross_price_pnl": -0.9029271326348729,
+      "allocated_entry_fees": 0.16458,
+      "exit_fees": 0.15475999999999998,
+      "entry_reserve": 0.05815693463755162,
+      "exit_slippage": 0.043617700978162866
+    },
+    "balanced/spread_capture": {
+      "modeled_exit_pnl": -2.067277027025252,
+      "gross_price_pnl": -1.7353324324307247,
+      "allocated_entry_fees": 0.14996,
+      "exit_fees": 0.10552,
+      "entry_reserve": 0.04369405405401591,
+      "exit_slippage": 0.03277054054051165
+    },
+    "aggressive/event_repricing": {
+      "modeled_exit_pnl": -2.323798626266595,
+      "gross_price_pnl": -0.9649093468764486,
+      "allocated_entry_fees": 0.64084,
+      "exit_fees": 0.5918,
+      "entry_reserve": 0.07214244536579828,
+      "exit_slippage": 0.054106834024348516
+    }
+  },
+  "unmatched_exits": 0,
+  "original_bytes_verified": 510808052,
+  "duration_seconds": 5.16499115107581,
+  "complete_at_snapshot": true,
+  "snapshot_end": {
+    "id": "strategy42:000000000525",
+    "sha256": "864ca7e5be809c33e5b5d18e13499fa0c338daf5952401305cf305e0e8f76979",
+    "at": "2026-11-16T19:33:23.275436Z"
+  }
+}

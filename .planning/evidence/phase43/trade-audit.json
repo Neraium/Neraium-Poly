@@ -1,0 +1,4655 @@
+{
+  "trades": [
+    {
+      "profile": "aggressive",
+      "order_id": "69c41305421eabc1da44b54d84e3c8b298de7bfe7663afd222cc14a0dd7934d2",
+      "strategy": "spread_capture",
+      "market_id": "7003482",
+      "event_id": "1375597",
+      "question": "Set 1 Winner: Carlos Alcaraz vs Frances Tiafoe",
+      "forecast_id": null,
+      "probability": null,
+      "uncertainty": {
+        "adverse_selection": "unmeasured",
+        "fill_model": "later marketable asks only; no queue-priority claim"
+      },
+      "fee_verified": false,
+      "quantity": 23.053,
+      "entry_cost": 1.308256,
+      "entry_principal": 1.1526500000000002,
+      "entry_fees": 0.1095,
+      "exit_quantity": 23.052999999999997,
+      "remaining_quantity": 3.552713678800501e-15,
+      "remaining_principal": 2.220446049250313e-16,
+      "remaining_entry_fees": 1.3877787807814457e-17,
+      "allocated_entry_principal": 1.15265,
+      "allocated_entry_fees": 0.10949999999999999,
+      "exit_principal": 0.9891399999999999,
+      "exit_fees": 0.09462,
+      "allocated_entry_cost": 1.308256,
+      "modeled_exit_pnl": -0.4483155000000001,
+      "native_settlement_pnl": 0.0,
+      "entry_best_bid": 0.06,
+      "entry_best_ask": 0.09,
+      "gross_price_pnl": -0.16351000000000004,
+      "entry_reserve": 0.04610600000000015,
+      "exit_slippage": 0.034579499999999874,
+      "entry_spread_diagnostic": -0.6915899999999999,
+      "probability_error": null,
+      "exit_reason": "legacy trigger not recorded"
+    },
+    {
+      "profile": "aggressive",
+      "order_id": "3dd10776389f62a7c3786cf626974a1e6d5d00dedda9ebe53a95b808c913fa26",
+      "strategy": "independent",
+      "market_id": "7013493",
+      "event_id": "1379184",
+      "question": "S&P 500 (SPX) Up or Down on November 16?",
+      "forecast_id": "e6c31ecd719f31520ed44c2d4028c05dd07a093682e0b2a530767ce17f93da7d",
+      "probability": 0.6033755274261603,
+      "uncertainty": 1.0,
+      "fee_verified": false,
+      "quantity": 9.4,
+      "entry_cost": 2.5450500000000003,
+      "entry_principal": 2.35,
+      "entry_fees": 0.17625,
+      "exit_quantity": 9.4,
+      "remaining_quantity": 0.0,
+      "remaining_principal": 0.0,
+      "remaining_entry_fees": 0.0,
+      "allocated_entry_principal": 2.35,
+      "allocated_entry_fees": 0.17625,
+      "exit_principal": 2.23061,
+      "exit_fees": 0.17011,
+      "allocated_entry_cost": 2.5450500000000003,
+      "modeled_exit_pnl": -0.49865000000000004,
+      "native_settlement_pnl": 0.0,
+      "entry_best_bid": 0.23,
+      "entry_best_ask": 0.25,
+      "gross_price_pnl": -0.11939000000000011,
+      "entry_reserve": 0.018800000000000178,
+      "exit_slippage": 0.014099999999999557,
+      "entry_spread_diagnostic": -0.18799999999999992,
+      "probability_error": null,
+      "exit_reason": "legacy trigger not recorded"
+    },
+    {
+      "profile": "aggressive",
+      "order_id": "0110a8ff1df9614c0d294842fc329b76782830b589ba3665753febd935dec03d",
+      "strategy": "spread_capture",
+      "market_id": "7077405",
+      "event_id": "1396658",
+      "question": "Helsinki: Luka Mikrut vs Michael Agwi",
+      "forecast_id": null,
+      "probability": null,
+      "uncertainty": {
+        "adverse_selection": "unmeasured",
+        "fill_model": "later marketable asks only; no queue-priority claim"
+      },
+      "fee_verified": false,
+      "quantity": 85.36500000000001,
+      "entry_cost": 2.9800899999999997,
+      "entry_principal": 2.56095,
+      "entry_fees": 0.24841,
+      "exit_quantity": 85.36500000000001,
+      "remaining_quantity": 0.0,
+      "remaining_principal": 0.0,
+      "remaining_entry_fees": 0.0,
+      "allocated_entry_principal": 2.56095,
+      "allocated_entry_fees": 0.24841,
+      "exit_principal": 1.44165,
+      "exit_fees": 0.14155,
+      "allocated_entry_cost": 2.9800899999999997,
+      "modeled_exit_pnl": -1.8080374999999997,
+      "native_settlement_pnl": 0.0,
+      "entry_best_bid": 0.03,
+      "entry_best_ask": 0.05,
+      "gross_price_pnl": -1.1193,
+      "entry_reserve": 0.17072999999999963,
+      "exit_slippage": 0.1280475000000001,
+      "entry_spread_diagnostic": -1.7073000000000005,
+      "probability_error": null,
+      "exit_reason": "legacy trigger not recorded"
+    },
+    {
+      "profile": "balanced",
+      "order_id": "829e8ff9d698c9c6e1405d15891d672e9b166385b55dcc47929280bfb2955050",
+      "strategy": "independent",
+      "market_id": "7013493",
+      "event_id": "1379184",
+      "question": "S&P 500 (SPX) Up or Down on November 16?",
+      "forecast_id": "e6c31ecd719f31520ed44c2d4028c05dd07a093682e0b2a530767ce17f93da7d",
+      "probability": 0.6033755274261603,
+      "uncertainty": 1.0,
+      "fee_verified": true,
+      "quantity": 8.082990366088632,
+      "entry_cost": 2.0975335722543353,
+      "entry_principal": 2.020747591522158,
+      "entry_fees": 0.06062,
+      "exit_quantity": 8.082990366088632,
+      "remaining_quantity": 0.0,
+      "remaining_principal": 0.0,
+      "remaining_entry_fees": 0.0,
+      "allocated_entry_principal": 2.020747591522158,
+      "allocated_entry_fees": 0.06062,
+      "exit_principal": 1.9399176878612716,
+      "exit_fees": 0.05897,
+      "allocated_entry_cost": 2.0975335722543353,
+      "modeled_exit_pnl": -0.22871036994219662,
+      "native_settlement_pnl": 0.0,
+      "entry_best_bid": 0.24,
+      "entry_best_ask": 0.25,
+      "gross_price_pnl": -0.08082990366088638,
+      "entry_reserve": 0.01616598073217735,
+      "exit_slippage": 0.012124485549132924,
+      "entry_spread_diagnostic": -0.0808299036608864,
+      "probability_error": null,
+      "exit_reason": "legacy trigger not recorded"
+    },
+    {
+      "profile": "aggressive",
+      "order_id": "4aba4a9b14f29c46f3d213b3a1e1c63bfeb5d3c4c43b6275fae05f7da27eecd4",
+      "strategy": "independent",
+      "market_id": "7013493",
+      "event_id": "1379184",
+      "question": "S&P 500 (SPX) Up or Down on November 16?",
+      "forecast_id": "de281aba5b232832e4770739fa26530d418ac9d37fa02a4cc9fc58adda8b6a0f",
+      "probability": 0.6033755274261603,
+      "uncertainty": 1.0,
+      "fee_verified": false,
+      "quantity": 10.66704593941118,
+      "entry_cost": 2.888105576731617,
+      "entry_principal": 2.666761484852795,
+      "entry_fees": 0.20001,
+      "exit_quantity": 10.66704593941118,
+      "remaining_quantity": 0.0,
+      "remaining_principal": 0.0,
+      "remaining_entry_fees": 0.0,
+      "allocated_entry_principal": 2.666761484852795,
+      "allocated_entry_fees": 0.20001,
+      "exit_principal": 2.4534205660645716,
+      "exit_fees": 0.18891,
+      "allocated_entry_cost": 2.888105576731617,
+      "modeled_exit_pnl": -0.6395955795761621,
+      "native_settlement_pnl": 0.0,
+      "entry_best_bid": 0.24,
+      "entry_best_ask": 0.26,
+      "gross_price_pnl": -0.21334091878822337,
+      "entry_reserve": 0.021334091878822098,
+      "exit_slippage": 0.01600056890911672,
+      "entry_spread_diagnostic": -0.21334091878822378,
+      "probability_error": null,
+      "exit_reason": "legacy trigger not recorded"
+    },
+    {
+      "profile": "aggressive",
+      "order_id": "f90f8afe00ee103bfa98ec2884de8d435f25155905120cb12040f55d8a900a6f",
+      "strategy": "independent",
+      "market_id": "6567954",
+      "event_id": "1299582",
+      "question": "Trail Blazers vs. Timberwolves",
+      "forecast_id": "fd6cbc77839dc416de95b1585e988015a180e9b87634cdc8883235f582109b28",
+      "probability": 0.5051901825122906,
+      "uncertainty": {
+        "lower_probability": 0.0,
+        "type": "uncalibrated_not_a_coverage_interval",
+        "upper_probability": 1.0
+      },
+      "fee_verified": false,
+      "quantity": 6.16218614718111,
+      "entry_cost": 2.999999999997673,
+      "entry_principal": 2.834605627703311,
+      "entry_fees": 0.15307,
+      "exit_quantity": 6.16218614718111,
+      "remaining_quantity": 0.0,
+      "remaining_principal": 0.0,
+      "remaining_entry_fees": 0.0,
+      "allocated_entry_principal": 2.834605627703311,
+      "allocated_entry_fees": 0.15307,
+      "exit_principal": 2.7729837662314996,
+      "exit_fees": 0.15251,
+      "allocated_entry_cost": 2.999999999997673,
+      "modeled_exit_pnl": -0.38876951298694484,
+      "native_settlement_pnl": 0.0,
+      "entry_best_bid": 0.45,
+      "entry_best_ask": 0.46,
+      "gross_price_pnl": -0.06162186147181137,
+      "entry_reserve": 0.012324372294362035,
+      "exit_slippage": 0.009243279220771505,
+      "entry_spread_diagnostic": -0.06162186147181115,
+      "probability_error": null,
+      "exit_reason": "legacy trigger not recorded"
+    },
+    {
+      "profile": "balanced",
+      "order_id": "878038567341424c2d89c04190f375760d9035cd51d2f8f9a97f6a7eb62acdff",
+      "strategy": "independent",
+      "market_id": "7013493",
+      "event_id": "1379184",
+      "question": "S&P 500 (SPX) Up or Down on November 16?",
+      "forecast_id": "de281aba5b232832e4770739fa26530d418ac9d37fa02a4cc9fc58adda8b6a0f",
+      "probability": 0.6033755274261603,
+      "uncertainty": 1.0,
+      "fee_verified": true,
+      "quantity": 18.539389312967444,
+      "entry_cost": 4.9999999999974705,
+      "entry_principal": 4.8202412213715355,
+      "entry_fees": 0.14268,
+      "exit_quantity": 18.539389312967444,
+      "remaining_quantity": 0.0,
+      "remaining_principal": 0.0,
+      "remaining_entry_fees": 0.0,
+      "allocated_entry_principal": 4.8202412213715355,
+      "allocated_entry_fees": 0.14268,
+      "exit_principal": 4.634847328241861,
+      "exit_fees": 0.13905,
+      "allocated_entry_cost": 4.9999999999974705,
+      "modeled_exit_pnl": -0.532011755725061,
+      "native_settlement_pnl": 0.0,
+      "entry_best_bid": 0.25,
+      "entry_best_ask": 0.26,
+      "gross_price_pnl": -0.18539389312967458,
+      "entry_reserve": 0.03707877862593492,
+      "exit_slippage": 0.027809083969451365,
+      "entry_spread_diagnostic": -0.1853938931296746,
+      "probability_error": null,
+      "exit_reason": "legacy trigger not recorded"
+    },
+    {
+      "profile": "aggressive",
+      "order_id": "55f51c34dc256409eaaa736afdfcc12537ebfa161d2ca962350cffda14b80fb1",
+      "strategy": "spread_capture",
+      "market_id": "7081317",
+      "event_id": "1398461",
+      "question": "Counter-Strike: Brute vs Nice Try (BO3) - NODWIN Clutch Series Group Stage",
+      "forecast_id": null,
+      "probability": null,
+      "uncertainty": {
+        "adverse_selection": "unmeasured",
+        "fill_model": "later marketable asks only; no queue-priority claim"
+      },
+      "fee_verified": false,
+      "quantity": 11.080317460308082,
+      "entry_cost": 2.9999999999976366,
+      "entry_principal": 2.7700793650770206,
+      "entry_fees": 0.20776,
+      "exit_quantity": 11.080317460308082,
+      "remaining_quantity": 0.0,
+      "remaining_principal": 0.0,
+      "remaining_entry_fees": 0.0,
+      "allocated_entry_principal": 2.7700793650770206,
+      "allocated_entry_fees": 0.20776,
+      "exit_principal": 2.437669841267778,
+      "exit_fees": 0.19014,
+      "allocated_entry_cost": 2.9999999999976366,
+      "modeled_exit_pnl": -0.7690906349203206,
+      "native_settlement_pnl": 0.0,
+      "entry_best_bid": 0.25,
+      "entry_best_ask": 0.3,
+      "gross_price_pnl": -0.3324095238092424,
+      "entry_reserve": 0.022160634920615985,
+      "exit_slippage": 0.016620476190462252,
+      "entry_spread_diagnostic": -0.554015873015404,
+      "probability_error": null,
+      "exit_reason": "legacy trigger not recorded"
+    },
+    {
+      "profile": "aggressive",
+      "order_id": "3242a8fe3e0bab033823931c7d4c81892906ff1f179851565a244569be83ca08",
+      "strategy": "independent",
+      "market_id": "7085176",
+      "event_id": "1399649",
+      "question": "Will Bitcoin dip to $63,000 on November 16?",
+      "forecast_id": "5b589a9b64e2b96c244ecf917790184e085511535c391eaa51b2fe4d26afa31c",
+      "probability": 0.53125,
+      "uncertainty": {
+        "lower_probability": 0.0,
+        "type": "uncalibrated_model_uncertainty_not_coverage_interval",
+        "upper_probability": 1.0
+      },
+      "fee_verified": false,
+      "quantity": 6.800000000000001,
+      "entry_cost": 2.4668300000000007,
+      "entry_principal": 2.3010000000000006,
+      "entry_fees": 0.15223,
+      "exit_quantity": 6.800000000000001,
+      "remaining_quantity": 0.0,
+      "remaining_principal": 0.0,
+      "remaining_entry_fees": 0.0,
+      "allocated_entry_principal": 2.3010000000000006,
+      "allocated_entry_fees": 0.15223,
+      "exit_principal": 2.448,
+      "exit_fees": 0.15667,
+      "allocated_entry_cost": 2.4668300000000007,
+      "modeled_exit_pnl": -0.18570000000000064,
+      "native_settlement_pnl": 0.0,
+      "entry_best_bid": 0.33,
+      "entry_best_ask": 0.34,
+      "gross_price_pnl": 0.14699999999999935,
+      "entry_reserve": 0.01360000000000014,
+      "exit_slippage": 0.010199999999999765,
+      "entry_spread_diagnostic": -0.06800000000000007,
+      "probability_error": null,
+      "exit_reason": "legacy trigger not recorded"
+    },
+    {
+      "profile": "aggressive",
+      "order_id": "a3774837cfcf0bec764cb66a5902832fd5686a23f9007a7e8ec4f432dc265715",
+      "strategy": "independent",
+      "market_id": "6567954",
+      "event_id": "1299582",
+      "question": "Trail Blazers vs. Timberwolves",
+      "forecast_id": "c696ae66b2986a530c2d806f0b20f0e8cf2aa9c694fc2e0f1deb1cbb621f7b38",
+      "probability": 0.5051901825122906,
+      "uncertainty": {
+        "lower_probability": 0.0,
+        "type": "uncalibrated_not_a_coverage_interval",
+        "upper_probability": 1.0
+      },
+      "fee_verified": false,
+      "quantity": 6.16218614718111,
+      "entry_cost": 2.999999999997673,
+      "entry_principal": 2.834605627703311,
+      "entry_fees": 0.15307,
+      "exit_quantity": 6.16218614718111,
+      "remaining_quantity": 0.0,
+      "remaining_principal": 0.0,
+      "remaining_entry_fees": 0.0,
+      "allocated_entry_principal": 2.834605627703311,
+      "allocated_entry_fees": 0.15307,
+      "exit_principal": 2.7729837662314996,
+      "exit_fees": 0.15251,
+      "allocated_entry_cost": 2.999999999997673,
+      "modeled_exit_pnl": -0.38876951298694484,
+      "native_settlement_pnl": 0.0,
+      "entry_best_bid": 0.45,
+      "entry_best_ask": 0.46,
+      "gross_price_pnl": -0.06162186147181137,
+      "entry_reserve": 0.012324372294362035,
+      "exit_slippage": 0.009243279220771505,
+      "entry_spread_diagnostic": -0.06162186147181115,
+      "probability_error": null,
+      "exit_reason": "legacy trigger not recorded"
+    },
+    {
+      "profile": "aggressive",
+      "order_id": "51eae308787b022f3f76d56f46d1abf63defad09874fd18c7abd84fd1daff9e4",
+      "strategy": "independent",
+      "market_id": "7085178",
+      "event_id": "1399649",
+      "question": "Will Bitcoin dip to $62,000 on November 16?",
+      "forecast_id": "ea26f21c74349743cd6c4ca0586813a4429d9a4ddefcfbcc13df7143d71b6552",
+      "probability": 0.19921875,
+      "uncertainty": {
+        "lower_probability": 0.0,
+        "type": "uncalibrated_model_uncertainty_not_coverage_interval",
+        "upper_probability": 1.0
+      },
+      "fee_verified": false,
+      "quantity": 17.099862257290546,
+      "entry_cost": 2.9999976856810684,
+      "entry_principal": 2.7359779611664874,
+      "entry_fees": 0.22982,
+      "exit_quantity": 17.099862257290546,
+      "remaining_quantity": 0.0,
+      "remaining_principal": 0.0,
+      "remaining_entry_fees": 0.0,
+      "allocated_entry_principal": 2.7359779611664874,
+      "allocated_entry_fees": 0.22982,
+      "exit_principal": 2.564979111069441,
+      "exit_fees": 0.21802,
+      "allocated_entry_cost": 2.9999976856810684,
+      "modeled_exit_pnl": -0.6786883679975636,
+      "native_settlement_pnl": 0.0,
+      "entry_best_bid": 0.15,
+      "entry_best_ask": 0.16,
+      "gross_price_pnl": -0.17099885009704652,
+      "entry_reserve": 0.034199724514581004,
+      "exit_slippage": 0.02564979338593598,
+      "entry_spread_diagnostic": -0.1709986225729056,
+      "probability_error": null,
+      "exit_reason": "legacy trigger not recorded"
+    },
+    {
+      "profile": "aggressive",
+      "order_id": "02c42c7f098197ef970fe41f5998e5f70d17c6b7397bda790590ff93f787a0a4",
+      "strategy": "spread_capture",
+      "market_id": "7053407",
+      "event_id": "1390601",
+      "question": "Dota 2: Froglings vs Inner Circle - Game 1 Winner",
+      "forecast_id": null,
+      "probability": null,
+      "uncertainty": {
+        "adverse_selection": "unmeasured",
+        "fill_model": "later marketable asks only; no queue-priority claim"
+      },
+      "fee_verified": false,
+      "quantity": 0.5,
+      "entry_cost": 0.0555,
+      "entry_principal": 0.05,
+      "entry_fees": 0.0045,
+      "exit_quantity": 0.5,
+      "remaining_quantity": 0.0,
+      "remaining_principal": 0.0,
+      "remaining_entry_fees": 0.0,
+      "allocated_entry_principal": 0.05,
+      "allocated_entry_fees": 0.0045,
+      "exit_principal": 0.04,
+      "exit_fees": 0.00368,
+      "allocated_entry_cost": 0.0555,
+      "modeled_exit_pnl": -0.019930000000000003,
+      "native_settlement_pnl": 0.0,
+      "entry_best_bid": 0.1,
+      "entry_best_ask": 0.15,
+      "gross_price_pnl": -0.010000000000000002,
+      "entry_reserve": 0.0009999999999999983,
+      "exit_slippage": 0.0007500000000000007,
+      "entry_spread_diagnostic": -0.024999999999999994,
+      "probability_error": null,
+      "exit_reason": "legacy trigger not recorded"
+    },
+    {
+      "profile": "aggressive",
+      "order_id": "e1acfe893989ddad0a219a9ea756be2ebcd1aee9e9be82168034b5e1ab70510f",
+      "strategy": "independent",
+      "market_id": "7013493",
+      "event_id": "1379184",
+      "question": "S&P 500 (SPX) Up or Down on November 16?",
+      "forecast_id": "96799143b37743fc9ad8d8d2a470534b775deb775de3c98d5e72557db8567d49",
+      "probability": 0.6033755274261603,
+      "uncertainty": 1.0,
+      "fee_verified": false,
+      "quantity": 13.123915094337654,
+      "entry_cost": 2.9999999999995826,
+      "entry_principal": 2.7560221698109073,
+      "entry_fees": 0.21773,
+      "exit_quantity": 13.123915094337654,
+      "remaining_quantity": 0.0,
+      "remaining_principal": 0.0,
+      "remaining_entry_fees": 0.0,
+      "allocated_entry_principal": 2.7560221698109073,
+      "allocated_entry_fees": 0.21773,
+      "exit_principal": 1.968587264150648,
+      "exit_fees": 0.16733,
+      "allocated_entry_cost": 2.9999999999995826,
+      "modeled_exit_pnl": -1.218428608490441,
+      "native_settlement_pnl": 0.0,
+      "entry_best_bid": 0.2,
+      "entry_best_ask": 0.21,
+      "gross_price_pnl": -0.7874349056602592,
+      "entry_reserve": 0.026247830188675242,
+      "exit_slippage": 0.019685872641506563,
+      "entry_spread_diagnostic": -0.1312391509433763,
+      "probability_error": null,
+      "exit_reason": "legacy trigger not recorded"
+    },
+    {
+      "profile": "aggressive",
+      "order_id": "ac3281ee75d2e992b6ecb98d794078045429005a4385cde110523648f98d9a8d",
+      "strategy": "spread_capture",
+      "market_id": "7077403",
+      "event_id": "1396656",
+      "question": "Helsinki: Alexander Ritschard vs Kai Wehnelt",
+      "forecast_id": null,
+      "probability": null,
+      "uncertainty": {
+        "adverse_selection": "unmeasured",
+        "fill_model": "later marketable asks only; no queue-priority claim"
+      },
+      "fee_verified": false,
+      "quantity": 7.5,
+      "entry_cost": 1.01034,
+      "entry_principal": 0.915,
+      "entry_fees": 0.08034,
+      "exit_quantity": 7.5,
+      "remaining_quantity": 0.0,
+      "remaining_principal": 0.0,
+      "remaining_entry_fees": 0.0,
+      "allocated_entry_principal": 0.915,
+      "allocated_entry_fees": 0.08034,
+      "exit_principal": 0.861656,
+      "exit_fees": 0.07627,
+      "allocated_entry_cost": 1.01034,
+      "modeled_exit_pnl": -0.23620399999999997,
+      "native_settlement_pnl": 0.0,
+      "entry_best_bid": 0.167,
+      "entry_best_ask": 0.208,
+      "gross_price_pnl": -0.05334400000000006,
+      "entry_reserve": 0.014999999999999986,
+      "exit_slippage": 0.011249999999999871,
+      "entry_spread_diagnostic": -0.3074999999999999,
+      "probability_error": null,
+      "exit_reason": "legacy trigger not recorded"
+    },
+    {
+      "profile": "aggressive",
+      "order_id": "c3c4c3e087cb222a7bbe81d38a4c560d40cdf30959ab0abb2d2ee64f744cd548",
+      "strategy": "momentum",
+      "market_id": "7013493",
+      "event_id": "1379184",
+      "question": "S&P 500 (SPX) Up or Down on November 16?",
+      "forecast_id": null,
+      "probability": null,
+      "uncertainty": {
+        "calibration": "unvalidated",
+        "pricing_target_variation": 0.025716991199664793
+      },
+      "fee_verified": true,
+      "quantity": 11.123625954194246,
+      "entry_cost": 2.9999999999988924,
+      "entry_principal": 2.892142748090504,
+      "entry_fees": 0.08561,
+      "exit_quantity": 11.123625954194246,
+      "remaining_quantity": 0.0,
+      "remaining_principal": 0.0,
+      "remaining_entry_fees": 0.0,
+      "allocated_entry_principal": 2.892142748090504,
+      "allocated_entry_fees": 0.08561,
+      "exit_principal": 2.447197709922734,
+      "exit_fees": 0.07635,
+      "allocated_entry_cost": 2.9999999999988924,
+      "modeled_exit_pnl": -0.6458377290074497,
+      "native_settlement_pnl": 0.0,
+      "entry_best_bid": 0.23,
+      "entry_best_ask": 0.26,
+      "gross_price_pnl": -0.44494503816777,
+      "entry_reserve": 0.022247251908388457,
+      "exit_slippage": 0.016685438931291152,
+      "entry_spread_diagnostic": -0.3337087786258274,
+      "probability_error": null,
+      "exit_reason": "legacy trigger not recorded"
+    },
+    {
+      "profile": "balanced",
+      "order_id": "47ca392e5d53c4f27a5dd03e438ba7da339c030009d132e296eb364cf9b801ad",
+      "strategy": "momentum",
+      "market_id": "7013493",
+      "event_id": "1379184",
+      "question": "S&P 500 (SPX) Up or Down on November 16?",
+      "forecast_id": null,
+      "probability": null,
+      "uncertainty": {
+        "calibration": "unvalidated",
+        "pricing_target_variation": 0.025716991199664793
+      },
+      "fee_verified": true,
+      "quantity": 18.539389312967444,
+      "entry_cost": 4.9999999999974705,
+      "entry_principal": 4.8202412213715355,
+      "entry_fees": 0.14268,
+      "exit_quantity": 18.539389312967444,
+      "remaining_quantity": 0.0,
+      "remaining_principal": 0.0,
+      "remaining_entry_fees": 0.0,
+      "allocated_entry_principal": 4.8202412213715355,
+      "allocated_entry_fees": 0.14268,
+      "exit_principal": 4.078665648852838,
+      "exit_fees": 0.12725,
+      "allocated_entry_cost": 4.9999999999974705,
+      "modeled_exit_pnl": -1.0763934351140838,
+      "native_settlement_pnl": 0.0,
+      "entry_best_bid": 0.23,
+      "entry_best_ask": 0.26,
+      "gross_price_pnl": -0.7415755725186974,
+      "entry_reserve": 0.03707877862593492,
+      "exit_slippage": 0.027809083969451365,
+      "entry_spread_diagnostic": -0.5561816793890233,
+      "probability_error": null,
+      "exit_reason": "legacy trigger not recorded"
+    },
+    {
+      "profile": "aggressive",
+      "order_id": "d86a07b3f03839fc361fc3143a28fb247751fd6a0ac0fc849a40c9edd9b768a9",
+      "strategy": "spread_capture",
+      "market_id": "7013493",
+      "event_id": "1379184",
+      "question": "S&P 500 (SPX) Up or Down on November 16?",
+      "forecast_id": null,
+      "probability": null,
+      "uncertainty": {
+        "adverse_selection": "unmeasured",
+        "fill_model": "later marketable asks only; no queue-priority claim"
+      },
+      "fee_verified": true,
+      "quantity": 13.10820036259628,
+      "entry_cost": 2.999990480496374,
+      "entry_principal": 2.8838040797711817,
+      "entry_fees": 0.08997,
+      "exit_quantity": 13.10820036259628,
+      "remaining_quantity": 0.0,
+      "remaining_principal": 0.0,
+      "remaining_entry_fees": 0.0,
+      "allocated_entry_principal": 2.8838040797711817,
+      "allocated_entry_fees": 0.08997,
+      "exit_principal": 1.9087480507634793,
+      "exit_fees": 0.06522,
+      "allocated_entry_cost": 2.9999904804963746,
+      "modeled_exit_pnl": -1.1761247302767897,
+      "native_settlement_pnl": 0.0,
+      "entry_best_bid": 0.22,
+      "entry_best_ask": 0.26,
+      "gross_price_pnl": -0.9750560290077024,
+      "entry_reserve": 0.026216400725192934,
+      "exit_slippage": 0.019662300543894284,
+      "entry_spread_diagnostic": -0.5243280145038514,
+      "probability_error": null,
+      "exit_reason": "legacy trigger not recorded"
+    },
+    {
+      "profile": "balanced",
+      "order_id": "b69e51d805e93e13d7a71d8f62897d13b91d9fb82f99fc07945d0d4604f8bf8a",
+      "strategy": "spread_capture",
+      "market_id": "7013493",
+      "event_id": "1379184",
+      "question": "S&P 500 (SPX) Up or Down on November 16?",
+      "forecast_id": null,
+      "probability": null,
+      "uncertainty": {
+        "adverse_selection": "unmeasured",
+        "fill_model": "later marketable asks only; no queue-priority claim"
+      },
+      "fee_verified": true,
+      "quantity": 21.847027027008046,
+      "entry_cost": 4.9999999999957865,
+      "entry_principal": 4.806345945941771,
+      "entry_fees": 0.14996,
+      "exit_quantity": 21.847027027008046,
+      "remaining_quantity": 0.0,
+      "remaining_principal": 0.0,
+      "remaining_entry_fees": 0.0,
+      "allocated_entry_principal": 4.806345945941771,
+      "allocated_entry_fees": 0.14996,
+      "exit_principal": 3.071013513511046,
+      "exit_fees": 0.10552,
+      "allocated_entry_cost": 4.9999999999957865,
+      "modeled_exit_pnl": -2.067277027025252,
+      "native_settlement_pnl": 0.0,
+      "entry_best_bid": 0.22,
+      "entry_best_ask": 0.26,
+      "gross_price_pnl": -1.7353324324307247,
+      "entry_reserve": 0.04369405405401591,
+      "exit_slippage": 0.03277054054051165,
+      "entry_spread_diagnostic": -0.873881081080322,
+      "probability_error": null,
+      "exit_reason": "legacy trigger not recorded"
+    },
+    {
+      "profile": "aggressive",
+      "order_id": "8429778103b639006617982676b9ab0d818f496381448c585ea9d13abbed2aa3",
+      "strategy": "independent",
+      "market_id": "6567954",
+      "event_id": "1299582",
+      "question": "Trail Blazers vs. Timberwolves",
+      "forecast_id": "ebac3b1c154e90cf64d99ce6545dd66471e6cf6c19250633d72e12a1dce17c8d",
+      "probability": 0.5281306715063521,
+      "uncertainty": {
+        "lower_probability": 0.0,
+        "type": "uncalibrated_not_a_coverage_interval",
+        "upper_probability": 1.0
+      },
+      "fee_verified": false,
+      "quantity": 6.16218614718111,
+      "entry_cost": 2.999999999997673,
+      "entry_principal": 2.834605627703311,
+      "entry_fees": 0.15307,
+      "exit_quantity": 6.16218614718111,
+      "remaining_quantity": 0.0,
+      "remaining_principal": 0.0,
+      "remaining_entry_fees": 0.0,
+      "allocated_entry_principal": 2.834605627703311,
+      "allocated_entry_fees": 0.15307,
+      "exit_principal": 2.7729837662314996,
+      "exit_fees": 0.15251,
+      "allocated_entry_cost": 2.999999999997673,
+      "modeled_exit_pnl": -0.38876951298694484,
+      "native_settlement_pnl": 0.0,
+      "entry_best_bid": 0.45,
+      "entry_best_ask": 0.46,
+      "gross_price_pnl": -0.06162186147181137,
+      "entry_reserve": 0.012324372294362035,
+      "exit_slippage": 0.009243279220771505,
+      "entry_spread_diagnostic": -0.06162186147181115,
+      "probability_error": null,
+      "exit_reason": "legacy trigger not recorded"
+    },
+    {
+      "profile": "aggressive",
+      "order_id": "3bb56c8af6518d5f1a819c15f316e57926ac1602501fbc6e080a4be69ba58d2f",
+      "strategy": "independent",
+      "market_id": "6567954",
+      "event_id": "1299582",
+      "question": "Trail Blazers vs. Timberwolves",
+      "forecast_id": "a53c778ed3174d824d93e6bfdf4507e99290377dec980ce07afcec13f3156db6",
+      "probability": 0.5281306715063521,
+      "uncertainty": {
+        "lower_probability": 0.0,
+        "type": "uncalibrated_not_a_coverage_interval",
+        "upper_probability": 1.0
+      },
+      "fee_verified": false,
+      "quantity": 6.16218614718111,
+      "entry_cost": 2.999999999997673,
+      "entry_principal": 2.834605627703311,
+      "entry_fees": 0.15307,
+      "exit_quantity": 6.16218614718111,
+      "remaining_quantity": 0.0,
+      "remaining_principal": 0.0,
+      "remaining_entry_fees": 0.0,
+      "allocated_entry_principal": 2.834605627703311,
+      "allocated_entry_fees": 0.15307,
+      "exit_principal": 2.7729837662314996,
+      "exit_fees": 0.15251,
+      "allocated_entry_cost": 2.999999999997673,
+      "modeled_exit_pnl": -0.38876951298694484,
+      "native_settlement_pnl": 0.0,
+      "entry_best_bid": 0.45,
+      "entry_best_ask": 0.46,
+      "gross_price_pnl": -0.06162186147181137,
+      "entry_reserve": 0.012324372294362035,
+      "exit_slippage": 0.009243279220771505,
+      "entry_spread_diagnostic": -0.06162186147181115,
+      "probability_error": null,
+      "exit_reason": "legacy trigger not recorded"
+    },
+    {
+      "profile": "balanced",
+      "order_id": "52ef084b4c2a8038ee8602e2df08a5137b8a6734757132bfcdb897d61c397c54",
+      "strategy": "momentum",
+      "market_id": "7013493",
+      "event_id": "1379184",
+      "question": "S&P 500 (SPX) Up or Down on November 16?",
+      "forecast_id": null,
+      "probability": null,
+      "uncertainty": {
+        "calibration": "unvalidated",
+        "pricing_target_variation": 0.0177951304200522
+      },
+      "fee_verified": true,
+      "quantity": 5.349858299458992,
+      "entry_cost": 4.999997935095781,
+      "entry_principal": 4.975368218496863,
+      "entry_fees": 0.01393,
+      "exit_quantity": 5.349858299458992,
+      "remaining_quantity": 0.0,
+      "remaining_principal": 0.0,
+      "remaining_entry_fees": 0.0,
+      "allocated_entry_principal": 4.975368218496863,
+      "allocated_entry_fees": 0.01393,
+      "exit_principal": 4.8792310525076825,
+      "exit_fees": 0.01717,
+      "allocated_entry_cost": 4.999997935095781,
+      "modeled_exit_pnl": -0.14596167003728588,
+      "native_settlement_pnl": 0.0,
+      "entry_best_bid": 0.92,
+      "entry_best_ask": 0.93,
+      "gross_price_pnl": -0.09613716598918032,
+      "entry_reserve": 0.010699716598917995,
+      "exit_slippage": 0.008024787449187443,
+      "entry_spread_diagnostic": -0.05349858299458997,
+      "probability_error": null,
+      "exit_reason": "legacy trigger not recorded"
+    },
+    {
+      "profile": "aggressive",
+      "order_id": "14b89c38e36dced229ce2902a68672877c90c0b72b2584445ad4d1b0c178201e",
+      "strategy": "independent",
+      "market_id": "3215007",
+      "event_id": "770450",
+      "question": "Will there be no change in Fed interest rates after the December 2026 meeting?",
+      "forecast_id": "cc74ed9995c003afe3aebcabbcedbab4bb542d57af395ce646b5a42013952e82",
+      "probability": 0.7135416666666666,
+      "uncertainty": {
+        "lower_probability": 0.0,
+        "type": "uncalibrated_regime_uncertainty_not_sampling_confidence",
+        "upper_probability": 1.0
+      },
+      "fee_verified": false,
+      "quantity": 76.36611111107788,
+      "entry_cost": 2.999999999998804,
+      "entry_principal": 2.5964477777766484,
+      "entry_fees": 0.25082,
+      "exit_quantity": 76.36611111107788,
+      "remaining_quantity": 0.0,
+      "remaining_principal": 0.0,
+      "remaining_entry_fees": 0.0,
+      "allocated_entry_principal": 2.5964477777766484,
+      "allocated_entry_fees": 0.25082,
+      "exit_principal": 2.52008166666557,
+      "exit_fees": 0.24369,
+      "allocated_entry_cost": 2.999999999998804,
+      "modeled_exit_pnl": -0.8381574999998507,
+      "native_settlement_pnl": 0.0,
+      "entry_best_bid": 0.033,
+      "entry_best_ask": 0.034,
+      "gross_price_pnl": -0.07636611111107827,
+      "entry_reserve": 0.1527322222221557,
+      "exit_slippage": 0.11454916666661674,
+      "entry_spread_diagnostic": -0.07636611111107795,
+      "probability_error": null,
+      "exit_reason": "legacy trigger not recorded"
+    },
+    {
+      "profile": "aggressive",
+      "order_id": "29c67324f532f3bfe64528809e722c1c5ed1cc6993751ffe7d672d2e79bf2592",
+      "strategy": "momentum",
+      "market_id": "7085205",
+      "event_id": "1399652",
+      "question": "Will Ethereum dip to $1,750 on November 16?",
+      "forecast_id": null,
+      "probability": null,
+      "uncertainty": {
+        "calibration": "unvalidated",
+        "pricing_target_variation": 0.005710402407201608
+      },
+      "fee_verified": true,
+      "quantity": 19.943092970977055,
+      "entry_cost": 2.9999992018787416,
+      "entry_principal": 2.792033015936788,
+      "entry_fees": 0.16808,
+      "exit_quantity": 19.943092970977055,
+      "remaining_quantity": 0.0,
+      "remaining_principal": 0.0,
+      "remaining_entry_fees": 0.0,
+      "allocated_entry_principal": 2.792033015936788,
+      "allocated_entry_fees": 0.16808,
+      "exit_principal": 2.4561611565172465,
+      "exit_fees": 0.15073,
+      "allocated_entry_cost": 2.9999992018787416,
+      "modeled_exit_pnl": -0.7244826848179606,
+      "native_settlement_pnl": 0.0,
+      "entry_best_bid": 0.11,
+      "entry_best_ask": 0.14,
+      "gross_price_pnl": -0.33587185941954134,
+      "entry_reserve": 0.0398861859419537,
+      "exit_slippage": 0.029914639456465775,
+      "entry_spread_diagnostic": -0.5982927891293119,
+      "probability_error": null,
+      "exit_reason": "legacy trigger not recorded"
+    },
+    {
+      "profile": "balanced",
+      "order_id": "4a1b10dfbf903f605df2b4883e1ef7fa628f30e025179d935e903a964b70b2e7",
+      "strategy": "momentum",
+      "market_id": "7013493",
+      "event_id": "1379184",
+      "question": "S&P 500 (SPX) Up or Down on November 16?",
+      "forecast_id": null,
+      "probability": null,
+      "uncertainty": {
+        "calibration": "unvalidated",
+        "pricing_target_variation": 0.010606601717798208
+      },
+      "fee_verified": true,
+      "quantity": 5.1892197063497525,
+      "entry_cost": 4.999999357508461,
+      "entry_principal": 4.981650918095762,
+      "entry_fees": 0.00797,
+      "exit_quantity": 5.1892197063497525,
+      "remaining_quantity": 0.0,
+      "remaining_principal": 0.0,
+      "remaining_entry_fees": 0.0,
+      "allocated_entry_principal": 4.981650918095762,
+      "allocated_entry_fees": 0.00797,
+      "exit_principal": 4.916436523968767,
+      "exit_fees": 0.01034,
+      "allocated_entry_cost": 4.999999357508461,
+      "modeled_exit_pnl": -0.10168666309921814,
+      "native_settlement_pnl": 0.0,
+      "entry_best_bid": 0.94,
+      "entry_best_ask": 0.96,
+      "gross_price_pnl": -0.06521439412699515,
+      "entry_reserve": 0.010378439412698703,
+      "exit_slippage": 0.007783829559524058,
+      "entry_spread_diagnostic": -0.10378439412699514,
+      "probability_error": null,
+      "exit_reason": "legacy trigger not recorded"
+    },
+    {
+      "profile": "aggressive",
+      "order_id": "59b3492d471eb13c5261d14cc5ea46d2c43a571613c2ef19a3b384f8237c0675",
+      "strategy": "independent",
+      "market_id": "7085176",
+      "event_id": "1399649",
+      "question": "Will Bitcoin dip to $63,000 on November 16?",
+      "forecast_id": "4ab611ce33375493699194575b80d7a0947200b092de8ded8af34e5982dc0a33",
+      "probability": 0.345703125,
+      "uncertainty": {
+        "lower_probability": 0.0,
+        "type": "uncalibrated_model_uncertainty_not_coverage_interval",
+        "upper_probability": 1.0
+      },
+      "fee_verified": false,
+      "quantity": 5.0,
+      "entry_cost": 1.615,
+      "entry_principal": 1.5,
+      "entry_fees": 0.105,
+      "exit_quantity": 5.0,
+      "remaining_quantity": 0.0,
+      "remaining_principal": 0.0,
+      "remaining_entry_fees": 0.0,
+      "allocated_entry_principal": 1.5,
+      "allocated_entry_fees": 0.105,
+      "exit_principal": 1.85,
+      "exit_fees": 0.11655,
+      "allocated_entry_cost": 1.6149999999999998,
+      "modeled_exit_pnl": 0.11095000000000033,
+      "native_settlement_pnl": 0.0,
+      "entry_best_bid": 0.3,
+      "entry_best_ask": 0.31,
+      "gross_price_pnl": 0.3500000000000001,
+      "entry_reserve": 0.009999999999999773,
+      "exit_slippage": 0.007500000000000062,
+      "entry_spread_diagnostic": -0.050000000000000044,
+      "probability_error": null,
+      "exit_reason": "legacy trigger not recorded"
+    },
+    {
+      "profile": "aggressive",
+      "order_id": "1cf030a466f84139aab7fa1c8e798d1d8d9531d7fdb6b616e2f8f5412e6bad21",
+      "strategy": "spread_capture",
+      "market_id": "7072427",
+      "event_id": "1395638",
+      "question": "W50 Heraklion: Maria Garcia Cid vs Gaia Maduzzi",
+      "forecast_id": null,
+      "probability": null,
+      "uncertainty": {
+        "adverse_selection": "unmeasured",
+        "fill_model": "later marketable asks only; no queue-priority claim"
+      },
+      "fee_verified": false,
+      "quantity": 16.119476744183892,
+      "entry_cost": 2.483045697674113,
+      "entry_principal": 2.256726744185745,
+      "entry_fees": 0.19408,
+      "exit_quantity": 16.119476744183892,
+      "remaining_quantity": 0.0,
+      "remaining_principal": 0.0,
+      "remaining_entry_fees": 0.0,
+      "allocated_entry_principal": 2.256726744185745,
+      "allocated_entry_fees": 0.19408,
+      "exit_principal": 2.095531976743906,
+      "exit_fees": 0.18231,
+      "allocated_entry_cost": 2.483045697674113,
+      "modeled_exit_pnl": -0.5940029360464825,
+      "native_settlement_pnl": 0.0,
+      "entry_best_bid": 0.17,
+      "entry_best_ask": 0.21,
+      "gross_price_pnl": -0.16119476744183903,
+      "entry_reserve": 0.03223895348836783,
+      "exit_slippage": 0.024179215116275632,
+      "entry_spread_diagnostic": -0.6447790697673553,
+      "probability_error": null,
+      "exit_reason": "legacy trigger not recorded"
+    },
+    {
+      "profile": "aggressive",
+      "order_id": "c0f426d569d119ec5e30e902be751ca357f513c6e00848e9e90f78041e25f538",
+      "strategy": "spread_capture",
+      "market_id": "7072427",
+      "event_id": "1395638",
+      "question": "W50 Heraklion: Maria Garcia Cid vs Gaia Maduzzi",
+      "forecast_id": null,
+      "probability": null,
+      "uncertainty": {
+        "adverse_selection": "unmeasured",
+        "fill_model": "later marketable asks only; no queue-priority claim"
+      },
+      "fee_verified": false,
+      "quantity": 10.700000000000001,
+      "entry_cost": 0.60723,
+      "entry_principal": 0.535,
+      "entry_fees": 0.05083,
+      "exit_quantity": 10.700000000000001,
+      "remaining_quantity": 0.0,
+      "remaining_principal": 0.0,
+      "remaining_entry_fees": 0.0,
+      "allocated_entry_principal": 0.535,
+      "allocated_entry_fees": 0.05083,
+      "exit_principal": 0.42800000000000005,
+      "exit_fees": 0.04109,
+      "allocated_entry_cost": 0.60723,
+      "modeled_exit_pnl": -0.23637000000000002,
+      "native_settlement_pnl": 0.0,
+      "entry_best_bid": 0.07,
+      "entry_best_ask": 0.1,
+      "gross_price_pnl": -0.10699999999999998,
+      "entry_reserve": 0.021400000000000016,
+      "exit_slippage": 0.01605000000000001,
+      "entry_spread_diagnostic": -0.321,
+      "probability_error": null,
+      "exit_reason": "legacy trigger not recorded"
+    },
+    {
+      "profile": "aggressive",
+      "order_id": "cea7b9298cc0eb5e966fb9da5dddeb63dc7b3319a7609eae8bb21cd1bec89bee",
+      "strategy": "independent",
+      "market_id": "6567954",
+      "event_id": "1299582",
+      "question": "Trail Blazers vs. Timberwolves",
+      "forecast_id": "56428d872a420c8e11b67cc3d9e46587b3f8069c90534beb49009daa72d0d0f0",
+      "probability": 0.5281306715063521,
+      "uncertainty": {
+        "lower_probability": 0.0,
+        "type": "uncalibrated_not_a_coverage_interval",
+        "upper_probability": 1.0
+      },
+      "fee_verified": false,
+      "quantity": 6.16218614718111,
+      "entry_cost": 2.999999999997673,
+      "entry_principal": 2.834605627703311,
+      "entry_fees": 0.15307,
+      "exit_quantity": 6.16218614718111,
+      "remaining_quantity": 0.0,
+      "remaining_principal": 0.0,
+      "remaining_entry_fees": 0.0,
+      "allocated_entry_principal": 2.834605627703311,
+      "allocated_entry_fees": 0.15307,
+      "exit_principal": 2.7729837662314996,
+      "exit_fees": 0.15251,
+      "allocated_entry_cost": 2.999999999997673,
+      "modeled_exit_pnl": -0.38876951298694484,
+      "native_settlement_pnl": 0.0,
+      "entry_best_bid": 0.45,
+      "entry_best_ask": 0.46,
+      "gross_price_pnl": -0.06162186147181137,
+      "entry_reserve": 0.012324372294362035,
+      "exit_slippage": 0.009243279220771505,
+      "entry_spread_diagnostic": -0.06162186147181115,
+      "probability_error": null,
+      "exit_reason": "legacy trigger not recorded"
+    },
+    {
+      "profile": "aggressive",
+      "order_id": "921780f49bc54e6b0a52188e7ebe1226900433492e597cccc9c13659977356d7",
+      "strategy": "independent",
+      "market_id": "7085178",
+      "event_id": "1399649",
+      "question": "Will Bitcoin dip to $62,000 on November 16?",
+      "forecast_id": "ed8e881d11d4be45adb87dd16e084cb1f6f614ad27b112df6aeb31fb7325193b",
+      "probability": 0.236328125,
+      "uncertainty": {
+        "lower_probability": 0.0,
+        "type": "uncalibrated_model_uncertainty_not_coverage_interval",
+        "upper_probability": 1.0
+      },
+      "fee_verified": false,
+      "quantity": 14.465480294803802,
+      "entry_cost": 2.99999221660233,
+      "entry_principal": 2.7484412560127223,
+      "entry_fees": 0.22262,
+      "exit_quantity": 14.465480294803802,
+      "remaining_quantity": 0.0,
+      "remaining_principal": 0.0,
+      "remaining_entry_fees": 0.0,
+      "allocated_entry_principal": 2.7484412560127223,
+      "allocated_entry_fees": 0.22262,
+      "exit_principal": 2.6037864530646844,
+      "exit_fees": 0.21351,
+      "allocated_entry_cost": 2.9999922166023296,
+      "modeled_exit_pnl": -0.6314139839798507,
+      "native_settlement_pnl": 0.0,
+      "entry_best_bid": 0.17,
+      "entry_best_ask": 0.19,
+      "gross_price_pnl": -0.1446548029480379,
+      "entry_reserve": 0.02893096058960734,
+      "exit_slippage": 0.021698220442205596,
+      "entry_spread_diagnostic": -0.2893096058960759,
+      "probability_error": null,
+      "exit_reason": "legacy trigger not recorded"
+    },
+    {
+      "profile": "aggressive",
+      "order_id": "691739fa0330ea482ca329b0d924d3bba892aeee99859d462aa72fce2a080fd8",
+      "strategy": "momentum",
+      "market_id": "7053672",
+      "event_id": "1390769",
+      "question": "Colina: Katrina Scott vs Anastasia Zolotareva",
+      "forecast_id": null,
+      "probability": null,
+      "uncertainty": {
+        "calibration": "unvalidated",
+        "pricing_target_variation": 0.011902380714238077
+      },
+      "fee_verified": false,
+      "quantity": 22.631229508187232,
+      "entry_cost": 2.999999999998842,
+      "entry_principal": 2.7157475409824676,
+      "entry_fees": 0.23899,
+      "exit_quantity": 22.631229508187232,
+      "remaining_quantity": 0.0,
+      "remaining_principal": 0.0,
+      "remaining_entry_fees": 0.0,
+      "allocated_entry_principal": 2.7157475409824676,
+      "allocated_entry_fees": 0.23899,
+      "exit_principal": 2.4894352459005957,
+      "exit_fees": 0.22156,
+      "allocated_entry_cost": 2.9999999999988423,
+      "modeled_exit_pnl": -0.766071598360528,
+      "native_settlement_pnl": 0.0,
+      "entry_best_bid": 0.11,
+      "entry_best_ask": 0.12,
+      "gross_price_pnl": -0.2263122950818719,
+      "entry_reserve": 0.04526245901637463,
+      "exit_slippage": 0.03394684426228123,
+      "entry_spread_diagnostic": -0.2263122950818722,
+      "probability_error": null,
+      "exit_reason": "legacy trigger not recorded"
+    },
+    {
+      "profile": "aggressive",
+      "order_id": "2002c0eaca403fcb3998fdb50b230594e415b752a6814cae50af501b43ee57c7",
+      "strategy": "momentum",
+      "market_id": "7079213",
+      "event_id": "1397697",
+      "question": "Colina: Rebeka Masarova vs Diletta Cherubini",
+      "forecast_id": null,
+      "probability": null,
+      "uncertainty": {
+        "calibration": "unvalidated",
+        "pricing_target_variation": 0.005
+      },
+      "fee_verified": false,
+      "quantity": 33.57206333068577,
+      "entry_cost": 2.9999991931162335,
+      "entry_principal": 2.685765066454862,
+      "entry_fees": 0.24709,
+      "exit_quantity": 33.57206333068577,
+      "remaining_quantity": 0.0,
+      "remaining_principal": 0.0,
+      "remaining_entry_fees": 0.0,
+      "allocated_entry_principal": 2.685765066454862,
+      "allocated_entry_fees": 0.24709,
+      "exit_principal": 2.350044433148004,
+      "exit_fees": 0.21855,
+      "allocated_entry_cost": 2.9999991931162335,
+      "modeled_exit_pnl": -0.9188628549642579,
+      "native_settlement_pnl": 0.0,
+      "entry_best_bid": 0.07,
+      "entry_best_ask": 0.08,
+      "gross_price_pnl": -0.33572063330685786,
+      "entry_reserve": 0.06714412666137151,
+      "exit_slippage": 0.0503580949960285,
+      "entry_spread_diagnostic": -0.33572063330685753,
+      "probability_error": null,
+      "exit_reason": "legacy trigger not recorded"
+    },
+    {
+      "profile": "aggressive",
+      "order_id": "3d19b48a58171e86c1902771f0faaf609925fa766b8aa41306ad485639cab5f7",
+      "strategy": "spread_capture",
+      "market_id": "7053408",
+      "event_id": "1390601",
+      "question": "Dota 2: Froglings vs Inner Circle - Game 2 Winner",
+      "forecast_id": null,
+      "probability": null,
+      "uncertainty": {
+        "adverse_selection": "unmeasured",
+        "fill_model": "later marketable asks only; no queue-priority claim"
+      },
+      "fee_verified": false,
+      "quantity": 9.728000000000002,
+      "entry_cost": 2.120706,
+      "entry_principal": 1.9456000000000004,
+      "entry_fees": 0.15565,
+      "exit_quantity": 9.728000000000002,
+      "remaining_quantity": 0.0,
+      "remaining_principal": 0.0,
+      "remaining_entry_fees": 0.0,
+      "allocated_entry_principal": 1.9456000000000004,
+      "allocated_entry_fees": 0.15565,
+      "exit_principal": 1.4592000000000003,
+      "exit_fees": 0.12403,
+      "allocated_entry_cost": 2.120706,
+      "modeled_exit_pnl": -0.8001280000000002,
+      "native_settlement_pnl": 0.0,
+      "entry_best_bid": 0.2,
+      "entry_best_ask": 0.24,
+      "gross_price_pnl": -0.48640000000000017,
+      "entry_reserve": 0.01945599999999975,
+      "exit_slippage": 0.01459200000000016,
+      "entry_spread_diagnostic": -0.38911999999999985,
+      "probability_error": null,
+      "exit_reason": "legacy trigger not recorded"
+    },
+    {
+      "profile": "aggressive",
+      "order_id": "c536dfa556533aa34f32af535fb56a7577b0d99bed3610edc4e0454e21d3a7a9",
+      "strategy": "independent",
+      "market_id": "7085178",
+      "event_id": "1399649",
+      "question": "Will Bitcoin dip to $62,000 on November 16?",
+      "forecast_id": "9cbf0ae40a4735cf6ccec42494aedc4645a0bd00ab05863f1714a5398594da7a",
+      "probability": 0.263671875,
+      "uncertainty": {
+        "lower_probability": 0.0,
+        "type": "uncalibrated_model_uncertainty_not_coverage_interval",
+        "upper_probability": 1.0
+      },
+      "fee_verified": true,
+      "quantity": 16.49465116278317,
+      "entry_cost": 2.999999999998706,
+      "entry_principal": 2.8040906976731392,
+      "entry_fees": 0.16292,
+      "exit_quantity": 16.49465116278317,
+      "remaining_quantity": 0.0,
+      "remaining_principal": 0.0,
+      "remaining_entry_fees": 0.0,
+      "allocated_entry_principal": 2.8040906976731392,
+      "allocated_entry_fees": 0.16292,
+      "exit_principal": 2.0801581395339808,
+      "exit_fees": 0.12714,
+      "allocated_entry_cost": 2.999999999998706,
+      "modeled_exit_pnl": -1.0717238372089,
+      "native_settlement_pnl": 0.0,
+      "entry_best_bid": 0.16,
+      "entry_best_ask": 0.17,
+      "gross_price_pnl": -0.7239325581391585,
+      "entry_reserve": 0.03298930232556668,
+      "exit_slippage": 0.024741976744174776,
+      "entry_spread_diagnostic": -0.16494651162783186,
+      "probability_error": null,
+      "exit_reason": "legacy trigger not recorded"
+    },
+    {
+      "profile": "aggressive",
+      "order_id": "284322dad7dfb6e582500b72d5afb7459ecb9078f411cc752f9b12f206f87cc0",
+      "strategy": "independent",
+      "market_id": "6567954",
+      "event_id": "1299582",
+      "question": "Trail Blazers vs. Timberwolves",
+      "forecast_id": "f9e7dc54027d30f3473bff149542e29758ad3496de4ec2987c5e1cc23dca03c7",
+      "probability": 0.5051901825122906,
+      "uncertainty": {
+        "lower_probability": 0.0,
+        "type": "uncalibrated_not_a_coverage_interval",
+        "upper_probability": 1.0
+      },
+      "fee_verified": false,
+      "quantity": 6.16218614718111,
+      "entry_cost": 2.999999999997673,
+      "entry_principal": 2.834605627703311,
+      "entry_fees": 0.15307,
+      "exit_quantity": 6.16218614718111,
+      "remaining_quantity": 0.0,
+      "remaining_principal": 0.0,
+      "remaining_entry_fees": 0.0,
+      "allocated_entry_principal": 2.834605627703311,
+      "allocated_entry_fees": 0.15307,
+      "exit_principal": 2.7729837662314996,
+      "exit_fees": 0.15251,
+      "allocated_entry_cost": 2.999999999997673,
+      "modeled_exit_pnl": -0.38876951298694484,
+      "native_settlement_pnl": 0.0,
+      "entry_best_bid": 0.45,
+      "entry_best_ask": 0.46,
+      "gross_price_pnl": -0.06162186147181137,
+      "entry_reserve": 0.012324372294362035,
+      "exit_slippage": 0.009243279220771505,
+      "entry_spread_diagnostic": -0.06162186147181115,
+      "probability_error": null,
+      "exit_reason": "legacy trigger not recorded"
+    },
+    {
+      "profile": "balanced",
+      "order_id": "e30424ac827f91d24d041f6469fa66221be3498fba6017e16cdd684b3be343dc",
+      "strategy": "independent",
+      "market_id": "7085178",
+      "event_id": "1399649",
+      "question": "Will Bitcoin dip to $62,000 on November 16?",
+      "forecast_id": "9cbf0ae40a4735cf6ccec42494aedc4645a0bd00ab05863f1714a5398594da7a",
+      "probability": 0.263671875,
+      "uncertainty": {
+        "lower_probability": 0.0,
+        "type": "uncalibrated_model_uncertainty_not_coverage_interval",
+        "upper_probability": 1.0
+      },
+      "fee_verified": true,
+      "quantity": 27.49110465114284,
+      "entry_cost": 4.999999999996569,
+      "entry_principal": 4.673487790694283,
+      "entry_fees": 0.27153,
+      "exit_quantity": 27.49110465114284,
+      "remaining_quantity": 0.0,
+      "remaining_principal": 0.0,
+      "remaining_entry_fees": 0.0,
+      "allocated_entry_principal": 4.673487790694283,
+      "allocated_entry_fees": 0.27153,
+      "exit_principal": 3.3997325581371407,
+      "exit_fees": 0.20842000000000002,
+      "allocated_entry_cost": 4.999999999996569,
+      "modeled_exit_pnl": -1.8499240988361425,
+      "native_settlement_pnl": 0.0,
+      "entry_best_bid": 0.16,
+      "entry_best_ask": 0.17,
+      "gross_price_pnl": -1.2737552325571424,
+      "entry_reserve": 0.05498220930228587,
+      "exit_slippage": 0.041236656976714414,
+      "entry_spread_diagnostic": -0.27491104651142867,
+      "probability_error": null,
+      "exit_reason": "legacy trigger not recorded"
+    },
+    {
+      "profile": "aggressive",
+      "order_id": "7d971cf4e7cc9cca3f56f9e48a5b9a0dafc9a31cbb90b9b07644a1e9d198a000",
+      "strategy": "independent",
+      "market_id": "7085176",
+      "event_id": "1399649",
+      "question": "Will Bitcoin dip to $63,000 on November 16?",
+      "forecast_id": "acbdfa87353e20d302645e9f49bbcb8e1779bc7ec736d223e9ef1e1a319e2d1b",
+      "probability": 0.55078125,
+      "uncertainty": {
+        "lower_probability": 0.0,
+        "type": "uncalibrated_model_uncertainty_not_coverage_interval",
+        "upper_probability": 1.0
+      },
+      "fee_verified": false,
+      "quantity": 1.9000000000000001,
+      "entry_cost": 0.71203,
+      "entry_principal": 0.665,
+      "entry_fees": 0.04323,
+      "exit_quantity": 1.9000000000000001,
+      "remaining_quantity": 0.0,
+      "remaining_principal": 0.0,
+      "remaining_entry_fees": 0.0,
+      "allocated_entry_principal": 0.665,
+      "allocated_entry_fees": 0.04323,
+      "exit_principal": 0.798,
+      "exit_fees": 0.04628,
+      "allocated_entry_cost": 0.71203,
+      "modeled_exit_pnl": 0.036839999999999984,
+      "native_settlement_pnl": 0.0,
+      "entry_best_bid": 0.34,
+      "entry_best_ask": 0.35,
+      "gross_price_pnl": 0.133,
+      "entry_reserve": 0.0038000000000000186,
+      "exit_slippage": 0.002850000000000019,
+      "entry_spread_diagnostic": -0.018999999999999913,
+      "probability_error": null,
+      "exit_reason": "legacy trigger not recorded"
+    },
+    {
+      "profile": "aggressive",
+      "order_id": "1f3befd4bfa8244be6d4ed8123ac460377030637db1e72a2d0c39873172424ed",
+      "strategy": "independent",
+      "market_id": "6567954",
+      "event_id": "1299582",
+      "question": "Trail Blazers vs. Timberwolves",
+      "forecast_id": "748490ffc9a5b4d7ea053fedc4e3639244b6d5159e6da64c6a295e8ab827c862",
+      "probability": 0.5051901825122906,
+      "uncertainty": {
+        "lower_probability": 0.0,
+        "type": "uncalibrated_not_a_coverage_interval",
+        "upper_probability": 1.0
+      },
+      "fee_verified": false,
+      "quantity": 6.16218614718111,
+      "entry_cost": 2.999999999997673,
+      "entry_principal": 2.834605627703311,
+      "entry_fees": 0.15307,
+      "exit_quantity": 6.16218614718111,
+      "remaining_quantity": 0.0,
+      "remaining_principal": 0.0,
+      "remaining_entry_fees": 0.0,
+      "allocated_entry_principal": 2.834605627703311,
+      "allocated_entry_fees": 0.15307,
+      "exit_principal": 2.7729837662314996,
+      "exit_fees": 0.15251,
+      "allocated_entry_cost": 2.999999999997673,
+      "modeled_exit_pnl": -0.38876951298694484,
+      "native_settlement_pnl": 0.0,
+      "entry_best_bid": 0.45,
+      "entry_best_ask": 0.46,
+      "gross_price_pnl": -0.06162186147181137,
+      "entry_reserve": 0.012324372294362035,
+      "exit_slippage": 0.009243279220771505,
+      "entry_spread_diagnostic": -0.06162186147181115,
+      "probability_error": null,
+      "exit_reason": "legacy trigger not recorded"
+    },
+    {
+      "profile": "aggressive",
+      "order_id": "87ce5025d6c2d10b952dec191ccb19d19ef8ad1002380ce599a8c0761a498821",
+      "strategy": "independent",
+      "market_id": "7085178",
+      "event_id": "1399649",
+      "question": "Will Bitcoin dip to $62,000 on November 16?",
+      "forecast_id": "8a810d9767025b25575ad8c0da617bb80ecba15635a80610dfbdf897dfd735e3",
+      "probability": 0.166015625,
+      "uncertainty": {
+        "lower_probability": 0.0,
+        "type": "uncalibrated_model_uncertainty_not_coverage_interval",
+        "upper_probability": 1.0
+      },
+      "fee_verified": false,
+      "quantity": 22.345,
+      "entry_cost": 2.7214,
+      "entry_principal": 2.45795,
+      "entry_fees": 0.21876,
+      "exit_quantity": 22.345,
+      "remaining_quantity": 0.0,
+      "remaining_principal": 0.0,
+      "remaining_entry_fees": 0.0,
+      "allocated_entry_principal": 2.45795,
+      "allocated_entry_fees": 0.21876,
+      "exit_principal": 2.2345,
+      "exit_fees": 0.20111,
+      "allocated_entry_cost": 2.7214,
+      "modeled_exit_pnl": -0.7215275000000001,
+      "native_settlement_pnl": 0.0,
+      "entry_best_bid": 0.1,
+      "entry_best_ask": 0.11,
+      "gross_price_pnl": -0.2234499999999997,
+      "entry_reserve": 0.044690000000000174,
+      "exit_slippage": 0.03351750000000031,
+      "entry_spread_diagnostic": -0.22344999999999987,
+      "probability_error": null,
+      "exit_reason": "legacy trigger not recorded"
+    },
+    {
+      "profile": "aggressive",
+      "order_id": "f32b4e397242f96777fa21407e60d6f0da1bd81b29a3a1f94d2d8637b0f4ddfe",
+      "strategy": "independent",
+      "market_id": "3215007",
+      "event_id": "770450",
+      "question": "Will there be no change in Fed interest rates after the December 2026 meeting?",
+      "forecast_id": "f39b06f171236e48058c7bbfa545c9ba97d4515545b982a000a4679b3649f114",
+      "probability": 0.640625,
+      "uncertainty": {
+        "lower_probability": 0.0,
+        "type": "uncalibrated_regime_uncertainty_not_sampling_confidence",
+        "upper_probability": 1.0
+      },
+      "fee_verified": false,
+      "quantity": 72.34072127855468,
+      "entry_cost": 2.9999974085850782,
+      "entry_principal": 2.6042659660279686,
+      "entry_fees": 0.25105,
+      "exit_quantity": 72.34072127855468,
+      "remaining_quantity": 0.0,
+      "remaining_principal": 0.0,
+      "remaining_entry_fees": 0.0,
+      "allocated_entry_principal": 2.6042659660279686,
+      "allocated_entry_fees": 0.25105,
+      "exit_principal": 2.4804365234708596,
+      "exit_fees": 0.23954000000000003,
+      "allocated_entry_cost": 2.9999974085850782,
+      "modeled_exit_pnl": -0.867611967032051,
+      "native_settlement_pnl": 0.0,
+      "entry_best_bid": 0.035,
+      "entry_best_ask": 0.036,
+      "gross_price_pnl": -0.12382944255710893,
+      "entry_reserve": 0.14468144255710969,
+      "exit_slippage": 0.10851108191783254,
+      "entry_spread_diagnostic": -0.07234072127855425,
+      "probability_error": null,
+      "exit_reason": "legacy trigger not recorded"
+    },
+    {
+      "profile": "balanced",
+      "order_id": "061c94342ee0318a09211b8d26759870aa1b9add4b9dcaf7a09778ee674be47e",
+      "strategy": "independent",
+      "market_id": "3215007",
+      "event_id": "770450",
+      "question": "Will there be no change in Fed interest rates after the December 2026 meeting?",
+      "forecast_id": "f39b06f171236e48058c7bbfa545c9ba97d4515545b982a000a4679b3649f114",
+      "probability": 0.640625,
+      "uncertainty": {
+        "lower_probability": 0.0,
+        "type": "uncalibrated_regime_uncertainty_not_sampling_confidence",
+        "upper_probability": 1.0
+      },
+      "fee_verified": true,
+      "quantity": 125.83289473679011,
+      "entry_cost": 4.999999999998024,
+      "entry_principal": 4.529984210524444,
+      "entry_fees": 0.21835,
+      "exit_quantity": 125.83289473679011,
+      "remaining_quantity": 0.0,
+      "remaining_principal": 0.0,
+      "remaining_entry_fees": 0.0,
+      "allocated_entry_principal": 4.529984210524444,
+      "allocated_entry_fees": 0.21835,
+      "exit_principal": 4.2991704210508646,
+      "exit_fees": 0.20761,
+      "allocated_entry_cost": 4.999999999998024,
+      "modeled_exit_pnl": -1.0971889210523447,
+      "native_settlement_pnl": 0.0,
+      "entry_best_bid": 0.035,
+      "entry_best_ask": 0.036,
+      "gross_price_pnl": -0.23081378947357933,
+      "entry_reserve": 0.2516657894735799,
+      "exit_slippage": 0.18874934210518557,
+      "entry_spread_diagnostic": -0.12583289473678935,
+      "probability_error": null,
+      "exit_reason": "legacy trigger not recorded"
+    },
+    {
+      "profile": "aggressive",
+      "order_id": "99045972c13e6635b84378585ebf143e536409ac8cacb9919067f033c356fcde",
+      "strategy": "event_repricing",
+      "market_id": "7085205",
+      "event_id": "1399652",
+      "question": "Will Ethereum dip to $1,750 on November 16?",
+      "forecast_id": "4a01f42aa0817c26cca3644c6d3817c81d769bf6d3ba5dd9725846e1da9de1eb",
+      "probability": 0.228515625,
+      "uncertainty": {
+        "lower_probability": 0.0,
+        "type": "uncalibrated_model_uncertainty_not_coverage_interval",
+        "upper_probability": 1.0
+      },
+      "fee_verified": false,
+      "quantity": 15.246978021975742,
+      "entry_cost": 2.9999999999995848,
+      "entry_principal": 2.7444560439556334,
+      "entry_fees": 0.22505,
+      "exit_quantity": 15.246978021975742,
+      "remaining_quantity": 0.0,
+      "remaining_principal": 0.0,
+      "remaining_entry_fees": 0.0,
+      "allocated_entry_principal": 2.7444560439556334,
+      "allocated_entry_fees": 0.22505,
+      "exit_principal": 2.439516483516119,
+      "exit_fees": 0.20492,
+      "allocated_entry_cost": 2.9999999999995848,
+      "modeled_exit_pnl": -0.7882739835164294,
+      "native_settlement_pnl": 0.0,
+      "entry_best_bid": 0.16,
+      "entry_best_ask": 0.18,
+      "gross_price_pnl": -0.3049395604395144,
+      "entry_reserve": 0.030493956043951415,
+      "exit_slippage": 0.022870467032963582,
+      "entry_spread_diagnostic": -0.3049395604395147,
+      "probability_error": null,
+      "exit_reason": "legacy trigger not recorded"
+    },
+    {
+      "profile": "aggressive",
+      "order_id": "c64d13e44963878c7e2d420487ba03d5883a417680bea36a59b0af1962671d1b",
+      "strategy": "event_repricing",
+      "market_id": "7085176",
+      "event_id": "1399649",
+      "question": "Will Bitcoin dip to $63,000 on November 16?",
+      "forecast_id": "a9d8f789554fe9b8406863b26f8eb8179be74207e4f02900d5b609e1fbb4025e",
+      "probability": 0.474609375,
+      "uncertainty": {
+        "lower_probability": 0.0,
+        "type": "uncalibrated_model_uncertainty_not_coverage_interval",
+        "upper_probability": 1.0
+      },
+      "fee_verified": false,
+      "quantity": 9.597226027390466,
+      "entry_cost": 2.999999999998016,
+      "entry_principal": 2.783195547943235,
+      "entry_fees": 0.19761,
+      "exit_quantity": 9.597226027390466,
+      "remaining_quantity": 0.0,
+      "remaining_principal": 0.0,
+      "remaining_entry_fees": 0.0,
+      "allocated_entry_principal": 2.783195547943235,
+      "allocated_entry_fees": 0.19761,
+      "exit_principal": 2.4773065068476168,
+      "exit_fees": 0.18368,
+      "allocated_entry_cost": 2.999999999998016,
+      "modeled_exit_pnl": -0.7207693321914848,
+      "native_settlement_pnl": 0.0,
+      "entry_best_bid": 0.28,
+      "entry_best_ask": 0.29,
+      "gross_price_pnl": -0.3058890410956181,
+      "entry_reserve": 0.01919445205478093,
+      "exit_slippage": 0.014395839041085878,
+      "entry_spread_diagnostic": -0.09597226027390421,
+      "probability_error": null,
+      "exit_reason": "legacy trigger not recorded"
+    },
+    {
+      "profile": "aggressive",
+      "order_id": "1ccdc65c4a7a74e7d5b0c95c5ca7cf11aa9e61c6765cd13f2f0be80e75ecc8dd",
+      "strategy": "independent",
+      "market_id": "7085205",
+      "event_id": "1399652",
+      "question": "Will Ethereum dip to $1,750 on November 16?",
+      "forecast_id": "4a01f42aa0817c26cca3644c6d3817c81d769bf6d3ba5dd9725846e1da9de1eb",
+      "probability": 0.228515625,
+      "uncertainty": {
+        "lower_probability": 0.0,
+        "type": "uncalibrated_model_uncertainty_not_coverage_interval",
+        "upper_probability": 1.0
+      },
+      "fee_verified": false,
+      "quantity": 15.246978021975742,
+      "entry_cost": 2.9999999999995848,
+      "entry_principal": 2.7444560439556334,
+      "entry_fees": 0.22505,
+      "exit_quantity": 15.246978021975742,
+      "remaining_quantity": 0.0,
+      "remaining_principal": 0.0,
+      "remaining_entry_fees": 0.0,
+      "allocated_entry_principal": 2.7444560439556334,
+      "allocated_entry_fees": 0.22505,
+      "exit_principal": 2.439516483516119,
+      "exit_fees": 0.20492,
+      "allocated_entry_cost": 2.9999999999995848,
+      "modeled_exit_pnl": -0.7882739835164294,
+      "native_settlement_pnl": 0.0,
+      "entry_best_bid": 0.16,
+      "entry_best_ask": 0.18,
+      "gross_price_pnl": -0.3049395604395144,
+      "entry_reserve": 0.030493956043951415,
+      "exit_slippage": 0.022870467032963582,
+      "entry_spread_diagnostic": -0.3049395604395147,
+      "probability_error": null,
+      "exit_reason": "legacy trigger not recorded"
+    },
+    {
+      "profile": "aggressive",
+      "order_id": "a8c796f229a56c36c8136bb0db54ae450a316592e25e650c10c19f453781bd57",
+      "strategy": "independent",
+      "market_id": "6567954",
+      "event_id": "1299582",
+      "question": "Trail Blazers vs. Timberwolves",
+      "forecast_id": "86343c8c2099eb7c55e9ad17feb156e97f4d5a88113f3d451320779e0ce88130",
+      "probability": 0.5051901825122906,
+      "uncertainty": {
+        "lower_probability": 0.0,
+        "type": "uncalibrated_not_a_coverage_interval",
+        "upper_probability": 1.0
+      },
+      "fee_verified": false,
+      "quantity": 6.16218614718111,
+      "entry_cost": 2.999999999997673,
+      "entry_principal": 2.834605627703311,
+      "entry_fees": 0.15307,
+      "exit_quantity": 6.16218614718111,
+      "remaining_quantity": 0.0,
+      "remaining_principal": 0.0,
+      "remaining_entry_fees": 0.0,
+      "allocated_entry_principal": 2.834605627703311,
+      "allocated_entry_fees": 0.15307,
+      "exit_principal": 2.7729837662314996,
+      "exit_fees": 0.15251,
+      "allocated_entry_cost": 2.999999999997673,
+      "modeled_exit_pnl": -0.38876951298694484,
+      "native_settlement_pnl": 0.0,
+      "entry_best_bid": 0.45,
+      "entry_best_ask": 0.46,
+      "gross_price_pnl": -0.06162186147181137,
+      "entry_reserve": 0.012324372294362035,
+      "exit_slippage": 0.009243279220771505,
+      "entry_spread_diagnostic": -0.06162186147181115,
+      "probability_error": null,
+      "exit_reason": "legacy trigger not recorded"
+    },
+    {
+      "profile": "aggressive",
+      "order_id": "08828b85bf489186c2d4b77ffd109e422f5097b98f40632827f959bbb918b00f",
+      "strategy": "independent",
+      "market_id": "7085176",
+      "event_id": "1399649",
+      "question": "Will Bitcoin dip to $63,000 on November 16?",
+      "forecast_id": "a9d8f789554fe9b8406863b26f8eb8179be74207e4f02900d5b609e1fbb4025e",
+      "probability": 0.474609375,
+      "uncertainty": {
+        "lower_probability": 0.0,
+        "type": "uncalibrated_model_uncertainty_not_coverage_interval",
+        "upper_probability": 1.0
+      },
+      "fee_verified": false,
+      "quantity": 9.597226027390466,
+      "entry_cost": 2.999999999998016,
+      "entry_principal": 2.783195547943235,
+      "entry_fees": 0.19761,
+      "exit_quantity": 9.597226027390466,
+      "remaining_quantity": 0.0,
+      "remaining_principal": 0.0,
+      "remaining_entry_fees": 0.0,
+      "allocated_entry_principal": 2.783195547943235,
+      "allocated_entry_fees": 0.19761,
+      "exit_principal": 2.3963619862998073,
+      "exit_fees": 0.17980000000000002,
+      "allocated_entry_cost": 2.999999999998016,
+      "modeled_exit_pnl": -0.7978338527392945,
+      "native_settlement_pnl": 0.0,
+      "entry_best_bid": 0.28,
+      "entry_best_ask": 0.29,
+      "gross_price_pnl": -0.3868335616434275,
+      "entry_reserve": 0.01919445205478093,
+      "exit_slippage": 0.014395839041085878,
+      "entry_spread_diagnostic": -0.09597226027390421,
+      "probability_error": null,
+      "exit_reason": "legacy trigger not recorded"
+    },
+    {
+      "profile": "aggressive",
+      "order_id": "088e63d26e2ecae8608b029c69a600869fcdf8e3016985e3991f17557cf9a6be",
+      "strategy": "independent",
+      "market_id": "7085178",
+      "event_id": "1399649",
+      "question": "Will Bitcoin dip to $62,000 on November 16?",
+      "forecast_id": "b4465e6f77b6c0ff249579d6bca1ca1bc981f656a844b79f397db742aaa9cb89",
+      "probability": 0.1875,
+      "uncertainty": {
+        "lower_probability": 0.0,
+        "type": "uncalibrated_model_uncertainty_not_coverage_interval",
+        "upper_probability": 1.0
+      },
+      "fee_verified": false,
+      "quantity": 22.345,
+      "entry_cost": 2.7214,
+      "entry_principal": 2.45795,
+      "entry_fees": 0.21876,
+      "exit_quantity": 22.345,
+      "remaining_quantity": 0.0,
+      "remaining_principal": 0.0,
+      "remaining_entry_fees": 0.0,
+      "allocated_entry_principal": 2.45795,
+      "allocated_entry_fees": 0.21876,
+      "exit_principal": 2.2345,
+      "exit_fees": 0.20111,
+      "allocated_entry_cost": 2.7214,
+      "modeled_exit_pnl": -0.7215275000000001,
+      "native_settlement_pnl": 0.0,
+      "entry_best_bid": 0.1,
+      "entry_best_ask": 0.11,
+      "gross_price_pnl": -0.2234499999999997,
+      "entry_reserve": 0.044690000000000174,
+      "exit_slippage": 0.03351750000000031,
+      "entry_spread_diagnostic": -0.22344999999999987,
+      "probability_error": null,
+      "exit_reason": "legacy trigger not recorded"
+    },
+    {
+      "profile": "aggressive",
+      "order_id": "ad9a6d9822eac97ef9d5ec72b0beeee9941103140dbb3a4ae724868452c910f9",
+      "strategy": "momentum",
+      "market_id": "7046445",
+      "event_id": "1389036",
+      "question": "Helsinki: Shintaro Mochizuki vs Lorenzo Giustino",
+      "forecast_id": null,
+      "probability": null,
+      "uncertainty": {
+        "calibration": "unvalidated",
+        "pricing_target_variation": 0.011547005383792509
+      },
+      "fee_verified": false,
+      "quantity": 24.632564249938415,
+      "entry_cost": 2.999996965760169,
+      "entry_principal": 2.7095818372602922,
+      "entry_fees": 0.24115,
+      "exit_quantity": 24.632564249938415,
+      "remaining_quantity": 0.0,
+      "remaining_principal": 0.0,
+      "remaining_entry_fees": 0.0,
+      "allocated_entry_principal": 2.7095818372602922,
+      "allocated_entry_fees": 0.24115,
+      "exit_principal": 2.2169305522615237,
+      "exit_fees": 0.20174,
+      "allocated_entry_cost": 2.999996965760169,
+      "modeled_exit_pnl": -1.0217552598735533,
+      "native_settlement_pnl": 0.0,
+      "entry_best_bid": 0.1,
+      "entry_best_ask": 0.11,
+      "gross_price_pnl": -0.49265128499876853,
+      "entry_reserve": 0.049265128499876826,
+      "exit_slippage": 0.03694884637490792,
+      "entry_spread_diagnostic": -0.24632564249938402,
+      "probability_error": null,
+      "exit_reason": "legacy trigger not recorded"
+    },
+    {
+      "profile": "aggressive",
+      "order_id": "84b5c9a61190b049f670ebfcf4a7f0e49de7d0c1aaa30cf33739051b4189e71a",
+      "strategy": "event_repricing",
+      "market_id": "7085176",
+      "event_id": "1399649",
+      "question": "Will Bitcoin dip to $63,000 on November 16?",
+      "forecast_id": "ec8531379d6ee5c05164ea3d836d4c62729378d6f38b7797637323775154379a",
+      "probability": 0.40234375,
+      "uncertainty": {
+        "lower_probability": 0.0,
+        "type": "uncalibrated_model_uncertainty_not_coverage_interval",
+        "upper_probability": 1.0
+      },
+      "fee_verified": false,
+      "quantity": 8.7270186335329,
+      "entry_cost": 2.999999999997594,
+      "entry_principal": 2.792645962730528,
+      "entry_fees": 0.1899,
+      "exit_quantity": 8.7270186335329,
+      "remaining_quantity": 0.0,
+      "remaining_principal": 0.0,
+      "remaining_entry_fees": 0.0,
+      "allocated_entry_principal": 2.792645962730528,
+      "allocated_entry_fees": 0.1899,
+      "exit_principal": 2.463565217389212,
+      "exit_fees": 0.17679999999999998,
+      "allocated_entry_cost": 2.999999999997594,
+      "modeled_exit_pnl": -0.7263253105586811,
+      "native_settlement_pnl": 0.0,
+      "entry_best_bid": 0.31,
+      "entry_best_ask": 0.32,
+      "gross_price_pnl": -0.32908074534131604,
+      "entry_reserve": 0.017454037267065903,
+      "exit_slippage": 0.01309052795029908,
+      "entry_spread_diagnostic": -0.08727018633532908,
+      "probability_error": null,
+      "exit_reason": "legacy trigger not recorded"
+    },
+    {
+      "profile": "aggressive",
+      "order_id": "d1b60da435ce9b6ac11c51d408ef6df595302046162eb8c26c28336bab360ba9",
+      "strategy": "event_repricing",
+      "market_id": "7085178",
+      "event_id": "1399649",
+      "question": "Will Bitcoin dip to $62,000 on November 16?",
+      "forecast_id": "9414d5f1914b60ecca84e9b9b39c214a9f0fcf1de294b192e36e5e08ba6519c3",
+      "probability": 0.1484375,
+      "uncertainty": {
+        "lower_probability": 0.0,
+        "type": "uncalibrated_model_uncertainty_not_coverage_interval",
+        "upper_probability": 1.0
+      },
+      "fee_verified": false,
+      "quantity": 2.5,
+      "entry_cost": 0.35828000000000004,
+      "entry_principal": 0.325,
+      "entry_fees": 0.02828,
+      "exit_quantity": 2.5,
+      "remaining_quantity": 0.0,
+      "remaining_principal": 0.0,
+      "remaining_entry_fees": 0.0,
+      "allocated_entry_principal": 0.325,
+      "allocated_entry_fees": 0.02828,
+      "exit_principal": 0.3,
+      "exit_fees": 0.0264,
+      "allocated_entry_cost": 0.35828000000000004,
+      "modeled_exit_pnl": -0.08843000000000001,
+      "native_settlement_pnl": 0.0,
+      "entry_best_bid": 0.12,
+      "entry_best_ask": 0.13,
+      "gross_price_pnl": -0.025000000000000022,
+      "entry_reserve": 0.005000000000000032,
+      "exit_slippage": 0.0037499999999999756,
+      "entry_spread_diagnostic": -0.025000000000000022,
+      "probability_error": null,
+      "exit_reason": "legacy trigger not recorded"
+    },
+    {
+      "profile": "aggressive",
+      "order_id": "8b509d26b154cf6cbb74cfd997c3301bc7063045e4ba885df0fcdfcbb28f8b3f",
+      "strategy": "independent",
+      "market_id": "7085205",
+      "event_id": "1399652",
+      "question": "Will Ethereum dip to $1,750 on November 16?",
+      "forecast_id": "c7476dca8ef054c8a4db27a3112f0227194b63dd89519536a8c36ce9ff4cfb53",
+      "probability": 0.21875,
+      "uncertainty": {
+        "lower_probability": 0.0,
+        "type": "uncalibrated_model_uncertainty_not_coverage_interval",
+        "upper_probability": 1.0
+      },
+      "fee_verified": false,
+      "quantity": 13.761466716189368,
+      "entry_cost": 2.9999962766702524,
+      "entry_principal": 2.7522933432378736,
+      "entry_fees": 0.22018,
+      "exit_quantity": 13.761466716189368,
+      "remaining_quantity": 0.0,
+      "remaining_principal": 0.0,
+      "remaining_entry_fees": 0.0,
+      "allocated_entry_principal": 2.7522933432378736,
+      "allocated_entry_fees": 0.22018,
+      "exit_principal": 2.4770637125500663,
+      "exit_fees": 0.20312,
+      "allocated_entry_cost": 2.9999962766702524,
+      "modeled_exit_pnl": -0.7466947641944699,
+      "native_settlement_pnl": 0.0,
+      "entry_best_bid": 0.18,
+      "entry_best_ask": 0.2,
+      "gross_price_pnl": -0.27522963068780726,
+      "entry_reserve": 0.027522933432378827,
+      "exit_slippage": 0.020642200074283634,
+      "entry_spread_diagnostic": -0.2752293343237876,
+      "probability_error": null,
+      "exit_reason": "legacy trigger not recorded"
+    },
+    {
+      "profile": "aggressive",
+      "order_id": "47b67b64c7e6cdf02adf4b28b989824662e084b8c4c78e12914f45ddbc0362d9",
+      "strategy": "independent",
+      "market_id": "7085176",
+      "event_id": "1399649",
+      "question": "Will Bitcoin dip to $63,000 on November 16?",
+      "forecast_id": "ec8531379d6ee5c05164ea3d836d4c62729378d6f38b7797637323775154379a",
+      "probability": 0.40234375,
+      "uncertainty": {
+        "lower_probability": 0.0,
+        "type": "uncalibrated_model_uncertainty_not_coverage_interval",
+        "upper_probability": 1.0
+      },
+      "fee_verified": false,
+      "quantity": 8.7270186335329,
+      "entry_cost": 2.999999999997594,
+      "entry_principal": 2.792645962730528,
+      "entry_fees": 0.1899,
+      "exit_quantity": 8.7270186335329,
+      "remaining_quantity": 0.0,
+      "remaining_principal": 0.0,
+      "remaining_entry_fees": 0.0,
+      "allocated_entry_principal": 2.792645962730528,
+      "allocated_entry_fees": 0.1899,
+      "exit_principal": 2.4435652173892124,
+      "exit_fees": 0.17594,
+      "allocated_entry_cost": 2.999999999997594,
+      "modeled_exit_pnl": -0.7454653105586813,
+      "native_settlement_pnl": 0.0,
+      "entry_best_bid": 0.31,
+      "entry_best_ask": 0.32,
+      "gross_price_pnl": -0.3490807453413156,
+      "entry_reserve": 0.017454037267065903,
+      "exit_slippage": 0.013090527950299524,
+      "entry_spread_diagnostic": -0.08727018633532908,
+      "probability_error": null,
+      "exit_reason": "legacy trigger not recorded"
+    }
+  ],
+  "by_strategy": {
+    "aggressive/spread_capture": {
+      "modeled_exit_pnl": -6.088203301243593,
+      "gross_price_pnl": -3.4082143202587845,
+      "allocated_entry_fees": 1.1410399999999998,
+      "exit_fees": 0.9189099999999999,
+      "entry_reserve": 0.35430798913417627,
+      "exit_slippage": 0.2657309918506322
+    },
+    "aggressive/independent": {
+      "modeled_exit_pnl": -14.113658859189254,
+      "gross_price_pnl": -3.9859059791874687,
+      "allocated_entry_fees": 4.5065,
+      "exit_fees": 4.2738299999999985,
+      "entry_reserve": 0.7699559314295914,
+      "exit_slippage": 0.5774669485721936
+    },
+    "balanced/independent": {
+      "modeled_exit_pnl": -3.7078351455557446,
+      "gross_price_pnl": -1.7707928188212827,
+      "allocated_entry_fees": 0.6931799999999999,
+      "exit_fees": 0.61405,
+      "entry_reserve": 0.35989275813397803,
+      "exit_slippage": 0.26991956860048427
+    },
+    "aggressive/momentum": {
+      "modeled_exit_pnl": -4.077010127023749,
+      "gross_price_pnl": -1.8355011109748096,
+      "allocated_entry_fees": 0.98092,
+      "exit_fees": 0.8689300000000001,
+      "entry_reserve": 0.2238051520279651,
+      "exit_slippage": 0.16785386402097457
+    },
+    "balanced/momentum": {
+      "modeled_exit_pnl": -1.3240417682505878,
+      "gross_price_pnl": -0.9029271326348729,
+      "allocated_entry_fees": 0.16458,
+      "exit_fees": 0.15475999999999998,
+      "entry_reserve": 0.05815693463755162,
+      "exit_slippage": 0.043617700978162866
+    },
+    "balanced/spread_capture": {
+      "modeled_exit_pnl": -2.067277027025252,
+      "gross_price_pnl": -1.7353324324307247,
+      "allocated_entry_fees": 0.14996,
+      "exit_fees": 0.10552,
+      "entry_reserve": 0.04369405405401591,
+      "exit_slippage": 0.03277054054051165
+    },
+    "aggressive/event_repricing": {
+      "modeled_exit_pnl": -2.323798626266595,
+      "gross_price_pnl": -0.9649093468764486,
+      "allocated_entry_fees": 0.64084,
+      "exit_fees": 0.5918,
+      "entry_reserve": 0.07214244536579828,
+      "exit_slippage": 0.054106834024348516
+    }
+  },
+  "unmatched_exits": 0,
+  "limitation": "USD accounting decomposition; unresolved outcomes cannot attribute probability error; no causal adverse-selection attribution; legacy trigger unrecorded",
+  "coverage": [
+    {
+      "id": "strategy42:000000000001",
+      "sha256": "2bc09d395589070250653ee20287b806dc5a9e458b85ad796d5faa6746774440",
+      "at": "2026-11-16T13:05:03.727913Z"
+    },
+    {
+      "id": "strategy42:000000000002",
+      "sha256": "78805cc936dc2cf90e6fae0cec5d494c344cd0ecade0a24e7eedf584d2310806",
+      "at": "2026-11-16T13:05:10.176184Z"
+    },
+    {
+      "id": "strategy42:000000000003",
+      "sha256": "256636c37406f0e0a9abe7ab776c610b47089567b1c4ea8147becd63f38256cd",
+      "at": "2026-11-16T13:16:28.487075Z"
+    },
+    {
+      "id": "strategy42:000000000004",
+      "sha256": "552bc2bdea5e05160b040fada20fa41190ec74f5d1f7016dc5933c888140b7c7",
+      "at": "2026-11-16T13:16:48.318652Z"
+    },
+    {
+      "id": "strategy42:000000000005",
+      "sha256": "913f1f0d3b4b5cf2d88e7195592f3f26549537b1b4c909e13c3f5d7e2eb48965",
+      "at": "2026-11-16T13:17:19.665186Z"
+    },
+    {
+      "id": "strategy42:000000000006",
+      "sha256": "7172aef886c57d5189f5c4db049d6295cd44936cfa79a355f7d72e32d432108e",
+      "at": "2026-11-16T13:17:39.084470Z"
+    },
+    {
+      "id": "strategy42:000000000007",
+      "sha256": "a8f6f5ea819a1236f42221528275c03c432790b3d656e3006f7d9c9fa554d38a",
+      "at": "2026-11-16T13:17:49.309188Z"
+    },
+    {
+      "id": "strategy42:000000000008",
+      "sha256": "fe7aade9f8bcf32c74ae8fd96f4f8b730061e74294006150ec7dc25c42e532b6",
+      "at": "2026-11-16T13:17:58.720162Z"
+    },
+    {
+      "id": "strategy42:000000000009",
+      "sha256": "6386846e64ad55f4591f103bf9a37e62164117d3549b97ee708a84f39aeba805",
+      "at": "2026-11-16T13:18:15.902913Z"
+    },
+    {
+      "id": "strategy42:000000000010",
+      "sha256": "68ef7976d57aac077c4073db2fff99ce5cd3b519e3cc6b2fe4019b8fd5708a81",
+      "at": "2026-11-16T13:18:37.483407Z"
+    },
+    {
+      "id": "strategy42:000000000011",
+      "sha256": "47367d9bec652fbee61610f7ced84a659c3cb3219cbb80bd63518a452cabe339",
+      "at": "2026-11-16T13:19:13.459769Z"
+    },
+    {
+      "id": "strategy42:000000000012",
+      "sha256": "acc3328d733c9eb889bf96fca1de05e42b36825a2b351053684a820c743c449b",
+      "at": "2026-11-16T13:19:34.708742Z"
+    },
+    {
+      "id": "strategy42:000000000013",
+      "sha256": "5b0853d71e63f9a555b628458b1640d542483843f2a243b15a0ffe46c68f8560",
+      "at": "2026-11-16T13:20:06.804302Z"
+    },
+    {
+      "id": "strategy42:000000000014",
+      "sha256": "f4b3edfc84ae59b31de9b5534e6e1b1a0d7e4f019b45fe838f55e492f66c79d6",
+      "at": "2026-11-16T13:20:28.236477Z"
+    },
+    {
+      "id": "strategy42:000000000015",
+      "sha256": "95f62502da2a75be3817196153c921ae66b53d729f70c6b790e1de6bb33b218a",
+      "at": "2026-11-16T13:20:39.391004Z"
+    },
+    {
+      "id": "strategy42:000000000016",
+      "sha256": "78c51c05c457c67889a83aa97f469c511c64e7721e386fc764880f266710cf45",
+      "at": "2026-11-16T13:20:52.576145Z"
+    },
+    {
+      "id": "strategy42:000000000017",
+      "sha256": "3955859ed4a276a090ca5a6cb0e4949e5e08d9e72f491d2d37339adcd314440c",
+      "at": "2026-11-16T13:21:49.618210Z"
+    },
+    {
+      "id": "strategy42:000000000018",
+      "sha256": "d39f2fffcae4df21698188605dd14ae01bd92820d18b2ffe58a9e58c8bfb9fdf",
+      "at": "2026-11-16T13:22:03.708307Z"
+    },
+    {
+      "id": "strategy42:000000000019",
+      "sha256": "71d6b64e5dd2977d6583b9d29643496dd4b9eb27859f8aebb21901a2a4b3785b",
+      "at": "2026-11-16T13:22:15.405475Z"
+    },
+    {
+      "id": "strategy42:000000000020",
+      "sha256": "906636449f82cc99edacb78919d1a605b38bb8ba0123cd488eb6493c90271dfc",
+      "at": "2026-11-16T13:22:56.165053Z"
+    },
+    {
+      "id": "strategy42:000000000021",
+      "sha256": "15150655d77282de6140bd4b0442db3cc584f026ad52f7236be0f7b13e2b3695",
+      "at": "2026-11-16T13:23:10.813905Z"
+    },
+    {
+      "id": "strategy42:000000000022",
+      "sha256": "5fa9712ca3fb58dd0c6466a0cb3fa09d4979a02969374dc73df293b7a63cd4c5",
+      "at": "2026-11-16T13:23:45.550739Z"
+    },
+    {
+      "id": "strategy42:000000000023",
+      "sha256": "f2fb28aede2754921f8199c7dd59c525dec2c1cada929fec75e0e52a029025c2",
+      "at": "2026-11-16T13:24:05.634464Z"
+    },
+    {
+      "id": "strategy42:000000000024",
+      "sha256": "510ab51500245dc5f9172f545cfd0e8c1ca5d782cfb8788b4b8d451e167ddead",
+      "at": "2026-11-16T13:24:14.468492Z"
+    },
+    {
+      "id": "strategy42:000000000025",
+      "sha256": "4efc0e56b1377030e6f4f8c31cffcc1b7f386224fa0bfbefe530d000ed48a79d",
+      "at": "2026-11-16T13:24:22.606365Z"
+    },
+    {
+      "id": "strategy42:000000000026",
+      "sha256": "97cae3f02b66cd2ccb9561f8e1ba5d8429a9bc42bcf4b3bdf878f12a73e23cbf",
+      "at": "2026-11-16T13:24:31.298697Z"
+    },
+    {
+      "id": "strategy42:000000000027",
+      "sha256": "b02678d76a5fe3c918556199794e85b4595d35dd25585b3e682854ea9044c167",
+      "at": "2026-11-16T13:24:42.905384Z"
+    },
+    {
+      "id": "strategy42:000000000028",
+      "sha256": "679df84718995095325883db6c0423b09212f4dc5b1aed74811f83496a75d5e2",
+      "at": "2026-11-16T13:24:59.060766Z"
+    },
+    {
+      "id": "strategy42:000000000029",
+      "sha256": "c05a29dfc01ff5916afc2e910ae4dbffb77661150dde460fd32771b02affccb6",
+      "at": "2026-11-16T13:25:10.008125Z"
+    },
+    {
+      "id": "strategy42:000000000030",
+      "sha256": "9c62c7085a73ddf9db73d1c5dc4ed2fb58ddfe6385cbde1da87409678158502e",
+      "at": "2026-11-16T13:25:35.104811Z"
+    },
+    {
+      "id": "strategy42:000000000031",
+      "sha256": "fdd4cb9cb11d24cbcf6d660902828ab3d66f8e73ef012cd61b1138c1c3934576",
+      "at": "2026-11-16T13:26:03.615225Z"
+    },
+    {
+      "id": "strategy42:000000000032",
+      "sha256": "b4346faa92f14ec8021ccf7b67aca40de27cd2e70c9f8af6ccc3fbc356ab4538",
+      "at": "2026-11-16T13:26:14.415903Z"
+    },
+    {
+      "id": "strategy42:000000000033",
+      "sha256": "7f042997c9536bba178ccdfdaffaa5f7dc299af7b1713a96b41ff3f322a67fec",
+      "at": "2026-11-16T13:27:06.701867Z"
+    },
+    {
+      "id": "strategy42:000000000034",
+      "sha256": "c8d0d14477cbe6e3b09f87077afec3bff836f0dabf7d466bab687d076b89f4e5",
+      "at": "2026-11-16T13:27:18.125432Z"
+    },
+    {
+      "id": "strategy42:000000000035",
+      "sha256": "a46907ea0ad6382527aa3491f0cf39d0b4be929abf5102d3b7a5b4bc3427a36f",
+      "at": "2026-11-16T13:27:39.022198Z"
+    },
+    {
+      "id": "strategy42:000000000036",
+      "sha256": "e6ebd4bb614df9e8238f5bd59f3ca0dd44d57a94409bf260248625c4328a750c",
+      "at": "2026-11-16T13:28:28.629672Z"
+    },
+    {
+      "id": "strategy42:000000000037",
+      "sha256": "3482429eeedd09571032e0829b0b2cec96d9db544e507ad56a793374e78aba5e",
+      "at": "2026-11-16T13:28:36.628528Z"
+    },
+    {
+      "id": "strategy42:000000000038",
+      "sha256": "b817cd4f797b3aa5354761d3e7d4a8fc6c3078106601a105a42063fc65dc93cb",
+      "at": "2026-11-16T13:29:19.301961Z"
+    },
+    {
+      "id": "strategy42:000000000039",
+      "sha256": "0f210b3e5b2163582e42cde6acdf1f7927cfbfd1f1d1ac9868c82be859e2cf42",
+      "at": "2026-11-16T13:29:44.318770Z"
+    },
+    {
+      "id": "strategy42:000000000040",
+      "sha256": "9d8e834eb912899ab8282db658e539dc6be2a743625c092733c69753575b5baa",
+      "at": "2026-11-16T13:29:59.286421Z"
+    },
+    {
+      "id": "strategy42:000000000041",
+      "sha256": "42abb64113f7346a09c3a87edc3c7e18949e2761f14752cebe53b294f1848c30",
+      "at": "2026-11-16T13:30:39.489990Z"
+    },
+    {
+      "id": "strategy42:000000000042",
+      "sha256": "3604a20db093669088fb5951a46392610acde3707de09769f610708aac51219f",
+      "at": "2026-11-16T13:31:07.297851Z"
+    },
+    {
+      "id": "strategy42:000000000043",
+      "sha256": "d47a543b9003bd84deb1a182290d4be90b9990b0ee6339ba3f4743abbb22d58c",
+      "at": "2026-11-16T13:31:17.005750Z"
+    },
+    {
+      "id": "strategy42:000000000044",
+      "sha256": "239a61b1e231e1e5c69b7bf3d650a4395389df93f4fb23283d7bedfc2a4f8ddb",
+      "at": "2026-11-16T13:31:25.809646Z"
+    },
+    {
+      "id": "strategy42:000000000045",
+      "sha256": "fee6d2c80895df0e7d6328606fca5d67e9550cf2d76566961c9ec5b18d2f3a0e",
+      "at": "2026-11-16T13:31:31.546170Z"
+    },
+    {
+      "id": "strategy42:000000000046",
+      "sha256": "b9911e5c0a8b9e5a30355a6dd0981a662fd89154eef1dcbad257302bb49ed430",
+      "at": "2026-11-16T13:31:40.613575Z"
+    },
+    {
+      "id": "strategy42:000000000047",
+      "sha256": "e03910006e8c553f0314c6041cbe388207f778a3c60b4fbbd1910783387b380d",
+      "at": "2026-11-16T13:31:55.206022Z"
+    },
+    {
+      "id": "strategy42:000000000048",
+      "sha256": "4e74ce49b0ba56fcd3e60051114cf5b446d1724c9dc043ab5b41fab06c9d4bd8",
+      "at": "2026-11-16T13:32:08.817190Z"
+    },
+    {
+      "id": "strategy42:000000000049",
+      "sha256": "577f965920230913815e1538260b1d6f5387c3ff115418c1f0868566e4d2a397",
+      "at": "2026-11-16T13:32:17.634349Z"
+    },
+    {
+      "id": "strategy42:000000000050",
+      "sha256": "a8c8777894b22eea51998c1f9223f058c3cde8c4e80b27f6fb24b0673fa4b71f",
+      "at": "2026-11-16T13:32:38.007215Z"
+    },
+    {
+      "id": "strategy42:000000000051",
+      "sha256": "6f0a052b78d984536cac2ad8e0436c127665ecc611fa79434546cefa775df58e",
+      "at": "2026-11-16T13:33:05.433501Z"
+    },
+    {
+      "id": "strategy42:000000000052",
+      "sha256": "10c449c2df11111db61a9925b662afdcb8597ac254b1cdbf9623d3cb9bf9eba9",
+      "at": "2026-11-16T13:33:27.209507Z"
+    },
+    {
+      "id": "strategy42:000000000053",
+      "sha256": "86c24163430221d158a48bc4ad77716c8a32f9050aaa42fb71d0b0821faff945",
+      "at": "2026-11-16T13:34:02.410726Z"
+    },
+    {
+      "id": "strategy42:000000000054",
+      "sha256": "1bf20647bb9bca62d9952aa403ec9f6b1edbafa8c86c6d0bb5fc8f55f7b27579",
+      "at": "2026-11-16T13:34:14.692479Z"
+    },
+    {
+      "id": "strategy42:000000000055",
+      "sha256": "51819df8714091fa127596534fecef80f3483533c831d3849275e3653260cef5",
+      "at": "2026-11-16T13:34:25.788239Z"
+    },
+    {
+      "id": "strategy42:000000000056",
+      "sha256": "475015143ed69fa893585dc8d7179a5bbe4db7111ffc6c256935d8b981d502a9",
+      "at": "2026-11-16T13:34:32.313011Z"
+    },
+    {
+      "id": "strategy42:000000000057",
+      "sha256": "89f9dd4e98190d1faa30fd10b0cc0e59fa8fb518fafaa1370177b75f036a8654",
+      "at": "2026-11-16T13:34:48.142829Z"
+    },
+    {
+      "id": "strategy42:000000000058",
+      "sha256": "af0c970b1d9eefac845b1a26c3b2139b122cb14a6dca3388f9a87fb720fb6c84",
+      "at": "2026-11-16T13:34:59.661084Z"
+    },
+    {
+      "id": "strategy42:000000000059",
+      "sha256": "2afdfe5389490a382f6d54dd7c17949c975fa0c2daa55ab6a50cac7493701d70",
+      "at": "2026-11-16T13:35:32.107779Z"
+    },
+    {
+      "id": "strategy42:000000000060",
+      "sha256": "c983345a316f035a3f7c8f4846d7f3c15d465c46586c0f1c3f1016b87b938ff1",
+      "at": "2026-11-16T13:36:00.077340Z"
+    },
+    {
+      "id": "strategy42:000000000061",
+      "sha256": "d1a959932079c565a0656744722e2204ef1cab2ccbc8dae5abd3d4ee50334872",
+      "at": "2026-11-16T13:36:18.494256Z"
+    },
+    {
+      "id": "strategy42:000000000062",
+      "sha256": "c12e841c1dcdad7a08a5d2b80c7921182d6ded2d32c49dbf738d2a22ab586d3a",
+      "at": "2026-11-16T13:37:05.734357Z"
+    },
+    {
+      "id": "strategy42:000000000063",
+      "sha256": "b6e81b7b9be43faae4646b5abc696cb2c2fa66e135f670188020ce8e73baf40f",
+      "at": "2026-11-16T13:37:18.227014Z"
+    },
+    {
+      "id": "strategy42:000000000064",
+      "sha256": "5bca6412fdf3e75624b154159f56f02593f334e25f5e4d966b09cc8c12a3c6c4",
+      "at": "2026-11-16T13:37:53.232072Z"
+    },
+    {
+      "id": "strategy42:000000000065",
+      "sha256": "fae0f0733b0f702bae804a3a3b666e7318873383b261e255359e66a38f607bd4",
+      "at": "2026-11-16T13:38:19.053525Z"
+    },
+    {
+      "id": "strategy42:000000000066",
+      "sha256": "83f4d36154ab59fc6b226f5f9bd656bb73f75e3ac76ca130f07a8d83d2055249",
+      "at": "2026-11-16T13:38:45.100814Z"
+    },
+    {
+      "id": "strategy42:000000000067",
+      "sha256": "7cf4cb618c806e3a7e81a18d4cb690fc80f1b3c6494e306460ef2ea4eb569bff",
+      "at": "2026-11-16T13:39:13.316738Z"
+    },
+    {
+      "id": "strategy42:000000000068",
+      "sha256": "c9fee4bfebd75919fb8874a26413f6c7248c309a85037a33343593a10221f7e9",
+      "at": "2026-11-16T13:39:40.004220Z"
+    },
+    {
+      "id": "strategy42:000000000069",
+      "sha256": "03ca5eca6ccef7a8a2693caef0880d155bcd3fe651e7f55ea80ad583cfd0e32c",
+      "at": "2026-11-16T13:39:53.605903Z"
+    },
+    {
+      "id": "strategy42:000000000070",
+      "sha256": "2492f693600621b6ff28eeca40f647a4ca505db5b446675ae4aed0a75019bbb8",
+      "at": "2026-11-16T13:40:25.923022Z"
+    },
+    {
+      "id": "strategy42:000000000071",
+      "sha256": "d2103e7e26d028c841e52f4e247278e09dc1a8539122c339bcfac16dcde1e5db",
+      "at": "2026-11-16T13:40:36.597286Z"
+    },
+    {
+      "id": "strategy42:000000000072",
+      "sha256": "6b4fbcd788a7db6bdd68cff26d5165aa4a31eed17b07034575f2b6ae38cd11dc",
+      "at": "2026-11-16T13:40:48.237787Z"
+    },
+    {
+      "id": "strategy42:000000000073",
+      "sha256": "fb50b7bbd4105f7ff8ea2e231c2236943dc0d489574119344d65546bc43c86ac",
+      "at": "2026-11-16T13:41:13.668670Z"
+    },
+    {
+      "id": "strategy42:000000000074",
+      "sha256": "1461235017407b68f8fcc46551e5d70dce54b7d1d128c304c23fd4491a8fcaad",
+      "at": "2026-11-16T13:41:43.852251Z"
+    },
+    {
+      "id": "strategy42:000000000075",
+      "sha256": "36b91c485a0f431b718966819d4297d5b199c3e7f6cc0a47fa1ed86b7a39fa57",
+      "at": "2026-11-16T13:41:56.854027Z"
+    },
+    {
+      "id": "strategy42:000000000076",
+      "sha256": "d11c18b5df8f402c1909fb998bafc1270b8fa293cac59e77d50727e50b8e9f45",
+      "at": "2026-11-16T13:42:08.485478Z"
+    },
+    {
+      "id": "strategy42:000000000077",
+      "sha256": "5015968519a2b0e926a1e4df4c32a835e23cc0379731572c63bb68626600f0d0",
+      "at": "2026-11-16T13:42:43.869265Z"
+    },
+    {
+      "id": "strategy42:000000000078",
+      "sha256": "2cef0a9de568933d855d3d0d0c95b1f7cdf8d8f3905dc36fae9a14e526011236",
+      "at": "2026-11-16T13:51:13.336310Z"
+    },
+    {
+      "id": "strategy42:000000000079",
+      "sha256": "aa20702c7af921fe35f3e42305fcc721493539b5ca9864ca972efdfd019c8bbf",
+      "at": "2026-11-16T13:51:31.341816Z"
+    },
+    {
+      "id": "strategy42:000000000080",
+      "sha256": "5c3cdf3cd11111b6967b7086f09acae5b4414ae5c9f05bc6deff2b26284af411",
+      "at": "2026-11-16T13:52:06.764713Z"
+    },
+    {
+      "id": "strategy42:000000000081",
+      "sha256": "6cb3805b5dddfa3dcb15c3e78c9ea2753e0cc02e78c4d0d9044f65ce8b150733",
+      "at": "2026-11-16T13:52:22.216986Z"
+    },
+    {
+      "id": "strategy42:000000000082",
+      "sha256": "5a8a68979ec96687477cd62c06e8ac6490bd8cf6e2e8de87715764c8fc685496",
+      "at": "2026-11-16T13:52:23.212333Z"
+    },
+    {
+      "id": "strategy42:000000000083",
+      "sha256": "a9073fa3a1e4c524dccd0297e1a0fb09df5cc8eb3068254b14311208c8d2f0d8",
+      "at": "2026-11-16T13:53:09.234402Z"
+    },
+    {
+      "id": "strategy42:000000000084",
+      "sha256": "ceda93f4c8528f6a0a997067a3e1858d35c6c3ecef5484a23fbc3749f70a7e4c",
+      "at": "2026-11-16T13:53:26.755388Z"
+    },
+    {
+      "id": "strategy42:000000000085",
+      "sha256": "5c6bf123c301dae8c82dad50ad5a0d298f5fafa1fc6085d8cb25d565444de108",
+      "at": "2026-11-16T13:53:35.948543Z"
+    },
+    {
+      "id": "strategy42:000000000086",
+      "sha256": "20eb8cbfb39db55b30daf0912c0e0cf1e53527f25e223249e0b7e39025c4a6b0",
+      "at": "2026-11-16T13:53:58.422685Z"
+    },
+    {
+      "id": "strategy42:000000000087",
+      "sha256": "d2eccf0cb4228c087b78346626932c0cc2a9584bb77512c06818d325240b1099",
+      "at": "2026-11-16T13:54:11.700980Z"
+    },
+    {
+      "id": "strategy42:000000000088",
+      "sha256": "613b26fe9a6a82fb7e042275d5843572b29a5d392fd668f3bfd66c99bae11a60",
+      "at": "2026-11-16T13:54:40.347502Z"
+    },
+    {
+      "id": "strategy42:000000000089",
+      "sha256": "e24b1536ac793ad1571a7c754b0016cb7dd4fb1e891192559db1afa6135f8159",
+      "at": "2026-11-16T13:54:57.455544Z"
+    },
+    {
+      "id": "strategy42:000000000090",
+      "sha256": "a4a1ac43d90c3d14fa398d1642c275715cbbfdcf8d8225f4ed05980aeef4862f",
+      "at": "2026-11-16T13:55:05.805035Z"
+    },
+    {
+      "id": "strategy42:000000000091",
+      "sha256": "2df53d806d6ed683bf8c924bb82b37ec2e5e9f0daa00b085cb2e6b2d6a704c81",
+      "at": "2026-11-16T13:55:12.129858Z"
+    },
+    {
+      "id": "strategy42:000000000092",
+      "sha256": "56e95091f82c2e4409d1bbfa5f122651b1728243601abe186ba5a3b88ed63211",
+      "at": "2026-11-16T13:55:26.987087Z"
+    },
+    {
+      "id": "strategy42:000000000093",
+      "sha256": "77b74fac1ab66e72608657f575dbfcc6c7a97a677dfda83a67d4b42cdc2c2fe0",
+      "at": "2026-11-16T13:56:04.738051Z"
+    },
+    {
+      "id": "strategy42:000000000094",
+      "sha256": "373f46b3a0d6820bbdf27d7cea1a1522ec330e12ccd0aae01a119c6c6e32885c",
+      "at": "2026-11-16T13:56:22.818751Z"
+    },
+    {
+      "id": "strategy42:000000000095",
+      "sha256": "6d3da8c35f2d7a0f529cac82dfd35b4d4718d652cb35c7bab1d656138ea8e626",
+      "at": "2026-11-16T13:57:12.286404Z"
+    },
+    {
+      "id": "strategy42:000000000096",
+      "sha256": "95713cb9d1b53b7e62639a1105c9d7813900eeb7c519934ca728d5ba7066ce06",
+      "at": "2026-11-16T13:57:53.932260Z"
+    },
+    {
+      "id": "strategy42:000000000097",
+      "sha256": "f62f586bab8ac5515b45e53b3a457cc0acbdbf6ccdbacf72f918d7f978c151ac",
+      "at": "2026-11-16T13:58:24.822206Z"
+    },
+    {
+      "id": "strategy42:000000000098",
+      "sha256": "0c4edb66118ddb13758ec9754bb4318048fcf096ec2f33e2f32abfe5628b2289",
+      "at": "2026-11-16T13:58:25.958932Z"
+    },
+    {
+      "id": "strategy42:000000000099",
+      "sha256": "18e270d917c0120eed8d212e66990ee6602dba6632e39d6e11bf65f66c527dcb",
+      "at": "2026-11-16T13:58:39.374506Z"
+    },
+    {
+      "id": "strategy42:000000000100",
+      "sha256": "700c05888c8dc364445ade5680bbf172a994bd1bd4911adbbb2062c1dcb10bb1",
+      "at": "2026-11-16T13:59:13.916986Z"
+    },
+    {
+      "id": "strategy42:000000000101",
+      "sha256": "589c2e78247dbb9c1f4eb148e58f7c34791246c4ef9591cc4f87c7efeab47719",
+      "at": "2026-11-16T13:59:39.961226Z"
+    },
+    {
+      "id": "strategy42:000000000102",
+      "sha256": "010973e3f07c58cdde060405284e56c7d07f679972741c5b37eb7d3f7bdd9b19",
+      "at": "2026-11-16T13:59:51.564590Z"
+    },
+    {
+      "id": "strategy42:000000000103",
+      "sha256": "2836b8d8a7e54b002bb8f1762493f5c5e82d66c6c5be1054f74c3d57724f8341",
+      "at": "2026-11-16T14:00:01.006358Z"
+    },
+    {
+      "id": "strategy42:000000000104",
+      "sha256": "a68fb504c481d597ac70856a76ea5d8d76e344961b06b48a16baa4f86fcbaeaf",
+      "at": "2026-11-16T14:00:19.655697Z"
+    },
+    {
+      "id": "strategy42:000000000105",
+      "sha256": "147c572f71cd3a096b822437ce6c8c3a241508efc3b35e1685836ad8595a38c1",
+      "at": "2026-11-16T14:00:33.388359Z"
+    },
+    {
+      "id": "strategy42:000000000106",
+      "sha256": "49b5e885748066cf14d417663dca5e243b891cd404b64822a56da39effa377d9",
+      "at": "2026-11-16T14:00:46.282836Z"
+    },
+    {
+      "id": "strategy42:000000000107",
+      "sha256": "1243aff83214445de0a91d7946a150ef25442c22863d0cb7a4eef087d2f62e8e",
+      "at": "2026-11-16T14:01:06.154575Z"
+    },
+    {
+      "id": "strategy42:000000000108",
+      "sha256": "834edbdcdb122423a5ad25df24685a88fd7d1dbee396ec4b7bcd4de67f428245",
+      "at": "2026-11-16T14:01:31.636403Z"
+    },
+    {
+      "id": "strategy42:000000000109",
+      "sha256": "1365feb610dc50a2d5e6d5042f2bc4b4c7c55f942c948ab3d89fb2dcedd0d813",
+      "at": "2026-11-16T14:01:42.638563Z"
+    },
+    {
+      "id": "strategy42:000000000110",
+      "sha256": "56e22bfd10a5c7216ff8fbafbe4aea6565ceb676c04fbe966144bb90b1a57668",
+      "at": "2026-11-16T14:01:53.267136Z"
+    },
+    {
+      "id": "strategy42:000000000111",
+      "sha256": "a430912c221dcd53183af1144e08220abe168b96fd80628979b198aca8ce4ed0",
+      "at": "2026-11-16T14:01:59.435407Z"
+    },
+    {
+      "id": "strategy42:000000000112",
+      "sha256": "7695cecbd475c2721425598b4439b817ec3133019bbf591272a179b5828469f6",
+      "at": "2026-11-16T14:02:11.971076Z"
+    },
+    {
+      "id": "strategy42:000000000113",
+      "sha256": "496fad0492b9ed801dcc7df1e08a2f7a3c3956838c0f7af497411755eaa7e71e",
+      "at": "2026-11-16T14:02:40.885145Z"
+    },
+    {
+      "id": "strategy42:000000000114",
+      "sha256": "57c0ad933489977630869636e448882b2e7afdf7ffd23a4a75864fc24684aa0e",
+      "at": "2026-11-16T14:03:11.521511Z"
+    },
+    {
+      "id": "strategy42:000000000115",
+      "sha256": "56ebad3d094ff250934df912dd3441c64214144b0a06a7fc9a6a4495e7689b01",
+      "at": "2026-11-16T14:03:29.359365Z"
+    },
+    {
+      "id": "strategy42:000000000116",
+      "sha256": "b8e899a86d166bbad9e07e2590755425c49927166561634639027706405522a8",
+      "at": "2026-11-16T14:04:07.762585Z"
+    },
+    {
+      "id": "strategy42:000000000117",
+      "sha256": "bcabcea5ca340b3f896de6623512a8e84aa461f878030b1024d8559e66f5f882",
+      "at": "2026-11-16T14:04:28.391078Z"
+    },
+    {
+      "id": "strategy42:000000000118",
+      "sha256": "acdde58e2eaf0abf4e7c4e8766484c8b1fd5f4d8ed2b5977d278a30771fdb792",
+      "at": "2026-11-16T14:04:53.467453Z"
+    },
+    {
+      "id": "strategy42:000000000119",
+      "sha256": "5b5ce743c3bd8b9383823d26b85dd3c07dff8ae7917d16fe1bd68271096041ac",
+      "at": "2026-11-16T14:05:38.531330Z"
+    },
+    {
+      "id": "strategy42:000000000120",
+      "sha256": "ebccdbd0b970b8fd5f14ae2e10c8d5312f85307b1baad9e43b06c4785fa47dbe",
+      "at": "2026-11-16T14:05:53.668069Z"
+    },
+    {
+      "id": "strategy42:000000000121",
+      "sha256": "d465dca2b37419b7063e1740f05ccc8e90079ff69a18b3f86add37c163b0ee27",
+      "at": "2026-11-16T14:06:59.060872Z"
+    },
+    {
+      "id": "strategy42:000000000122",
+      "sha256": "b83d04828874b39fadc2283c5d7b0afb7e9701ed8587044c3aba7a4a462d5806",
+      "at": "2026-11-16T14:07:08.010428Z"
+    },
+    {
+      "id": "strategy42:000000000123",
+      "sha256": "a2bcd43a60307e8effaffddfd410601cec16bd36d1a83d6a563db14d99437791",
+      "at": "2026-11-16T14:07:22.208830Z"
+    },
+    {
+      "id": "strategy42:000000000124",
+      "sha256": "3013c9e6402fcc24576f774df60a53abdf74e73a1fc8bf46bfb84a0e4411a8b9",
+      "at": "2026-11-16T14:07:33.999686Z"
+    },
+    {
+      "id": "strategy42:000000000125",
+      "sha256": "6936259d3ed3d3f2c9719bdf340f29bfbfe026e8473a6266b5be16d9bb26f7a1",
+      "at": "2026-11-16T14:07:41.127892Z"
+    },
+    {
+      "id": "strategy42:000000000126",
+      "sha256": "6f12004379476f7a8deec34945959aebc48af0464ecdd98d12f470a76ad31d3e",
+      "at": "2026-11-16T14:07:47.244171Z"
+    },
+    {
+      "id": "strategy42:000000000127",
+      "sha256": "2dfe3878ba406351ebc511edc26406d4171455b5744701414c6abbb182b4ff4f",
+      "at": "2026-11-16T14:08:02.608323Z"
+    },
+    {
+      "id": "strategy42:000000000128",
+      "sha256": "78c91141e743f2525036be78a816196776e06928fda949a2c81de057f55c171f",
+      "at": "2026-11-16T14:08:26.355134Z"
+    },
+    {
+      "id": "strategy42:000000000129",
+      "sha256": "dbd1b51a57b63e33880e18573dae7239475a7a8e5ef6e60158ad166a1a7d5483",
+      "at": "2026-11-16T14:08:50.265006Z"
+    },
+    {
+      "id": "strategy42:000000000130",
+      "sha256": "19130ddb4bd91e3d23f05d20e3e80b7403813c83331571d7f40690a2c7dd2414",
+      "at": "2026-11-16T14:09:09.106600Z"
+    },
+    {
+      "id": "strategy42:000000000131",
+      "sha256": "d5d8c079675918413b105b18dd51788b7037336def513160598e877f34af8d8a",
+      "at": "2026-11-16T14:09:55.546115Z"
+    },
+    {
+      "id": "strategy42:000000000132",
+      "sha256": "3545ffdbb96c3bf0c619068eb731e84e1f1c0c039fcc3e498ed09208db1f46f4",
+      "at": "2026-11-16T14:10:15.649786Z"
+    },
+    {
+      "id": "strategy42:000000000133",
+      "sha256": "1e665e7563aa51bbc62abccf649a5afae76cbd1405d92b467772e347dc030d35",
+      "at": "2026-11-16T14:18:30.779146Z"
+    },
+    {
+      "id": "strategy42:000000000134",
+      "sha256": "63133772ebf93d3818e4b6b6e261932af11f89052b2646043d8c57c8697926c9",
+      "at": "2026-11-16T14:18:31.431757Z"
+    },
+    {
+      "id": "strategy42:000000000135",
+      "sha256": "42394d49d8f9aee547b44b38795ec4c0b02e683e63d0782d92b6df50abb24204",
+      "at": "2026-11-16T14:18:47.566014Z"
+    },
+    {
+      "id": "strategy42:000000000136",
+      "sha256": "6751ac1b3e216d028af7e4116983fbc91cf18a609c0935a3717a969cb08eabc3",
+      "at": "2026-11-16T14:18:57.162824Z"
+    },
+    {
+      "id": "strategy42:000000000137",
+      "sha256": "938226affa6b9400e7f2434fbe550d0826bcfd236479e18bf94512c6b95c17b3",
+      "at": "2026-11-16T14:19:07.739811Z"
+    },
+    {
+      "id": "strategy42:000000000138",
+      "sha256": "3bbf04505dc96a1f343d3a46f00240eebece1c4705fdaed8f2fffcfbef956d85",
+      "at": "2026-11-16T14:19:19.799542Z"
+    },
+    {
+      "id": "strategy42:000000000139",
+      "sha256": "7e7182c9a327f016aee2d8a2c8ca19147ce1e1942e2bbef8d23df94d96b25e1e",
+      "at": "2026-11-16T14:19:42.704349Z"
+    },
+    {
+      "id": "strategy42:000000000140",
+      "sha256": "175391d0358a41ca9d4153f4e16dbf5120342210f3b95b5661a383bb54b08574",
+      "at": "2026-11-16T14:19:52.712921Z"
+    },
+    {
+      "id": "strategy42:000000000141",
+      "sha256": "1e869b9876f0e6806f454e239e116f50c707886a53c93d51a6b0bd654646b8e8",
+      "at": "2026-11-16T14:20:05.554104Z"
+    },
+    {
+      "id": "strategy42:000000000142",
+      "sha256": "067d55f2def89f121abe48b2df8f878e5a81b412dea64a1c104935b297e9328a",
+      "at": "2026-11-16T14:20:16.708577Z"
+    },
+    {
+      "id": "strategy42:000000000143",
+      "sha256": "129cea8358e570a00a69b1eff054c7db5ff8a47564852a970af86c0d9e63c691",
+      "at": "2026-11-16T14:20:25.715295Z"
+    },
+    {
+      "id": "strategy42:000000000144",
+      "sha256": "b4a5292cb3bd1a74bd6cdb32a459406dd9ef9986ce6b538942fd211b556e26ff",
+      "at": "2026-11-16T14:20:42.349420Z"
+    },
+    {
+      "id": "strategy42:000000000145",
+      "sha256": "5200ae12fa7a26f08999e034c26ebb5bf882e4f96f6b8c245277523482a41bf6",
+      "at": "2026-11-16T14:20:51.505370Z"
+    },
+    {
+      "id": "strategy42:000000000146",
+      "sha256": "d36a69561247962c4fa5b593b97be47b2ba1a393b8cd93db13654e87ce2a6179",
+      "at": "2026-11-16T14:21:00.621968Z"
+    },
+    {
+      "id": "strategy42:000000000147",
+      "sha256": "1346bea83d6ac766d5a65baeec287aeb3e29f9bedcacf455e1ece3648748a518",
+      "at": "2026-11-16T14:21:12.167121Z"
+    },
+    {
+      "id": "strategy42:000000000148",
+      "sha256": "1b544752cab4f452e3bfa7811de80eb2ff132fc42399876be558241e60a4e4c5",
+      "at": "2026-11-16T14:21:25.590050Z"
+    },
+    {
+      "id": "strategy42:000000000149",
+      "sha256": "a1de8da63f55deb460ca8e33c52067ff69b200d1374f102800b6f6f56b0cffd0",
+      "at": "2026-11-16T14:21:51.053524Z"
+    },
+    {
+      "id": "strategy42:000000000150",
+      "sha256": "04ec74e70d9d7ec87a98326b03dbc40ff350e1cc77d2ef4e8a22e4f348ba95b4",
+      "at": "2026-11-16T14:21:59.820423Z"
+    },
+    {
+      "id": "strategy42:000000000151",
+      "sha256": "0d4da7eaaa20e2fde28462fb6aabfa25338c760f2b4e30fb9d9c05bff175b9f2",
+      "at": "2026-11-16T14:22:06.994850Z"
+    },
+    {
+      "id": "strategy42:000000000152",
+      "sha256": "56ea711847259d0670e32b387edfd55a3bacdb61527959eed449724b75eb85a5",
+      "at": "2026-11-16T14:22:18.539768Z"
+    },
+    {
+      "id": "strategy42:000000000153",
+      "sha256": "4328dde8dc6ae74b36371c4486dbe11b611390ff59928043e4bb5475afe2794d",
+      "at": "2026-11-16T14:22:27.377918Z"
+    },
+    {
+      "id": "strategy42:000000000154",
+      "sha256": "3ced3a720da59dff4dc9a9f19ab57822af93beacc784385eee5c6c9e1f1a0b29",
+      "at": "2026-11-16T14:22:38.174282Z"
+    },
+    {
+      "id": "strategy42:000000000155",
+      "sha256": "443cb3da1c1e5a2c50e7f012ce4373e5d3384b158cbed84e840f17e1b1f4199b",
+      "at": "2026-11-16T14:23:17.910922Z"
+    },
+    {
+      "id": "strategy42:000000000156",
+      "sha256": "bae866ea083a955d3c98840b98f9841454ff9da786860024b40363f466c36ba2",
+      "at": "2026-11-16T14:23:26.795711Z"
+    },
+    {
+      "id": "strategy42:000000000157",
+      "sha256": "79e53f0c47e51eb100d2d26325e5da9e6215c4b6cefc2f9d4a30065bba8a623e",
+      "at": "2026-11-16T14:23:34.472633Z"
+    },
+    {
+      "id": "strategy42:000000000158",
+      "sha256": "bc6401ff18c04383372be61bc8f735a360af5f4a6bd8d0ee7b2f6f9d8aba1d9b",
+      "at": "2026-11-16T14:23:41.786548Z"
+    },
+    {
+      "id": "strategy42:000000000159",
+      "sha256": "8318a000673aa6663b68192fe4fee8d80bb3fd418d14e0adcfc81309f8cb6045",
+      "at": "2026-11-16T14:24:15.176571Z"
+    },
+    {
+      "id": "strategy42:000000000160",
+      "sha256": "5d960fd7e442b3c1e7f43e78b1d9f78ffc19a920665d32e5e5f6b92d742e756f",
+      "at": "2026-11-16T14:24:27.112025Z"
+    },
+    {
+      "id": "strategy42:000000000161",
+      "sha256": "1d451ec4912a635bed98ee67ab02ed220519a786ce2f1056d189081bcd646014",
+      "at": "2026-11-16T14:24:37.069087Z"
+    },
+    {
+      "id": "strategy42:000000000162",
+      "sha256": "91d2623a49c111389bc4f5b160ca918496aca39dfaeb58b55d62e711b5e15685",
+      "at": "2026-11-16T14:24:43.653754Z"
+    },
+    {
+      "id": "strategy42:000000000163",
+      "sha256": "ab128ac9871596198abf9e60f875ba11558db323588487cdbfba8232f0cd5303",
+      "at": "2026-11-16T14:25:05.553321Z"
+    },
+    {
+      "id": "strategy42:000000000164",
+      "sha256": "06cf51364bdc27d9f897349652ffcb5a1906ce1d1760d241188973ca0b3b1892",
+      "at": "2026-11-16T14:25:17.479678Z"
+    },
+    {
+      "id": "strategy42:000000000165",
+      "sha256": "e950554ea1816d013a752453e28c9e41f9c6ae3ed46f639e91e4e094a6034405",
+      "at": "2026-11-16T14:25:27.884549Z"
+    },
+    {
+      "id": "strategy42:000000000166",
+      "sha256": "33087782abec89d55a6a8956726b23849556013f5ac007b490fb47af7473a949",
+      "at": "2026-11-16T14:25:39.536973Z"
+    },
+    {
+      "id": "strategy42:000000000167",
+      "sha256": "de54987f90833c4091fb669c670e843b9c1e392a523ec2f74ae958fd80ea32e5",
+      "at": "2026-11-16T14:25:49.187792Z"
+    },
+    {
+      "id": "strategy42:000000000168",
+      "sha256": "11c5e0325f2fa958044ee9fac62cb34d22b15b1bf027c419be7771fd08dae1a4",
+      "at": "2026-11-16T14:26:09.760153Z"
+    },
+    {
+      "id": "strategy42:000000000169",
+      "sha256": "536630b18f91066dbb7a74a33281bf933ef93bf807a532fac0c91193294edcc0",
+      "at": "2026-11-16T14:26:20.551774Z"
+    },
+    {
+      "id": "strategy42:000000000170",
+      "sha256": "229202911e60f1469febb925507d22762a2fe22e9bc29127e683b39c3a6e1262",
+      "at": "2026-11-16T14:26:33.265033Z"
+    },
+    {
+      "id": "strategy42:000000000171",
+      "sha256": "eb313a0f6e0dd1adcea616dae58c7dbff0342adb1c40069ed054bc592c4ac054",
+      "at": "2026-11-16T14:26:46.906293Z"
+    },
+    {
+      "id": "strategy42:000000000172",
+      "sha256": "8681b34ec0b55f35bcc528d33a4e8e21926e5213ea14932eefb97885d54293fc",
+      "at": "2026-11-16T14:27:03.617265Z"
+    },
+    {
+      "id": "strategy42:000000000173",
+      "sha256": "b8c847448fc65ab7b2855d0a85a6b5a2a6731c5410510ea23e4e4187fc67fc6f",
+      "at": "2026-11-16T14:27:11.250461Z"
+    },
+    {
+      "id": "strategy42:000000000174",
+      "sha256": "30eaecf1f40a8dc7737ea46a46e8c9f6c7639d8051ef847ab0533a0294260925",
+      "at": "2026-11-16T14:27:21.895072Z"
+    },
+    {
+      "id": "strategy42:000000000175",
+      "sha256": "7defd7dcebc502c7c22868ca5c42fbd9491ca06c123ca3c9b31edbed3399cd2f",
+      "at": "2026-11-16T14:27:33.485360Z"
+    },
+    {
+      "id": "strategy42:000000000176",
+      "sha256": "66c20e577b6ab20dec269c3d094b5f081bc77ea6e21c4d69b0bbe9e118216c51",
+      "at": "2026-11-16T14:27:47.388714Z"
+    },
+    {
+      "id": "strategy42:000000000177",
+      "sha256": "94941301ce1f3bd69c63ac075f7c7dbc42e9d87452b878f450de04049ee58ef5",
+      "at": "2026-11-16T14:28:10.276389Z"
+    },
+    {
+      "id": "strategy42:000000000178",
+      "sha256": "010464564251ccfd953c5555e69430f44d2fb3e6e82e6638de73fae6607f9036",
+      "at": "2026-11-16T14:28:25.126390Z"
+    },
+    {
+      "id": "strategy42:000000000179",
+      "sha256": "f0407e12a23d29633f79bf1444d1dc0e4017b86d553ec5976f3d24ae42060832",
+      "at": "2026-11-16T14:28:39.854997Z"
+    },
+    {
+      "id": "strategy42:000000000180",
+      "sha256": "54bd26b6077d0c61a6a0323b7ae79f7fc70a64df328ca5f8fe3d0f052d29de4a",
+      "at": "2026-11-16T14:28:54.171117Z"
+    },
+    {
+      "id": "strategy42:000000000181",
+      "sha256": "763ec5bb3af58446f7a77746378767f1378bd2af58bbd65d61e1698898eb25c6",
+      "at": "2026-11-16T14:29:18.324550Z"
+    },
+    {
+      "id": "strategy42:000000000182",
+      "sha256": "a0c8b117b6d0bfba7d60497ae570cc0774054dbdd5050e1b80c45304c53c5358",
+      "at": "2026-11-16T14:29:26.500348Z"
+    },
+    {
+      "id": "strategy42:000000000183",
+      "sha256": "449736ee42ca892dea88360374cd8819c8ecbda0075d878d71a5dd55a35302e0",
+      "at": "2026-11-16T14:29:36.485435Z"
+    },
+    {
+      "id": "strategy42:000000000184",
+      "sha256": "ab1f7a6987d9ab4bafcb7f782580295d0a1e25d616298e3da3afb16ca177241b",
+      "at": "2026-11-16T14:29:51.503566Z"
+    },
+    {
+      "id": "strategy42:000000000185",
+      "sha256": "2ae962e08223db5a09fff322c9ae941fc4d354484ebc9b59293e20742c61289c",
+      "at": "2026-11-16T14:30:06.907489Z"
+    },
+    {
+      "id": "strategy42:000000000186",
+      "sha256": "3aef85c895becf3e649d87e48f07902aa228d19664497f7444407d9e2124f69a",
+      "at": "2026-11-16T14:30:49.340995Z"
+    },
+    {
+      "id": "strategy42:000000000187",
+      "sha256": "60d2efd077c78fd552bc1477b1d19a3b5fc19d621de283ac3b99b90f4f1af4bf",
+      "at": "2026-11-16T14:30:59.106232Z"
+    },
+    {
+      "id": "strategy42:000000000188",
+      "sha256": "5f301013c7d787dbd9e6ce2553a3a2ec61f9f27d88823aaad51b3a7fdd5f7aa5",
+      "at": "2026-11-16T14:31:06.042048Z"
+    },
+    {
+      "id": "strategy42:000000000189",
+      "sha256": "8ad008ef78e8364fc58beb15ceaa047024a2b5863bf1e96de5fca757f180cb0c",
+      "at": "2026-11-16T14:31:18.329352Z"
+    },
+    {
+      "id": "strategy42:000000000190",
+      "sha256": "dedf188e30af00e55eff8e36b1ff781219c26d3ba74db8f57e57f6089a355202",
+      "at": "2026-11-16T14:36:29.680832Z"
+    },
+    {
+      "id": "strategy42:000000000191",
+      "sha256": "4528a21069c0453f9aa62ec1d41d660faf1a2e2fa25f57cba4618d57acddc884",
+      "at": "2026-11-16T14:36:50.098112Z"
+    },
+    {
+      "id": "strategy42:000000000192",
+      "sha256": "d887da44cd988faf025ad0843bb4bf1b2d8372f7f152610fe05dd155e5298f85",
+      "at": "2026-11-16T14:37:06.870900Z"
+    },
+    {
+      "id": "strategy42:000000000193",
+      "sha256": "d4d3e907c27f3efc7cf5cfd9458af538106eb293fc6f5cf0a69bfb8025c08715",
+      "at": "2026-11-16T14:37:30.960824Z"
+    },
+    {
+      "id": "strategy42:000000000194",
+      "sha256": "b5cbb6751ccf67cbc69ce3ff06f3c2664ee4a375e30da2810e88be76a07e8da2",
+      "at": "2026-11-16T14:37:37.604609Z"
+    },
+    {
+      "id": "strategy42:000000000195",
+      "sha256": "d6955dc6c2e1a3fc6a48d8ae4b66cb5b8bcaeabecba126ac24f0be2bfc5a7f25",
+      "at": "2026-11-16T14:37:55.951144Z"
+    },
+    {
+      "id": "strategy42:000000000196",
+      "sha256": "59f84f830a42e5175988ae9936a9fb961baf6029a302c4b5ad788e448d7d0570",
+      "at": "2026-11-16T14:38:09.629847Z"
+    },
+    {
+      "id": "strategy42:000000000197",
+      "sha256": "3e1b10bfe9a504e3facd7ca90ee13cfbb8ec028709d45515e1da37f8b2f13790",
+      "at": "2026-11-16T14:38:27.118849Z"
+    },
+    {
+      "id": "strategy42:000000000198",
+      "sha256": "fa2b3d2a76e92a16e566705511dece1fb1e7575a6b886f1a8de3c106c94058da",
+      "at": "2026-11-16T14:38:39.041556Z"
+    },
+    {
+      "id": "strategy42:000000000199",
+      "sha256": "325db0163c21fa1ebb5490b7f73827a929f102096f9667dc958c06aed3855c44",
+      "at": "2026-11-16T14:38:51.180910Z"
+    },
+    {
+      "id": "strategy42:000000000200",
+      "sha256": "502ddb75e95d9feef2957fc166b5e265f40bba312eac54ff6d0a767d657cbb9f",
+      "at": "2026-11-16T14:39:06.916226Z"
+    },
+    {
+      "id": "strategy42:000000000201",
+      "sha256": "27b7fc4ce6bfddb7c86ada814a24c5e503280e14ea3f15cb2a943792cb978b94",
+      "at": "2026-11-16T14:39:20.816276Z"
+    },
+    {
+      "id": "strategy42:000000000202",
+      "sha256": "0c70f38a84ad6b90d921c1a82766f2a5f1771e9af65a2011e3c943f8042cfd56",
+      "at": "2026-11-16T14:39:37.621492Z"
+    },
+    {
+      "id": "strategy42:000000000203",
+      "sha256": "bce1260b61543b6939b0b719def0f30a7e5bae1dfa3c287ca3476d5953c88a82",
+      "at": "2026-11-16T14:39:50.141944Z"
+    },
+    {
+      "id": "strategy42:000000000204",
+      "sha256": "2228d082a03bb1a5689ddd65a2b0c5fcc43ef225630d2a2e7facb7b69b0a740f",
+      "at": "2026-11-16T14:40:01.565964Z"
+    },
+    {
+      "id": "strategy42:000000000205",
+      "sha256": "a209239ce74677db5e81fb06c9121b25f7143bc33bf247cd068cfb890ffa2fba",
+      "at": "2026-11-16T14:40:14.185528Z"
+    },
+    {
+      "id": "strategy42:000000000206",
+      "sha256": "3bb0e9e077b5fba09fc6bcb306da9de3acb45dddf89c5a2b34e2fae9b2925f53",
+      "at": "2026-11-16T14:40:29.506681Z"
+    },
+    {
+      "id": "strategy42:000000000207",
+      "sha256": "54a68a94418326b0624457e36fa502f146a8d49acf8661fabd16d17c5aee7c3f",
+      "at": "2026-11-16T14:40:42.502022Z"
+    },
+    {
+      "id": "strategy42:000000000208",
+      "sha256": "201d14656016a3d5d0210907d0848fe890eda0ad648445aeaa62ed4eb7e66d93",
+      "at": "2026-11-16T14:40:52.130539Z"
+    },
+    {
+      "id": "strategy42:000000000209",
+      "sha256": "817ef00841411c1eb460bd5d44787a2dec927642c27f179d09a37c38886e6721",
+      "at": "2026-11-16T14:41:02.262823Z"
+    },
+    {
+      "id": "strategy42:000000000210",
+      "sha256": "c7148cce19f850ba82a66f7fca2564b808ef52bdaafec18562ec80d36b0a2241",
+      "at": "2026-11-16T14:41:15.009985Z"
+    },
+    {
+      "id": "strategy42:000000000211",
+      "sha256": "bd7fb611237d3c118276dc4c71f99a0d81bc25634097733d78ca2b8d2bca7c3b",
+      "at": "2026-11-16T14:41:37.859838Z"
+    },
+    {
+      "id": "strategy42:000000000212",
+      "sha256": "e6bd5ae3d524bf8676df8835848ed431f9b2b42d2bb05c73ab8198234195e45a",
+      "at": "2026-11-16T14:42:02.481327Z"
+    },
+    {
+      "id": "strategy42:000000000213",
+      "sha256": "54d48f3f1e0376f124761a8ec1ed20cd563f1c74c6a674994d8b3fad717afe86",
+      "at": "2026-11-16T14:42:13.393229Z"
+    },
+    {
+      "id": "strategy42:000000000214",
+      "sha256": "c44472a232813d1b53a40f095cd0eacaabcfa380c48c27883efa444e44c48805",
+      "at": "2026-11-16T14:42:21.327148Z"
+    },
+    {
+      "id": "strategy42:000000000215",
+      "sha256": "230febca36860e423333279a933a054b6562a5b6883db832efeec89f2643f72a",
+      "at": "2026-11-16T14:42:36.621912Z"
+    },
+    {
+      "id": "strategy42:000000000216",
+      "sha256": "be116aee827b3d607b296ef21c788e462d660ad0aa98d2e11779a2da5dfe0be6",
+      "at": "2026-11-16T14:42:48.779050Z"
+    },
+    {
+      "id": "strategy42:000000000217",
+      "sha256": "6a4a4ad3af39e687ed1b1cf2ea8a51c9f2fcc387a1a0330bb680aedb36e3d1c6",
+      "at": "2026-11-16T14:43:08.314438Z"
+    },
+    {
+      "id": "strategy42:000000000218",
+      "sha256": "a36ada3c75d0f2e94913bdebb5d1e666883ac55f0ab344d145e838edaf5268b5",
+      "at": "2026-11-16T14:43:21.101252Z"
+    },
+    {
+      "id": "strategy42:000000000219",
+      "sha256": "3af88fd2a4f327fca6ee23dd8607c71af9272b60bed88f669c7bcd6e8edfb39a",
+      "at": "2026-11-16T14:43:28.777820Z"
+    },
+    {
+      "id": "strategy42:000000000220",
+      "sha256": "98cffb22097806ea12ebb152e00a919e33048f39d52e0498adb6ff1840d5ae65",
+      "at": "2026-11-16T14:43:44.246090Z"
+    },
+    {
+      "id": "strategy42:000000000221",
+      "sha256": "b81cf1dce6fa83a94c8f3ceff4c316bf0517b3c90ee8e1481887d3f44afdc117",
+      "at": "2026-11-16T14:44:30.893816Z"
+    },
+    {
+      "id": "strategy42:000000000222",
+      "sha256": "6e17efa699f16d4723edbc49991b5e0710e2d1dbf1fcdf0423b9772a9419c284",
+      "at": "2026-11-16T14:44:46.772492Z"
+    },
+    {
+      "id": "strategy42:000000000223",
+      "sha256": "17b2be39a9b12f276357c943d1fbe3a0b9a80149c9570a6c732806c94dff2621",
+      "at": "2026-11-16T14:44:53.000119Z"
+    },
+    {
+      "id": "strategy42:000000000224",
+      "sha256": "26e462b763f4d999fa06f3dfc0c029e0e78933eea0ba1fbfcf03edd3cbc5d750",
+      "at": "2026-11-16T14:45:05.031747Z"
+    },
+    {
+      "id": "strategy42:000000000225",
+      "sha256": "410c23cbf218b6be53c7b2c5338b1876c9cf343213206b1cd7249c63be925aac",
+      "at": "2026-11-16T14:45:41.679637Z"
+    },
+    {
+      "id": "strategy42:000000000226",
+      "sha256": "131d56bfc095de3776f127754435b8d338f58b7765e189b2121b29ba3cbef380",
+      "at": "2026-11-16T14:45:54.049262Z"
+    },
+    {
+      "id": "strategy42:000000000227",
+      "sha256": "e34ac0de699ea51ab8296d9dcc33048b4903ce994e1b371d0cf6bf1d06129b06",
+      "at": "2026-11-16T14:46:01.498208Z"
+    },
+    {
+      "id": "strategy42:000000000228",
+      "sha256": "d11cae4ee765274ed0fecde775e67aa6bb3fde244ff0df360e042a55cd20c24c",
+      "at": "2026-11-16T14:46:12.125815Z"
+    },
+    {
+      "id": "strategy42:000000000229",
+      "sha256": "4a47963d9df180786d3a862baf479e49c60a35a84d2e57de4f0714306194a845",
+      "at": "2026-11-16T14:46:51.709346Z"
+    },
+    {
+      "id": "strategy42:000000000230",
+      "sha256": "eec508dfae1740e90737f289c87bdad22777c1bb4ed4f129c299177ed2f137f5",
+      "at": "2026-11-16T14:47:04.440252Z"
+    },
+    {
+      "id": "strategy42:000000000231",
+      "sha256": "21642ca532b3b6df1c6262e0d4361ca99c0594934fffbc7cc93449497652ebc6",
+      "at": "2026-11-16T14:47:12.648720Z"
+    },
+    {
+      "id": "strategy42:000000000232",
+      "sha256": "6bbb94fb8ed27977ea6a7f6840f350502c6a36c19a85f4faef9cea64c67cd8e9",
+      "at": "2026-11-16T14:47:20.849361Z"
+    },
+    {
+      "id": "strategy42:000000000233",
+      "sha256": "16245a4ffd9114adb3444e5dab3aa2b4f42c3ed70c39523be054f557dc4ada96",
+      "at": "2026-11-16T14:48:08.659616Z"
+    },
+    {
+      "id": "strategy42:000000000234",
+      "sha256": "c92f3a8707e31b3d5578ab2be7cc8bb0d50d5af7853280a75a2dc56c3f9c987a",
+      "at": "2026-11-16T14:48:22.747401Z"
+    },
+    {
+      "id": "strategy42:000000000235",
+      "sha256": "d7fabf14476134f0e2aeaab5e1c52d5c6f655be3a59ff647fd29e46dc71d1515",
+      "at": "2026-11-16T14:48:36.676225Z"
+    },
+    {
+      "id": "strategy42:000000000236",
+      "sha256": "316169730cc3ae63950922e7e7b62347e38881333227e80cae77bed392a6d7a6",
+      "at": "2026-11-16T14:54:18.904177Z"
+    },
+    {
+      "id": "strategy42:000000000237",
+      "sha256": "ddc4e1e3f0dedf73235820752b95afefff120f0fe06dc90593998b43dfed2fed",
+      "at": "2026-11-16T14:54:32.956673Z"
+    },
+    {
+      "id": "strategy42:000000000238",
+      "sha256": "b673603ca8ac23d7d7ee34a58d7448155919b786ef575eef8150e1090fa054b6",
+      "at": "2026-11-16T14:54:51.667197Z"
+    },
+    {
+      "id": "strategy42:000000000239",
+      "sha256": "435a8c6b03fc8fddc04fc57d62fbe240d873a98d57cc92a5b348e4eebe86c12c",
+      "at": "2026-11-16T14:55:09.026513Z"
+    },
+    {
+      "id": "strategy42:000000000240",
+      "sha256": "65abd0c0cdbf1d19bb872a1670faa0e214ce48171818ce76762d01cc4959603a",
+      "at": "2026-11-16T14:55:30.076760Z"
+    },
+    {
+      "id": "strategy42:000000000241",
+      "sha256": "5ee2dfcfe7c08d6df12d763cd3d269dba618201b56a2c8e9b05ee98f9201a55c",
+      "at": "2026-11-16T14:55:37.591086Z"
+    },
+    {
+      "id": "strategy42:000000000242",
+      "sha256": "2319bb00875f7fc438d83976c745a7286321c9d30507f6b5250f90caa83d6b5b",
+      "at": "2026-11-16T14:55:52.197717Z"
+    },
+    {
+      "id": "strategy42:000000000243",
+      "sha256": "ca48ddfc78903eb1fe399be8b70ae4a230d0a14cbb6f1750cb3ee9d44484709c",
+      "at": "2026-11-16T14:56:05.081214Z"
+    },
+    {
+      "id": "strategy42:000000000244",
+      "sha256": "d9d4ecd040a949e989a810b30acd2dbe86eb92153bb050c4a2fbcf8028b5312b",
+      "at": "2026-11-16T14:56:21.005479Z"
+    },
+    {
+      "id": "strategy42:000000000245",
+      "sha256": "eead1936cb489c60d0de224163abec46fa8bbed13a15db0368b05cd56b235f31",
+      "at": "2026-11-16T14:56:44.277487Z"
+    },
+    {
+      "id": "strategy42:000000000246",
+      "sha256": "fcd45c8182ed9913f97a1a9e19dfe17e997c167a96588b7e61eca3be3dfff2b7",
+      "at": "2026-11-16T14:56:53.305914Z"
+    },
+    {
+      "id": "strategy42:000000000247",
+      "sha256": "13c4da3751779f35b524075b0dec31d89293caaca672b049607707825633388c",
+      "at": "2026-11-16T14:57:00.680731Z"
+    },
+    {
+      "id": "strategy42:000000000248",
+      "sha256": "75c49236d72fd54eff80bbfc53b5fdf450d3a42db84c92dfe22a8769599abbfd",
+      "at": "2026-11-16T14:57:13.535796Z"
+    },
+    {
+      "id": "strategy42:000000000249",
+      "sha256": "f2def73acdb24868ae8154c52cdeb85f2fdbf31bef2ac5d05f80e0f0ac620315",
+      "at": "2026-11-16T14:57:28.241500Z"
+    },
+    {
+      "id": "strategy42:000000000250",
+      "sha256": "d55069bc37527bd35228078ee2ec542e2531b2893d2c4ad511f692b3558e346a",
+      "at": "2026-11-16T14:58:13.945669Z"
+    },
+    {
+      "id": "strategy42:000000000251",
+      "sha256": "32199039c5cad7a312335635648f89c4eae2b51207b39569973d76ba54e245eb",
+      "at": "2026-11-16T14:58:22.411208Z"
+    },
+    {
+      "id": "strategy42:000000000252",
+      "sha256": "c0a4cb466d14fe2073b8860e87c06bdd441ba64f12132756ec807fe48360d7c7",
+      "at": "2026-11-16T14:58:34.626777Z"
+    },
+    {
+      "id": "strategy42:000000000253",
+      "sha256": "c21d00622cafe752ff3075257dcaa871e7b0f975690ec4da32698df54c048ec9",
+      "at": "2026-11-16T14:58:56.836036Z"
+    },
+    {
+      "id": "strategy42:000000000254",
+      "sha256": "333be1cb365acc1618d16852320d2fbceb56a18faffcfa1580656aed4a5b42fd",
+      "at": "2026-11-16T14:59:08.914732Z"
+    },
+    {
+      "id": "strategy42:000000000255",
+      "sha256": "81afae1698c306b89a179d6d02ad277409dcd9a3aa79f85b4623094dda779bc3",
+      "at": "2026-11-16T14:59:21.052356Z"
+    },
+    {
+      "id": "strategy42:000000000256",
+      "sha256": "fe40a4001351a1fe34a63c1ac0ea1ba13c6f7f8eeea96ee6ffbe7fdf7d168d30",
+      "at": "2026-11-16T14:59:35.331281Z"
+    },
+    {
+      "id": "strategy42:000000000257",
+      "sha256": "37e8c6d119ee8cf56fedb83165e208b18fd3d3a2aa1b3e617f19ded91dacb11f",
+      "at": "2026-11-16T15:00:12.196278Z"
+    },
+    {
+      "id": "strategy42:000000000258",
+      "sha256": "905f92e22aac92983ec94fda4ef7da148f98a9326dd95d23b2dd2fc9e539f93c",
+      "at": "2026-11-16T15:00:27.763023Z"
+    },
+    {
+      "id": "strategy42:000000000259",
+      "sha256": "43cf45fd2f3d10fdf6026f60f972c458faabc3882c2e3b9b028e695f59bdf0d4",
+      "at": "2026-11-16T15:00:41.371723Z"
+    },
+    {
+      "id": "strategy42:000000000260",
+      "sha256": "8c2b4d4dbe5769eb0234dbe6ebee1f710e868bcad362c78ce2d96f82ee1b7830",
+      "at": "2026-11-16T15:00:54.868195Z"
+    },
+    {
+      "id": "strategy42:000000000261",
+      "sha256": "9f97eda08922ee43ca94c2d3b94bb9b24dc2b8e04a47b3f69e83581d2cd0c455",
+      "at": "2026-11-16T15:01:05.279326Z"
+    },
+    {
+      "id": "strategy42:000000000262",
+      "sha256": "3d8423cb1130798bb458aaf58d5b7c6e44c985d8709bb60b08aa9827e3bd6b34",
+      "at": "2026-11-16T15:01:19.270343Z"
+    },
+    {
+      "id": "strategy42:000000000263",
+      "sha256": "5b6786638353c48baf8884a81821d2244acb58334c33ab8498a164db03c2ce96",
+      "at": "2026-11-16T15:01:35.843974Z"
+    },
+    {
+      "id": "strategy42:000000000264",
+      "sha256": "341a13fb1789bf44fdfac16f58b3084b0b3055256eec14b6a249fabc3524fe44",
+      "at": "2026-11-16T15:02:07.628102Z"
+    },
+    {
+      "id": "strategy42:000000000265",
+      "sha256": "1852cdf6201683bfa31ae5ee002347d85c6f36c3c3be8f19f384634960a3bca4",
+      "at": "2026-11-16T15:02:16.446132Z"
+    },
+    {
+      "id": "strategy42:000000000266",
+      "sha256": "ffc31d976ed35922bff881b141c76699910db1e67a6a2aad37fffc5e0ee8003f",
+      "at": "2026-11-16T15:02:34.699000Z"
+    },
+    {
+      "id": "strategy42:000000000267",
+      "sha256": "706fd8ae0e948a88f8f32245926795b494f108a44444f108a6b08c1002fdcd27",
+      "at": "2026-11-16T15:02:48.313349Z"
+    },
+    {
+      "id": "strategy42:000000000268",
+      "sha256": "bd64cf0343d7bbeb7588010c01c10c81aa674bd119cad0719ed513a924034f1c",
+      "at": "2026-11-16T15:03:23.288949Z"
+    },
+    {
+      "id": "strategy42:000000000269",
+      "sha256": "d3149c0d42bcda5b49217065569b4b41d6875360a67e81bdeef7b474f84efd9c",
+      "at": "2026-11-16T15:03:33.931435Z"
+    },
+    {
+      "id": "strategy42:000000000270",
+      "sha256": "eef61d785c0d88ef20ff6fa001924cdc32036d70c36df5b80effd9d521eb8676",
+      "at": "2026-11-16T15:03:41.878295Z"
+    },
+    {
+      "id": "strategy42:000000000271",
+      "sha256": "936dbbebeb584d26822dc52a334a261c47085d7d6ad198c00414e1ef20f4fb57",
+      "at": "2026-11-16T15:03:55.714111Z"
+    },
+    {
+      "id": "strategy42:000000000272",
+      "sha256": "7295f1ce18d22b8d9c65b4bcb7977e56cf41643775c84c231e4c1f99ae495d2f",
+      "at": "2026-11-16T15:04:36.499869Z"
+    },
+    {
+      "id": "strategy42:000000000273",
+      "sha256": "5a322c38940b81b7fa962d8447eb1af5ee3c7e2d6e21ad2e8dd18a5f0efbdf4c",
+      "at": "2026-11-16T15:04:54.666529Z"
+    },
+    {
+      "id": "strategy42:000000000274",
+      "sha256": "460cef0c37b65b8f0e01f0c8c9bb3f8099e96f689843dfb0c14c8492a14482d4",
+      "at": "2026-11-16T15:05:04.348830Z"
+    },
+    {
+      "id": "strategy42:000000000275",
+      "sha256": "567b645c729c90d5b4fa9c41f3e08a1646d9323cf01b2817e6d949d720917b37",
+      "at": "2026-11-16T15:05:42.426596Z"
+    },
+    {
+      "id": "strategy42:000000000276",
+      "sha256": "40d5545c59adb1e66690066b3aaab7bed2b1d55c7375c725ef160025d93e9cf6",
+      "at": "2026-11-16T15:05:57.693763Z"
+    },
+    {
+      "id": "strategy42:000000000277",
+      "sha256": "1a594f309bbb89cf7f4c4991ed328c2bf9165d424667b6e6f0d39c9d4135a23c",
+      "at": "2026-11-16T15:06:21.563511Z"
+    },
+    {
+      "id": "strategy42:000000000278",
+      "sha256": "bb869affa86219328148e4d13de62184b03b1e8eca0e57c029ec9a0639fbd801",
+      "at": "2026-11-16T15:06:30.344780Z"
+    },
+    {
+      "id": "strategy42:000000000279",
+      "sha256": "9b30d9d28c1a26a8c4c058b4627569a2678f1f3298e5bd9567dc151c11e98bed",
+      "at": "2026-11-16T15:06:46.470694Z"
+    },
+    {
+      "id": "strategy42:000000000280",
+      "sha256": "99eaeab34327aecff225ad93468449842767fb129cfbe6920cdb6218dfe4c9d2",
+      "at": "2026-11-16T15:07:00.664134Z"
+    },
+    {
+      "id": "strategy42:000000000281",
+      "sha256": "2336b99523c13f6f28bed6172d763086f98b0eb9bbc793e732016e7260993b90",
+      "at": "2026-11-16T15:07:13.607968Z"
+    },
+    {
+      "id": "strategy42:000000000282",
+      "sha256": "9851bcc45e7c2918475e5601a3f2e8085f0c14578bdfb4649f8fb63eb89d791d",
+      "at": "2026-11-16T15:13:04.074501Z"
+    },
+    {
+      "id": "strategy42:000000000283",
+      "sha256": "35162330fd8b398e5440ff676cbde37b18061e5c860f1f326d825223b43b6fbc",
+      "at": "2026-11-16T15:13:13.013508Z"
+    },
+    {
+      "id": "strategy42:000000000284",
+      "sha256": "bd917bb682cb043e28796215b0e085d033b5e5c3083410b14b63d1a9a37e9c6f",
+      "at": "2026-11-16T15:13:21.834615Z"
+    },
+    {
+      "id": "strategy42:000000000285",
+      "sha256": "afaeeb5cc94526be737d3320b6a606c6047c46b189359ce731286e57eda86590",
+      "at": "2026-11-16T15:13:37.775905Z"
+    },
+    {
+      "id": "strategy42:000000000286",
+      "sha256": "cb1da10c569e740805067d6d2be61bf7d0144442227cd98beeb10b70d6224e9e",
+      "at": "2026-11-16T15:14:25.254544Z"
+    },
+    {
+      "id": "strategy42:000000000287",
+      "sha256": "31de0d590fb313c8b2cf4ef3b7b7ea6c1a3087c6efa73eccaf2d859651a71664",
+      "at": "2026-11-16T15:14:37.925198Z"
+    },
+    {
+      "id": "strategy42:000000000288",
+      "sha256": "fc80c13dc5354d3d903c5d91ea1d7cfe19b31ac414d4097632ff9e1e82dc9ae1",
+      "at": "2026-11-16T15:14:51.376507Z"
+    },
+    {
+      "id": "strategy42:000000000289",
+      "sha256": "35b8b55c2b0c9cf8968ded4b8f2a3821fac18b5a6e5ad89b9ff18454782ccd33",
+      "at": "2026-11-16T15:15:13.731996Z"
+    },
+    {
+      "id": "strategy42:000000000290",
+      "sha256": "a3181a188b111491b541bf04423a08b0c4136c99f76c532668d762108a1a3937",
+      "at": "2026-11-16T15:15:27.761944Z"
+    },
+    {
+      "id": "strategy42:000000000291",
+      "sha256": "73389366af726b256b41d18c10749c4679c62d5680ddc4bd068a309c092a606e",
+      "at": "2026-11-16T15:15:36.567598Z"
+    },
+    {
+      "id": "strategy42:000000000292",
+      "sha256": "0dcab21a05c7d9baf84f96987646d6128a84b93c1c87916abdf468404f72acf9",
+      "at": "2026-11-16T15:15:49.377386Z"
+    },
+    {
+      "id": "strategy42:000000000293",
+      "sha256": "bef4b72e0e66a4e2d0ceaaf554f544713111f9626148d724ac280d4abb3e04ce",
+      "at": "2026-11-16T15:16:02.707622Z"
+    },
+    {
+      "id": "strategy42:000000000294",
+      "sha256": "896ea85f09cabf5a41e672821d4005fd64344065707c10265f88193920df64ac",
+      "at": "2026-11-16T15:16:11.454346Z"
+    },
+    {
+      "id": "strategy42:000000000295",
+      "sha256": "022d5873126e42aa828f5dd20af8108f968b54ee5acc2ecba00fae59547e5146",
+      "at": "2026-11-16T15:16:22.864461Z"
+    },
+    {
+      "id": "strategy42:000000000296",
+      "sha256": "ebe1fdb96b77bba9ba9bf925d4e7989281bf5dce9eabab0d66bd2dca167e8b3e",
+      "at": "2026-11-16T15:16:35.819404Z"
+    },
+    {
+      "id": "strategy42:000000000297",
+      "sha256": "16f9cd635b3fb98048963b9f8c0557704f59a650a180e9013831fbd2fadc0764",
+      "at": "2026-11-16T15:16:46.372550Z"
+    },
+    {
+      "id": "strategy42:000000000298",
+      "sha256": "2b43156f8ddf719ad6378e3a3b6772a2259e71ec2c242e9ab95233347cb36553",
+      "at": "2026-11-16T15:17:08.579246Z"
+    },
+    {
+      "id": "strategy42:000000000299",
+      "sha256": "cef32cff259fa31e41cbec2f0c8215d1c674706ceec63e2a082d201e6f33298e",
+      "at": "2026-11-16T15:17:17.833558Z"
+    },
+    {
+      "id": "strategy42:000000000300",
+      "sha256": "9e96d0e06732bc60cf06b69006285402d8d33e88350252d5b09fea997c9b4b76",
+      "at": "2026-11-16T15:17:30.048840Z"
+    },
+    {
+      "id": "strategy42:000000000301",
+      "sha256": "45a2bbe03ac0f6f901b7515d4234212c9d9f80822cd18f270ef1660829f61cbd",
+      "at": "2026-11-16T15:17:40.734732Z"
+    },
+    {
+      "id": "strategy42:000000000302",
+      "sha256": "24fabedc7021eb4748e6021e10bcf861d4f18d7e516306ee9da54943ad47f170",
+      "at": "2026-11-16T15:17:52.772075Z"
+    },
+    {
+      "id": "strategy42:000000000303",
+      "sha256": "af29e6764feedb135a1203be5296d9d1f9251bc4cb897c07d14ef6ca59b40b43",
+      "at": "2026-11-16T15:18:49.458955Z"
+    },
+    {
+      "id": "strategy42:000000000304",
+      "sha256": "490034ba9ce378aa45ee7ff02afca8acf2c39c2d365d21140798e47ae82c4f2f",
+      "at": "2026-11-16T15:19:00.587508Z"
+    },
+    {
+      "id": "strategy42:000000000305",
+      "sha256": "d9bf1e3e5ded4845f3d628d41f848c1ae0f1e8c4e34d03fe0c074511568aa594",
+      "at": "2026-11-16T15:19:17.250157Z"
+    },
+    {
+      "id": "strategy42:000000000306",
+      "sha256": "45fdae2a94bf47f6731bccd11e150a2f46dec793fe3c6ac8f769d82cbf0403cf",
+      "at": "2026-11-16T15:19:28.221817Z"
+    },
+    {
+      "id": "strategy42:000000000307",
+      "sha256": "44a4dc515a8d7b18fe72c66fb6e801e5398646478749160552ffea84820c7d84",
+      "at": "2026-11-16T15:20:15.598637Z"
+    },
+    {
+      "id": "strategy42:000000000308",
+      "sha256": "0f629001a555ec7ed941428109ab945d418387087800664f34418b542d9bc110",
+      "at": "2026-11-16T15:20:28.257774Z"
+    },
+    {
+      "id": "strategy42:000000000309",
+      "sha256": "abb3a0e2ce944c4241832e5b7e37550e22cbba8fe480e4205278c3cbad196a18",
+      "at": "2026-11-16T15:20:37.623532Z"
+    },
+    {
+      "id": "strategy42:000000000310",
+      "sha256": "603a22885ab6a961012615af2cbaaf21676ee737eaf700693b78e21c80d2254e",
+      "at": "2026-11-16T15:20:54.820690Z"
+    },
+    {
+      "id": "strategy42:000000000311",
+      "sha256": "2516e10a83672638a371e6181164f0ea8e97ff4ab50350d0a91fed3e27cb9e28",
+      "at": "2026-11-16T15:21:06.566284Z"
+    },
+    {
+      "id": "strategy42:000000000312",
+      "sha256": "a4ca9c06100554ac45ec4f23825933c5ee27eb1b6a632be5b9540c4e3cc3e66b",
+      "at": "2026-11-16T15:21:25.654531Z"
+    },
+    {
+      "id": "strategy42:000000000313",
+      "sha256": "9e0f9041691c1b10192ee51e8d9c7c1cf9e1bfa6541b5a7bc74a36431dceab3a",
+      "at": "2026-11-16T15:21:41.216177Z"
+    },
+    {
+      "id": "strategy42:000000000314",
+      "sha256": "475f92eab9aec102e509c9cc334dc94ded8ccf92c037746639c94f74f7db598a",
+      "at": "2026-11-16T15:21:58.091409Z"
+    },
+    {
+      "id": "strategy42:000000000315",
+      "sha256": "05e406230739abe27336ead3ca69adb1905b4f789a226607e9e94de93c920f4c",
+      "at": "2026-11-16T15:22:09.359312Z"
+    },
+    {
+      "id": "strategy42:000000000316",
+      "sha256": "5d10b3779bc66387b2060ba19c758b67a3326e60e6eb441a4011465f22243e6e",
+      "at": "2026-11-16T15:22:20.106313Z"
+    },
+    {
+      "id": "strategy42:000000000317",
+      "sha256": "e7bd786c38b898d8e7614c427e2caf5453344a9682bc14313267242cd1e5744b",
+      "at": "2026-11-16T15:22:32.453629Z"
+    },
+    {
+      "id": "strategy42:000000000318",
+      "sha256": "cb0df578915117e5b9342f947540026f48e1af3f08cc6e86461c515e5188d7f3",
+      "at": "2026-11-16T15:22:47.776672Z"
+    },
+    {
+      "id": "strategy42:000000000319",
+      "sha256": "6ccbea5a63b4cc99b402c743070db1bb247ef1e1d28471571427f7a5fdeb36f2",
+      "at": "2026-11-16T15:23:12.797811Z"
+    },
+    {
+      "id": "strategy42:000000000320",
+      "sha256": "08c09aaa96222c4330ae1027b20e0058b3f2e68b6ea0ac72c9530a2a50f57a05",
+      "at": "2026-11-16T15:23:23.791517Z"
+    },
+    {
+      "id": "strategy42:000000000321",
+      "sha256": "2001331fa4e704123c7479b9c154980c47e0863e7d45952eae697c51c757a567",
+      "at": "2026-11-16T15:23:34.280049Z"
+    },
+    {
+      "id": "strategy42:000000000322",
+      "sha256": "f9aa43f768b324dffc3e01c2fdfe8177e57bd52191ff8829603e2f28316bd5ea",
+      "at": "2026-11-16T15:23:43.844736Z"
+    },
+    {
+      "id": "strategy42:000000000323",
+      "sha256": "b6401243d0a5d48900897a3a136b01a33d5206995ad7af30f60b9d5a1e7f158e",
+      "at": "2026-11-16T15:23:55.160327Z"
+    },
+    {
+      "id": "strategy42:000000000324",
+      "sha256": "05a00f9fd676fb2521b04de746d66b95bfe3ace52c820d4e16bc35324529e215",
+      "at": "2026-11-16T15:24:03.745915Z"
+    },
+    {
+      "id": "strategy42:000000000325",
+      "sha256": "7e9633a8812c09fd6fd1e0456d7bb503647059700bc7469392c80dd2b3653596",
+      "at": "2026-11-16T15:24:28.754355Z"
+    },
+    {
+      "id": "strategy42:000000000326",
+      "sha256": "bbe91f45277e7cb655897192d4166aa2d1b5c79ce0b0a8baeec8342c8d4c3fdd",
+      "at": "2026-11-16T15:24:41.363653Z"
+    },
+    {
+      "id": "strategy42:000000000327",
+      "sha256": "679168376a88c9e947e8eb093b7553a848eeb1363c4d2385a6b09f705794da52",
+      "at": "2026-11-16T15:24:57.397893Z"
+    },
+    {
+      "id": "strategy42:000000000328",
+      "sha256": "b55a2ebdcfa852c385140f24c88f8e3ad68e1be5af97c8365b3809b79f1dc9f6",
+      "at": "2026-11-16T15:25:07.755041Z"
+    },
+    {
+      "id": "strategy42:000000000329",
+      "sha256": "e45d5faffb94f66f763e775e3474c4c209dabe3932659a76335eab8fc5205ae8",
+      "at": "2026-11-16T15:25:41.613156Z"
+    },
+    {
+      "id": "strategy42:000000000330",
+      "sha256": "27e2c035801d334ae65d782c754b1373e2657fccf5bbd29d03270220576059a6",
+      "at": "2026-11-16T15:25:57.145110Z"
+    },
+    {
+      "id": "strategy42:000000000331",
+      "sha256": "9c8024e19518c7664c6ed66b8ec93a30d969b6232530f96016c2bf6cd8030ed7",
+      "at": "2026-11-16T15:26:10.592037Z"
+    },
+    {
+      "id": "strategy42:000000000332",
+      "sha256": "deb07f9b734d0bf0b0ab649809e19f819053bcfac0dda0003b4e35376dd9fbf2",
+      "at": "2026-11-16T15:26:18.386858Z"
+    },
+    {
+      "id": "strategy42:000000000333",
+      "sha256": "fe071f928b57c373b471d3f86df31be5acaae4150d68e991cd6388775f675a68",
+      "at": "2026-11-16T15:26:33.851880Z"
+    },
+    {
+      "id": "strategy42:000000000334",
+      "sha256": "510661f2f7ba66ede30ba8a5da4a662918456b5a6f88ec59c00b3dd05f231362",
+      "at": "2026-11-16T15:26:46.582918Z"
+    },
+    {
+      "id": "strategy42:000000000335",
+      "sha256": "3032d4230391185fe30c0d299976f9b11adf47cb23a50e9b6b911c59d22502f4",
+      "at": "2026-11-16T15:26:58.945105Z"
+    },
+    {
+      "id": "strategy42:000000000336",
+      "sha256": "535e8a60c0ccc0540b52523d404312bef5f591ccef20f2f51bc24b9afc202687",
+      "at": "2026-11-16T15:27:12.310908Z"
+    },
+    {
+      "id": "strategy42:000000000337",
+      "sha256": "f51cf1050f39063e1306b39a24d6b46ee3bdd1aa29b26e76adbdb12d4665b100",
+      "at": "2026-11-16T15:27:27.605538Z"
+    },
+    {
+      "id": "strategy42:000000000338",
+      "sha256": "346db817e5d1eebc4051156e07f9b3fbbd72757d04f0233abd04ade85003086c",
+      "at": "2026-11-16T15:27:43.771723Z"
+    },
+    {
+      "id": "strategy42:000000000339",
+      "sha256": "2fd96dc26a8c7aeb2d89de12c79b6a56f36a444ce9c8fc479cbef3d2f6fd4831",
+      "at": "2026-11-16T15:27:55.483889Z"
+    },
+    {
+      "id": "strategy42:000000000340",
+      "sha256": "7d2abf1a26331e5de5f5cdbab6ee4851a6e3a022a7c0fc73cd3719f36899006a",
+      "at": "2026-11-16T15:28:05.859787Z"
+    },
+    {
+      "id": "strategy42:000000000341",
+      "sha256": "4f6c60e19a59aae03b8d9574e4e4299e16693a4e78a36b91eb488d6a962138db",
+      "at": "2026-11-16T15:28:17.016058Z"
+    },
+    {
+      "id": "strategy42:000000000342",
+      "sha256": "b2b3314878d2260277bf0c93ccc6192bc96efcb26650ddd5ceebb66dc8e06ba5",
+      "at": "2026-11-16T15:28:31.295594Z"
+    },
+    {
+      "id": "strategy42:000000000343",
+      "sha256": "a46d0505b61c0612335461f344e9fdc3bb0c558d1ff2d3623e1d50269de4da6a",
+      "at": "2026-11-16T15:29:14.255775Z"
+    },
+    {
+      "id": "strategy42:000000000344",
+      "sha256": "43357e6737228c21c178353750dc6ef55608f48dda748a75c45672d170372776",
+      "at": "2026-11-16T15:29:22.191643Z"
+    },
+    {
+      "id": "strategy42:000000000345",
+      "sha256": "e69e2d663fde0d33d64bae0361f06a6fceb0b253e67e07603b8d20dad82cc216",
+      "at": "2026-11-16T15:29:34.600955Z"
+    },
+    {
+      "id": "strategy42:000000000346",
+      "sha256": "6d956878bd864c9083f8f471c415156ec4dbcc5b0637e6d75bd573ad7de48c15",
+      "at": "2026-11-16T15:30:41.306760Z"
+    },
+    {
+      "id": "strategy42:000000000347",
+      "sha256": "68efac9f494dbfd16eaa0006376ff0207492cdc8035286afab82c6a692fb80ab",
+      "at": "2026-11-16T15:30:49.215873Z"
+    },
+    {
+      "id": "strategy42:000000000348",
+      "sha256": "dac1871470de9df8fe9912a731d5c41a0bc05c1a68b25314227e475f3d3eaf78",
+      "at": "2026-11-16T15:30:57.933982Z"
+    },
+    {
+      "id": "strategy42:000000000349",
+      "sha256": "aa2188c47651d0c9aa18a540160f626ea6565d1e48f5214d4a3c6d5d7a49d076",
+      "at": "2026-11-16T15:31:14.022010Z"
+    },
+    {
+      "id": "strategy42:000000000350",
+      "sha256": "8dfe7c31824300532f08fc3e8e563cdd4d5e55c86bfbde131d3a944734a39a85",
+      "at": "2026-11-16T15:31:26.937181Z"
+    },
+    {
+      "id": "strategy42:000000000351",
+      "sha256": "9f45c98a0be01f3be2e5acb30033f64ea7b4356fbc0df449b7baed969ea4703d",
+      "at": "2026-11-16T15:31:51.198945Z"
+    },
+    {
+      "id": "strategy42:000000000352",
+      "sha256": "267ca6974587ba787c87ef17731ca2224a0fbd6b13e658d856c05a7ec54b58fd",
+      "at": "2026-11-16T15:32:00.014943Z"
+    },
+    {
+      "id": "strategy42:000000000353",
+      "sha256": "efc20e8180a493831724d60cdfff5c086f83e3c5af8f628abd39c630aefed56c",
+      "at": "2026-11-16T15:32:07.528634Z"
+    },
+    {
+      "id": "strategy42:000000000354",
+      "sha256": "98206a57df921bc40b0744f4e7c379c19b3880cbb991bc2dcb5a96c0fd27d99a",
+      "at": "2026-11-16T15:32:26.400577Z"
+    },
+    {
+      "id": "strategy42:000000000355",
+      "sha256": "05bcb7305ccc217a4c90cb00fd052a8cc91b515a8c70dec64092839f073bb8ee",
+      "at": "2026-11-16T15:33:14.764707Z"
+    },
+    {
+      "id": "strategy42:000000000356",
+      "sha256": "2ee16387f9bf54ba7ab857a286266af5c7727f7f28c0de704624065953bad476",
+      "at": "2026-11-16T15:33:31.219178Z"
+    },
+    {
+      "id": "strategy42:000000000357",
+      "sha256": "b1ac27a15f6c68b43a32ebb0896d038230d040eb2ad72802082649dcb033a0e3",
+      "at": "2026-11-16T15:33:40.870168Z"
+    },
+    {
+      "id": "strategy42:000000000358",
+      "sha256": "233f2dced6ff30d11a18ddcff9b3e2fda55211e4066ebe2a93dc6dd511c9309d",
+      "at": "2026-11-16T15:34:18.354303Z"
+    },
+    {
+      "id": "strategy42:000000000359",
+      "sha256": "9137e7ded518959c7cebbf948259ddace4f07020f5b039b1228c4c816958ab02",
+      "at": "2026-11-16T15:34:34.503830Z"
+    },
+    {
+      "id": "strategy42:000000000360",
+      "sha256": "457dc950379386fb7c5c2cd5a01a3870e8c53773a6f33e019094c5fa6ae0c7fd",
+      "at": "2026-11-16T15:34:46.750126Z"
+    },
+    {
+      "id": "strategy42:000000000361",
+      "sha256": "e4a450a24877ed9b358d30b38fa255e07a746d121ff3a763c39baa29c3cdb00f",
+      "at": "2026-11-16T15:35:02.294503Z"
+    },
+    {
+      "id": "strategy42:000000000362",
+      "sha256": "6c5a7e2e409efab95de875f5df9a5dcc6d39e18c65a3564b5bb742dddd37686e",
+      "at": "2026-11-16T15:35:22.273757Z"
+    },
+    {
+      "id": "strategy42:000000000363",
+      "sha256": "5d443de8433539617c1dcd3c215ff8b2b5a37ff1c3e5d1425d3bff9a1c561ad2",
+      "at": "2026-11-16T15:35:39.449948Z"
+    },
+    {
+      "id": "strategy42:000000000364",
+      "sha256": "fd95fb5b83c643b1f32ee057dc214a8b0dfce93452dbb5485a571cbbf498c666",
+      "at": "2026-11-16T15:35:54.647716Z"
+    },
+    {
+      "id": "strategy42:000000000365",
+      "sha256": "40e8be53ff8fdaf11b51b0a63a85222728c74a7d5acc161e292489e93be9b018",
+      "at": "2026-11-16T15:47:32.752926Z"
+    },
+    {
+      "id": "strategy42:000000000366",
+      "sha256": "73b7761f96d8d9df0067e30e562abb1f74a29fb7f98b531fa4095126abc288c8",
+      "at": "2026-11-16T15:47:45.159366Z"
+    },
+    {
+      "id": "strategy42:000000000367",
+      "sha256": "0742f5491f02ca5074528f3326e2cc667af1b258d26081b8fd2898826681b520",
+      "at": "2026-11-16T15:47:56.374507Z"
+    },
+    {
+      "id": "strategy42:000000000368",
+      "sha256": "ae4f375818daec9177ea68a1cf4e8d9511ef9be3b273a91ae6a4f1f6a3c82b0f",
+      "at": "2026-11-16T15:48:05.882525Z"
+    },
+    {
+      "id": "strategy42:000000000369",
+      "sha256": "fbb96c46cd9c39417c37411966ab81bbe237bc6ae47a7cbe05e6c619420391b3",
+      "at": "2026-11-16T15:48:14.014143Z"
+    },
+    {
+      "id": "strategy42:000000000370",
+      "sha256": "2275283fe512f440790b291cdef67423b44a7d88ae6b1ff2e44238119e9b32e9",
+      "at": "2026-11-16T15:52:56.748352Z"
+    },
+    {
+      "id": "strategy42:000000000371",
+      "sha256": "d6dfbc9a09c89d52328c603d156b682484a9041245a32cb2c8d4f6e8aa9c171c",
+      "at": "2026-11-16T15:53:05.825052Z"
+    },
+    {
+      "id": "strategy42:000000000372",
+      "sha256": "75e956747d6cfacdb7945a813e8a90221802e16a094116df184333ac5074a5ab",
+      "at": "2026-11-16T15:53:14.453362Z"
+    },
+    {
+      "id": "strategy42:000000000373",
+      "sha256": "43e13fa71fd37900306ab20a65afcafd9f96c066702691dcaadd704e338adff2",
+      "at": "2026-11-16T15:53:25.591972Z"
+    },
+    {
+      "id": "strategy42:000000000374",
+      "sha256": "6e4a73b4a76c9184ee391763450ad0b313eb96f6802b64dc99161aae08c4eb59",
+      "at": "2026-11-16T15:53:38.521243Z"
+    },
+    {
+      "id": "strategy42:000000000375",
+      "sha256": "01d8cc63a98129a87d89cef9adca96f37539f92259518d67f4066c2f2bd5a38d",
+      "at": "2026-11-16T15:53:49.767826Z"
+    },
+    {
+      "id": "strategy42:000000000376",
+      "sha256": "a92aa41762cd565767e62bbe5ebc3163e240740234369a4819ed297ad09c2c63",
+      "at": "2026-11-16T15:54:10.776284Z"
+    },
+    {
+      "id": "strategy42:000000000377",
+      "sha256": "60faf2e03f2a05c7f4d6fae221f97a5082059a1024581f3b46484a4fed00a2c3",
+      "at": "2026-11-16T15:54:19.106718Z"
+    },
+    {
+      "id": "strategy42:000000000378",
+      "sha256": "9573043d9b55c6c6f7676c84ce9dc43c82427525d0e2e31df73bba25a381b46f",
+      "at": "2026-11-16T15:54:29.857260Z"
+    },
+    {
+      "id": "strategy42:000000000379",
+      "sha256": "c0073a63aa6123a7b33122edaf67d85850ae70cf0a1d5132efc0e5f7886fb43e",
+      "at": "2026-11-16T15:54:43.780048Z"
+    },
+    {
+      "id": "strategy42:000000000380",
+      "sha256": "b89072c0395b00a22ee3ae39e4401bba10209671b9d2b5d527b66f65e724d50f",
+      "at": "2026-11-16T15:54:56.754724Z"
+    },
+    {
+      "id": "strategy42:000000000381",
+      "sha256": "f226b30885a1ec4e5053a8bc49f616be3b0985f315bf7988e9fc7911662a870b",
+      "at": "2026-11-16T15:55:19.225081Z"
+    },
+    {
+      "id": "strategy42:000000000382",
+      "sha256": "55443965eb0c1a86e4a3354d5ad5caa0a12369f646f31537d4d1be7ccfd3b444",
+      "at": "2026-11-16T15:55:29.236923Z"
+    },
+    {
+      "id": "strategy42:000000000383",
+      "sha256": "7a0f7eba1058d57c4c757ac2dc5c13485a4703b65021b75d6cdbc42ba5e9dc17",
+      "at": "2026-11-16T15:55:36.247172Z"
+    },
+    {
+      "id": "strategy42:000000000384",
+      "sha256": "8dca752a2a8a8a8a9530d3c77c15f0c90cbd3cc63ed69f93010084e1a1bda61d",
+      "at": "2026-11-16T15:55:48.745194Z"
+    },
+    {
+      "id": "strategy42:000000000385",
+      "sha256": "3bba0338ff3f36bc00a7bd9310c520a25f74caa56ba3ecf983c415518f168e7e",
+      "at": "2026-11-16T15:56:01.589478Z"
+    },
+    {
+      "id": "strategy42:000000000386",
+      "sha256": "4b999dd949931b68e33267bf6d4f353042f0fecf1cd9e3945c559c2948fece03",
+      "at": "2026-11-16T15:56:36.731065Z"
+    },
+    {
+      "id": "strategy42:000000000387",
+      "sha256": "7d90b9473fdf9fa9956e7553ff33f02572d8db4db8b9e5512996f70e80e5e731",
+      "at": "2026-11-16T15:56:50.929824Z"
+    },
+    {
+      "id": "strategy42:000000000388",
+      "sha256": "ee386713381a680371a0dae5677e3f19dbaaec58ca811221766635106e083bf7",
+      "at": "2026-11-16T15:57:05.827177Z"
+    },
+    {
+      "id": "strategy42:000000000389",
+      "sha256": "c4d3a55d9fc43f98d369e7c1a33004c56e0a2bebcf9873f9529dcac576185e13",
+      "at": "2026-11-16T15:57:45.429642Z"
+    },
+    {
+      "id": "strategy42:000000000390",
+      "sha256": "f7a195ddf8b1f3422afb3eeb377e5f82640a775bccbd7ad9514d71715b01bf2d",
+      "at": "2026-11-16T15:57:57.679958Z"
+    },
+    {
+      "id": "strategy42:000000000391",
+      "sha256": "779f7b516aa3d259bcb08c58489e6dca1c95419af124d1b408d99bf330262673",
+      "at": "2026-11-16T15:58:07.597684Z"
+    },
+    {
+      "id": "strategy42:000000000392",
+      "sha256": "7755b37be2bde418a16b0ecc7f156d450e471ce5c5840ef4b69f461e21221ac9",
+      "at": "2026-11-16T15:58:16.126541Z"
+    },
+    {
+      "id": "strategy42:000000000393",
+      "sha256": "3ee760e966f9b7f56008f5f5dac4e42eaaf71835d317ad84bcdc685841714e6c",
+      "at": "2026-11-16T15:58:55.400358Z"
+    },
+    {
+      "id": "strategy42:000000000394",
+      "sha256": "88ff523c5364eade6224dbdbf37e2f8442706fe73b59fc1f70b880fc4348d9aa",
+      "at": "2026-11-16T15:59:12.138271Z"
+    },
+    {
+      "id": "strategy42:000000000395",
+      "sha256": "ab475fe5f393f5accff56bec27a3fe9060eb391cf26a455431a63b723994eb56",
+      "at": "2026-11-16T15:59:25.517248Z"
+    },
+    {
+      "id": "strategy42:000000000396",
+      "sha256": "36af3d0a5cbb274b7371f1aad3d5e9d4eee20d422611af47eb236a9fb3226991",
+      "at": "2026-11-16T15:59:39.045745Z"
+    },
+    {
+      "id": "strategy42:000000000397",
+      "sha256": "33e8ec92e4188bd5c3c1fc2e9024458578227c740dfde703a5f90ece2dd86adf",
+      "at": "2026-11-16T15:59:53.001194Z"
+    },
+    {
+      "id": "strategy42:000000000398",
+      "sha256": "fd0a9ed158a89bdb3b5f704a6cdef11448e063722884156bc74fa2e7f17ab62b",
+      "at": "2026-11-16T16:00:03.452133Z"
+    },
+    {
+      "id": "strategy42:000000000399",
+      "sha256": "b1e83427cfe0ace40c1c98e9f10c079072043d82d0bbb00d7a9ae51322964519",
+      "at": "2026-11-16T16:00:25.138877Z"
+    },
+    {
+      "id": "strategy42:000000000400",
+      "sha256": "1576087aad4c6b493e10f44fd72d65fcd751450a33643755c75d9fa683068e7d",
+      "at": "2026-11-16T16:01:06.311511Z"
+    },
+    {
+      "id": "strategy42:000000000401",
+      "sha256": "a13d688ce5fcdee355c1e4cc40eec12b56ed6286a53fb750759e5c06eeffedc1",
+      "at": "2026-11-16T16:01:13.987796Z"
+    },
+    {
+      "id": "strategy42:000000000402",
+      "sha256": "77c2482ae079b05ed4fb6db8dc0ca870c2f6dc609421f313b6fb3e1a92e1aa3f",
+      "at": "2026-11-16T16:01:27.006789Z"
+    },
+    {
+      "id": "strategy42:000000000403",
+      "sha256": "67ece7c02144d1c6270bdd7ee4b559e797bafabca06db6fe1fe334495e754c4f",
+      "at": "2026-11-16T16:02:04.677742Z"
+    },
+    {
+      "id": "strategy42:000000000404",
+      "sha256": "e3a3eac704285a24488d15db222d8a309d711aaeff8ccc7ee83abcee9b234276",
+      "at": "2026-11-16T16:02:19.053502Z"
+    },
+    {
+      "id": "strategy42:000000000405",
+      "sha256": "9e8feb31a99a82a6a21dd59bb4d7947f787e7fccd276ab91e8cc171be5a0579c",
+      "at": "2026-11-16T16:02:34.656337Z"
+    },
+    {
+      "id": "strategy42:000000000406",
+      "sha256": "5f1c71e95873546d425abfaffb969a7943f88a306628e8816a5655cd12a2c5a2",
+      "at": "2026-11-16T16:02:47.000164Z"
+    },
+    {
+      "id": "strategy42:000000000407",
+      "sha256": "c2d1b9c693dc4d81577a85c7f7c7f532ea8e07bf78a9d467c8aa24f965e6fa96",
+      "at": "2026-11-16T16:02:56.300166Z"
+    },
+    {
+      "id": "strategy42:000000000408",
+      "sha256": "41ddce0a9d6c1597a6f5cabf9f35241fbc25e55e9508cb8287e6a0878665ccd2",
+      "at": "2026-11-16T16:03:11.819908Z"
+    },
+    {
+      "id": "strategy42:000000000409",
+      "sha256": "afdefeead2bcbe9afac7f53f5bb56c6d296e1e4e7c795f70c2bdee528a24e445",
+      "at": "2026-11-16T16:03:24.018121Z"
+    },
+    {
+      "id": "strategy42:000000000410",
+      "sha256": "96dcea3f200ba6f4a7b7fc9b0c783c5f2e75862ee351462042b8fe1361978f53",
+      "at": "2026-11-16T16:03:35.578631Z"
+    },
+    {
+      "id": "strategy42:000000000411",
+      "sha256": "d5137fa71271fa09a00ade5ce490e951d5bb5063e968f7727e75af067f18b86d",
+      "at": "2026-11-16T16:03:52.129601Z"
+    },
+    {
+      "id": "strategy42:000000000412",
+      "sha256": "966769c20d1fca062513b759147e5e108bc8e03b36b10f307b195d64cc9388dc",
+      "at": "2026-11-16T16:04:03.893025Z"
+    },
+    {
+      "id": "strategy42:000000000413",
+      "sha256": "87ad781683870bc2ba92cba290f74a9b1fffe6216c5bc63612fc21dc40f59e2b",
+      "at": "2026-11-16T16:04:24.336231Z"
+    },
+    {
+      "id": "strategy42:000000000414",
+      "sha256": "97d3ada5ee4c37f56d377e7e63f6efe3f834e4e2b992dfc741b2a41c5a8a536c",
+      "at": "2026-11-16T16:04:40.622245Z"
+    },
+    {
+      "id": "strategy42:000000000415",
+      "sha256": "a1b634141610ac6eaf20f83218b5802ffa87f60aa31aebbd721fdf93a9bc949d",
+      "at": "2026-11-16T16:04:54.531118Z"
+    },
+    {
+      "id": "strategy42:000000000416",
+      "sha256": "f61111cc238c05c75c3bd150a63cfe6cf206b9bf2d7bc9c7f6c48c4b7321b9fa",
+      "at": "2026-11-16T16:05:02.372253Z"
+    },
+    {
+      "id": "strategy42:000000000417",
+      "sha256": "c28e591499dd76b1ac84b7ba901d4d1f62b642a1b89a7cef89244a60fbc149b3",
+      "at": "2026-11-16T16:05:14.297389Z"
+    },
+    {
+      "id": "strategy42:000000000418",
+      "sha256": "1d4765ba5a704d32e8cbd783500504caf06dfacb176fa21d22db2ad228d06163",
+      "at": "2026-11-16T16:05:29.313586Z"
+    },
+    {
+      "id": "strategy42:000000000419",
+      "sha256": "1d86135b83681e0dfff7d954551cc5bfe70ec23df96d87d2e4c29cb6416e8b4e",
+      "at": "2026-11-16T16:05:53.031882Z"
+    },
+    {
+      "id": "strategy42:000000000420",
+      "sha256": "cb2bcc1c85747f07307da430b56efe53754edb0ca428ddde2d702a64e01738cf",
+      "at": "2026-11-16T16:06:06.760203Z"
+    },
+    {
+      "id": "strategy42:000000000421",
+      "sha256": "49f82c04e3ee656e05ba2e0c4809c5de0d09c1ac0504472c215b505bdd7a3085",
+      "at": "2026-11-16T16:06:21.245918Z"
+    },
+    {
+      "id": "strategy42:000000000422",
+      "sha256": "287b6fffa966ee0df959d4c2b46398e1a91406a69af7f61f05f541b2c257c1cc",
+      "at": "2026-11-16T16:06:34.807111Z"
+    },
+    {
+      "id": "strategy42:000000000423",
+      "sha256": "2a6b072511c50c0bc3cdbc5e2875d64347b3fb2934bc76091c2f6deeb710fc33",
+      "at": "2026-11-16T16:06:49.697998Z"
+    },
+    {
+      "id": "strategy42:000000000424",
+      "sha256": "bfb1d9d331a65df7b0bc14a339e12149bd7cadcc8476509ed4edb247f483fd98",
+      "at": "2026-11-16T16:07:08.897113Z"
+    },
+    {
+      "id": "strategy42:000000000425",
+      "sha256": "048b6d1d99864ffd28f2e92df59d500ce215aa3a8cfe10d5cbcb2c43fb038ccb",
+      "at": "2026-11-16T16:07:21.204436Z"
+    },
+    {
+      "id": "strategy42:000000000426",
+      "sha256": "31d3a915cae4e7e3775fde923d826d9eb72ba74a8ce8fc585389166dda93238a",
+      "at": "2026-11-16T16:07:34.520893Z"
+    },
+    {
+      "id": "strategy42:000000000427",
+      "sha256": "63a63ae4dd0b6447328c4cf49b8fc51e3b210d14913109dc8f495b2686108656",
+      "at": "2026-11-16T16:07:46.899137Z"
+    },
+    {
+      "id": "strategy42:000000000428",
+      "sha256": "942a24aaac033661022b24edc1055d25ca884eb9f7409879c6d797897aa0266b",
+      "at": "2026-11-16T16:08:36.253345Z"
+    },
+    {
+      "id": "strategy42:000000000429",
+      "sha256": "0619ff943e0c21f53e34d059f2f32a018e3fade1f19cfd486dc494104e96392b",
+      "at": "2026-11-16T16:08:51.484094Z"
+    },
+    {
+      "id": "strategy42:000000000430",
+      "sha256": "a19dbeb5993b1a0a3365252cd8b702c745250b8fe624a6c10fb221c71f40674a",
+      "at": "2026-11-16T16:09:01.079481Z"
+    },
+    {
+      "id": "strategy42:000000000431",
+      "sha256": "5444a3402b1a341be34d176715f68262ae706d775fe69f94a682d4144d3200b3",
+      "at": "2026-11-16T16:09:44.260168Z"
+    },
+    {
+      "id": "strategy42:000000000432",
+      "sha256": "0c3c8c39aecb04f80cdc28174da0829648f07db322974880078bb6854910f5a7",
+      "at": "2026-11-16T16:10:01.578752Z"
+    },
+    {
+      "id": "strategy42:000000000433",
+      "sha256": "4b64add20b453a934dc0d308c1d4aae6ad52a30ce864c394a379210061d33776",
+      "at": "2026-11-16T16:10:12.620186Z"
+    },
+    {
+      "id": "strategy42:000000000434",
+      "sha256": "dcc3d90b1565a04479680f7a3ec14cd82fc6793e7cc82cb8631c58cd5669556b",
+      "at": "2026-11-16T16:10:29.001583Z"
+    },
+    {
+      "id": "strategy42:000000000435",
+      "sha256": "d0c40943b6e35cda1174f0e53c93df817f533f6fffb33e483b2669c5f1d6cf12",
+      "at": "2026-11-16T16:10:43.674787Z"
+    },
+    {
+      "id": "strategy42:000000000436",
+      "sha256": "1210999f5ab7dc488e50494c63f71e75e2dcc30dbd2cf98176a8d1a1e92ea035",
+      "at": "2026-11-16T16:10:57.263649Z"
+    },
+    {
+      "id": "strategy42:000000000437",
+      "sha256": "0bfb9e7f4178b7199b89156c3e4093062973ef40055fe90b2dc39ac9a6cbe0f0",
+      "at": "2026-11-16T16:11:12.771474Z"
+    },
+    {
+      "id": "strategy42:000000000438",
+      "sha256": "a9fe99551a5a8cbab3a82531361fc654d5eed7b231aba3fb8a9aaf063d4dd35b",
+      "at": "2026-11-16T16:11:34.171838Z"
+    },
+    {
+      "id": "strategy42:000000000439",
+      "sha256": "51173c297641ea6ae08977bbaf98705267206d2850db3693a029bc727a2ef461",
+      "at": "2026-11-16T16:11:43.407613Z"
+    },
+    {
+      "id": "strategy42:000000000440",
+      "sha256": "ffacf07e0e47758e398b3342f087830e5663cf5eed08e6102fe98634429bce26",
+      "at": "2026-11-16T16:11:57.421893Z"
+    },
+    {
+      "id": "strategy42:000000000441",
+      "sha256": "0bb12bfb0d689a37229e9ead7ab7eb2c4f8219c3522a9f98466474b636a71a6f",
+      "at": "2026-11-16T16:12:11.581114Z"
+    },
+    {
+      "id": "strategy42:000000000442",
+      "sha256": "651bb55c893924f87ef82a87e7d9895f876097bddc804e17719a5e0c4ecfb6c2",
+      "at": "2026-11-16T16:12:25.682492Z"
+    },
+    {
+      "id": "strategy42:000000000443",
+      "sha256": "cc9dc7e399f19bbcfacbe05b812a3a2d74a960f8489c07a4bd3ac2e89e6895de",
+      "at": "2026-11-16T16:13:08.066832Z"
+    },
+    {
+      "id": "strategy42:000000000444",
+      "sha256": "bd7667308305a4319a3ee104ceb48ae1825306e3232e68a24aa2385dc54a5b7e",
+      "at": "2026-11-16T16:13:26.409428Z"
+    },
+    {
+      "id": "strategy42:000000000445",
+      "sha256": "6f9fa8ed187bed613ce08cd048f729b12f89a916dd319e0f328bbc3f9a189731",
+      "at": "2026-11-16T16:13:41.669339Z"
+    },
+    {
+      "id": "strategy42:000000000446",
+      "sha256": "97330525ec1f05c4254c68394e3173b9aa6094585134a6fbcacd352c3af62642",
+      "at": "2026-11-16T16:14:21.350874Z"
+    },
+    {
+      "id": "strategy42:000000000447",
+      "sha256": "b227454c5bf26afc7cdd472bdab304426dc19929774cd83e3eb78dd5e8d03a90",
+      "at": "2026-11-16T16:14:34.065986Z"
+    },
+    {
+      "id": "strategy42:000000000448",
+      "sha256": "b359820fd71e1af3dac9912b62df981b4b2bdf08fb40654620cd0ce42e094f39",
+      "at": "2026-11-16T16:14:43.490122Z"
+    },
+    {
+      "id": "strategy42:000000000449",
+      "sha256": "7fe68015ad8536d61287aa0a156f28427f034dbd7fcf6f6d1602e5937efe22f1",
+      "at": "2026-11-16T16:14:56.841895Z"
+    },
+    {
+      "id": "strategy42:000000000450",
+      "sha256": "542153641927765826379d3a9ef6b0990fc18fdc59d962b8c23eaaf0f85fb4c5",
+      "at": "2026-11-16T16:15:30.414976Z"
+    },
+    {
+      "id": "strategy42:000000000451",
+      "sha256": "b4da58b23b644acddafa5521306abcb08c6223ca8cba21c4f42a2bc2fc535995",
+      "at": "2026-11-16T16:15:48.852259Z"
+    },
+    {
+      "id": "strategy42:000000000452",
+      "sha256": "a39f44f0c9aeb03725b68f29e0cbfab7040bc382b0eec4d1496696e261258487",
+      "at": "2026-11-16T16:16:02.065093Z"
+    },
+    {
+      "id": "strategy42:000000000453",
+      "sha256": "0ec5c3e2fe2278d215494c23e46b98eabe3f2e1d1b6ca7a45983a8b1acd12f97",
+      "at": "2026-11-16T16:16:18.987414Z"
+    },
+    {
+      "id": "strategy42:000000000454",
+      "sha256": "0b0b90cfb80f9a2c7c0bd40e6497f3b9d9c8a3dcd6e53d7f115bd5191b0a32fc",
+      "at": "2026-11-16T16:16:27.143149Z"
+    },
+    {
+      "id": "strategy42:000000000455",
+      "sha256": "6a3c855316852738b35f46a53be224d5489ea210b5ca01b0281f23df5e9e9dcb",
+      "at": "2026-11-16T16:16:41.797145Z"
+    },
+    {
+      "id": "strategy42:000000000456",
+      "sha256": "fc467c682a0336bbcadafe0f8b1a37367dc5976a8f35e81f15e0a2099e3c51be",
+      "at": "2026-11-16T16:16:55.676260Z"
+    },
+    {
+      "id": "strategy42:000000000457",
+      "sha256": "5b16d3c32f461432971d5453577698791145e3191046fb5ec701b2d0d711fe79",
+      "at": "2026-11-16T16:17:55.315844Z"
+    },
+    {
+      "id": "strategy42:000000000458",
+      "sha256": "e0a148911a0b18e731a271edf011bb785314dede049e7a859d200bc7f47242ec",
+      "at": "2026-11-16T16:18:05.509936Z"
+    },
+    {
+      "id": "strategy42:000000000459",
+      "sha256": "62bac9818f4b679f80bdd8f9904067a31be5875f40fce7e507080fd265790a7a",
+      "at": "2026-11-16T16:18:22.386944Z"
+    },
+    {
+      "id": "strategy42:000000000460",
+      "sha256": "0af3e1fb1d07c3488ba9b38af1948c325cf20b2e93bf82bac7b06b17bfb7977f",
+      "at": "2026-11-16T16:18:55.934056Z"
+    },
+    {
+      "id": "strategy42:000000000461",
+      "sha256": "7096c6b50aedcc6442dfde8ca8666e66081c14d153af9f1fe9c50d8a5e5d771c",
+      "at": "2026-11-16T16:19:07.251911Z"
+    },
+    {
+      "id": "strategy42:000000000462",
+      "sha256": "ca57602e079d8aa2ad09b86fcae2227f735890bf8dcc4573672505f352b9a371",
+      "at": "2026-11-16T16:19:17.625131Z"
+    },
+    {
+      "id": "strategy42:000000000463",
+      "sha256": "8107858e020042f59080236f47f8b7753f4a6112170618582aa4f4eac70bbb98",
+      "at": "2026-11-16T16:19:26.314880Z"
+    },
+    {
+      "id": "strategy42:000000000464",
+      "sha256": "9b7805316458cf2e823e8e656f3ee0c96b673cbd5f9f2ab2a89a2483ce62aa13",
+      "at": "2026-11-16T16:19:58.732181Z"
+    },
+    {
+      "id": "strategy42:000000000465",
+      "sha256": "0ac0bfc696a8a6b8d8821770a03a5dafdffa23b0738f3859e723a6b4d84650dc",
+      "at": "2026-11-16T16:20:11.638225Z"
+    },
+    {
+      "id": "strategy42:000000000466",
+      "sha256": "b125858138fb08da30fc63d2d883e6dee0e7e198b2709f69e879149eb5c5d7c0",
+      "at": "2026-11-16T16:20:22.539957Z"
+    },
+    {
+      "id": "strategy42:000000000467",
+      "sha256": "15a125a57b1df9d996c12c7c46be9f70f81a70f9686b9bd00ec3e7e3a07c8bbb",
+      "at": "2026-11-16T16:20:33.382030Z"
+    },
+    {
+      "id": "strategy42:000000000468",
+      "sha256": "e142023a98f2fcd9d7382379f3c4b663dabb7367ac4258d7f98e3184d7917240",
+      "at": "2026-11-16T16:20:59.034810Z"
+    },
+    {
+      "id": "strategy42:000000000469",
+      "sha256": "dba07d2dcaf931ea85110de4dcdd11a11d862292f93ebb63a708f2454a6dce68",
+      "at": "2026-11-16T16:21:12.642629Z"
+    },
+    {
+      "id": "strategy42:000000000470",
+      "sha256": "bf375b13d2be88f5c6afa80a75639140c74283403bc87fc7d6b9af9d47c39096",
+      "at": "2026-11-16T16:21:30.243662Z"
+    },
+    {
+      "id": "strategy42:000000000471",
+      "sha256": "b2de0df277b742827555df397d1cc9aba3e234c8345a059573d7201c0e28a50e",
+      "at": "2026-11-16T16:21:47.450810Z"
+    },
+    {
+      "id": "strategy42:000000000472",
+      "sha256": "fccfaef53f9c5bed4bbb5872ee4ad0314af5e0e5f54842110ba1a18946ab702b",
+      "at": "2026-11-16T16:22:00.949461Z"
+    },
+    {
+      "id": "strategy42:000000000473",
+      "sha256": "0eac8f8bf7f589771f32f83155d056f3eda4aaedf010c85f1dfbbd9a1917f596",
+      "at": "2026-11-16T16:22:14.468219Z"
+    },
+    {
+      "id": "strategy42:000000000474",
+      "sha256": "b701431202447b423e4719a1c97147404f1a422651fa79f56b9177942ddb5667",
+      "at": "2026-11-16T16:22:33.330182Z"
+    },
+    {
+      "id": "strategy42:000000000475",
+      "sha256": "47a65525f963abbf6ebc87105af07e9bdf357b2cc3fc57edd7c4859f5ad215ed",
+      "at": "2026-11-16T16:28:10.609341Z"
+    },
+    {
+      "id": "strategy42:000000000476",
+      "sha256": "0c3a1e70669de753e78128579b5a9d2f244f76a4b71495abe026dbb837e2dfc6",
+      "at": "2026-11-16T16:28:18.599484Z"
+    },
+    {
+      "id": "strategy42:000000000477",
+      "sha256": "c0d667fca0c2ac4f92dbf35ea7b0a23d445041708ba92d5f3fca844703b144a9",
+      "at": "2026-11-16T16:28:33.948662Z"
+    },
+    {
+      "id": "strategy42:000000000478",
+      "sha256": "781b67174a4178a4bc2aa39ecb266bfb76982d6c119d3c7c025c03c8f558e29e",
+      "at": "2026-11-16T16:28:46.450541Z"
+    },
+    {
+      "id": "strategy42:000000000479",
+      "sha256": "86e861c96794ed8cc1af319f49c50dfbe695bf94d3ce5888480a90ff3397f0d8",
+      "at": "2026-11-16T16:28:57.083196Z"
+    },
+    {
+      "id": "strategy42:000000000480",
+      "sha256": "42d0094e3e109b86a3f5d97dd6416949d26229fcd0932554eb99d2faa3c16edc",
+      "at": "2026-11-16T16:29:13.921163Z"
+    },
+    {
+      "id": "strategy42:000000000481",
+      "sha256": "6966e5ff2027a57fc9d9d2d7743676755e8bb8488adff06e2f9346495e96180b",
+      "at": "2026-11-16T16:29:28.561403Z"
+    },
+    {
+      "id": "strategy42:000000000482",
+      "sha256": "14cd4810a7d5716a046d58758b48f9b5e4be272f6d6f7de751ef07db0afed696",
+      "at": "2026-11-16T16:29:39.458612Z"
+    },
+    {
+      "id": "strategy42:000000000483",
+      "sha256": "d94fa14d6638e4d6d0d1b52adde5f36f8e7c282a4f135194babe7e0798c58213",
+      "at": "2026-11-16T16:29:52.657421Z"
+    },
+    {
+      "id": "strategy42:000000000484",
+      "sha256": "b6dd045867c030363088f6098506d2e5394014f7987ff0850ca56e690c61f0ef",
+      "at": "2026-11-16T16:30:04.632370Z"
+    },
+    {
+      "id": "strategy42:000000000485",
+      "sha256": "0a04598c0ca8f19c2921e11b033fb16297b4c8a2d050b7ce50c3f7bf848b801c",
+      "at": "2026-11-16T16:30:21.772212Z"
+    },
+    {
+      "id": "strategy42:000000000486",
+      "sha256": "7e11e966b2080489da94b8ebdb08f53710fa2005782f72e0842951fe97cd3144",
+      "at": "2026-11-16T16:30:31.559055Z"
+    },
+    {
+      "id": "strategy42:000000000487",
+      "sha256": "aa28cd12b593c60dfe7f117b79d1aa44595b71c94dc9fadaf4ecf9a00878859d",
+      "at": "2026-11-16T16:30:42.479204Z"
+    },
+    {
+      "id": "strategy42:000000000488",
+      "sha256": "5e0322ae3e31d91efbc37475229813c669dc1970d8b6daf383f5654bc2c16c73",
+      "at": "2026-11-16T16:30:56.332041Z"
+    },
+    {
+      "id": "strategy42:000000000489",
+      "sha256": "7bf4d92ddf39bce5136649e28dd674cdd2ffff0cf70fd1b5cb803a21860eee53",
+      "at": "2026-11-16T16:31:12.147278Z"
+    },
+    {
+      "id": "strategy42:000000000490",
+      "sha256": "40228dc86bb52c0c16d27048b8320ffb5674921e0aca21c9c17b9fa54df8af7f",
+      "at": "2026-11-16T16:31:42.670509Z"
+    },
+    {
+      "id": "strategy42:000000000491",
+      "sha256": "8e89dd12d449ce1752c6881d0ac3d921852409a9b1cf3baf411be45a30e2d122",
+      "at": "2026-11-16T16:31:53.799732Z"
+    },
+    {
+      "id": "strategy42:000000000492",
+      "sha256": "14e82f457f67ea32c4905701c3a4045b74f086dcf8c95b1dc76a69cd212a41e4",
+      "at": "2026-11-16T16:32:05.350019Z"
+    },
+    {
+      "id": "strategy42:000000000493",
+      "sha256": "2971fd00020c812de8387eb4fbe4f229bd03633132352e820e17b950399456da",
+      "at": "2026-11-16T16:32:17.617398Z"
+    },
+    {
+      "id": "strategy42:000000000494",
+      "sha256": "b17c35e120bd6769913781eaba5aef9474e889113ef4090f7a54bff181e7cd7d",
+      "at": "2026-11-16T16:32:28.358574Z"
+    },
+    {
+      "id": "strategy42:000000000495",
+      "sha256": "350a80d035919c14211d8379158ce4d65be97208524998ebc317b4133f05edc3",
+      "at": "2026-11-16T16:32:40.967178Z"
+    },
+    {
+      "id": "strategy42:000000000496",
+      "sha256": "7c902974f04edca053b48e4e6634c9b87144e815927139ced75aee0efc398bd9",
+      "at": "2026-11-16T16:32:54.514576Z"
+    },
+    {
+      "id": "strategy42:000000000497",
+      "sha256": "5bb0f11e7a5e4c3f5bee5df6eaf7716f165889b97fd6c1bfca0cd04e762bdad9",
+      "at": "2026-11-16T16:33:05.719576Z"
+    },
+    {
+      "id": "strategy42:000000000498",
+      "sha256": "ee85e42e5360afe611c0e7b1d409104b1f3965b1dafdf12d830c5e918ba0a621",
+      "at": "2026-11-16T16:33:15.489635Z"
+    },
+    {
+      "id": "strategy42:000000000499",
+      "sha256": "347d23c62064d0042b55b1b2fbb9081766fe428123b28b8eac2922a12dda9eaf",
+      "at": "2026-11-16T16:33:31.724631Z"
+    },
+    {
+      "id": "strategy42:000000000500",
+      "sha256": "eaabe78c45366ec1f50d9457c2ec6648d83b0b811e4425f72f180f69cc5e536f",
+      "at": "2026-11-16T16:34:27.507096Z"
+    },
+    {
+      "id": "strategy42:000000000501",
+      "sha256": "8c4d8860ab01701d98e7d6687c9c592e42250d977e44834a33804af7f8d66d01",
+      "at": "2026-11-16T16:34:36.641025Z"
+    },
+    {
+      "id": "strategy42:000000000502",
+      "sha256": "bbd2a42a110ea658b1946c00a4cabc3ddf26ef2e61d0bdc4aa7a3bf61a441702",
+      "at": "2026-11-16T16:34:54.556814Z"
+    },
+    {
+      "id": "strategy42:000000000503",
+      "sha256": "878cb264bea73d74ed1b7b80b2518182b597dcc5dd9164d6909ce84053549ab7",
+      "at": "2026-11-16T16:35:17.270560Z"
+    },
+    {
+      "id": "strategy42:000000000504",
+      "sha256": "d3e515d9670a9e47acb4378bccbe741a477a9a72ab71fab13c18f248b8a087e4",
+      "at": "2026-11-16T16:38:13.182482Z"
+    },
+    {
+      "id": "strategy42:000000000505",
+      "sha256": "08abd73e01652ca796dce07cdd539134b165b352d84f1a123e270a94769b73de",
+      "at": "2026-11-16T16:45:34.312486Z"
+    },
+    {
+      "id": "strategy42:000000000506",
+      "sha256": "887da866181b0b81270c4b5c7dc238e483e869aa0d0a3be84b5df1e3be5c7ead",
+      "at": "2026-11-16T16:50:16.732410Z"
+    },
+    {
+      "id": "strategy42:000000000507",
+      "sha256": "de30fe6fe857b8163707a20bfc7a618dd116309aeb88434c2ead216055ff6cd2",
+      "at": "2026-11-16T16:53:10.965462Z"
+    },
+    {
+      "id": "strategy42:000000000508",
+      "sha256": "679efdcc7665cc6a728dd52b03722e801e7f04836fa58f105348be17ea02f536",
+      "at": "2026-11-16T17:11:31.887268Z"
+    },
+    {
+      "id": "strategy42:000000000509",
+      "sha256": "99b45deb4b30b91ddb87bac5034be26f3d1ed836e2c9ebe88a41a17400ef0025",
+      "at": "2026-11-16T17:18:41.101608Z"
+    },
+    {
+      "id": "strategy42:000000000510",
+      "sha256": "b565f24f0b80bbc13e10a585781a71aaedd2ec2badc36e4ba590bb7179ea5e3a",
+      "at": "2026-11-16T17:23:42.591293Z"
+    },
+    {
+      "id": "strategy42:000000000511",
+      "sha256": "0a03dfc1b95bc67aace5795db4f22935c4e29d433206c07e8dc2b5ee3b1c55d0",
+      "at": "2026-11-16T17:26:04.191270Z"
+    },
+    {
+      "id": "strategy42:000000000512",
+      "sha256": "41442347516c50d60e646e04cad88192b2b62a6ba167a95f8a35f59ab0751763",
+      "at": "2026-11-16T17:37:49.438613Z"
+    },
+    {
+      "id": "strategy42:000000000513",
+      "sha256": "7f7390caffd4915c2e8bc6a97109307790b413d4e6ef8105fda259bca97751d7",
+      "at": "2026-11-16T17:51:13.640261Z"
+    },
+    {
+      "id": "strategy42:000000000514",
+      "sha256": "9f2fe1fccfde735dca7ba0413d614bdf13964de4856ce8592fbc03fa2b332c5d",
+      "at": "2026-11-16T18:02:04.699270Z"
+    },
+    {
+      "id": "strategy42:000000000515",
+      "sha256": "15b1466a88a16318009bd7da3aa0758356701549d8055bd5e6ae0285014b456e",
+      "at": "2026-11-16T18:05:31.221032Z"
+    },
+    {
+      "id": "strategy42:000000000516",
+      "sha256": "1bf714d7ff6a4814930552568e3aa29f0e2a39a1c6451a1c9dfdbed6c385f417",
+      "at": "2026-11-16T18:09:14.187850Z"
+    },
+    {
+      "id": "strategy42:000000000517",
+      "sha256": "8a47ce248c4a0a1e9f9b60ed7a7c49d533020a83b8477fcef29c254fab8348b6",
+      "at": "2026-11-16T18:11:06.402412Z"
+    },
+    {
+      "id": "strategy42:000000000518",
+      "sha256": "9bed5a79c6c3962fde69d4e508844e9a3dc3230c521d6341cb9a0444380d2b91",
+      "at": "2026-11-16T18:37:16.329705Z"
+    },
+    {
+      "id": "strategy42:000000000519",
+      "sha256": "ceff4e4e79b871d1afac306e07641cda903867babfe377f1724ac7215b53f440",
+      "at": "2026-11-16T19:04:21.250006Z"
+    },
+    {
+      "id": "strategy42:000000000520",
+      "sha256": "f9e3fd2fbe965a0a02b23895a513513c4ad4f06b004cf772903efe671d62ea0e",
+      "at": "2026-11-16T19:05:27.677417Z"
+    },
+    {
+      "id": "strategy42:000000000521",
+      "sha256": "9393eaa574b03d3997f8189029b78455d77638ace961e8c04767889a1ad70856",
+      "at": "2026-11-16T19:18:30.174387Z"
+    },
+    {
+      "id": "strategy42:000000000522",
+      "sha256": "5506516b4167f0f63100b047e776337e949fffeafbcfc5e9a838570ffc29431b",
+      "at": "2026-11-16T19:21:00.607500Z"
+    },
+    {
+      "id": "strategy42:000000000523",
+      "sha256": "e876b7b05c707bfc9ff363b69b169d6348e57fc222b970e88504650336ebd00c",
+      "at": "2026-11-16T19:21:24.365122Z"
+    },
+    {
+      "id": "strategy42:000000000524",
+      "sha256": "9193943f14bab3c5517dc7bbb4b892d52bbaab30b6c5a84b80d41c34f9b7d84c",
+      "at": "2026-11-16T19:29:28.568948Z"
+    },
+    {
+      "id": "strategy42:000000000525",
+      "sha256": "864ca7e5be809c33e5b5d18e13499fa0c338daf5952401305cf305e0e8f76979",
+      "at": "2026-11-16T19:33:23.275436Z"
+    }
+  ],
+  "original_bytes_verified": 510808052,
+  "duration_seconds": 5.16499115107581,
+  "complete_at_snapshot": true,
+  "snapshot_end": {
+    "id": "strategy42:000000000525",
+    "sha256": "864ca7e5be809c33e5b5d18e13499fa0c338daf5952401305cf305e0e8f76979",
+    "at": "2026-11-16T19:33:23.275436Z"
+  },
+  "hold_comparison": {
+    "hold_native": "unresolved: no native payout proof in these original decisions; realized P/L unavailable",
+    "legacy_exit": "actual recorded executable modeled bid exits; no counterfactual missing books invented",
+    "other_exit_policies": "new frozen prospective matched-entry tournament; historical path coverage insufficient for an uncensored comparison"
+  }
+}
