@@ -1,0 +1,29 @@
+import hashlib,json,math,re,statistics
+from datetime import UTC,datetime
+from pathlib import Path
+root=Path('.planning/evidence/phase38-activation');rows=[json.loads(l) for l in (root/'observation.jsonl').read_text().splitlines()]
+assert rows and all(not r['critical'] for r in rows)
+result={'source_revision':'1342482fd9431f4e2e69d8788d864cb32fd1d4e9','ci_run':43820619710,'observation':json.load(open(root/'observation-result.json')),'first_sample_at':rows[0]['at'],'last_sample_at':rows[-1]['at'],'effective_counter_window_seconds':rows[-1]['elapsed_seconds']-rows[0]['elapsed_seconds'],'services':{},'rollback_executed':False,'stop_reset':False,'order_admission_resumed':False,'disk_free_bytes_final':json.load(open(root/'final-guard.json'))['disk_free_bytes']}
+def percentile(values,p):return sorted(values)[max(0,math.ceil(len(values)*p)-1)] if values else None
+for unit in rows[0]['services']:
+ data=[r['services'][unit] for r in rows];first,last=data[0],data[-1]
+ metrics=[d.get('connectivity') or (d.get('supplemental') or {}).get('transport') or {} for d in data]
+ rss=[d.get('rss_bytes',0) for d in data];lat=[d['health_latency_seconds'] for d in data if 'health_latency_seconds' in d]
+ age=[d['health']['last_ingestion_age_seconds'] for d in data if 'health' in d]
+ archive_first=next((d['archive'] for d in data if d.get('archive')),{});archive_last=next((d['archive'] for d in reversed(data) if d.get('archive')), {})
+ deltas={k:metrics[-1].get(k,0)-metrics[0].get(k,0) for k in ['messages','native_books_delivered','reconnects','queue_overflows','queue_backpressure_waits','queue_backpressure_seconds','queue_backpressure_timeouts','invalidations','out_of_order']}
+ duration=result['effective_counter_window_seconds']
+ record={'pid':last['MainPID'],'loaded_source':result['source_revision'],'automatic_restarts':int(last['NRestarts']),'new_oom_kills':last.get('memory.events',{}).get('oom_kill',0),'memory_limit_bytes':int(last['MemoryMax']),'rss_bytes':{'first':rss[0],'min':min(rss),'max':max(rss),'last':rss[-1]},'max_cgroup_bytes':max(int(d['MemoryCurrent']) for d in data),'ingestion_age_seconds':{'max':max(age),'last':age[-1]},'health_ok_samples':sum(d.get('health',{}).get('status')=='ok' for d in data),'health_degraded_samples':sum(d.get('health',{}).get('status')=='degraded' for d in data),'health_errors':[d['health_error'] for d in data if d.get('health_error')],'health_rtt_seconds':{'median':statistics.median(lat),'p95':percentile(lat,.95),'p99':percentile(lat,.99),'max':max(lat),'scope':'loopback HTTP round-trip including client/dispatch overhead, not direct event-loop lag'},'counter_deltas':deltas,'reconnects_per_hour':deltas['reconnects']*3600/duration,'messages_per_second':deltas['messages']/duration,'final_ws_connected':metrics[-1].get('ws_connected'),'final_fresh_books':metrics[-1].get('fresh_books'),'last_reconnect_reason':metrics[-1].get('last_reconnect_reason'),'peak_queue_depth':max(m.get('queue_peak_depth',0) for m in metrics),'consumer_max_seconds':max(m.get('consumer_max_seconds',0) for m in metrics),'archive':{'health':archive_last.get('health'),'growth_bytes':archive_last.get('usage_bytes',0)-archive_first.get('usage_bytes',0),'growth_bytes_per_second_observed':(archive_last.get('usage_bytes',0)-archive_first.get('usage_bytes',0))/duration,'final_usage_bytes':archive_last.get('usage_bytes'),'budget_bytes':archive_last.get('budget_bytes'),'new_sealed_segments':archive_last.get('sealed_segments',0)-archive_first.get('sealed_segments',0),'new_compressed_segments':archive_last.get('compressed_segments',0)-archive_first.get('compressed_segments',0),'cold_verification':archive_last.get('cold_verification')},'cpu_core_equivalents':(last.get('cpu.stat',{}).get('usage_usec',0)-first.get('cpu.stat',{}).get('usage_usec',0))/duration/1e6}
+ unit_short='reference' if unit=='neraium-poly-paper.service' else 'experimental';journal=[json.loads(l) for l in (root/(unit_short+'-journal.jsonl')).read_text().splitlines()]
+ messages=[r.get('MESSAGE','') for r in journal if str(r.get('_PID'))==last['MainPID']]
+ record['journal_checks']={'native_publisher_errors':sum('phase35_native_evidence_withheld' in m for m in messages),'sqlite_errors':sum(bool(re.search(r'sqlite3\.(?:OperationalError|DatabaseError)|database is locked|database disk image is malformed',m)) for m in messages),'generic_error_records':sum(' ERROR ' in m for m in messages)}
+ result['services'][unit]=record
+final=json.load(open(root/'final-guard.json'));assert final['safety_passed'];result['accounts']={n:{'cash':a['risk.sqlite']['account']['cash'],'realized_simulated_pnl':a['risk.sqlite']['account']['realized'],'kill_switch':bool(a['risk.sqlite']['account']['kill']),'positions':a['risk.sqlite']['positions'],'reservations':a['risk.sqlite']['reservations'],'orders':a['broker.sqlite']['orders'],'fills':a['risk.sqlite']['fills']} for n,a in final['accounts'].items()}
+result['journal_prefixes_preserved']={}
+before=json.load(open(root/'preflight.json'))
+import sqlite3
+for path,old in before['journals'].items():
+ db=sqlite3.connect(f'file:{Path(path).resolve()}?mode=ro',uri=True,timeout=3);table='records' if path.endswith('prospective.sqlite') else 'journal';row=db.execute(f'select chain from {table} where seq=?',(old['records'],)).fetchone();db.close();assert row and row[0]==old['head_sha256'];result['journal_prefixes_preserved'][path]=True
+result['new_segment_audit']={n:{'status':a['status'],'records_verified':a['records_verified'],'immutable_segments':sum(s['status']=='verified' for s in a['segments']),'active_excluded':[s['segment'] for s in a['segments'] if s['status']=='active_withheld'],'next_after':a['next_after']} for n,a in json.load(open(root/'archive-post.json')).items()}
+(root/'summary.json').write_text(json.dumps(result,sort_keys=True,indent=2)+'\n')
+print(json.dumps(result,sort_keys=True,indent=2))

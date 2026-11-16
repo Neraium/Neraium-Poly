@@ -1,0 +1,10 @@
+{
+  "basis": "new process launched from verified editable package; complete tracked application/config manifest matches CI-reviewed source; new connectivity schema observed",
+  "cmdline": "/home/ubuntu/Neraium-Poly/.venv/bin/python /home/ubuntu/Neraium-Poly/.venv/bin/neraium-poly paper-live --config /home/ubuntu/Neraium-Poly/config/paper-live.example.json ",
+  "manifest_matches": true,
+  "module_origin": "/home/ubuntu/Neraium-Poly/backend/neraium_poly/ops/live.py",
+  "new_api_metrics_confirmed": true,
+  "process_cwd": "/home/ubuntu/Neraium-Poly",
+  "reference_pid": "355170",
+  "source_revision": "1342482fd9431f4e2e69d8788d864cb32fd1d4e9"
+}

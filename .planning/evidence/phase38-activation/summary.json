@@ -1,0 +1,282 @@
+{
+  "accounts": {
+    "experimental-paper": {
+      "cash": 496.11522059829053,
+      "fills": 10,
+      "kill_switch": true,
+      "orders": 13,
+      "positions": 0,
+      "realized_simulated_pnl": -3.8847794017094013,
+      "reservations": 0
+    },
+    "paper-live": {
+      "cash": 500.0,
+      "fills": 0,
+      "kill_switch": false,
+      "orders": 0,
+      "positions": 0,
+      "realized_simulated_pnl": 0.0,
+      "reservations": 0
+    }
+  },
+  "ci_run": 43820619710,
+  "disk_free_bytes_final": 225733632000,
+  "effective_counter_window_seconds": 870.9977614521049,
+  "first_sample_at": "2026-11-16T08:02:07.578957+00:00",
+  "journal_prefixes_preserved": {
+    "data/experimental-paper/event-intelligence/domains/forecasts.sqlite": true,
+    "data/experimental-paper/event-intelligence/forecasts.sqlite": true,
+    "data/experimental-paper/event-intelligence/sports/prospective.sqlite": true
+  },
+  "last_sample_at": "2026-11-16T08:16:37.582218+00:00",
+  "limitations": [
+    "15-minute observation, not eight-hour or indefinite stability proof",
+    "four supplemental fail-closed backpressure timeouts/reconnects persist",
+    "three experimental degraded health samples; no three consecutive unhealthy samples",
+    "direct internal event-loop lag not instrumented; HTTP RTT is a proxy",
+    "research paired-recovery and outcome-readiness inventories hit existing bounds; guards not loosened"
+  ],
+  "local_journal_artifacts": {
+    "experimental-journal.jsonl": {
+      "bytes": 623829,
+      "location": ".planning/evidence/phase38-activation/experimental-journal.jsonl",
+      "scope": "local full system journal; compact derived checks committed",
+      "sha256": "182138be6499a6cefea1d3d92e31af89f4678d811b340ec152b381d3e831ae79"
+    },
+    "reference-journal.jsonl": {
+      "bytes": 279200,
+      "location": ".planning/evidence/phase38-activation/reference-journal.jsonl",
+      "scope": "local full system journal; compact derived checks committed",
+      "sha256": "b01f987a903ed95706cf2d6d3d8f7c302964ea9ef3b0195d2f054ab1cd107b5b"
+    }
+  },
+  "new_segment_audit": {
+    "experimental-paper": {
+      "active_excluded": [
+        "segment-00008605.sqlite"
+      ],
+      "immutable_segments": 9,
+      "next_after": "segment-00008605.sqlite",
+      "records_verified": 4838,
+      "status": "range_verified"
+    },
+    "paper-live": {
+      "active_excluded": [
+        "segment-00003497.sqlite"
+      ],
+      "immutable_segments": 8,
+      "next_after": "segment-00003497.sqlite",
+      "records_verified": 23931,
+      "status": "range_verified"
+    }
+  },
+  "observation": {
+    "configured_maximum_seconds": 900,
+    "elapsed_seconds": 900.0034520681947,
+    "maximum_authorized_seconds": 28800,
+    "order_admission_resumed": false,
+    "pids": {
+      "neraium-poly-experimental.service": "358172",
+      "neraium-poly-paper.service": "355170"
+    },
+    "samples": 30,
+    "status": "completed",
+    "stop_reset": false
+  },
+  "order_admission_resumed": false,
+  "research_withholding": {
+    "authority": "research-only guards remain enforced; no automatic promotion or threshold change",
+    "categories": {
+      "neraium_poly.experimental.runtime phase20_recovery_withheld": 1,
+      "neraium_poly.experimental.runtime phase28_volume_research_withheld": 27
+    },
+    "exceptions": {
+      "ValueError: bounded paired recovery snapshot required": 1,
+      "ValueError: bounded_outcome_readiness_inventory_required": 18,
+      "ValueError: fresh_primary_research_frame_required": 9
+    }
+  },
+  "rollback_executed": false,
+  "services": {
+    "neraium-poly-experimental.service": {
+      "archive": {
+        "budget_bytes": 161061273600,
+        "cold_verification": {
+          "enabled": true,
+          "last_error": null,
+          "last_scan_at": "2026-11-16T08:16:12.936548+00:00",
+          "last_segment": "segment-00008603.sqlite",
+          "last_success_at": "2026-11-16T08:14:49.155493+00:00",
+          "minimum_scan_interval_seconds": 60,
+          "scope": "process-local progress; immutable proof presence is reported separately"
+        },
+        "final_usage_bytes": 54681534128,
+        "growth_bytes": 31368446,
+        "growth_bytes_per_second_observed": 36014.38188279995,
+        "health": "ok",
+        "new_compressed_segments": 5,
+        "new_sealed_segments": 5
+      },
+      "automatic_restarts": 0,
+      "consumer_max_seconds": 3.312731677200645,
+      "counter_deltas": {
+        "invalidations": 926,
+        "messages": 11479,
+        "native_books_delivered": 15415,
+        "out_of_order": 49,
+        "queue_backpressure_seconds": 10.446948972530663,
+        "queue_backpressure_timeouts": 4,
+        "queue_backpressure_waits": 302,
+        "queue_overflows": 4,
+        "reconnects": 4
+      },
+      "cpu_core_equivalents": 0.9866388147396578,
+      "final_fresh_books": 11,
+      "final_ws_connected": true,
+      "health_degraded_samples": 3,
+      "health_errors": [],
+      "health_ok_samples": 27,
+      "health_rtt_seconds": {
+        "max": 0.24594001984223723,
+        "median": 0.026618091855198145,
+        "p95": 0.20772297587245703,
+        "p99": 0.24594001984223723,
+        "scope": "loopback HTTP round-trip including client/dispatch overhead, not direct event-loop lag"
+      },
+      "ingestion_age_seconds": {
+        "last": 11.373516,
+        "max": 37.516527
+      },
+      "journal_checks": {
+        "generic_error_records": 28,
+        "native_publisher_errors": 0,
+        "sqlite_errors": 0
+      },
+      "last_reconnect_reason": "market queue backpressure timeout",
+      "loaded_source": "1342482fd9431f4e2e69d8788d864cb32fd1d4e9",
+      "max_cgroup_bytes": 2077413376,
+      "memory_limit_bytes": 2147483648,
+      "messages_per_second": 13.179138349176132,
+      "new_oom_kills": 0,
+      "peak_queue_depth": 64,
+      "pid": "358172",
+      "reconnects_per_hour": 16.532763501013704,
+      "rss_bytes": {
+        "first": 814870528,
+        "last": 989253632,
+        "max": 1181753344,
+        "min": 720457728
+      }
+    },
+    "neraium-poly-paper.service": {
+      "archive": {
+        "budget_bytes": 161061273600,
+        "cold_verification": {
+          "enabled": true,
+          "last_error": null,
+          "last_scan_at": "2026-11-16T08:16:14.983880+00:00",
+          "last_segment": "segment-00003495.sqlite",
+          "last_success_at": "2026-11-16T08:14:52.190506+00:00",
+          "minimum_scan_interval_seconds": 60,
+          "scope": "process-local progress; immutable proof presence is reported separately"
+        },
+        "final_usage_bytes": 50587016916,
+        "growth_bytes": 46913309,
+        "growth_bytes_per_second_observed": 53861.57241298456,
+        "health": "ok",
+        "new_compressed_segments": 3,
+        "new_sealed_segments": 3
+      },
+      "automatic_restarts": 0,
+      "consumer_max_seconds": 0.14246347080916166,
+      "counter_deltas": {
+        "invalidations": 126522,
+        "messages": 350105,
+        "native_books_delivered": 570826,
+        "out_of_order": 335,
+        "queue_backpressure_seconds": 0,
+        "queue_backpressure_timeouts": 0,
+        "queue_backpressure_waits": 0,
+        "queue_overflows": 0,
+        "reconnects": 1
+      },
+      "cpu_core_equivalents": 0.36225446489548785,
+      "final_fresh_books": 257,
+      "final_ws_connected": true,
+      "health_degraded_samples": 0,
+      "health_errors": [],
+      "health_ok_samples": 30,
+      "health_rtt_seconds": {
+        "max": 0.04209104599431157,
+        "median": 0.017080371268093586,
+        "p95": 0.038540199398994446,
+        "p99": 0.04209104599431157,
+        "scope": "loopback HTTP round-trip including client/dispatch overhead, not direct event-loop lag"
+      },
+      "ingestion_age_seconds": {
+        "last": 0.08439,
+        "max": 0.097964
+      },
+      "journal_checks": {
+        "generic_error_records": 0,
+        "native_publisher_errors": 0,
+        "sqlite_errors": 0
+      },
+      "last_reconnect_reason": "ConnectionClosedError",
+      "loaded_source": "1342482fd9431f4e2e69d8788d864cb32fd1d4e9",
+      "max_cgroup_bytes": 1072664576,
+      "memory_limit_bytes": 1073741824,
+      "messages_per_second": 401.95855316127796,
+      "new_oom_kills": 0,
+      "peak_queue_depth": 1,
+      "pid": "355170",
+      "reconnects_per_hour": 4.133190875253426,
+      "rss_bytes": {
+        "first": 391892992,
+        "last": 351072256,
+        "max": 451526656,
+        "min": 351072256
+      }
+    }
+  },
+  "source_attestations": {
+    "experimental": {
+      "basis": "new process launched from verified editable package; tracked application/config files match CI-reviewed source; new runtime health schema observed",
+      "cmdline": "/home/ubuntu/Neraium-Poly/.venv/bin/python /home/ubuntu/Neraium-Poly/.venv/bin/neraium-poly experimental-paper --config /home/ubuntu/Neraium-Poly/config/experimental-paper.example.json ",
+      "experimental_pid": "358172",
+      "manifest_matches": true,
+      "new_public_feed_diagnostics_confirmed": true,
+      "process_cwd": "/home/ubuntu/Neraium-Poly",
+      "source_revision": "1342482fd9431f4e2e69d8788d864cb32fd1d4e9"
+    },
+    "reference": {
+      "basis": "new process launched from verified editable package; complete tracked application/config manifest matches CI-reviewed source; new connectivity schema observed",
+      "cmdline": "/home/ubuntu/Neraium-Poly/.venv/bin/python /home/ubuntu/Neraium-Poly/.venv/bin/neraium-poly paper-live --config /home/ubuntu/Neraium-Poly/config/paper-live.example.json ",
+      "manifest_matches": true,
+      "module_origin": "/home/ubuntu/Neraium-Poly/backend/neraium_poly/ops/live.py",
+      "new_api_metrics_confirmed": true,
+      "process_cwd": "/home/ubuntu/Neraium-Poly",
+      "reference_pid": "355170",
+      "source_revision": "1342482fd9431f4e2e69d8788d864cb32fd1d4e9"
+    }
+  },
+  "source_revision": "1342482fd9431f4e2e69d8788d864cb32fd1d4e9",
+  "startup": {
+    "experimental": {
+      "first_api_seen_at": "2026-11-16T07:58:34.174343+00:00",
+      "pid": "358172",
+      "ready_at": "2026-11-16T07:59:27.945960+00:00",
+      "systemd_started_at": "2026-11-16T07:51:55Z"
+    },
+    "reference": {
+      "api_listening_at": "2026-11-16T07:49:22Z",
+      "first_api_seen_at": "2026-11-16T07:49:23.231655+00:00",
+      "pid": "355170",
+      "ready_at": "2026-11-16T07:50:06.191918+00:00",
+      "scope": "startup including archive recovery, not a separately instrumented archive-only duration",
+      "start_to_listener_seconds": 533,
+      "systemd_started_at": "2026-11-16T07:40:29Z"
+    }
+  },
+  "stop_reset": false
+}
