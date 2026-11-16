@@ -196,8 +196,8 @@ class VolumeResearch:
             from neraium_poly.research.phase29.alignment import classify_alignment
             report['alignment']=classify_alignment(report['findings'],frame,as_of=decision,
                 subscribed_tokens=frame.connectivity.get('research_subscribed_token_ids',()))
-            from neraium_poly.research.phase29.outcomes import maturity_report
-            report['source_maturity']=maturity_report(entries,as_of=decision)
+            from neraium_poly.research.phase29.outcomes import projected_maturity_report
+            report['source_maturity']=projected_maturity_report(entries,as_of=decision)
 
         if report.get('trading_authority') is not False or report.get('research_only') is not True:raise ValueError('volume authority boundary rejected')
         report['source_deferred']=deferred;report['forecast_refresh_rejections']=refresh_rejections

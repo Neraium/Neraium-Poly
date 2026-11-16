@@ -102,6 +102,18 @@ def maturity_report(entries, *, as_of):
             'scope': 'current source-replayed forecast inventory; maturity never implies outcome finality or independence', **AUTHORITY}
 
 
+def projected_maturity_report(entries, *, as_of):
+    """Projection rejections/outcomes are not forecast-inventory observations.
+
+    The existing 10,000 input-forecast limit and all provenance/finality checks
+    remain intact. The caller supplies the already bounded, verified projection;
+    filtering is lazy and never materializes another full inventory.
+    """
+    forecasts=(entry for entry in entries if not isinstance(entry,dict)
+               or entry.get('type') in (None,'forecast'))
+    return maturity_report(forecasts,as_of=as_of)
+
+
 def native_resolution_diagnostics(payload, *, condition_id):
     """Explain why a public response cannot pass the existing native protocol.
 

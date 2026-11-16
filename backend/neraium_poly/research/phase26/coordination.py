@@ -40,10 +40,11 @@ class Inputs:
     def __init__(self,store,*,clock,can_write,watcher=None):
         self.store,self.clock,self.can_write=store,clock,can_write
         self._io_gate=asyncio.Lock();self._closing=False;self._close_task=None
+        self._sample_wake=asyncio.Event();self._sample_task=None;self._sample_error=None
         self.counts=Counter();self.last_sample={};self.last_global=None;self.last_preflight=None;self.rejections={}
         policy={'version':'phase26-causal-inputs-v1','code_sha256':digest([Path(__file__).read_text(),Path(__file__).with_name('books.py').read_text(),(Path(__file__).parent.parent/'phase29'/'alignment.py').read_text(),(Path(__file__).parent.parent/'phase34'/'selection.py').read_text()]),
                 'native_book_max_age_seconds':15,'max_spread':.05,'model_interval_seconds':300,
-                'record_sampling':'qualified books at most one/token/60seconds and one/second globally; selected books also preserved in forecasts',
+                'record_sampling':'coalesced transport notifications; fresh authoritative cache sampled at most one/token/60seconds and one/second globally; selected books also preserved in forecasts',
                 'sports_check_after_start_hours':1,'finality_checks_relaxed':False,'primary_collection_duplicated':False,'max_supplemental_tokens':32,
                 'supplemental_selection':'all supported domains; bounded diverse parent-first; retained forecasts then weather same-parent central bins',
                 'synchronous_io':'one shielded worker at a time; stream lifecycle remains on original event loop',
@@ -56,7 +57,37 @@ class Inputs:
             value=existing if isinstance(existing,dict) else json.loads(existing[1])
             if value.get("policy")!=policy:raise ValueError("research input policy binding mismatch")
         self.policy_id=identity
-        self.watcher=watcher or SupplementalBooks(clock=clock,on_book=self.on_book)
+        self.watcher=watcher or SupplementalBooks(clock=clock,on_book=self.notify_book)
+
+    def notify_book(self,book):
+        """Coalesce notifications without another book cache or archive I/O.
+
+        Every native update still passes through the authoritative feed cache.
+        Notifications are sampling opportunities, never durable promises.
+        """
+        if self._closing:return
+        self.counts['transport_notifications']+=1
+        if self._sample_wake.is_set():self.counts['coalesced_notifications']+=1
+        self._sample_wake.set()
+        if self._sample_task is None:self._sample_task=asyncio.create_task(self._sample_loop())
+
+    async def _sample_loop(self):
+        while not self._closing:
+            await self._sample_wake.wait();self._sample_wake.clear()
+            try:
+                now=at(self.clock())
+                books=self.watcher.snapshot()
+                eligible=[b for b in books if b.token_id not in self.last_sample
+                    or now-self.last_sample[b.token_id]>=timedelta(seconds=60)]
+                book=min(eligible,key=lambda b:(self.last_sample.get(b.token_id,now-timedelta(days=1)),b.token_id)) if eligible else None
+                del books,eligible
+                if book is not None and await self.on_book(book):self._sample_error=None
+            except asyncio.CancelledError:raise
+            except Exception as error:  # noqa: BLE001 - failed evidence withholds qualification, never transport continuity
+                self._sample_error=f'{type(error).__name__}:{str(error)[:160]}'
+                self.counts['sampling_failures']+=1
+            finally:book=None
+            await asyncio.sleep(1)
 
     async def _sync_job(self,function,*args,**kwargs):
         # No queued executor jobs: one bounded synchronous operation owns this
@@ -93,6 +124,7 @@ class Inputs:
             source=book.source,book=raw,counts={'sampled':1}))
         self.last_global=now;self.last_sample[book.token_id]=now
         self.last_sample=dict(list(self.last_sample.items())[-64:]);self.counts['archived_samples']+=1
+        return True
 
     def _selection(self,frame,base_tokens,forecast_tokens):
         raw=frame.model_dump(mode='json') if hasattr(frame,'model_dump') else frame
@@ -102,6 +134,7 @@ class Inputs:
         return adapters,selected,selection
 
     async def prepare(self,frame,*,base_tokens,wait=False,forecast_tokens=()):
+        if self._sample_error:raise ValueError('research_input_sampling_unavailable')
         adapters,selected,selection=await self._sync_job(self._selection,frame,base_tokens,forecast_tokens)
         if self._closing:raise ValueError('research input coordinator closed')
         self.selection=selection
@@ -113,6 +146,7 @@ class Inputs:
         return await self._sync_job(self.qualify,frame,adapters=adapters,supplemental_books=supplemental)
 
     def qualify(self,frame,*,adapters=None,supplemental_books=None):
+        if self._sample_error:raise ValueError('research_input_sampling_unavailable')
         raw=frame.model_dump(mode='json') if hasattr(frame,'model_dump') else dict(frame)
         now=at(self.clock());adapters=adapters or modules();books={b['token_id']:OrderBookSnapshot.model_validate(b) for b in raw['books']}
         books.update({b.token_id:b for b in (self.watcher.snapshot() if supplemental_books is None else supplemental_books)})
@@ -136,10 +170,17 @@ class Inputs:
             'timestamp':now.isoformat(),'available_at':now.isoformat(),'markets':markets,'books':accepted})
 
     def status(self):
-        return {'watcher':self.watcher.status(),'counts':dict(self.counts),'last_preflight':self.last_preflight,'preflight_rejections':self.rejections,
+        return {'watcher':self.watcher.status(),'counts':dict(self.counts),'sampling_error':self._sample_error,
+                'sampling_task_active':self._sample_task is not None and not self._sample_task.done(),
+                'sampling_queue':'one coalesced wake bit; authoritative native cache only',
+                'last_preflight':self.last_preflight,'preflight_rejections':self.rejections,
                 'selection':getattr(self,'selection',None),'policy_id':self.policy_id,'counter_scope':'process-local sampling/transport; durable observation records retained','scope':'sampled supplementary books and filtered research inputs; native source times and original model gates unchanged','trading_authority':False}
     async def _close(self):
-        try:await self.watcher.close()
+        try:
+            if self._sample_task is not None:
+                self._sample_task.cancel()
+                await asyncio.gather(self._sample_task,return_exceptions=True)
+            await self.watcher.close()
         finally:
             async with self._io_gate:pass  # Drain even if transport close fails.
 
