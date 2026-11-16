@@ -1,0 +1,9 @@
+# Phase 38 durable recovery findings — 2026-11-16
+
+Validated source `1342482`, CI `43820619710` succeeded; evidence commit `6f998b8`; branch `phase38-recovery`. Details and deployment conditions: `.planning/handoffs/phase38.md`, measured evidence `.planning/evidence/phase38/summary.json`.
+
+- Experimental feed depends on the reference service's loopback `/api/market-frame`. External CLOB HTTP success does not establish this dependency's health. Reference archive recovery took 46m27s before its listener returned; experimental stop remains latched.
+- Recovery can stream ordered source/catalog cursors while validating all hashes and metadata, eliminating per-record random catalog lookups. Active crash recovery still belongs to the exclusive writer. The offline audit verified 13,859,271 records / 12,062 immutable sources / 12,060 compressed copies with 141.3-MiB peak verifier RSS; excluded active and later-written state explicitly.
+- High RSS can reflect libc free-arena retention: measured reference free arena reserve 837.5MB versus 104.4MB allocated. Thresholded reclamation and bounded streaming are implemented; deployed OOM elimination is not yet proven. Preserve existing resource limits.
+- Cancelling `asyncio.to_thread` does not stop its underlying SQLite writer. Drain the real thread task before releasing serial research gates/source locks; the blocked-publisher regression reproduced this defect.
+- Source passed 2,325 backend tests, Ruff, build and five browser tests. No new real or simulated trading profit established. No deployment/restart/stop reset performed; subsequent deployment and controlled observation require separate explicit owner authorization.
