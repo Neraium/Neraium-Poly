@@ -180,6 +180,7 @@ class ExperimentalRuntime:
             self.phase20_error = None
             if config.phase20_ab_research_enabled:
                 from neraium_poly.research.phase20.continuous import ProspectiveABResearch
+                from neraium_poly.research.phase39.recovery import PairedRecoveryStore
 
                 try:
                     if self.phase18 is None:
@@ -187,7 +188,8 @@ class ExperimentalRuntime:
                     hashes = {f["model_sha256"] for f in self.phase18.state["pending"].values()}
                     if len(hashes) > 1:
                         raise ValueError("one native replayable baseline model identity required")
-                    self.phase20 = ProspectiveABResearch(self.events, baseline_model_sha256=hashes.pop() if hashes else None,
+                    paired_store=PairedRecoveryStore(self.events,clock=self.clock,can_write=self._budget_ok)
+                    self.phase20 = ProspectiveABResearch(paired_store, baseline_model_sha256=hashes.pop() if hashes else None,
                         clock=self.clock, can_write=self._budget_ok)
                 except Exception as error:
                     self.phase20_error = f"{type(error).__name__}:{str(error)[:160]}"

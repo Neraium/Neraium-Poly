@@ -1,0 +1,37 @@
+F..........                                                              [100%]
+=================================== FAILURES ===================================
+__ test_over_64mib_ignored_context_streams_without_changing_frozen_experiment __
+
+tmp_path = PosixPath('/tmp/pytest-of-ubuntu/pytest-2454/test_over_64mib_ignored_contex0')
+
+    async def test_over_64mib_ignored_context_streams_without_changing_frozen_experiment(tmp_path):
+        store=EventStore(tmp_path/'fixture.sqlite')
+        try:
+            clock,research,original=await setup(store)
+            for i in range(80):ignored(store,original,clock,i,'x'*(900*1024))
+            with pytest.raises(ValueError,match='bounded paired recovery snapshot'):
+                ProspectiveABResearch(store,baseline_model_sha256=None,clock=clock)
+            clock.now+=timedelta(minutes=5)
+            recovered=ProspectiveABResearch(PairedRecoveryStore(store,clock=clock,can_write=lambda:True),baseline_model_sha256=None,clock=clock)
+            assert recovered.code_sha256==research.code_sha256
+            assert recovered.experiment==research.experiment
+            assert recovered.summary()['observations']==recovered.summary()['withheld']==1
+            assert recovered.summary()['paired']==0
+            assert recovered.summary()['rejections']=={'missed_timely_enrollment_after_recovery':1}
+            audit=store.latest('PairedRecoveryAudit',1)[0]
+            assert audit['result']['verified_rows']==81 and audit['result']['ignored_non_forecasts']==80
+            assert audit['result']['source_bytes_verified']>64*1024**2
+            assert audit['result']['retained_serialized_bytes']<64*1024**2
+            assert not audit['trading_authority'] and audit['result']['scan_complete']
+            assert store.get(original['id'])[1]  # Original still present, unchanged.
+            again=ProspectiveABResearch(PairedRecoveryStore(store,clock=clock,can_write=lambda:True),baseline_model_sha256=None,clock=clock)
+            assert again.state==recovered.state
+>           assert store.count(kind='PairedForecastStudy')==3
+E           AssertionError: assert 2 == 3
+E            +  where 2 = count(kind='PairedForecastStudy')
+E            +    where count = <neraium_poly.data.store.EventStore object at 0x77ba38f36fc0>.count
+
+tests/test_phase39_recovery.py:46: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_phase39_recovery.py::test_over_64mib_ignored_context_streams_without_changing_frozen_experiment
+1 failed, 10 passed in 9.90s

@@ -1,0 +1,30 @@
+.F                                                                       [100%]
+=================================== FAILURES ===================================
+______ test_managed_segments_use_existing_hash_identity_and_time_verifier ______
+
+tmp_path = PosixPath('/tmp/pytest-of-ubuntu/pytest-2456/test_managed_segments_use_exis0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7c67b17e1880>
+
+    async def test_managed_segments_use_existing_hash_identity_and_time_verifier(tmp_path,monkeypatch):
+        store=managed(tmp_path/'events.sqlite')
+        try:
+>           clock,research,original=await setup(store)
+                                    ^^^^^^^^^^^^^^^^^^
+
+tests/test_phase39_recovery.py:92: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+store = <neraium_poly.data.segmented.ManagedEventStore object at 0x7c67b13ddbe0>
+
+    async def setup(store):
+        clock = Clock()
+        prior = IndependentEventResearch(store, clock=clock, collector=collect)
+        await prior.step(frame(clock))
+>       original = store.latest('EventProbabilityStudy', 1)[0]
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       IndexError: list index out of range
+
+tests/test_phase20_continuous.py:16: IndexError
+=========================== short test summary info ============================
+FAILED tests/test_phase39_recovery.py::test_managed_segments_use_existing_hash_identity_and_time_verifier
+1 failed, 1 passed in 2.37s
