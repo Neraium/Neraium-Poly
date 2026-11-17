@@ -193,7 +193,11 @@ def test_dashboard_route_tracks_original_reads_and_recovers_fail_closed(setup,mo
         }
 
     publish(receipt)
-    assert client.get('/api/shadow-research').json()['status'] == 'fresh'
+    first = client.get('/api/shadow-research').json()
+    second = client.get('/api/shadow-research').json()
+    assert first['status'] == second['status'] == 'fresh'
+    assert first['freshness_trace'] == second['freshness_trace']
+    assert sampler.status()['attempts'] == 1
     health['status'] = 'degraded'
     sampler.observe()
     assert client.get('/api/shadow-research').json()['status'] == 'stale'

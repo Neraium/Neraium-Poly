@@ -39,6 +39,35 @@ def _sha(path):
     return result.hexdigest()
 
 
+def _file_identity(metadata):
+    return (
+        metadata.st_dev, metadata.st_ino, metadata.st_size,
+        metadata.st_mtime_ns, metadata.st_ctime_ns,
+    )
+
+
+def _immutable_identity(path):
+    metadata = path.stat(follow_symlinks=False)
+    if not stat.S_ISREG(metadata.st_mode):
+        raise ValueError("immutable archive source changed")
+    return _file_identity(metadata)
+
+
+class _HashedInput:
+    """Hash the exact compressed bytes consumed by gzip's sequential reader."""
+
+    def __init__(self, stream):
+        self.stream = stream
+        self.digest = hashlib.sha256()
+        self.length = 0
+
+    def read(self, size=-1):
+        chunk = self.stream.read(size)
+        self.digest.update(chunk)
+        self.length += len(chunk)
+        return chunk
+
+
 def _sync_dir(path):
     fd = os.open(path, os.O_RDONLY | os.O_DIRECTORY)
     try:
@@ -424,16 +453,25 @@ class ManagedEventStore:
                 wal = Path(str(path) + "-wal")
                 if wal.exists() and wal.stat().st_size:
                     raise ValueError("immutable archive has an uncheckpointed writer")
+            verified_identity = None
             if row["status"] in {"sealed", "legacy"}:
-                if path.stat().st_size != row["raw_size"] or _sha(path) != row["raw_sha"]:
+                verified_identity = _immutable_identity(path)
+                if verified_identity[2] != row["raw_size"] or _sha(path) != row["raw_sha"]:
                     raise ValueError("immutable archive source changed")
             elif row["status"] != "active":
                 raise ValueError("invalid archive segment state")
             total = self._index_segment(path, name)
+            if verified_identity is not None and _immutable_identity(path) != verified_identity:
+                raise ValueError("immutable archive source changed during recovery")
             if name != "legacy" and (row["status"] == "sealed" or manifest_path.exists()):
                 if not manifest_path.exists():
                     raise ValueError("sealed archive manifest missing")
-                actual = self._manifest(name, digest=_sha(path), size=path.stat().st_size, records=total)
+                # The owner already hashed this exact regular file. Device,
+                # inode, size, mtime and ctime bind its identity across replay.
+                # An interrupted active-to-sealed transition still needs a hash.
+                raw_digest = row["raw_sha"] if verified_identity is not None else _sha(path)
+                raw_size = verified_identity[2] if verified_identity is not None else path.stat().st_size
+                actual = self._manifest(name, digest=raw_digest, size=raw_size, records=total)
                 if self._read_manifest(manifest_path) != actual:
                     raise ValueError("immutable archive manifest changed")
                 if row["status"] == "active":
@@ -505,14 +543,33 @@ class ManagedEventStore:
 
     def _verify_compressed(self, row):
         target = Path(str(self._source(row["name"])) + ".gz")
-        if not target.is_file() or target.is_symlink() or _sha(target) != row["gzip_sha"]:
+        if not target.is_file() or target.is_symlink():
             raise ValueError("corrupt compressed archive copy")
         digest = hashlib.sha256()
         length = 0
-        with gzip.open(target, "rb") as handle:
-            for chunk in iter(lambda: handle.read(CHUNK), b""):
-                digest.update(chunk)
-                length += len(chunk)
+        # Hash the encoded and decoded streams from the same file descriptor.
+        # Only a complete stream matching both immutable digests can pass.
+        fd = os.open(target, os.O_RDONLY | os.O_NOFOLLOW)
+        with os.fdopen(fd, "rb") as stream:
+            metadata = os.fstat(stream.fileno())
+            if not stat.S_ISREG(metadata.st_mode) or metadata.st_size != row["gzip_size"]:
+                raise ValueError("corrupt compressed archive copy")
+            source = _HashedInput(stream)
+            try:
+                with gzip.GzipFile(fileobj=source, mode="rb") as handle:
+                    for chunk in iter(lambda: handle.read(CHUNK), b""):
+                        digest.update(chunk)
+                        length += len(chunk)
+                        if length > row["raw_size"]:
+                            raise ValueError("compressed archive roundtrip mismatch")
+            except (OSError, EOFError) as error:
+                raise ValueError("corrupt compressed archive copy") from error
+            if (
+                source.length != row["gzip_size"]
+                or source.digest.hexdigest() != row["gzip_sha"]
+                or _immutable_identity(target) != _file_identity(metadata)
+            ):
+                raise ValueError("corrupt compressed archive copy")
         if digest.hexdigest() != row["raw_sha"] or length != row["raw_size"]:
             raise ValueError("compressed archive roundtrip mismatch")
 
@@ -550,6 +607,7 @@ class ManagedEventStore:
             self._publish_compression(temporary, target)
         verified = dict(row)
         verified["gzip_sha"] = _sha(target)
+        verified["gzip_size"] = target.stat().st_size
         self._verify_compressed(verified)
         if temporary.exists():
             if temporary.is_symlink():

@@ -243,3 +243,38 @@ def test_open_sqlite_writer_and_symlinked_cache_are_rejected(tmp_path):
     alias.symlink_to(target, target_is_directory=True)
     with pytest.raises(ValueError, match="symlinked"):
         cold.ColdSegmentReader(alias, min_free_bytes=0)
+
+
+def test_warm_recovery_rejects_encoded_hash_change_even_with_same_decoded_bytes(tmp_path):
+    directory, rows, _ = fixture_archive(tmp_path)
+    encoded = directory / "events-segments" / (rows[0]["name"] + ".gz")
+    original = encoded.read_bytes()
+    changed = bytearray(original)
+    changed[4] ^= 1  # Gzip MTIME header changes without changing decoded data.
+    encoded.write_bytes(changed)
+    with pytest.raises(ValueError, match="corrupt compressed archive copy"):
+        ManagedEventStore(directory / "events.sqlite", segment_bytes=4096,
+                          budget_bytes=32 * 1024**2, min_free_bytes=0)
+    assert encoded.read_bytes() == changed
+
+
+def test_warm_recovery_rejects_raw_mutation_during_replay(tmp_path, monkeypatch):
+    directory, rows, _ = fixture_archive(tmp_path)
+    watched = directory / "events-segments" / rows[0]["name"]
+    index = ManagedEventStore._index_segment
+
+    def indexed_then_mutated(self, path, name=None):
+        count = index(self, path, name)
+        if path == watched:
+            metadata = path.stat()
+            with path.open("r+b") as stream:
+                byte = stream.read(1)
+                stream.seek(0)
+                stream.write(bytes([byte[0] ^ 1]))
+            os.utime(path, ns=(metadata.st_atime_ns, metadata.st_mtime_ns))
+        return count
+
+    monkeypatch.setattr(ManagedEventStore, "_index_segment", indexed_then_mutated)
+    with pytest.raises(ValueError, match="immutable archive source changed during recovery"):
+        ManagedEventStore(directory / "events.sqlite", segment_bytes=4096,
+                          budget_bytes=32 * 1024**2, min_free_bytes=0)

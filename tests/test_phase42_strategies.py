@@ -204,7 +204,7 @@ def test_controller_persists_original_source_bindings_for_restart_settlement(set
     assert recovered.profiles.state==c.profiles.state
 
 
-def test_trader_desk_cards_preserve_decisions_without_duplicate_orders(setup):
+def test_trader_desk_cards_preserve_decisions_without_duplicate_orders(setup, monkeypatch):
     from neraium_poly.research.phase42.desk import publish
     x,clock,_m,_b,_f,frame,fees,store,_risk=setup;x.step(frame,fees)
     report=publish(store,x,x.report(),clock[0]);cards=report['recent_decisions']
@@ -213,6 +213,10 @@ def test_trader_desk_cards_preserve_decisions_without_duplicate_orders(setup):
     assert report['positions']==[] and report['unfilled_orders']
     projected={}
     publish(store,x,x.report(),clock[0],projected=projected)
+    def forbid_redecode(_):
+        raise AssertionError("unchanged archived batch was decoded again")
+
+    monkeypatch.setattr("neraium_poly.research.phase42.desk.unpack_checkpoint", forbid_redecode)
     again=publish(store,x,x.report(),clock[0],projected=projected)
     assert projected['legacy'] is x.last and again['recent_decisions']==cards
 
