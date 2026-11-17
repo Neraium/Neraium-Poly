@@ -3,6 +3,7 @@ import asyncio
 from collections import Counter
 from datetime import timedelta
 from pathlib import Path
+from time import perf_counter
 
 from neraium_poly.contracts import Record
 from neraium_poly.research.phase14.relationships import digest
@@ -45,6 +46,7 @@ class Controller:
         self.panel=Panel(store,clock,can_write)
         self.report=None;self.current_forecasts={}
     def tick(self,frame,fees,*,proofs=None,frame_provider=None):
+        began=perf_counter();stages={}
         now=at(self.clock())
         if self.next_sources is None or now>=self.next_sources:
             from neraium_poly.research.phase42.sources import forecast_studies
@@ -83,14 +85,18 @@ class Controller:
             declared=at(__import__('json').loads(self.store.get(self.profiles.identity)[1])['available_at'])
             self.profiles.enroll([v['forecast'] for v in cohort.values() if at(v['forecast']['timestamp'])>=declared and at(v['forecast']['event_end_time'])>now],verifier=checked)
             self.next_sources=now+timedelta(seconds=60)
+        stages['source_inventory_replay_enrollment']=perf_counter()-began;part=perf_counter()
         if frame_provider is not None:frame=frame_provider()
+        stages['reference_snapshot_merge']=perf_counter()-part;part=perf_counter()
         self.admitted_frame_available_at=frame.available_at.isoformat()
         self.engine.step(frame,fees,source_forecasts=self.current_forecasts);self.profiles.step(frame,fees)
         if self.challenger.needs_quotes():self.challenger.step(frame,fees,source_forecasts=self.current_forecasts)
+        stages['legacy_and_profile_processing']=perf_counter()-part;part=perf_counter()
         exploratory_frame=frame_provider() if frame_provider is not None else frame
         self.explorer.step(exploratory_frame,fees,source_forecasts=self.current_forecasts)
         self.panel.register(self.current_forecasts,exploratory_frame)
         self.program.register(self.current_forecasts,self.verified_refs,exploratory_frame,self.engine.state['forecasts'],self.engine.state['labels'])
+        stages['active_candidate_evaluation']=perf_counter()-part;part=perf_counter()
         if self.next_outcomes is None or now>=self.next_outcomes:
             # Resolve only a bounded matured inventory. Original study IDs survive restart.
             attempts={}
@@ -98,16 +104,10 @@ class Controller:
             monitoring=watch47(self.program,now);watched={(v['forecast']['market_id'],v['forecast']['token_id'],v['forecast']['rules_sha256']) for v in monitoring.values()}
             due=sorted((fid for fid,f in self.engine.state['forecasts'].items() if (at(f['event_end_time'])<=now or (f['market_id'],f['token_id'],f['rules_sha256']) in watched) and fid not in self.engine.state['labels']),
                 key=lambda fid:(attempts.get(fid,''),fid))
-            native_bound={};verified_studies=set()
+            native_bound={}
             for fid in due:
                 binding=self.bindings.get(fid)
                 if not binding:continue
-                if binding['study_id'] not in verified_studies:
-                    original=self.store.get(binding['study_id'])
-                    if not original:raise ValueError('original settlement study missing')
-                    if len(original[1].encode())>16*1024**2:raise ValueError('native source study budget withheld')
-                    if digest(__import__('json').loads(original[1]))!=binding['study_sha256']:raise ValueError('settlement original study hash mismatch')
-                    verified_studies.add(binding['study_id'])
                 f=self.engine.state['forecasts'][fid]
                 if digest(f)!=binding['forecast_sha256']:raise ValueError('settlement original forecast hash mismatch')
                 native_bound[fid]={'study_sha256':binding['study_sha256'],'study_id':binding['study_id'],'forecast':f,'monitor_native':(f['market_id'],f['token_id'],f['rules_sha256']) in watched}
@@ -116,6 +116,7 @@ class Controller:
             native_bound.update(self.program.due());native_bound.update(monitoring)
             self.native_bound=native_bound
             self.next_outcomes=now+timedelta(seconds=300)
+        stages['pending_inventory_metadata_only']=perf_counter()-part;part=perf_counter()
         if proofs:
             self.engine.settle(proofs);self.challenger.settle(proofs);self.explorer.settle(proofs);self.profiles.settle(lambda f,t:proofs.get(f['id']))
         if proofs:self.program.settle(proofs)
@@ -123,12 +124,15 @@ class Controller:
             'execution':'isolated shadow only; no account/order-admission access','current_source_forecasts':len(self.current_forecasts),'calibration_cohort':'first available forecast per native market/token/model; repeated refreshes are not independent events','source_inventory':getattr(self,'inventory',{}),'native_verification_timeout_seconds':45,'native_proof_requests_per_5min':2}
         self.report['held_fee_tokens']=sorted({p['token_id'] for engine in (self.engine,self.challenger,self.explorer) for state in engine.state['profiles'].values() for p in [*state['orders'].values(),*state['positions'].values()]})
         self.report['current_fee_coverage']={'verified_tokens':sum(p.get('status')=='verified_current_protocol_curve' for p in fees.values()),'open_positions':[{ 'profile':name,'strategy':p['strategy'],'token_id':p['token_id'],'outcome':p['market']['outcome'],'entry_fee_verified':p['fee_verified'],'current_curve':fees.get(p['token_id'],{}),'limitation':'current evidence cannot authenticate or rewrite earlier entry fees'} for name,state in self.explorer.state['profiles'].items() for p in state['positions'].values()]}
+        stages['settlement_application_scoring_report']=perf_counter()-part;part=perf_counter()
         from neraium_poly.research.phase42.desk import publish
         self.report['phase44_rejection_breakdown']={n:breakdown(p['rejections']) for n,p in self.report['phase44_cohort']['profiles'].items()}
         explorer_view=publish(self.store,self.explorer,self.report['phase45_explorer'],now,cohort='phase45')
         challenger_view=publish(self.store,self.challenger,self.report['phase44_cohort'],now,cohort='phase44')
         self.report=publish(self.store,self.engine,self.report,now)
         self.report['positions']+=challenger_view['positions']+explorer_view['positions'];self.report['unfilled_orders']+=challenger_view['unfilled_orders']+explorer_view['unfilled_orders']
+        stages['decision_cards']=perf_counter()-part
+        self.report['processing_stages_seconds']={**stages,'total':perf_counter()-began,'native_archive_validation':'existing native worker, not quote tick'}
         return self.report
 
 
@@ -156,6 +160,7 @@ async def service_loop(runtime,should_exit):
     try:
         while not runtime.stopping and not should_exit():
             import time
+            iteration_started=time.monotonic()
             if source_future is not None and source_future.done():
                 try:runtime.shadow_source_status=source_future.result()
                 except Exception as error:runtime.shadow_source_status={'status':'withheld','error':str(error)[:180]}  # noqa: BLE001
@@ -183,12 +188,12 @@ async def service_loop(runtime,should_exit):
                         if not 0<=(runtime.clock()-frame.available_at).total_seconds()<=15:raise ValueError('research frame expired before worker admission')
                         if controller is None:controller=Controller(runtime.events,risk_limits=runtime.config.risk_limits.model_dump(),clock=runtime.clock,can_write=runtime._budget_ok,directory=runtime.config.data_dir/'phase42-native')
                         cache=getattr(runtime,'research_fees',None)
-                        fees=cache.proofs(as_of=runtime.clock()) if cache else {}
+                        fee_start=time.monotonic();fees=cache.proofs(as_of=runtime.clock()) if cache else {};fee_seconds=time.monotonic()-fee_start
                         def current_frame():
                             base=sampler.latest()
                             return merge_supplemental(base,extra_markets,extra_books,runtime.clock()) if extra_markets else base
                         report=controller.tick(frame,fees,proofs=native_proofs,frame_provider=current_frame)
-                        return {**report,'native_reconciliation':native_status,'reference_feed':sampler.status(),'input_frame_available_at':getattr(controller,'admitted_frame_available_at',frame.available_at.isoformat()),'shadow_worker':{'maximum_workers':1,'queued_jobs':0,'cycle_seconds':time.monotonic()-began,'frame_origin':origin}}
+                        return {**report,'native_reconciliation':native_status,'reference_feed':sampler.status(),'input_frame_available_at':getattr(controller,'admitted_frame_available_at',frame.available_at.isoformat()),'shadow_worker':{'maximum_workers':1,'queued_jobs':0,'cycle_seconds':time.monotonic()-began,'fee_proof_seconds':fee_seconds,'frame_origin':origin}}
                     if os.environ.get('NERAIUM_SHADOW_SOURCE_REFRESH','true')=='true' and source_future is None and time.monotonic()>=source_due:
                         def acquire_source():
                             from neraium_poly.research.phase42.sources import refresh
@@ -214,9 +219,12 @@ async def service_loop(runtime,should_exit):
                     runtime.shadow_research_error=None
             except Exception as error:  # noqa: BLE001 - withhold shadow only; never financial authority
                 runtime.shadow_research_error=f'{type(error).__name__}:{str(error)[:180]}'
-            for _ in range(5):
+            # Fixed cadence with bounded cooperative idle, rather than adding
+            # five idle seconds AFTER an already long critical evaluation.
+            delay=max(2.,5.-(time.monotonic()-iteration_started))
+            for _ in range(__import__('math').ceil(delay*10)):
                 if runtime.stopping or should_exit():return
-                await asyncio.sleep(1)
+                await asyncio.sleep(.1)
     finally:
         # _drain above ensures an active SQLite write finishes before shutdown.
         sampler.stop()

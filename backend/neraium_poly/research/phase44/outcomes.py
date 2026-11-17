@@ -13,6 +13,7 @@ from neraium_poly.research.phase14.relationships import digest
 from neraium_poly.research.phase24.continuous import at
 from neraium_poly.research.phase44.native import acquire, replay
 from neraium_poly.research.phase47.storage import read as read_evidence
+from neraium_poly.research.phase48.migration import allocation
 
 
 class NativeCycle46(Record):
@@ -45,6 +46,16 @@ def rebind(proof,original,forecast):
 async def collect(bound,store,directory,*,clock,can_write,max_requests=2):
     if not 0<=max_requests<=2:raise ValueError('bounded native requests required')
     root=Path(directory);root.mkdir(parents=True,exist_ok=True);now=at(clock());found={};attempts={};cache={}
+    authenticated=set()
+    def authenticate(fid):
+        item=bound[fid];sid=item.get('study_id');expected=item.get('study_sha256')
+        if sid is None:return  # Historical direct-call interfaces carry no study pointer.
+        if (sid,expected) in authenticated:return
+        original=store.get(sid)
+        if not original:raise ValueError('original settlement study missing')
+        if len(original[1].encode())>16*1024**2:raise ValueError('native source study budget withheld')
+        if digest(json.loads(original[1]))!=expected:raise ValueError('settlement original study hash mismatch')
+        authenticated.add((sid,expected))
     wanted={(v['forecast']['market_id'],v['forecast']['event_id'],v['forecast']['token_id'],v['forecast']['rules_sha256']) for v in bound.values()}
     rows=store.latest('NativePayout44',256)
     failures={}
@@ -66,7 +77,8 @@ async def collect(bound,store,directory,*,clock,can_write,max_requests=2):
             cache[row['directory']]=(proof,original)
         proof,original=cache[row['directory']]
         for fid,item in bound.items():
-            try:result=rebind(proof,original,item['forecast'])
+            try:
+                result=rebind(proof,original,item['forecast']);authenticate(fid)
             except ValueError:continue
             found[fid]=result
     due=sorted((fid for fid,v in bound.items() if (at(v['forecast']['event_end_time'])<=now or v.get('monitor_native') is True) and fid not in found),key=lambda fid:(not bound[fid].get('monitor_native',False),attempts.get(fid,''),bound[fid]['forecast']['event_end_time'],fid))
@@ -77,9 +89,9 @@ async def collect(bound,store,directory,*,clock,can_write,max_requests=2):
     due=[fid for pair in zip_longest(monitored,historical) for fid in pair if fid is not None]
     requests=0;tried=set();deferred=0
     def finish():
-        used=sum(p.stat().st_size for p in root.rglob('*') if p.is_file())
+        used=allocation(root)['unique_bytes']
         summary=NativeCycle46(id=digest(['native-cycle46',now.isoformat(),sorted(bound),requests,deferred,len(found),used]),timestamp=now,available_at=at(clock()),source='neraium-poly/native-capacity/v46',
-            capacity={'limit_bytes':64*1024**2,'used_bytes':used,'remaining_bytes':max(0,64*1024**2-used),'originals_deleted':False},attempted=requests,deferred=deferred,cached_proofs=len(found))
+            capacity={'limit_bytes':64*1024**2,'used_bytes':used,'remaining_bytes':max(0,64*1024**2-used),'allocation':allocation(root),'accounting':'unique device/inode file bytes; shared immutable data counted once; cap unchanged','originals_deleted':False},attempted=requests,deferred=deferred,cached_proofs=len(found))
         if can_write():store.append(summary)
         return found
     for fid in due:
@@ -93,12 +105,13 @@ async def collect(bound,store,directory,*,clock,can_write,max_requests=2):
         if not can_write():raise ValueError('native_publication_capacity_unavailable')
         # Same existing64MiB guard, including all legacy originals. No cleanup,
         # replacement or guard increase is needed for the new verifier.
-        used=sum(p.stat().st_size for p in root.rglob('*') if p.is_file())
+        used=allocation(root)['unique_bytes']
         remaining=64*1024**2-used
         if remaining<=0:return finish()  # Never discard independently replayed cached proofs on capacity exhaustion.
         requests+=1
         name='v44-'+digest([fid,now.isoformat()]);path=root/name;proof=None
         try:
+            authenticate(fid)
             # Drain cancellation before another SQLite/evidence owner can run.
             proof=await _drain(asyncio.create_task(asyncio.to_thread(acquire,f,path,disk_budget=min(2*1024**2,remaining))))
             reason='finalized_standard_CTF_and_exact_original_outcome_asset'
@@ -111,6 +124,7 @@ async def collect(bound,store,directory,*,clock,can_write,max_requests=2):
         store.append(row)
         if proof is not None:
             for other,item in bound.items():
-                try:found[other]=rebind(proof,f,item['forecast'])
+                try:
+                    result=rebind(proof,f,item['forecast']);authenticate(other);found[other]=result
                 except ValueError:continue
     return finish()
