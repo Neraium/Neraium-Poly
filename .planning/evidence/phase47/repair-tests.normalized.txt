@@ -1,0 +1,49 @@
+..F..                                                                    [100%]
+=================================== FAILURES ===================================
+__ test_missing_transaction_hash_and_optional_question_use_exact_bounded_logs __
+
+    def test_missing_transaction_hash_and_optional_question_use_exact_bounded_logs():
+        b=json.loads((FIXTURE/'bundle.json').read_bytes());g=b['gamma'];hint=json.loads(json.dumps(b['resolution_hint']));row=hint['data'][0];row.pop('question_id',None);row['transaction_hash']='';row['resolved_block']=int(b['log']['blockNumber'],16)
+        calls=[]
+        class Client:
+            def request(self,method,params):
+                calls.append((method,params))
+                if method=='eth_getBlockByNumber':return b['finalized']
+                if method=='eth_getLogs':return [b['log']]
+                if method=='eth_getTransactionReceipt':return b['receipt']
+                raise AssertionError(method)
+        log,receipt=discover(Client(),g,hint);assert log==b['log'] and receipt==b['receipt']
+        assert [c[0] for c in calls]==['eth_getBlockByNumber','eth_getLogs','eth_getTransactionReceipt']
+        assert calls[1][1][0]['topics'][1]==g['conditionId']
+        q=calls[1][1][0];assert int(q['toBlock'],16)-int(q['fromBlock'],16)<=3000
+        assert verify({**b,'resolution_hint':hint})['native_payout_verified']
+        with pytest.raises(ValueError):validate_hint({'data':[{**row,'condition_id':'WRONG'}]},g)
+        with pytest.raises(ValueError):validate_hint({'data':[{**row,'question_id':'WRONG'}]},g)
+>       with pytest.raises(ValueError):verify({**b,'resolution_hint':hint,'state':[]})
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_phase47.py:50:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+backend/neraium_poly/research/phase44/native.py:59: in verify
+    if read('condition',oracle,g['questionID'],2)!=condition:raise ValueError('native_onchain_condition_mismatch')
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+name = 'condition'
+args = ('0x65070be91477460d8a7aeeb94ef92fe056c2f2a7', '0xf93af759ca9a93d6dabb3e538856944d405e71913c1ef6f09fd422742cddc53a', 2)
+
+    def read(name,*args):
+>       row=state[call_key(CTF,name,*args)]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: ('0x4d97dcd97ec945f40cf65f87097ace5ea0476045', '0x852c6ae200000000000000000000000065070be91477460d8a7aeeb94ef92fe056c2f2a7f93af759ca9a93d6dabb3e538856944d405e71913c1ef6f09fd422742cddc53a0000000000000000000000000000000000000000000000000000000000000002')
+
+backend/neraium_poly/research/phase44/native.py:56: KeyError
+=============================== warnings summary ===============================
+../../../../../../Neraium-Poly/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1
+  /home/ubuntu/Neraium-Poly/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_phase47.py::test_missing_transaction_hash_and_optional_question_use_exact_bounded_logs
+1 failed, 4 passed, 1 warning in 0.77s

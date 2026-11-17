@@ -1,0 +1,46 @@
+before — actual live-input local profile; inputs differ, not a matched causal benchmark
+Tue Nov 17 15:06:32 2026    .planning/evidence/phase47/before.prof
+
+         33806189 function calls (31467456 primitive calls) in 24.340 seconds
+
+   Ordered by: cumulative time
+   List reduced from 3860 to 20 due to restriction <'checkpoints|deepcopy|replay_cache|read_reference|forecast_studies'>
+   List reduced from 20 to 12 due to restriction <12>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        9    0.001    0.000    5.733    0.637 sources.py:41(read_reference)
+       72    0.001    0.000    3.930    0.055 checkpoints.py:48(_canonical)
+       19    0.013    0.001    3.844    0.202 checkpoints.py:63(pack_checkpoint)
+       72    1.597    0.022    3.111    0.043 checkpoints.py:17(_json_only)
+2058056/45    1.223    0.000    2.478    0.055 copy.py:118(deepcopy)
+122982/45    0.418    0.000    2.478    0.055 copy.py:217(_deepcopy_dict)
+       28    0.000    0.000    2.347    0.084 replay_cache.py:16(verify)
+       34    0.016    0.000    2.008    0.059 checkpoints.py:86(unpack_checkpoint)
+10581/10467    0.044    0.000    0.620    0.000 copy.py:191(_deepcopy_list)
+        1    0.004    0.004    0.345    0.345 sources.py:86(forecast_studies)
+  2083143    0.244    0.000    0.244    0.000 checkpoints.py:36(<genexpr>)
+  2083143    0.200    0.000    0.200    0.000 checkpoints.py:38(<genexpr>)
+
+
+after — actual live-input local profile; inputs differ, not a matched causal benchmark
+Tue Nov 17 15:17:12 2026    .planning/evidence/phase47/after.prof
+
+         30608580 function calls (28235508 primitive calls) in 25.025 seconds
+
+   Ordered by: cumulative time
+   List reduced from 3857 to 21 due to restriction <'checkpoints|deepcopy|replay_cache|read_reference|forecast_studies'>
+   List reduced from 21 to 12 due to restriction <12>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        9    0.001    0.000    5.392    0.599 sources.py:41(read_reference)
+       24    0.006    0.000    3.914    0.163 checkpoints.py:63(pack_checkpoint)
+       62    0.001    0.000    3.792    0.061 checkpoints.py:48(_canonical)
+       62    1.519    0.025    3.014    0.049 checkpoints.py:17(_json_only)
+2082060/47    1.432    0.000    2.815    0.060 copy.py:118(deepcopy)
+124707/47    0.457    0.000    2.815    0.060 copy.py:217(_deepcopy_dict)
+       38    0.021    0.001    2.559    0.067 checkpoints.py:91(_verified_checkpoint)
+       20    0.000    0.000    1.744    0.087 replay_cache.py:16(verify)
+10869/10755    0.051    0.000    0.786    0.000 copy.py:191(_deepcopy_list)
+       14    0.000    0.000    0.571    0.041 checkpoints.py:87(unpack_checkpoint)
+        1    0.006    0.006    0.427    0.427 sources.py:86(forecast_studies)
+  1833981    0.240    0.000    0.240    0.000 checkpoints.py:38(<genexpr>)

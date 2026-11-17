@@ -1,0 +1,95 @@
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	﻿2026-11-17T15:21:58.8712784Z ##[group]Run uv run --frozen pytest -q --junitxml=certification.xml
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:21:58.8713328Z [36;1muv run --frozen pytest -q --junitxml=certification.xml[0m
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:21:58.8739021Z shell: /usr/bin/bash -e {0}
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:21:58.8739255Z env:
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:21:58.8739423Z   PAPER_TRADING: true
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:21:58.8739603Z   LIVE_TRADING_ENABLED: false
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:21:58.8739836Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:21:58.8740065Z ##[endgroup]
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:22:05.4851652Z ........................................................................ [  2%]
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:22:06.1161181Z ........................................................................ [  5%]
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:22:08.2317747Z ........................................................................ [  8%]
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:22:09.1427840Z ........................................................................ [ 11%]
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:22:11.1867783Z ........................................................................ [ 14%]
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:22:19.5490112Z ........................................................................ [ 17%]
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:22:19.8436974Z ........................................................................ [ 20%]
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:22:23.5044540Z ........................................................................ [ 23%]
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:22:23.6397317Z ........................................................................ [ 26%]
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:22:24.3670152Z ........................................................................ [ 29%]
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:22:25.3210983Z ........................................................................ [ 32%]
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:22:25.5537017Z ........................................................................ [ 35%]
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:22:34.3669356Z ........................................................................ [ 38%]
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:22:34.7626931Z ........................................................................ [ 41%]
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:22:37.0749043Z ........................................................................ [ 44%]
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:22:38.0422220Z ........................................................................ [ 47%]
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:22:39.5169268Z ........................................................................ [ 50%]
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:22:40.3741180Z ........................................................................ [ 53%]
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:22:41.7652317Z ........................................................................ [ 56%]
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:22:42.1383649Z ........................................................................ [ 59%]
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:22:42.6394543Z ........................................................................ [ 62%]
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:22:43.3434387Z ........................................................................ [ 65%]
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:22:43.5129799Z ........................................................................ [ 68%]
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:22:44.6249499Z ........................................................................ [ 71%]
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:22:45.4114365Z ........................................................................ [ 74%]
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:22:46.0303133Z ........................................................................ [ 77%]
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:22:47.5330682Z ........................................................................ [ 80%]
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:22:50.0206296Z ........................................................................ [ 82%]
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:22:51.0955250Z ........................................................................ [ 85%]
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:22:56.9224576Z ........................................................................ [ 88%]
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:02.9604550Z ........................................................................ [ 91%]
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:05.0371980Z ..........F............................................................. [ 94%]
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:05.4596802Z ........................................................................ [ 97%]
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:06.0547705Z ......................................................                   [100%]
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:06.0548201Z =================================== FAILURES ===================================
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:06.0548659Z _______ test_full_acquisition_missing_hint_transaction_compressed_replay _______
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:06.0548940Z
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:06.0549177Z tmp_path = PosixPath('/tmp/pytest-of-runner/pytest-0/test_full_acquisition_missing_0')
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:06.0549479Z
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:06.0549692Z     def test_full_acquisition_missing_hint_transaction_compressed_replay(tmp_path):
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:06.0550016Z         import httpx
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:06.0550250Z         from neraium_poly.research.phase44.native import acquire
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:06.0550917Z         b=json.loads((FIXTURE/'bundle.json').read_bytes());hint=json.loads(json.dumps(b['resolution_hint']));hint['data'][0].pop('question_id',None);hint['data'][0]['transaction_hash']='';hint['data'][0]['resolved_block']=int(b['log']['blockNumber'],16)
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:06.0552275Z         native={f"https://gamma-api.polymarket.com/markets/{b['forecast']['market_id']}":b['gamma'],f"https://clob.polymarket.com/markets-by-token/{b['forecast']['token_id']}":b['clob'],f"https://gamma-api.polymarket.com/events/{b['forecast']['event_id']}":b['parent'],f"https://data-api.polymarket.com/v2/resolutions?condition={b['gamma']['conditionId']}":hint}
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:06.0553367Z         def request(req):
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:06.0553640Z             if req.method=='GET':return httpx.Response(200,json=native[str(req.url)])
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:06.0553993Z             call=json.loads(req.content);m,p=call['method'],call['params']
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:06.0554274Z             if m=='eth_getLogs':value=[b['log']]
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:06.0554535Z             elif m=='eth_getTransactionReceipt':value=b['receipt']
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:06.0554811Z             elif m=='eth_getBlockByHash':value=b['block']
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:06.0555159Z             elif m=='eth_getBlockByNumber':value=b['finalized'] if p[0]=='finalized' else b['canonical']
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:06.0555501Z             elif m=='eth_chainId':value=b['chain_id']
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:06.0555878Z             elif m=='eth_call':value=next(v['result'] for v in b['state'] if v['to'].lower()==p[0]['to'].lower() and v['data']==p[0]['data'])
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:06.0556259Z             else:raise AssertionError(m)
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:06.0556556Z             return httpx.Response(200,json={'jsonrpc':'2.0','id':call['id'],'result':value})
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:06.0557100Z >       with httpx.Client(transport=httpx.MockTransport(request)) as client:proof=acquire(b['forecast'],tmp_path/'new',client=client,disk_budget=128*1024)
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:06.0557608Z                                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:06.0557818Z
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:06.0557901Z tests/test_phase47.py:84:
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:06.0558121Z _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:06.0558439Z backend/neraium_poly/research/phase44/native.py:129: in acquire
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:06.0558847Z     c=Client(directory,client=transport,max_requests=48,max_bytes=2*1024**2,interval=.05)
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:06.0559392Z       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:06.0559652Z _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:06.0559817Z
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:06.0559985Z self = <neraium_poly.research.phase44.native.Client object at 0x7f96ad20cce0>
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:06.0560392Z directory = PosixPath('/tmp/pytest-of-runner/pytest-0/test_full_acquisition_missing_0/new')
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:06.0560871Z kwargs = {'client': <httpx.Client object at 0x7f96ad20ebd0>, 'max_requests': 48, 'max_bytes': 2097152, 'interval': 0.05}
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:06.0561154Z
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:06.0561243Z     def __init__(self, directory, **kwargs):
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:06.0561475Z         super().__init__(directory, **kwargs)
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:06.0561828Z         if shutil.disk_usage(self.directory).free < 100 * 1024**3 + self.max_bytes:
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:06.0562106Z             self.client.close()
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:06.0562343Z >           raise ValueError("protected 100 GiB filesystem reserve")
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:06.0562628Z E           ValueError: protected 100 GiB filesystem reserve
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:06.0562788Z
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:06.0562920Z backend/neraium_poly/research/phase35/native.py:172: ValueError
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:06.0563326Z =============================== warnings summary ===============================
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:06.0563631Z .venv/lib/python3.12/site-packages/fastapi/testclient.py:1
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:06.0564276Z   /home/runner/work/Neraium-Poly/Neraium-Poly/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:06.0565037Z     from starlette.testclient import TestClient as TestClient  # noqa
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:06.0565261Z
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:06.0565418Z -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:06.0565744Z =========================== short test summary info ============================
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:06.0566249Z FAILED tests/test_phase47.py::test_full_acquisition_missing_hint_transaction_compressed_replay - ValueError: protected 100 GiB filesystem reserve
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:06.0566699Z 1 failed, 2429 passed, 1 warning in 66.14s (0:01:06)
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T15:23:06.2514354Z ##[error]Process completed with exit code 1.

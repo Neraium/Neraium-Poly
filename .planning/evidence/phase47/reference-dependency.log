@@ -1,0 +1,25 @@
+Nov 17 15:29:11 ip-172-31-67-49 neraium-poly[555731]: INFO:     127.0.0.1:37012 - "GET /api/market-frame HTTP/1.1" 200 OK
+Nov 17 15:29:17 ip-172-31-67-49 neraium-poly[555731]: INFO:     127.0.0.1:37020 - "GET /api/health HTTP/1.1" 200 OK
+Nov 17 15:29:19 ip-172-31-67-49 neraium-poly[555731]: INFO:     127.0.0.1:50460 - "GET /api/market-frame HTTP/1.1" 200 OK
+Nov 17 15:29:20 ip-172-31-67-49 neraium-poly[555731]: INFO:     127.0.0.1:37020 - "GET /api/health HTTP/1.1" 200 OK
+Nov 17 15:29:23 ip-172-31-67-49 neraium-poly[555731]: INFO:     127.0.0.1:37020 - "GET /api/health HTTP/1.1" 200 OK
+Nov 17 15:29:26 ip-172-31-67-49 neraium-poly[555731]: 2026-11-17 15:29:26,971 INFO neraium_poly.ops.live cycle {"schema_version": "1.0", "id": "2f34e2e3-d7b3-46de-aa5d-fd0027e54233", "timestamp": "2026-11-17T15:29:26.846463Z", "available_at": "2026-11-17T15:29:26.846465Z", "source": "real-polymarket-paper-coordinator", "markets_scanned": 405, "outcomes_observed": 810, "books_received": 101, "fresh_books": 57, "evidence_qualified": 0, "opportunities_qualified": 0, "orders_submitted": 0, "suppression_reasons": ["no_approved_real_market_strategy"]}
+Nov 17 15:29:27 ip-172-31-67-49 neraium-poly[555731]: INFO:     127.0.0.1:50462 - "GET /api/market-frame HTTP/1.1" 200 OK
+Nov 17 15:29:27 ip-172-31-67-49 neraium-poly[555731]: INFO:     127.0.0.1:37020 - "GET /api/health HTTP/1.1" 200 OK
+Nov 17 15:29:30 ip-172-31-67-49 neraium-poly[555731]: INFO:     127.0.0.1:37020 - "GET /api/health HTTP/1.1" 200 OK
+Nov 17 15:29:33 ip-172-31-67-49 neraium-poly[555731]: INFO:     127.0.0.1:37020 - "GET /api/health HTTP/1.1" 200 OK
+Nov 17 15:29:34 ip-172-31-67-49 neraium-poly[555731]: INFO:     127.0.0.1:44920 - "GET /api/market-frame HTTP/1.1" 200 OK
+Nov 17 15:29:36 ip-172-31-67-49 neraium-poly[555731]: INFO:     127.0.0.1:37020 - "GET /api/health HTTP/1.1" 200 OK
+Nov 17 15:29:39 ip-172-31-67-49 neraium-poly[555731]: INFO:     127.0.0.1:37020 - "GET /api/health HTTP/1.1" 200 OK
+Nov 17 15:29:40 ip-172-31-67-49 neraium-poly[555731]: INFO:     127.0.0.1:41874 - "GET /api/market-frame HTTP/1.1" 200 OK
+Nov 17 15:29:42 ip-172-31-67-49 neraium-poly[555731]: INFO:     127.0.0.1:37020 - "GET /api/health HTTP/1.1" 200 OK
+Nov 17 15:29:46 ip-172-31-67-49 neraium-poly[555731]: INFO:     127.0.0.1:37020 - "GET /api/health HTTP/1.1" 200 OK
+Nov 17 15:29:46 ip-172-31-67-49 neraium-poly[555731]: INFO:     127.0.0.1:41884 - "GET /api/market-frame HTTP/1.1" 200 OK
+Nov 17 15:29:49 ip-172-31-67-49 neraium-poly[555731]: INFO:     127.0.0.1:37020 - "GET /api/health HTTP/1.1" 200 OK
+Nov 17 15:29:52 ip-172-31-67-49 neraium-poly[555731]: INFO:     127.0.0.1:37020 - "GET /api/health HTTP/1.1" 200 OK
+Nov 17 15:29:53 ip-172-31-67-49 neraium-poly[555731]: INFO:     127.0.0.1:58892 - "GET /api/market-frame HTTP/1.1" 200 OK
+Nov 17 15:29:55 ip-172-31-67-49 neraium-poly[555731]: INFO:     127.0.0.1:37020 - "GET /api/health HTTP/1.1" 200 OK
+Nov 17 15:30:00 ip-172-31-67-49 neraium-poly[555731]: INFO:     127.0.0.1:59316 - "GET /api/market-frame HTTP/1.1" 200 OK
+Nov 17 15:30:06 ip-172-31-67-49 neraium-poly[555731]: INFO:     127.0.0.1:59322 - "GET /api/market-frame HTTP/1.1" 200 OK
+Nov 17 15:30:11 ip-172-31-67-49 neraium-poly[555731]: INFO:     127.0.0.1:51362 - "GET /api/market-frame HTTP/1.1" 200 OK
+Nov 17 15:30:17 ip-172-31-67-49 neraium-poly[555731]: INFO:     127.0.0.1:51378 - "GET /api/market-frame HTTP/1.1" 200 OK

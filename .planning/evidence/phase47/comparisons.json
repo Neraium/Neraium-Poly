@@ -1,0 +1,292 @@
+{
+  "frozen_trials_unchanged": 14,
+  "cycle_id": "strategy42:000000003977",
+  "cycle_sha256": "1bd647621f4f7e6c63c7ab4c720a8f36eb08c96508b8c6bf9e16ae7d48a4adf2",
+  "trivial_baselines_equal_native_parent_weight": {
+    "empirical-ohlc-block-bootstrap-v23.1": {
+      "native_parents": 2,
+      "zero": {
+        "brier": 0.0,
+        "log_loss_clipped": 0.0
+      },
+      "one": {
+        "brier": 1.0,
+        "log_loss_clipped": 27.631021115928547
+      }
+    },
+    "nba-causal-elo-v24.1": {
+      "native_parents": 2,
+      "zero": {
+        "brier": 0.25,
+        "log_loss_clipped": 6.907755278982137
+      },
+      "one": {
+        "brier": 0.75,
+        "log_loss_clipped": 20.72326583694641
+      }
+    },
+    "nba-team-frequency-v24.1": {
+      "native_parents": 2,
+      "zero": {
+        "brier": 0.25,
+        "log_loss_clipped": 6.907755278982137
+      },
+      "one": {
+        "brier": 0.75,
+        "log_loss_clipped": 20.72326583694641
+      }
+    },
+    "gaussian-first-passage-v23.1": {
+      "native_parents": 2,
+      "zero": {
+        "brier": 0.0,
+        "log_loss_clipped": 0.0
+      },
+      "one": {
+        "brier": 1.0,
+        "log_loss_clipped": 27.631021115928547
+      }
+    },
+    "spx-gaussian-logreturn-direction-v25.1": {
+      "native_parents": 1,
+      "zero": {
+        "brier": 0.0,
+        "log_loss_clipped": 0.0
+      },
+      "one": {
+        "brier": 1.0,
+        "log_loss_clipped": 27.631021115928547
+      }
+    },
+    "nhl-beta-frequency-v25.1": {
+      "native_parents": 1,
+      "zero": {
+        "brier": 0.0,
+        "log_loss_clipped": 0.0
+      },
+      "one": {
+        "brier": 1.0,
+        "log_loss_clipped": 27.631021115928547
+      }
+    },
+    "nhl-causal-elo-v25.1": {
+      "native_parents": 1,
+      "zero": {
+        "brier": 0.0,
+        "log_loss_clipped": 0.0
+      },
+      "one": {
+        "brier": 1.0,
+        "log_loss_clipped": 27.631021115928547
+      }
+    },
+    "spx-weekday-beta-direction-v25.1": {
+      "native_parents": 1,
+      "zero": {
+        "brier": 0.0,
+        "log_loss_clipped": 0.0
+      },
+      "one": {
+        "brier": 1.0,
+        "log_loss_clipped": 27.631021115928547
+      }
+    }
+  },
+  "existing_model_and_market_scores": {
+    "empirical-ohlc-block-bootstrap-v23.1": {
+      "forecasts": 10,
+      "native_parent_groups": 2,
+      "reviewed_independent_groups": 0,
+      "scores": {
+        "model": {
+          "brier": 0.027671337127685547,
+          "log_loss": 0.10681693998636874
+        },
+        "market": {
+          "brier": 0.029438333333333337,
+          "log_loss": 0.13753798892495522
+        },
+        "neutral": {
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      },
+      "model_minus_market_brier": -0.0017669962056477903,
+      "market_baseline": "original causal executable-book midpoint / token expected payout; not an independent model probability",
+      "confidence_interval": null,
+      "calibration_fit": null,
+      "status": "descriptive_only; independent cohort review and sufficient heldout groups required"
+    },
+    "nba-causal-elo-v24.1": {
+      "forecasts": 3,
+      "native_parent_groups": 2,
+      "reviewed_independent_groups": 0,
+      "scores": {
+        "model": {
+          "brier": 0.33358415455109947,
+          "log_loss": 0.862084495044505
+        },
+        "market": {
+          "brier": 0.328925,
+          "log_loss": 0.8529651249813557
+        },
+        "neutral": {
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      },
+      "model_minus_market_brier": 0.0046591545510994425,
+      "market_baseline": "original causal executable-book midpoint / token expected payout; not an independent model probability",
+      "confidence_interval": null,
+      "calibration_fit": null,
+      "status": "descriptive_only; independent cohort review and sufficient heldout groups required"
+    },
+    "nba-team-frequency-v24.1": {
+      "forecasts": 3,
+      "native_parent_groups": 2,
+      "reviewed_independent_groups": 0,
+      "scores": {
+        "model": {
+          "brier": 0.4976755381021782,
+          "log_loss": 1.2239739633348847
+        },
+        "market": {
+          "brier": 0.328925,
+          "log_loss": 0.8529651249813557
+        },
+        "neutral": {
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      },
+      "model_minus_market_brier": 0.16875053810217816,
+      "market_baseline": "original causal executable-book midpoint / token expected payout; not an independent model probability",
+      "confidence_interval": null,
+      "calibration_fit": null,
+      "status": "descriptive_only; independent cohort review and sufficient heldout groups required"
+    },
+    "gaussian-first-passage-v23.1": {
+      "forecasts": 10,
+      "native_parent_groups": 2,
+      "reviewed_independent_groups": 0,
+      "scores": {
+        "model": {
+          "brier": 0.014285910818302161,
+          "log_loss": 0.07004252359700353
+        },
+        "market": {
+          "brier": 0.029438333333333337,
+          "log_loss": 0.13753798892495522
+        },
+        "neutral": {
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      },
+      "model_minus_market_brier": -0.015152422515031176,
+      "market_baseline": "original causal executable-book midpoint / token expected payout; not an independent model probability",
+      "confidence_interval": null,
+      "calibration_fit": null,
+      "status": "descriptive_only; independent cohort review and sufficient heldout groups required"
+    },
+    "spx-gaussian-logreturn-direction-v25.1": {
+      "forecasts": 1,
+      "native_parent_groups": 1,
+      "reviewed_independent_groups": 0,
+      "scores": {
+        "model": {
+          "brier": 0.26838941732330446,
+          "log_loss": 0.7299421699569301
+        },
+        "market": {
+          "brier": 0.055224999999999996,
+          "log_loss": 0.2678794451556012
+        },
+        "neutral": {
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      },
+      "model_minus_market_brier": 0.21316441732330446,
+      "market_baseline": "original causal executable-book midpoint / token expected payout; not an independent model probability",
+      "confidence_interval": null,
+      "calibration_fit": null,
+      "status": "descriptive_only; independent cohort review and sufficient heldout groups required"
+    },
+    "nhl-beta-frequency-v25.1": {
+      "forecasts": 1,
+      "native_parent_groups": 1,
+      "reviewed_independent_groups": 0,
+      "scores": {
+        "model": {
+          "brier": 0.3461394749462325,
+          "log_loss": 0.8875482630085012
+        },
+        "market": {
+          "brier": 0.255025,
+          "log_loss": 0.7031975164134467
+        },
+        "neutral": {
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      },
+      "model_minus_market_brier": 0.09111447494623248,
+      "market_baseline": "original causal executable-book midpoint / token expected payout; not an independent model probability",
+      "confidence_interval": null,
+      "calibration_fit": null,
+      "status": "descriptive_only; independent cohort review and sufficient heldout groups required"
+    },
+    "nhl-causal-elo-v25.1": {
+      "forecasts": 1,
+      "native_parent_groups": 1,
+      "reviewed_independent_groups": 0,
+      "scores": {
+        "model": {
+          "brier": 0.2743507578223335,
+          "log_loss": 0.7418859093934518
+        },
+        "market": {
+          "brier": 0.255025,
+          "log_loss": 0.7031975164134467
+        },
+        "neutral": {
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      },
+      "model_minus_market_brier": 0.019325757822333478,
+      "market_baseline": "original causal executable-book midpoint / token expected payout; not an independent model probability",
+      "confidence_interval": null,
+      "calibration_fit": null,
+      "status": "descriptive_only; independent cohort review and sufficient heldout groups required"
+    },
+    "spx-weekday-beta-direction-v25.1": {
+      "forecasts": 1,
+      "native_parent_groups": 1,
+      "reviewed_independent_groups": 0,
+      "scores": {
+        "model": {
+          "brier": 0.36406202709679714,
+          "log_loss": 0.9247653588651272
+        },
+        "market": {
+          "brier": 0.055224999999999996,
+          "log_loss": 0.2678794451556012
+        },
+        "neutral": {
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      },
+      "model_minus_market_brier": 0.30883702709679717,
+      "market_baseline": "original causal executable-book midpoint / token expected payout; not an independent model probability",
+      "confidence_interval": null,
+      "calibration_fit": null,
+      "status": "descriptive_only; independent cohort review and sufficient heldout groups required"
+    }
+  },
+  "limitation": "single-game sports cohorts and correlated crypto thresholds; no certified independence, confidence interval or calibrated superiority",
+  "as_of": "2026-11-17T15:54:30.330874Z",
+  "identical_samples_verified": true
+}

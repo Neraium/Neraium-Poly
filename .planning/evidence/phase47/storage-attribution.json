@@ -1,0 +1,104 @@
+{
+  "native_root": "/home/ubuntu/Neraium-Poly/data/experimental-paper/phase42-native",
+  "raw_unique_path_bytes_by_source": {
+    "market_metadata": 211615,
+    "token_mapping": 14006,
+    "parent_event": 34695366,
+    "resolution_lookup": 18117,
+    "RPC": 3027997,
+    "legacy_metadata_without_url": 25819035
+  },
+  "proof_files": [
+    {
+      "path": "v44-173bb0acc93a795fc4640d1a2ac99a3cb8df4ef54cf34921d9ab962ac76c26e6/proof.json",
+      "bytes": 815,
+      "sha256": "8d8cae2803162bd4217a68ce33324d65fe368bfb8e7fe679e588a5acbb690411"
+    },
+    {
+      "path": "v44-dca01d6fd320bb19601e3354c4a0c1bd4c48bbc134f8931cefbc1935defddf05/proof.json",
+      "bytes": 814,
+      "sha256": "3ea1263d40d62b7908806634f1c5b6ded26085adcc2653eb2b5aacdd4f81a042"
+    },
+    {
+      "path": "v44-6eda2ded6969199d3dea7ae07d7256c2aff71b73a9d1044628ca20c04d8e796e/proof.json",
+      "bytes": 816,
+      "sha256": "76a5f36335c7025a328638183dd3621478aadeed554b2ab187fa0206d0c4d327"
+    },
+    {
+      "path": "v44-8e9f0d0c25eb1ec1be9bec6e2457bf961257a65df6992f55661c470aacbbc27a/proof.json",
+      "bytes": 815,
+      "sha256": "47b928c2ecde6969f760300e09d6736cf2c8cc737065cebfcd3dbd2745f9ab27"
+    },
+    {
+      "path": "v44-2acc03f35d152c87e80ae4929b0c6b1866f7834c8d56ea05b5adf2ceb6566e65/proof.json",
+      "bytes": 816,
+      "sha256": "1f29cffc1a2a516c29887619fcaa2a22ca521189af4a71e5eb7753281eef6f77"
+    },
+    {
+      "path": "v44-93bb35759bde917f1151d6cf0ce268ad19efdb2c82c0bef4c81df6c8ac76efef/proof.json",
+      "bytes": 815,
+      "sha256": "b713bc72c51b9747e702a8366f2dc76704c8f1cb578eafd63f5138217121af55"
+    },
+    {
+      "path": "v44-28b57fb676d4bb1924a13ded2b1932004fd1b54d11349ce136cad8ccda3983e2/proof.json",
+      "bytes": 815,
+      "sha256": "8474e89a4ee64c25e9b16fe8b97cb8971cbc05af56a084cc41b4d5b7e2c95a91"
+    },
+    {
+      "path": "v44-bb4e0b38211b3123dcc24a3c768328ed39a8fab357d5d51aae6edfb55509657c/proof.json",
+      "bytes": 816,
+      "sha256": "386cfb5a26b3fb037a522d8c45ebb4a92c97e2bb3be64c5e4b86e734536ebe65"
+    },
+    {
+      "path": "v44-5a9519e5b5c2d87262f8cdba92fcf6e42e5ad6aff8af13250a851ea204d95456/proof.json",
+      "bytes": 815,
+      "sha256": "8605935b2f2a4458fd361a4154b890eb5a7c454651e9b5426da868f166a2ce81"
+    },
+    {
+      "path": "v44-f2221a4c9ce1fe9e69d9451380073e18a77b973583f0db8a32130f8c9d6a86cc/proof.json",
+      "bytes": 815,
+      "sha256": "10acbe1e41f28a48c9b795fc2d3d70b86c1d5db06c84771d4b57a9ea17b8f251"
+    },
+    {
+      "path": "v44-ce1d1aedea426966fa93eddbf05af1240739e82076f4c40e03eb2c1fcfe6825e/proof.json",
+      "bytes": 815,
+      "sha256": "6e686fe5a378bab38c0eb0e8c1b812bad5ad1e027146ec856916585ed9c28cbe"
+    }
+  ],
+  "lookup_failure": {
+    "attempt_id": "0f8b4c901a266064d29d6984476b04bf814bb44ac1cdfb9580629fa739577099",
+    "forecast_id": "97dea28b4914cfe6bfd103890db820ee1a4a464d4a255327f4ecf6783a11609f",
+    "observed_at": "2026-11-17T15:17:45.169577Z",
+    "reason": "ValueError:native_resolution_transaction_unavailable",
+    "raw_path": "/home/ubuntu/Neraium-Poly/data/experimental-paper/phase42-native/v44-c700f80170aa73070e3ed51c96fd14eb8a6f5bc2848498b3d34f4921b3ec36be/raw/0eda72bd30ab844a9d0fd5843abcb4c0e0a715e907fc463aa3d1da87a1cf3bb6.json",
+    "source_url": "https://data-api.polymarket.com/v2/resolutions?condition=0x1e392b5d80711a000230f6eec6b7b67cf1b4a7ee793d83c8e432680e37217c4f",
+    "sha256": "0eda72bd30ab844a9d0fd5843abcb4c0e0a715e907fc463aa3d1da87a1cf3bb6",
+    "payload": {
+      "data": [
+        {
+          "condition_id": "0x1e392b5d80711a000230f6eec6b7b67cf1b4a7ee793d83c8e432680e37217c4f",
+          "status": "resolved",
+          "extended_review": false,
+          "was_disputed": false,
+          "new_version_q": false,
+          "transaction_hash": "",
+          "log_index": "",
+          "last_update_timestamp": "2026-11-17T03:43:49Z",
+          "payouts": [
+            0,
+            1000000
+          ],
+          "resolution_source": "reported",
+          "was_arbitrated": false,
+          "resolved_block": 97454373,
+          "resolved_at": "2026-11-17T03:43:49Z"
+        }
+      ]
+    }
+  },
+  "historical_files_modified": false,
+  "historical_bytes_reclaimed": 0,
+  "physical_raw_bytes": 63786136,
+  "raw_bytes_not_attributed_by_surviving_manifests": 0,
+  "unattributed_policy": "retain untouched; no proof authenticity or deletion eligibility inferred"
+}
