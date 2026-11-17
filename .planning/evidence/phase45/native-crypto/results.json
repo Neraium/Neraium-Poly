@@ -1,0 +1,1447 @@
+{
+  "scope": "original prospective forecasts and restored authentic finalized native chain evidence; no positions, no paper profits",
+  "checkpoint_id": "strategy42:000000002400",
+  "checkpoint_sha256": "ee872e2b0bf58ffb0f3a2ab0297fa6b46ba8a4e2b1d34fd19f2bbad2cfdc944f",
+  "forecasts": {
+    "14c1b55f1f9a02c4df79e490fda7be3954523971847d1079667895ab78a543b7": {
+      "baseline_scope": "same preforecast observed two-sided quote; not an independent predictive feature",
+      "book": {
+        "asks": [
+          {
+            "price": 0.016,
+            "size": 230.0
+          },
+          {
+            "price": 0.017,
+            "size": 314.0
+          },
+          {
+            "price": 0.018,
+            "size": 10.0
+          },
+          {
+            "price": 0.02,
+            "size": 249.94
+          },
+          {
+            "price": 0.021,
+            "size": 400.0
+          },
+          {
+            "price": 0.022,
+            "size": 4970.0
+          },
+          {
+            "price": 0.029,
+            "size": 2801.0
+          },
+          {
+            "price": 0.033,
+            "size": 360.0
+          },
+          {
+            "price": 0.044,
+            "size": 161.0
+          },
+          {
+            "price": 0.056,
+            "size": 339.0
+          },
+          {
+            "price": 0.057,
+            "size": 540.0
+          },
+          {
+            "price": 0.058,
+            "size": 3000.0
+          },
+          {
+            "price": 0.162,
+            "size": 7512.0
+          },
+          {
+            "price": 0.31,
+            "size": 7.0
+          },
+          {
+            "price": 0.482,
+            "size": 5253.0
+          },
+          {
+            "price": 0.59,
+            "size": 5470.0
+          },
+          {
+            "price": 0.697,
+            "size": 5360.0
+          },
+          {
+            "price": 0.745,
+            "size": 6020.0
+          },
+          {
+            "price": 0.778,
+            "size": 5.62
+          },
+          {
+            "price": 0.779,
+            "size": 3350.0
+          },
+          {
+            "price": 0.78,
+            "size": 500.0
+          },
+          {
+            "price": 0.806,
+            "size": 7150.0
+          },
+          {
+            "price": 0.856,
+            "size": 9480.0
+          },
+          {
+            "price": 0.91,
+            "size": 5.0
+          },
+          {
+            "price": 0.969,
+            "size": 55.23
+          },
+          {
+            "price": 0.97,
+            "size": 100.0
+          },
+          {
+            "price": 0.988,
+            "size": 60.73
+          },
+          {
+            "price": 0.989,
+            "size": 909.0
+          },
+          {
+            "price": 0.996,
+            "size": 178.33
+          },
+          {
+            "price": 0.997,
+            "size": 1718.27
+          },
+          {
+            "price": 0.998,
+            "size": 2595.74
+          },
+          {
+            "price": 0.999,
+            "size": 5251.81
+          }
+        ],
+        "available_at": "2026-11-16T13:52:03.632042Z",
+        "bids": [
+          {
+            "price": 0.008,
+            "size": 5395.0
+          },
+          {
+            "price": 0.007,
+            "size": 309.91
+          },
+          {
+            "price": 0.006,
+            "size": 214.0
+          },
+          {
+            "price": 0.005,
+            "size": 74.76
+          },
+          {
+            "price": 0.004,
+            "size": 40.0
+          },
+          {
+            "price": 0.003,
+            "size": 334.0
+          },
+          {
+            "price": 0.002,
+            "size": 135.0
+          },
+          {
+            "price": 0.001,
+            "size": 47085.0
+          }
+        ],
+        "complete": true,
+        "exchange": "polymarket",
+        "id": "1b7df46ec4e06c8021e1a129ad24fdd51d55529b5a0641c243d3027d8a28c4f1",
+        "market_id": "7085185",
+        "schema_version": "1.0",
+        "sequence": 0,
+        "source": "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+        "timestamp": "2026-11-16T13:52:03.591000Z",
+        "token_id": "107282931402706380297186214079120427633563857937533006094935287461432685391014"
+      },
+      "book_id": "1b7df46ec4e06c8021e1a129ad24fdd51d55529b5a0641c243d3027d8a28c4f1",
+      "book_sha256": "2657f112f271a724de2e1587211666b358c2a4cf8d9187b67b92c12d2f2a85e1",
+      "brier": null,
+      "calibration_status": "unvalidated_research",
+      "certification_authority": false,
+      "contract": {
+        "available_at": "2026-11-16T13:52:06.762338Z",
+        "compatible": true,
+        "contract_type": "binance_daily_low_barrier",
+        "domain": "crypto",
+        "event_id": "1399649",
+        "id": "23bd53be6cd1b09b8a068ccce83473eb46f85ad614c2d4d58ed383652dedbda4",
+        "market_id": "7085185",
+        "parameters": {
+          "asset": "BTC",
+          "candle_convention": "all_UTC_1m_candles_with_open_in_half_open_local_day",
+          "market_snapshot": {
+            "available_at": "2026-11-16T13:45:17.385121Z",
+            "end_time": "2026-11-17T05:00:00Z",
+            "event_id": "1399649",
+            "exchange": "polymarket",
+            "id": "cb4d0d448442a157043a632dcf4c4aefc9ac8b317c8cdbe0acd47d4be63e80aa",
+            "market_id": "7085185",
+            "min_order_size": 5.0,
+            "outcome": "Yes",
+            "probability": 0.012,
+            "question": "Will Bitcoin dip to $58,000 on November 16?",
+            "resolution_rules": "This market will immediately resolve to \"Yes\" if any Binance 1 minute candle for Bitcoin (BTC/USDT) on the date specified in the title, between 12:00 AM ET and 11:59 PM ET has a final \"Low\" price equal to or lower than the price specified in the title. Otherwise, this market will resolve to \"No.\"\n\nThe resolution source for this market is Binance, specifically the BTC/USDT \"Low\" prices available at https://www.binance.com/en/trade/BTC_USDT, with the chart settings on \"1m\" for one-minute candles selected on the top bar.\n\nPlease note that the outcome of this market depends solely on the price data from the Binance BTC/USDT trading pair. Prices from other exchanges, different trading pairs, or spot markets will not be considered for the resolution of this market.",
+            "resolution_source": "https://www.binance.com/en/trade/BTC_USDT",
+            "schema_version": "1.0",
+            "source": "https://gamma-api.polymarket.com",
+            "status": "active",
+            "tick_size": 0.001,
+            "timestamp": "2026-11-16T13:45:17.385121Z",
+            "token_id": "107282931402706380297186214079120427633563857937533006094935287461432685391014"
+          },
+          "operator": "<=",
+          "period_end_utc": "2026-11-17T05:00:00+00:00",
+          "period_start_utc": "2026-11-16T05:00:00+00:00",
+          "price_definition": "final_minute_low",
+          "quote_currency": "USDT",
+          "reference_source": "https://www.binance.com/en/trade/BTC_USDT",
+          "selected_outcome": "Yes",
+          "symbol": "BTCUSDT",
+          "threshold": 58000.0,
+          "timezone": "America/New_York"
+        },
+        "probability_semantics": "binary_event_probability",
+        "reasons": [],
+        "review_required": false,
+        "rules_sha256": "638df5f387291ab1afa41edc265695e1b5264a48080a7d0aca10418a60621201",
+        "schema_version": "1.0",
+        "source": "neraium-poly/event-rule-interpreter/v18",
+        "timestamp": "2026-11-16T13:52:06.762338Z",
+        "token_id": "107282931402706380297186214079120427633563857937533006094935287461432685391014"
+      },
+      "cost_adjusted_trading_edge": null,
+      "dataset_sha256": "d7a5cd41d11a7b31f49bca16784a013c7867541a231211094a35b1151a14fdf7",
+      "domain": "crypto",
+      "enrollment_id": "6aaa54889e3a35b97213536d0de03c996e1558e133984ad1f376d777e290a8b1",
+      "event_end_time": "2026-11-17T05:00:00+00:00",
+      "event_id": "1399649",
+      "evidence_cutoff": "2026-11-16T13:52:09.587523+00:00",
+      "evidence_ids": [
+        "6050416b7f74f20cc0fcead3fe309593ca535d117b26e8486bfb969980320f83"
+      ],
+      "failure_conditions": "Past blocks represent future regimes; finite-path tails and bootstrap stationarity can fail",
+      "feature_version": "causal-closed-minute-return-and-intrabar-low-v1",
+      "forecast_horizon_seconds": 54470.412477,
+      "horizon_bucket": "8-24h",
+      "hypothesis": "Stationary moving-block resampling of authentic joint close returns and intrabar lows",
+      "id": "14c1b55f1f9a02c4df79e490fda7be3954523971847d1079667895ab78a543b7",
+      "independence_reviewed": false,
+      "independent_of_polymarket": true,
+      "input_requirements": [
+        "exact Binance daily-low rule",
+        "720 causal minute returns",
+        "complete elapsed event window",
+        "fresh observed executable book"
+      ],
+      "log_loss": null,
+      "lower_probability": 0.0,
+      "market": {
+        "available_at": "2026-11-16T13:45:17.385121Z",
+        "end_time": "2026-11-17T05:00:00Z",
+        "event_id": "1399649",
+        "exchange": "polymarket",
+        "id": "cb4d0d448442a157043a632dcf4c4aefc9ac8b317c8cdbe0acd47d4be63e80aa",
+        "market_id": "7085185",
+        "min_order_size": 5.0,
+        "outcome": "Yes",
+        "probability": 0.012,
+        "question": "Will Bitcoin dip to $58,000 on November 16?",
+        "resolution_rules": "This market will immediately resolve to \"Yes\" if any Binance 1 minute candle for Bitcoin (BTC/USDT) on the date specified in the title, between 12:00 AM ET and 11:59 PM ET has a final \"Low\" price equal to or lower than the price specified in the title. Otherwise, this market will resolve to \"No.\"\n\nThe resolution source for this market is Binance, specifically the BTC/USDT \"Low\" prices available at https://www.binance.com/en/trade/BTC_USDT, with the chart settings on \"1m\" for one-minute candles selected on the top bar.\n\nPlease note that the outcome of this market depends solely on the price data from the Binance BTC/USDT trading pair. Prices from other exchanges, different trading pairs, or spot markets will not be considered for the resolution of this market.",
+        "resolution_source": "https://www.binance.com/en/trade/BTC_USDT",
+        "schema_version": "1.0",
+        "source": "https://gamma-api.polymarket.com",
+        "status": "active",
+        "tick_size": 0.001,
+        "timestamp": "2026-11-16T13:45:17.385121Z",
+        "token_id": "107282931402706380297186214079120427633563857937533006094935287461432685391014"
+      },
+      "market_id": "7085185",
+      "market_probability": 0.012,
+      "measured_sigma_per_sqrt_minute": 0.0006527628776241443,
+      "model_id": "empirical-ohlc-block-bootstrap-v23.1",
+      "model_sha256": "1aae861913d43ec42fa1ead1d90839d35abea30bf921d4dbe848cc9c8f259472",
+      "model_version": "empirical-ohlc-block-bootstrap-v23.1",
+      "monte_carlo": {
+        "barrier_hits": 0,
+        "block_minutes": 15,
+        "paths": 512,
+        "sampling_standard_error": 0.0,
+        "scope": "simulation error only, not forecast uncertainty"
+      },
+      "performance_criteria": [
+        "event-disjoint verified-outcome Brier/log-loss versus contemporaneous market",
+        "calibration and uncertainty before any edge claim"
+      ],
+      "probability": 0.0,
+      "probability_semantics": "binary_event_probability",
+      "reference_price": 64281.44,
+      "research_only": true,
+      "reviewed_dependency_group": null,
+      "risk_assumptions": "Research only; [0,1] model uncertainty; no automatic admission, sizing or orders",
+      "rules_sha256": "638df5f387291ab1afa41edc265695e1b5264a48080a7d0aca10418a60621201",
+      "source_independence": "Both challengers share Binance data and are NOT independent corroboration",
+      "source_lineages": [
+        "binance:BTCUSDT"
+      ],
+      "status": "research_estimate",
+      "timestamp": "2026-11-16T13:52:09.592136+00:00",
+      "token_id": "107282931402706380297186214079120427633563857937533006094935287461432685391014",
+      "trading_authority": false,
+      "training_interval": [
+        "2026-11-16T01:51:00+00:00",
+        "2026-11-16T13:51:59.999000+00:00"
+      ],
+      "training_observations": 721,
+      "training_returns": 720,
+      "uncertainty": {
+        "lower_probability": 0.0,
+        "type": "uncalibrated_model_uncertainty_not_coverage_interval",
+        "upper_probability": 1.0
+      },
+      "upper_probability": 1.0
+    },
+    "1a6f78818fd716b4916d1fe5ebe9d5b26d64d4c18582ed6a4e6db2ecbc9e3129": {
+      "baseline_scope": "same preforecast observed two-sided quote; not an independent predictive feature",
+      "book": {
+        "asks": [
+          {
+            "price": 0.12,
+            "size": 2425.0
+          },
+          {
+            "price": 0.13,
+            "size": 30.0
+          },
+          {
+            "price": 0.15,
+            "size": 4120.0
+          },
+          {
+            "price": 0.17,
+            "size": 1801.0
+          },
+          {
+            "price": 0.2,
+            "size": 20.0
+          },
+          {
+            "price": 0.21,
+            "size": 40.0
+          },
+          {
+            "price": 0.23,
+            "size": 45.0
+          },
+          {
+            "price": 0.25,
+            "size": 2002.0
+          },
+          {
+            "price": 0.26,
+            "size": 40.0
+          },
+          {
+            "price": 0.33,
+            "size": 1670.0
+          },
+          {
+            "price": 0.34,
+            "size": 505.87
+          },
+          {
+            "price": 0.36,
+            "size": 25.0
+          },
+          {
+            "price": 0.37,
+            "size": 20.0
+          },
+          {
+            "price": 0.41,
+            "size": 20.0
+          },
+          {
+            "price": 0.47,
+            "size": 6443.0
+          },
+          {
+            "price": 0.49,
+            "size": 20.0
+          },
+          {
+            "price": 0.6,
+            "size": 4240.0
+          },
+          {
+            "price": 0.67,
+            "size": 35.0
+          },
+          {
+            "price": 0.69,
+            "size": 4020.0
+          },
+          {
+            "price": 0.73,
+            "size": 5140.0
+          },
+          {
+            "price": 0.8,
+            "size": 6890.0
+          },
+          {
+            "price": 0.83,
+            "size": 6.82
+          },
+          {
+            "price": 0.84,
+            "size": 9895.0
+          },
+          {
+            "price": 0.92,
+            "size": 5.0
+          },
+          {
+            "price": 0.96,
+            "size": 40.63
+          },
+          {
+            "price": 0.97,
+            "size": 109.82
+          },
+          {
+            "price": 0.98,
+            "size": 500.0
+          },
+          {
+            "price": 0.99,
+            "size": 6292.18
+          }
+        ],
+        "available_at": "2026-11-16T13:52:02.888569Z",
+        "bids": [
+          {
+            "price": 0.1,
+            "size": 205.0
+          },
+          {
+            "price": 0.08,
+            "size": 39.99
+          },
+          {
+            "price": 0.07,
+            "size": 90.0
+          },
+          {
+            "price": 0.06,
+            "size": 11.0
+          },
+          {
+            "price": 0.05,
+            "size": 4387.0
+          },
+          {
+            "price": 0.04,
+            "size": 11235.0
+          },
+          {
+            "price": 0.03,
+            "size": 540.0
+          },
+          {
+            "price": 0.02,
+            "size": 540.0
+          },
+          {
+            "price": 0.01,
+            "size": 1040.0
+          }
+        ],
+        "complete": true,
+        "exchange": "polymarket",
+        "id": "e8025009a698a9423ab0c694da59d55c0d096403e9e3cab4054057b552afe267",
+        "market_id": "7085207",
+        "schema_version": "1.0",
+        "sequence": 0,
+        "source": "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+        "timestamp": "2026-11-16T13:52:02.847000Z",
+        "token_id": "102051962032016000694916371251048357589054364497162698091416123830113673228638"
+      },
+      "book_id": "e8025009a698a9423ab0c694da59d55c0d096403e9e3cab4054057b552afe267",
+      "book_sha256": "cb0141d38579ed3d07572fadcaaf3e8a5ec8da0d017a7f7bac8e5f496eb569a4",
+      "brier": null,
+      "calibration_status": "unvalidated_research",
+      "certification_authority": false,
+      "contract": {
+        "available_at": "2026-11-16T13:52:06.762338Z",
+        "compatible": true,
+        "contract_type": "binance_daily_low_barrier",
+        "domain": "crypto",
+        "event_id": "1399652",
+        "id": "ec8cc7522464a12a17051f803168e38c9f3f24b05b04f039dad7dd1c80819d11",
+        "market_id": "7085207",
+        "parameters": {
+          "asset": "ETH",
+          "candle_convention": "all_UTC_1m_candles_with_open_in_half_open_local_day",
+          "market_snapshot": {
+            "available_at": "2026-11-16T13:45:17.385121Z",
+            "end_time": "2026-11-17T05:00:00Z",
+            "event_id": "1399652",
+            "exchange": "polymarket",
+            "id": "d63f66232a14d5e5818bb6087fe742e4888c0e7dae60b82cf0c2133d11c66cec",
+            "market_id": "7085207",
+            "min_order_size": 5.0,
+            "outcome": "Yes",
+            "probability": 0.115,
+            "question": "Will Ethereum dip to $1,700 on November 16?",
+            "resolution_rules": "This market will immediately resolve to \"Yes\" if any Binance 1 minute candle for Ethereum (ETH/USDT) on the date specified in the title, between 12:00 AM ET and 11:59 PM ET has a final \"Low\" price equal to or lower than the price specified in the title. Otherwise, this market will resolve to \"No.\"\n\nThe resolution source for this market is Binance, specifically the ETH/USDT \"Low\" prices available at https://www.binance.com/en/trade/ETH_USDT, with the chart settings on \"1m\" for one-minute candles selected on the top bar.\n\nPlease note that the outcome of this market depends solely on the price data from the Binance ETH/USDT trading pair. Prices from other exchanges, different trading pairs, or spot markets will not be considered for the resolution of this market.",
+            "resolution_source": "https://www.binance.com/en/trade/ETH_USDT",
+            "schema_version": "1.0",
+            "source": "https://gamma-api.polymarket.com",
+            "status": "active",
+            "tick_size": 0.01,
+            "timestamp": "2026-11-16T13:45:17.385121Z",
+            "token_id": "102051962032016000694916371251048357589054364497162698091416123830113673228638"
+          },
+          "operator": "<=",
+          "period_end_utc": "2026-11-17T05:00:00+00:00",
+          "period_start_utc": "2026-11-16T05:00:00+00:00",
+          "price_definition": "final_minute_low",
+          "quote_currency": "USDT",
+          "reference_source": "https://www.binance.com/en/trade/ETH_USDT",
+          "selected_outcome": "Yes",
+          "symbol": "ETHUSDT",
+          "threshold": 1700.0,
+          "timezone": "America/New_York"
+        },
+        "probability_semantics": "binary_event_probability",
+        "reasons": [],
+        "review_required": false,
+        "rules_sha256": "7f6910dd41ab8ce7cdf36a171f1ae383ceb28ab5d50097feda93300f967309d9",
+        "schema_version": "1.0",
+        "source": "neraium-poly/event-rule-interpreter/v18",
+        "timestamp": "2026-11-16T13:52:06.762338Z",
+        "token_id": "102051962032016000694916371251048357589054364497162698091416123830113673228638"
+      },
+      "cost_adjusted_trading_edge": null,
+      "dataset_sha256": "ff7259aa133efeccb75da17d4327d6b20dd3c1e580a24e7d683849fe22b92715",
+      "domain": "crypto",
+      "enrollment_id": "6aaa54889e3a35b97213536d0de03c996e1558e133984ad1f376d777e290a8b1",
+      "event_end_time": "2026-11-17T05:00:00+00:00",
+      "event_id": "1399652",
+      "evidence_cutoff": "2026-11-16T13:52:09.683113+00:00",
+      "evidence_ids": [
+        "657b1aa7a5f12f71046a9689df9f96600e600cb70e6321aa0ae11cb6dbe497ff"
+      ],
+      "failure_conditions": "Past blocks represent future regimes; finite-path tails and bootstrap stationarity can fail",
+      "feature_version": "causal-closed-minute-return-and-intrabar-low-v1",
+      "forecast_horizon_seconds": 54470.316887,
+      "horizon_bucket": "8-24h",
+      "hypothesis": "Stationary moving-block resampling of authentic joint close returns and intrabar lows",
+      "id": "1a6f78818fd716b4916d1fe5ebe9d5b26d64d4c18582ed6a4e6db2ecbc9e3129",
+      "independence_reviewed": false,
+      "independent_of_polymarket": true,
+      "input_requirements": [
+        "exact Binance daily-low rule",
+        "720 causal minute returns",
+        "complete elapsed event window",
+        "fresh observed executable book"
+      ],
+      "log_loss": null,
+      "lower_probability": 0.0,
+      "market": {
+        "available_at": "2026-11-16T13:45:17.385121Z",
+        "end_time": "2026-11-17T05:00:00Z",
+        "event_id": "1399652",
+        "exchange": "polymarket",
+        "id": "d63f66232a14d5e5818bb6087fe742e4888c0e7dae60b82cf0c2133d11c66cec",
+        "market_id": "7085207",
+        "min_order_size": 5.0,
+        "outcome": "Yes",
+        "probability": 0.115,
+        "question": "Will Ethereum dip to $1,700 on November 16?",
+        "resolution_rules": "This market will immediately resolve to \"Yes\" if any Binance 1 minute candle for Ethereum (ETH/USDT) on the date specified in the title, between 12:00 AM ET and 11:59 PM ET has a final \"Low\" price equal to or lower than the price specified in the title. Otherwise, this market will resolve to \"No.\"\n\nThe resolution source for this market is Binance, specifically the ETH/USDT \"Low\" prices available at https://www.binance.com/en/trade/ETH_USDT, with the chart settings on \"1m\" for one-minute candles selected on the top bar.\n\nPlease note that the outcome of this market depends solely on the price data from the Binance ETH/USDT trading pair. Prices from other exchanges, different trading pairs, or spot markets will not be considered for the resolution of this market.",
+        "resolution_source": "https://www.binance.com/en/trade/ETH_USDT",
+        "schema_version": "1.0",
+        "source": "https://gamma-api.polymarket.com",
+        "status": "active",
+        "tick_size": 0.01,
+        "timestamp": "2026-11-16T13:45:17.385121Z",
+        "token_id": "102051962032016000694916371251048357589054364497162698091416123830113673228638"
+      },
+      "market_id": "7085207",
+      "market_probability": 0.11,
+      "measured_sigma_per_sqrt_minute": 0.000811470584414409,
+      "model_id": "empirical-ohlc-block-bootstrap-v23.1",
+      "model_sha256": "1aae861913d43ec42fa1ead1d90839d35abea30bf921d4dbe848cc9c8f259472",
+      "model_version": "empirical-ohlc-block-bootstrap-v23.1",
+      "monte_carlo": {
+        "barrier_hits": 14,
+        "block_minutes": 15,
+        "paths": 512,
+        "sampling_standard_error": 0.007207319052307378,
+        "scope": "simulation error only, not forecast uncertainty"
+      },
+      "performance_criteria": [
+        "event-disjoint verified-outcome Brier/log-loss versus contemporaneous market",
+        "calibration and uncertainty before any edge claim"
+      ],
+      "probability": 0.02734375,
+      "probability_semantics": "binary_event_probability",
+      "reference_price": 1803.21,
+      "research_only": true,
+      "reviewed_dependency_group": null,
+      "risk_assumptions": "Research only; [0,1] model uncertainty; no automatic admission, sizing or orders",
+      "rules_sha256": "7f6910dd41ab8ce7cdf36a171f1ae383ceb28ab5d50097feda93300f967309d9",
+      "source_independence": "Both challengers share Binance data and are NOT independent corroboration",
+      "source_lineages": [
+        "binance:ETHUSDT"
+      ],
+      "status": "research_estimate",
+      "timestamp": "2026-11-16T13:52:09.687809+00:00",
+      "token_id": "102051962032016000694916371251048357589054364497162698091416123830113673228638",
+      "trading_authority": false,
+      "training_interval": [
+        "2026-11-16T01:51:00+00:00",
+        "2026-11-16T13:51:59.999000+00:00"
+      ],
+      "training_observations": 721,
+      "training_returns": 720,
+      "uncertainty": {
+        "lower_probability": 0.0,
+        "type": "uncalibrated_model_uncertainty_not_coverage_interval",
+        "upper_probability": 1.0
+      },
+      "upper_probability": 1.0
+    },
+    "a5640cd3e115d2c62cd9a0d01cad07d04bb3a1e432049ad45b7df441f2a8255e": {
+      "baseline_scope": "same preforecast observed two-sided quote; not an independent predictive feature",
+      "book": {
+        "asks": [
+          {
+            "price": 0.016,
+            "size": 230.0
+          },
+          {
+            "price": 0.017,
+            "size": 314.0
+          },
+          {
+            "price": 0.018,
+            "size": 10.0
+          },
+          {
+            "price": 0.02,
+            "size": 249.94
+          },
+          {
+            "price": 0.021,
+            "size": 400.0
+          },
+          {
+            "price": 0.022,
+            "size": 4970.0
+          },
+          {
+            "price": 0.029,
+            "size": 2801.0
+          },
+          {
+            "price": 0.033,
+            "size": 360.0
+          },
+          {
+            "price": 0.044,
+            "size": 161.0
+          },
+          {
+            "price": 0.056,
+            "size": 339.0
+          },
+          {
+            "price": 0.057,
+            "size": 540.0
+          },
+          {
+            "price": 0.058,
+            "size": 3000.0
+          },
+          {
+            "price": 0.162,
+            "size": 7512.0
+          },
+          {
+            "price": 0.31,
+            "size": 7.0
+          },
+          {
+            "price": 0.482,
+            "size": 5253.0
+          },
+          {
+            "price": 0.59,
+            "size": 5470.0
+          },
+          {
+            "price": 0.697,
+            "size": 5360.0
+          },
+          {
+            "price": 0.745,
+            "size": 6020.0
+          },
+          {
+            "price": 0.778,
+            "size": 5.62
+          },
+          {
+            "price": 0.779,
+            "size": 3350.0
+          },
+          {
+            "price": 0.78,
+            "size": 500.0
+          },
+          {
+            "price": 0.806,
+            "size": 7150.0
+          },
+          {
+            "price": 0.856,
+            "size": 9480.0
+          },
+          {
+            "price": 0.91,
+            "size": 5.0
+          },
+          {
+            "price": 0.969,
+            "size": 55.23
+          },
+          {
+            "price": 0.97,
+            "size": 100.0
+          },
+          {
+            "price": 0.988,
+            "size": 60.73
+          },
+          {
+            "price": 0.989,
+            "size": 909.0
+          },
+          {
+            "price": 0.996,
+            "size": 178.33
+          },
+          {
+            "price": 0.997,
+            "size": 1718.27
+          },
+          {
+            "price": 0.998,
+            "size": 2595.74
+          },
+          {
+            "price": 0.999,
+            "size": 5251.81
+          }
+        ],
+        "available_at": "2026-11-16T13:52:03.632042Z",
+        "bids": [
+          {
+            "price": 0.008,
+            "size": 5395.0
+          },
+          {
+            "price": 0.007,
+            "size": 309.91
+          },
+          {
+            "price": 0.006,
+            "size": 214.0
+          },
+          {
+            "price": 0.005,
+            "size": 74.76
+          },
+          {
+            "price": 0.004,
+            "size": 40.0
+          },
+          {
+            "price": 0.003,
+            "size": 334.0
+          },
+          {
+            "price": 0.002,
+            "size": 135.0
+          },
+          {
+            "price": 0.001,
+            "size": 47085.0
+          }
+        ],
+        "complete": true,
+        "exchange": "polymarket",
+        "id": "1b7df46ec4e06c8021e1a129ad24fdd51d55529b5a0641c243d3027d8a28c4f1",
+        "market_id": "7085185",
+        "schema_version": "1.0",
+        "sequence": 0,
+        "source": "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+        "timestamp": "2026-11-16T13:52:03.591000Z",
+        "token_id": "107282931402706380297186214079120427633563857937533006094935287461432685391014"
+      },
+      "book_id": "1b7df46ec4e06c8021e1a129ad24fdd51d55529b5a0641c243d3027d8a28c4f1",
+      "book_sha256": "2657f112f271a724de2e1587211666b358c2a4cf8d9187b67b92c12d2f2a85e1",
+      "brier": null,
+      "calibration_status": "unvalidated_research",
+      "certification_authority": false,
+      "contract": {
+        "available_at": "2026-11-16T13:52:06.762338Z",
+        "compatible": true,
+        "contract_type": "binance_daily_low_barrier",
+        "domain": "crypto",
+        "event_id": "1399649",
+        "id": "23bd53be6cd1b09b8a068ccce83473eb46f85ad614c2d4d58ed383652dedbda4",
+        "market_id": "7085185",
+        "parameters": {
+          "asset": "BTC",
+          "candle_convention": "all_UTC_1m_candles_with_open_in_half_open_local_day",
+          "market_snapshot": {
+            "available_at": "2026-11-16T13:45:17.385121Z",
+            "end_time": "2026-11-17T05:00:00Z",
+            "event_id": "1399649",
+            "exchange": "polymarket",
+            "id": "cb4d0d448442a157043a632dcf4c4aefc9ac8b317c8cdbe0acd47d4be63e80aa",
+            "market_id": "7085185",
+            "min_order_size": 5.0,
+            "outcome": "Yes",
+            "probability": 0.012,
+            "question": "Will Bitcoin dip to $58,000 on November 16?",
+            "resolution_rules": "This market will immediately resolve to \"Yes\" if any Binance 1 minute candle for Bitcoin (BTC/USDT) on the date specified in the title, between 12:00 AM ET and 11:59 PM ET has a final \"Low\" price equal to or lower than the price specified in the title. Otherwise, this market will resolve to \"No.\"\n\nThe resolution source for this market is Binance, specifically the BTC/USDT \"Low\" prices available at https://www.binance.com/en/trade/BTC_USDT, with the chart settings on \"1m\" for one-minute candles selected on the top bar.\n\nPlease note that the outcome of this market depends solely on the price data from the Binance BTC/USDT trading pair. Prices from other exchanges, different trading pairs, or spot markets will not be considered for the resolution of this market.",
+            "resolution_source": "https://www.binance.com/en/trade/BTC_USDT",
+            "schema_version": "1.0",
+            "source": "https://gamma-api.polymarket.com",
+            "status": "active",
+            "tick_size": 0.001,
+            "timestamp": "2026-11-16T13:45:17.385121Z",
+            "token_id": "107282931402706380297186214079120427633563857937533006094935287461432685391014"
+          },
+          "operator": "<=",
+          "period_end_utc": "2026-11-17T05:00:00+00:00",
+          "period_start_utc": "2026-11-16T05:00:00+00:00",
+          "price_definition": "final_minute_low",
+          "quote_currency": "USDT",
+          "reference_source": "https://www.binance.com/en/trade/BTC_USDT",
+          "selected_outcome": "Yes",
+          "symbol": "BTCUSDT",
+          "threshold": 58000.0,
+          "timezone": "America/New_York"
+        },
+        "probability_semantics": "binary_event_probability",
+        "reasons": [],
+        "review_required": false,
+        "rules_sha256": "638df5f387291ab1afa41edc265695e1b5264a48080a7d0aca10418a60621201",
+        "schema_version": "1.0",
+        "source": "neraium-poly/event-rule-interpreter/v18",
+        "timestamp": "2026-11-16T13:52:06.762338Z",
+        "token_id": "107282931402706380297186214079120427633563857937533006094935287461432685391014"
+      },
+      "cost_adjusted_trading_edge": null,
+      "dataset_sha256": "d7a5cd41d11a7b31f49bca16784a013c7867541a231211094a35b1151a14fdf7",
+      "domain": "crypto",
+      "enrollment_id": "6aaa54889e3a35b97213536d0de03c996e1558e133984ad1f376d777e290a8b1",
+      "event_end_time": "2026-11-17T05:00:00+00:00",
+      "event_id": "1399649",
+      "evidence_cutoff": "2026-11-16T13:52:09.587523+00:00",
+      "evidence_ids": [
+        "6050416b7f74f20cc0fcead3fe309593ca535d117b26e8486bfb969980320f83"
+      ],
+      "failure_conditions": "Constant volatility, continuous first passage and no jumps; uncalibrated tails",
+      "feature_version": "causal-closed-minute-return-and-intrabar-low-v1",
+      "forecast_horizon_seconds": 54470.412477,
+      "horizon_bucket": "8-24h",
+      "hypothesis": "Gaussian zero-log-drift first passage, integrating uncertain future-day starting price",
+      "id": "a5640cd3e115d2c62cd9a0d01cad07d04bb3a1e432049ad45b7df441f2a8255e",
+      "independence_reviewed": false,
+      "independent_of_polymarket": true,
+      "input_requirements": [
+        "exact Binance daily-low rule",
+        "720 causal minute returns",
+        "complete elapsed event window",
+        "fresh observed executable book"
+      ],
+      "log_loss": null,
+      "lower_probability": 0.0,
+      "market": {
+        "available_at": "2026-11-16T13:45:17.385121Z",
+        "end_time": "2026-11-17T05:00:00Z",
+        "event_id": "1399649",
+        "exchange": "polymarket",
+        "id": "cb4d0d448442a157043a632dcf4c4aefc9ac8b317c8cdbe0acd47d4be63e80aa",
+        "market_id": "7085185",
+        "min_order_size": 5.0,
+        "outcome": "Yes",
+        "probability": 0.012,
+        "question": "Will Bitcoin dip to $58,000 on November 16?",
+        "resolution_rules": "This market will immediately resolve to \"Yes\" if any Binance 1 minute candle for Bitcoin (BTC/USDT) on the date specified in the title, between 12:00 AM ET and 11:59 PM ET has a final \"Low\" price equal to or lower than the price specified in the title. Otherwise, this market will resolve to \"No.\"\n\nThe resolution source for this market is Binance, specifically the BTC/USDT \"Low\" prices available at https://www.binance.com/en/trade/BTC_USDT, with the chart settings on \"1m\" for one-minute candles selected on the top bar.\n\nPlease note that the outcome of this market depends solely on the price data from the Binance BTC/USDT trading pair. Prices from other exchanges, different trading pairs, or spot markets will not be considered for the resolution of this market.",
+        "resolution_source": "https://www.binance.com/en/trade/BTC_USDT",
+        "schema_version": "1.0",
+        "source": "https://gamma-api.polymarket.com",
+        "status": "active",
+        "tick_size": 0.001,
+        "timestamp": "2026-11-16T13:45:17.385121Z",
+        "token_id": "107282931402706380297186214079120427633563857937533006094935287461432685391014"
+      },
+      "market_id": "7085185",
+      "market_probability": 0.012,
+      "measured_sigma_per_sqrt_minute": 0.0006527628776241443,
+      "model_id": "gaussian-first-passage-v23.1",
+      "model_sha256": "03327bf8b5ee88ab4f72dbe0bc4a7cb0061d9517c4e657d4661b038e27d7bee7",
+      "model_version": "gaussian-first-passage-v23.1",
+      "monte_carlo": null,
+      "performance_criteria": [
+        "event-disjoint verified-outcome Brier/log-loss versus contemporaneous market",
+        "calibration and uncertainty before any edge claim"
+      ],
+      "probability": 1.716085483940689e-07,
+      "probability_semantics": "binary_event_probability",
+      "reference_price": 64281.44,
+      "research_only": true,
+      "reviewed_dependency_group": null,
+      "risk_assumptions": "Research only; [0,1] model uncertainty; no automatic admission, sizing or orders",
+      "rules_sha256": "638df5f387291ab1afa41edc265695e1b5264a48080a7d0aca10418a60621201",
+      "source_independence": "Both challengers share Binance data and are NOT independent corroboration",
+      "source_lineages": [
+        "binance:BTCUSDT"
+      ],
+      "status": "research_estimate",
+      "timestamp": "2026-11-16T13:52:09.592136+00:00",
+      "token_id": "107282931402706380297186214079120427633563857937533006094935287461432685391014",
+      "trading_authority": false,
+      "training_interval": [
+        "2026-11-16T01:51:00+00:00",
+        "2026-11-16T13:51:59.999000+00:00"
+      ],
+      "training_observations": 721,
+      "training_returns": 720,
+      "uncertainty": {
+        "lower_probability": 0.0,
+        "type": "uncalibrated_model_uncertainty_not_coverage_interval",
+        "upper_probability": 1.0
+      },
+      "upper_probability": 1.0
+    },
+    "fe5764e53afd51a09927507e8ba7e0eac2948b5abe64f2de46dcb62b736ab333": {
+      "baseline_scope": "same preforecast observed two-sided quote; not an independent predictive feature",
+      "book": {
+        "asks": [
+          {
+            "price": 0.12,
+            "size": 2425.0
+          },
+          {
+            "price": 0.13,
+            "size": 30.0
+          },
+          {
+            "price": 0.15,
+            "size": 4120.0
+          },
+          {
+            "price": 0.17,
+            "size": 1801.0
+          },
+          {
+            "price": 0.2,
+            "size": 20.0
+          },
+          {
+            "price": 0.21,
+            "size": 40.0
+          },
+          {
+            "price": 0.23,
+            "size": 45.0
+          },
+          {
+            "price": 0.25,
+            "size": 2002.0
+          },
+          {
+            "price": 0.26,
+            "size": 40.0
+          },
+          {
+            "price": 0.33,
+            "size": 1670.0
+          },
+          {
+            "price": 0.34,
+            "size": 505.87
+          },
+          {
+            "price": 0.36,
+            "size": 25.0
+          },
+          {
+            "price": 0.37,
+            "size": 20.0
+          },
+          {
+            "price": 0.41,
+            "size": 20.0
+          },
+          {
+            "price": 0.47,
+            "size": 6443.0
+          },
+          {
+            "price": 0.49,
+            "size": 20.0
+          },
+          {
+            "price": 0.6,
+            "size": 4240.0
+          },
+          {
+            "price": 0.67,
+            "size": 35.0
+          },
+          {
+            "price": 0.69,
+            "size": 4020.0
+          },
+          {
+            "price": 0.73,
+            "size": 5140.0
+          },
+          {
+            "price": 0.8,
+            "size": 6890.0
+          },
+          {
+            "price": 0.83,
+            "size": 6.82
+          },
+          {
+            "price": 0.84,
+            "size": 9895.0
+          },
+          {
+            "price": 0.92,
+            "size": 5.0
+          },
+          {
+            "price": 0.96,
+            "size": 40.63
+          },
+          {
+            "price": 0.97,
+            "size": 109.82
+          },
+          {
+            "price": 0.98,
+            "size": 500.0
+          },
+          {
+            "price": 0.99,
+            "size": 6292.18
+          }
+        ],
+        "available_at": "2026-11-16T13:52:02.888569Z",
+        "bids": [
+          {
+            "price": 0.1,
+            "size": 205.0
+          },
+          {
+            "price": 0.08,
+            "size": 39.99
+          },
+          {
+            "price": 0.07,
+            "size": 90.0
+          },
+          {
+            "price": 0.06,
+            "size": 11.0
+          },
+          {
+            "price": 0.05,
+            "size": 4387.0
+          },
+          {
+            "price": 0.04,
+            "size": 11235.0
+          },
+          {
+            "price": 0.03,
+            "size": 540.0
+          },
+          {
+            "price": 0.02,
+            "size": 540.0
+          },
+          {
+            "price": 0.01,
+            "size": 1040.0
+          }
+        ],
+        "complete": true,
+        "exchange": "polymarket",
+        "id": "e8025009a698a9423ab0c694da59d55c0d096403e9e3cab4054057b552afe267",
+        "market_id": "7085207",
+        "schema_version": "1.0",
+        "sequence": 0,
+        "source": "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+        "timestamp": "2026-11-16T13:52:02.847000Z",
+        "token_id": "102051962032016000694916371251048357589054364497162698091416123830113673228638"
+      },
+      "book_id": "e8025009a698a9423ab0c694da59d55c0d096403e9e3cab4054057b552afe267",
+      "book_sha256": "cb0141d38579ed3d07572fadcaaf3e8a5ec8da0d017a7f7bac8e5f496eb569a4",
+      "brier": null,
+      "calibration_status": "unvalidated_research",
+      "certification_authority": false,
+      "contract": {
+        "available_at": "2026-11-16T13:52:06.762338Z",
+        "compatible": true,
+        "contract_type": "binance_daily_low_barrier",
+        "domain": "crypto",
+        "event_id": "1399652",
+        "id": "ec8cc7522464a12a17051f803168e38c9f3f24b05b04f039dad7dd1c80819d11",
+        "market_id": "7085207",
+        "parameters": {
+          "asset": "ETH",
+          "candle_convention": "all_UTC_1m_candles_with_open_in_half_open_local_day",
+          "market_snapshot": {
+            "available_at": "2026-11-16T13:45:17.385121Z",
+            "end_time": "2026-11-17T05:00:00Z",
+            "event_id": "1399652",
+            "exchange": "polymarket",
+            "id": "d63f66232a14d5e5818bb6087fe742e4888c0e7dae60b82cf0c2133d11c66cec",
+            "market_id": "7085207",
+            "min_order_size": 5.0,
+            "outcome": "Yes",
+            "probability": 0.115,
+            "question": "Will Ethereum dip to $1,700 on November 16?",
+            "resolution_rules": "This market will immediately resolve to \"Yes\" if any Binance 1 minute candle for Ethereum (ETH/USDT) on the date specified in the title, between 12:00 AM ET and 11:59 PM ET has a final \"Low\" price equal to or lower than the price specified in the title. Otherwise, this market will resolve to \"No.\"\n\nThe resolution source for this market is Binance, specifically the ETH/USDT \"Low\" prices available at https://www.binance.com/en/trade/ETH_USDT, with the chart settings on \"1m\" for one-minute candles selected on the top bar.\n\nPlease note that the outcome of this market depends solely on the price data from the Binance ETH/USDT trading pair. Prices from other exchanges, different trading pairs, or spot markets will not be considered for the resolution of this market.",
+            "resolution_source": "https://www.binance.com/en/trade/ETH_USDT",
+            "schema_version": "1.0",
+            "source": "https://gamma-api.polymarket.com",
+            "status": "active",
+            "tick_size": 0.01,
+            "timestamp": "2026-11-16T13:45:17.385121Z",
+            "token_id": "102051962032016000694916371251048357589054364497162698091416123830113673228638"
+          },
+          "operator": "<=",
+          "period_end_utc": "2026-11-17T05:00:00+00:00",
+          "period_start_utc": "2026-11-16T05:00:00+00:00",
+          "price_definition": "final_minute_low",
+          "quote_currency": "USDT",
+          "reference_source": "https://www.binance.com/en/trade/ETH_USDT",
+          "selected_outcome": "Yes",
+          "symbol": "ETHUSDT",
+          "threshold": 1700.0,
+          "timezone": "America/New_York"
+        },
+        "probability_semantics": "binary_event_probability",
+        "reasons": [],
+        "review_required": false,
+        "rules_sha256": "7f6910dd41ab8ce7cdf36a171f1ae383ceb28ab5d50097feda93300f967309d9",
+        "schema_version": "1.0",
+        "source": "neraium-poly/event-rule-interpreter/v18",
+        "timestamp": "2026-11-16T13:52:06.762338Z",
+        "token_id": "102051962032016000694916371251048357589054364497162698091416123830113673228638"
+      },
+      "cost_adjusted_trading_edge": null,
+      "dataset_sha256": "ff7259aa133efeccb75da17d4327d6b20dd3c1e580a24e7d683849fe22b92715",
+      "domain": "crypto",
+      "enrollment_id": "6aaa54889e3a35b97213536d0de03c996e1558e133984ad1f376d777e290a8b1",
+      "event_end_time": "2026-11-17T05:00:00+00:00",
+      "event_id": "1399652",
+      "evidence_cutoff": "2026-11-16T13:52:09.683113+00:00",
+      "evidence_ids": [
+        "657b1aa7a5f12f71046a9689df9f96600e600cb70e6321aa0ae11cb6dbe497ff"
+      ],
+      "failure_conditions": "Constant volatility, continuous first passage and no jumps; uncalibrated tails",
+      "feature_version": "causal-closed-minute-return-and-intrabar-low-v1",
+      "forecast_horizon_seconds": 54470.316887,
+      "horizon_bucket": "8-24h",
+      "hypothesis": "Gaussian zero-log-drift first passage, integrating uncertain future-day starting price",
+      "id": "fe5764e53afd51a09927507e8ba7e0eac2948b5abe64f2de46dcb62b736ab333",
+      "independence_reviewed": false,
+      "independent_of_polymarket": true,
+      "input_requirements": [
+        "exact Binance daily-low rule",
+        "720 causal minute returns",
+        "complete elapsed event window",
+        "fresh observed executable book"
+      ],
+      "log_loss": null,
+      "lower_probability": 0.0,
+      "market": {
+        "available_at": "2026-11-16T13:45:17.385121Z",
+        "end_time": "2026-11-17T05:00:00Z",
+        "event_id": "1399652",
+        "exchange": "polymarket",
+        "id": "d63f66232a14d5e5818bb6087fe742e4888c0e7dae60b82cf0c2133d11c66cec",
+        "market_id": "7085207",
+        "min_order_size": 5.0,
+        "outcome": "Yes",
+        "probability": 0.115,
+        "question": "Will Ethereum dip to $1,700 on November 16?",
+        "resolution_rules": "This market will immediately resolve to \"Yes\" if any Binance 1 minute candle for Ethereum (ETH/USDT) on the date specified in the title, between 12:00 AM ET and 11:59 PM ET has a final \"Low\" price equal to or lower than the price specified in the title. Otherwise, this market will resolve to \"No.\"\n\nThe resolution source for this market is Binance, specifically the ETH/USDT \"Low\" prices available at https://www.binance.com/en/trade/ETH_USDT, with the chart settings on \"1m\" for one-minute candles selected on the top bar.\n\nPlease note that the outcome of this market depends solely on the price data from the Binance ETH/USDT trading pair. Prices from other exchanges, different trading pairs, or spot markets will not be considered for the resolution of this market.",
+        "resolution_source": "https://www.binance.com/en/trade/ETH_USDT",
+        "schema_version": "1.0",
+        "source": "https://gamma-api.polymarket.com",
+        "status": "active",
+        "tick_size": 0.01,
+        "timestamp": "2026-11-16T13:45:17.385121Z",
+        "token_id": "102051962032016000694916371251048357589054364497162698091416123830113673228638"
+      },
+      "market_id": "7085207",
+      "market_probability": 0.11,
+      "measured_sigma_per_sqrt_minute": 0.000811470584414409,
+      "model_id": "gaussian-first-passage-v23.1",
+      "model_sha256": "03327bf8b5ee88ab4f72dbe0bc4a7cb0061d9517c4e657d4661b038e27d7bee7",
+      "model_version": "gaussian-first-passage-v23.1",
+      "monte_carlo": null,
+      "performance_criteria": [
+        "event-disjoint verified-outcome Brier/log-loss versus contemporaneous market",
+        "calibration and uncertainty before any edge claim"
+      ],
+      "probability": 0.015933468504736197,
+      "probability_semantics": "binary_event_probability",
+      "reference_price": 1803.21,
+      "research_only": true,
+      "reviewed_dependency_group": null,
+      "risk_assumptions": "Research only; [0,1] model uncertainty; no automatic admission, sizing or orders",
+      "rules_sha256": "7f6910dd41ab8ce7cdf36a171f1ae383ceb28ab5d50097feda93300f967309d9",
+      "source_independence": "Both challengers share Binance data and are NOT independent corroboration",
+      "source_lineages": [
+        "binance:ETHUSDT"
+      ],
+      "status": "research_estimate",
+      "timestamp": "2026-11-16T13:52:09.687809+00:00",
+      "token_id": "102051962032016000694916371251048357589054364497162698091416123830113673228638",
+      "trading_authority": false,
+      "training_interval": [
+        "2026-11-16T01:51:00+00:00",
+        "2026-11-16T13:51:59.999000+00:00"
+      ],
+      "training_observations": 721,
+      "training_returns": 720,
+      "uncertainty": {
+        "lower_probability": 0.0,
+        "type": "uncalibrated_model_uncertainty_not_coverage_interval",
+        "upper_probability": 1.0
+      },
+      "upper_probability": 1.0
+    }
+  },
+  "native_proofs": {
+    "14c1b55f1f9a02c4df79e490fda7be3954523971847d1079667895ab78a543b7": {
+      "forecast_id": "14c1b55f1f9a02c4df79e490fda7be3954523971847d1079667895ab78a543b7",
+      "event_id": "1399649",
+      "market_id": "7085185",
+      "token_id": "107282931402706380297186214079120427633563857937533006094935287461432685391014",
+      "rules_sha256": "638df5f387291ab1afa41edc265695e1b5264a48080a7d0aca10418a60621201",
+      "payout": 0,
+      "resolved_at": "2026-11-17T05:10:44+00:00",
+      "available_at": "2026-11-17T05:19:41.778109+00:00",
+      "verified": true,
+      "native_payout_verified": true,
+      "proof_sha256": "1efb1d05da7bf84af2f9a0141ebd80b301bb8180276f7a86f22286d5e11dbfd9",
+      "verification_source": "standard_CTF_receipt_canonical_finality_and_original_USDC_outcome_asset_v44",
+      "trust_limit": "HTTPS RPC attribution and reproducible evidence, not independent node consensus verification",
+      "independence_reviewed": false,
+      "research_only": true,
+      "trading_authority": false,
+      "original_forecast_sha256": "29b08c11aa4be98d7b39b6484c5fa7a0805cc4299e61c0f8ab91e6b251b0fb67"
+    },
+    "1a6f78818fd716b4916d1fe5ebe9d5b26d64d4c18582ed6a4e6db2ecbc9e3129": {
+      "forecast_id": "1a6f78818fd716b4916d1fe5ebe9d5b26d64d4c18582ed6a4e6db2ecbc9e3129",
+      "event_id": "1399652",
+      "market_id": "7085207",
+      "token_id": "102051962032016000694916371251048357589054364497162698091416123830113673228638",
+      "rules_sha256": "7f6910dd41ab8ce7cdf36a171f1ae383ceb28ab5d50097feda93300f967309d9",
+      "payout": 0,
+      "resolved_at": "2026-11-17T05:10:43+00:00",
+      "available_at": "2026-11-17T05:19:47.323211+00:00",
+      "verified": true,
+      "native_payout_verified": true,
+      "proof_sha256": "71e595c973f39b376fcd06dae71a30b50faefd700d41a7c1126d8464448900a3",
+      "verification_source": "standard_CTF_receipt_canonical_finality_and_original_USDC_outcome_asset_v44",
+      "trust_limit": "HTTPS RPC attribution and reproducible evidence, not independent node consensus verification",
+      "independence_reviewed": false,
+      "research_only": true,
+      "trading_authority": false,
+      "original_forecast_sha256": "a0a8ec796aa6e01c6a5ecf195c27456947aa51dedfeaa6d316b326f103774cb6"
+    },
+    "a5640cd3e115d2c62cd9a0d01cad07d04bb3a1e432049ad45b7df441f2a8255e": {
+      "forecast_id": "a5640cd3e115d2c62cd9a0d01cad07d04bb3a1e432049ad45b7df441f2a8255e",
+      "event_id": "1399649",
+      "market_id": "7085185",
+      "token_id": "107282931402706380297186214079120427633563857937533006094935287461432685391014",
+      "rules_sha256": "638df5f387291ab1afa41edc265695e1b5264a48080a7d0aca10418a60621201",
+      "payout": 0,
+      "resolved_at": "2026-11-17T05:10:44+00:00",
+      "available_at": "2026-11-17T05:19:41.778109+00:00",
+      "verified": true,
+      "native_payout_verified": true,
+      "proof_sha256": "1efb1d05da7bf84af2f9a0141ebd80b301bb8180276f7a86f22286d5e11dbfd9",
+      "verification_source": "standard_CTF_receipt_canonical_finality_and_original_USDC_outcome_asset_v44",
+      "trust_limit": "HTTPS RPC attribution and reproducible evidence, not independent node consensus verification",
+      "independence_reviewed": false,
+      "research_only": true,
+      "trading_authority": false,
+      "original_forecast_sha256": "2b8e504ac875b52cef377498ac9d2fc3deebe7098406f3071f4b2c753b3c1139"
+    },
+    "fe5764e53afd51a09927507e8ba7e0eac2948b5abe64f2de46dcb62b736ab333": {
+      "forecast_id": "fe5764e53afd51a09927507e8ba7e0eac2948b5abe64f2de46dcb62b736ab333",
+      "event_id": "1399652",
+      "market_id": "7085207",
+      "token_id": "102051962032016000694916371251048357589054364497162698091416123830113673228638",
+      "rules_sha256": "7f6910dd41ab8ce7cdf36a171f1ae383ceb28ab5d50097feda93300f967309d9",
+      "payout": 0,
+      "resolved_at": "2026-11-17T05:10:43+00:00",
+      "available_at": "2026-11-17T05:19:47.323211+00:00",
+      "verified": true,
+      "native_payout_verified": true,
+      "proof_sha256": "71e595c973f39b376fcd06dae71a30b50faefd700d41a7c1126d8464448900a3",
+      "verification_source": "standard_CTF_receipt_canonical_finality_and_original_USDC_outcome_asset_v44",
+      "trust_limit": "HTTPS RPC attribution and reproducible evidence, not independent node consensus verification",
+      "independence_reviewed": false,
+      "research_only": true,
+      "trading_authority": false,
+      "original_forecast_sha256": "9e6cbe684cfd2f5a365a1b0160de8bb8ef8824ec79ef6ad82195ea432e2080a6"
+    }
+  },
+  "metrics": {
+    "empirical-ohlc-block-bootstrap-v23.1": {
+      "forecasts": 2,
+      "native_parent_groups": 2,
+      "reviewed_independent_groups": 0,
+      "scores": {
+        "model": {
+          "brier": 0.00037384033203125,
+          "log_loss": 0.013862274007427431
+        },
+        "market": {
+          "brier": 0.006122,
+          "log_loss": 0.06430319874511038
+        },
+        "neutral": {
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      },
+      "model_minus_market_brier": -0.00574815966796875,
+      "market_baseline": "original causal executable-book midpoint / token expected payout; not an independent model probability",
+      "confidence_interval": null,
+      "calibration_fit": null,
+      "status": "descriptive_only; independent cohort review and sufficient heldout groups required"
+    },
+    "gaussian-first-passage-v23.1": {
+      "forecasts": 2,
+      "native_parent_groups": 2,
+      "reviewed_independent_groups": 0,
+      "scores": {
+        "model": {
+          "brier": 0.0001269377093104349,
+          "log_loss": 0.008030971257964252
+        },
+        "market": {
+          "brier": 0.006122,
+          "log_loss": 0.06430319874511038
+        },
+        "neutral": {
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      },
+      "model_minus_market_brier": -0.005995062290689565,
+      "market_baseline": "original causal executable-book midpoint / token expected payout; not an independent model probability",
+      "confidence_interval": null,
+      "calibration_fit": null,
+      "status": "descriptive_only; independent cohort review and sufficient heldout groups required"
+    }
+  },
+  "reviewed_independent_events": 0,
+  "correlation_limitation": "BTC and ETH, same date; two native parent IDs do not establish two independent outcomes",
+  "source_studies": [
+    {
+      "schema_version": "1.0",
+      "id": "7bdc848e0901cf62ef2126133eec16391d6e50ed65bd238fe534c82601647eb2",
+      "timestamp": "2026-11-16T13:52:20.743887Z",
+      "available_at": "2026-11-16T13:52:20.743887Z",
+      "source": "neraium-poly/replayed-source/v42",
+      "forecast_id": "14c1b55f1f9a02c4df79e490fda7be3954523971847d1079667895ab78a543b7",
+      "forecast_sha256": "29b08c11aa4be98d7b39b6484c5fa7a0805cc4299e61c0f8ab91e6b251b0fb67",
+      "study_id": "c8c3d4a587dcef9d1ef9a59bff2072dc3e4d0ebe32c28bece209a7333e597198",
+      "study_sha256": "ca71022142146f6835a26001beb2e88bfeb9768d494c4591188197da6619c5e7"
+    },
+    {
+      "schema_version": "1.0",
+      "id": "d6abcbe8fe01698a039129531b8003d7f3aadbf84dc00a89ffda711248233f68",
+      "timestamp": "2026-11-16T13:52:20.743887Z",
+      "available_at": "2026-11-16T13:52:20.743887Z",
+      "source": "neraium-poly/replayed-source/v42",
+      "forecast_id": "1a6f78818fd716b4916d1fe5ebe9d5b26d64d4c18582ed6a4e6db2ecbc9e3129",
+      "forecast_sha256": "a0a8ec796aa6e01c6a5ecf195c27456947aa51dedfeaa6d316b326f103774cb6",
+      "study_id": "c8c3d4a587dcef9d1ef9a59bff2072dc3e4d0ebe32c28bece209a7333e597198",
+      "study_sha256": "ca71022142146f6835a26001beb2e88bfeb9768d494c4591188197da6619c5e7"
+    },
+    {
+      "schema_version": "1.0",
+      "id": "fe1f488f1a7bbe8b9c075af5c5a0721c4a8c03d9fd7c5f104e3e10c0cf1e7c13",
+      "timestamp": "2026-11-16T13:52:20.743887Z",
+      "available_at": "2026-11-16T13:52:20.743887Z",
+      "source": "neraium-poly/replayed-source/v42",
+      "forecast_id": "a5640cd3e115d2c62cd9a0d01cad07d04bb3a1e432049ad45b7df441f2a8255e",
+      "forecast_sha256": "2b8e504ac875b52cef377498ac9d2fc3deebe7098406f3071f4b2c753b3c1139",
+      "study_id": "c8c3d4a587dcef9d1ef9a59bff2072dc3e4d0ebe32c28bece209a7333e597198",
+      "study_sha256": "ca71022142146f6835a26001beb2e88bfeb9768d494c4591188197da6619c5e7"
+    },
+    {
+      "schema_version": "1.0",
+      "id": "56152ea353724d6b3c39725c05bd973daff7bf951e10f28eda3b904f87395727",
+      "timestamp": "2026-11-16T13:52:20.743887Z",
+      "available_at": "2026-11-16T13:52:20.743887Z",
+      "source": "neraium-poly/replayed-source/v42",
+      "forecast_id": "fe5764e53afd51a09927507e8ba7e0eac2948b5abe64f2de46dcb62b736ab333",
+      "forecast_sha256": "9e6cbe684cfd2f5a365a1b0160de8bb8ef8824ec79ef6ad82195ea432e2080a6",
+      "study_id": "c8c3d4a587dcef9d1ef9a59bff2072dc3e4d0ebe32c28bece209a7333e597198",
+      "study_sha256": "ca71022142146f6835a26001beb2e88bfeb9768d494c4591188197da6619c5e7"
+    }
+  ]
+}

@@ -9,6 +9,7 @@ from neraium_poly.research.phase42.engine import StrategyCycle, StrategyEngine
 from neraium_poly.research.phase42.strategies import propose
 from neraium_poly.research.phase44.cohort import opportunities as bid_opportunities
 from neraium_poly.research.phase45 import native_positions
+from neraium_poly.research.phase45.complements import derive
 from neraium_poly.research.phase45.diagnostics import breakdown
 from neraium_poly.research.phase45.economics import evaluate
 
@@ -69,13 +70,18 @@ def opportunities(markets,books,forecasts,history,prior,fees,now):
         if total>=1:
             rejected.append({'strategy':'consistency','token_id':tokens[0],'reason':'combined_executable_asks_not_below_unit_payout'});continue
         pair=digest([a.market_id,*[books[t].id for t in tokens]])
+        units={t:books[t].asks[0].price+fees[t]['rate']*books[t].asks[0].price*(1-books[t].asks[0].price)+.002 for t in tokens}
+        matched_quantity=min(*[books[t].asks[0].size*.1 for t in tokens],5/sum(units.values()))
         for t in tokens:
             m,b=markets[t],books[t]
             out.append({'strategy':'consistency','key':pair+':'+t,'bundle':pair,'token_id':t,'market':m.model_dump(mode='json'),
                 'book':b.model_dump(mode='json'),'created_at':now.isoformat(),'domain':'complementary_condition','target':b.asks[0].price+(1-total)/2,
-                'probability':None,'uncertainty':{'legging_risk':'partial unequal legs remain directional; not atomic arbitrage','payout_assumption':'exact native binary condition; final payout proof still required'},
+                'paired_leg_budget':matched_quantity*units[t],'matched_pair_quantity':matched_quantity,'probability':None,'uncertainty':{'legging_risk':'partial unequal legs remain directional; not atomic arbitrage','payout_assumption':'exact native binary condition; final payout proof still required'},
                 'evidence_kind':'authoritative exact two-token native condition; labels not used to infer equivalence'})
-    return [{**c,'decision_fee':fees.get(c['token_id'],{})} for c in out],rejected
+    complements,missing=derive(markets,books,forecasts,fees,now)
+    mapped={c['token_id'] for c in complements}
+    rejected=[r for r in rejected if not(r['strategy']=='independent' and r['token_id'] in mapped and r['reason']=='independent_source_forecast_unavailable')]
+    return [{**c,'decision_fee':fees.get(c['token_id'],{})} for c in out+complements],rejected+missing
 
 
 class StrategyCycle45(StrategyCycle):
@@ -102,12 +108,12 @@ class Explorer(StrategyEngine):
             observations={**observations,'economic_candidates':getattr(self,'economic_candidates',[])}
         return super()._commit(state,events,observations)
     def extra_policy(self):
-        return {**super().extra_policy(),'cohort':'phase45-exploration-v1','source_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),'report_sources_sha256':{n:hashlib.sha256(Path(__file__).with_name(n).read_bytes()).hexdigest() for n in ('economics.py','diagnostics.py','panel.py','native_positions.py')},
+        return {**super().extra_policy(),'cohort':'phase45-exploration-v1','source_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),'report_sources_sha256':{n:hashlib.sha256(Path(__file__).with_name(n).read_bytes()).hexdigest() for n in ('economics.py','diagnostics.py','panel.py','native_positions.py','complements.py')},
                 'native_hold_research':True,'principal_budget_usd':20,'market_budget_usd':5,'event_and_domain_budget_usd':10,
                 'uncertainty':'unvalidated external models; aggressive fees sensitivity0.10 if unavailable; no qualified profit claim',
                 'checkpoint':'first100 independent native event groups; no calibration fitting or automatic promotion'}
     def budget(self,s,c,size):
-        return max(0.,min(super().budget(s,c,size),20-self.exposure(s),5-self.exposure(s,'market_id',c['market']['market_id']),10-self.exposure(s,'event_id',c['market']['event_id']),10-self.exposure(s,'domain',c['domain'])))
+        return max(0.,min(super().budget(s,c,size),c.get('paired_leg_budget',size),20-self.exposure(s),5-self.exposure(s,'market_id',c['market']['market_id']),10-self.exposure(s,'event_id',c['market']['event_id']),10-self.exposure(s,'domain',c['domain'])))
     def settle(self,proofs):
         original=super().settle(proofs)
         return native_positions.settle(self,proofs) or original

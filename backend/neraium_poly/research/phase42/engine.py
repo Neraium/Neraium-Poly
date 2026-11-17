@@ -262,7 +262,7 @@ class StrategyEngine:
                     rate=fee['rate'] if known else config['unknown_fee']
                     if rate is None:raise ValueError('native_fee_unavailable')
                     if not number(rate,0,1):raise ValueError('invalid_fee_coefficient')
-                    if name=='conservative' and (not c.get('forecast') or c['forecast'].get('calibration_status') not in ('qualified','calibrated')):raise ValueError('conservative_calibration_withheld')
+                    if name=='conservative' and strategy!='consistency' and (not c.get('forecast') or c['forecast'].get('calibration_status') not in ('qualified','calibrated')):raise ValueError('conservative_calibration_withheld')
                     target=c['target']
                     if c['probability'] is not None:
                         lower=c['forecast'].get('lower_probability',0.);target=target*(1-config['haircut'])+lower*config['haircut']
@@ -273,7 +273,7 @@ class StrategyEngine:
                         if not c.get('passive') and level.price>limit+EPS:break
                         q,cost,_=self._size(price,level.size*self.policy['participation'],max(0.,budget-spent),rate)
                         # Pricing strategies reserve round-trip taker costs; passive fee also conservative.
-                        exit_cost=rate*target*(1-target)+self.policy['extra_slippage_per_share'] if c['probability'] is None else 0.
+                        exit_cost=rate*target*(1-target)+self.policy['extra_slippage_per_share'] if c['probability'] is None and strategy!='consistency' else 0.
                         if target-price-rate*price*(1-price)-.002-exit_cost<=config['edge']+EPS:break
                         quantity+=q;spent+=cost;net+=q*(target-exit_cost)-cost
                         if q>EPS:last=price

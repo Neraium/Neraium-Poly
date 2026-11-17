@@ -197,3 +197,36 @@ def test_closed_previous_cohort_retains_cash_forecasts_and_stops_without_new_quo
     assert recovered.state==closed.state
     closed.state['profiles']['balanced']['orders']['CONTROLLED']={'id':'CONTROLLED'}
     assert closed.needs_quotes()
+
+
+def test_external_probability_complement_requires_exact_native_pair_and_preserves_original(setup):
+    from neraium_poly.research.phase45.complements import derive
+    from neraium_poly.research.phase45.native_positions import capture
+    _,clock,m,b,f,_,fees,_,_=setup;original=copy.deepcopy(f)
+    z=m.model_copy(update={'token_id':'OTHER','outcome':'No' if m.outcome=='Yes' else 'Yes'});bz=b.model_copy(update={'token_id':z.token_id})
+    fs={m.token_id:{**fees[m.token_id],'condition_tokens':[m.token_id,z.token_id]},z.token_id:{**fees[m.token_id],'token_id':z.token_id,'condition_tokens':[m.token_id,z.token_id]}}
+    cs,_=derive({m.token_id:m,z.token_id:z},{m.token_id:b,z.token_id:bz},{f['id']:f},fs,clock[0]);assert len(cs)==1
+    c=cs[0];assert c['probability']==pytest.approx(1-f['probability']) and f==original
+    assert c['forecast']['independent_evidence_count']==1 and c['forecast']['derived_from']==f['id']
+    state={};capture(state,[{'type':'shadow_intent','candidate':c}]);native=next(iter(state['pricing_contracts45'].values()))
+    assert native['token_id']==z.token_id and native['probability'] is None and native['source_forecast_id']==f['id']
+    fs[z.token_id]['condition_tokens']=[z.token_id,'UNRELATED']
+    cs,rs=derive({m.token_id:m,z.token_id:z},{m.token_id:b,z.token_id:bz},{f['id']:f},fs,clock[0]);assert not cs and rs
+
+
+def test_pair_intents_target_equal_shares_within_joint_market_budget_and_no_exit_taker_cost(setup):
+    _,clock,m,b,_,frame,fees,store,risk=setup
+    z=m.model_copy(update={'token_id':'OTHER','outcome':'No' if m.outcome=='Yes' else 'Yes'});bz=b.model_copy(update={'token_id':z.token_id,'id':'OTHER-book'})
+    fs={m.token_id:{**fees[m.token_id],'condition_tokens':[m.token_id,z.token_id]},z.token_id:{**fees[m.token_id],'token_id':z.token_id,'condition_tokens':[m.token_id,z.token_id]}}
+    frame=frame.model_copy(update={'markets':(m,z),'books':(b,bz)})
+    e=Explorer(store,risk_limits=risk,clock=lambda:clock[0],can_write=lambda:True);e.step(frame,fs,source_forecasts={})
+    for s in e.state['profiles'].values():
+        orders=list(s['orders'].values());assert len(orders)==2
+        assert orders[0]['remaining']==pytest.approx(orders[1]['remaining'])
+        assert sum(o['reserved'] for o in orders)<=5+1e-8 and orders[0]['bundle']==orders[1]['bundle']
+    clock[0]+=timedelta(seconds=1)
+    later=frame.model_copy(update={'timestamp':clock[0],'available_at':clock[0],'books':tuple(v.model_copy(update={'timestamp':clock[0],'available_at':clock[0],'id':v.id+'later'}) for v in (b,bz))})
+    e.step(later,fs,source_forecasts={})
+    ps=list(e.state['profiles']['aggressive']['positions'].values());assert len(ps)==2
+    assert ps[0]['quantity']==pytest.approx(ps[1]['quantity']) and e.exposure(e.state['profiles']['aggressive'])<=5+1e-8
+    assert e.report()['forecasts']==0 and e.report()['native_pricing_contracts']['registered']==2
