@@ -1113,9 +1113,12 @@ class ExperimentalRuntime:
             if getattr(self,"phase28",None) is not None and self.last_frame is not None:
                 try:
                     watcher=self.phase26_inputs.watcher if self.phase26_inputs else None
-                    frame=current_frame(self.last_frame,extra_markets=tuple(watcher._markets.values()) if watcher else (),
+                    sampler=getattr(self,'research_reference',None)
+                    observed=sampler.latest() if sampler is not None else self.last_frame
+                    requested=set(getattr(self,'research_fee_targets',()))|set(getattr(self.phase28,'forecast_tokens',()))
+                    frame=current_frame(observed,extra_markets=tuple(watcher._markets.values()) if watcher else (),
                         extra_books=watcher.observations() if watcher and hasattr(watcher,'observations') else watcher.snapshot() if watcher else (),as_of=self.clock())
-                    await self.research_fees.refresh(frame,forecast_tokens=getattr(self.phase28,'forecast_tokens',()))
+                    await self.research_fees.refresh(frame,forecast_tokens=requested)
                 except (ValueError, TypeError, OSError, KeyError) as error:
                     self.research_fee_error=type(error).__name__
             for _ in range(10):

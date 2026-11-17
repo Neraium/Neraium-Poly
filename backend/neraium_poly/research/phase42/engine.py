@@ -25,6 +25,7 @@ LEGACY_DEFINITIONS_SHA256='d60142b125c6bacb56ed548603a6307402f9b01e308691a0c75f6
 DEPLOYED_SOURCE_SHA256='7208eb2e84d64f141fa16e247ec6b92eb30356a6dac2223f5123702035485808'
 DEPLOYED_DEFINITIONS_SHA256='2e451f687dec791505d5206c5f9e511ee83342afea9a63da6473c1e799dd070c'
 PHASE43_SOURCE_SHA256='c13cda0c3ff41bcf82528c0c569b7766b4d8f11c92dafc00071b53bea635b1cf'
+PHASE44_SOURCE_SHA256='a9cc84d8fd66a92bcf2cd27096f35eef3597db073d6d1bbb000a297bb6a6725e'  # Reviewed exact deployment; old portfolios retain their original exits and risk checks.
 EPS=1e-8
 PROFILES={
  'aggressive':{'size':3.,'edge':0.,'spread':.20,'haircut':0.,'unknown_fee':.10},
@@ -47,6 +48,7 @@ class StrategyCycle(Record):
 
 class StrategyEngine:
     entry_enrollment_open=True
+    native_hold_research=False
     record_type=StrategyCycle
     identity_prefix='strategy42'
     source_name='neraium-poly/strategy-competition/v42'
@@ -81,7 +83,7 @@ class StrategyEngine:
         if row['policy']!=self.policy:
             compatible={**row['policy'],'code_sha256':self.policy['code_sha256'],'definitions_sha256':self.policy['definitions_sha256'],'economic_sources_sha256':self.policy['economic_sources_sha256'],**self.extra_policy()}
             closing_only=(row['policy'].get('entry_enrollment_open') is True and self.policy.get('entry_enrollment_open') is False and {**row['policy'],'entry_enrollment_open':False}==self.policy)
-            if not closing_only and ((row['policy']['code_sha256'],row['policy']['definitions_sha256']) not in ((LEGACY_SOURCE_SHA256,LEGACY_DEFINITIONS_SHA256),(DEPLOYED_SOURCE_SHA256,DEPLOYED_DEFINITIONS_SHA256),(PHASE43_SOURCE_SHA256,DEPLOYED_DEFINITIONS_SHA256)) or compatible!=self.policy):raise ValueError('frozen strategy source/policy mismatch; no reset permitted')
+            if not closing_only and ((row['policy']['code_sha256'],row['policy']['definitions_sha256']) not in ((LEGACY_SOURCE_SHA256,LEGACY_DEFINITIONS_SHA256),(DEPLOYED_SOURCE_SHA256,DEPLOYED_DEFINITIONS_SHA256),(PHASE43_SOURCE_SHA256,DEPLOYED_DEFINITIONS_SHA256),(PHASE44_SOURCE_SHA256,DEPLOYED_DEFINITIONS_SHA256)) or compatible!=self.policy):raise ValueError('frozen strategy source/policy mismatch; no reset permitted')
         state=unpack_checkpoint(row['checkpoint'])
         if digest(state)!=row['state_sha256']:raise ValueError('strategy checkpoint integrity failure')
         if row['previous_id']:
@@ -105,7 +107,7 @@ class StrategyEngine:
             profile['credits']={k:v for k,v in profile['credits'].items() if v>EPS}
         if len(state['forecasts'])>512 or len(state['markets_seen'])>4096 or any(len(s['closed'])>2048 or len(s['seen'])>4096 or len(s['credits'])>32768 for s in state['profiles'].values()):raise ValueError('bounded research state exhausted; preserve and review')
         now=at(self.clock());state['sequence']+=1;state['last_at']=now.isoformat()
-        if self.last and self.last['policy']!=self.policy:events=[{'type':'reviewed_source_transition','from':self.last['policy']['code_sha256'],'to':self.policy['code_sha256'],'scope':'Phase43: zero-credit cache compaction, passive new-entry retirement, settlement-aligned new independent entries, matched exits; original cash, losses, suspension, positions and immutable records retained'},*events]
+        if self.last and self.last['policy']!=self.policy:events=[{'type':'reviewed_source_transition','from':self.last['policy']['code_sha256'],'to':self.policy['code_sha256'],'scope':'reviewed compatible source transition; original cash, losses, suspension, positions and frozen exits retained; new Phase45-only native-hold principal budget grants no account authority'},*events]
         row=self.record_type(id=identity,timestamp=now,available_at=now,source=self.source_name,policy=self.policy,
             previous_id=self.last['id'] if self.last else None,previous_sha256=digest(self.last) if self.last else None,
             checkpoint=pack_checkpoint(state),state_sha256=digest(state),events=[{'type':'lossless_decision_batch','payload':pack_checkpoint({'decisions':events}),'sha256':digest(events)}],observations=observations)
@@ -194,6 +196,7 @@ class StrategyEngine:
             for oid,p in list(s['positions'].items()):
                 b=books.get(p['token_id']);m=markets.get(p['token_id'])
                 if not self.compatible(p,m) or b is None:continue
+                if p.get('exit_policy')=='native_hold45':continue
                 exit_position,exit_fee_verified=self.exit_fee(p,fees.get(p['token_id'],{}),now)
                 value,q,levels=self.proceeds(s,exit_position,b,consume=False)
                 timeout=(now-at(p['entered_at'])).total_seconds()>=self.definitions[p['strategy']]['horizon']
@@ -274,13 +277,14 @@ class StrategyEngine:
                         if q>EPS:last=price
                         if c.get('passive'):break
                     if quantity+EPS<m.min_order_size or net<=EPS:raise ValueError('net_hypothesis_or_native_minimum_size')
-                    if strategy!='consistency':
+                    native_hold=self.native_hold_research and strategy=='independent'
+                    if strategy!='consistency' and not native_hold:
                         liquidation,exit_quantity,_=self.proceeds(s,{'quantity':quantity,'rate':rate},b,consume=False)
                         if exit_quantity+EPS<quantity:raise ValueError('entry_exit_risk_unobservable_at_intended_size')
                         if liquidation<spent*.8:raise ValueError('entry_liquidation_already_breaches_20pct_exit_rule')
                     oid=digest([name,key]);s['orders'][oid]={'id':oid,'strategy':strategy,'token_id':token,'market_id':m.market_id,'event_id':m.event_id,'domain':c['domain'],
                         'market':c['market'],'forecast_id':c.get('forecast',{}).get('id'),'created_at':now.isoformat(),'expires':(now+timedelta(seconds=30)).isoformat(),
-                        'exit_policy':'settlement_aligned_v43' if strategy=='independent' else 'phase42_legacy','model_id':c.get('forecast',{}).get('model_id'),'model_sha256':c.get('forecast',{}).get('model_sha256'),
+                        'exit_policy':'native_hold45' if native_hold else 'settlement_aligned_v43' if strategy=='independent' else 'phase42_legacy','model_id':c.get('forecast',{}).get('model_id'),'model_sha256':c.get('forecast',{}).get('model_sha256'),
                         'fee_verified':known,'fee_evidence':fee if known else {'status':'assumed_sensitivity','rate':rate},'rate':rate,'reserved':spent,'remaining':quantity,'limit':last,'target':target,'bundle':c.get('bundle')}
                     s['seen'].append(key);counts[strategy+':orders']+=1
                     events.append({'type':'shadow_intent','profile':name,'order_id':oid,'quantity':quantity,'capital':spent,'estimated_net_value':net,'fee_verified':known,'candidate':c,'pricing_target_not_independent_probability':c['probability'] is None})

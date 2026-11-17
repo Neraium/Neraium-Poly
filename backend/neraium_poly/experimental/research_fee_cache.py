@@ -15,17 +15,28 @@ class AsyncBudgetResearchFeeCache(ResearchFeeCache):
     """
     async def refresh(self, frame, *, forecast_tokens):
         now=at(self.clock());tokens=set(forecast_tokens);markets={m.token_id:m for m in frame.markets}
-        eligible=[]
-        for b in frame.books:
-            m=markets.get(b.token_id)
-            if (b.token_id in tokens and m is not None and m.market_id==b.market_id
-                and m.status=='active' and m.end_time is not None and m.end_time>now
-                and 0<=(now-b.timestamp).total_seconds()<=15 and 0<=(now-b.available_at).total_seconds()<=15
-                and b.bids and b.asks):eligible.append(b.token_id)
-        keep=set(sorted(set(eligible))[:32])
+        # Forecasts, complementary partners and deep quoted markets compete in
+        # one bounded cache. Rotate unselected names; no subscription expansion.
+        by_token={b.token_id:b for b in frame.books}
+        all_fresh=[]
+        for token,m in markets.items():
+            b=by_token.get(token)
+            if b is not None and m.status=='active' and m.end_time is not None and m.end_time>now and b.market_id==m.market_id and b.bids and b.asks and 0<=(now-b.timestamp).total_seconds()<=15 and 0<=(now-b.available_at).total_seconds()<=15:all_fresh.append(token)
+        ranked=sorted(all_fresh,key=lambda t:(t not in tokens,-sum(v.size*v.price for v in by_token[t].bids[:3])+sum(v.size*v.price for v in by_token[t].asks[:3])*.001,t))
+        focus=[]
+        for token in ranked:
+            if token in focus:continue
+            group=[t for t in ranked if markets[t].market_id==markets[token].market_id]
+            for t in group[:2]:
+                if t not in focus and len(focus)<16:focus.append(t)
+            if len(focus)>=16:break
+        remaining=[t for t in ranked if t not in focus]
+        shift=(int(now.timestamp())//240*16)%len(remaining) if remaining else 0
+        keep=set(focus+(remaining[shift:]+remaining[:shift])[:16])
         self.observations={t:v for t,v in self.observations.items() if t in keep}
         self.attempts={t:v for t,v in self.attempts.items() if t in keep};self.errors={t:v for t,v in self.errors.items() if t in keep}
-        for token in sorted(keep,key=lambda t:self.attempts.get(t,now-timedelta(days=1)))[:2]:
+        due=[t for t in keep if (self.attempts.get(t) is None or now-self.attempts[t]>=timedelta(seconds=60)) and (t not in self.observations or now-at(self.observations[t]['observed_at'])>=timedelta(seconds=240))]
+        for token in sorted(due,key=lambda t:(self.attempts.get(t,now-timedelta(days=1)),t))[:2]:
             allowed=self.can_write()
             if inspect.isawaitable(allowed):allowed=await allowed
             if not allowed:return
@@ -41,5 +52,16 @@ class AsyncBudgetResearchFeeCache(ResearchFeeCache):
             except Exception as error:  # noqa: BLE001 - unknown native fees never become zero
                 self.errors[token]=type(error).__name__
 
+    def proofs(self,*,as_of):
+        import json
+        proofs=super().proofs(as_of=as_of)
+        for proof in proofs.values():
+            if proof.get('status')!='verified_current_protocol_curve':continue
+            original=self.store.get(proof['raw_response_ids'][0])
+            if original is None:continue
+            parent=json.loads(original[1])['payload']
+            proof['condition_tokens']=[str(parent['primary_token_id']),str(parent['secondary_token_id'])]
+        return proofs
+
     def status(self):
-        return {**super().status(),'budget_scheduling':'awaited admission; current audited write guards retained'}
+        return {**super().status(),'budget_scheduling':'due entries selected before2-token batch; cache32, native calls unchanged; forecast/depth/rotating coverage'}
