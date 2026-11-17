@@ -118,3 +118,24 @@ def test_uncalibrated_positive_central_estimate_is_not_positive_conservative_pro
     row=evaluate([c],Explorer.profile_configs,clock[0])[0]
     assert row['estimated_net_profit']>0 and row['uncertainty_lower_net_profit']<0
     assert not row['actual_fill'] and not row['trading_authority']
+
+
+def test_pricing_contract_settlement_does_not_invent_probability_forecasts(setup):
+    from neraium_poly.research.phase45.native_positions import capture, due
+    _,clock,m,b,_,frame,fees,store,risk=setup
+    e=Explorer(store,risk_limits=risk,clock=lambda:clock[0],can_write=lambda:True)
+    c={'created_at':clock[0].isoformat(),'market':m.model_dump(mode='json')}
+    capture(e.state,[{'type':'shadow_intent','candidate':c}]);contract=next(iter(e.state['pricing_contracts45'].values()))
+    assert contract['probability'] is None and not e.state['forecasts']
+    assert due(e,clock[0])=={}
+    # Isolated controlled position, not a claimed market fill or performance.
+    profile=e.state['profiles']['aggressive'];profile['cash']-=2
+    profile['positions']['CONTROLLED']={'market_id':m.market_id,'event_id':m.event_id,'token_id':m.token_id,'market':m.model_dump(mode='json'),'last_fill_at':clock[0].isoformat(),'quantity':5.,'cost':2.,'strategy':'consistency'}
+    clock[0]+=timedelta(seconds=2)
+    proof={k:contract[k] for k in ('market_id','event_id','token_id','rules_sha256')};proof.update(forecast_id=contract['id'],native_payout_verified=True,verified=True,payout=1,resolved_at=(clock[0]-timedelta(seconds=1)).isoformat(),available_at=clock[0].isoformat())
+    with pytest.raises(ValueError):e.settle({contract['id']:{**proof,'token_id':'wrong'}})
+    e.settle({contract['id']:proof});assert e.state['profiles']['aggressive']['cash']==503
+    assert e.report()['forecasts']==0 and e.report()['native_pricing_contracts']['verified']==1
+    assert not e.settle({contract['id']:proof}) and e.state['profiles']['aggressive']['cash']==503
+    clock[0]+=timedelta(seconds=1);e.step(frame_at(frame,b,clock[0]),fees)
+    assert Explorer(store,risk_limits=risk,clock=lambda:clock[0],can_write=lambda:True).state==e.state

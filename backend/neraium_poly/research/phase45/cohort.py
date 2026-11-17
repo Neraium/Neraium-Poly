@@ -8,6 +8,7 @@ from neraium_poly.research.phase24.continuous import at
 from neraium_poly.research.phase42.engine import StrategyCycle, StrategyEngine
 from neraium_poly.research.phase42.strategies import propose
 from neraium_poly.research.phase44.cohort import opportunities as bid_opportunities
+from neraium_poly.research.phase45 import native_positions
 from neraium_poly.research.phase45.diagnostics import breakdown
 from neraium_poly.research.phase45.economics import evaluate
 
@@ -96,18 +97,23 @@ class Explorer(StrategyEngine):
         self.economic_candidates=evaluate(candidates,self.profile_configs,now)
         return candidates,rejected
     def _commit(self,state,events,observations):
+        native_positions.capture(state,events)
         if 'frame_id' in observations:
             observations={**observations,'economic_candidates':getattr(self,'economic_candidates',[])}
         return super()._commit(state,events,observations)
     def extra_policy(self):
-        return {**super().extra_policy(),'cohort':'phase45-exploration-v1','source_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),'report_sources_sha256':{n:hashlib.sha256(Path(__file__).with_name(n).read_bytes()).hexdigest() for n in ('economics.py','diagnostics.py','panel.py')},
+        return {**super().extra_policy(),'cohort':'phase45-exploration-v1','source_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),'report_sources_sha256':{n:hashlib.sha256(Path(__file__).with_name(n).read_bytes()).hexdigest() for n in ('economics.py','diagnostics.py','panel.py','native_positions.py')},
                 'native_hold_research':True,'principal_budget_usd':20,'market_budget_usd':5,'event_and_domain_budget_usd':10,
                 'uncertainty':'unvalidated external models; aggressive fees sensitivity0.10 if unavailable; no qualified profit claim',
                 'checkpoint':'first100 independent native event groups; no calibration fitting or automatic promotion'}
     def budget(self,s,c,size):
         return max(0.,min(super().budget(s,c,size),20-self.exposure(s),5-self.exposure(s,'market_id',c['market']['market_id']),10-self.exposure(s,'event_id',c['market']['event_id']),10-self.exposure(s,'domain',c['domain'])))
+    def settle(self,proofs):
+        original=super().settle(proofs)
+        return native_positions.settle(self,proofs) or original
     def report(self):
         r=super().report()
+        r['native_pricing_contracts']={'registered':len(self.state.get('pricing_contracts45',{})),'verified':len(self.state.get('pricing_labels45',{})),'probability_forecasts':False}
         r['strategy_changes']={'independent':'Phase45-only native hold; maximum principal20USD total,5USD per native market,10USD per event/domain; prior portfolios and exits untouched','other':'bid-exit and native-condition strategies retain declared rules; no certification or account authority'}
         r['rejection_breakdown']={name:breakdown(p['rejections']) for name,p in r['profiles'].items()}
         r['economic_candidates']=self.last.get('observations',{}).get('economic_candidates',[]) if self.last else []

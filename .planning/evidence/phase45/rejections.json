@@ -1,0 +1,90 @@
+{
+  "scope": "frozen baseline; repeated per-profile screens, not unique independent trades",
+  "markets_evaluated_unique": 253,
+  "per_profile": {
+    "aggressive": {
+      "categories": {
+        "observations": {
+          "missing_independent_evidence": 15378,
+          "invalid_or_stale_book": 8500,
+          "historically_ambiguous_evidence_or_economics": 27395,
+          "unsupported_or_unverified_market_structure": 4442,
+          "unfavorable_economics_or_signal": 19,
+          "other_explicit_reason": 17
+        },
+        "total": 55751,
+        "unit": "repeated rejection observations in one alternative profile; not unique opportunities or independent events",
+        "legacy_ambiguity": "Mixed historical reasons cannot be causally separated with the evidence retained; new decisions use separate reasons."
+      },
+      "exact_reasons": {
+        "independent:independent_source_forecast_unavailable": 15378,
+        "independent:fresh_executable_book_unavailable": 4250,
+        "consistency:fresh_executable_book_unavailable": 4250,
+        "consistency:complementary_native_identity_or_fee_evidence_unverified": 7616,
+        "consistency:exact_two_token_condition_unavailable": 4442,
+        "momentum:bid_history_and_verified_fees_required": 19563,
+        "momentum:bid_trend_does_not_cover_round_trip_friction_and_depth": 149,
+        "independent:net_hypothesis_or_native_minimum_size": 67,
+        "consistency:combined_executable_asks_not_below_unit_payout": 19,
+        "independent:entry_liquidation_already_breaches_20pct_exit_rule": 17
+      }
+    },
+    "balanced": {
+      "categories": {
+        "observations": {
+          "missing_independent_evidence": 15378,
+          "invalid_or_stale_book": 8500,
+          "historically_ambiguous_evidence_or_economics": 27353,
+          "unsupported_or_unverified_market_structure": 4442,
+          "missing_verified_fees": 57,
+          "unfavorable_economics_or_signal": 19,
+          "other_explicit_reason": 2
+        },
+        "total": 55751,
+        "unit": "repeated rejection observations in one alternative profile; not unique opportunities or independent events",
+        "legacy_ambiguity": "Mixed historical reasons cannot be causally separated with the evidence retained; new decisions use separate reasons."
+      },
+      "exact_reasons": {
+        "independent:independent_source_forecast_unavailable": 15378,
+        "independent:fresh_executable_book_unavailable": 4250,
+        "consistency:fresh_executable_book_unavailable": 4250,
+        "consistency:complementary_native_identity_or_fee_evidence_unverified": 7616,
+        "consistency:exact_two_token_condition_unavailable": 4442,
+        "momentum:bid_history_and_verified_fees_required": 19563,
+        "momentum:bid_trend_does_not_cover_round_trip_friction_and_depth": 149,
+        "independent:native_fee_unavailable": 57,
+        "consistency:combined_executable_asks_not_below_unit_payout": 19,
+        "independent:net_hypothesis_or_native_minimum_size": 25,
+        "independent:entry_liquidation_already_breaches_20pct_exit_rule": 2
+      }
+    },
+    "conservative": {
+      "categories": {
+        "observations": {
+          "missing_independent_evidence": 15378,
+          "invalid_or_stale_book": 8500,
+          "historically_ambiguous_evidence_or_economics": 27328,
+          "unsupported_or_unverified_market_structure": 4442,
+          "missing_verified_fees": 57,
+          "unfavorable_economics_or_signal": 19,
+          "probability_uncertainty": 27
+        },
+        "total": 55751,
+        "unit": "repeated rejection observations in one alternative profile; not unique opportunities or independent events",
+        "legacy_ambiguity": "Mixed historical reasons cannot be causally separated with the evidence retained; new decisions use separate reasons."
+      },
+      "exact_reasons": {
+        "independent:independent_source_forecast_unavailable": 15378,
+        "independent:fresh_executable_book_unavailable": 4250,
+        "consistency:fresh_executable_book_unavailable": 4250,
+        "consistency:complementary_native_identity_or_fee_evidence_unverified": 7616,
+        "consistency:exact_two_token_condition_unavailable": 4442,
+        "momentum:bid_history_and_verified_fees_required": 19563,
+        "momentum:bid_trend_does_not_cover_round_trip_friction_and_depth": 149,
+        "independent:native_fee_unavailable": 57,
+        "consistency:combined_executable_asks_not_below_unit_payout": 19,
+        "independent:conservative_calibration_withheld": 27
+      }
+    }
+  }
+}

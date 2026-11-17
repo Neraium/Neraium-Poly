@@ -97,6 +97,8 @@ class Controller:
                 f=self.engine.state['forecasts'][fid]
                 if digest(f)!=binding['forecast_sha256']:raise ValueError('settlement original forecast hash mismatch')
                 native_bound[fid]={'study_sha256':binding['study_sha256'],'study_id':binding['study_id'],'forecast':f}
+            from neraium_poly.research.phase45.native_positions import due
+            native_bound.update(due(self.explorer,now))
             self.native_bound=native_bound
             self.next_outcomes=now+timedelta(seconds=300)
         if proofs:
