@@ -1,3 +1,5 @@
+> **Updated activation handoff:** see `phase48-activation.md`. Source8d8c115 activated with greenCI44162494371; storage migration verified. Below is the preserved original blocked checkpoint.
+
 # Phase48 — migration verified on copy; activation BLOCKED; new native BTC result
 
 Worktree `/home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/phase48-evidence`, branch `citadel/phase48-evidence`, base c69c88cc8c7f4b41d51716d93a273be214510118. Implementation f8c69539e6b075d393a8bb5a5d8ace386b1eefc0; closing revision is the commit containing this handoff. No subagents. No live archive changes, stop, restart or deployment occurred.

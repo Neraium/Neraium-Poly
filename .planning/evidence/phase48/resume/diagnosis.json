@@ -1,0 +1,14 @@
+{
+  "window_utc": [
+    "2026-11-17T19:30:00Z",
+    "2026-11-17T19:48:00Z"
+  ],
+  "value_error_counts": {
+    "fresh shared reference observation unavailable": 29,
+    "forecast storage budget exhausted": 8,
+    "fresh_primary_research_frame_required": 21
+  },
+  "interpretation": "Main cycle failures originate at ReferenceSampler.latest, which withholds absent/expired frames. Native64MiB capacity blocks native settlement acquisition, not reference reads; forecast-ledger budget is a separate caught research error. No stale fallback or cap increase. New bounded last-failure/type diagnostics survive healthy recovery.",
+  "reference_modified": false,
+  "native_write_probes": 0
+}

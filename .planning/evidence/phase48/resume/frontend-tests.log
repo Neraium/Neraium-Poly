@@ -1,0 +1,23 @@
+npm notice run neraium-poly-dashboard@0.1.0 test
+npm notice run playwright test
+[WebServer] Using CPython 3.12.3 interpreter at: /usr/bin/python3
+[WebServer] Creating virtual environment at: .venv
+[WebServer]    Building neraium-poly @ file:///home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/phase48-evidence
+[WebServer]       Built neraium-poly @ file:///home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/phase48-evidence
+[WebServer] Installed 23 packages in 7ms
+[WebServer] INFO:     Started server process [607405]
+[WebServer] INFO:     Waiting for application startup.
+[WebServer] INFO:     Application startup complete.
+[WebServer] INFO:     Uvicorn running on http://127.0.0.1:18940 (Press CTRL+C to quit)
+
+Running 5 tests using 1 worker
+
+(node:607408) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 tests/connected.spec.ts:2:1 › connected paper workflow exposes audited fills and latches emergency stop (452ms)
+  ✓  2 tests/dashboard.spec.ts:3:1 › all workflows render, replay and emergency stop work (684ms)
+  ✓  3 tests/dashboard.spec.ts:14:1 › service failure is visible (159ms)
+  ✓  4 tests/live-operation.spec.ts:2:1 › live-market gate and observed books render without enabling synthetic replay (373ms)
+  ✓  5 tests/research.spec.ts:3:1 › research deficits and null performance remain visible (257ms)
+
+  5 passed (4.3s)

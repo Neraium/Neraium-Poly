@@ -19,7 +19,10 @@ assert json.loads((HERE/'rollback-ready.json').read_text())['source_only']
 rehearsal=json.loads((HERE.parent/'migration-rehearsal.json').read_text());assert rehearsal['interrupted_then_resumed'] and rehearsal['restoration_byte_exact']
 subprocess.run(['sudo','-n','systemctl','stop',deploy.UNIT],check=True,timeout=90)
 live_guard()
-initial=snapshot(ROOT);assert initial['implementation_sha256']==hashlib.sha256(Path(__import__('neraium_poly.research.phase48.migration',fromlist=['__file__']).__file__).read_bytes()).hexdigest()
+initial=snapshot(ROOT)
+preserved=json.loads((HERE.parent/'ending-native-identities.json').read_text())['snapshot']
+assert initial['files']==preserved['files'] and initial['proofs']==preserved['proofs'],'original Phase48 manifest differs; keep stopped and inspect'
+assert initial['implementation_sha256']==hashlib.sha256(Path(__import__('neraium_poly.research.phase48.migration',fromlist=['__file__']).__file__).read_bytes()).hexdigest()
 # All logical source objects must match the fully verified rehearsal before any mutation.
 assert len(initial['files'])==rehearsal['isolated_original_files'] and initial['proofs']==rehearsal['original_proof_identities']
 source=ReadonlyArchive(ROOT.parent);anchors={}

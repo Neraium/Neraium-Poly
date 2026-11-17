@@ -1,0 +1,44 @@
+{
+  "source": "8d8c115d20fc86604cffc4af64657f967b499b63",
+  "ci_run": 44162494371,
+  "before": {
+    "samples": 60,
+    "fresh_reports": 18,
+    "fresh_percent": 30.0,
+    "api_errors": 0,
+    "healthy_ingestion_samples": 45,
+    "unique_completed_cycles": 14,
+    "cycle_seconds_p50": 16.005529027897865,
+    "cycle_seconds_p95": 34.37309831613675,
+    "cycle_seconds_max": 34.37309831613675,
+    "health_api_seconds_p50": 0.023830493446439505,
+    "health_api_seconds_p95": 0.4367886451072991,
+    "health_api_seconds_max": 0.4886580007150769,
+    "peak_cgroup_memory_bytes": 2090770432,
+    "failed_or_stale_rows_discarded": false
+  },
+  "after_post_ready": {
+    "samples": 61,
+    "fresh_reports": 13,
+    "fresh_percent": 21.311475409836067,
+    "api_errors": 0,
+    "healthy_ingestion_samples": 38,
+    "unique_completed_cycles": 15,
+    "cycle_seconds_p50": 9.159358389209956,
+    "cycle_seconds_p95": 21.587977836839855,
+    "cycle_seconds_max": 21.587977836839855,
+    "health_api_seconds_p50": 0.0030159358866512775,
+    "health_api_seconds_p95": 0.10108568193390965,
+    "health_api_seconds_max": 0.24381317291408777,
+    "peak_cgroup_memory_bytes": 2090405888,
+    "failed_or_stale_rows_discarded": false
+  },
+  "startup": {
+    "duration_seconds": 786.9650005670264,
+    "samples": 157,
+    "api_errors": 150
+  },
+  "post_ready_duration_seconds": 303.7750758570619,
+  "accounts_unchanged": true,
+  "method": "Same observe.py, sequential health+research read, 5s sleep, 300s ready window. Failed/stale post-ready rows retained. Startup separated explicitly; no claim of long-term stability or deterministic causality from unmatched changing markets."
+}

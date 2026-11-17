@@ -1,0 +1,73 @@
+{
+  "records": [
+    {
+      "schema_version": "1.0",
+      "id": "671d7a13c7ecb3ee1351cc6e93463effd25da78c9736dda21ff252ade11ce8f7",
+      "timestamp": "2026-11-17T20:10:31.528144Z",
+      "available_at": "2026-11-17T20:10:31.528144Z",
+      "source": "neraium-poly/research-native44",
+      "forecast_id": "4839c339dbcb496779157fb22f4d57c5c8c8f09d1ab9b97478c8dcad6d9b4081",
+      "forecast_sha256": "d28ad313a1e2a0e30deb8059891c13a31a40818f958c7c54f9dec2af3dc7aef7",
+      "original_study_sha256": "3ec8451552cbf1f155626cae771dd072e9e7f0501947f52bf4b3b66b3ba6d63c",
+      "directory": "v44-539ba2de2c37cf975fa271761e05ee4533f012104380be35ff4867904fcb04ef",
+      "verified": true,
+      "reason": "finalized_standard_CTF_and_exact_original_outcome_asset",
+      "proof": {
+        "forecast_id": "4839c339dbcb496779157fb22f4d57c5c8c8f09d1ab9b97478c8dcad6d9b4081",
+        "event_id": "1313613",
+        "market_id": "6675279",
+        "token_id": "108562362738229001428284705064640409148462148852250109040793940256053964650466",
+        "rules_sha256": "a9ada9283ca59deab1e61e2756830cff216df3eec5faaadfedbb71cb0cdeee24",
+        "payout": 1,
+        "resolved_at": "2026-11-17T15:34:04+00:00",
+        "available_at": "2026-11-17T20:10:31.504298+00:00",
+        "verified": true,
+        "native_payout_verified": true,
+        "proof_sha256": "eef7bba23311d8e676c73b598f04472f6fcf16d8e621df336160a75a37be349a",
+        "verification_source": "standard_CTF_receipt_canonical_finality_and_original_USDC_outcome_asset_v44",
+        "trust_limit": "HTTPS RPC attribution and reproducible evidence, not independent node consensus verification",
+        "independence_reviewed": false,
+        "research_only": true,
+        "trading_authority": false
+      },
+      "research_only": true,
+      "trading_authority": false
+    },
+    {
+      "schema_version": "1.0",
+      "id": "6265196c76014c48d4f241c6368977c9da1c1aa51ca7c60458ec4e066d860106",
+      "timestamp": "2026-11-17T20:05:10.385088Z",
+      "available_at": "2026-11-17T20:05:10.385088Z",
+      "source": "neraium-poly/research-native44",
+      "forecast_id": "c6fe6cfe71b506edb4c120f491086229c4901cf28b6b303e9825404ad2081e97",
+      "forecast_sha256": "0c778aa76e342f4c3a8ca627f02df12fb0269d6fdd5b7dc67a1cb7942b3f9299",
+      "original_study_sha256": "0551bfdb25825bc4952e213dcdbdc9f6fc13ebe51e042af088ebb416220db05e",
+      "directory": "v44-39c2f58262870649b0e54ce2228d24c6d0c1e88ecd5087f6599b325bef99e562",
+      "verified": true,
+      "reason": "finalized_standard_CTF_and_exact_original_outcome_asset",
+      "proof": {
+        "forecast_id": "c6fe6cfe71b506edb4c120f491086229c4901cf28b6b303e9825404ad2081e97",
+        "event_id": "1299582",
+        "market_id": "6567954",
+        "token_id": "23674258102859867224420319712159566089105292768153514096016373353387215697441",
+        "rules_sha256": "91d5d7808cf76ca75ba5f9f8b2ad52dfd572b3dad32ae0bf28001facc80416d4",
+        "payout": 0,
+        "resolved_at": "2026-11-17T03:45:25+00:00",
+        "available_at": "2026-11-17T20:05:09.940072+00:00",
+        "verified": true,
+        "native_payout_verified": true,
+        "proof_sha256": "07beaa8ec591324b86e1dfaac296b602a357dd88726104bf25b9a543f5339b2c",
+        "verification_source": "standard_CTF_receipt_canonical_finality_and_original_USDC_outcome_asset_v44",
+        "trust_limit": "HTTPS RPC attribution and reproducible evidence, not independent node consensus verification",
+        "independence_reviewed": false,
+        "research_only": true,
+        "trading_authority": false
+      },
+      "research_only": true,
+      "trading_authority": false
+    }
+  ],
+  "independent_replay_matches_published_proof": true,
+  "live_archive_modified": false,
+  "scope": "published proofs only; positive payout does not establish profitable strategy; preserve original forecast and source hashes"
+}

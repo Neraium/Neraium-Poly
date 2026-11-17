@@ -1,0 +1,161 @@
+{
+  "at": "2026-11-17T20:15:29.643614+00:00",
+  "status": "DEPLOYED_VERIFIED_WITH_REMAINING_FRESHNESS_LIMITATION",
+  "branch": "citadel/phase48-evidence",
+  "activated_source": "8d8c115d20fc86604cffc4af64657f967b499b63",
+  "experimental_pid": "611350",
+  "reference_pid": "555731",
+  "ci_run": 44162494371,
+  "ci_conclusion": "success",
+  "backend_tests_passed": 2446,
+  "audit_gate_preserved": true,
+  "dependency_path": "Removed Vite7.3.7 -> picomatch4.0.7 (also fdir/tinyglobby); fixed-entry esbuild0.28.2 build and bounded loopback development proxy. No downgrade, overrides, advisory exclusion or audit suppression.",
+  "npm_audit_vulnerabilities": {
+    "info": 0,
+    "low": 0,
+    "moderate": 0,
+    "high": 0,
+    "critical": 0,
+    "total": 0
+  },
+  "rollback_executed": false,
+  "source_only_rollback_revision": "95599ffec0cc4a4bf1b6a35480747276d6c55b50",
+  "migration": {
+    "original_logical_files_verified": 1098,
+    "original_native_proofs_replayed": 15,
+    "original_content_and_proof_hashes_unchanged": true,
+    "plan_sha256": "09d039ea10b0a6ac2d5f29a0a66168b4f2df7bf869433e9b8882095643c2ae45",
+    "journal_chain_events_verified": 1750,
+    "journal_export_decoded_sha256": "dbfc6c49d72c9cb7b98ddbdf197eac1d89072787682c67c06bed4f90fdee1e04",
+    "backup_sha256": "f6c44edd1dbb5801d67b2905f0646186bf8707ee999991f38d96e822b6077671",
+    "backup_bytes": 8536660,
+    "native_at_migration": {
+      "logical_bytes": 33453198,
+      "unique_bytes": 25107365,
+      "allocated_bytes": 26824704,
+      "files": 1098,
+      "unique_inodes": 770,
+      "limit_bytes": 67108864
+    },
+    "native_current": {
+      "logical_bytes": 33920682,
+      "unique_bytes": 25574849,
+      "allocated_bytes": 27422720,
+      "files": 1142,
+      "unique_inodes": 814,
+      "limit_bytes": 67108864
+    },
+    "migration_native_allocated_reclaimed_bytes": 43200512,
+    "retained_backup_and_administrative_allocated_bytes": 11399168,
+    "net_allocated_savings_after_retained_backup_and_journal_bytes": 31801344,
+    "live_source_archives_deleted": false
+  },
+  "current_native_guard_headroom_bytes": 41534015,
+  "performance": {
+    "source": "8d8c115d20fc86604cffc4af64657f967b499b63",
+    "ci_run": 44162494371,
+    "before": {
+      "samples": 60,
+      "fresh_reports": 18,
+      "fresh_percent": 30.0,
+      "api_errors": 0,
+      "healthy_ingestion_samples": 45,
+      "unique_completed_cycles": 14,
+      "cycle_seconds_p50": 16.005529027897865,
+      "cycle_seconds_p95": 34.37309831613675,
+      "cycle_seconds_max": 34.37309831613675,
+      "health_api_seconds_p50": 0.023830493446439505,
+      "health_api_seconds_p95": 0.4367886451072991,
+      "health_api_seconds_max": 0.4886580007150769,
+      "peak_cgroup_memory_bytes": 2090770432,
+      "failed_or_stale_rows_discarded": false
+    },
+    "after_post_ready": {
+      "samples": 61,
+      "fresh_reports": 13,
+      "fresh_percent": 21.311475409836067,
+      "api_errors": 0,
+      "healthy_ingestion_samples": 38,
+      "unique_completed_cycles": 15,
+      "cycle_seconds_p50": 9.159358389209956,
+      "cycle_seconds_p95": 21.587977836839855,
+      "cycle_seconds_max": 21.587977836839855,
+      "health_api_seconds_p50": 0.0030159358866512775,
+      "health_api_seconds_p95": 0.10108568193390965,
+      "health_api_seconds_max": 0.24381317291408777,
+      "peak_cgroup_memory_bytes": 2090405888,
+      "failed_or_stale_rows_discarded": false
+    },
+    "startup": {
+      "duration_seconds": 786.9650005670264,
+      "samples": 157,
+      "api_errors": 150
+    },
+    "post_ready_duration_seconds": 303.7750758570619,
+    "accounts_unchanged": true,
+    "method": "Same observe.py, sequential health+research read, 5s sleep, 300s ready window. Failed/stale post-ready rows retained. Startup separated explicitly; no claim of long-term stability or deterministic causality from unmatched changing markets."
+  },
+  "financial_accounts_unchanged": true,
+  "financial_accounts": {
+    "paper-live": {
+      "cash": 500.0,
+      "realized": 0.0,
+      "kill": 0,
+      "limits_sha256": "5d49295ce5df09ad48cda10e3f9fe2eadc5ce793ea741e0070a05f4eca00a6b0",
+      "positions": 0,
+      "reservations": 0,
+      "orders": 0
+    },
+    "experimental-paper": {
+      "cash": 496.11522059829053,
+      "realized": -3.8847794017094013,
+      "kill": 1,
+      "limits_sha256": "5d49295ce5df09ad48cda10e3f9fe2eadc5ce793ea741e0070a05f4eca00a6b0",
+      "positions": 0,
+      "reservations": 0,
+      "orders": 13
+    }
+  },
+  "stop_cleared": false,
+  "real_money_enabled": false,
+  "financial_order_resumption": false,
+  "reference_restarted": false,
+  "experimental_manual_restarts": 1,
+  "experimental_automatic_restarts": 0,
+  "observed_oom_kills": 0,
+  "filesystem_free_bytes": 181531615232,
+  "reserve_bytes": 107374182400,
+  "archive_quotas_GiB": {
+    "collector": 150,
+    "experimental": 150
+  },
+  "latest_verified_native_publications": [
+    {
+      "forecast_id": "4839c339dbcb496779157fb22f4d57c5c8c8f09d1ab9b97478c8dcad6d9b4081",
+      "market_id": "6675279",
+      "parent_event": "1313613",
+      "payout": 1,
+      "proof_sha256": "eef7bba23311d8e676c73b598f04472f6fcf16d8e621df336160a75a37be349a"
+    },
+    {
+      "forecast_id": "c6fe6cfe71b506edb4c120f491086229c4901cf28b6b303e9825404ad2081e97",
+      "market_id": "6567954",
+      "parent_event": "1299582",
+      "payout": 0,
+      "proof_sha256": "07beaa8ec591324b86e1dfaac296b602a357dd88726104bf25b9a543f5339b2c"
+    }
+  ],
+  "frozen_original_trials_preserved": 14,
+  "frozen_trials_live_verified_in_postflight": 0,
+  "new_native_acquisition_working": true,
+  "profitable_edge_demonstrated": false,
+  "remaining_blockers": [
+    "Fresh research13/61 versus18/60 baseline; no measured improvement in end-to-end freshness despite lower cycle times. Failed/stale samples retained.",
+    "Retained reference failure diagnostics identify ReadTimeout and ValueError:public-data producer is degraded. Reference service was not modified.",
+    "Separate legacy forecast-ledger budget exhausted; unchanged guard withholds research writes.",
+    "Original frozen14 remain unverified in live cohort at postflight; previously recovered isolated BTC proofs are retained, not manually injected or backdated. Existing retry/backoff still applies.",
+    "All-in execution costs and independently demonstrated profitable edge remain unverified."
+  ],
+  "final_gates": "Both API health statusesok;295release files, running policy hashes, account/stop/risk limits and financial/archive journals verified. All1098original logical files and15original native proofs plus1750migration events verified. Two additional published native proofs independently copied/replayed.",
+  "next_action": "Read-only profiling of reference read/degraded-producer intervals, preserve current paper stop and bounds, and allow scheduled native reconciliation. Any reference changes require separate authorization; do not relax freshness or audit gates."
+}

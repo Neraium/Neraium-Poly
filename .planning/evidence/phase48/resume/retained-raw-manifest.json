@@ -1,0 +1,26 @@
+{
+  "activation/observation/samples.jsonl": {
+    "original_bytes": 12669865,
+    "original_sha256": "c3fa26eeeb282563c2287f675365dbd5c71c1d6ff4c7376e108fc0176862aeec",
+    "compressed": "activation/observation/samples.jsonl.gz",
+    "compressed_sha256": "363df05c668af735726bf3f6fad54ea02cc0da7278b2871f765dfc1d70e256c1"
+  },
+  "activation/postflight.json": {
+    "original_bytes": 279035,
+    "original_sha256": "7fff4b7727d394ea2d018fc35532ecf5e3fc9ca4bd973d86022852ca83941bda",
+    "compressed": "activation/postflight.json.gz",
+    "compressed_sha256": "0341a0103d1c29ebf71721ada825bffdbce63a2b2b88fc0a021cc55da8b29f9c"
+  },
+  "resume/backend-ci.log": {
+    "original_bytes": 59408,
+    "original_sha256": "ce9cd8b88d44cb3ecb8f8c8c4fed5466f4faaec718c68c43c6fe3e5a626a7013",
+    "compressed": "resume/backend-ci.log.gz",
+    "compressed_sha256": "4cef6a5e52f7c6261211184779bc68f655a6e0453e6e60e8b39362cd8fc4bb62"
+  },
+  "resume/ingestion-before.log": {
+    "original_bytes": 88549,
+    "original_sha256": "46d990996757cc750e727207aae81f38cd387cfa6de878593f11e0c375baac92",
+    "compressed": "resume/ingestion-before.log.gz",
+    "compressed_sha256": "de06abcd775c435fcc7cf0dba563e49c94d4ba107d326ece34d4f38956737e93"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "original_logical_files_verified": 1098,
+  "original_native_proofs_replayed": 15,
+  "original_content_and_proof_hashes_unchanged": true,
+  "plan_sha256": "09d039ea10b0a6ac2d5f29a0a66168b4f2df7bf869433e9b8882095643c2ae45",
+  "journal_chain_events_verified": 1750,
+  "journal_export_decoded_sha256": "dbfc6c49d72c9cb7b98ddbdf197eac1d89072787682c67c06bed4f90fdee1e04",
+  "backup_sha256": "f6c44edd1dbb5801d67b2905f0646186bf8707ee999991f38d96e822b6077671",
+  "backup_bytes": 8536660,
+  "native_at_migration": {
+    "logical_bytes": 33453198,
+    "unique_bytes": 25107365,
+    "allocated_bytes": 26824704,
+    "files": 1098,
+    "unique_inodes": 770,
+    "limit_bytes": 67108864
+  },
+  "native_current": {
+    "logical_bytes": 33920682,
+    "unique_bytes": 25574849,
+    "allocated_bytes": 27422720,
+    "files": 1142,
+    "unique_inodes": 814,
+    "limit_bytes": 67108864
+  },
+  "migration_native_allocated_reclaimed_bytes": 43200512,
+  "retained_backup_and_administrative_allocated_bytes": 11399168,
+  "net_allocated_savings_after_retained_backup_and_journal_bytes": 31801344,
+  "live_source_archives_deleted": false
+}

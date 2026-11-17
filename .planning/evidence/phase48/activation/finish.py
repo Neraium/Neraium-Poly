@@ -13,7 +13,7 @@ from neraium_poly.research.phase14.relationships import digest
 from neraium_poly.research.phase44.cohort import LegacyCohort as StrategyEngine
 from neraium_poly.risk import RiskLimits
 
-HERE=Path(__file__).resolve().parent;ROOT=Path('/home/ubuntu/Neraium-Poly');SOURCE='f8c69539e6b075d393a8bb5a5d8ace386b1eefc0'
+HERE=Path(__file__).resolve().parent;ROOT=Path('/home/ubuntu/Neraium-Poly');SOURCE='8d8c115d20fc86604cffc4af64657f967b499b63'
 spec=importlib.util.spec_from_file_location('gate',HERE/'deploy.py');gate=importlib.util.module_from_spec(spec);spec.loader.exec_module(gate);gate.OLD=SOURCE
 post=gate.gate(full=True);assert all(r.get('integrity')=='verified' for r in post['journals'].values())
 manifest=json.loads((HERE/'release-manifest.json').read_text());assert manifest['source']==SOURCE and all(hashlib.sha256((Path(manifest['release'])/n).read_bytes()).hexdigest()==h for n,h in manifest['files'].items())
