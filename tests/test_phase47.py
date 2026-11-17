@@ -66,11 +66,12 @@ setup=_setup
 
 
 def test_full_acquisition_missing_hint_transaction_compressed_replay(tmp_path,monkeypatch):
-    import httpx
-    from neraium_poly.research.phase44.native import acquire
     # Offline network fixture also models eligible disk headroom; CI runners
     # may have less than the production100GiB reserve. Runtime guard unchanged.
     from types import SimpleNamespace
+
+    import httpx
+    from neraium_poly.research.phase44.native import acquire
     monkeypatch.setattr('shutil.disk_usage',lambda _:SimpleNamespace(free=200*1024**3))
     b=json.loads((FIXTURE/'bundle.json').read_bytes());hint=json.loads(json.dumps(b['resolution_hint']));hint['data'][0].pop('question_id',None);hint['data'][0]['transaction_hash']='';hint['data'][0]['resolved_block']=int(b['log']['blockNumber'],16)
     native={f"https://gamma-api.polymarket.com/markets/{b['forecast']['market_id']}":b['gamma'],f"https://clob.polymarket.com/markets-by-token/{b['forecast']['token_id']}":b['clob'],f"https://gamma-api.polymarket.com/events/{b['forecast']['event_id']}":b['parent'],f"https://data-api.polymarket.com/v2/resolutions?condition={b['gamma']['conditionId']}":hint}
