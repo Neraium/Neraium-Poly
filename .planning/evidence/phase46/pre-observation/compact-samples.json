@@ -1,0 +1,3279 @@
+[
+  {
+    "at": "2026-11-17T13:52:54.305154+00:00",
+    "elapsed": 0.034284555818885565,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "2081787904",
+      "CPUUsageNSec": "27342391642000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "80527",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.09100854117423296,
+    "health": {
+      "status": "degraded"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3725,
+      "as_of": "2026-11-17T13:52:10.080546+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 18.1688020452857,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4504,
+        "failures": 647,
+        "last_attempt": "2026-11-17T13:52:21.476134+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 341,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.776517924387008,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:52:21.551376+00:00",
+        "age_seconds": 5.103391,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:52:59.476187+00:00",
+    "elapsed": 5.205323164816946,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "2082181120",
+      "CPUUsageNSec": "27347503478000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "80527",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.03158213337883353,
+    "health": {
+      "status": "degraded"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3725,
+      "as_of": "2026-11-17T13:52:10.080546+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 18.1688020452857,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4504,
+        "failures": 647,
+        "last_attempt": "2026-11-17T13:52:21.476134+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 341,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.776517924387008,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:52:21.551376+00:00",
+        "age_seconds": 5.103391,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:53:04.545094+00:00",
+    "elapsed": 10.2742296368815,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "2082086912",
+      "CPUUsageNSec": "27352573069000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "80527",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.22661590529605746,
+    "health": {
+      "status": "degraded"
+    },
+    "research": {
+      "status": "fresh",
+      "cycles": 3726,
+      "as_of": "2026-11-17T13:52:50.026327+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 27.67894547386095,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4509,
+        "failures": 647,
+        "last_attempt": "2026-11-17T13:52:57.267825+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 322,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.7817572944331914,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:52:57.288562+00:00",
+        "age_seconds": 3.216991,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:53:09.925423+00:00",
+    "elapsed": 15.65457684500143,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "2079137792",
+      "CPUUsageNSec": "27357939318000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "80758",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.07833938114345074,
+    "ready_elapsed": 15.812274411786348,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3726,
+      "as_of": "2026-11-17T13:52:50.026327+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 27.67894547386095,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4509,
+        "failures": 647,
+        "last_attempt": "2026-11-17T13:52:57.267825+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 322,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.7817572944331914,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:52:57.288562+00:00",
+        "age_seconds": 3.216991,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:53:15.084650+00:00",
+    "elapsed": 20.813790609128773,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "2052780032",
+      "CPUUsageNSec": "27363083263000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "80897",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.09023101581260562,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3726,
+      "as_of": "2026-11-17T13:52:50.026327+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 27.67894547386095,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4509,
+        "failures": 647,
+        "last_attempt": "2026-11-17T13:52:57.267825+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 322,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.7817572944331914,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:52:57.288562+00:00",
+        "age_seconds": 3.216991,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:53:20.313215+00:00",
+    "elapsed": 26.042352568823844,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "1729720320",
+      "CPUUsageNSec": "27368286770000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "80897",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.003543758299201727,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3726,
+      "as_of": "2026-11-17T13:52:50.026327+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 27.67894547386095,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4509,
+        "failures": 647,
+        "last_attempt": "2026-11-17T13:52:57.267825+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 322,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.7817572944331914,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:52:57.288562+00:00",
+        "age_seconds": 3.216991,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:53:25.338293+00:00",
+    "elapsed": 31.067428248003125,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "1880301568",
+      "CPUUsageNSec": "27373183208000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "80897",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.002668880857527256,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3726,
+      "as_of": "2026-11-17T13:52:50.026327+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 27.67894547386095,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4509,
+        "failures": 647,
+        "last_attempt": "2026-11-17T13:52:57.267825+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 322,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.7817572944331914,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:52:57.288562+00:00",
+        "age_seconds": 3.216991,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:53:30.363953+00:00",
+    "elapsed": 36.093091955874115,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "1985613824",
+      "CPUUsageNSec": "27377946670000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "80897",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.0027697449550032616,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "fresh",
+      "cycles": 3727,
+      "as_of": "2026-11-17T13:53:14.287213+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 13.568979708943516,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4513,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:53:21.892945+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 310,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.7854905126150697,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:53:21.956370+00:00",
+        "age_seconds": 4.837643,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:53:35.387730+00:00",
+    "elapsed": 41.11686386587098,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "1996017664",
+      "CPUUsageNSec": "27382959251000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "80897",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.0022560260258615017,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3727,
+      "as_of": "2026-11-17T13:53:14.287213+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 13.568979708943516,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4513,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:53:21.892945+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 310,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.7854905126150697,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:53:21.956370+00:00",
+        "age_seconds": 4.837643,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:53:40.410012+00:00",
+    "elapsed": 46.13914796104655,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "2002255872",
+      "CPUUsageNSec": "27387960706000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "80897",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.0026108212769031525,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "fresh",
+      "cycles": 3728,
+      "as_of": "2026-11-17T13:53:32.085542+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 5.846974633168429,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4515,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:53:32.871830+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 314,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.7947824157308787,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:53:32.979231+00:00",
+        "age_seconds": 4.726334,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:53:45.433424+00:00",
+    "elapsed": 51.16257372079417,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "2022440960",
+      "CPUUsageNSec": "27392814038000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "80897",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.02760560903698206,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "fresh",
+      "cycles": 3728,
+      "as_of": "2026-11-17T13:53:32.085542+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 5.846974633168429,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4515,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:53:32.871830+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 314,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.7947824157308787,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:53:32.979231+00:00",
+        "age_seconds": 4.726334,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:53:50.482118+00:00",
+    "elapsed": 56.21125487377867,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "2024726528",
+      "CPUUsageNSec": "27397856390000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "80897",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.0026263068430125713,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "fresh",
+      "cycles": 3728,
+      "as_of": "2026-11-17T13:53:32.085542+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 5.846974633168429,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4515,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:53:32.871830+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 314,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.7947824157308787,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:53:32.979231+00:00",
+        "age_seconds": 4.726334,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:53:55.505873+00:00",
+    "elapsed": 61.23501005908474,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "2042044416",
+      "CPUUsageNSec": "27402797940000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "80897",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.14052042411640286,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3728,
+      "as_of": "2026-11-17T13:53:32.085542+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 5.846974633168429,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4515,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:53:32.871830+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 314,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.7947824157308787,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:53:32.979231+00:00",
+        "age_seconds": 4.726334,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:54:00.710416+00:00",
+    "elapsed": 66.43955193506554,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "2046775296",
+      "CPUUsageNSec": "27407995082000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "80897",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.18284063506871462,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3728,
+      "as_of": "2026-11-17T13:53:32.085542+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 5.846974633168429,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4515,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:53:32.871830+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 314,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.7947824157308787,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:53:32.979231+00:00",
+        "age_seconds": 4.726334,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:54:05.929455+00:00",
+    "elapsed": 71.65859317686409,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "2047082496",
+      "CPUUsageNSec": "27413192238000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "80897",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.5673581301234663,
+    "health": {
+      "status": "degraded"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3728,
+      "as_of": "2026-11-17T13:53:32.085542+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 5.846974633168429,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4515,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:53:32.871830+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 314,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.7947824157308787,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:53:32.979231+00:00",
+        "age_seconds": 4.726334,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:54:11.596508+00:00",
+    "elapsed": 77.32564223883674,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "2047266816",
+      "CPUUsageNSec": "27418874222000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "80897",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.003049947787076235,
+    "health": {
+      "status": "degraded"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3729,
+      "as_of": "2026-11-17T13:53:51.091657+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 24.53865339793265,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4520,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:54:02.545060+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 296,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.7947824157308787,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:54:02.578328+00:00",
+        "age_seconds": 4.689136,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:54:16.672876+00:00",
+    "elapsed": 82.40201081382111,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "1985986560",
+      "CPUUsageNSec": "27423917479000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "80897",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.00265806308016181,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3729,
+      "as_of": "2026-11-17T13:53:51.091657+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 24.53865339793265,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4520,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:54:02.545060+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 296,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.7947824157308787,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:54:02.578328+00:00",
+        "age_seconds": 4.689136,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:54:21.695644+00:00",
+    "elapsed": 87.42477855086327,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "1710391296",
+      "CPUUsageNSec": "27428930890000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "80897",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.03388750087469816,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3729,
+      "as_of": "2026-11-17T13:53:51.091657+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 24.53865339793265,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4520,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:54:02.545060+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 296,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.7947824157308787,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:54:02.578328+00:00",
+        "age_seconds": 4.689136,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:54:26.838392+00:00",
+    "elapsed": 92.56753043085337,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "1879461888",
+      "CPUUsageNSec": "27433946915000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "80897",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.4150686957873404,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3729,
+      "as_of": "2026-11-17T13:53:51.091657+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 24.53865339793265,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4520,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:54:02.545060+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 296,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.7947824157308787,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:54:02.578328+00:00",
+        "age_seconds": 4.689136,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:54:32.379284+00:00",
+    "elapsed": 98.10841851588339,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "1900158976",
+      "CPUUsageNSec": "27439423780000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "80897",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.08532534493133426,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3729,
+      "as_of": "2026-11-17T13:53:51.091657+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 24.53865339793265,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4520,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:54:02.545060+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 296,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.7947824157308787,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:54:02.578328+00:00",
+        "age_seconds": 4.689136,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:54:37.530970+00:00",
+    "elapsed": 103.26010840106755,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "1905532928",
+      "CPUUsageNSec": "27444538008000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "80897",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.39727199729532003,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3730,
+      "as_of": "2026-11-17T13:54:16.922469+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 20.427955387160182,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4524,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:54:29.375572+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 308,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.7947824157308787,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:54:29.401232+00:00",
+        "age_seconds": 3.562187,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:54:43.035674+00:00",
+    "elapsed": 108.7648133598268,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "1906978816",
+      "CPUUsageNSec": "27450025584000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "80897",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.27754701720550656,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3730,
+      "as_of": "2026-11-17T13:54:16.922469+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 20.427955387160182,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4524,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:54:29.375572+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 308,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.7947824157308787,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:54:29.401232+00:00",
+        "age_seconds": 3.562187,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:54:48.408580+00:00",
+    "elapsed": 114.13771557901055,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "1909047296",
+      "CPUUsageNSec": "27455392955000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "80897",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.002697500865906477,
+    "health": {
+      "status": "degraded"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3730,
+      "as_of": "2026-11-17T13:54:16.922469+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 20.427955387160182,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4524,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:54:29.375572+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 308,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.7947824157308787,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:54:29.401232+00:00",
+        "age_seconds": 3.562187,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:54:53.433740+00:00",
+    "elapsed": 119.16287843883038,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "1916510208",
+      "CPUUsageNSec": "27460411759000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "80897",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.2557375729084015,
+    "health": {
+      "status": "degraded"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3730,
+      "as_of": "2026-11-17T13:54:16.922469+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 20.427955387160182,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4524,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:54:29.375572+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 308,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.7947824157308787,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:54:29.401232+00:00",
+        "age_seconds": 3.562187,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:54:58.756946+00:00",
+    "elapsed": 124.48608190473169,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "1916567552",
+      "CPUUsageNSec": "27465726156000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "80897",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.2675292259082198,
+    "health": {
+      "status": "degraded"
+    },
+    "research": {
+      "status": "fresh",
+      "cycles": 3731,
+      "as_of": "2026-11-17T13:54:42.297153+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 14.567007160745561,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4527,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:54:51.683056+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 322,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.801638264907524,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:54:51.705505+00:00",
+        "age_seconds": 2.167088,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:55:04.057949+00:00",
+    "elapsed": 129.78708388470113,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "1914671104",
+      "CPUUsageNSec": "27470974701000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "80897",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.002624243963509798,
+    "health": {
+      "status": "degraded"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3731,
+      "as_of": "2026-11-17T13:54:42.297153+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 14.567007160745561,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4527,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:54:51.683056+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 322,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.801638264907524,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:54:51.705505+00:00",
+        "age_seconds": 2.167088,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:55:09.082127+00:00",
+    "elapsed": 134.81126292375848,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "1934262272",
+      "CPUUsageNSec": "27475980312000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "80897",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.007534344214946032,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3731,
+      "as_of": "2026-11-17T13:54:42.297153+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 14.567007160745561,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4527,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:54:51.683056+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 322,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.801638264907524,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:54:51.705505+00:00",
+        "age_seconds": 2.167088,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:55:14.112583+00:00",
+    "elapsed": 139.84171739174053,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "1998114816",
+      "CPUUsageNSec": "27479314731000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "80897",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.002100445795804262,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3731,
+      "as_of": "2026-11-17T13:54:42.297153+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 14.567007160745561,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4527,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:54:51.683056+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 322,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.801638264907524,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:54:51.705505+00:00",
+        "age_seconds": 2.167088,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:55:19.134918+00:00",
+    "elapsed": 144.86405218672007,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "2003931136",
+      "CPUUsageNSec": "27484115225000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "80897",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.5030847149901092,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3731,
+      "as_of": "2026-11-17T13:54:42.297153+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 14.567007160745561,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4527,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:54:51.683056+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 322,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.801638264907524,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:54:51.705505+00:00",
+        "age_seconds": 2.167088,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:55:24.717038+00:00",
+    "elapsed": 150.44617296103388,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "2040786944",
+      "CPUUsageNSec": "27489699198000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "80897",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.00563332112506032,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3731,
+      "as_of": "2026-11-17T13:54:42.297153+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 14.567007160745561,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4527,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:54:51.683056+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 322,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.801638264907524,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:54:51.705505+00:00",
+        "age_seconds": 2.167088,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:55:29.755427+00:00",
+    "elapsed": 155.4845769717358,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "2058289152",
+      "CPUUsageNSec": "27494733142000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "80897",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.5019062338396907,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3731,
+      "as_of": "2026-11-17T13:54:42.297153+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 14.567007160745561,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4527,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:54:51.683056+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 322,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.801638264907524,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:54:51.705505+00:00",
+        "age_seconds": 2.167088,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:55:35.337310+00:00",
+    "elapsed": 161.06644331105053,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "2083594240",
+      "CPUUsageNSec": "27500293853000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "80897",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.05308607220649719,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3731,
+      "as_of": "2026-11-17T13:54:42.297153+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 14.567007160745561,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4527,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:54:51.683056+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 322,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.801638264907524,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:54:51.705505+00:00",
+        "age_seconds": 2.167088,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:55:40.412863+00:00",
+    "elapsed": 166.1419970318675,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "2038358016",
+      "CPUUsageNSec": "27505349914000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "81031",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.05910578416660428,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3731,
+      "as_of": "2026-11-17T13:54:42.297153+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 14.567007160745561,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4527,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:54:51.683056+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 322,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.801638264907524,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:54:51.705505+00:00",
+        "age_seconds": 2.167088,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:55:45.511855+00:00",
+    "elapsed": 171.24098934279755,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "1755901952",
+      "CPUUsageNSec": "27510335585000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "81031",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.04060517577454448,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3731,
+      "as_of": "2026-11-17T13:54:42.297153+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 14.567007160745561,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4527,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:54:51.683056+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 322,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.801638264907524,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:54:51.705505+00:00",
+        "age_seconds": 2.167088,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:55:50.610056+00:00",
+    "elapsed": 176.33919005282223,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "1777897472",
+      "CPUUsageNSec": "27515371319000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "81031",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.011777278035879135,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3731,
+      "as_of": "2026-11-17T13:54:42.297153+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 14.567007160745561,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4527,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:54:51.683056+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 322,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.801638264907524,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:54:51.705505+00:00",
+        "age_seconds": 2.167088,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:55:55.642845+00:00",
+    "elapsed": 181.3719805548899,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "1819009024",
+      "CPUUsageNSec": "27520367239000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "81031",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.0026234611868858337,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3731,
+      "as_of": "2026-11-17T13:54:42.297153+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 14.567007160745561,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4527,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:54:51.683056+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 322,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.801638264907524,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:54:51.705505+00:00",
+        "age_seconds": 2.167088,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:56:00.665550+00:00",
+    "elapsed": 186.39468363299966,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "1832890368",
+      "CPUUsageNSec": "27525328115000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "81031",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.05389560991898179,
+    "health": {
+      "status": "degraded"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3731,
+      "as_of": "2026-11-17T13:54:42.297153+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 14.567007160745561,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4527,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:54:51.683056+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 322,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.801638264907524,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:54:51.705505+00:00",
+        "age_seconds": 2.167088,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:56:05.821961+00:00",
+    "elapsed": 191.55109652783722,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "1838243840",
+      "CPUUsageNSec": "27530523156000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "81031",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.04009157279506326,
+    "health": {
+      "status": "degraded"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3731,
+      "as_of": "2026-11-17T13:54:42.297153+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 14.567007160745561,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4527,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:54:51.683056+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 322,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.801638264907524,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:54:51.705505+00:00",
+        "age_seconds": 2.167088,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:56:10.885852+00:00",
+    "elapsed": 196.61498550372198,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "1852370944",
+      "CPUUsageNSec": "27535521400000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "81031",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.003984970971941948,
+    "health": {
+      "status": "degraded"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3731,
+      "as_of": "2026-11-17T13:54:42.297153+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 14.567007160745561,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4527,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:54:51.683056+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 322,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.801638264907524,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:54:51.705505+00:00",
+        "age_seconds": 2.167088,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:56:15.911150+00:00",
+    "elapsed": 201.64028413174674,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "1925046272",
+      "CPUUsageNSec": "27540533091000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "81031",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.5049406345933676,
+    "health": {
+      "status": "degraded"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3731,
+      "as_of": "2026-11-17T13:54:42.297153+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 14.567007160745561,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4527,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:54:51.683056+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 322,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.801638264907524,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:54:51.705505+00:00",
+        "age_seconds": 2.167088,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:56:21.518708+00:00",
+    "elapsed": 207.24784273467958,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "1924833280",
+      "CPUUsageNSec": "27546127899000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "81031",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.03926216112449765,
+    "health": {
+      "status": "degraded"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3731,
+      "as_of": "2026-11-17T13:54:42.297153+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 14.567007160745561,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4527,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:54:51.683056+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 322,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.801638264907524,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:54:51.705505+00:00",
+        "age_seconds": 2.167088,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:56:26.582437+00:00",
+    "elapsed": 212.31158839073032,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "2002149376",
+      "CPUUsageNSec": "27551175104000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "81031",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.004726589657366276,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3731,
+      "as_of": "2026-11-17T13:54:42.297153+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 14.567007160745561,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4527,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:54:51.683056+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 322,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.801638264907524,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:54:51.705505+00:00",
+        "age_seconds": 2.167088,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:56:31.610141+00:00",
+    "elapsed": 217.33927537873387,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "1974640640",
+      "CPUUsageNSec": "27556166302000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "81031",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.003422149922698736,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3731,
+      "as_of": "2026-11-17T13:54:42.297153+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 14.567007160745561,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4527,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:54:51.683056+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 322,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.801638264907524,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:54:51.705505+00:00",
+        "age_seconds": 2.167088,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:56:36.638586+00:00",
+    "elapsed": 222.36772013502195,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "2031403008",
+      "CPUUsageNSec": "27561107486000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "81031",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.004327056929469109,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3731,
+      "as_of": "2026-11-17T13:54:42.297153+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 14.567007160745561,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4527,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:54:51.683056+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 322,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.801638264907524,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:54:51.705505+00:00",
+        "age_seconds": 2.167088,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:56:41.663110+00:00",
+    "elapsed": 227.39224381698295,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "2031566848",
+      "CPUUsageNSec": "27566108397000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "81031",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.010757316835224628,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3731,
+      "as_of": "2026-11-17T13:54:42.297153+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 14.567007160745561,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4527,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:54:51.683056+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 322,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.801638264907524,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:54:51.705505+00:00",
+        "age_seconds": 2.167088,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:56:46.699723+00:00",
+    "elapsed": 232.42885736795142,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "2031788032",
+      "CPUUsageNSec": "27571146560000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "81031",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.0026581459678709507,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3731,
+      "as_of": "2026-11-17T13:54:42.297153+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 14.567007160745561,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4527,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:54:51.683056+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 322,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.801638264907524,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:54:51.705505+00:00",
+        "age_seconds": 2.167088,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:56:51.723932+00:00",
+    "elapsed": 237.45306815300137,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "1724276736",
+      "CPUUsageNSec": "27576151011000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "81031",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.002913012634962797,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3731,
+      "as_of": "2026-11-17T13:54:42.297153+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 14.567007160745561,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4527,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:54:51.683056+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 322,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.801638264907524,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:54:51.705505+00:00",
+        "age_seconds": 2.167088,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:56:56.749014+00:00",
+    "elapsed": 242.47814731486142,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "1960058880",
+      "CPUUsageNSec": "27581034954000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "81031",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.002328961156308651,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3731,
+      "as_of": "2026-11-17T13:54:42.297153+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 14.567007160745561,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4527,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:54:51.683056+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 322,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.801638264907524,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:54:51.705505+00:00",
+        "age_seconds": 2.167088,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:57:01.773959+00:00",
+    "elapsed": 247.50309174880385,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "1978236928",
+      "CPUUsageNSec": "27585999688000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "81031",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.26134097296744585,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3731,
+      "as_of": "2026-11-17T13:54:42.297153+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 14.567007160745561,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4527,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:54:51.683056+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 322,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.801638264907524,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:54:51.705505+00:00",
+        "age_seconds": 2.167088,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:57:07.073106+00:00",
+    "elapsed": 252.80224345671013,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "1983897600",
+      "CPUUsageNSec": "27591279689000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "81031",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.0022632000036537647,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3731,
+      "as_of": "2026-11-17T13:54:42.297153+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 14.567007160745561,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4527,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:54:51.683056+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 322,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.801638264907524,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:54:51.705505+00:00",
+        "age_seconds": 2.167088,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:57:12.095336+00:00",
+    "elapsed": 257.82447083480656,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "2008039424",
+      "CPUUsageNSec": "27596277716000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "81031",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.0077563016675412655,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3731,
+      "as_of": "2026-11-17T13:54:42.297153+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 14.567007160745561,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4527,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:54:51.683056+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 322,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.801638264907524,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:54:51.705505+00:00",
+        "age_seconds": 2.167088,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:57:17.123964+00:00",
+    "elapsed": 262.8530969307758,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "2032644096",
+      "CPUUsageNSec": "27601303212000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "81031",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.010092278011143208,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3731,
+      "as_of": "2026-11-17T13:54:42.297153+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 14.567007160745561,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4527,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:54:51.683056+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 322,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.801638264907524,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:54:51.705505+00:00",
+        "age_seconds": 2.167088,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:57:22.159150+00:00",
+    "elapsed": 267.8882840559818,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "2065096704",
+      "CPUUsageNSec": "27606306198000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "81031",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.002116774208843708,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3731,
+      "as_of": "2026-11-17T13:54:42.297153+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 14.567007160745561,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4527,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:54:51.683056+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 322,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.801638264907524,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:54:51.705505+00:00",
+        "age_seconds": 2.167088,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:57:27.181914+00:00",
+    "elapsed": 272.9110477678478,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "2068541440",
+      "CPUUsageNSec": "27611213619000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "81031",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.02095356723293662,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3731,
+      "as_of": "2026-11-17T13:54:42.297153+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 14.567007160745561,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4527,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:54:51.683056+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 322,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.801638264907524,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:54:51.705505+00:00",
+        "age_seconds": 2.167088,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:57:32.229990+00:00",
+    "elapsed": 277.9591232580133,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "2038890496",
+      "CPUUsageNSec": "27616255283000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "81130",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.5213386788964272,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3731,
+      "as_of": "2026-11-17T13:54:42.297153+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 14.567007160745561,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4527,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:54:51.683056+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 322,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.801638264907524,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:54:51.705505+00:00",
+        "age_seconds": 2.167088,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:57:37.780045+00:00",
+    "elapsed": 283.50918074604124,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "2077532160",
+      "CPUUsageNSec": "27621805908000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "81239",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.0033030840568244457,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3731,
+      "as_of": "2026-11-17T13:54:42.297153+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 14.567007160745561,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4527,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:54:51.683056+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 322,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.801638264907524,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:54:51.705505+00:00",
+        "age_seconds": 2.167088,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:57:42.805750+00:00",
+    "elapsed": 288.5348882339895,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "2101116928",
+      "CPUUsageNSec": "27626769931000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "81239",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.3341665999032557,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3731,
+      "as_of": "2026-11-17T13:54:42.297153+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 14.567007160745561,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4527,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:54:51.683056+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 322,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.801638264907524,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:54:51.705505+00:00",
+        "age_seconds": 2.167088,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:57:48.181376+00:00",
+    "elapsed": 293.91051055677235,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "2078744576",
+      "CPUUsageNSec": "27632123859000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "81239",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.0069848340936005116,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3731,
+      "as_of": "2026-11-17T13:54:42.297153+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 14.567007160745561,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4527,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:54:51.683056+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 322,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.801638264907524,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:54:51.705505+00:00",
+        "age_seconds": 2.167088,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:57:53.238740+00:00",
+    "elapsed": 298.9678746298887,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "2079404032",
+      "CPUUsageNSec": "27637154854000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "81239",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.0023724366910755634,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3731,
+      "as_of": "2026-11-17T13:54:42.297153+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 14.567007160745561,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4527,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:54:51.683056+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 322,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.801638264907524,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:54:51.705505+00:00",
+        "age_seconds": 2.167088,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:57:58.262760+00:00",
+    "elapsed": 303.99189330497757,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "2079543296",
+      "CPUUsageNSec": "27642156249000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "81239",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.03060123836621642,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3731,
+      "as_of": "2026-11-17T13:54:42.297153+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 14.567007160745561,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4527,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:54:51.683056+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 322,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.801638264907524,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:54:51.705505+00:00",
+        "age_seconds": 2.167088,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:58:03.342872+00:00",
+    "elapsed": 309.0720061878674,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "2079387648",
+      "CPUUsageNSec": "27647226495000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "81239",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.05014702398329973,
+    "health": {
+      "status": "degraded"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3731,
+      "as_of": "2026-11-17T13:54:42.297153+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 14.567007160745561,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4527,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:54:51.683056+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 322,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.801638264907524,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:54:51.705505+00:00",
+        "age_seconds": 2.167088,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:58:08.480169+00:00",
+    "elapsed": 314.2093036198057,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "2079801344",
+      "CPUUsageNSec": "27652358508000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "81239",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.0023102229461073875,
+    "health": {
+      "status": "degraded"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3731,
+      "as_of": "2026-11-17T13:54:42.297153+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 14.567007160745561,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4527,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:54:51.683056+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 322,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.801638264907524,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:54:51.705505+00:00",
+        "age_seconds": 2.167088,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T13:58:13.503367+00:00",
+    "elapsed": 319.2325000730343,
+    "service": {
+      "MainPID": "542117",
+      "NRestarts": "0",
+      "MemoryCurrent": "2080063488",
+      "CPUUsageNSec": "27657359592000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "81239",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.01598086580634117,
+    "health": {
+      "status": "degraded"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3731,
+      "as_of": "2026-11-17T13:54:42.297153+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 14.567007160745561,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 4527,
+        "failures": 648,
+        "last_attempt": "2026-11-17T13:54:51.683056+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 322,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.801638264907524,
+        "maximum_read_seconds": 3.0711471559479833,
+        "available_at": "2026-11-17T13:54:51.705505+00:00",
+        "age_seconds": 2.167088,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  }
+]

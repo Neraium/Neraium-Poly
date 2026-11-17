@@ -1,0 +1,6575 @@
+[
+  {
+    "at": "2026-11-17T14:16:49.325925+00:00",
+    "elapsed": 0.03529260493814945,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "173842432",
+      "CPUUsageNSec": "1103764000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "0",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:16:54.338403+00:00",
+    "elapsed": 5.0477781048975885,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "203333632",
+      "CPUUsageNSec": "1489597000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "0",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:16:59.348116+00:00",
+    "elapsed": 10.057490148115903,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "239747072",
+      "CPUUsageNSec": "1922341000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "0",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:17:04.358209+00:00",
+    "elapsed": 15.067583940923214,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "289292288",
+      "CPUUsageNSec": "2219640000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "0",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:17:09.367978+00:00",
+    "elapsed": 20.07734931493178,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "339779584",
+      "CPUUsageNSec": "2544030000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "0",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:17:14.377793+00:00",
+    "elapsed": 25.087165236938745,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "379772928",
+      "CPUUsageNSec": "2810381000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "0",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:17:19.387969+00:00",
+    "elapsed": 30.09734318079427,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "464384000",
+      "CPUUsageNSec": "5286158000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "0",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:17:24.398984+00:00",
+    "elapsed": 35.10835614008829,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "423735296",
+      "CPUUsageNSec": "10264532000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "0",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:17:29.409666+00:00",
+    "elapsed": 40.11903800209984,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "426881024",
+      "CPUUsageNSec": "15180747000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "0",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:17:34.419683+00:00",
+    "elapsed": 45.12905243691057,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "430284800",
+      "CPUUsageNSec": "20092803000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "0",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:17:39.428955+00:00",
+    "elapsed": 50.13832458620891,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "436576256",
+      "CPUUsageNSec": "25007148000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "0",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:17:44.438608+00:00",
+    "elapsed": 55.14798209210858,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "439984128",
+      "CPUUsageNSec": "29905837000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "0",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:17:49.448307+00:00",
+    "elapsed": 60.15767965884879,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "443392000",
+      "CPUUsageNSec": "34819806000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "0",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:17:54.459053+00:00",
+    "elapsed": 65.16842421516776,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "446799872",
+      "CPUUsageNSec": "39727522000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "0",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:17:59.469738+00:00",
+    "elapsed": 70.17911027092487,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "449945600",
+      "CPUUsageNSec": "44648192000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "0",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:18:04.479200+00:00",
+    "elapsed": 75.18857087520882,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "453353472",
+      "CPUUsageNSec": "49570064000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "0",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:18:09.488727+00:00",
+    "elapsed": 80.19809747394174,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "456499200",
+      "CPUUsageNSec": "54498144000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "0",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:18:14.498850+00:00",
+    "elapsed": 85.20822183322161,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "496128000",
+      "CPUUsageNSec": "59184684000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "0",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:18:19.507896+00:00",
+    "elapsed": 90.21726641617715,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "646463488",
+      "CPUUsageNSec": "63425480000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "0",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:18:24.518933+00:00",
+    "elapsed": 95.22830475494266,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "699219968",
+      "CPUUsageNSec": "68413518000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "0",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:18:29.529620+00:00",
+    "elapsed": 100.23898962698877,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "887472128",
+      "CPUUsageNSec": "72356852000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "0",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:18:34.539548+00:00",
+    "elapsed": 105.24892071913928,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "1143717888",
+      "CPUUsageNSec": "76222147000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "0",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:18:39.550879+00:00",
+    "elapsed": 110.26025262288749,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "1378234368",
+      "CPUUsageNSec": "80111623000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "0",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:18:44.561370+00:00",
+    "elapsed": 115.2707407521084,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "1615392768",
+      "CPUUsageNSec": "83897822000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "0",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:18:49.570827+00:00",
+    "elapsed": 120.2801992148161,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "1881542656",
+      "CPUUsageNSec": "87664335000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "0",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:18:54.581385+00:00",
+    "elapsed": 125.29075677786022,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2146959360",
+      "CPUUsageNSec": "91400964000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "44",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:18:59.591084+00:00",
+    "elapsed": 130.30045632319525,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2146996224",
+      "CPUUsageNSec": "95106369000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "620",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:19:04.602288+00:00",
+    "elapsed": 135.3116602571681,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147270656",
+      "CPUUsageNSec": "99155823000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "1047",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:19:09.611636+00:00",
+    "elapsed": 140.3210095539689,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2132705280",
+      "CPUUsageNSec": "103485994000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "1324",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:19:14.621865+00:00",
+    "elapsed": 145.33123645093292,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147336192",
+      "CPUUsageNSec": "107781261000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "1636",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:19:19.633708+00:00",
+    "elapsed": 150.34308289177716,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147237888",
+      "CPUUsageNSec": "112197738000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "1831",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:19:24.645678+00:00",
+    "elapsed": 155.35505159106106,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2124288000",
+      "CPUUsageNSec": "116505912000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "2182",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:19:29.655514+00:00",
+    "elapsed": 160.36488624615595,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2138714112",
+      "CPUUsageNSec": "120733005000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "2461",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:19:34.665418+00:00",
+    "elapsed": 165.3747904729098,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147373056",
+      "CPUUsageNSec": "124996656000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "2784",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:19:39.675040+00:00",
+    "elapsed": 170.38441203814,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147393536",
+      "CPUUsageNSec": "129222001000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "3026",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:19:44.685733+00:00",
+    "elapsed": 175.39510526321828,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2146979840",
+      "CPUUsageNSec": "133442595000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "3312",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:19:49.697011+00:00",
+    "elapsed": 180.4063816908747,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2146963456",
+      "CPUUsageNSec": "137698269000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "3599",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:19:54.708428+00:00",
+    "elapsed": 185.4178162207827,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147373056",
+      "CPUUsageNSec": "142255863000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "3782",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:19:59.718508+00:00",
+    "elapsed": 190.4278791649267,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147364864",
+      "CPUUsageNSec": "146757223000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "3952",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:20:04.727842+00:00",
+    "elapsed": 195.43721379106864,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147033088",
+      "CPUUsageNSec": "151147044000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "4208",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:20:09.737573+00:00",
+    "elapsed": 200.4469450628385,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2115510272",
+      "CPUUsageNSec": "155660431000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "4404",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:20:14.746519+00:00",
+    "elapsed": 205.4558901102282,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147225600",
+      "CPUUsageNSec": "160013811000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "4679",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:20:19.755409+00:00",
+    "elapsed": 210.4647827669978,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2146689024",
+      "CPUUsageNSec": "164434079000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "4915",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:20:24.765409+00:00",
+    "elapsed": 215.47478176094592,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147483648",
+      "CPUUsageNSec": "169315372000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "4934",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:20:29.774604+00:00",
+    "elapsed": 220.48397566005588,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147385344",
+      "CPUUsageNSec": "174240328000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "4941",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:20:34.784911+00:00",
+    "elapsed": 225.49428255623206,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147217408",
+      "CPUUsageNSec": "179173514000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "4963",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:20:39.794774+00:00",
+    "elapsed": 230.50414577219635,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2116542464",
+      "CPUUsageNSec": "184107043000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "4982",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:20:44.805276+00:00",
+    "elapsed": 235.51464979304,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2141437952",
+      "CPUUsageNSec": "189039529000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "4982",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:20:49.814969+00:00",
+    "elapsed": 240.52434108778834,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2138103808",
+      "CPUUsageNSec": "193972823000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "4988",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:20:54.826159+00:00",
+    "elapsed": 245.53553044004366,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2119114752",
+      "CPUUsageNSec": "198910614000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "4996",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:20:59.835477+00:00",
+    "elapsed": 250.54484816687182,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2123046912",
+      "CPUUsageNSec": "203844005000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "4996",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:21:04.845699+00:00",
+    "elapsed": 255.55507107591256,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2126696448",
+      "CPUUsageNSec": "208770648000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "4996",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:21:09.855581+00:00",
+    "elapsed": 260.56495248898864,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147221504",
+      "CPUUsageNSec": "213703096000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "4997",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:21:14.865727+00:00",
+    "elapsed": 265.5750981140882,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147475456",
+      "CPUUsageNSec": "218630329000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "5004",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:21:19.876657+00:00",
+    "elapsed": 270.586029779166,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2140450816",
+      "CPUUsageNSec": "223557657000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "5036",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:21:24.887899+00:00",
+    "elapsed": 275.59727216279134,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2114433024",
+      "CPUUsageNSec": "228492006000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "5046",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:21:29.897901+00:00",
+    "elapsed": 280.60727318003774,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2118598656",
+      "CPUUsageNSec": "233457255000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "5046",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:21:34.908926+00:00",
+    "elapsed": 285.6182972481474,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2122268672",
+      "CPUUsageNSec": "238465300000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "5046",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:21:39.919470+00:00",
+    "elapsed": 290.62884055590257,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2143330304",
+      "CPUUsageNSec": "243471819000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "5056",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:21:44.929360+00:00",
+    "elapsed": 295.6387323439121,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2133348352",
+      "CPUUsageNSec": "248478969000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "5068",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:21:49.938708+00:00",
+    "elapsed": 300.6480783680454,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2113998848",
+      "CPUUsageNSec": "253486252000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "5074",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:21:54.950030+00:00",
+    "elapsed": 305.65940155787393,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2136784896",
+      "CPUUsageNSec": "258492626000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "5074",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:21:59.960860+00:00",
+    "elapsed": 310.6702337949537,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2139930624",
+      "CPUUsageNSec": "263500778000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "5074",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:22:04.971590+00:00",
+    "elapsed": 315.68096326012164,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2143588352",
+      "CPUUsageNSec": "268506349000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "5074",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:22:09.982175+00:00",
+    "elapsed": 320.69154634000733,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2146721792",
+      "CPUUsageNSec": "273512301000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "5074",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:22:14.991562+00:00",
+    "elapsed": 325.7009367761202,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2139222016",
+      "CPUUsageNSec": "278516223000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "5094",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:22:20.001887+00:00",
+    "elapsed": 330.71126106893644,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2142601216",
+      "CPUUsageNSec": "283521192000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "5094",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:22:25.012918+00:00",
+    "elapsed": 335.7222891179845,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2122047488",
+      "CPUUsageNSec": "288529744000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "5104",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:22:30.021897+00:00",
+    "elapsed": 340.7312685530633,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2143277056",
+      "CPUUsageNSec": "293536312000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "5104",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:22:35.031857+00:00",
+    "elapsed": 345.7412300459109,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2137579520",
+      "CPUUsageNSec": "298544855000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "5120",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:22:40.041764+00:00",
+    "elapsed": 350.75113535812125,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2141245440",
+      "CPUUsageNSec": "303550090000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "5129",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:22:45.052763+00:00",
+    "elapsed": 355.76213522208855,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2118262784",
+      "CPUUsageNSec": "308554663000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "5131",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:22:50.062766+00:00",
+    "elapsed": 360.77213930990547,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2141061120",
+      "CPUUsageNSec": "313559720000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "5131",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:22:55.074930+00:00",
+    "elapsed": 365.78430232591927,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2144202752",
+      "CPUUsageNSec": "318570397000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "5131",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:23:00.085174+00:00",
+    "elapsed": 370.7945465501398,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147225600",
+      "CPUUsageNSec": "323577268000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "5135",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:23:05.095563+00:00",
+    "elapsed": 375.8049353961833,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2119057408",
+      "CPUUsageNSec": "328584979000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "5156",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:23:10.106128+00:00",
+    "elapsed": 380.81550020119175,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2121781248",
+      "CPUUsageNSec": "333593316000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "5156",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:23:15.116058+00:00",
+    "elapsed": 385.825430538971,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2124660736",
+      "CPUUsageNSec": "338599471000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "5156",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:23:20.126520+00:00",
+    "elapsed": 390.83589416602626,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2135134208",
+      "CPUUsageNSec": "343606789000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "5176",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:23:25.138836+00:00",
+    "elapsed": 395.8482075170614,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2135666688",
+      "CPUUsageNSec": "348615727000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "5179",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:23:30.149549+00:00",
+    "elapsed": 400.85892164707184,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2141147136",
+      "CPUUsageNSec": "353620266000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "5179",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:23:35.160535+00:00",
+    "elapsed": 405.86990618286654,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2140057600",
+      "CPUUsageNSec": "358625819000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "5185",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:23:40.170214+00:00",
+    "elapsed": 410.8795871450566,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2117591040",
+      "CPUUsageNSec": "363631584000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "5194",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:23:45.180857+00:00",
+    "elapsed": 415.8902284489013,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2136829952",
+      "CPUUsageNSec": "368535806000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "5201",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:23:50.190513+00:00",
+    "elapsed": 420.8998831198551,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2139762688",
+      "CPUUsageNSec": "373535478000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "5201",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:23:55.201600+00:00",
+    "elapsed": 425.9109732839279,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2142875648",
+      "CPUUsageNSec": "378436697000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "5201",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:24:00.211506+00:00",
+    "elapsed": 430.92087899520993,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2138263552",
+      "CPUUsageNSec": "383441846000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "5215",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:24:05.222747+00:00",
+    "elapsed": 435.9321191147901,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2136260608",
+      "CPUUsageNSec": "388444444000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "5223",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:24:10.233917+00:00",
+    "elapsed": 440.9432871178724,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2117185536",
+      "CPUUsageNSec": "393443739000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "5230",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:24:15.244563+00:00",
+    "elapsed": 445.9539339328185,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2116165632",
+      "CPUUsageNSec": "398347930000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "5235",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:24:20.254941+00:00",
+    "elapsed": 450.9643109510653,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147225600",
+      "CPUUsageNSec": "403354370000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "5256",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:24:25.266805+00:00",
+    "elapsed": 455.97617486398667,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2131230720",
+      "CPUUsageNSec": "408362725000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "5256",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:24:30.277917+00:00",
+    "elapsed": 460.98728685919195,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147045376",
+      "CPUUsageNSec": "413271942000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "5256",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:24:35.287396+00:00",
+    "elapsed": 465.99676761683077,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147237888",
+      "CPUUsageNSec": "417685499000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "5463",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:24:40.296924+00:00",
+    "elapsed": 471.0062945471145,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147373056",
+      "CPUUsageNSec": "421260706000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "6068",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:24:45.306479+00:00",
+    "elapsed": 476.01585188508034,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147225600",
+      "CPUUsageNSec": "424895266000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "6632",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:24:50.317789+00:00",
+    "elapsed": 481.0271619888954,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147258368",
+      "CPUUsageNSec": "428561706000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "7259",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:24:55.329735+00:00",
+    "elapsed": 486.03910902980715,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147418112",
+      "CPUUsageNSec": "432357448000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "7776",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:25:00.339970+00:00",
+    "elapsed": 491.04934234777465,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147463168",
+      "CPUUsageNSec": "436120078000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "8253",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:25:05.350438+00:00",
+    "elapsed": 496.05982751306146,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147065856",
+      "CPUUsageNSec": "439816264000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "8825",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:25:10.360843+00:00",
+    "elapsed": 501.0702183051035,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147368960",
+      "CPUUsageNSec": "443501614000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "9369",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:25:15.371358+00:00",
+    "elapsed": 506.08073276421055,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2140721152",
+      "CPUUsageNSec": "447141341000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "9967",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:25:20.382638+00:00",
+    "elapsed": 511.0920109320432,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2135019520",
+      "CPUUsageNSec": "450796420000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "10621",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:25:25.393742+00:00",
+    "elapsed": 516.1031115539372,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147377152",
+      "CPUUsageNSec": "454427676000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "11311",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:25:30.403724+00:00",
+    "elapsed": 521.113095595967,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147291136",
+      "CPUUsageNSec": "458055586000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "12007",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:25:35.414926+00:00",
+    "elapsed": 526.1242994968779,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147418112",
+      "CPUUsageNSec": "461578918000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "12704",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:25:40.425035+00:00",
+    "elapsed": 531.1344044618309,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147295232",
+      "CPUUsageNSec": "465457875000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "13180",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:25:45.435630+00:00",
+    "elapsed": 536.145002621226,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147401728",
+      "CPUUsageNSec": "468940882000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "13938",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:25:50.445405+00:00",
+    "elapsed": 541.1547770681791,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147041280",
+      "CPUUsageNSec": "472495225000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "14665",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:25:55.455783+00:00",
+    "elapsed": 546.1651551439427,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147143680",
+      "CPUUsageNSec": "476090138000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "15425",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:26:00.467069+00:00",
+    "elapsed": 551.176442231983,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147229696",
+      "CPUUsageNSec": "479729922000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "16105",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:26:05.477972+00:00",
+    "elapsed": 556.1873454670422,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2146979840",
+      "CPUUsageNSec": "483347106000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "16866",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:26:10.487787+00:00",
+    "elapsed": 561.1971572558396,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147483648",
+      "CPUUsageNSec": "486993520000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "17547",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:26:15.498494+00:00",
+    "elapsed": 566.2078655920923,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147409920",
+      "CPUUsageNSec": "490589900000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "18292",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:26:20.508579+00:00",
+    "elapsed": 571.2179525801912,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2119729152",
+      "CPUUsageNSec": "494126670000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "19113",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:26:25.519500+00:00",
+    "elapsed": 576.2288704728708,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147299328",
+      "CPUUsageNSec": "497662934000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "19877",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:26:30.528878+00:00",
+    "elapsed": 581.2382506518625,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147221504",
+      "CPUUsageNSec": "501228805000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "20662",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:26:35.539668+00:00",
+    "elapsed": 586.2490394101478,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147225600",
+      "CPUUsageNSec": "504798439000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "21435",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:26:40.549906+00:00",
+    "elapsed": 591.2592775220983,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147241984",
+      "CPUUsageNSec": "508384410000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "22134",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:26:45.559412+00:00",
+    "elapsed": 596.2687827050686,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147115008",
+      "CPUUsageNSec": "512282782000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "22658",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:26:50.569116+00:00",
+    "elapsed": 601.2784896469675,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147311616",
+      "CPUUsageNSec": "516267210000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "23097",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:26:55.579716+00:00",
+    "elapsed": 606.2890892978758,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147377152",
+      "CPUUsageNSec": "519869562000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "23856",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:27:00.589886+00:00",
+    "elapsed": 611.299257109873,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147041280",
+      "CPUUsageNSec": "523661147000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "24482",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:27:05.599963+00:00",
+    "elapsed": 616.3093339111656,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147250176",
+      "CPUUsageNSec": "527199941000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "25242",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:27:10.610577+00:00",
+    "elapsed": 621.3199494872242,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147328000",
+      "CPUUsageNSec": "530764462000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "26028",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:27:15.620659+00:00",
+    "elapsed": 626.3300322392024,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147414016",
+      "CPUUsageNSec": "534281901000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "26803",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:27:20.630831+00:00",
+    "elapsed": 631.340202330146,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147192832",
+      "CPUUsageNSec": "537795227000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "27616",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:27:25.641673+00:00",
+    "elapsed": 636.3510457798839,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147110912",
+      "CPUUsageNSec": "541312026000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "28451",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:27:30.651197+00:00",
+    "elapsed": 641.3605711311102,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147446784",
+      "CPUUsageNSec": "544831959000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "29256",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:27:35.661420+00:00",
+    "elapsed": 646.3708108500578,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147315712",
+      "CPUUsageNSec": "548341878000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "29896",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:27:40.672124+00:00",
+    "elapsed": 651.3815007628873,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147209216",
+      "CPUUsageNSec": "551938776000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "30494",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:27:45.681946+00:00",
+    "elapsed": 656.3913192208856,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147414016",
+      "CPUUsageNSec": "555544781000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "31059",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:27:50.691591+00:00",
+    "elapsed": 661.4009627457708,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2137493504",
+      "CPUUsageNSec": "559116175000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "31635",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:27:55.702933+00:00",
+    "elapsed": 666.412305295933,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2146951168",
+      "CPUUsageNSec": "562694433000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "32274",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:28:00.713334+00:00",
+    "elapsed": 671.4227079898119,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147188736",
+      "CPUUsageNSec": "566309253000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "32800",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:28:05.723342+00:00",
+    "elapsed": 676.4327149819583,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147012608",
+      "CPUUsageNSec": "569942987000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "33418",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:28:10.734164+00:00",
+    "elapsed": 681.4435392501764,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147266560",
+      "CPUUsageNSec": "573505393000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "34017",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:28:15.743967+00:00",
+    "elapsed": 686.4533390440047,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147225600",
+      "CPUUsageNSec": "578180231000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "34194",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError"
+  },
+  {
+    "at": "2026-11-17T14:28:20.754697+00:00",
+    "elapsed": 691.4640687950887,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2144624640",
+      "CPUUsageNSec": "583058943000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "34466",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.004205490928143263,
+    "health": {
+      "status": "degraded"
+    },
+    "research": {
+      "status": "withheld"
+    }
+  },
+  {
+    "at": "2026-11-17T14:28:25.772622+00:00",
+    "elapsed": 696.4819921199232,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147225600",
+      "CPUUsageNSec": "587948587000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "34846",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.0029188543558120728,
+    "health": {
+      "status": "degraded"
+    },
+    "research": {
+      "status": "withheld"
+    }
+  },
+  {
+    "at": "2026-11-17T14:28:30.787612+00:00",
+    "elapsed": 701.4969826932065,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2096230400",
+      "CPUUsageNSec": "592620836000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "35165",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.003371124155819416,
+    "health": {
+      "status": "degraded"
+    },
+    "research": {
+      "status": "withheld"
+    }
+  },
+  {
+    "at": "2026-11-17T14:28:35.801794+00:00",
+    "elapsed": 706.5111669041216,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147287040",
+      "CPUUsageNSec": "597500831000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "35387",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.18369804602116346,
+    "health": {
+      "status": "degraded"
+    },
+    "research": {
+      "status": "withheld"
+    }
+  },
+  {
+    "at": "2026-11-17T14:28:41.038905+00:00",
+    "elapsed": 711.7482769167982,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2142732288",
+      "CPUUsageNSec": "602717484000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "35432",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.09196569910272956,
+    "health": {
+      "status": "degraded"
+    },
+    "research": {
+      "status": "withheld"
+    }
+  },
+  {
+    "at": "2026-11-17T14:28:46.226061+00:00",
+    "elapsed": 716.9354343521409,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2121265152",
+      "CPUUsageNSec": "607888137000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "35497",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.20985575066879392,
+    "health": {
+      "status": "degraded"
+    },
+    "research": {
+      "status": "withheld"
+    }
+  },
+  {
+    "at": "2026-11-17T14:28:51.503639+00:00",
+    "elapsed": 722.2130085108802,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2108297216",
+      "CPUUsageNSec": "613158325000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "35497",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.002615931909531355,
+    "health": {
+      "status": "degraded"
+    },
+    "research": {
+      "status": "fresh",
+      "cycles": 3750,
+      "as_of": "2026-11-17T14:28:36.343320+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 23.74713623477146,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 5,
+        "failures": 1,
+        "last_attempt": "2026-11-17T14:28:41.023231+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 296,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.5533822379074991,
+        "maximum_read_seconds": 3.018974795937538,
+        "available_at": "2026-11-17T14:28:41.182085+00:00",
+        "age_seconds": 5.764292,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:28:56.528696+00:00",
+    "elapsed": 727.2380679319613,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2097975296",
+      "CPUUsageNSec": "618128922000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "35619",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.0028041223995387554,
+    "health": {
+      "status": "degraded"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3750,
+      "as_of": "2026-11-17T14:28:36.343320+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 23.74713623477146,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 5,
+        "failures": 1,
+        "last_attempt": "2026-11-17T14:28:41.023231+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 296,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.5533822379074991,
+        "maximum_read_seconds": 3.018974795937538,
+        "available_at": "2026-11-17T14:28:41.182085+00:00",
+        "age_seconds": 5.764292,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:29:01.551490+00:00",
+    "elapsed": 732.2608631830662,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147225600",
+      "CPUUsageNSec": "623141145000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "35878",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.002096639946103096,
+    "ready_elapsed": 732.2821246180683,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3750,
+      "as_of": "2026-11-17T14:28:36.343320+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 23.74713623477146,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 5,
+        "failures": 1,
+        "last_attempt": "2026-11-17T14:28:41.023231+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 296,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.5533822379074991,
+        "maximum_read_seconds": 3.018974795937538,
+        "available_at": "2026-11-17T14:28:41.182085+00:00",
+        "age_seconds": 5.764292,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:29:06.573982+00:00",
+    "elapsed": 737.2833559787832,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2119487488",
+      "CPUUsageNSec": "628063568000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "35881",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.08168451301753521,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "fresh",
+      "cycles": 3751,
+      "as_of": "2026-11-17T14:28:55.611367+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 13.621266103815287,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 8,
+        "failures": 1,
+        "last_attempt": "2026-11-17T14:29:00.255978+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 256,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.7338414269033819,
+        "maximum_read_seconds": 3.018974795937538,
+        "available_at": "2026-11-17T14:29:00.292915+00:00",
+        "age_seconds": 5.77106,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:29:11.733628+00:00",
+    "elapsed": 742.4429991710931,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2087895040",
+      "CPUUsageNSec": "633148110000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "35881",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.0030525620095431805,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3751,
+      "as_of": "2026-11-17T14:28:55.611367+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 13.621266103815287,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 8,
+        "failures": 1,
+        "last_attempt": "2026-11-17T14:29:00.255978+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 256,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.7338414269033819,
+        "maximum_read_seconds": 3.018974795937538,
+        "available_at": "2026-11-17T14:29:00.292915+00:00",
+        "age_seconds": 5.77106,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:29:16.757883+00:00",
+    "elapsed": 747.4672571760602,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2088054784",
+      "CPUUsageNSec": "638156433000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "35881",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.10017667105421424,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3751,
+      "as_of": "2026-11-17T14:28:55.611367+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 13.621266103815287,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 8,
+        "failures": 1,
+        "last_attempt": "2026-11-17T14:29:00.255978+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 256,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.7338414269033819,
+        "maximum_read_seconds": 3.018974795937538,
+        "available_at": "2026-11-17T14:29:00.292915+00:00",
+        "age_seconds": 5.77106,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:29:21.899814+00:00",
+    "elapsed": 752.6091832672246,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2094006272",
+      "CPUUsageNSec": "643248763000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "35881",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.032182366121560335,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "fresh",
+      "cycles": 3752,
+      "as_of": "2026-11-17T14:29:12.090347+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 8.510115327313542,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 11,
+        "failures": 1,
+        "last_attempt": "2026-11-17T14:29:18.535572+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 296,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.6642512809485197,
+        "maximum_read_seconds": 3.018974795937538,
+        "available_at": "2026-11-17T14:29:18.556464+00:00",
+        "age_seconds": 1.283824,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:29:26.997101+00:00",
+    "elapsed": 757.7064707609825,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2080174080",
+      "CPUUsageNSec": "648297267000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "36041",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.0024107610806822777,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3752,
+      "as_of": "2026-11-17T14:29:12.090347+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 8.510115327313542,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 11,
+        "failures": 1,
+        "last_attempt": "2026-11-17T14:29:18.535572+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 296,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.6642512809485197,
+        "maximum_read_seconds": 3.018974795937538,
+        "available_at": "2026-11-17T14:29:18.556464+00:00",
+        "age_seconds": 1.283824,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:29:32.019138+00:00",
+    "elapsed": 762.7285107891075,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "1994739712",
+      "CPUUsageNSec": "653280910000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "36350",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.08434738218784332,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3752,
+      "as_of": "2026-11-17T14:29:12.090347+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 8.510115327313542,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 11,
+        "failures": 1,
+        "last_attempt": "2026-11-17T14:29:18.535572+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 296,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.6642512809485197,
+        "maximum_read_seconds": 3.018974795937538,
+        "available_at": "2026-11-17T14:29:18.556464+00:00",
+        "age_seconds": 1.283824,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:29:37.126552+00:00",
+    "elapsed": 767.8359238388948,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "1738629120",
+      "CPUUsageNSec": "658318642000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "36350",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.002432596869766712,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "fresh",
+      "cycles": 3753,
+      "as_of": "2026-11-17T14:29:26.796629+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 7.563065428286791,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 13,
+        "failures": 1,
+        "last_attempt": "2026-11-17T14:29:29.621658+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 281,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.6828644671477377,
+        "maximum_read_seconds": 3.018974795937538,
+        "available_at": "2026-11-17T14:29:29.914704+00:00",
+        "age_seconds": 2.52104,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:29:42.149909+00:00",
+    "elapsed": 772.8592797610909,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "1864577024",
+      "CPUUsageNSec": "663150648000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "36350",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.0024392330087721348,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "fresh",
+      "cycles": 3753,
+      "as_of": "2026-11-17T14:29:26.796629+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 7.563065428286791,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 13,
+        "failures": 1,
+        "last_attempt": "2026-11-17T14:29:29.621658+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 281,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.6828644671477377,
+        "maximum_read_seconds": 3.018974795937538,
+        "available_at": "2026-11-17T14:29:29.914704+00:00",
+        "age_seconds": 2.52104,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:29:47.173276+00:00",
+    "elapsed": 777.882647742983,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "1869443072",
+      "CPUUsageNSec": "668162094000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "36350",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.0034870579838752747,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3753,
+      "as_of": "2026-11-17T14:29:26.796629+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 7.563065428286791,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 13,
+        "failures": 1,
+        "last_attempt": "2026-11-17T14:29:29.621658+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 281,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.6828644671477377,
+        "maximum_read_seconds": 3.018974795937538,
+        "available_at": "2026-11-17T14:29:29.914704+00:00",
+        "age_seconds": 2.52104,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:29:52.197746+00:00",
+    "elapsed": 782.9071166450158,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "1882439680",
+      "CPUUsageNSec": "673103661000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "36350",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.10620939638465643,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3753,
+      "as_of": "2026-11-17T14:29:26.796629+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 7.563065428286791,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 13,
+        "failures": 1,
+        "last_attempt": "2026-11-17T14:29:29.621658+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 281,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.6828644671477377,
+        "maximum_read_seconds": 3.018974795937538,
+        "available_at": "2026-11-17T14:29:29.914704+00:00",
+        "age_seconds": 2.52104,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:29:57.387944+00:00",
+    "elapsed": 788.097315448802,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "1917489152",
+      "CPUUsageNSec": "678285004000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "36350",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.12714929599314928,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3754,
+      "as_of": "2026-11-17T14:29:43.397770+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 16.560018780175596,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 17,
+        "failures": 1,
+        "last_attempt": "2026-11-17T14:29:51.734358+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 302,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.6752270604483783,
+        "maximum_read_seconds": 3.018974795937538,
+        "available_at": "2026-11-17T14:29:45.920865+00:00",
+        "age_seconds": 8.324889,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:30:02.560715+00:00",
+    "elapsed": 793.2700852830894,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "1919770624",
+      "CPUUsageNSec": "683428860000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "36350",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.002497471868991852,
+    "health": {
+      "status": "degraded"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3754,
+      "as_of": "2026-11-17T14:29:43.397770+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 16.560018780175596,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 17,
+        "failures": 1,
+        "last_attempt": "2026-11-17T14:29:51.734358+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 302,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.6752270604483783,
+        "maximum_read_seconds": 3.018974795937538,
+        "available_at": "2026-11-17T14:29:45.920865+00:00",
+        "age_seconds": 8.324889,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:30:07.583971+00:00",
+    "elapsed": 798.2933435738087,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "1949044736",
+      "CPUUsageNSec": "688437233000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "36350",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.40095618320629,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3754,
+      "as_of": "2026-11-17T14:29:43.397770+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 16.560018780175596,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 17,
+        "failures": 1,
+        "last_attempt": "2026-11-17T14:29:51.734358+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 302,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.6752270604483783,
+        "maximum_read_seconds": 3.018974795937538,
+        "available_at": "2026-11-17T14:29:45.920865+00:00",
+        "age_seconds": 8.324889,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:30:13.045478+00:00",
+    "elapsed": 803.7548519410193,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "1958916096",
+      "CPUUsageNSec": "693895188000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "36350",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.002550901845097542,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "fresh",
+      "cycles": 3755,
+      "as_of": "2026-11-17T14:30:01.369062+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 12.391970543190837,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 20,
+        "failures": 2,
+        "last_attempt": "2026-11-17T14:30:10.202933+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 263,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.8569221226498485,
+        "maximum_read_seconds": 3.170507522765547,
+        "available_at": "2026-11-17T14:30:10.308661+00:00",
+        "age_seconds": 1.658337,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:30:18.069511+00:00",
+    "elapsed": 808.778882203158,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "1964810240",
+      "CPUUsageNSec": "698881513000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "36350",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.05534643027931452,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3755,
+      "as_of": "2026-11-17T14:30:01.369062+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 12.391970543190837,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 20,
+        "failures": 2,
+        "last_attempt": "2026-11-17T14:30:10.202933+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 263,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.8569221226498485,
+        "maximum_read_seconds": 3.170507522765547,
+        "available_at": "2026-11-17T14:30:10.308661+00:00",
+        "age_seconds": 1.658337,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:30:23.207713+00:00",
+    "elapsed": 813.9170847930945,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "1961275392",
+      "CPUUsageNSec": "703972813000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "36350",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.0027083358727395535,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3755,
+      "as_of": "2026-11-17T14:30:01.369062+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 12.391970543190837,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 20,
+        "failures": 2,
+        "last_attempt": "2026-11-17T14:30:10.202933+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 263,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.8569221226498485,
+        "maximum_read_seconds": 3.170507522765547,
+        "available_at": "2026-11-17T14:30:10.308661+00:00",
+        "age_seconds": 1.658337,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:30:28.234243+00:00",
+    "elapsed": 818.9436140907928,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2013528064",
+      "CPUUsageNSec": "708963369000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "36350",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.002197252120822668,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3755,
+      "as_of": "2026-11-17T14:30:01.369062+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 12.391970543190837,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 20,
+        "failures": 2,
+        "last_attempt": "2026-11-17T14:30:10.202933+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 263,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.8569221226498485,
+        "maximum_read_seconds": 3.170507522765547,
+        "available_at": "2026-11-17T14:30:10.308661+00:00",
+        "age_seconds": 1.658337,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:30:33.256654+00:00",
+    "elapsed": 823.9660286158323,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2068500480",
+      "CPUUsageNSec": "713959262000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "36350",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.12325735203921795,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "fresh",
+      "cycles": 3756,
+      "as_of": "2026-11-17T14:30:19.178159+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 15.133002834860235,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 23,
+        "failures": 2,
+        "last_attempt": "2026-11-17T14:30:29.553796+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 267,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.8718741540797055,
+        "maximum_read_seconds": 3.170507522765547,
+        "available_at": "2026-11-17T14:30:29.655409+00:00",
+        "age_seconds": 2.808126,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:30:38.429331+00:00",
+    "elapsed": 829.1387031851336,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2072576000",
+      "CPUUsageNSec": "719120853000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "36350",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.28702686820179224,
+    "health": {
+      "status": "degraded"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3756,
+      "as_of": "2026-11-17T14:30:19.178159+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 15.133002834860235,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 23,
+        "failures": 2,
+        "last_attempt": "2026-11-17T14:30:29.553796+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 267,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.8718741540797055,
+        "maximum_read_seconds": 3.170507522765547,
+        "available_at": "2026-11-17T14:30:29.655409+00:00",
+        "age_seconds": 2.808126,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:30:43.766477+00:00",
+    "elapsed": 834.4758502580225,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2077888512",
+      "CPUUsageNSec": "724451999000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "36350",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.00459080608561635,
+    "health": {
+      "status": "degraded"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3756,
+      "as_of": "2026-11-17T14:30:19.178159+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 15.133002834860235,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 23,
+        "failures": 2,
+        "last_attempt": "2026-11-17T14:30:29.553796+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 267,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.8718741540797055,
+        "maximum_read_seconds": 3.170507522765547,
+        "available_at": "2026-11-17T14:30:29.655409+00:00",
+        "age_seconds": 2.808126,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:30:48.802989+00:00",
+    "elapsed": 839.5123602747917,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2075951104",
+      "CPUUsageNSec": "729426125000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "36350",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.003180745057761669,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "fresh",
+      "cycles": 3757,
+      "as_of": "2026-11-17T14:30:41.038032+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 10.108491449151188,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 25,
+        "failures": 2,
+        "last_attempt": "2026-11-17T14:30:42.846595+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 295,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.8718741540797055,
+        "maximum_read_seconds": 3.170507522765547,
+        "available_at": "2026-11-17T14:30:42.902631+00:00",
+        "age_seconds": 5.085356,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:30:53.842889+00:00",
+    "elapsed": 844.5522614391521,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2056683520",
+      "CPUUsageNSec": "734458835000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "36663",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.0025118752382695675,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "fresh",
+      "cycles": 3757,
+      "as_of": "2026-11-17T14:30:41.038032+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 10.108491449151188,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 25,
+        "failures": 2,
+        "last_attempt": "2026-11-17T14:30:42.846595+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 295,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.8718741540797055,
+        "maximum_read_seconds": 3.170507522765547,
+        "available_at": "2026-11-17T14:30:42.902631+00:00",
+        "age_seconds": 5.085356,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:30:58.868556+00:00",
+    "elapsed": 849.5779319992289,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "1814114304",
+      "CPUUsageNSec": "739441617000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "36663",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.0029971636831760406,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3757,
+      "as_of": "2026-11-17T14:30:41.038032+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 10.108491449151188,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 25,
+        "failures": 2,
+        "last_attempt": "2026-11-17T14:30:42.846595+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 295,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.8718741540797055,
+        "maximum_read_seconds": 3.170507522765547,
+        "available_at": "2026-11-17T14:30:42.902631+00:00",
+        "age_seconds": 5.085356,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:31:03.894468+00:00",
+    "elapsed": 854.6038391841576,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "1912995840",
+      "CPUUsageNSec": "744226249000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "36663",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.002559484913945198,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "fresh",
+      "cycles": 3758,
+      "as_of": "2026-11-17T14:30:55.662980+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 9.332649507094175,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 28,
+        "failures": 2,
+        "last_attempt": "2026-11-17T14:30:59.919387+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 283,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.8522834430914372,
+        "maximum_read_seconds": 3.170507522765547,
+        "available_at": "2026-11-17T14:30:59.994456+00:00",
+        "age_seconds": 2.469464,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:31:08.918657+00:00",
+    "elapsed": 859.6280283317901,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "1930473472",
+      "CPUUsageNSec": "749215440000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "36663",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.01209210092201829,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "fresh",
+      "cycles": 3758,
+      "as_of": "2026-11-17T14:30:55.662980+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 9.332649507094175,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 28,
+        "failures": 2,
+        "last_attempt": "2026-11-17T14:30:59.919387+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 283,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.8522834430914372,
+        "maximum_read_seconds": 3.170507522765547,
+        "available_at": "2026-11-17T14:30:59.994456+00:00",
+        "age_seconds": 2.469464,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:31:13.953477+00:00",
+    "elapsed": 864.6628508451395,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2010288128",
+      "CPUUsageNSec": "754238167000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "36663",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.0043918658047914505,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "fresh",
+      "cycles": 3758,
+      "as_of": "2026-11-17T14:30:55.662980+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 9.332649507094175,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 28,
+        "failures": 2,
+        "last_attempt": "2026-11-17T14:30:59.919387+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 283,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.8522834430914372,
+        "maximum_read_seconds": 3.170507522765547,
+        "available_at": "2026-11-17T14:30:59.994456+00:00",
+        "age_seconds": 2.469464,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:31:18.981308+00:00",
+    "elapsed": 869.6906794561073,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "1941176320",
+      "CPUUsageNSec": "759264732000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "36663",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.09192595211789012,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3758,
+      "as_of": "2026-11-17T14:30:55.662980+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 9.332649507094175,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 28,
+        "failures": 2,
+        "last_attempt": "2026-11-17T14:30:59.919387+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 283,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.8522834430914372,
+        "maximum_read_seconds": 3.170507522765547,
+        "available_at": "2026-11-17T14:30:59.994456+00:00",
+        "age_seconds": 2.469464,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:31:24.105127+00:00",
+    "elapsed": 874.8144990759902,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "1950130176",
+      "CPUUsageNSec": "764335205000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "36663",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.3981940969824791,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "fresh",
+      "cycles": 3759,
+      "as_of": "2026-11-17T14:31:10.460817+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 14.320404065772891,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 32,
+        "failures": 2,
+        "last_attempt": "2026-11-17T14:31:21.868486+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 271,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.8718741540797055,
+        "maximum_read_seconds": 3.170507522765547,
+        "available_at": "2026-11-17T14:31:16.118916+00:00",
+        "age_seconds": 5.924857,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:31:29.528642+00:00",
+    "elapsed": 880.2380126002245,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "1960841216",
+      "CPUUsageNSec": "769730356000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "36663",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.019488069228827953,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3759,
+      "as_of": "2026-11-17T14:31:10.460817+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 14.320404065772891,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 32,
+        "failures": 2,
+        "last_attempt": "2026-11-17T14:31:21.868486+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 271,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.8718741540797055,
+        "maximum_read_seconds": 3.170507522765547,
+        "available_at": "2026-11-17T14:31:16.118916+00:00",
+        "age_seconds": 5.924857,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:31:34.600317+00:00",
+    "elapsed": 885.3096902710386,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2025353216",
+      "CPUUsageNSec": "774729872000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "36663",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.15986310876905918,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3759,
+      "as_of": "2026-11-17T14:31:10.460817+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 14.320404065772891,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 32,
+        "failures": 2,
+        "last_attempt": "2026-11-17T14:31:21.868486+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 271,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.8718741540797055,
+        "maximum_read_seconds": 3.170507522765547,
+        "available_at": "2026-11-17T14:31:16.118916+00:00",
+        "age_seconds": 5.924857,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:31:39.827164+00:00",
+    "elapsed": 890.5365374591202,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2040057856",
+      "CPUUsageNSec": "779949144000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "36663",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.002753349021077156,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "fresh",
+      "cycles": 3760,
+      "as_of": "2026-11-17T14:31:29.193884+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 10.64454268431291,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 34,
+        "failures": 2,
+        "last_attempt": "2026-11-17T14:31:35.158295+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 288,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.8039035932160914,
+        "maximum_read_seconds": 3.170507522765547,
+        "available_at": "2026-11-17T14:31:35.203987+00:00",
+        "age_seconds": 3.220597,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:31:44.849998+00:00",
+    "elapsed": 895.5593704432249,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2050048000",
+      "CPUUsageNSec": "784964584000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "36663",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.17788710491731763,
+    "health": {
+      "status": "degraded"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3760,
+      "as_of": "2026-11-17T14:31:29.193884+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 10.64454268431291,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 34,
+        "failures": 2,
+        "last_attempt": "2026-11-17T14:31:35.158295+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 288,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.8039035932160914,
+        "maximum_read_seconds": 3.170507522765547,
+        "available_at": "2026-11-17T14:31:35.203987+00:00",
+        "age_seconds": 3.220597,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:31:50.079076+00:00",
+    "elapsed": 900.7884494559839,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2069340160",
+      "CPUUsageNSec": "790177934000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "36663",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.0033866181038320065,
+    "health": {
+      "status": "degraded"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3760,
+      "as_of": "2026-11-17T14:31:29.193884+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 10.64454268431291,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 34,
+        "failures": 2,
+        "last_attempt": "2026-11-17T14:31:35.158295+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 288,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.8039035932160914,
+        "maximum_read_seconds": 3.170507522765547,
+        "available_at": "2026-11-17T14:31:35.203987+00:00",
+        "age_seconds": 3.220597,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:31:55.103260+00:00",
+    "elapsed": 905.8126322831959,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2070953984",
+      "CPUUsageNSec": "795190455000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "36663",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.04876409377902746,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3760,
+      "as_of": "2026-11-17T14:31:29.193884+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 10.64454268431291,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 34,
+        "failures": 2,
+        "last_attempt": "2026-11-17T14:31:35.158295+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 288,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.8039035932160914,
+        "maximum_read_seconds": 3.170507522765547,
+        "available_at": "2026-11-17T14:31:35.203987+00:00",
+        "age_seconds": 3.220597,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:32:00.189842+00:00",
+    "elapsed": 910.8992154467851,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "1993994240",
+      "CPUUsageNSec": "800223714000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "36956",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.03426630888134241,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "fresh",
+      "cycles": 3761,
+      "as_of": "2026-11-17T14:31:46.048347+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 15.503644333221018,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 37,
+        "failures": 2,
+        "last_attempt": "2026-11-17T14:31:55.391835+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 294,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.8718741540797055,
+        "maximum_read_seconds": 3.170507522765547,
+        "available_at": "2026-11-17T14:31:55.715967+00:00",
+        "age_seconds": 3.714879,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:32:05.279300+00:00",
+    "elapsed": 915.9886716241017,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "1807605760",
+      "CPUUsageNSec": "805209386000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "36956",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.002484317868947983,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3761,
+      "as_of": "2026-11-17T14:31:46.048347+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 15.503644333221018,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 37,
+        "failures": 2,
+        "last_attempt": "2026-11-17T14:31:55.391835+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 294,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.8718741540797055,
+        "maximum_read_seconds": 3.170507522765547,
+        "available_at": "2026-11-17T14:31:55.715967+00:00",
+        "age_seconds": 3.714879,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:32:10.304702+00:00",
+    "elapsed": 921.0140744708478,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "1890824192",
+      "CPUUsageNSec": "810190032000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "36956",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.055904869455844164,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3761,
+      "as_of": "2026-11-17T14:31:46.048347+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 15.503644333221018,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 37,
+        "failures": 2,
+        "last_attempt": "2026-11-17T14:31:55.391835+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 294,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.8718741540797055,
+        "maximum_read_seconds": 3.170507522765547,
+        "available_at": "2026-11-17T14:31:55.715967+00:00",
+        "age_seconds": 3.714879,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:32:15.455194+00:00",
+    "elapsed": 926.1645664991811,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "1918930944",
+      "CPUUsageNSec": "815324073000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "36956",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.0023792157880961895,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3761,
+      "as_of": "2026-11-17T14:31:46.048347+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 15.503644333221018,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 37,
+        "failures": 2,
+        "last_attempt": "2026-11-17T14:31:55.391835+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 294,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.8718741540797055,
+        "maximum_read_seconds": 3.170507522765547,
+        "available_at": "2026-11-17T14:31:55.715967+00:00",
+        "age_seconds": 3.714879,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:32:20.478753+00:00",
+    "elapsed": 931.188123493921,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "1921880064",
+      "CPUUsageNSec": "820143402000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "36956",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.07680170424282551,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "fresh",
+      "cycles": 3762,
+      "as_of": "2026-11-17T14:32:16.454923+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 14.778145056217909,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 40,
+        "failures": 2,
+        "last_attempt": "2026-11-17T14:32:14.514119+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 250,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.8522834430914372,
+        "maximum_read_seconds": 3.170507522765547,
+        "available_at": "2026-11-17T14:32:14.545142+00:00",
+        "age_seconds": 4.715249,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:32:25.616056+00:00",
+    "elapsed": 936.3254272951744,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "1914769408",
+      "CPUUsageNSec": "825264770000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "36956",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.0025730961933732033,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "fresh",
+      "cycles": 3762,
+      "as_of": "2026-11-17T14:32:16.454923+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 14.778145056217909,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 40,
+        "failures": 2,
+        "last_attempt": "2026-11-17T14:32:14.514119+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 250,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.8522834430914372,
+        "maximum_read_seconds": 3.170507522765547,
+        "available_at": "2026-11-17T14:32:14.545142+00:00",
+        "age_seconds": 4.715249,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:32:30.640170+00:00",
+    "elapsed": 941.3495487961918,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2095681536",
+      "CPUUsageNSec": "830255277000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "36956",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.0023110685870051384,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "fresh",
+      "cycles": 3762,
+      "as_of": "2026-11-17T14:32:16.454923+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 14.778145056217909,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 40,
+        "failures": 2,
+        "last_attempt": "2026-11-17T14:32:14.514119+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 250,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.8522834430914372,
+        "maximum_read_seconds": 3.170507522765547,
+        "available_at": "2026-11-17T14:32:14.545142+00:00",
+        "age_seconds": 4.715249,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:32:35.663656+00:00",
+    "elapsed": 946.3730283142067,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2108497920",
+      "CPUUsageNSec": "834795632000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "36956",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.0034600202925503254,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "fresh",
+      "cycles": 3763,
+      "as_of": "2026-11-17T14:32:28.411434+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 10.454660694114864,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 43,
+        "failures": 2,
+        "last_attempt": "2026-11-17T14:32:31.536957+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 339,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.8369985949248075,
+        "maximum_read_seconds": 3.170507522765547,
+        "available_at": "2026-11-17T14:32:31.575309+00:00",
+        "age_seconds": 3.14618,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:32:40.690192+00:00",
+    "elapsed": 951.3995622508228,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2081083392",
+      "CPUUsageNSec": "839863260000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "37347",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.04061465710401535,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "fresh",
+      "cycles": 3763,
+      "as_of": "2026-11-17T14:32:28.411434+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 10.454660694114864,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 43,
+        "failures": 2,
+        "last_attempt": "2026-11-17T14:32:31.536957+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 339,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.8369985949248075,
+        "maximum_read_seconds": 3.170507522765547,
+        "available_at": "2026-11-17T14:32:31.575309+00:00",
+        "age_seconds": 3.14618,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:32:45.754302+00:00",
+    "elapsed": 956.4636739827693,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "1993969664",
+      "CPUUsageNSec": "844876756000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "37664",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.002751257736235857,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "fresh",
+      "cycles": 3763,
+      "as_of": "2026-11-17T14:32:28.411434+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 10.454660694114864,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 43,
+        "failures": 2,
+        "last_attempt": "2026-11-17T14:32:31.536957+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 339,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.8369985949248075,
+        "maximum_read_seconds": 3.170507522765547,
+        "available_at": "2026-11-17T14:32:31.575309+00:00",
+        "age_seconds": 3.14618,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:32:50.778895+00:00",
+    "elapsed": 961.4882658692077,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2017153024",
+      "CPUUsageNSec": "849889152000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "37664",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.0019338359124958515,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3763,
+      "as_of": "2026-11-17T14:32:28.411434+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 10.454660694114864,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 43,
+        "failures": 2,
+        "last_attempt": "2026-11-17T14:32:31.536957+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 339,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.8369985949248075,
+        "maximum_read_seconds": 3.170507522765547,
+        "available_at": "2026-11-17T14:32:31.575309+00:00",
+        "age_seconds": 3.14618,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:32:55.800724+00:00",
+    "elapsed": 966.5100953918882,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2034225152",
+      "CPUUsageNSec": "854852728000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "37664",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.04936116002500057,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "fresh",
+      "cycles": 3764,
+      "as_of": "2026-11-17T14:32:40.372545+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 14.48780540889129,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 47,
+        "failures": 2,
+        "last_attempt": "2026-11-17T14:32:53.174958+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 278,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.8461208459921181,
+        "maximum_read_seconds": 3.170507522765547,
+        "available_at": "2026-11-17T14:32:53.268483+00:00",
+        "age_seconds": 0.962552,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:33:01.285066+00:00",
+    "elapsed": 971.9944375031628,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2024910848",
+      "CPUUsageNSec": "860287414000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "37664",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.0024998560547828674,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3764,
+      "as_of": "2026-11-17T14:32:40.372545+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 14.48780540889129,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 47,
+        "failures": 2,
+        "last_attempt": "2026-11-17T14:32:53.174958+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 278,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.8461208459921181,
+        "maximum_read_seconds": 3.170507522765547,
+        "available_at": "2026-11-17T14:32:53.268483+00:00",
+        "age_seconds": 0.962552,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:33:06.310167+00:00",
+    "elapsed": 977.0195405459963,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2025918464",
+      "CPUUsageNSec": "865305017000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "37664",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.10785037418827415,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3764,
+      "as_of": "2026-11-17T14:32:40.372545+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 14.48780540889129,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 47,
+        "failures": 2,
+        "last_attempt": "2026-11-17T14:32:53.174958+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 278,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.8461208459921181,
+        "maximum_read_seconds": 3.170507522765547,
+        "available_at": "2026-11-17T14:32:53.268483+00:00",
+        "age_seconds": 0.962552,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:33:11.554458+00:00",
+    "elapsed": 982.2638304559514,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2013794304",
+      "CPUUsageNSec": "870493286000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "37664",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.02177991485223174,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "fresh",
+      "cycles": 3765,
+      "as_of": "2026-11-17T14:33:01.334141+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 10.4616629909724,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 49,
+        "failures": 2,
+        "last_attempt": "2026-11-17T14:33:07.981048+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 276,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.8461208459921181,
+        "maximum_read_seconds": 3.170507522765547,
+        "available_at": "2026-11-17T14:33:08.027624+00:00",
+        "age_seconds": 1.979342,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:33:16.626781+00:00",
+    "elapsed": 987.3361549437977,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2044051456",
+      "CPUUsageNSec": "875573345000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "37664",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.005331604275852442,
+    "health": {
+      "status": "degraded"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3765,
+      "as_of": "2026-11-17T14:33:01.334141+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 10.4616629909724,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 49,
+        "failures": 2,
+        "last_attempt": "2026-11-17T14:33:07.981048+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 276,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.8461208459921181,
+        "maximum_read_seconds": 3.170507522765547,
+        "available_at": "2026-11-17T14:33:08.027624+00:00",
+        "age_seconds": 1.979342,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:33:21.654301+00:00",
+    "elapsed": 992.3636704818346,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2064039936",
+      "CPUUsageNSec": "880469919000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "37664",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.23632473405450583,
+    "health": {
+      "status": "degraded"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3765,
+      "as_of": "2026-11-17T14:33:01.334141+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 10.4616629909724,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 49,
+        "failures": 2,
+        "last_attempt": "2026-11-17T14:33:07.981048+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 276,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.8461208459921181,
+        "maximum_read_seconds": 3.170507522765547,
+        "available_at": "2026-11-17T14:33:08.027624+00:00",
+        "age_seconds": 1.979342,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:33:26.966304+00:00",
+    "elapsed": 997.6756771239452,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "2054119424",
+      "CPUUsageNSec": "885767239000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "37664",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.10507382918149233,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3765,
+      "as_of": "2026-11-17T14:33:01.334141+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 10.4616629909724,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 49,
+        "failures": 2,
+        "last_attempt": "2026-11-17T14:33:07.981048+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 276,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.8461208459921181,
+        "maximum_read_seconds": 3.170507522765547,
+        "available_at": "2026-11-17T14:33:08.027624+00:00",
+        "age_seconds": 1.979342,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:33:32.151840+00:00",
+    "elapsed": 1002.8612157721072,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "1995186176",
+      "CPUUsageNSec": "890942953000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "37905",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.0027331109158694744,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3765,
+      "as_of": "2026-11-17T14:33:01.334141+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 10.4616629909724,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 49,
+        "failures": 2,
+        "last_attempt": "2026-11-17T14:33:07.981048+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 276,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.8461208459921181,
+        "maximum_read_seconds": 3.170507522765547,
+        "available_at": "2026-11-17T14:33:08.027624+00:00",
+        "age_seconds": 1.979342,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:33:37.175735+00:00",
+    "elapsed": 1007.8851059330627,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "1598005248",
+      "CPUUsageNSec": "895940641000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "37905",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.2818523673340678,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3765,
+      "as_of": "2026-11-17T14:33:01.334141+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 10.4616629909724,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 49,
+        "failures": 2,
+        "last_attempt": "2026-11-17T14:33:07.981048+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 276,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.8461208459921181,
+        "maximum_read_seconds": 3.170507522765547,
+        "available_at": "2026-11-17T14:33:08.027624+00:00",
+        "age_seconds": 1.979342,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:33:42.550723+00:00",
+    "elapsed": 1013.2600945779122,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "1650962432",
+      "CPUUsageNSec": "901060840000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "37905",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.00247489707544446,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3765,
+      "as_of": "2026-11-17T14:33:01.334141+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 10.4616629909724,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 49,
+        "failures": 2,
+        "last_attempt": "2026-11-17T14:33:07.981048+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 276,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.8461208459921181,
+        "maximum_read_seconds": 3.170507522765547,
+        "available_at": "2026-11-17T14:33:08.027624+00:00",
+        "age_seconds": 1.979342,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:33:47.573817+00:00",
+    "elapsed": 1018.2831903588958,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "1650225152",
+      "CPUUsageNSec": "905848009000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "37905",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.0024235532619059086,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3765,
+      "as_of": "2026-11-17T14:33:01.334141+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 10.4616629909724,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 49,
+        "failures": 2,
+        "last_attempt": "2026-11-17T14:33:07.981048+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 276,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.8461208459921181,
+        "maximum_read_seconds": 3.170507522765547,
+        "available_at": "2026-11-17T14:33:08.027624+00:00",
+        "age_seconds": 1.979342,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:33:52.597981+00:00",
+    "elapsed": 1023.3073541321792,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "1659666432",
+      "CPUUsageNSec": "909071407000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "37905",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.0025805700570344925,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "fresh",
+      "cycles": 3766,
+      "as_of": "2026-11-17T14:33:34.498013+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 33.36492797778919,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 55,
+        "failures": 2,
+        "last_attempt": "2026-11-17T14:33:46.209977+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 70,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.8461208459921181,
+        "maximum_read_seconds": 3.170507522765547,
+        "available_at": "2026-11-17T14:33:47.057435+00:00",
+        "age_seconds": 1.751838,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:33:57.621646+00:00",
+    "elapsed": 1028.331017000135,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "1664045056",
+      "CPUUsageNSec": "913228567000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "37905",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.0022132298909127712,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3766,
+      "as_of": "2026-11-17T14:33:34.498013+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 33.36492797778919,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 55,
+        "failures": 2,
+        "last_attempt": "2026-11-17T14:33:46.209977+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 70,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.8461208459921181,
+        "maximum_read_seconds": 3.170507522765547,
+        "available_at": "2026-11-17T14:33:47.057435+00:00",
+        "age_seconds": 1.751838,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  },
+  {
+    "at": "2026-11-17T14:34:02.646555+00:00",
+    "elapsed": 1033.3559254971333,
+    "service": {
+      "MainPID": "580126",
+      "NRestarts": "0",
+      "MemoryCurrent": "1682972672",
+      "CPUUsageNSec": "918217205000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "37905",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "latency": 0.0071908291429281235,
+    "health": {
+      "status": "ok"
+    },
+    "research": {
+      "status": "stale",
+      "cycles": 3766,
+      "as_of": "2026-11-17T14:33:34.498013+00:00",
+      "shadow_worker": {
+        "maximum_workers": 1,
+        "queued_jobs": 0,
+        "cycle_seconds": 33.36492797778919,
+        "frame_origin": "shared_bounded_reference_reader"
+      },
+      "reference_feed": {
+        "attempts": 55,
+        "failures": 2,
+        "last_attempt": "2026-11-17T14:33:46.209977+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 70,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.8461208459921181,
+        "maximum_read_seconds": 3.170507522765547,
+        "available_at": "2026-11-17T14:33:47.057435+00:00",
+        "age_seconds": 1.751838,
+        "status": "fresh",
+        "trading_authority": false
+      }
+    }
+  }
+]

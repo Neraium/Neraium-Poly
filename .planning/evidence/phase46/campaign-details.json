@@ -1,0 +1,115 @@
+{
+  "completed_native_status": {
+    "at": "2026-11-17T14:34:02.646555+00:00",
+    "status": {
+      "status": "completed",
+      "proofs": 0,
+      "recent_attempt_reasons": {
+        "ValueError:native_resolution_transaction_unavailable": 14,
+        "ValueError:native_remaining_disk_budget_exhausted": 2
+      },
+      "capacity": {
+        "schema_version": "1.0",
+        "id": "e9ea4feea590c2e90978254121ca0565c6e7c2fbb1fad02b804c9d75191c049d",
+        "timestamp": "2026-11-17T14:28:46.948870Z",
+        "available_at": "2026-11-17T14:28:51.548799Z",
+        "source": "neraium-poly/native-capacity/v46",
+        "capacity": {
+          "limit_bytes": 67108864,
+          "used_bytes": 65445975,
+          "remaining_bytes": 1662889,
+          "originals_deleted": false
+        },
+        "attempted": 2,
+        "deferred": 8,
+        "cached_proofs": 0
+      }
+    }
+  },
+  "fee_tokens_peak": 3,
+  "fee_tokens_final": 2,
+  "positive_conservative_candidates_observed": 0,
+  "best_conditional_hypothesis": {
+    "strategy": "independent",
+    "bundle_id": null,
+    "matched_pair_quantity": null,
+    "profile": "aggressive",
+    "market_id": "3215007",
+    "event_id": "770450",
+    "token_id": "42865728742506860386768556888821101266630139112044622335353850919229585308601",
+    "question": "Will there be no change in Fed interest rates after the December 2026 meeting?",
+    "decision_at": "2026-11-17T14:32:17.827840+00:00",
+    "book_id": "34195dd6493535e7e98173aa8a5add6e91ece6d931f140c07dd11e0b51ffbc9d",
+    "book_at": "2026-11-17T14:32:05.759000Z",
+    "bid": 0.027,
+    "ask": 0.03,
+    "levels": [
+      {
+        "price": 0.03,
+        "size": 451.55
+      },
+      {
+        "price": 0.031,
+        "size": 23615.73
+      },
+      {
+        "price": 0.032,
+        "size": 52000.01
+      },
+      {
+        "price": 0.033,
+        "size": 2109.01
+      },
+      {
+        "price": 0.034,
+        "size": 230.0
+      },
+      {
+        "price": 0.035,
+        "size": 6630.23
+      },
+      {
+        "price": 0.036,
+        "size": 1880.99
+      },
+      {
+        "price": 0.037,
+        "size": 39859.98
+      }
+    ],
+    "model_probability": 0.7135416666666666,
+    "pricing_target": 0.7135416666666666,
+    "uncertainty": {
+      "lower_probability": 0.0,
+      "upper_probability": 1.0,
+      "type": "uncalibrated_regime_uncertainty_not_sampling_confidence"
+    },
+    "evidence_kind": "source_replayed_independent_model; original conditional assumptions retained",
+    "estimated_quantity": 45.155,
+    "capital": 1.5763610500000003,
+    "estimated_gross_profit": 30.86532395833333,
+    "estimated_execution_costs": 0.22171105000000021,
+    "estimated_net_profit": 30.64361290833333,
+    "uncertainty_lower_net_profit": -1.5763610500000003,
+    "settlement_end": "2026-12-09T23:59:00Z",
+    "correlation_group": "770450",
+    "return_on_capital": 19.439463382029977,
+    "maximum_principal_loss": 1.5763610500000003,
+    "native_fee_verified": false,
+    "fee_rate_assumption": 0.1,
+    "modeled_reserves_per_share": 0.002,
+    "additional_exit_slippage_per_share": 0.0,
+    "all_in_costs_verified": false,
+    "entry_diagnostics": [],
+    "status": "unvalidated_hypothesis_only",
+    "actual_fill": false,
+    "trading_authority": false,
+    "limitation": "best-ask-limit intent, bounded10% participation; later book required; portfolio, native size, shared-depth and risk gates apply independently; fees/slippage are not all verified costs"
+  },
+  "phase46_trials_by_domain": {
+    "sports": 6,
+    "crypto": 4,
+    "economics": 4
+  },
+  "additional_blocker": "One read-only /api/state diagnostic timed out after10s; no retry or freshness relaxation. Health/research endpoints passed bounded observation."
+}

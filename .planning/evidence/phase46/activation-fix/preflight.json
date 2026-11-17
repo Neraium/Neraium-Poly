@@ -1,0 +1,215 @@
+{
+  "at": "2026-11-17T14:15:53.911029+00:00",
+  "expected_source": {
+    "reference": "1342482fd9431f4e2e69d8788d864cb32fd1d4e9",
+    "experimental_before": "c81d5b1d3ae449ccd362a2383f02abc7eaa2328c",
+    "experimental_candidate": "5504ce84b321cc4a2f6915993e64dc95a0aaf0e7"
+  },
+  "accounts": {
+    "paper-live": {
+      "risk.sqlite": {
+        "quick_check": "ok",
+        "account": {
+          "id": 1,
+          "cash": 500.0,
+          "peak": 500.0,
+          "realized": 0.0,
+          "kill": 0,
+          "limits": {
+            "bankroll": 500.0,
+            "aggregate_fraction": 0.2,
+            "market_fraction": 0.05,
+            "event_fraction": 0.1,
+            "correlation_fraction": 0.1,
+            "daily_loss_fraction": 0.05,
+            "drawdown_fraction": 0.1,
+            "max_book_age_seconds": 15.0,
+            "max_market_age_seconds": 3600.0,
+            "max_estimate_age_seconds": 300.0,
+            "max_evidence_age_seconds": 3600.0,
+            "max_spread": 0.05,
+            "min_net_edge": 0.03,
+            "max_liquidity_participation": 0.25,
+            "approval_ttl_seconds": 10.0,
+            "standard_min": 2.0,
+            "standard_max": 5.0,
+            "high_min": 5.0,
+            "high_max": 15.0,
+            "exceptional_min": 15.0,
+            "exceptional_max": 25.0,
+            "kelly_fraction": 0.1
+          }
+        },
+        "positions": 0,
+        "reservations": 0,
+        "fills": 0
+      },
+      "broker.sqlite": {
+        "quick_check": "ok",
+        "orders": 0,
+        "open_orders": 0
+      },
+      "service.sqlite": {
+        "quick_check": "ok",
+        "hashes_valid": true
+      }
+    },
+    "experimental-paper": {
+      "risk.sqlite": {
+        "quick_check": "ok",
+        "account": {
+          "id": 1,
+          "cash": 496.11522059829053,
+          "peak": 500.0,
+          "realized": -3.8847794017094013,
+          "kill": 1,
+          "limits": {
+            "bankroll": 500.0,
+            "aggregate_fraction": 0.2,
+            "market_fraction": 0.05,
+            "event_fraction": 0.1,
+            "correlation_fraction": 0.1,
+            "daily_loss_fraction": 0.05,
+            "drawdown_fraction": 0.1,
+            "max_book_age_seconds": 15.0,
+            "max_market_age_seconds": 3600.0,
+            "max_estimate_age_seconds": 300.0,
+            "max_evidence_age_seconds": 3600.0,
+            "max_spread": 0.05,
+            "min_net_edge": 0.03,
+            "max_liquidity_participation": 0.25,
+            "approval_ttl_seconds": 10.0,
+            "standard_min": 2.0,
+            "standard_max": 5.0,
+            "high_min": 5.0,
+            "high_max": 15.0,
+            "exceptional_min": 15.0,
+            "exceptional_max": 25.0,
+            "kelly_fraction": 0.1
+          }
+        },
+        "positions": 0,
+        "reservations": 0,
+        "fills": 10
+      },
+      "broker.sqlite": {
+        "quick_check": "ok",
+        "orders": 13,
+        "open_orders": 0
+      },
+      "service.sqlite": {
+        "quick_check": "ok",
+        "hashes_valid": true
+      }
+    }
+  },
+  "services": {
+    "neraium-poly-paper.service": {
+      "MainPID": "555731",
+      "NRestarts": "2",
+      "ExecStart": "{ path=/home/ubuntu/Neraium-Poly/.venv/bin/neraium-poly ; argv[]=/home/ubuntu/Neraium-Poly/.venv/bin/neraium-poly paper-live --config /home/ubuntu/Neraium-Poly/config/paper-live.example.json ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }",
+      "MemoryCurrent": "1071378432",
+      "MemoryPeak": "1074900992",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "1073741824",
+      "TasksMax": "64",
+      "WorkingDirectory": "/home/ubuntu/Neraium-Poly",
+      "ActiveState": "active",
+      "FragmentPath": "/etc/systemd/system/neraium-poly-paper.service",
+      "DropInPaths": "",
+      "ActiveEnterTimestamp": "Tue 2026-11-17 08:35:18 UTC",
+      "flags": {
+        "PAPER_TRADING": "true",
+        "LIVE_TRADING_ENABLED": "false"
+      },
+      "health": {
+        "status": "ok",
+        "paper_trading": true,
+        "live_trading_enabled": false,
+        "mode": "live_market_paper",
+        "trading_status": "validation_blocked",
+        "last_ingestion_at": "2026-11-17T14:15:54.063063+00:00",
+        "last_ingestion_age_seconds": 0.000138,
+        "last_error": null,
+        "ledger_consistent": true,
+        "timestamp": "2026-11-17T14:15:54.063201+00:00"
+      },
+      "source_attestation": "unchanged Phase38 PID and exact backend tree; original process has no source env marker",
+      "verified_source": "1342482fd9431f4e2e69d8788d864cb32fd1d4e9"
+    },
+    "neraium-poly-experimental.service": {
+      "MainPID": "577442",
+      "NRestarts": "0",
+      "ExecStart": "{ path=/home/ubuntu/Neraium-Poly/.venv/bin/neraium-poly ; argv[]=/home/ubuntu/Neraium-Poly/.venv/bin/neraium-poly experimental-paper --config /home/ubuntu/Neraium-Poly/config/experimental-paper.example.json ; ignore_errors=no ; start_time=[Tue 2026-11-17 13:58:15 UTC] ; stop_time=[n/a] ; pid=577442 ; code=(null) ; status=0/0 }",
+      "MemoryCurrent": "2001588224",
+      "MemoryPeak": "2147696640",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "TasksMax": "32",
+      "WorkingDirectory": "/home/ubuntu/Neraium-Poly",
+      "ActiveState": "active",
+      "FragmentPath": "/etc/systemd/system/neraium-poly-experimental.service",
+      "DropInPaths": "/etc/systemd/system.control/neraium-poly-experimental.service.d/50-CPUQuota.conf /etc/systemd/system.control/neraium-poly-experimental.service.d/50-MemoryMax.conf /etc/systemd/system/neraium-poly-experimental.service.d/60-phase39-source.conf",
+      "ActiveEnterTimestamp": "Tue 2026-11-17 13:58:15 UTC",
+      "flags": {
+        "PAPER_TRADING": "true",
+        "LIVE_TRADING_ENABLED": "false"
+      },
+      "health": {
+        "status": "ok",
+        "account_id": "experimental-paper",
+        "validation_status": "unvalidated",
+        "paper_trading": true,
+        "live_trading_enabled": false,
+        "last_ingestion_at": "2026-11-17T14:15:51.359704+00:00",
+        "last_ingestion_age_seconds": 2.75512,
+        "last_error": null,
+        "fee_error": null,
+        "research_reference": {
+          "attempts": 58,
+          "failures": 1,
+          "last_attempt": "2026-11-17T14:15:47.720860+00:00",
+          "last_error": null,
+          "fresh_books_at_receipt": 64,
+          "maximum_workers": 1,
+          "queued_requests": 0,
+          "median_read_seconds": 0.7510278113186359,
+          "maximum_read_seconds": 3.080597515683621,
+          "available_at": "2026-11-17T14:15:47.736300+00:00",
+          "age_seconds": 6.378565,
+          "status": "fresh",
+          "trading_authority": false
+        },
+        "public_feed": {
+          "status": "not_observed",
+          "producer_url": "http://127.0.0.1:18742/api/market-frame",
+          "attempts": 0,
+          "failures": 0,
+          "trading_authority": false
+        },
+        "timestamp": "2026-11-17T14:15:54.114824+00:00"
+      },
+      "verified_source": "c81d5b1d3ae449ccd362a2383f02abc7eaa2328c"
+    }
+  },
+  "disk_free_bytes": 189111472128,
+  "source_match": true,
+  "journals": {
+    "data/experimental-paper/event-intelligence/forecasts.sqlite": {
+      "records": 17469,
+      "head_sha256": "c64539f6b6da4b6f549a52bebd3a6601b5485d9bb709ae50062ce84d8a7f8a87",
+      "integrity": "verified"
+    },
+    "data/experimental-paper/event-intelligence/domains/forecasts.sqlite": {
+      "records": 357,
+      "head_sha256": "4c6d2e49f06a6165bd933ceef69aed4e04984701e1bf4dd35527d738337c050b",
+      "integrity": "verified"
+    },
+    "data/experimental-paper/event-intelligence/sports/prospective.sqlite": {
+      "records": 34,
+      "head_sha256": "814ecf6a8b2cb49775c961c68a8bab23db4b378ecfa241d79241ff6e03fa6868",
+      "integrity": "verified"
+    }
+  },
+  "safety_passed": true
+}

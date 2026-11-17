@@ -1,0 +1,19 @@
+{
+  "source": "5504ce84b321cc4a2f6915993e64dc95a0aaf0e7",
+  "run": 44100729340,
+  "conclusion": "success",
+  "junit_sha256": "482ce30b3b4260d5b8c8ad80cb87e7e25ebe0c30601c32d34e3d3de5879d710c",
+  "suites": [
+    {
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "tests": "2423",
+      "time": "81.822",
+      "timestamp": "2026-11-17T14:13:30.643599+00:00",
+      "hostname": "runnervm8axu0"
+    }
+  ],
+  "scope": "final code backend regression, Ruff, scenario, dependency audit, dashboard build/browser/audit; no repeated local full suite"
+}

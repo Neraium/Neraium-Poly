@@ -1,0 +1,23 @@
+{
+  "at": "2026-11-17T14:01:50.080577+00:00",
+  "pid": "577442",
+  "memory_current": 2147454976,
+  "memory_events": {
+    "low": "0",
+    "high": "0",
+    "max": "4664",
+    "oom": "0",
+    "oom_kill": "0",
+    "oom_group_kill": "0",
+    "sock_throttled": "0"
+  },
+  "memory_stat": {
+    "anon": 156626944,
+    "file": 1986871296,
+    "file_mapped": 114688,
+    "slab": 3006984,
+    "pgscan": 624361,
+    "pgsteal": 624347
+  },
+  "process": "    PID %CPU   RSS    VSZ     ELAPSED STAT\n 577442 74.3 170656 195300      03:34 Rs\n"
+}

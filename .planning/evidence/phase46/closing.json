@@ -1,0 +1,1900 @@
+{
+  "source": "5504ce84b321cc4a2f6915993e64dc95a0aaf0e7",
+  "pid": "580126",
+  "before": {
+    "samples": 60,
+    "duration_seconds": 303.5779232280329,
+    "fresh_research": 5,
+    "unique_completed_cycles": 6,
+    "median_cycle_seconds": 17.49748127395287,
+    "maximum_cycle_seconds": 27.67894547386095,
+    "peak_memory_bytes": 2101116928,
+    "maximum_api_latency": 0.5673581301234663,
+    "automatic_restarts": "0",
+    "oom_kills": "0"
+  },
+  "after": {
+    "samples": 60,
+    "duration_seconds": 301.09506231406704,
+    "fresh_research": 23,
+    "unique_completed_cycles": 17,
+    "median_cycle_seconds": 13.621266103815287,
+    "maximum_cycle_seconds": 33.36492797778919,
+    "peak_memory_bytes": 2147225600,
+    "maximum_api_latency": 0.40095618320629,
+    "automatic_restarts": "0",
+    "oom_kills": "0"
+  },
+  "indexed_forecasts": 74,
+  "native_inventory": {
+    "model_labels": 22,
+    "outcome_tokens": 11,
+    "native_parent_ids": 3,
+    "canonical_source_events": 3,
+    "conservative_date_blocks": 2,
+    "model_payout_counts": {
+      "0": 22
+    },
+    "positive_contract_tokens": 0,
+    "zero_contract_tokens": 11,
+    "unmapped_model_labels": 0,
+    "reviewed_independent_samples": 0,
+    "limitation": "labels, contracts, native parents and date blocks are distinct; no statistical independence certification"
+  },
+  "outcome_program": {
+    "by_model": {
+      "fomc-scheduled-policy-frequency-v24.1": {
+        "resolved_blocks": 0,
+        "scores": {}
+      },
+      "nba-team-frequency-v24.1": {
+        "resolved_blocks": 0,
+        "scores": {}
+      },
+      "empirical-ohlc-block-bootstrap-v23.1": {
+        "resolved_blocks": 0,
+        "scores": {}
+      },
+      "nhl-causal-elo-v25.1": {
+        "resolved_blocks": 0,
+        "scores": {}
+      },
+      "nhl-beta-frequency-v25.1": {
+        "resolved_blocks": 0,
+        "scores": {}
+      },
+      "gaussian-first-passage-v23.1": {
+        "resolved_blocks": 0,
+        "scores": {}
+      },
+      "fomc-recent-policy-shrinkage-v24.1": {
+        "resolved_blocks": 0,
+        "scores": {}
+      },
+      "nba-causal-elo-v24.1": {
+        "resolved_blocks": 0,
+        "scores": {}
+      }
+    },
+    "prospective_trials": 14,
+    "native_results": 0,
+    "positive_zero_payouts": {},
+    "conservative_date_blocks": 0,
+    "canonical_source_events": 6,
+    "scores_equal_block_weight": {},
+    "reviewed_independent_training": 0,
+    "reviewed_independent_heldout": 0,
+    "calibration_fit": false,
+    "confidence_interval": null,
+    "withholding": {
+      "fresh_executable_book_required": 4
+    },
+    "policy": {
+      "code_sha256": "880dcf2d42814d0af2733d1f92c08a2f9506d1fd63b1bf5bd0328f174fdc2423",
+      "version": "phase46-v1",
+      "max_trials": 512,
+      "max_enrollments_per_tick": 4,
+      "baselines": [
+        "external",
+        "market",
+        "zero",
+        "one",
+        "neutral",
+        "past_frequency",
+        "past_horizon_frequency"
+      ],
+      "selection": "unresolved source-backed events; new dependency blocks, entropy, near-term depth; no label selection",
+      "independence": "canonical source events and conservative domain/date blocks are not certification; review required",
+      "training": "earliest forecast per historical block selected from ALL forecasts, then require its native result available before decision; exclude target block; Jeffreys prior; no future labels",
+      "promotion": "none; unchanged certified100 training/100 heldout gates"
+    },
+    "limitation": "no independence certification; shared dates and latent regimes remain correlated; no winner without independent prospective evidence"
+  },
+  "event_group_scores": {
+    "empirical-ohlc-block-bootstrap-v23.1": {
+      "forecasts": 10,
+      "native_parent_groups": 2,
+      "reviewed_independent_groups": 0,
+      "scores": {
+        "model": {
+          "brier": 0.027671337127685547,
+          "log_loss": 0.10681693998636874
+        },
+        "market": {
+          "brier": 0.029438333333333337,
+          "log_loss": 0.13753798892495522
+        },
+        "neutral": {
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      },
+      "model_minus_market_brier": -0.0017669962056477903,
+      "market_baseline": "original causal executable-book midpoint / token expected payout; not an independent model probability",
+      "confidence_interval": null,
+      "calibration_fit": null,
+      "status": "descriptive_only; independent cohort review and sufficient heldout groups required"
+    },
+    "gaussian-first-passage-v23.1": {
+      "forecasts": 10,
+      "native_parent_groups": 2,
+      "reviewed_independent_groups": 0,
+      "scores": {
+        "model": {
+          "brier": 0.014285910818302161,
+          "log_loss": 0.07004252359700353
+        },
+        "market": {
+          "brier": 0.029438333333333337,
+          "log_loss": 0.13753798892495522
+        },
+        "neutral": {
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      },
+      "model_minus_market_brier": -0.015152422515031176,
+      "market_baseline": "original causal executable-book midpoint / token expected payout; not an independent model probability",
+      "confidence_interval": null,
+      "calibration_fit": null,
+      "status": "descriptive_only; independent cohort review and sufficient heldout groups required"
+    },
+    "spx-gaussian-logreturn-direction-v25.1": {
+      "forecasts": 1,
+      "native_parent_groups": 1,
+      "reviewed_independent_groups": 0,
+      "scores": {
+        "model": {
+          "brier": 0.26838941732330446,
+          "log_loss": 0.7299421699569301
+        },
+        "market": {
+          "brier": 0.055224999999999996,
+          "log_loss": 0.2678794451556012
+        },
+        "neutral": {
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      },
+      "model_minus_market_brier": 0.21316441732330446,
+      "market_baseline": "original causal executable-book midpoint / token expected payout; not an independent model probability",
+      "confidence_interval": null,
+      "calibration_fit": null,
+      "status": "descriptive_only; independent cohort review and sufficient heldout groups required"
+    },
+    "spx-weekday-beta-direction-v25.1": {
+      "forecasts": 1,
+      "native_parent_groups": 1,
+      "reviewed_independent_groups": 0,
+      "scores": {
+        "model": {
+          "brier": 0.36406202709679714,
+          "log_loss": 0.9247653588651272
+        },
+        "market": {
+          "brier": 0.055224999999999996,
+          "log_loss": 0.2678794451556012
+        },
+        "neutral": {
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      },
+      "model_minus_market_brier": 0.30883702709679717,
+      "market_baseline": "original causal executable-book midpoint / token expected payout; not an independent model probability",
+      "confidence_interval": null,
+      "calibration_fit": null,
+      "status": "descriptive_only; independent cohort review and sufficient heldout groups required"
+    }
+  },
+  "baseline_warning": "all22 legacy labels were zero; zero-predictor Brier0/logloss0, one-predictor Brier1/clipped logloss27.631; no independently validated model superiority",
+  "markets_evaluated_unique_cumulative": 479,
+  "new_market_ids": 17,
+  "rejection_delta_observations": {
+    "aggressive": {
+      "unfavorable_economics_or_signal": 0,
+      "unsupported_or_unverified_market_structure": 1204,
+      "invalid_or_stale_book": 1070,
+      "missing_verified_fees": 6306,
+      "missing_independent_evidence": 8988,
+      "portfolio_or_research_policy": 46,
+      "historically_ambiguous_evidence_or_economics": 12,
+      "other_explicit_reason": 58
+    },
+    "balanced": {
+      "unfavorable_economics_or_signal": 0,
+      "unsupported_or_unverified_market_structure": 1204,
+      "invalid_or_stale_book": 1070,
+      "missing_verified_fees": 6347,
+      "missing_independent_evidence": 8988,
+      "portfolio_or_research_policy": 9,
+      "historically_ambiguous_evidence_or_economics": 7,
+      "other_explicit_reason": 58
+    },
+    "conservative": {
+      "unfavorable_economics_or_signal": 0,
+      "unsupported_or_unverified_market_structure": 1204,
+      "invalid_or_stale_book": 1070,
+      "missing_verified_fees": 6356,
+      "probability_uncertainty": 1,
+      "missing_independent_evidence": 8988,
+      "other_explicit_reason": 58,
+      "spread_too_wide": 0,
+      "historically_ambiguous_evidence_or_economics": 7
+    }
+  },
+  "rejection_breakdown": {
+    "aggressive": {
+      "observations": {
+        "unfavorable_economics_or_signal": 2,
+        "unsupported_or_unverified_market_structure": 54594,
+        "invalid_or_stale_book": 67933,
+        "missing_verified_fees": 216050,
+        "missing_independent_evidence": 309012,
+        "portfolio_or_research_policy": 2880,
+        "historically_ambiguous_evidence_or_economics": 1776,
+        "other_explicit_reason": 3821
+      },
+      "total": 656068,
+      "unit": "repeated rejection observations in one alternative profile; not unique opportunities or independent events",
+      "legacy_ambiguity": "Mixed historical reasons cannot be causally separated with the evidence retained; new decisions use separate reasons."
+    },
+    "balanced": {
+      "observations": {
+        "unfavorable_economics_or_signal": 2,
+        "unsupported_or_unverified_market_structure": 54594,
+        "invalid_or_stale_book": 67933,
+        "missing_verified_fees": 219872,
+        "missing_independent_evidence": 309012,
+        "portfolio_or_research_policy": 296,
+        "historically_ambiguous_evidence_or_economics": 545,
+        "other_explicit_reason": 3821
+      },
+      "total": 656075,
+      "unit": "repeated rejection observations in one alternative profile; not unique opportunities or independent events",
+      "legacy_ambiguity": "Mixed historical reasons cannot be causally separated with the evidence retained; new decisions use separate reasons."
+    },
+    "conservative": {
+      "observations": {
+        "unfavorable_economics_or_signal": 2,
+        "unsupported_or_unverified_market_structure": 54594,
+        "invalid_or_stale_book": 67933,
+        "missing_verified_fees": 220166,
+        "probability_uncertainty": 64,
+        "missing_independent_evidence": 309012,
+        "other_explicit_reason": 3821,
+        "spread_too_wide": 1,
+        "historically_ambiguous_evidence_or_economics": 485
+      },
+      "total": 656078,
+      "unit": "repeated rejection observations in one alternative profile; not unique opportunities or independent events",
+      "legacy_ambiguity": "Mixed historical reasons cannot be causally separated with the evidence retained; new decisions use separate reasons."
+    }
+  },
+  "strategy_deltas": {
+    "legacy": {
+      "aggressive": {
+        "independent": {
+          "screened_observations": 0,
+          "unique_enrolled_opportunities": 0,
+          "orders": 0,
+          "fill_events": 0,
+          "modeled_exit_net_pnl": 0.0,
+          "verified_settlement_net_pnl": 0
+        },
+        "consistency": {
+          "screened_observations": 0,
+          "unique_enrolled_opportunities": 0,
+          "orders": 0,
+          "fill_events": 0,
+          "modeled_exit_net_pnl": 0,
+          "verified_settlement_net_pnl": 0
+        },
+        "momentum": {
+          "screened_observations": 0,
+          "unique_enrolled_opportunities": 0,
+          "orders": 0,
+          "fill_events": 0,
+          "modeled_exit_net_pnl": 0.0,
+          "verified_settlement_net_pnl": 0
+        },
+        "spread_capture": {
+          "screened_observations": 0,
+          "unique_enrolled_opportunities": 0,
+          "orders": 0,
+          "fill_events": 0,
+          "modeled_exit_net_pnl": 0.0,
+          "verified_settlement_net_pnl": 0
+        },
+        "event_repricing": {
+          "screened_observations": 0,
+          "unique_enrolled_opportunities": 0,
+          "orders": 0,
+          "fill_events": 0,
+          "modeled_exit_net_pnl": 0.0,
+          "verified_settlement_net_pnl": 0
+        }
+      },
+      "balanced": {
+        "independent": {
+          "screened_observations": 0,
+          "unique_enrolled_opportunities": 0,
+          "orders": 0,
+          "fill_events": 0,
+          "modeled_exit_net_pnl": 0.0,
+          "verified_settlement_net_pnl": 0
+        },
+        "consistency": {
+          "screened_observations": 0,
+          "unique_enrolled_opportunities": 0,
+          "orders": 0,
+          "fill_events": 0,
+          "modeled_exit_net_pnl": 0,
+          "verified_settlement_net_pnl": 0
+        },
+        "momentum": {
+          "screened_observations": 0,
+          "unique_enrolled_opportunities": 0,
+          "orders": 0,
+          "fill_events": 0,
+          "modeled_exit_net_pnl": 0.0,
+          "verified_settlement_net_pnl": 0
+        },
+        "spread_capture": {
+          "screened_observations": 0,
+          "unique_enrolled_opportunities": 0,
+          "orders": 0,
+          "fill_events": 0,
+          "modeled_exit_net_pnl": 0.0,
+          "verified_settlement_net_pnl": 0
+        },
+        "event_repricing": {
+          "screened_observations": 0,
+          "unique_enrolled_opportunities": 0,
+          "orders": 0,
+          "fill_events": 0,
+          "modeled_exit_net_pnl": 0,
+          "verified_settlement_net_pnl": 0
+        }
+      },
+      "conservative": {
+        "independent": {
+          "screened_observations": 0,
+          "unique_enrolled_opportunities": 0,
+          "orders": 0,
+          "fill_events": 0,
+          "modeled_exit_net_pnl": 0,
+          "verified_settlement_net_pnl": 0
+        },
+        "consistency": {
+          "screened_observations": 0,
+          "unique_enrolled_opportunities": 0,
+          "orders": 0,
+          "fill_events": 0,
+          "modeled_exit_net_pnl": 0,
+          "verified_settlement_net_pnl": 0
+        },
+        "momentum": {
+          "screened_observations": 0,
+          "unique_enrolled_opportunities": 0,
+          "orders": 0,
+          "fill_events": 0,
+          "modeled_exit_net_pnl": 0,
+          "verified_settlement_net_pnl": 0
+        },
+        "spread_capture": {
+          "screened_observations": 0,
+          "unique_enrolled_opportunities": 0,
+          "orders": 0,
+          "fill_events": 0,
+          "modeled_exit_net_pnl": 0,
+          "verified_settlement_net_pnl": 0
+        },
+        "event_repricing": {
+          "screened_observations": 0,
+          "unique_enrolled_opportunities": 0,
+          "orders": 0,
+          "fill_events": 0,
+          "modeled_exit_net_pnl": 0,
+          "verified_settlement_net_pnl": 0
+        }
+      }
+    },
+    "phase44": {
+      "aggressive": {
+        "independent": {
+          "screened_observations": 0,
+          "unique_enrolled_opportunities": 0,
+          "orders": 0,
+          "fill_events": 0,
+          "modeled_exit_net_pnl": 0,
+          "verified_settlement_net_pnl": 0
+        },
+        "consistency": {
+          "screened_observations": 0,
+          "unique_enrolled_opportunities": 0,
+          "orders": 0,
+          "fill_events": 0,
+          "modeled_exit_net_pnl": 0,
+          "verified_settlement_net_pnl": 0
+        },
+        "momentum": {
+          "screened_observations": 0,
+          "unique_enrolled_opportunities": 0,
+          "orders": 0,
+          "fill_events": 0,
+          "modeled_exit_net_pnl": 0,
+          "verified_settlement_net_pnl": 0
+        }
+      },
+      "balanced": {
+        "independent": {
+          "screened_observations": 0,
+          "unique_enrolled_opportunities": 0,
+          "orders": 0,
+          "fill_events": 0,
+          "modeled_exit_net_pnl": 0,
+          "verified_settlement_net_pnl": 0
+        },
+        "consistency": {
+          "screened_observations": 0,
+          "unique_enrolled_opportunities": 0,
+          "orders": 0,
+          "fill_events": 0,
+          "modeled_exit_net_pnl": 0,
+          "verified_settlement_net_pnl": 0
+        },
+        "momentum": {
+          "screened_observations": 0,
+          "unique_enrolled_opportunities": 0,
+          "orders": 0,
+          "fill_events": 0,
+          "modeled_exit_net_pnl": 0,
+          "verified_settlement_net_pnl": 0
+        }
+      },
+      "conservative": {
+        "independent": {
+          "screened_observations": 0,
+          "unique_enrolled_opportunities": 0,
+          "orders": 0,
+          "fill_events": 0,
+          "modeled_exit_net_pnl": 0,
+          "verified_settlement_net_pnl": 0
+        },
+        "consistency": {
+          "screened_observations": 0,
+          "unique_enrolled_opportunities": 0,
+          "orders": 0,
+          "fill_events": 0,
+          "modeled_exit_net_pnl": 0,
+          "verified_settlement_net_pnl": 0
+        },
+        "momentum": {
+          "screened_observations": 0,
+          "unique_enrolled_opportunities": 0,
+          "orders": 0,
+          "fill_events": 0,
+          "modeled_exit_net_pnl": 0,
+          "verified_settlement_net_pnl": 0
+        }
+      }
+    },
+    "phase45": {
+      "aggressive": {
+        "independent": {
+          "screened_observations": 4972,
+          "unique_enrolled_opportunities": 0,
+          "orders": 0,
+          "fill_events": 0,
+          "modeled_exit_net_pnl": 0,
+          "verified_settlement_net_pnl": 0
+        },
+        "consistency": {
+          "screened_observations": 3034,
+          "unique_enrolled_opportunities": 0,
+          "orders": 0,
+          "fill_events": 0,
+          "modeled_exit_net_pnl": 0,
+          "verified_settlement_net_pnl": 0
+        },
+        "event_repricing": {
+          "screened_observations": 4864,
+          "unique_enrolled_opportunities": 0,
+          "orders": 0,
+          "fill_events": 0,
+          "modeled_exit_net_pnl": 0.0,
+          "verified_settlement_net_pnl": 0
+        },
+        "momentum": {
+          "screened_observations": 4865,
+          "unique_enrolled_opportunities": 0,
+          "orders": 0,
+          "fill_events": 0,
+          "modeled_exit_net_pnl": 0,
+          "verified_settlement_net_pnl": 0
+        }
+      },
+      "balanced": {
+        "independent": {
+          "screened_observations": 4972,
+          "unique_enrolled_opportunities": 0,
+          "orders": 0,
+          "fill_events": 0,
+          "modeled_exit_net_pnl": 0,
+          "verified_settlement_net_pnl": 0
+        },
+        "consistency": {
+          "screened_observations": 3034,
+          "unique_enrolled_opportunities": 0,
+          "orders": 0,
+          "fill_events": 0,
+          "modeled_exit_net_pnl": 0,
+          "verified_settlement_net_pnl": 0
+        },
+        "event_repricing": {
+          "screened_observations": 4864,
+          "unique_enrolled_opportunities": 0,
+          "orders": 0,
+          "fill_events": 0,
+          "modeled_exit_net_pnl": 0,
+          "verified_settlement_net_pnl": 0
+        },
+        "momentum": {
+          "screened_observations": 4864,
+          "unique_enrolled_opportunities": 1,
+          "orders": 1,
+          "fill_events": 0,
+          "modeled_exit_net_pnl": 0,
+          "verified_settlement_net_pnl": 0
+        }
+      },
+      "conservative": {
+        "independent": {
+          "screened_observations": 4972,
+          "unique_enrolled_opportunities": 0,
+          "orders": 0,
+          "fill_events": 0,
+          "modeled_exit_net_pnl": 0,
+          "verified_settlement_net_pnl": 0
+        },
+        "consistency": {
+          "screened_observations": 3034,
+          "unique_enrolled_opportunities": 0,
+          "orders": 0,
+          "fill_events": 0,
+          "modeled_exit_net_pnl": 0,
+          "verified_settlement_net_pnl": 0
+        },
+        "event_repricing": {
+          "screened_observations": 4864,
+          "unique_enrolled_opportunities": 0,
+          "orders": 0,
+          "fill_events": 0,
+          "modeled_exit_net_pnl": 0,
+          "verified_settlement_net_pnl": 0
+        },
+        "momentum": {
+          "screened_observations": 4865,
+          "unique_enrolled_opportunities": 0,
+          "orders": 0,
+          "fill_events": 0,
+          "modeled_exit_net_pnl": 0,
+          "verified_settlement_net_pnl": 0
+        }
+      }
+    }
+  },
+  "strategies": {
+    "legacy": {
+      "aggressive": {
+        "strategies": {
+          "independent": {
+            "screened_observations": 266566,
+            "unique_enrolled_opportunities": 30,
+            "candidates": 2404,
+            "orders": 30,
+            "fill_events": 27,
+            "open_positions": 0,
+            "unrealized_net_pnl": 0,
+            "exposure": 0,
+            "modeled_exit_net_pnl": -14.113658859189254,
+            "verified_settlement_net_pnl": 0,
+            "wins": 2,
+            "losses": 25,
+            "closed_observations": 27
+          },
+          "consistency": {
+            "screened_observations": 205756,
+            "unique_enrolled_opportunities": 0,
+            "candidates": 0,
+            "orders": 0,
+            "fill_events": 0,
+            "open_positions": 0,
+            "unrealized_net_pnl": 0,
+            "exposure": 0,
+            "modeled_exit_net_pnl": 0,
+            "verified_settlement_net_pnl": 0,
+            "wins": 0,
+            "losses": 0,
+            "closed_observations": 0
+          },
+          "momentum": {
+            "screened_observations": 273076,
+            "unique_enrolled_opportunities": 9,
+            "candidates": 8893,
+            "orders": 9,
+            "fill_events": 6,
+            "open_positions": 0,
+            "unrealized_net_pnl": 0,
+            "exposure": 0,
+            "modeled_exit_net_pnl": -4.077010127023749,
+            "verified_settlement_net_pnl": 0,
+            "wins": 0,
+            "losses": 6,
+            "closed_observations": 6
+          },
+          "spread_capture": {
+            "screened_observations": 489430,
+            "unique_enrolled_opportunities": 654,
+            "candidates": 225892,
+            "orders": 654,
+            "fill_events": 9,
+            "open_positions": 0,
+            "unrealized_net_pnl": 0,
+            "exposure": 0,
+            "modeled_exit_net_pnl": -6.088203301243593,
+            "verified_settlement_net_pnl": 0,
+            "wins": 0,
+            "losses": 9,
+            "closed_observations": 9
+          },
+          "event_repricing": {
+            "screened_observations": 264214,
+            "unique_enrolled_opportunities": 4,
+            "candidates": 26,
+            "orders": 4,
+            "fill_events": 4,
+            "open_positions": 0,
+            "unrealized_net_pnl": 0,
+            "exposure": 0,
+            "modeled_exit_net_pnl": -2.323798626266595,
+            "verified_settlement_net_pnl": 0,
+            "wins": 0,
+            "losses": 4,
+            "closed_observations": 4
+          }
+        },
+        "unrealized": 0.0,
+        "drawdown": 26.60267091372316,
+        "suspended": true,
+        "open_positions": 0
+      },
+      "balanced": {
+        "strategies": {
+          "independent": {
+            "screened_observations": 266590,
+            "unique_enrolled_opportunities": 6,
+            "candidates": 2404,
+            "orders": 6,
+            "fill_events": 5,
+            "open_positions": 1,
+            "unrealized_net_pnl": null,
+            "exposure": 4.999999999999357,
+            "modeled_exit_net_pnl": -3.7078351455557446,
+            "verified_settlement_net_pnl": 0,
+            "wins": 0,
+            "losses": 4,
+            "closed_observations": 4
+          },
+          "consistency": {
+            "screened_observations": 205756,
+            "unique_enrolled_opportunities": 0,
+            "candidates": 0,
+            "orders": 0,
+            "fill_events": 0,
+            "open_positions": 0,
+            "unrealized_net_pnl": null,
+            "exposure": 0,
+            "modeled_exit_net_pnl": 0,
+            "verified_settlement_net_pnl": 0,
+            "wins": 0,
+            "losses": 0,
+            "closed_observations": 0
+          },
+          "momentum": {
+            "screened_observations": 273081,
+            "unique_enrolled_opportunities": 4,
+            "candidates": 8893,
+            "orders": 4,
+            "fill_events": 4,
+            "open_positions": 0,
+            "unrealized_net_pnl": null,
+            "exposure": 0,
+            "modeled_exit_net_pnl": -1.3240417682505878,
+            "verified_settlement_net_pnl": 0,
+            "wins": 0,
+            "losses": 3,
+            "closed_observations": 3
+          },
+          "spread_capture": {
+            "screened_observations": 490017,
+            "unique_enrolled_opportunities": 67,
+            "candidates": 225892,
+            "orders": 67,
+            "fill_events": 1,
+            "open_positions": 0,
+            "unrealized_net_pnl": null,
+            "exposure": 0,
+            "modeled_exit_net_pnl": -2.067277027025252,
+            "verified_settlement_net_pnl": 0,
+            "wins": 0,
+            "losses": 1,
+            "closed_observations": 1
+          },
+          "event_repricing": {
+            "screened_observations": 264218,
+            "unique_enrolled_opportunities": 0,
+            "candidates": 26,
+            "orders": 0,
+            "fill_events": 0,
+            "open_positions": 0,
+            "unrealized_net_pnl": null,
+            "exposure": 0,
+            "modeled_exit_net_pnl": 0,
+            "verified_settlement_net_pnl": 0,
+            "wins": 0,
+            "losses": 0,
+            "closed_observations": 0
+          }
+        },
+        "unrealized": null,
+        "drawdown": 7.87671319655675,
+        "suspended": false,
+        "open_positions": 1
+      },
+      "conservative": {
+        "strategies": {
+          "independent": {
+            "screened_observations": 266596,
+            "unique_enrolled_opportunities": 0,
+            "candidates": 2404,
+            "orders": 0,
+            "fill_events": 0,
+            "open_positions": 0,
+            "unrealized_net_pnl": 0,
+            "exposure": 0,
+            "modeled_exit_net_pnl": 0,
+            "verified_settlement_net_pnl": 0,
+            "wins": 0,
+            "losses": 0,
+            "closed_observations": 0
+          },
+          "consistency": {
+            "screened_observations": 205756,
+            "unique_enrolled_opportunities": 0,
+            "candidates": 0,
+            "orders": 0,
+            "fill_events": 0,
+            "open_positions": 0,
+            "unrealized_net_pnl": 0,
+            "exposure": 0,
+            "modeled_exit_net_pnl": 0,
+            "verified_settlement_net_pnl": 0,
+            "wins": 0,
+            "losses": 0,
+            "closed_observations": 0
+          },
+          "momentum": {
+            "screened_observations": 273085,
+            "unique_enrolled_opportunities": 0,
+            "candidates": 8893,
+            "orders": 0,
+            "fill_events": 0,
+            "open_positions": 0,
+            "unrealized_net_pnl": 0,
+            "exposure": 0,
+            "modeled_exit_net_pnl": 0,
+            "verified_settlement_net_pnl": 0,
+            "wins": 0,
+            "losses": 0,
+            "closed_observations": 0
+          },
+          "spread_capture": {
+            "screened_observations": 490084,
+            "unique_enrolled_opportunities": 0,
+            "candidates": 225892,
+            "orders": 0,
+            "fill_events": 0,
+            "open_positions": 0,
+            "unrealized_net_pnl": 0,
+            "exposure": 0,
+            "modeled_exit_net_pnl": 0,
+            "verified_settlement_net_pnl": 0,
+            "wins": 0,
+            "losses": 0,
+            "closed_observations": 0
+          },
+          "event_repricing": {
+            "screened_observations": 264218,
+            "unique_enrolled_opportunities": 0,
+            "candidates": 26,
+            "orders": 0,
+            "fill_events": 0,
+            "open_positions": 0,
+            "unrealized_net_pnl": 0,
+            "exposure": 0,
+            "modeled_exit_net_pnl": 0,
+            "verified_settlement_net_pnl": 0,
+            "wins": 0,
+            "losses": 0,
+            "closed_observations": 0
+          }
+        },
+        "unrealized": 0.0,
+        "drawdown": 0.0,
+        "suspended": false,
+        "open_positions": 0
+      }
+    },
+    "phase44": {
+      "aggressive": {
+        "strategies": {
+          "independent": {
+            "screened_observations": 49064,
+            "unique_enrolled_opportunities": 2,
+            "candidates": 426,
+            "orders": 2,
+            "fill_events": 1,
+            "open_positions": 1,
+            "unrealized_net_pnl": null,
+            "exposure": 2.9999999999981024,
+            "modeled_exit_net_pnl": 0,
+            "verified_settlement_net_pnl": 0,
+            "wins": 0,
+            "losses": 0,
+            "closed_observations": 0
+          },
+          "consistency": {
+            "screened_observations": 41981,
+            "unique_enrolled_opportunities": 0,
+            "candidates": 0,
+            "orders": 0,
+            "fill_events": 0,
+            "open_positions": 0,
+            "unrealized_net_pnl": null,
+            "exposure": 0,
+            "modeled_exit_net_pnl": 0,
+            "verified_settlement_net_pnl": 0,
+            "wins": 0,
+            "losses": 0,
+            "closed_observations": 0
+          },
+          "momentum": {
+            "screened_observations": 48640,
+            "unique_enrolled_opportunities": 0,
+            "candidates": 0,
+            "orders": 0,
+            "fill_events": 0,
+            "open_positions": 0,
+            "unrealized_net_pnl": null,
+            "exposure": 0,
+            "modeled_exit_net_pnl": 0,
+            "verified_settlement_net_pnl": 0,
+            "wins": 0,
+            "losses": 0,
+            "closed_observations": 0
+          }
+        },
+        "unrealized": null,
+        "drawdown": 0.2467538827432918,
+        "suspended": false,
+        "open_positions": 1
+      },
+      "balanced": {
+        "strategies": {
+          "independent": {
+            "screened_observations": 49066,
+            "unique_enrolled_opportunities": 0,
+            "candidates": 426,
+            "orders": 0,
+            "fill_events": 0,
+            "open_positions": 0,
+            "unrealized_net_pnl": 0,
+            "exposure": 0,
+            "modeled_exit_net_pnl": 0,
+            "verified_settlement_net_pnl": 0,
+            "wins": 0,
+            "losses": 0,
+            "closed_observations": 0
+          },
+          "consistency": {
+            "screened_observations": 41981,
+            "unique_enrolled_opportunities": 0,
+            "candidates": 0,
+            "orders": 0,
+            "fill_events": 0,
+            "open_positions": 0,
+            "unrealized_net_pnl": 0,
+            "exposure": 0,
+            "modeled_exit_net_pnl": 0,
+            "verified_settlement_net_pnl": 0,
+            "wins": 0,
+            "losses": 0,
+            "closed_observations": 0
+          },
+          "momentum": {
+            "screened_observations": 48640,
+            "unique_enrolled_opportunities": 0,
+            "candidates": 0,
+            "orders": 0,
+            "fill_events": 0,
+            "open_positions": 0,
+            "unrealized_net_pnl": 0,
+            "exposure": 0,
+            "modeled_exit_net_pnl": 0,
+            "verified_settlement_net_pnl": 0,
+            "wins": 0,
+            "losses": 0,
+            "closed_observations": 0
+          }
+        },
+        "unrealized": 0.0,
+        "drawdown": 0.0,
+        "suspended": false,
+        "open_positions": 0
+      },
+      "conservative": {
+        "strategies": {
+          "independent": {
+            "screened_observations": 49066,
+            "unique_enrolled_opportunities": 0,
+            "candidates": 426,
+            "orders": 0,
+            "fill_events": 0,
+            "open_positions": 0,
+            "unrealized_net_pnl": 0,
+            "exposure": 0,
+            "modeled_exit_net_pnl": 0,
+            "verified_settlement_net_pnl": 0,
+            "wins": 0,
+            "losses": 0,
+            "closed_observations": 0
+          },
+          "consistency": {
+            "screened_observations": 41981,
+            "unique_enrolled_opportunities": 0,
+            "candidates": 0,
+            "orders": 0,
+            "fill_events": 0,
+            "open_positions": 0,
+            "unrealized_net_pnl": 0,
+            "exposure": 0,
+            "modeled_exit_net_pnl": 0,
+            "verified_settlement_net_pnl": 0,
+            "wins": 0,
+            "losses": 0,
+            "closed_observations": 0
+          },
+          "momentum": {
+            "screened_observations": 48640,
+            "unique_enrolled_opportunities": 0,
+            "candidates": 0,
+            "orders": 0,
+            "fill_events": 0,
+            "open_positions": 0,
+            "unrealized_net_pnl": 0,
+            "exposure": 0,
+            "modeled_exit_net_pnl": 0,
+            "verified_settlement_net_pnl": 0,
+            "wins": 0,
+            "losses": 0,
+            "closed_observations": 0
+          }
+        },
+        "unrealized": 0.0,
+        "drawdown": 0.0,
+        "suspended": false,
+        "open_positions": 0
+      }
+    },
+    "phase45": {
+      "aggressive": {
+        "strategies": {
+          "independent": {
+            "screened_observations": 186504,
+            "unique_enrolled_opportunities": 9,
+            "candidates": 4132,
+            "orders": 9,
+            "fill_events": 5,
+            "open_positions": 5,
+            "unrealized_net_pnl": null,
+            "exposure": 15.721805390026644,
+            "modeled_exit_net_pnl": 0,
+            "verified_settlement_net_pnl": 0,
+            "wins": 0,
+            "losses": 0,
+            "closed_observations": 0
+          },
+          "consistency": {
+            "screened_observations": 116577,
+            "unique_enrolled_opportunities": 0,
+            "candidates": 0,
+            "orders": 0,
+            "fill_events": 0,
+            "open_positions": 0,
+            "unrealized_net_pnl": null,
+            "exposure": 0,
+            "modeled_exit_net_pnl": 0,
+            "verified_settlement_net_pnl": 0,
+            "wins": 0,
+            "losses": 0,
+            "closed_observations": 0
+          },
+          "event_repricing": {
+            "screened_observations": 178607,
+            "unique_enrolled_opportunities": 1,
+            "candidates": 48,
+            "orders": 1,
+            "fill_events": 1,
+            "open_positions": 0,
+            "unrealized_net_pnl": null,
+            "exposure": 0,
+            "modeled_exit_net_pnl": -0.48823432304021974,
+            "verified_settlement_net_pnl": 0,
+            "wins": 0,
+            "losses": 1,
+            "closed_observations": 1
+          },
+          "momentum": {
+            "screened_observations": 178561,
+            "unique_enrolled_opportunities": 0,
+            "candidates": 1,
+            "orders": 0,
+            "fill_events": 0,
+            "open_positions": 0,
+            "unrealized_net_pnl": null,
+            "exposure": 0,
+            "modeled_exit_net_pnl": 0,
+            "verified_settlement_net_pnl": 0,
+            "wins": 0,
+            "losses": 0,
+            "closed_observations": 0
+          }
+        },
+        "unrealized": null,
+        "drawdown": 7.898688966981183,
+        "suspended": false,
+        "open_positions": 5
+      },
+      "balanced": {
+        "strategies": {
+          "independent": {
+            "screened_observations": 186511,
+            "unique_enrolled_opportunities": 2,
+            "candidates": 4132,
+            "orders": 2,
+            "fill_events": 1,
+            "open_positions": 1,
+            "unrealized_net_pnl": null,
+            "exposure": 4.999999752084135,
+            "modeled_exit_net_pnl": 0,
+            "verified_settlement_net_pnl": 0,
+            "wins": 0,
+            "losses": 0,
+            "closed_observations": 0
+          },
+          "consistency": {
+            "screened_observations": 116577,
+            "unique_enrolled_opportunities": 0,
+            "candidates": 0,
+            "orders": 0,
+            "fill_events": 0,
+            "open_positions": 0,
+            "unrealized_net_pnl": null,
+            "exposure": 0,
+            "modeled_exit_net_pnl": 0,
+            "verified_settlement_net_pnl": 0,
+            "wins": 0,
+            "losses": 0,
+            "closed_observations": 0
+          },
+          "event_repricing": {
+            "screened_observations": 178608,
+            "unique_enrolled_opportunities": 0,
+            "candidates": 48,
+            "orders": 0,
+            "fill_events": 0,
+            "open_positions": 0,
+            "unrealized_net_pnl": null,
+            "exposure": 0,
+            "modeled_exit_net_pnl": 0,
+            "verified_settlement_net_pnl": 0,
+            "wins": 0,
+            "losses": 0,
+            "closed_observations": 0
+          },
+          "momentum": {
+            "screened_observations": 178560,
+            "unique_enrolled_opportunities": 1,
+            "candidates": 1,
+            "orders": 1,
+            "fill_events": 0,
+            "open_positions": 0,
+            "unrealized_net_pnl": null,
+            "exposure": 0,
+            "modeled_exit_net_pnl": 0,
+            "verified_settlement_net_pnl": 0,
+            "wins": 0,
+            "losses": 0,
+            "closed_observations": 0
+          }
+        },
+        "unrealized": null,
+        "drawdown": 3.4395613145375137,
+        "suspended": false,
+        "open_positions": 1
+      },
+      "conservative": {
+        "strategies": {
+          "independent": {
+            "screened_observations": 186513,
+            "unique_enrolled_opportunities": 0,
+            "candidates": 4132,
+            "orders": 0,
+            "fill_events": 0,
+            "open_positions": 0,
+            "unrealized_net_pnl": 0,
+            "exposure": 0,
+            "modeled_exit_net_pnl": 0,
+            "verified_settlement_net_pnl": 0,
+            "wins": 0,
+            "losses": 0,
+            "closed_observations": 0
+          },
+          "consistency": {
+            "screened_observations": 116577,
+            "unique_enrolled_opportunities": 0,
+            "candidates": 0,
+            "orders": 0,
+            "fill_events": 0,
+            "open_positions": 0,
+            "unrealized_net_pnl": 0,
+            "exposure": 0,
+            "modeled_exit_net_pnl": 0,
+            "verified_settlement_net_pnl": 0,
+            "wins": 0,
+            "losses": 0,
+            "closed_observations": 0
+          },
+          "event_repricing": {
+            "screened_observations": 178608,
+            "unique_enrolled_opportunities": 0,
+            "candidates": 48,
+            "orders": 0,
+            "fill_events": 0,
+            "open_positions": 0,
+            "unrealized_net_pnl": 0,
+            "exposure": 0,
+            "modeled_exit_net_pnl": 0,
+            "verified_settlement_net_pnl": 0,
+            "wins": 0,
+            "losses": 0,
+            "closed_observations": 0
+          },
+          "momentum": {
+            "screened_observations": 178561,
+            "unique_enrolled_opportunities": 0,
+            "candidates": 1,
+            "orders": 0,
+            "fill_events": 0,
+            "open_positions": 0,
+            "unrealized_net_pnl": 0,
+            "exposure": 0,
+            "modeled_exit_net_pnl": 0,
+            "verified_settlement_net_pnl": 0,
+            "wins": 0,
+            "losses": 0,
+            "closed_observations": 0
+          }
+        },
+        "unrealized": 0.0,
+        "drawdown": 0.0,
+        "suspended": false,
+        "open_positions": 0
+      }
+    }
+  },
+  "loss_attribution": {
+    "legacy": {
+      "aggressive/spread_capture": {
+        "modeled_exit_pnl": -6.088203301243593,
+        "gross_price_pnl": -3.408214320258784,
+        "allocated_entry_fees": 1.1410399999999998,
+        "exit_fees": 0.9189099999999999,
+        "entry_reserve": 0.3543079891341763,
+        "exit_slippage": 0.2657309918506322,
+        "native_settlement_pnl": 0.0
+      },
+      "aggressive/independent": {
+        "modeled_exit_pnl": -14.113658859189256,
+        "gross_price_pnl": -3.9859059791874683,
+        "allocated_entry_fees": 4.506500000000001,
+        "exit_fees": 4.27383,
+        "entry_reserve": 0.7699559314295914,
+        "exit_slippage": 0.5774669485721936,
+        "native_settlement_pnl": 0.0
+      },
+      "aggressive/momentum": {
+        "modeled_exit_pnl": -4.077010127023749,
+        "gross_price_pnl": -1.8355011109748096,
+        "allocated_entry_fees": 0.98092,
+        "exit_fees": 0.8689300000000001,
+        "entry_reserve": 0.22380515202796514,
+        "exit_slippage": 0.16785386402097457,
+        "native_settlement_pnl": 0.0
+      },
+      "aggressive/event_repricing": {
+        "modeled_exit_pnl": -2.323798626266595,
+        "gross_price_pnl": -0.9649093468764486,
+        "allocated_entry_fees": 0.64084,
+        "exit_fees": 0.5917999999999999,
+        "entry_reserve": 0.07214244536579828,
+        "exit_slippage": 0.054106834024348516,
+        "native_settlement_pnl": 0.0
+      },
+      "balanced/independent": {
+        "modeled_exit_pnl": -3.7078351455557446,
+        "gross_price_pnl": -1.7707928188212827,
+        "allocated_entry_fees": 0.6931799999999999,
+        "exit_fees": 0.61405,
+        "entry_reserve": 0.3598927581339781,
+        "exit_slippage": 0.26991956860048427,
+        "native_settlement_pnl": 0.0
+      },
+      "balanced/momentum": {
+        "modeled_exit_pnl": -1.3240417682505878,
+        "gross_price_pnl": -0.9029271326348729,
+        "allocated_entry_fees": 0.16458,
+        "exit_fees": 0.15475999999999998,
+        "entry_reserve": 0.05815693463755162,
+        "exit_slippage": 0.043617700978162866,
+        "native_settlement_pnl": 0.0
+      },
+      "balanced/spread_capture": {
+        "modeled_exit_pnl": -2.067277027025252,
+        "gross_price_pnl": -1.7353324324307247,
+        "allocated_entry_fees": 0.14996,
+        "exit_fees": 0.10552,
+        "entry_reserve": 0.04369405405401591,
+        "exit_slippage": 0.03277054054051165,
+        "native_settlement_pnl": 0.0
+      }
+    },
+    "phase44": {
+      "aggressive/independent": {
+        "modeled_exit_pnl": 0.0,
+        "gross_price_pnl": 0.0,
+        "allocated_entry_fees": 0.0,
+        "exit_fees": 0.0,
+        "entry_reserve": 0.0,
+        "exit_slippage": 0.0,
+        "native_settlement_pnl": 0.0
+      }
+    },
+    "phase45": {
+      "aggressive/independent": {
+        "modeled_exit_pnl": 0.0,
+        "gross_price_pnl": 0.0,
+        "allocated_entry_fees": 0.0,
+        "exit_fees": 0.0,
+        "entry_reserve": 0.0,
+        "exit_slippage": 0.0,
+        "native_settlement_pnl": 0.0
+      },
+      "aggressive/event_repricing": {
+        "modeled_exit_pnl": -0.48823432304021974,
+        "gross_price_pnl": -0.29224703087870996,
+        "allocated_entry_fees": 0.07856,
+        "exit_fees": 0.09697,
+        "entry_reserve": 0.011689881235148872,
+        "exit_slippage": 0.00876741092636113,
+        "native_settlement_pnl": 0.0
+      },
+      "balanced/independent": {
+        "modeled_exit_pnl": 0.0,
+        "gross_price_pnl": 0.0,
+        "allocated_entry_fees": 0.0,
+        "exit_fees": 0.0,
+        "entry_reserve": 0.0,
+        "exit_slippage": 0.0,
+        "native_settlement_pnl": 0.0
+      }
+    }
+  },
+  "current_fee_coverage": {
+    "verified_tokens": 0,
+    "open_positions": [
+      {
+        "profile": "aggressive",
+        "strategy": "independent",
+        "token_id": "1872539315902515924799606559214177791785349026659019769256652879632505688486",
+        "outcome": "Yes",
+        "entry_fee_verified": false,
+        "current_curve": {},
+        "limitation": "current evidence cannot authenticate or rewrite earlier entry fees"
+      },
+      {
+        "profile": "aggressive",
+        "strategy": "independent",
+        "token_id": "39558151187725931787840585233153412323143176505664595931597609529298612359016",
+        "outcome": "Yes",
+        "entry_fee_verified": false,
+        "current_curve": {},
+        "limitation": "current evidence cannot authenticate or rewrite earlier entry fees"
+      },
+      {
+        "profile": "aggressive",
+        "strategy": "independent",
+        "token_id": "54595319531231293596819456837965644826173872065157101966346670493966903910550",
+        "outcome": "Oilers",
+        "entry_fee_verified": false,
+        "current_curve": {},
+        "limitation": "current evidence cannot authenticate or rewrite earlier entry fees"
+      },
+      {
+        "profile": "aggressive",
+        "strategy": "independent",
+        "token_id": "27141533080830282862188511521866751285425699378631227419069116704935580719726",
+        "outcome": "Yes",
+        "entry_fee_verified": false,
+        "current_curve": {},
+        "limitation": "current evidence cannot authenticate or rewrite earlier entry fees"
+      },
+      {
+        "profile": "aggressive",
+        "strategy": "independent",
+        "token_id": "42865728742506860386768556888821101266630139112044622335353850919229585308601",
+        "outcome": "Yes",
+        "entry_fee_verified": false,
+        "current_curve": {},
+        "limitation": "current evidence cannot authenticate or rewrite earlier entry fees"
+      },
+      {
+        "profile": "balanced",
+        "strategy": "independent",
+        "token_id": "27141533080830282862188511521866751285425699378631227419069116704935580719726",
+        "outcome": "Yes",
+        "entry_fee_verified": true,
+        "current_curve": {},
+        "limitation": "current evidence cannot authenticate or rewrite earlier entry fees"
+      }
+    ]
+  },
+  "native_pricing_contracts": {
+    "registered": 1,
+    "verified": 0,
+    "probability_forecasts": false
+  },
+  "native_reconciliation": {
+    "status": "acquiring",
+    "maximum_workers": 1,
+    "queued_jobs": 0
+  },
+  "source_refresh": {
+    "status": "acquiring",
+    "maximum_source_jobs": 1,
+    "maximum_http_workers": 2,
+    "deadline_seconds": 90
+  },
+  "current_economics": {
+    "rows": 6,
+    "positive_conditional_net": 0,
+    "positive_uncertainty_lower_net": 0,
+    "all_in_cost_verified": 0,
+    "best_hypotheses": [
+      {
+        "strategy": "independent",
+        "bundle_id": null,
+        "matched_pair_quantity": null,
+        "profile": "aggressive",
+        "market_id": "7109757",
+        "event_id": "1407036",
+        "token_id": "1872539315902515924799606559214177791785349026659019769256652879632505688486",
+        "question": "Will Bitcoin dip to $64,000 on November 17?",
+        "decision_at": "2026-11-17T14:34:49.709373+00:00",
+        "book_id": "a084114b42e14b00d1a0e16bf2676de6ff7c4b5976b5eff8c9195655e7979f4a",
+        "book_at": "2026-11-17T14:34:38.260000Z",
+        "bid": 0.4,
+        "ask": 0.41,
+        "levels": [
+          {
+            "price": 0.41,
+            "size": 478.0
+          },
+          {
+            "price": 0.42,
+            "size": 733.12
+          },
+          {
+            "price": 0.43,
+            "size": 5074.0
+          },
+          {
+            "price": 0.44,
+            "size": 50.0
+          },
+          {
+            "price": 0.45,
+            "size": 3050.0
+          },
+          {
+            "price": 0.46,
+            "size": 50.0
+          },
+          {
+            "price": 0.47,
+            "size": 50.0
+          },
+          {
+            "price": 0.48,
+            "size": 50.0
+          }
+        ],
+        "model_probability": 0.162109375,
+        "pricing_target": 0.162109375,
+        "uncertainty": {
+          "lower_probability": 0.0,
+          "upper_probability": 1.0,
+          "type": "uncalibrated_model_uncertainty_not_coverage_interval"
+        },
+        "evidence_kind": "source_replayed_independent_model; original conditional assumptions retained",
+        "estimated_quantity": 0.0,
+        "capital": 0.0,
+        "estimated_gross_profit": 0.0,
+        "estimated_execution_costs": 0.0,
+        "estimated_net_profit": 0.0,
+        "uncertainty_lower_net_profit": 0.0,
+        "settlement_end": "2026-11-18T05:00:00Z",
+        "correlation_group": "1407036",
+        "return_on_capital": null,
+        "maximum_principal_loss": 0.0,
+        "native_fee_verified": false,
+        "fee_rate_assumption": 0.1,
+        "modeled_reserves_per_share": 0.002,
+        "additional_exit_slippage_per_share": 0.0,
+        "all_in_costs_verified": false,
+        "entry_diagnostics": [
+          "nonpositive_after_cost_edge_at_executable_ask"
+        ],
+        "status": "unvalidated_hypothesis_only",
+        "actual_fill": false,
+        "trading_authority": false,
+        "limitation": "best-ask-limit intent, bounded10% participation; later book required; portfolio, native size, shared-depth and risk gates apply independently; fees/slippage are not all verified costs"
+      },
+      {
+        "strategy": "independent",
+        "bundle_id": null,
+        "matched_pair_quantity": null,
+        "profile": "balanced",
+        "market_id": "7109757",
+        "event_id": "1407036",
+        "token_id": "1872539315902515924799606559214177791785349026659019769256652879632505688486",
+        "question": "Will Bitcoin dip to $64,000 on November 17?",
+        "decision_at": "2026-11-17T14:34:49.709373+00:00",
+        "book_id": "a084114b42e14b00d1a0e16bf2676de6ff7c4b5976b5eff8c9195655e7979f4a",
+        "book_at": "2026-11-17T14:34:38.260000Z",
+        "bid": 0.4,
+        "ask": 0.41,
+        "levels": [
+          {
+            "price": 0.41,
+            "size": 478.0
+          },
+          {
+            "price": 0.42,
+            "size": 733.12
+          },
+          {
+            "price": 0.43,
+            "size": 5074.0
+          },
+          {
+            "price": 0.44,
+            "size": 50.0
+          },
+          {
+            "price": 0.45,
+            "size": 3050.0
+          },
+          {
+            "price": 0.46,
+            "size": 50.0
+          },
+          {
+            "price": 0.47,
+            "size": 50.0
+          },
+          {
+            "price": 0.48,
+            "size": 50.0
+          }
+        ],
+        "model_probability": 0.162109375,
+        "pricing_target": 0.12158203125,
+        "uncertainty": {
+          "lower_probability": 0.0,
+          "upper_probability": 1.0,
+          "type": "uncalibrated_model_uncertainty_not_coverage_interval"
+        },
+        "evidence_kind": "source_replayed_independent_model; original conditional assumptions retained",
+        "estimated_quantity": 0.0,
+        "capital": 0.0,
+        "estimated_gross_profit": 0.0,
+        "estimated_execution_costs": 0.0,
+        "estimated_net_profit": 0.0,
+        "uncertainty_lower_net_profit": 0.0,
+        "settlement_end": "2026-11-18T05:00:00Z",
+        "correlation_group": "1407036",
+        "return_on_capital": null,
+        "maximum_principal_loss": 0.0,
+        "native_fee_verified": false,
+        "fee_rate_assumption": null,
+        "modeled_reserves_per_share": 0.002,
+        "additional_exit_slippage_per_share": 0.0,
+        "all_in_costs_verified": false,
+        "entry_diagnostics": [
+          "native_fee_unavailable"
+        ],
+        "status": "unvalidated_hypothesis_only",
+        "actual_fill": false,
+        "trading_authority": false,
+        "limitation": "best-ask-limit intent, bounded10% participation; later book required; portfolio, native size, shared-depth and risk gates apply independently; fees/slippage are not all verified costs"
+      },
+      {
+        "strategy": "independent",
+        "bundle_id": null,
+        "matched_pair_quantity": null,
+        "profile": "conservative",
+        "market_id": "7109757",
+        "event_id": "1407036",
+        "token_id": "1872539315902515924799606559214177791785349026659019769256652879632505688486",
+        "question": "Will Bitcoin dip to $64,000 on November 17?",
+        "decision_at": "2026-11-17T14:34:49.709373+00:00",
+        "book_id": "a084114b42e14b00d1a0e16bf2676de6ff7c4b5976b5eff8c9195655e7979f4a",
+        "book_at": "2026-11-17T14:34:38.260000Z",
+        "bid": 0.4,
+        "ask": 0.41,
+        "levels": [
+          {
+            "price": 0.41,
+            "size": 478.0
+          },
+          {
+            "price": 0.42,
+            "size": 733.12
+          },
+          {
+            "price": 0.43,
+            "size": 5074.0
+          },
+          {
+            "price": 0.44,
+            "size": 50.0
+          },
+          {
+            "price": 0.45,
+            "size": 3050.0
+          },
+          {
+            "price": 0.46,
+            "size": 50.0
+          },
+          {
+            "price": 0.47,
+            "size": 50.0
+          },
+          {
+            "price": 0.48,
+            "size": 50.0
+          }
+        ],
+        "model_probability": 0.162109375,
+        "pricing_target": 0.0,
+        "uncertainty": {
+          "lower_probability": 0.0,
+          "upper_probability": 1.0,
+          "type": "uncalibrated_model_uncertainty_not_coverage_interval"
+        },
+        "evidence_kind": "source_replayed_independent_model; original conditional assumptions retained",
+        "estimated_quantity": 0.0,
+        "capital": 0.0,
+        "estimated_gross_profit": 0.0,
+        "estimated_execution_costs": 0.0,
+        "estimated_net_profit": 0.0,
+        "uncertainty_lower_net_profit": 0.0,
+        "settlement_end": "2026-11-18T05:00:00Z",
+        "correlation_group": "1407036",
+        "return_on_capital": null,
+        "maximum_principal_loss": 0.0,
+        "native_fee_verified": false,
+        "fee_rate_assumption": null,
+        "modeled_reserves_per_share": 0.002,
+        "additional_exit_slippage_per_share": 0.0,
+        "all_in_costs_verified": false,
+        "entry_diagnostics": [
+          "native_fee_unavailable",
+          "conservative_calibration_withheld"
+        ],
+        "status": "unvalidated_hypothesis_only",
+        "actual_fill": false,
+        "trading_authority": false,
+        "limitation": "best-ask-limit intent, bounded10% participation; later book required; portfolio, native size, shared-depth and risk gates apply independently; fees/slippage are not all verified costs"
+      }
+    ],
+    "status": "conditional model estimates, not verified profitability"
+  },
+  "positions": [
+    {
+      "cohort": "legacy",
+      "profile": "balanced",
+      "strategy": "independent",
+      "question": "Canucks vs. Utah",
+      "outcome": "Canucks",
+      "market_id": "5972110",
+      "token_id": "77794554739886834088652750962860202612574076954109300919030423304279493517800",
+      "quantity": 18.408053435112052,
+      "capital": 4.999999999999357,
+      "marked_net_pnl": null,
+      "entry_at": "2026-11-17T02:04:43.627238+00:00",
+      "forecast_id": "dc1d2a96320e7f71dd3c07aebc9472b371a3cd2d400243a12993792de161123b"
+    },
+    {
+      "cohort": "phase44",
+      "profile": "aggressive",
+      "strategy": "independent",
+      "question": "Trail Blazers vs. Timberwolves",
+      "outcome": "Trail Blazers",
+      "market_id": "6627714",
+      "token_id": "32630839406867215334861616656017648902563326942616863603128605406735809794963",
+      "quantity": 6.4602876106152705,
+      "capital": 2.9999999999981024,
+      "marked_net_pnl": null,
+      "entry_at": "2026-11-17T05:05:03.824905+00:00",
+      "forecast_id": "4e21a7c2d8578e736dbc1a6592bf50e20485b82f84dd51d55ace94160768d696"
+    },
+    {
+      "cohort": "phase45",
+      "profile": "aggressive",
+      "strategy": "independent",
+      "question": "Will Bitcoin dip to $64,000 on November 17?",
+      "outcome": "Yes",
+      "market_id": "7109757",
+      "token_id": "1872539315902515924799606559214177791785349026659019769256652879632505688486",
+      "quantity": 6.11246882793001,
+      "capital": 4.9999999999998685,
+      "marked_net_pnl": null,
+      "entry_at": "2026-11-17T06:41:26.815915+00:00",
+      "forecast_id": "b42b8e71d04f16debdb91c4f454c1b7f0f4481868fb811b30fe30676393b6bb7"
+    },
+    {
+      "cohort": "phase45",
+      "profile": "aggressive",
+      "strategy": "independent",
+      "question": "Will Bitcoin dip to $61,000 on November 17?",
+      "outcome": "Yes",
+      "market_id": "7109764",
+      "token_id": "39558151187725931787840585233153412323143176505664595931597609529298612359016",
+      "quantity": 38.99840299304498,
+      "capital": 3.2734270304644633,
+      "marked_net_pnl": null,
+      "entry_at": "2026-11-17T10:45:07.077630+00:00",
+      "forecast_id": "70578a5f48b1371f499b13e7cbaf75b9dd517bc46eed279b86e9d10e2de149e6"
+    },
+    {
+      "cohort": "phase45",
+      "profile": "aggressive",
+      "strategy": "independent",
+      "question": "Oilers vs. Panthers",
+      "outcome": "Oilers",
+      "market_id": "6013297",
+      "token_id": "54595319531231293596819456837965644826173872065157101966346670493966903910550",
+      "quantity": 10.062182203383184,
+      "capital": 4.999999999996863,
+      "marked_net_pnl": null,
+      "entry_at": "2026-11-17T11:24:39.227901+00:00",
+      "forecast_id": "f2cee3a410a97252a13b25c24690b3b6ae6c4911c6bcf230e04b9113bd710217"
+    },
+    {
+      "cohort": "phase45",
+      "profile": "aggressive",
+      "strategy": "independent",
+      "question": "Will Bitcoin dip to $63,000 on November 17?",
+      "outcome": "Yes",
+      "market_id": "7109760",
+      "token_id": "27141533080830282862188511521866751285425699378631227419069116704935580719726",
+      "quantity": 3.7,
+      "capital": 1.7265700000000002,
+      "marked_net_pnl": null,
+      "entry_at": "2026-11-17T06:37:54.059876+00:00",
+      "forecast_id": "659f78be185ec1c567b021bc890d6e2dc54b172fa152c01bade92318510282a6"
+    },
+    {
+      "cohort": "phase45",
+      "profile": "aggressive",
+      "strategy": "independent",
+      "question": "Will there be no change in Fed interest rates after the December 2026 meeting?",
+      "outcome": "Yes",
+      "market_id": "3215007",
+      "token_id": "42865728742506860386768556888821101266630139112044622335353850919229585308601",
+      "quantity": 18.899953130441386,
+      "capital": 0.7218083595654485,
+      "marked_net_pnl": null,
+      "entry_at": "2026-11-17T06:25:50.302581+00:00",
+      "forecast_id": "0f7d1eb6d8079967bca459b0f8fb030367a59dfafad069fece24c6e830325a0f"
+    },
+    {
+      "cohort": "phase45",
+      "profile": "balanced",
+      "strategy": "independent",
+      "question": "Will Bitcoin dip to $63,000 on November 17?",
+      "outcome": "Yes",
+      "market_id": "7109760",
+      "token_id": "27141533080830282862188511521866751285425699378631227419069116704935580719726",
+      "quantity": 12.547303015927055,
+      "capital": 4.999999752084135,
+      "marked_net_pnl": null,
+      "entry_at": "2026-11-17T11:12:12.333017+00:00",
+      "forecast_id": "72a9b86ae0779005b1843e0666fb16f5c715fcd071270431c474fab71bd3b016"
+    }
+  ],
+  "unfilled_orders": [],
+  "archive": {
+    "open_positions": 0,
+    "fills": 10,
+    "orders_submitted": 13,
+    "capital_observation": {
+      "risk_read_started_at": "2026-11-17T14:34:57.023813+00:00",
+      "broker_read_started_at": "2026-11-17T14:34:57.039932+00:00",
+      "read_completed_at": "2026-11-17T14:34:57.040532+00:00",
+      "scope": "current committed read-only per-ledger transactions; no cross-ledger atomicity or implicit expiry",
+      "admission_authority": false,
+      "reconciliation_performed": false
+    },
+    "account_id": "experimental-paper",
+    "cash": 496.11522059829053,
+    "bankroll": 496.11522059829053,
+    "kill_switch": true,
+    "simulated_pnl": -3.8847794017094657,
+    "generated_at": "2026-11-17T14:34:57.040549+00:00",
+    "service": {
+      "status": "ok",
+      "account_id": "experimental-paper",
+      "validation_status": "unvalidated",
+      "paper_trading": true,
+      "live_trading_enabled": false,
+      "last_ingestion_at": "2026-11-17T14:34:55.249316+00:00",
+      "last_ingestion_age_seconds": 1.791236,
+      "last_error": null,
+      "fee_error": null,
+      "research_reference": {
+        "attempts": 67,
+        "failures": 2,
+        "last_attempt": "2026-11-17T14:34:53.222036+00:00",
+        "last_error": null,
+        "fresh_books_at_receipt": 255,
+        "maximum_workers": 1,
+        "queued_requests": 0,
+        "median_read_seconds": 0.7584414440207183,
+        "maximum_read_seconds": 3.170507522765547,
+        "available_at": "2026-11-17T14:34:53.253581+00:00",
+        "age_seconds": 3.787005,
+        "status": "fresh",
+        "trading_authority": false
+      },
+      "public_feed": {
+        "status": "not_observed",
+        "producer_url": "http://127.0.0.1:18742/api/market-frame",
+        "attempts": 0,
+        "failures": 0,
+        "trading_authority": false
+      },
+      "timestamp": "2026-11-17T14:34:57.040552+00:00"
+    },
+    "archive": {
+      "managed": true,
+      "usage_bytes": 73082974696,
+      "usage_is_conservative_estimate": false,
+      "budget_bytes": 161061273600,
+      "active_bytes": 2772576,
+      "segment_bytes": 8388608,
+      "future_compression_profile": "gzip-level6-streaming-verified-v34",
+      "segments": 11626,
+      "sealed_segments": 11625,
+      "compressed_segments": 11503,
+      "legacy_records": 164111,
+      "records": 3833289,
+      "free_bytes": 188899966976,
+      "growth_bytes_per_second": 267963.2632186247,
+      "remaining_bytes": 87978298904,
+      "seconds_to_exhaustion": null,
+      "global_floor_bytes": 107374182400,
+      "retention_policy": "retain_all_originals_and_verified_copies",
+      "archive_tiers": {
+        "active_segments": 1,
+        "sealed_originals_present": 11625,
+        "cold_only_segments": 0,
+        "cold_only_verified_this_process": 0,
+        "cold_proofs_present": 9869,
+        "derived_cache_bytes": 65169027,
+        "derived_cache_budget_bytes": 67108864,
+        "counts_scope": "current catalog and filesystem; proof presence is not integrity verification"
+      },
+      "tier_usage_bytes": {
+        "active": 2772576,
+        "warm": 45691457536,
+        "cold": 21411310011,
+        "protected": 517521408,
+        "derived_cache": 65169027,
+        "segment_metadata": 389869875,
+        "catalog_state": 5004874263
+      },
+      "cold_verification": {
+        "enabled": true,
+        "minimum_scan_interval_seconds": 60,
+        "last_scan_at": "2026-11-17T14:33:38.321328+00:00",
+        "last_success_at": "2026-11-17T14:33:38.321328+00:00",
+        "last_segment": "segment-00009869.sqlite",
+        "last_error": null,
+        "scope": "process-local progress; immutable proof presence is reported separately"
+      },
+      "warnings": [],
+      "cold_only_names_sample": [],
+      "health": "ok",
+      "last_error": null,
+      "measurement_at": "2026-11-17T14:34:52.852272+00:00",
+      "measurement_completed_at": "2026-11-17T14:34:54.790808+00:00",
+      "measurement_scope": "strict archive measurement window; admission uses strict checks",
+      "measurement_age_seconds": 4.188334,
+      "measurement_status": "cached",
+      "snapshot_only": true,
+      "admission_authority": false,
+      "usage_is_historical": true,
+      "measurement_max_age_seconds": 60,
+      "free_space_measured_at": "2026-11-17T14:34:57.040606+00:00"
+    },
+    "experimental_totals": {
+      "cycles": 61246,
+      "observations": 2124068,
+      "qualified_opportunities": 86,
+      "signals": 19969161
+    },
+    "scope": "archive health and current simulated capital; research histories remain in /api/state"
+  },
+  "postflight_safety_passed": true,
+  "reference_pid_unchanged": true,
+  "stop_latched": true,
+  "rollback_executed": false,
+  "qualification": "no real-account order access, no certified promotion; paper/shadow outcomes remain separate from financial performance"
+}

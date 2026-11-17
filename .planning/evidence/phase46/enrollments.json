@@ -1,0 +1,128 @@
+{
+  "declaration": {
+    "schema_version": "1.0",
+    "id": "2543106601d72839d372e1557b27579495d4512f8ab2bcaac806ddb27b21c141",
+    "timestamp": "2026-11-17T14:10:06.822318Z",
+    "available_at": "2026-11-17T14:10:06.822318Z",
+    "source": "neraium-poly/prospective-program/v46",
+    "research_only": true,
+    "trading_authority": false,
+    "certification_authority": false,
+    "policy": {
+      "code_sha256": "880dcf2d42814d0af2733d1f92c08a2f9506d1fd63b1bf5bd0328f174fdc2423",
+      "version": "phase46-v1",
+      "max_trials": 512,
+      "max_enrollments_per_tick": 4,
+      "baselines": [
+        "external",
+        "market",
+        "zero",
+        "one",
+        "neutral",
+        "past_frequency",
+        "past_horizon_frequency"
+      ],
+      "selection": "unresolved source-backed events; new dependency blocks, entropy, near-term depth; no label selection",
+      "independence": "canonical source events and conservative domain/date blocks are not certification; review required",
+      "training": "earliest forecast per historical block selected from ALL forecasts, then require its native result available before decision; exclude target block; Jeffreys prior; no future labels",
+      "promotion": "none; unchanged certified100 training/100 heldout gates"
+    }
+  },
+  "verified_sample_count": 4,
+  "canonical_events": 2,
+  "records": [
+    {
+      "trial_id": "fd3b29715328a0e3eda72f80b39eb300164c4e32e66e03a9f13a8a1d5d2fa8f8",
+      "forecast_id": "1663fea931a6e70e3c4952a04873145dacf9851eb923c09621b56d4dca859bb9",
+      "source_study_id": "000000000004:c8e390ae78daa64f98d50c7770c1b8106a861e950628bca8ddbc55a19233e474",
+      "source_study_sha256": "e41b63ba10239226419825678877f9d6ac4bce964db4b656a80b1f7dc2b0c691",
+      "registered_at": "2026-11-17T14:11:21.546592Z",
+      "forecast_at": "2026-11-17T14:10:10.190372+00:00",
+      "event_end": "2026-12-10T05:00:00+00:00",
+      "domain": "economics",
+      "model": "fomc-recent-policy-shrinkage-v24.1",
+      "canonical_event": "93f9747c9ba19291b881fa531672adad3880a8ccddbda247f31d9660f4f9b185",
+      "dependency_block": "93f9747c9ba19291b881fa531672adad3880a8ccddbda247f31d9660f4f9b185",
+      "probabilities": {
+        "external": 0.28645833333333337,
+        "market": 0.9724999999999999,
+        "zero": 0.0,
+        "one": 1.0,
+        "neutral": 0.5,
+        "past_frequency": 0.5,
+        "past_horizon_frequency": 0.5
+      },
+      "book_sha256": "db619ec2818c4d6d3c24dabb57581063394da3e7f45c54b3825b2247477269ba"
+    },
+    {
+      "trial_id": "a038b8990ca383f625737d35e21026889719f90efff99ca1170a6bc86f94254b",
+      "forecast_id": "f40c87e29d88fd608a01aac56752aab0725edd46f0e3b8256a5a730e9c998ab4",
+      "source_study_id": "000000000004:c8e390ae78daa64f98d50c7770c1b8106a861e950628bca8ddbc55a19233e474",
+      "source_study_sha256": "e41b63ba10239226419825678877f9d6ac4bce964db4b656a80b1f7dc2b0c691",
+      "registered_at": "2026-11-17T14:11:21.546592Z",
+      "forecast_at": "2026-11-17T14:10:10.190372+00:00",
+      "event_end": "2026-12-10T05:00:00+00:00",
+      "domain": "economics",
+      "model": "fomc-scheduled-policy-frequency-v24.1",
+      "canonical_event": "93f9747c9ba19291b881fa531672adad3880a8ccddbda247f31d9660f4f9b185",
+      "dependency_block": "93f9747c9ba19291b881fa531672adad3880a8ccddbda247f31d9660f4f9b185",
+      "probabilities": {
+        "external": 0.359375,
+        "market": 0.9724999999999999,
+        "zero": 0.0,
+        "one": 1.0,
+        "neutral": 0.5,
+        "past_frequency": 0.5,
+        "past_horizon_frequency": 0.5
+      },
+      "book_sha256": "db619ec2818c4d6d3c24dabb57581063394da3e7f45c54b3825b2247477269ba"
+    },
+    {
+      "trial_id": "450f610a4bddb996871539b9c4b356e0ec9850b9f6af07106f04b0561ab0de75",
+      "forecast_id": "7bd2e44a2931dca50dcc1a3906668230bba45ae138d7b6af456798cf51b21b5f",
+      "source_study_id": "000000000005:aef7f5d51a393ae9972574e9946d48ca33ef8551d772f5c09dcfc4c0452348a8",
+      "source_study_sha256": "e41130510e5bbe315e00641274e06731f5b31bc1b4f980380af772763d011a1a",
+      "registered_at": "2026-11-17T14:11:06.170711Z",
+      "forecast_at": "2026-11-17T14:10:40.426505+00:00",
+      "event_end": "2026-11-18T00:00:00+00:00",
+      "domain": "sports",
+      "model": "nhl-causal-elo-v25.1",
+      "canonical_event": "4bdf262940d4d2cea7ed19162b47a743270f8f2402ea3650ef75ce4fa464686d",
+      "dependency_block": "4bdf262940d4d2cea7ed19162b47a743270f8f2402ea3650ef75ce4fa464686d",
+      "probabilities": {
+        "external": 0.5521546982834598,
+        "market": 0.46499999999999997,
+        "zero": 0.0,
+        "one": 1.0,
+        "neutral": 0.5,
+        "past_frequency": 0.5,
+        "past_horizon_frequency": 0.5
+      },
+      "book_sha256": "84d2f960585668f92b3e94c6fe642f0765e3b3818ade605b23ee4aa656ebe301"
+    },
+    {
+      "trial_id": "215c4f9c0653e8c0fb3da172dc95facf71c715646ba3595f72242fa3559fcb24",
+      "forecast_id": "4a34a9621e82562415b55d687c033f57f054941c491c0b9aa53944335f377459",
+      "source_study_id": "000000000005:aef7f5d51a393ae9972574e9946d48ca33ef8551d772f5c09dcfc4c0452348a8",
+      "source_study_sha256": "e41130510e5bbe315e00641274e06731f5b31bc1b4f980380af772763d011a1a",
+      "registered_at": "2026-11-17T14:11:06.170711Z",
+      "forecast_at": "2026-11-17T14:10:40.426505+00:00",
+      "event_end": "2026-11-18T00:00:00+00:00",
+      "domain": "sports",
+      "model": "nhl-beta-frequency-v25.1",
+      "canonical_event": "4bdf262940d4d2cea7ed19162b47a743270f8f2402ea3650ef75ce4fa464686d",
+      "dependency_block": "4bdf262940d4d2cea7ed19162b47a743270f8f2402ea3650ef75ce4fa464686d",
+      "probabilities": {
+        "external": 0.6446886446886446,
+        "market": 0.46499999999999997,
+        "zero": 0.0,
+        "one": 1.0,
+        "neutral": 0.5,
+        "past_frequency": 0.5,
+        "past_horizon_frequency": 0.5
+      },
+      "book_sha256": "84d2f960585668f92b3e94c6fe642f0765e3b3818ade605b23ee4aa656ebe301"
+    }
+  ],
+  "scope": "actual durable prospective enrollments; no label creation, source mutation or certification"
+}
