@@ -230,3 +230,17 @@ def test_pair_intents_target_equal_shares_within_joint_market_budget_and_no_exit
     ps=list(e.state['profiles']['aggressive']['positions'].values());assert len(ps)==2
     assert ps[0]['quantity']==pytest.approx(ps[1]['quantity']) and e.exposure(e.state['profiles']['aggressive'])<=5+1e-8
     assert e.report()['forecasts']==0 and e.report()['native_pricing_contracts']['registered']==2
+
+
+def test_pair_allocation_cannot_admit_only_one_leg_because_fees_differ(setup):
+    from neraium_poly.contracts import PriceLevel
+    _,clock,m,b,_,_,fees,_,_=setup
+    z=m.model_copy(update={'token_id':'OTHER','outcome':'No' if m.outcome=='Yes' else 'Yes'})
+    ba=b.model_copy(update={'asks':(PriceLevel(price=.1,size=100),),'bids':(PriceLevel(price=.09,size=100),)})
+    bz=b.model_copy(update={'token_id':z.token_id,'asks':(PriceLevel(price=.886,size=100),),'bids':(PriceLevel(price=.88,size=100),)})
+    fs={m.token_id:{**fees[m.token_id],'rate':.05,'condition_tokens':[m.token_id,z.token_id]},z.token_id:{**fees[m.token_id],'rate':.05,'token_id':z.token_id,'condition_tokens':[m.token_id,z.token_id]}}
+    cs,_=opportunities({m.token_id:m,z.token_id:z},{m.token_id:ba,z.token_id:bz},{},{},{},fs,clock[0])
+    pair=[c for c in cs if c['strategy']=='consistency'];assert len(pair)==2
+    margins=[c['target']-(c['book']['asks'][0]['price']+.05*c['book']['asks'][0]['price']*(1-c['book']['asks'][0]['price'])+.002) for c in pair]
+    assert margins[0]>0 and margins[0]==pytest.approx(margins[1])
+    assert sum(c['target'] for c in pair)==pytest.approx(1)

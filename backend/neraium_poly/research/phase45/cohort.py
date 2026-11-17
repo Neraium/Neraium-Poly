@@ -75,7 +75,7 @@ def opportunities(markets,books,forecasts,history,prior,fees,now):
         for t in tokens:
             m,b=markets[t],books[t]
             out.append({'strategy':'consistency','key':pair+':'+t,'bundle':pair,'token_id':t,'market':m.model_dump(mode='json'),
-                'book':b.model_dump(mode='json'),'created_at':now.isoformat(),'domain':'complementary_condition','target':b.asks[0].price+(1-total)/2,
+                'book':b.model_dump(mode='json'),'created_at':now.isoformat(),'domain':'complementary_condition','target':units[t]+(1-sum(units.values()))/2,
                 'paired_leg_budget':matched_quantity*units[t],'matched_pair_quantity':matched_quantity,'probability':None,'uncertainty':{'legging_risk':'partial unequal legs remain directional; not atomic arbitrage','payout_assumption':'exact native binary condition; final payout proof still required'},
                 'evidence_kind':'authoritative exact two-token native condition; labels not used to infer equivalence'})
     complements,missing=derive(markets,books,forecasts,fees,now)
