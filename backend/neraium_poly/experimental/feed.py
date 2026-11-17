@@ -136,6 +136,10 @@ class SharedFeedClient:
                     raise ValueError("shared frame exceeds byte budget")
                 data.extend(chunk)
         frame = SharedMarketFrame.model_validate_json(data)
+        return self.validate(frame, now, diagnostics=diagnostics)
+
+    @staticmethod
+    def validate(frame, now=None, *, diagnostics=False):
         now = now or datetime.now(UTC)
         if not 0 <= (now - frame.available_at).total_seconds() <= 15:
             raise ValueError("stale or future shared frame")

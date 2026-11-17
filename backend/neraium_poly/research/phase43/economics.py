@@ -18,7 +18,7 @@ def ledger(events, state=None):
                 'market_id': c['market']['market_id'], 'event_id': c['market']['event_id'],
                 'question': c['market']['question'], 'forecast_id': c.get('forecast', {}).get('id'),
                 'probability': c.get('probability'), 'uncertainty': c.get('uncertainty'),
-                'fee_verified': e['fee_verified'], 'quantity': 0., 'entry_cost': 0.,
+                'fee_verified': e['fee_verified'], 'cost_assumptions':{'slippage_per_share':.0015,'redemption_reserve_per_share':.0005,'rounding':'5decimals per modeled fill'}, 'quantity': 0., 'entry_cost': 0.,
                 'entry_principal': 0., 'entry_fees': 0., 'exit_quantity': 0.,
                 'remaining_quantity':0., 'remaining_principal':0., 'remaining_entry_fees':0., 'allocated_entry_principal':0., 'allocated_entry_fees':0.,
                 'exit_principal': 0., 'exit_fees': 0., 'allocated_entry_cost': 0.,
@@ -47,8 +47,14 @@ def ledger(events, state=None):
                 t['exit_quantity'] += q
                 t['exit_principal'] += principal; t['exit_fees'] += fees
                 t['allocated_entry_cost'] += e['cost']; t['modeled_exit_pnl'] += e['pnl']
-        # Native settlements have separate proof-ledger authority; never infer
-        # them from a bid exit or guess an order ID missing in old records.
+        elif e['type']=='native_settlement':
+            t=state['trades'].get(key)
+            if t is None:state['unmatched_exits']+=1;continue
+            t['native_settlement_pnl']+=e['pnl']
+            t['native_settlement_cost']=t.get('native_settlement_cost',0.)+e['cost']
+            t['native_payout_value']=t.get('native_payout_value',0.)+e['pnl']+e['cost']
+            t['remaining_quantity']=0.;t['remaining_principal']=0.;t['remaining_entry_fees']=0.
+        # Native payout and modeled bid exits remain separate accounting types.
     return state
 
 
@@ -70,7 +76,7 @@ def attribution(state):
                'exit_slippage': exit_reserve, 'entry_spread_diagnostic': spread,
                'probability_error': None, 'exit_reason': 'legacy trigger not recorded'}
         trades.append(row)
-        for k in ('modeled_exit_pnl', 'gross_price_pnl', 'allocated_entry_fees', 'exit_fees', 'entry_reserve', 'exit_slippage'):
+        for k in ('modeled_exit_pnl', 'gross_price_pnl', 'allocated_entry_fees', 'exit_fees', 'entry_reserve', 'exit_slippage','native_settlement_pnl'):
             totals[t['profile'] + '/' + t['strategy']][k] += row[k]
     return {'trades': trades, 'by_strategy': dict(totals), 'unmatched_exits': state['unmatched_exits'],
             'limitation': 'USD accounting decomposition; unresolved outcomes cannot attribute probability error; no causal adverse-selection attribution; legacy trigger unrecorded'}

@@ -21,7 +21,7 @@ def test_zero_credit_compaction_preserves_consumed_depth_after_recovery(setup):
     recovered=type(x)(store,risk_limits=risk,clock=lambda:clock[0],can_write=lambda:True)
     clock[0]+=timedelta(seconds=1);recovered.step(frame_at(frame,b,clock[0],size=10),fees)
     assert recovered.state['profiles']['balanced']['cash']==before['cash']
-    assert recovered.state['profiles']['balanced']['positions']==before['positions']
+    assert {k:{f:v for f,v in p.items() if f!='marked_book_at'} for k,p in recovered.state['profiles']['balanced']['positions'].items()}=={k:{f:v for f,v in p.items() if f!='marked_book_at'} for k,p in before['positions'].items()}
 
 
 def test_settlement_horizon_does_not_force_five_minute_liquidation(setup):

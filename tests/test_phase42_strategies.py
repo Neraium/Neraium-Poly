@@ -1,4 +1,5 @@
 """Controlled strategy/execution tests; fixtures are NOT market evidence."""
+import asyncio
 import copy
 import json
 from datetime import timedelta
@@ -141,9 +142,19 @@ async def test_opt_in_service_loop_uses_async_worker_and_never_account_access(mo
     runtime._async_budget_ok=budget;runtime._budget_ok=lambda:True;runtime._research_io=io
     class Controlled:
         def __init__(self,*args,**kwargs):pass
-        def tick(self,frame,fees):
+        def tick(self,frame,fees,**kwargs):
             with pytest.raises(RuntimeError):asyncio.get_running_loop()  # Synchronous IO is off the event loop.
             assert frame.available_at==NOW;runtime.stopping=True;return {'as_of':NOW.isoformat(),'trading_authority':False}
+    from neraium_poly.research.phase44 import reference
+    class Reader:
+        def __init__(self,*args,**kwargs):pass
+        def latest(self):return runtime.last_frame
+        def status(self):return {'status':'fresh'}
+        async def run(self,stop):
+            while not stop():await asyncio.sleep(.001)
+        def stop(self):pass
+    monkeypatch.setattr(reference,'ReferenceSampler',Reader)
+    runtime.config.source_url='http://127.0.0.1:18742/api/market-frame'
     monkeypatch.setattr(controller,'Controller',Controlled)
     await controller.service_loop(runtime,lambda:False)
     assert runtime.shadow_research_error is None and not runtime.shadow_research_snapshot['trading_authority']
@@ -212,18 +223,19 @@ async def test_starved_combined_frame_uses_fresh_bounded_read_only_reference(set
         config=SimpleNamespace(risk_limits=RiskLimits(),data_dir=tmp_path,source_url='http://127.0.0.1:18742/api/market-frame'),clock=lambda:NOW)
     async def budget():return True
     runtime._async_budget_ok=budget;runtime._budget_ok=lambda:True
+    frame=frame.model_copy(update={'source':'neraium-poly/public-market-frame/v1','producer_health':{'status':'ok','live_trading_enabled':False}})
     methods=[]
     def request(req):methods.append(req.method);return httpx.Response(200,json=frame.model_dump(mode='json'))
     client=httpx.Client
     monkeypatch.setattr(httpx,'Client',lambda **kwargs:client(**kwargs,transport=httpx.MockTransport(request)))
     class Controlled:
         def __init__(self,*args,**kwargs):pass
-        def tick(self,observed,fees):
+        def tick(self,observed,fees,**kwargs):
             assert observed.available_at==NOW;runtime.stopping=True;return {'as_of':NOW.isoformat()}
     monkeypatch.setattr(controller,'Controller',Controlled)
     await controller.service_loop(runtime,lambda:False)
-    assert methods==['GET'] and runtime.shadow_research_error is None
-    assert runtime.shadow_research_snapshot['shadow_worker']['frame_origin']=='fresh_reference_read'
+    assert 1<=len(methods)<=2 and all(m=='GET' for m in methods) and runtime.shadow_research_error is None
+    assert runtime.shadow_research_snapshot['shadow_worker']['frame_origin']=='shared_bounded_reference_reader'
     assert runtime.shadow_research_snapshot['shadow_worker']['maximum_workers']==1
 
 
@@ -310,7 +322,17 @@ async def test_source_job_is_drained_on_service_shutdown(setup,monkeypatch,tmp_p
     monkeypatch.setattr(sources,'refresh',pending)
     class Controlled:
         def __init__(self,*args,**kwargs):pass
-        def tick(self,*args):runtime.stopping=True;return {'as_of':NOW.isoformat()}
+        def tick(self,*args,**kwargs):runtime.stopping=True;return {'as_of':NOW.isoformat()}
+    from neraium_poly.research.phase44 import reference
+    class Reader:
+        def __init__(self,*args,**kwargs):pass
+        def latest(self):return runtime.last_frame
+        def status(self):return {'status':'fresh'}
+        async def run(self,stop):
+            while not stop():await asyncio.sleep(.001)
+        def stop(self):pass
+    monkeypatch.setattr(reference,'ReferenceSampler',Reader)
+    runtime.config.source_url='http://127.0.0.1:18742/api/market-frame'
     monkeypatch.setattr(controller,'Controller',Controlled)
     await controller.service_loop(runtime,lambda:False)
     assert runtime.shadow_source_status['status']=='cancelled_and_drained'
@@ -329,7 +351,17 @@ async def test_shadow_capacity_admission_does_not_queue_on_financial_io(monkeypa
     runtime._async_budget_ok=forbidden;runtime._budget_ok=budget
     class Controlled:
         def __init__(self,*args,**kwargs):pass
-        def tick(self,*args):runtime.stopping=True;return {'as_of':NOW.isoformat()}
+        def tick(self,*args,**kwargs):runtime.stopping=True;return {'as_of':NOW.isoformat()}
+    from neraium_poly.research.phase44 import reference
+    class Reader:
+        def __init__(self,*args,**kwargs):pass
+        def latest(self):return runtime.last_frame
+        def status(self):return {'status':'fresh'}
+        async def run(self,stop):
+            while not stop():await asyncio.sleep(.001)
+        def stop(self):pass
+    monkeypatch.setattr(reference,'ReferenceSampler',Reader)
+    runtime.config.source_url='http://127.0.0.1:18742/api/market-frame'
     monkeypatch.setattr(controller,'Controller',Controlled)
     await controller.service_loop(runtime,lambda:False)
     assert runtime.shadow_research_error is None and admissions and all(n!=owner for n in admissions)

@@ -1,0 +1,58 @@
+{
+  "cycles": 2025,
+  "markets_evaluated_unique": 649,
+  "forecasts": 44,
+  "parent_events": 10,
+  "verified_outcomes": 2,
+  "event_group_scores": {
+    "spx-gaussian-logreturn-direction-v25.1": {
+      "forecasts": 1,
+      "native_parent_groups": 1,
+      "reviewed_independent_groups": 0,
+      "scores": {
+        "model": {
+          "brier": 0.26838941732330446,
+          "log_loss": 0.7299421699569301
+        },
+        "market": {
+          "brier": 0.055224999999999996,
+          "log_loss": 0.2678794451556012
+        },
+        "neutral": {
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      },
+      "model_minus_market_brier": 0.21316441732330446,
+      "market_baseline": "original causal executable-book midpoint / token expected payout; not an independent model probability",
+      "confidence_interval": null,
+      "calibration_fit": null,
+      "status": "descriptive_only; independent cohort review and sufficient heldout groups required"
+    },
+    "spx-weekday-beta-direction-v25.1": {
+      "forecasts": 1,
+      "native_parent_groups": 1,
+      "reviewed_independent_groups": 0,
+      "scores": {
+        "model": {
+          "brier": 0.36406202709679714,
+          "log_loss": 0.9247653588651272
+        },
+        "market": {
+          "brier": 0.055224999999999996,
+          "log_loss": 0.2678794451556012
+        },
+        "neutral": {
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      },
+      "model_minus_market_brier": 0.30883702709679717,
+      "market_baseline": "original causal executable-book midpoint / token expected payout; not an independent model probability",
+      "confidence_interval": null,
+      "calibration_fit": null,
+      "status": "descriptive_only; independent cohort review and sufficient heldout groups required"
+    }
+  }
+}
+new cohort {'aggressive': {'open_positions': 0, 'pending_orders': 0, 'cash_hypothetical': 500.0}, 'balanced': {'open_positions': 0, 'pending_orders': 0, 'cash_hypothetical': 500.0}, 'conservative': {'open_positions': 0, 'pending_orders': 0, 'cash_hypothetical': 500.0}}

@@ -1,0 +1,30 @@
+{
+  "source": "Phase43 frozen original trade audit; no current fee backfill into historical decisions",
+  "groups": {
+    "aggressive/entry_rate_assumed": {
+      "gross_price_pnl": -7.714725272563339,
+      "entry_fees": 6.762719999999999,
+      "exit_fees_frozen_rate": 6.234030000000001,
+      "modeled_slippage": 0.9741542827923229,
+      "redemption_and_entry_reserve": 1.2988723770564292,
+      "net_pnl": -22.984501932412094
+    },
+    "balanced/entry_rate_observed": {
+      "gross_price_pnl": -4.4090523838868805,
+      "entry_fees": 1.0077200000000002,
+      "exit_fees_frozen_rate": 0.87433,
+      "modeled_slippage": 0.3463078101191588,
+      "redemption_and_entry_reserve": 0.4617437468255456,
+      "net_pnl": -7.0991539408315845
+    },
+    "aggressive/entry_rate_observed": {
+      "gross_price_pnl": -2.479805484734172,
+      "entry_fees": 0.50658,
+      "exit_fees_frozen_rate": 0.41944000000000004,
+      "modeled_slippage": 0.09100435567582599,
+      "redemption_and_entry_reserve": 0.12133914090110177,
+      "net_pnl": -3.6181689813110998
+    }
+  },
+  "limits": "Entry-rate observation does not verify all-in costs. Exit rates were held at entry. Slippage and reserves are modeled; spread is already in gross price P/L and is not deducted twice. Native payout settlement never turns modeled fills into actual exchange fills."
+}

@@ -591,7 +591,8 @@ class ExperimentalRuntime:
             return
         if self._admission_stopping():
             return
-        frame = await self.feed.read()
+        sampler=getattr(self,'research_reference',None)
+        frame = sampler.latest() if sampler is not None else await self.feed.read()
         await self._sync_io(self._process_frame, frame, cycle=True)
 
     def _research_frame(self, frame):
@@ -1249,6 +1250,7 @@ class ExperimentalRuntime:
             "last_ingestion_age_seconds": age,
             "last_error": self.last_error,
             "fee_error": self.fee_error,
+            "research_reference": self.research_reference.status() if getattr(self,"research_reference",None) else None,
             "public_feed": self.feed.status() if hasattr(self.feed, "status") else None,
             "timestamp": now.isoformat(),
         }

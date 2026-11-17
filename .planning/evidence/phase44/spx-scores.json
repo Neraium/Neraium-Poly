@@ -1,0 +1,624 @@
+{
+  "forecasts": {
+    "4cac22f65dd259a8f575fef16dc71729663e8e7a687310647418d17d260613b5": {
+      "adapter": "finance",
+      "book": {
+        "asks": [
+          {
+            "price": 0.25,
+            "size": 94.0
+          },
+          {
+            "price": 0.26,
+            "size": 2480.76
+          },
+          {
+            "price": 0.27,
+            "size": 199.99
+          },
+          {
+            "price": 0.29,
+            "size": 400.0
+          },
+          {
+            "price": 0.3,
+            "size": 51.17
+          },
+          {
+            "price": 0.53,
+            "size": 490.53
+          },
+          {
+            "price": 0.64,
+            "size": 40.0
+          },
+          {
+            "price": 0.65,
+            "size": 200.0
+          },
+          {
+            "price": 0.66,
+            "size": 10.0
+          },
+          {
+            "price": 0.67,
+            "size": 200.0
+          },
+          {
+            "price": 0.68,
+            "size": 250.0
+          },
+          {
+            "price": 0.69,
+            "size": 2096.77
+          },
+          {
+            "price": 0.79,
+            "size": 3142.85
+          },
+          {
+            "price": 0.8,
+            "size": 10.0
+          },
+          {
+            "price": 0.89,
+            "size": 4690.9
+          },
+          {
+            "price": 0.93,
+            "size": 13.79
+          },
+          {
+            "price": 0.94,
+            "size": 6249.99
+          },
+          {
+            "price": 0.97,
+            "size": 8333.33
+          },
+          {
+            "price": 0.98,
+            "size": 929.04
+          },
+          {
+            "price": 0.99,
+            "size": 16010.07
+          }
+        ],
+        "available_at": "2026-11-16T13:58:05.100522Z",
+        "bids": [
+          {
+            "price": 0.22,
+            "size": 343.44
+          },
+          {
+            "price": 0.2,
+            "size": 48.29
+          },
+          {
+            "price": 0.16,
+            "size": 57.14
+          },
+          {
+            "price": 0.15,
+            "size": 1069.0
+          },
+          {
+            "price": 0.14,
+            "size": 71.42
+          },
+          {
+            "price": 0.13,
+            "size": 150.0
+          },
+          {
+            "price": 0.12,
+            "size": 83.33
+          },
+          {
+            "price": 0.1,
+            "size": 100.0
+          },
+          {
+            "price": 0.09,
+            "size": 511.11
+          },
+          {
+            "price": 0.08,
+            "size": 105.8
+          },
+          {
+            "price": 0.07,
+            "size": 214.25
+          },
+          {
+            "price": 0.06,
+            "size": 83.3
+          },
+          {
+            "price": 0.03,
+            "size": 7.27
+          },
+          {
+            "price": 0.02,
+            "size": 105.0
+          },
+          {
+            "price": 0.01,
+            "size": 1016.74
+          }
+        ],
+        "complete": true,
+        "exchange": "polymarket",
+        "id": "ae4b602797d8072f88cf7e67ca01648eab0bf741ca27a5107fe7b02e5048c48d",
+        "market_id": "7013493",
+        "schema_version": "1.0",
+        "sequence": 0,
+        "source": "https://clob.polymarket.com",
+        "timestamp": "2026-11-16T13:58:01.084000Z",
+        "token_id": "103742494706721003388227410190352775568770343628077396960840123711617229822970"
+      },
+      "book_id": "ae4b602797d8072f88cf7e67ca01648eab0bf741ca27a5107fe7b02e5048c48d",
+      "book_sha256": "9c5584f57a6429cc31f6df1ad377f6f0af7601f5f53060c6809cfedeb8cd5b5a",
+      "calibration_status": "unvalidated_research",
+      "certification_authority": false,
+      "contract": {
+        "asset": "S&P 500 Index",
+        "calendar_status": "weekday provisional; exchange holiday validity unverified, conditional forecast only",
+        "conditioning": "ordinary completed strictly non-tied regular session; no halt/fallback or publisher discrepancy",
+        "kind": "spx_daily_direction",
+        "market": {
+          "available_at": "2026-11-16T13:51:57.051490Z",
+          "end_time": "2026-11-16T21:00:00Z",
+          "event_id": "1379184",
+          "exchange": "polymarket",
+          "id": "0608657dacc41df5ec790b25733b779d875c749a5e3e8159f1eddd3fd888c4e7",
+          "market_id": "7013493",
+          "min_order_size": 5.0,
+          "outcome": "Up",
+          "probability": 0.245,
+          "question": "S&P 500 (SPX) Up or Down on November 16?",
+          "resolution_rules": "This market will resolve to \"Up\" if the official S&P 500 Index closing price for S&P 500 (SPX) on Monday, November 16, 2026 is higher than the official S&P 500 Index closing price for SPX on the most recent prior trading day.\n\nThis market will resolve to \"Down\" if the official S&P 500 Index closing price for S&P 500 (SPX) on Monday, November 16, 2026 is lower than the official S&P 500 Index closing price for SPX on the most recent prior trading day.\n\nE.g., ordinarily, a market on Monday would refer to the previous Friday for its most recent closing price, unless that Friday were a market holiday, in which case it would refer to Thursday, or the next most recent trading day.\n\nIf the two specified closing prices are exactly equal, this market will resolve 50-50. Note that all figures will be rounded to the nearest cent using standard rounding.\n\nIf SPX does not trade at all during the regular session, the market will resolve 50-50.\n\nIf either of the relevant days are shortened (for example, due to a market holiday schedule), the official closing price published by S&P 500 Index for that shortened session will still be used for resolution.\n\nIf either of the relevant days have no official closing price (for example, due to a trading halt into the market close, system issue, delisting, or other disruption), the market will use the last valid on-exchange trade price of the regular session as the effective closing price.\n\nThe resolution source for this market is the Wall Street Journal, specifically the Close values published by the WSJ under \"Historical Prices\".\n\nUS: https://www.wsj.com/market-data/stocks\nEMEA: https://www.wsj.com/market-data/stocks/emea \nASIA: https://www.wsj.com/market-data/stocks/asia",
+          "resolution_source": "https://www.wsj.com/market-data/stocks",
+          "schema_version": "1.0",
+          "source": "https://gamma-api.polymarket.com",
+          "status": "active",
+          "tick_size": 0.01,
+          "timestamp": "2026-11-16T13:51:57.051490Z",
+          "token_id": "103742494706721003388227410190352775568770343628077396960840123711617229822970"
+        },
+        "period_end": "2026-11-16T21:00:00+00:00",
+        "period_start": "2026-11-16T14:30:00+00:00",
+        "reference_source": "https://www.wsj.com/market-data/stocks",
+        "rules_sha256": "96298e1b750c55c036f5d3a507a4f91a9f099db2a15d02e07cdf97f25acd9682",
+        "selected_outcome": "Up",
+        "settlement_at": "2026-11-16T21:00:00+00:00",
+        "source_url": "https://www.wsj.com/market-data/stocks",
+        "symbol": "SPX",
+        "target_date": "2026-11-16",
+        "target_weekday": 0
+      },
+      "dataset_sha256": "30c79e639ebd5e6e136204a46ee8d6ea72848942594d2df4c4d637360c2f9538",
+      "domain": "finance",
+      "enrollment_id": "f5ccde61139fd62094a95966ce2f66c4d3d53dc52f3e28915432066076773894",
+      "event_end_time": "2026-11-16T21:00:00+00:00",
+      "event_id": "1379184",
+      "evidence_cutoff": "2026-11-16T13:58:05.101041+00:00",
+      "evidence_ids": [
+        "97135d8874cec67c23f360b4bb79205319a51cc31980237beeb9b6682171df6b"
+      ],
+      "evidence_lineages": [
+        "Federal Reserve Bank of St. Louis FRED:SP500"
+      ],
+      "feature_version": "sp500-current-observed-cash-closes-v1",
+      "horizon_bucket": "0-8h",
+      "id": "4cac22f65dd259a8f575fef16dc71729663e8e7a687310647418d17d260613b5",
+      "independence_reviewed": false,
+      "last_source_observation": "2026-11-13T21:00:00+00:00",
+      "limitations": [
+        "No verified historical WSJ prices, holidays, revised-vintage availability or independent held-out calibration",
+        "FRED is the exact cash-index asset but cannot by itself prove WSJ contract settlement",
+        "Models share one source and cannot count as independent confirmation"
+      ],
+      "lower_probability": 0.0,
+      "market": {
+        "available_at": "2026-11-16T13:51:57.051490Z",
+        "end_time": "2026-11-16T21:00:00Z",
+        "event_id": "1379184",
+        "exchange": "polymarket",
+        "id": "0608657dacc41df5ec790b25733b779d875c749a5e3e8159f1eddd3fd888c4e7",
+        "market_id": "7013493",
+        "min_order_size": 5.0,
+        "outcome": "Up",
+        "probability": 0.245,
+        "question": "S&P 500 (SPX) Up or Down on November 16?",
+        "resolution_rules": "This market will resolve to \"Up\" if the official S&P 500 Index closing price for S&P 500 (SPX) on Monday, November 16, 2026 is higher than the official S&P 500 Index closing price for SPX on the most recent prior trading day.\n\nThis market will resolve to \"Down\" if the official S&P 500 Index closing price for S&P 500 (SPX) on Monday, November 16, 2026 is lower than the official S&P 500 Index closing price for SPX on the most recent prior trading day.\n\nE.g., ordinarily, a market on Monday would refer to the previous Friday for its most recent closing price, unless that Friday were a market holiday, in which case it would refer to Thursday, or the next most recent trading day.\n\nIf the two specified closing prices are exactly equal, this market will resolve 50-50. Note that all figures will be rounded to the nearest cent using standard rounding.\n\nIf SPX does not trade at all during the regular session, the market will resolve 50-50.\n\nIf either of the relevant days are shortened (for example, due to a market holiday schedule), the official closing price published by S&P 500 Index for that shortened session will still be used for resolution.\n\nIf either of the relevant days have no official closing price (for example, due to a trading halt into the market close, system issue, delisting, or other disruption), the market will use the last valid on-exchange trade price of the regular session as the effective closing price.\n\nThe resolution source for this market is the Wall Street Journal, specifically the Close values published by the WSJ under \"Historical Prices\".\n\nUS: https://www.wsj.com/market-data/stocks\nEMEA: https://www.wsj.com/market-data/stocks/emea \nASIA: https://www.wsj.com/market-data/stocks/asia",
+        "resolution_source": "https://www.wsj.com/market-data/stocks",
+        "schema_version": "1.0",
+        "source": "https://gamma-api.polymarket.com",
+        "status": "active",
+        "tick_size": 0.01,
+        "timestamp": "2026-11-16T13:51:57.051490Z",
+        "token_id": "103742494706721003388227410190352775568770343628077396960840123711617229822970"
+      },
+      "market_baseline_comparable": false,
+      "market_expected_payout": 0.235,
+      "market_id": "7013493",
+      "market_probability": null,
+      "model_id": "spx-gaussian-logreturn-direction-v25.1",
+      "model_sha256": "eb87c826ea2801030105a57e7cea126e5333ff7c1d52ceaabbb015404870145a",
+      "model_version": "spx-gaussian-logreturn-direction-v25.1",
+      "probability": 0.5180631402863018,
+      "probability_semantics": "binary_event_probability",
+      "research_only": true,
+      "reviewed_dependency_group": null,
+      "rules_sha256": "96298e1b750c55c036f5d3a507a4f91a9f099db2a15d02e07cdf97f25acd9682",
+      "source_lineages": [
+        "FRED:SP500:cash-index"
+      ],
+      "target_conditioning": "ordinary completed strictly non-tied regular session; no halt/fallback or publisher discrepancy",
+      "timestamp": "2026-11-16T13:58:05.119755+00:00",
+      "token_id": "103742494706721003388227410190352775568770343628077396960840123711617229822970",
+      "trading_authority": false,
+      "training_observations": 252,
+      "uncertainty": 1.0,
+      "unconditional_contract_probability": false,
+      "upper_probability": 1.0
+    },
+    "e6c31ecd719f31520ed44c2d4028c05dd07a093682e0b2a530767ce17f93da7d": {
+      "adapter": "finance",
+      "book": {
+        "asks": [
+          {
+            "price": 0.25,
+            "size": 94.0
+          },
+          {
+            "price": 0.26,
+            "size": 2480.76
+          },
+          {
+            "price": 0.27,
+            "size": 199.99
+          },
+          {
+            "price": 0.29,
+            "size": 400.0
+          },
+          {
+            "price": 0.3,
+            "size": 51.17
+          },
+          {
+            "price": 0.53,
+            "size": 490.53
+          },
+          {
+            "price": 0.64,
+            "size": 40.0
+          },
+          {
+            "price": 0.65,
+            "size": 200.0
+          },
+          {
+            "price": 0.66,
+            "size": 10.0
+          },
+          {
+            "price": 0.67,
+            "size": 200.0
+          },
+          {
+            "price": 0.68,
+            "size": 250.0
+          },
+          {
+            "price": 0.69,
+            "size": 2096.77
+          },
+          {
+            "price": 0.79,
+            "size": 3142.85
+          },
+          {
+            "price": 0.8,
+            "size": 10.0
+          },
+          {
+            "price": 0.89,
+            "size": 4690.9
+          },
+          {
+            "price": 0.93,
+            "size": 13.79
+          },
+          {
+            "price": 0.94,
+            "size": 6249.99
+          },
+          {
+            "price": 0.97,
+            "size": 8333.33
+          },
+          {
+            "price": 0.98,
+            "size": 929.04
+          },
+          {
+            "price": 0.99,
+            "size": 16010.07
+          }
+        ],
+        "available_at": "2026-11-16T13:58:05.100522Z",
+        "bids": [
+          {
+            "price": 0.22,
+            "size": 343.44
+          },
+          {
+            "price": 0.2,
+            "size": 48.29
+          },
+          {
+            "price": 0.16,
+            "size": 57.14
+          },
+          {
+            "price": 0.15,
+            "size": 1069.0
+          },
+          {
+            "price": 0.14,
+            "size": 71.42
+          },
+          {
+            "price": 0.13,
+            "size": 150.0
+          },
+          {
+            "price": 0.12,
+            "size": 83.33
+          },
+          {
+            "price": 0.1,
+            "size": 100.0
+          },
+          {
+            "price": 0.09,
+            "size": 511.11
+          },
+          {
+            "price": 0.08,
+            "size": 105.8
+          },
+          {
+            "price": 0.07,
+            "size": 214.25
+          },
+          {
+            "price": 0.06,
+            "size": 83.3
+          },
+          {
+            "price": 0.03,
+            "size": 7.27
+          },
+          {
+            "price": 0.02,
+            "size": 105.0
+          },
+          {
+            "price": 0.01,
+            "size": 1016.74
+          }
+        ],
+        "complete": true,
+        "exchange": "polymarket",
+        "id": "ae4b602797d8072f88cf7e67ca01648eab0bf741ca27a5107fe7b02e5048c48d",
+        "market_id": "7013493",
+        "schema_version": "1.0",
+        "sequence": 0,
+        "source": "https://clob.polymarket.com",
+        "timestamp": "2026-11-16T13:58:01.084000Z",
+        "token_id": "103742494706721003388227410190352775568770343628077396960840123711617229822970"
+      },
+      "book_id": "ae4b602797d8072f88cf7e67ca01648eab0bf741ca27a5107fe7b02e5048c48d",
+      "book_sha256": "9c5584f57a6429cc31f6df1ad377f6f0af7601f5f53060c6809cfedeb8cd5b5a",
+      "calibration_status": "unvalidated_research",
+      "certification_authority": false,
+      "contract": {
+        "asset": "S&P 500 Index",
+        "calendar_status": "weekday provisional; exchange holiday validity unverified, conditional forecast only",
+        "conditioning": "ordinary completed strictly non-tied regular session; no halt/fallback or publisher discrepancy",
+        "kind": "spx_daily_direction",
+        "market": {
+          "available_at": "2026-11-16T13:51:57.051490Z",
+          "end_time": "2026-11-16T21:00:00Z",
+          "event_id": "1379184",
+          "exchange": "polymarket",
+          "id": "0608657dacc41df5ec790b25733b779d875c749a5e3e8159f1eddd3fd888c4e7",
+          "market_id": "7013493",
+          "min_order_size": 5.0,
+          "outcome": "Up",
+          "probability": 0.245,
+          "question": "S&P 500 (SPX) Up or Down on November 16?",
+          "resolution_rules": "This market will resolve to \"Up\" if the official S&P 500 Index closing price for S&P 500 (SPX) on Monday, November 16, 2026 is higher than the official S&P 500 Index closing price for SPX on the most recent prior trading day.\n\nThis market will resolve to \"Down\" if the official S&P 500 Index closing price for S&P 500 (SPX) on Monday, November 16, 2026 is lower than the official S&P 500 Index closing price for SPX on the most recent prior trading day.\n\nE.g., ordinarily, a market on Monday would refer to the previous Friday for its most recent closing price, unless that Friday were a market holiday, in which case it would refer to Thursday, or the next most recent trading day.\n\nIf the two specified closing prices are exactly equal, this market will resolve 50-50. Note that all figures will be rounded to the nearest cent using standard rounding.\n\nIf SPX does not trade at all during the regular session, the market will resolve 50-50.\n\nIf either of the relevant days are shortened (for example, due to a market holiday schedule), the official closing price published by S&P 500 Index for that shortened session will still be used for resolution.\n\nIf either of the relevant days have no official closing price (for example, due to a trading halt into the market close, system issue, delisting, or other disruption), the market will use the last valid on-exchange trade price of the regular session as the effective closing price.\n\nThe resolution source for this market is the Wall Street Journal, specifically the Close values published by the WSJ under \"Historical Prices\".\n\nUS: https://www.wsj.com/market-data/stocks\nEMEA: https://www.wsj.com/market-data/stocks/emea \nASIA: https://www.wsj.com/market-data/stocks/asia",
+          "resolution_source": "https://www.wsj.com/market-data/stocks",
+          "schema_version": "1.0",
+          "source": "https://gamma-api.polymarket.com",
+          "status": "active",
+          "tick_size": 0.01,
+          "timestamp": "2026-11-16T13:51:57.051490Z",
+          "token_id": "103742494706721003388227410190352775568770343628077396960840123711617229822970"
+        },
+        "period_end": "2026-11-16T21:00:00+00:00",
+        "period_start": "2026-11-16T14:30:00+00:00",
+        "reference_source": "https://www.wsj.com/market-data/stocks",
+        "rules_sha256": "96298e1b750c55c036f5d3a507a4f91a9f099db2a15d02e07cdf97f25acd9682",
+        "selected_outcome": "Up",
+        "settlement_at": "2026-11-16T21:00:00+00:00",
+        "source_url": "https://www.wsj.com/market-data/stocks",
+        "symbol": "SPX",
+        "target_date": "2026-11-16",
+        "target_weekday": 0
+      },
+      "dataset_sha256": "30c79e639ebd5e6e136204a46ee8d6ea72848942594d2df4c4d637360c2f9538",
+      "domain": "finance",
+      "enrollment_id": "f5ccde61139fd62094a95966ce2f66c4d3d53dc52f3e28915432066076773894",
+      "event_end_time": "2026-11-16T21:00:00+00:00",
+      "event_id": "1379184",
+      "evidence_cutoff": "2026-11-16T13:58:05.101041+00:00",
+      "evidence_ids": [
+        "97135d8874cec67c23f360b4bb79205319a51cc31980237beeb9b6682171df6b"
+      ],
+      "evidence_lineages": [
+        "Federal Reserve Bank of St. Louis FRED:SP500"
+      ],
+      "feature_version": "sp500-current-observed-cash-closes-v1",
+      "horizon_bucket": "0-8h",
+      "id": "e6c31ecd719f31520ed44c2d4028c05dd07a093682e0b2a530767ce17f93da7d",
+      "independence_reviewed": false,
+      "last_source_observation": "2026-11-13T21:00:00+00:00",
+      "limitations": [
+        "No verified historical WSJ prices, holidays, revised-vintage availability or independent held-out calibration",
+        "FRED is the exact cash-index asset but cannot by itself prove WSJ contract settlement",
+        "Models share one source and cannot count as independent confirmation"
+      ],
+      "lower_probability": 0.0,
+      "market": {
+        "available_at": "2026-11-16T13:51:57.051490Z",
+        "end_time": "2026-11-16T21:00:00Z",
+        "event_id": "1379184",
+        "exchange": "polymarket",
+        "id": "0608657dacc41df5ec790b25733b779d875c749a5e3e8159f1eddd3fd888c4e7",
+        "market_id": "7013493",
+        "min_order_size": 5.0,
+        "outcome": "Up",
+        "probability": 0.245,
+        "question": "S&P 500 (SPX) Up or Down on November 16?",
+        "resolution_rules": "This market will resolve to \"Up\" if the official S&P 500 Index closing price for S&P 500 (SPX) on Monday, November 16, 2026 is higher than the official S&P 500 Index closing price for SPX on the most recent prior trading day.\n\nThis market will resolve to \"Down\" if the official S&P 500 Index closing price for S&P 500 (SPX) on Monday, November 16, 2026 is lower than the official S&P 500 Index closing price for SPX on the most recent prior trading day.\n\nE.g., ordinarily, a market on Monday would refer to the previous Friday for its most recent closing price, unless that Friday were a market holiday, in which case it would refer to Thursday, or the next most recent trading day.\n\nIf the two specified closing prices are exactly equal, this market will resolve 50-50. Note that all figures will be rounded to the nearest cent using standard rounding.\n\nIf SPX does not trade at all during the regular session, the market will resolve 50-50.\n\nIf either of the relevant days are shortened (for example, due to a market holiday schedule), the official closing price published by S&P 500 Index for that shortened session will still be used for resolution.\n\nIf either of the relevant days have no official closing price (for example, due to a trading halt into the market close, system issue, delisting, or other disruption), the market will use the last valid on-exchange trade price of the regular session as the effective closing price.\n\nThe resolution source for this market is the Wall Street Journal, specifically the Close values published by the WSJ under \"Historical Prices\".\n\nUS: https://www.wsj.com/market-data/stocks\nEMEA: https://www.wsj.com/market-data/stocks/emea \nASIA: https://www.wsj.com/market-data/stocks/asia",
+        "resolution_source": "https://www.wsj.com/market-data/stocks",
+        "schema_version": "1.0",
+        "source": "https://gamma-api.polymarket.com",
+        "status": "active",
+        "tick_size": 0.01,
+        "timestamp": "2026-11-16T13:51:57.051490Z",
+        "token_id": "103742494706721003388227410190352775568770343628077396960840123711617229822970"
+      },
+      "market_baseline_comparable": false,
+      "market_expected_payout": 0.235,
+      "market_id": "7013493",
+      "market_probability": null,
+      "model_id": "spx-weekday-beta-direction-v25.1",
+      "model_sha256": "af337d9504ba57fe4fc56c406e57d27f9fc4ae29706a63db38237ecf68195ee2",
+      "model_version": "spx-weekday-beta-direction-v25.1",
+      "probability": 0.6033755274261603,
+      "probability_semantics": "binary_event_probability",
+      "research_only": true,
+      "reviewed_dependency_group": null,
+      "rules_sha256": "96298e1b750c55c036f5d3a507a4f91a9f099db2a15d02e07cdf97f25acd9682",
+      "source_lineages": [
+        "FRED:SP500:cash-index"
+      ],
+      "target_conditioning": "ordinary completed strictly non-tied regular session; no halt/fallback or publisher discrepancy",
+      "timestamp": "2026-11-16T13:58:05.119755+00:00",
+      "token_id": "103742494706721003388227410190352775568770343628077396960840123711617229822970",
+      "trading_authority": false,
+      "training_observations": 235,
+      "uncertainty": 1.0,
+      "unconditional_contract_probability": false,
+      "upper_probability": 1.0
+    }
+  },
+  "labels": {
+    "4cac22f65dd259a8f575fef16dc71729663e8e7a687310647418d17d260613b5": {
+      "forecast_id": "4cac22f65dd259a8f575fef16dc71729663e8e7a687310647418d17d260613b5",
+      "event_id": "1379184",
+      "market_id": "7013493",
+      "token_id": "103742494706721003388227410190352775568770343628077396960840123711617229822970",
+      "rules_sha256": "96298e1b750c55c036f5d3a507a4f91a9f099db2a15d02e07cdf97f25acd9682",
+      "payout": 0,
+      "resolved_at": "2026-11-16T23:29:04+00:00",
+      "available_at": "2026-11-17T03:16:58.626249+00:00",
+      "verified": true,
+      "native_payout_verified": true,
+      "proof_sha256": "2ab6ab273974972ac5ddf28a4d86e69596c29a5a0fbbb431d164e1b9c5d17d2f",
+      "verification_source": "standard_CTF_receipt_canonical_finality_and_original_USDC_outcome_asset_v44",
+      "trust_limit": "HTTPS RPC attribution and reproducible evidence, not independent node consensus verification",
+      "independence_reviewed": false,
+      "research_only": true,
+      "trading_authority": false,
+      "original_forecast_sha256": "c8c5f253a5d10c17258f053dc5633283ede930e7006c1cd077f651e140f33586"
+    },
+    "e6c31ecd719f31520ed44c2d4028c05dd07a093682e0b2a530767ce17f93da7d": {
+      "forecast_id": "e6c31ecd719f31520ed44c2d4028c05dd07a093682e0b2a530767ce17f93da7d",
+      "event_id": "1379184",
+      "market_id": "7013493",
+      "token_id": "103742494706721003388227410190352775568770343628077396960840123711617229822970",
+      "rules_sha256": "96298e1b750c55c036f5d3a507a4f91a9f099db2a15d02e07cdf97f25acd9682",
+      "payout": 0,
+      "resolved_at": "2026-11-16T23:29:04+00:00",
+      "available_at": "2026-11-17T03:16:58.626249+00:00",
+      "verified": true,
+      "native_payout_verified": true,
+      "proof_sha256": "2ab6ab273974972ac5ddf28a4d86e69596c29a5a0fbbb431d164e1b9c5d17d2f",
+      "verification_source": "standard_CTF_receipt_canonical_finality_and_original_USDC_outcome_asset_v44",
+      "trust_limit": "HTTPS RPC attribution and reproducible evidence, not independent node consensus verification",
+      "independence_reviewed": false,
+      "research_only": true,
+      "trading_authority": false,
+      "original_forecast_sha256": "db468c170409bb8e9e0560425256d289a45277cad0007048defffaea44a2bdaf"
+    }
+  },
+  "scores": {
+    "spx-gaussian-logreturn-direction-v25.1": {
+      "forecasts": 1,
+      "native_parent_groups": 1,
+      "reviewed_independent_groups": 0,
+      "scores": {
+        "model": {
+          "brier": 0.26838941732330446,
+          "log_loss": 0.7299421699569301
+        },
+        "market": {
+          "brier": 0.055224999999999996,
+          "log_loss": 0.2678794451556012
+        },
+        "neutral": {
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      },
+      "model_minus_market_brier": 0.21316441732330446,
+      "market_baseline": "original causal executable-book midpoint / token expected payout; not an independent model probability",
+      "confidence_interval": null,
+      "calibration_fit": null,
+      "status": "descriptive_only; independent cohort review and sufficient heldout groups required"
+    },
+    "spx-weekday-beta-direction-v25.1": {
+      "forecasts": 1,
+      "native_parent_groups": 1,
+      "reviewed_independent_groups": 0,
+      "scores": {
+        "model": {
+          "brier": 0.36406202709679714,
+          "log_loss": 0.9247653588651272
+        },
+        "market": {
+          "brier": 0.055224999999999996,
+          "log_loss": 0.2678794451556012
+        },
+        "neutral": {
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      },
+      "model_minus_market_brier": 0.30883702709679717,
+      "market_baseline": "original causal executable-book midpoint / token expected payout; not an independent model probability",
+      "confidence_interval": null,
+      "calibration_fit": null,
+      "status": "descriptive_only; independent cohort review and sufficient heldout groups required"
+    }
+  }
+}

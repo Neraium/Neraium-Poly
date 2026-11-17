@@ -9,7 +9,7 @@ class ShadowDecisionCard(Record):
     payload:dict
 
 
-def publish(store,engine,report,now):
+def publish(store,engine,report,now,*,cohort='legacy'):
     row=engine.last
     if row:
         batch=row['events'][0];decisions=unpack_checkpoint(batch['payload'])['decisions']
@@ -17,7 +17,7 @@ def publish(store,engine,report,now):
         for i,event in enumerate(decisions):
             if event['type'] not in ('shadow_intent','modeled_fill','modeled_exit','native_settlement'):continue
             c=event.get('candidate',{});m=c.get('market',{})
-            card={'type':event['type'],'profile':event['profile'],'strategy':c.get('strategy',event.get('strategy')),'order_id':event.get('order_id'),
+            card={'cohort':cohort,'type':event['type'],'profile':event['profile'],'strategy':c.get('strategy',event.get('strategy')),'order_id':event.get('order_id'),
                 'market_id':m.get('market_id',event.get('book',{}).get('market_id')),'question':m.get('question'),'token_id':c.get('token_id'),
                 'quantity':event.get('quantity'),'capital':event.get('capital',event.get('cost')),'estimated_net_value':event.get('estimated_net_value'),
                 'net_modeled_pnl':event.get('pnl'),'model_probability':c.get('probability'),'pricing_target':c.get('target'),
@@ -28,7 +28,7 @@ def publish(store,engine,report,now):
     positions=[]
     pending=[]
     for profile,s in engine.state['profiles'].items():
-        for p in s['positions'].values():positions.append({'profile':profile,'strategy':p['strategy'],'question':p['market']['question'],'market_id':p['market_id'],'token_id':p['token_id'],
-            'quantity':p['quantity'],'capital':p['cost'],'marked_net_pnl':p.get('marked_pnl') if s['unrealized'] is not None else None,'entry_at':p['entered_at'],'forecast_id':p.get('forecast_id')})
-        for o in s['orders'].values():pending.append({'profile':profile,'strategy':o['strategy'],'question':o['market']['question'],'limit':o['limit'],'unfilled_quantity':o['remaining'],'reserved_capital':o['reserved'],'expires':o['expires']})
+        for p in s['positions'].values():positions.append({'cohort':cohort,'profile':profile,'strategy':p['strategy'],'question':p['market']['question'],'market_id':p['market_id'],'token_id':p['token_id'],
+            'quantity':p['quantity'],'capital':p['cost'],'marked_net_pnl':p.get('marked_pnl') if report.get('profiles',{}).get(profile,{}).get('unrealized_net_pnl') is not None else None,'entry_at':p['entered_at'],'forecast_id':p.get('forecast_id')})
+        for o in s['orders'].values():pending.append({'cohort':cohort,'profile':profile,'strategy':o['strategy'],'question':o['market']['question'],'limit':o['limit'],'unfilled_quantity':o['remaining'],'reserved_capital':o['reserved'],'expires':o['expires']})
     return {**report,'recent_decisions':[{'at':r['available_at'],**r['payload']} for r in store.latest('ShadowDecisionCard',20)],'positions':positions,'unfilled_orders':pending}

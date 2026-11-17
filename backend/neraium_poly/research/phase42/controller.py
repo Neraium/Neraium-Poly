@@ -9,9 +9,9 @@ from neraium_poly.research.phase14.relationships import digest
 from neraium_poly.research.phase24.continuous import at
 from neraium_poly.research.phase25.dependencies import bound_forecasts
 from neraium_poly.research.phase40.campaign import adapters, replay_model
-from neraium_poly.research.phase41.native import collect
 from neraium_poly.research.phase41.simulation import ProfileExperiment
-from neraium_poly.research.phase42.engine import StrategyEngine
+from neraium_poly.research.phase44.cohort import Cohort, LegacyCohort
+from neraium_poly.research.phase44.outcomes import collect
 
 
 class ShadowSourceBinding(Record):
@@ -24,12 +24,13 @@ class ShadowSourceBinding(Record):
 class Controller:
     def __init__(self,store,*,risk_limits,clock,can_write,directory):
         self.store,self.clock,self.can_write=store,clock,can_write
-        self.engine=StrategyEngine(store,risk_limits=risk_limits,clock=clock,can_write=can_write)
+        self.engine=LegacyCohort(store,risk_limits=risk_limits,clock=clock,can_write=can_write)
+        self.challenger=Cohort(store,risk_limits=risk_limits,clock=clock,can_write=can_write)
         self.profiles=ProfileExperiment(store,risk_limits=risk_limits,clock=clock,can_write=can_write)
         self.models=adapters();self.directory=Path(directory);self.next_sources=None;self.next_outcomes=None;self.errors=Counter()
         self.bindings={r['forecast_id']:r for r in store.latest('ShadowSourceBinding',512)}
         self.report=None;self.current_forecasts={}
-    def tick(self,frame,fees):
+    def tick(self,frame,fees,*,proofs=None,frame_provider=None):
         now=at(self.clock())
         if self.next_sources is None or now>=self.next_sources:
             from neraium_poly.research.phase42.sources import forecast_studies
@@ -58,36 +59,46 @@ class Controller:
             def checked(f):
                 if f['id'] not in verified or digest(verified[f['id']]['forecast'])!=digest(f):raise ValueError('exact replayed original forecast required')
             self.engine.enroll([v['forecast'] for v in cohort.values()],verifier=checked)
+            def existing_original(f):
+                binding=self.bindings.get(f['id'])
+                if binding is None or binding['forecast_sha256']!=digest(f):raise ValueError('new cohort requires existing immutable source binding')
+            self.challenger.enroll(list(self.engine.state['forecasts'].values()),verifier=existing_original)
             declared=at(__import__('json').loads(self.store.get(self.profiles.identity)[1])['available_at'])
             self.profiles.enroll([v['forecast'] for v in cohort.values() if at(v['forecast']['timestamp'])>=declared and at(v['forecast']['event_end_time'])>now],verifier=checked)
             self.next_sources=now+timedelta(seconds=60)
+        if frame_provider is not None:frame=frame_provider()
+        self.admitted_frame_available_at=frame.available_at.isoformat()
         self.engine.step(frame,fees,source_forecasts=self.current_forecasts);self.profiles.step(frame,fees)
+        self.challenger.step(frame,fees,source_forecasts=self.current_forecasts)
         if self.next_outcomes is None or now>=self.next_outcomes:
             # Resolve only a bounded matured inventory. Original study IDs survive restart.
             attempts={}
             for row in self.store.latest('ProfilePayoutStudy',256):attempts.setdefault(row['forecast_id'],row['available_at'])
             due=sorted((fid for fid,f in self.engine.state['forecasts'].items() if at(f['event_end_time'])<=now and fid not in self.engine.state['labels']),
-                key=lambda fid:(attempts.get(fid,''),fid))[:2]
-            native_bound={}
+                key=lambda fid:(attempts.get(fid,''),fid))
+            native_bound={};verified_studies=set()
             for fid in due:
                 binding=self.bindings.get(fid)
                 if not binding:continue
-                original=self.store.get(binding['study_id'])
-                if not original:raise ValueError('original settlement study missing')
-                if len(original[1].encode())>16*1024**2:raise ValueError('native source study budget withheld')
-                study=__import__('json').loads(original[1]);f=self.engine.state['forecasts'][fid]
-                if digest(study)!=binding['study_sha256'] or digest(f)!=binding['forecast_sha256']:raise ValueError('settlement original identity/hash mismatch')
-                native_bound[fid]={'study':study,'forecast':f}
-            async def outcomes():
-                async with asyncio.timeout(20):return await collect(native_bound,self.store,self.directory,clock=self.clock,can_write=lambda:self.can_write() and sum(p.stat().st_size for p in self.directory.rglob('*') if p.is_file())<64*1024**2,max_requests=2)
-            try:
-                proofs=asyncio.run(outcomes());self.engine.settle(proofs);self.profiles.settle(lambda f,t:proofs.get(f['id']))
-            except (ValueError,KeyError,OSError,TimeoutError) as error:self.errors['native_payout:'+type(error).__name__]+=1
+                if binding['study_id'] not in verified_studies:
+                    original=self.store.get(binding['study_id'])
+                    if not original:raise ValueError('original settlement study missing')
+                    if len(original[1].encode())>16*1024**2:raise ValueError('native source study budget withheld')
+                    if digest(__import__('json').loads(original[1]))!=binding['study_sha256']:raise ValueError('settlement original study hash mismatch')
+                    verified_studies.add(binding['study_id'])
+                f=self.engine.state['forecasts'][fid]
+                if digest(f)!=binding['forecast_sha256']:raise ValueError('settlement original forecast hash mismatch')
+                native_bound[fid]={'study_sha256':binding['study_sha256'],'study_id':binding['study_id'],'forecast':f}
+            self.native_bound=native_bound
             self.next_outcomes=now+timedelta(seconds=300)
-        self.report={**self.engine.report(),'phase41_profiles':self.profiles.report(),'source_withholding':dict(self.errors),
-            'execution':'isolated shadow only; no account/order-admission access','current_source_forecasts':len(self.current_forecasts),'calibration_cohort':'first available forecast per native market/token/model; repeated refreshes are not independent events','source_inventory':getattr(self,'inventory',{}),'native_verification_timeout_seconds':20,'native_proof_requests_per_5min':2}
+        if proofs:
+            self.engine.settle(proofs);self.challenger.settle(proofs);self.profiles.settle(lambda f,t:proofs.get(f['id']))
+        self.report={**self.engine.report(),'phase44_cohort':self.challenger.report(),'phase41_profiles':self.profiles.report(),'source_withholding':dict(self.errors),
+            'execution':'isolated shadow only; no account/order-admission access','current_source_forecasts':len(self.current_forecasts),'calibration_cohort':'first available forecast per native market/token/model; repeated refreshes are not independent events','source_inventory':getattr(self,'inventory',{}),'native_verification_timeout_seconds':45,'native_proof_requests_per_5min':2}
         from neraium_poly.research.phase42.desk import publish
+        challenger_view=publish(self.store,self.challenger,self.report['phase44_cohort'],now,cohort='phase44')
         self.report=publish(self.store,self.engine,self.report,now)
+        self.report['positions']+=challenger_view['positions'];self.report['unfilled_orders']+=challenger_view['unfilled_orders']
         return self.report
 
 
@@ -97,10 +108,8 @@ async def service_loop(runtime,should_exit):
     if os.environ.get('NERAIUM_SHADOW_RESEARCH')!='true':return
     from concurrent.futures import ThreadPoolExecutor
 
-    import httpx
-
-    from neraium_poly.experimental.contracts import SharedMarketFrame
     from neraium_poly.experimental.research_worker import _drain
+    from neraium_poly.research.phase44.reference import ReferenceSampler, merge_supplemental
     # Long external-model jobs already occupy the shared research worker. One
     # independent shadow-only lane prevents starvation; store append locks still
     # serialize immutable writes. Existing cgroup/thread/CPU/memory caps remain.
@@ -108,7 +117,12 @@ async def service_loop(runtime,should_exit):
     from threading import Event
     source_executor=ThreadPoolExecutor(max_workers=1,thread_name_prefix='shadow-sources')
     source_stop=Event();source_future=None;source_due=0.
+    native_executor=ThreadPoolExecutor(max_workers=1,thread_name_prefix='native-reconcile')
+    native_future=None;native_due=0.;native_proofs={};native_status={'status':'initializing'}
     controller=None
+    sampler=ReferenceSampler(runtime.config.source_url,clock=runtime.clock)
+    runtime.research_reference=sampler
+    sampler_task=asyncio.create_task(sampler.run(lambda:runtime.stopping or should_exit()))
     try:
         while not runtime.stopping and not should_exit():
             import time
@@ -116,38 +130,54 @@ async def service_loop(runtime,should_exit):
                 try:runtime.shadow_source_status=source_future.result()
                 except Exception as error:runtime.shadow_source_status={'status':'withheld','error':str(error)[:180]}  # noqa: BLE001
                 source_future=None;source_due=time.monotonic()+300
+            if native_future is not None and native_future.done():
+                try:
+                    verified,reasons=native_future.result();native_proofs.update(verified);native_status={'status':'completed','proofs':len(native_proofs),'recent_attempt_reasons':reasons}
+                except Exception as error:native_status={'status':'withheld','reason':type(error).__name__+':'+str(error)[:180]}  # noqa: BLE001
+                native_future=None;native_due=time.monotonic()+300
             try:
-                frame=runtime.last_frame
+                frame=sampler.latest()
+                inputs=getattr(runtime,'phase26_inputs',None)
+                extra_markets=();extra_books=()
+                if inputs is not None:
+                    # Snapshot transport-owned caches only on their owner loop.
+                    extra_markets=tuple(inputs.watcher._markets.values());extra_books=tuple(inputs.watcher.snapshot())
+                    frame=merge_supplemental(frame,extra_markets,extra_books,runtime.clock())
                 if frame is not None:
-                    def work(frame=frame):
+                    def work(frame=frame,native_status=native_status,extra_markets=extra_markets,extra_books=extra_books):
                         nonlocal controller
                         import time
                         began=time.monotonic();origin='combined_experimental_frame'
                         if not runtime._budget_ok():raise ValueError('archive budget admission withheld')
-                        if (runtime.clock()-frame.available_at).total_seconds()>10:
-                            # Same authorized loopback feed; no cached/stale book substitution.
-                            with httpx.Client(timeout=3,trust_env=False) as client, client.stream('GET',runtime.config.source_url) as response:
-                                response.raise_for_status();raw=bytearray()
-                                for chunk in response.iter_bytes():
-                                    if time.monotonic()-began>4:raise ValueError('reference frame absolute read deadline exceeded')
-                                    if len(raw)+len(chunk)>8*1024**2:raise ValueError('bounded reference frame exceeded')
-                                    raw.extend(chunk)
-                            frame=SharedMarketFrame.model_validate_json(raw);origin='fresh_reference_read'
+                        origin='shared_bounded_reference_reader'
+                        if not 0<=(runtime.clock()-frame.available_at).total_seconds()<=15:raise ValueError('research frame expired before worker admission')
                         if controller is None:controller=Controller(runtime.events,risk_limits=runtime.config.risk_limits.model_dump(),clock=runtime.clock,can_write=runtime._budget_ok,directory=runtime.config.data_dir/'phase42-native')
                         cache=getattr(runtime,'research_fees',None)
                         fees=cache.proofs(as_of=runtime.clock()) if cache else {}
-                        report=controller.tick(frame,fees)
-                        return {**report,'input_frame_available_at':frame.available_at.isoformat(),'shadow_worker':{'maximum_workers':1,'queued_jobs':0,'cycle_seconds':time.monotonic()-began,'frame_origin':origin}}
+                        def current_frame():
+                            base=sampler.latest()
+                            return merge_supplemental(base,extra_markets,extra_books,runtime.clock()) if extra_markets else base
+                        report=controller.tick(frame,fees,proofs=native_proofs,frame_provider=current_frame)
+                        return {**report,'native_reconciliation':native_status,'reference_feed':sampler.status(),'input_frame_available_at':getattr(controller,'admitted_frame_available_at',frame.available_at.isoformat()),'shadow_worker':{'maximum_workers':1,'queued_jobs':0,'cycle_seconds':time.monotonic()-began,'frame_origin':origin}}
                     if os.environ.get('NERAIUM_SHADOW_SOURCE_REFRESH','true')=='true' and source_future is None and time.monotonic()>=source_due:
                         def acquire_source():
-                            from neraium_poly.research.phase42.sources import read_reference, refresh
-                            observed=read_reference(runtime.config.source_url)
+                            from neraium_poly.research.phase42.sources import refresh
+                            observed=sampler.latest()
                             return asyncio.run(refresh(runtime.events,observed,clock=runtime.clock,can_write=runtime._budget_ok,stop=source_stop,
-                                frame_provider=lambda:asyncio.to_thread(read_reference,runtime.config.source_url)))
+                                frame_provider=lambda:asyncio.to_thread(sampler.latest)))
                         source_future=asyncio.get_running_loop().run_in_executor(source_executor,acquire_source)
                         runtime.shadow_source_status={'status':'acquiring','maximum_source_jobs':1,'maximum_http_workers':2,'deadline_seconds':90}
                     worker=asyncio.get_running_loop().run_in_executor(executor,work)
                     report=await _drain(worker)
+                    if native_future is None and time.monotonic()>=native_due and getattr(controller,'native_bound',None):
+                        pending=dict(controller.native_bound)
+                        def reconcile(pending=pending):
+                            async def work_native():
+                                async with asyncio.timeout(45):return await collect(pending,runtime.events,runtime.config.data_dir/'phase42-native',clock=runtime.clock,can_write=runtime._budget_ok,max_requests=2)
+                            verified=asyncio.run(work_native())
+                            reasons=dict(Counter(row['reason'] for row in runtime.events.latest('NativePayout44',16)))
+                            return verified,reasons
+                        native_future=asyncio.get_running_loop().run_in_executor(native_executor,reconcile);native_status={'status':'acquiring','maximum_workers':1,'queued_jobs':0}
                     runtime.shadow_research_snapshot={**report,'source_refresh':getattr(runtime,'shadow_source_status',{})}
                     runtime.shadow_research_error=None
             except Exception as error:  # noqa: BLE001 - withhold shadow only; never financial authority
@@ -157,10 +187,17 @@ async def service_loop(runtime,should_exit):
                 await asyncio.sleep(1)
     finally:
         # _drain above ensures an active SQLite write finishes before shutdown.
+        sampler.stop()
+        await _drain(sampler_task)
         source_stop.set()
         if source_future is not None:
             try:await _drain(source_future)
             except asyncio.CancelledError:runtime.shadow_source_status={'status':'cancelled_and_drained'}
             except Exception as error:runtime.shadow_source_status={'status':'withheld_on_close','error':str(error)[:180]}  # noqa: BLE001
+        if native_future is not None:
+            try:await _drain(native_future)
+            except asyncio.CancelledError:pass
+            except Exception as error:runtime.shadow_native_error=type(error).__name__+':'+str(error)[:180]  # noqa: BLE001 - preserve failure diagnostics
+        native_executor.shutdown(wait=True,cancel_futures=True)
         source_executor.shutdown(wait=True,cancel_futures=True)
         executor.shutdown(wait=True,cancel_futures=True)
