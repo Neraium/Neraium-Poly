@@ -1,0 +1,33 @@
+scope=actual frozen archive and current public quotes; host process outside service cgroup; cannot infer deployed throughput
+error=None
+         13403952 function calls (12487176 primitive calls) in 6.488 seconds
+
+   Ordered by: cumulative time
+   List reduced from 1217 to 25 due to restriction <25>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.033    0.033    6.498    6.498 controller.py:38(tick)
+        3    0.010    0.003    1.968    0.656 engine.py:159(step)
+       22    0.000    0.000    1.780    0.081 campaign.py:142(replay_model)
+       12    0.002    0.000    1.347    0.112 outcomes.py:38(replay_forecast)
+       12    0.004    0.000    1.339    0.112 models.py:119(forecast_models)
+        4    0.594    0.149    1.212    0.303 models.py:88(_resampled_minima)
+        6    0.003    0.001    1.185    0.197 checkpoints.py:63(pack_checkpoint)
+       22    0.000    0.000    1.154    0.052 checkpoints.py:48(_canonical)
+851661/17    0.517    0.000    1.046    0.062 copy.py:118(deepcopy)
+ 56245/17    0.169    0.000    1.046    0.062 copy.py:217(_deepcopy_dict)
+       22    0.465    0.021    0.950    0.043 checkpoints.py:17(_json_only)
+        3    0.003    0.001    0.933    0.311 engine.py:98(_commit)
+      618    0.002    0.000    0.735    0.001 __init__.py:299(loads)
+      618    0.001    0.000    0.731    0.001 decoder.py:332(decode)
+      618    0.724    0.001    0.729    0.001 decoder.py:343(raw_decode)
+      236    0.007    0.000    0.650    0.003 provenance.py:88(_fetch)
+       84    0.000    0.000    0.592    0.007 profile-overlay:20(get)
+       84    0.001    0.000    0.591    0.007 provenance.py:112(get)
+     1111    0.002    0.000    0.571    0.001 __init__.py:183(dumps)
+     1111    0.001    0.000    0.568    0.001 encoder.py:183(encode)
+     1111    0.566    0.001    0.566    0.001 encoder.py:205(iterencode)
+       10    0.002    0.000    0.498    0.050 checkpoints.py:86(unpack_checkpoint)
+        2    0.001    0.001    0.467    0.233 simulation.py:89(_commit)
+        1    0.003    0.003    0.451    0.451 sources.py:81(forecast_studies)
+       10    0.000    0.000    0.433    0.043 campaign.py:65(replay)

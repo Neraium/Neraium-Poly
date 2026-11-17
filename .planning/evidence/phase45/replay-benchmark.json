@@ -1,0 +1,42 @@
+{
+  "scope": "isolated matched warm inventory audit; frozen authentic source records/native frame; host process outside service cgroup, not a deployed speed claim",
+  "baseline_source": "1875ff2018e8f8ac670553eefd2fd46e819446b8",
+  "frame_sha256": "9536717a8776a2ff688bd796981f87d9be617581689b6f7f86ce41cb21086c33",
+  "study_sha256": [
+    "62bc4bda94a2a6b4cefbf6d916bf088d87ecc65ee53d6bcc27188deafb8f264b",
+    "ba0621243f7d759673db39f5a9aba626f8539053c38b7ad4113b06205701fe22",
+    "e167934558dd30c828b7ce73baefd964a043a60f71c25dd8e5ac74eaa2ea7ca5",
+    "ec00ff4fc4c04b0d119727b0c257291bcb5ec142df6fb02b7e62e1a4247fcb89",
+    "ee6f1ab6c41f377ce36a491de83df356513107e4faaad5f3e1f255fa91be8ff8",
+    "3162df90f2dfb2a0d004e91654586a0c9af812a6b2024507b8157e82401ee0ff",
+    "2ab154c2e83be34d9d6be1f573e34ba87640bdcdc894aafe1dacbd11e30cfc85",
+    "a38e5c8e38c1709d287e254f89f73e380ae2e27526f185b4300c734a7b6d8450",
+    "ba04f3768b925f07b8293679f839ddfce9ea44ef983e94e7d59cbf5fff6292ec",
+    "6cebd77186cbab814dfc38fd7071721e5a958a4e726f5f72e425caca56049ab1"
+  ],
+  "clock": "2026-11-17T05:40:38.730358+00:00",
+  "cycles": {
+    "before": {
+      "seconds": 1.7189478776417673,
+      "full_model_replays": 30,
+      "source_withholding": {},
+      "forecasts": 56,
+      "cache": null
+    },
+    "after": {
+      "seconds": 0.9794576652348042,
+      "full_model_replays": 0,
+      "source_withholding": {},
+      "forecasts": 56,
+      "cache": {
+        "successful_full_replays": 30,
+        "identical_input_hits": 30,
+        "entries": 30,
+        "maximum_entries": 512,
+        "causal_binding_checked_each_inventory_pass": true,
+        "persistent_trust": false,
+        "outcome_proofs_cached": false
+      }
+    }
+  }
+}

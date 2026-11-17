@@ -10,11 +10,13 @@ from neraium_poly.research.phase24.continuous import at
 from neraium_poly.research.phase25.dependencies import bound_forecasts
 from neraium_poly.research.phase40.campaign import adapters, replay_model
 from neraium_poly.research.phase41.simulation import ProfileExperiment
-from neraium_poly.research.phase44.cohort import Cohort, LegacyCohort
+from neraium_poly.research.phase44.cohort import LegacyCohort
 from neraium_poly.research.phase44.outcomes import collect
 from neraium_poly.research.phase45.cohort import Explorer
 from neraium_poly.research.phase45.diagnostics import breakdown
 from neraium_poly.research.phase45.panel import Panel
+from neraium_poly.research.phase45.replay_cache import ReplayCache
+from neraium_poly.research.phase45.retire import ClosedPhase44
 
 
 class ShadowSourceBinding(Record):
@@ -28,11 +30,13 @@ class Controller:
     def __init__(self,store,*,risk_limits,clock,can_write,directory):
         self.store,self.clock,self.can_write=store,clock,can_write
         self.engine=LegacyCohort(store,risk_limits=risk_limits,clock=clock,can_write=can_write)
-        self.challenger=Cohort(store,risk_limits=risk_limits,clock=clock,can_write=can_write)
+        self.challenger=ClosedPhase44(store,risk_limits=risk_limits,clock=clock,can_write=can_write)
+        self.challenger.close_enrollment()
         self.explorer=Explorer(store,risk_limits=risk_limits,clock=clock,can_write=can_write)
         self.profiles=ProfileExperiment(store,risk_limits=risk_limits,clock=clock,can_write=can_write)
         self.models=adapters();self.directory=Path(directory);self.next_sources=None;self.next_outcomes=None;self.errors=Counter()
         self.bindings={r['forecast_id']:r for r in store.latest('ShadowSourceBinding',512)}
+        self.replay_cache=ReplayCache()
         self.panel=Panel(store,clock,can_write)
         self.report=None;self.current_forecasts={}
     def tick(self,frame,fees,*,proofs=None,frame_provider=None):
@@ -42,10 +46,12 @@ class Controller:
             studies,self.inventory=forecast_studies(self.store)
             if len(__import__('json').dumps(studies).encode())>16*1024**2:raise ValueError('bounded source snapshot exceeds16MiB; no guard increase')
             bound,invalid=bound_forecasts(studies,as_of=now);self.errors.update(invalid)
-            verified={}
+            verified={};study_hashes={}
             for fid,item in bound.items():
                 try:
-                    replay_model(item['study'],item['forecast'],self.models,now=now);verified[fid]=item
+                    identity=id(item['study'])
+                    if identity not in study_hashes:study_hashes[identity]=digest(item['study'])
+                    self.replay_cache.verify(item,self.models,now=now,replay=replay_model,study_sha256=study_hashes[identity]);verified[fid]=item
                 except (ValueError,KeyError,TypeError,OSError) as error:self.errors['source_replay:'+type(error).__name__]+=1
             cohort_keys={(f['model_id'],f['event_id'],f['market_id'],f['token_id']) for f in self.engine.state['forecasts'].values()}
             cohort={}
@@ -67,7 +73,6 @@ class Controller:
             def existing_original(f):
                 binding=self.bindings.get(f['id'])
                 if binding is None or binding['forecast_sha256']!=digest(f):raise ValueError('new cohort requires existing immutable source binding')
-            self.challenger.enroll(list(self.engine.state['forecasts'].values()),verifier=existing_original)
             self.explorer.enroll(list(self.engine.state['forecasts'].values()),verifier=existing_original)
             declared=at(__import__('json').loads(self.store.get(self.profiles.identity)[1])['available_at'])
             self.profiles.enroll([v['forecast'] for v in cohort.values() if at(v['forecast']['timestamp'])>=declared and at(v['forecast']['event_end_time'])>now],verifier=checked)
@@ -75,9 +80,10 @@ class Controller:
         if frame_provider is not None:frame=frame_provider()
         self.admitted_frame_available_at=frame.available_at.isoformat()
         self.engine.step(frame,fees,source_forecasts=self.current_forecasts);self.profiles.step(frame,fees)
-        self.challenger.step(frame,fees,source_forecasts=self.current_forecasts)
-        self.explorer.step(frame,fees,source_forecasts=self.current_forecasts)
-        self.panel.register(self.current_forecasts,frame)
+        if self.challenger.needs_quotes():self.challenger.step(frame,fees,source_forecasts=self.current_forecasts)
+        exploratory_frame=frame_provider() if frame_provider is not None else frame
+        self.explorer.step(exploratory_frame,fees,source_forecasts=self.current_forecasts)
+        self.panel.register(self.current_forecasts,exploratory_frame)
         if self.next_outcomes is None or now>=self.next_outcomes:
             # Resolve only a bounded matured inventory. Original study IDs survive restart.
             attempts={}
@@ -103,7 +109,7 @@ class Controller:
             self.next_outcomes=now+timedelta(seconds=300)
         if proofs:
             self.engine.settle(proofs);self.challenger.settle(proofs);self.explorer.settle(proofs);self.profiles.settle(lambda f,t:proofs.get(f['id']))
-        self.report={**self.engine.report(),'phase44_cohort':self.challenger.report(),'phase45_explorer':self.explorer.report(),'probability_panel':self.panel.report(self.engine.state['labels']),'phase41_profiles':self.profiles.report(),'source_withholding':dict(self.errors),
+        self.report={**self.engine.report(),'phase44_cohort':self.challenger.report(),'phase45_explorer':self.explorer.report(),'exploratory_frame_available_at':exploratory_frame.available_at.isoformat(),'source_replay_cache':self.replay_cache.status(),'probability_panel':self.panel.report(self.engine.state['labels']),'phase41_profiles':self.profiles.report(),'source_withholding':dict(self.errors),
             'execution':'isolated shadow only; no account/order-admission access','current_source_forecasts':len(self.current_forecasts),'calibration_cohort':'first available forecast per native market/token/model; repeated refreshes are not independent events','source_inventory':getattr(self,'inventory',{}),'native_verification_timeout_seconds':45,'native_proof_requests_per_5min':2}
         from neraium_poly.research.phase42.desk import publish
         self.report['phase44_rejection_breakdown']={n:breakdown(p['rejections']) for n,p in self.report['phase44_cohort']['profiles'].items()}

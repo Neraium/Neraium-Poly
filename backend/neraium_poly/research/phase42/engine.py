@@ -26,6 +26,7 @@ DEPLOYED_SOURCE_SHA256='7208eb2e84d64f141fa16e247ec6b92eb30356a6dac2223f51237020
 DEPLOYED_DEFINITIONS_SHA256='2e451f687dec791505d5206c5f9e511ee83342afea9a63da6473c1e799dd070c'
 PHASE43_SOURCE_SHA256='c13cda0c3ff41bcf82528c0c569b7766b4d8f11c92dafc00071b53bea635b1cf'
 PHASE44_SOURCE_SHA256='a9cc84d8fd66a92bcf2cd27096f35eef3597db073d6d1bbb000a297bb6a6725e'  # Reviewed exact deployment; old portfolios retain their original exits and risk checks.
+PHASE45_SOURCE_SHA256='0c07a94d01f85e4b34f253f578a25dd050d5c996bee268ca72694a030035c53a'  # Exact reviewed Phase45 deployment; only unused retired comparison work is removed.
 EPS=1e-8
 PROFILES={
  'aggressive':{'size':3.,'edge':0.,'spread':.20,'haircut':0.,'unknown_fee':.10},
@@ -83,7 +84,7 @@ class StrategyEngine:
         if row['policy']!=self.policy:
             compatible={**row['policy'],'code_sha256':self.policy['code_sha256'],'definitions_sha256':self.policy['definitions_sha256'],'economic_sources_sha256':self.policy['economic_sources_sha256'],**self.extra_policy()}
             closing_only=(row['policy'].get('entry_enrollment_open') is True and self.policy.get('entry_enrollment_open') is False and {**row['policy'],'entry_enrollment_open':False}==self.policy)
-            if not closing_only and ((row['policy']['code_sha256'],row['policy']['definitions_sha256']) not in ((LEGACY_SOURCE_SHA256,LEGACY_DEFINITIONS_SHA256),(DEPLOYED_SOURCE_SHA256,DEPLOYED_DEFINITIONS_SHA256),(PHASE43_SOURCE_SHA256,DEPLOYED_DEFINITIONS_SHA256),(PHASE44_SOURCE_SHA256,DEPLOYED_DEFINITIONS_SHA256)) or compatible!=self.policy):raise ValueError('frozen strategy source/policy mismatch; no reset permitted')
+            if not closing_only and ((row['policy']['code_sha256'],row['policy']['definitions_sha256']) not in ((LEGACY_SOURCE_SHA256,LEGACY_DEFINITIONS_SHA256),(DEPLOYED_SOURCE_SHA256,DEPLOYED_DEFINITIONS_SHA256),(PHASE43_SOURCE_SHA256,DEPLOYED_DEFINITIONS_SHA256),(PHASE44_SOURCE_SHA256,DEPLOYED_DEFINITIONS_SHA256),(PHASE45_SOURCE_SHA256,DEPLOYED_DEFINITIONS_SHA256)) or compatible!=self.policy):raise ValueError('frozen strategy source/policy mismatch; no reset permitted')
         state=unpack_checkpoint(row['checkpoint'])
         if digest(state)!=row['state_sha256']:raise ValueError('strategy checkpoint integrity failure')
         if row['previous_id']:
@@ -174,7 +175,7 @@ class StrategyEngine:
         markets={t:markets[t] for t in ranked};books={t:b.model_copy(update={'bids':b.bids[:8],'asks':b.asks[:8]}) for t,b in books.items() if t in markets}
         state=copy.deepcopy(self.state);events=[]
         state['markets_seen']=sorted(set(state['markets_seen'])|{m.market_id for m in markets.values()})
-        candidates,rejections=self.proposer(markets,books,source_forecasts if source_forecasts is not None else state['forecasts'],state['history'],state['prior_forecasts'],fees,now)
+        candidates,rejections=self.proposer(markets,books,source_forecasts if source_forecasts is not None else state['forecasts'],state['history'],state['prior_forecasts'],fees,now) if self.entry_enrollment_open else ([],[])
         if not self.entry_enrollment_open:
             candidates=[];rejections=[]
             for profile in state['profiles'].values():
@@ -185,7 +186,8 @@ class StrategyEngine:
             if not history or at(history[-1]['at'])<b.timestamp:history.append({'at':b.timestamp.isoformat(),'mid':(b.bids[0].price+b.asks[0].price)/2,'bid':b.bids[0].price,'ask':b.asks[0].price,'book_sha256':digest(b.model_dump(mode='json'))})
             state['history'][token]=history[-32:]
         state['history']={t:h for t,h in state['history'].items() if t in markets}
-        for f in sorted((source_forecasts if source_forecasts is not None else state['forecasts']).values(),key=lambda f:f['timestamp']):
+        if not self.entry_enrollment_open:state['prior_forecasts']={}  # Unused comparison cache; original enrolled forecasts and journal bytes stay intact.
+        for f in sorted((source_forecasts if source_forecasts is not None else state['forecasts']).values(),key=lambda f:f['timestamp']) if self.entry_enrollment_open else ():
             key=f['token_id']+'|'+f['model_id'];old=state['prior_forecasts'].get(key)
             if old is None or at(old['timestamp'])<=at(f['timestamp']):state['prior_forecasts'][key]=f
         for name,config in self.profile_configs.items():

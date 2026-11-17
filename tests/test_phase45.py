@@ -139,3 +139,61 @@ def test_pricing_contract_settlement_does_not_invent_probability_forecasts(setup
     assert not e.settle({contract['id']:proof}) and e.state['profiles']['aggressive']['cash']==503
     clock[0]+=timedelta(seconds=1);e.step(frame_at(frame,b,clock[0]),fees)
     assert Explorer(store,risk_limits=risk,clock=lambda:clock[0],can_write=lambda:True).state==e.state
+
+
+def test_replay_cache_requires_exact_source_forecast_model_and_success_and_is_bounded(setup):
+    from neraium_poly.research.phase14.relationships import digest
+    from neraium_poly.research.phase45.replay_cache import ReplayCache
+    _,clock,_,_,f,_,_,_,_=setup;cache=ReplayCache();calls=[]
+    item={'study':{'id':'CONTROLLED','data':[1,2]},'forecast':f}
+    def replay(*args,**kwargs):calls.append(True)
+    def check(v):cache.verify(v,{},now=clock[0],replay=replay,study_sha256=digest(v['study']))
+    check(item);check(item);assert len(calls)==1 and cache.hits==1
+    check({**item,'study':{**item['study'],'data':[1,3]}});assert len(calls)==2
+    check({**item,'forecast':{**f,'model_sha256':'different'}});assert len(calls)==3
+    clock[0]-=timedelta(seconds=1);check(item);assert len(calls)==4
+    for i in range(513):check({**item,'forecast':{**f,'id':'CONTROLLED-'+str(i)}})
+    assert len(cache.keys)==512
+    recovered=ReplayCache();assert not recovered.keys
+    def fail(*a,**k):raise ValueError('CONTROLLED bad source')
+    with pytest.raises(ValueError):recovered.verify(item,{},now=clock[0],replay=fail,study_sha256=digest(item['study']))
+    assert not recovered.keys
+
+
+def test_controller_rechecks_causal_binding_but_reuses_exact_replay_and_refreshes_explorer(setup,monkeypatch,tmp_path):
+    from neraium_poly.contracts import Record
+    from neraium_poly.research.phase42 import controller
+    _,clock,_m,b,f,frame,fees,store,risk=setup
+    class ControlledStudy(Record):
+        forecasts:list
+    source=ControlledStudy(id='CONTROLLED-cache-study',timestamp=clock[0],available_at=clock[0],source='CONTROLLED',forecasts=[f]);store.append(source)
+    bound={f['id']:{'forecast':f,'study':source.model_dump(mode='json')}};causal=[];replays=[];reads=[]
+    def binding(*args,**kwargs):causal.append(True);return bound,{}
+    monkeypatch.setattr(controller,'bound_forecasts',binding)
+    monkeypatch.setattr(controller,'replay_model',lambda *a,**k:replays.append(True))
+    c=controller.Controller(store,risk_limits=risk,clock=lambda:clock[0],can_write=lambda:True,directory=tmp_path/'native')
+    def fresh():
+        clock[0]+=timedelta(seconds=1);reads.append(clock[0]);return frame_at(frame,b,clock[0])
+    c.tick(frame,fees,frame_provider=fresh);c.next_sources=None
+    c.tick(frame_at(frame,b,clock[0]),fees,frame_provider=fresh)
+    assert len(causal)==2 and len(replays)==1 and len(reads)==4
+    assert c.explorer.state['last_at']==reads[-1].isoformat()
+    assert c.report['source_replay_cache']['identical_input_hits']==1
+
+
+def test_closed_previous_cohort_retains_cash_forecasts_and_stops_without_new_quote_writes(setup):
+    from neraium_poly.research.phase44.cohort import Cohort
+    from neraium_poly.research.phase45.retire import ClosedPhase44
+    _,clock,_,_,f,_,_,store,risk=setup
+    old=Cohort(store,risk_limits=risk,clock=lambda:clock[0],can_write=lambda:True)
+    old.enroll([f],verifier=lambda _:None);old.state['profiles']['aggressive']['suspended']=True
+    old._commit(copy.deepcopy(old.state),[],{'operation':'CONTROLLED suspension'})
+    before=copy.deepcopy(old.state)
+    closed=ClosedPhase44(store,risk_limits=risk,clock=lambda:clock[0],can_write=lambda:True);closed.close_enrollment()
+    assert not closed.needs_quotes() and not closed.entry_enrollment_open
+    assert closed.state['profiles']==before['profiles'] and closed.state['forecasts']==before['forecasts']
+    seq=closed.state['sequence'];closed.close_enrollment();assert closed.state['sequence']==seq
+    recovered=ClosedPhase44(store,risk_limits=risk,clock=lambda:clock[0],can_write=lambda:True)
+    assert recovered.state==closed.state
+    closed.state['profiles']['balanced']['orders']['CONTROLLED']={'id':'CONTROLLED'}
+    assert closed.needs_quotes()
