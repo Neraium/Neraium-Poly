@@ -1,0 +1,22 @@
+Running as unit: run-rc1e0221259eb415d82b92eaea99578ab.scope; invocation ID: c21c4110a0714357b21f77b8e8d6bf2e
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/phase50-recovery/.planning/evidence/phase50/api-bench.py", line 82, in <module>
+    asyncio.run(main())
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/phase50-recovery/.planning/evidence/phase50/api-bench.py", line 55, in main
+    runtime=ExperimentalRuntime(ExperimentalConfig.model_validate(config))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/phase50-recovery.dwiiZA/8d8c115d20fc86604cffc4af64657f967b499b63/backend/neraium_poly/experimental/runtime.py", line 104, in __init__
+    self.archive = QuoteArchive(self.events, self.ledger.get("quote_archive", {}))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/phase50-recovery.dwiiZA/8d8c115d20fc86604cffc4af64657f967b499b63/backend/neraium_poly/research/archive.py", line 85, in __init__
+    raise ValueError("Missing canonical quote in recovered archive")
+ValueError: Missing canonical quote in recovered archive

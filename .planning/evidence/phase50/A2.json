@@ -1,0 +1,52 @@
+{
+  "managed_archive_ready_seconds": 42.49813759094104,
+  "stages_inclusive": {
+    "neraium_poly.data.segmented._tree_size": {
+      "calls": 31,
+      "seconds": 0.14071918418630958,
+      "input_bytes": 0
+    },
+    "ManagedEventStore._recover": {
+      "calls": 1,
+      "seconds": 29.28214614884928,
+      "input_bytes": 0
+    },
+    "neraium_poly.data.segmented._sha": {
+      "calls": 1536,
+      "seconds": 14.241293565370142,
+      "input_bytes": 4967043067
+    },
+    "ManagedEventStore._index_segment": {
+      "calls": 512,
+      "seconds": 6.568953490816057,
+      "input_bytes": 0
+    },
+    "ManagedEventStore._verify_compressed": {
+      "calls": 512,
+      "seconds": 12.380265833809972,
+      "input_bytes": 0
+    },
+    "ManagedEventStore.status": {
+      "calls": 1,
+      "seconds": 1.6365098231472075,
+      "input_bytes": 0
+    }
+  },
+  "io": {
+    "rchar": 9770574357,
+    "wchar": 58720,
+    "syscr": 965175,
+    "syscw": 4143,
+    "read_bytes": 3099074560,
+    "write_bytes": 16969728,
+    "cancelled_write_bytes": 0
+  },
+  "peak_rss_KiB": 162036,
+  "catalog_fingerprints": {
+    "records": "59685a7e009b23bda09eeae6beffb0bb36d7a92255995f30838bd10756dd8dc9",
+    "segments": "5e41ad8d8e0c96606140284310c1d0eba7c2af9e9632b06fa57598735555379a"
+  },
+  "cache": "fsync and POSIX_FADV_DONTNEED on separate copied inodes before timer. Kernel metadata and host device caches were not globally flushed.",
+  "scope": "Real selected sealed segments through production ManagedEventStore. No HTTP or account recovery timing.",
+  "sqlite": "3.45.1"
+}

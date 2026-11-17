@@ -1,0 +1,104 @@
+{
+  "legacy": {
+    "source_bytes": {
+      "forecasts.sqlite-shm": 32768,
+      "forecasts.sqlite-wal": 4148872,
+      "forecasts.sqlite": 63016960
+    },
+    "source_sha256": {
+      "forecasts.sqlite": "a54c915bba2724817df59373e872dd0e03d661f1b6d6f9f3d294b91b47f2fa2f",
+      "forecasts.sqlite-wal": "2bf54dbb135d1d998a47d18f09e3d5e8c8805b098e7d5a453ed1e2311e749fd6"
+    },
+    "before_checkpoint": {
+      "forecasts.sqlite-shm": 32768,
+      "forecasts.sqlite-wal": 4148872,
+      "forecasts.sqlite": 63016960
+    },
+    "after_checkpoint": {
+      "forecasts.sqlite-shm": 32768,
+      "forecasts.sqlite-wal": 0,
+      "forecasts.sqlite": 63016960
+    },
+    "headroom_bytes": 4059136,
+    "original": {
+      "chain": {
+        "records": 17725,
+        "head_sha256": "0940e7ff825f643bbc4deac28879bf6cde1b9a0d37eaeb76843fac677118f01f",
+        "integrity": "verified"
+      },
+      "logical_sha256": "740667ba2d8808159e3b44767eaafa71b1561d919edadce8c6c411e232616db6"
+    },
+    "after_killed_uncommitted_write": {
+      "chain": {
+        "records": 17725,
+        "head_sha256": "0940e7ff825f643bbc4deac28879bf6cde1b9a0d37eaeb76843fac677118f01f",
+        "integrity": "verified"
+      },
+      "logical_sha256": "740667ba2d8808159e3b44767eaafa71b1561d919edadce8c6c411e232616db6"
+    },
+    "controlled_retry": {
+      "records": 17726,
+      "id": "CONTROLLED-phase50-isolated-retry"
+    },
+    "after_restart": {
+      "chain": {
+        "records": 17726,
+        "head_sha256": "4b0d9de99dd2cab06ae2cf1c2a047567e83cd02eb1eda2fee853e56e0602d964",
+        "integrity": "verified"
+      },
+      "logical_sha256": "29f4d11b42542fd603e39560abafba869c4669b7baedd5c6596e98f6cacb2a47"
+    },
+    "guard_bytes": 67108864
+  },
+  "domains": {
+    "source_bytes": {
+      "forecasts.sqlite-shm": 32768,
+      "forecasts.sqlite-wal": 4466112,
+      "forecasts.sqlite": 65789952
+    },
+    "source_sha256": {
+      "forecasts.sqlite": "e65c723d9c6c07e56d9c274ae48f484938054505a0d06dfb9377a66f85f8861b",
+      "forecasts.sqlite-wal": "73af8e2a2c9a25d62a37cbf579ff5cf4298c7436d380f4b4a14f35acea514284"
+    },
+    "before_checkpoint": {
+      "forecasts.sqlite-shm": 32768,
+      "forecasts.sqlite-wal": 4466112,
+      "forecasts.sqlite": 65789952
+    },
+    "after_checkpoint": {
+      "forecasts.sqlite-shm": 32768,
+      "forecasts.sqlite-wal": 0,
+      "forecasts.sqlite": 65789952
+    },
+    "headroom_bytes": 1286144,
+    "original": {
+      "chain": {
+        "records": 357,
+        "head_sha256": "4c6d2e49f06a6165bd933ceef69aed4e04984701e1bf4dd35527d738337c050b",
+        "integrity": "verified"
+      },
+      "logical_sha256": "07c66c80666399e24d25137aa99bd3d3f902fc57c469d7e78fe3904e8d5f9cc2"
+    },
+    "after_killed_uncommitted_write": {
+      "chain": {
+        "records": 357,
+        "head_sha256": "4c6d2e49f06a6165bd933ceef69aed4e04984701e1bf4dd35527d738337c050b",
+        "integrity": "verified"
+      },
+      "logical_sha256": "07c66c80666399e24d25137aa99bd3d3f902fc57c469d7e78fe3904e8d5f9cc2"
+    },
+    "controlled_retry": {
+      "records": 358,
+      "id": "CONTROLLED-phase50-isolated-retry"
+    },
+    "after_restart": {
+      "chain": {
+        "records": 358,
+        "head_sha256": "58b34cffdd08bbb37aeba9a120018fd7bac4864f3a52b624fa1a5e871054998e",
+        "integrity": "verified"
+      },
+      "logical_sha256": "6c7688a2216c45259dabe4876f77aa011e24656a73ebf1c9f14e027b56777344"
+    },
+    "guard_bytes": 67108864
+  }
+}

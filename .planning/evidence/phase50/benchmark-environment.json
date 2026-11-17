@@ -1,0 +1,25 @@
+{
+  "snapshot_manifest_sha256": "efb43f94a93fa987a859f82ebc1b3132d80483631c555cbbbf50332bd9a61064",
+  "source_segments_sealed_at_snapshot": 12609,
+  "sample_segments": 512,
+  "sample_immutable_source_count": 1950,
+  "sample_immutable_bytes": 2966662718,
+  "starting_filesystem_free_bytes": 171577372672,
+  "reserve_bytes": 107374182400,
+  "pretest_scratch_headroom_bytes": 64203190272,
+  "source_archive_allocated_bytes": 80323035136,
+  "scopes": [
+    {
+      "cpu.max": "100000 100000",
+      "memory.max": "2147483648",
+      "memory.swap.max": "0"
+    }
+  ],
+  "original_sequence": [
+    "8d8c115/A1",
+    "f7903e1/B1",
+    "f7903e1/B2",
+    "8d8c115/A2"
+  ],
+  "copy_condition": "Independent regular file inodes, same verified catalog and immutable SHA manifest, fsync before DONTNEED. Device and directory metadata caches not flushed. Each worker 100% CPU quota, 2 GiB memory, swap off."
+}

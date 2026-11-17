@@ -1,0 +1,3 @@
+# Phase 50 verified recovery checkpoint
+
+Worktree phase50-recovery. Branch citadel/phase50-recovery. Base 96763b1 and implementation 8d9756ff8a514ad87947646ffc330f0c3e10efc8. Exact-source CI 44187256997 green. Complete matched A/B recovery, C validation, 128-segment size contrast, equivalent-limit reduced HTTP runs, live read-only preservation checks, ledger-copy interruption and retry, and producer transport trace. Closing candidate is staged. Full-size recovery margin and a separate shadow-resumption decision are pending. No live restart or storage change. Active experimental 8d8c115 PID 660816, stop latched, paper-only and quiesced. Reference PID 555731. Review phase50.md and evidence/phase50/closing.json before future rollout.

@@ -1,0 +1,2 @@
+backend	Run uv run --frozen ruff check backend tests	2026-11-17T22:10:00.6933292Z All checks passed!
+backend	Run uv run --frozen pytest -q --junitxml=certification.xml	2026-11-17T22:11:11.5316810Z 2449 passed, 1 warning in 69.69s (0:01:09)

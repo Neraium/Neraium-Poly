@@ -1,0 +1,29 @@
+{
+  "runtime_initialized_seconds": 66.43898263107985,
+  "first_http_health_response_seconds": 66.46908912993968,
+  "health": {
+    "status": "degraded",
+    "account_id": "experimental-paper",
+    "validation_status": "unvalidated",
+    "paper_trading": true,
+    "live_trading_enabled": false,
+    "last_ingestion_at": null,
+    "last_ingestion_age_seconds": null,
+    "last_error": null,
+    "fee_error": null,
+    "research_reference": null,
+    "public_feed": {
+      "status": "not_observed",
+      "producer_url": "http://127.0.0.1:18742/api/market-frame",
+      "attempts": 0,
+      "failures": 0,
+      "trading_authority": false
+    },
+    "timestamp": "2026-11-17T22:24:39.629498+00:00"
+  },
+  "accounts_identical": true,
+  "frozen_trial_bytes_preserved": 14,
+  "peak_rss_KiB": 187708,
+  "scope": "Identical reduced sealed corpus and independent committed account copies. Production runtime and HTTP route, no ingestion workers, original certificate data or live accounts. HTTP readiness is not full operational readiness.",
+  "cache": "fsync and DONTNEED on isolated copied file inodes"
+}
