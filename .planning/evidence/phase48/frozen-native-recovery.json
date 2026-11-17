@@ -1,0 +1,65 @@
+{
+  "at": "2026-11-17T17:43:21.081382+00:00",
+  "results": [
+    {
+      "trial_id": "b6f28132057d4eb38808c9d7e553834cdd246de5eabf5c553e9cfa28395ab7fa",
+      "source_forecast_sha256": "0e50aa3d8ea1fad049e10d352b15547ad7ce85c15b7d8211e69ca84ddbdfafb7",
+      "original_trial_sha256": "1371bf8f4960315be95cc3517fc610eaa5424d02bd613dfa2bcfcea7f784c925",
+      "at": "2026-11-17T17:43:14.705803+00:00",
+      "directory": "frozen-native-53763e1b96cf739fe8c4",
+      "official_metadata_not_payout": true,
+      "live_archive_modified": false,
+      "live_journal_modified": false,
+      "verified": true,
+      "proof": {
+        "forecast_id": "cf598ee5eae83d30be0c5f50ad64e1e1911aee7d64f8984bb5be3cc2f773527a",
+        "event_id": "1407036",
+        "market_id": "7109757",
+        "token_id": "1872539315902515924799606559214177791785349026659019769256652879632505688486",
+        "rules_sha256": "638df5f387291ab1afa41edc265695e1b5264a48080a7d0aca10418a60621201",
+        "payout": 1,
+        "resolved_at": "2026-11-17T15:59:02+00:00",
+        "available_at": "2026-11-17T17:43:17.866580+00:00",
+        "verified": true,
+        "native_payout_verified": true,
+        "proof_sha256": "44d2985df9cf1d2299d63886fa2e53047e60a8417882d42764099e4025446dfc",
+        "verification_source": "standard_CTF_receipt_canonical_finality_and_original_USDC_outcome_asset_v44",
+        "trust_limit": "HTTPS RPC attribution and reproducible evidence, not independent node consensus verification",
+        "independence_reviewed": false,
+        "research_only": true,
+        "trading_authority": false
+      }
+    },
+    {
+      "trial_id": "2ee38f3752ad734556551fe8a3dff8b2a9a21c5c7fe8624a6d80ccb024d905bf",
+      "source_forecast_sha256": "eb10492115eb12efbb665a6948c6c30d29ae556f75399190c92c9c847a971823",
+      "original_trial_sha256": "dc0be7fa7feb29f66f5ab42a222a1c6a25a6de9d17058aab5f0eccde346d56a5",
+      "at": "2026-11-17T17:43:17.892224+00:00",
+      "directory": "frozen-native-b86f44918de77714cfe2",
+      "official_metadata_not_payout": true,
+      "live_archive_modified": false,
+      "live_journal_modified": false,
+      "verified": true,
+      "proof": {
+        "forecast_id": "551f877c9c0ca1db12a65470b3af92d869dde8c1dc5e342a5e5cb28b098e009f",
+        "event_id": "1407036",
+        "market_id": "7109757",
+        "token_id": "1872539315902515924799606559214177791785349026659019769256652879632505688486",
+        "rules_sha256": "638df5f387291ab1afa41edc265695e1b5264a48080a7d0aca10418a60621201",
+        "payout": 1,
+        "resolved_at": "2026-11-17T15:59:02+00:00",
+        "available_at": "2026-11-17T17:43:21.057555+00:00",
+        "verified": true,
+        "native_payout_verified": true,
+        "proof_sha256": "e7f6a6b4fa4a4f6e5ab6b8067c50a2917af7f5cd845039ff039e2f32c770fa9f",
+        "verification_source": "standard_CTF_receipt_canonical_finality_and_original_USDC_outcome_asset_v44",
+        "trust_limit": "HTTPS RPC attribution and reproducible evidence, not independent node consensus verification",
+        "independence_reviewed": false,
+        "research_only": true,
+        "trading_authority": false
+      }
+    }
+  ],
+  "no_original_forecasts_changed": true,
+  "no_live_publication": true
+}

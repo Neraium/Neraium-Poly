@@ -1,0 +1,140 @@
+{
+  "at": "2026-11-17T17:48:34.909116+00:00",
+  "status": "BLOCKED_ACTIVATION",
+  "branch": "citadel/phase48-evidence",
+  "source": "f8c69539e6b075d393a8bb5a5d8ace386b1eefc0",
+  "deployed_source": "95599ffec0cc4a4bf1b6a35480747276d6c55b50",
+  "services_restarted": false,
+  "live_migration": false,
+  "live_native_capacity": {
+    "logical_bytes": 67108855,
+    "unique_bytes": 67108855,
+    "allocated_bytes": 70025216,
+    "files": 1098,
+    "unique_inodes": 1098,
+    "limit_bytes": 67108864
+  },
+  "live_headroom_bytes": 9,
+  "isolated_rehearsal_allocated_savings_bytes": 43200512,
+  "actual_live_reclaimed_bytes": 0,
+  "original963_byte_hashes_preserved": true,
+  "all15_live_proofs_replayed": true,
+  "new_isolated_native_proofs": 2,
+  "new_contracts": 1,
+  "new_parent_events": 1,
+  "new_dependency_blocks": 1,
+  "positive_payouts": 1,
+  "zero_payouts_new": 0,
+  "frozen_trials_verified_in_isolation": 2,
+  "frozen_trials_pending_or_disputed": 12,
+  "live_journal_publication": false,
+  "scoring": {
+    "external": {
+      "brier": 0.5876909447248868,
+      "log_loss_clipped_1e_minus12": 1.4920914888171537
+    },
+    "market": {
+      "brier": 0.354025,
+      "log_loss_clipped_1e_minus12": 0.9038682118755978
+    },
+    "zero": {
+      "brier": 1.0,
+      "log_loss_clipped_1e_minus12": 27.631021115928547
+    },
+    "one": {
+      "brier": 0.0,
+      "log_loss_clipped_1e_minus12": 0.0
+    },
+    "neutral": {
+      "brier": 0.25,
+      "log_loss_clipped_1e_minus12": 0.6931471805599453
+    },
+    "past_frequency": {
+      "brier": 0.5625,
+      "log_loss_clipped_1e_minus12": 1.3862943611198906
+    },
+    "past_horizon_frequency": {
+      "brier": 0.5625,
+      "log_loss_clipped_1e_minus12": 1.3862943611198906
+    }
+  },
+  "reviewed_independent_samples": 0,
+  "isolated_shadow_native_net_delta": 1.1124688279301411,
+  "all_in_costs_verified": false,
+  "profitable_edge_demonstrated": false,
+  "live_before_fresh": 18,
+  "live_before_samples": 60,
+  "live_before_duration_seconds": 304.3622282971628,
+  "post_activation_observation": null,
+  "ci_run": 44139326953,
+  "ci_backend_tests_passed": 2445,
+  "ci_overall": "failure",
+  "ci_blocker": "Unpatched high picomatch ReDoS GHSA-fc5q-39xc-vjpf; dashboard audit fails. Audit-suggested Vite6.2.7 introduces other vulnerabilities and was rejected; exact originals restored. No gate bypass.",
+  "additional_activation_blocker": "Last experimental ingestion health degraded: cycle_failed:ValueError, age25.6s; reference fresh. Financial/journal safety gate passes.",
+  "ending_services": {
+    "neraium-poly-paper.service": {
+      "MainPID": "555731",
+      "ActiveState": "active",
+      "NRestarts": "2",
+      "MemoryCurrent": "1073479680",
+      "MemoryMax": "1073741824",
+      "health": {
+        "status": "ok",
+        "paper_trading": true,
+        "live_trading_enabled": false,
+        "mode": "live_market_paper",
+        "trading_status": "validation_blocked",
+        "last_ingestion_at": "2026-11-17T17:45:54.431549+00:00",
+        "last_ingestion_age_seconds": 0.080687,
+        "last_error": null,
+        "ledger_consistent": true,
+        "timestamp": "2026-11-17T17:45:54.512236+00:00"
+      }
+    },
+    "neraium-poly-experimental.service": {
+      "MainPID": "588342",
+      "ActiveState": "active",
+      "NRestarts": "0",
+      "MemoryCurrent": "2021429248",
+      "MemoryMax": "2147483648",
+      "health": {
+        "status": "degraded",
+        "account_id": "experimental-paper",
+        "validation_status": "unvalidated",
+        "paper_trading": true,
+        "live_trading_enabled": false,
+        "last_ingestion_at": "2026-11-17T17:45:28.930618+00:00",
+        "last_ingestion_age_seconds": 25.60341,
+        "last_error": "cycle_failed:ValueError",
+        "fee_error": null,
+        "research_reference": {
+          "attempts": 1205,
+          "failures": 85,
+          "last_attempt": "2026-11-17T17:45:49.765982+00:00",
+          "last_error": null,
+          "fresh_books_at_receipt": 30,
+          "maximum_workers": 1,
+          "queued_requests": 0,
+          "median_read_seconds": 0.669829977909103,
+          "maximum_read_seconds": 3.4840999729931355,
+          "available_at": "2026-11-17T17:45:49.781729+00:00",
+          "age_seconds": 4.75235,
+          "status": "fresh",
+          "trading_authority": false
+        },
+        "public_feed": {
+          "status": "not_observed",
+          "producer_url": "http://127.0.0.1:18742/api/market-frame",
+          "attempts": 0,
+          "failures": 0,
+          "trading_authority": false
+        },
+        "timestamp": "2026-11-17T17:45:54.534028+00:00"
+      }
+    }
+  },
+  "ending_financial_gate_passed": true,
+  "filesystem_free_bytes": 184825196544,
+  "reserve_bytes": 107374182400,
+  "next_action": "Repair the dashboard build dependency security gate without audit suppression; obtain all-source green CI and healthy immediate service gates. Reverify exact source/backup/rollback, migrate quiescent experimental archive only, then activate and observe. Native proof publication must preserve frozen14 and original costs."
+}

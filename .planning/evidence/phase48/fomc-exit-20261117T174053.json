@@ -1,0 +1,1578 @@
+{
+  "at": "2026-11-17T17:40:53.348899+00:00",
+  "position": {
+    "cohort": "phase45",
+    "profile": "aggressive",
+    "strategy": "independent",
+    "question": "Will there be no change in Fed interest rates after the December 2026 meeting?",
+    "outcome": "Yes",
+    "market_id": "3215007",
+    "token_id": "42865728742506860386768556888821101266630139112044622335353850919229585308601",
+    "quantity": 18.899953130441386,
+    "capital": 0.7218083595654485,
+    "marked_net_pnl": null,
+    "entry_at": "2026-11-17T06:25:50.302581+00:00",
+    "forecast_id": "0f7d1eb6d8079967bca459b0f8fb030367a59dfafad069fece24c6e830325a0f"
+  },
+  "fee_proof": {
+    "status": "verified_current_protocol_curve",
+    "token_id": "42865728742506860386768556888821101266630139112044622335353850919229585308601",
+    "condition_id": "0x723822eb2b143cee54c0bd7c1efba322b21f0051984c266df8879c394f1011c0",
+    "rate": 0.05,
+    "exponent": 1,
+    "taker_only": true,
+    "formula": "shares * fd.r * price * (1-price)",
+    "documentation": "https://docs.polymarket.com/trading/fees",
+    "fee_observation_id": "6d3198de-1886-4d54-bb2e-617cb4d0e7b3",
+    "fee_observation_sha256": "f93bd7c4b48b38567c862b7d05e5a0c7e765f8afba07d0051ff7bf9c7096b7ce",
+    "raw_response_ids": [
+      "c16be7a64f9e0ff32ef994418b0b8e104c22ef02b52ca78e0c0b265ba8a1888c",
+      "5a3689fb3abd704291a05ac9f668e70231c092788baa3338ff56a7ffff21c51d"
+    ],
+    "retrieval_ids": [
+      "286b2f016c5271434692f1df3a2875cf24b847da739ab9d777546ae6766953ab",
+      "ba7bce716621350b318ae8b837c6750689f0113db13960d1d343b6dd5c92ece5"
+    ],
+    "available_at": "2026-11-17T17:40:53.087387Z",
+    "as_of": "2026-11-17T17:40:53.348899+00:00",
+    "source_timestamp": null,
+    "timestamp_semantics": "public responses provide retrieval/availability time; exchange effective-time unavailable",
+    "rounding": "official nearest 5 decimals; per-fill count unknown, conservative bound used",
+    "all_in_costs_verified": false,
+    "missing_cost_evidence": [
+      "fill_fragmentation_rounding",
+      "additional_slippage",
+      "latency_adverse_selection",
+      "capital_lockup_cost",
+      "settlement_redemption_cost"
+    ],
+    "calibration_verified": false,
+    "research_only": true,
+    "trading_authority": false
+  },
+  "book": {
+    "schema_version": "1.0",
+    "id": "9ccefc8f1ef22b1db906345c58ac91d697e08443977b779687a35755ab696d2e",
+    "timestamp": "2026-11-17T17:40:52.570000Z",
+    "available_at": "2026-11-17T17:40:53.348003Z",
+    "source": "https://clob.polymarket.com",
+    "exchange": "polymarket",
+    "market_id": "3215007",
+    "token_id": "42865728742506860386768556888821101266630139112044622335353850919229585308601",
+    "bids": [
+      {
+        "price": 0.031,
+        "size": 100.0
+      },
+      {
+        "price": 0.029,
+        "size": 66.99
+      },
+      {
+        "price": 0.028,
+        "size": 313.14
+      },
+      {
+        "price": 0.027,
+        "size": 41625.16
+      },
+      {
+        "price": 0.026,
+        "size": 107325.92
+      },
+      {
+        "price": 0.025,
+        "size": 2000.0
+      },
+      {
+        "price": 0.024,
+        "size": 1500.0
+      },
+      {
+        "price": 0.023,
+        "size": 2000.0
+      },
+      {
+        "price": 0.022,
+        "size": 1147.0
+      },
+      {
+        "price": 0.021,
+        "size": 24234.27
+      },
+      {
+        "price": 0.02,
+        "size": 155978.86
+      },
+      {
+        "price": 0.019,
+        "size": 100.0
+      },
+      {
+        "price": 0.018,
+        "size": 28152.2
+      },
+      {
+        "price": 0.017,
+        "size": 11142.58
+      },
+      {
+        "price": 0.016,
+        "size": 21300.0
+      },
+      {
+        "price": 0.015,
+        "size": 119815.16
+      },
+      {
+        "price": 0.014,
+        "size": 3300.0
+      },
+      {
+        "price": 0.013,
+        "size": 7133.92
+      },
+      {
+        "price": 0.012,
+        "size": 10353.3
+      },
+      {
+        "price": 0.011,
+        "size": 28854.64
+      },
+      {
+        "price": 0.01,
+        "size": 9139.27
+      },
+      {
+        "price": 0.009,
+        "size": 9649.06
+      },
+      {
+        "price": 0.008,
+        "size": 14061.25
+      },
+      {
+        "price": 0.007,
+        "size": 30767.76
+      },
+      {
+        "price": 0.006,
+        "size": 24474.09
+      },
+      {
+        "price": 0.005,
+        "size": 243623.1
+      },
+      {
+        "price": 0.004,
+        "size": 56208.0
+      },
+      {
+        "price": 0.003,
+        "size": 68454.96
+      },
+      {
+        "price": 0.002,
+        "size": 101506.62
+      },
+      {
+        "price": 0.001,
+        "size": 552666.74
+      }
+    ],
+    "asks": [
+      {
+        "price": 0.032,
+        "size": 103.31
+      },
+      {
+        "price": 0.033,
+        "size": 250.0
+      },
+      {
+        "price": 0.034,
+        "size": 6138.0
+      },
+      {
+        "price": 0.035,
+        "size": 5037.1
+      },
+      {
+        "price": 0.036,
+        "size": 50579.0
+      },
+      {
+        "price": 0.037,
+        "size": 7219.99
+      },
+      {
+        "price": 0.038,
+        "size": 18089.09
+      },
+      {
+        "price": 0.039,
+        "size": 11113.3
+      },
+      {
+        "price": 0.04,
+        "size": 11727.91
+      },
+      {
+        "price": 0.041,
+        "size": 1455.76
+      },
+      {
+        "price": 0.042,
+        "size": 5100.0
+      },
+      {
+        "price": 0.043,
+        "size": 7104.0
+      },
+      {
+        "price": 0.044,
+        "size": 100.0
+      },
+      {
+        "price": 0.045,
+        "size": 5300.0
+      },
+      {
+        "price": 0.046,
+        "size": 134.0
+      },
+      {
+        "price": 0.047,
+        "size": 5984.5
+      },
+      {
+        "price": 0.048,
+        "size": 1431.99
+      },
+      {
+        "price": 0.049,
+        "size": 5000.0
+      },
+      {
+        "price": 0.05,
+        "size": 2359.95
+      },
+      {
+        "price": 0.052,
+        "size": 11602.0
+      },
+      {
+        "price": 0.053,
+        "size": 2000.0
+      },
+      {
+        "price": 0.054,
+        "size": 5000.0
+      },
+      {
+        "price": 0.055,
+        "size": 100.0
+      },
+      {
+        "price": 0.056,
+        "size": 1493.34
+      },
+      {
+        "price": 0.057,
+        "size": 10.0
+      },
+      {
+        "price": 0.058,
+        "size": 50.0
+      },
+      {
+        "price": 0.059,
+        "size": 5000.0
+      },
+      {
+        "price": 0.06,
+        "size": 2100.0
+      },
+      {
+        "price": 0.061,
+        "size": 33.79
+      },
+      {
+        "price": 0.062,
+        "size": 5033.82
+      },
+      {
+        "price": 0.063,
+        "size": 33.86
+      },
+      {
+        "price": 0.064,
+        "size": 33.89
+      },
+      {
+        "price": 0.065,
+        "size": 64.92
+      },
+      {
+        "price": 0.066,
+        "size": 33.96
+      },
+      {
+        "price": 0.067,
+        "size": 33.99
+      },
+      {
+        "price": 0.068,
+        "size": 1088.03
+      },
+      {
+        "price": 0.069,
+        "size": 3034.06
+      },
+      {
+        "price": 0.07,
+        "size": 2359.1
+      },
+      {
+        "price": 0.071,
+        "size": 34.13
+      },
+      {
+        "price": 0.072,
+        "size": 5034.17
+      },
+      {
+        "price": 0.073,
+        "size": 54.2
+      },
+      {
+        "price": 0.074,
+        "size": 114.24
+      },
+      {
+        "price": 0.075,
+        "size": 34.27
+      },
+      {
+        "price": 0.076,
+        "size": 34.31
+      },
+      {
+        "price": 0.079,
+        "size": 5500.0
+      },
+      {
+        "price": 0.08,
+        "size": 270.03
+      },
+      {
+        "price": 0.082,
+        "size": 5000.0
+      },
+      {
+        "price": 0.088,
+        "size": 1100.0
+      },
+      {
+        "price": 0.089,
+        "size": 10000.0
+      },
+      {
+        "price": 0.09,
+        "size": 2712.0
+      },
+      {
+        "price": 0.092,
+        "size": 5000.0
+      },
+      {
+        "price": 0.096,
+        "size": 100.0
+      },
+      {
+        "price": 0.1,
+        "size": 10017.0
+      },
+      {
+        "price": 0.102,
+        "size": 5000.0
+      },
+      {
+        "price": 0.11,
+        "size": 8630.0
+      },
+      {
+        "price": 0.113,
+        "size": 5000.0
+      },
+      {
+        "price": 0.12,
+        "size": 2898.0
+      },
+      {
+        "price": 0.128,
+        "size": 8.1
+      },
+      {
+        "price": 0.129,
+        "size": 1000.0
+      },
+      {
+        "price": 0.13,
+        "size": 3893.6
+      },
+      {
+        "price": 0.133,
+        "size": 5000.0
+      },
+      {
+        "price": 0.138,
+        "size": 400.0
+      },
+      {
+        "price": 0.139,
+        "size": 500.0
+      },
+      {
+        "price": 0.14,
+        "size": 10.0
+      },
+      {
+        "price": 0.15,
+        "size": 400.0
+      },
+      {
+        "price": 0.16,
+        "size": 9500.0
+      },
+      {
+        "price": 0.163,
+        "size": 5000.0
+      },
+      {
+        "price": 0.17,
+        "size": 1512.51
+      },
+      {
+        "price": 0.18,
+        "size": 4980.4
+      },
+      {
+        "price": 0.188,
+        "size": 150.0
+      },
+      {
+        "price": 0.19,
+        "size": 1000.0
+      },
+      {
+        "price": 0.193,
+        "size": 5000.0
+      },
+      {
+        "price": 0.21,
+        "size": 10.0
+      },
+      {
+        "price": 0.22,
+        "size": 5888.46
+      },
+      {
+        "price": 0.222,
+        "size": 1000.0
+      },
+      {
+        "price": 0.223,
+        "size": 5000.0
+      },
+      {
+        "price": 0.23,
+        "size": 1362.5
+      },
+      {
+        "price": 0.25,
+        "size": 1200.0
+      },
+      {
+        "price": 0.253,
+        "size": 5000.0
+      },
+      {
+        "price": 0.26,
+        "size": 2819.52
+      },
+      {
+        "price": 0.28,
+        "size": 10.0
+      },
+      {
+        "price": 0.31,
+        "size": 1005.01
+      },
+      {
+        "price": 0.324,
+        "size": 1000.0
+      },
+      {
+        "price": 0.33,
+        "size": 21.72
+      },
+      {
+        "price": 0.35,
+        "size": 457.14
+      },
+      {
+        "price": 0.37,
+        "size": 5.0
+      },
+      {
+        "price": 0.388,
+        "size": 150.0
+      },
+      {
+        "price": 0.39,
+        "size": 13710.0
+      },
+      {
+        "price": 0.4,
+        "size": 16422.58
+      },
+      {
+        "price": 0.41,
+        "size": 20.0
+      },
+      {
+        "price": 0.419,
+        "size": 11000.0
+      },
+      {
+        "price": 0.42,
+        "size": 45034.0
+      },
+      {
+        "price": 0.424,
+        "size": 500.0
+      },
+      {
+        "price": 0.43,
+        "size": 10032.89
+      },
+      {
+        "price": 0.44,
+        "size": 2272.72
+      },
+      {
+        "price": 0.45,
+        "size": 1882.26
+      },
+      {
+        "price": 0.46,
+        "size": 726.37
+      },
+      {
+        "price": 0.48,
+        "size": 4941.5
+      },
+      {
+        "price": 0.49,
+        "size": 84.0
+      },
+      {
+        "price": 0.54,
+        "size": 548.93
+      },
+      {
+        "price": 0.55,
+        "size": 10.0
+      },
+      {
+        "price": 0.589,
+        "size": 1000.0
+      },
+      {
+        "price": 0.59,
+        "size": 633.0
+      },
+      {
+        "price": 0.6,
+        "size": 61.66
+      },
+      {
+        "price": 0.699,
+        "size": 6666.0
+      },
+      {
+        "price": 0.7,
+        "size": 81.95
+      },
+      {
+        "price": 0.815,
+        "size": 5.83
+      },
+      {
+        "price": 0.816,
+        "size": 543.0
+      },
+      {
+        "price": 0.817,
+        "size": 9000.0
+      },
+      {
+        "price": 0.818,
+        "size": 8888.0
+      },
+      {
+        "price": 0.819,
+        "size": 10000.0
+      },
+      {
+        "price": 0.82,
+        "size": 200000.0
+      },
+      {
+        "price": 0.848,
+        "size": 150.0
+      },
+      {
+        "price": 0.85,
+        "size": 500.0
+      },
+      {
+        "price": 0.9,
+        "size": 10.0
+      },
+      {
+        "price": 0.91,
+        "size": 233.59
+      },
+      {
+        "price": 0.929,
+        "size": 6.44
+      },
+      {
+        "price": 0.93,
+        "size": 504.63
+      },
+      {
+        "price": 0.94,
+        "size": 1058.25
+      },
+      {
+        "price": 0.95,
+        "size": 1673.39
+      },
+      {
+        "price": 0.958,
+        "size": 800.0
+      },
+      {
+        "price": 0.959,
+        "size": 60000.0
+      },
+      {
+        "price": 0.96,
+        "size": 65630.32
+      },
+      {
+        "price": 0.968,
+        "size": 5.89
+      },
+      {
+        "price": 0.969,
+        "size": 350.0
+      },
+      {
+        "price": 0.97,
+        "size": 94771.47
+      },
+      {
+        "price": 0.98,
+        "size": 144375.0
+      },
+      {
+        "price": 0.987,
+        "size": 8.35
+      },
+      {
+        "price": 0.988,
+        "size": 416.66
+      },
+      {
+        "price": 0.989,
+        "size": 502165.04
+      },
+      {
+        "price": 0.99,
+        "size": 312028.99
+      },
+      {
+        "price": 0.991,
+        "size": 666.66
+      },
+      {
+        "price": 0.992,
+        "size": 1375.0
+      },
+      {
+        "price": 0.993,
+        "size": 1577.11
+      },
+      {
+        "price": 0.994,
+        "size": 1833.32
+      },
+      {
+        "price": 0.995,
+        "size": 2200.0
+      },
+      {
+        "price": 0.996,
+        "size": 31505.53
+      },
+      {
+        "price": 0.997,
+        "size": 6749.98
+      },
+      {
+        "price": 0.998,
+        "size": 113341.1
+      },
+      {
+        "price": 0.999,
+        "size": 21029072.31
+      }
+    ],
+    "sequence": 0,
+    "complete": true
+  },
+  "book_quality": "DataHealth(healthy=True, reasons=(), age_seconds=0.778899, spread=0.0010000000000000009)",
+  "full_quantity_observable": true,
+  "indicative_gross_exit_value": 0.5658976876523588,
+  "formula_exit_fee": 0.02744641406990464,
+  "modeled_exit_slippage": 0.02834992969566208,
+  "indicative_net_pnl": -0.21170701567865646,
+  "actual_fill": false,
+  "exit_performed": false,
+  "entry_repriced": false,
+  "assumptions": "10% depth participation, first8bid levels, modeled0.0015/share exit slippage; full all-in cost evidence unavailable",
+  "records": {
+    "FeeObservation": [
+      {
+        "schema_version": "1.0",
+        "id": "6d3198de-1886-4d54-bb2e-617cb4d0e7b3",
+        "timestamp": "2026-11-17T17:40:53.087387Z",
+        "available_at": "2026-11-17T17:40:53.087387Z",
+        "source": "https://clob.polymarket.com",
+        "token_id": "42865728742506860386768556888821101266630139112044622335353850919229585308601",
+        "fee_rate": 0.05,
+        "raw_response_ids": [
+          "c16be7a64f9e0ff32ef994418b0b8e104c22ef02b52ca78e0c0b265ba8a1888c",
+          "5a3689fb3abd704291a05ac9f668e70231c092788baa3338ff56a7ffff21c51d"
+        ],
+        "retrieval_ids": [
+          "286b2f016c5271434692f1df3a2875cf24b847da739ab9d777546ae6766953ab",
+          "ba7bce716621350b318ae8b837c6750689f0113db13960d1d343b6dd5c92ece5"
+        ],
+        "assumption": "Current official exponent1 global notional fee bound; refreshed by receipt-time TTL"
+      }
+    ],
+    "PublicFeeResponse": [
+      {
+        "schema_version": "1.0",
+        "id": "b7443afbec49fb65364b091848309c21bee64285fda41c4e96ce5c0566d7558e",
+        "timestamp": "2026-11-17T17:40:53.347184Z",
+        "available_at": "2026-11-17T17:40:53.347184Z",
+        "source": "https://clob.polymarket.com",
+        "url": "https://clob.polymarket.com/book",
+        "content_sha256": "9f4ee0abf55d7fc419788ed471b16a1d4ed4ec9c9e7c574c776369c39e877dc3",
+        "hash_basis": "canonical_json_payload_not_HTTP_bytes",
+        "payload": {
+          "market": "0x723822eb2b143cee54c0bd7c1efba322b21f0051984c266df8879c394f1011c0",
+          "asset_id": "42865728742506860386768556888821101266630139112044622335353850919229585308601",
+          "timestamp": "1794937252570",
+          "hash": "46eea745dc52174635ee727484b970e416ba2644",
+          "bids": [
+            {
+              "price": "0.001",
+              "size": "552666.74"
+            },
+            {
+              "price": "0.002",
+              "size": "101506.62"
+            },
+            {
+              "price": "0.003",
+              "size": "68454.96"
+            },
+            {
+              "price": "0.004",
+              "size": "56208"
+            },
+            {
+              "price": "0.005",
+              "size": "243623.1"
+            },
+            {
+              "price": "0.006",
+              "size": "24474.09"
+            },
+            {
+              "price": "0.007",
+              "size": "30767.76"
+            },
+            {
+              "price": "0.008",
+              "size": "14061.25"
+            },
+            {
+              "price": "0.009",
+              "size": "9649.06"
+            },
+            {
+              "price": "0.01",
+              "size": "9139.27"
+            },
+            {
+              "price": "0.011",
+              "size": "28854.64"
+            },
+            {
+              "price": "0.012",
+              "size": "10353.3"
+            },
+            {
+              "price": "0.013",
+              "size": "7133.92"
+            },
+            {
+              "price": "0.014",
+              "size": "3300"
+            },
+            {
+              "price": "0.015",
+              "size": "119815.16"
+            },
+            {
+              "price": "0.016",
+              "size": "21300"
+            },
+            {
+              "price": "0.017",
+              "size": "11142.58"
+            },
+            {
+              "price": "0.018",
+              "size": "28152.2"
+            },
+            {
+              "price": "0.019",
+              "size": "100"
+            },
+            {
+              "price": "0.02",
+              "size": "155978.86"
+            },
+            {
+              "price": "0.021",
+              "size": "24234.27"
+            },
+            {
+              "price": "0.022",
+              "size": "1147"
+            },
+            {
+              "price": "0.023",
+              "size": "2000"
+            },
+            {
+              "price": "0.024",
+              "size": "1500"
+            },
+            {
+              "price": "0.025",
+              "size": "2000"
+            },
+            {
+              "price": "0.026",
+              "size": "107325.92"
+            },
+            {
+              "price": "0.027",
+              "size": "41625.16"
+            },
+            {
+              "price": "0.028",
+              "size": "313.14"
+            },
+            {
+              "price": "0.029",
+              "size": "66.99"
+            },
+            {
+              "price": "0.031",
+              "size": "100"
+            }
+          ],
+          "asks": [
+            {
+              "price": "0.999",
+              "size": "21029072.31"
+            },
+            {
+              "price": "0.998",
+              "size": "113341.1"
+            },
+            {
+              "price": "0.997",
+              "size": "6749.98"
+            },
+            {
+              "price": "0.996",
+              "size": "31505.53"
+            },
+            {
+              "price": "0.995",
+              "size": "2200"
+            },
+            {
+              "price": "0.994",
+              "size": "1833.32"
+            },
+            {
+              "price": "0.993",
+              "size": "1577.11"
+            },
+            {
+              "price": "0.992",
+              "size": "1375"
+            },
+            {
+              "price": "0.991",
+              "size": "666.66"
+            },
+            {
+              "price": "0.99",
+              "size": "312028.99"
+            },
+            {
+              "price": "0.989",
+              "size": "502165.04"
+            },
+            {
+              "price": "0.988",
+              "size": "416.66"
+            },
+            {
+              "price": "0.987",
+              "size": "8.35"
+            },
+            {
+              "price": "0.98",
+              "size": "144375"
+            },
+            {
+              "price": "0.97",
+              "size": "94771.47"
+            },
+            {
+              "price": "0.969",
+              "size": "350"
+            },
+            {
+              "price": "0.968",
+              "size": "5.89"
+            },
+            {
+              "price": "0.96",
+              "size": "65630.32"
+            },
+            {
+              "price": "0.959",
+              "size": "60000"
+            },
+            {
+              "price": "0.958",
+              "size": "800"
+            },
+            {
+              "price": "0.95",
+              "size": "1673.39"
+            },
+            {
+              "price": "0.94",
+              "size": "1058.25"
+            },
+            {
+              "price": "0.93",
+              "size": "504.63"
+            },
+            {
+              "price": "0.929",
+              "size": "6.44"
+            },
+            {
+              "price": "0.91",
+              "size": "233.59"
+            },
+            {
+              "price": "0.9",
+              "size": "10"
+            },
+            {
+              "price": "0.85",
+              "size": "500"
+            },
+            {
+              "price": "0.848",
+              "size": "150"
+            },
+            {
+              "price": "0.82",
+              "size": "200000"
+            },
+            {
+              "price": "0.819",
+              "size": "10000"
+            },
+            {
+              "price": "0.818",
+              "size": "8888"
+            },
+            {
+              "price": "0.817",
+              "size": "9000"
+            },
+            {
+              "price": "0.816",
+              "size": "543"
+            },
+            {
+              "price": "0.815",
+              "size": "5.83"
+            },
+            {
+              "price": "0.7",
+              "size": "81.95"
+            },
+            {
+              "price": "0.699",
+              "size": "6666"
+            },
+            {
+              "price": "0.6",
+              "size": "61.66"
+            },
+            {
+              "price": "0.59",
+              "size": "633"
+            },
+            {
+              "price": "0.589",
+              "size": "1000"
+            },
+            {
+              "price": "0.55",
+              "size": "10"
+            },
+            {
+              "price": "0.54",
+              "size": "548.93"
+            },
+            {
+              "price": "0.49",
+              "size": "84"
+            },
+            {
+              "price": "0.48",
+              "size": "4941.5"
+            },
+            {
+              "price": "0.46",
+              "size": "726.37"
+            },
+            {
+              "price": "0.45",
+              "size": "1882.26"
+            },
+            {
+              "price": "0.44",
+              "size": "2272.72"
+            },
+            {
+              "price": "0.43",
+              "size": "10032.89"
+            },
+            {
+              "price": "0.424",
+              "size": "500"
+            },
+            {
+              "price": "0.42",
+              "size": "45034"
+            },
+            {
+              "price": "0.419",
+              "size": "11000"
+            },
+            {
+              "price": "0.41",
+              "size": "20"
+            },
+            {
+              "price": "0.4",
+              "size": "16422.58"
+            },
+            {
+              "price": "0.39",
+              "size": "13710"
+            },
+            {
+              "price": "0.388",
+              "size": "150"
+            },
+            {
+              "price": "0.37",
+              "size": "5"
+            },
+            {
+              "price": "0.35",
+              "size": "457.14"
+            },
+            {
+              "price": "0.33",
+              "size": "21.72"
+            },
+            {
+              "price": "0.324",
+              "size": "1000"
+            },
+            {
+              "price": "0.31",
+              "size": "1005.01"
+            },
+            {
+              "price": "0.28",
+              "size": "10"
+            },
+            {
+              "price": "0.26",
+              "size": "2819.52"
+            },
+            {
+              "price": "0.253",
+              "size": "5000"
+            },
+            {
+              "price": "0.25",
+              "size": "1200"
+            },
+            {
+              "price": "0.23",
+              "size": "1362.5"
+            },
+            {
+              "price": "0.223",
+              "size": "5000"
+            },
+            {
+              "price": "0.222",
+              "size": "1000"
+            },
+            {
+              "price": "0.22",
+              "size": "5888.46"
+            },
+            {
+              "price": "0.21",
+              "size": "10"
+            },
+            {
+              "price": "0.193",
+              "size": "5000"
+            },
+            {
+              "price": "0.19",
+              "size": "1000"
+            },
+            {
+              "price": "0.188",
+              "size": "150"
+            },
+            {
+              "price": "0.18",
+              "size": "4980.4"
+            },
+            {
+              "price": "0.17",
+              "size": "1512.51"
+            },
+            {
+              "price": "0.163",
+              "size": "5000"
+            },
+            {
+              "price": "0.16",
+              "size": "9500"
+            },
+            {
+              "price": "0.15",
+              "size": "400"
+            },
+            {
+              "price": "0.14",
+              "size": "10"
+            },
+            {
+              "price": "0.139",
+              "size": "500"
+            },
+            {
+              "price": "0.138",
+              "size": "400"
+            },
+            {
+              "price": "0.133",
+              "size": "5000"
+            },
+            {
+              "price": "0.13",
+              "size": "3893.6"
+            },
+            {
+              "price": "0.129",
+              "size": "1000"
+            },
+            {
+              "price": "0.128",
+              "size": "8.1"
+            },
+            {
+              "price": "0.12",
+              "size": "2898"
+            },
+            {
+              "price": "0.113",
+              "size": "5000"
+            },
+            {
+              "price": "0.11",
+              "size": "8630"
+            },
+            {
+              "price": "0.102",
+              "size": "5000"
+            },
+            {
+              "price": "0.1",
+              "size": "10017"
+            },
+            {
+              "price": "0.096",
+              "size": "100"
+            },
+            {
+              "price": "0.092",
+              "size": "5000"
+            },
+            {
+              "price": "0.09",
+              "size": "2712"
+            },
+            {
+              "price": "0.089",
+              "size": "10000"
+            },
+            {
+              "price": "0.088",
+              "size": "1100"
+            },
+            {
+              "price": "0.082",
+              "size": "5000"
+            },
+            {
+              "price": "0.08",
+              "size": "270.03"
+            },
+            {
+              "price": "0.079",
+              "size": "5500"
+            },
+            {
+              "price": "0.076",
+              "size": "34.31"
+            },
+            {
+              "price": "0.075",
+              "size": "34.27"
+            },
+            {
+              "price": "0.074",
+              "size": "114.24"
+            },
+            {
+              "price": "0.073",
+              "size": "54.2"
+            },
+            {
+              "price": "0.072",
+              "size": "5034.17"
+            },
+            {
+              "price": "0.071",
+              "size": "34.13"
+            },
+            {
+              "price": "0.07",
+              "size": "2359.1"
+            },
+            {
+              "price": "0.069",
+              "size": "3034.06"
+            },
+            {
+              "price": "0.068",
+              "size": "1088.03"
+            },
+            {
+              "price": "0.067",
+              "size": "33.99"
+            },
+            {
+              "price": "0.066",
+              "size": "33.96"
+            },
+            {
+              "price": "0.065",
+              "size": "64.92"
+            },
+            {
+              "price": "0.064",
+              "size": "33.89"
+            },
+            {
+              "price": "0.063",
+              "size": "33.86"
+            },
+            {
+              "price": "0.062",
+              "size": "5033.82"
+            },
+            {
+              "price": "0.061",
+              "size": "33.79"
+            },
+            {
+              "price": "0.06",
+              "size": "2100"
+            },
+            {
+              "price": "0.059",
+              "size": "5000"
+            },
+            {
+              "price": "0.058",
+              "size": "50"
+            },
+            {
+              "price": "0.057",
+              "size": "10"
+            },
+            {
+              "price": "0.056",
+              "size": "1493.34"
+            },
+            {
+              "price": "0.055",
+              "size": "100"
+            },
+            {
+              "price": "0.054",
+              "size": "5000"
+            },
+            {
+              "price": "0.053",
+              "size": "2000"
+            },
+            {
+              "price": "0.052",
+              "size": "11602"
+            },
+            {
+              "price": "0.05",
+              "size": "2359.95"
+            },
+            {
+              "price": "0.049",
+              "size": "5000"
+            },
+            {
+              "price": "0.048",
+              "size": "1431.99"
+            },
+            {
+              "price": "0.047",
+              "size": "5984.5"
+            },
+            {
+              "price": "0.046",
+              "size": "134"
+            },
+            {
+              "price": "0.045",
+              "size": "5300"
+            },
+            {
+              "price": "0.044",
+              "size": "100"
+            },
+            {
+              "price": "0.043",
+              "size": "7104"
+            },
+            {
+              "price": "0.042",
+              "size": "5100"
+            },
+            {
+              "price": "0.041",
+              "size": "1455.76"
+            },
+            {
+              "price": "0.04",
+              "size": "11727.91"
+            },
+            {
+              "price": "0.039",
+              "size": "11113.3"
+            },
+            {
+              "price": "0.038",
+              "size": "18089.09"
+            },
+            {
+              "price": "0.037",
+              "size": "7219.99"
+            },
+            {
+              "price": "0.036",
+              "size": "50579"
+            },
+            {
+              "price": "0.035",
+              "size": "5037.1"
+            },
+            {
+              "price": "0.034",
+              "size": "6138"
+            },
+            {
+              "price": "0.033",
+              "size": "250"
+            },
+            {
+              "price": "0.032",
+              "size": "103.31"
+            }
+          ],
+          "min_order_size": "5",
+          "tick_size": "0.001",
+          "neg_risk": true,
+          "last_trade_price": "0.966"
+        }
+      },
+      {
+        "schema_version": "1.0",
+        "id": "5a3689fb3abd704291a05ac9f668e70231c092788baa3338ff56a7ffff21c51d",
+        "timestamp": "2026-11-17T17:40:53.086744Z",
+        "available_at": "2026-11-17T17:40:53.086744Z",
+        "source": "https://clob.polymarket.com",
+        "url": "https://clob.polymarket.com/clob-markets/0x723822eb2b143cee54c0bd7c1efba322b21f0051984c266df8879c394f1011c0",
+        "content_sha256": "0d70c630f2c40151e5de3faae25abfd3cc808c717c7ff42c1942ba1502087bbd",
+        "hash_basis": "canonical_json_payload_not_HTTP_bytes",
+        "payload": {
+          "r": {
+            "mi": 200,
+            "ma": 2.5,
+            "e": true,
+            "moas": 30
+          },
+          "t": [
+            {
+              "t": "42865728742506860386768556888821101266630139112044622335353850919229585308601",
+              "o": "Yes"
+            },
+            {
+              "t": "8077351031134730167836761678618167504307708651130165095377248922919635337796",
+              "o": "No"
+            }
+          ],
+          "c": "0x723822eb2b143cee54c0bd7c1efba322b21f0051984c266df8879c394f1011c0",
+          "mos": 5,
+          "mts": 0.001,
+          "mbf": 1000,
+          "tbf": 1000,
+          "ao": true,
+          "nr": true,
+          "cbos": true,
+          "aot": "2026-07-30T00:42:48Z",
+          "ibce": true,
+          "fd": {
+            "r": 0.05,
+            "e": 1,
+            "to": true
+          },
+          "v": "v1"
+        }
+      },
+      {
+        "schema_version": "1.0",
+        "id": "c16be7a64f9e0ff32ef994418b0b8e104c22ef02b52ca78e0c0b265ba8a1888c",
+        "timestamp": "2026-11-17T17:40:52.853257Z",
+        "available_at": "2026-11-17T17:40:52.853257Z",
+        "source": "https://clob.polymarket.com",
+        "url": "https://clob.polymarket.com/markets-by-token/42865728742506860386768556888821101266630139112044622335353850919229585308601",
+        "content_sha256": "0ca89013350d20e918e5415273dc883d9c4f3d2e3b486ec3e4513ed31152620b",
+        "hash_basis": "canonical_json_payload_not_HTTP_bytes",
+        "payload": {
+          "condition_id": "0x723822eb2b143cee54c0bd7c1efba322b21f0051984c266df8879c394f1011c0",
+          "primary_token_id": "42865728742506860386768556888821101266630139112044622335353850919229585308601",
+          "secondary_token_id": "8077351031134730167836761678618167504307708651130165095377248922919635337796"
+        }
+      }
+    ],
+    "PublicFeeReceipt": [
+      {
+        "schema_version": "1.0",
+        "id": "abd318c409dbfd25245a800ff3d7e1a26edbcdc052697f7a1b1ed8b9663f01c7",
+        "timestamp": "2026-11-17T17:40:53.347184Z",
+        "available_at": "2026-11-17T17:40:53.347184Z",
+        "source": "https://clob.polymarket.com",
+        "raw_response_id": "b7443afbec49fb65364b091848309c21bee64285fda41c4e96ce5c0566d7558e",
+        "content_sha256": "9f4ee0abf55d7fc419788ed471b16a1d4ed4ec9c9e7c574c776369c39e877dc3",
+        "url": "https://clob.polymarket.com/book"
+      },
+      {
+        "schema_version": "1.0",
+        "id": "ba7bce716621350b318ae8b837c6750689f0113db13960d1d343b6dd5c92ece5",
+        "timestamp": "2026-11-17T17:40:53.086744Z",
+        "available_at": "2026-11-17T17:40:53.086744Z",
+        "source": "https://clob.polymarket.com",
+        "raw_response_id": "5a3689fb3abd704291a05ac9f668e70231c092788baa3338ff56a7ffff21c51d",
+        "content_sha256": "0d70c630f2c40151e5de3faae25abfd3cc808c717c7ff42c1942ba1502087bbd",
+        "url": "https://clob.polymarket.com/clob-markets/0x723822eb2b143cee54c0bd7c1efba322b21f0051984c266df8879c394f1011c0"
+      },
+      {
+        "schema_version": "1.0",
+        "id": "286b2f016c5271434692f1df3a2875cf24b847da739ab9d777546ae6766953ab",
+        "timestamp": "2026-11-17T17:40:52.853257Z",
+        "available_at": "2026-11-17T17:40:52.853257Z",
+        "source": "https://clob.polymarket.com",
+        "raw_response_id": "c16be7a64f9e0ff32ef994418b0b8e104c22ef02b52ca78e0c0b265ba8a1888c",
+        "content_sha256": "0ca89013350d20e918e5415273dc883d9c4f3d2e3b486ec3e4513ed31152620b",
+        "url": "https://clob.polymarket.com/markets-by-token/42865728742506860386768556888821101266630139112044622335353850919229585308601"
+      }
+    ]
+  }
+}

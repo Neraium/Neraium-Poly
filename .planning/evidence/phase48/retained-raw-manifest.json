@@ -1,0 +1,32 @@
+{
+  "before-observation/samples.jsonl": {
+    "original_sha256": "741417036f3f9129258b5bd21317cbc7316bc85b1fb425c0737fa161dcf6b9e3",
+    "original_bytes": 12570760,
+    "compressed_path": "before-observation/samples.jsonl.gz",
+    "compressed_sha256": "d5fcb2f19d0792444d4d3e8970a753cd746f6be9897fe424ab870ecab3edff66"
+  },
+  "ci-failure.log": {
+    "original_sha256": "46472a20b699355f8ab7eca1ed58fc6b501cbb4de8a495617b8ba710ba2077d1",
+    "original_bytes": 3622,
+    "compressed_path": "ci-failure.log.gz",
+    "compressed_sha256": "1c38bed09e89e4f3af6957ed5c1ed85e88b8f40e9be9920b6b8ac378825a63fe"
+  },
+  "ci-backend.log": {
+    "original_sha256": "d14398377b8a57027f4f7a61f088e0d834eb87a944848f084bd077d1ea922e96",
+    "original_bytes": 59579,
+    "compressed_path": "ci-backend.log.gz",
+    "compressed_sha256": "a93e248ca86f68983f93a2fcc832c5875d5c4deae8b1c40259adf193893df52d"
+  },
+  "recovered-scoring.json": {
+    "original_sha256": "03b8d3ea2353bd728c94acf6b7eaa2bc0e3c5e6eed8df8430ba2319e3f15d52e",
+    "original_bytes": 1679664,
+    "compressed_path": "recovered-scoring.json.gz",
+    "compressed_sha256": "3e4602d36720791cd6ef7f678f568ce5a5ccc96dd82386f6304a4c977d799176"
+  },
+  "controller-after.json": {
+    "original_sha256": "3fd201928dbb5205a14cbd179e104e148d965742a50265ad73e9e1f9baafa9ff",
+    "original_bytes": 273559,
+    "compressed_path": "controller-after.json.gz",
+    "compressed_sha256": "c60df99ebcf5a0cc8c6e4c240d8d20a1bf49d044baba2de2ec9d6b5cf75bd6d3"
+  }
+}

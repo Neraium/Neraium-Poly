@@ -1,0 +1,131 @@
+{
+  "before": {
+    "total_seconds": 22.96361886800004,
+    "functions": [
+      {
+        "function": "research/phase42/controller.py:tick",
+        "calls": 3,
+        "own_seconds": 0.104911611,
+        "cumulative_seconds": 15.959669223
+      },
+      {
+        "function": "research/phase16/checkpoints.py:pack_checkpoint",
+        "calls": 22,
+        "own_seconds": 0.0046853070000000005,
+        "cumulative_seconds": 3.3310593390000003
+      },
+      {
+        "function": "research/phase17/provenance.py:get",
+        "calls": 1122,
+        "own_seconds": 0.005239597,
+        "cumulative_seconds": 1.487353147
+      },
+      {
+        "function": "experimental/research_fee_cache.py:proofs",
+        "calls": 3,
+        "own_seconds": 0.000588052,
+        "cumulative_seconds": 0.9589674210000001
+      },
+      {
+        "function": "research/phase29/costs.py:proofs",
+        "calls": 3,
+        "own_seconds": 0.000656901,
+        "cumulative_seconds": 0.8061939090000001
+      },
+      {
+        "function": "research/phase17/provenance.py:latest",
+        "calls": 23,
+        "own_seconds": 0.0037336260000000003,
+        "cumulative_seconds": 0.5247770890000001
+      },
+      {
+        "function": "data/store.py:get",
+        "calls": 1122,
+        "own_seconds": 0.0027861170000000003,
+        "cumulative_seconds": 0.010105135000000001
+      },
+      {
+        "function": "data/store.py:latest",
+        "calls": 22,
+        "own_seconds": 9.7501e-05,
+        "cumulative_seconds": 0.000606043
+      },
+      {
+        "function": "research/phase44/reference.py:latest",
+        "calls": 9,
+        "own_seconds": 2.4203000000000002e-05,
+        "cumulative_seconds": 4.1654000000000005e-05
+      }
+    ]
+  },
+  "after": {
+    "total_seconds": 22.194253949000032,
+    "functions": [
+      {
+        "function": "research/phase42/controller.py:tick",
+        "calls": 3,
+        "own_seconds": 0.108982825,
+        "cumulative_seconds": 15.072993268000001
+      },
+      {
+        "function": "research/phase16/checkpoints.py:pack_checkpoint",
+        "calls": 16,
+        "own_seconds": 0.003968704,
+        "cumulative_seconds": 2.7118366440000004
+      },
+      {
+        "function": "research/phase17/provenance.py:get",
+        "calls": 1171,
+        "own_seconds": 0.005457339,
+        "cumulative_seconds": 1.26689998
+      },
+      {
+        "function": "experimental/research_fee_cache.py:proofs",
+        "calls": 3,
+        "own_seconds": 0.0006438160000000001,
+        "cumulative_seconds": 1.016877268
+      },
+      {
+        "function": "research/phase29/costs.py:proofs",
+        "calls": 3,
+        "own_seconds": 0.000763153,
+        "cumulative_seconds": 0.855180212
+      },
+      {
+        "function": "research/phase17/provenance.py:latest",
+        "calls": 23,
+        "own_seconds": 0.003755707,
+        "cumulative_seconds": 0.5203799100000001
+      },
+      {
+        "function": "data/store.py:get",
+        "calls": 1171,
+        "own_seconds": 0.002890048,
+        "cumulative_seconds": 0.010242606000000001
+      },
+      {
+        "function": "data/store.py:latest",
+        "calls": 22,
+        "own_seconds": 8.6629e-05,
+        "cumulative_seconds": 0.0005154490000000001
+      },
+      {
+        "function": "research/phase44/reference.py:latest",
+        "calls": 9,
+        "own_seconds": 2.3114000000000003e-05,
+        "cumulative_seconds": 5.3341e-05
+      }
+    ]
+  },
+  "limitation": "Isolated real-controller runs on different current snapshots; supports profiling only, not a matched live-service performance claim.",
+  "live_baseline": {
+    "samples": 60,
+    "fresh": 18,
+    "fresh_percent": 30.0,
+    "unique_cycle_observations": 14,
+    "cycle_seconds_p50": 16.005529027897865,
+    "cycle_seconds_p95": 34.37309831613675,
+    "cycle_seconds_max": 34.37309831613675,
+    "failed_observations_retained": true
+  }
+}
