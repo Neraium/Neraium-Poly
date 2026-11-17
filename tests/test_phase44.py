@@ -32,6 +32,20 @@ def test_reference_reader_failure_and_age_invalidate_without_fallback(setup):
     with pytest.raises(ValueError):sampler.latest()
 
 
+def test_reference_failure_diagnostic_survives_recovery_without_stale_fallback(setup):
+    _x,clock,_m,b,_f,frame,_fees,_store,_risk=setup
+    def healthy(_):return frame_at(frame,b,clock[0]).model_copy(update={'source':'neraium-poly/public-market-frame/v1','producer_health':{'status':'ok','live_trading_enabled':False}})
+    sampler=ReferenceSampler('http://127.0.0.1:18742/api/market-frame',clock=lambda:clock[0],reader=healthy)
+    sampler.observe()
+    def failed(_):raise httpx.ReadTimeout('CONTROLLED diagnostic')
+    sampler.reader=failed;sampler.observe()
+    with pytest.raises(ValueError):sampler.latest()
+    assert sampler.status()['last_failure']['reason']=='ReadTimeout:CONTROLLED diagnostic'
+    sampler.reader=healthy;sampler.observe();status=sampler.status()
+    assert status['status']=='fresh' and status['last_error'] is None
+    assert status['last_failure']['reason']=='ReadTimeout:CONTROLLED diagnostic' and status['failure_types']=={'ReadTimeout':1}
+
+
 async def test_slow_reference_reader_does_not_block_loop_and_shutdown_drains(setup):
     _x,clock,_m,b,_f,frame,_fees,_store,_risk=setup;calls=[];done=[]
     def read(_):

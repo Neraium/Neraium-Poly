@@ -25,6 +25,7 @@ class ReferenceSampler:
         self.url=loopback_url(url);self.clock=clock;self.reader=reader or read_reference
         self.lock=Lock();self.frame=None;self.attempts=0;self.failures=0;self.error=None
         self.last_attempt=None;self.latencies=deque(maxlen=128);self.fresh_books=0
+        self.last_failure=None;self.failure_types={}
         self._stopping=False
 
     def observe(self):
@@ -39,7 +40,12 @@ class ReferenceSampler:
             if not count:raise ValueError('no fresh executable reference books')
             with self.lock:self.frame=frame;self.fresh_books=count;self.error=None
         except (httpx.HTTPError,ValueError,OSError) as error:
-            with self.lock:self.frame=None;self.fresh_books=0;self.failures+=1;self.error=type(error).__name__+':'+str(error)[:120]
+            with self.lock:
+                self.frame=None;self.fresh_books=0;self.failures+=1;self.error=type(error).__name__+':'+str(error)[:120]
+                self.last_failure={'at':self.clock().isoformat(),'reason':self.error}
+                kind=type(error).__name__
+                if kind not in self.failure_types and len(self.failure_types)>=8:kind='other'
+                self.failure_types[kind]=self.failure_types.get(kind,0)+1
         finally:
             with self.lock:self.latencies.append(time.monotonic()-began)
 
@@ -52,7 +58,7 @@ class ReferenceSampler:
     def status(self):
         with self.lock:
             frame=self.frame;latencies=list(self.latencies)
-            result={'attempts':self.attempts,'failures':self.failures,'last_attempt':self.last_attempt,'last_error':self.error,
+            result={'attempts':self.attempts,'failures':self.failures,'last_attempt':self.last_attempt,'last_error':self.error,'last_failure':self.last_failure,'failure_types':dict(self.failure_types),
                     'fresh_books_at_receipt':self.fresh_books,'maximum_workers':1,'queued_requests':0,
                     'median_read_seconds':statistics.median(latencies) if latencies else None,
                     'maximum_read_seconds':max(latencies) if latencies else None,
