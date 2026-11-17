@@ -1,6 +1,7 @@
 """Bounded research payout reconciliation. No financial/certification authority."""
 import asyncio
 import json
+from itertools import zip_longest
 from pathlib import Path
 from typing import Literal
 
@@ -69,6 +70,11 @@ async def collect(bound,store,directory,*,clock,can_write,max_requests=2):
             except ValueError:continue
             found[fid]=result
     due=sorted((fid for fid,v in bound.items() if (at(v['forecast']['event_end_time'])<=now or v.get('monitor_native') is True) and fid not in found),key=lambda fid:(not bound[fid].get('monitor_native',False),attempts.get(fid,''),bound[fid]['forecast']['event_end_time'],fid))
+    # Fair bounded merge: early-barrier monitoring cannot starve already
+    # matured originals, and historical failures cannot starve the frozen14.
+    monitored=[fid for fid in due if bound[fid].get('monitor_native')]
+    historical=[fid for fid in due if not bound[fid].get('monitor_native')]
+    due=[fid for pair in zip_longest(monitored,historical) for fid in pair if fid is not None]
     requests=0;tried=set();deferred=0
     def finish():
         used=sum(p.stat().st_size for p in root.rglob('*') if p.is_file())

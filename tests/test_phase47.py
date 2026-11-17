@@ -98,3 +98,17 @@ def test_frozen_cohort_monitoring_is_time_based_not_payout_based(setup,monkeypat
     original=p.rows[key]['probabilities'].copy()
     p.rows[key]['source_forecast']['event_end_time']=(p.clock()+timedelta(days=2)).isoformat()
     assert not cohort.watch(p,p.clock()) and p.rows[key]['probabilities']==original
+
+
+async def test_two_request_budget_cannot_starve_matured_inventory(setup,tmp_path,monkeypatch):
+    from datetime import timedelta
+
+    from neraium_poly.research.phase44 import outcomes
+    _,clock,_,_,f,_,_,store,_=setup;bound={};seen=[]
+    for n in range(4):
+        v={**f,'id':str(n),'market_id':str(n),'token_id':str(n),'event_end_time':(clock[0]+timedelta(hours=1 if n<3 else -1)).isoformat()}
+        bound[str(n)]={'forecast':v,'study_sha256':'CONTROLLED','monitor_native':n<3}
+    def acquire(f,*args,**kwargs):seen.append(f['id']);raise ValueError('native_pending_or_disputed')
+    monkeypatch.setattr(outcomes,'acquire',acquire)
+    result=await outcomes.collect(bound,store,tmp_path/'proof',clock=lambda:clock[0],can_write=lambda:True)
+    assert len(seen)==2 and '3' in seen and not result

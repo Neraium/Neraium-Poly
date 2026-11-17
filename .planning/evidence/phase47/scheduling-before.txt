@@ -1,0 +1,33 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+___________ test_two_request_budget_cannot_starve_matured_inventory ____________
+
+setup = (<neraium_poly.research.phase42.engine.StrategyEngine object at 0x7fb537bd71d0>, [datetime.datetime(2026, 11, 7, 23, 0...price=0.46, size=100.0),), sequence=0, complete=True),), fees={}, relationships=(), evidence=(), connectivity={}), ...)
+tmp_path = PosixPath('/tmp/pytest-of-ubuntu/pytest-2566/test_two_request_budget_cannot0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fb537bd7170>
+
+    async def test_two_request_budget_cannot_starve_matured_inventory(setup,tmp_path,monkeypatch):
+        from datetime import timedelta
+    
+        from neraium_poly.research.phase44 import outcomes
+        _,clock,_,_,f,_,_,store,_=setup;bound={};seen=[]
+        for n in range(4):
+            v={**f,'id':str(n),'market_id':str(n),'token_id':str(n),'event_end_time':(clock[0]+timedelta(hours=1 if n<3 else -1)).isoformat()}
+            bound[str(n)]={'forecast':v,'study_sha256':'CONTROLLED','monitor_native':n<3}
+        def acquire(f,*args,**kwargs):seen.append(f['id']);raise ValueError('native_pending_or_disputed')
+        monkeypatch.setattr(outcomes,'acquire',acquire)
+        result=await outcomes.collect(bound,store,tmp_path/'proof',clock=lambda:clock[0],can_write=lambda:True)
+>       assert len(seen)==2 and '3' in seen and not result
+E       AssertionError: assert (2 == 2 and '3' in ['0', '1'])
+E        +  where 2 = len(['0', '1'])
+
+tests/test_phase47.py:114: AssertionError
+=============================== warnings summary ===============================
+../../../../../../Neraium-Poly/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1
+  /home/ubuntu/Neraium-Poly/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_phase47.py::test_two_request_budget_cannot_starve_matured_inventory
+1 failed, 1 warning in 0.36s
