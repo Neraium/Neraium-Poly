@@ -74,7 +74,8 @@ def pack_checkpoint(checkpoint):
         raise ValueError("checkpoint encoded byte budget exceeded")
     envelope = {"codec": CODEC, "raw_sha256": _sha(raw), "raw_bytes": len(raw),
                 "gzip_sha256": _sha(compressed), "gzip_bytes": len(compressed), "gzip_base64": encoded}
-    if _canonical(unpack_checkpoint(envelope)) != raw:
+    _, recovered = _verified_checkpoint(envelope)
+    if recovered != raw:
         raise ValueError("checkpoint independent roundtrip verification failed")
     return envelope
 
@@ -84,6 +85,10 @@ def _nonfinite_constant(_value):
 
 
 def unpack_checkpoint(envelope):
+    return _verified_checkpoint(envelope)[0]
+
+
+def _verified_checkpoint(envelope):
     """Verify both byte identities before restoring exactly one bounded gzip member."""
     if type(envelope) is not dict or set(envelope) != FIELDS or envelope.get("codec") != CODEC:
         raise ValueError("unsupported checkpoint envelope schema")
@@ -133,4 +138,4 @@ def unpack_checkpoint(envelope):
         raise ValueError("checkpoint decoded JSON is invalid") from error
     if _canonical(checkpoint) != raw:
         raise ValueError("checkpoint decoded JSON is not canonical")
-    return checkpoint
+    return checkpoint, raw

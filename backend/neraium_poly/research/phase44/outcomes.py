@@ -11,6 +11,7 @@ from neraium_poly.experimental.research_worker import _drain
 from neraium_poly.research.phase14.relationships import digest
 from neraium_poly.research.phase24.continuous import at
 from neraium_poly.research.phase44.native import acquire, replay
+from neraium_poly.research.phase47.storage import read as read_evidence
 
 
 class NativeCycle46(Record):
@@ -59,7 +60,7 @@ async def collect(bound,store,directory,*,clock,can_write,max_requests=2):
         if path.parent!=root or path.is_symlink():raise ValueError('unsafe_native_recovery_path')
         # One bounded proof replay per condition in this pass, never all history.
         if row['directory'] not in cache:
-            proof=replay(path);original=json.loads((path/'bundle.json').read_bytes())['forecast']
+            proof=replay(path);original=json.loads(read_evidence(path/'bundle.json'))['forecast']
             if digest(original)!=row['forecast_sha256'] or proof!=row['proof']:raise ValueError('native_stored_proof_original_mismatch')
             cache[row['directory']]=(proof,original)
         proof,original=cache[row['directory']]
@@ -67,7 +68,7 @@ async def collect(bound,store,directory,*,clock,can_write,max_requests=2):
             try:result=rebind(proof,original,item['forecast'])
             except ValueError:continue
             found[fid]=result
-    due=sorted((fid for fid,v in bound.items() if at(v['forecast']['event_end_time'])<=now and fid not in found),key=lambda fid:(attempts.get(fid,''),bound[fid]['forecast']['event_end_time'],fid))
+    due=sorted((fid for fid,v in bound.items() if (at(v['forecast']['event_end_time'])<=now or v.get('monitor_native') is True) and fid not in found),key=lambda fid:(not bound[fid].get('monitor_native',False),attempts.get(fid,''),bound[fid]['forecast']['event_end_time'],fid))
     requests=0;tried=set();deferred=0
     def finish():
         used=sum(p.stat().st_size for p in root.rglob('*') if p.is_file())

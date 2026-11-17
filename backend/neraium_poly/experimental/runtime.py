@@ -1114,10 +1114,15 @@ class ExperimentalRuntime:
                 try:
                     watcher=self.phase26_inputs.watcher if self.phase26_inputs else None
                     sampler=getattr(self,'research_reference',None)
-                    observed=sampler.latest() if sampler is not None else self.last_frame
                     requested=set(getattr(self,'research_fee_targets',()))|set(getattr(self.phase28,'forecast_tokens',()))
-                    frame=current_frame(observed,extra_markets=tuple(watcher._markets.values()) if watcher else (),
-                        extra_books=watcher.observations() if watcher and hasattr(watcher,'observations') else watcher.snapshot() if watcher else (),as_of=self.clock())
+                    try:
+                        observed=sampler.latest() if sampler is not None else self.last_frame
+                        frame=current_frame(observed,extra_markets=tuple(watcher._markets.values()) if watcher else (),
+                            extra_books=watcher.observations() if watcher and hasattr(watcher,'observations') else watcher.snapshot() if watcher else (),as_of=self.clock()) if observed is not None else None
+                    except ValueError:
+                        # Token-specific official fees do not require quotes.
+                        # This supplies NO book and grants NO execution authority.
+                        frame=None
                     await self.research_fees.refresh(frame,forecast_tokens=requested,priority_tokens=getattr(self,'research_fee_targets',()))
                 except (ValueError, TypeError, OSError, KeyError) as error:
                     self.research_fee_error=type(error).__name__

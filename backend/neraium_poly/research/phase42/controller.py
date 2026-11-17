@@ -18,6 +18,8 @@ from neraium_poly.research.phase45.panel import Panel
 from neraium_poly.research.phase45.replay_cache import ReplayCache
 from neraium_poly.research.phase45.retire import ClosedPhase44
 from neraium_poly.research.phase46.program import Program, inventory
+from neraium_poly.research.phase47.cohort import report as cohort47_report
+from neraium_poly.research.phase47.cohort import watch as watch47
 
 
 class ShadowSourceBinding(Record):
@@ -93,7 +95,8 @@ class Controller:
             # Resolve only a bounded matured inventory. Original study IDs survive restart.
             attempts={}
             for row in self.store.latest('ProfilePayoutStudy',256):attempts.setdefault(row['forecast_id'],row['available_at'])
-            due=sorted((fid for fid,f in self.engine.state['forecasts'].items() if at(f['event_end_time'])<=now and fid not in self.engine.state['labels']),
+            monitoring=watch47(self.program,now);watched={(v['forecast']['market_id'],v['forecast']['token_id'],v['forecast']['rules_sha256']) for v in monitoring.values()}
+            due=sorted((fid for fid,f in self.engine.state['forecasts'].items() if (at(f['event_end_time'])<=now or (f['market_id'],f['token_id'],f['rules_sha256']) in watched) and fid not in self.engine.state['labels']),
                 key=lambda fid:(attempts.get(fid,''),fid))
             native_bound={};verified_studies=set()
             for fid in due:
@@ -107,16 +110,16 @@ class Controller:
                     verified_studies.add(binding['study_id'])
                 f=self.engine.state['forecasts'][fid]
                 if digest(f)!=binding['forecast_sha256']:raise ValueError('settlement original forecast hash mismatch')
-                native_bound[fid]={'study_sha256':binding['study_sha256'],'study_id':binding['study_id'],'forecast':f}
+                native_bound[fid]={'study_sha256':binding['study_sha256'],'study_id':binding['study_id'],'forecast':f,'monitor_native':(f['market_id'],f['token_id'],f['rules_sha256']) in watched}
             from neraium_poly.research.phase45.native_positions import due
             native_bound.update(due(self.explorer,now))
-            native_bound.update(self.program.due())
+            native_bound.update(self.program.due());native_bound.update(monitoring)
             self.native_bound=native_bound
             self.next_outcomes=now+timedelta(seconds=300)
         if proofs:
             self.engine.settle(proofs);self.challenger.settle(proofs);self.explorer.settle(proofs);self.profiles.settle(lambda f,t:proofs.get(f['id']))
         if proofs:self.program.settle(proofs)
-        self.report={**self.engine.report(),'outcome_program':self.program.report(),'native_outcome_inventory':inventory(self.engine.state['forecasts'],self.engine.state['labels']),'phase44_cohort':self.challenger.report(),'phase45_explorer':self.explorer.report(),'exploratory_frame_available_at':exploratory_frame.available_at.isoformat(),'source_replay_cache':self.replay_cache.status(),'probability_panel':self.panel.report(self.engine.state['labels']),'phase41_profiles':self.profiles.report(),'source_withholding':dict(self.errors),
+        self.report={**self.engine.report(),'outcome_program':self.program.report(),'phase47_cohort':cohort47_report(self.program,self.store.latest('NativePayout44',256),now),'native_outcome_inventory':inventory(self.engine.state['forecasts'],self.engine.state['labels']),'phase44_cohort':self.challenger.report(),'phase45_explorer':self.explorer.report(),'exploratory_frame_available_at':exploratory_frame.available_at.isoformat(),'source_replay_cache':self.replay_cache.status(),'probability_panel':self.panel.report(self.engine.state['labels']),'phase41_profiles':self.profiles.report(),'source_withholding':dict(self.errors),
             'execution':'isolated shadow only; no account/order-admission access','current_source_forecasts':len(self.current_forecasts),'calibration_cohort':'first available forecast per native market/token/model; repeated refreshes are not independent events','source_inventory':getattr(self,'inventory',{}),'native_verification_timeout_seconds':45,'native_proof_requests_per_5min':2}
         self.report['held_fee_tokens']=sorted({p['token_id'] for engine in (self.engine,self.challenger,self.explorer) for state in engine.state['profiles'].values() for p in [*state['orders'].values(),*state['positions'].values()]})
         self.report['current_fee_coverage']={'verified_tokens':sum(p.get('status')=='verified_current_protocol_curve' for p in fees.values()),'open_positions':[{ 'profile':name,'strategy':p['strategy'],'token_id':p['token_id'],'outcome':p['market']['outcome'],'entry_fee_verified':p['fee_verified'],'current_curve':fees.get(p['token_id'],{}),'limitation':'current evidence cannot authenticate or rewrite earlier entry fees'} for name,state in self.explorer.state['profiles'].items() for p in state['positions'].values()]}

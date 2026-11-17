@@ -14,10 +14,10 @@ class AsyncBudgetResearchFeeCache(ResearchFeeCache):
     AuditedFeeAdapter independently checks current capacity before durable writes.
     """
     async def refresh(self, frame, *, forecast_tokens,priority_tokens=()):
-        now=at(self.clock());tokens=set(forecast_tokens);held=set(priority_tokens);markets={m.token_id:m for m in frame.markets}
+        now=at(self.clock());tokens=set(forecast_tokens);held=set(priority_tokens);markets={m.token_id:m for m in frame.markets} if frame is not None else {}
         # Forecasts, complementary partners and deep quoted markets compete in
         # one bounded cache. Rotate unselected names; no subscription expansion.
-        by_token={b.token_id:b for b in frame.books}
+        by_token={b.token_id:b for b in frame.books} if frame is not None else {}
         all_fresh=[]
         for token,m in markets.items():
             b=by_token.get(token)
@@ -36,15 +36,15 @@ class AsyncBudgetResearchFeeCache(ResearchFeeCache):
         keep=set(focus+(remaining[shift:]+remaining[:shift])[:16])
         self.observations={t:v for t,v in self.observations.items() if t in keep}
         self.attempts={t:v for t,v in self.attempts.items() if t in keep};self.errors={t:v for t,v in self.errors.items() if t in keep}
-        due=[t for t in keep if (self.attempts.get(t) is None or now-self.attempts[t]>=timedelta(seconds=60)) and (t not in self.observations or now-at(self.observations[t]['observed_at'])>=timedelta(seconds=240))]
-        for token in sorted(due,key=lambda t:(self.attempts.get(t,now-timedelta(days=1)),t))[:2]:
+        due=[t for t in keep if (self.attempts.get(t) is None or now-self.attempts[t]>=timedelta(seconds=60)) and (t not in self.observations or now-at(self.observations[t]['observed_at'])>=timedelta(seconds=210))]
+        for token in sorted(due,key=lambda t:(t not in held,t not in tokens,self.attempts.get(t,now-timedelta(days=1)),t))[:2]:
             allowed=self.can_write()
             if inspect.isawaitable(allowed):allowed=await allowed
             if not allowed:return
             prior=self.attempts.get(token)
             if prior is not None and now-prior<timedelta(seconds=60):continue
             cached=self.observations.get(token)
-            if cached and now-at(cached['observed_at'])<timedelta(seconds=240):continue
+            if cached and now-at(cached['observed_at'])<timedelta(seconds=210):continue
             self.attempts[token]=now
             try:
                 raw=await self.adapter.observed_fee(token)

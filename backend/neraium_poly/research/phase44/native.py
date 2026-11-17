@@ -44,9 +44,8 @@ def identity(f,g,c,parent):
 def verify(bundle):
     f,g,c,parent=(bundle[k] for k in ('forecast','gamma','clob','parent'))
     outcomes,tokens=identity(f,g,c,parent);condition=g['conditionId'].lower();log=bundle['log']
-    hint=bundle['resolution_hint'];rows=hint.get('data',[])
-    if (len(rows)!=1 or rows[0].get('condition_id','').lower()!=condition or rows[0].get('question_id','').lower()!=g['questionID'].lower() or rows[0].get('status')!='resolved' or rows[0].get('extended_review') is not False or rows[0].get('was_disputed') is not False):
-        raise ValueError('native_transaction_hint_mismatch')
+    from neraium_poly.research.phase47.discovery import validate_hint
+    validate_hint(bundle['resolution_hint'],g)
     if bundle['chain_id']!='0x89':raise ValueError('wrong_native_chain')
     proof=corroborate_resolution(condition,log,bundle['receipt'],bundle['block'],bundle['canonical'],bundle['finalized'],available_at=at(bundle['available_at']))
     if not at(f['evidence_cutoff'])<=at(f['timestamp'])<at(proof['settlement_at']):raise ValueError('forecast_not_prospective_to_native_resolution')
@@ -71,12 +70,13 @@ def verify(bundle):
 
 
 def replay(directory):
-    directory=Path(directory);bundle=json.loads((directory/'bundle.json').read_bytes());manifest=json.loads((directory/'manifest.json').read_bytes())
+    from neraium_poly.research.phase47.storage import read
+    directory=Path(directory);bundle=json.loads(read(directory/'bundle.json'));manifest=json.loads(read(directory/'manifest.json'))
     native={};rpc={};calls={}
     for row in manifest['responses']:
         path=directory/row['response_path']
         if path.parent!=directory/'raw' or path.is_symlink():raise ValueError('unsafe_native_proof_path')
-        raw=path.read_bytes()
+        raw=read(path)
         if hashlib.sha256(raw).hexdigest()!=row['response_sha256'] or row['status']!=200:raise ValueError('native_raw_hash_or_http_mismatch')
         payload=json.loads(raw)
         if row['method']=='GET':native[row['url']]=payload;continue
@@ -90,7 +90,14 @@ def replay(directory):
     f=bundle['forecast']
     for key,url in [('gamma','https://gamma-api.polymarket.com/markets/'+f['market_id']),('clob','https://clob.polymarket.com/markets-by-token/'+f['token_id']),('parent','https://gamma-api.polymarket.com/events/'+f['event_id']),('resolution_hint','https://data-api.polymarket.com/v2/resolutions?condition='+bundle['gamma']['conditionId'])]:
         if native.get(url)!=bundle[key]:raise ValueError('native_original_response_binding_failed')
-    if bundle['log']['transactionHash']!=bundle['resolution_hint']['data'][0]['transaction_hash'] and not any(method=='eth_getLogs' and bundle['log'] in value for (method,_params),value in rpc.items() if isinstance(value,list)):raise ValueError('native_fallback_log_not_in_original_query')
+    hint_rows=bundle['resolution_hint'].get('data',[]);hint_tx=hint_rows[0].get('transaction_hash') if hint_rows else None
+    if bundle['log']['transactionHash']!=hint_tx:
+        matched=False
+        for (method,params),value in rpc.items():
+            if method!='eth_getLogs' or not isinstance(value,list) or bundle['log'] not in value:continue
+            query=json.loads(params)[0];low=int(query['fromBlock'],16);high=int(query['toBlock'],16)
+            if query['address'].lower()==CTF and query['topics']==[CONDITION_RESOLUTION,bundle['gamma']['conditionId']] and 0<=high-low<=5000 and low<=int(bundle['log']['blockNumber'],16)<=high<=int(bundle['finalized']['number'],16):matched=True
+        if not matched:raise ValueError('native_fallback_log_not_in_original_query')
     expected={'chain_id':('eth_chainId',[]),'receipt':('eth_getTransactionReceipt',[bundle['log']['transactionHash']]),'block':('eth_getBlockByHash',[bundle['log']['blockHash'],False]),'canonical':('eth_getBlockByNumber',[bundle['log']['blockNumber'],False]),'finalized':('eth_getBlockByNumber',['finalized',False])}
     for key,(method,params) in expected.items():
         if rpc.get((method,json.dumps(params)))!=bundle[key]:raise ValueError('native_chain_original_binding_failed')
@@ -122,32 +129,16 @@ def acquire(f,directory,*,client=None,disk_budget=None):
     c=Client(directory,client=transport,max_requests=48,max_bytes=2*1024**2,interval=.05)
     try:
         if disk_budget is not None:
-            from neraium_poly.research.phase46.file_budget import BudgetPath, FileBudget
-            c.directory=BudgetPath(directory,budget=FileBudget(directory,disk_budget))
+            from neraium_poly.research.phase46.file_budget import FileBudget
+            from neraium_poly.research.phase47.storage import CompressedPath
+            c.directory=CompressedPath(directory,budget=FileBudget(directory,disk_budget))
         g=c.native_get('https://gamma-api.polymarket.com/markets/'+f['market_id'])
         if g.get('closed') is not True or g.get('umaResolutionStatus')!='resolved':raise ValueError('native_pending_or_disputed')
         clob=c.native_get('https://clob.polymarket.com/markets-by-token/'+f['token_id'])
         parent=c.native_get('https://gamma-api.polymarket.com/events/'+f['event_id']);identity(f,g,clob,parent)
-        hint=c.resolution_hint(g['conditionId']);rows=hint.get('data',[])
-        if len(rows)!=1 or not HEX32.fullmatch(rows[0].get('transaction_hash','')):raise ValueError('native_resolution_transaction_unavailable')
-        tx=rows[0]['transaction_hash'];receipt=c.request('eth_getTransactionReceipt',[tx])
-        logs=[v for v in receipt.get('logs',[]) if v.get('address','').lower()==CTF and v.get('topics',[])[:2]==[CONDITION_RESOLUTION,g['conditionId']]]
-        if len(logs)!=1:
-            # A resolution API transaction can be an oracle proposal, not the
-            # CTF payout. Use the official closedTime only as a search hint;
-            # canonical logs and state remain the actual proof.
-            target=at(g['closedTime']).timestamp()
-            final=c.request('eth_getBlockByNumber',['finalized',False]);height=int(final['number'],16)
-            low=max(0,height-65536);high=height
-            while low<high:
-                middle=(low+high)//2;header=c.request('eth_getBlockByNumber',[hex(middle),False])
-                if int(header['timestamp'],16)<target:low=middle+1
-                else:high=middle
-            logs=c.request('eth_getLogs',[{'address':CTF,'topics':[CONDITION_RESOLUTION,g['conditionId']],
-                'fromBlock':hex(max(0,low-1500)),'toBlock':hex(min(height,low+1500))}])
-            if not isinstance(logs,list) or len(logs)!=1:raise ValueError('unique_native_condition_resolution_log_unavailable_in_published_close_bracket')
-            receipt=c.request('eth_getTransactionReceipt',[logs[0]['transactionHash']])
-        log=logs[0];bundle={'forecast':f,'gamma':g,'clob':clob,'parent':parent,'resolution_hint':hint,'log':log,'receipt':receipt,
+        from neraium_poly.research.phase47.discovery import discover
+        hint=c.resolution_hint(g['conditionId']);log,receipt=discover(c,g,hint)
+        bundle={'forecast':f,'gamma':g,'clob':clob,'parent':parent,'resolution_hint':hint,'log':log,'receipt':receipt,
             'chain_id':c.request('eth_chainId',[]),'block':c.request('eth_getBlockByHash',[log['blockHash'],False]),
             'canonical':c.request('eth_getBlockByNumber',[log['blockNumber'],False]),'finalized':c.request('eth_getBlockByNumber',['finalized',False]),'state':[]}
         block=bundle['finalized']['hash'];state=bundle['state'];condition=g['conditionId'];oracle='0x'+log['topics'][2][-40:]

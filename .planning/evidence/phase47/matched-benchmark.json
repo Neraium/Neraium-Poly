@@ -1,0 +1,32 @@
+{
+  "before": {
+    "seconds": [
+      0.3353773970156908,
+      0.336978015024215,
+      0.3466283599846065,
+      0.32800177577883005,
+      0.3429277273826301
+    ],
+    "median": 0.336978015024215,
+    "raw_bytes": 5397482,
+    "gzip_bytes": 1021389
+  },
+  "after": {
+    "seconds": [
+      0.2550839609466493,
+      0.26083330903202295,
+      0.2571287169121206,
+      0.26056245481595397,
+      0.2542860032990575
+    ],
+    "median": 0.2571287169121206,
+    "raw_bytes": 5397482,
+    "gzip_bytes": 1021389
+  },
+  "representation": {
+    "original_bytes": 65532235,
+    "gzip_equivalent_bytes": 7560989,
+    "ratio": 0.11537816465438726,
+    "scope": "measurement only; no original rewritten or deleted; new acquisitions only"
+  }
+}

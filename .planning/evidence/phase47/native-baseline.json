@@ -1,0 +1,115 @@
+{
+  "bytes_by_kind": {
+    "bundle.json": 1295394,
+    "manifest.json": 566677,
+    "proof.json": 8967,
+    "raw": 63590403
+  },
+  "total_bytes": 65461441,
+  "unique_content_bytes": 56256258,
+  "files": 945,
+  "recent": [
+    {
+      "record": {
+        "schema_version": "1.0",
+        "id": "bd36738b9cfb59e7bd657f1eba0402a95638a486d1d3745e2060985a9b8c1dc4",
+        "timestamp": "2026-11-17T14:40:22.565567Z",
+        "available_at": "2026-11-17T14:40:22.565567Z",
+        "source": "neraium-poly/research-native44",
+        "forecast_id": "bdf32fb3e8e890fde55c7f28c3fd10b1b34583f1df2cb3562d020905e02aad1d",
+        "forecast_sha256": "4da67dd83cf5fc83c91a294464e080d21edb9e5962854f8aa07858054468948f",
+        "original_study_sha256": "0551bfdb25825bc4952e213dcdbdc9f6fc13ebe51e042af088ebb416220db05e",
+        "directory": "v44-10e5b6fef5283754410891c0b2c8211e4d99f1fb6a271136849b1273e659ef74",
+        "verified": false,
+        "reason": "ValueError:native_remaining_disk_budget_exhausted",
+        "proof": null,
+        "research_only": true,
+        "trading_authority": false
+      },
+      "hints": []
+    },
+    {
+      "record": {
+        "schema_version": "1.0",
+        "id": "71f7025f8625f771ad937e6ef3e617eb9062799a8a1a8a4088a0c14af9c5be38",
+        "timestamp": "2026-11-17T14:34:28.003854Z",
+        "available_at": "2026-11-17T14:34:28.003854Z",
+        "source": "neraium-poly/research-native44",
+        "forecast_id": "0735eaf526269a4fe4da2eaf1e1ec84d2fc2dfe12c9257da86af676e1d42aeab",
+        "forecast_sha256": "0dfc2887b81bb30e0a1cbc0637b222e4a021e7fb908561a70478f7cce98ee1a8",
+        "original_study_sha256": "b94083d44d782e567e6bb318817ffac8994ce2a9a8b0ba12ddd4f0419766cd70",
+        "directory": "v44-d36c3d2ea39100176edb154114320127cb7dad2c6192e46ad44154cd584dfcb1",
+        "verified": false,
+        "reason": "ValueError:native_remaining_disk_budget_exhausted",
+        "proof": null,
+        "research_only": true,
+        "trading_authority": false
+      },
+      "hints": []
+    },
+    {
+      "record": {
+        "schema_version": "1.0",
+        "id": "979918d509935b63fb07e0623fb02b27f87a6b7164b6dc29d720752cc8777eff",
+        "timestamp": "2026-11-17T14:34:25.118624Z",
+        "available_at": "2026-11-17T14:34:25.118624Z",
+        "source": "neraium-poly/research-native44",
+        "forecast_id": "c544ac9a0954d8747efca192d7f88a6814c0259caf8742dc4aae4e0cea25bf46",
+        "forecast_sha256": "83369d1f137fb99e5b6e1d0a0f6afa2cc3b7c509aff6f009d3c0b309016a8679",
+        "original_study_sha256": "ef637b03f50968a87ed4aa13db99f7944d3c736d4009b777b6042a5f9e378292",
+        "directory": "v44-ed16b5fd9eff15e9f14ddbdd5a73481058b7b3d75a153aafdb0c47d859595608",
+        "verified": false,
+        "reason": "ValueError:native_remaining_disk_budget_exhausted",
+        "proof": null,
+        "research_only": true,
+        "trading_authority": false
+      },
+      "hints": []
+    },
+    {
+      "record": {
+        "schema_version": "1.0",
+        "id": "043b9ab5077efd0c1afb27a17f6a7dad3331d3ea36867f0273c5ef5812d589f5",
+        "timestamp": "2026-11-17T14:28:50.934424Z",
+        "available_at": "2026-11-17T14:28:50.934424Z",
+        "source": "neraium-poly/research-native44",
+        "forecast_id": "6c8f21ac7f56e0acdeb02b74ed9c0c3f50fce8fc505f028a125d3ac69ba51f43",
+        "forecast_sha256": "b1679edeebc7aef22158ec42e25e75b4e2775aa5fe2a8b508b8b56c2be25271f",
+        "original_study_sha256": "16fb3fe5d1128bd35a208322cc1fd7ada8d4f6c5ee91863bc51c2bc6b35261aa",
+        "directory": "v44-4ca8704bad4e1f30c320b5a1a8ef304f732f35e177555f26378f795ea9cc28d5",
+        "verified": false,
+        "reason": "ValueError:native_resolution_transaction_unavailable",
+        "proof": null,
+        "research_only": true,
+        "trading_authority": false
+      },
+      "hints": [
+        {
+          "url": "https://data-api.polymarket.com/v2/resolutions?condition=0x1e392b5d80711a000230f6eec6b7b67cf1b4a7ee793d83c8e432680e37217c4f",
+          "payload": {
+            "data": [
+              {
+                "condition_id": "0x1e392b5d80711a000230f6eec6b7b67cf1b4a7ee793d83c8e432680e37217c4f",
+                "status": "resolved",
+                "extended_review": false,
+                "was_disputed": false,
+                "new_version_q": false,
+                "transaction_hash": "",
+                "log_index": "",
+                "last_update_timestamp": "2026-11-17T03:43:49Z",
+                "payouts": [
+                  0,
+                  1000000
+                ],
+                "resolution_source": "reported",
+                "was_arbitrated": false,
+                "resolved_block": 97454373,
+                "resolved_at": "2026-11-17T03:43:49Z"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
