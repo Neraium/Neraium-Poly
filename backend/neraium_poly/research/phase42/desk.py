@@ -28,7 +28,7 @@ def publish(store,engine,report,now,*,cohort='legacy'):
     positions=[]
     pending=[]
     for profile,s in engine.state['profiles'].items():
-        for p in s['positions'].values():positions.append({'cohort':cohort,'profile':profile,'strategy':p['strategy'],'question':p['market']['question'],'market_id':p['market_id'],'token_id':p['token_id'],
+        for p in s['positions'].values():positions.append({'cohort':cohort,'profile':profile,'strategy':p['strategy'],'question':p['market']['question'],'outcome':p['market']['outcome'],'market_id':p['market_id'],'token_id':p['token_id'],
             'quantity':p['quantity'],'capital':p['cost'],'marked_net_pnl':p.get('marked_pnl') if report.get('profiles',{}).get(profile,{}).get('unrealized_net_pnl') is not None else None,'entry_at':p['entered_at'],'forecast_id':p.get('forecast_id')})
         for o in s['orders'].values():pending.append({'cohort':cohort,'profile':profile,'strategy':o['strategy'],'question':o['market']['question'],'limit':o['limit'],'unfilled_quantity':o['remaining'],'reserved_capital':o['reserved'],'expires':o['expires']})
     return {**report,'recent_decisions':[{'at':r['available_at'],**r['payload']} for r in store.latest('ShadowDecisionCard',20)],'positions':positions,'unfilled_orders':pending}

@@ -13,8 +13,8 @@ class AsyncBudgetResearchFeeCache(ResearchFeeCache):
     Keep its byte identity and old observations while adapting only scheduling.
     AuditedFeeAdapter independently checks current capacity before durable writes.
     """
-    async def refresh(self, frame, *, forecast_tokens):
-        now=at(self.clock());tokens=set(forecast_tokens);markets={m.token_id:m for m in frame.markets}
+    async def refresh(self, frame, *, forecast_tokens,priority_tokens=()):
+        now=at(self.clock());tokens=set(forecast_tokens);held=set(priority_tokens);markets={m.token_id:m for m in frame.markets}
         # Forecasts, complementary partners and deep quoted markets compete in
         # one bounded cache. Rotate unselected names; no subscription expansion.
         by_token={b.token_id:b for b in frame.books}
@@ -22,11 +22,12 @@ class AsyncBudgetResearchFeeCache(ResearchFeeCache):
         for token,m in markets.items():
             b=by_token.get(token)
             if b is not None and m.status=='active' and m.end_time is not None and m.end_time>now and b.market_id==m.market_id and b.bids and b.asks and 0<=(now-b.timestamp).total_seconds()<=15 and 0<=(now-b.available_at).total_seconds()<=15:all_fresh.append(token)
-        ranked=sorted(all_fresh,key=lambda t:(t not in tokens,-sum(v.size*v.price for v in by_token[t].bids[:3])+sum(v.size*v.price for v in by_token[t].asks[:3])*.001,t))
+        all_fresh=sorted(set(all_fresh)|held|{t for t in tokens if t in markets and markets[t].status=='active' and markets[t].end_time and markets[t].end_time>now})
+        ranked=sorted(all_fresh,key=lambda t:(t not in held,t not in tokens,(-sum(v.size*v.price for v in by_token[t].bids[:3])+sum(v.size*v.price for v in by_token[t].asks[:3])*.001) if t in by_token else 0,t))
         focus=[]
         for token in ranked:
             if token in focus:continue
-            group=[t for t in ranked if markets[t].market_id==markets[token].market_id]
+            group=[t for t in ranked if t in markets and markets[t].market_id==markets[token].market_id] if token in markets else [token]
             for t in group[:2]:
                 if t not in focus and len(focus)<16:focus.append(t)
             if len(focus)>=16:break

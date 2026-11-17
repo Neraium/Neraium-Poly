@@ -1,0 +1,173 @@
+{
+  "at": "2026-11-17T13:21:05.515305+00:00",
+  "position": {
+    "cohort": "phase45",
+    "profile": "aggressive",
+    "strategy": "independent",
+    "question": "Will there be no change in Fed interest rates after the December 2026 meeting?",
+    "market_id": "3215007",
+    "token_id": "42865728742506860386768556888821101266630139112044622335353850919229585308601",
+    "quantity": 18.899953130441386,
+    "capital": 0.7218083595654485,
+    "marked_net_pnl": null,
+    "entry_at": "2026-11-17T06:25:50.302581+00:00",
+    "forecast_id": "0f7d1eb6d8079967bca459b0f8fb030367a59dfafad069fece24c6e830325a0f"
+  },
+  "observation": {
+    "fee_rate": 0.05,
+    "observed_at": "2026-11-17T13:21:05.514398+00:00",
+    "source": "https://clob.polymarket.com",
+    "reference": "/markets-by-token/42865728742506860386768556888821101266630139112044622335353850919229585308601",
+    "raw_response_ids": [
+      "c16be7a64f9e0ff32ef994418b0b8e104c22ef02b52ca78e0c0b265ba8a1888c",
+      "f92692b5bd38655446386fd76bb5af2855adc20eaf17cca3f3367b9eedbdcfd6"
+    ],
+    "evidence_id": "a2b971a8-885a-405c-ab80-017ac50a39a9",
+    "retrieval_ids": [
+      "fbeed3e9d78fa3824120a5fa6caa29866cd2ddfb3dd268758eafb1424e33f1ef",
+      "2b34e373a39a0fa8453c9ec146c85bf6ddf58bca423ce035a6918ec1cb615ab5"
+    ]
+  },
+  "proof": {
+    "status": "verified_current_protocol_curve",
+    "token_id": "42865728742506860386768556888821101266630139112044622335353850919229585308601",
+    "condition_id": "0x723822eb2b143cee54c0bd7c1efba322b21f0051984c266df8879c394f1011c0",
+    "rate": 0.05,
+    "exponent": 1,
+    "taker_only": true,
+    "formula": "shares * fd.r * price * (1-price)",
+    "documentation": "https://docs.polymarket.com/trading/fees",
+    "fee_observation_id": "a2b971a8-885a-405c-ab80-017ac50a39a9",
+    "fee_observation_sha256": "b514266b7f9e7cb506edb17a09c1a8029774e475d758b48cb5a82b0a8771bc64",
+    "raw_response_ids": [
+      "c16be7a64f9e0ff32ef994418b0b8e104c22ef02b52ca78e0c0b265ba8a1888c",
+      "f92692b5bd38655446386fd76bb5af2855adc20eaf17cca3f3367b9eedbdcfd6"
+    ],
+    "retrieval_ids": [
+      "fbeed3e9d78fa3824120a5fa6caa29866cd2ddfb3dd268758eafb1424e33f1ef",
+      "2b34e373a39a0fa8453c9ec146c85bf6ddf58bca423ce035a6918ec1cb615ab5"
+    ],
+    "available_at": "2026-11-17T13:21:05.514398Z",
+    "as_of": "2026-11-17T13:21:05.515099+00:00",
+    "source_timestamp": null,
+    "timestamp_semantics": "public responses provide retrieval/availability time; exchange effective-time unavailable",
+    "rounding": "official nearest 5 decimals; per-fill count unknown, conservative bound used",
+    "all_in_costs_verified": false,
+    "missing_cost_evidence": [
+      "fill_fragmentation_rounding",
+      "additional_slippage",
+      "latency_adverse_selection",
+      "capital_lockup_cost",
+      "settlement_redemption_cost"
+    ],
+    "calibration_verified": false,
+    "research_only": true,
+    "trading_authority": false
+  },
+  "historical_entry_repriced": false,
+  "scope": "current public protocol evidence, not evidence of fee effective at prior entry",
+  "records": {
+    "FeeObservation": [
+      {
+        "schema_version": "1.0",
+        "id": "a2b971a8-885a-405c-ab80-017ac50a39a9",
+        "timestamp": "2026-11-17T13:21:05.514398Z",
+        "available_at": "2026-11-17T13:21:05.514398Z",
+        "source": "https://clob.polymarket.com",
+        "token_id": "42865728742506860386768556888821101266630139112044622335353850919229585308601",
+        "fee_rate": 0.05,
+        "raw_response_ids": [
+          "c16be7a64f9e0ff32ef994418b0b8e104c22ef02b52ca78e0c0b265ba8a1888c",
+          "f92692b5bd38655446386fd76bb5af2855adc20eaf17cca3f3367b9eedbdcfd6"
+        ],
+        "retrieval_ids": [
+          "fbeed3e9d78fa3824120a5fa6caa29866cd2ddfb3dd268758eafb1424e33f1ef",
+          "2b34e373a39a0fa8453c9ec146c85bf6ddf58bca423ce035a6918ec1cb615ab5"
+        ],
+        "assumption": "Current official exponent1 global notional fee bound; refreshed by receipt-time TTL"
+      }
+    ],
+    "PublicFeeResponse": [
+      {
+        "schema_version": "1.0",
+        "id": "f92692b5bd38655446386fd76bb5af2855adc20eaf17cca3f3367b9eedbdcfd6",
+        "timestamp": "2026-11-17T13:21:05.513558Z",
+        "available_at": "2026-11-17T13:21:05.513558Z",
+        "source": "https://clob.polymarket.com",
+        "url": "https://clob.polymarket.com/clob-markets/0x723822eb2b143cee54c0bd7c1efba322b21f0051984c266df8879c394f1011c0",
+        "content_sha256": "5a0e406fc0c99c0edef4a0629a009f99ac29d4ef5b66823a1d80e925fa3e77ff",
+        "hash_basis": "canonical_json_payload_not_HTTP_bytes",
+        "payload": {
+          "r": {
+            "mi": 200,
+            "ma": 4.5,
+            "moas": 30
+          },
+          "t": [
+            {
+              "t": "42865728742506860386768556888821101266630139112044622335353850919229585308601",
+              "o": "Yes"
+            },
+            {
+              "t": "8077351031134730167836761678618167504307708651130165095377248922919635337796",
+              "o": "No"
+            }
+          ],
+          "c": "0x723822eb2b143cee54c0bd7c1efba322b21f0051984c266df8879c394f1011c0",
+          "mos": 5,
+          "mts": 0.001,
+          "mbf": 1000,
+          "tbf": 1000,
+          "ao": true,
+          "nr": true,
+          "cbos": true,
+          "aot": "2026-07-30T00:42:48Z",
+          "ibce": true,
+          "fd": {
+            "r": 0.05,
+            "e": 1,
+            "to": true
+          },
+          "v": "v1"
+        }
+      },
+      {
+        "schema_version": "1.0",
+        "id": "c16be7a64f9e0ff32ef994418b0b8e104c22ef02b52ca78e0c0b265ba8a1888c",
+        "timestamp": "2026-11-17T13:21:05.318483Z",
+        "available_at": "2026-11-17T13:21:05.318483Z",
+        "source": "https://clob.polymarket.com",
+        "url": "https://clob.polymarket.com/markets-by-token/42865728742506860386768556888821101266630139112044622335353850919229585308601",
+        "content_sha256": "0ca89013350d20e918e5415273dc883d9c4f3d2e3b486ec3e4513ed31152620b",
+        "hash_basis": "canonical_json_payload_not_HTTP_bytes",
+        "payload": {
+          "condition_id": "0x723822eb2b143cee54c0bd7c1efba322b21f0051984c266df8879c394f1011c0",
+          "primary_token_id": "42865728742506860386768556888821101266630139112044622335353850919229585308601",
+          "secondary_token_id": "8077351031134730167836761678618167504307708651130165095377248922919635337796"
+        }
+      }
+    ],
+    "PublicFeeReceipt": [
+      {
+        "schema_version": "1.0",
+        "id": "2b34e373a39a0fa8453c9ec146c85bf6ddf58bca423ce035a6918ec1cb615ab5",
+        "timestamp": "2026-11-17T13:21:05.513558Z",
+        "available_at": "2026-11-17T13:21:05.513558Z",
+        "source": "https://clob.polymarket.com",
+        "raw_response_id": "f92692b5bd38655446386fd76bb5af2855adc20eaf17cca3f3367b9eedbdcfd6",
+        "content_sha256": "5a0e406fc0c99c0edef4a0629a009f99ac29d4ef5b66823a1d80e925fa3e77ff",
+        "url": "https://clob.polymarket.com/clob-markets/0x723822eb2b143cee54c0bd7c1efba322b21f0051984c266df8879c394f1011c0"
+      },
+      {
+        "schema_version": "1.0",
+        "id": "fbeed3e9d78fa3824120a5fa6caa29866cd2ddfb3dd268758eafb1424e33f1ef",
+        "timestamp": "2026-11-17T13:21:05.318483Z",
+        "available_at": "2026-11-17T13:21:05.318483Z",
+        "source": "https://clob.polymarket.com",
+        "raw_response_id": "c16be7a64f9e0ff32ef994418b0b8e104c22ef02b52ca78e0c0b265ba8a1888c",
+        "content_sha256": "0ca89013350d20e918e5415273dc883d9c4f3d2e3b486ec3e4513ed31152620b",
+        "url": "https://clob.polymarket.com/markets-by-token/42865728742506860386768556888821101266630139112044622335353850919229585308601"
+      }
+    ]
+  }
+}

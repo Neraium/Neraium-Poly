@@ -12,9 +12,10 @@ import httpx
 
 from neraium_poly.experimental.contracts import SharedMarketFrame
 from neraium_poly.research.phase14.relationships import digest
-from neraium_poly.research.phase23.continuous import ChallengerResearch, ChallengerStudy
+from neraium_poly.research.phase23.continuous import ChallengerStudy
 from neraium_poly.research.phase24.continuous import DomainResearch, DomainResearchStudy
 from neraium_poly.research.phase40.campaign import adapters
+from neraium_poly.research.phase46.selection import InformationChallenger as ChallengerResearch
 
 
 class RefreshDomainStudy(DomainResearchStudy):
@@ -55,13 +56,17 @@ async def refresh(store,frame,*,clock,can_write,stop,frame_provider=None):
         if rows and int(datetime.fromisoformat(rows[0]['timestamp']).timestamp())//300==slot:
             return {'status':'already_recorded_epoch','epoch':slot,'bytes_written':0}
     scope=Scope(store,can_write,stop);errors=[]
+    from neraium_poly.research.phase46.selection import VERSION, select
     async def run():
-        for label,engine in [('domains',DomainResearch(scope,clock=clock,can_write=scope.can_write,adapters=adapters())),('crypto',ChallengerResearch(scope,clock=clock,can_write=scope.can_write))]:
-            engine.enrollment_id=digest(['phase42-point-in-time-refresh-v1',label,engine.enrollment_id,slot])
+        domain_models=adapters()
+        engines= [('domains',DomainResearch(scope,clock=clock,can_write=scope.can_write,adapters=domain_models)),('crypto',ChallengerResearch(scope,clock=clock,can_write=scope.can_write))]
+        for label,engine in (engines if slot%2==0 else list(reversed(engines))):
+            engine.enrollment_id=digest(['phase42-point-in-time-refresh-v1',label,engine.enrollment_id,slot,VERSION])
             engine.state['enrollment_id']=engine.enrollment_id
             if stop.is_set() or not scope.can_write():return
             try:
                 observed=await frame_provider() if frame_provider else frame
+                if label=='domains':observed=select(observed,clock(),models=domain_models)
                 await engine.step(observed)
             except (ValueError,OSError) as error:errors.append(f'{label}:{type(error).__name__}:{str(error)[:120]}')
     job=asyncio.create_task(run())

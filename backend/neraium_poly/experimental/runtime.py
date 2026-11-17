@@ -1077,7 +1077,7 @@ class ExperimentalRuntime:
         # No external outcome/source-acquisition lock: fresh research observations
         # must not wait for unrelated unresolved-event provider timeouts.
         while not self.stopping and not should_exit():
-            if getattr(self,"phase28",None) is not None and self.last_frame is not None:
+            if getattr(self,'research_reference',None) is not None or self.last_frame is not None:
                 try:
                     from neraium_poly.research.phase28.inputs import current_frame
                     watcher = self.phase26_inputs.watcher if self.phase26_inputs else None
@@ -1110,7 +1110,7 @@ class ExperimentalRuntime:
         from neraium_poly.research.phase28.inputs import current_frame
         self.research_fees=AsyncBudgetResearchFeeCache(self.events,self.fee_adapter,clock=self.clock,can_write=self._async_budget_ok)
         while not self.stopping and not should_exit():
-            if getattr(self,"phase28",None) is not None and self.last_frame is not None:
+            if getattr(self,'research_reference',None) is not None or self.last_frame is not None:
                 try:
                     watcher=self.phase26_inputs.watcher if self.phase26_inputs else None
                     sampler=getattr(self,'research_reference',None)
@@ -1118,7 +1118,7 @@ class ExperimentalRuntime:
                     requested=set(getattr(self,'research_fee_targets',()))|set(getattr(self.phase28,'forecast_tokens',()))
                     frame=current_frame(observed,extra_markets=tuple(watcher._markets.values()) if watcher else (),
                         extra_books=watcher.observations() if watcher and hasattr(watcher,'observations') else watcher.snapshot() if watcher else (),as_of=self.clock())
-                    await self.research_fees.refresh(frame,forecast_tokens=requested)
+                    await self.research_fees.refresh(frame,forecast_tokens=requested,priority_tokens=getattr(self,'research_fee_targets',()))
                 except (ValueError, TypeError, OSError, KeyError) as error:
                     self.research_fee_error=type(error).__name__
             for _ in range(10):

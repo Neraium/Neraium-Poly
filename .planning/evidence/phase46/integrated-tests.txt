@@ -1,0 +1,145 @@
+..................F....F...F..F......................................... [ 63%]
+.........................................                                [100%]
+=================================== FAILURES ===================================
+_____ test_opt_in_service_loop_uses_async_worker_and_never_account_access ______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7c79397d3530>
+tmp_path = PosixPath('/tmp/pytest-of-ubuntu/pytest-2556/test_opt_in_service_loop_uses_0')
+
+    async def test_opt_in_service_loop_uses_async_worker_and_never_account_access(monkeypatch,tmp_path):
+        import asyncio
+    
+        from neraium_poly.research.phase42 import controller
+        from neraium_poly.risk import RiskLimits
+        monkeypatch.setenv('NERAIUM_SHADOW_RESEARCH','true');monkeypatch.setenv('NERAIUM_SHADOW_SOURCE_REFRESH','false')
+        def forbidden(*args):raise AssertionError('actual account access')
+        runtime=SimpleNamespace(stopping=False,last_frame=SimpleNamespace(available_at=NOW),events=None,config=SimpleNamespace(risk_limits=RiskLimits(),data_dir=tmp_path),
+            clock=lambda:NOW,account=SimpleNamespace(place_order=forbidden))
+        async def budget():return True
+        async def io(factory):return await factory()
+        runtime._async_budget_ok=budget;runtime._budget_ok=lambda:True;runtime._research_io=io
+        class Controlled:
+            def __init__(self,*args,**kwargs):pass
+            def tick(self,frame,fees,**kwargs):
+                with pytest.raises(RuntimeError):asyncio.get_running_loop()  # Synchronous IO is off the event loop.
+                assert frame.available_at==NOW;runtime.stopping=True;return {'as_of':NOW.isoformat(),'trading_authority':False}
+        from neraium_poly.research.phase44 import reference
+        class Reader:
+            def __init__(self,*args,**kwargs):pass
+            def latest(self):return runtime.last_frame
+            def status(self):return {'status':'fresh'}
+            async def run(self,stop):
+                while not stop():await asyncio.sleep(.001)
+            def stop(self):pass
+        monkeypatch.setattr(reference,'ReferenceSampler',Reader)
+        runtime.config.source_url='http://127.0.0.1:18742/api/market-frame'
+        monkeypatch.setattr(controller,'Controller',Controlled)
+        await controller.service_loop(runtime,lambda:False)
+>       assert runtime.shadow_research_error is None and not runtime.shadow_research_snapshot['trading_authority']
+E       assert ("AttributeError:'Controlled' object has no attribute 'engine'" is None)
+E        +  where "AttributeError:'Controlled' object has no attribute 'engine'" = namespace(stopping=True, last_frame=namespace(available_at=datetime.datetime(2026, 11, 7, 23, 0, tzinfo=datetime.timez...Reader object at 0x7c7939977aa0>, shadow_research_error="AttributeError:'Controlled' object has no attribute 'engine'").shadow_research_error
+
+tests/test_phase42_strategies.py:160: AssertionError
+______ test_starved_combined_frame_uses_fresh_bounded_read_only_reference ______
+
+setup = (<neraium_poly.research.phase42.engine.StrategyEngine object at 0x7c79399740b0>, [datetime.datetime(2026, 11, 7, 23, 0...price=0.46, size=100.0),), sequence=0, complete=True),), fees={}, relationships=(), evidence=(), connectivity={}), ...)
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7c7939974200>
+tmp_path = PosixPath('/tmp/pytest-of-ubuntu/pytest-2556/test_starved_combined_frame_us0')
+
+    async def test_starved_combined_frame_uses_fresh_bounded_read_only_reference(setup,monkeypatch,tmp_path):
+        import httpx
+        from neraium_poly.research.phase42 import controller
+        from neraium_poly.risk import RiskLimits
+        _x,_clock,_m,_b,_f,frame,_fees,_store,_risk=setup
+        monkeypatch.setenv('NERAIUM_SHADOW_RESEARCH','true');monkeypatch.setenv('NERAIUM_SHADOW_SOURCE_REFRESH','false')
+        runtime=SimpleNamespace(stopping=False,last_frame=frame.model_copy(update={'available_at':NOW-timedelta(seconds=20)}),events=None,
+            config=SimpleNamespace(risk_limits=RiskLimits(),data_dir=tmp_path,source_url='http://127.0.0.1:18742/api/market-frame'),clock=lambda:NOW)
+        async def budget():return True
+        runtime._async_budget_ok=budget;runtime._budget_ok=lambda:True
+        frame=frame.model_copy(update={'source':'neraium-poly/public-market-frame/v1','producer_health':{'status':'ok','live_trading_enabled':False}})
+        methods=[]
+        def request(req):methods.append(req.method);return httpx.Response(200,json=frame.model_dump(mode='json'))
+        client=httpx.Client
+        monkeypatch.setattr(httpx,'Client',lambda **kwargs:client(**kwargs,transport=httpx.MockTransport(request)))
+        class Controlled:
+            def __init__(self,*args,**kwargs):pass
+            def tick(self,observed,fees,**kwargs):
+                assert observed.available_at==NOW;runtime.stopping=True;return {'as_of':NOW.isoformat()}
+        monkeypatch.setattr(controller,'Controller',Controlled)
+        await controller.service_loop(runtime,lambda:False)
+>       assert 1<=len(methods)<=2 and all(m=='GET' for m in methods) and runtime.shadow_research_error is None
+E       assert (2 <= 2 and True and "AttributeError:'Controlled' object has no attribute 'engine'" is None)
+E        +  where 2 = len(['GET', 'GET'])
+E        +  and   True = all(<generator object test_starved_combined_frame_uses_fresh_bounded_read_only_reference.<locals>.<genexpr> at 0x7c79396fbed0>)
+E        +  and   "AttributeError:'Controlled' object has no attribute 'engine'" = namespace(stopping=True, last_frame=SharedMarketFrame(schema_version='1.0', id='controlled-frame', timestamp=datetime....ampler object at 0x7c79399749e0>, shadow_research_error="AttributeError:'Controlled' object has no attribute 'engine'").shadow_research_error
+
+tests/test_phase42_strategies.py:237: AssertionError
+_______ test_refresh_is_bounded_namespaced_and_keeps_scientific_formulas _______
+
+setup = (<neraium_poly.research.phase42.engine.StrategyEngine object at 0x7c79397d3050>, [datetime.datetime(2026, 11, 7, 23, 0...price=0.46, size=100.0),), sequence=0, complete=True),), fees={}, relationships=(), evidence=(), connectivity={}), ...)
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7c79397d13a0>
+
+    async def test_refresh_is_bounded_namespaced_and_keeps_scientific_formulas(setup,monkeypatch):
+        from threading import Event
+    
+        from neraium_poly.research.phase24.continuous import DomainResearchStudy
+        from neraium_poly.research.phase42 import sources
+        _x,clock,_m,_b,_f,frame,_fees,store,_risk=setup
+        class Controlled:
+            def __init__(self,scope,**kwargs):self.store=scope;self.enrollment_id='CONTROLLED-model';self.state={'enrollment_id':self.enrollment_id}
+            async def step(self,observed):
+                row=DomainResearchStudy(id='CONTROLLED-refresh-'+self.enrollment_id,timestamp=clock[0],available_at=clock[0],source='CONTROLLED',operation='scan',enrollment_id=self.enrollment_id,checkpoint={},checkpoint_sha256='0'*64)
+                self.store.append(row)
+>       monkeypatch.setattr(sources,'DomainResearch',Controlled);monkeypatch.setattr(sources,'ChallengerResearch',Controlled)
+                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: <module 'neraium_poly.research.phase42.sources' from '/home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/phase46-outcomes/backend/neraium_poly/research/phase42/sources.py'> has no attribute 'ChallengerResearch'
+
+tests/test_phase42_strategies.py:293: AttributeError
+________ test_shadow_capacity_admission_does_not_queue_on_financial_io _________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7c79397d1d60>
+tmp_path = PosixPath('/tmp/pytest-of-ubuntu/pytest-2556/test_shadow_capacity_admission0')
+
+    async def test_shadow_capacity_admission_does_not_queue_on_financial_io(monkeypatch,tmp_path):
+        import threading
+    
+        from neraium_poly.research.phase42 import controller
+        from neraium_poly.risk import RiskLimits
+        monkeypatch.setenv('NERAIUM_SHADOW_RESEARCH','true');monkeypatch.setenv('NERAIUM_SHADOW_SOURCE_REFRESH','false')
+        runtime=SimpleNamespace(stopping=False,last_frame=SimpleNamespace(available_at=NOW),events=None,config=SimpleNamespace(risk_limits=RiskLimits(),data_dir=tmp_path),clock=lambda:NOW)
+        owner=threading.get_ident();admissions=[]
+        async def forbidden():runtime.stopping=True;raise AssertionError('financial IO queue touched')
+        def budget():admissions.append(threading.get_ident());return True
+        runtime._async_budget_ok=forbidden;runtime._budget_ok=budget
+        class Controlled:
+            def __init__(self,*args,**kwargs):pass
+            def tick(self,*args,**kwargs):runtime.stopping=True;return {'as_of':NOW.isoformat()}
+        from neraium_poly.research.phase44 import reference
+        class Reader:
+            def __init__(self,*args,**kwargs):pass
+            def latest(self):return runtime.last_frame
+            def status(self):return {'status':'fresh'}
+            async def run(self,stop):
+                while not stop():await asyncio.sleep(.001)
+            def stop(self):pass
+        monkeypatch.setattr(reference,'ReferenceSampler',Reader)
+        runtime.config.source_url='http://127.0.0.1:18742/api/market-frame'
+        monkeypatch.setattr(controller,'Controller',Controlled)
+        await controller.service_loop(runtime,lambda:False)
+>       assert runtime.shadow_research_error is None and admissions and all(n!=owner for n in admissions)
+E       assert ("AttributeError:'Controlled' object has no attribute 'engine'" is None)
+E        +  where "AttributeError:'Controlled' object has no attribute 'engine'" = namespace(stopping=True, last_frame=namespace(available_at=datetime.datetime(2026, 11, 7, 23, 0, tzinfo=datetime.timez...Reader object at 0x7c79397bed20>, shadow_research_error="AttributeError:'Controlled' object has no attribute 'engine'").shadow_research_error
+
+tests/test_phase42_strategies.py:367: AssertionError
+=============================== warnings summary ===============================
+../../../../../../Neraium-Poly/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1
+  /home/ubuntu/Neraium-Poly/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_phase42_strategies.py::test_opt_in_service_loop_uses_async_worker_and_never_account_access
+FAILED tests/test_phase42_strategies.py::test_starved_combined_frame_uses_fresh_bounded_read_only_reference
+FAILED tests/test_phase42_strategies.py::test_refresh_is_bounded_namespaced_and_keeps_scientific_formulas
+FAILED tests/test_phase42_strategies.py::test_shadow_capacity_admission_does_not_queue_on_financial_io
+4 failed, 109 passed, 1 warning in 16.26s

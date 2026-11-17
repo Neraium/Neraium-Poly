@@ -17,6 +17,7 @@ from neraium_poly.research.phase45.diagnostics import breakdown
 from neraium_poly.research.phase45.panel import Panel
 from neraium_poly.research.phase45.replay_cache import ReplayCache
 from neraium_poly.research.phase45.retire import ClosedPhase44
+from neraium_poly.research.phase46.program import Program, inventory
 
 
 class ShadowSourceBinding(Record):
@@ -36,6 +37,8 @@ class Controller:
         self.profiles=ProfileExperiment(store,risk_limits=risk_limits,clock=clock,can_write=can_write)
         self.models=adapters();self.directory=Path(directory);self.next_sources=None;self.next_outcomes=None;self.errors=Counter()
         self.bindings={r['forecast_id']:r for r in store.latest('ShadowSourceBinding',512)}
+        self.program=Program(store,clock,can_write)
+        self.verified_refs={}
         self.replay_cache=ReplayCache()
         self.panel=Panel(store,clock,can_write)
         self.report=None;self.current_forecasts={}
@@ -59,6 +62,7 @@ class Controller:
                 f=item['forecast'];key=(f['model_id'],f['event_id'],f['market_id'],f['token_id'])
                 if key not in cohort_keys and at(f['event_end_time'])>now:cohort[fid]=item;cohort_keys.add(key)
             self.current_forecasts={fid:v['forecast'] for fid,v in verified.items()}
+            self.verified_refs={fid:{'study_id':v['study']['id'],'study_sha256':study_hashes[id(v['study'])],'forecast_sha256':digest(v['forecast'])} for fid,v in verified.items()}
             for fid,item in verified.items():
                 if fid not in cohort and fid not in self.engine.state['forecasts']:continue
                 if fid in self.bindings:continue
@@ -84,6 +88,7 @@ class Controller:
         exploratory_frame=frame_provider() if frame_provider is not None else frame
         self.explorer.step(exploratory_frame,fees,source_forecasts=self.current_forecasts)
         self.panel.register(self.current_forecasts,exploratory_frame)
+        self.program.register(self.current_forecasts,self.verified_refs,exploratory_frame,self.engine.state['forecasts'],self.engine.state['labels'])
         if self.next_outcomes is None or now>=self.next_outcomes:
             # Resolve only a bounded matured inventory. Original study IDs survive restart.
             attempts={}
@@ -105,12 +110,16 @@ class Controller:
                 native_bound[fid]={'study_sha256':binding['study_sha256'],'study_id':binding['study_id'],'forecast':f}
             from neraium_poly.research.phase45.native_positions import due
             native_bound.update(due(self.explorer,now))
+            native_bound.update(self.program.due())
             self.native_bound=native_bound
             self.next_outcomes=now+timedelta(seconds=300)
         if proofs:
             self.engine.settle(proofs);self.challenger.settle(proofs);self.explorer.settle(proofs);self.profiles.settle(lambda f,t:proofs.get(f['id']))
-        self.report={**self.engine.report(),'phase44_cohort':self.challenger.report(),'phase45_explorer':self.explorer.report(),'exploratory_frame_available_at':exploratory_frame.available_at.isoformat(),'source_replay_cache':self.replay_cache.status(),'probability_panel':self.panel.report(self.engine.state['labels']),'phase41_profiles':self.profiles.report(),'source_withholding':dict(self.errors),
+        if proofs:self.program.settle(proofs)
+        self.report={**self.engine.report(),'outcome_program':self.program.report(),'native_outcome_inventory':inventory(self.engine.state['forecasts'],self.engine.state['labels']),'phase44_cohort':self.challenger.report(),'phase45_explorer':self.explorer.report(),'exploratory_frame_available_at':exploratory_frame.available_at.isoformat(),'source_replay_cache':self.replay_cache.status(),'probability_panel':self.panel.report(self.engine.state['labels']),'phase41_profiles':self.profiles.report(),'source_withholding':dict(self.errors),
             'execution':'isolated shadow only; no account/order-admission access','current_source_forecasts':len(self.current_forecasts),'calibration_cohort':'first available forecast per native market/token/model; repeated refreshes are not independent events','source_inventory':getattr(self,'inventory',{}),'native_verification_timeout_seconds':45,'native_proof_requests_per_5min':2}
+        self.report['held_fee_tokens']=sorted({p['token_id'] for engine in (self.engine,self.challenger,self.explorer) for state in engine.state['profiles'].values() for p in [*state['orders'].values(),*state['positions'].values()]})
+        self.report['current_fee_coverage']={'verified_tokens':sum(p.get('status')=='verified_current_protocol_curve' for p in fees.values()),'open_positions':[{ 'profile':name,'strategy':p['strategy'],'token_id':p['token_id'],'outcome':p['market']['outcome'],'entry_fee_verified':p['fee_verified'],'current_curve':fees.get(p['token_id'],{}),'limitation':'current evidence cannot authenticate or rewrite earlier entry fees'} for name,state in self.explorer.state['profiles'].items() for p in state['positions'].values()]}
         from neraium_poly.research.phase42.desk import publish
         self.report['phase44_rejection_breakdown']={n:breakdown(p['rejections']) for n,p in self.report['phase44_cohort']['profiles'].items()}
         explorer_view=publish(self.store,self.explorer,self.report['phase45_explorer'],now,cohort='phase45')
@@ -150,7 +159,7 @@ async def service_loop(runtime,should_exit):
                 source_future=None;source_due=time.monotonic()+300
             if native_future is not None and native_future.done():
                 try:
-                    verified,reasons=native_future.result();native_proofs.update(verified);native_status={'status':'completed','proofs':len(native_proofs),'recent_attempt_reasons':reasons}
+                    verified,reasons,capacity=native_future.result();native_proofs.update(verified);native_status={'status':'completed','proofs':len(native_proofs),'recent_attempt_reasons':reasons,'capacity':capacity}
                 except Exception as error:native_status={'status':'withheld','reason':type(error).__name__+':'+str(error)[:180]}  # noqa: BLE001
                 native_future=None;native_due=time.monotonic()+300
             try:
@@ -194,8 +203,10 @@ async def service_loop(runtime,should_exit):
                                 async with asyncio.timeout(45):return await collect(pending,runtime.events,runtime.config.data_dir/'phase42-native',clock=runtime.clock,can_write=runtime._budget_ok,max_requests=2)
                             verified=asyncio.run(work_native())
                             reasons=dict(Counter(row['reason'] for row in runtime.events.latest('NativePayout44',16)))
-                            return verified,reasons
+                            cycles=runtime.events.latest('NativeCycle46',1)
+                            return verified,reasons,cycles[0] if cycles else None
                         native_future=asyncio.get_running_loop().run_in_executor(native_executor,reconcile);native_status={'status':'acquiring','maximum_workers':1,'queued_jobs':0}
+                    runtime.research_fee_targets=frozenset(report.get('held_fee_tokens',()))
                     runtime.shadow_research_snapshot={**report,'source_refresh':getattr(runtime,'shadow_source_status',{})}
                     runtime.shadow_research_error=None
             except Exception as error:  # noqa: BLE001 - withhold shadow only; never financial authority

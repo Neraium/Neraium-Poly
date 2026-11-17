@@ -115,11 +115,15 @@ class Client(NativeResearchClient):
         return json.loads(raw)
 
 
-def acquire(f,directory,*,client=None):
+def acquire(f,directory,*,client=None,disk_budget=None):
     """Bounded read-only acquisition; raw failures are retained, never called proof."""
+    if disk_budget is not None and (type(disk_budget) is not int or not 0<=disk_budget<=2*1024**2):raise ValueError('bounded native disk allowance required')
     owned=client is None;transport=client or httpx.Client(timeout=3,trust_env=False)
     c=Client(directory,client=transport,max_requests=48,max_bytes=2*1024**2,interval=.05)
     try:
+        if disk_budget is not None:
+            from neraium_poly.research.phase46.file_budget import BudgetPath, FileBudget
+            c.directory=BudgetPath(directory,budget=FileBudget(directory,disk_budget))
         g=c.native_get('https://gamma-api.polymarket.com/markets/'+f['market_id'])
         if g.get('closed') is not True or g.get('umaResolutionStatus')!='resolved':raise ValueError('native_pending_or_disputed')
         clob=c.native_get('https://clob.polymarket.com/markets-by-token/'+f['token_id'])
@@ -153,8 +157,8 @@ def acquire(f,directory,*,client=None):
             state.append(c.call(CTF,'position',block,USDC,state[-1]['result']))
         state.append(c.call(CTF,'denominator',block,condition))
         for i in range(2):state.append(c.call(CTF,'numerator',block,condition,i))
-        bundle['available_at']=datetime.now(UTC).isoformat();(Path(directory)/'bundle.json').write_bytes(canonical(bundle))
-        c.save_manifest();result=replay(directory);(Path(directory)/'proof.json').write_bytes(canonical(result));return result
+        bundle['available_at']=datetime.now(UTC).isoformat();(c.directory/'bundle.json').write_bytes(canonical(bundle))
+        c.save_manifest();result=replay(directory);(c.directory/'proof.json').write_bytes(canonical(result));return result
     finally:
         c.save_manifest();c.close()
         if owned:transport.close()

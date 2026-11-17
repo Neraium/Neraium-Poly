@@ -27,6 +27,7 @@ DEPLOYED_DEFINITIONS_SHA256='2e451f687dec791505d5206c5f9e511ee83342afea9a63da647
 PHASE43_SOURCE_SHA256='c13cda0c3ff41bcf82528c0c569b7766b4d8f11c92dafc00071b53bea635b1cf'
 PHASE44_SOURCE_SHA256='a9cc84d8fd66a92bcf2cd27096f35eef3597db073d6d1bbb000a297bb6a6725e'  # Reviewed exact deployment; old portfolios retain their original exits and risk checks.
 PHASE45_SOURCE_SHA256='0c07a94d01f85e4b34f253f578a25dd050d5c996bee268ca72694a030035c53a'  # Exact reviewed Phase45 deployment; only unused retired comparison work is removed.
+PHASE46_SOURCE_SHA256='6b7e3e608d1f48cf0684fbb14efa68dd6f9be35a135e19f99563ee76eadadb16'  # Exact reviewed Phase45 deployment; bounded native acquisition compatibility.
 EPS=1e-8
 PROFILES={
  'aggressive':{'size':3.,'edge':0.,'spread':.20,'haircut':0.,'unknown_fee':.10},
@@ -84,7 +85,7 @@ class StrategyEngine:
         if row['policy']!=self.policy:
             compatible={**row['policy'],'code_sha256':self.policy['code_sha256'],'definitions_sha256':self.policy['definitions_sha256'],'economic_sources_sha256':self.policy['economic_sources_sha256'],**self.extra_policy()}
             closing_only=(row['policy'].get('entry_enrollment_open') is True and self.policy.get('entry_enrollment_open') is False and {**row['policy'],'entry_enrollment_open':False}==self.policy)
-            if not closing_only and ((row['policy']['code_sha256'],row['policy']['definitions_sha256']) not in ((LEGACY_SOURCE_SHA256,LEGACY_DEFINITIONS_SHA256),(DEPLOYED_SOURCE_SHA256,DEPLOYED_DEFINITIONS_SHA256),(PHASE43_SOURCE_SHA256,DEPLOYED_DEFINITIONS_SHA256),(PHASE44_SOURCE_SHA256,DEPLOYED_DEFINITIONS_SHA256),(PHASE45_SOURCE_SHA256,DEPLOYED_DEFINITIONS_SHA256)) or compatible!=self.policy):raise ValueError('frozen strategy source/policy mismatch; no reset permitted')
+            if not closing_only and ((row['policy']['code_sha256'],row['policy']['definitions_sha256']) not in ((LEGACY_SOURCE_SHA256,LEGACY_DEFINITIONS_SHA256),(DEPLOYED_SOURCE_SHA256,DEPLOYED_DEFINITIONS_SHA256),(PHASE43_SOURCE_SHA256,DEPLOYED_DEFINITIONS_SHA256),(PHASE44_SOURCE_SHA256,DEPLOYED_DEFINITIONS_SHA256),(PHASE45_SOURCE_SHA256,DEPLOYED_DEFINITIONS_SHA256),(PHASE46_SOURCE_SHA256,DEPLOYED_DEFINITIONS_SHA256)) or compatible!=self.policy):raise ValueError('frozen strategy source/policy mismatch; no reset permitted')
         state=unpack_checkpoint(row['checkpoint'])
         if digest(state)!=row['state_sha256']:raise ValueError('strategy checkpoint integrity failure')
         if row['previous_id']:
