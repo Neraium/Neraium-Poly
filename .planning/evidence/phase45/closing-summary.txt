@@ -1,0 +1,24 @@
+{
+  "source": "202da2f502d94ea44d70e5fdcbeb29bae0f2f771",
+  "pid": "542117",
+  "unique_phase45_markets": 280,
+  "indexed_forecasts": 62,
+  "native_labels": 22,
+  "native_parent_ids": 3,
+  "labels_by_domain": {
+    "crypto": 20,
+    "finance": 2
+  },
+  "observation": {
+    "ready_seconds": 616.5594520363957,
+    "post_ready_seconds": 300.8800223688595,
+    "samples": 60,
+    "fresh": 31,
+    "worker_median_seconds": 8.966965329833329,
+    "worker_max_seconds": 30.9843766852282,
+    "accounts_unchanged": true,
+    "no_automatic_restarts": true,
+    "experimental_oom_kills": 0
+  },
+  "disk_free_GiB": 184.1851577758789
+}
