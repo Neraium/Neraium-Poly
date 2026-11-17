@@ -1,0 +1,48 @@
+{
+  "error": "startup recovery/API did not become ready within900s",
+  "pid": "640711",
+  "last": {
+    "at": "2026-11-17T21:34:44.732202+00:00",
+    "elapsed": 901.836280118674,
+    "service": {
+      "MainPID": "640711",
+      "NRestarts": "0",
+      "MemoryCurrent": "2147311616",
+      "CPUUsageNSec": "562679009000",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active"
+    },
+    "memory_events": {
+      "low": "0",
+      "high": "0",
+      "max": "34476",
+      "oom": "0",
+      "oom_kill": "0",
+      "oom_group_kill": "0",
+      "sock_throttled": "0"
+    },
+    "api_error": "ConnectError",
+    "accounts": {
+      "paper-live": {
+        "cash": 500.0,
+        "realized": 0.0,
+        "kill": 0,
+        "limits_sha256": "5d49295ce5df09ad48cda10e3f9fe2eadc5ce793ea741e0070a05f4eca00a6b0",
+        "positions": 0,
+        "reservations": 0,
+        "orders": 0
+      },
+      "experimental-paper": {
+        "cash": 496.11522059829053,
+        "realized": -3.8847794017094013,
+        "kill": 1,
+        "limits_sha256": "5d49295ce5df09ad48cda10e3f9fe2eadc5ce793ea741e0070a05f4eca00a6b0",
+        "positions": 0,
+        "reservations": 0,
+        "orders": 13
+      }
+    },
+    "window": null
+  }
+}

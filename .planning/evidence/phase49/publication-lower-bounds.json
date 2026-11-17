@@ -1,0 +1,27 @@
+{
+  "current_baseline": {
+    "distinct_measured_reports": 49,
+    "necessarily_expired_before_publication": {
+      "2026-11-17T21:06:25.368303+00:00": {
+        "after_input_selection_seconds": 20.48501367913559,
+        "input_frame_available_at": "2026-11-17T21:06:25.216931+00:00",
+        "processing_stages": {
+          "source_inventory_replay_enrollment": 6.47595152258873e-06,
+          "reference_snapshot_merge": 0.0005572107620537281,
+          "legacy_and_profile_processing": 5.854679733980447,
+          "active_candidate_evaluation": 7.977974808309227,
+          "pending_inventory_metadata_only": 5.671754479408264e-07,
+          "settlement_application_scoring_report": 1.118355106562376,
+          "decision_cards": 5.5340034631080925,
+          "total": 20.485660602804273,
+          "native_archive_validation": "existing native worker, not quote tick"
+        }
+      }
+    }
+  },
+  "phase48_post": {
+    "distinct_measured_reports": 15,
+    "necessarily_expired_before_publication": {}
+  },
+  "interpretation": "After frame selection, the display still uses the initially admitted processing-frame timestamp. Its selected timestamp predates the remaining stages. A measured remaining time above 20 seconds proves expiration before publication even without producer ID. In other cases the older samples cannot locate the exact expiration boundary."
+}

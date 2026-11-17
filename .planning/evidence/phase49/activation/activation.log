@@ -1,0 +1,13 @@
+Experimental source switched. Recording readiness and observation.
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/phase49-freshness/.planning/evidence/phase49/observe.py", line 61, in <module>
+    if ready is None and time.monotonic()-started>900:raise ValueError('startup recovery/API did not become ready within900s')
+                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: startup recovery/API did not become ready within900s
+Source-only rollback requested; financial records untouched; verify recovery.
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/phase49-freshness/.planning/evidence/phase49/activation/activate.py", line 55, in <module>
+    subprocess.run([sys.executable,str(EVIDENCE/'observe.py'),'--out',str(EVIDENCE/'after'),'--source',deploy.SOURCE,'--startup'],check=True,timeout=1870)
+  File "/usr/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/home/ubuntu/Neraium-Poly/.venv/bin/python', '/home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/phase49-freshness/.planning/evidence/phase49/observe.py', '--out', '/home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/phase49-freshness/.planning/evidence/phase49/after', '--source', 'f7903e13f4c30bdf644d86d0d301fd4834041caf', '--startup']' returned non-zero exit status 1.

@@ -1,0 +1,34 @@
+{
+  "cycle": "strategy44:000000002803",
+  "runs": {
+    "before": [
+      0.0067993891425430775,
+      0.006603448651731014,
+      0.006636123172938824,
+      0.006617165636271238,
+      0.00659301970154047,
+      0.0066730729304254055,
+      0.006740545853972435,
+      0.00672253780066967,
+      0.006630216259509325,
+      0.0068071987479925156
+    ],
+    "after": [
+      1.535797491669655e-05,
+      1.409091055393219e-05,
+      1.3621058315038681e-05,
+      1.378590241074562e-05,
+      1.330813392996788e-05,
+      1.4131888747215271e-05,
+      1.3039913028478622e-05,
+      1.431116834282875e-05,
+      1.3768207281827927e-05,
+      1.3007782399654388e-05
+    ]
+  },
+  "medians": {
+    "before": 0.006654598051682115,
+    "after": 1.3777054846286774e-05
+  },
+  "scope": "Same immutable closed-cohort cycle, same position projection, published cards already exist. The controller reads recent cards once at the end instead of repeating the read in each subcohort. Read-only microbenchmark; not a live performance prediction."
+}
