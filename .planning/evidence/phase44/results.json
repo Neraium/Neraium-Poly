@@ -1,0 +1,982 @@
+{
+  "source": "211e2a688055c91d6c14755cd7c24b2f56f3f10b",
+  "pid": "509003",
+  "reference_pid": "478083",
+  "comparisons": {
+    "before": {
+      "samples": 24,
+      "window_seconds": 120,
+      "fresh_research_samples": 10,
+      "healthy_ingestion_samples": 21,
+      "reference_errors": 2,
+      "median_read_seconds": 0.2743611226323992,
+      "p95_read_seconds": 3.002880051266402
+    },
+    "after": {
+      "samples": 24,
+      "window_seconds": 120,
+      "fresh_research_samples": 21,
+      "healthy_ingestion_samples": 22,
+      "reference_errors": 0,
+      "median_read_seconds": 0.3297074739821255,
+      "p95_read_seconds": 0.5271321372129023
+    }
+  },
+  "observation": {
+    "source": "211e2a688055c91d6c14755cd7c24b2f56f3f10b",
+    "pid": "509003",
+    "duration_seconds": 953.68787644431,
+    "ready_after_seconds": 592.0890150652267,
+    "post_ready_seconds": 361.5988622568548,
+    "samples": 190,
+    "fresh_research_samples": 51,
+    "peak_memory_bytes": 2147483648,
+    "accounts_unchanged": true,
+    "rollback_executed": false
+  },
+  "active_samples": 74,
+  "fresh_active_samples": 51,
+  "forecasts": 46,
+  "native_parent_events": 11,
+  "native_verified_forecast_labels": 2,
+  "native_verified_event_ids": [
+    "1379184"
+  ],
+  "scores": {
+    "spx-gaussian-logreturn-direction-v25.1": {
+      "forecasts": 1,
+      "native_parent_groups": 1,
+      "reviewed_independent_groups": 0,
+      "scores": {
+        "model": {
+          "brier": 0.26838941732330446,
+          "log_loss": 0.7299421699569301
+        },
+        "market": {
+          "brier": 0.055224999999999996,
+          "log_loss": 0.2678794451556012
+        },
+        "neutral": {
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      },
+      "model_minus_market_brier": 0.21316441732330446,
+      "market_baseline": "original causal executable-book midpoint / token expected payout; not an independent model probability",
+      "confidence_interval": null,
+      "calibration_fit": null,
+      "status": "descriptive_only; independent cohort review and sufficient heldout groups required"
+    },
+    "spx-weekday-beta-direction-v25.1": {
+      "forecasts": 1,
+      "native_parent_groups": 1,
+      "reviewed_independent_groups": 0,
+      "scores": {
+        "model": {
+          "brier": 0.36406202709679714,
+          "log_loss": 0.9247653588651272
+        },
+        "market": {
+          "brier": 0.055224999999999996,
+          "log_loss": 0.2678794451556012
+        },
+        "neutral": {
+          "brier": 0.25,
+          "log_loss": 0.6931471805599453
+        }
+      },
+      "model_minus_market_brier": 0.30883702709679717,
+      "market_baseline": "original causal executable-book midpoint / token expected payout; not an independent model probability",
+      "confidence_interval": null,
+      "calibration_fit": null,
+      "status": "descriptive_only; independent cohort review and sufficient heldout groups required"
+    }
+  },
+  "native_reconciliation": {
+    "status": "completed",
+    "proofs": 2,
+    "recent_attempt_reasons": {
+      "ValueError:native_resolution_transaction_unavailable": 3,
+      "finalized_standard_CTF_and_exact_original_outcome_asset": 1
+    }
+  },
+  "legacy": {
+    "aggressive": {
+      "cash": 473.39732908627684,
+      "open": 0,
+      "pending": 0,
+      "drawdown": 26.60267091372316,
+      "suspended": true,
+      "strategies": {
+        "independent": {
+          "screened_observations": 266566,
+          "unique_enrolled_opportunities": 30,
+          "candidates": 2404,
+          "orders": 30,
+          "fill_events": 27,
+          "open_positions": 0,
+          "unrealized_net_pnl": 0,
+          "exposure": 0,
+          "modeled_exit_net_pnl": -14.113658859189254,
+          "verified_settlement_net_pnl": 0,
+          "wins": 2,
+          "losses": 25,
+          "closed_observations": 27
+        },
+        "consistency": {
+          "screened_observations": 205756,
+          "unique_enrolled_opportunities": 0,
+          "candidates": 0,
+          "orders": 0,
+          "fill_events": 0,
+          "open_positions": 0,
+          "unrealized_net_pnl": 0,
+          "exposure": 0,
+          "modeled_exit_net_pnl": 0,
+          "verified_settlement_net_pnl": 0,
+          "wins": 0,
+          "losses": 0,
+          "closed_observations": 0
+        },
+        "momentum": {
+          "screened_observations": 273076,
+          "unique_enrolled_opportunities": 9,
+          "candidates": 8893,
+          "orders": 9,
+          "fill_events": 6,
+          "open_positions": 0,
+          "unrealized_net_pnl": 0,
+          "exposure": 0,
+          "modeled_exit_net_pnl": -4.077010127023749,
+          "verified_settlement_net_pnl": 0,
+          "wins": 0,
+          "losses": 6,
+          "closed_observations": 6
+        },
+        "spread_capture": {
+          "screened_observations": 489430,
+          "unique_enrolled_opportunities": 654,
+          "candidates": 225892,
+          "orders": 654,
+          "fill_events": 9,
+          "open_positions": 0,
+          "unrealized_net_pnl": 0,
+          "exposure": 0,
+          "modeled_exit_net_pnl": -6.088203301243593,
+          "verified_settlement_net_pnl": 0,
+          "wins": 0,
+          "losses": 9,
+          "closed_observations": 9
+        },
+        "event_repricing": {
+          "screened_observations": 264214,
+          "unique_enrolled_opportunities": 4,
+          "candidates": 26,
+          "orders": 4,
+          "fill_events": 4,
+          "open_positions": 0,
+          "unrealized_net_pnl": 0,
+          "exposure": 0,
+          "modeled_exit_net_pnl": -2.323798626266595,
+          "verified_settlement_net_pnl": 0,
+          "wins": 0,
+          "losses": 4,
+          "closed_observations": 4
+        }
+      },
+      "rejections": {
+        "consistency:combined_executable_asks_not_below_unit_payout": 81,
+        "consistency:complementary_native_identity_or_fee_evidence_unverified": 96655,
+        "consistency:exact_two_token_condition_unavailable": 70720,
+        "consistency:fresh_executable_book_unavailable": 38300,
+        "event_repricing:fresh_executable_book_unavailable": 38300,
+        "event_repricing:independent_source_forecast_unavailable": 223488,
+        "event_repricing:loss_stop_or_incomplete_portfolio_mark": 10,
+        "event_repricing:net_hypothesis_or_native_minimum_size": 12,
+        "event_repricing:new_independent_evidence_revision_unavailable": 2378,
+        "independent:already_enrolled_or_open": 212,
+        "independent:fresh_executable_book_unavailable": 38300,
+        "independent:independent_source_forecast_unavailable": 223488,
+        "independent:loss_stop_or_incomplete_portfolio_mark": 1683,
+        "independent:net_hypothesis_or_native_minimum_size": 479,
+        "momentum:already_enrolled_or_open": 11,
+        "momentum:causal_30second_history_unavailable": 107874,
+        "momentum:fresh_executable_book_unavailable": 38300,
+        "momentum:loss_stop_or_incomplete_portfolio_mark": 6862,
+        "momentum:net_hypothesis_or_native_minimum_size": 2011,
+        "momentum:positive_past_momentum_not_observed": 109125,
+        "spread_capture:already_enrolled_or_open": 572,
+        "spread_capture:fresh_executable_book_unavailable": 38300,
+        "spread_capture:loss_stop_or_incomplete_portfolio_mark": 16791,
+        "spread_capture:net_hypothesis_or_native_minimum_size": 38070,
+        "spread_capture:profile_spread": 6,
+        "spread_capture:retired_crossed_ask_passive_proxy; adverse_selection_and_queue_position_unverified": 169799
+      }
+    },
+    "balanced": {
+      "cash": 487.900846059169,
+      "open": 1,
+      "pending": 0,
+      "drawdown": 7.87671319655675,
+      "suspended": false,
+      "strategies": {
+        "independent": {
+          "screened_observations": 266590,
+          "unique_enrolled_opportunities": 6,
+          "candidates": 2404,
+          "orders": 6,
+          "fill_events": 5,
+          "open_positions": 1,
+          "unrealized_net_pnl": null,
+          "exposure": 4.999999999999357,
+          "modeled_exit_net_pnl": -3.7078351455557446,
+          "verified_settlement_net_pnl": 0,
+          "wins": 0,
+          "losses": 4,
+          "closed_observations": 4
+        },
+        "consistency": {
+          "screened_observations": 205756,
+          "unique_enrolled_opportunities": 0,
+          "candidates": 0,
+          "orders": 0,
+          "fill_events": 0,
+          "open_positions": 0,
+          "unrealized_net_pnl": null,
+          "exposure": 0,
+          "modeled_exit_net_pnl": 0,
+          "verified_settlement_net_pnl": 0,
+          "wins": 0,
+          "losses": 0,
+          "closed_observations": 0
+        },
+        "momentum": {
+          "screened_observations": 273081,
+          "unique_enrolled_opportunities": 4,
+          "candidates": 8893,
+          "orders": 4,
+          "fill_events": 4,
+          "open_positions": 0,
+          "unrealized_net_pnl": null,
+          "exposure": 0,
+          "modeled_exit_net_pnl": -1.3240417682505878,
+          "verified_settlement_net_pnl": 0,
+          "wins": 0,
+          "losses": 3,
+          "closed_observations": 3
+        },
+        "spread_capture": {
+          "screened_observations": 490017,
+          "unique_enrolled_opportunities": 67,
+          "candidates": 225892,
+          "orders": 67,
+          "fill_events": 1,
+          "open_positions": 0,
+          "unrealized_net_pnl": null,
+          "exposure": 0,
+          "modeled_exit_net_pnl": -2.067277027025252,
+          "verified_settlement_net_pnl": 0,
+          "wins": 0,
+          "losses": 1,
+          "closed_observations": 1
+        },
+        "event_repricing": {
+          "screened_observations": 264218,
+          "unique_enrolled_opportunities": 0,
+          "candidates": 26,
+          "orders": 0,
+          "fill_events": 0,
+          "open_positions": 0,
+          "unrealized_net_pnl": null,
+          "exposure": 0,
+          "modeled_exit_net_pnl": 0,
+          "verified_settlement_net_pnl": 0,
+          "wins": 0,
+          "losses": 0,
+          "closed_observations": 0
+        }
+      },
+      "rejections": {
+        "consistency:combined_executable_asks_not_below_unit_payout": 81,
+        "consistency:complementary_native_identity_or_fee_evidence_unverified": 96655,
+        "consistency:exact_two_token_condition_unavailable": 70720,
+        "consistency:fresh_executable_book_unavailable": 38300,
+        "event_repricing:fresh_executable_book_unavailable": 38300,
+        "event_repricing:independent_source_forecast_unavailable": 223488,
+        "event_repricing:loss_stop_or_incomplete_portfolio_mark": 1,
+        "event_repricing:native_fee_unavailable": 23,
+        "event_repricing:net_hypothesis_or_native_minimum_size": 2,
+        "event_repricing:new_independent_evidence_revision_unavailable": 2378,
+        "independent:already_enrolled_or_open": 59,
+        "independent:entry_liquidation_already_breaches_20pct_exit_rule": 6,
+        "independent:fresh_executable_book_unavailable": 38300,
+        "independent:independent_source_forecast_unavailable": 223488,
+        "independent:loss_stop_or_incomplete_portfolio_mark": 209,
+        "independent:native_fee_unavailable": 1858,
+        "independent:net_hypothesis_or_native_minimum_size": 266,
+        "momentum:already_enrolled_or_open": 10,
+        "momentum:causal_30second_history_unavailable": 107874,
+        "momentum:fresh_executable_book_unavailable": 38300,
+        "momentum:loss_stop_or_incomplete_portfolio_mark": 1360,
+        "momentum:native_fee_unavailable": 7358,
+        "momentum:net_hypothesis_or_native_minimum_size": 156,
+        "momentum:positive_past_momentum_not_observed": 109125,
+        "momentum:profile_spread": 5,
+        "spread_capture:already_enrolled_or_open": 75,
+        "spread_capture:fresh_executable_book_unavailable": 38300,
+        "spread_capture:loss_stop_or_incomplete_portfolio_mark": 967,
+        "spread_capture:native_fee_unavailable": 53924,
+        "spread_capture:net_hypothesis_or_native_minimum_size": 963,
+        "spread_capture:profile_spread": 97,
+        "spread_capture:retired_crossed_ask_passive_proxy; adverse_selection_and_queue_position_unverified": 169799
+      }
+    },
+    "conservative": {
+      "cash": 500.0,
+      "open": 0,
+      "pending": 0,
+      "drawdown": 0.0,
+      "suspended": false,
+      "strategies": {
+        "independent": {
+          "screened_observations": 266596,
+          "unique_enrolled_opportunities": 0,
+          "candidates": 2404,
+          "orders": 0,
+          "fill_events": 0,
+          "open_positions": 0,
+          "unrealized_net_pnl": 0,
+          "exposure": 0,
+          "modeled_exit_net_pnl": 0,
+          "verified_settlement_net_pnl": 0,
+          "wins": 0,
+          "losses": 0,
+          "closed_observations": 0
+        },
+        "consistency": {
+          "screened_observations": 205756,
+          "unique_enrolled_opportunities": 0,
+          "candidates": 0,
+          "orders": 0,
+          "fill_events": 0,
+          "open_positions": 0,
+          "unrealized_net_pnl": 0,
+          "exposure": 0,
+          "modeled_exit_net_pnl": 0,
+          "verified_settlement_net_pnl": 0,
+          "wins": 0,
+          "losses": 0,
+          "closed_observations": 0
+        },
+        "momentum": {
+          "screened_observations": 273085,
+          "unique_enrolled_opportunities": 0,
+          "candidates": 8893,
+          "orders": 0,
+          "fill_events": 0,
+          "open_positions": 0,
+          "unrealized_net_pnl": 0,
+          "exposure": 0,
+          "modeled_exit_net_pnl": 0,
+          "verified_settlement_net_pnl": 0,
+          "wins": 0,
+          "losses": 0,
+          "closed_observations": 0
+        },
+        "spread_capture": {
+          "screened_observations": 490084,
+          "unique_enrolled_opportunities": 0,
+          "candidates": 225892,
+          "orders": 0,
+          "fill_events": 0,
+          "open_positions": 0,
+          "unrealized_net_pnl": 0,
+          "exposure": 0,
+          "modeled_exit_net_pnl": 0,
+          "verified_settlement_net_pnl": 0,
+          "wins": 0,
+          "losses": 0,
+          "closed_observations": 0
+        },
+        "event_repricing": {
+          "screened_observations": 264218,
+          "unique_enrolled_opportunities": 0,
+          "candidates": 26,
+          "orders": 0,
+          "fill_events": 0,
+          "open_positions": 0,
+          "unrealized_net_pnl": 0,
+          "exposure": 0,
+          "modeled_exit_net_pnl": 0,
+          "verified_settlement_net_pnl": 0,
+          "wins": 0,
+          "losses": 0,
+          "closed_observations": 0
+        }
+      },
+      "rejections": {
+        "consistency:combined_executable_asks_not_below_unit_payout": 81,
+        "consistency:complementary_native_identity_or_fee_evidence_unverified": 96655,
+        "consistency:exact_two_token_condition_unavailable": 70720,
+        "consistency:fresh_executable_book_unavailable": 38300,
+        "event_repricing:conservative_calibration_withheld": 3,
+        "event_repricing:fresh_executable_book_unavailable": 38300,
+        "event_repricing:independent_source_forecast_unavailable": 223488,
+        "event_repricing:native_fee_unavailable": 23,
+        "event_repricing:new_independent_evidence_revision_unavailable": 2378,
+        "independent:conservative_calibration_withheld": 408,
+        "independent:fresh_executable_book_unavailable": 38300,
+        "independent:independent_source_forecast_unavailable": 223488,
+        "independent:native_fee_unavailable": 1996,
+        "momentum:causal_30second_history_unavailable": 107874,
+        "momentum:conservative_calibration_withheld": 206,
+        "momentum:fresh_executable_book_unavailable": 38300,
+        "momentum:native_fee_unavailable": 8526,
+        "momentum:positive_past_momentum_not_observed": 109125,
+        "momentum:profile_spread": 161,
+        "spread_capture:conservative_calibration_withheld": 1128,
+        "spread_capture:fresh_executable_book_unavailable": 38300,
+        "spread_capture:native_fee_unavailable": 54218,
+        "spread_capture:profile_spread": 747,
+        "spread_capture:retired_crossed_ask_passive_proxy; adverse_selection_and_queue_position_unverified": 169799
+      }
+    }
+  },
+  "new_cohort": {
+    "aggressive": {
+      "cash": 500.0,
+      "open": 0,
+      "pending": 0,
+      "drawdown": 0.0,
+      "suspended": false,
+      "strategies": {
+        "independent": {
+          "screened_observations": 5400,
+          "unique_enrolled_opportunities": 0,
+          "candidates": 24,
+          "orders": 0,
+          "fill_events": 0,
+          "open_positions": 0,
+          "unrealized_net_pnl": 0,
+          "exposure": 0,
+          "modeled_exit_net_pnl": 0,
+          "verified_settlement_net_pnl": 0,
+          "wins": 0,
+          "losses": 0,
+          "closed_observations": 0
+        },
+        "consistency": {
+          "screened_observations": 4280,
+          "unique_enrolled_opportunities": 0,
+          "candidates": 0,
+          "orders": 0,
+          "fill_events": 0,
+          "open_positions": 0,
+          "unrealized_net_pnl": 0,
+          "exposure": 0,
+          "modeled_exit_net_pnl": 0,
+          "verified_settlement_net_pnl": 0,
+          "wins": 0,
+          "losses": 0,
+          "closed_observations": 0
+        },
+        "momentum": {
+          "screened_observations": 5376,
+          "unique_enrolled_opportunities": 0,
+          "candidates": 0,
+          "orders": 0,
+          "fill_events": 0,
+          "open_positions": 0,
+          "unrealized_net_pnl": 0,
+          "exposure": 0,
+          "modeled_exit_net_pnl": 0,
+          "verified_settlement_net_pnl": 0,
+          "wins": 0,
+          "losses": 0,
+          "closed_observations": 0
+        }
+      },
+      "rejections": {
+        "independent:independent_source_forecast_unavailable": 4295,
+        "independent:fresh_executable_book_unavailable": 1057,
+        "consistency:fresh_executable_book_unavailable": 1057,
+        "consistency:complementary_native_identity_or_fee_evidence_unverified": 2142,
+        "consistency:exact_two_token_condition_unavailable": 1070,
+        "momentum:bid_history_and_verified_fees_required": 5326,
+        "momentum:bid_trend_does_not_cover_round_trip_friction_and_depth": 50,
+        "independent:net_hypothesis_or_native_minimum_size": 24,
+        "consistency:combined_executable_asks_not_below_unit_payout": 11
+      }
+    },
+    "balanced": {
+      "cash": 500.0,
+      "open": 0,
+      "pending": 0,
+      "drawdown": 0.0,
+      "suspended": false,
+      "strategies": {
+        "independent": {
+          "screened_observations": 5400,
+          "unique_enrolled_opportunities": 0,
+          "candidates": 24,
+          "orders": 0,
+          "fill_events": 0,
+          "open_positions": 0,
+          "unrealized_net_pnl": 0,
+          "exposure": 0,
+          "modeled_exit_net_pnl": 0,
+          "verified_settlement_net_pnl": 0,
+          "wins": 0,
+          "losses": 0,
+          "closed_observations": 0
+        },
+        "consistency": {
+          "screened_observations": 4280,
+          "unique_enrolled_opportunities": 0,
+          "candidates": 0,
+          "orders": 0,
+          "fill_events": 0,
+          "open_positions": 0,
+          "unrealized_net_pnl": 0,
+          "exposure": 0,
+          "modeled_exit_net_pnl": 0,
+          "verified_settlement_net_pnl": 0,
+          "wins": 0,
+          "losses": 0,
+          "closed_observations": 0
+        },
+        "momentum": {
+          "screened_observations": 5376,
+          "unique_enrolled_opportunities": 0,
+          "candidates": 0,
+          "orders": 0,
+          "fill_events": 0,
+          "open_positions": 0,
+          "unrealized_net_pnl": 0,
+          "exposure": 0,
+          "modeled_exit_net_pnl": 0,
+          "verified_settlement_net_pnl": 0,
+          "wins": 0,
+          "losses": 0,
+          "closed_observations": 0
+        }
+      },
+      "rejections": {
+        "independent:independent_source_forecast_unavailable": 4295,
+        "independent:fresh_executable_book_unavailable": 1057,
+        "consistency:fresh_executable_book_unavailable": 1057,
+        "consistency:complementary_native_identity_or_fee_evidence_unverified": 2142,
+        "consistency:exact_two_token_condition_unavailable": 1070,
+        "momentum:bid_history_and_verified_fees_required": 5326,
+        "momentum:bid_trend_does_not_cover_round_trip_friction_and_depth": 50,
+        "independent:native_fee_unavailable": 20,
+        "consistency:combined_executable_asks_not_below_unit_payout": 11,
+        "independent:net_hypothesis_or_native_minimum_size": 4
+      }
+    },
+    "conservative": {
+      "cash": 500.0,
+      "open": 0,
+      "pending": 0,
+      "drawdown": 0.0,
+      "suspended": false,
+      "strategies": {
+        "independent": {
+          "screened_observations": 5400,
+          "unique_enrolled_opportunities": 0,
+          "candidates": 24,
+          "orders": 0,
+          "fill_events": 0,
+          "open_positions": 0,
+          "unrealized_net_pnl": 0,
+          "exposure": 0,
+          "modeled_exit_net_pnl": 0,
+          "verified_settlement_net_pnl": 0,
+          "wins": 0,
+          "losses": 0,
+          "closed_observations": 0
+        },
+        "consistency": {
+          "screened_observations": 4280,
+          "unique_enrolled_opportunities": 0,
+          "candidates": 0,
+          "orders": 0,
+          "fill_events": 0,
+          "open_positions": 0,
+          "unrealized_net_pnl": 0,
+          "exposure": 0,
+          "modeled_exit_net_pnl": 0,
+          "verified_settlement_net_pnl": 0,
+          "wins": 0,
+          "losses": 0,
+          "closed_observations": 0
+        },
+        "momentum": {
+          "screened_observations": 5376,
+          "unique_enrolled_opportunities": 0,
+          "candidates": 0,
+          "orders": 0,
+          "fill_events": 0,
+          "open_positions": 0,
+          "unrealized_net_pnl": 0,
+          "exposure": 0,
+          "modeled_exit_net_pnl": 0,
+          "verified_settlement_net_pnl": 0,
+          "wins": 0,
+          "losses": 0,
+          "closed_observations": 0
+        }
+      },
+      "rejections": {
+        "independent:independent_source_forecast_unavailable": 4295,
+        "independent:fresh_executable_book_unavailable": 1057,
+        "consistency:fresh_executable_book_unavailable": 1057,
+        "consistency:complementary_native_identity_or_fee_evidence_unverified": 2142,
+        "consistency:exact_two_token_condition_unavailable": 1070,
+        "momentum:bid_history_and_verified_fees_required": 5326,
+        "momentum:bid_trend_does_not_cover_round_trip_friction_and_depth": 50,
+        "independent:native_fee_unavailable": 20,
+        "consistency:combined_executable_asks_not_below_unit_payout": 11,
+        "independent:conservative_calibration_withheld": 4
+      }
+    }
+  },
+  "new_cohort_unique_markets": 219,
+  "new_cohort_forecasts": 26,
+  "new_cohort_parent_events": 4,
+  "new_cohort_costs": {
+    "trades": [],
+    "by_strategy": {},
+    "unmatched_exits": 0,
+    "limitation": "USD accounting decomposition; unresolved outcomes cannot attribute probability error; no causal adverse-selection attribution; legacy trigger unrecorded"
+  },
+  "new_cohort_exit_comparison": {
+    "policy": {
+      "version": "phase43-matched-exits-v1",
+      "arms": [
+        "hold_native",
+        "first_executable_bid",
+        "evidence_repricing",
+        "time_300s",
+        "risk_20pct"
+      ],
+      "participation": 0.1,
+      "slippage_per_share": 0.0015,
+      "latency_seconds": 0.5,
+      "max_entries": 256,
+      "selection": "first256 actual new modeled filled orders per profile; no winner selection or automatic promotion",
+      "comparison": "alternative exit paths on identical entries, not five funded accounts; model fees retained; no queue or exchange-fill claim",
+      "evidence_repricing": "fresh same-model external probability revision below net bid, or net bid reaches frozen entry probability target",
+      "risk_budgets_usd": {
+        "aggregate": 100.0,
+        "market": 25.0,
+        "event": 50.0,
+        "correlation": 50.0
+      },
+      "checkpoint": "256 entries per profile is a fixed review checkpoint; no automatic clearing"
+    },
+    "entries": 0,
+    "matched_fill_counts": {},
+    "withheld_fills": 0,
+    "withholding_reasons": {},
+    "arms": {
+      "hold_native": {
+        "cash_hypothetical_by_profile": {},
+        "maximum_drawdown_by_profile": {},
+        "suspended_profiles": {},
+        "closed_lots": 0,
+        "open_lots": 0,
+        "modeled_exit_pnl": 0,
+        "verified_settlement_pnl": 0,
+        "unrealized_net_pnl": 0,
+        "unresolved_capital": 0,
+        "parent_events": 0,
+        "limitation": "alternative exit experiment; unresolved holds have no settled result; no winner selection"
+      },
+      "first_executable_bid": {
+        "cash_hypothetical_by_profile": {},
+        "maximum_drawdown_by_profile": {},
+        "suspended_profiles": {},
+        "closed_lots": 0,
+        "open_lots": 0,
+        "modeled_exit_pnl": 0,
+        "verified_settlement_pnl": 0,
+        "unrealized_net_pnl": 0,
+        "unresolved_capital": 0,
+        "parent_events": 0,
+        "limitation": "alternative exit experiment; unresolved holds have no settled result; no winner selection"
+      },
+      "evidence_repricing": {
+        "cash_hypothetical_by_profile": {},
+        "maximum_drawdown_by_profile": {},
+        "suspended_profiles": {},
+        "closed_lots": 0,
+        "open_lots": 0,
+        "modeled_exit_pnl": 0,
+        "verified_settlement_pnl": 0,
+        "unrealized_net_pnl": 0,
+        "unresolved_capital": 0,
+        "parent_events": 0,
+        "limitation": "alternative exit experiment; unresolved holds have no settled result; no winner selection"
+      },
+      "time_300s": {
+        "cash_hypothetical_by_profile": {},
+        "maximum_drawdown_by_profile": {},
+        "suspended_profiles": {},
+        "closed_lots": 0,
+        "open_lots": 0,
+        "modeled_exit_pnl": 0,
+        "verified_settlement_pnl": 0,
+        "unrealized_net_pnl": 0,
+        "unresolved_capital": 0,
+        "parent_events": 0,
+        "limitation": "alternative exit experiment; unresolved holds have no settled result; no winner selection"
+      },
+      "risk_20pct": {
+        "cash_hypothetical_by_profile": {},
+        "maximum_drawdown_by_profile": {},
+        "suspended_profiles": {},
+        "closed_lots": 0,
+        "open_lots": 0,
+        "modeled_exit_pnl": 0,
+        "verified_settlement_pnl": 0,
+        "unrealized_net_pnl": 0,
+        "unresolved_capital": 0,
+        "parent_events": 0,
+        "limitation": "alternative exit experiment; unresolved holds have no settled result; no winner selection"
+      }
+    },
+    "checkpoint_reached": false
+  },
+  "legacy_exit_comparison": {
+    "policy": {
+      "version": "phase43-matched-exits-v1",
+      "arms": [
+        "hold_native",
+        "first_executable_bid",
+        "evidence_repricing",
+        "time_300s",
+        "risk_20pct"
+      ],
+      "participation": 0.1,
+      "slippage_per_share": 0.0015,
+      "latency_seconds": 0.5,
+      "max_entries": 256,
+      "selection": "first256 actual new modeled filled orders per profile; no winner selection or automatic promotion",
+      "comparison": "alternative exit paths on identical entries, not five funded accounts; model fees retained; no queue or exchange-fill claim",
+      "evidence_repricing": "fresh same-model external probability revision below net bid, or net bid reaches frozen entry probability target",
+      "risk_budgets_usd": {
+        "aggregate": 100.0,
+        "market": 25.0,
+        "event": 50.0,
+        "correlation": 50.0
+      },
+      "checkpoint": "256 entries per profile is a fixed review checkpoint; no automatic clearing"
+    },
+    "entries": 1,
+    "matched_fill_counts": {
+      "balanced": 1
+    },
+    "withheld_fills": 0,
+    "withholding_reasons": {},
+    "arms": {
+      "evidence_repricing": {
+        "cash_hypothetical_by_profile": {
+          "balanced": 495.0000000000006
+        },
+        "maximum_drawdown_by_profile": {
+          "balanced": 0.777559255725123
+        },
+        "suspended_profiles": {},
+        "closed_lots": 0,
+        "open_lots": 1,
+        "modeled_exit_pnl": 0,
+        "verified_settlement_pnl": 0,
+        "unrealized_net_pnl": null,
+        "unresolved_capital": 4.999999999999357,
+        "parent_events": 1,
+        "limitation": "alternative exit experiment; unresolved holds have no settled result; no winner selection"
+      },
+      "first_executable_bid": {
+        "cash_hypothetical_by_profile": {
+          "balanced": 499.40182127862596
+        },
+        "maximum_drawdown_by_profile": {
+          "balanced": 0.5981787213740404
+        },
+        "suspended_profiles": {},
+        "closed_lots": 1,
+        "open_lots": 0,
+        "modeled_exit_pnl": -0.598178721374012,
+        "verified_settlement_pnl": 0,
+        "unrealized_net_pnl": 0,
+        "unresolved_capital": 0,
+        "parent_events": 1,
+        "limitation": "alternative exit experiment; unresolved holds have no settled result; no winner selection"
+      },
+      "hold_native": {
+        "cash_hypothetical_by_profile": {
+          "balanced": 495.0000000000006
+        },
+        "maximum_drawdown_by_profile": {
+          "balanced": 0.777559255725123
+        },
+        "suspended_profiles": {},
+        "closed_lots": 0,
+        "open_lots": 1,
+        "modeled_exit_pnl": 0,
+        "verified_settlement_pnl": 0,
+        "unrealized_net_pnl": null,
+        "unresolved_capital": 4.999999999999357,
+        "parent_events": 1,
+        "limitation": "alternative exit experiment; unresolved holds have no settled result; no winner selection"
+      },
+      "risk_20pct": {
+        "cash_hypothetical_by_profile": {
+          "balanced": 495.0000000000006
+        },
+        "maximum_drawdown_by_profile": {
+          "balanced": 0.777559255725123
+        },
+        "suspended_profiles": {},
+        "closed_lots": 0,
+        "open_lots": 1,
+        "modeled_exit_pnl": 0,
+        "verified_settlement_pnl": 0,
+        "unrealized_net_pnl": null,
+        "unresolved_capital": 4.999999999999357,
+        "parent_events": 1,
+        "limitation": "alternative exit experiment; unresolved holds have no settled result; no winner selection"
+      },
+      "time_300s": {
+        "cash_hypothetical_by_profile": {
+          "balanced": 499.40182127862596
+        },
+        "maximum_drawdown_by_profile": {
+          "balanced": 0.5981787213740404
+        },
+        "suspended_profiles": {},
+        "closed_lots": 1,
+        "open_lots": 0,
+        "modeled_exit_pnl": -0.598178721374012,
+        "verified_settlement_pnl": 0,
+        "unrealized_net_pnl": 0,
+        "unresolved_capital": 0,
+        "parent_events": 1,
+        "limitation": "alternative exit experiment; unresolved holds have no settled result; no winner selection"
+      }
+    },
+    "checkpoint_reached": false
+  },
+  "actual_accounts": {
+    "paper-live": {
+      "cash": 500.0,
+      "realized": 0.0,
+      "kill": 0,
+      "positions": 0,
+      "reservations": 0,
+      "orders": 0
+    },
+    "experimental-paper": {
+      "cash": 496.11522059829053,
+      "realized": -3.8847794017094013,
+      "kill": 1,
+      "positions": 0,
+      "reservations": 0,
+      "orders": 13
+    }
+  },
+  "journals": {
+    "data/experimental-paper/event-intelligence/forecasts.sqlite": {
+      "records": 16908,
+      "head_sha256": "542d379926d677c300d2d0defc29748297e0e6eccca0958a185248e6d8e8da28",
+      "integrity": "verified"
+    },
+    "data/experimental-paper/event-intelligence/domains/forecasts.sqlite": {
+      "records": 357,
+      "head_sha256": "4c6d2e49f06a6165bd933ceef69aed4e04984701e1bf4dd35527d738337c050b",
+      "integrity": "verified"
+    },
+    "data/experimental-paper/event-intelligence/sports/prospective.sqlite": {
+      "records": 34,
+      "head_sha256": "814ecf6a8b2cb49775c961c68a8bab23db4b378ecfa241d79241ff6e03fa6868",
+      "integrity": "verified"
+    }
+  },
+  "disk_free_GiB": 186.90636825561523,
+  "archive": {
+    "managed": true,
+    "usage_bytes": 64983373997,
+    "usage_is_conservative_estimate": false,
+    "budget_bytes": 161061273600,
+    "active_bytes": 2801416,
+    "segment_bytes": 8388608,
+    "future_compression_profile": "gzip-level6-streaming-verified-v34",
+    "segments": 10331,
+    "sealed_segments": 10330,
+    "compressed_segments": 10193,
+    "legacy_records": 164111,
+    "records": 3732750,
+    "free_bytes": 200688201728,
+    "growth_bytes_per_second": 250631.5756620926,
+    "remaining_bytes": 96077899603,
+    "seconds_to_exhaustion": null,
+    "global_floor_bytes": 107374182400,
+    "retention_policy": "retain_all_originals_and_verified_copies",
+    "archive_tiers": {
+      "active_segments": 1,
+      "sealed_originals_present": 10330,
+      "cold_only_segments": 0,
+      "cold_only_verified_this_process": 0,
+      "cold_proofs_present": 9427,
+      "derived_cache_bytes": 66901974,
+      "derived_cache_budget_bytes": 67108864,
+      "counts_scope": "current catalog and filesystem; proof presence is not integrity verification"
+    },
+    "tier_usage_bytes": {
+      "active": 2801416,
+      "warm": 40680189952,
+      "cold": 18463991033,
+      "protected": 517521408,
+      "derived_cache": 66901974,
+      "segment_metadata": 346863811,
+      "catalog_state": 4905104403
+    },
+    "cold_verification": {
+      "enabled": true,
+      "minimum_scan_interval_seconds": 60,
+      "last_scan_at": "2026-11-17T04:15:24.127207+00:00",
+      "last_success_at": "2026-11-17T04:15:24.127207+00:00",
+      "last_segment": "segment-00009427.sqlite",
+      "last_error": null,
+      "scope": "process-local progress; immutable proof presence is reported separately"
+    },
+    "warnings": [],
+    "cold_only_names_sample": [],
+    "health": "ok",
+    "last_error": null,
+    "measurement_at": "2026-11-17T04:15:42.044878+00:00",
+    "measurement_completed_at": "2026-11-17T04:15:42.910533+00:00",
+    "measurement_scope": "strict archive measurement window; admission uses strict checks",
+    "measurement_age_seconds": 10.00002,
+    "measurement_status": "cached",
+    "snapshot_only": true,
+    "admission_authority": false,
+    "usage_is_historical": true,
+    "measurement_max_age_seconds": 60,
+    "free_space_measured_at": "2026-11-17T04:15:52.044898+00:00"
+  },
+  "CI": 44013066176,
+  "limitations": [
+    "Short matched windows do not prove indefinite reliability; stale data still withheld",
+    "Native contract payout scoring, not independently licensed SPX official close verification",
+    "One native parent event; no fitted calibration, significance or strategy promotion",
+    "All trading fills and costs remain hypothetical; no verified profitable strategy demonstrated"
+  ],
+  "source_cycle": {
+    "id": "strategy42:000000002119",
+    "payload_sha256": "ebb68919e40ee7f108e3a1bb983aea9c053d41f427258c6d634e48b15bff03d7",
+    "state_sha256": "a3ded7b0ad03d7322e5f12e4a5a515c65adf8add3595741bda68fc5c6294006e",
+    "checkpoint_bytes": 1167563
+  }
+}

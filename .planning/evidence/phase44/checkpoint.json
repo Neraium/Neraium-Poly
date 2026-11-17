@@ -1,0 +1,13 @@
+{
+  "at": "2026-11-17T04:26:29.443515+00:00",
+  "branch": "citadel/phase44-profitability",
+  "worktree": "/home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/phase44-profitability",
+  "source": "211e2a688055c91d6c14755cd7c24b2f56f3f10b",
+  "CI": 44013066176,
+  "phase": "complete; source deployed and attested; closing evidence push pending",
+  "experimental_pid": 509003,
+  "reference_pid": 478083,
+  "next": "leave both services running, collect native outcomes and paired exit results; preserve stop and legacy suspensions",
+  "remaining": "no demonstrated positive net strategy; partial freshness; incomplete fee/paired-condition coverage; one native event is insufficient for calibration or certification",
+  "evidence": "results.json and activation/postflight.json"
+}

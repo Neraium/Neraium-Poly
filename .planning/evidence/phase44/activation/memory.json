@@ -1,0 +1,21 @@
+{
+  "at": "2026-11-17T04:22:27.350966+00:00",
+  "process": {
+    "VmHWM": "1184180 kB",
+    "VmRSS": "1102560 kB"
+  },
+  "cgroup_events": {
+    "low": "0",
+    "high": "0",
+    "max": "26489",
+    "oom": "0",
+    "oom_kill": "0",
+    "oom_group_kill": "0",
+    "sock_throttled": "0"
+  },
+  "cgroup_stat": {
+    "anon": 1108385792,
+    "file": 904794112,
+    "kernel": 20021248
+  }
+}

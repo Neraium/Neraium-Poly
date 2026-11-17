@@ -1,0 +1,32 @@
+{
+  "services": {
+    "neraium-poly-paper.service": {
+      "MainPID": "478083",
+      "NRestarts": "1",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "1073741824",
+      "TasksMax": "64",
+      "ActiveState": "active"
+    },
+    "neraium-poly-experimental.service": {
+      "MainPID": "460056",
+      "NRestarts": "0",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "TasksMax": "32",
+      "ActiveState": "active"
+    }
+  },
+  "accounts": {
+    "paper-live": {
+      "cash": 500.0,
+      "realized": 0.0,
+      "kill": 0
+    },
+    "experimental-paper": {
+      "cash": 496.11522059829053,
+      "realized": -3.8847794017094013,
+      "kill": 1
+    }
+  }
+}
