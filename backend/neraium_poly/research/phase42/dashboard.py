@@ -29,7 +29,16 @@ def snapshot(runtime,now):
     if not report:return {'status':'withheld','reason':getattr(runtime,'shadow_research_error',None) or 'shadow research disabled or initializing','trading_authority':False}
     age=(now-at(report['as_of'])).total_seconds() if report.get('as_of') else None
     if report.get('input_frame_available_at'):age=max(age or 0,(now-at(report['input_frame_available_at'])).total_seconds())
+    trace=report.get('freshness_trace',{})
+    source_reads=trace.get('decision_reads',())
+    source_age=max(((now-at(item['source_available_at'])).total_seconds() for item in source_reads),default=None)
+    if source_age is not None:
+        age=max(age or 0,source_age)
     error=getattr(runtime,'shadow_research_error',None)
     sampler=getattr(runtime,'research_reference',None)
-    if sampler is not None and sampler.status()['status']!='fresh':error=error or 'current reference observation withheld'
-    return {**report,'age_seconds':age,'status':'fresh' if age is not None and 0<=age<=20 and not error else 'stale','runtime_error':error,'trading_authority':False}
+    reference=sampler.status() if sampler is not None else None
+    if reference is not None and reference['status']!='fresh':error=error or 'current reference observation withheld'
+    return {**report,'age_seconds':age,'status':'fresh' if age is not None and 0<=age<=20 and not error else 'stale','runtime_error':error,'freshness_sample':{
+        'sampled_at':now.isoformat(),'source_age_seconds':source_age,'reference':reference,
+        'last_processing_failure':getattr(runtime,'shadow_research_last_failure',None)
+    },'trading_authority':False}

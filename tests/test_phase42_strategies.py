@@ -149,6 +149,7 @@ async def test_opt_in_service_loop_uses_async_worker_and_never_account_access(mo
     class Reader:
         def __init__(self,*args,**kwargs):pass
         def latest(self):return runtime.last_frame
+        def latest_with_receipt(self):return self.latest(),{'source_available_at':NOW.isoformat()}
         def status(self):return {'status':'fresh'}
         async def run(self,stop):
             while not stop():await asyncio.sleep(.001)
@@ -210,7 +211,10 @@ def test_trader_desk_cards_preserve_decisions_without_duplicate_orders(setup):
     assert cards and all(c['actual_fill'] is False for c in cards)
     assert any(c['estimated_net_value']>0 for c in cards)
     assert report['positions']==[] and report['unfilled_orders']
-    again=publish(store,x,x.report(),clock[0]);assert again['recent_decisions']==cards
+    projected={}
+    publish(store,x,x.report(),clock[0],projected=projected)
+    again=publish(store,x,x.report(),clock[0],projected=projected)
+    assert projected['legacy'] is x.last and again['recent_decisions']==cards
 
 
 async def test_starved_combined_frame_uses_fresh_bounded_read_only_reference(setup,monkeypatch,tmp_path):
@@ -327,6 +331,7 @@ async def test_source_job_is_drained_on_service_shutdown(setup,monkeypatch,tmp_p
     class Reader:
         def __init__(self,*args,**kwargs):pass
         def latest(self):return runtime.last_frame
+        def latest_with_receipt(self):return self.latest(),{'source_available_at':NOW.isoformat()}
         def status(self):return {'status':'fresh'}
         async def run(self,stop):
             while not stop():await asyncio.sleep(.001)
@@ -356,6 +361,7 @@ async def test_shadow_capacity_admission_does_not_queue_on_financial_io(monkeypa
     class Reader:
         def __init__(self,*args,**kwargs):pass
         def latest(self):return runtime.last_frame
+        def latest_with_receipt(self):return self.latest(),{'source_available_at':NOW.isoformat()}
         def status(self):return {'status':'fresh'}
         async def run(self,stop):
             while not stop():await asyncio.sleep(.001)

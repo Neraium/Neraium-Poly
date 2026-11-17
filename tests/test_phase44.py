@@ -162,3 +162,52 @@ def test_retired_cohort_drops_only_unheld_derived_depth_and_keeps_losses(setup):
     assert not legacy.state['profiles']['aggressive']['books'] and not legacy.state['profiles']['aggressive']['credits']
     assert not any(s['orders'] for s in legacy.state['profiles'].values())
     assert m.market_id in legacy.state['markets_seen'] or m.token_id not in legacy.state['history']
+
+
+def test_dashboard_route_tracks_original_reads_and_recovers_fail_closed(setup,monkeypatch):
+    from types import SimpleNamespace
+
+    from fastapi.testclient import TestClient
+    from neraium_poly.ops import api
+
+    _x, clock, _m, book, _f, frame, _fees, _store, _risk = setup
+    health = {'status': 'ok', 'live_trading_enabled': False}
+    original = clock[0]
+
+    def producer(_):
+        return frame_at(frame, book, clock[0]).model_copy(update={
+            'source': 'neraium-poly/public-market-frame/v1', 'producer_health': health,
+        })
+
+    sampler = ReferenceSampler('http://127.0.0.1:18742/api/market-frame', clock=lambda: clock[0], reader=producer)
+    sampler.observe()
+    used, receipt = sampler.latest_with_receipt()
+    runtime = SimpleNamespace(clock=lambda: clock[0], research_reference=sampler)
+    monkeypatch.setattr(api, "datetime", SimpleNamespace(now=lambda tz: clock[0]))
+    client = TestClient(api.create_app(runtime=runtime))
+
+    def publish(receipt):
+        runtime.shadow_research_snapshot = {
+            'as_of': clock[0].isoformat(),
+            'freshness_trace': {'decision_reads': [receipt], 'published_at': clock[0].isoformat()},
+        }
+
+    publish(receipt)
+    assert client.get('/api/shadow-research').json()['status'] == 'fresh'
+    health['status'] = 'degraded'
+    sampler.observe()
+    assert client.get('/api/shadow-research').json()['status'] == 'stale'
+
+    health['status'] = 'ok'
+    clock[0] = original + timedelta(seconds=21)
+    sampler.observe()
+    publish(receipt)  # A new producer read cannot renew the prior decision inputs.
+    stale = client.get('/api/shadow-research').json()
+    assert stale['status'] == 'stale' and stale['freshness_sample']['source_age_seconds'] == 21
+    assert stale['freshness_trace']['decision_reads'][0]['frame_id'] == used.id
+
+    _, recovered = sampler.latest_with_receipt()
+    publish(recovered)
+    result = client.get('/api/shadow-research').json()
+    assert result['status'] == 'fresh'
+    assert result['freshness_sample']['reference']['last_failure']['reason'] == 'ValueError:public-data producer is degraded'

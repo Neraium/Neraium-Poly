@@ -26,40 +26,54 @@ class ReferenceSampler:
         self.lock=Lock();self.frame=None;self.attempts=0;self.failures=0;self.error=None
         self.last_attempt=None;self.latencies=deque(maxlen=128);self.fresh_books=0
         self.last_failure=None;self.failure_types={}
+        self.receipt=None;self.recent_reads=deque(maxlen=12)
         self._stopping=False
 
     def observe(self):
         began=time.monotonic();now=self.clock()
         with self.lock:self.attempts+=1;self.last_attempt=now.isoformat()
+        receipt={'read_started_at':now.isoformat()}
         try:
             frame=self.reader(self.url)
+            receipt.update(frame_id=frame.id,source_timestamp=frame.timestamp.isoformat(),
+                           source_available_at=frame.available_at.isoformat(),
+                           producer_health=frame.producer_health.get('status'),
+                           producer_error=frame.producer_health.get('last_error'))
             # Exact existing public-frame checks, including native identity,
             # byte-universe bounds and paper-only producer semantics.
             frame=SharedFeedClient.validate(frame,self.clock())
             count=sum(assess_book(b,self.clock()).healthy for b in frame.books)
             if not count:raise ValueError('no fresh executable reference books')
-            with self.lock:self.frame=frame;self.fresh_books=count;self.error=None
+            with self.lock:
+                receipt.update(read_completed_at=self.clock().isoformat(),status='accepted',fresh_books=count)
+                self.frame=frame;self.fresh_books=count;self.error=None;self.receipt=receipt
+                self.recent_reads.append(receipt)
         except (httpx.HTTPError,ValueError,OSError) as error:
             with self.lock:
                 self.frame=None;self.fresh_books=0;self.failures+=1;self.error=type(error).__name__+':'+str(error)[:120]
-                self.last_failure={'at':self.clock().isoformat(),'reason':self.error}
+                receipt.update(read_completed_at=self.clock().isoformat(),status='withheld',error=self.error)
+                self.receipt=None;self.recent_reads.append(receipt)
+                self.last_failure={'at':receipt['read_completed_at'],'reason':self.error}
                 kind=type(error).__name__
                 if kind not in self.failure_types and len(self.failure_types)>=8:kind='other'
                 self.failure_types[kind]=self.failure_types.get(kind,0)+1
         finally:
             with self.lock:self.latencies.append(time.monotonic()-began)
 
-    def latest(self):
-        with self.lock:frame=self.frame
+    def latest_with_receipt(self):
+        with self.lock:frame,receipt=self.frame,self.receipt
         if frame is None or not 0<=(self.clock()-frame.available_at).total_seconds()<=15:
             raise ValueError('fresh shared reference observation unavailable')
-        return frame
+        return frame,receipt
+
+    def latest(self):
+        return self.latest_with_receipt()[0]
 
     def status(self):
         with self.lock:
             frame=self.frame;latencies=list(self.latencies)
             result={'attempts':self.attempts,'failures':self.failures,'last_attempt':self.last_attempt,'last_error':self.error,'last_failure':self.last_failure,'failure_types':dict(self.failure_types),
-                    'fresh_books_at_receipt':self.fresh_books,'maximum_workers':1,'queued_requests':0,
+                    'accepted_frame':self.receipt,'recent_reads':list(self.recent_reads),'fresh_books_at_receipt':self.fresh_books,'maximum_workers':1,'queued_requests':0,
                     'median_read_seconds':statistics.median(latencies) if latencies else None,
                     'maximum_read_seconds':max(latencies) if latencies else None,
                     'available_at':frame.available_at.isoformat() if frame else None}

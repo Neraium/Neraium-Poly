@@ -44,7 +44,7 @@ class Controller:
         self.verified_refs={}
         self.replay_cache=ReplayCache()
         self.panel=Panel(store,clock,can_write)
-        self.report=None;self.current_forecasts={}
+        self.report=None;self.current_forecasts={};self.projected_cycles={}
     def tick(self,frame,fees,*,proofs=None,frame_provider=None):
         began=perf_counter();stages={}
         now=at(self.clock())
@@ -89,8 +89,11 @@ class Controller:
         if frame_provider is not None:frame=frame_provider()
         stages['reference_snapshot_merge']=perf_counter()-part;part=perf_counter()
         self.admitted_frame_available_at=frame.available_at.isoformat()
-        self.engine.step(frame,fees,source_forecasts=self.current_forecasts);self.profiles.step(frame,fees)
-        if self.challenger.needs_quotes():self.challenger.step(frame,fees,source_forecasts=self.current_forecasts)
+        # These engines consume the same immutable serialized observation.
+        payload=frame.model_dump(mode='json')
+        self.engine.step(payload,fees,source_forecasts=self.current_forecasts)
+        self.profiles.step(payload,fees)
+        if self.challenger.needs_quotes():self.challenger.step(payload,fees,source_forecasts=self.current_forecasts)
         stages['legacy_and_profile_processing']=perf_counter()-part;part=perf_counter()
         exploratory_frame=frame_provider() if frame_provider is not None else frame
         self.explorer.step(exploratory_frame,fees,source_forecasts=self.current_forecasts)
@@ -127,9 +130,9 @@ class Controller:
         stages['settlement_application_scoring_report']=perf_counter()-part;part=perf_counter()
         from neraium_poly.research.phase42.desk import publish
         self.report['phase44_rejection_breakdown']={n:breakdown(p['rejections']) for n,p in self.report['phase44_cohort']['profiles'].items()}
-        explorer_view=publish(self.store,self.explorer,self.report['phase45_explorer'],now,cohort='phase45')
-        challenger_view=publish(self.store,self.challenger,self.report['phase44_cohort'],now,cohort='phase44')
-        self.report=publish(self.store,self.engine,self.report,now)
+        explorer_view=publish(self.store,self.explorer,self.report['phase45_explorer'],now,cohort='phase45',projected=self.projected_cycles,include_recent=False)
+        challenger_view=publish(self.store,self.challenger,self.report['phase44_cohort'],now,cohort='phase44',projected=self.projected_cycles,include_recent=False)
+        self.report=publish(self.store,self.engine,self.report,now,projected=self.projected_cycles)
         self.report['positions']+=challenger_view['positions']+explorer_view['positions'];self.report['unfilled_orders']+=challenger_view['unfilled_orders']+explorer_view['unfilled_orders']
         stages['decision_cards']=perf_counter()-part
         self.report['processing_stages_seconds']={**stages,'total':perf_counter()-began,'native_archive_validation':'existing native worker, not quote tick'}
@@ -170,8 +173,10 @@ async def service_loop(runtime,should_exit):
                     verified,reasons,capacity=native_future.result();native_proofs.update(verified);native_status={'status':'completed','proofs':len(native_proofs),'recent_attempt_reasons':reasons,'capacity':capacity}
                 except Exception as error:native_status={'status':'withheld','reason':type(error).__name__+':'+str(error)[:180]}  # noqa: BLE001
                 native_future=None;native_due=time.monotonic()+300
+            trace={'scheduled_at':runtime.clock().isoformat(),'decision_reads':[]}
             try:
-                frame=sampler.latest()
+                frame,initial_receipt=sampler.latest_with_receipt()
+                trace['initial_read']=initial_receipt
                 inputs=getattr(runtime,'phase26_inputs',None)
                 extra_markets=();extra_books=()
                 if inputs is not None:
@@ -179,19 +184,24 @@ async def service_loop(runtime,should_exit):
                     extra_markets=tuple(inputs.watcher._markets.values());extra_books=tuple(inputs.watcher.snapshot())
                     frame=merge_supplemental(frame,extra_markets,extra_books,runtime.clock())
                 if frame is not None:
-                    def work(frame=frame,native_status=native_status,extra_markets=extra_markets,extra_books=extra_books):
+                    def work(frame=frame,native_status=native_status,extra_markets=extra_markets,extra_books=extra_books,trace=trace):
                         nonlocal controller
                         import time
+                        trace['worker_started_at']=runtime.clock().isoformat()
                         began=time.monotonic();origin='combined_experimental_frame'
                         if not runtime._budget_ok():raise ValueError('archive budget admission withheld')
                         origin='shared_bounded_reference_reader'
-                        if not 0<=(runtime.clock()-frame.available_at).total_seconds()<=15:raise ValueError('research frame expired before worker admission')
+                        if not 0<=(runtime.clock()-at(trace['initial_read']['source_available_at'])).total_seconds()<=15:raise ValueError('research frame expired before worker admission')
                         if controller is None:controller=Controller(runtime.events,risk_limits=runtime.config.risk_limits.model_dump(),clock=runtime.clock,can_write=runtime._budget_ok,directory=runtime.config.data_dir/'phase42-native')
                         cache=getattr(runtime,'research_fees',None)
                         fee_start=time.monotonic();fees=cache.proofs(as_of=runtime.clock()) if cache else {};fee_seconds=time.monotonic()-fee_start
                         def current_frame():
-                            base=sampler.latest()
-                            return merge_supplemental(base,extra_markets,extra_books,runtime.clock()) if extra_markets else base
+                            base,receipt=sampler.latest_with_receipt()
+                            decision_at=runtime.clock()
+                            selected=merge_supplemental(base,extra_markets,extra_books,decision_at) if extra_markets else base
+                            trace['decision_reads'].append({**receipt,'decision_at':decision_at.isoformat(),
+                                                           'processing_frame_id':selected.id})
+                            return selected
                         report=controller.tick(frame,fees,proofs=native_proofs,frame_provider=current_frame)
                         return {**report,'native_reconciliation':native_status,'reference_feed':sampler.status(),'input_frame_available_at':getattr(controller,'admitted_frame_available_at',frame.available_at.isoformat()),'shadow_worker':{'maximum_workers':1,'queued_jobs':0,'cycle_seconds':time.monotonic()-began,'fee_proof_seconds':fee_seconds,'frame_origin':origin}}
                     if os.environ.get('NERAIUM_SHADOW_SOURCE_REFRESH','true')=='true' and source_future is None and time.monotonic()>=source_due:
@@ -215,10 +225,18 @@ async def service_loop(runtime,should_exit):
                             return verified,reasons,cycles[0] if cycles else None
                         native_future=asyncio.get_running_loop().run_in_executor(native_executor,reconcile);native_status={'status':'acquiring','maximum_workers':1,'queued_jobs':0}
                     runtime.research_fee_targets=frozenset(report.get('held_fee_tokens',()))
-                    runtime.shadow_research_snapshot={**report,'source_refresh':getattr(runtime,'shadow_source_status',{})}
+                    published_at=runtime.clock()
+                    trace['published_at']=published_at.isoformat()
+                    trace['source_age_at_publication_seconds']=max(
+                        (published_at-at(item['source_available_at'])).total_seconds() for item in trace['decision_reads'] or [trace['initial_read']]
+                    )
+                    runtime.shadow_research_snapshot={**report,'freshness_trace':trace,
+                                                     'source_refresh':getattr(runtime,'shadow_source_status',{})}
                     runtime.shadow_research_error=None
             except Exception as error:  # noqa: BLE001 - withhold shadow only; never financial authority
                 runtime.shadow_research_error=f'{type(error).__name__}:{str(error)[:180]}'
+                runtime.shadow_research_last_failure={**trace,'failed_at':runtime.clock().isoformat(),
+                                                      'error':runtime.shadow_research_error}
             # Fixed cadence with bounded cooperative idle, rather than adding
             # five idle seconds AFTER an already long critical evaluation.
             delay=max(2.,5.-(time.monotonic()-iteration_started))
