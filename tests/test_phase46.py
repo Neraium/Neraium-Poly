@@ -122,3 +122,23 @@ def test_information_selection_prefers_balanced_contract_without_reading_outcome
     monkeypatch.setattr(selection,'map_challenger_contract',lambda *a,**k:SimpleNamespace(compatible=True,review_required=False,parameters={'period_start_utc':'CONTROLLED-same-date','period_end_utc':'CONTROLLED-same-end'}))
     chosen=selection.select(frame.model_copy(update={'markets':(rare,balanced),'books':(br,bb)}),clock[0],crypto=True)
     assert [m.market_id for m in chosen.markets]==['2']
+
+
+def test_source_inventory_budgets_the_exact_controller_representation():
+    import json
+    from threading import RLock
+
+    from neraium_poly.research.phase42.sources import forecast_studies
+    # Specific regression: compact UTF8 records fit, expanded JSON does not.
+    # Originals remain available; defer excess records instead of poisoning
+    # the entire inventory or increasing the existing16MiB guard.
+    raw=json.dumps({'forecasts':[{}],'evidence':'é'*600000},ensure_ascii=False,separators=(',',':'))
+    rows={str(i):('RefreshDomainStudy',raw) for i in range(5)}
+    class Connection:
+        def execute(self,_sql,args):return SimpleNamespace(fetchall=lambda:[(k,) for k in rows] if args[0]=='RefreshDomainStudy' else [])
+    store=SimpleNamespace(catalog=Connection(),_lock=RLock(),get=rows.get)
+    assert sum(len(r[1].encode()) for r in rows.values())<16*1024**2
+    studies,audit=forecast_studies(store)
+    assert len(studies)==4 and audit['deferred_for_serialized_budget']==1
+    assert len(json.dumps(studies).encode())==audit['retained_bytes']<=16*1024**2
+    assert len(rows)==5 and all(r[1]==raw for r in rows.values())

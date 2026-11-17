@@ -85,7 +85,7 @@ async def refresh(store,frame,*,clock,can_write,stop,frame_provider=None):
 
 def forecast_studies(store):
     """Look past empty scan rows without materializing full-history payloads."""
-    output=[];size=0;scanned=0
+    output=[];size=2;scanned=0;deferred=0
     for kind in ('RefreshDomainStudy','RefreshCryptoStudy','DomainResearchStudy','ChallengerStudy'):
         connection=getattr(store,'catalog',None)
         table='records' if connection is not None else 'events'
@@ -97,7 +97,10 @@ def forecast_studies(store):
             if not original or len(original[1].encode())>8*1024**2:continue
             payload=json.loads(original[1])
             if not payload.get('forecasts'):continue
-            needed=len(original[1].encode())
-            if size+needed>16*1024**2:continue
+            # Match the controller representation exactly, including whitespace,
+            # Unicode escaping, array brackets and separators. Original bytes
+            # and the independent8MiB per-record guard remain unchanged.
+            needed=len(json.dumps(payload).encode())+(2 if output else 0)
+            if size+needed>16*1024**2:deferred+=1;continue
             size+=needed;output.append(payload)
-    return output,{'rows_scanned':scanned,'retained_studies':len(output),'retained_bytes':size,'source_guard_bytes':16*1024**2}
+    return output,{'rows_scanned':scanned,'retained_studies':len(output),'retained_bytes':size,'source_guard_bytes':16*1024**2,'deferred_for_serialized_budget':deferred}

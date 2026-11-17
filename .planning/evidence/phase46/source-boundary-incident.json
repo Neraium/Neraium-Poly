@@ -1,0 +1,129 @@
+{
+  "source": "c81d5b1d3ae449ccd362a2383f02abc7eaa2328c",
+  "observed_failure_samples": [
+    {
+      "at": "2026-11-17T14:10:10.315603+00:00",
+      "elapsed": 701.759242742788,
+      "health": "degraded",
+      "research": {
+        "status": "withheld",
+        "reason": "ValueError:bounded source snapshot exceeds16MiB; no guard increase",
+        "trading_authority": false
+      }
+    },
+    {
+      "at": "2026-11-17T14:10:15.329296+00:00",
+      "elapsed": 706.7729348316789,
+      "health": "degraded",
+      "research": {
+        "status": "withheld",
+        "reason": "ValueError:bounded source snapshot exceeds16MiB; no guard increase",
+        "trading_authority": false
+      }
+    },
+    {
+      "at": "2026-11-17T14:10:20.696019+00:00",
+      "elapsed": 712.1396563677117,
+      "health": "degraded",
+      "research": {
+        "status": "withheld",
+        "reason": "ValueError:bounded source snapshot exceeds16MiB; no guard increase",
+        "trading_authority": false
+      }
+    },
+    {
+      "at": "2026-11-17T14:10:25.716405+00:00",
+      "elapsed": 717.1600419767201,
+      "health": "degraded",
+      "research": {
+        "status": "withheld",
+        "reason": "ValueError:bounded source snapshot exceeds16MiB; no guard increase",
+        "trading_authority": false
+      }
+    },
+    {
+      "at": "2026-11-17T14:10:31.018920+00:00",
+      "elapsed": 722.4625586420298,
+      "health": "ok",
+      "research": {
+        "status": "withheld",
+        "reason": "ValueError:bounded source snapshot exceeds16MiB; no guard increase",
+        "trading_authority": false
+      }
+    },
+    {
+      "at": "2026-11-17T14:10:36.363182+00:00",
+      "elapsed": 727.8068206086755,
+      "health": "ok",
+      "research": {
+        "status": "withheld",
+        "reason": "ValueError:bounded source snapshot exceeds16MiB; no guard increase",
+        "trading_authority": false
+      }
+    },
+    {
+      "at": "2026-11-17T14:10:41.378469+00:00",
+      "elapsed": 732.8221084019169,
+      "health": "ok",
+      "research": {
+        "status": "withheld",
+        "reason": "ValueError:bounded source snapshot exceeds16MiB; no guard increase",
+        "trading_authority": false
+      }
+    },
+    {
+      "at": "2026-11-17T14:10:46.514790+00:00",
+      "elapsed": 737.958431083709,
+      "health": "ok",
+      "research": {
+        "status": "withheld",
+        "reason": "ValueError:bounded source snapshot exceeds16MiB; no guard increase",
+        "trading_authority": false
+      }
+    },
+    {
+      "at": "2026-11-17T14:10:51.528140+00:00",
+      "elapsed": 742.9717805557884,
+      "health": "ok",
+      "research": {
+        "status": "withheld",
+        "reason": "ValueError:bounded source snapshot exceeds16MiB; no guard increase",
+        "trading_authority": false
+      }
+    },
+    {
+      "at": "2026-11-17T14:10:56.588676+00:00",
+      "elapsed": 748.0323136630468,
+      "health": "ok",
+      "research": {
+        "status": "withheld",
+        "reason": "ValueError:bounded source snapshot exceeds16MiB; no guard increase",
+        "trading_authority": false
+      }
+    },
+    {
+      "at": "2026-11-17T14:11:01.622560+00:00",
+      "elapsed": 753.0662006479688,
+      "health": "degraded",
+      "research": {
+        "status": "withheld",
+        "reason": "ValueError:bounded source snapshot exceeds16MiB; no guard increase",
+        "trading_authority": false
+      }
+    },
+    {
+      "at": "2026-11-17T14:11:06.638053+00:00",
+      "elapsed": 758.0816944339313,
+      "health": "ok",
+      "research": {
+        "status": "withheld",
+        "reason": "ValueError:bounded source snapshot exceeds16MiB; no guard increase",
+        "trading_authority": false
+      }
+    }
+  ],
+  "cause": "raw compact source accounting disagreed with the controller expanded JSON byte accounting",
+  "repair": "bound exact existing controller representation, defer excess originals; preserve16MiB guard",
+  "current_inventory_note": "concurrent source refresh can temporarily move inventory below boundary; later standalone snapshot was below bound",
+  "safety": "paper-only, latched stop, no account changes"
+}
