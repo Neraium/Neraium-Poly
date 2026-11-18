@@ -9,6 +9,7 @@ import httpx
 
 from neraium_poly.data import assess_book
 from neraium_poly.experimental.contracts import SharedMarketFrame
+from neraium_poly.experimental.feed_trace import producer_frame, producer_mark
 
 BOOK_SOURCES = {
     "https://clob.polymarket.com",
@@ -19,7 +20,9 @@ BOOK_SOURCES = {
 def market_frame(runtime) -> SharedMarketFrame:
     # Never call risk.snapshot/state here: sharing observations cannot expire or
     # otherwise mutate the certified account's reservations or capital.
+    producer_mark("lock_wait_started")
     with runtime._lock:
+        producer_mark("lock_acquired")
         raw_books = tuple(runtime._current_books().values())
         markets = tuple(runtime.markets.values())
         last_success = runtime.last_success
@@ -55,7 +58,7 @@ def market_frame(runtime) -> SharedMarketFrame:
             }
             for token, (at, model) in runtime.fees.items()
         }
-        return SharedMarketFrame(
+        frame = SharedMarketFrame(
             id=hashlib.sha256((now.isoformat() + repr(tuple(b.id for b in books))).encode()).hexdigest(),
             timestamp=now,
             available_at=now,
@@ -67,6 +70,8 @@ def market_frame(runtime) -> SharedMarketFrame:
             relationships=tuple(r.model_dump(mode="json") for r in runtime.relationships.values()),
             connectivity=runtime.coverage.metrics() if runtime.coverage else {},
         )
+        producer_frame(frame, ingestion_age_seconds=age, has_fresh_books=has_fresh_books)
+        return frame
 
 
 def loopback_url(value: str) -> str:
