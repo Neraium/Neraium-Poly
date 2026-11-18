@@ -226,6 +226,9 @@ def run(frames, candidate, full_depth):
                     "request_at": t,
                     "effective_at": t + 0.5,
                     "up_bid": b,
+                    "up_exit_5share_vwap": take(up["BUY"], 5.0)[1] / 5
+                    if sum(up["BUY"].values()) >= 5 and valid
+                    else None,
                     "down_bid": d,
                     "exchange_event_at": x,
                     "left": order["left"],
@@ -312,7 +315,7 @@ def run(frames, candidate, full_depth):
 def quote_points(frames):
     bids = {}
     times = []
-    for t, _, kind, item in frames:
+    for t, exchange, kind, item in frames:
         if kind == "book" and item["asset_id"] == UP:
             bids = {float(p["price"]): float(p["size"]) for p in item["bids"]}
         elif kind == "price_change":
@@ -327,7 +330,8 @@ def quote_points(frames):
                     bids.pop(p, None)
         else:
             continue
-        times.append((t, max(bids, default=None)))
+        quantity, value, _, _ = take(bids, 5.0)
+        times.append((t, exchange, value / 5 if quantity >= 5 - EPS else None))
     return times
 
 
@@ -347,8 +351,9 @@ def main():
             c["paired_saved_dollars"] = None
             for delay in (5, 30):
                 target = c["request_at"] + delay
-                last = next((p for t, p in reversed(quotes) if target - 15 <= t <= target), None)
-                c[f"bid_move_{delay}s"] = None if last is None or c["up_bid"] is None else last - c["up_bid"]
+                last = next((p for t, x, p in reversed(quotes) if t <= target and target - x <= 15), None)
+                initial = c["up_exit_5share_vwap"]
+                c[f"bid_move_{delay}s"] = None if last is None or initial is None else last - initial
         largest = None
         for c in b["cancels"]:
             if not c["after_effective_fill_quantity"]:
