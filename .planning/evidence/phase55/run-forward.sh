@@ -4,7 +4,7 @@ e=$(cd "$(dirname "$0")" && pwd)
 root=/home/ubuntu/Neraium-Poly
 private=$1
 action=$2
-test -s "$e/ready.json"
+test -s "$e/ready.json" || test -s "$e/rollback.json"
 refpid=$(systemctl show -p MainPID --value neraium-poly-paper.service)
 exppid=$(systemctl show -p MainPID --value neraium-poly-experimental.service)
 python3 - "$e" "$refpid" "$exppid" <<'PY'
@@ -12,7 +12,7 @@ import json,sqlite3,sys
 from pathlib import Path
 p,ref,exp=sys.argv[1:]
 e=Path(p)
-r=json.loads((e/'ready.json').read_text())
+r=json.loads(next(q for q in (e/'ready.json',e/'rollback.json') if q.is_file()).read_text())
 assert ref==r['reference']['service']['MainPID']
 original=json.loads((e/'preflight.json').read_text())
 assert exp==original['experimental']['service']['MainPID']
