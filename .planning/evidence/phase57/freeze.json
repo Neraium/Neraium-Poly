@@ -1,0 +1,337 @@
+{
+  "markets": {
+    "6507424": {
+      "category": "crypto",
+      "rows": [
+        {
+          "schema_version": "1.0",
+          "id": "6d43b8ba904653f7421ad15162ff3702531d077f5ed11eec49eb55f3c2c0cdf3",
+          "timestamp": "2026-11-18T04:54:57.043887Z",
+          "available_at": "2026-11-18T04:54:57.043887Z",
+          "source": "https://gamma-api.polymarket.com",
+          "exchange": "polymarket",
+          "market_id": "6507424",
+          "event_id": "1292830",
+          "question": "Will Ethereum dip to $1,700 in November?",
+          "token_id": "63490726571685763717718607148541056740784014950633397294249955066228831862356",
+          "outcome": "Yes",
+          "probability": 0.58,
+          "status": "active",
+          "resolution_rules": "This market will immediately resolve to \"Yes\" if any Binance 1 minute candle for ETH/USDT during the month specified in the title (from 00:00 AM ET on the first day to 11:59 PM ET on the last), has a final Low price equal to or lower than the price specified in the title. Otherwise, this market will resolve to \"No.\"\n\nThe resolution source for this market is Binance, specifically the ETH/USDT Low prices available at https://www.binance.com/en/trade/ETH_USDT, with the chart settings on \"1m\" for one-minute candles selected on the top bar.\n\nPlease note that the outcome of this market depends solely on the price data from the Binance ETH/USDT trading pair. Prices from other exchanges, different trading pairs, or spot markets will not be considered for the resolution of this market.",
+          "resolution_source": "https://www.binance.com/en/trade/ETH_USDT",
+          "end_time": "2026-12-01T05:00:00Z",
+          "tick_size": 0.01,
+          "min_order_size": 5.0
+        },
+        {
+          "schema_version": "1.0",
+          "id": "7bc7223cae0a06e61e1e10b9e8a560e1c2687132b85ba153cedffd3978fe60a6",
+          "timestamp": "2026-11-18T04:54:57.043887Z",
+          "available_at": "2026-11-18T04:54:57.043887Z",
+          "source": "https://gamma-api.polymarket.com",
+          "exchange": "polymarket",
+          "market_id": "6507424",
+          "event_id": "1292830",
+          "question": "Will Ethereum dip to $1,700 in November?",
+          "token_id": "7582593594700551001706036693808589873652332717405210520476296517493091579486",
+          "outcome": "No",
+          "probability": 0.42,
+          "status": "active",
+          "resolution_rules": "This market will immediately resolve to \"Yes\" if any Binance 1 minute candle for ETH/USDT during the month specified in the title (from 00:00 AM ET on the first day to 11:59 PM ET on the last), has a final Low price equal to or lower than the price specified in the title. Otherwise, this market will resolve to \"No.\"\n\nThe resolution source for this market is Binance, specifically the ETH/USDT Low prices available at https://www.binance.com/en/trade/ETH_USDT, with the chart settings on \"1m\" for one-minute candles selected on the top bar.\n\nPlease note that the outcome of this market depends solely on the price data from the Binance ETH/USDT trading pair. Prices from other exchanges, different trading pairs, or spot markets will not be considered for the resolution of this market.",
+          "resolution_source": "https://www.binance.com/en/trade/ETH_USDT",
+          "end_time": "2026-12-01T05:00:00Z",
+          "tick_size": 0.01,
+          "min_order_size": 5.0
+        }
+      ],
+      "token_source": {
+        "condition_id": "0xdb4fe21811faa19c45873d8342ed9c0cc99858986c3741e53e86f24e726eba48",
+        "primary_token_id": "63490726571685763717718607148541056740784014950633397294249955066228831862356",
+        "secondary_token_id": "7582593594700551001706036693808589873652332717405210520476296517493091579486"
+      },
+      "native": {
+        "r": {
+          "mi": 50,
+          "ma": 4.5,
+          "moas": 30
+        },
+        "t": [
+          {
+            "t": "63490726571685763717718607148541056740784014950633397294249955066228831862356",
+            "o": "Yes"
+          },
+          {
+            "t": "7582593594700551001706036693808589873652332717405210520476296517493091579486",
+            "o": "No"
+          }
+        ],
+        "c": "0xdb4fe21811faa19c45873d8342ed9c0cc99858986c3741e53e86f24e726eba48",
+        "mos": 5,
+        "mts": 0.01,
+        "mbf": 1000,
+        "tbf": 1000,
+        "ao": true,
+        "cbos": true,
+        "aot": "2026-11-01T05:07:15Z",
+        "ibce": true,
+        "fd": {
+          "r": 0.07,
+          "e": 1,
+          "to": true
+        },
+        "v": "v1"
+      },
+      "fee_available_at": "2026-11-18T06:41:06.979296+00:00"
+    },
+    "7085179": {
+      "category": "crypto",
+      "rows": [
+        {
+          "schema_version": "1.0",
+          "id": "3a60c2eb37503b0279febd7430afd95d2f6160d19f8730bced8286d25a25a3e7",
+          "timestamp": "2026-11-18T04:54:58.419390Z",
+          "available_at": "2026-11-18T04:54:58.419390Z",
+          "source": "https://gamma-api.polymarket.com",
+          "exchange": "polymarket",
+          "market_id": "7085179",
+          "event_id": "1399648",
+          "question": "Will Bitcoin dip to $54,000 November 16-22?",
+          "token_id": "49036806249063228354011514130198527117344376680487486052993679702878026434728",
+          "outcome": "Yes",
+          "probability": 0.0165,
+          "status": "active",
+          "resolution_rules": "This market will immediately resolve to \"Yes\" if any Binance 1 minute candle for Bitcoin (BTC/USDT) during the date range specified in the title (from 12:00 AM ET on the first date to 11:59 PM ET on the last) has a final \"Low\" price equal to or lower than the price specified in the title. Otherwise, this market will resolve to \"No.\"\n\nThe resolution source for this market is Binance, specifically the BTC/USDT \"Low\" prices available at https://www.binance.com/en/trade/BTC_USDT, with the chart settings on \"1m\" candles selected on the top bar.\n\nPlease note that the outcome of this market depends solely on the price data from the Binance BTC/USDT trading pair. Prices from other exchanges, different trading pairs, or spot markets will not be considered for the resolution of this market.",
+          "resolution_source": "https://www.binance.com/en/trade/BTC_USDT",
+          "end_time": "2026-11-23T05:00:00Z",
+          "tick_size": 0.001,
+          "min_order_size": 5.0
+        },
+        {
+          "schema_version": "1.0",
+          "id": "e1b3f0da9bbf28778eb3d553cc2f3e145c24b6bea55efe40b18f51579bc2332e",
+          "timestamp": "2026-11-18T04:54:58.419390Z",
+          "available_at": "2026-11-18T04:54:58.419390Z",
+          "source": "https://gamma-api.polymarket.com",
+          "exchange": "polymarket",
+          "market_id": "7085179",
+          "event_id": "1399648",
+          "question": "Will Bitcoin dip to $54,000 November 16-22?",
+          "token_id": "28577370528316977134653942714233130220703311027677067940189627715616608518278",
+          "outcome": "No",
+          "probability": 0.9835,
+          "status": "active",
+          "resolution_rules": "This market will immediately resolve to \"Yes\" if any Binance 1 minute candle for Bitcoin (BTC/USDT) during the date range specified in the title (from 12:00 AM ET on the first date to 11:59 PM ET on the last) has a final \"Low\" price equal to or lower than the price specified in the title. Otherwise, this market will resolve to \"No.\"\n\nThe resolution source for this market is Binance, specifically the BTC/USDT \"Low\" prices available at https://www.binance.com/en/trade/BTC_USDT, with the chart settings on \"1m\" candles selected on the top bar.\n\nPlease note that the outcome of this market depends solely on the price data from the Binance BTC/USDT trading pair. Prices from other exchanges, different trading pairs, or spot markets will not be considered for the resolution of this market.",
+          "resolution_source": "https://www.binance.com/en/trade/BTC_USDT",
+          "end_time": "2026-11-23T05:00:00Z",
+          "tick_size": 0.001,
+          "min_order_size": 5.0
+        }
+      ],
+      "token_source": {
+        "condition_id": "0x676f8c99034e975765ee19e2364884f45c6b34327400d61985d66eb94dc9b497",
+        "primary_token_id": "28577370528316977134653942714233130220703311027677067940189627715616608518278",
+        "secondary_token_id": "49036806249063228354011514130198527117344376680487486052993679702878026434728"
+      },
+      "native": {
+        "r": {
+          "mi": 50,
+          "ma": 4.5,
+          "moas": 30
+        },
+        "t": [
+          {
+            "t": "49036806249063228354011514130198527117344376680487486052993679702878026434728",
+            "o": "Yes"
+          },
+          {
+            "t": "28577370528316977134653942714233130220703311027677067940189627715616608518278",
+            "o": "No"
+          }
+        ],
+        "c": "0x676f8c99034e975765ee19e2364884f45c6b34327400d61985d66eb94dc9b497",
+        "mos": 5,
+        "mts": 0.001,
+        "mbf": 1000,
+        "tbf": 1000,
+        "ao": true,
+        "cbos": true,
+        "aot": "2026-11-16T05:00:16Z",
+        "ibce": true,
+        "fd": {
+          "r": 0.07,
+          "e": 1,
+          "to": true
+        },
+        "v": "v1"
+      },
+      "fee_available_at": "2026-11-18T06:41:10.471430+00:00"
+    },
+    "4620900": {
+      "category": "economics",
+      "rows": [
+        {
+          "schema_version": "1.0",
+          "id": "82d24e5b5d568b0e396932edac623136c1d926f34a990d46cde4c04d5c424940",
+          "timestamp": "2026-11-18T04:54:57.171040Z",
+          "available_at": "2026-11-18T04:54:57.171040Z",
+          "source": "https://gamma-api.polymarket.com",
+          "exchange": "polymarket",
+          "market_id": "4620900",
+          "event_id": "1034268",
+          "question": "Another Fed rate hike in 2026?",
+          "token_id": "834988939366537589681339435844742816680296103724655311351481456389958777625",
+          "outcome": "Yes",
+          "probability": 0.967,
+          "status": "active",
+          "resolution_rules": "This market will resolve to \u201cYes\u201d if the upper bound of the target federal funds rate is increased at any point between September 17, 2026 and the completion of the Fed's December 2026 meeting, currently scheduled for December 8 to 9, 2026, inclusive of any rate hike announced as a result of the December meeting. Otherwise, this market will resolve to \u201cNo\u201d.\n\nAny change to the target federal funds rate announced at the conclusion of the September 15 to 16, 2026 FOMC meeting will not count toward this market. Emergency rate hikes announced on or after September 17, 2026 will qualify.\n\nThis market may not resolve to \"No\" until the Fed has released its rate change decision following its December meeting.\n\nThe primary resolution source for this market will be the official website of the Federal Reserve (https://www.federalreserve.gov/monetarypolicy/openmarket.htm), however a consensus of credible reporting may also be used.",
+          "resolution_source": "https://www.federalreserve.gov/monetarypolicy/openmarket.htm",
+          "end_time": "2026-12-10T04:59:00Z",
+          "tick_size": 0.001,
+          "min_order_size": 5.0
+        },
+        {
+          "schema_version": "1.0",
+          "id": "6a81a3f63e922f2b0e720d681c9cd074248968c75febb3dfcaf2364453156cc8",
+          "timestamp": "2026-11-18T04:54:57.171040Z",
+          "available_at": "2026-11-18T04:54:57.171040Z",
+          "source": "https://gamma-api.polymarket.com",
+          "exchange": "polymarket",
+          "market_id": "4620900",
+          "event_id": "1034268",
+          "question": "Another Fed rate hike in 2026?",
+          "token_id": "51699731593220798404378104978434018325263546766663573208722653674626387696963",
+          "outcome": "No",
+          "probability": 0.033,
+          "status": "active",
+          "resolution_rules": "This market will resolve to \u201cYes\u201d if the upper bound of the target federal funds rate is increased at any point between September 17, 2026 and the completion of the Fed's December 2026 meeting, currently scheduled for December 8 to 9, 2026, inclusive of any rate hike announced as a result of the December meeting. Otherwise, this market will resolve to \u201cNo\u201d.\n\nAny change to the target federal funds rate announced at the conclusion of the September 15 to 16, 2026 FOMC meeting will not count toward this market. Emergency rate hikes announced on or after September 17, 2026 will qualify.\n\nThis market may not resolve to \"No\" until the Fed has released its rate change decision following its December meeting.\n\nThe primary resolution source for this market will be the official website of the Federal Reserve (https://www.federalreserve.gov/monetarypolicy/openmarket.htm), however a consensus of credible reporting may also be used.",
+          "resolution_source": "https://www.federalreserve.gov/monetarypolicy/openmarket.htm",
+          "end_time": "2026-12-10T04:59:00Z",
+          "tick_size": 0.001,
+          "min_order_size": 5.0
+        }
+      ],
+      "token_source": {
+        "condition_id": "0x9b1a03b41a1a68c209e9c3caf3d8af3f878420d6dbe8cb8afffd66049e73b114",
+        "primary_token_id": "51699731593220798404378104978434018325263546766663573208722653674626387696963",
+        "secondary_token_id": "834988939366537589681339435844742816680296103724655311351481456389958777625"
+      },
+      "native": {
+        "r": {
+          "mi": 50,
+          "ma": 4.5,
+          "e": true,
+          "moas": 30
+        },
+        "t": [
+          {
+            "t": "834988939366537589681339435844742816680296103724655311351481456389958777625",
+            "o": "Yes"
+          },
+          {
+            "t": "51699731593220798404378104978434018325263546766663573208722653674626387696963",
+            "o": "No"
+          }
+        ],
+        "c": "0x9b1a03b41a1a68c209e9c3caf3d8af3f878420d6dbe8cb8afffd66049e73b114",
+        "mos": 5,
+        "mts": 0.001,
+        "mbf": 1000,
+        "tbf": 1000,
+        "ao": true,
+        "cbos": true,
+        "aot": "2026-09-16T18:24:19Z",
+        "ibce": true,
+        "fd": {
+          "r": 0.05,
+          "e": 1,
+          "to": true
+        },
+        "v": "v1"
+      },
+      "fee_available_at": "2026-11-18T06:41:20.966382+00:00"
+    }
+  },
+  "relationships": [
+    {
+      "id": "6507424",
+      "legs": [
+        "63490726571685763717718607148541056740784014950633397294249955066228831862356",
+        "7582593594700551001706036693808589873652332717405210520476296517493091579486"
+      ],
+      "kind": "complete_set",
+      "payoffs": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0.5,
+          0.5
+        ]
+      ],
+      "floor": 1
+    },
+    {
+      "id": "7085179",
+      "legs": [
+        "49036806249063228354011514130198527117344376680487486052993679702878026434728",
+        "28577370528316977134653942714233130220703311027677067940189627715616608518278"
+      ],
+      "kind": "complete_set",
+      "payoffs": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0.5,
+          0.5
+        ]
+      ],
+      "floor": 1
+    },
+    {
+      "id": "4620900",
+      "legs": [
+        "834988939366537589681339435844742816680296103724655311351481456389958777625",
+        "51699731593220798404378104978434018325263546766663573208722653674626387696963"
+      ],
+      "kind": "complete_set",
+      "payoffs": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0.5,
+          0.5
+        ]
+      ],
+      "floor": 1
+    }
+  ],
+  "cash": 500,
+  "conversion_cost_sensitivity": 0.1,
+  "conversion_cost_verified": false,
+  "latency_seconds": 0.5,
+  "book_age_seconds": 15,
+  "receipt_skew_seconds": 2,
+  "duration_seconds": 86400,
+  "size_step": 0.01,
+  "fee": "round up per level to 0.00001",
+  "rebates": 0,
+  "capture_interval_seconds": 5,
+  "capture_limit_bytes": 2147483648
+}
