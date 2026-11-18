@@ -1,0 +1,765 @@
+{
+  "markets": {
+    "7085279": {
+      "rows": [
+        {
+          "schema_version": "1.0",
+          "id": "047d0ec2bbbb11e9e9a7489fb054b296b5e55537bbfa8ce46ed2f585d081c8ed",
+          "timestamp": "2026-11-18T04:54:57.045062Z",
+          "available_at": "2026-11-18T04:54:57.045062Z",
+          "source": "https://gamma-api.polymarket.com",
+          "exchange": "polymarket",
+          "market_id": "7085279",
+          "event_id": "1399686",
+          "question": "Bitcoin Up or Down on November 18?",
+          "token_id": "64861365285069029557900743048508256749594557931463713273796290001731810401402",
+          "outcome": "Up",
+          "probability": 0.745,
+          "status": "active",
+          "resolution_rules": "This market will resolve to \"Up\" if the \"Close\" price for the Binance 1 minute candle for BTC/USDT Nov 17 '26 12:00 in the ET timezone (noon) is lower than the final \"Close\" price for the Nov 18 '26 12:00 ET candle.\n\nThis market will resolve to \"Down\" if the \"Close\" price for the Binance 1 minute candle for BTC/USDT Nov 17 '26 12:00 in the ET timezone (noon) is higher than the final \"Close\" price for the Nov 18 '26 12:00 ET candle.\n\nIf the final \"Close\" price for both of these candles is exactly equal on Binance, this market will resolve 50-50.\n\nThe resolution source for this market is Binance, specifically the BTC/USDT \"Close\" prices currently available at https://www.binance.com/en/trade/BTC_USDT with \"1m\" and \"Candles\" selected on the top bar.\n\nPlease note that this market is about the price according to Binance BTC/USDT, not according to other exchanges or trading pairs.",
+          "resolution_source": "https://www.binance.com/en/trade/BTC_USDT",
+          "end_time": "2026-11-18T17:00:00Z",
+          "tick_size": 0.01,
+          "min_order_size": 5.0
+        },
+        {
+          "schema_version": "1.0",
+          "id": "b236702903d2627dce253b90dad6cca1cf37f7ddcaaa5304e2a448ea11430754",
+          "timestamp": "2026-11-18T04:54:57.045062Z",
+          "available_at": "2026-11-18T04:54:57.045062Z",
+          "source": "https://gamma-api.polymarket.com",
+          "exchange": "polymarket",
+          "market_id": "7085279",
+          "event_id": "1399686",
+          "question": "Bitcoin Up or Down on November 18?",
+          "token_id": "29381255133050054389003672133520693140250737513600071244706436948176173898222",
+          "outcome": "Down",
+          "probability": 0.255,
+          "status": "active",
+          "resolution_rules": "This market will resolve to \"Up\" if the \"Close\" price for the Binance 1 minute candle for BTC/USDT Nov 17 '26 12:00 in the ET timezone (noon) is lower than the final \"Close\" price for the Nov 18 '26 12:00 ET candle.\n\nThis market will resolve to \"Down\" if the \"Close\" price for the Binance 1 minute candle for BTC/USDT Nov 17 '26 12:00 in the ET timezone (noon) is higher than the final \"Close\" price for the Nov 18 '26 12:00 ET candle.\n\nIf the final \"Close\" price for both of these candles is exactly equal on Binance, this market will resolve 50-50.\n\nThe resolution source for this market is Binance, specifically the BTC/USDT \"Close\" prices currently available at https://www.binance.com/en/trade/BTC_USDT with \"1m\" and \"Candles\" selected on the top bar.\n\nPlease note that this market is about the price according to Binance BTC/USDT, not according to other exchanges or trading pairs.",
+          "resolution_source": "https://www.binance.com/en/trade/BTC_USDT",
+          "end_time": "2026-11-18T17:00:00Z",
+          "tick_size": 0.01,
+          "min_order_size": 5.0
+        }
+      ],
+      "token_source": {
+        "condition_id": "0x49ff4d5f6c88f0956f3595285e83659feecc3bfe3b571e43054c8b95452d0d78",
+        "primary_token_id": "29381255133050054389003672133520693140250737513600071244706436948176173898222",
+        "secondary_token_id": "64861365285069029557900743048508256749594557931463713273796290001731810401402"
+      },
+      "native": {
+        "r": {
+          "mi": 50,
+          "ma": 4.5,
+          "moas": 30
+        },
+        "t": [
+          {
+            "t": "64861365285069029557900743048508256749594557931463713273796290001731810401402",
+            "o": "Up"
+          },
+          {
+            "t": "29381255133050054389003672133520693140250737513600071244706436948176173898222",
+            "o": "Down"
+          }
+        ],
+        "c": "0x49ff4d5f6c88f0956f3595285e83659feecc3bfe3b571e43054c8b95452d0d78",
+        "mos": 5,
+        "mts": 0.01,
+        "mbf": 1000,
+        "tbf": 1000,
+        "ao": true,
+        "cbos": true,
+        "aot": "2026-11-16T05:07:06Z",
+        "ibce": true,
+        "fd": {
+          "r": 0.07,
+          "e": 1,
+          "to": true
+        },
+        "v": "v1"
+      },
+      "fee_available_at": "2026-11-18T05:27:47.230206+00:00",
+      "fee_urls": [
+        "https://clob.polymarket.com/markets-by-token/64861365285069029557900743048508256749594557931463713273796290001731810401402",
+        "https://clob.polymarket.com/clob-markets/0x49ff4d5f6c88f0956f3595285e83659feecc3bfe3b571e43054c8b95452d0d78"
+      ]
+    },
+    "6967637": {
+      "rows": [
+        {
+          "schema_version": "1.0",
+          "id": "ef69741b1b343f23e91b0eed657d61073e831fb7477ae5bb7bc8cb52667ac343",
+          "timestamp": "2026-11-18T04:54:58.419390Z",
+          "available_at": "2026-11-18T04:54:58.419390Z",
+          "source": "https://gamma-api.polymarket.com",
+          "exchange": "polymarket",
+          "market_id": "6967637",
+          "event_id": "1365186",
+          "question": "Will the price of Bitcoin be above $78,000 on November 18?",
+          "token_id": "99605811677579867413103209963004476249531355278148518500211558639158236345856",
+          "outcome": "Yes",
+          "probability": 0.0005,
+          "status": "active",
+          "resolution_rules": "This market will resolve to \"Yes\" if the Binance 1 minute candle for BTC/USDT closing at 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market is Binance, specifically the BTC/USDT \"Close\" prices currently available at https://www.binance.com/en/trade/BTC_USDT with \"1m\" and \"Candles\" selected on the top bar.\n\nPlease note that this market is about the price according to Binance BTC/USDT, not according to other exchanges or trading pairs.\n\nPrice precision is determined by the number of decimal places in the source.",
+          "resolution_source": "https://www.binance.com/en/trade/BTC_USDT",
+          "end_time": "2026-11-18T17:00:00Z",
+          "tick_size": 0.001,
+          "min_order_size": 5.0
+        },
+        {
+          "schema_version": "1.0",
+          "id": "26d946ff3fe1d8dc61de86230089ec1de1d6b647090422b7de1a6f5b8285f5a8",
+          "timestamp": "2026-11-18T04:54:58.419390Z",
+          "available_at": "2026-11-18T04:54:58.419390Z",
+          "source": "https://gamma-api.polymarket.com",
+          "exchange": "polymarket",
+          "market_id": "6967637",
+          "event_id": "1365186",
+          "question": "Will the price of Bitcoin be above $78,000 on November 18?",
+          "token_id": "18858493667921022176531925978775571469959593653739164587561489916671105586296",
+          "outcome": "No",
+          "probability": 0.9995,
+          "status": "active",
+          "resolution_rules": "This market will resolve to \"Yes\" if the Binance 1 minute candle for BTC/USDT closing at 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market is Binance, specifically the BTC/USDT \"Close\" prices currently available at https://www.binance.com/en/trade/BTC_USDT with \"1m\" and \"Candles\" selected on the top bar.\n\nPlease note that this market is about the price according to Binance BTC/USDT, not according to other exchanges or trading pairs.\n\nPrice precision is determined by the number of decimal places in the source.",
+          "resolution_source": "https://www.binance.com/en/trade/BTC_USDT",
+          "end_time": "2026-11-18T17:00:00Z",
+          "tick_size": 0.001,
+          "min_order_size": 5.0
+        }
+      ],
+      "token_source": {
+        "condition_id": "0x17a3600551fe148e2ca83b7544b1a9559c493ea4c8fff99131e8f4324a527fcd",
+        "primary_token_id": "18858493667921022176531925978775571469959593653739164587561489916671105586296",
+        "secondary_token_id": "99605811677579867413103209963004476249531355278148518500211558639158236345856"
+      },
+      "native": {
+        "r": {
+          "mi": 50,
+          "ma": 4.5,
+          "moas": 30
+        },
+        "t": [
+          {
+            "t": "99605811677579867413103209963004476249531355278148518500211558639158236345856",
+            "o": "Yes"
+          },
+          {
+            "t": "18858493667921022176531925978775571469959593653739164587561489916671105586296",
+            "o": "No"
+          }
+        ],
+        "c": "0x17a3600551fe148e2ca83b7544b1a9559c493ea4c8fff99131e8f4324a527fcd",
+        "mos": 5,
+        "mts": 0.001,
+        "mbf": 1000,
+        "tbf": 1000,
+        "ao": true,
+        "cbos": true,
+        "aot": "2026-11-11T17:00:17Z",
+        "ibce": true,
+        "fd": {
+          "r": 0.07,
+          "e": 1,
+          "to": true
+        },
+        "v": "v1"
+      },
+      "fee_available_at": "2026-11-18T05:27:47.430395+00:00",
+      "fee_urls": [
+        "https://clob.polymarket.com/markets-by-token/99605811677579867413103209963004476249531355278148518500211558639158236345856",
+        "https://clob.polymarket.com/clob-markets/0x17a3600551fe148e2ca83b7544b1a9559c493ea4c8fff99131e8f4324a527fcd"
+      ]
+    },
+    "6967639": {
+      "rows": [
+        {
+          "schema_version": "1.0",
+          "id": "b3ffb03e37fbe9af9ca62a8ece19be9d0157c5d72de31feeea9e92bc27725736",
+          "timestamp": "2026-11-18T04:54:58.419390Z",
+          "available_at": "2026-11-18T04:54:58.419390Z",
+          "source": "https://gamma-api.polymarket.com",
+          "exchange": "polymarket",
+          "market_id": "6967639",
+          "event_id": "1365186",
+          "question": "Will the price of Bitcoin be above $80,000 on November 18?",
+          "token_id": "76355308852958249486572120698344996341507882666423641624719688344040514683953",
+          "outcome": "Yes",
+          "probability": 0.0005,
+          "status": "active",
+          "resolution_rules": "This market will resolve to \"Yes\" if the Binance 1 minute candle for BTC/USDT closing at 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market is Binance, specifically the BTC/USDT \"Close\" prices currently available at https://www.binance.com/en/trade/BTC_USDT with \"1m\" and \"Candles\" selected on the top bar.\n\nPlease note that this market is about the price according to Binance BTC/USDT, not according to other exchanges or trading pairs.\n\nPrice precision is determined by the number of decimal places in the source.",
+          "resolution_source": "https://www.binance.com/en/trade/BTC_USDT",
+          "end_time": "2026-11-18T17:00:00Z",
+          "tick_size": 0.001,
+          "min_order_size": 5.0
+        },
+        {
+          "schema_version": "1.0",
+          "id": "1129df3cd0530861baffd282276bc2700836e2f4db62d2a2c60656616e915199",
+          "timestamp": "2026-11-18T04:54:58.419390Z",
+          "available_at": "2026-11-18T04:54:58.419390Z",
+          "source": "https://gamma-api.polymarket.com",
+          "exchange": "polymarket",
+          "market_id": "6967639",
+          "event_id": "1365186",
+          "question": "Will the price of Bitcoin be above $80,000 on November 18?",
+          "token_id": "115270921719375494822917363011440026171000164305463908332203665026697026442440",
+          "outcome": "No",
+          "probability": 0.9995,
+          "status": "active",
+          "resolution_rules": "This market will resolve to \"Yes\" if the Binance 1 minute candle for BTC/USDT closing at 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market is Binance, specifically the BTC/USDT \"Close\" prices currently available at https://www.binance.com/en/trade/BTC_USDT with \"1m\" and \"Candles\" selected on the top bar.\n\nPlease note that this market is about the price according to Binance BTC/USDT, not according to other exchanges or trading pairs.\n\nPrice precision is determined by the number of decimal places in the source.",
+          "resolution_source": "https://www.binance.com/en/trade/BTC_USDT",
+          "end_time": "2026-11-18T17:00:00Z",
+          "tick_size": 0.001,
+          "min_order_size": 5.0
+        }
+      ],
+      "token_source": {
+        "condition_id": "0x89622520d8fdba6f344788d4113bbefb7d5954082eb00364e22e97abf1f168ed",
+        "primary_token_id": "115270921719375494822917363011440026171000164305463908332203665026697026442440",
+        "secondary_token_id": "76355308852958249486572120698344996341507882666423641624719688344040514683953"
+      },
+      "native": {
+        "r": {
+          "mi": 50,
+          "ma": 4.5,
+          "moas": 30
+        },
+        "t": [
+          {
+            "t": "76355308852958249486572120698344996341507882666423641624719688344040514683953",
+            "o": "Yes"
+          },
+          {
+            "t": "115270921719375494822917363011440026171000164305463908332203665026697026442440",
+            "o": "No"
+          }
+        ],
+        "c": "0x89622520d8fdba6f344788d4113bbefb7d5954082eb00364e22e97abf1f168ed",
+        "mos": 5,
+        "mts": 0.001,
+        "mbf": 1000,
+        "tbf": 1000,
+        "ao": true,
+        "cbos": true,
+        "aot": "2026-11-11T17:00:17Z",
+        "ibce": true,
+        "fd": {
+          "r": 0.07,
+          "e": 1,
+          "to": true
+        },
+        "v": "v1"
+      },
+      "fee_available_at": "2026-11-18T05:27:47.646373+00:00",
+      "fee_urls": [
+        "https://clob.polymarket.com/markets-by-token/76355308852958249486572120698344996341507882666423641624719688344040514683953",
+        "https://clob.polymarket.com/clob-markets/0x89622520d8fdba6f344788d4113bbefb7d5954082eb00364e22e97abf1f168ed"
+      ]
+    },
+    "6967641": {
+      "rows": [
+        {
+          "schema_version": "1.0",
+          "id": "0ba8105015fea7e48a4baa014043e08bdcbae2bb707adf446119c1192b2d44de",
+          "timestamp": "2026-11-18T04:54:58.419390Z",
+          "available_at": "2026-11-18T04:54:58.419390Z",
+          "source": "https://gamma-api.polymarket.com",
+          "exchange": "polymarket",
+          "market_id": "6967641",
+          "event_id": "1365186",
+          "question": "Will the price of Bitcoin be above $82,000 on November 18?",
+          "token_id": "53761763853969718932734078101145455365888646643240720329102868781606265903859",
+          "outcome": "Yes",
+          "probability": 0.0005,
+          "status": "active",
+          "resolution_rules": "This market will resolve to \"Yes\" if the Binance 1 minute candle for BTC/USDT closing at 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market is Binance, specifically the BTC/USDT \"Close\" prices currently available at https://www.binance.com/en/trade/BTC_USDT with \"1m\" and \"Candles\" selected on the top bar.\n\nPlease note that this market is about the price according to Binance BTC/USDT, not according to other exchanges or trading pairs.\n\nPrice precision is determined by the number of decimal places in the source.",
+          "resolution_source": "https://www.binance.com/en/trade/BTC_USDT",
+          "end_time": "2026-11-18T17:00:00Z",
+          "tick_size": 0.001,
+          "min_order_size": 5.0
+        },
+        {
+          "schema_version": "1.0",
+          "id": "b9f68ad79f3633195e65fffed7021a897eb7fda680d0858b83c82ee96c6051e4",
+          "timestamp": "2026-11-18T04:54:58.419390Z",
+          "available_at": "2026-11-18T04:54:58.419390Z",
+          "source": "https://gamma-api.polymarket.com",
+          "exchange": "polymarket",
+          "market_id": "6967641",
+          "event_id": "1365186",
+          "question": "Will the price of Bitcoin be above $82,000 on November 18?",
+          "token_id": "99375854079514422573697526007136691545979024272468545490549830527492511196946",
+          "outcome": "No",
+          "probability": 0.9995,
+          "status": "active",
+          "resolution_rules": "This market will resolve to \"Yes\" if the Binance 1 minute candle for BTC/USDT closing at 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market is Binance, specifically the BTC/USDT \"Close\" prices currently available at https://www.binance.com/en/trade/BTC_USDT with \"1m\" and \"Candles\" selected on the top bar.\n\nPlease note that this market is about the price according to Binance BTC/USDT, not according to other exchanges or trading pairs.\n\nPrice precision is determined by the number of decimal places in the source.",
+          "resolution_source": "https://www.binance.com/en/trade/BTC_USDT",
+          "end_time": "2026-11-18T17:00:00Z",
+          "tick_size": 0.001,
+          "min_order_size": 5.0
+        }
+      ],
+      "token_source": {
+        "condition_id": "0xb6abdb44dbc3133071faec0805bf3a19f8c29626411810b80b618469b9776153",
+        "primary_token_id": "53761763853969718932734078101145455365888646643240720329102868781606265903859",
+        "secondary_token_id": "99375854079514422573697526007136691545979024272468545490549830527492511196946"
+      },
+      "native": {
+        "r": {
+          "mi": 50,
+          "ma": 4.5,
+          "moas": 30
+        },
+        "t": [
+          {
+            "t": "53761763853969718932734078101145455365888646643240720329102868781606265903859",
+            "o": "Yes"
+          },
+          {
+            "t": "99375854079514422573697526007136691545979024272468545490549830527492511196946",
+            "o": "No"
+          }
+        ],
+        "c": "0xb6abdb44dbc3133071faec0805bf3a19f8c29626411810b80b618469b9776153",
+        "mos": 5,
+        "mts": 0.001,
+        "mbf": 1000,
+        "tbf": 1000,
+        "ao": true,
+        "cbos": true,
+        "aot": "2026-11-11T17:00:17Z",
+        "ibce": true,
+        "fd": {
+          "r": 0.07,
+          "e": 1,
+          "to": true
+        },
+        "v": "v1"
+      },
+      "fee_available_at": "2026-11-18T05:27:47.845621+00:00",
+      "fee_urls": [
+        "https://clob.polymarket.com/markets-by-token/53761763853969718932734078101145455365888646643240720329102868781606265903859",
+        "https://clob.polymarket.com/clob-markets/0xb6abdb44dbc3133071faec0805bf3a19f8c29626411810b80b618469b9776153"
+      ]
+    },
+    "6967642": {
+      "rows": [
+        {
+          "schema_version": "1.0",
+          "id": "b785c7136ce43eab82df489b5ebc58bb3340eb577f1467f630c6b46691cc6b75",
+          "timestamp": "2026-11-18T04:54:58.419390Z",
+          "available_at": "2026-11-18T04:54:58.419390Z",
+          "source": "https://gamma-api.polymarket.com",
+          "exchange": "polymarket",
+          "market_id": "6967642",
+          "event_id": "1365186",
+          "question": "Will the price of Bitcoin be above $84,000 on November 18?",
+          "token_id": "56176587871299003011517796868835067416781074787066360406425983104246690145300",
+          "outcome": "Yes",
+          "probability": 0.0005,
+          "status": "active",
+          "resolution_rules": "This market will resolve to \"Yes\" if the Binance 1 minute candle for BTC/USDT closing at 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market is Binance, specifically the BTC/USDT \"Close\" prices currently available at https://www.binance.com/en/trade/BTC_USDT with \"1m\" and \"Candles\" selected on the top bar.\n\nPlease note that this market is about the price according to Binance BTC/USDT, not according to other exchanges or trading pairs.\n\nPrice precision is determined by the number of decimal places in the source.",
+          "resolution_source": "https://www.binance.com/en/trade/BTC_USDT",
+          "end_time": "2026-11-18T17:00:00Z",
+          "tick_size": 0.001,
+          "min_order_size": 5.0
+        },
+        {
+          "schema_version": "1.0",
+          "id": "675653a388e77033e7031add60727b9f9f956d8f2ce08cd0f749560062eb61d9",
+          "timestamp": "2026-11-18T04:54:58.419390Z",
+          "available_at": "2026-11-18T04:54:58.419390Z",
+          "source": "https://gamma-api.polymarket.com",
+          "exchange": "polymarket",
+          "market_id": "6967642",
+          "event_id": "1365186",
+          "question": "Will the price of Bitcoin be above $84,000 on November 18?",
+          "token_id": "32426912013454756530786450924281331724369872217258566707091648180222690120569",
+          "outcome": "No",
+          "probability": 0.9995,
+          "status": "active",
+          "resolution_rules": "This market will resolve to \"Yes\" if the Binance 1 minute candle for BTC/USDT closing at 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market is Binance, specifically the BTC/USDT \"Close\" prices currently available at https://www.binance.com/en/trade/BTC_USDT with \"1m\" and \"Candles\" selected on the top bar.\n\nPlease note that this market is about the price according to Binance BTC/USDT, not according to other exchanges or trading pairs.\n\nPrice precision is determined by the number of decimal places in the source.",
+          "resolution_source": "https://www.binance.com/en/trade/BTC_USDT",
+          "end_time": "2026-11-18T17:00:00Z",
+          "tick_size": 0.001,
+          "min_order_size": 5.0
+        }
+      ],
+      "token_source": {
+        "condition_id": "0xa5886bab0bb50e0ff9fe66b7c0372cd39472fedbd1187677485ff7164419d4ff",
+        "primary_token_id": "32426912013454756530786450924281331724369872217258566707091648180222690120569",
+        "secondary_token_id": "56176587871299003011517796868835067416781074787066360406425983104246690145300"
+      },
+      "native": {
+        "r": {
+          "mi": 50,
+          "ma": 4.5,
+          "moas": 30
+        },
+        "t": [
+          {
+            "t": "56176587871299003011517796868835067416781074787066360406425983104246690145300",
+            "o": "Yes"
+          },
+          {
+            "t": "32426912013454756530786450924281331724369872217258566707091648180222690120569",
+            "o": "No"
+          }
+        ],
+        "c": "0xa5886bab0bb50e0ff9fe66b7c0372cd39472fedbd1187677485ff7164419d4ff",
+        "mos": 5,
+        "mts": 0.001,
+        "mbf": 1000,
+        "tbf": 1000,
+        "ao": true,
+        "cbos": true,
+        "aot": "2026-11-11T17:00:16Z",
+        "ibce": true,
+        "fd": {
+          "r": 0.07,
+          "e": 1,
+          "to": true
+        },
+        "v": "v1"
+      },
+      "fee_available_at": "2026-11-18T05:27:48.051463+00:00",
+      "fee_urls": [
+        "https://clob.polymarket.com/markets-by-token/56176587871299003011517796868835067416781074787066360406425983104246690145300",
+        "https://clob.polymarket.com/clob-markets/0xa5886bab0bb50e0ff9fe66b7c0372cd39472fedbd1187677485ff7164419d4ff"
+      ]
+    }
+  },
+  "relationships": [
+    {
+      "id": "7085279",
+      "legs": [
+        "64861365285069029557900743048508256749594557931463713273796290001731810401402",
+        "29381255133050054389003672133520693140250737513600071244706436948176173898222"
+      ],
+      "kind": "complete_set",
+      "payoffs": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0.5,
+          0.5
+        ]
+      ],
+      "floor": 1
+    },
+    {
+      "id": "6967637",
+      "legs": [
+        "99605811677579867413103209963004476249531355278148518500211558639158236345856",
+        "18858493667921022176531925978775571469959593653739164587561489916671105586296"
+      ],
+      "kind": "complete_set",
+      "payoffs": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0.5,
+          0.5
+        ]
+      ],
+      "floor": 1
+    },
+    {
+      "id": "6967639",
+      "legs": [
+        "76355308852958249486572120698344996341507882666423641624719688344040514683953",
+        "115270921719375494822917363011440026171000164305463908332203665026697026442440"
+      ],
+      "kind": "complete_set",
+      "payoffs": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0.5,
+          0.5
+        ]
+      ],
+      "floor": 1
+    },
+    {
+      "id": "6967641",
+      "legs": [
+        "53761763853969718932734078101145455365888646643240720329102868781606265903859",
+        "99375854079514422573697526007136691545979024272468545490549830527492511196946"
+      ],
+      "kind": "complete_set",
+      "payoffs": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0.5,
+          0.5
+        ]
+      ],
+      "floor": 1
+    },
+    {
+      "id": "6967642",
+      "legs": [
+        "56176587871299003011517796868835067416781074787066360406425983104246690145300",
+        "32426912013454756530786450924281331724369872217258566707091648180222690120569"
+      ],
+      "kind": "complete_set",
+      "payoffs": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0.5,
+          0.5
+        ]
+      ],
+      "floor": 1
+    },
+    {
+      "id": "6967637=>6967639",
+      "legs": [
+        "99605811677579867413103209963004476249531355278148518500211558639158236345856",
+        "115270921719375494822917363011440026171000164305463908332203665026697026442440"
+      ],
+      "kind": "strict_implication",
+      "payoffs": {
+        "price_regions_low_mid_high": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "both_invalid_half": [
+          0.5,
+          0.5
+        ],
+        "differential_exception": [
+          0,
+          0
+        ]
+      },
+      "floor": 0,
+      "blocked": "Actual close rules prove implication on the shared observed candle. No binding cross-condition exceptional adjudication guarantee recovered."
+    },
+    {
+      "id": "6967637=>6967641",
+      "legs": [
+        "99605811677579867413103209963004476249531355278148518500211558639158236345856",
+        "99375854079514422573697526007136691545979024272468545490549830527492511196946"
+      ],
+      "kind": "strict_implication",
+      "payoffs": {
+        "price_regions_low_mid_high": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "both_invalid_half": [
+          0.5,
+          0.5
+        ],
+        "differential_exception": [
+          0,
+          0
+        ]
+      },
+      "floor": 0,
+      "blocked": "Actual close rules prove implication on the shared observed candle. No binding cross-condition exceptional adjudication guarantee recovered."
+    },
+    {
+      "id": "6967637=>6967642",
+      "legs": [
+        "99605811677579867413103209963004476249531355278148518500211558639158236345856",
+        "32426912013454756530786450924281331724369872217258566707091648180222690120569"
+      ],
+      "kind": "strict_implication",
+      "payoffs": {
+        "price_regions_low_mid_high": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "both_invalid_half": [
+          0.5,
+          0.5
+        ],
+        "differential_exception": [
+          0,
+          0
+        ]
+      },
+      "floor": 0,
+      "blocked": "Actual close rules prove implication on the shared observed candle. No binding cross-condition exceptional adjudication guarantee recovered."
+    },
+    {
+      "id": "6967639=>6967641",
+      "legs": [
+        "76355308852958249486572120698344996341507882666423641624719688344040514683953",
+        "99375854079514422573697526007136691545979024272468545490549830527492511196946"
+      ],
+      "kind": "strict_implication",
+      "payoffs": {
+        "price_regions_low_mid_high": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "both_invalid_half": [
+          0.5,
+          0.5
+        ],
+        "differential_exception": [
+          0,
+          0
+        ]
+      },
+      "floor": 0,
+      "blocked": "Actual close rules prove implication on the shared observed candle. No binding cross-condition exceptional adjudication guarantee recovered."
+    },
+    {
+      "id": "6967639=>6967642",
+      "legs": [
+        "76355308852958249486572120698344996341507882666423641624719688344040514683953",
+        "32426912013454756530786450924281331724369872217258566707091648180222690120569"
+      ],
+      "kind": "strict_implication",
+      "payoffs": {
+        "price_regions_low_mid_high": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "both_invalid_half": [
+          0.5,
+          0.5
+        ],
+        "differential_exception": [
+          0,
+          0
+        ]
+      },
+      "floor": 0,
+      "blocked": "Actual close rules prove implication on the shared observed candle. No binding cross-condition exceptional adjudication guarantee recovered."
+    },
+    {
+      "id": "6967641=>6967642",
+      "legs": [
+        "53761763853969718932734078101145455365888646643240720329102868781606265903859",
+        "32426912013454756530786450924281331724369872217258566707091648180222690120569"
+      ],
+      "kind": "strict_implication",
+      "payoffs": {
+        "price_regions_low_mid_high": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "both_invalid_half": [
+          0.5,
+          0.5
+        ],
+        "differential_exception": [
+          0,
+          0
+        ]
+      },
+      "floor": 0,
+      "blocked": "Actual close rules prove implication on the shared observed candle. No binding cross-condition exceptional adjudication guarantee recovered."
+    }
+  ],
+  "cash": 500,
+  "conversion_cost_sensitivity": 0.1,
+  "conversion_cost_verified": false,
+  "latency_seconds": 0.5,
+  "book_age_seconds": 15,
+  "receipt_skew_seconds": 2,
+  "duration_seconds": 90,
+  "size_step": 0.01,
+  "fee": "round up per level to 0.00001",
+  "rebates": 0
+}
