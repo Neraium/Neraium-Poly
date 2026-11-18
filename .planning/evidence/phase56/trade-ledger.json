@@ -1,0 +1,118 @@
+{
+  "displayed_ahead": {
+    "baseline": {
+      "order_ledger": [
+        {
+          "id": 732,
+          "price": 0.73,
+          "effective": 1794978420.437177,
+          "expires": 1794978450.437177,
+          "left": 5.0,
+          "ahead": 1412.0,
+          "down_at_entry": 0.26
+        },
+        {
+          "id": 1437,
+          "price": 0.73,
+          "effective": 1794978498.50568,
+          "expires": 1794978528.50568,
+          "left": 5.0,
+          "ahead": 2029.0,
+          "down_at_entry": 0.25
+        }
+      ],
+      "ledger": [],
+      "cancels": [],
+      "ambiguities": {}
+    },
+    "candidate": {
+      "order_ledger": [
+        {
+          "id": 732,
+          "price": 0.73,
+          "effective": 1794978420.437177,
+          "expires": 1794978450.437177,
+          "left": 5.0,
+          "ahead": 1412.0,
+          "down_at_entry": 0.26
+        },
+        {
+          "id": 1437,
+          "price": 0.73,
+          "effective": 1794978498.50568,
+          "expires": 1794978528.50568,
+          "left": 5.0,
+          "ahead": 2029.0,
+          "down_at_entry": 0.25
+        }
+      ],
+      "ledger": [],
+      "cancels": [],
+      "ambiguities": {}
+    },
+    "cash": {
+      "order_ledger": [],
+      "ledger": [],
+      "cancels": [],
+      "ambiguities": []
+    }
+  },
+  "zero_ahead": {
+    "baseline": {
+      "order_ledger": [
+        {
+          "id": 732,
+          "price": 0.73,
+          "effective": 1794978420.437177,
+          "expires": 1794978450.437177,
+          "left": 5.0,
+          "ahead": 0.0,
+          "down_at_entry": 0.26
+        },
+        {
+          "id": 1437,
+          "price": 0.73,
+          "effective": 1794978498.50568,
+          "expires": 1794978528.50568,
+          "left": 5.0,
+          "ahead": 0.0,
+          "down_at_entry": 0.25
+        }
+      ],
+      "ledger": [],
+      "cancels": [],
+      "ambiguities": {}
+    },
+    "candidate": {
+      "order_ledger": [
+        {
+          "id": 732,
+          "price": 0.73,
+          "effective": 1794978420.437177,
+          "expires": 1794978450.437177,
+          "left": 5.0,
+          "ahead": 0.0,
+          "down_at_entry": 0.26
+        },
+        {
+          "id": 1437,
+          "price": 0.73,
+          "effective": 1794978498.50568,
+          "expires": 1794978528.50568,
+          "left": 5.0,
+          "ahead": 0.0,
+          "down_at_entry": 0.25
+        }
+      ],
+      "ledger": [],
+      "cancels": [],
+      "ambiguities": {}
+    },
+    "cash": {
+      "order_ledger": [],
+      "ledger": [],
+      "cancels": [],
+      "ambiguities": []
+    }
+  }
+}

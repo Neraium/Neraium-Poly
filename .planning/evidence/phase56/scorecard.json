@@ -1,0 +1,183 @@
+{
+  "event_counts": {
+    "book": 4,
+    "price_change": 1908,
+    "last_trade_price": 1
+  },
+  "scenarios": {
+    "displayed_ahead": {
+      "largest_observable_paired_gain": null,
+      "baseline": {
+        "cash": 500.0,
+        "realized": 0.0,
+        "inventory": 0.0,
+        "open_basis": 0.0,
+        "liquidation": 0.0,
+        "net_after_liquidation": 0.0,
+        "max_observed_drawdown": 0.0,
+        "round_trips": 0,
+        "fills": 0,
+        "rebates": 0,
+        "orders": 2,
+        "order_ledger": [
+          {
+            "id": 732,
+            "price": 0.73,
+            "effective": 1794978420.437177,
+            "expires": 1794978450.437177,
+            "left": 5.0,
+            "ahead": 1412.0,
+            "down_at_entry": 0.26
+          },
+          {
+            "id": 1437,
+            "price": 0.73,
+            "effective": 1794978498.50568,
+            "expires": 1794978528.50568,
+            "left": 5.0,
+            "ahead": 2029.0,
+            "down_at_entry": 0.25
+          }
+        ],
+        "cancels": [],
+        "ledger": [],
+        "ambiguities": {}
+      },
+      "candidate": {
+        "cash": 500.0,
+        "realized": 0.0,
+        "inventory": 0.0,
+        "open_basis": 0.0,
+        "liquidation": 0.0,
+        "net_after_liquidation": 0.0,
+        "max_observed_drawdown": 0.0,
+        "round_trips": 0,
+        "fills": 0,
+        "rebates": 0,
+        "orders": 2,
+        "order_ledger": [
+          {
+            "id": 732,
+            "price": 0.73,
+            "effective": 1794978420.437177,
+            "expires": 1794978450.437177,
+            "left": 5.0,
+            "ahead": 1412.0,
+            "down_at_entry": 0.26
+          },
+          {
+            "id": 1437,
+            "price": 0.73,
+            "effective": 1794978498.50568,
+            "expires": 1794978528.50568,
+            "left": 5.0,
+            "ahead": 2029.0,
+            "down_at_entry": 0.25
+          }
+        ],
+        "cancels": [],
+        "ledger": [],
+        "ambiguities": {}
+      },
+      "cash": {
+        "fills": 0,
+        "realized": 0,
+        "max_observed_drawdown": 0,
+        "net_after_liquidation": 0
+      },
+      "candidate_minus_baseline": 0.0,
+      "without_only_market": {
+        "baseline": 0,
+        "candidate": 0,
+        "cash": 0
+      }
+    },
+    "zero_ahead": {
+      "largest_observable_paired_gain": null,
+      "baseline": {
+        "cash": 500.0,
+        "realized": 0.0,
+        "inventory": 0.0,
+        "open_basis": 0.0,
+        "liquidation": 0.0,
+        "net_after_liquidation": 0.0,
+        "max_observed_drawdown": 0.0,
+        "round_trips": 0,
+        "fills": 0,
+        "rebates": 0,
+        "orders": 2,
+        "order_ledger": [
+          {
+            "id": 732,
+            "price": 0.73,
+            "effective": 1794978420.437177,
+            "expires": 1794978450.437177,
+            "left": 5.0,
+            "ahead": 0.0,
+            "down_at_entry": 0.26
+          },
+          {
+            "id": 1437,
+            "price": 0.73,
+            "effective": 1794978498.50568,
+            "expires": 1794978528.50568,
+            "left": 5.0,
+            "ahead": 0.0,
+            "down_at_entry": 0.25
+          }
+        ],
+        "cancels": [],
+        "ledger": [],
+        "ambiguities": {}
+      },
+      "candidate": {
+        "cash": 500.0,
+        "realized": 0.0,
+        "inventory": 0.0,
+        "open_basis": 0.0,
+        "liquidation": 0.0,
+        "net_after_liquidation": 0.0,
+        "max_observed_drawdown": 0.0,
+        "round_trips": 0,
+        "fills": 0,
+        "rebates": 0,
+        "orders": 2,
+        "order_ledger": [
+          {
+            "id": 732,
+            "price": 0.73,
+            "effective": 1794978420.437177,
+            "expires": 1794978450.437177,
+            "left": 5.0,
+            "ahead": 0.0,
+            "down_at_entry": 0.26
+          },
+          {
+            "id": 1437,
+            "price": 0.73,
+            "effective": 1794978498.50568,
+            "expires": 1794978528.50568,
+            "left": 5.0,
+            "ahead": 0.0,
+            "down_at_entry": 0.25
+          }
+        ],
+        "cancels": [],
+        "ledger": [],
+        "ambiguities": {}
+      },
+      "cash": {
+        "fills": 0,
+        "realized": 0,
+        "max_observed_drawdown": 0,
+        "net_after_liquidation": 0
+      },
+      "candidate_minus_baseline": 0.0,
+      "without_only_market": {
+        "baseline": 0,
+        "candidate": 0,
+        "cash": 0
+      }
+    }
+  }
+}

@@ -6,8 +6,10 @@ import sys
 import time
 from datetime import UTC, datetime
 from pathlib import Path
-from websockets.asyncio.client import connect
+
 from neraium_poly.data.stream import MARKET_WS
+from websockets.asyncio.client import connect
+
 
 async def run():
     root=Path(__file__).resolve().parent

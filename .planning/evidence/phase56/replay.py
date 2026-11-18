@@ -306,6 +306,7 @@ def run(frames, candidate, full_depth):
         "fills": sum(r["type"] == "maker_fill" for r in ledger),
         "rebates": 0,
         "orders": len(orders),
+        "order_ledger": list(orders.values()),
         "cancels": cancels,
         "ledger": ledger,
         "ambiguities": dict(veto),
