@@ -1,0 +1,30 @@
+{
+  "source": "8d9756ff8a514ad87947646ffc330f0c3e10efc8",
+  "start": "2026-11-18T05:00:00+00:00",
+  "end": "2026-11-19T05:00:00+00:00",
+  "metric": "native-settled and modeled executable-exit net dollars, separately reported, against no trade $0; mark and open principal separate",
+  "scope": "Phase45 Explorer untouched; Phase42 and Phase44 historical frozen lineages only; Phase16 monetary mark challenger not an entry/exit strategy",
+  "selection": "no selection or fitting on this window; all eligible capture times and all hypotheses reported; observed event concentration reported, no superiority inference across strategies without independent groups and multiplicity control",
+  "execution": "existing Explorer logic including 0.5 seconds latency, later authentic books, bounded depth and participation, fees/slippage, original exit and risk rules; assumed fees never validate positive net edge; report verified fees and modeled execution separately",
+  "unseen": "chronological only, starts after freeze; cross-event independence or unseen market identity is a separate requirement; quarantine overlapping groups when evidenced, do not promote based on unresolved overlap",
+  "data": "original point-in-time frames, receipts, verified fee evidence and models where available; no future joins or filling gaps with reconstructed producer health",
+  "settlement": "do not force a close at endpoint; missing native payouts stay open",
+  "file_sha256": {
+    "config/experimental-paper.example.json": "9d21eb0e8b76923e875264507e7b058bdab81bc86e78a078ed939d40e11b8eb6",
+    "backend/neraium_poly/research/phase16/short_horizon.py": "6908ad47f76de1cb980ebd5ddceb4037aa5e5e8d3585f72aa65dd29fbcc13f62",
+    "backend/neraium_poly/research/phase41/simulation.py": "361b4d6fc7558ba2b4f0012a9a617f8b96b5da5f6fee7f839d057a022797cc17",
+    "backend/neraium_poly/research/phase42/engine.py": "3f3909b7334378704e9d17fb2224c14df839e8466cc5614173e114e8b64e5974",
+    "backend/neraium_poly/research/phase42/strategies.py": "2e451f687dec791505d5206c5f9e511ee83342afea9a63da6473c1e799dd070c",
+    "backend/neraium_poly/research/phase42/controller.py": "89236eabce90b4aeac3aa01176aa3fceb6a27cb0f070d6703057a712d032856e",
+    "backend/neraium_poly/research/phase42/sources.py": "c37bf77a4c30a9266c831845f0ff0e4fb874c81a07ad3330cb1c016b06e001df",
+    "backend/neraium_poly/research/phase43/economics.py": "915aa011d0e18fa134d22de717a6a1f1e436f8c9ff143cc42173a241f6e7cefc",
+    "backend/neraium_poly/research/phase43/tournament.py": "89c749b19b54eae8498b6927730d2f57212c979dbf75dc44c97055ab1081aadb",
+    "backend/neraium_poly/research/phase43/baseline.json": "6b866094c65c92fb7c48688714d18f9936609fba57652d56355f31021c098abd",
+    "backend/neraium_poly/research/phase44/cohort.py": "811915a50d6c85269398955a3cfd9ff29c4ad3ee12378695f94005a5eba0d3f0",
+    "backend/neraium_poly/research/phase45/cohort.py": "f1fcab5ad2d10ea4425f794d20eb714c3bee5f866006ad1abc6b8757cc660941",
+    "backend/neraium_poly/research/phase45/economics.py": "afb5cfa49eb70659660a4950a303bb8b492d4e6660ad78987b704041c3b6090a",
+    "backend/neraium_poly/research/phase45/native_positions.py": "3e5d43052ee40241c3da6538a6bc9df0b7d8ee3e34612ecd1414adccbd95a094",
+    "backend/neraium_poly/research/phase45/complements.py": "95bccf4b8364ab13f8bbc91a8830fb280e6f2b51b04bfcd0648471940f533c92",
+    "backend/neraium_poly/research/phase29/costs.py": "d3cdcf23f4bf933f921f6bb751d121e5ace63263737370e419b25c07f4c45f4d"
+  }
+}
