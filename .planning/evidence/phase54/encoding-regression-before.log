@@ -1,0 +1,58 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+______ test_market_frame_route_does_not_reencode_json_compatible_snapshot ______
+
+now = datetime.datetime(2026, 11, 5, 12, 0, tzinfo=datetime.timezone.utc)
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7e0f599717f0>
+
+    def test_market_frame_route_does_not_reencode_json_compatible_snapshot(now, monkeypatch):
+        import fastapi.routing
+
+        snapshot = frame(now)
+        payload = snapshot.model_dump(mode="json")
+
+        def unexpected_encoding(*_args, **_kwargs):
+            pytest.fail("market frame was already made JSON-compatible by the producer")
+
+        monkeypatch.setattr(fastapi.routing, "jsonable_encoder", unexpected_encoding)
+>       with TestClient(create_app(runtime=SimpleNamespace(market_frame=lambda: payload))) as client:
+
+tests/test_experimental_feed.py:191:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+/home/ubuntu/Neraium-Poly/.venv/lib/python3.12/site-packages/starlette/testclient.py:584: in __exit__
+    self.exit_stack.close()
+/usr/lib/python3.12/contextlib.py:618: in close
+    self.__exit__(None, None, None)
+/usr/lib/python3.12/contextlib.py:610: in __exit__
+    raise exc_details[1]
+/usr/lib/python3.12/contextlib.py:595: in __exit__
+    if cb(*exc_details):
+       ^^^^^^^^^^^^^^^^
+/usr/lib/python3.12/contextlib.py:478: in _exit_wrapper
+    callback(*args, **kwds)
+/home/ubuntu/Neraium-Poly/.venv/lib/python3.12/site-packages/starlette/testclient.py:576: in wait_shutdown
+    portal.call(self.wait_shutdown)
+/home/ubuntu/Neraium-Poly/.venv/lib/python3.12/site-packages/anyio/from_thread.py:347: in call
+    return cast(T_Retval, self.start_task_soon(func, *args).result())
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/ubuntu/Neraium-Poly/.venv/lib/python3.12/site-packages/anyio/from_thread.py:483: in start_task_soon
+    self._check_running()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <anyio.from_thread.BlockingPortal object at 0x7e0f59973e30>
+
+    def _check_running(self) -> None:
+        if self._event_loop_thread_id is None:
+>           raise RuntimeError("This portal is not running")
+E           RuntimeError: This portal is not running
+
+/home/ubuntu/Neraium-Poly/.venv/lib/python3.12/site-packages/anyio/from_thread.py:216: RuntimeError
+=============================== warnings summary ===============================
+../../../../../../Neraium-Poly/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1
+  /home/ubuntu/Neraium-Poly/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_experimental_feed.py::test_market_frame_route_does_not_reencode_json_compatible_snapshot
+1 failed, 12 deselected, 1 warning in 0.25s

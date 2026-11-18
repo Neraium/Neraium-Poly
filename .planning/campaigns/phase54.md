@@ -1,0 +1,11 @@
+# Phase 54 isolated matched market-frame replay
+
+Base 5b92612, compare exact 8d9756f and CI-tested cf527789. No existing Phase 54 worktree. Dedicated branch citadel/phase54-market-frame-replay. No changes to or observation workload against either production service.
+
+Matched five-minute inputs come from the second Phase 52 window. Freeze public quote/delta/market records with their original timestamps and hashes. Drivers use actual market-frame and shadow report routes, shared reference reader cadence, historical clock and native quote recording under an isolated archive. Producer is limited to 1 CPU, 1 GiB, 64 tasks, experimental to 1 CPU, 2 GiB, 32 tasks. Each pair shares a private loopback-only namespace. Production data is inaccessible in both jobs. No modeled orders, financial account access, live network, or injected delays in primary arms.
+
+At 03:38 UTC baseline arm running. Driver exec session 8798. Scratch path in .planning/evidence/phase54/scratch.local. Review the producer and sampler cgroups, check completed measurements, replay injected test only after the matched primary runs, preserve logs/joins, and push evidence.
+
+03:49 UTC. Primary A/B completed at 0/61 read timeouts and 59/60 fresh each. All 61 instrumented requests joined. Largest measured stage was frame-to-headers at 236.98 ms median. Isolated injected calibration captured two late producer completions, one headers and one body. Test failed on the actual redundant FastAPI encoder and passed by skipping its second traversal without changing payload or freshness. Implementation 56fdb8be1f1ff6620922f947daf7e88b519a71da. A matched repair arm is running in session 45982. Collect the final measurements, verify CI and live isolation, push evidence, and report that the Phase 52 timeout boundary is unresolved.
+
+Complete. Serving/instrumented/repaired arms each 0/61 timeout and 59/60 fresh. Repaired p50/p95 254/313 ms versus instrumented 436/505 ms, with the median handler-to-headers stage reduced 78.8%. Positive-control timeout joins are separate. Exact-source CI 44233071376 passed. Both running PIDs, environment and accounts equal Phase 53. Production cause remains unresolved. See the handoff for the minimum future live observation and reference restart requirement.

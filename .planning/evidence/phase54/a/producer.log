@@ -1,0 +1,7 @@
+Started phase54-replay-a-reference.service - /home/ubuntu/Neraium-Poly/.venv/bin/python /home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/phase54-market-frame-replay/.planning/evidence/phase54/replay.py reference /home/ubuntu/phase54-replay.RWjfQ0/fixture.json.gz 2762005961289227 /home/ubuntu/phase54-replay.RWjfQ0/a/reference.
+Started server process [828240]
+Uvicorn running on http://127.0.0.1:18554 (Press CTRL+C to quit)
+Shutting down
+Finished server process [828240]
+phase54-replay-a-reference.service: Deactivated successfully.
+phase54-replay-a-reference.service: Consumed 20.809s CPU time, 441.3M memory peak, 0B memory swap peak.

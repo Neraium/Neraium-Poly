@@ -1,0 +1,210 @@
+{
+  "a": {
+    "source": "8d9756ff8a514ad87947646ffc330f0c3e10efc8",
+    "requests": 61,
+    "accepted": 61,
+    "read_timeouts": 0,
+    "timeout_ordinals": [],
+    "withheld": {},
+    "latency_seconds_all": {
+      "p50": 0.455238942,
+      "p95": 0.558094373,
+      "max": 0.685506766
+    },
+    "latency_seconds_accepted": {
+      "p50": 0.455238942,
+      "p95": 0.558094373,
+      "max": 0.685506766
+    },
+    "fresh_polls": 59,
+    "polls": 60,
+    "poll_outcomes": {
+      "withheld": 1,
+      "fresh": 59
+    },
+    "distinct_published_reports_observed": 59,
+    "accepted_fresh_books": {
+      "p50": 12,
+      "p95": 84,
+      "max": 206
+    },
+    "baseline_market_count": 882,
+    "baseline_book_count": 761,
+    "updates_applied": 2927,
+    "reference_native_quotes_archived": 453,
+    "joined_by_request_id": 0,
+    "instrumented_unjoined": 0,
+    "producer_unjoined": 0,
+    "timeout_with_late_producer_finish": 0,
+    "timing_seconds": {
+      "client_to_asgi": null,
+      "asgi_to_handler": null,
+      "lock_wait": null,
+      "frame_build_under_lock": null,
+      "handler_to_headers": null,
+      "server_body_send": null,
+      "client_headers_to_body_finish": null,
+      "decode": null
+    }
+  },
+  "b": {
+    "source": "cf52778988d26e3d2016bb01cbfe85d212b3f64d",
+    "requests": 61,
+    "accepted": 61,
+    "read_timeouts": 0,
+    "timeout_ordinals": [],
+    "withheld": {},
+    "latency_seconds_all": {
+      "p50": 0.435739909,
+      "p95": 0.505218868,
+      "max": 0.690309596
+    },
+    "latency_seconds_accepted": {
+      "p50": 0.435739909,
+      "p95": 0.505218868,
+      "max": 0.690309596
+    },
+    "fresh_polls": 59,
+    "polls": 60,
+    "poll_outcomes": {
+      "withheld": 1,
+      "fresh": 59
+    },
+    "distinct_published_reports_observed": 59,
+    "accepted_fresh_books": {
+      "p50": 12,
+      "p95": 83,
+      "max": 204
+    },
+    "baseline_market_count": 882,
+    "baseline_book_count": 761,
+    "updates_applied": 2927,
+    "reference_native_quotes_archived": 453,
+    "joined_by_request_id": 61,
+    "instrumented_unjoined": 0,
+    "producer_unjoined": 0,
+    "timeout_with_late_producer_finish": 0,
+    "timing_seconds": {
+      "client_to_asgi": {
+        "p50": 0.014892,
+        "p95": 0.016233,
+        "max": 0.019987
+      },
+      "asgi_to_handler": {
+        "p50": 0.000542,
+        "p95": 0.000812,
+        "max": 0.009956
+      },
+      "lock_wait": {
+        "p50": 3.999999999999989e-06,
+        "p95": 5.000000000000013e-06,
+        "max": 6.000000000000037e-06
+      },
+      "frame_build_under_lock": {
+        "p50": 0.006932,
+        "p95": 0.007918,
+        "max": 0.009047
+      },
+      "handler_to_headers": {
+        "p50": 0.23697799999999997,
+        "p95": 0.26177,
+        "max": 0.478551
+      },
+      "server_body_send": {
+        "p50": 0.002703999999999984,
+        "p95": 0.037458999999999965,
+        "max": 0.08551999999999998
+      },
+      "client_headers_to_body_finish": {
+        "p50": 0.0039020000000000166,
+        "p95": 0.03951100000000002,
+        "max": 0.08762500000000001
+      },
+      "decode": {
+        "p50": 0.14411800000000002,
+        "p95": 0.17763900000000005,
+        "max": 0.19794199999999995
+      }
+    }
+  },
+  "d": {
+    "source": "56fdb8be1f1ff6620922f947daf7e88b519a71da",
+    "requests": 61,
+    "accepted": 61,
+    "read_timeouts": 0,
+    "timeout_ordinals": [],
+    "withheld": {},
+    "latency_seconds_all": {
+      "p50": 0.254155787,
+      "p95": 0.313198368,
+      "max": 0.322953298
+    },
+    "latency_seconds_accepted": {
+      "p50": 0.254155787,
+      "p95": 0.313198368,
+      "max": 0.322953298
+    },
+    "fresh_polls": 59,
+    "polls": 60,
+    "poll_outcomes": {
+      "withheld": 1,
+      "fresh": 59
+    },
+    "distinct_published_reports_observed": 59,
+    "accepted_fresh_books": {
+      "p50": 13,
+      "p95": 84,
+      "max": 210
+    },
+    "baseline_market_count": 882,
+    "baseline_book_count": 761,
+    "updates_applied": 2927,
+    "reference_native_quotes_archived": 453,
+    "joined_by_request_id": 61,
+    "instrumented_unjoined": 0,
+    "producer_unjoined": 0,
+    "timeout_with_late_producer_finish": 0,
+    "timing_seconds": {
+      "client_to_asgi": {
+        "p50": 0.015285,
+        "p95": 0.017654,
+        "max": 0.025545
+      },
+      "asgi_to_handler": {
+        "p50": 0.000536,
+        "p95": 0.000689,
+        "max": 0.010025
+      },
+      "lock_wait": {
+        "p50": 3.999999999999989e-06,
+        "p95": 5.000000000000013e-06,
+        "max": 6.000000000000037e-06
+      },
+      "frame_build_under_lock": {
+        "p50": 0.007196,
+        "p95": 0.008484,
+        "max": 0.009939000000000002
+      },
+      "handler_to_headers": {
+        "p50": 0.05021200000000001,
+        "p95": 0.063924,
+        "max": 0.07073600000000001
+      },
+      "server_body_send": {
+        "p50": 0.0026569999999999927,
+        "p95": 0.0033060000000000034,
+        "max": 0.004025000000000001
+      },
+      "client_headers_to_body_finish": {
+        "p50": 0.003907999999999995,
+        "p95": 0.0044460000000000055,
+        "max": 0.006099999999999994
+      },
+      "decode": {
+        "p50": 0.147334,
+        "p95": 0.202951,
+        "max": 0.20709999999999998
+      }
+    }
+  }
+}

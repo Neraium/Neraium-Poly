@@ -1,0 +1,19 @@
+{
+  "scope": "injected-only positive control, separate from primary study",
+  "joined_timeouts": [
+    {
+      "request_id": "aea8ff5ae74f4e4eb14e1c23ae042192",
+      "ordinal": 1,
+      "client_failure_stage": "receive_response_headers",
+      "read_timeout_seconds": 3.018285881,
+      "producer_finished_after_timeout_seconds": 0.725377
+    },
+    {
+      "request_id": "b1760183d56a49ebaad3aa10ed27815c",
+      "ordinal": 3,
+      "client_failure_stage": "receive_response_body",
+      "read_timeout_seconds": 3.296125444,
+      "producer_finished_after_timeout_seconds": 0.439173
+    }
+  ]
+}
