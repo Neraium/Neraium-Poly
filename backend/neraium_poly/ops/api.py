@@ -5,6 +5,7 @@ from pathlib import Path
 from threading import RLock
 
 from fastapi import FastAPI, HTTPException, Request
+from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
 
 from neraium_poly.experimental.feed_trace import MarketFrameTimingMiddleware, producer_mark
@@ -38,8 +39,6 @@ def create_app(runtime=None, frontend_path: Path | None = None, local_port: int 
                 f"http://127.0.0.1:{getattr(getattr(runtime, 'config', None), 'port', 18740)}",
             }
         ):
-            from fastapi.responses import JSONResponse
-
             return JSONResponse({"detail": "Cross-origin mutation rejected"}, status_code=403)
         response = await call_next(request)
         response.headers["X-Content-Type-Options"] = "nosniff"
@@ -66,7 +65,9 @@ def create_app(runtime=None, frontend_path: Path | None = None, local_port: int 
             raise HTTPException(404, "Actual public market frame unavailable in this mode")
         frame = runtime.market_frame()
         producer_mark("handler_returned")
-        return frame
+        # The producer already used model_dump(mode="json"). Avoid FastAPI
+        # traversing every market and order-book level a second time.
+        return JSONResponse(content=frame)
 
     @app.get("/api/state")
     def state():

@@ -176,3 +176,22 @@ def test_discovery_scope_transition_withholds_inconsistent_books(now):
     assert result.producer_health["status"] == "ok"
     runtime._current_books = lambda: {departed.token_id: departed}
     assert market_frame(runtime).producer_health["status"] == "degraded"
+
+
+def test_market_frame_route_does_not_reencode_json_compatible_snapshot(now, monkeypatch):
+    import fastapi.routing
+
+    snapshot = frame(now)
+    payload = snapshot.model_dump(mode="json")
+
+    def unexpected_encoding(*_args, **_kwargs):
+        pytest.fail("market frame was already made JSON-compatible by the producer")
+
+    monkeypatch.setattr(fastapi.routing, "jsonable_encoder", unexpected_encoding)
+    with TestClient(create_app(runtime=SimpleNamespace(market_frame=lambda: payload))) as client:
+        response = client.get("/api/market-frame")
+    assert response.status_code == 200
+    assert response.headers["content-type"] == "application/json"
+    assert response.headers["cache-control"] == "no-store"
+    assert response.json() == payload
+    assert SharedMarketFrame.model_validate_json(response.content) == snapshot
