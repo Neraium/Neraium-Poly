@@ -1,0 +1,33 @@
+# Phase 55 trading-performance evaluation
+
+**Decision: advance no strategy.** There are no valid new holdout trades, so unseen net dollars and drawdown are unmeasured. The frozen historical Phase 43 audit reconciled 51 filled and eventually fully closed modeled orders, with -$33.70 net across separate alternatives. The aggressive/balanced modeled exit portfolios lost $26.60/$7.10, with historical drawdown $26.60/$7.10 at that checkpoint. These accounts and strategy profiles must never be pooled for capital or statistical inference. The passive spread proxy remains retired as already frozen. Other strategies remain research-only.
+
+## Reused evidence and design exposure
+
+The Phase 16 exact source dataset hash was reverified locally. Its eight token, market and parent identities are in historical-scorecard.json. Training was Nov 6 21:24:46–22:26:57 UTC and the original holdout Nov 6 22:28:27–23:04:42 UTC. The 879 held-out bid marks overlapped four training parents. The model and unchanged-bid baseline both had zero MAE on flat token marks. Mean cost-adjusted hypothetical round trip was -$0.092317/share and zero projected examples were positive. There were no authenticated fills or monetary account returns in that study. Keep the cohort frozen and retire this result as evidence for an edge.
+
+The first Phase 42 strategy definition landed Nov 16 12:50 UTC (69cfb39). The Phase 43 loss/admission revision followed Nov 16 19:49 UTC (6f0032a). Phase 45's friction-aware exploratory design followed Nov 17 03:51 UTC (211e2a6); paired native-payout economics was revised Nov 17 06:01 UTC (202da2f). The authoritative checkpoint metadata logs review what can be reconstructed through Nov 18 03:06 UTC. The archived Phase 42, 44 and 45 checkpoints trace 651, 308 and 792 market IDs respectively. The union has 1,205 known markets and 29 known forecast parent IDs including the Phase 16 study. These are conservative known exposure exclusions. The complete human/model design universe and all economic dependencies were not logged. No retrospective candidate is presented as decision-blind.
+
+### Previously evaluated outcomes
+
+| Frozen historical arm | Fully closed modeled orders | Gross executable price P/L | Net modeled exit P/L |
+| --- | ---: | ---: | ---: |
+| Aggressive independent | 25 | -$3.99 | -$14.11 |
+| Aggressive spread capture | 9 | -$3.41 | -$6.09 |
+| Aggressive momentum | 5 | -$1.84 | -$4.08 |
+| Aggressive event repricing | 4 | -$0.96 | -$2.32 |
+| Balanced independent | 4 | -$1.77 | -$3.71 |
+| Balanced momentum | 3 | -$0.90 | -$1.32 |
+| Balanced spread capture | 1 | -$1.74 | -$2.07 |
+
+Aggressive total shortfall decomposes into $10.19 gross executable-price loss and $16.41 costs. Even a zero-cost sensitivity leaves gross losses. Exact legacy exit trigger and forecast error were not recorded, so direction versus entry or exit timing cannot be separated causally. Historical-scorecard.json includes order counts, allocated entry dollars, net/closed order and market/event concentration. For the frozen legacy snapshot some per-strategy signal counts and marked drawdowns are unobservable. The separately reported current archived checkpoint preserves available rejection/fill counters, actual portfolio maximum drawdowns, and open inventory.
+
+Latest balanced Phase 42 is +$6.31 net after a single +$13.41 native-payout modeled settlement (parent 1224253) on top of -$7.10 in exits. Removing that one event leaves -$7.10. Its marked portfolio drawdown was $7.88. Explorer aggressive was +$5.69 net with $8.95 drawdown and three open positions. Its three closure records include two native settlements and one -$0.49 modeled exit. Removing the best native event leaves +$0.62 across the remaining two records. Explorer balanced was +$5.54 net with $7.90 drawdown and two open positions. Its only closure was a native settlement on the same best event, which reduces its net to $0 when omitted. These outcomes have been observed, the alternatives share event exposure, and execution remains modeled. They do not support advancement. Phase 44 had no closed observations and one open aggressive position. The conservative profiles recorded no completed closures.
+
+## Frozen forward scorecard
+
+Remote lock b5468c268dd45f24129826aef4c2a3ca496b3fe0 was published before the prospective start. Existing Explorer strategy/source versions and sizing, per-profile fee assumptions, existing risk budgets, exit rules, 0.5-second latency, up to eight levels, up to 10% depth participation, settlement policy and no-trade $0 benchmark remain fixed. Known prior market/parent identities are excluded conservatively. Their absence alone cannot certify independence. Judge net dollars with bid exits and native settlements separate at the fixed endpoint, with open inventory and marks separate. Report all four hypotheses and all profiles. No statistical winner until independent groups support a multiplicity-aware comparison. The historical bid-mark benchmark remains the unchanged current depth bid.
+
+The later archive interval 03:07–04:07 UTC contained 9 full book records, 1,885 deltas and 354 market snapshots, but zero complete served producer frames or Explorer decision cycles. Native snapshots preserve source times but cannot recreate the producer health or validity at the original decision boundary. No replay of that interval invents a receipt, fee proof or signal. The exact blocker is a timestamped full response tape, original causal study joins, exact fee proofs and eligible later depth to measure entries/exits. Native-hold outcomes additionally require punctual original payout proofs.
+
+The fixed prospective quote tape uses the first 15 minutes after 05:00 UTC Nov 18. Primary endpoint is 05:00 UTC Nov 19, with no forced terminal exits. Quote opportunities requiring a later book outside that tape remain unresolved. capture-tape.py records original validated receipt envelopes and available archive evidence IDs. prospective.py invokes the original Controller in a new private EventStore and replays the native fee and optional payout proof formats. It refuses out-of-window receipts, source hash changes and unavailable evidence. The first primary readout is available after the endpoint if the tape and supporting evidence were captured. Missing inputs stay unmeasured.
