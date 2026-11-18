@@ -245,7 +245,14 @@ def scan():
                     if not compatible_rules(F["markets"], relationship["id"].split("=>")):
                         rejects["cross_condition_mismatched_terms"] += 1
                         continue
-                    floor = payout_floor(list(relationship["payoffs"].values()))
+                    states = relationship["payoffs"]
+                    floor = payout_floor(
+                        [
+                            *states["price_regions_low_mid_high"],
+                            states["both_invalid_half"],
+                            states["differential_exception"],
+                        ]
+                    )
                     if floor < 1:
                         rejects["cross_condition_exception_floor"] += 1
                         continue
@@ -292,21 +299,40 @@ def scan():
                     ):
                         pending = {**result, "arrivals": []}
                         peak = max(peak, result["capital"])
+    incomplete_at_end = pending is not None
+    if pending:
+        arrivals = pending.pop("arrivals")
+        result = attempt(
+            depth,
+            pending["tokens"],
+            pending["rates"],
+            pending,
+            arrivals + [None] * (4 - len(arrivals)),
+            pending["side"] == "asks",
+            F["conversion_cost_sensitivity"],
+        )
+        attempts.append({**pending, **result, "endpoint_censored": True})
     (ROOT / "opportunities.jsonl").write_text("".join(json.dumps(row) + "\n" for row in rows))
     out = {
         "polls": len(receipts),
         "markets": len(F["markets"]),
         "hours": (max(receipts) - min(receipts)) / 3600,
         "distinct_priceable_baskets": len(rows),
+        "priceable_markets": sorted({r["market"] for r in rows}),
+        "best_net_before_conversion": max(
+            (r["net"] + F["conversion_cost_sensitivity"] for r in rows), default=None
+        ),
         "positive_after_assumed_conversion": sum(r["net"] > EPS for r in rows),
         "distinct_qualified": sum(r["net"] > EPS and F["conversion_cost_verified"] for r in rows),
         "rejects": dict(rejects),
         "attempts": attempts,
-        "unconfirmed_at_endpoint": pending is not None,
+        "unconfirmed_at_endpoint": incomplete_at_end,
         "peak_capital": peak,
         "completed": sum(a["complete"] for a in attempts),
-        "incomplete": sum(not a["complete"] for a in attempts) + int(pending is not None),
-        "net_paper_under_conversion_sensitivity": sum(a["net"] or 0 for a in attempts),
+        "incomplete": sum(not a["complete"] for a in attempts),
+        "net_paper_under_conversion_sensitivity": None
+        if any(a["net"] is None for a in attempts)
+        else sum(a["net"] for a in attempts),
         "conversion_verified": F["conversion_cost_verified"],
         "unpriced_residual_attempts": sum(a["net"] is None for a in attempts),
         "cash_benchmark": 0,

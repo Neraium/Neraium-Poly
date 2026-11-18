@@ -1,0 +1,60 @@
+{
+  "reference": {
+    "service": {
+      "MainPID": "872650",
+      "NRestarts": "0",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "1073741824",
+      "TasksMax": "64",
+      "WorkingDirectory": "/home/ubuntu/Neraium-Poly",
+      "ActiveState": "active",
+      "SubState": "running"
+    },
+    "flags": {
+      "PAPER_TRADING": "true",
+      "LIVE_TRADING_ENABLED": "false",
+      "NERAIUM_SHADOW_RESEARCH": "",
+      "NERAIUM_DEPLOYED_SOURCE": "",
+      "PYTHONPATH": ""
+    }
+  },
+  "experimental": {
+    "service": {
+      "MainPID": "788797",
+      "NRestarts": "0",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "TasksMax": "32",
+      "WorkingDirectory": "/home/ubuntu/Neraium-Poly",
+      "ActiveState": "active",
+      "SubState": "running"
+    },
+    "flags": {
+      "PAPER_TRADING": "true",
+      "LIVE_TRADING_ENABLED": "false",
+      "NERAIUM_SHADOW_RESEARCH": "false",
+      "NERAIUM_DEPLOYED_SOURCE": "8d9756ff8a514ad87947646ffc330f0c3e10efc8",
+      "PYTHONPATH": "/home/ubuntu/Neraium-Poly/.deploy/releases/8d9756ff8a514ad87947646ffc330f0c3e10efc8/backend"
+    }
+  },
+  "accounts": {
+    "paper-live": {
+      "risk_sha256": "7c300e3be499a16dcff430297d22ed17905e0cc7b95291afceefbc89913addc5",
+      "positions": 0,
+      "unreleased_reservations": 0,
+      "fills": 0,
+      "orders": 0,
+      "broker_orders_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "stop_latched": false
+    },
+    "experimental-paper": {
+      "risk_sha256": "8a38b86a80549d3b4cc7d62c1f1c33207b1268d1fb80859e152c9f1ee77d3c11",
+      "positions": 0,
+      "unreleased_reservations": 0,
+      "fills": 10,
+      "orders": 13,
+      "broker_orders_sha256": "4621469d77cb332bb5a5ca43731d4caf8d4af27f8c64bb0539ce77b0cff5e69c",
+      "stop_latched": true
+    }
+  }
+}

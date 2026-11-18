@@ -1,0 +1,176 @@
+{
+  "polls": 90,
+  "markets": 5,
+  "hours": 0.024736800326241388,
+  "distinct_priceable_baskets": 76,
+  "priceable_markets": [
+    "7085279"
+  ],
+  "best_net_before_conversion": -0.14643000000000073,
+  "positive_after_assumed_conversion": 0,
+  "distinct_qualified": 0,
+  "rejects": {
+    "empty_side": 46,
+    "stale_missing_or_skewed_pair": 478,
+    "cross_condition_exception_floor": 203,
+    "repeat_book_depth": 496
+  },
+  "attempts": [],
+  "unconfirmed_at_endpoint": false,
+  "peak_capital": 0,
+  "completed": 0,
+  "incomplete": 0,
+  "net_paper_under_conversion_sensitivity": 0,
+  "conversion_verified": false,
+  "unpriced_residual_attempts": 0,
+  "cash_benchmark": 0,
+  "closest": [
+    {
+      "quantity": 5.0,
+      "legs": [
+        {
+          "quantity": 5.0,
+          "principal": 4.2,
+          "fees": 0.04704,
+          "limit": 0.84
+        },
+        {
+          "quantity": 5.0,
+          "principal": 0.8500000000000001,
+          "fees": 0.04939,
+          "limit": 0.17
+        }
+      ],
+      "gross_edge": -0.05000000000000071,
+      "net": -0.24643000000000073,
+      "fees": 0.09643,
+      "minimum_payout": 5.0,
+      "capital": 5.24643,
+      "largest_profitable_shares": 0,
+      "side": "asks",
+      "market": "7085279",
+      "tokens": [
+        "64861365285069029557900743048508256749594557931463713273796290001731810401402",
+        "29381255133050054389003672133520693140250737513600071244706436948176173898222"
+      ],
+      "rates": [
+        0.07,
+        0.07
+      ],
+      "decision_timestamp": 1794979669.821272,
+      "original_receipts": [
+        {
+          "receipt": 1794979669.747788,
+          "exchange": 1794979668.078,
+          "id": "aa1ce2d81f659e3dba6f24f505426fdf1bae4e60",
+          "available_at": "2026-11-18T05:27:49.747788+00:00"
+        },
+        {
+          "receipt": 1794979669.742503,
+          "exchange": 1794979668.078,
+          "id": "d63a727385fa2022fc75f51c49656aa2a84f7969",
+          "available_at": "2026-11-18T05:27:49.742503+00:00"
+        }
+      ],
+      "reason": "nonpositive_net"
+    },
+    {
+      "quantity": 5.0,
+      "legs": [
+        {
+          "quantity": 5.0,
+          "principal": 4.1499999999999995,
+          "fees": 0.04939,
+          "limit": 0.83
+        },
+        {
+          "quantity": 5.0,
+          "principal": 0.8,
+          "fees": 0.04704,
+          "limit": 0.16
+        }
+      ],
+      "gross_edge": -0.05000000000000071,
+      "net": -0.24643000000000073,
+      "fees": 0.09643,
+      "minimum_payout": 5.0,
+      "capital": 5.1,
+      "largest_profitable_shares": 0,
+      "side": "bids",
+      "market": "7085279",
+      "tokens": [
+        "64861365285069029557900743048508256749594557931463713273796290001731810401402",
+        "29381255133050054389003672133520693140250737513600071244706436948176173898222"
+      ],
+      "rates": [
+        0.07,
+        0.07
+      ],
+      "decision_timestamp": 1794979669.821272,
+      "original_receipts": [
+        {
+          "receipt": 1794979669.747788,
+          "exchange": 1794979668.078,
+          "id": "aa1ce2d81f659e3dba6f24f505426fdf1bae4e60",
+          "available_at": "2026-11-18T05:27:49.747788+00:00"
+        },
+        {
+          "receipt": 1794979669.742503,
+          "exchange": 1794979668.078,
+          "id": "d63a727385fa2022fc75f51c49656aa2a84f7969",
+          "available_at": "2026-11-18T05:27:49.742503+00:00"
+        }
+      ],
+      "reason": "nonpositive_net"
+    },
+    {
+      "quantity": 5.0,
+      "legs": [
+        {
+          "quantity": 5.0,
+          "principal": 4.2,
+          "fees": 0.04704,
+          "limit": 0.84
+        },
+        {
+          "quantity": 5.0,
+          "principal": 0.8500000000000001,
+          "fees": 0.04939,
+          "limit": 0.17
+        }
+      ],
+      "gross_edge": -0.05000000000000071,
+      "net": -0.24643000000000073,
+      "fees": 0.09643,
+      "minimum_payout": 5.0,
+      "capital": 5.24643,
+      "largest_profitable_shares": 0,
+      "side": "asks",
+      "market": "7085279",
+      "tokens": [
+        "64861365285069029557900743048508256749594557931463713273796290001731810401402",
+        "29381255133050054389003672133520693140250737513600071244706436948176173898222"
+      ],
+      "rates": [
+        0.07,
+        0.07
+      ],
+      "decision_timestamp": 1794979670.737327,
+      "original_receipts": [
+        {
+          "receipt": 1794979670.713989,
+          "exchange": 1794979670.286,
+          "id": "1ddfad4804044b5ba9cfc35ab0a095e234eafb4f",
+          "available_at": "2026-11-18T05:27:50.713989+00:00"
+        },
+        {
+          "receipt": 1794979670.715517,
+          "exchange": 1794979670.286,
+          "id": "fd6be8149cb93393b4ef28930b3628e442698b4c",
+          "available_at": "2026-11-18T05:27:50.715517+00:00"
+        }
+      ],
+      "reason": "nonpositive_net"
+    }
+  ]
+}
