@@ -11,6 +11,7 @@ from datetime import datetime
 import httpx
 
 from neraium_poly.experimental.contracts import SharedMarketFrame
+from neraium_poly.experimental.feed_trace import TRACE_HEADER
 from neraium_poly.research.phase14.relationships import digest
 from neraium_poly.research.phase23.continuous import ChallengerStudy
 from neraium_poly.research.phase24.continuous import DomainResearch, DomainResearchStudy
@@ -38,14 +39,29 @@ class Scope:
         self.base.append(item);self.written+=size
 
 
-def read_reference(url):
-    began=time.monotonic();raw=bytearray()
-    with httpx.Client(timeout=3,trust_env=False) as client, client.stream('GET',url) as response:
+def read_reference(url, *, timing=None):
+    began = time.monotonic()
+    raw = bytearray()
+    request = {}
+    if timing is not None:
+        request = {
+            "headers": {TRACE_HEADER.decode("ascii"): timing.request_id},
+            "extensions": {"trace": timing.http_event},
+        }
+    with httpx.Client(timeout=3, trust_env=False) as client, client.stream("GET", url, **request) as response:
         response.raise_for_status()
         for chunk in response.iter_bytes():
-            if time.monotonic()-began>4 or len(raw)+len(chunk)>8*1024**2:raise ValueError('bounded reference source frame exceeded')
+            if timing is not None:
+                timing.mark("first_body_chunk")
+            if time.monotonic()-began > 4 or len(raw)+len(chunk) > 8*1024**2:
+                raise ValueError("bounded reference source frame exceeded")
             raw.extend(chunk)
-    return SharedMarketFrame.model_validate_json(raw)
+    if timing is not None:
+        timing.mark("body_complete")
+    frame = SharedMarketFrame.model_validate_json(raw)
+    if timing is not None:
+        timing.mark("decoded")
+    return frame
 
 
 async def refresh(store,frame,*,clock,can_write,stop,frame_provider=None):

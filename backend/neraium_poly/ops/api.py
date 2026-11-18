@@ -7,6 +7,7 @@ from threading import RLock
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.staticfiles import StaticFiles
 
+from neraium_poly.experimental.feed_trace import MarketFrameTimingMiddleware, producer_mark
 from neraium_poly.settings import Settings
 
 
@@ -45,6 +46,8 @@ def create_app(runtime=None, frontend_path: Path | None = None, local_port: int 
         response.headers["Cache-Control"] = "no-store"
         return response
 
+    app.add_middleware(MarketFrameTimingMiddleware)
+
     @app.get("/api/health")
     def health():
         if hasattr(runtime, "health"):
@@ -58,9 +61,12 @@ def create_app(runtime=None, frontend_path: Path | None = None, local_port: int 
 
     @app.get("/api/market-frame")
     def public_market_frame():
+        producer_mark("handler_started")
         if not hasattr(runtime, "market_frame"):
             raise HTTPException(404, "Actual public market frame unavailable in this mode")
-        return runtime.market_frame()
+        frame = runtime.market_frame()
+        producer_mark("handler_returned")
+        return frame
 
     @app.get("/api/state")
     def state():

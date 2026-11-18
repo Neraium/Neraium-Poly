@@ -1,0 +1,103 @@
+{
+  "phase49": {
+    "separate_producer_probe_count": 12,
+    "separate_producer_probe_read_timeouts": 5,
+    "polls": 178,
+    "boundaries": {
+      "expired_source_or_report_boundary_unknown": 30,
+      "fresh_at_sample": 86,
+      "reference_timeout": 34,
+      "producer_degraded": 28
+    },
+    "request_join_gap": "Baseline retains diagnostic counter snapshots without per-request receipts."
+  },
+  "phase52": {
+    "polls": 177,
+    "reports": 50,
+    "producer_frames": 116,
+    "receipt_processing_frames": 68,
+    "requests": 175,
+    "request_states": {
+      "withheld": 71,
+      "accepted": 104
+    },
+    "withheld_request_reasons": {
+      "ReadTimeout:timed out": 59,
+      "ValueError:public-data producer is degraded": 12
+    },
+    "boundaries": {
+      "fresh_at_sample": {
+        "polls": 70,
+        "unique_report_ids": 44,
+        "distinct_veto_requests": 0,
+        "unjoined_poll_count": null,
+        "veto_request_duration_seconds": null,
+        "veto_requests_with_producer_frame": 0
+      },
+      "reference_timeout": {
+        "polls": 54,
+        "unique_report_ids": 9,
+        "distinct_veto_requests": 49,
+        "unjoined_poll_count": 0,
+        "veto_request_duration_seconds": {
+          "min": 3.016862,
+          "median": 3.030384,
+          "max": 3.330098
+        },
+        "veto_requests_with_producer_frame": 0
+      },
+      "producer_degraded": {
+        "polls": 27,
+        "unique_report_ids": 9,
+        "distinct_veto_requests": 10,
+        "unjoined_poll_count": 0,
+        "veto_request_duration_seconds": {
+          "min": 0.066795,
+          "median": 0.352958,
+          "max": 2.941033
+        },
+        "veto_requests_with_producer_frame": 10,
+        "producer_error_values": {
+          "None": 10
+        }
+      },
+      "after_publication_before_sample": {
+        "polls": 26,
+        "unique_report_ids": 14,
+        "distinct_veto_requests": 0,
+        "unjoined_poll_count": null,
+        "veto_request_duration_seconds": null,
+        "veto_requests_with_producer_frame": 0
+      }
+    },
+    "windows": {
+      "1": {
+        "fresh_at_sample": 24,
+        "reference_timeout": 17,
+        "producer_degraded": 12,
+        "after_publication_before_sample": 7
+      },
+      "2": {
+        "fresh_at_sample": 20,
+        "after_publication_before_sample": 4,
+        "reference_timeout": 22,
+        "producer_degraded": 12
+      },
+      "3": {
+        "fresh_at_sample": 26,
+        "after_publication_before_sample": 15,
+        "reference_timeout": 15,
+        "producer_degraded": 3
+      }
+    },
+    "observed_withholding_episodes": 13,
+    "longest_observed_episode_seconds": 57.859623,
+    "episodes_containing_timeout": 9,
+    "oldest_post_publication_expiry_seconds": 37.392177,
+    "expiry_publication_ages_seconds": [
+      5.765962,
+      17.680859
+    ],
+    "same_report_both_fresh_and_stale": 16
+  }
+}

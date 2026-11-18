@@ -16,13 +16,14 @@ import httpx
 
 from neraium_poly.data import assess_book
 from neraium_poly.experimental.feed import SharedFeedClient, loopback_url
+from neraium_poly.experimental.feed_trace import FrameRequestTiming
 from neraium_poly.experimental.research_worker import _drain
 from neraium_poly.research.phase42.sources import read_reference
 
 
 class ReferenceSampler:
     def __init__(self, url, *, clock=lambda:datetime.now(UTC), reader=None):
-        self.url=loopback_url(url);self.clock=clock;self.reader=reader or read_reference
+        self.url=loopback_url(url);self.clock=clock;self.reader=reader
         self.lock=Lock();self.frame=None;self.attempts=0;self.failures=0;self.error=None
         self.last_attempt=None;self.latencies=deque(maxlen=128);self.fresh_books=0
         self.last_failure=None;self.failure_types={}
@@ -32,9 +33,13 @@ class ReferenceSampler:
     def observe(self):
         began=time.monotonic();now=self.clock()
         with self.lock:self.attempts+=1;self.last_attempt=now.isoformat()
+        timing=FrameRequestTiming()
         receipt={'read_started_at':now.isoformat()}
         try:
-            frame=self.reader(self.url)
+            try:
+                frame=read_reference(self.url,timing=timing) if self.reader is None else self.reader(self.url)
+            finally:
+                receipt.update(timing.receipt())
             receipt.update(frame_id=frame.id,source_timestamp=frame.timestamp.isoformat(),
                            source_available_at=frame.available_at.isoformat(),
                            producer_health=frame.producer_health.get('status'),
