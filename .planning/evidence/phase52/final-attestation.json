@@ -1,0 +1,96 @@
+{
+  "at": "2026-11-18T03:20:14.838971+00:00",
+  "source": "8d9756ff8a514ad87947646ffc330f0c3e10efc8",
+  "completion_record": "quiesced-ready.json",
+  "experimental": {
+    "service": {
+      "MainPID": "788797",
+      "NRestarts": "0",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "TasksMax": "32",
+      "WorkingDirectory": "/home/ubuntu/Neraium-Poly",
+      "ActiveState": "active",
+      "SubState": "running"
+    },
+    "flags": {
+      "PAPER_TRADING": "true",
+      "LIVE_TRADING_ENABLED": "false",
+      "NERAIUM_SHADOW_RESEARCH": "false",
+      "NERAIUM_DEPLOYED_SOURCE": "8d9756ff8a514ad87947646ffc330f0c3e10efc8",
+      "PYTHONPATH": "/home/ubuntu/Neraium-Poly/.deploy/releases/8d9756ff8a514ad87947646ffc330f0c3e10efc8/backend"
+    }
+  },
+  "reference": {
+    "service": {
+      "MainPID": "555731",
+      "NRestarts": "2",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "1073741824",
+      "TasksMax": "64",
+      "WorkingDirectory": "/home/ubuntu/Neraium-Poly",
+      "ActiveState": "active",
+      "SubState": "running"
+    },
+    "flags": {
+      "PAPER_TRADING": "true",
+      "LIVE_TRADING_ENABLED": "false",
+      "NERAIUM_SHADOW_RESEARCH": "",
+      "NERAIUM_DEPLOYED_SOURCE": "",
+      "PYTHONPATH": ""
+    }
+  },
+  "disk_free_bytes": 159929524224,
+  "experimental_health": "ok",
+  "reference_health": "ok",
+  "shadow": {
+    "status": "withheld",
+    "reason": "shadow research disabled or initializing",
+    "trading_authority": false
+  },
+  "balances": {
+    "paper-live": {
+      "paper_cash": 500.0,
+      "realized": 0.0,
+      "stop_latched": false
+    },
+    "experimental-paper": {
+      "paper_cash": 496.11522059829053,
+      "realized": -3.8847794017094013,
+      "stop_latched": true
+    }
+  },
+  "paper_state_matches_preflight": true,
+  "original_journal_heads_preserved_as_prefixes": true,
+  "journal_heads": {
+    "forecasts.sqlite": {
+      "records": 17725,
+      "head_sha256": "0940e7ff825f643bbc4deac28879bf6cde1b9a0d37eaeb76843fac677118f01f",
+      "integrity": "verified"
+    },
+    "domains/forecasts.sqlite": {
+      "records": 357,
+      "head_sha256": "4c6d2e49f06a6165bd933ceef69aed4e04984701e1bf4dd35527d738337c050b",
+      "integrity": "verified"
+    },
+    "sports/prospective.sqlite": {
+      "records": 34,
+      "head_sha256": "814ecf6a8b2cb49775c961c68a8bab23db4b378ecfa241d79241ff6e03fa6868",
+      "integrity": "verified"
+    }
+  },
+  "original_proofs": 22,
+  "current_proofs": 25,
+  "original_proof_file_identities": 1098,
+  "backup_sha256": "f6c44edd1dbb5801d67b2905f0646186bf8707ee999991f38d96e822b6077671",
+  "frozen_trials": 14,
+  "memory_events": {
+    "low": "0",
+    "high": "0",
+    "max": "42492",
+    "oom": "0",
+    "oom_kill": "0",
+    "oom_group_kill": "0",
+    "sock_throttled": "0"
+  }
+}

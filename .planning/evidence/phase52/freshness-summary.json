@@ -1,0 +1,192 @@
+{
+  "windows": [
+    {
+      "fresh": 24,
+      "total": 60,
+      "fresh_under_phase48_age_rule": 24,
+      "distinct_reports": 18,
+      "repeat_report_polls": 42,
+      "distinct_decision_source_frames": 22,
+      "distinct_journal_matched_processing_frames": 17,
+      "distinct_reference_availability_timestamps_at_sampling": 34,
+      "ingestion_healthy": 39,
+      "api_errors": 0,
+      "observed_boundaries": {
+        "fresh_at_sample": 24,
+        "reference_timeout": 17,
+        "producer_degraded": 12,
+        "after_publication_before_sample": 7
+      },
+      "source_age_at_publication_seconds": {
+        "p50": 7.1985790000000005,
+        "p95": 17.680859,
+        "max": 17.680859
+      },
+      "cycle_seconds": {
+        "p50": 5.803604040993378,
+        "p95": 22.185894113965333,
+        "max": 22.185894113965333
+      },
+      "processing_stages": {
+        "source_inventory_replay_enrollment": {
+          "p50": 7.3160044848918915e-06,
+          "p95": 10.92190250614658,
+          "max": 10.92190250614658
+        },
+        "legacy_and_profile_processing": {
+          "p50": 1.7579917274415493,
+          "p95": 4.150541923008859,
+          "max": 4.150541923008859
+        },
+        "active_candidate_evaluation": {
+          "p50": 1.6252840922679752,
+          "p95": 4.599251880776137,
+          "max": 4.599251880776137
+        },
+        "settlement_application_scoring_report": {
+          "p50": 0.13349320786073804,
+          "p95": 9.146098216995597,
+          "max": 9.146098216995597
+        },
+        "decision_cards": {
+          "p50": 0.019759831484407187,
+          "p95": 0.48255154909566045,
+          "max": 0.48255154909566045
+        }
+      }
+    },
+    {
+      "fresh": 20,
+      "total": 58,
+      "fresh_under_phase48_age_rule": 20,
+      "distinct_reports": 16,
+      "repeat_report_polls": 42,
+      "distinct_decision_source_frames": 22,
+      "distinct_journal_matched_processing_frames": 15,
+      "distinct_reference_availability_timestamps_at_sampling": 28,
+      "ingestion_healthy": 41,
+      "api_errors": 0,
+      "observed_boundaries": {
+        "fresh_at_sample": 20,
+        "after_publication_before_sample": 4,
+        "reference_timeout": 22,
+        "producer_degraded": 12
+      },
+      "source_age_at_publication_seconds": {
+        "p50": 8.0426185,
+        "p95": 15.702033,
+        "max": 15.702033
+      },
+      "cycle_seconds": {
+        "p50": 5.800967226503417,
+        "p95": 19.146852798294276,
+        "max": 19.146852798294276
+      },
+      "processing_stages": {
+        "source_inventory_replay_enrollment": {
+          "p50": 6.155809387564659e-06,
+          "p95": 6.828553564846516,
+          "max": 6.828553564846516
+        },
+        "legacy_and_profile_processing": {
+          "p50": 2.0488273589871824,
+          "p95": 10.770035612862557,
+          "max": 10.770035612862557
+        },
+        "active_candidate_evaluation": {
+          "p50": 1.5612266163807362,
+          "p95": 5.069620322901756,
+          "max": 5.069620322901756
+        },
+        "settlement_application_scoring_report": {
+          "p50": 0.47916244994848967,
+          "p95": 1.7859356962144375,
+          "max": 1.7859356962144375
+        },
+        "decision_cards": {
+          "p50": 0.013085081009194255,
+          "p95": 0.4526570700109005,
+          "max": 0.4526570700109005
+        }
+      }
+    },
+    {
+      "fresh": 26,
+      "total": 59,
+      "fresh_under_phase48_age_rule": 31,
+      "distinct_reports": 17,
+      "repeat_report_polls": 42,
+      "distinct_decision_source_frames": 25,
+      "distinct_journal_matched_processing_frames": 17,
+      "distinct_reference_availability_timestamps_at_sampling": 40,
+      "ingestion_healthy": 43,
+      "api_errors": 0,
+      "observed_boundaries": {
+        "fresh_at_sample": 26,
+        "after_publication_before_sample": 15,
+        "reference_timeout": 15,
+        "producer_degraded": 3
+      },
+      "source_age_at_publication_seconds": {
+        "p50": 10.20122,
+        "p95": 13.981488,
+        "max": 13.981488
+      },
+      "cycle_seconds": {
+        "p50": 10.82902552979067,
+        "p95": 27.195885291788727,
+        "max": 27.195885291788727
+      },
+      "processing_stages": {
+        "source_inventory_replay_enrollment": {
+          "p50": 6.204936653375626e-06,
+          "p95": 12.57522827386856,
+          "max": 12.57522827386856
+        },
+        "legacy_and_profile_processing": {
+          "p50": 3.3567124218679965,
+          "p95": 5.524505984969437,
+          "max": 5.524505984969437
+        },
+        "active_candidate_evaluation": {
+          "p50": 2.1344384672120214,
+          "p95": 5.748412669170648,
+          "max": 5.748412669170648
+        },
+        "settlement_application_scoring_report": {
+          "p50": 0.5378058846108615,
+          "p95": 3.677296572830528,
+          "max": 3.677296572830528
+        },
+        "decision_cards": {
+          "p50": 0.018458032049238682,
+          "p95": 0.2346360068768263,
+          "max": 0.2346360068768263
+        }
+      }
+    }
+  ],
+  "startup_or_unpartitioned": {
+    "fresh": 0,
+    "total": 0,
+    "fresh_under_phase48_age_rule": 0,
+    "distinct_reports": 0,
+    "repeat_report_polls": 0,
+    "distinct_decision_source_frames": null,
+    "distinct_journal_matched_processing_frames": 0,
+    "distinct_reference_availability_timestamps_at_sampling": 0,
+    "ingestion_healthy": 0,
+    "api_errors": 0,
+    "observed_boundaries": {},
+    "source_age_at_publication_seconds": null,
+    "cycle_seconds": null,
+    "processing_stages": {
+      "source_inventory_replay_enrollment": null,
+      "legacy_and_profile_processing": null,
+      "active_candidate_evaluation": null,
+      "settlement_application_scoring_report": null,
+      "decision_cards": null
+    }
+  },
+  "limitations": "Legacy reports expose reference availability and processing timestamps but lack exact original decision frame IDs and publication time. Sample classifications are observable vetoes. The post candidate also checks the original producer age at the same threshold, so the Phase 48 rule is recomputed separately using its legacy as_of and processing-frame timestamps."
+}

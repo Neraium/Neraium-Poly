@@ -1,0 +1,356 @@
+{
+  "baseline": "Phase 49 concurrent five-second API polling and existing freshness verdict",
+  "cycle_percentiles": "one value per distinct report, median and nearest-rank p95",
+  "frame_definition": "union of decision-receipt processing frame IDs and archive-verified StrategyCycle frame IDs",
+  "classification_limit": "polls can observe the same report or failure more than once; retained failure samples do not count unseen events",
+  "windows": [
+    {
+      "window": 1,
+      "phase49_baseline": {
+        "fresh": 26,
+        "total": 60,
+        "fresh_under_phase48_age_rule": 26,
+        "distinct_reports": 17,
+        "repeat_report_polls": 43,
+        "distinct_decision_source_frames": null,
+        "distinct_journal_matched_processing_frames": 17,
+        "distinct_reference_availability_timestamps_at_sampling": 37,
+        "ingestion_healthy": 39,
+        "api_errors": 0,
+        "observed_boundaries": {
+          "expired_source_or_report_boundary_unknown": 8,
+          "fresh_at_sample": 26,
+          "reference_timeout": 13,
+          "producer_degraded": 13
+        },
+        "source_age_at_publication_seconds": null,
+        "cycle_seconds": {
+          "p50": 11.481177975889295,
+          "p95": 21.04340378008783,
+          "max": 21.04340378008783
+        },
+        "processing_stages": {
+          "source_inventory_replay_enrollment": {
+            "p50": 5.966983735561371e-06,
+            "p95": 8.71567321382463,
+            "max": 8.71567321382463
+          },
+          "legacy_and_profile_processing": {
+            "p50": 4.382623570039868,
+            "p95": 8.802871708292514,
+            "max": 8.802871708292514
+          },
+          "active_candidate_evaluation": {
+            "p50": 2.1553364186547697,
+            "p95": 7.977974808309227,
+            "max": 7.977974808309227
+          },
+          "settlement_application_scoring_report": {
+            "p50": 1.026169571094215,
+            "p95": 3.21166636608541,
+            "max": 3.21166636608541
+          },
+          "decision_cards": {
+            "p50": 0.2401532898657024,
+            "p95": 5.5340034631080925,
+            "max": 5.5340034631080925
+          }
+        }
+      },
+      "observed": {
+        "fresh": 24,
+        "total": 60,
+        "fresh_under_phase48_age_rule": 24,
+        "distinct_reports": 18,
+        "repeat_report_polls": 42,
+        "distinct_decision_source_frames": 22,
+        "distinct_journal_matched_processing_frames": 17,
+        "distinct_reference_availability_timestamps_at_sampling": 34,
+        "ingestion_healthy": 39,
+        "api_errors": 0,
+        "observed_boundaries": {
+          "fresh_at_sample": 24,
+          "reference_timeout": 17,
+          "producer_degraded": 12,
+          "after_publication_before_sample": 7
+        },
+        "source_age_at_publication_seconds": {
+          "p50": 7.1985790000000005,
+          "p95": 17.680859,
+          "max": 17.680859
+        },
+        "cycle_seconds": {
+          "p50": 5.803604040993378,
+          "p95": 22.185894113965333,
+          "max": 22.185894113965333
+        },
+        "processing_stages": {
+          "source_inventory_replay_enrollment": {
+            "p50": 7.3160044848918915e-06,
+            "p95": 10.92190250614658,
+            "max": 10.92190250614658
+          },
+          "legacy_and_profile_processing": {
+            "p50": 1.7579917274415493,
+            "p95": 4.150541923008859,
+            "max": 4.150541923008859
+          },
+          "active_candidate_evaluation": {
+            "p50": 1.6252840922679752,
+            "p95": 4.599251880776137,
+            "max": 4.599251880776137
+          },
+          "settlement_application_scoring_report": {
+            "p50": 0.13349320786073804,
+            "p95": 9.146098216995597,
+            "max": 9.146098216995597
+          },
+          "decision_cards": {
+            "p50": 0.019759831484407187,
+            "p95": 0.48255154909566045,
+            "max": 0.48255154909566045
+          }
+        }
+      },
+      "distinct_processing_frame_ids": 22,
+      "distinct_journal_rejoined_ids": 17,
+      "distinct_receipt_processing_ids": 22,
+      "current_processing_expiry_polls": 0,
+      "retained_distinct_worker_failures_seen": {
+        "ValueError:fresh shared reference observation unavailable": 23
+      }
+    },
+    {
+      "window": 2,
+      "phase49_baseline": {
+        "fresh": 32,
+        "total": 59,
+        "fresh_under_phase48_age_rule": 32,
+        "distinct_reports": 16,
+        "repeat_report_polls": 43,
+        "distinct_decision_source_frames": null,
+        "distinct_journal_matched_processing_frames": 16,
+        "distinct_reference_availability_timestamps_at_sampling": 40,
+        "ingestion_healthy": 47,
+        "api_errors": 0,
+        "observed_boundaries": {
+          "fresh_at_sample": 32,
+          "expired_source_or_report_boundary_unknown": 9,
+          "reference_timeout": 11,
+          "producer_degraded": 7
+        },
+        "source_age_at_publication_seconds": null,
+        "cycle_seconds": {
+          "p50": 12.20675813453272,
+          "p95": 23.170649175997823,
+          "max": 23.170649175997823
+        },
+        "processing_stages": {
+          "source_inventory_replay_enrollment": {
+            "p50": 6.653834134340286e-06,
+            "p95": 7.675891669932753,
+            "max": 7.675891669932753
+          },
+          "legacy_and_profile_processing": {
+            "p50": 4.3556323810480535,
+            "p95": 8.423017176333815,
+            "max": 8.423017176333815
+          },
+          "active_candidate_evaluation": {
+            "p50": 2.579652457498014,
+            "p95": 4.359497067984194,
+            "max": 4.359497067984194
+          },
+          "settlement_application_scoring_report": {
+            "p50": 0.8940156300086528,
+            "p95": 3.7784349913708866,
+            "max": 3.7784349913708866
+          },
+          "decision_cards": {
+            "p50": 0.5277170145418495,
+            "p95": 3.071635525673628,
+            "max": 3.071635525673628
+          }
+        }
+      },
+      "observed": {
+        "fresh": 20,
+        "total": 58,
+        "fresh_under_phase48_age_rule": 20,
+        "distinct_reports": 16,
+        "repeat_report_polls": 42,
+        "distinct_decision_source_frames": 22,
+        "distinct_journal_matched_processing_frames": 15,
+        "distinct_reference_availability_timestamps_at_sampling": 28,
+        "ingestion_healthy": 41,
+        "api_errors": 0,
+        "observed_boundaries": {
+          "fresh_at_sample": 20,
+          "after_publication_before_sample": 4,
+          "reference_timeout": 22,
+          "producer_degraded": 12
+        },
+        "source_age_at_publication_seconds": {
+          "p50": 8.0426185,
+          "p95": 15.702033,
+          "max": 15.702033
+        },
+        "cycle_seconds": {
+          "p50": 5.800967226503417,
+          "p95": 19.146852798294276,
+          "max": 19.146852798294276
+        },
+        "processing_stages": {
+          "source_inventory_replay_enrollment": {
+            "p50": 6.155809387564659e-06,
+            "p95": 6.828553564846516,
+            "max": 6.828553564846516
+          },
+          "legacy_and_profile_processing": {
+            "p50": 2.0488273589871824,
+            "p95": 10.770035612862557,
+            "max": 10.770035612862557
+          },
+          "active_candidate_evaluation": {
+            "p50": 1.5612266163807362,
+            "p95": 5.069620322901756,
+            "max": 5.069620322901756
+          },
+          "settlement_application_scoring_report": {
+            "p50": 0.47916244994848967,
+            "p95": 1.7859356962144375,
+            "max": 1.7859356962144375
+          },
+          "decision_cards": {
+            "p50": 0.013085081009194255,
+            "p95": 0.4526570700109005,
+            "max": 0.4526570700109005
+          }
+        }
+      },
+      "distinct_processing_frame_ids": 22,
+      "distinct_journal_rejoined_ids": 15,
+      "distinct_receipt_processing_ids": 22,
+      "current_processing_expiry_polls": 0,
+      "retained_distinct_worker_failures_seen": {
+        "ValueError:fresh shared reference observation unavailable": 22
+      }
+    },
+    {
+      "window": 3,
+      "phase49_baseline": {
+        "fresh": 28,
+        "total": 59,
+        "fresh_under_phase48_age_rule": 28,
+        "distinct_reports": 17,
+        "repeat_report_polls": 42,
+        "distinct_decision_source_frames": null,
+        "distinct_journal_matched_processing_frames": 17,
+        "distinct_reference_availability_timestamps_at_sampling": 40,
+        "ingestion_healthy": 40,
+        "api_errors": 0,
+        "observed_boundaries": {
+          "expired_source_or_report_boundary_unknown": 13,
+          "fresh_at_sample": 28,
+          "reference_timeout": 10,
+          "producer_degraded": 8
+        },
+        "source_age_at_publication_seconds": null,
+        "cycle_seconds": {
+          "p50": 10.945479987189174,
+          "p95": 23.2993406788446,
+          "max": 23.2993406788446
+        },
+        "processing_stages": {
+          "source_inventory_replay_enrollment": {
+            "p50": 5.85382804274559e-06,
+            "p95": 8.58810238679871,
+            "max": 8.58810238679871
+          },
+          "legacy_and_profile_processing": {
+            "p50": 3.2836822336539626,
+            "p95": 9.37926433281973,
+            "max": 9.37926433281973
+          },
+          "active_candidate_evaluation": {
+            "p50": 2.7614786569029093,
+            "p95": 8.100980773102492,
+            "max": 8.100980773102492
+          },
+          "settlement_application_scoring_report": {
+            "p50": 1.0122075220569968,
+            "p95": 3.2697082688100636,
+            "max": 3.2697082688100636
+          },
+          "decision_cards": {
+            "p50": 0.2659930055961013,
+            "p95": 3.071635525673628,
+            "max": 3.071635525673628
+          }
+        }
+      },
+      "observed": {
+        "fresh": 26,
+        "total": 59,
+        "fresh_under_phase48_age_rule": 31,
+        "distinct_reports": 17,
+        "repeat_report_polls": 42,
+        "distinct_decision_source_frames": 25,
+        "distinct_journal_matched_processing_frames": 17,
+        "distinct_reference_availability_timestamps_at_sampling": 40,
+        "ingestion_healthy": 43,
+        "api_errors": 0,
+        "observed_boundaries": {
+          "fresh_at_sample": 26,
+          "after_publication_before_sample": 15,
+          "reference_timeout": 15,
+          "producer_degraded": 3
+        },
+        "source_age_at_publication_seconds": {
+          "p50": 10.20122,
+          "p95": 13.981488,
+          "max": 13.981488
+        },
+        "cycle_seconds": {
+          "p50": 10.82902552979067,
+          "p95": 27.195885291788727,
+          "max": 27.195885291788727
+        },
+        "processing_stages": {
+          "source_inventory_replay_enrollment": {
+            "p50": 6.204936653375626e-06,
+            "p95": 12.57522827386856,
+            "max": 12.57522827386856
+          },
+          "legacy_and_profile_processing": {
+            "p50": 3.3567124218679965,
+            "p95": 5.524505984969437,
+            "max": 5.524505984969437
+          },
+          "active_candidate_evaluation": {
+            "p50": 2.1344384672120214,
+            "p95": 5.748412669170648,
+            "max": 5.748412669170648
+          },
+          "settlement_application_scoring_report": {
+            "p50": 0.5378058846108615,
+            "p95": 3.677296572830528,
+            "max": 3.677296572830528
+          },
+          "decision_cards": {
+            "p50": 0.018458032049238682,
+            "p95": 0.2346360068768263,
+            "max": 0.2346360068768263
+          }
+        }
+      },
+      "distinct_processing_frame_ids": 25,
+      "distinct_journal_rejoined_ids": 17,
+      "distinct_receipt_processing_ids": 25,
+      "current_processing_expiry_polls": 0,
+      "retained_distinct_worker_failures_seen": {
+        "ValueError:fresh shared reference observation unavailable": 12
+      }
+    }
+  ]
+}
