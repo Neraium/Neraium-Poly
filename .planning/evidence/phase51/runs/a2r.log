@@ -1,0 +1,35 @@
+Nov 18 01:56:30 ip-172-31-67-49 systemd[1]: Started phase51-full-a2r.service - /usr/bin/unshare -m --propagation private --pid --fork --mount-proc /bin/bash /home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/phase51-full-recovery/.planning/evidence/phase51/mount-run.sh /home/ubuntu/phase51-full.NX8yez a2r /home/ubuntu/phase51-source.R753dV/backend /home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/phase51-full-recovery/.planning/evidence/phase51/bench.py 8d8c115d20fc86604cffc4af64657f967b499b63.
+Nov 18 02:10:54 ip-172-31-67-49 unshare[768871]: phase16_recovery_withheld
+Nov 18 02:10:54 ip-172-31-67-49 unshare[768871]: Traceback (most recent call last):
+Nov 18 02:10:54 ip-172-31-67-49 unshare[768871]:   File "/home/ubuntu/phase51-source.R753dV/backend/neraium_poly/experimental/runtime.py", line 155, in __init__
+Nov 18 02:10:54 ip-172-31-67-49 unshare[768871]:     self.phase16 = ContinuousQualification(self.events)
+Nov 18 02:10:54 ip-172-31-67-49 unshare[768871]:                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Nov 18 02:10:54 ip-172-31-67-49 unshare[768871]:   File "/home/ubuntu/phase51-source.R753dV/backend/neraium_poly/research/phase16/continuous.py", line 64, in __init__
+Nov 18 02:10:54 ip-172-31-67-49 unshare[768871]:     self._restore(state)
+Nov 18 02:10:54 ip-172-31-67-49 unshare[768871]:   File "/home/ubuntu/phase51-source.R753dV/backend/neraium_poly/research/phase16/continuous.py", line 99, in _restore
+Nov 18 02:10:54 ip-172-31-67-49 unshare[768871]:     raise ValueError("qualification checkpoint model policy differs")
+Nov 18 02:10:54 ip-172-31-67-49 unshare[768871]: ValueError: qualification checkpoint model policy differs
+Nov 18 02:11:33 ip-172-31-67-49 unshare[768871]: phase28_volume_research_withheld
+Nov 18 02:11:33 ip-172-31-67-49 unshare[768871]: Traceback (most recent call last):
+Nov 18 02:11:33 ip-172-31-67-49 unshare[768871]:   File "/home/ubuntu/phase51-source.R753dV/backend/neraium_poly/experimental/runtime.py", line 1097, in _volume_research_loop
+Nov 18 02:11:33 ip-172-31-67-49 unshare[768871]:     await asyncio.shield(worker)
+Nov 18 02:11:33 ip-172-31-67-49 unshare[768871]:   File "/usr/lib/python3.12/asyncio/threads.py", line 25, in to_thread
+Nov 18 02:11:33 ip-172-31-67-49 unshare[768871]:     return await loop.run_in_executor(None, func_call)
+Nov 18 02:11:33 ip-172-31-67-49 unshare[768871]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Nov 18 02:11:33 ip-172-31-67-49 unshare[768871]:   File "/usr/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+Nov 18 02:11:33 ip-172-31-67-49 unshare[768871]:     result = self.fn(*self.args, **self.kwargs)
+Nov 18 02:11:33 ip-172-31-67-49 unshare[768871]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Nov 18 02:11:33 ip-172-31-67-49 unshare[768871]:   File "/home/ubuntu/phase51-source.R753dV/backend/neraium_poly/experimental/runtime.py", line 1094, in evaluate
+Nov 18 02:11:33 ip-172-31-67-49 unshare[768871]:     return self.phase28.step(current,**({'native_fee_observations':proofs} if proofs is not None else {}))
+Nov 18 02:11:33 ip-172-31-67-49 unshare[768871]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Nov 18 02:11:33 ip-172-31-67-49 unshare[768871]:   File "/home/ubuntu/phase51-source.R753dV/backend/neraium_poly/research/phase28/continuous.py", line 190, in step
+Nov 18 02:11:33 ip-172-31-67-49 unshare[768871]:     reports.append(builder([study],frame,as_of=decision,verified_forecast_ids=verified,**({'included_forecast_ids':[r['forecast_id'] for r in rows]} if self.builder is None else {}),**({'native_fee_observations':native_fee_observations} if native_fee_observations is not None else {})))
+Nov 18 02:11:33 ip-172-31-67-49 unshare[768871]:                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Nov 18 02:11:33 ip-172-31-67-49 unshare[768871]:   File "/home/ubuntu/phase51-source.R753dV/backend/neraium_poly/research/phase28/findings.py", line 107, in build_economic_findings
+Nov 18 02:11:33 ip-172-31-67-49 unshare[768871]:     _raw, markets, books, bad = _current(frame, now)
+Nov 18 02:11:33 ip-172-31-67-49 unshare[768871]:                                 ^^^^^^^^^^^^^^^^^^^^
+Nov 18 02:11:33 ip-172-31-67-49 unshare[768871]:   File "/home/ubuntu/phase51-source.R753dV/backend/neraium_poly/research/phase27/findings.py", line 37, in _current
+Nov 18 02:11:33 ip-172-31-67-49 unshare[768871]:     raise ValueError('fresh_causal_market_frame_required')
+Nov 18 02:11:33 ip-172-31-67-49 unshare[768871]: ValueError: fresh_causal_market_frame_required
+Nov 18 02:12:10 ip-172-31-67-49 systemd[1]: phase51-full-a2r.service: Deactivated successfully.
+Nov 18 02:12:10 ip-172-31-67-49 systemd[1]: phase51-full-a2r.service: Consumed 12min 7.293s CPU time, 2.0G memory peak, 0B memory swap peak.

@@ -1,0 +1,6 @@
+mnt:[4026531832]
+mnt:[4026532761]
+817 72 259:1 /home/ubuntu/phase51-full.NX8yez/seed /home/ubuntu/phase51-full.NX8yez/seed ro,relatime - ext4 /dev/root rw,discard,errors=remount-ro,commit=30
+898 72 259:1 /home/ubuntu/Neraium-Poly /home/ubuntu/Neraium-Poly ro,relatime - ext4 /dev/root rw,discard,errors=remount-ro,commit=30
+974 817 0:73 / /home/ubuntu/phase51-full.NX8yez/seed rw,relatime - tmpfs tmpfs rw,size=4k,mode=000,inode64
+975 898 0:71 / /home/ubuntu/Neraium-Poly/data rw,relatime - overlay overlay rw,lowerdir=/home/ubuntu/phase51-full.NX8yez/seed,upperdir=/home/ubuntu/phase51-full.NX8yez/runs/a1r/upper,workdir=/home/ubuntu/phase51-full.NX8yez/runs/a1r/work,uuid=on,nouserxattr

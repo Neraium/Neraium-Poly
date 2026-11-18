@@ -1,0 +1,167 @@
+{
+  "a1r": {
+    "forecasts.sqlite": {
+      "frozen_prefix_verified": true,
+      "current_head": {
+        "records": 17743,
+        "head_sha256": "77fd3a23c12a4bfeb2305c74b766a942f4663f416581827e86cf42f7837da51d",
+        "integrity": "verified"
+      },
+      "append_counts_by_kind": {
+        "evidence": 12,
+        "forecast": 6
+      }
+    },
+    "domains/forecasts.sqlite": {
+      "frozen_prefix_verified": true,
+      "current_head": {
+        "records": 359,
+        "head_sha256": "50eee2ff80656767fce98f03b21b7dc0b6e624d2af928f72139d933accea15d6",
+        "integrity": "verified"
+      },
+      "append_counts_by_kind": {
+        "domain_evidence": 2
+      }
+    },
+    "sports/prospective.sqlite": {
+      "frozen_prefix_verified": true,
+      "current_head": {
+        "records": 34,
+        "head_sha256": "814ecf6a8b2cb49775c961c68a8bab23db4b378ecfa241d79241ff6e03fa6868",
+        "integrity": "verified"
+      },
+      "append_counts_by_kind": {}
+    }
+  },
+  "b1r": {
+    "forecasts.sqlite": {
+      "frozen_prefix_verified": true,
+      "current_head": {
+        "records": 17743,
+        "head_sha256": "e1bb18b8e12694ae0c3b5a3ac3382ba304f027d4d0e2b734df9a3315c3eecf33",
+        "integrity": "verified"
+      },
+      "append_counts_by_kind": {
+        "evidence": 12,
+        "forecast": 6
+      }
+    },
+    "domains/forecasts.sqlite": {
+      "frozen_prefix_verified": true,
+      "current_head": {
+        "records": 359,
+        "head_sha256": "4399b5e470a1bc062d74fceaf5a200ca385a10433c3532a1c82e34a5c1a62d59",
+        "integrity": "verified"
+      },
+      "append_counts_by_kind": {
+        "domain_evidence": 2
+      }
+    },
+    "sports/prospective.sqlite": {
+      "frozen_prefix_verified": true,
+      "current_head": {
+        "records": 34,
+        "head_sha256": "814ecf6a8b2cb49775c961c68a8bab23db4b378ecfa241d79241ff6e03fa6868",
+        "integrity": "verified"
+      },
+      "append_counts_by_kind": {}
+    }
+  },
+  "b2r": {
+    "forecasts.sqlite": {
+      "frozen_prefix_verified": true,
+      "current_head": {
+        "records": 17737,
+        "head_sha256": "33b9b340c1e08b4ecaf57ddfac0b9cba9f7f056934687940f59b31f3490875e0",
+        "integrity": "verified"
+      },
+      "append_counts_by_kind": {
+        "evidence": 8,
+        "forecast": 4
+      }
+    },
+    "domains/forecasts.sqlite": {
+      "frozen_prefix_verified": true,
+      "current_head": {
+        "records": 359,
+        "head_sha256": "11cc8de995cdd374742026ef3632ce5198f74996ccb51a5a8119a7754bebdbbe",
+        "integrity": "verified"
+      },
+      "append_counts_by_kind": {
+        "domain_evidence": 2
+      }
+    },
+    "sports/prospective.sqlite": {
+      "frozen_prefix_verified": true,
+      "current_head": {
+        "records": 34,
+        "head_sha256": "814ecf6a8b2cb49775c961c68a8bab23db4b378ecfa241d79241ff6e03fa6868",
+        "integrity": "verified"
+      },
+      "append_counts_by_kind": {}
+    }
+  },
+  "a2r": {
+    "forecasts.sqlite": {
+      "frozen_prefix_verified": true,
+      "current_head": {
+        "records": 17743,
+        "head_sha256": "56e2894ac7c50899f1c67ecc9fc5bdad2fdad0fc00b4253314c40f4ded5e2674",
+        "integrity": "verified"
+      },
+      "append_counts_by_kind": {
+        "evidence": 12,
+        "forecast": 6
+      }
+    },
+    "domains/forecasts.sqlite": {
+      "frozen_prefix_verified": true,
+      "current_head": {
+        "records": 359,
+        "head_sha256": "d3c5ba2147efb9da987d2fe40722be5ee2c789e060d4a3d30277b0285bf8dd54",
+        "integrity": "verified"
+      },
+      "append_counts_by_kind": {
+        "domain_evidence": 2
+      }
+    },
+    "sports/prospective.sqlite": {
+      "frozen_prefix_verified": true,
+      "current_head": {
+        "records": 34,
+        "head_sha256": "814ecf6a8b2cb49775c961c68a8bab23db4b378ecfa241d79241ff6e03fa6868",
+        "integrity": "verified"
+      },
+      "append_counts_by_kind": {}
+    }
+  },
+  "live": {
+    "forecasts.sqlite": {
+      "frozen_prefix_verified": true,
+      "current_head": {
+        "records": 17725,
+        "head_sha256": "0940e7ff825f643bbc4deac28879bf6cde1b9a0d37eaeb76843fac677118f01f",
+        "integrity": "verified"
+      },
+      "append_counts_by_kind": {}
+    },
+    "domains/forecasts.sqlite": {
+      "frozen_prefix_verified": true,
+      "current_head": {
+        "records": 357,
+        "head_sha256": "4c6d2e49f06a6165bd933ceef69aed4e04984701e1bf4dd35527d738337c050b",
+        "integrity": "verified"
+      },
+      "append_counts_by_kind": {}
+    },
+    "sports/prospective.sqlite": {
+      "frozen_prefix_verified": true,
+      "current_head": {
+        "records": 34,
+        "head_sha256": "814ecf6a8b2cb49775c961c68a8bab23db4b378ecfa241d79241ff6e03fa6868",
+        "integrity": "verified"
+      },
+      "append_counts_by_kind": {}
+    }
+  }
+}

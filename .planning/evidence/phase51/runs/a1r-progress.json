@@ -1,0 +1,49 @@
+{
+  "elapsed": 907.0484611960128,
+  "timing": {
+    "ManagedEventStore.__init__": {
+      "calls": 1,
+      "seconds": 0.0,
+      "bytes": 0
+    },
+    "neraium_poly.data.segmented._tree_size": {
+      "calls": 828,
+      "seconds": 251.00550192315131,
+      "bytes": 0
+    },
+    "sqlite.quick_check": {
+      "calls": 12501,
+      "seconds": 56.68221291620284,
+      "bytes": 0
+    },
+    "ManagedEventStore._recover": {
+      "calls": 1,
+      "seconds": 0.0,
+      "bytes": 0
+    },
+    "neraium_poly.data.segmented._sha": {
+      "calls": 37496,
+      "seconds": 198.7855913382955,
+      "bytes": 122606782320
+    },
+    "ManagedEventStore._index_segment": {
+      "calls": 12500,
+      "seconds": 445.1812044917606,
+      "bytes": 0
+    },
+    "ManagedEventStore._verify_compressed": {
+      "calls": 12498,
+      "seconds": 270.7313068564981,
+      "bytes": 0
+    }
+  },
+  "io": {
+    "rchar": 243670164991,
+    "wchar": 36513528,
+    "syscr": 24450798,
+    "syscw": 108983,
+    "read_bytes": 28581306368,
+    "write_bytes": 2435301376,
+    "cancelled_write_bytes": 36446208
+  }
+}

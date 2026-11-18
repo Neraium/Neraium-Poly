@@ -1,0 +1,229 @@
+{
+  "order": [
+    "a1r",
+    "b1r",
+    "b2r",
+    "a2r"
+  ],
+  "runs": {
+    "a1r": {
+      "source": "8d8c115d20fc86604cffc4af64657f967b499b63",
+      "runtime_initialized_seconds": 962.8469369802624,
+      "state_verification_complete_seconds": 963.8814921029843,
+      "first_http_seconds": 963.9792349319905,
+      "readiness_seconds": 973.4489257978275,
+      "passed_900_seconds": false,
+      "margin_seconds": -73.44892579782754,
+      "io_until_initialized": {
+        "rchar": 250363254815,
+        "wchar": 36593897,
+        "syscr": 25269731,
+        "syscw": 138130,
+        "read_bytes": 30363942912,
+        "write_bytes": 2634256384,
+        "cancelled_write_bytes": 70193152
+      },
+      "readiness": "real experimental runtime, archive reconstructed; isolated state verified, healthy live-reference ingest and paper flags, shadow report withheld",
+      "state_equivalent_at_start": true,
+      "forecast_heads_unchanged_after_ready_cycle": false,
+      "cache_preflight": {
+        "sample_files": 258,
+        "resident_pages": 120365,
+        "total_pages": 183873,
+        "resident_fraction": 0.6546094315097921,
+        "page_size": 4096,
+        "eviction": "none",
+        "host_meminfo": {
+          "MemAvailable": "247579000 kB",
+          "Cached": "229468040 kB",
+          "SwapTotal": "0 kB"
+        },
+        "host_io_pressure": "some avg10=24.97 avg60=24.17 avg300=16.15 total=112702164296\nfull avg10=24.97 avg60=24.16 avg300=16.11 total=112601280613\n",
+        "live_experimental_pid": "660816"
+      },
+      "timings_inclusive_not_additive": {
+        "archive_constructor_seconds": 951.4168693176471,
+        "archive_recover_seconds": 894.9217666289769,
+        "index_replay_segments": 12766,
+        "index_replay_seconds": 456.3253509309143,
+        "catalog_record_calls_through_readiness": 103,
+        "compressed_verification_seconds": 278.4302789205685,
+        "standalone_hash_seconds": 206.42684639664367,
+        "standalone_hash_bytes": 125400160610,
+        "archive_tree_measure_calls": 861,
+        "archive_tree_measure_seconds": 263.69763549091294,
+        "sqlite_quick_check_seconds": 57.35601719561964
+      },
+      "peak_observed_upper_allocated_bytes": 2570371072,
+      "min_observed_live_free_bytes": 148409012224,
+      "max_observed_memory_peak_bytes": 2147483648,
+      "oom_killed": false
+    },
+    "b1r": {
+      "source": "8d9756ff8a514ad87947646ffc330f0c3e10efc8",
+      "runtime_initialized_seconds": 826.8182647922076,
+      "state_verification_complete_seconds": 827.7892053341493,
+      "first_http_seconds": 827.8798991772346,
+      "readiness_seconds": 837.3550196420401,
+      "passed_900_seconds": true,
+      "margin_seconds": 62.64498035795987,
+      "io_until_initialized": {
+        "rchar": 175735914169,
+        "wchar": 36593880,
+        "syscr": 25134610,
+        "syscw": 138130,
+        "read_bytes": 27242680320,
+        "write_bytes": 2634166272,
+        "cancelled_write_bytes": 70914048
+      },
+      "readiness": "real experimental runtime, archive reconstructed; isolated state verified, healthy live-reference ingest and paper flags, shadow report withheld",
+      "state_equivalent_at_start": true,
+      "forecast_heads_unchanged_after_ready_cycle": false,
+      "cache_preflight": {
+        "sample_files": 258,
+        "resident_pages": 117308,
+        "total_pages": 183873,
+        "resident_fraction": 0.6379838257928027,
+        "page_size": 4096,
+        "eviction": "none",
+        "host_meminfo": {
+          "MemAvailable": "246824356 kB",
+          "Cached": "226063612 kB",
+          "SwapTotal": "0 kB"
+        },
+        "host_io_pressure": "some avg10=14.81 avg60=19.48 avg300=15.91 total=112831469199\nfull avg10=14.81 avg60=19.48 avg300=15.88 total=112729919461\n",
+        "live_experimental_pid": "660816"
+      },
+      "timings_inclusive_not_additive": {
+        "archive_constructor_seconds": 815.7436377839185,
+        "archive_recover_seconds": 795.7606647750363,
+        "index_replay_segments": 12766,
+        "index_replay_seconds": 414.5683977245353,
+        "catalog_record_calls_through_readiness": 136,
+        "compressed_verification_seconds": 263.907475435175,
+        "standalone_hash_seconds": 94.9881002032198,
+        "standalone_hash_bytes": 50772824064,
+        "archive_tree_measure_calls": 770,
+        "archive_tree_measure_seconds": 233.3563133776188,
+        "sqlite_quick_check_seconds": 19.182876182254404
+      },
+      "peak_observed_upper_allocated_bytes": 2571988992,
+      "min_observed_live_free_bytes": 145837928448,
+      "max_observed_memory_peak_bytes": 2147483648,
+      "oom_killed": false
+    },
+    "b2r": {
+      "source": "8d9756ff8a514ad87947646ffc330f0c3e10efc8",
+      "runtime_initialized_seconds": 796.6027571917512,
+      "state_verification_complete_seconds": 797.566623353865,
+      "first_http_seconds": 797.6587680419907,
+      "readiness_seconds": 804.4780927919783,
+      "passed_900_seconds": true,
+      "margin_seconds": 95.52190720802173,
+      "io_until_initialized": {
+        "rchar": 175735918266,
+        "wchar": 36593875,
+        "syscr": 25134611,
+        "syscw": 138130,
+        "read_bytes": 26665844736,
+        "write_bytes": 2635804672,
+        "cancelled_write_bytes": 70078464
+      },
+      "readiness": "real experimental runtime, archive reconstructed; isolated state verified, healthy live-reference ingest and paper flags, shadow report withheld",
+      "state_equivalent_at_start": true,
+      "forecast_heads_unchanged_after_ready_cycle": false,
+      "cache_preflight": {
+        "sample_files": 258,
+        "resident_pages": 119624,
+        "total_pages": 183873,
+        "resident_fraction": 0.6505794760514051,
+        "page_size": 4096,
+        "eviction": "none",
+        "host_meminfo": {
+          "MemAvailable": "246701940 kB",
+          "Cached": "227580756 kB",
+          "SwapTotal": "0 kB"
+        },
+        "host_io_pressure": "some avg10=9.31 avg60=13.80 avg300=13.08 total=112950117240\nfull avg10=9.31 avg60=13.80 avg300=13.07 total=112848427318\n",
+        "live_experimental_pid": "660816"
+      },
+      "timings_inclusive_not_additive": {
+        "archive_constructor_seconds": 785.0241703679785,
+        "archive_recover_seconds": 754.1747201322578,
+        "index_replay_segments": 12766,
+        "index_replay_seconds": 384.69541970128193,
+        "catalog_record_calls_through_readiness": 73,
+        "compressed_verification_seconds": 255.5903138150461,
+        "standalone_hash_seconds": 90.6246027466841,
+        "standalone_hash_bytes": 50772824064,
+        "archive_tree_measure_calls": 728,
+        "archive_tree_measure_seconds": 212.67673562886193,
+        "sqlite_quick_check_seconds": 28.88599744439125
+      },
+      "peak_observed_upper_allocated_bytes": 2568884224,
+      "min_observed_live_free_bytes": 143191662592,
+      "max_observed_memory_peak_bytes": 2147483648,
+      "oom_killed": false
+    },
+    "a2r": {
+      "source": "8d8c115d20fc86604cffc4af64657f967b499b63",
+      "runtime_initialized_seconds": 869.7949164607562,
+      "state_verification_complete_seconds": 870.7424077000469,
+      "first_http_seconds": 870.8314786306582,
+      "readiness_seconds": 881.9055276629515,
+      "passed_900_seconds": true,
+      "margin_seconds": 18.0944723370485,
+      "io_until_initialized": {
+        "rchar": 250363250720,
+        "wchar": 36593900,
+        "syscr": 25269730,
+        "syscw": 138130,
+        "read_bytes": 26703335424,
+        "write_bytes": 2634911744,
+        "cancelled_write_bytes": 70799360
+      },
+      "readiness": "real experimental runtime, archive reconstructed; isolated state verified, healthy live-reference ingest and paper flags, shadow report withheld",
+      "state_equivalent_at_start": true,
+      "forecast_heads_unchanged_after_ready_cycle": false,
+      "cache_preflight": {
+        "sample_files": 258,
+        "resident_pages": 121073,
+        "total_pages": 183873,
+        "resident_fraction": 0.6584599152676032,
+        "page_size": 4096,
+        "eviction": "none",
+        "host_meminfo": {
+          "MemAvailable": "246689716 kB",
+          "Cached": "227590212 kB",
+          "SwapTotal": "0 kB"
+        },
+        "host_io_pressure": "some avg10=16.60 avg60=19.11 avg300=14.68 total=113070960205\nfull avg10=16.60 avg60=19.07 avg300=14.66 total=112969142348\n",
+        "live_experimental_pid": "660816"
+      },
+      "timings_inclusive_not_additive": {
+        "archive_constructor_seconds": 858.8941506533884,
+        "archive_recover_seconds": 814.2784602986649,
+        "index_replay_segments": 12766,
+        "index_replay_seconds": 403.4550158875063,
+        "catalog_record_calls_through_readiness": 130,
+        "compressed_verification_seconds": 263.4162150043994,
+        "standalone_hash_seconds": 188.4200054826215,
+        "standalone_hash_bytes": 125400160610,
+        "archive_tree_measure_calls": 788,
+        "archive_tree_measure_seconds": 231.9393888777122,
+        "sqlite_quick_check_seconds": 42.577072749845684
+      },
+      "peak_observed_upper_allocated_bytes": 2571481088,
+      "min_observed_live_free_bytes": 140522070016,
+      "max_observed_memory_peak_bytes": 2147483648,
+      "oom_killed": false
+    }
+  },
+  "candidate_readiness_repeated_pass": true,
+  "candidate_slowest_measured_seconds": 837.3550196420401,
+  "candidate_slowest_margin_seconds": 62.64498035795987,
+  "resources": "1 CPU, 2 GiB RAM, 32 tasks, no host swap. Shared read-only sealed sources, private mutable DBs and ext4 overlay upper, per-run isolated mount/PID namespace. No cache evictions.",
+  "frozen_trials": 14,
+  "proof_hashes": 22,
+  "source_files": 1098
+}

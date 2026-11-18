@@ -1,0 +1,246 @@
+{
+  "source": "8d8c115d20fc86604cffc4af64657f967b499b63",
+  "runtime_initialized_seconds": 962.8469369802624,
+  "state_verification_complete_seconds": 963.8814921029843,
+  "first_http_seconds": 963.9792349319905,
+  "readiness_seconds": 973.4489257978275,
+  "passed_900_seconds": false,
+  "margin_seconds": -73.44892579782754,
+  "state_equivalent_at_start": {
+    "accounts": {
+      "paper-live": {
+        "risk_sha256": "7c300e3be499a16dcff430297d22ed17905e0cc7b95291afceefbc89913addc5",
+        "positions": 0,
+        "unreleased_reservations": 0,
+        "fills": 0,
+        "orders": 0,
+        "broker_orders_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "stop_latched": false
+      },
+      "experimental-paper": {
+        "risk_sha256": "8a38b86a80549d3b4cc7d62c1f1c33207b1268d1fb80859e152c9f1ee77d3c11",
+        "positions": 0,
+        "unreleased_reservations": 0,
+        "fills": 10,
+        "orders": 13,
+        "broker_orders_sha256": "4621469d77cb332bb5a5ca43731d4caf8d4af27f8c64bb0539ce77b0cff5e69c",
+        "stop_latched": true
+      }
+    },
+    "journals": {
+      "forecasts.sqlite": {
+        "records": 17725,
+        "head_sha256": "0940e7ff825f643bbc4deac28879bf6cde1b9a0d37eaeb76843fac677118f01f",
+        "integrity": "verified"
+      },
+      "domains/forecasts.sqlite": {
+        "records": 357,
+        "head_sha256": "4c6d2e49f06a6165bd933ceef69aed4e04984701e1bf4dd35527d738337c050b",
+        "integrity": "verified"
+      },
+      "sports/prospective.sqlite": {
+        "records": 34,
+        "head_sha256": "814ecf6a8b2cb49775c961c68a8bab23db4b378ecfa241d79241ff6e03fa6868",
+        "integrity": "verified"
+      }
+    },
+    "native": {
+      "proofs": {
+        "v44-173bb0acc93a795fc4640d1a2ac99a3cb8df4ef54cf34921d9ab962ac76c26e6": "8d8cae2803162bd4217a68ce33324d65fe368bfb8e7fe679e588a5acbb690411",
+        "v44-1e712eb49b71c772efb426df887825d5dd79daa649057eba4dc5928585c669ad": "4e105991617faef61455f6b052a4f7c1a8c96c6287210178f0581de1a082f532",
+        "v44-20302543041fbee6f32d4e0c8bb3e3677d8be7daad4d0fb50297bd96f3357f40": "c369678c83d33e805db1a941d7fd6c268ff63fd60489dae18bd5ef148d48ab74",
+        "v44-28b57fb676d4bb1924a13ded2b1932004fd1b54d11349ce136cad8ccda3983e2": "8474e89a4ee64c25e9b16fe8b97cb8971cbc05af56a084cc41b4d5b7e2c95a91",
+        "v44-2acc03f35d152c87e80ae4929b0c6b1866f7834c8d56ea05b5adf2ceb6566e65": "1f29cffc1a2a516c29887619fcaa2a22ca521189af4a71e5eb7753281eef6f77",
+        "v44-39c2f58262870649b0e54ce2228d24c6d0c1e88ecd5087f6599b325bef99e562": "22c9d57e71b64fd077b964043d09c6dd09d34abafc37814bc0bad1c98bade8b9",
+        "v44-3aa1f7de44fb5dea27c79cea15a9abb1344bfbee9bfd2a4254043db70b7fba14": "e3fca18665c494de89befe666b375feaca94121fae6574b373cd3574754c3be2",
+        "v44-50267e1135387c4c6b43a4fd19d9b972d7fe43b4d8a16c8416b132b1e261bc95": "f4d247acf7789508f5de137d3ff8f5e9ba8cb9d4d81b7b12fe9313d1df10c2af",
+        "v44-539ba2de2c37cf975fa271761e05ee4533f012104380be35ff4867904fcb04ef": "bea52a219122b2093f805f073f10d078e5d3fc865370712289264310b60eb4ae",
+        "v44-5a9519e5b5c2d87262f8cdba92fcf6e42e5ad6aff8af13250a851ea204d95456": "8605935b2f2a4458fd361a4154b890eb5a7c454651e9b5426da868f166a2ce81",
+        "v44-6eda2ded6969199d3dea7ae07d7256c2aff71b73a9d1044628ca20c04d8e796e": "76a5f36335c7025a328638183dd3621478aadeed554b2ab187fa0206d0c4d327",
+        "v44-7add39c0c53be707cf48fe9d13cc5f23ef1d03cf81783b01db42b866db5573c5": "96f11091e8246917c0c67ca7fefdb04850cd9d1d708a3491101fb36f6da63868",
+        "v44-7c39e601d894a09c18935776a7824b4d8671a120b0f25a11a4c3e6afecdebdfd": "efaf6dbbf4d4057791be7b6556e6faf784e332105e3d6fddd343aa5305623df5",
+        "v44-7d265bfb0dd42bcea931bfeb6366ca6ef25c5fdd3ab6d2ca0daef66a6e9b9013": "031c7b57b3610b6899fa60ea3ae1f6e8d9c97c7a8e48a3da7b546db25a66e8b3",
+        "v44-8204c72a57b42469d104c38c74400fea34e6dc9653d48949743bf72672e882b9": "af01decacf148e81120bd76b8746deef4dcd98688c3678605741328c86ce92b6",
+        "v44-8e9f0d0c25eb1ec1be9bec6e2457bf961257a65df6992f55661c470aacbbc27a": "47b928c2ecde6969f760300e09d6736cf2c8cc737065cebfcd3dbd2745f9ab27",
+        "v44-93bb35759bde917f1151d6cf0ce268ad19efdb2c82c0bef4c81df6c8ac76efef": "b713bc72c51b9747e702a8366f2dc76704c8f1cb578eafd63f5138217121af55",
+        "v44-aa6cc102f0d4ac21be830f85cdf959dbb0517f9a13edf08fb20c60a66b42b087": "3e788ac3dac64fa1f301771664c6531f2ace1f67599cf498fbc7a57c538de2be",
+        "v44-bb4e0b38211b3123dcc24a3c768328ed39a8fab357d5d51aae6edfb55509657c": "386cfb5a26b3fb037a522d8c45ebb4a92c97e2bb3be64c5e4b86e734536ebe65",
+        "v44-ce1d1aedea426966fa93eddbf05af1240739e82076f4c40e03eb2c1fcfe6825e": "6e686fe5a378bab38c0eb0e8c1b812bad5ad1e027146ec856916585ed9c28cbe",
+        "v44-dca01d6fd320bb19601e3354c4a0c1bd4c48bbc134f8931cefbc1935defddf05": "3ea1263d40d62b7908806634f1c5b6ded26085adcc2653eb2b5aacdd4f81a042",
+        "v44-f2221a4c9ce1fe9e69d9451380073e18a77b973583f0db8a32130f8c9d6a86cc": "10acbe1e41f28a48c9b795fc2d3d70b86c1d5db06c84771d4b57a9ea17b8f251"
+      },
+      "original_files": 1098,
+      "backup_sha256": "f6c44edd1dbb5801d67b2905f0646186bf8707ee999991f38d96e822b6077671"
+    },
+    "trials": {
+      "c0e130e983b444961da67717c223754f031979d96ed7686b0ce4adf9c87904da": "30f22330737f0ce43b58e7ba8b2eabbbfa9f25990e929a8e8602f0422ec397b1",
+      "b6f28132057d4eb38808c9d7e553834cdd246de5eabf5c553e9cfa28395ab7fa": "b6742f0606e3043f6c70e103d249daba4ce7a5ae9dda4e3d820fc0408da9a4bc",
+      "a9829b5c2da6b97e48cf1b06d84e5ff5d74f0aaa1db209eb785234bd248bcf27": "8e78a0cfa5bb988371810035ce8011324b49a7a44b139e1e91c7c59f683458d6",
+      "2ee38f3752ad734556551fe8a3dff8b2a9a21c5c7fe8624a6d80ccb024d905bf": "063bc3d0d4fa7fd250502f6bdd908b42d4f27a9c6cb6a7a4c8978f9e9d7ad11e",
+      "c47fb2763182467d11fd259963020eb70e295cd4a00b33b7efc5062aec42171d": "6491f05a7f30bfdf8dd03670b5f31a48e32b53ee8610289dc28206feae3dce25",
+      "8bac5c400e8effba6ae0e6d48b5ab2084603b34f9800beef922081631d84475c": "5f3ada721252db9e57877d92088f928457bdb00589a94b15dd7e6d50a6a2234d",
+      "712a8c4feb1231cc309ae0bd6df73bc81ad03cfb6c7f337458761fe3f6baf4dc": "69f13fa66a5185289d32c8bdd2a3d30fa30bda06ea356b0fe8256c152dc568ad",
+      "6ddca38152c734eb2d1620f6b2d6a14ef8f7ebf215a051aa64fda9182417adea": "6c08e8084a394725d459743f6813ba78db8f915aacd226de07c959da5a6d1d62",
+      "345eb83cbab9ea4b6e9896e446b3564f22fc0aeea5f1f018963b172a768b24b7": "3969cb0763e7cec43a92b68a61a5ff1520db9c2285c4ca8e56891659dcdff356",
+      "2566beac1d90b5651446664dfa548ecb1d50902690264ede9fdcc1d3a401ed9f": "95fde22b8ecf4c61949fdaff334c169c16a4cb665fbe3284eee73d058672b277",
+      "fd3b29715328a0e3eda72f80b39eb300164c4e32e66e03a9f13a8a1d5d2fa8f8": "53580cacc5f283494066f10b63c9d638144ce76aa3d2d2c823bc2079ec40dbaa",
+      "a038b8990ca383f625737d35e21026889719f90efff99ca1170a6bc86f94254b": "d8d1770cb3c24ee27ad0a1cce1737e71362742451a62490e7f6593f9dc1d2ab9",
+      "450f610a4bddb996871539b9c4b356e0ec9850b9f6af07106f04b0561ab0de75": "a5c5179dd2d8e9fbd40802396589e886daddcc4a9469ba479dd10d4e1480a1e7",
+      "215c4f9c0653e8c0fb3da172dc95facf71c715646ba3595f72242fa3559fcb24": "d4b73640c14ed780e1b4e4a25866585de01be3765a159d608d1b1215180d71ff"
+    }
+  },
+  "stage_metrics_inclusive": {
+    "ManagedEventStore.__init__": {
+      "calls": 1,
+      "seconds": 951.4168693176471,
+      "bytes": 0
+    },
+    "neraium_poly.data.segmented._tree_size": {
+      "calls": 861,
+      "seconds": 263.69763549091294,
+      "bytes": 0
+    },
+    "sqlite.quick_check": {
+      "calls": 12779,
+      "seconds": 57.35601719561964,
+      "bytes": 0
+    },
+    "ManagedEventStore._recover": {
+      "calls": 1,
+      "seconds": 894.9217666289769,
+      "bytes": 0
+    },
+    "neraium_poly.data.segmented._sha": {
+      "calls": 38293,
+      "seconds": 206.42684639664367,
+      "bytes": 125400160610
+    },
+    "ManagedEventStore._index_segment": {
+      "calls": 12766,
+      "seconds": 456.3253509309143,
+      "bytes": 0
+    },
+    "ManagedEventStore._verify_compressed": {
+      "calls": 12764,
+      "seconds": 278.4302789205685,
+      "bytes": 0
+    },
+    "ManagedEventStore.status": {
+      "calls": 2,
+      "seconds": 2.698809653054923,
+      "bytes": 0
+    },
+    "ManagedEventStore._catalog_record": {
+      "calls": 103,
+      "seconds": 0.036249769385904074,
+      "bytes": 0
+    },
+    "neraium_poly.data.cold._sha": {
+      "calls": 7,
+      "seconds": 0.01932635996490717,
+      "bytes": 18210153
+    }
+  },
+  "io_until_initialized": {
+    "rchar": 250363254815,
+    "wchar": 36593897,
+    "syscr": 25269731,
+    "syscw": 138130,
+    "read_bytes": 30363942912,
+    "write_bytes": 2634256384,
+    "cancelled_write_bytes": 70193152
+  },
+  "readiness": "real experimental runtime, archive reconstructed; isolated state verified, healthy live-reference ingest and paper flags, shadow report withheld",
+  "poll_rejections": [
+    {
+      "at": 963.9792565661483,
+      "health": "degraded",
+      "last_error": null
+    },
+    {
+      "at": 964.5205887500197,
+      "health": "degraded",
+      "last_error": null
+    },
+    {
+      "at": 965.0243117632344,
+      "health": "degraded",
+      "last_error": null
+    },
+    {
+      "at": 965.5279265539721,
+      "health": "degraded",
+      "last_error": null
+    },
+    {
+      "at": 966.0314328791574,
+      "health": "degraded",
+      "last_error": null
+    },
+    {
+      "at": 966.5395410992205,
+      "health": "degraded",
+      "last_error": null
+    },
+    {
+      "at": 967.0430663791485,
+      "health": "degraded",
+      "last_error": null
+    },
+    {
+      "at": 967.5467172912322,
+      "health": "degraded",
+      "last_error": null
+    },
+    {
+      "at": 968.0756927672774,
+      "health": "degraded",
+      "last_error": null
+    },
+    {
+      "at": 968.5851325062104,
+      "health": "degraded",
+      "last_error": null
+    },
+    {
+      "at": 969.0933775641024,
+      "health": "degraded",
+      "last_error": null
+    },
+    {
+      "at": 969.5969912209548,
+      "health": "degraded",
+      "last_error": null
+    },
+    {
+      "at": 970.1013745819218,
+      "health": "degraded",
+      "last_error": null
+    },
+    {
+      "at": 970.605935677886,
+      "health": "degraded",
+      "last_error": null
+    },
+    {
+      "at": 971.1125709419139,
+      "health": "degraded",
+      "last_error": null
+    },
+    {
+      "at": 971.618927013129,
+      "health": "degraded",
+      "last_error": null
+    },
+    {
+      "at": 972.123505059164,
+      "health": "degraded",
+      "last_error": null
+    },
+    {
+      "at": 972.6267052502371,
+      "health": "degraded",
+      "last_error": null
+    }
+  ]
+}

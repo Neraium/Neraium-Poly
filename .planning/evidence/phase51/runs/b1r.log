@@ -1,0 +1,13 @@
+Nov 18 01:28:16 ip-172-31-67-49 systemd[1]: Started phase51-full-b1r.service - /usr/bin/unshare -m --propagation private --pid --fork --mount-proc /bin/bash /home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/phase51-full-recovery/.planning/evidence/phase51/mount-run.sh /home/ubuntu/phase51-full.NX8yez b1r /home/ubuntu/phase51-source.JESegb/backend /home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/phase51-full-recovery/.planning/evidence/phase51/bench.py 8d9756ff8a514ad87947646ffc330f0c3e10efc8.
+Nov 18 01:41:56 ip-172-31-67-49 unshare[764491]: phase16_recovery_withheld
+Nov 18 01:41:56 ip-172-31-67-49 unshare[764491]: Traceback (most recent call last):
+Nov 18 01:41:56 ip-172-31-67-49 unshare[764491]:   File "/home/ubuntu/phase51-source.JESegb/backend/neraium_poly/experimental/runtime.py", line 155, in __init__
+Nov 18 01:41:56 ip-172-31-67-49 unshare[764491]:     self.phase16 = ContinuousQualification(self.events)
+Nov 18 01:41:56 ip-172-31-67-49 unshare[764491]:                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Nov 18 01:41:56 ip-172-31-67-49 unshare[764491]:   File "/home/ubuntu/phase51-source.JESegb/backend/neraium_poly/research/phase16/continuous.py", line 64, in __init__
+Nov 18 01:41:56 ip-172-31-67-49 unshare[764491]:     self._restore(state)
+Nov 18 01:41:56 ip-172-31-67-49 unshare[764491]:   File "/home/ubuntu/phase51-source.JESegb/backend/neraium_poly/research/phase16/continuous.py", line 99, in _restore
+Nov 18 01:41:56 ip-172-31-67-49 unshare[764491]:     raise ValueError("qualification checkpoint model policy differs")
+Nov 18 01:41:56 ip-172-31-67-49 unshare[764491]: ValueError: qualification checkpoint model policy differs
+Nov 18 01:42:36 ip-172-31-67-49 systemd[1]: phase51-full-b1r.service: Deactivated successfully.
+Nov 18 01:42:36 ip-172-31-67-49 systemd[1]: phase51-full-b1r.service: Consumed 11min 41.064s CPU time.

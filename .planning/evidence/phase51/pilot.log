@@ -1,0 +1,27 @@
+Nov 18 00:54:33 ip-172-31-67-49 systemd[1]: Started phase51-full-a1.service - /usr/bin/unshare -m --propagation private --pid --fork --mount-proc /bin/bash /home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/phase51-full-recovery/.planning/evidence/phase51/mount-run.sh /home/ubuntu/phase51-full.NX8yez a1 /home/ubuntu/phase51-source.R753dV/backend /home/ubuntu/.local/share/neraium-citadel/worktrees/3e041d43987e0512/phase51-full-recovery/.planning/evidence/phase51/bench.py 8d8c115d20fc86604cffc4af64657f967b499b63.
+Nov 18 01:09:39 ip-172-31-67-49 unshare[723843]: phase16_recovery_withheld
+Nov 18 01:09:39 ip-172-31-67-49 unshare[723843]: Traceback (most recent call last):
+Nov 18 01:09:39 ip-172-31-67-49 unshare[723843]:   File "/home/ubuntu/phase51-source.R753dV/backend/neraium_poly/experimental/runtime.py", line 155, in __init__
+Nov 18 01:09:39 ip-172-31-67-49 unshare[723843]:     self.phase16 = ContinuousQualification(self.events)
+Nov 18 01:09:39 ip-172-31-67-49 unshare[723843]:                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Nov 18 01:09:39 ip-172-31-67-49 unshare[723843]:   File "/home/ubuntu/phase51-source.R753dV/backend/neraium_poly/research/phase16/continuous.py", line 64, in __init__
+Nov 18 01:09:39 ip-172-31-67-49 unshare[723843]:     self._restore(state)
+Nov 18 01:09:39 ip-172-31-67-49 unshare[723843]:   File "/home/ubuntu/phase51-source.R753dV/backend/neraium_poly/research/phase16/continuous.py", line 99, in _restore
+Nov 18 01:09:39 ip-172-31-67-49 unshare[723843]:     raise ValueError("qualification checkpoint model policy differs")
+Nov 18 01:09:39 ip-172-31-67-49 unshare[723843]: ValueError: qualification checkpoint model policy differs
+Nov 18 01:09:46 ip-172-31-67-49 unshare[723843]: phase26_recovery_withheld
+Nov 18 01:09:46 ip-172-31-67-49 unshare[723843]: Traceback (most recent call last):
+Nov 18 01:09:46 ip-172-31-67-49 unshare[723843]:   File "/home/ubuntu/phase51-source.R753dV/backend/neraium_poly/experimental/runtime.py", line 289, in __init__
+Nov 18 01:09:46 ip-172-31-67-49 unshare[723843]:     self.phase26_index = ResearchIndex(config.data_dir/"research-projection.sqlite", source_directory=config.data_dir)
+Nov 18 01:09:46 ip-172-31-67-49 unshare[723843]:                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Nov 18 01:09:46 ip-172-31-67-49 unshare[723843]:   File "/home/ubuntu/phase51-source.R753dV/backend/neraium_poly/research/phase26/index.py", line 63, in __init__
+Nov 18 01:09:46 ip-172-31-67-49 unshare[723843]:     if row is None or row['value']!=identity:raise ValueError('projection source/path/policy identity mismatch')
+Nov 18 01:09:46 ip-172-31-67-49 unshare[723843]:                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Nov 18 01:09:46 ip-172-31-67-49 unshare[723843]: ValueError: projection source/path/policy identity mismatch
+Nov 18 01:09:46 ip-172-31-67-49 unshare[723843]: phase28_recovery_withheld
+Nov 18 01:09:46 ip-172-31-67-49 unshare[723843]: Traceback (most recent call last):
+Nov 18 01:09:46 ip-172-31-67-49 unshare[723843]:   File "/home/ubuntu/phase51-source.R753dV/backend/neraium_poly/experimental/runtime.py", line 317, in __init__
+Nov 18 01:09:46 ip-172-31-67-49 unshare[723843]:     raise ValueError("volume research requires anchored source projection")
+Nov 18 01:09:46 ip-172-31-67-49 unshare[723843]: ValueError: volume research requires anchored source projection
+Nov 18 01:10:15 ip-172-31-67-49 systemd[1]: phase51-full-a1.service: Deactivated successfully.
+Nov 18 01:10:15 ip-172-31-67-49 systemd[1]: phase51-full-a1.service: Consumed 12min 27.724s CPU time, 2.0G memory peak, 0B memory swap peak.

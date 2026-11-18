@@ -1,0 +1,32 @@
+{
+  "at": "2026-11-18T01:03:36.605768+00:00",
+  "free_bytes": 155901272064,
+  "experimental_config_sha256": "9d21eb0e8b76923e875264507e7b058bdab81bc86e78a078ed939d40e11b8eb6",
+  "python": "Python 3.12.3",
+  "services": {
+    "neraium-poly-paper.service": {
+      "MainPID": "555731",
+      "NRestarts": "2",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "1073741824",
+      "MemorySwapMax": "infinity",
+      "TasksMax": "64",
+      "PAPER_TRADING": "true",
+      "LIVE_TRADING_ENABLED": "false",
+      "NERAIUM_SHADOW_RESEARCH": "unset",
+      "NERAIUM_DEPLOYED_SOURCE": "unset"
+    },
+    "neraium-poly-experimental.service": {
+      "MainPID": "660816",
+      "NRestarts": "0",
+      "CPUQuotaPerSecUSec": "1s",
+      "MemoryMax": "2147483648",
+      "MemorySwapMax": "infinity",
+      "TasksMax": "32",
+      "PAPER_TRADING": "true",
+      "LIVE_TRADING_ENABLED": "false",
+      "NERAIUM_SHADOW_RESEARCH": "false",
+      "NERAIUM_DEPLOYED_SOURCE": "8d8c115d20fc86604cffc4af64657f967b499b63"
+    }
+  }
+}
