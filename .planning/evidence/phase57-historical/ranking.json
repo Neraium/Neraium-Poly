@@ -1,0 +1,511 @@
+{
+  "markets_scanned": 35,
+  "priceable_markets": 26,
+  "event_families": 12,
+  "priceable_event_families": 10,
+  "priceable_market_hours": 1.295044715139601,
+  "coverage": "thin",
+  "gross_episodes": 0,
+  "distinct_after_fee": 0,
+  "modeled_usd_before_unknown_conversion": 0,
+  "best_episode_usd_before_unknown_conversion": null,
+  "markets": [
+    {
+      "market": "7085279",
+      "event": "1399686",
+      "question": "Bitcoin Up or Down on November 18?",
+      "priceable_market_hours": 0.10754318535327911,
+      "coverage": "thin",
+      "gross_episodes": 0,
+      "distinct_after_fee": 0,
+      "modeled_usd_before_unknown_conversion": 0,
+      "best_episode_usd_before_unknown_conversion": null
+    },
+    {
+      "market": "3580932",
+      "event": "848341",
+      "question": "Will Chiang Wan-an win the next Taipei Mayor election?",
+      "priceable_market_hours": 0.09837062219778697,
+      "coverage": "thin",
+      "gross_episodes": 0,
+      "distinct_after_fee": 0,
+      "modeled_usd_before_unknown_conversion": 0,
+      "best_episode_usd_before_unknown_conversion": null
+    },
+    {
+      "market": "3580933",
+      "event": "848341",
+      "question": "Will Puma Shen win the next Taipei Mayor election?",
+      "priceable_market_hours": 0.0945535304148992,
+      "coverage": "thin",
+      "gross_episodes": 0,
+      "distinct_after_fee": 0,
+      "modeled_usd_before_unknown_conversion": 0,
+      "best_episode_usd_before_unknown_conversion": null
+    },
+    {
+      "market": "6172750",
+      "event": "1250301",
+      "question": "Will WTI Crude Oil (WTI) hit (HIGH) $120 in November?",
+      "priceable_market_hours": 0.08375989218552907,
+      "coverage": "thin",
+      "gross_episodes": 0,
+      "distinct_after_fee": 0,
+      "modeled_usd_before_unknown_conversion": 0,
+      "best_episode_usd_before_unknown_conversion": null
+    },
+    {
+      "market": "6172755",
+      "event": "1250301",
+      "question": "Will WTI Crude Oil (WTI) hit (LOW) $70 in November?",
+      "priceable_market_hours": 0.08342269486851163,
+      "coverage": "thin",
+      "gross_episodes": 0,
+      "distinct_after_fee": 0,
+      "modeled_usd_before_unknown_conversion": 0,
+      "best_episode_usd_before_unknown_conversion": null
+    },
+    {
+      "market": "679030",
+      "event": "79987",
+      "question": "Will Jean-Luc M\u00e9lenchon win the 2027 French presidential election?",
+      "priceable_market_hours": 0.07797016024589538,
+      "coverage": "thin",
+      "gross_episodes": 0,
+      "distinct_after_fee": 0,
+      "modeled_usd_before_unknown_conversion": 0,
+      "best_episode_usd_before_unknown_conversion": null
+    },
+    {
+      "market": "3215012",
+      "event": "770451",
+      "question": "Will there be no change in Fed interest rates after the January 2027 meeting?",
+      "priceable_market_hours": 0.0686506912443373,
+      "coverage": "thin",
+      "gross_episodes": 0,
+      "distinct_after_fee": 0,
+      "modeled_usd_before_unknown_conversion": 0,
+      "best_episode_usd_before_unknown_conversion": null
+    },
+    {
+      "market": "3215009",
+      "event": "770450",
+      "question": "Will the Fed increase interest rates by 50+ bps after the December 2026 meeting?",
+      "priceable_market_hours": 0.06668500529395209,
+      "coverage": "thin",
+      "gross_episodes": 0,
+      "distinct_after_fee": 0,
+      "modeled_usd_before_unknown_conversion": 0,
+      "best_episode_usd_before_unknown_conversion": null
+    },
+    {
+      "market": "7105511",
+      "event": "1306312",
+      "question": "Spread: Lakers (-6.5)",
+      "priceable_market_hours": 0.06361515548494127,
+      "coverage": "thin",
+      "gross_episodes": 0,
+      "distinct_after_fee": 0,
+      "modeled_usd_before_unknown_conversion": 0,
+      "best_episode_usd_before_unknown_conversion": null
+    },
+    {
+      "market": "6207382",
+      "event": "1250301",
+      "question": "Will WTI Crude Oil (WTI) hit (LOW) $75 in November?",
+      "priceable_market_hours": 0.06327118045753903,
+      "coverage": "thin",
+      "gross_episodes": 0,
+      "distinct_after_fee": 0,
+      "modeled_usd_before_unknown_conversion": 0,
+      "best_episode_usd_before_unknown_conversion": null
+    },
+    {
+      "market": "3215008",
+      "event": "770450",
+      "question": "Will the Fed increase interest rates by 25 bps after the December 2026 meeting?",
+      "priceable_market_hours": 0.060353855888048806,
+      "coverage": "thin",
+      "gross_episodes": 0,
+      "distinct_after_fee": 0,
+      "modeled_usd_before_unknown_conversion": 0,
+      "best_episode_usd_before_unknown_conversion": null
+    },
+    {
+      "market": "3344920",
+      "event": "797729",
+      "question": "Will The Legend of Zelda: Ocarina of Time win Game of the Year at the 2026 Game Awards?",
+      "priceable_market_hours": 0.05903762545850542,
+      "coverage": "thin",
+      "gross_episodes": 0,
+      "distinct_after_fee": 0,
+      "modeled_usd_before_unknown_conversion": 0,
+      "best_episode_usd_before_unknown_conversion": null
+    },
+    {
+      "market": "3215013",
+      "event": "770451",
+      "question": "Will the Fed increase interest rates by 25 bps after the January 2027 meeting?",
+      "priceable_market_hours": 0.05647254202100966,
+      "coverage": "thin",
+      "gross_episodes": 0,
+      "distinct_after_fee": 0,
+      "modeled_usd_before_unknown_conversion": 0,
+      "best_episode_usd_before_unknown_conversion": null
+    },
+    {
+      "market": "3344909",
+      "event": "797729",
+      "question": "Will Phantom Blade Zero win Game of the Year at the 2026 Game Awards?",
+      "priceable_market_hours": 0.0482113062010871,
+      "coverage": "thin",
+      "gross_episodes": 0,
+      "distinct_after_fee": 0,
+      "modeled_usd_before_unknown_conversion": 0,
+      "best_episode_usd_before_unknown_conversion": null
+    },
+    {
+      "market": "7109762",
+      "event": "1407036",
+      "question": "Will Bitcoin dip to $62,000 on November 17?",
+      "priceable_market_hours": 0.043153942823410035,
+      "coverage": "thin",
+      "gross_episodes": 0,
+      "distinct_after_fee": 0,
+      "modeled_usd_before_unknown_conversion": 0,
+      "best_episode_usd_before_unknown_conversion": null
+    },
+    {
+      "market": "7109760",
+      "event": "1407036",
+      "question": "Will Bitcoin dip to $63,000 on November 17?",
+      "priceable_market_hours": 0.040099916126992964,
+      "coverage": "thin",
+      "gross_episodes": 0,
+      "distinct_after_fee": 0,
+      "modeled_usd_before_unknown_conversion": 0,
+      "best_episode_usd_before_unknown_conversion": null
+    },
+    {
+      "market": "6685533",
+      "event": "1250301",
+      "question": "Will WTI Crude Oil (WTI) hit (LOW) $65 in November?",
+      "priceable_market_hours": 0.033946426510810854,
+      "coverage": "thin",
+      "gross_episodes": 0,
+      "distinct_after_fee": 0,
+      "modeled_usd_before_unknown_conversion": 0,
+      "best_episode_usd_before_unknown_conversion": null
+    },
+    {
+      "market": "3215007",
+      "event": "770450",
+      "question": "Will there be no change in Fed interest rates after the December 2026 meeting?",
+      "priceable_market_hours": 0.02914344271024068,
+      "coverage": "thin",
+      "gross_episodes": 0,
+      "distinct_after_fee": 0,
+      "modeled_usd_before_unknown_conversion": 0,
+      "best_episode_usd_before_unknown_conversion": null
+    },
+    {
+      "market": "3215005",
+      "event": "770450",
+      "question": "Will the Fed decrease interest rates by 50+ bps after the December 2026 meeting?",
+      "priceable_market_hours": 0.023871024714575872,
+      "coverage": "thin",
+      "gross_episodes": 0,
+      "distinct_after_fee": 0,
+      "modeled_usd_before_unknown_conversion": 0,
+      "best_episode_usd_before_unknown_conversion": null
+    },
+    {
+      "market": "3215006",
+      "event": "770450",
+      "question": "Will the Fed decrease interest rates by 25 bps after the December 2026 meeting?",
+      "priceable_market_hours": 0.020024772750006782,
+      "coverage": "thin",
+      "gross_episodes": 0,
+      "distinct_after_fee": 0,
+      "modeled_usd_before_unknown_conversion": 0,
+      "best_episode_usd_before_unknown_conversion": null
+    },
+    {
+      "market": "7109836",
+      "event": "1407041",
+      "question": "Will Ethereum dip to $1,750 on November 17?",
+      "priceable_market_hours": 0.018440579175949098,
+      "coverage": "thin",
+      "gross_episodes": 0,
+      "distinct_after_fee": 0,
+      "modeled_usd_before_unknown_conversion": 0,
+      "best_episode_usd_before_unknown_conversion": null
+    },
+    {
+      "market": "6172747",
+      "event": "1250301",
+      "question": "Will WTI Crude Oil (WTI) hit (HIGH) $150 in November?",
+      "priceable_market_hours": 0.015850845641560026,
+      "coverage": "thin",
+      "gross_episodes": 0,
+      "distinct_after_fee": 0,
+      "modeled_usd_before_unknown_conversion": 0,
+      "best_episode_usd_before_unknown_conversion": null
+    },
+    {
+      "market": "6172746",
+      "event": "1250301",
+      "question": "Will WTI Crude Oil (WTI) hit (HIGH) $160 in November?",
+      "priceable_market_hours": 0.012517172826661004,
+      "coverage": "thin",
+      "gross_episodes": 0,
+      "distinct_after_fee": 0,
+      "modeled_usd_before_unknown_conversion": 0,
+      "best_episode_usd_before_unknown_conversion": null
+    },
+    {
+      "market": "3215011",
+      "event": "770451",
+      "question": "Will the Fed decrease interest rates by 25 bps after the January 2027 meeting?",
+      "priceable_market_hours": 0.010440466205279032,
+      "coverage": "thin",
+      "gross_episodes": 0,
+      "distinct_after_fee": 0,
+      "modeled_usd_before_unknown_conversion": 0,
+      "best_episode_usd_before_unknown_conversion": null
+    },
+    {
+      "market": "6172748",
+      "event": "1250301",
+      "question": "Will WTI Crude Oil (WTI) hit (HIGH) $140 in November?",
+      "priceable_market_hours": 0.009850150810347662,
+      "coverage": "thin",
+      "gross_episodes": 0,
+      "distinct_after_fee": 0,
+      "modeled_usd_before_unknown_conversion": 0,
+      "best_episode_usd_before_unknown_conversion": null
+    },
+    {
+      "market": "3215010",
+      "event": "770451",
+      "question": "Will the Fed decrease interest rates by 50+ bps after the January 2027 meeting?",
+      "priceable_market_hours": 0.005788527528444926,
+      "coverage": "thin",
+      "gross_episodes": 0,
+      "distinct_after_fee": 0,
+      "modeled_usd_before_unknown_conversion": 0,
+      "best_episode_usd_before_unknown_conversion": null
+    },
+    {
+      "market": "7109768",
+      "event": "1407036",
+      "question": "Will Bitcoin dip to $59,000 on November 17?",
+      "priceable_market_hours": 0.0,
+      "coverage": "unpriceable",
+      "gross_episodes": 0,
+      "distinct_after_fee": 0,
+      "modeled_usd_before_unknown_conversion": 0,
+      "best_episode_usd_before_unknown_conversion": null
+    },
+    {
+      "market": "7109844",
+      "event": "1407041",
+      "question": "Will Ethereum dip to $1,650 on November 17?",
+      "priceable_market_hours": 0.0,
+      "coverage": "unpriceable",
+      "gross_episodes": 0,
+      "distinct_after_fee": 0,
+      "modeled_usd_before_unknown_conversion": 0,
+      "best_episode_usd_before_unknown_conversion": null
+    },
+    {
+      "market": "7109764",
+      "event": "1407036",
+      "question": "Will Bitcoin dip to $61,000 on November 17?",
+      "priceable_market_hours": 0.0,
+      "coverage": "unpriceable",
+      "gross_episodes": 0,
+      "distinct_after_fee": 0,
+      "modeled_usd_before_unknown_conversion": 0,
+      "best_episode_usd_before_unknown_conversion": null
+    },
+    {
+      "market": "7109766",
+      "event": "1407036",
+      "question": "Will Bitcoin dip to $60,000 on November 17?",
+      "priceable_market_hours": 0.0,
+      "coverage": "unpriceable",
+      "gross_episodes": 0,
+      "distinct_after_fee": 0,
+      "modeled_usd_before_unknown_conversion": 0,
+      "best_episode_usd_before_unknown_conversion": null
+    },
+    {
+      "market": "7095813",
+      "event": "1402616",
+      "question": "Counter-Strike: ALKA vs Los Ni\u00f1os (BO3) - CCT South America Challengers #4 Playoffs",
+      "priceable_market_hours": 0.0,
+      "coverage": "unpriceable",
+      "gross_episodes": 0,
+      "distinct_after_fee": 0,
+      "modeled_usd_before_unknown_conversion": 0,
+      "best_episode_usd_before_unknown_conversion": null
+    },
+    {
+      "market": "6967637",
+      "event": "1365186",
+      "question": "Will the price of Bitcoin be above $78,000 on November 18?",
+      "priceable_market_hours": 0.0,
+      "coverage": "unpriceable",
+      "gross_episodes": 0,
+      "distinct_after_fee": 0,
+      "modeled_usd_before_unknown_conversion": 0,
+      "best_episode_usd_before_unknown_conversion": null
+    },
+    {
+      "market": "6967639",
+      "event": "1365186",
+      "question": "Will the price of Bitcoin be above $80,000 on November 18?",
+      "priceable_market_hours": 0.0,
+      "coverage": "unpriceable",
+      "gross_episodes": 0,
+      "distinct_after_fee": 0,
+      "modeled_usd_before_unknown_conversion": 0,
+      "best_episode_usd_before_unknown_conversion": null
+    },
+    {
+      "market": "6967641",
+      "event": "1365186",
+      "question": "Will the price of Bitcoin be above $82,000 on November 18?",
+      "priceable_market_hours": 0.0,
+      "coverage": "unpriceable",
+      "gross_episodes": 0,
+      "distinct_after_fee": 0,
+      "modeled_usd_before_unknown_conversion": 0,
+      "best_episode_usd_before_unknown_conversion": null
+    },
+    {
+      "market": "6967642",
+      "event": "1365186",
+      "question": "Will the price of Bitcoin be above $84,000 on November 18?",
+      "priceable_market_hours": 0.0,
+      "coverage": "unpriceable",
+      "gross_episodes": 0,
+      "distinct_after_fee": 0,
+      "modeled_usd_before_unknown_conversion": 0,
+      "best_episode_usd_before_unknown_conversion": null
+    }
+  ],
+  "event_ranking": [
+    {
+      "event": "1250301",
+      "priceable_market_hours": 0.30261836330095926,
+      "coverage": "thin",
+      "gross_episodes": 0,
+      "distinct_after_fee": 0,
+      "modeled_usd_before_unknown_conversion": 0,
+      "best_episode_usd_before_unknown_conversion": null
+    },
+    {
+      "event": "770450",
+      "priceable_market_hours": 0.20007810135682425,
+      "coverage": "thin",
+      "gross_episodes": 0,
+      "distinct_after_fee": 0,
+      "modeled_usd_before_unknown_conversion": 0,
+      "best_episode_usd_before_unknown_conversion": null
+    },
+    {
+      "event": "848341",
+      "priceable_market_hours": 0.19292415261268617,
+      "coverage": "thin",
+      "gross_episodes": 0,
+      "distinct_after_fee": 0,
+      "modeled_usd_before_unknown_conversion": 0,
+      "best_episode_usd_before_unknown_conversion": null
+    },
+    {
+      "event": "770451",
+      "priceable_market_hours": 0.1413522269990709,
+      "coverage": "thin",
+      "gross_episodes": 0,
+      "distinct_after_fee": 0,
+      "modeled_usd_before_unknown_conversion": 0,
+      "best_episode_usd_before_unknown_conversion": null
+    },
+    {
+      "event": "1399686",
+      "priceable_market_hours": 0.10754318535327911,
+      "coverage": "thin",
+      "gross_episodes": 0,
+      "distinct_after_fee": 0,
+      "modeled_usd_before_unknown_conversion": 0,
+      "best_episode_usd_before_unknown_conversion": null
+    },
+    {
+      "event": "797729",
+      "priceable_market_hours": 0.10724893165959251,
+      "coverage": "thin",
+      "gross_episodes": 0,
+      "distinct_after_fee": 0,
+      "modeled_usd_before_unknown_conversion": 0,
+      "best_episode_usd_before_unknown_conversion": null
+    },
+    {
+      "event": "1407036",
+      "priceable_market_hours": 0.08325385895040299,
+      "coverage": "thin",
+      "gross_episodes": 0,
+      "distinct_after_fee": 0,
+      "modeled_usd_before_unknown_conversion": 0,
+      "best_episode_usd_before_unknown_conversion": null
+    },
+    {
+      "event": "79987",
+      "priceable_market_hours": 0.07797016024589538,
+      "coverage": "thin",
+      "gross_episodes": 0,
+      "distinct_after_fee": 0,
+      "modeled_usd_before_unknown_conversion": 0,
+      "best_episode_usd_before_unknown_conversion": null
+    },
+    {
+      "event": "1306312",
+      "priceable_market_hours": 0.06361515548494127,
+      "coverage": "thin",
+      "gross_episodes": 0,
+      "distinct_after_fee": 0,
+      "modeled_usd_before_unknown_conversion": 0,
+      "best_episode_usd_before_unknown_conversion": null
+    },
+    {
+      "event": "1407041",
+      "priceable_market_hours": 0.018440579175949098,
+      "coverage": "thin",
+      "gross_episodes": 0,
+      "distinct_after_fee": 0,
+      "modeled_usd_before_unknown_conversion": 0,
+      "best_episode_usd_before_unknown_conversion": null
+    },
+    {
+      "event": "1402616",
+      "priceable_market_hours": 0.0,
+      "coverage": "unpriceable",
+      "gross_episodes": 0,
+      "distinct_after_fee": 0,
+      "modeled_usd_before_unknown_conversion": 0,
+      "best_episode_usd_before_unknown_conversion": null
+    },
+    {
+      "event": "1365186",
+      "priceable_market_hours": 0.0,
+      "coverage": "unpriceable",
+      "gross_episodes": 0,
+      "distinct_after_fee": 0,
+      "modeled_usd_before_unknown_conversion": 0,
+      "best_episode_usd_before_unknown_conversion": null
+    }
+  ],
+  "admitted_forward_candidate": null,
+  "forward_reason": "No positive gross episode in the scoped historical replay."
+}

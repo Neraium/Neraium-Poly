@@ -1,0 +1,316 @@
+{
+  "rest": {
+    "start": "2026-11-18T05:27:49.821272+00:00",
+    "end": "2026-11-18T05:29:18.873753+00:00",
+    "wall_hours": 0.024736800326241388,
+    "decisions": 90,
+    "markets": {
+      "7085279": {
+        "samples": 90,
+        "priced_bids": 90,
+        "priced_asks": 90,
+        "priceable_seconds": 89.052481174469,
+        "hours": 0.024736800326241388,
+        "gross_episodes": 0,
+        "after_fee_episodes": 0,
+        "partial_baskets": 0,
+        "modeled_usd_before_unknown_conversion": 0,
+        "best_execution_usd_before_unknown_conversion": null
+      },
+      "6967637": {
+        "samples": 90,
+        "invalid_or_insufficient_bids": 90,
+        "invalid_or_insufficient_asks": 90,
+        "hours": 0.0,
+        "gross_episodes": 0,
+        "after_fee_episodes": 0,
+        "partial_baskets": 0,
+        "modeled_usd_before_unknown_conversion": 0,
+        "best_execution_usd_before_unknown_conversion": null
+      },
+      "6967639": {
+        "samples": 90,
+        "invalid_or_insufficient_bids": 90,
+        "invalid_or_insufficient_asks": 90,
+        "hours": 0.0,
+        "gross_episodes": 0,
+        "after_fee_episodes": 0,
+        "partial_baskets": 0,
+        "modeled_usd_before_unknown_conversion": 0,
+        "best_execution_usd_before_unknown_conversion": null
+      },
+      "6967641": {
+        "samples": 90,
+        "invalid_or_insufficient_bids": 90,
+        "invalid_or_insufficient_asks": 90,
+        "hours": 0.0,
+        "gross_episodes": 0,
+        "after_fee_episodes": 0,
+        "partial_baskets": 0,
+        "modeled_usd_before_unknown_conversion": 0,
+        "best_execution_usd_before_unknown_conversion": null
+      },
+      "6967642": {
+        "samples": 90,
+        "invalid_or_insufficient_bids": 90,
+        "invalid_or_insufficient_asks": 90,
+        "hours": 0.0,
+        "gross_episodes": 0,
+        "after_fee_episodes": 0,
+        "partial_baskets": 0,
+        "modeled_usd_before_unknown_conversion": 0,
+        "best_execution_usd_before_unknown_conversion": null
+      }
+    }
+  },
+  "websocket": {
+    "start": "2026-11-18T05:05:02.332932+00:00",
+    "end": "2026-11-18T05:10:00.435918+00:00",
+    "wall_hours": 0.08280638502703773,
+    "decisions": 1911,
+    "markets": {
+      "7085279": {
+        "samples": 1911,
+        "priced_bids": 1911,
+        "priced_asks": 1911,
+        "priceable_seconds": 298.1029860973358,
+        "hours": 0.08280638502703773,
+        "gross_episodes": 0,
+        "after_fee_episodes": 0,
+        "partial_baskets": 0,
+        "modeled_usd_before_unknown_conversion": 0,
+        "best_execution_usd_before_unknown_conversion": null
+      }
+    }
+  },
+  "websocket_5s": {
+    "start": "2026-11-18T05:05:02.332932+00:00",
+    "end": "2026-11-18T05:09:57.332932+00:00",
+    "wall_hours": 0.08194444444444444,
+    "decisions": 60,
+    "markets": {
+      "7085279": {
+        "samples": 60,
+        "priced_bids": 60,
+        "priced_asks": 60,
+        "priceable_seconds": 295.0,
+        "hours": 0.08194444444444444,
+        "gross_episodes": 0,
+        "after_fee_episodes": 0,
+        "partial_baskets": 0,
+        "modeled_usd_before_unknown_conversion": 0,
+        "best_execution_usd_before_unknown_conversion": null
+      }
+    }
+  },
+  "between_polls": [],
+  "websocket_integrity": {
+    "book": 4,
+    "price_change": 1908,
+    "last_trade_price": 1
+  },
+  "tape_sha256": {
+    "phase56": "38739538b175ccb438943f13e7ed30b0a37caa0bcd46f6464af7fe5bec08f9fd",
+    "phase56-baskets": "0fb2eb83fe9e6755e97d5291fe51759a587b8cd3a3ceddc18e8c7a05f5c82bd8"
+  },
+  "cross_market": [
+    {
+      "id": "6967637=>6967639",
+      "terms": [
+        "This market will resolve to \"Yes\" if the Binance 1 minute candle for BTC/USDT closing at 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market is Binance, specifically the BTC/USDT \"Close\" prices currently available at https://www.binance.com/en/trade/BTC_USDT with \"1m\" and \"Candles\" selected on the top bar.\n\nPlease note that this market is about the price according to Binance BTC/USDT, not according to other exchanges or trading pairs.\n\nPrice precision is determined by the number of decimal places in the source.",
+        "This market will resolve to \"Yes\" if the Binance 1 minute candle for BTC/USDT closing at 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market is Binance, specifically the BTC/USDT \"Close\" prices currently available at https://www.binance.com/en/trade/BTC_USDT with \"1m\" and \"Candles\" selected on the top bar.\n\nPlease note that this market is about the price according to Binance BTC/USDT, not according to other exchanges or trading pairs.\n\nPrice precision is determined by the number of decimal places in the source."
+      ],
+      "payoff": {
+        "price_regions_low_mid_high": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "both_invalid_half": [
+          0.5,
+          0.5
+        ],
+        "differential_exception": [
+          0,
+          0
+        ]
+      },
+      "admitted_floor": 0,
+      "rejection": "No shared adjudication guarantee for exceptional resolutions."
+    },
+    {
+      "id": "6967637=>6967641",
+      "terms": [
+        "This market will resolve to \"Yes\" if the Binance 1 minute candle for BTC/USDT closing at 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market is Binance, specifically the BTC/USDT \"Close\" prices currently available at https://www.binance.com/en/trade/BTC_USDT with \"1m\" and \"Candles\" selected on the top bar.\n\nPlease note that this market is about the price according to Binance BTC/USDT, not according to other exchanges or trading pairs.\n\nPrice precision is determined by the number of decimal places in the source.",
+        "This market will resolve to \"Yes\" if the Binance 1 minute candle for BTC/USDT closing at 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market is Binance, specifically the BTC/USDT \"Close\" prices currently available at https://www.binance.com/en/trade/BTC_USDT with \"1m\" and \"Candles\" selected on the top bar.\n\nPlease note that this market is about the price according to Binance BTC/USDT, not according to other exchanges or trading pairs.\n\nPrice precision is determined by the number of decimal places in the source."
+      ],
+      "payoff": {
+        "price_regions_low_mid_high": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "both_invalid_half": [
+          0.5,
+          0.5
+        ],
+        "differential_exception": [
+          0,
+          0
+        ]
+      },
+      "admitted_floor": 0,
+      "rejection": "No shared adjudication guarantee for exceptional resolutions."
+    },
+    {
+      "id": "6967637=>6967642",
+      "terms": [
+        "This market will resolve to \"Yes\" if the Binance 1 minute candle for BTC/USDT closing at 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market is Binance, specifically the BTC/USDT \"Close\" prices currently available at https://www.binance.com/en/trade/BTC_USDT with \"1m\" and \"Candles\" selected on the top bar.\n\nPlease note that this market is about the price according to Binance BTC/USDT, not according to other exchanges or trading pairs.\n\nPrice precision is determined by the number of decimal places in the source.",
+        "This market will resolve to \"Yes\" if the Binance 1 minute candle for BTC/USDT closing at 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market is Binance, specifically the BTC/USDT \"Close\" prices currently available at https://www.binance.com/en/trade/BTC_USDT with \"1m\" and \"Candles\" selected on the top bar.\n\nPlease note that this market is about the price according to Binance BTC/USDT, not according to other exchanges or trading pairs.\n\nPrice precision is determined by the number of decimal places in the source."
+      ],
+      "payoff": {
+        "price_regions_low_mid_high": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "both_invalid_half": [
+          0.5,
+          0.5
+        ],
+        "differential_exception": [
+          0,
+          0
+        ]
+      },
+      "admitted_floor": 0,
+      "rejection": "No shared adjudication guarantee for exceptional resolutions."
+    },
+    {
+      "id": "6967639=>6967641",
+      "terms": [
+        "This market will resolve to \"Yes\" if the Binance 1 minute candle for BTC/USDT closing at 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market is Binance, specifically the BTC/USDT \"Close\" prices currently available at https://www.binance.com/en/trade/BTC_USDT with \"1m\" and \"Candles\" selected on the top bar.\n\nPlease note that this market is about the price according to Binance BTC/USDT, not according to other exchanges or trading pairs.\n\nPrice precision is determined by the number of decimal places in the source.",
+        "This market will resolve to \"Yes\" if the Binance 1 minute candle for BTC/USDT closing at 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market is Binance, specifically the BTC/USDT \"Close\" prices currently available at https://www.binance.com/en/trade/BTC_USDT with \"1m\" and \"Candles\" selected on the top bar.\n\nPlease note that this market is about the price according to Binance BTC/USDT, not according to other exchanges or trading pairs.\n\nPrice precision is determined by the number of decimal places in the source."
+      ],
+      "payoff": {
+        "price_regions_low_mid_high": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "both_invalid_half": [
+          0.5,
+          0.5
+        ],
+        "differential_exception": [
+          0,
+          0
+        ]
+      },
+      "admitted_floor": 0,
+      "rejection": "No shared adjudication guarantee for exceptional resolutions."
+    },
+    {
+      "id": "6967639=>6967642",
+      "terms": [
+        "This market will resolve to \"Yes\" if the Binance 1 minute candle for BTC/USDT closing at 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market is Binance, specifically the BTC/USDT \"Close\" prices currently available at https://www.binance.com/en/trade/BTC_USDT with \"1m\" and \"Candles\" selected on the top bar.\n\nPlease note that this market is about the price according to Binance BTC/USDT, not according to other exchanges or trading pairs.\n\nPrice precision is determined by the number of decimal places in the source.",
+        "This market will resolve to \"Yes\" if the Binance 1 minute candle for BTC/USDT closing at 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market is Binance, specifically the BTC/USDT \"Close\" prices currently available at https://www.binance.com/en/trade/BTC_USDT with \"1m\" and \"Candles\" selected on the top bar.\n\nPlease note that this market is about the price according to Binance BTC/USDT, not according to other exchanges or trading pairs.\n\nPrice precision is determined by the number of decimal places in the source."
+      ],
+      "payoff": {
+        "price_regions_low_mid_high": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "both_invalid_half": [
+          0.5,
+          0.5
+        ],
+        "differential_exception": [
+          0,
+          0
+        ]
+      },
+      "admitted_floor": 0,
+      "rejection": "No shared adjudication guarantee for exceptional resolutions."
+    },
+    {
+      "id": "6967641=>6967642",
+      "terms": [
+        "This market will resolve to \"Yes\" if the Binance 1 minute candle for BTC/USDT closing at 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market is Binance, specifically the BTC/USDT \"Close\" prices currently available at https://www.binance.com/en/trade/BTC_USDT with \"1m\" and \"Candles\" selected on the top bar.\n\nPlease note that this market is about the price according to Binance BTC/USDT, not according to other exchanges or trading pairs.\n\nPrice precision is determined by the number of decimal places in the source.",
+        "This market will resolve to \"Yes\" if the Binance 1 minute candle for BTC/USDT closing at 12:00 in the ET timezone (noon) on the date specified in the title has a final \"Close\" price higher than the price specified in the title. Otherwise, this market will resolve to \"No\".\n\nThe resolution source for this market is Binance, specifically the BTC/USDT \"Close\" prices currently available at https://www.binance.com/en/trade/BTC_USDT with \"1m\" and \"Candles\" selected on the top bar.\n\nPlease note that this market is about the price according to Binance BTC/USDT, not according to other exchanges or trading pairs.\n\nPrice precision is determined by the number of decimal places in the source."
+      ],
+      "payoff": {
+        "price_regions_low_mid_high": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "both_invalid_half": [
+          0.5,
+          0.5
+        ],
+        "differential_exception": [
+          0,
+          0
+        ]
+      },
+      "admitted_floor": 0,
+      "rejection": "No shared adjudication guarantee for exceptional resolutions."
+    }
+  ]
+}
