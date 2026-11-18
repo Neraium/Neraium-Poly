@@ -176,6 +176,32 @@ assert sum(v["polls"] for k, v in boundaries.items() if k != "fresh_at_sample") 
 producer_probe = [
     json.loads(line) for line in (EVIDENCE / "phase49/producer-probe.jsonl").read_text().splitlines()
 ]
+legacy_reports = {}
+legacy_failures = {}
+legacy_polls = []
+for row in legacy:
+    if identity := row.get("as_of"):
+        document = {
+            "processing_available_at": row["processing_frame_available_at"],
+            "journal_processing_frame": row["journal_processing_frame"],
+            "published_at": row["published_at"],
+            "cycle_seconds": row["cycle_seconds"],
+        }
+        assert legacy_reports.setdefault(identity, document) == document
+    observed = row.get("reference_failure")
+    failure_at = observed.get("at") if observed else None
+    if failure_at:
+        assert legacy_failures.setdefault(failure_at, observed) == observed
+    legacy_polls.append(
+        {
+            "at": row["at"],
+            "window": row["window"] + 1,
+            "legacy_report_as_of": identity,
+            "frozen_failure_observation_at": failure_at,
+            "status": row["status"],
+            "boundary": row["observed_boundary"],
+        }
+    )
 summary = {
     "phase49": {
         "separate_producer_probe_count": len(producer_probe),
@@ -183,6 +209,15 @@ summary = {
             "ReadTimeout" in r.get("error", "") for r in producer_probe
         ),
         "polls": len(legacy),
+        "reports_deduped_by_as_of": len(legacy_reports),
+        "journal_processing_frame_ids": len(
+            {
+                report["journal_processing_frame"]["processing_frame_id"]
+                for report in legacy_reports.values()
+                if report["journal_processing_frame"]
+            }
+        ),
+        "distinct_failure_timestamps_in_frozen_reports": len(legacy_failures),
         "boundaries": dict(Counter(x["observed_boundary"] for x in legacy)),
         "request_join_gap": "Baseline retains diagnostic counter snapshots without per-request receipts.",
     },
@@ -221,6 +256,12 @@ summary = {
 }
 (HERE / "summary.json").write_text(json.dumps(summary, indent=2) + "\n")
 data = {
+    "phase49_baseline": {
+        "reports_keyed_by_as_of": legacy_reports,
+        "polls": legacy_polls,
+        "failures_observed_in_frozen_reports": legacy_failures,
+        "unpaired_producer_probe": producer_probe,
+    },
     "requests": requests,
     "producer_frames": frames,
     "derived_processing_frames": processing,

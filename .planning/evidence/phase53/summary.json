@@ -3,6 +3,9 @@
     "separate_producer_probe_count": 12,
     "separate_producer_probe_read_timeouts": 5,
     "polls": 178,
+    "reports_deduped_by_as_of": 49,
+    "journal_processing_frame_ids": 49,
+    "distinct_failure_timestamps_in_frozen_reports": 40,
     "boundaries": {
       "expired_source_or_report_boundary_unknown": 30,
       "fresh_at_sample": 86,
